@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define MAX_V 12050
+#define MAX_V 1000
 
 vector<int> G[MAX_V];
 int match[MAX_V],V;
@@ -26,6 +26,7 @@ bool dfs(int v){
 
 int bipartite_matching(){
   int res=0;
+  memset(match,-1,sizeof(match));
   for(int v=0;v<V;v++){
     if(match[v]<0){
       memset(used,0,sizeof(used));
@@ -36,6 +37,7 @@ int bipartite_matching(){
   }
   return res;
 }
+
 
 int main(){
   
