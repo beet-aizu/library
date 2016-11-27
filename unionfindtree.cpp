@@ -4,7 +4,7 @@ vector<int> r,p;
 void init(int size){
   r.resize(size,0);
   p.resize(size,0);
-  for(int i=0;i<size;i++) p[i]=0,r[i]=i;
+  for(int i=0;i<size;i++) r[i]=0,p[i]=i;
 }
 
 int find(int x){
