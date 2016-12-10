@@ -196,6 +196,14 @@ Polygon andrewScan(Polygon s){
   return l;
 } 
 
+double area(Polygon s){
+  double res=0;
+  for(int i=0;i<s.size();i++){
+    res+=cross(s[i],s[(i+1)%s.size()])/2.0;
+  }
+  return abs(res);
+}
+
 int main(){
   return 0;
 }

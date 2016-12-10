@@ -17,6 +17,7 @@ bool same(int x,int y){
 }
 void unite(int x,int y){
   x=find(x);y=find(y);
+  if(x==y) return;
   if(r[x]>r[y]) {
     p[y]=x;
   }else {
