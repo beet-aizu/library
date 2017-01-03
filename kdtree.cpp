@@ -92,7 +92,7 @@ int main(){
     ans.clear();
     find(root,sx,tx,sy,ty,0,ans);
     sort(ans.begin(),ans.end());
-    for(int j=0;j<ans.size();j++){
+    for(int j=0;j<(int)ans.size();j++){
       ans[j].print();
     }
     printf("\n");

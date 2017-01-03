@@ -15,7 +15,6 @@ void update(int k,int a){
     dat[k]=min(dat[k*2+1],dat[k*2+2]);
   }
 }
-// find(a,b,0,0,n);
 int query(int a,int b,int k,int l,int r){
   if(r<=a||b<=l) return INT_MAX;
   if(a<=l&&r<=b) return dat[k];
@@ -24,6 +23,9 @@ int query(int a,int b,int k,int l,int r){
     int vr=query(a,b,k*2+2,(l+r)/2,r);
     return min(vl,vr);
   }
+}
+int query(int a,int b){
+  return query(a,b,0,0,n);
 }
 int main(){
   return 0;

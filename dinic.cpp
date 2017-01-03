@@ -71,7 +71,7 @@ int max_flow(int s,int t){
   return max_flow(s,t,INF);
 }
 
-//cap=1 only
+//cap==1 only
 bool back_edge(int s,int t,int from, int to){
   for(int i=0;i<(int)G[from].size();i++) {
     edge& e=G[from][i];

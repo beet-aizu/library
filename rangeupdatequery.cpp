@@ -13,10 +13,8 @@ void init(int n_){
 int query(int k){
   k+=n-1;
   P p=dat[k];
-  //cout<<k<<"/"<<dat[k].second<<endl;
   while(k>0){
     k=(k-1)/2;
-    //cout<<k<<"/"<<dat[k].second<<endl;
     p=max(p,dat[k]);
   }
   return p.second;
@@ -25,7 +23,6 @@ int query(int k){
 void update(int a,int b,int k,P p,int l,int r){
   if(r<=a||b<=l) return;
   if(a<=l&&r<=b) {
-    //cout<<a<<":"<<b<<":"<<k<<":"<<l<<":"<<r<<endl;
      dat[k]=p;
   }else{
     update(a,b,k*2+1,p,l,(l+r)/2);
@@ -42,7 +39,6 @@ signed main(){
     if(!f){
       int s,t,x;
       cin>>s>>t>>x;
-      //cout<<i<<":"<<x<<endl;
       update(s,t+1,0,P(i,x),0,n);
     }else{
       int u;

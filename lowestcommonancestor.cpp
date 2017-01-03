@@ -11,7 +11,7 @@ int depth[MAX_V];
 void dfs(int v,int p,int d){
   parent[0][v]=p;
   depth[v]=d;
-  for(int i=0;i<G[v].size();i++){
+  for(int i=0;i<(int)G[v].size();i++){
     if(G[v][i]!=p) dfs(G[v][i],v,d+1);
   }
 }
@@ -44,6 +44,7 @@ int lca(int u,int v){
 }
 
 signed main(){
+  int n;
   init(n);
   return 0;
 }
