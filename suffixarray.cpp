@@ -19,7 +19,7 @@ void constract_sa(string S, int *sa){
     sa[i]=i;
     r[i]=i<n?S[i]:-1;
   }
-  for(k=1;k<=n;k++){
+  for(k=1;k<=n;k*=2){
     sort(sa,sa+n+1,compare_sa);
     t[sa[0]]=0;
     for(int i=0;i<=n;i++){

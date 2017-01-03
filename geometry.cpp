@@ -179,7 +179,7 @@ Polygon andrewScan(Polygon s){
   u.push_back(s[1]);
   l.push_back(s[s.size()-1]);
   l.push_back(s[s.size()-2]);
-  for(int i=2;i<s.size();i++){
+  for(int i=2;i<(int)s.size();i++){
     for(int n=u.size();n>=2&&ccw(u[n-2],u[n-1],s[i]) != CLOCKWISE;n--){
       u.pop_back();
     }
@@ -198,10 +198,36 @@ Polygon andrewScan(Polygon s){
 
 double area(Polygon s){
   double res=0;
-  for(int i=0;i<s.size();i++){
+  for(int i=0;i<(int)s.size();i++){
     res+=cross(s[i],s[(i+1)%s.size()])/2.0;
   }
   return abs(res);
+}
+
+
+Point getCrossPointLL(Line l1,Line l2){
+  double a=cross(l1.p2-l1.p1,l2.p2-l2.p1);
+  double b=cross(l1.p2-l1.p1,l1.p2-l2.p1);
+  if(abs(a)<EPS&&abs(b)<EPS) return l2.p1;
+  return l2.p1+(l2.p2-l2.p1)*(b/a);
+}
+
+Polygon convexCut(Polygon p,Line l){
+  Polygon q;
+  for(int i=0;i<(int)p.size();i++){
+    Point a=p[i],b=p[(i+1)%p.size()];
+    if(ccw(l.p1,l.p2,a)!=-1) q.push_back(a);
+    if(ccw(l.p1,l.p2,a)*ccw(l.p1,l.p2,b)<0)
+      q.push_back(getCrossPointLL(Line(a,b),l));
+  }
+  return q;
+}
+
+Line bisector(Point p1,Point p2){
+  Circle c1=Circle(p1,abs(p1-p2)),c2=Circle(p2,abs(p1-p2));
+  pair<Point,Point> p=getCrossPoints(c1,c2);
+  if(cross(p2-p1,p.first-p1)>0) swap(p.first,p.second);
+  return Line(p.first,p.second);
 }
 
 int main(){

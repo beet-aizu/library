@@ -3,7 +3,11 @@ using namespace std;
 #define MAX_V 500
 #define INF 1<<28
 typedef pair<int,int> P;
-struct edge{int to,cap,cost,rev;};
+struct edge{
+  int to,cap,cost,rev;
+  edge(){}
+  edge(int to,int cap,int cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
+};
 
 int V;
 vector<edge> G[MAX_V];
@@ -12,8 +16,8 @@ int dist[MAX_V];
 int prevv[MAX_V],preve[MAX_V];
 
 void add_edge(int from,int to,int cap,int cost){
-  G[from].push_back((edge){to,cap,cost,G[to].size()});
-  G[to].push_back((edge){from,0,-cost,G[from].size()-1});
+  G[from].push_back(edge(to,cap,cost,G[to].size()));
+  G[to].push_back(edge(from,0,-cost,G[from].size()-1));
 }
 
 int min_cost_flow(int s,int t,int f){
@@ -28,7 +32,7 @@ int min_cost_flow(int s,int t,int f){
       P p=que.top();que.pop();
       int v=p.second;
       if(dist[v]<p.first) continue;
-      for(int i=0;i<G[v].size();i++){
+      for(int i=0;i<(int)G[v].size();i++){
 	edge &e=G[v][i];
 	if(e.cap>0&&dist[e.to]>dist[v]+e.cost+h[v]-h[e.to]){
 	  dist[e.to]=dist[v]+e.cost+h[v]-h[e.to];

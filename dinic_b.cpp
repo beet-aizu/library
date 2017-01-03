@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define INF 1<<28
-#define MAX_V 600
+#define MAX_V 500
 struct edge {
   int to,cap,rev;
   edge(){}
@@ -9,15 +9,12 @@ struct edge {
 };
 
 vector<edge> G[MAX_V];
-map<int,int> M[MAX_V];
 int level[MAX_V];
 int iter[MAX_V];
 
 void add_edge(int from,int to,int cap){
-  M[from][to]=G[from].size();
-  M[to][from]=G[to].size();
   G[from].push_back(edge(to,cap,G[to].size()));
-  G[to].push_back(edge(from,cap,G[from].size()-1));
+  G[to].push_back(edge(from,0,G[from].size()-1));
 }
 
 void bfs(int s){
@@ -57,7 +54,7 @@ int max_flow(int s, int t, int lim){
   int flow=0;
   for(;;){
     bfs(s);
-    if(level[t]<0||lim==0) return flow;
+    if(level[t]<0) return flow;
     memset(iter,0,sizeof(iter));
     int f;
     while((f=dfs(s,t,lim))>0){
@@ -69,21 +66,6 @@ int max_flow(int s, int t, int lim){
 
 int max_flow(int s,int t){
   return max_flow(s,t,INF);
-}
-
-//cap=1 only
-bool back_edge(int s,int t,int from, int to){
-  for(int i=0;i<(int)G[from].size();i++) {
-    edge& e=G[from][i];
-    if(e.to == to) {
-      if(e.cap == 0 && max_flow(from, to, 1) == 0) {
-	max_flow(from, s, 1);
-	max_flow(t, to, 1);
-	return 1;
-      }
-    }
-  }
-  return 0;
 }
 
 int main(){
