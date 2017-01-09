@@ -20,13 +20,13 @@ int query(int k){
   return p.second;
 }
 
-void update(int a,int b,int k,P p,int l,int r){
+void update(int a,int b,P p,int k=0,int l=0,int r=n){
   if(r<=a||b<=l) return;
   if(a<=l&&r<=b) {
      dat[k]=p;
   }else{
-    update(a,b,k*2+1,p,l,(l+r)/2);
-    update(a,b,k*2+2,p,(l+r)/2,r);
+    update(a,b,p,k*2+1,l,(l+r)/2);
+    update(a,b,p,k*2+2,(l+r)/2,r);
   }
 }
 signed main(){
@@ -39,7 +39,7 @@ signed main(){
     if(!f){
       int s,t,x;
       cin>>s>>t>>x;
-      update(s,t+1,0,P(i,x),0,n);
+      update(s,t+1,P(i,x));
     }else{
       int u;
       cin>>u;

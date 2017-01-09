@@ -2,6 +2,7 @@
 using namespace std;
 const int MAX_N = 1 << 17;
 int bit[MAX_N+1],n;
+//1-indexed
 int sum(int i){
   int s=0;
   while(i>0){
