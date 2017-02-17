@@ -48,6 +48,7 @@ typedef Segment Line;
 struct Circle{
   Point c;
   double r;
+  Circle(){}
   Circle(Point c,double r):c(c),r(r){}
 };
 
