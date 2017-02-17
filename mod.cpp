@@ -55,6 +55,11 @@ ll mod_pow(ll x,ll n,ll mod){
   return res;
 }
 
+void init(ll p){
+  fact[0]=1;
+  for(ll i=1;i<MAX_P;i++) fact[i]=(fact[i-1]*i)%p;
+}
+
 ll mod_fact(ll n,ll p,ll& e){
   e=0;
   if(n==0) return 1;

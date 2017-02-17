@@ -29,6 +29,12 @@ struct Point{
     return fabs(x-p.x) < EPS && fabs(y-p.y) < EPS;
   }
 };
+
+istream &operator >> (istream &is,Point &p){
+  is>>p.x>>p.y;
+  return is;
+}
+
 typedef Point Vector;
 typedef vector<Point> Polygon;
 
