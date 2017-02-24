@@ -53,19 +53,19 @@ struct AVL{
     return balance(t);
   }
   int sz(node *t){
-    if(t) return t->size;
+    if(t!=NULL) return t->size;
     return 0;
   }
   int ht(node *t){
-    if(t) return t->height;
+    if(t!=NULL) return t->height;
     return 0;
   }
   node *rotate(node *t,int l,int r){
     node *s=t->child[r];
     t->child[r]=s->child[l];
     s->child[l]=balance(t);
-    if(t) t->size=sz(t->child[0])+sz(t->child[1])+1;
-    if(s) s->size=sz(s->child[0])+sz(s->child[1])+1;
+    if(t!=NULL) t->size=sz(t->child[0])+sz(t->child[1])+1;
+    if(s!=NULL) s->size=sz(s->child[0])+sz(s->child[1])+1;
     return balance(s);
   }
   node *balance(node *t){
@@ -76,15 +76,15 @@ struct AVL{
 	return rotate(t,!i,i);
       }
     }
-    if(t) t->height=max(ht(t->child[0]),ht(t->child[1]))+1;
-    if(t) t->size=sz(t->child[0])+sz(t->child[1])+1;
+    if(t!=NULL) t->height=max(ht(t->child[0]),ht(t->child[1]))+1;
+    if(t!=NULL) t->size=sz(t->child[0])+sz(t->child[1])+1;
     return t;
   }
   pointer rank(int k){
     return rank(root,k);
   }
   pointer rank(node *t,int k){
-    if(!t) return NULL;
+    if(t==NULL) return NULL;
     int m=sz(t->child[0]);
     if(k<m) return rank(t->child[0],k);
     if(k==m) return t;
