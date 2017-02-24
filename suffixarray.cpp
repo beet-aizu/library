@@ -53,6 +53,24 @@ bool contains(string S,int *sa,string T){
   return S.compare(sa[b],T.length(),T)==0;
 }
 
+int count(string &S,int *sa,string T){
+  int a1=0,b1=S.length();
+  while(b1-a1>1){
+    int c=(a1+b1)/2;
+    if(S.compare(sa[c],T.length(),T)<0) a1=c;
+    else b1=c;
+  }
+  if(S.compare(sa[b1],T.length(),T)) return 0;
+  int a2=0,b2=S.length()+1;
+  while(b2-a2>1){
+    int c=(a2+b2)/2;
+    if(S.compare(sa[c],T.length(),T)<=0) a2=c;
+    else b2=c;
+  }
+  return a2-b1+1;
+}
+
+
 int main(){
   return 0;
 }
