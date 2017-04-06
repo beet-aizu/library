@@ -2,14 +2,18 @@
 using namespace std;
 #define int long long
 struct Chien{
-  static const int MAX=1<<18;
-  int n,dat[2*MAX-1],laz[2*MAX-1];
+  int n;
+  vector<int> dat,laz;
+  const int def=0;
   Chien(){}
   Chien(int n_){init(n_);}
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
-    for(int i=0;i<2*n-1;i++) dat[i]=laz[i]=0;
+    dat.clear();
+    dat.resize(2*n-1,def);
+    laz.clear();
+    laz.resize(2*n-1,0);
   }
   inline void eval(int len,int k){
     if(k*2+1<n*2-1){
@@ -28,7 +32,7 @@ struct Chien{
   }
   int query(int a,int b,int k,int l,int r){
     eval(r-l,k);
-    if(r<=a||b<=l) return 0;
+    if(r<=a||b<=l) return def;
     if(a<=l&&r<=b) return dat[k];
     int vl=query(a,b,k*2+1,l,(l+r)/2);
     int vr=query(a,b,k*2+2,(l+r)/2,r);
@@ -59,6 +63,6 @@ signed main(){
 }
 
 /*
-verified on 2017/02/18
+verified on 2017/02/24
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
 */

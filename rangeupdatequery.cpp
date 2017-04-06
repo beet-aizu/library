@@ -3,14 +3,15 @@ using namespace std;
 #define int long long
 typedef pair<int,int> P;
 struct RUP{
-  static const int MAX_N = 1 << 18;
   int n;
-  P dat[2*MAX_N-1];
+  vector<P> dat;
   RUP(){}
   RUP(int n_){init(n_);}
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
+    dat.clear();
+    dat.resize(2*n-1);
     for(int i=0;i<2*n-1;i++) dat[i].first=-1,dat[i].second=INT_MAX;
   }
   int query(int k){
@@ -22,7 +23,6 @@ struct RUP{
     }
     return p.second;
   }
-  
   void update(int a,int b,P p,int k,int l,int r){
     if(r<=a||b<=l) return;
     if(a<=l&&r<=b) {
@@ -58,6 +58,6 @@ signed main(){
 }
 
 /*
-verified on 2017/02/18
+verified on 2017/02/24
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
 */
