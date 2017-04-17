@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+#define int long long
 #define MOD 1000000007
 #define MAX_N 100000
 #define MAX_P 200005
-ll fact[MAX_P];
-ll extgcd(ll a,ll b,ll& x,ll& y){
-  ll d=a;
+int fact[MAX_P];
+int extgcd(int a,int b,int& x,int& y){
+  int d=a;
   if(b!=0){
     d=extgcd(b,a%b,y,x);
     y-=(a/b)*x;
@@ -15,15 +15,15 @@ ll extgcd(ll a,ll b,ll& x,ll& y){
   }
   return d;
 }
-ll mod_inverse(ll a,ll m){
-  ll x,y;
+int mod_inverse(int a,int m){
+  int x,y;
   extgcd(a,m,x,y);
   return (m+x%m)%m;
 }
 
-ll euler_phi(ll n){
-  ll res=n;
-  for(ll i=2;i*i<=n;i++){
+int euler_phi(int n){
+  int res=n;
+  for(int i=2;i*i<=n;i++){
     if(n%i==0){
       res=res/i*(i-1);
       for(;n%i==0;n/=i);
@@ -33,11 +33,11 @@ ll euler_phi(ll n){
   return res;
 }
 
-ll euler[MAX_N];
+int euler[MAX_N];
 
 void euler_phi2(){
-  for(ll i=0;i<MAX_N;i++) euler[i]=i;
-  for(ll i=2;i<MAX_N;i++){
+  for(int i=0;i<MAX_N;i++) euler[i]=i;
+  for(int i=2;i<MAX_N;i++){
     if(euler[i]==i){
       for(int j=i;j<MAX_N;j+=i) euler[j]=euler[j]/i*(i-1);
     }
@@ -45,8 +45,8 @@ void euler_phi2(){
 }
 
 
-ll mod_pow(ll x,ll n,ll mod){
-  ll res=1;
+int mod_pow(int x,int n,int mod){
+  int res=1;
   while(n>0){
     if(n&1) res=res*x%mod;
     x=x*x%mod;
@@ -55,27 +55,27 @@ ll mod_pow(ll x,ll n,ll mod){
   return res;
 }
 
-void init(ll p){
+void init(int p){
   fact[0]=1;
-  for(ll i=1;i<MAX_P;i++) fact[i]=(fact[i-1]*i)%p;
+  for(int i=1;i<MAX_P;i++) fact[i]=(fact[i-1]*i)%p;
 }
 
-ll mod_fact(ll n,ll p,ll& e){
+int mod_fact(int n,int p,int& e){
   e=0;
   if(n==0) return 1;
-  ll res=mod_fact(n/p,p,e);
+  int res=mod_fact(n/p,p,e);
   e+=n/p;
   if(n/p%2!=0)return res*(p-fact[n%p]) %p;
   return res*fact[n%p]%p;
 } 
-ll mod_comb(ll n,ll k,ll p){
+int mod_comb(int n,int k,int p){
   if(n==k||k==0) return 1;
-  ll e1,e2,e3;
-  ll a1=mod_fact(n,p,e1),a2=mod_fact(k,p,e2),a3=mod_fact(n-k,p,e3);
+  int e1,e2,e3;
+  int a1=mod_fact(n,p,e1),a2=mod_fact(k,p,e2),a3=mod_fact(n-k,p,e3);
   if(e1>e2+e3) return 0;
   return a1*mod_inverse(a2*a3%p,p)%p;
 }
 
-int main(){
+signed main(){
   return 0;
 }
