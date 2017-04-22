@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+#define int long long
 #define MAX_V 111111
 typedef pair<int,int> P;
 vector<int> G[MAX_V],C[MAX_V],T[MAX_V],ord,low,belong;
@@ -58,9 +58,13 @@ void biconnectedgrapth(){
     T[v].push_back(u);
   }
 }
-int main(){
+signed main(){
   int n;
   cin>>n;
   V=n;
   return 0;
 }
+
+/*
+  not verified
+*/

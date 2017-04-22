@@ -1,13 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int MAX_N = 1 << 17;
+#define int long long
 struct BIT{
-  int bit[MAX_N+1],n;
+  vector<int> bit;
+  int n;
   //1-indexed
   BIT(){init();}
   BIT(int n):n(n){init();}
   void init(){
-    memset(bit,0,sizeof(bit));
+    bit.clear();
+    bit.resize(n+1,0);
   }
   int sum(int i){
     int s=0;
@@ -30,7 +32,19 @@ struct BIT{
     add(i+1,x);
   }
 };
-int main(){
-  
+signed main(){
+  int n,q;
+  cin>>n>>q;
+  BIT bit(n);
+  for(int i=0;i<q;i++){
+    int c,x,y;
+    cin>>c>>x>>y;
+    if(c) cout<<bit.sum(y)-bit.sum(x-1)<<endl;
+    else bit.add(x,y);
+  }
   return 0;
 }
+/*
+verified on 2017/04/22
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
+ */
