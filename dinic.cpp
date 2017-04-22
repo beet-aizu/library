@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 #define INF 1<<28
 #define MAX_V 600
 struct edge {
@@ -13,11 +14,15 @@ map<int,int> M[MAX_V];
 int level[MAX_V];
 int iter[MAX_V];
 
+
 void add_edge(int from,int to,int cap){
   M[from][to]=G[from].size();
   M[to][from]=G[to].size();
   G[from].push_back(edge(to,cap,G[to].size()));
-  G[to].push_back(edge(from,cap,G[from].size()-1));
+  // undirected
+  //G[to].push_back(edge(from,cap,G[from].size()-1));
+  // directed
+  G[to].push_back(edge(from,0,G[from].size()-1));
 }
 
 void bfs(int s){
@@ -53,7 +58,7 @@ int dfs(int v,int t,int f){
   return 0;
 }
 
-int max_flow(int s, int t, int lim){
+int max_flow(int s,int t,int lim){
   int flow=0;
   for(;;){
     bfs(s);
@@ -75,10 +80,10 @@ int max_flow(int s,int t){
 bool back_edge(int s,int t,int from, int to){
   for(int i=0;i<(int)G[from].size();i++) {
     edge& e=G[from][i];
-    if(e.to == to) {
-      if(e.cap == 0 && max_flow(from, to, 1) == 0) {
-	max_flow(from, s, 1);
-	max_flow(t, to, 1);
+    if(e.to==to) {
+      if(e.cap==0&&max_flow(from,to,1)==0) {
+	max_flow(from,s,1);
+	max_flow(t,to,1);
 	return 1;
       }
     }
@@ -86,6 +91,19 @@ bool back_edge(int s,int t,int from, int to){
   return 0;
 }
 
-int main(){
+signed main(){
+  int V,E;
+  cin>>V>>E;
+  for(int i=0;i<E;i++){
+    int u,v,c;
+    cin>>u>>v>>c;
+    add_edge(u,v,c);
+  }
+  cout<<max_flow(0,V-1)<<endl;
   return 0;
 }
+
+/*
+verified on 2017/04/22
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
+*/

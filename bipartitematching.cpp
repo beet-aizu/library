@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 #define MAX_V 1000
 vector<int> G[MAX_V];
 int match[MAX_V],V;
@@ -37,8 +38,10 @@ int bipartite_matching(){
   return res;
 }
 
-
-int main(){
+signed main(){
   
   return 0;
 }
+/*
+not verified
+*/
