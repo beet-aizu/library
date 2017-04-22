@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 #define EPS (1e-10)
 #define equals(a,b) (fabs((a)-(b)) < EPS)
+#define PI 3.141592653589793238
+#define int long long
  
 using namespace std;
 
@@ -237,6 +239,38 @@ Line bisector(Point p1,Point p2){
   return Line(p.first,p.second);
 }
 
-int main(){
+
+Vector spin(Vector v,double theta){
+  Vector res;
+  res.x=cos(theta)*v.x-sin(theta)*v.y;
+  res.y=sin(theta)*v.x+cos(theta)*v.y;
+  return res;
+}
+
+vector<Line> corner(Line l1,Line l2){
+  vector<Line> res;
+  if(isParallel(l1,l2)){
+    double d=getDistanceLP(l1,l2.p1)/2.0;
+    Vector v1=l1.p2-l1.p1;
+    v1=v1/v1.abs()*d;
+    Point p=l2.p1+spin(v1,90.0*(PI/180.0));
+    double d1=getDistanceLP(l1,p);
+    double d2=getDistanceLP(l2,p);
+    if(abs(d1-d2)>d){
+      p=l2.p1+spin(v1,-90.0*(PI/180.0));
+    }
+    res.push_back(Line(p,p+v1));
+  }else{
+    Point p=getCrossPointLL(l1,l2);
+    Vector v1=l1.p2-l1.p1,v2=l2.p2-l2.p1;
+    v1=v1/v1.abs();
+    v2=v2/v2.abs();
+    res.push_back(Line(p,p+(v1+v2)));
+    res.push_back(Line(p,p+spin(v1+v2,90.0*(PI/180.0))));
+  }
+  return res;
+}
+
+signed main(){
   return 0;
 }
