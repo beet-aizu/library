@@ -17,5 +17,12 @@ int matrixchainmultiplication(){
   return m[1][n];
 }
 int main(){
+  cin>>n;
+  for(int i=0;i<n;i++) cin>>p[i]>>p[i+1];
+  cout<<matrixchainmultiplication()<<endl;
   return 0;
 }
+/*
+verified on 2017/04/26
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_B
+*/
