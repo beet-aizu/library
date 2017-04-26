@@ -45,6 +45,16 @@ int kruskal(int N,vector<edge> edges){
   return res;
 }
 int main(){
-  
+  int V,E;
+  cin>>V>>E;
+  vector<edge> edges(E);
+  for(int i=0;i<E;i++)
+    cin>>edges[i].from>>edges[i].to>>edges[i].cost;
+  cout<<kruskal(V,edges)<<endl;
   return 0;
 }
+
+/*
+verified on 2017/04/26
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
+*/
