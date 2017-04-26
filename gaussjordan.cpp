@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 const double EPS=1E-8;
 typedef vector<double> vec;
 typedef vector<vec> mat;
@@ -27,6 +28,9 @@ vec gauss_jordan(const mat& A,const vec& b){
   for(int i=0;i<n;i++) x[i]=B[i][n];
   return x;
 }
-int main(){
+signed main(){
   return 0;
 }
+/*
+not verified
+*/
