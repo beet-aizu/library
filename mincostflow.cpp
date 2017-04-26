@@ -63,6 +63,18 @@ int min_cost_flow(int s,int t,int f){
 }
 
 int main(){
-  
+  int v,e,f;
+  cin>>v>>e>>f;
+  for(int i=0;i<e;i++){
+    int u,v,c,d;
+    cin>>u>>v>>c>>d;
+    add_edge(u,v,c,d);
+  }
+  V=v;
+  cout<<min_cost_flow(0,v-1,f)<<endl;
   return 0;
 }
+/*
+verified on 2017/04/26
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
+*/
