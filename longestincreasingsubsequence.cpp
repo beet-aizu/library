@@ -21,3 +21,7 @@ int main(){
   cout<<lis()<<endl;
   return 0;
 }
+/*
+verified on 2017/04/26
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=jp
+*/
