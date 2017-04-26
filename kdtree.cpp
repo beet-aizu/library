@@ -39,21 +39,17 @@ int makeKDTree(int l,int r,int depth){
     sort(P+l,P+r,lessY);
   }
   T[t].location=mid;
-  T[t].l = makeKDTree(l,mid,depth+1);
-  T[t].r = makeKDTree(mid+1,r,depth+1);
-
+  T[t].l=makeKDTree(l,mid,depth+1);
+  T[t].r=makeKDTree(mid+1,r,depth+1);
   return t;
 }
 
 void find(int v,int sx,int tx,int sy,int ty,int depth,vector<Point> &ans){
   int x=P[T[v].location].x;
   int y=P[T[v].location].y;
-
-
   if(sx<=x&&x<=tx&&sy<=y&&y<=ty){
     ans.push_back(P[T[v].location]);
   }
-
   if(depth%2==0){
     if(T[v].l!=NIL){
       if(sx<=x) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
@@ -69,7 +65,6 @@ void find(int v,int sx,int tx,int sy,int ty,int depth,vector<Point> &ans){
       if(y<=ty) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
     }
   }
-  
 } 
    
 int main(){
@@ -100,3 +95,8 @@ int main(){
   
   return 0;
 }
+
+/*
+verified on 2017/04/26
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C&lang=jp
+*/
