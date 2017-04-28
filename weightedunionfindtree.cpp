@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 struct WeightedUnionFind{
   vector<int> r,p,ws;
   WeightedUnionFind(){}
@@ -40,6 +41,6 @@ struct WeightedUnionFind{
     return weight(x)-weight(y);
   }
 };
-int main(){
+signed main(){
   return 0;
 }

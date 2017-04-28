@@ -36,10 +36,22 @@ void tsort(int n){
     return;
   }
   for(int i=0;i<n;i++)
-    cout<<p[i]+1<<" \n"[i==n-1];
+    cout<<p[i]<<endl;
 }
 
 signed main(){
-  
+  int n,e;
+  cin>>n>>e;
+  for(int i=0;i<e;i++){
+    int s,t;
+    cin>>s>>t;
+    G[s].insert(t);
+  }
+  tsort(n);
   return 0;
 }
+
+/*
+verified on 2017/04/28
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B&lang=jp
+*/
