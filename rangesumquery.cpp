@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-struct RMQ{
+struct RSQ{
   int n;
   vector<int> dat;
   const int def=0;
-  RMQ(){}
-  RMQ(int n_){init(n_);}
-  RMQ(vector<int> v){init(v);}
+  RSQ(){}
+  RSQ(int n_){init(n_);}
+  RSQ(vector<int> v){init(v);}
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
