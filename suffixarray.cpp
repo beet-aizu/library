@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+#define int long long
 #define MAX_N 200050
 int n,k;
 int r[MAX_N+1],r2[MAX_N+1];
@@ -167,6 +167,6 @@ int count(string &S,int *sa,string T,RMQ &rmq){
   return a[1]-b[0]+1;
 }
 
-int main(){
+signed main(){
   return 0;
 }

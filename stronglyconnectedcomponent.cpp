@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 #define MAX_V 200050
 int V;
 vector<int> G[MAX_V],rG[MAX_V],vs;
@@ -36,7 +37,7 @@ int scc(){
   }
   return k;
 }
-int main(){
+signed main(){
   
   return 0;
 }

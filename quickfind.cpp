@@ -2,12 +2,11 @@
 using namespace std;
 #define int long long
 
-
-struct UnionFind{
+struct QuickFind{
   vector<int> r,p;
   vector<vector<int> > v;
-  UnionFind(){}
-  UnionFind(int size){init(size);}
+  QuickFind(){}
+  QuickFind(int size){init(size);}
   void init(int size){
     r.resize(size,0);
     p.resize(size,0);
@@ -35,12 +34,16 @@ struct UnionFind{
 signed main(){
   int n,q;
   cin>>n>>q;
-  UnionFind uf(n);
+  QuickFind qf(n);
   for(int i=0;i<q;i++){
     int c,x,y;
     cin>>c>>x>>y;
-    if(c) cout<<uf.same(x,y)<<endl;
-    else uf.unite(x,y);
+    if(c) cout<<qf.same(x,y)<<endl;
+    else qf.unite(x,y);
   }
   return 0;
 }
+/*
+verified on 2017/04/28
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
+*/
