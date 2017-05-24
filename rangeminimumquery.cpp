@@ -24,11 +24,9 @@ struct RMQ{
   int query(int a,int b,int k,int l,int r){
     if(r<=a||b<=l) return def;
     if(a<=l&&r<=b) return dat[k];
-    else{
-      int vl=query(a,b,k*2+1,l,(l+r)/2);
-      int vr=query(a,b,k*2+2,(l+r)/2,r);
-      return min(vl,vr);
-    }
+    int vl=query(a,b,k*2+1,l,(l+r)/2);
+    int vr=query(a,b,k*2+2,(l+r)/2,r);
+    return min(vl,vr);
   }
   int query(int a,int b){
     return query(a,b,0,0,n);

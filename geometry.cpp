@@ -132,6 +132,37 @@ Point reflect(Segment s,Point p){
   return p+(project(s,p)-p)*2.0;
 }
 
+double arg(Vector p){
+  return atan2(p.y,p.x);
+}
+
+Vector polar(double a,double r){
+  return Point(cos(r)*a,sin(r)*a);
+}
+
+int ccw(Point p0,Point p1,Point p2);
+bool intersectSS(Point p1,Point p2,Point p3,Point p4);
+bool intersectSS(Segment s1,Segment s2);
+int intersectCC(Circle c1,Circle c2);
+bool intersectSC(Segment s,Circle c);
+double getDistanceLP(Line l,Point p);
+double getDistanceSP(Segment s,Point p);
+double getDistanceSS(Segment s1,Segment s2);
+Point getCrossPointSS(Segment s1,Segment s2);
+Point getCrossPointLL(Line l1,Line l2);
+pair<Point,Point> getCrossPointCL(Circle c,Line l);
+pair<Point,Point> getCrossPointCC(Circle c1,Circle c2);
+int contains(Polygon g,Point p);
+Polygon andrewScan(Polygon s);
+Polygon convex_hull(Polygon ps);
+double diameter(Polygon s);
+bool isConvex(Polygon p);
+double area(Polygon s);
+Polygon convexCut(Polygon p,Line l);
+Line bisector(Point p1,Point p2);
+Vector translate(Vector v,double theta);
+vector<Line> corner(Line l1,Line l2);
+
 int ccw(Point p0,Point p1,Point p2){
   Vector a = p1-p0;
   Vector b = p2-p0;
@@ -160,6 +191,11 @@ int intersectCC(Circle c1,Circle c2){
   if(equals(d+c2.r,c1.r)) return ICC_INSCRIBE;
   if(d+c2.r<c1.r) return ICC_CONTAIN;
   return ICC_INTERSECT;
+}
+
+bool intersectSC(Segment s,Circle c){
+  double d=getDistanceSP(s,c.c);
+  return d<=c.r;
 }
 
 double getDistanceLP(Line l,Point p){
@@ -198,15 +234,6 @@ pair<Point,Point> getCrossPointCL(Circle c,Line l){
   Vector e=(l.p2-l.p1)/abs(l.p2-l.p1);
   double base=sqrt(c.r*c.r-norm(pr-c.c));
   return make_pair(pr+e*base,pr-e*base);
-}
-
-
-double arg(Vector p){
-  return atan2(p.y,p.x);
-}
-
-Vector polar(double a,double r){
-  return Point(cos(r)*a,sin(r)*a);
 }
 
 pair<Point,Point> getCrossPointCC(Circle c1,Circle c2){
