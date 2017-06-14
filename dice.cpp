@@ -43,6 +43,23 @@ struct Dice{
       s[5]=s[1];
       s[1]=b;
     }
+    
+    // migi neji (not verified)
+    if(c=='R'){
+      b=s[1];
+      s[1]=s[3];
+      s[3]=s[4];
+      s[4]=s[2];
+      s[2]=b;
+    }
+    if(c=='L'){
+      b=s[1];
+      s[1]=s[2];
+      s[2]=s[4];
+      s[4]=s[3];
+      s[3]=b;
+    }
+    
   }
   int top() {
     return s[0];
