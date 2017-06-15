@@ -65,6 +65,23 @@ struct Dice{
     return s[0];
   }
 };
+vector<Dice> makeDices(Dice d){
+  vector<Dice> res;
+  for(int i=0;i<6;i++){
+    Dice t(d);
+    if(i==1) t.roll('N'); 
+    if(i==2) t.roll('S'); 
+    if(i==3) t.roll('S'),t.roll('S');
+    if(i==4) t.roll('L'); 
+    if(i==5) t.roll('R'); 
+    for(int k=0;k<4;k++){
+      res.push_back(t);
+      t.roll('E');
+    }
+  }
+  return res;
+}
+
 signed main(){
   Dice d;
   for(int i=0;i<6;i++) cin >> d.s[i];
