@@ -64,6 +64,11 @@ struct Dice{
   int top() {
     return s[0];
   }
+  int hash(){
+    int res=0;
+    for(int i=0;i<6;i++) res=res*256+s[i];
+    return res;
+  }
 };
 vector<Dice> makeDices(Dice d){
   vector<Dice> res;

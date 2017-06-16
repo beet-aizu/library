@@ -243,6 +243,7 @@ pair<Point,Point> getCrossPointCC(Circle c1,Circle c2){
   return make_pair(c1.c+polar(c1.r,t+a),c1.c+polar(c1.r,t-a));
 }
 
+// IN:2 ON:1 OUT:0
 int contains(Polygon g,Point p){
   int n=g.size();
   bool x=false;
