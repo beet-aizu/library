@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-int MOD=1000000009LL;
+int MOD=1000000007LL;
 typedef vector<int> arr;
 typedef vector<arr> mat;
 inline arr mul(mat a,arr& b,int mod){
@@ -19,8 +19,14 @@ inline mat mul(mat& a,mat& b,int mod){
 	(res[i][j]+=a[i][k]*b[k][j])%=mod;
   return res;
 }
-mat memo[100],base;
+mat base;
 inline mat mat_pow(mat a,int n,int mod){
+  if(base.empty()){
+    base=mat(a);
+    for(int i=0;i<(int)a.size();i++)
+      for(int j=0;j<(int)a[i].size();j++)
+	base[i][j]=(i==j);
+  }
   mat res(base);
   while(n){
     if(n&1) res=mul(a,res,mod);
@@ -29,6 +35,7 @@ inline mat mat_pow(mat a,int n,int mod){
   }
   return res;
 }
+mat memo[100];
 void init(mat a,int mod){
   base=mat(a);
   for(int i=0;i<(int)base.size();i++)
