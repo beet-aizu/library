@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct Dice{
   int s[6];
   void roll(char c){
@@ -86,6 +87,7 @@ vector<Dice> makeDices(Dice d){
   }
   return res;
 }
+//END CUT HERE
 
 signed main(){
   Dice d;

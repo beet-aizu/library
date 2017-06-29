@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-int MOD=1000000007LL;
+//BEGIN CUT HERE
+int MOD=1000000009LL; //<- alert!!!
 typedef vector<int> arr;
 typedef vector<arr> mat;
 inline arr mul(mat a,arr& b,int mod){
@@ -55,6 +56,7 @@ inline mat mat_pow2(int w,int n,int mod){
   }
   return res;
 }
+//END CUT HERE
 
 typedef pair<int,int> P;
 signed main(){
@@ -98,3 +100,8 @@ signed main(){
   }
   return 0;
 }
+
+/*
+verified on 2017/06/29
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
+*/

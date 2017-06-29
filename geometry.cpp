@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
+using namespace std;
+#define int long long
+//BEGIN CUT HERE
+
 #define EPS (1e-10)
 #define equals(a,b) (fabs((a)-(b)) < EPS)
 #define PI 3.141592653589793238
-#define int long long
  
-using namespace std;
-
 // COUNTER CLOCKWISE
 static const int CCW_COUNTER_CLOCKWISE = 1;
 static const int CCW_CLOCKWISE = -1;
@@ -387,6 +388,7 @@ vector<Line> corner(Line l1,Line l2){
   return res;
 }
 
+//END CUT HERE
 
 signed main(){
   Circle c1,c2;

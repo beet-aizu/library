@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct BIT{
   vector<int> bit;
   int n;
@@ -32,6 +33,8 @@ struct BIT{
     add(i+1,x);
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,q;
   cin>>n>>q;

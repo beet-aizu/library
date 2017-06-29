@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct UnionFind{
   vector<int> r,p;
   UnionFind(){}
@@ -24,6 +25,7 @@ struct UnionFind{
     p[y]=x;
   }
 };
+//END CUT HERE
 
 signed main(){
   int n,q;

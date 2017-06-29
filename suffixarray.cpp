@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct SA{
   int n,k;
   string S;
@@ -202,6 +203,8 @@ struct SA{
     return a[1]-b[0]+1;
   }
 };
+//END CUT HERE
+
 char buf[1000001];
 signed main(){
   scanf("%s",buf);

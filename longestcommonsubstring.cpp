@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define N 1050
-int c[N+1][N+1];
+//BEGIN CUT HERE
 int lcs(string X,string Y){
-  memset(c,0,sizeof(0));
+  const int N=max(X.size(),Y.size())+1;
+  vector<vector<int> > c(N,vector<int>(N,0));
   int m = X.size();
   int n = Y.size();
   int maxl = 0;
@@ -18,6 +18,7 @@ int lcs(string X,string Y){
   }
   return maxl;
 }
+//END CUT HERE
 int main(){
   int q;
   cin>>q;
@@ -29,6 +30,6 @@ int main(){
   return 0;
 }
 /*
-verified on 2017/04/26
+verified on 2017/06/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
 */

@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct WeightedUnionFind{
   vector<int> r,p,ws;
   WeightedUnionFind(){}
@@ -41,6 +42,11 @@ struct WeightedUnionFind{
     return weight(x)-weight(y);
   }
 };
+//END CUT HERE
 signed main(){
   return 0;
 }
+/*
+  not verified
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330
+*/

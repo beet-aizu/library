@@ -1,12 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-struct RMQ{
+//BEGIN CUT HERE
+struct SparseTable{
   int n,h;
   vector<vector<int> > dat;
   vector<int> ht;
-  RMQ(){}
-  RMQ(int n_,int *arr){init(n_,arr);}
+  SparseTable(){}
+  SparseTable(int n_,int *arr){init(n_,arr);}
   void init(int n_,int *arr){
     n=1;h=1;
     while(n<n_) n*=2,h++;
@@ -31,6 +32,7 @@ struct RMQ{
     return min(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])+1]);
   }
 };
+//END CUT HERE
 
 signed main(){
   return 0;

@@ -1,57 +1,74 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-#define MAX 414514
-set<int> G[MAX];
-int indeg[MAX];
-bool V[MAX];
-vector<int> p;
-void bfs(int s){
-  queue<int> q;
-  q.push(s);
-  V[s]=1;
-  while(!q.empty()){
-    int u=q.front();q.pop();
-    p.push_back(u);
-    for(int v:G[u]){
-      indeg[v]--;
-      if(indeg[v]==0&&!V[v]){
-	V[v]=1;
-	q.push(v);
+//BEGIN CUT HERE
+struct TopologicalSort{
+  int n;
+  vector<set<int> > G;
+  vector<int> indeg,V,p;
+  TopologicalSort(){}
+  TopologicalSort(int n):n(n){init();}
+  
+  void init(){
+    for(int i=0;i<(int)G.size();i++) G[i].clear();
+    G.clear();
+    indeg.clear();
+    V.clear();
+    p.clear();
+    G.resize(n);
+    indeg.resize(n);
+    V.resize(n);
+  }
+
+  void add_edge(int s,int t){
+    G[s].insert(t);
+  }
+  
+  void bfs(int s){
+    queue<int> q;
+    q.push(s);
+    V[s]=1;
+    while(!q.empty()){
+      int u=q.front();q.pop();
+      p.push_back(u);
+      for(int v:G[u]){
+	indeg[v]--;
+	if(indeg[v]==0&&!V[v]){
+	  V[v]=1;
+	  q.push(v);
+	}
       }
     }
   }
-}
-void tsort(int n){
-  memset(V,0,sizeof(V));
-  memset(indeg,0,sizeof(indeg));
-  for(int u=0;u<n;u++)
-    for(int v:G[u])
-      indeg[v]++;
-  for(int u=0;u<n;u++)
-    if(indeg[u]==0&&!V[u]) bfs(u);
-
-  if((int)p.size()!=n){
-    cout<<-1<<endl;
-    return;
+  
+  void tsort(){
+    fill(V.begin(),V.end(),0);
+    fill(indeg.begin(),indeg.end(),0);
+    for(int u=0;u<n;u++)
+      for(int v:G[u])
+	indeg[v]++;
+    for(int u=0;u<n;u++)
+      if(indeg[u]==0&&!V[u]) bfs(u);
+    for(int i=0;i<n;i++)
+      cout<<p[i]<<endl;
   }
-  for(int i=0;i<n;i++)
-    cout<<p[i]<<endl;
-}
+};
+//END CUT HERE
 
 signed main(){
   int n,e;
   cin>>n>>e;
+  TopologicalSort ts(n);
   for(int i=0;i<e;i++){
     int s,t;
     cin>>s>>t;
-    G[s].insert(t);
+    ts.add_edge(s,t);
   }
-  tsort(n);
+  ts.tsort();
   return 0;
 }
 
 /*
-verified on 2017/04/28
+verified on 2017/06/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B&lang=jp
 */

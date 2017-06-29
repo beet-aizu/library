@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct AVL{
   struct node{
     int key;
@@ -100,6 +101,8 @@ struct AVL{
     else return sz(t)-sz(t->child[1])+index(t->child[1],key);
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,k;
   cin>>n>>k;

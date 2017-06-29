@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct StarrySky{
   int n;
   const int def=0;
@@ -39,6 +40,8 @@ struct StarrySky{
     return query(a,b,0,0,n);
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,q;
   cin>>n>>q;

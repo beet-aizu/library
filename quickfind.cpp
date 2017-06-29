@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-
+//BEGIN CUT HERE
 struct QuickFind{
   vector<int> r,p;
   vector<vector<int> > v;
@@ -31,6 +31,8 @@ struct QuickFind{
     v[y].clear();
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,q;
   cin>>n>>q;

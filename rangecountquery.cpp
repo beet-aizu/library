@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-struct RMQ{
+//BEGIN CUT HERE
+struct RCQ{
   int n;
   vector<vector<int>> dat;
-  RMQ(){}
-  RMQ(int n_,int* c){init(n_,c);}
+  RCQ(){}
+  RCQ(int n_,int* c){init(n_,c);}
   void init(int n_,int *c){
     n=1;
     while(n<n_) n*=2;
@@ -38,6 +39,8 @@ struct RMQ{
     return query(a,b,x,0,0,n);
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,k;
   cin>>n>>k;
@@ -48,12 +51,16 @@ signed main(){
     sum+=a[i];
     c[i]=sum-k*(i+1);
   }
-  RMQ rmq(n,c);
+  RCQ rcq(n,c);
   int ans=0,tmp=0;
   for(int i=0;i<n;i++){
-    ans+=rmq.query(i,n,tmp);
+    ans+=rcq.query(i,n,tmp);
     tmp+=a[i]-k;
   }
   cout<<ans<<endl;
   return 0;
 }
+/*
+  not verified 
+  http://arc075.contest.atcoder.jp/tasks/arc075_c
+*/

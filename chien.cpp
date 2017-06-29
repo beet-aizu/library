@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct Chien{
   int n;
   vector<int> dat,laz;
@@ -45,6 +46,8 @@ struct Chien{
     return query(a,b,0,0,n);
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,q;
   cin>>n>>q;

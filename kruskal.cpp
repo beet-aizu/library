@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//BEGIN CUT HERE
 struct UnionFind{
   vector<int> r,p;
   UnionFind(){}
@@ -44,6 +45,7 @@ int kruskal(int N,vector<edge> edges){
   }
   return res;
 }
+//END CUT HERE
 int main(){
   int V,E;
   cin>>V>>E;

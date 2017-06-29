@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct SCC{
   int V;
   vector<vector<int> > G,rG,T;
@@ -57,6 +58,8 @@ struct SCC{
     return k;
   }
 };
+//END CUT HERE
+
 signed main(){
   
   return 0;

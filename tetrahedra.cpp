@@ -3,6 +3,7 @@ using namespace std;
 #define EPS (1e-10)
 #define int long long
 
+//BEGIN CUT HERE
 typedef vector<double> arr;
 typedef vector<arr> mat;
 
@@ -42,6 +43,8 @@ double tetrahedra(double OA,double OB,double OC,double AB,double AC,double BC){
   if(det(A)<=0) return 0; 
   return sqrt(det(A)/288.0);
 }
+//END CUT HERE
+
 signed main(){
   int n;
   while(cin>>n,n){

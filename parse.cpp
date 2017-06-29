@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 int expression(string,int&);
 int term(string,int&);
 int factor(string,int&);
@@ -67,6 +68,7 @@ int number(string s,int& p){
     res=res*10+s[p++]-'0';
   return res;
 }
+//END CUT HERE
 
 signed main(){
   int n;

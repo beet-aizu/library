@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-typedef unsigned long long ull;
+//BEGIN CUT HERE
 struct RollingHash{
+  typedef unsigned long long ull;
   string S;
   ull B;
   vector<ull> hash,p;
@@ -24,6 +25,8 @@ struct RollingHash{
     return hash[r]-hash[l]*p[r-l];
   }
 };
+//END CUT HERE
+
 signed main(){
   string t,p;
   cin>>t>>p;

@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define MAX 111
+//BEGIN CUT HERE
 vector <int> treeconstruction(vector <int> d) {
+  const int MAX = 111;
   vector<int> res,NG;
   int n=d.size();
   int m=0;
@@ -75,5 +76,6 @@ vector <int> treeconstruction(vector <int> d) {
   }
   return res;
 }
+//END CUT HERE
 int main(){
 }

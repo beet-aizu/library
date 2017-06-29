@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 #define MOD 1000000007
 #define MAX_N 100000
 #define MAX_P 200005
@@ -74,7 +75,7 @@ int mod_comb(int n,int k,int p){
   if(e1>e2+e3) return 0;
   return a1*mod_inverse(a2*a3%p,p)%p;
 }
-
+//END CUT HERE
 signed main(){
   return 0;
 }

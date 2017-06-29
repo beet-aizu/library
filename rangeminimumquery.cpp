@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
+//BEGIN CUT HERE
 struct RMQ{
   int n;
   vector<int> dat;
@@ -38,6 +39,8 @@ struct RMQ{
     return query(a,b,0,0,n);
   }
 };
+//END CUT HERE
+
 signed main(){
   int n,q;
   cin>>n>>q;

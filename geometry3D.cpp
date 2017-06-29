@@ -1,9 +1,11 @@
 #include<bits/stdc++.h>
+using namespace std;
+#define int long long
+
+//BEGIN CUT HERE
 #define EPS (1e-10)
 #define equals(a,b) (fabs((a)-(b)) < EPS)
 #define PI 3.141592653589793238
-#define int long long
-using namespace std;
 struct Point3D{
   double x,y,z;
   Point3D(){}
@@ -86,6 +88,8 @@ bool intersectSC(Segment3D s,Sphere c){
   if(d>c.r) return 0;
   return !((abs(s.p1-c.c)<=c.r)&&(abs(s.p2-c.c)<=c.r));
 }
+
+//END CUT HERE
 
 signed main(){
   return 0;
