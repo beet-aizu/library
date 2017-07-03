@@ -6,9 +6,10 @@ struct BIT{
   vector<int> bit;
   int n;
   //1-indexed
-  BIT(){init();}
-  BIT(int n):n(n){init();}
-  void init(){
+  BIT(){init(-1);}
+  BIT(int n_){init(n_);}
+  void init(int n_){
+    n=n_;
     bit.clear();
     bit.resize(n+1,0);
   }
