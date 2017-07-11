@@ -3,6 +3,7 @@ using namespace std;
 #define int long long
 
 //BEGIN CUT HERE
+
 #define EPS (1e-10)
 #define equals(a,b) (fabs((a)-(b)) < EPS)
 #define PI 3.141592653589793238
@@ -10,7 +11,7 @@ struct Point3D{
   double x,y,z;
   Point3D(){}
   Point3D(double x,double y,double z):x(x),y(y),z(z){}
-  Point3D operator+(Point3D p) {return Point3D(x+p.x,y+p.y,z+p.x);}
+  Point3D operator+(Point3D p) {return Point3D(x+p.x,y+p.y,z+p.z);}
   Point3D operator-(Point3D p) {return Point3D(x-p.x,y-p.y,z-p.z);}
   Point3D operator*(double k){return Point3D(x*k,y*k,z*k);}
   Point3D operator/(double k){return Point3D(x/k,y/k,z/k);}
@@ -73,6 +74,17 @@ double dot(Vector3D a,Vector3D b){
 Vector3D cross(Vector3D a,Vector3D b){
   return Vector3D(a.y*b.z-a.z*b.y,a.z*b.x-a.x*b.z,a.x*b.y-a.y*b.x);
 }
+
+Point3D project(Line3D l,Point3D p){
+  Point3D b=l.p2-l.p1;
+  double t=dot(p-l.p1,b)/norm(b);
+  return l.p1+b*t;
+}
+
+Point3D reflect(Line3D l,Point3D p){
+  return p+(project(l,p)-p)*2.0;
+}
+
 double getDistanceLP(Line3D l,Point3D p){
   return abs(cross(l.p2-l.p1,p-l.p1)/abs(l.p2-l.p1));
 }

@@ -97,7 +97,7 @@ struct HLDecomposition {
   
   // for_each(vertex)
   // [l,r] <- attention!!
-  void for_each(int u, int v, function<void(int, int)> f) {
+  void for_each(int u, int v, const function<void(int, int)>& f) {
     if (vid[u] > vid[v]) swap(u, v);
     f(max(vid[head[v]], vid[u]), vid[v]);
     if (head[u] != head[v]) for_each(u, parent[head[v]], f);
@@ -105,7 +105,7 @@ struct HLDecomposition {
   
   // for_each(edge)
   // [l,r] <- attention!!
-  void for_each_edge(int u, int v, function<void(int, int)> f) {
+  void for_each_edge(int u, int v, const function<void(int, int)>& f) {
     if (vid[u] > vid[v]) swap(u, v);
     if (head[u] != head[v]){
       f(vid[head[v]], vid[v]);
