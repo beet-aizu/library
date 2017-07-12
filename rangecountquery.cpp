@@ -4,7 +4,7 @@ using namespace std;
 //BEGIN CUT HERE
 struct RCQ{
   int n;
-  vector<vector<int>> dat;
+  vector<vector<int> > dat;
   RCQ(){}
   RCQ(int n_,int* c){init(n_,c);}
   void init(int n_,int *c){
@@ -15,7 +15,8 @@ struct RCQ{
     construct(n_,c);
   }
   void construct(int n_,int *c){
-    for(int i=0;i<n_;i++) dat[n-1+i].push_back(c[i]);
+    for(int i=0;i<n_;i++)
+      dat[n-1+i].push_back(c[i]);
     for(int i=n-2;i>=0;i--){
       for(int j:dat[i*2+1]) dat[i].push_back(j);
       for(int j:dat[i*2+2]) dat[i].push_back(j);
@@ -26,9 +27,9 @@ struct RCQ{
     if(r<=a||b<=l) return 0;
     if(a<=l&&r<=b){
       int res=0;
-      auto latte=lower_bound(dat[k].begin(),dat[k].end(),x);
+      auto latte=
+	lower_bound(dat[k].begin(),dat[k].end(),x);
       res=dat[k].end()-latte;
-      //cout<<res<<endl;
       return res;
     }
     int vl=query(a,b,x,k*2+1,l,(l+r)/2);

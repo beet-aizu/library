@@ -24,7 +24,8 @@ struct StarrySky{
     }
     add(a,b,x,k*2+1,l,(l+r)/2);
     add(a,b,x,k*2+2,(l+r)/2,r);
-    datm[k]=max(datm[k*2+1]+data[k*2+1],datm[k*2+2]+data[k*2+2]);
+    datm[k]=max(datm[k*2+1]+data[k*2+1],
+		datm[k*2+2]+data[k*2+2]);
   }
   int query(int a,int b,int k,int l,int r){
     if(r<=a||b<=l) return def;

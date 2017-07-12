@@ -29,7 +29,8 @@ struct Chien{
     if(r<=a||b<=l) return dat[k]+laz[k]*(r-l);
     if(a<=l&&r<=b) return dat[k]+(laz[k]+=x)*(r-l);
     eval(r-l,k);
-    return dat[k]=update(a,b,x,k*2+1,l,(l+r)/2)+update(a,b,x,k*2+2,(l+r)/2,r);
+    return dat[k]=update(a,b,x,k*2+1,l,(l+r)/2)
+      +update(a,b,x,k*2+2,(l+r)/2,r);
   }
   int query(int a,int b,int k,int l,int r){
     eval(r-l,k);

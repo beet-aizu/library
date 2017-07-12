@@ -1,44 +1,57 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-// I will fix it later.
-
-typedef pair<int,int> P;
+//BEGIN CUT HERE
 struct RUP{
   int n;
-  vector<P> dat;
+  vector<int> dat,laz;
+  const int def=INT_MAX;
   RUP(){}
   RUP(int n_){init(n_);}
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
-    dat.resize(2*n-1);
-    for(int i=0;i<2*n-1;i++) dat[i].first=-1,dat[i].second=INT_MAX;
+    dat.resize(2*n-1,def);
+    laz.clear();
+    laz.resize(2*n-1,-1);
   }
-  int query(int k){
-    k+=n-1;
-    P p=dat[k];
-    while(k>0){
-      k=(k-1)/2;
-      p=max(p,dat[k]);
+  inline void eval(int len,int k){
+    if(laz[k]<0) return;
+    if(k*2+1<n*2-1){
+      laz[k*2+1]=laz[k];
+      laz[k*2+2]=laz[k];
     }
-    return p.second;
+    dat[k]=laz[k];
+    laz[k]=-1;
   }
-  void update(int a,int b,P p,int k,int l,int r){
+  void update(int a,int b,int x,int k,int l,int r){
+    eval(r-l,k);
     if(r<=a||b<=l) return;
-    if(a<=l&&r<=b) {
-      dat[k]=p;
-    }else{
-      update(a,b,p,k*2+1,l,(l+r)/2);
-      update(a,b,p,k*2+2,(l+r)/2,r);
+    if(a<=l&&r<=b){
+      laz[k]=x;
+      return;
     }
+    eval(r-l,k);
+    update(a,b,x,k*2+1,l,(l+r)/2);
+    update(a,b,x,k*2+2,(l+r)/2,r);
   }
-  
-  void update(int a,int b,P p){
-    update(a,b,p,0,0,n);
+  int query(int a,int b,int k,int l,int r){
+    eval(r-l,k);
+    if(r<=a||b<=l) return def;
+    if(a<=l&&r<=b) return dat[k];
+    int vl=query(a,b,k*2+1,l,(l+r)/2);
+    int vr=query(a,b,k*2+2,(l+r)/2,r);
+    return min(vl,vr);
+  }
+  void update(int a,int b,int x){
+    update(a,b,x,0,0,n);
+  }
+  int query(int a){
+    return query(a,a+1,0,0,n);
   }
 };
+//END CUT HERE
 signed main(){
   int n,q;
   cin>>n>>q;
@@ -49,7 +62,7 @@ signed main(){
     if(!f){
       int s,t,x;
       cin>>s>>t>>x;
-      rup.update(s,t+1,P(i,x));
+      rup.update(s,t+1,x);
     }else{
       int u;
       cin>>u;
@@ -60,6 +73,6 @@ signed main(){
 }
 
 /*
-verified on 2017/02/24
+verified on 2017/07/12
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
 */

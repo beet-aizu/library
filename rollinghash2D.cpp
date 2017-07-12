@@ -49,7 +49,7 @@ struct RollingHash2D{
 	hash[i+1][j]=hash[i][j]*B+rh[i].find(j,j+c);
     }
   }
-  //S[l,r)
+  //[(i,j),(i+r,j+c)]
   ull find(int i,int j){
     return hash[i+r][j]-hash[i][j]*p[r];
   }

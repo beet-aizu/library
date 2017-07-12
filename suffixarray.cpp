@@ -2,12 +2,12 @@
 using namespace std;
 #define int long long
 //BEGIN CUT HERE
-struct SA{
+struct SuffixArray{
   int n,k;
   string S;
   vector<int> r,r2,t,sa,lcp;
-  SA(){}
-  SA(string S):S(S){init();}
+  SuffixArray(){}
+  SuffixArray(string S):S(S){init();}
   void init(){
     n=S.size();
     r.resize(n+1,0);
@@ -209,7 +209,7 @@ char buf[1000001];
 signed main(){
   scanf("%s",buf);
   string T(buf);
-  SA sa(T);
+  SuffixArray sa(T);
   int q;
   scanf("%lld",&q);
   while(q--){
