@@ -9,6 +9,9 @@ struct SCC{
   SCC(){}
   SCC(int V):V(V){init();}
   void init(){
+    for(int i=0;i<(int)G.size();i++) G[i].clear();
+    for(int i=0;i<(int)rG.size();i++) rG[i].clear();
+    for(int i=0;i<(int)T.size();i++) T[i].clear();
     G.clear();
     rG.clear();
     vs.clear();
@@ -41,7 +44,7 @@ struct SCC{
     }
   }
   
-  int scc(){
+  int build(){
     fill(used.begin(),used.end(),0);
     vs.clear();
     for(int v=0;v<V;v++){

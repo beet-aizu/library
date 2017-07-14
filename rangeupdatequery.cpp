@@ -25,16 +25,14 @@ struct RUP{
     dat[k]=laz[k];
     laz[k]=-1;
   }
-  void update(int a,int b,int x,int k,int l,int r){
+  int update(int a,int b,int x,int k,int l,int r){
     eval(r-l,k);
-    if(r<=a||b<=l) return;
-    if(a<=l&&r<=b){
-      laz[k]=x;
-      return;
-    }
+    if(r<=a||b<=l) return dat[k];
+    if(a<=l&&r<=b) return laz[k]=x;
     eval(r-l,k);
-    update(a,b,x,k*2+1,l,(l+r)/2);
-    update(a,b,x,k*2+2,(l+r)/2,r);
+    dat[k]=min(update(a,b,x,k*2+1,l,(l+r)/2),
+	       update(a,b,x,k*2+2,(l+r)/2,r));
+    return dat[k];
   }
   int query(int a,int b,int k,int l,int r){
     eval(r-l,k);
@@ -47,8 +45,8 @@ struct RUP{
   void update(int a,int b,int x){
     update(a,b,x,0,0,n);
   }
-  int query(int a){
-    return query(a,a+1,0,0,n);
+  int query(int a,int b){
+    return query(a,b,0,0,n);
   }
 };
 //END CUT HERE
@@ -64,15 +62,15 @@ signed main(){
       cin>>s>>t>>x;
       rup.update(s,t+1,x);
     }else{
-      int u;
-      cin>>u;
-      cout<<rup.query(u)<<endl;
+      int s,t;
+      cin>>s>>t;
+      cout<<rup.query(s,t+1)<<endl;
     }
   }
   return 0;
 }
 
 /*
-verified on 2017/07/12
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
+verified on 2017/07/13
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
 */

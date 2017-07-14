@@ -151,8 +151,8 @@ double getDistanceSP(Segment s,Point p);
 double getDistanceSS(Segment s1,Segment s2);
 Point getCrossPointSS(Segment s1,Segment s2);
 Point getCrossPointLL(Line l1,Line l2);
-pair<Point,Point> getCrossPointCL(Circle c,Line l);
-pair<Point,Point> getCrossPointCC(Circle c1,Circle c2);
+Polygon getCrossPointCL(Circle c,Line l);
+Polygon getCrossPointCC(Circle c1,Circle c2);
 int contains(Polygon g,Point p);
 Polygon andrewScan(Polygon s);
 Polygon convex_hull(Polygon ps);
@@ -230,18 +230,24 @@ Point getCrossPointLL(Line l1,Line l2){
   return l2.p1+(l2.p2-l2.p1)*(b/a);
 }
 
-pair<Point,Point> getCrossPointCL(Circle c,Line l){
+Polygon getCrossPointCL(Circle c,Line l){
+  Polygon p(2);
   Vector pr=project(l,c.c);
   Vector e=(l.p2-l.p1)/abs(l.p2-l.p1);
   double base=sqrt(c.r*c.r-norm(pr-c.c));
-  return make_pair(pr+e*base,pr-e*base);
+  p[0]=pr+e*base;
+  p[1]=pr-e*base;
+  return p;
 }
 
-pair<Point,Point> getCrossPointCC(Circle c1,Circle c2){
+Polygon getCrossPointCC(Circle c1,Circle c2){
+  Polygon p(2);
   double d=abs(c1.c-c2.c);
   double a=acos((c1.r*c1.r+d*d-c2.r*c2.r)/(2*c1.r*d));
   double t=arg(c2.c-c1.c);
-  return make_pair(c1.c+polar(c1.r,t+a),c1.c+polar(c1.r,t-a));
+  p[0]=c1.c+polar(c1.r,t+a);
+  p[1]=c1.c+polar(c1.r,t-a);
+  return p;
 }
 
 // IN:2 ON:1 OUT:0
@@ -352,9 +358,9 @@ Polygon convexCut(Polygon p,Line l){
 
 Line bisector(Point p1,Point p2){
   Circle c1=Circle(p1,abs(p1-p2)),c2=Circle(p2,abs(p1-p2));
-  pair<Point,Point> p=getCrossPointCC(c1,c2);
-  if(cross(p2-p1,p.first-p1)>0) swap(p.first,p.second);
-  return Line(p.first,p.second);
+  Polygon p=getCrossPointCC(c1,c2);
+  if(cross(p2-p1,p[0]-p1)>0) swap(p[0],p[1]);
+  return Line(p[0],p[1]);
 }
 
 Vector translate(Vector v,double theta){
@@ -388,13 +394,25 @@ vector<Line> corner(Line l1,Line l2){
   return res;
 }
 
+Polygon tangent(Circle c1,Point p2){
+  Circle c2=Circle(p2,sqrt(norm(c1.c-p2)-c1.r*c1.r));
+  Polygon p=getCrossPointCC(c1,c2);
+  sort(p.begin(),p.end());
+  return p;
+}
+
+Polygon tangent(Circle c1,Circle c2){
+  Polygon p;
+  return p;
+}
+
 //END CUT HERE
 
 signed main(){
-  Circle c1,c2;
-  cin>>c1>>c2;
-  auto pp=getCrossPointCC(c1,c2);
-  if(pp.second<pp.first) swap(pp.first,pp.second);
-  cout<<pp.first<<" "<<pp.second<<endl;
+  Point p;
+  Circle c;
+  cin>>p>>c;
+  auto pp=tangent(c,p);
+  for(auto p:pp) cout<<p<<endl;
   return 0;
 }

@@ -17,6 +17,10 @@ struct BiconectedGraph{
     C.resize(n);
     T.resize(n);
   }
+  void add_edge(int u,int v){
+    G[u].push_back(v);
+    G[v].push_back(u);
+  }
   bool is_bridge(int u,int v){
     if(ord[u]>ord[v]) swap(u,v);
     return ord[u]<low[v];
@@ -48,7 +52,7 @@ struct BiconectedGraph{
     fill_component(k++,u);
   }
   
-  void biconnectedgraph(int n){
+  void build(int n){
     int k=0;
     ord.clear();
     ord.resize(n,-1);
@@ -77,10 +81,24 @@ struct BiconectedGraph{
 //END CUT HERE
 
 signed main(){
+  int v,e;
+  cin>>v>>e;
+  BiconectedGraph bcc(v);
+  for(int i=0;i<e;i++){
+    int s,t;
+    cin>>s>>t;
+    bcc.add_edge(s,t);
+  }
+  bcc.build(v);
+  typedef pair<int,int> P;
+  vector<P> B=bcc.B;
+  for(P &p:B) if(p.first>p.second) swap(p.first,p.second);
+  sort(B.begin(),B.end());
+  for(P p:B) cout<<p.first<<" "<<p.second<<endl;
   return 0;
 }
 
 /*
-  not verified
-  (verified yuki166 E)
+  verified on 2017/07/13
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B&lang=jp
 */
