@@ -22,6 +22,7 @@ struct BIT{
     return s;
   }
   void add(int i,int x){
+    if(i==0) return;
     while(i<=n){
       bit[i]+=x;
       i+=i&-i;
