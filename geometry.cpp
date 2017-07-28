@@ -34,6 +34,8 @@ struct Point{
 
   bool operator < (const Point &p) const{
     return x!=p.x?x<p.x:y<p.y;
+    //grid-point only
+    //return !equals(x,p.x)?x<p.x:!equals(y,p.y)?y<p.y:0;
   }
 
   bool operator == (const Point &p) const{

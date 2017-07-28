@@ -1,7 +1,7 @@
 (defun beet () 
   (interactive) 
   (let (file buf str from to) 
-    (setq file (read-file-name "File Name: "))
+    (setq file (read-file-name "File Name: " "~/git-library/"))
     (setq buf (find-file-noselect file))
     (setq str
 	  (with-current-buffer buf
