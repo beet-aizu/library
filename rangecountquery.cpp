@@ -12,9 +12,9 @@ struct RCQ{
     while(n<n_) n*=2;
     dat.clear();
     dat.resize(2*n-1);
-    construct(n_,c);
+    build(n_,c);
   }
-  void construct(int n_,int *c){
+  void build(int n_,int *c){
     for(int i=0;i<n_;i++)
       dat[n-1+i].push_back(c[i]);
     for(int i=n-2;i>=0;i--){

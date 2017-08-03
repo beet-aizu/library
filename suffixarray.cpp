@@ -15,9 +15,9 @@ struct SuffixArray{
     t.resize(n+1,0);
     sa.resize(n+1,0);
     lcp.resize(n+1,0);
-    construct_sa();
-    construct_lcp();
-    construct_rmq();
+    build_sa();
+    build_lcp();
+    build_rmq();
   }
   bool compare_sa(int i,int j){
     if(r[i]!=r[j]) return r[i]<r[j];
@@ -27,7 +27,7 @@ struct SuffixArray{
       return ri<rj;
     }
   }
-  void construct_sa(){
+  void build_sa(){
     n=S.length();
     for(int i=0;i<=n;i++){
       sa[i]=i;
@@ -82,7 +82,7 @@ struct SuffixArray{
     return a[1]-b[0]+1;
   }
   
-  void construct_lcp(){
+  void build_lcp(){
     for(int i=0;i<=n;i++) r2[sa[i]]=i;
     int h=0;
     lcp[0]=0;
@@ -109,14 +109,14 @@ struct SuffixArray{
     const int def=INT_MAX;
     RMQ(){}
     RMQ(int n_){init(n_);}
-    RMQ(int n_,vector<int>& a){init(n_);construct(n_,a);}
+    RMQ(int n_,vector<int>& a){init(n_);build(n_,a);}
     void init(int n_){
       n=1;
       while(n<n_) n*=2;
       dat.clear();
       dat.resize(2*n-1,def);
     }
-    void construct(int n_, vector<int>& a){
+    void build(int n_, vector<int>& a){
       for(int i=0;i<n_;i++) dat[i+n-1]=a[i];
       for(int i=n-2;i>=0;i--)
 	dat[i]=min(dat[i*2+1],dat[i*2+2]);
@@ -144,9 +144,9 @@ struct SuffixArray{
   };
   
   RMQ rmq;
-  void construct_rmq(){
+  void build_rmq(){
     rmq.init(n);
-    rmq.construct(n,lcp);
+    rmq.build(n,lcp);
   }
   
   // O(|T|+log|S|)

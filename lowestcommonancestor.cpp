@@ -35,7 +35,7 @@ struct LowestCommonAncestor{
     }
   }
   
-  void construct(){
+  void build(){
     dfs(root,-1,0);
     for(int k=0;k+1<MAX_LOG_V;k++){
       for(int v=0;v<V;v++){
@@ -77,7 +77,7 @@ signed main(){
       lca.add_edge(i,c);
     }
   }
-  lca.construct();
+  lca.build();
   int q;
   cin>>q;
   while(q--){

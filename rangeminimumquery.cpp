@@ -8,14 +8,14 @@ struct RMQ{
   const int def=INT_MAX;
   RMQ(){}
   RMQ(int n_){init(n_);}
-  RMQ(int n_,int* a){init(n_);construct(n_,a);}
+  RMQ(int n_,int* a){init(n_);build(n_,a);}
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
     dat.resize(2*n-1,def);
   }
-  void construct(int n_, int* a){
+  void build(int n_, int* a){
     for(int i=0;i<n_;i++) dat[i+n-1]=a[i];
     for(int i=n-2;i>=0;i--)
       dat[i]=min(dat[i*2+1],dat[i*2+2]);
