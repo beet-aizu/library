@@ -75,7 +75,21 @@ int mod_comb(int n,int k,int p){
   if(e1>e2+e3) return 0;
   return a1*mod_inverse(a2*a3%p,p)%p;
 }
+
+int montmort(int n,int mod){
+  int res=0,inv=1;
+  for(int k=2;k<=n;k++){
+    (inv*=mod_inverse(k,mod))%=mod;
+    if(k%2 ) (res+=mod-inv)%=mod;
+    else (res+=inv)%=mod;
+  }
+  for(int i=1;i<=n;i++)
+    (res*=i)%=mod;
+  return res;
+}
+
 //END CUT HERE
 signed main(){
+  for(int i=1;i<10;i++) cout<<i<<":"<<montmort(i,MOD)<<endl;
   return 0;
 }
