@@ -76,6 +76,17 @@ int mod_comb(int n,int k,int p){
   return a1*mod_inverse(a2*a3%p,p)%p;
 }
 
+int mod_comb2(int n,int k,int mod){
+  int res=1;
+  for(int i=0;i<k;i++){
+    res*=n-i;
+    res%=mod;
+    res*=mod_inverse(i+1,mod);
+    res%=mod;
+  }
+  return res;
+}
+
 int montmort(int n,int mod){
   int res=0,inv=1;
   for(int k=2;k<=n;k++){
