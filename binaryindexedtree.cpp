@@ -2,37 +2,34 @@
 using namespace std;
 #define int long long
 //BEGIN CUT HERE
+template<typename T> 
 struct BIT{
-  vector<int> bit;
+  vector<T> bit;
   int n;
   //1-indexed
-  BIT(){init(-1);}
-  BIT(int n_){init(n_);}
-  void init(int n_){
+  BIT(){init(-1,(T)0);}
+  BIT(int n_,T d){init(n_,d);}
+  void init(int n_,T d){
     n=n_;
     bit.clear();
-    bit.resize(n+1,0);
+    bit.resize(n+1,d);
   }
-  int sum(int i){
-    int s=0;
-    while(i>0){
-      s+=bit[i];
-      i-=i&-i;
-    }
+  T sum(int i){
+    T s=0;
+    for(int x=i;x>0;x-=(x&-x))
+      s+=bit[x];
     return s;
   }
-  void add(int i,int x){
+  void add(int i,T a){
     if(i==0) return;
-    while(i<=n){
-      bit[i]+=x;
-      i+=i&-i;
-    }
+    for(int x=i;x<=n;x+=(x&-x))
+      bit[x]+=a;
   }
-  int sum0(int i){
+  T sum0(int i){
     return sum(i+1);
   }
-  void add0(int i,int x){
-    add(i+1,x);
+  void add0(int i,T a){
+    add(i+1,a);
   }
 };
 //END CUT HERE
@@ -40,7 +37,7 @@ struct BIT{
 signed main(){
   int n,q;
   cin>>n>>q;
-  BIT bit(n);
+  BIT<int> bit(n+100,0);
   for(int i=0;i<q;i++){
     int c,x,y;
     cin>>c>>x>>y;
@@ -50,6 +47,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/04/22
+verified on 2017/09/22
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
  */

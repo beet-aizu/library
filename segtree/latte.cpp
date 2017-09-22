@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
   typedef function<T(T,E)> G;
@@ -54,6 +55,7 @@ struct SegmentTree{
     return g(c,x);
   }
 };
+//END CUT HERE
 signed main(){
   return 0;
 }

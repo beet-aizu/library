@@ -16,11 +16,6 @@ int extgcd(int a,int b,int& x,int& y){
   }
   return d;
 }
-int mod_inverse(int a,int m){
-  int x,y;
-  extgcd(a,m,x,y);
-  return (m+x%m)%m;
-}
 
 int euler_phi(int n){
   int res=n;
@@ -53,6 +48,10 @@ int mod_pow(int x,int n,int mod){
     n>>=1;
   }
   return res;
+}
+
+int mod_inverse(int a,int mod){
+  return mod_pow(a,mod-2,mod);
 }
 
 void init(int p){

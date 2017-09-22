@@ -4,7 +4,7 @@ using namespace std;
 //BEGIN CUT HERE
 struct SCC{
   int V;
-  vector<vector<int> > G,rG,T;
+  vector<vector<int> > G,rG,T,C;
   vector<int> vs,used,cmp;
   SCC(){}
   SCC(int V):V(V){init();}
@@ -38,7 +38,7 @@ struct SCC{
   void rdfs(int v,int k){
     used[v]=1;
     cmp[v]=k;
-    T[k].push_back(v);
+    C[k].push_back(v);
     for(int i=0;i<(int)rG[v].size();i++){
       if(!used[rG[v][i]]) rdfs(rG[v][i],k);
     }
@@ -55,8 +55,17 @@ struct SCC{
     for(int i=vs.size()-1;i>=0;i--){
       if(!used[vs[i]]){
 	T.push_back(vector<int>());
+	C.push_back(vector<int>());
 	rdfs(vs[i],k++);
       }
+    }
+    for(int i=0;i<V;i++)
+      for(int u:G[i])
+	if(cmp[i]!=cmp[u])
+	  T[cmp[i]].push_back(cmp[u]);
+    for(int i=0;i<k;i++){
+      sort(T[i].begin(),T[i].end());
+      T[i].erase(unique(T[i].begin(),T[i].end()),T[i].end());
     }
     return k;
   }
