@@ -12,6 +12,7 @@ struct SegmentTree{
   E d0;
   vector<T> dat;
   vector<E> laz;
+  SegmentTree(){};
   SegmentTree(int n_,G g,H h,T d1,E d0,
 	      vector<T> v=vector<T>()){
     this->g=g;
