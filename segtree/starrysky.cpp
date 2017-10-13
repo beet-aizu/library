@@ -1,68 +1,94 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
-struct StarrySky{
+template <typename T,typename E>
+struct SegmentTree{
+  typedef function<T(T,T)> F;
+  typedef function<T(T,E)> G;
+  typedef function<T(E,E)> H;
   int n;
-  const int def=0;
-  vector<int> datm,data;
-  StarrySky(){}
-  StarrySky(int n_){init(n_);}
+  F f;
+  G g;
+  H h;
+  T d1;
+  E d0;
+  vector<T> dat;
+  vector<E> laz;
+  SegmentTree(){};
+  SegmentTree(int n_,F f,G g,H h,T d1,E d0,
+	      vector<T> v=vector<T>()){
+    this->f=f;
+    this->g=g;
+    this->h=h;
+    this->d1=d1;
+    this->d0=d0;
+    init(n_);
+    if(n_==(int)v.size()) build(n_,v);
+  }
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
-    datm.clear();
-    datm.resize(n*2-1,def);
-    data.clear();
-    data.resize(n*2-1,0);
+    dat.clear();
+    dat.resize(2*n-1,d1);
+    laz.clear();
+    laz.resize(2*n-1,d0);
   }
-  void add(int a,int b,int x,int k,int l,int r){
+  void build(int n_, vector<T> v){
+    for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
+    for(int i=n-2;i>=0;i--)
+      dat[i]=f(dat[i*2+1],dat[i*2+2]);
+  }
+  void update(int a,int b,E x,int k,int l,int r){
     if(r<=a||b<=l) return;
     if(a<=l&&r<=b){
-      data[k]+=x;
+      laz[k]=h(laz[k],x);
       return;
     }
-    add(a,b,x,k*2+1,l,(l+r)/2);
-    add(a,b,x,k*2+2,(l+r)/2,r);
-    datm[k]=max(datm[k*2+1]+data[k*2+1],
-		datm[k*2+2]+data[k*2+2]);
+    update(a,b,x,k*2+1,l,(l+r)/2);
+    update(a,b,x,k*2+2,(l+r)/2,r);
+    dat[k]=f(g(dat[k*2+1],laz[k*2+1]),g(dat[k*2+2],laz[k*2+2]));
   }
-  int query(int a,int b,int k,int l,int r){
-    if(r<=a||b<=l) return def;
-    if(a<=l&&r<=b) return datm[k]+data[k];
-    int vl=query(a,b,k*2+1,l,(l+r)/2);
-    int vr=query(a,b,k*2+2,(l+r)/2,r);
-    return max(vl,vr)+data[k];
+  void update(int a,int b,E x){
+    update(a,b,x,0,0,n);
   }
-  void add(int a,int b,int x){
-    add(a,b,x,0,0,n);
+  T query(int a,int b,int k,int l,int r){
+    if(r<=a||b<=l) return d1;
+    if(a<=l&&r<=b) return g(dat[k],laz[k]);
+    T vl=query(a,b,k*2+1,l,(l+r)/2);
+    T vr=query(a,b,k*2+2,(l+r)/2,r);
+    return g(f(vl,vr),laz[k]);
   }
-  int query(int a,int b){
+  T query(int a,int b){
     return query(a,b,0,0,n);
   }
 };
 //END CUT HERE
-
 signed main(){
-  int n,q;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  Int n,q;
   cin>>n>>q;
-  StarrySky ss(n);
-  for(int i=0;i<q;i++){
-    int c,s,t,x;
-    cin>>c;
-    if(c){
+  SegmentTree<Int,Int> ss(n,
+			  [](Int a,Int b){return max(a,b);},
+			  [](Int a,Int b){return a+b;},
+			  [](Int a,Int b){return a+b;},
+			  INT_MIN,0,vector<Int>(n,0));
+  for(Int i=0;i<q;i++){
+    Int t,a,b;
+    cin>>t>>a>>b;
+    if(t==1){
+      Int x;
       cin>>x;
-      cout<<ss.query(x-1,x)<<endl;
-    }else{
-      cin>>s>>t>>x;
-      ss.add(s-1,t,x);
+      ss.update(a,b,x);
+    }
+    if(t==2){
+      cout<<ss.query(a,b)<<endl;
     }
   }
   return 0;
 }
-
 /*
-verified on 2017/02/24
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
+  verified on 2017/10/14
+  https://hoj.hamako-ths.ed.jp/onlinejudge/problems/861
 */
-
