@@ -146,6 +146,7 @@ Vector polar(double a,double r){
 int ccw(Point p0,Point p1,Point p2);
 bool intersectSS(Point p1,Point p2,Point p3,Point p4);
 bool intersectSS(Segment s1,Segment s2);
+bool intersectPS(Polygon p,Segment l);
 int intersectCC(Circle c1,Circle c2);
 bool intersectSC(Segment s,Circle c);
 double getDistanceLP(Line l,Point p);
@@ -183,6 +184,13 @@ bool intersectSS(Point p1,Point p2,Point p3,Point p4){
 
 bool intersectSS(Segment s1,Segment s2){
   return intersectSS(s1.p1,s1.p2,s2.p1,s2.p2);
+}
+
+bool intersectPS(Polygon p,Segment l){
+  int n=p.size();
+  for(int i=0;i<n;i++)
+    if(intersectSS(Segment(p[i],p[(i+1)%n]),l)) return 1;
+  return 0;
 }
 
 int intersectCC(Circle c1,Circle c2){
@@ -403,12 +411,12 @@ Polygon tangent(Circle c1,Point p2){
   return p;
 }
 
+//END CUT HERE
+
 Polygon tangent(Circle c1,Circle c2){
   Polygon p;
   return p;
 }
-
-//END CUT HERE
 
 signed main(){
   Point p;
