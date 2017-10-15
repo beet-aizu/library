@@ -14,11 +14,8 @@ struct SegmentTree{
   vector<E> laz;
   SegmentTree(){};
   SegmentTree(int n_,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>()){
-    this->g=g;
-    this->h=h;
-    this->d1=d1;
-    this->d0=d0;
+	      vector<T> v=vector<T>()):
+    g(g),h(h),d1(d1),d0(d0){
     init(n_);
     if(n_==(int)v.size()) build(n_,v);
   }
@@ -58,5 +55,27 @@ struct SegmentTree{
 };
 //END CUT HERE
 signed main(){
+  int n,q;
+  cin>>n>>q;
+  SegmentTree<int,int> raq(n,
+			   [](int a,int b){return a+b;},
+			   [](int a,int b){return a+b;},
+			   0,0);
+  for(int i=0;i<q;i++){
+    int c,s,t,x;
+    cin>>c;
+    if(c){
+      cin>>x;
+      cout<<raq.query(x-1)<<endl;
+    }else{
+      cin>>s>>t>>x;
+      raq.update(s-1,t,x);
+    }
+  }
   return 0;
 }
+
+/*
+  verified on 2017/10/15
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp
+*/

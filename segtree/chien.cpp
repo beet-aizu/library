@@ -18,13 +18,8 @@ struct SegmentTree{
   vector<T> dat;
   vector<E> laz;
   SegmentTree(int n_,F f,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>(),P p=[](E a,int b){return a;}){
-    this->f=f;
-    this->g=g;
-    this->h=h;
-    this->p=p;
-    this->d1=d1;
-    this->d0=d0;
+	      vector<T> v=vector<T>(),P p=[](E a,int b){return a;}):
+    f(f),g(g),h(h),d1(d1),d0(d0),p(p){
     init(n_);
     if(n_==(int)v.size()) build(n_,v);
   }

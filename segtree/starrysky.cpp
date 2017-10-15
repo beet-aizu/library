@@ -17,12 +17,8 @@ struct SegmentTree{
   vector<E> laz;
   SegmentTree(){};
   SegmentTree(int n_,F f,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>()){
-    this->f=f;
-    this->g=g;
-    this->h=h;
-    this->d1=d1;
-    this->d0=d0;
+	      vector<T> v=vector<T>()):
+    f(f),g(g),h(h),d1(d1),d0(d0){
     init(n_);
     if(n_==(int)v.size()) build(n_,v);
   }
@@ -89,6 +85,6 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2017/10/14
+  verified on 2017/10/15
   https://hoj.hamako-ths.ed.jp/onlinejudge/problems/861
 */

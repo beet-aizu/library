@@ -13,10 +13,8 @@ struct SegmentTree{
   vector<T> dat;
   SegmentTree(){};
   SegmentTree(int n_,F f,G g,T d1,
-	      vector<T> v=vector<T>()){
-    this->f=f;
-    this->g=g;
-    this->d1=d1;
+	      vector<T> v=vector<T>()):
+    f(f),g(g),d1(d1){
     init(n_);
     if(n_==(int)v.size()) build(n_,v);
   }
@@ -52,5 +50,22 @@ struct SegmentTree{
 };
 //END CUT HERE
 signed main(){
+  int n,q;
+  cin>>n>>q;
+  SegmentTree<int,int> rmq(n,
+			   [](int a,int b){return min(a,b);},
+			   [](int a,int b){return b;},
+			   INT_MAX);
+  for(int i=0;i<q;i++){
+    int c,x,y;
+    cin>>c>>x>>y;
+    if(c) cout<<rmq.query(x,y+1)<<endl;
+    else rmq.update(x,y);
+  }
   return 0;
 }
+/*
+  verified on 2017/10/15
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
+*/
+

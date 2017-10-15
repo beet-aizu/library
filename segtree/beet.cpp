@@ -14,11 +14,8 @@ struct SegmentTree{
   vector<E> laz;
   SegmentTree(){};
   SegmentTree(int n_,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>()){
-    this->g=g;
-    this->h=h;
-    this->d1=d1;
-    this->d0=d0;
+	      vector<T> v=vector<T>()):
+    g(g),h(h),d1(d1),d0(d0){
     init(n_);
     if(n_==(int)v.size()) build(n_,v);
   }
@@ -90,3 +87,7 @@ signed main(){
   }
   return 0;
 }
+/*
+  verified on 2017/10/15
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D&lang=jp
+*/
