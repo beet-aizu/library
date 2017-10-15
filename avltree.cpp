@@ -1,28 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
+template<typename T>
 struct AVL{
   struct node{
-    int key;
+    T key;
     int size,height;
     node *child[2];
-    node (const int &key):key(key),size(1),height(1){
+    node (const T &key):key(key),size(1),height(1){
       child[0]=child[1]=0;
     }
   } *root;
   typedef node *pointer;
   AVL(){root=NULL;}
-  pointer find(int key){
+  pointer find(T key){
     return find(root,key);
   }
-  node *find(node *t,const int key){
+  node *find(node *t,const T key){
     if(t==NULL) return NULL;
     if(key==(t->key)) return t;
     else if(key<(t->key)) return find(t->child[0],key);
     else return find(t->child[1],key);
   }
-  void insert(const int key){
+  void insert(const T key){
     root=insert(root,new node(key));
   }
   node *insert(node *t,node *x){
@@ -32,8 +33,8 @@ struct AVL{
     t->size+=1;
     return balance(t);
   }
-  void erase(const int key){
-    int t=key;
+  void erase(const T key){
+    T t=key;
     if(find(t)==NULL) return;
     root=erase(root,key);
   }
@@ -91,11 +92,11 @@ struct AVL{
     if(k==m) return t;
     if(k>m) return rank(t->child[1],k-m-1);
   }
-  int index(int key){
+  int index(T key){
     if(find(key)==NULL) return -1;
     return index(root,key);
   }
-  int index(node *t,int key){
+  int index(node *t,T key){
     if(key==(t->key)) return sz(t->child[0]);
     if(key<(t->key)) return index(t->child[0],key);
     else return sz(t)-sz(t->child[1])+index(t->child[1],key);
@@ -110,11 +111,11 @@ signed main(){
   for(int i=0;i<n;i++) cin>>x[i];
   map<int,int> m;
   for(int i=0;i<n;i++) m[x[i]]=i+1;
-  AVL avl;
+  AVL<Int> avl;
   for(int i=0;i<k-1;i++) avl.insert(x[i]);
   for(int i=k-1;i<n;i++){
     avl.insert(x[i]);
-    int key=avl.rank(k-1)->key;
+    Int key=avl.rank(k-1)->key;
     cout<<m[key]<<endl;
     assert(avl.index(key)==k-1);
   }
