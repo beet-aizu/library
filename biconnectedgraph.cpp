@@ -7,9 +7,9 @@ struct BiconectedGraph{
   vector<vector<int> > G,C,T;
   vector<int> ord,low,belong;
   vector<P> B;
-  int V;
+  int n;
   BiconectedGraph(){}
-  BiconectedGraph(int n){
+  BiconectedGraph(int n):n(n){
     G.clear();
     C.clear();
     T.clear();
@@ -17,14 +17,25 @@ struct BiconectedGraph{
     C.resize(n);
     T.resize(n);
   }
+  
   void add_edge(int u,int v){
     G[u].push_back(v);
     G[v].push_back(u);
   }
+
+  void input(int m,int offset){
+    int a,b;
+    for(int i=0;i<m;i++){
+      cin>>a>>b;
+      add_edge(a+offset,b+offset);
+    }
+  }
+  
   bool is_bridge(int u,int v){
     if(ord[u]>ord[v]) swap(u,v);
     return ord[u]<low[v];
   }
+  
   void dfs(int u,int p,int &k){
     ord[u]=low[u]=k;
     ++k;
@@ -39,6 +50,7 @@ struct BiconectedGraph{
       if(is_bridge(u,v)) B.push_back(P(u,v));
     }
   }
+  
   void fill_component(int c,int u){
     C[c].push_back(u);
     belong[u]=c;
@@ -47,18 +59,19 @@ struct BiconectedGraph{
       fill_component(c,v);
     }
   }
+  
   void add_component(int u,int &k){
     if(belong[u]>=0) return;
     fill_component(k++,u);
   }
   
-  void build(int n){
+  int build(){
     int k=0;
     ord.clear();
-    ord.resize(n,-1);
     low.clear();
-    low.resize(n);
     belong.clear();
+    ord.resize(n,-1);
+    low.resize(n);
     belong.resize(n,-1);
     for(int u=0;u<n;u++){
       if(ord[u]>=0) continue;
@@ -70,12 +83,12 @@ struct BiconectedGraph{
       add_component(B[i].second,k);
     }
     add_component(0,k);
-    V=k;
     for(int i=0;i<(int)B.size();i++){
       int u=belong[B[i].first],v=belong[B[i].second];
       T[u].push_back(v);
       T[v].push_back(u);
     }
+    return k;
   }
 };
 //END CUT HERE
@@ -84,12 +97,8 @@ signed main(){
   int v,e;
   cin>>v>>e;
   BiconectedGraph bcc(v);
-  for(int i=0;i<e;i++){
-    int s,t;
-    cin>>s>>t;
-    bcc.add_edge(s,t);
-  }
-  bcc.build(v);
+  bcc.input(e,0);
+  bcc.build();
   typedef pair<int,int> P;
   vector<P> B=bcc.B;
   for(P &p:B) if(p.first>p.second) swap(p.first,p.second);
@@ -99,6 +108,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/07/13
+  verified on 2017/10/15
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B&lang=jp
 */
