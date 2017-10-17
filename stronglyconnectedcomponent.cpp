@@ -24,10 +24,12 @@ struct SCC{
     used.resize(V);
     cmp.resize(V);
   }
+  
   void add_edge(int from,int to){
     G[from].push_back(to);
     rG[to].push_back(from);
   }
+  
   void dfs(int v){
     used[v]=1;
     for(int i=0;i<(int)G[v].size();i++){
@@ -35,6 +37,7 @@ struct SCC{
     }
     vs.push_back(v);
   }
+  
   void rdfs(int v,int k){
     used[v]=1;
     cmp[v]=k;

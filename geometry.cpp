@@ -355,6 +355,19 @@ double area(Polygon s){
   return abs(res);
 }
 
+double area(Circle c1,Circle c2){
+  double d=abs(c1.c-c2.c);
+  if(c1.r+c2.r<=d+EPS) return 0;
+  if(d<=abs(c1.r-c2.r)){
+    double r=min(c1.r,c2.r);
+    return PI*r*r;
+  }
+  double rc=(d*d+c1.r*c1.r-c2.r*c2.r)/(2*d);
+  double th=acos(rc/c1.r);
+  double ph=acos((d-rc)/c2.r);
+  return c1.r*c1.r*th+c2.r*c2.r*ph-d*c1.r*sin(th);
+}
+
 Polygon convexCut(Polygon p,Line l){
   Polygon q;
   for(int i=0;i<(int)p.size();i++){
