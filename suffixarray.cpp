@@ -45,29 +45,36 @@ struct SuffixArray{
     S.pop_back();
   }
   
-  // O(|T|*log|S|)
-  pair<int,int> count(string& T){
-    int sl=S.length(),tl=T.length();
-    int a[2],b[2];
-    for(int i=0;i<2;i++){
-      a[i]=0;
-      b[i]=sl;
-      while(a[i]+1<b[i]){
-	int c=(a[i]+b[i])/2;
-	if(S.compare(sa[c],tl,T)<0||
-	   (i&&S.compare(sa[c],tl,T)==0)) a[i]=c;
-	else b[i]=c;
-      }
+  bool lt_substr(string &T,int si=0,int ti=0){
+    int sn=n,tn=T.size();
+    while(si<sn&&ti<tn){
+      if(S[si]<T[ti]) return 1;
+      if(S[si]>T[ti]) return 0;
+      si++;ti++;
     }
-    if(S.compare(sa[b[0]],tl,T)!=0) return make_pair(0,0);
-    if(a[1]<sl&&S.compare(sa[a[1]+1],tl,T)==0) a[1]++;
-    if(b[0]> 0&&S.compare(sa[b[0]-1],tl,T)==0) b[0]--;
-    return make_pair(b[0],a[1]+1);
+    return si>=sn&&ti<tn;
   }
   
-  bool contains(string& T){
-    auto tmp=count(T);
-    return tmp.first!=tmp.second;
+  int lower_bound(string& T){
+    int low=-1,high=n;
+    while(low+1<high){
+      int mid=(low+high)/2;
+      if(lt_substr(T,sa[mid],0)) low=mid;
+      else high=mid;
+    }
+    return high;
+  }
+  
+  int upper_bound(string& T){
+    T.back()++;
+    int res=lower_bound(T);
+    T.back()--;
+    return res;
+  }
+  
+  // O(|T|*log|S|)
+  int count(string& T){
+    return upper_bound(T)-lower_bound(T);
   }
   
   void build_lcp(){
@@ -99,8 +106,6 @@ struct SuffixArray{
     vector<int> dat;
     const int def=INT_MAX;
     RMQ(){}
-    RMQ(int n_){init(n_);}
-    RMQ(int n_,vector<int>& a){init(n_);build(n_,a);}
     void init(int n_){
       n=1;
       while(n<n_) n*=2;
@@ -111,14 +116,6 @@ struct SuffixArray{
       for(int i=0;i<n_;i++) dat[i+n-1]=a[i];
       for(int i=n-2;i>=0;i--)
 	dat[i]=min(dat[i*2+1],dat[i*2+2]);
-    }
-    void update(int k,int a){
-      k+=n-1;
-      dat[k]=a;
-      while(k>0){
-	k=(k-1)/2;
-	dat[k]=min(dat[k*2+1],dat[k*2+2]);
-      }
     }
     int query(int a,int b,int k,int l,int r){
       if(r<=a||b<=l) return def;
@@ -139,64 +136,50 @@ struct SuffixArray{
     rmq.init(n);
     rmq.build(n,lcp);
   }
-  
-  // O(|T|+log|S|)
-  pair<int,int> count2(string& T){
-    int a[2],b[2];
-    int sl=S.length(),tl=T.length();
-    for(int i=0;i<2;i++){
-      int p,l,r;
-      p=tl;
-      a[i]=0;
-      b[i]=sl;
-      l=getlcp(sa[a[i]],T,0);
-      r=getlcp(sa[b[i]],T,0);
-      while(a[i]+1<b[i]){
-	int c=(a[i]+b[i])/2;
-	//cout<<a[i]<<" "<<b[i]<<" "<<c<<endl;
-	if(l>=r){
-	  int m=rmq.query(a[i],c);
-	  if(m<l) b[i]=c,r=m;
-	  else{
-	    int k=l+getlcp(sa[c],T,l);
-	    if(i){
-	      if(k==p||S[sa[c]+k]<T[k]) a[i]=c,l=k;
-	      else b[i]=c,r=k;
-	    }else{
-	      if(k==p) b[i]=c,r=k;
-	      else if(S[sa[c]+k]<T[k]) a[i]=c,l=k;
-	      else b[i]=c,r=k;
-	    }
-	  }
-	}else{
-	  int m=rmq.query(c,b[i]);
-	  if(m<r) a[i]=c,l=m;
-	  else{
-	    int k=r+getlcp(sa[c],T,r);
-	    if(i){
-	      if(k==p||S[sa[c]+k]<T[k]) a[i]=c,l=k;
-	      else b[i]=c,r=k;
-	    }else{
-	      if(k==p) b[i]=c,r=k;
-	      else if(S[sa[c]+k]<T[k]) a[i]=c,l=k;
-	      else b[i]=c,r=k;
-	    }
-	  }
-	}
-      }
-    }
-   
-    if(a[1]<sl&&getlcp(sa[a[1]+1],T,0)==tl) a[1]++;
-    if(b[0]> 0&&getlcp(sa[b[0]-1],T,0)==tl) b[0]--;
-   
-    if(getlcp(sa[b[0]],T,0)!=tl) return make_pair(0,0);
 
-    return make_pair(b[0],a[1]+1);
+  int lower_bound2(string &T){
+    int sl=S.length(),tl=T.length();
+    S.push_back('$');
+    int p=tl;
+    int low=0,high=sl;
+    int l=getlcp(sa[low],T,0);
+    int r=getlcp(sa[high],T,0);
+    while(low+1<high){
+      int mid=(low+high)/2;
+      int k;
+      if(l>=r){
+	int m=rmq.query(low,mid);
+	if(m<l){
+	  high=mid,r=m;
+	  continue;
+	}
+	k=l+getlcp(sa[mid],T,l);
+      }else{
+	int m=rmq.query(mid,high);
+	if(m<r){
+	  low=mid,l=m;
+	  continue;
+	}
+	k=r+getlcp(sa[mid],T,r);
+      }
+      if(k==p) high=mid,r=k;
+      else if(S[sa[mid]+k]<T[k]) low=mid,l=k;
+      else high=mid,r=k;
+    }
+    S.pop_back();
+    return high;
   }
 
-  bool contains2(string& T){
-    auto tmp=count2(T);
-    return tmp.first!=tmp.second;
+  int upper_bound2(string &T){
+    T.back()++;
+    int res=lower_bound2(T);
+    T.back()--;
+    return res;
+  }
+  
+  // O(|T|+log|S|)
+  int count2(string& T){
+    return  upper_bound2(T)-lower_bound2(T);
   }
 };
 //END CUT HERE
@@ -213,7 +196,7 @@ signed main(){
   while(q--){
     scanf("%s",buf);
     string P(buf);
-    printf("%d\n",sa.contains2(P));
+    printf("%d\n",!!sa.count2(P));
     //assert(sa.count(P)==sa.count2(P));
   }
   return 0;
@@ -225,19 +208,14 @@ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
 */
 
 //*/
-char buf[1145141];
 signed main(){
-  int n;
-  scanf("%d",&n);
-  int m;
-  scanf("%d",&m);
-  scanf("%s",buf);
-  string s(buf);
+  int n,m;
+  string s;
+  cin>>n>>m>>s;
   SuffixArray sa(s);
   string t="I";
-  for(int i=0;i<n;i++) t=t+"OI";
-  auto tmp=sa.count2(t);
-  printf("%d\n",tmp.second-tmp.first);
+  for(int i=0;i<n;i++) t+="OI";
+  cout<<sa.count2(t)<<endl;
   return 0;
 }
 //*/
