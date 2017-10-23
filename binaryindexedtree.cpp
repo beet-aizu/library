@@ -25,6 +25,20 @@ struct BIT{
     for(int x=i;x<=n;x+=(x&-x))
       bit[x]+=a;
   }
+  
+  int lower_bound(int w){
+    if(w<=0) return 0;
+    int x=0,r=1;
+    while(r<n) r<<=1;
+    for(int k=r;k>0;k>>=1){
+      if(x+k<=n&&bit[x+k]<w){
+	w-=bit[x+k];
+	x+=k;
+      }
+    }
+    return x+1;
+  }
+  
   T sum0(int i){
     return sum(i+1);
   }

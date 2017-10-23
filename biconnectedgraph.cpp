@@ -82,7 +82,7 @@ struct BiconectedGraph{
       add_component(B[i].first,k);
       add_component(B[i].second,k);
     }
-    add_component(0,k);
+    for(int u=0;u<n;u++) add_component(u,k);
     for(int i=0;i<(int)B.size();i++){
       int u=belong[B[i].first],v=belong[B[i].second];
       T[u].push_back(v);
@@ -108,6 +108,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/10/15
+  verified on 2017/10/21
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B&lang=jp
 */

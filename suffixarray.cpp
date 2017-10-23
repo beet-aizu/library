@@ -9,6 +9,7 @@ struct SuffixArray{
   SuffixArray(string& S):S(S){init();}
   void init(){
     n=S.length();
+    S.push_back('$');
     build_sa();
     build_lcp();
     build_rmq();
@@ -16,7 +17,6 @@ struct SuffixArray{
   void build_sa(){
     sa.clear();
     sa.resize(n+1,0);
-    S.push_back('$');
     iota(sa.begin(),sa.end(),0);
     sort(sa.begin(),sa.end(),
 	 [&](int a,int b){
@@ -42,11 +42,10 @@ struct SuffixArray{
       }
       c.swap(r);
     }
-    S.pop_back();
   }
   
   bool lt_substr(string &T,int si=0,int ti=0){
-    int sn=n,tn=T.size();
+    int sn=S.size(),tn=T.size();
     while(si<sn&&ti<tn){
       if(S[si]<T[ti]) return 1;
       if(S[si]>T[ti]) return 0;
@@ -56,7 +55,7 @@ struct SuffixArray{
   }
   
   int lower_bound(string& T){
-    int low=-1,high=n;
+    int low=0,high=n+1;
     while(low+1<high){
       int mid=(low+high)/2;
       if(lt_substr(T,sa[mid],0)) low=mid;
@@ -127,7 +126,7 @@ struct SuffixArray{
       }
     }
     int query(int a,int b){
-      return query(a,b,0,0,n);
+      return query(max(a,0),b,0,0,n);
     }
   };
   
@@ -139,9 +138,9 @@ struct SuffixArray{
 
   int lower_bound2(string &T){
     int sl=S.length(),tl=T.length();
-    S.push_back('$');
+    if(lt_substr(T,sa[sl-1],0)) return sl;
     int p=tl;
-    int low=0,high=sl;
+    int low=0,high=sl-1;
     int l=getlcp(sa[low],T,0);
     int r=getlcp(sa[high],T,0);
     while(low+1<high){
@@ -166,7 +165,7 @@ struct SuffixArray{
       else if(S[sa[mid]+k]<T[k]) low=mid,l=k;
       else high=mid,r=k;
     }
-    S.pop_back();
+				 
     return high;
   }
 
@@ -215,7 +214,8 @@ signed main(){
   SuffixArray sa(s);
   string t="I";
   for(int i=0;i<n;i++) t+="OI";
-  cout<<sa.count2(t)<<endl;
+  cout<<sa.count(t)<<endl;
+  //cout<<sa.count2(t)<<endl;
   return 0;
 }
 //*/
