@@ -64,6 +64,11 @@ bool sort_y(Point a,Point b){
 typedef Point Vector;
 typedef vector<Point> Polygon;
 
+istream &operator >> (istream &is,Polygon &p){
+  for(int i=0;i<(int)p.size();i++) cin>>p[i];
+  return is;
+}
+
 struct Segment{
   Point p1,p2;
   Segment(){}
