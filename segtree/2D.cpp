@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 //BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
@@ -13,10 +14,7 @@ struct SegmentTree{
   vector<T> dat;
   SegmentTree(){};
   SegmentTree(int n_,F f,G g,T d1,
-	      vector<T> v=vector<T>()){
-    this->f=f;
-    this->g=g;
-    this->d1=d1;
+	      vector<T> v=vector<T>()):f(f),g(g),d1(d1){
     init(n_);
     if(n_==(int)v.size()) build(n_,v);
   }
@@ -63,13 +61,9 @@ struct SegmentTree2D{
   V v;
   R d1;
   vector<T> dat;
-  SegmentTree2D(int n_,C c,F f,G g,V v,R d1){
-    this->f=f;
-    this->g=g;
-    this->v=v;
-    this->d1=d1;
-    init(n_,c);
-  }
+  SegmentTree2D(int n_,C c,F f,G g,V v,R d1):
+    f(f),g(g),v(v),d1(d1){init(n_,c);}
+  
   void init(int n_,C c){
     n=1;
     while(n<n_) n*=2;
@@ -77,6 +71,7 @@ struct SegmentTree2D{
     dat.resize(2*n-1);
     for(int i=0;i<2*n-1;i++) dat[i]=c();
   }
+  
   void update(int x,int y,E e){
     x+=n-1;
     g(dat[x],y,e);
@@ -85,6 +80,7 @@ struct SegmentTree2D{
       g(dat[x],y,e);
     }
   }
+  
   R query(int a,int b,int c,int d,int k,int l,int r){
     if(r<=a||b<=l) return d1;
     if(a<=l&&r<=b) return v(dat[k],c,d);
@@ -92,6 +88,7 @@ struct SegmentTree2D{
     R vr=query(a,b,c,d,k*2+2,(l+r)/2,r);
     return f(vl,vr);
   }
+  
   // [a,b) * [c,d)
   R query(int a,int b,int c,int d){
     return query(a,b,c,d,0,0,n);
@@ -156,3 +153,8 @@ signed main(){
   }
   return 0;
 }
+
+/*
+verified on 2017/10/29
+http://judge.u-aizu.ac.jp/onlinejudge/cdescription.jsp?cid=ACPC2017Day3&pid=E
+*/
