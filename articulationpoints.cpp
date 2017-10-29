@@ -1,29 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct ArticulationPoints{
+  int n,timer;
   vector<vector<int> > G;
   vector<int> used,pre,par,low;
-  int V,timer;
   set<int> ap;
   ArticulationPoints(){}
-  ArticulationPoints(int V):V(V){init();}
-  void init(){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    used.clear();
-    pre.clear();
-    par.clear();
-    low.clear();
-    ap.clear();
-    
-    G.resize(V);
-    used.resize(V);
-    pre.resize(V);
-    par.resize(V);
-    low.resize(V);
-  }
+  ArticulationPoints(int sz):
+    n(sz),G(sz),used(sz),pre(sz),par(sz),low(sz){}
   
   void add_edge(int from,int to){
     G[from].push_back(to);
@@ -47,11 +33,11 @@ struct ArticulationPoints{
   
   void build(){
     fill(used.begin(),used.end(),0);
+    ap.clear();
     timer=1;
     dfs(0,-1);
-    ap.clear();
     int np=0;
-    for(int i=1;i<V;i++){
+    for(int i=1;i<n;i++){
       int p=par[i];
       if(p==0) np++;
       else if(pre[p]<=low[i]) ap.insert(p);
@@ -76,6 +62,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/07/13
+  verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A&lang=jp
 */

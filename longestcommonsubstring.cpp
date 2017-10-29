@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 //BEGIN CUT HERE
 int lcs(string X,string Y){
   const int N=max(X.size(),Y.size())+1;

@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 int lis(int n,vector<int>& A){
   vector<int> L(A.size()+1,0);
@@ -25,6 +25,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/06/29
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=jp
 */

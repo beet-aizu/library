@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct Fordfulkerson{
   const int INF = 1 << 28;
@@ -9,20 +9,13 @@ struct Fordfulkerson{
     edge(){}
     edge(int to,int cap,int rev):to(to),cap(cap),rev(rev){}
   };
-  
+
+  int n;
   vector<vector<edge> > G;
   vector<int> used;
   
   Fordfulkerson(){}
-  Fordfulkerson(int V){init(V);}
-  
-  void init(int V){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    used.clear();
-    G.resize(V);
-    used.resize(V);
-  }
+  Fordfulkerson(int sz):n(sz),G(n),used(n){}
   
   void add_edge(int from,int to,int cap){
     G[from].push_back(edge(to,cap,G[to].size()));
@@ -75,6 +68,6 @@ signed main(){
 }
 
 /*
-verified on 2017/06/29
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
 */

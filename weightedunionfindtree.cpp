@@ -1,17 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
+template <typename T> 
 struct WeightedUnionFind{
-  vector<int> r,p,ws;
+  int n;
+  T d;
+  vector<int> r,p;
+  vector<T> ws;
   WeightedUnionFind(){}
-  WeightedUnionFind(int size){init(size);}
-  void init(int size){
-    r.resize(size,0);
-    p.resize(size,0);
-    ws.resize(size,0);
-    for(int i=0;i<size;i++) r[i]=1,p[i]=i;
-  }
+  WeightedUnionFind(int sz,T d_):
+    n(sz),d(d_),r(n,1),p(n),ws(n,d){iota(p.begin(),p.end(),0);}
   int find(int x){
     if(x==p[x]){
       return x;
@@ -21,14 +20,14 @@ struct WeightedUnionFind{
       return p[x]=t;
     }
   }
-  int weight(int x){
+  T weight(int x){
     find(x);
     return ws[x];
   }
   bool same(int x,int y){
     return find(x)==find(y);
   }
-  void unite(int x,int y,int w){
+  void unite(int x,int y,T w){
     w+=weight(x);
     w-=weight(y);
     x=find(x);y=find(y);
@@ -38,15 +37,33 @@ struct WeightedUnionFind{
     p[y]=x;
     ws[y]=w;
   }
-  int diff(int x,int y){
-    return weight(x)-weight(y);
+  T diff(int x,int y){
+    return weight(y)-weight(x);
   }
 };
 //END CUT HERE
 signed main(){
+  int n,m;
+  while(cin>>n>>m,n||m){
+    WeightedUnionFind<Int> u(n,0);
+    for(int i=0;i<m;i++){
+      int a,b;
+      char c;
+      cin>>c>>a>>b;
+      a--;b--;
+      if(c=='!'){
+	Int w;
+	cin>>w;
+	u.unite(a,b,w);
+      }else{
+	if(!u.same(a,b)) cout<<"UNKNOWN"<<endl;
+	else cout<<u.diff(a,b)<<endl;
+      }
+    }
+  }
   return 0;
 }
 /*
-  not verified
+  verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330
 */

@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct LongestCommonSubstring{
   struct node{
@@ -8,7 +8,7 @@ struct LongestCommonSubstring{
     node *next;
     node(int value,node *next):value(value),next(next){}
   };
-  const int INF=1LL<<55LL;
+  const int INF=1<<28;
   string x,y;
   LongestCommonSubstring(){}
   LongestCommonSubstring(string x,string y):x(x),y(y){}
@@ -49,6 +49,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/06/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
+verified on 2017/10/29
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C&lang=jp
 */

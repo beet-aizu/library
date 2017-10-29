@@ -1,29 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct BiconectedGraph{
   typedef pair<int,int> P;
+  int n;
   vector<vector<int> > G,C,T;
   vector<int> ord,low,belong;
   vector<P> B;
-  int n;
   BiconectedGraph(){}
-  BiconectedGraph(int n):n(n){
-    G.clear();
-    C.clear();
-    T.clear();
-    G.resize(n);
-    C.resize(n);
-    T.resize(n);
-  }
+  BiconectedGraph(int sz):n(sz),G(sz),C(sz),T(sz){}
   
   void add_edge(int u,int v){
     G[u].push_back(v);
     G[v].push_back(u);
   }
 
-  void input(int m,int offset){
+  void input(int m,int offset=0){
     int a,b;
     for(int i=0;i<m;i++){
       cin>>a>>b;
@@ -67,12 +60,11 @@ struct BiconectedGraph{
   
   int build(){
     int k=0;
-    ord.clear();
-    low.clear();
-    belong.clear();
-    ord.resize(n,-1);
+    ord.resize(n);
     low.resize(n);
-    belong.resize(n,-1);
+    belong.resize(n);
+    fill(ord.begin(),ord.end(),-1);
+    fill(belong.begin(),belong.end(),-1);
     for(int u=0;u<n;u++){
       if(ord[u]>=0) continue;
       dfs(u,-1,k);
@@ -108,6 +100,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/10/21
+  verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B&lang=jp
 */

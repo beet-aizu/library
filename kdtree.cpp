@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct KDTree{
   class Node{
@@ -18,7 +18,7 @@ struct KDTree{
       return id<p.id;
     }
     void print(){
-      printf("%lld\n",id);
+      printf("%d\n",id);
     }
   };
   
@@ -86,10 +86,10 @@ struct KDTree{
 signed main(){
   int x,y;
   int N;
-  scanf("%lld",&N);
+  scanf("%d",&N);
   KDTree kd(N);
   for(int i=0;i<N;i++) {
-    scanf("%lld %lld",&x,&y);
+    scanf("%d %d",&x,&y);
     kd.P[i]=KDTree::Point(i,x,y);
     kd.T[i].l = kd.T[i].r = kd.T[i].p = kd.NIL;
   }
@@ -97,11 +97,11 @@ signed main(){
   int root=kd.makeKDTree(0,N,0);
 
   int q;
-  scanf("%lld",&q);
+  scanf("%d",&q);
   int sx,tx,sy,ty;
   vector<KDTree::Point> ans;
   for(int i=0;i<q;i++){
-    scanf("%lld %lld %lld %lld",&sx,&tx,&sy,&ty);
+    scanf("%d %d %d %d",&sx,&tx,&sy,&ty);
     ans.clear();
     kd.find(root,sx,tx,sy,ty,0,ans);
     sort(ans.begin(),ans.end());
@@ -115,6 +115,6 @@ signed main(){
 }
 
 /*
-verified on 2017/07/13
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C&lang=jp
 */

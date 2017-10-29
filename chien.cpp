@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct Chien{
   int n;
-  vector<int> dat,laz;
-  const int def=0;
+  vector<Int> dat,laz;
+  const Int def=0;
   Chien(){}
   Chien(int n_){init(n_);}
   void init(int n_){
@@ -24,7 +24,7 @@ struct Chien{
     dat[k]+=laz[k]*len;
     laz[k]=0;
   }
-  int update(int a,int b,int x,int k,int l,int r){
+  Int update(int a,int b,Int x,int k,int l,int r){
     eval(r-l,k);
     if(r<=a||b<=l) return dat[k]+laz[k]*(r-l);
     if(a<=l&&r<=b) return dat[k]+(laz[k]+=x)*(r-l);
@@ -32,18 +32,18 @@ struct Chien{
     return dat[k]=update(a,b,x,k*2+1,l,(l+r)/2)
       +update(a,b,x,k*2+2,(l+r)/2,r);
   }
-  int query(int a,int b,int k,int l,int r){
+  Int query(int a,int b,int k,int l,int r){
     eval(r-l,k);
     if(r<=a||b<=l) return def;
     if(a<=l&&r<=b) return dat[k];
-    int vl=query(a,b,k*2+1,l,(l+r)/2);
-    int vr=query(a,b,k*2+2,(l+r)/2,r);
+    Int vl=query(a,b,k*2+1,l,(l+r)/2);
+    Int vr=query(a,b,k*2+2,(l+r)/2,r);
     return vl+vr;
   }
-  int update(int a,int b,int x){
+  Int update(int a,int b,Int x){
     return update(a,b,x,0,0,n);
   }
-  int query(int a,int b){
+  Int query(int a,int b){
     return query(a,b,0,0,n);
   }
 };
@@ -54,7 +54,7 @@ signed main(){
   cin>>n>>q;
   Chien ch(n);
   for(int i=0;i<q;i++){
-    int c,s,t,x;
+    Int c,s,t,x;
     cin>>c;
     if(c){
       cin>>s>>t;
@@ -68,5 +68,5 @@ signed main(){
 
 /*
 verified on 2017/02/24
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
 */

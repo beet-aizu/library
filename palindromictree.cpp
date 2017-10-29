@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct PalindromicTree{
   struct node{
@@ -12,7 +12,16 @@ struct PalindromicTree{
   vector<int> ord;
   int n,suff;
   PalindromicTree(){}
-  PalindromicTree(string s_){init(s_);build();}
+  PalindromicTree(string s_):s(s_),v(s_.length()+10){
+    n=2;
+    suff=1;
+    v[0].app=v[1].app=-1;
+    v[0].len=-1;v[1].len=0;
+    v[0].suf=v[1].suf=0;
+    v[0].hei=v[1].hei=0;
+    build();
+  }
+  
   bool addchar(int pos){
     char ch=s[pos];
     int cur=suff;
@@ -45,19 +54,6 @@ struct PalindromicTree{
     }
     v[suff].hei=v[v[suff].suf].hei+1;
     return true;
-  }
-  
-  void init(string s_){
-    s=s_;
-    v.clear();
-    v.resize(s.length()+10);
-
-    n=2;
-    suff=1;
-    v[0].app=v[1].app=-1;
-    v[0].len=-1;v[1].len=0;
-    v[0].suf=v[1].suf=0;
-    v[0].hei=v[1].hei=0;
   }
   
   void calcOrder(){
@@ -115,7 +111,8 @@ signed main(){
   cin>>s>>t;
   PalindromicTree p1(s),p2(t);
   RollingHash r1(s),r2(t);
-  map<int,int> m1[55555],m2[55555];
+  using ull = RollingHash::ull;
+  map<ull,Int> m1[55555],m2[55555];
   for(int i=0;i<(int)p1.n;i++){
     PalindromicTree::node& u=p1.v[i];
     if(u.app<0) continue;
@@ -126,7 +123,7 @@ signed main(){
     if(u.app<0) continue;
     m2[u.len][r2.find(u.app,u.app+u.len)]=u.cnt;
   }
-  int ans=0;
+  Int ans=0;
   for(int i=1;i<=(int)s.length();i++){
     for(auto p:m1[i]){
       ans+=m2[i][p.first]*p.second;
@@ -138,6 +135,6 @@ signed main(){
 
 
 /*
-verified on 2017/07/20
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2292
 */

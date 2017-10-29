@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct Dinic{
   const int INF=1<<28;
@@ -11,25 +11,13 @@ struct Dinic{
     edge(int to,int cap,int rev):to(to),cap(cap),rev(rev){}
   };
 
+  int n;
   vector<vector<edge> > G;
   vector<map<int,int> > M;
   vector<int> level,iter;
 
   Dinic(){}
-  Dinic(int V){init(V);}
-
-  void init(int V){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    for(int i=0;i<(int)M.size();i++) M[i].clear();
-    M.clear();
-    level.clear();
-    iter.clear();
-    G.resize(V);
-    M.resize(V);
-    level.resize(V);
-    iter.resize(V);
-  }
+  Dinic(int sz):n(sz),G(n),M(n),level(n),iter(n){}
   
   void add_edge(int from,int to,int cap){
     M[from][to]=G[from].size();
@@ -123,6 +111,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/06/29
+  verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
 */

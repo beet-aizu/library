@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define EPS (1e-10)
-#define int long long
+using Int = long long;
 
 //BEGIN CUT HERE
 typedef vector<double> arr;
@@ -74,6 +74,6 @@ signed main(){
 
 
 /*
-verified on 2017/04/26
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2060
 */

@@ -1,24 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct TopologicalSort{
   int n;
   vector<set<int> > G;
   vector<int> indeg,V,p;
   TopologicalSort(){}
-  TopologicalSort(int n):n(n){init();}
-  
-  void init(){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    indeg.clear();
-    V.clear();
-    p.clear();
-    G.resize(n);
-    indeg.resize(n);
-    V.resize(n);
-  }
+  TopologicalSort(int sz):n(sz),G(n),indeg(n),V(n){}
 
   void add_edge(int s,int t){
     G[s].insert(t);
@@ -69,6 +58,6 @@ signed main(){
 }
 
 /*
-verified on 2017/06/29
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B&lang=jp
 */

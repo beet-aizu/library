@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 //BEGIN CUT HERE
 struct SuffixArray{
   int n,k;

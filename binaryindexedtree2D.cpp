@@ -1,22 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 //BEGIN CUT HERE
 template<typename T> 
 struct BIT2D{
-  vector<vector<T> > bit;
   int n,m;
+  T d;
+  vector<vector<T> > bit;
   //1-indexed
-  BIT2D(){init(-1,-1,(T)0);}
-  BIT2D(int n_,int m_,T d){init(n_,m_,d);}
-  void init(int n_,int m_,T d){
-    n=n_;
-    m=m_;
-    for(vector<T> &v:bit) v.clear();
-    bit.clear();
-    bit.resize(n+1,vector<T>(m+1,d));
-  }
+  BIT2D():n(-1),m(-1){}
+  BIT2D(int n_,int m_,T d_):n(n_),m(m_),d(d_),bit(n_+1,vector<T>(m+1,d_)){}
   T sum(int i,int j){
-    T s=0;
+    T s=d;
     for(int x=i;x>0;x-=(x&-x))
       for(int y=j;y>0;y-=(y&-y))
 	s+=bit[x][y];
@@ -76,6 +71,6 @@ signed main(){
 }
 
 /*
-verified on 2017/09/22
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/cdescription.jsp?cid=ACPC2017Day3&pid=E
  */

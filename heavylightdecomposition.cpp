@@ -1,58 +1,43 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
-
+using Int = long long;
 //BEGIN CUT HERE
 struct HLDecomposition {
-  vector<vector<int>> g;
-
-  vector<int> vid, head, heavy, parent, depth, inv;
+  int n,pos;
+  vector<vector<int> > G;
+  vector<int> vid, head, heavy, parent, depth, inv, type;
   
   HLDecomposition(){}
-  HLDecomposition(int n){init(n);}
-
-  void init(int n){
-    for(auto &a:g) a.clear(); 
-    g.clear();
-    vid.clear();
-    head.clear();
-    heavy.clear();
-    parent.clear();
-    depth.clear();
-    inv.clear();
-    
-    g.resize(n);
-    vid.resize(n, -1);
-    head.resize(n);
-    heavy.resize(n, -1);
-    parent.resize(n);
-    depth.resize(n);
-    inv.resize(n);
-  }
+  HLDecomposition(int sz):
+    n(sz),pos(0),G(n),
+    vid(n,-1),head(n),heavy(n,-1),parent(n),depth(n),inv(n),type(n){}
   
   void add_edge(int u, int v) {
-    g[u].push_back(v);
-    g[v].push_back(u);
+    G[u].push_back(v);
+    G[v].push_back(u);
   }
 
-  void build() {
-    dfs(0, -1);
-    bfs();
+  void build(vector<int> rs=vector<int>(1,0)) {
+    int c=0;
+    for(int r:rs){
+      dfs(r, -1);
+      bfs(r, c++);
+    }
   }
-
+  
   typedef tuple<int,int,int,int,int,int> T;
-  int dfs(int curr, int prev) {
+  int dfs(int curr,int prev) {
     stack<T> st;
     int result;
-    int sub, max_sub, i, next;
+    int sub,max_sub,i,next;
   ENTRYPOINT:
     parent[curr] = prev;
-    sub = 1;
-    max_sub = 0;
-    for(i=0;i<(int)g[curr].size();i++){
-      next = g[curr][i];
-      if (next != prev) {
-	depth[next] = depth[curr] + 1;
+    sub=1;
+    max_sub=0;
+    for(i=0;i<(int)G[curr].size();i++){
+      next=G[curr][i];
+      if(next!=prev) {
+	depth[next]=depth[curr]+1;
 	{
 	  st.emplace(curr,prev,sub,max_sub,i,next);
 	  prev=curr;curr=next;
@@ -68,8 +53,9 @@ struct HLDecomposition {
 	next    = get<5>(t);
 	
 	int sub_next=result;
-	sub += sub_next;
-	if (max_sub < sub_next) max_sub = sub_next, heavy[curr] = next;
+	sub+=sub_next;
+	if(max_sub<sub_next)
+	  max_sub=sub_next,heavy[curr]=next;
       }
     }
     while(!st.empty()){
@@ -79,16 +65,18 @@ struct HLDecomposition {
     return sub;
   }
 
-  void bfs() {
-    int k = 0;
-    queue<int> q({ 0 });
-    while (!q.empty()) {
-      int h = q.front(); q.pop();
-      for (int i = h; i != -1; i = heavy[i]) {
-	vid[i] = k++;
-	inv[vid[i]] = i;
-	head[i] = h;
-	for (int j : g[i]) if (j != parent[i] && j != heavy[i]) q.push(j);
+  void bfs(int r,int c) {
+    int &k=pos;
+    queue<int> q({0});
+    while(!q.empty()){
+      int h=q.front();q.pop();
+      for(int i=h;i!=-1;i=heavy[i]) {
+	type[i]=c;
+	vid[i]=k++;
+	inv[vid[i]]=i;
+	head[i]=h;
+	for(int j:G[i])
+	  if(j!=parent[i]&&j!=heavy[i]) q.push(j);
       }
     }
   }
@@ -128,23 +116,33 @@ struct HLDecomposition {
 
 struct BiconectedGraph{
   typedef pair<int,int> P;
+  int n;
   vector<vector<int> > G,C,T;
   vector<int> ord,low,belong;
   vector<P> B;
-  int V;
   BiconectedGraph(){}
-  BiconectedGraph(int n){
-    G.clear();
-    C.clear();
-    T.clear();
-    G.resize(n);
-    C.resize(n);
-    T.resize(n);
+  BiconectedGraph(int sz):n(sz),G(sz),C(sz),T(sz){}
+  
+  void add_edge(int u,int v){
+    G[u].push_back(v);
+    G[v].push_back(u);
   }
+
+  void input(int m,int offset){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int a,b;
+    for(int i=0;i<m;i++){
+      cin>>a>>b;
+      add_edge(a+offset,b+offset);
+    }
+  }
+  
   bool is_bridge(int u,int v){
     if(ord[u]>ord[v]) swap(u,v);
     return ord[u]<low[v];
   }
+  
   void dfs(int u,int p,int &k){
     ord[u]=low[u]=k;
     ++k;
@@ -159,6 +157,7 @@ struct BiconectedGraph{
       if(is_bridge(u,v)) B.push_back(P(u,v));
     }
   }
+  
   void fill_component(int c,int u){
     C[c].push_back(u);
     belong[u]=c;
@@ -167,19 +166,19 @@ struct BiconectedGraph{
       fill_component(c,v);
     }
   }
+  
   void add_component(int u,int &k){
     if(belong[u]>=0) return;
     fill_component(k++,u);
   }
   
-  void biconnectedgraph(int n){
+  int build(){
     int k=0;
-    ord.clear();
-    ord.resize(n,-1);
-    low.clear();
+    ord.resize(n);
     low.resize(n);
-    belong.clear();
-    belong.resize(n,-1);
+    belong.resize(n);
+    fill(ord.begin(),ord.end(),-1);
+    fill(belong.begin(),belong.end(),-1);
     for(int u=0;u<n;u++){
       if(ord[u]>=0) continue;
       dfs(u,-1,k);
@@ -189,15 +188,16 @@ struct BiconectedGraph{
       add_component(B[i].first,k);
       add_component(B[i].second,k);
     }
-    add_component(0,k);
-    V=k;
+    for(int u=0;u<n;u++) add_component(u,k);
     for(int i=0;i<(int)B.size();i++){
       int u=belong[B[i].first],v=belong[B[i].second];
       T[u].push_back(v);
       T[v].push_back(u);
     }
+    return k;
   }
 };
+
 
 struct RMQ{
   int n;
@@ -254,23 +254,13 @@ signed main(){
   int n,e,q;
   cin>>n>>e>>q;
   BiconectedGraph big(n);
-  for(int i=0;i<e;i++){
-    int s,t;
-    cin>>s>>t;
-    s--;t--;
-    //cout<<s<<" "<<t<<endl;
-    big.G[s].push_back(t);
-    big.G[t].push_back(s);
-  }
-  big.biconnectedgraph(n);
+  big.input(e,-1);
 
-  int E=0;
-  
-  int V=big.V;
+  int E=0,V=big.build();
   HLDecomposition hl(V+1000);
   for(int i=0;i<V;i++)
-    for(int j:big.T[i]) hl.add_edge(i,j),E++;
-  E/=2;
+    for(int j:big.T[i])
+      if(i<j) hl.add_edge(i,j),E++;
   assert(V==E+1);
   
   hl.build();
@@ -313,5 +303,7 @@ signed main(){
   return 0;
 }
 
-// verify yukucoder165 E
+/* verified on 2017/10/29
+https://yukicoder.me/problems/no/529
+*/
 

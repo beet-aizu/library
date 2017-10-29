@@ -5,22 +5,12 @@ using namespace std;
 struct LowestCommonAncestor{
   const int MAX_LOG_V = 50;
   
-  vector<vector<int> > G,parent;
-  int root=0,V;
+  int n;
+  vector<vector<int> > G,par;
   vector<int> depth;
   LowestCommonAncestor(){}
-  LowestCommonAncestor(int V):V(V){init();}
-
-  void init(){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    for(int i=0;i<(int)parent.size();i++) parent[i].clear();
-    parent.clear();
-    depth.clear();
-    G.resize(V);
-    parent.resize(MAX_LOG_V,vector<int>(V));
-    depth.resize(V);
-  }
+  LowestCommonAncestor(int sz):
+    n(sz),G(sz),par(MAX_LOG_V,vector<int>(n)),depth(sz){}
 
   void add_edge(int u,int v){
     G[u].push_back(v);
@@ -28,19 +18,19 @@ struct LowestCommonAncestor{
   }
   
   void dfs(int v,int p,int d){
-    parent[0][v]=p;
+    par[0][v]=p;
     depth[v]=d;
     for(int i=0;i<(int)G[v].size();i++){
       if(G[v][i]!=p) dfs(G[v][i],v,d+1);
     }
   }
   
-  void build(){
-    dfs(root,-1,0);
+  void build(int r=0){
+    dfs(r,-1,0);
     for(int k=0;k+1<MAX_LOG_V;k++){
-      for(int v=0;v<V;v++){
-	if(parent[k][v]<0) parent[k+1][v]=-1;
-	else parent[k+1][v]=parent[k][parent[k][v]];
+      for(int v=0;v<n;v++){
+	if(par[k][v]<0) par[k+1][v]=-1;
+	else par[k+1][v]=par[k][par[k][v]];
       }
     }
   }
@@ -49,17 +39,21 @@ struct LowestCommonAncestor{
     if(depth[u]>depth[v]) swap(u,v);
     for(int k=0;k<MAX_LOG_V;k++){
       if((depth[v]-depth[u])>>k&1){
-	v=parent[k][v];
+	v=par[k][v];
       }
     }
     if(u==v) return u;
     for(int k=MAX_LOG_V-1;k>=0;k--){
-      if(parent[k][u]!=parent[k][v]){
-	u=parent[k][u];
-	v=parent[k][v];
+      if(par[k][u]!=par[k][v]){
+	u=par[k][u];
+	v=par[k][v];
       }
     }
-    return parent[0][u];
+    return par[0][u];
+  }
+
+  int distance(int u,int v){
+    return depth[u]+depth[v]-depth[lca(u,v)]*2;
   }
 };
 //END CUT HERE
@@ -88,6 +82,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/06/29
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
 */

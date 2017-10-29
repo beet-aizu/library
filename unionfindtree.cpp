@@ -1,16 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct UnionFind{
+  int n;
   vector<int> r,p;
   UnionFind(){}
-  UnionFind(int size){init(size);}
-  void init(int size){
-    r.resize(size,0);
-    p.resize(size,0);
-    for(int i=0;i<size;i++) r[i]=1,p[i]=i;
-  }
+  UnionFind(int sz):n(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
   int find(int x){
     return (x==p[x]?x:p[x]=find(p[x]));
   }
@@ -40,6 +36,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/04/28
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
 */

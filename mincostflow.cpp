@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 //BEGIN CUT HERE
 struct PrimalDual{
   const int INF = 1<<28;
@@ -10,26 +11,12 @@ struct PrimalDual{
     edge(int to,int cap,int cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
   };
 
-  int V;
+  int n;
   vector<vector<edge> > G;
   vector<int> h,dist,prevv,preve;
 
   PrimalDual(){}
-  PrimalDual(int V):V(V){init();}
-
-  void init(){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    h.clear();
-    dist.clear();
-    prevv.clear();
-    preve.clear();
-    G.resize(V);
-    h.resize(V);
-    dist.resize(V);
-    prevv.resize(V);
-    preve.resize(V);
-  }
+  PrimalDual(int sz):n(sz),G(sz),h(sz),dist(sz),prevv(sz),preve(sz){}
   
   void add_edge(int from,int to,int cap,int cost){
     G[from].push_back(edge(to,cap,cost,G[to].size()));
@@ -38,10 +25,10 @@ struct PrimalDual{
 
   int min_cost_flow(int s,int t,int f){
     int res=0;
-    fill(h.begin(),h.begin()+V,0);
+    fill(h.begin(),h.end(),0);
     while(f>0){
       priority_queue<P,vector<P>,greater<P> > que;
-      fill(dist.begin(),dist.begin()+V,INF);
+      fill(dist.begin(),dist.end(),INF);
       dist[s]=0;
       que.push(P(0,s));
       while(!que.empty()){
@@ -61,7 +48,7 @@ struct PrimalDual{
       if(dist[t]==INF){
 	return -1;
       }
-      for(int v=0;v<V;v++) h[v]+=dist[v];
+      for(int v=0;v<n;v++) h[v]+=dist[v];
 
       int d=f;
       for(int v=t;v!=s;v=prevv[v]){
@@ -93,6 +80,6 @@ int main(){
   return 0;
 }
 /*
-verified on 2017/06/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
+verified on 2017/10/29
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B&lang=jp
 */

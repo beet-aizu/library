@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 #define MAX 11
 bool e[MAX][MAX];
 int mod_pow(int x,int n,int mod){

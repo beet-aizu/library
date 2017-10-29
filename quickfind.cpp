@@ -1,17 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct QuickFind{
+  int n;
   vector<int> r,p;
   vector<vector<int> > v;
   QuickFind(){}
-  QuickFind(int size){init(size);}
-  void init(int size){
-    r.resize(size,0);
-    p.resize(size,0);
-    v.resize(size);
-    for(int i=0;i<size;i++){
+  QuickFind(int sz):n(sz),r(sz),p(sz),v(sz){
+    for(int i=0;i<n;i++){
       r[i]=1,p[i]=i;
       v[i].resize(1,i);
     }
@@ -46,6 +43,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/04/28
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
 */

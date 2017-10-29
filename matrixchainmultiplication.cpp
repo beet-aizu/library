@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 #define N 100
 #define INF 1<<25
 int n,p[N+1],m[N+1][N+1];

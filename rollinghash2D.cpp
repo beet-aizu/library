@@ -1,46 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct RollingHash2D{
   typedef unsigned long long ull;
+  
   struct RollingHash{
+    typedef unsigned long long ull;
     string S;
     ull B;
-    vector<ull> hash,p;
     int len;
+    vector<ull> hash,p;
     RollingHash(){}
-    RollingHash(string S,ull B=1000000007LL):S(S),B(B){init();};
-    void init(){
-      len=S.length();
-      hash.resize(len+1);
-      p.resize(len+1);
+    RollingHash(string S_,ull B_=1000000007LL):
+      S(S_),B(B_),len(S.length()),hash(len+1),p(len+1){
       hash[0]=0;p[0]=1;
       for(int i=0;i<len;i++){
 	hash[i+1]=hash[i]*B+S[i];
 	p[i+1]=p[i]*B;
       }
     }
-  //S[l,r)
+    //S[l,r)
     ull find(int l,int r){
       return hash[r]-hash[l]*p[r-l];
     }
   };
+  
   vector<string> S;
-  vector<RollingHash> rh;
-  vector<vector<ull> > hash;
-  vector<ull> p;
   int h,w,r,c;
   ull B;
+  vector<ull> p;
+  vector<vector<ull> > hash;
+  vector<RollingHash> rh;
   RollingHash2D(){}
-  RollingHash2D(vector<string> S,int r,int c,ull B=1000000009LL):S(S),r(r),c(c),B(B){init();};
-  void init(){
-    h=S.size();
-    w=S[0].size();
-    hash.resize(h+1,vector<ull>(w-c+1,0));
-    rh.resize(h);
+  RollingHash2D(vector<string> S_,int r_,int c_,ull B_=1000000009LL):
+    S(S_),h(S_.size()),w(S_[0].size()),r(r_),c(c_),B(B_),
+    p(h+1),hash(h+1,vector<ull>(w-c+1,0)),rh(h){
     for(int i=0;i<h;i++) rh[i]=RollingHash(S[i]);
-    p.resize(h+1);
     p[0]=1;
     for(int i=0;i<h;i++) p[i+1]=p[i]*B;
     for(int j=0;j<w-c+1;j++){
@@ -49,7 +45,7 @@ struct RollingHash2D{
 	hash[i+1][j]=hash[i][j]*B+rh[i].find(j,j+c);
     }
   }
-  //[(i,j),(i+r,j+c)]
+  //[i,i+r) * [j,j+c)
   ull find(int i,int j){
     return hash[i+r][j]-hash[i][j]*p[r];
   }
@@ -76,6 +72,6 @@ signed main(){
 }
 
 /*
-verified on 2017/06/22
+verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
 */

@@ -1,19 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct RollingHash{
   typedef unsigned long long ull;
   string S;
   ull B;
-  vector<ull> hash,p;
   int len;
+  vector<ull> hash,p;
   RollingHash(){}
-  RollingHash(string S,ull B=1000000007LL):S(S),B(B){init();};
-  void init(){
-    len=S.length();
-    hash.resize(len+1);
-    p.resize(len+1);
+  RollingHash(string S_,ull B_=1000000007LL):
+    S(S_),B(B_),len(S.length()),hash(len+1),p(len+1){
     hash[0]=0;p[0]=1;
     for(int i=0;i<len;i++){
       hash[i+1]=hash[i]*B+S[i];
@@ -37,6 +34,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/04/28
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
+verified on 2017/10/29
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B&lang=jp
 */

@@ -1,24 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
-struct BipartiteMatching{
+struct BiMatch{
+  int n;
   vector<vector<int> > G;
-  int V;
   vector<int> match,used;
   
-  BipartiteMatching(){}
-  BipartiteMatching(int V):V(V){init();}
-  
-  void init(){
-    for(int i=0;i<(int)G.size();i++) G[i].clear();
-    G.clear();
-    match.clear();
-    used.clear();
-    G.resize(V);
-    match.resize(V);
-    used.resize(V);
-  }
+  BiMatch(){}
+  BiMatch(int sz):n(sz),G(sz),match(sz),used(sz){}
   
   void add_edge(int u,int v){
     G[u].push_back(v);
@@ -38,10 +28,10 @@ struct BipartiteMatching{
     return false;
   }
 
-  int bipartite_matching(){
+  int build(){
     int res=0;
     fill(match.begin(),match.end(),-1);
-    for(int v=0;v<V;v++){
+    for(int v=0;v<n;v++){
       if(match[v]<0){
 	fill(used.begin(),used.end(),0);
 	if(dfs(v)){
@@ -57,16 +47,16 @@ struct BipartiteMatching{
 signed main(){
   int X,Y,E;
   cin>>X>>Y>>E;
-  BipartiteMatching bm(X+Y);
+  BiMatch bm(X+Y);
   for(int i=0;i<E;i++){
     int x,y;
     cin>>x>>y;
     bm.add_edge(x,X+y);
   }
-  cout<<bm.bipartite_matching()<<endl;
+  cout<<bm.build()<<endl;
   return 0;
 }
 /*
-  verified on 2017/06/29
+  verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A&lang=jp
 */

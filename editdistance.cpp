@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 int editDistance(string x,string y){
   int n=x.length(),m=y.length();
-  int INF=1LL<<55LL;
+  int INF=n+m;
   vector<vector<int> > dp(n+1,vector<int>(m+1,INF));
   for(int i=0;i<=n;i++) dp[i][0]=i;
   for(int i=0;i<=m;i++) dp[0][i]=i;
@@ -26,6 +26,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/07/13
+  verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E&lang=jp
 */
