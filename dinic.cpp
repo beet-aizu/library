@@ -62,22 +62,22 @@ struct Dinic{
     return 0;
   }
   
-  int max_flow(int s,int t,int lim){
-    int flow=0;
+  int flow(int s,int t,int lim){
+    int fl=0;
     for(;;){
       bfs(s);
-      if(level[t]<0||lim==0) return flow;
+      if(level[t]<0||lim==0) return fl;
       fill(iter.begin(),iter.end(),0);
       int f;
       while((f=dfs(s,t,lim))>0){
-	flow+=f;
+	fl+=f;
 	lim-=f;
       }
     }
   }
 
-  int max_flow(int s,int t){
-    return max_flow(s,t,INF);
+  int flow(int s,int t){
+    return flow(s,t,INF);
   }
 
   //cap==1 only
@@ -85,9 +85,9 @@ struct Dinic{
     for(int i=0;i<(int)G[from].size();i++) {
       edge& e=G[from][i];
       if(e.to==to) {
-	if(e.cap==0&&max_flow(from,to,1)==0) {
-	  max_flow(from,s,1);
-	  max_flow(t,to,1);
+	if(e.cap==0&&flow(from,to,1)==0) {
+	  flow(from,s,1);
+	  flow(t,to,1);
 	  return 1;
 	}
       }
@@ -106,7 +106,7 @@ signed main(){
     cin>>u>>v>>c;
     dinic.add_edge(u,v,c);
   }
-  cout<<dinic.max_flow(0,V-1)<<endl;
+  cout<<dinic.flow(0,V-1)<<endl;
   return 0;
 }
 
