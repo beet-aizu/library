@@ -23,7 +23,7 @@ struct PrimalDual{
     G[to].push_back(edge(from,0,-cost,G[from].size()-1));
   }
 
-  int min_cost_flow(int s,int t,int f){
+  int flow(int s,int t,int f){
     int res=0;
     fill(h.begin(),h.end(),0);
     while(f>0){
@@ -76,7 +76,7 @@ int main(){
     cin>>u>>v>>c>>d;
     pd.add_edge(u,v,c,d);
   }
-  cout<<pd.min_cost_flow(0,v-1,f)<<endl;
+  cout<<pd.flow(0,v-1,f)<<endl;
   return 0;
 }
 /*
