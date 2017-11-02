@@ -15,3 +15,13 @@
 
 (define-key global-map (kbd "C-x l") 'beet)
 
+(defun repl ()
+  (interactive)
+  (beginning-of-buffer)
+  (replace-regexp "\\(\\W\\)int\\(\\W\\)" "\\1Int\\2")
+  (save-buffer)
+  (mark-whole-buffer)
+  (kill-ring-save (region-beginning) (region-end)))
+
+(define-key global-map (kbd "C-i") 'repl)
+
