@@ -17,11 +17,13 @@
 
 (defun repl ()
   (interactive)
-  (beginning-of-buffer)
-  (replace-regexp "\\(\\W\\)int\\(\\W\\)" "\\1Int\\2")
-  (save-buffer)
-  (mark-whole-buffer)
-  (kill-ring-save (region-beginning) (region-end)))
+  (let ((pos (point)))
+    (beginning-of-buffer)
+    (replace-regexp "\\(\\W\\)int\\(\\W\\)" "\\1Int\\2")
+    (save-buffer)
+    (mark-whole-buffer)
+    (kill-ring-save (region-beginning) (region-end))
+    (goto-char pos)))
 
-(define-key global-map (kbd "C-i") 'repl)
+(define-key global-map (kbd "C-x r") 'repl)
 
