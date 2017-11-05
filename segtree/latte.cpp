@@ -55,6 +55,8 @@ struct SegmentTree{
 };
 //END CUT HERE
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
   int n,q;
   cin>>n>>q;
   SegmentTree<int,int> raq(n,
@@ -76,6 +78,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/10/15
+  verified on 2017/11/05
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp
 */

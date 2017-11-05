@@ -37,19 +37,20 @@ struct SegmentTree{
       dat[k]=f(dat[k*2+1],dat[k*2+2]);
     }
   }
-  T query(int a,int b,int k,int l,int r){
-    if(r<=a||b<=l) return d1;
-    if(a<=l&&r<=b) return dat[k];
-    T vl=query(a,b,k*2+1,l,(l+r)/2);
-    T vr=query(a,b,k*2+2,(l+r)/2,r);
+  inline T query(int a,int b){
+    T vl=d1,vr=d1;
+    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
+      if(l&1) vl=f(vl,dat[(l++)-1]);
+      if(r&1) vr=f(dat[(--r)-1],vr);
+    }
     return f(vl,vr);
   }
-  T query(int a,int b){
-    return query(a,b,0,0,n);
-  }
+  
 };
 //END CUT HERE
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
   int n,q;
   cin>>n>>q;
   SegmentTree<int,int> rmq(n,
@@ -65,7 +66,7 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2017/10/15
+  verified on 2017/11/05
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
 */
 
