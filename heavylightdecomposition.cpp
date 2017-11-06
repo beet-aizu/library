@@ -117,6 +117,37 @@ struct HLDecomposition {
 //END CUT HERE
 
 
+
+signed main(){
+  int n;
+  cin>>n;
+  HLDecomposition lca(n);
+  for(int i=0;i<n;i++){
+    int k;
+    cin>>k;
+    for(int j=0;j<k;j++){
+      int c;
+      cin>>c;
+      lca.add_edge(i,c);
+    }
+  }
+  lca.build();
+  int q;
+  cin>>q;
+  while(q--){
+    int u,v;
+    cin>>u>>v;
+    cout<<lca.lca(u,v)<<endl;
+  }
+  return 0;
+}
+/*
+verified on 2017/11/07
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
+*/
+
+/*
+
 struct BiconectedGraph{
   typedef pair<int,int> P;
   int n;
@@ -199,46 +230,51 @@ struct BiconectedGraph{
   }
 };
 
-
-struct RMQ{
+template <typename T,typename E>
+struct SegmentTree{
+  typedef function<T(T,T)> F;
+  typedef function<T(T,E)> G;
   int n;
-  vector<set<int> > dat;
-  RMQ(){}
-  RMQ(int n_){init(n_);}
-   void init(int n_){
+  F f;
+  G g;
+  T d1;
+  E d0;
+  vector<T> dat;
+  SegmentTree(){};
+  SegmentTree(int n_,F f,G g,T d1,
+	      vector<T> v=vector<T>()):
+    f(f),g(g),d1(d1){
+    init(n_);
+    if(n_==(int)v.size()) build(n_,v);
+  }
+  void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
-    dat.resize(2*n-1);
+    dat.resize(2*n-1,d1);
   }
-   void update(int k,int a){
+  void build(int n_, vector<T> v){
+    for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
+    for(int i=n-2;i>=0;i--)
+      dat[i]=f(dat[i*2+1],dat[i*2+2]);
+  }
+  void update(int k,E a){
     k+=n-1;
-    dat[k].insert(a);
-    while(k){
-      k=(k-1)>>1;
-      dat[k].insert(a);
+    dat[k]=g(dat[k],a);
+    while(k>0){
+      k=(k-1)/2;
+      dat[k]=f(dat[k*2+1],dat[k*2+2]);
     }
   }
-   void remove(int k,int a){
-    k+=n-1;
-    dat[k].erase(a);
-    while(k){
-      k=(k-1)>>1;
-      dat[k].erase(a);
-    }
-  }
-  int get(int k){
-    if(dat[k].empty()) return -1;
-    return *--dat[k].end();
-  }
-  int query(int a,int b){
-    int vl=-1,vr=-1;
+  inline T query(int a,int b){
+    T vl=d1,vr=d1;
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
-      if(l&1) vl=max(vl,get((l++)-1));
-      if(r&1) vr=max(get((--r)-1),vr);
+      if(l&1) vl=f(vl,dat[(l++)-1]);
+      if(r&1) vr=f(dat[(--r)-1],vr);
     }
-    return max(vl,vr);
+    return f(vl,vr);
   }
+  
 };
 
 signed main(){
@@ -255,7 +291,11 @@ signed main(){
       if(i<j) hl.add_edge(i,j),E++;
   
   hl.build();
-  RMQ rmq(V);
+  SegmentTree<int,int> rmq(V,
+			   [](int a,int b){return max(a,b);},
+			   [](int a,int b){return b;},
+			   -1);
+  vector<priority_queue<int> > pq(V);
   map<int,int> m;
   int num=0;
   for(int i=0;i<q;i++){
@@ -268,7 +308,8 @@ signed main(){
       u=big.belong[u];
       u=hl.vid[u];
       m[w]=u;
-      rmq.update(m[w],w);
+      if(pq[u].empty()||pq[u].top()<w) rmq.update(u,w);
+      pq[u].push(w);
       num++;
     }
     if(d==2){
@@ -282,13 +323,17 @@ signed main(){
 	  ans = max(ans,rmq.query(l, r + 1));
 	});
       printf("%d\n",ans);
-      if(~ans) rmq.remove(m[ans],ans),num--;
+      if(~ans){
+	int k=m[ans];
+	pq[k].pop();
+	rmq.update(k,(!pq[k].empty()?pq[k].top():-1));		 
+	num--;
+      }
     }
   }
   return 0;
 }
 
-/* verified on 2017/10/29
+/* verified on 2017/11/07
 https://yukicoder.me/problems/no/529
 */
-
