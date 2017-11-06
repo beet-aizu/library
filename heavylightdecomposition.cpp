@@ -25,7 +25,7 @@ struct HLDecomposition {
     }
   }
   
-  typedef tuple<int,int,int,int,int,int> T;
+  using T = tuple<int,int,int,int,int,int>;
   int dfs(int curr,int prev) {
     stack<T> st;
     int result;
@@ -39,18 +39,13 @@ struct HLDecomposition {
       if(next!=prev) {
 	depth[next]=depth[curr]+1;
 	{
-	  st.emplace(curr,prev,sub,max_sub,i,next);
+	  st.push(make_tuple(curr,prev,sub,max_sub,i,next));
 	  prev=curr;curr=next;
 	  goto ENTRYPOINT;
 	}
       RETURNPOINT:
 	T t=st.top();st.pop();
-	curr    = get<0>(t);
-	prev    = get<1>(t);
-	sub     = get<2>(t);
-	max_sub = get<3>(t);
-	i       = get<4>(t);
-	next    = get<5>(t);
+	tie(curr,prev,sub,max_sub,i,next)=t;
 	
 	int sub_next=result;
 	sub+=sub_next;
@@ -67,7 +62,7 @@ struct HLDecomposition {
 
   void bfs(int r,int c) {
     int &k=pos;
-    queue<int> q({0});
+    queue<int> q({r});
     while(!q.empty()){
       int h=q.front();q.pop();
       for(int i=h;i!=-1;i=heavy[i]) {
@@ -84,27 +79,35 @@ struct HLDecomposition {
   // for_each(vertex)
   // [l,r] <- attention!!
   void for_each(int u, int v, const function<void(int, int)>& f) {
-    if (vid[u] > vid[v]) swap(u, v);
-    f(max(vid[head[v]], vid[u]), vid[v]);
-    if (head[u] != head[v]) for_each(u, parent[head[v]], f);
+    while(1){
+      if (vid[u] > vid[v]) swap(u, v);
+      f(max(vid[head[v]], vid[u]), vid[v]);
+      if (head[u] != head[v]) v=parent[head[v]];
+      else break;
+    }
   }
   
   // for_each(edge)
   // [l,r] <- attention!!
   void for_each_edge(int u, int v, const function<void(int, int)>& f) {
-    if (vid[u] > vid[v]) swap(u, v);
-    if (head[u] != head[v]){
-      f(vid[head[v]], vid[v]);
-      for_each_edge(u, parent[head[v]], f);
-    }else{
-      if(u!=v) f(vid[u]+1,vid[v]);
+    while(1){
+      if(vid[u] > vid[v]) swap(u,v);
+      if(head[u] != head[v]){
+	f(vid[head[v]],vid[v]);
+        v=parent[head[v]];
+      } else{
+	if(u!=v) f(vid[u]+1,vid[v]);
+	break;
+      }
     }
   }
 
   int lca(int u,int v){
-    if(vid[u]>vid[v]) swap(u,v);
-    if(head[u]==head[v]) return u;
-    return lca(u,parent[head[v]]);
+    while(1){
+      if(vid[u]>vid[v]) swap(u,v);
+      if(head[u]==head[v]) return u;
+      v=parent[head[v]];
+    }
   }
 
   int distance(int u,int v){
@@ -123,22 +126,20 @@ struct BiconectedGraph{
   BiconectedGraph(){}
   BiconectedGraph(int sz):n(sz),G(sz),C(sz),T(sz){}
   
-  void add_edge(int u,int v){
+   void add_edge(int u,int v){
     G[u].push_back(v);
     G[v].push_back(u);
   }
 
-  void input(int m,int offset){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+   void input(int m,int offset){
     int a,b;
     for(int i=0;i<m;i++){
-      cin>>a>>b;
+      scanf("%d %d",&a,&b);
       add_edge(a+offset,b+offset);
     }
   }
   
-  bool is_bridge(int u,int v){
+   bool is_bridge(int u,int v){
     if(ord[u]>ord[v]) swap(u,v);
     return ord[u]<low[v];
   }
@@ -204,101 +205,85 @@ struct RMQ{
   vector<set<int> > dat;
   RMQ(){}
   RMQ(int n_){init(n_);}
-  void init(int n_){
+   void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
     dat.resize(2*n-1);
   }
-  void update(int k,int a){
-    //cout<<k<<" "<<a<<endl;
+   void update(int k,int a){
     k+=n-1;
-    assert(!dat[k].count(a));
     dat[k].insert(a);
-    while(k>0){
-      k=(k-1)/2;
-      assert(!dat[k].count(a));
+    while(k){
+      k=(k-1)>>1;
       dat[k].insert(a);
     }
   }
-  void remove(int k,int a){
-    //cout<<k<<" "<<a<<endl;
+   void remove(int k,int a){
     k+=n-1;
-    assert(dat[k].count(a));
     dat[k].erase(a);
-    while(k>0){
-      k=(k-1)/2;
-      assert(dat[k].count(a));
+    while(k){
+      k=(k-1)>>1;
       dat[k].erase(a);
     }
   }
-  int query(int a,int b,int k,int l,int r){
-    if(r<=a||b<=l) return -1;
-    if(a<=l&&r<=b){
-      if(dat[k].empty()) return -1;
-      return *--dat[k].end();
-    }
-    int vl=query(a,b,k*2+1,l,(l+r)/2);
-    int vr=query(a,b,k*2+2,(l+r)/2,r);
-    return max(vl,vr);
+  int get(int k){
+    if(dat[k].empty()) return -1;
+    return *--dat[k].end();
   }
   int query(int a,int b){
-    //cout<<a<<" "<<b<<endl;
-    return query(a,b,0,0,n);
+    int vl=-1,vr=-1;
+    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
+      if(l&1) vl=max(vl,get((l++)-1));
+      if(r&1) vr=max(get((--r)-1),vr);
+    }
+    return max(vl,vr);
   }
 };
 
 signed main(){
-  ios::sync_with_stdio(0);
-  cin.tie(0);
   int n,e,q;
-  cin>>n>>e>>q;
+  scanf("%d %d %d",&n,&e,&q);
+  
   BiconectedGraph big(n);
   big.input(e,-1);
 
   int E=0,V=big.build();
-  HLDecomposition hl(V+1000);
+  HLDecomposition hl(V);
   for(int i=0;i<V;i++)
     for(int j:big.T[i])
       if(i<j) hl.add_edge(i,j),E++;
-  assert(V==E+1);
   
   hl.build();
   RMQ rmq(V);
   map<int,int> m;
   int num=0;
-  set<int> as;
   for(int i=0;i<q;i++){
     int d;
-    cin>>d;
+    scanf("%d",&d);
     if(d==1){
       int u,w;
-      cin>>u>>w;
+      scanf("%d %d",&u,&w);
       u--;
       u=big.belong[u];
       u=hl.vid[u];
-      //cout<<u<<":"<<w<<endl;
       m[w]=u;
       rmq.update(m[w],w);
       num++;
     }
     if(d==2){
       int s,t;
-      cin>>s>>t;
+      scanf("%d %d",&s,&t);
       s--;t--;
       s=big.belong[s];
       t=big.belong[t];
       int ans=-1;
-      //cout<<s<<"-"<<t<<endl;
-      //cout<<" "<<hl.vid[s]<<" "<<hl.vid[t]<<endl;
       hl.for_each(s, t, [&](int l, int r) {
 	  ans = max(ans,rmq.query(l, r + 1));
-	  //cout<<ans<<endl;
 	});
-      cout<<ans<<endl;
+      printf("%d\n",ans);
       if(~ans) rmq.remove(m[ans],ans),num--;
     }
-    assert(num==(int)rmq.dat[0].size());
   }
   return 0;
 }

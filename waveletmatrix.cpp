@@ -2,12 +2,12 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-struct SuccinctIndexableDictionary{
+struct FullyIndexableDictionary{
   int len,blk;
   vector<int> bit,sum;
   
-  SuccinctIndexableDictionary(){}
-  SuccinctIndexableDictionary(int len)
+  FullyIndexableDictionary(){}
+  FullyIndexableDictionary(int len)
     :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}
   
   void set(int k){
@@ -51,14 +51,14 @@ struct SuccinctIndexableDictionary{
 template<class T,int MAXLOG>
 struct WaveletMatrix{
   int len;
-  SuccinctIndexableDictionary mat[MAXLOG];
+  FullyIndexableDictionary mat[MAXLOG];
   int zs[MAXLOG],buff1[MAXLOG],buff2[MAXLOG];
 
   WaveletMatrix(vector<T> data){
     len=data.size();
     vector<T> l(len),r(len);
     for(int dep=0;dep<MAXLOG;dep++){
-      mat[dep]=SuccinctIndexableDictionary(len+1);
+      mat[dep]=FullyIndexableDictionary(len+1);
       int p=0,q=0;
       for(int i=0;i<len;i++){
 	bool k=(data[i]>>(MAXLOG-(dep+1)))&1;
