@@ -39,7 +39,7 @@ struct HLDecomposition {
       if(next!=prev) {
 	depth[next]=depth[curr]+1;
 	{
-	  st.push(make_tuple(curr,prev,sub,max_sub,i,next));
+	  st.emplace(curr,prev,sub,max_sub,i,next);
 	  prev=curr;curr=next;
 	  goto ENTRYPOINT;
 	}
