@@ -5,12 +5,13 @@ using Int = long long;
 struct HLDecomposition {
   int n,pos;
   vector<vector<int> > G;
-  vector<int> vid, head, heavy, parent, depth, inv, type;
+  vector<int> vid, head, sub, hvy, par, dep, inv, type;
   
   HLDecomposition(){}
   HLDecomposition(int sz):
     n(sz),pos(0),G(n),
-    vid(n,-1),head(n),heavy(n,-1),parent(n),depth(n),inv(n),type(n){}
+    vid(n,-1),head(n),sub(n,1),hvy(n,-1),
+    par(n),dep(n),inv(n),type(n){}
   
   void add_edge(int u, int v) {
     G[u].push_back(v);
@@ -20,44 +21,36 @@ struct HLDecomposition {
   void build(vector<int> rs=vector<int>(1,0)) {
     int c=0;
     for(int r:rs){
-      dfs(r, -1);
+      dfs(r);
       bfs(r, c++);
     }
   }
   
-  using T = tuple<int,int,int,int,int,int>;
-  int dfs(int curr,int prev) {
+  void dfs(int rt) {
+    using T = pair<int,int>;
     stack<T> st;
-    int result;
-    int sub,max_sub,i,next;
-  ENTRYPOINT:
-    parent[curr] = prev;
-    sub=1;
-    max_sub=0;
-    for(i=0;i<(int)G[curr].size();i++){
-      next=G[curr][i];
-      if(next!=prev) {
-	depth[next]=depth[curr]+1;
-	{
-	  st.emplace(curr,prev,sub,max_sub,i,next);
-	  prev=curr;curr=next;
-	  goto ENTRYPOINT;
+    par[rt]=-1;
+    dep[rt]=0;
+    st.emplace(rt,0);
+    while(!st.empty()){
+      int v=st.top().first;
+      int &i=st.top().second;
+      if(i<(int)G[v].size()){
+	int u=G[v][i++];
+	if(u==par[v]) continue;
+	par[u]=v;
+	dep[u]=dep[v]+1;
+	st.emplace(u,0);
+      }else{
+	st.pop();
+	int res=0;
+	for(int u:G[v]){
+	  if(u==par[v]) continue;
+	  sub[v]+=sub[u];
+	  if(res<sub[u]) res=sub[u],hvy[v]=u;
 	}
-      RETURNPOINT:
-	T t=st.top();st.pop();
-	tie(curr,prev,sub,max_sub,i,next)=t;
-	
-	int sub_next=result;
-	sub+=sub_next;
-	if(max_sub<sub_next)
-	  max_sub=sub_next,heavy[curr]=next;
       }
     }
-    while(!st.empty()){
-      result=sub;
-      goto RETURNPOINT;
-    }
-    return sub;
   }
 
   void bfs(int r,int c) {
@@ -65,13 +58,13 @@ struct HLDecomposition {
     queue<int> q({r});
     while(!q.empty()){
       int h=q.front();q.pop();
-      for(int i=h;i!=-1;i=heavy[i]) {
+      for(int i=h;i!=-1;i=hvy[i]) {
 	type[i]=c;
 	vid[i]=k++;
 	inv[vid[i]]=i;
 	head[i]=h;
 	for(int j:G[i])
-	  if(j!=parent[i]&&j!=heavy[i]) q.push(j);
+	  if(j!=par[i]&&j!=hvy[i]) q.push(j);
       }
     }
   }
@@ -80,9 +73,9 @@ struct HLDecomposition {
   // [l,r] <- attention!!
   void for_each(int u, int v, const function<void(int, int)>& f) {
     while(1){
-      if (vid[u] > vid[v]) swap(u, v);
-      f(max(vid[head[v]], vid[u]), vid[v]);
-      if (head[u] != head[v]) v=parent[head[v]];
+      if(vid[u]>vid[v]) swap(u,v);
+      f(max(vid[head[v]],vid[u]),vid[v]);
+      if(head[u]!=head[v]) v=par[head[v]];
       else break;
     }
   }
@@ -91,10 +84,10 @@ struct HLDecomposition {
   // [l,r] <- attention!!
   void for_each_edge(int u, int v, const function<void(int, int)>& f) {
     while(1){
-      if(vid[u] > vid[v]) swap(u,v);
-      if(head[u] != head[v]){
+      if(vid[u]>vid[v]) swap(u,v);
+      if(head[u]!=head[v]){
 	f(vid[head[v]],vid[v]);
-        v=parent[head[v]];
+        v=par[head[v]];
       } else{
 	if(u!=v) f(vid[u]+1,vid[v]);
 	break;
@@ -106,18 +99,18 @@ struct HLDecomposition {
     while(1){
       if(vid[u]>vid[v]) swap(u,v);
       if(head[u]==head[v]) return u;
-      v=parent[head[v]];
+      v=par[head[v]];
     }
   }
 
   int distance(int u,int v){
-    return depth[u]+depth[v]-2*depth[lca(u,v)];
+    return dep[u]+dep[v]-2*dep[lca(u,v)];
   }
 };
 //END CUT HERE
 
 
-
+/*
 signed main(){
   int n;
   cin>>n;
@@ -142,11 +135,10 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/11/07
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
+  verified on 2017/11/07
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
 */
 
-/*
 
 struct BiconectedGraph{
   typedef pair<int,int> P;
