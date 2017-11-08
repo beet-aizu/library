@@ -37,6 +37,7 @@ struct SegmentTree{
       dat[i]=f(dat[i*2+1],dat[i*2+2]);
   }
   inline void eval(int len,int k){
+    if(laz[k]==d0) return;
     if(k*2+1<n*2-1){
       laz[k*2+1]=h(laz[k*2+1],laz[k]);
       laz[k*2+2]=h(laz[k*2+2],laz[k]);
@@ -46,7 +47,7 @@ struct SegmentTree{
   }
   T update(int a,int b,E x,int k,int l,int r){
     eval(r-l,k);
-    if(r<=a||b<=l) return g(dat[k],p(laz[k],r-l));
+    if(r<=a||b<=l) return dat[k];
     if(a<=l&&r<=b){
       laz[k]=h(laz[k],x);
       return g(dat[k],p(laz[k],r-l));
