@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 int expression(string,int&);
 int term(string,int&);
@@ -83,6 +83,6 @@ signed main(){
 }
 
 /*
-verified on 2017/04/26
+verified on 2017/11/20
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?lang=jp&id=0109
 */

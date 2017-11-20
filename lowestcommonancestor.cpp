@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+using Int = long long;
 //BEGIN CUT HERE
 struct LowestCommonAncestor{
   const int MAX_LOG_V = 50;
@@ -82,6 +82,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/10/29
+verified on 2017/11/20
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
 */
