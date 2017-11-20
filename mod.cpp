@@ -5,7 +5,7 @@ using Int = long long;
 #define MOD 1000000007
 #define MAX_N 100000
 #define MAX_P 200005
-Int fact[MAX_P];
+Int fact[MAX_P],inv[MAX_P];
 Int extgcd(Int a,Int b,Int& x,Int& y){
   Int d=a;
   if(b!=0){
@@ -58,19 +58,25 @@ Int mod_inverse2(Int a,Int mod){
   return mod_pow(a,mod-2,mod);
 }
 
-void init(Int p){
+void init(Int mod){
   fact[0]=1;
-  for(Int i=1;i<MAX_P;i++) fact[i]=(fact[i-1]*i)%p;
+  for(Int i=1;i<MAX_P;i++)
+    fact[i]=(fact[i-1]*i)%mod;
+
+  inv[1]=1;
+  for(int i=2;i<MAX_P;i++)
+    inv[i]=inv[mod%i]*(mod-mod/i)%mod;
 }
 
-Int mod_fact(Int n,Int p,Int& e){
+Int mod_fact(Int n,Int mod,Int& e){
   e=0;
   if(n==0) return 1;
-  Int res=mod_fact(n/p,p,e);
-  e+=n/p;
-  if(n/p%2!=0)return res*(p-fact[n%p]) %p;
-  return res*fact[n%p]%p;
-} 
+  Int res=mod_fact(n/mod,mod,e);
+  e+=n/mod;
+  if(n/mod%2!=0)return res*(mod-fact[n%mod]) %mod;
+  return res*fact[n%mod]%mod;
+}
+
 Int mod_comb(Int n,Int k,Int mod){
   if(n==k||k==0) return 1;
   Int e1,e2,e3;
@@ -82,7 +88,7 @@ Int mod_comb(Int n,Int k,Int mod){
 Int mod_comb2(Int n,Int k,Int mod){
   Int res=1;
   for(Int i=0;i<k;i++){
-    res*=n-i;
+    res*=(n-i)%mod;
     res%=mod;
     res*=mod_inverse(i+1,mod);
     res%=mod;
@@ -105,5 +111,7 @@ Int montmort(Int n,Int mod){
 //END CUT HERE
 signed main(){
   for(Int i=1;i<10;i++) cout<<i<<":"<<montmort(i,MOD)<<endl;
+  init(MOD);
+  for(int i=1;i<MAX_P;i++) assert(i*inv[i]%MOD==1);
   return 0;
 }
