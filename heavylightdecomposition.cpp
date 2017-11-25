@@ -18,7 +18,7 @@ struct HLDecomposition {
     G[v].push_back(u);
   }
 
-  void build(vector<int> rs=vector<int>(1,0)) {
+  void build(vector<int> rs={0}) {
     int c=0;
     for(int r:rs){
       dfs(r);
@@ -27,7 +27,7 @@ struct HLDecomposition {
   }
   
   void dfs(int rt) {
-    using T = pair<int,int>;
+    using T = pair<int, int>;
     stack<T> st;
     par[rt]=-1;
     dep[rt]=0;
