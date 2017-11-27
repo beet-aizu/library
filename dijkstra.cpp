@@ -10,7 +10,7 @@ vector<T> dijkstra(int s,vector<vector<pair<int, T> > > & G,T INF){
   vector<int> b(n,-1);
   priority_queue<P,vector<P>,greater<P> > q;
   d[s]=0;
-  q.push(P(d[s],s));
+  q.emplace(d[s],s);
   while(!q.empty()){
     P p=q.top();q.pop();
     int v=p.second;
