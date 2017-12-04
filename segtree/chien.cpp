@@ -94,6 +94,6 @@ signed main(){
 }
 
 /*
-verified on 2017/10/15
+verified on 2017/12/01
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
 */
