@@ -229,7 +229,29 @@ struct ConvexHull3D{
   int triangle(){
     return num;
   }
+
+  double area(Point3D a,Point3D b,Point3D c){
+    return abs((b-a)*(c-a));
+  }
+
+  Point3D cross(Point3D a,Point3D b,Point3D c){
+    return Point3D((b.y-a.y)*(c.z-a.z)-(b.z-a.z)*(c.y-a.y),
+		   (b.z-a.z)*(c.x-a.x)-(b.x-a.x)*(c.z-a.z),
+		   (b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x));
+  }
   
+  double area(){
+    double res=0;
+    if(n==3){
+      Point3D q=cross(p[0],p[1],p[2]);
+      res=abs(q)/2.0;
+      return res;
+    }
+    return res;
+    for(int i=0;i<num;i++)
+      res+=area(p[f[i].a],p[f[i].b],p[f[i].c]);
+    return res/2.0;
+  }
 };
 
 //END CUT HERE
