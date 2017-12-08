@@ -5,9 +5,11 @@ using Int = long long;
 struct TopologicalSort{
   int n;
   vector<set<int> > G;
-  vector<int> indeg,V,p;
+  vector<bool> used;
+  vector<int> indeg,p;
+  
   TopologicalSort(){}
-  TopologicalSort(int sz):n(sz),G(n),indeg(n),V(n){}
+  TopologicalSort(int sz):n(sz),G(n),used(n),indeg(n),p(0){}
 
   void add_edge(int s,int t){
     G[s].insert(t);
@@ -16,30 +18,31 @@ struct TopologicalSort{
   void bfs(int s){
     queue<int> q;
     q.push(s);
-    V[s]=1;
+    used[s]=1;
     while(!q.empty()){
-      int u=q.front();q.pop();
-      p.push_back(u);
-      for(int v:G[u]){
-	indeg[v]--;
-	if(indeg[v]==0&&!V[v]){
-	  V[v]=1;
-	  q.push(v);
+      int v=q.front();q.pop();
+      p.push_back(v);
+      for(int u:G[v]){
+	indeg[u]--;
+	if(indeg[u]==0&&!used[u]){
+	  used[u]=1;
+	  q.push(u);
 	}
       }
     }
   }
   
-  void tsort(){
-    fill(V.begin(),V.end(),0);
+  vector<int>  build(){
+    fill(used.begin(),used.end(),0);
     fill(indeg.begin(),indeg.end(),0);
-    for(int u=0;u<n;u++)
-      for(int v:G[u])
-	indeg[v]++;
-    for(int u=0;u<n;u++)
-      if(indeg[u]==0&&!V[u]) bfs(u);
+    
     for(int i=0;i<n;i++)
-      cout<<p[i]<<endl;
+      for(int v:G[i]) indeg[v]++;
+    
+    for(int i=0;i<n;i++)
+      if(indeg[i]==0&&!used[i]) bfs(i);
+    
+    return p;
   }
 };
 //END CUT HERE
@@ -53,11 +56,12 @@ signed main(){
     cin>>s>>t;
     ts.add_edge(s,t);
   }
-  ts.tsort();
+  auto p=ts.build();
+  for(int i:p) cout<<i<<endl;
   return 0;
 }
 
 /*
-verified on 2017/10/29
+verified on 2017/12/09
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B&lang=jp
 */
