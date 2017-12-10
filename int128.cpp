@@ -2,11 +2,11 @@
 using namespace std;
 //BEGIN CUT HERE
 using Int = __int128_t;
-Int abs(Int val){return val<0?-val:val;}
+Int abs128(Int val){return val<0?-val:val;}
 
 ostream &operator<<(ostream &os,Int val){
   if(ostream::sentry(os)){
-    __uint128_t tmp=abs(val);
+    __uint128_t tmp=abs128(val);
     char buf[64];
     char *d=end(buf);
     do{
