@@ -59,7 +59,7 @@ signed main(){
     }
     Int g=v[0];
     for(Int i=0;i<n;i++) g=__gcd(g,v[i]);
-    if(abs(r)%g){
+    if(abs128(r)%g){
       cout<<" Stupid keypad!"<<endl;
       continue;
     }
@@ -73,7 +73,7 @@ signed main(){
     };
     bool f=0;
     for(Int i=0;i<n;i++){
-      if(abs(r)%v[i]==0){
+      if(abs128(r)%v[i]==0){
     ans[i]=r/v[i];
     f=1;
     break;

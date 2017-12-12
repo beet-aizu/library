@@ -43,7 +43,7 @@ struct BIT{
   }
 };
 //END CUT HERE
-
+/*//
 signed main(){
   int n,q;
   cin>>n>>q;
@@ -56,7 +56,30 @@ signed main(){
   }
   return 0;
 }
+//*/
 /*
 verified on 2017/10/29
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
+ */
+
+signed main(){
+  int q;
+  cin>>q;
+  BIT<int> bit(2e5,0);
+  while(q--){
+    int t,x;
+    cin>>t>>x;
+    if(t==1) bit.add(x,1);
+    if(t==2){
+      int k=bit.lower_bound(x);
+      bit.add(k,-1);
+      cout<<k<<endl;
+    }
+  }
+  return 0;
+}
+
+/*
+verified on 2017/12/12
+https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
  */

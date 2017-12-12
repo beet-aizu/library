@@ -102,3 +102,7 @@ signed main(){
   }
   return 0;
 }
+/*
+  verified on 2017/12/12
+  http://rhodon.u-aizu.ac.jp:8080/arena/submission_log.jsp?no=3794&runID=2326224
+*/
