@@ -69,6 +69,15 @@ struct SegmentTree{
   T query(int a,int b){
     return query(a,b,0,0,n);
   }
+  void update(int k,T x){
+    query(k,k+1);//evaluate
+    k+=n-1;
+    dat[k]=x;
+    while(k){
+      k=(k-1)/2;
+      dat[k]=f(dat[k*2+1],dat[k*2+2]);
+    }
+  }
 };
 //END CUT HERE
 signed main(){
