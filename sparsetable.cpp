@@ -21,9 +21,9 @@ struct SparseTable{
       }
       p*=2;
     }
-    ht.resize(n_);
+    ht.resize(n_+1);
     ht[0]=ht[1]=0;
-    for(int j=2;j<n_;j++)
+    for(int j=2;j<=n_;j++)
       ht[j]=ht[j>>1]+1;
   }
   int query(int a,int b){
