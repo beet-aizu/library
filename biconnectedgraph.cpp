@@ -29,33 +29,33 @@ struct BiconectedGraph{
     return ord[u]<low[v];
   }
   
-  void dfs(int u,int p,int &k){
-    ord[u]=low[u]=k;
+  void dfs(int v,int p,int &k){
+    ord[v]=low[v]=k;
     ++k;
-    for(int v:G[u]){
-      if(v==p) continue;
-      if(ord[v]>=0){
-	low[u]=min(low[u],ord[v]);
+    for(int u:G[v]){
+      if(u==p) continue;
+      if(ord[u]>=0){
+	low[v]=min(low[v],ord[u]);
       }else{
-	dfs(v,u,k);
-	low[u]=min(low[u],low[v]);
+	dfs(u,v,k);
+	low[v]=min(low[v],low[u]);
       }
       if(is_bridge(u,v)) B.push_back(P(u,v));
     }
   }
   
-  void fill_component(int c,int u){
-    C[c].push_back(u);
-    belong[u]=c;
-    for(int v:G[u]){
-      if(belong[v]>=0||is_bridge(u,v)) continue;
-      fill_component(c,v);
+  void fill_component(int c,int v){
+    C[c].push_back(v);
+    belong[v]=c;
+    for(int u:G[v]){
+      if(belong[u]>=0||is_bridge(u,v)) continue;
+      fill_component(c,u);
     }
   }
   
-  void add_component(int u,int &k){
-    if(belong[u]>=0) return;
-    fill_component(k++,u);
+  void add_component(int v,int &k){
+    if(belong[v]>=0) return;
+    fill_component(k++,v);
   }
   
   int build(){
@@ -65,16 +65,16 @@ struct BiconectedGraph{
     belong.resize(n);
     fill(ord.begin(),ord.end(),-1);
     fill(belong.begin(),belong.end(),-1);
-    for(int u=0;u<n;u++){
-      if(ord[u]>=0) continue;
-      dfs(u,-1,k);
+    for(int v=0;v<n;v++){
+      if(ord[v]>=0) continue;
+      dfs(v,-1,k);
     }
     k=0;
     for(int i=0;i<(int)B.size();i++){
       add_component(B[i].first,k);
       add_component(B[i].second,k);
     }
-    for(int u=0;u<n;u++) add_component(u,k);
+    for(int v=0;v<n;v++) add_component(v,k);
     for(int i=0;i<(int)B.size();i++){
       int u=belong[B[i].first],v=belong[B[i].second];
       T[u].push_back(v);
@@ -100,6 +100,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/10/29
+  verified on 2017/12/20
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B&lang=jp
 */
