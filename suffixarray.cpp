@@ -184,10 +184,8 @@ struct SuffixArray{
 };
 //END CUT HERE
 
-
-/*//
-char buf[1000001];
-signed main(){
+signed AOJ_ALDS114D(){
+  static char buf[1000001];
   scanf("%s",buf);
   string T(buf);
   SuffixArray sa(T);
@@ -201,14 +199,12 @@ signed main(){
   }
   return 0;
 }
-//*/
 /*
-verified on 2017/10/20
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
 */
 
-//*/
-signed main(){
+signed JOI2009HO_A(){
   int n,m;
   string s;
   cin>>n>>m>>s;
@@ -219,8 +215,13 @@ signed main(){
   //cout<<sa.count2(t)<<endl;
   return 0;
 }
-//*/
 /*
-  verified on 2017/10/20
-http://joi2009ho.contest.atcoder.jp/tasks/joi2009ho_a
+  verified on 2017/12/31
+  http://joi2009ho.contest.atcoder.jp/tasks/joi2009ho_a
 */
+
+signed main(){
+  //AOJ_ALDS114D();
+  JOI2009HO_A();
+  return 0;
+};

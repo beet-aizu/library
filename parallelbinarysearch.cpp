@@ -81,7 +81,7 @@ struct SegmentTree{
   }
 };
 
-signed main(){
+signed SPOJ_METEORS(){
   Int n,m;
   cin>>n>>m;
   vector<Int> o(m),p(n);
@@ -130,8 +130,61 @@ signed main(){
   }
   
   return 0;
+};
+
+
+struct UnionFind{
+  int n;
+  vector<int> r,p;
+  UnionFind(){}
+  UnionFind(int sz):n(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
+  int find(int x){
+    return (x==p[x]?x:p[x]=find(p[x]));
+  }
+  bool same(int x,int y){
+    return find(x)==find(y);
+  }
+  void unite(int x,int y){
+    x=find(x);y=find(y);
+    if(x==y) return;
+    if(r[x]<r[y]) swap(x,y);
+    r[x]+=r[y];
+    p[y]=x;
+  }
+};
+
+signed CODETHANKSFESTIVAL2017_H(){
+  int n,m;
+  cin>>n>>m;
+  vector<int> a(m),b(m);
+  for(int i=0;i<m;i++) cin>>a[i]>>b[i];
+  int q;
+  cin>>q;
+  vector<int> x(q),y(q);
+  for(int i=0;i<q;i++) cin>>x[i]>>y[i];
+  
+  for(int i=0;i<m;i++) a[i]--,b[i]--;
+  for(int i=0;i<q;i++) x[i]--,y[i]--;
+
+  UnionFind uf;
+  auto init=[&]{uf=UnionFind(n);};
+  auto apply=[&](int i){uf.unite(a[i],b[i]);};
+  auto check=[&](int i){return uf.same(x[i],y[i]);};
+
+  auto ans=parallelbinarysearch(q,m,init,apply,check);
+
+  for(int i=0;i<q;i++)
+    cout<<(ans[i]==m?-1:ans[i]+1)<<endl;
+  
+  return 0;
+}
+
+signed main(){
+  //SPOJ_METEORS();
+  CODETHANKSFESTIVAL2017_H();
 }
 /*
-  verified on 2017/12/30
+  verified on 2017/12/31
   http://www.spoj.com/problems/METEORS/
+  https://beta.atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_h
  */
