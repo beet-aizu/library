@@ -6,15 +6,15 @@ vector<Int> parallelbinarysearch(Int n,Int q,
 				 function<void(void)> init,
 				 function<void(Int)> apply,
 				 function<bool(Int)> check){
-  vector<vector<Int> > C(q+1);
-  vector<Int> L(n,-1),R(n,q+1);
+  vector<vector<Int> > C(q);
+  vector<Int> L(n,-1),R(n,q);
   bool flg=1;
   while(flg){
     flg=0;
     init();
     for(Int i=0;i<n;i++)
       if(L[i]+1<R[i]) C[(L[i]+R[i])>>1].emplace_back(i);
-    for(Int i=0;i<=q;i++){
+    for(Int i=0;i<q;i++){
       flg|=!C[i].empty();
       apply(i);
       for(Int j:C[i]){
@@ -120,7 +120,7 @@ signed main(){
   
   vector<Int> R=parallelbinarysearch(n,q,init,apply,check);
   
-  for(Int i=0;i<=q;i++) apply(i);
+  for(Int i=0;i<q;i++) apply(i);
   
   for(Int i=0;i<n;i++){
     if(!check(i)) R[i]=q+1;
