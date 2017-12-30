@@ -89,7 +89,7 @@ signed main(){
   for(Int i=0;i<n;i++) cin>>p[i];
   Int q;
   cin>>q;
-  vector<Int> l(q+1,0),r(q+1,0),a(q+1,0);
+  vector<Int> l(q),r(q),a(q);
   for(Int i=0;i<q;i++) cin>>l[i]>>r[i]>>a[i];
   for(Int i=0;i<q;i++) l[i]--,r[i]--;
   
