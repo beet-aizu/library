@@ -106,6 +106,8 @@ double cross(Vector a,Vector b){
   return a.x*b.y-a.y*b.x;
 }
 
+Point orth(Point p){return Point(-p.y,p.x);}
+
 bool isOrthogonal(Vector a,Vector b){
   return equals(dot(a,b),0.0);
 }
@@ -246,13 +248,17 @@ Point getCrossPointLL(Line l1,Line l2){
 }
 
 Polygon getCrossPointCL(Circle c,Line l){
-  Polygon p(2);
-  Vector pr=project(l,c.c);
+  Polygon ps;
+  Point pr=project(l,c.c);
   Vector e=(l.p2-l.p1)/abs(l.p2-l.p1);
+  if(equals(getDistanceLP(l,c.c),c.r)){
+    ps.emplace_back(pr);
+    return ps;
+  }
   double base=sqrt(c.r*c.r-norm(pr-c.c));
-  p[0]=pr+e*base;
-  p[1]=pr-e*base;
-  return p;
+  ps.emplace_back(pr+e*base);
+  ps.emplace_back(pr-e*base);
+  return ps;
 }
 
 Polygon getCrossPointCC(Circle c1,Circle c2){
@@ -429,18 +435,36 @@ Polygon tangent(Circle c1,Point p2){
   return p;
 }
 
-//END CUT HERE
-
-Polygon tangent(Circle c1,Circle c2){
-  Polygon p;
-  return p;
+vector<Line> tangent(Circle c1,Circle c2){
+  vector<Line> ls;
+  if(c1.r<c2.r) swap(c1,c2);
+  double g=norm(c1.c-c2.c);
+  if(equals(g,0)) return ls;
+  Point u=(c2.c-c1.c)/sqrt(g);
+  Point v=orth(u);
+  for(int s=1;s>=-1;s-=2){
+    double h=(c1.r+s*c2.r)/sqrt(g);
+    if(equals(1-h*h,0)){
+      ls.emplace_back(c1.c+u*c1.r,c1.c+(u+v)*c1.r);
+    }else if(1-h*h>0){
+      Point uu=u*h,vv=v*sqrt(1-h*h);
+      ls.emplace_back(c1.c+(uu+vv)*c1.r,c2.c-(uu+vv)*c2.r*s);
+      ls.emplace_back(c1.c+(uu-vv)*c1.r,c2.c-(uu-vv)*c2.r*s);
+    }
+  }
+  
+  return ls;
 }
 
+//END CUT HERE
+
 signed main(){
-  Point p;
-  Circle c;
-  cin>>p>>c;
-  auto pp=tangent(c,p);
-  for(auto p:pp) cout<<p<<endl;
+  Circle c1,c2;
+  cin>>c1>>c2;
+  auto ls=tangent(c1,c2);
+  Polygon ps;
+  for(auto l:ls) ps.emplace_back(getCrossPointCL(c1,l)[0]);
+  sort(ps.begin(),ps.end());
+  for(auto p:ps) cout<<p<<endl;
   return 0;
 }
