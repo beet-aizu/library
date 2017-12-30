@@ -119,7 +119,8 @@ signed main(){
   };
   
   vector<Int> R=parallelbinarysearch(n,q,init,apply,check);
-  
+
+  init();
   for(Int i=0;i<q;i++) apply(i);
   
   for(Int i=0;i<n;i++){
