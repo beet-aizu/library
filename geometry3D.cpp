@@ -266,3 +266,8 @@ signed main(){
   }
   return 0;
 }
+
+/*
+  verified on 2017/12/31
+  http://rhodon.u-aizu.ac.jp:8080/arena/room.jsp?id=3794
+*/

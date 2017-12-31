@@ -46,6 +46,6 @@ signed main(){
 }
 
 /*
-verified on 2017/11/27
-http://arc026.contest.atcoder.jp/tasks/arc026_3
+  verified on 2017/11/27
+  http://arc026.contest.atcoder.jp/tasks/arc026_3
 */

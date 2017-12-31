@@ -71,6 +71,6 @@ signed main(){
 }
 
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/cdescription.jsp?cid=ACPC2017Day3&pid=E
- */
+  verified on 2017/10/29
+  http://judge.u-aizu.ac.jp/onlinejudge/cdescription.jsp?cid=ACPC2017Day3&pid=E
+*/

@@ -100,6 +100,6 @@ signed main(){
 
 
 /*
-verified on 2017/06/09
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_A
+  verified on 2017/06/09
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_A
 */
