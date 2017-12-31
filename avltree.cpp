@@ -104,7 +104,7 @@ struct AVL{
 };
 //END CUT HERE
 
-signed main(){
+signed ARC028_B(){
   int n,k;
   cin>>n>>k;
   int x[n];
@@ -123,9 +123,33 @@ signed main(){
 }
 
 /*
-verified on 2017/02/24
-http://arc028.contest.atcoder.jp/tasks/arc028_2
-http://arc033.contest.atcoder.jp/tasks/arc033_3
+  verified on 2017/12/31
+  http://arc028.contest.atcoder.jp/tasks/arc028_2
 */
 
+signed ARC033_C(){
+  int q;
+  cin>>q;
+  AVL<Int> avl;
+  for(int i=0;i<q;i++){
+    int t,x;
+    cin>>t>>x;
+    if(t==1) avl.insert(x);
+    else{
+      Int key=avl.rank(x-1)->key;
+      cout<<key<<endl;
+      avl.erase(key);
+    }
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://arc033.contest.atcoder.jp/tasks/arc033_3
+*/
 
+signed main(){
+  //ARC028_B();
+  ARC033_C();
+  return 0;
+}

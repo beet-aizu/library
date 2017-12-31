@@ -12,7 +12,30 @@ using gtree = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_up
 // find_by_order(int k): return the iterator of k-th smallest element (0-indexed)
 // order_by_key(T key):  return the index of key in tree
 //END CUT HERE
-signed main(){
+
+signed ARC028_B(){
+  int n,k;
+  cin>>n>>k;
+  int x[n];
+  for(int i=0;i<n;i++) cin>>x[i];
+  map<int,int> m;
+  for(int i=0;i<n;i++) m[x[i]]=i+1;
+  gtree<Int> G;
+  for(int i=0;i<k-1;i++) G.insert(x[i]);
+  for(int i=k-1;i<n;i++){
+    G.insert(x[i]);
+    Int key=*G.find_by_order(k-1);
+    cout<<m[key]<<endl;
+  }
+  return 0;
+}
+
+/*
+  verified on 2017/12/31
+  http://arc028.contest.atcoder.jp/tasks/arc028_2
+*/
+
+signed ARC033_C(){
   int q;
   cin>>q;
   gtree<int> G;
@@ -30,6 +53,12 @@ signed main(){
 }
 
 /*
-verified on 2017/12/12
-https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
- */
+  verified on 2017/12/31
+  https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
+*/
+
+signed main(){
+  ARC028_B();
+  //ARC033_C();
+  return 0;
+}

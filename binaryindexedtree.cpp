@@ -43,11 +43,11 @@ struct BIT{
   }
 };
 //END CUT HERE
-/*//
-signed main(){
+
+signed AOJ_DSL2B(){
   int n,q;
   cin>>n>>q;
-  BIT<int> bit(n+100,0);
+  BIT<Int> bit(n+100,0);
   for(int i=0;i<q;i++){
     int c,x,y;
     cin>>c>>x>>y;
@@ -56,13 +56,13 @@ signed main(){
   }
   return 0;
 }
-//*/
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
- */
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
+*/
 
-signed main(){
+// lower_bound
+signed ARC033_C(){
   int q;
   cin>>q;
   BIT<int> bit(2e5,0);
@@ -78,8 +78,13 @@ signed main(){
   }
   return 0;
 }
-
 /*
-verified on 2017/12/12
-https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
- */
+  verified on 2017/12/31
+  https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
+*/
+
+signed main(){
+  AOJ_DSL2B();
+  //ARC033_C();
+  return 0;
+}
