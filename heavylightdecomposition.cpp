@@ -110,8 +110,7 @@ struct HLDecomposition {
 //END CUT HERE
 
 
-/*
-signed main(){
+signed AOJ_GRL5C(){
   int n;
   cin>>n;
   HLDecomposition lca(n);
@@ -135,7 +134,7 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2017/11/07
+  verified on 2017/12/31
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
 */
 
@@ -269,7 +268,7 @@ struct SegmentTree{
   
 };
 
-signed main(){
+signed YUKI_529(){
   int n,e,q;
   scanf("%d %d %d",&n,&e,&q);
   
@@ -326,6 +325,12 @@ signed main(){
   return 0;
 }
 
-/* verified on 2017/11/07
+/* verified on 2017/12/31
 https://yukicoder.me/problems/no/529
 */
+
+signed main(){
+  //AOJ_GRL5C();
+  YUKI_529();
+  return 0;
+};
