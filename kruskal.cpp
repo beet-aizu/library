@@ -76,6 +76,6 @@ int main(){
 }
 
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
+  verified on 2017/10/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
 */

@@ -105,6 +105,6 @@ signed main(){
 }
 
 /*
-verified on 2017/10/29
-http://rhodon.u-aizu.ac.jp:8080/arena/room.jsp?id=3753
+  verified on 2017/10/29
+  http://rhodon.u-aizu.ac.jp:8080/arena/room.jsp?id=3753
 */

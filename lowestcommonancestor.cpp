@@ -82,6 +82,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/11/20
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
+  verified on 2017/11/20
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
 */

@@ -115,6 +115,6 @@ signed main(){
 }
 
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C&lang=jp
+  verified on 2017/10/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C&lang=jp
 */

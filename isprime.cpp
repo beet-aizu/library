@@ -24,4 +24,4 @@ signed main(){
 /*
   verified on 2017/12/30
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C&lang=jp
- */
+*/

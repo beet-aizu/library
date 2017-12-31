@@ -34,6 +34,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B&lang=jp
+  verified on 2017/10/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B&lang=jp
 */

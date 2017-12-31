@@ -31,6 +31,6 @@ int main(){
   return 0;
 }
 /*
-verified on 2017/06/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
+  verified on 2017/06/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
 */

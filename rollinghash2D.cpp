@@ -72,6 +72,6 @@ signed main(){
 }
 
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
+  verified on 2017/10/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
 */

@@ -123,6 +123,6 @@ signed main(){
   return 0;
 }
 /*
-verified 2017/10/29
-http://codeforces.com/contest/875/problem/C
+  verified 2017/10/29
+  http://codeforces.com/contest/875/problem/C
 */

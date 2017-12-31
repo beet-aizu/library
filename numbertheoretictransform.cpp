@@ -14,7 +14,6 @@ namespace NTT{
     num(int v):v(v){}
   };
 
-
   inline num operator+(num a,num b){
     return num((a.v+=b.v)>=md?a.v-md:a.v);
   }

@@ -25,6 +25,6 @@ signed main(){
   return 0;
 }
 /*
-verified on 2017/10/29
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=jp
+  verified on 2017/10/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=jp
 */

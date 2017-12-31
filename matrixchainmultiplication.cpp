@@ -24,6 +24,6 @@ int main(){
   return 0;
 }
 /*
-verified on 2017/04/26
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_B
+  verified on 2017/04/26
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_B
 */
