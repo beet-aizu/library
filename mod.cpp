@@ -64,7 +64,7 @@ void init(Int mod){
     fact[i]=(fact[i-1]*i)%mod;
 
   inv[1]=1;
-  for(int i=2;i<MAX_P;i++)
+  for(Int i=2;i<MAX_P;i++)
     inv[i]=inv[mod%i]*(mod-mod/i)%mod;
 }
 
@@ -100,18 +100,75 @@ Int montmort(Int n,Int mod){
   Int res=0,inv=1;
   for(Int k=2;k<=n;k++){
     (inv*=mod_inverse(k,mod))%=mod;
-    if(k%2 ) (res+=mod-inv)%=mod;
+    if(k%2) (res+=mod-inv)%=mod;
     else (res+=inv)%=mod;
   }
   for(Int i=1;i<=n;i++)
     (res*=i)%=mod;
   return res;
 }
-
 //END CUT HERE
+
+//mod_pow
+signed AOJ_NTL1B(){
+  Int n,m;
+  cin>>m>>n;
+  cout<<mod_pow(m,n,MOD)<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B&lang=jp
+*/
+
+
+//euler_phi:
+signed AOJ_NTL1D(){
+  Int n;
+  cin>>n;
+  cout<<euler_phi(n)<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D&lang=jp
+*/
+
+//extgcd
+signed AOJ_NTL1E(){
+  Int a,b;
+  cin>>a>>b;
+  Int x,y;
+  extgcd(a,b,x,y);
+  cout<<x<<" "<<y<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E&lang=jp
+*/
+
+//montmort
+signed ARC009_C(){
+  Int n,k;
+  cin>>n>>k;
+  const Int MMOD=1777777777;
+  Int a=montmort(k,MMOD);
+  a=a*mod_comb2(n,k,MMOD)%MMOD;
+  cout<<a<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  https://arc009.contest.atcoder.jp/tasks/arc009_3
+*/
+
+
 signed main(){
-  for(Int i=1;i<10;i++) cout<<i<<":"<<montmort(i,MOD)<<endl;
-  init(MOD);
-  for(int i=1;i<MAX_P;i++) assert(i*inv[i]%MOD==1);
+  //AOJ_NTL1B();
+  //AOJ_NTL1D();
+  AOJ_NTL1E();
+  
+  //ARC009_C();
   return 0;
 }
