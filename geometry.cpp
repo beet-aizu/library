@@ -458,7 +458,299 @@ vector<Line> tangent(Circle c1,Circle c2){
 
 //END CUT HERE
 
-signed main(){
+//Projection
+signed AOJ_CGL1A(){
+  Point p1,p2;
+  cin>>p1>>p2;
+  int q;
+  cin>>q;
+  while(q--){
+    Point p;
+    cin>>p;
+    cout<<project(Line(p1,p2),p)<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=jp
+*/
+
+//Reflect
+signed AOJ_CGL1B(){
+  Point p1,p2;
+  cin>>p1>>p2;
+  int q;
+  cin>>q;
+  while(q--){
+    Point p;
+    cin>>p;
+    cout<<reflect(Line(p1,p2),p)<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=jp
+*/
+
+//CCW
+signed AOJ_CGL1C(){
+  Point p0,p1;
+  cin>>p0>>p1;
+  int q;
+  cin>>q;
+  while(q--){
+    Point p2;
+    cin>>p2;
+    int t=ccw(p0,p1,p2);
+    if(t==CCW_COUNTER_CLOCKWISE) cout<<"COUNTER_CLOCKWISE"<<endl;
+    if(t==CCW_CLOCKWISE) cout<<"CLOCKWISE"<<endl;
+    if(t==CCW_ONLINE_BACK) cout<<"ONLINE_BACK"<<endl;
+    if(t==CCW_ONLINE_FRONT) cout<<"ONLINE_FRONT"<<endl;
+    if(t==CCW_ON_SEGMENT) cout<<"ON_SEGMENT"<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=jp
+*/
+
+//Parallel / Orthogonal
+signed AOJ_CGL2A(){
+  int q;
+  cin>>q;
+  while(q--){
+    Point p0,p1,p2,p3;
+    cin>>p0>>p1>>p2>>p3;
+    if(isParallel(Line(p0,p1),Line(p2,p3))) cout<<2<<endl;
+    else if(isOrthogonal(Line(p0,p1),Line(p2,p3))) cout<<1<<endl;
+    else cout<<0<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=jp
+*/
+
+//intersectSS
+signed AOJ_CGL2B(){
+  int q;
+  cin>>q;
+  while(q--){
+    Point p0,p1,p2,p3;
+    cin>>p0>>p1>>p2>>p3;
+    cout<<(intersectSS(Segment(p0,p1),Segment(p2,p3)))<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=jp
+*/
+
+//cross point
+signed AOJ_CGL2C(){
+  int q;
+  cin>>q;
+  while(q--){
+    Point p0,p1,p2,p3;
+    cin>>p0>>p1>>p2>>p3;
+    cout<<getCrossPointSS(Segment(p0,p1),Segment(p2,p3))<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=jp
+*/
+
+//distanceSS
+signed AOJ_CGL2D(){
+  int q;
+  cin>>q;
+  while(q--){
+    Point p0,p1,p2,p3;
+    cin>>p0>>p1>>p2>>p3;
+    printf("%.12f\n",getDistanceSS(Segment(p0,p1),Segment(p2,p3)));
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=jp
+*/
+
+//area of Polygon
+signed AOJ_CGL3A(){
+  int n;
+  cin>>n;
+  Polygon p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  printf("%.1f\n",area(p));
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=jp
+*/
+
+
+//isConvex
+signed AOJ_CGL3B(){
+  int n;
+  cin>>n;
+  Polygon p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  cout<<isConvex(p)<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=jp
+*/
+
+
+
+//contains
+signed AOJ_CGL3C(){
+  int n;
+  cin>>n;
+  Polygon p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  int q;
+  cin>>q;
+  while(q--){
+    Point r;
+    cin>>r;
+    cout<<contains(p,r)<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
+*/
+
+
+//convex hull
+signed AOJ_CGL4A(){
+  int n;
+  cin>>n;
+  Polygon p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  Polygon q=convex_hull(p);
+  cout<<q.size()<<endl;
+  for(Point v:q) cout<<v.x<<" "<<v.y<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=jp
+*/
+
+//diameter of Polygon
+signed AOJ_CGL4B(){
+  int n;
+  cin>>n;
+  Polygon p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  printf("%.12f\n",diameter(p));
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=jp
+*/
+
+//convexCut:
+signed AOJ_CGL4C(){
+  int n;
+  cin>>n;
+  Polygon g(n);
+  for(int i=0;i<n;i++) cin>>g[i];
+  Polygon p=andrewScan(g);
+  int q;
+  cin>>q;
+  while(q--){
+    Line l;
+    cin>>l.p1>>l.p2;
+    printf("%.12f\n",area(convexCut(p,l)));
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=jp
+*/
+
+
+//intersectCC
+signed AOJ_CGL7A(){
+  Circle c1,c2;
+  cin>>c1>>c2;
+  cout<<intersectCC(c1,c2)<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&lang=jp
+*/
+
+
+//getCrossPointCL
+signed AOJ_CGL7D(){
+  Circle c;
+  int q;
+  cin>>c>>q;
+  while(q--){
+    Line l;
+    cin>>l;
+    auto pp=getCrossPointCL(c,l);
+    if(pp.size()==1u) pp.emplace_back(pp[0]);
+    if(pp[1]<pp[0]) swap(pp[0],pp[1]);
+    cout<<pp[0]<<" "<<pp[1]<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D&lang=jp
+*/
+
+//intersectCC
+signed AOJ_CGL7E(){
+  Circle c1,c2;
+  cin>>c1>>c2;
+  auto pp=getCrossPointCC(c1,c2);
+  if(pp.size()==1u) pp.emplace_back(pp[0]);
+  if(pp[1]<pp[0]) swap(pp[0],pp[1]);
+  cout<<pp[0]<<" "<<pp[1]<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=jp
+*/
+
+//tangent to a Circle
+signed AOJ_CGL7F(){
+  Point p;
+  Circle c;
+  cin>>p>>c;
+  auto pp=tangent(c,p);
+  for(auto p:pp) cout<<p<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=jp
+*/
+
+//Common Tangent
+signed AOJ_CGL7G(){
   Circle c1,c2;
   cin>>c1>>c2;
   auto ls=tangent(c1,c2);
@@ -466,5 +758,98 @@ signed main(){
   for(auto l:ls) ps.emplace_back(getCrossPointCL(c1,l)[0]);
   sort(ps.begin(),ps.end());
   for(auto p:ps) cout<<p<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge//description.jsp?id=CGL_7_G&lang=jp
+*/
+
+//area of 2 circles' intersection
+signed AOJ_2572(){
+  double uw,uh,a,b,ab;
+  while(cin>>uw>>uh>>a>>b>>ab,uw!=0){
+    Circle c1(Point(0,0),sqrt(a/PI));
+    Circle c2(Point(0,0),sqrt(b/PI));
+    bool f=0;
+    if(c1.r<=c2.r) swap(c1,c2),f=1;
+    double l=max(0.0,c1.r-c2.r),r=c1.r+c2.r+EPS;
+    for(int k=0;k<100;k++){
+      double m=(l+r)/2;
+      c2.c.x=m;
+      //cout<<area(c1,c2)<<endl;
+      if(area(c1,c2)<=ab) r=m;
+      else l=m;
+    }
+    c2.c.x=l;
+    
+    double EPS3=1e-4;
+    assert(abs(area(c1,c2)-ab)<=EPS3);
+
+    l=0,r=PI/2;
+    for(int k=0;k<200;k++){
+      double m=(l+r)/2;
+      Circle t=c2;
+      t.c=translate(c2.c,m);
+      if(c1.r+max(c1.r,t.c.x+t.r)<=uw) r=m;
+      else l=m;
+    }
+    c2.c=translate(c2.c,r);
+    //cout<<c1.c<<"/"<<c2.c<<endl;
+    
+    Vector v(c1.r,c1.r);
+    c1.c=c1.c+v;
+    c2.c=c2.c+v;
+    
+    //cout<<c1.c<<"/"<<c2.c<<endl;
+
+    if(f) swap(c1,c2);
+    f=1;
+    f&=(c1.c.x-c1.r>=-EPS3);
+    f&=(c1.c.x+c1.r<=uw+EPS3);
+    f&=(c1.c.y-c1.r>=-EPS3);
+    f&=(c1.c.y+c1.r<=uh+EPS3);
+    f&=(c2.c.x-c2.r>=-EPS3);
+    f&=(c2.c.x+c2.r<=uw+EPS3);
+    f&=(c2.c.y-c2.r>=-EPS3);
+    f&=(c2.c.y+c2.r<=uh+EPS3);
+    if(f) cout<<c1.c<<" "<<c1.r<<" "<<c2.c<<" "<<c2.r<<endl;
+    else cout<<"impossible"<<endl;
+    //else cout<<c1.c<<" "<<c1.r<<"/"<<c2.c<<" "<<c2.r<<endl;
+  }
+  return 0;
+}
+/*
+verified on 2017/12/31
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572
+*/
+
+signed main(){
+  //AOJ_CGL1A();
+  //AOJ_CGL1B();
+  //AOJ_CGL1C();
+
+  //AOJ_CGL2A();
+  //AOJ_CGL2B();
+  //AOJ_CGL2C();
+  //AOJ_CGL2D();
+  
+  //AOJ_CGL3A();
+  //AOJ_CGL3B();
+  //AOJ_CGL3C();
+  
+  //AOJ_CGL4A();
+  //AOJ_CGL4B();
+  //AOJ_CGL4C();
+
+  
+  //AOJ_CGL7A();
+  //AOJ_CGL7D();
+  //AOJ_CGL7E();
+  //AOJ_CGL7F();
+  //AOJ_CGL7G();
+
+  AOJ_2572();
+  
   return 0;
 }
