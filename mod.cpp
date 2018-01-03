@@ -46,7 +46,7 @@ void euler_phi2(){
 
 Int mod_pow(Int x,Int n,Int mod){
   Int res=1;
-  while(n>0){
+  while(n){
     if(n&1) (res*=x)%=mod;
     (x*=x)%=mod;
     n>>=1;
