@@ -456,6 +456,30 @@ vector<Line> tangent(Circle c1,Circle c2){
   return ls;
 }
 
+double closest_pair(Polygon &a,int l=0,int r=-1){
+  if(r<0){
+    r=a.size();
+    sort(a.begin(),a.end(),sort_x);
+  }
+  if(r-l<=1) return abs(a[0]-a[1]);
+  int m=(l+r)>>1;
+  double x=a[m].x;
+  double d=min(closest_pair(a,l,m),closest_pair(a,m,r));
+  inplace_merge(a.begin()+l,a.begin()+m,a.begin()+r,sort_y);
+
+  Polygon b;
+  for(int i=l;i<r;i++){
+    if(fabs(a[i].x-x)>=d) continue;
+    for(int j=0;j<(int)b.size();j++){
+      double dy=a[i].y-next(b.rbegin(),j)->y;
+      if(dy>=d) break;
+      d=min(d,abs(a[i]-*next(b.rbegin(),j)));
+    }
+    b.emplace_back(a[i]);
+  }
+  return d;
+};
+
 //END CUT HERE
 
 //Projection
@@ -686,6 +710,19 @@ signed AOJ_CGL4C(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=jp
 */
 
+//closest pair:
+signed AOJ_CGL5A(){
+  int n;
+  cin>>n;
+  Polygon p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  cout<<fixed<<setprecision(12)<<closest_pair(p)<<endl;
+  return 0;
+}
+/*
+  verified on 2018/01/04
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_5_A&lang=jp
+*/
 
 //intersectCC
 signed AOJ_CGL7A(){
@@ -841,7 +878,8 @@ signed main(){
   //AOJ_CGL4A();
   //AOJ_CGL4B();
   //AOJ_CGL4C();
-
+  
+  AOJ_CGL5A();
   
   //AOJ_CGL7A();
   //AOJ_CGL7D();
@@ -849,7 +887,7 @@ signed main(){
   //AOJ_CGL7F();
   //AOJ_CGL7G();
 
-  AOJ_2572();
+  //AOJ_2572();
   
   return 0;
 }
