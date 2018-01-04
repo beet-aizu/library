@@ -2,28 +2,38 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
+
 template<typename T, typename E>
-struct SkewHeap{
+struct FGC{
   typedef function<T(T, E)> F;
   typedef function<E(E, E)> G;
-  SkewHeap *l,*r;
-  T val;
+  typedef function<bool(T,T)> C;
   F &f;
   G &g;
+  C &c;
+  FGC(F &f,G &g,C &c):f(f),g(g),c(c){}
+};
+
+template<typename T, typename E>
+struct SkewHeap{
+  SkewHeap *l,*r;
+  T val;
   E add,e;
+  FGC<T, E> &fgc;
   
-  SkewHeap(T val,F &f,G &g,E e):val(val),f(f),g(g),add(e),e(e){l=r=NULL;}
+  SkewHeap(T val,E e,FGC<T,E> &fgc):
+    val(val),add(e),e(e),fgc(fgc){l=r=NULL;}
   
   void eval(){
     if(add==e) return;
-    if(l) l->add=g(l->add,add);
-    if(r) r->add=g(r->add,add);
-    val=f(val,add);
+    if(l) l->add=fgc.g(l->add,add);
+    if(r) r->add=fgc.g(r->add,add);
+    val=fgc.f(val,add);
     add=e;
   }
   
   T top(){
-    return f(val,add);
+    return fgc.f(val,add);
   }
   
 };
@@ -32,7 +42,7 @@ template<typename T, typename E>
 SkewHeap<T, E>* meld(SkewHeap<T, E> *a,SkewHeap<T, E> *b){
   if(!a) return b;
   if(!b) return a;
-  if(a->top() > b->top())  swap(a,b);
+  if(a->fgc.c(a->top(),b->top()))  swap(a,b);
   a->eval();
   a->r=meld(a->r,b);
   swap(a->l,a->r);
@@ -42,9 +52,12 @@ SkewHeap<T, E>* meld(SkewHeap<T, E> *a,SkewHeap<T, E> *b){
 template<typename T, typename E>
 SkewHeap<T, E>* pop(SkewHeap<T, E>* a){
   a->eval();
-  return meld(a->l,a->r);
+  auto res=meld(a->l,a->r);
+  free(a);
+  return res;
 };
 
+//Without merge technique
 struct UnionFind{
   int n;
   vector<int> r,p;
@@ -64,12 +77,9 @@ struct UnionFind{
   }
 };
 
-
 struct Arborescence{
   using P = pair<int, int>;
   using Heap = SkewHeap<P, int>;
-  Heap::F f=[](P a,int b){return P(a.first+b,a.second);};
-  Heap::G g=[](int a,int b){return a+b;};
   
   struct edge{
     int from,to,cost;
@@ -80,7 +90,7 @@ struct Arborescence{
   int n;
   UnionFind uf;
   vector<edge> edges;
-  vector<Heap*> come,pool;
+  vector<Heap*> come;
   vector<int> used,from,cost;
   
   Arborescence(int n):n(n),uf(n),come(n,NULL),
@@ -99,12 +109,15 @@ struct Arborescence{
   }
 
   int build(int r){
+    FGC<P, int>::F f=[](P a,int b){return P(a.first+b,a.second);};
+    FGC<P, int>::G g=[](int a,int b){return a+b;};
+    FGC<P, int>::C c=[](P a, P b){return a>b;};
+    FGC<P, int> fgc(f,g,c);
+  
     used[r]=2;
-    pool.resize(edges.size(),NULL);
     for(int i=0;i<(int)edges.size();i++){
       edge &e=edges[i];
-      pool[i]=new Heap(P(e.cost,i),f,g,0);
-      come[e.to]=meld(come[e.to],pool[i]);
+      come[e.to]=meld(come[e.to],new Heap(P(e.cost,i),0,fgc));
     }
     
     int res=0;
