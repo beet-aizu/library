@@ -25,9 +25,10 @@ struct Kruskal{
   };
   
   struct edge{
-    int from,to,cost;
+    int from,to,cost,used;
     edge(){}
-    edge(int from,int to,int cost):from(from),to(to),cost(cost){}
+    edge(int from,int to,int cost):
+      from(from),to(to),cost(cost),used(0){}
     bool operator<(const edge& e) const{
       return cost<e.cost;
     }
@@ -40,7 +41,7 @@ struct Kruskal{
   Kruskal(int sz):n(sz){}
   
   void add_edge(int u,int v,int c){
-    edges.push_back(edge(u,v,c));
+    edges.emplace_back(u,v,c);
   }
 
   void input(int m,int offset=0){
@@ -55,11 +56,11 @@ struct Kruskal{
     sort(edges.begin(),edges.end());
     UnionFind uf(n+1);
     int res=0;
-    for(int i=0;i<(int)edges.size();i++){
-      edge e=edges[i];
+    for(auto &e:edges){
       if(!uf.same(e.from,e.to)){
 	res+=e.cost;
 	uf.unite(e.from,e.to);
+	e.used=1;
       }
     }
     return res;
@@ -76,6 +77,6 @@ int main(){
 }
 
 /*
-  verified on 2017/10/29
+  verified on 2018/01/11
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
 */
