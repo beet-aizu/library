@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-
+//BEGIN CUT HERE
 template<typename T>
 struct Kitamasa{
   using VT = vector<T>;
@@ -58,6 +58,7 @@ struct Kitamasa{
   }
   
 };
+//END CUT HERE
 
 signed main(){
   Int n,k;
@@ -72,3 +73,7 @@ signed main(){
   cout<<fib.calc(k)<<endl;
   return 0;
 }
+/*
+  verified on 2018/01/16
+  https://beta.atcoder.jp/contests/tdpc/tasks/tdpc_fibonacci 
+*/
