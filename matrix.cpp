@@ -2,17 +2,17 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-Int MOD=1000000009LL; //<- alert!!!
+const Int MOD=1e9+9; //<- alert!!!
 typedef vector<Int> arr;
 typedef vector<arr> mat;
-inline arr mul(mat a,arr& b,Int mod){
+inline arr mul(const mat &a,arr &b,Int mod){
   arr res(b.size(),0);
   for(int i=0;i<(int)b.size();i++)
     for(int j=0;j<(int)a[i].size();j++)
       (res[i]+=a[i][j]*b[j])%=mod;
   return res;
 }
-inline mat mul(mat& a,mat& b,Int mod){
+inline mat mul(const mat &a,const mat &b,Int mod){
   mat res(a.size(),arr(b[0].size(),0));
   for(int i=0;i<(int)a.size();i++)
     for(int j=0;j<(int)b[0].size();j++)
@@ -20,15 +20,11 @@ inline mat mul(mat& a,mat& b,Int mod){
 	(res[i][j]+=a[i][k]*b[k][j])%=mod;
   return res;
 }
-mat base;
 inline mat mat_pow(mat a,Int n,Int mod){
-  if(base.empty()){
-    base=mat(a);
-    for(int i=0;i<(int)a.size();i++)
-      for(int j=0;j<(int)a[i].size();j++)
-	base[i][j]=(i==j);
-  }
-  mat res(base);
+  mat res(a);
+  for(int i=0;i<(int)a.size();i++)
+    for(int j=0;j<(int)a[i].size();j++)
+      res[i][j]=(i==j);
   while(n){
     if(n&1) res=mul(a,res,mod);
     a=mul(a,a,mod);
@@ -36,6 +32,8 @@ inline mat mat_pow(mat a,Int n,Int mod){
   }
   return res;
 }
+//END CUT HERE
+mat base;
 mat memo[100];
 void init(mat a,Int mod){
   base=mat(a);
@@ -56,7 +54,6 @@ inline mat mat_pow2(Int n,Int mod){
   }
   return res;
 }
-//END CUT HERE
 
 typedef pair<Int,Int> P;
 signed main(){
@@ -98,6 +95,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/10/29
+  verified on 2018/01/17
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
 */

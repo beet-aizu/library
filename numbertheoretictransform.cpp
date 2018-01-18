@@ -27,14 +27,12 @@ namespace NTT{
   }
 
   inline num pow(num a,int b){
-    //cout<<a.v<<" "<<b<<endl;
     num res=1;
     while(b){
       if(b&1) res=res*a;
       a=a*a;
       b>>=1;
     }
-    //cout<<":"<<res.v<<endl;
     return res;
   }
 
