@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
+/*
+  multiprecision:
+  #include <boost/multiprecision/cpp_int.hpp>
+  using Int = boost::multiprecision::cpp_int;
+*/
 //BEGIN CUT HERE
 using Int = __int128_t;
 Int abs128(Int val){return val<0?-val:val;}
