@@ -42,32 +42,38 @@ struct Fordfulkerson{
     return 0;
   }
  
-  int max_flow(int s,int t){
-    int flow=0;
+  int flow(int s,int t,int lim){
+    int fl=0;
     for(;;){
       fill(used.begin(),used.end(),0);
-      int f=dfs(s,t,INF);
-      if(f==0) return flow;
-      flow+=f;
+      int f=dfs(s,t,lim);
+      if(f==0) return fl;
+      fl+=f;
+      lim-=f;
     }
   }
+
+  int flow(int s,int t){
+    return flow(s,t,INF);
+  }
+  
 };
 //END CUT HERE
 
 signed main(){
   int V,E;
   cin>>V>>E;
-  Fordfulkerson ford(V);
+  Fordfulkerson flow(V);
   for(int i=0;i<E;i++){
     int u,v,c;
     cin>>u>>v>>c;
-    ford.add_edge(u,v,c);
+    flow.add_edge(u,v,c);
   }
-  cout<<ford.max_flow(0,V-1)<<endl;
+  cout<<flow.flow(0,V-1)<<endl;
   return 0;
 }
 
 /*
-verified on 2017/10/29
+verified on 2018/01/19
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
 */
