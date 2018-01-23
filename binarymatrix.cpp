@@ -74,8 +74,8 @@ mat mat_pow(mat v,int k){
   }
   return res;
 }
-
 //END CUT HERE
+
 signed CFR382_D(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -155,24 +155,19 @@ signed AOJ_1308(){
 	}
       }
     };
+    
     for(int i=0;i<n;i++)
       for(int j=0;j<m;j++)
 	bfs(i,j);
     
-    auto u=v;
-    gauss(v);
-    int ans=1;
-    for(int i=0;i<n*m;i++){
-      int tmp=s[i/m][i%m];
-      for(int j=0;j<n*m;j++) tmp+=u[i][j]&v[j][n*m];
-      ans&=!(tmp&1);
-    }
-    cout<<ans<<endl;
+    int a=mrank(v,n*m);
+    int b=mrank(v,n*m+1);
+    cout<<(a==b)<<endl;
   }
   return 0;
 }
 /*
-verified on 2018/01/22
+verified on 2018/01/23
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
 */
 
@@ -225,8 +220,8 @@ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2624
 
 signed main(){
   //CFR382_D();
-  ARC054_D();
-  //AOJ_1308();
+  //ARC054_D();
+  AOJ_1308();
   //AOJ_2624();
   return 0;
 }
