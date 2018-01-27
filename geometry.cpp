@@ -173,7 +173,9 @@ Polygon convexCut(Polygon p,Line l);
 Line bisector(Point p1,Point p2);
 Vector translate(Vector v,double theta);
 vector<Line> corner(Line l1,Line l2);
-
+vector<vector<pair<int, double> > >
+segmentArrangement(vector<Segment> &ss, Polygon &ps);
+  
 int ccw(Point p0,Point p1,Point p2){
   Vector a = p1-p0;
   Vector b = p2-p0;
@@ -212,8 +214,7 @@ int intersectCC(Circle c1,Circle c2){
 }
 
 bool intersectSC(Segment s,Circle c){
-  double d=getDistanceSP(s,c.c);
-  return d<=c.r;
+  return getDistanceSP(s,c.c)<=c.r;
 }
 
 double getDistanceLP(Line l,Point p){
@@ -233,6 +234,11 @@ double getDistanceSS(Segment s1,Segment s2){
 }
 
 Point getCrossPointSS(Segment s1,Segment s2){
+  for(int k=0;k<2;k++){
+    if(getDistanceSP(s1,s2.p1)<EPS) return s2.p1; 
+    if(getDistanceSP(s1,s2.p2)<EPS) return s2.p2;
+    swap(s1,s2);
+  }
   Vector base=s2.p2-s2.p1;
   double d1=abs(cross(base,s1.p1-s2.p1));
   double d2=abs(cross(base,s1.p2-s2.p1));
@@ -478,7 +484,38 @@ double closest_pair(Polygon &a,int l=0,int r=-1){
     b.emplace_back(a[i]);
   }
   return d;
-};
+}
+
+vector<vector<pair<int, double> > >
+segmentArrangement(vector<Segment> &ss, Polygon &ps){
+  int n=ss.size();
+  for(int i=0;i<n;i++){
+    ps.emplace_back(ss[i].p1);
+    ps.emplace_back(ss[i].p2);
+    for(int j=i+1;j<n;j++)
+      if(intersectSS(ss[i],ss[j]))
+	ps.emplace_back(getCrossPointSS(ss[i],ss[j]));
+  }
+  sort(ps.begin(),ps.end());
+  ps.erase(unique(ps.begin(),ps.end()),ps.end());
+
+  vector<vector<pair<int, double> > > G(ps.size());
+  for(int i=0;i<n;i++){
+    vector<pair<double,int> > ls;
+    for(int j=0;j<(int)ps.size();j++)
+      if(getDistanceSP(ss[i],ps[j])<EPS)
+	ls.emplace_back(make_pair(norm(ss[i].p1-ps[j]),j));
+      
+    sort(ls.begin(),ls.end());
+    for(int j=0;j+1<(int)ls.size();j++){
+      int a=ls[j].second,b=ls[j+1].second;
+      G[a].emplace_back(b,abs(ps[a]-ps[b]));
+      G[b].emplace_back(a,abs(ps[a]-ps[b]));
+    }
+  }
+  return G;
+}
+						       
 
 //END CUT HERE
 
@@ -861,6 +898,72 @@ verified on 2017/12/31
 http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572
 */
 
+//Segment Arrangement
+signed AOJ_2454(){
+  int n,m;
+  cin>>n>>m;
+  vector<Segment> ss(n);
+  Polygon ps(m);
+  for(int i=0;i<n;i++) cin>>ss[i];
+  for(int i=0;i<m;i++) cin>>ps[i];
+  map<Point, int> mp;
+  for(int i=0;i<m;i++) mp[ps[i]]=i;
+  Point s,g;
+  cin>>s>>g;
+  ps.emplace_back(s);
+  ps.emplace_back(g);
+
+  auto G=segmentArrangement(ss,ps);
+  
+  double ans=0,tmp=0;
+  for(int i=0;i<n;i++) ans+=abs(ss[i].p1-ss[i].p2);
+
+  vector<int> used(G.size(),0);
+  queue<int> q;
+  for(int i=0;i<(int)G.size();i++)
+    if(ps[i]==g) {used[i]=1;q.emplace(i);}
+
+  while(!q.empty()){
+    int v=q.front();q.pop();
+    if(ps[v]==s){
+      cout<<(int)-1<<endl;
+      return 0;
+    }
+    if(mp.count(ps[v])) continue;
+    for(auto &e:G[v]){
+      int u=e.first;
+      if(!used[u]){
+	used[u]=1;
+	q.emplace(u);
+      }
+    }
+  }
+  
+  for(int i=0;i<(int)G.size();i++)
+    if(ps[i]==s) q.emplace(i);
+
+  while(!q.empty()){
+    int v=q.front();q.pop();
+    for(auto &e:G[v]){
+      int u=e.first;
+      double &c=e.second;
+      if(used[v]&&used[u]) continue;
+      if(c==0) continue;
+      tmp+=c;c=0;
+      q.emplace(u);
+    }
+  }
+  tmp/=2;
+  
+  cout<<fixed<<setprecision(12)<<ans-tmp<<endl;
+  return 0;
+}
+/*
+verified on 2018/01/27
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2454
+*/
+
+
 signed main(){
   //AOJ_CGL1A();
   //AOJ_CGL1B();
@@ -879,7 +982,7 @@ signed main(){
   //AOJ_CGL4B();
   //AOJ_CGL4C();
   
-  AOJ_CGL5A();
+  //AOJ_CGL5A();
   
   //AOJ_CGL7A();
   //AOJ_CGL7D();
@@ -888,6 +991,7 @@ signed main(){
   //AOJ_CGL7G();
 
   //AOJ_2572();
+  AOJ_2454();
   
   return 0;
 }
