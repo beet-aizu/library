@@ -9,12 +9,13 @@
       (setq str
 	    (with-current-buffer buf
 	      (buffer-substring-no-properties (point-min) (point-max))))
-      (setq from (search "//BEGIN CUT HERE" str))
-      (setq to (search "//END CUT HERE" str))
+      (setq from (+ (search "//BEGIN CUT HERE" str) 17))
+      (setq to (+ (search "//END CUT HERE" str) 1))
       (insert 
        (with-current-buffer buf
-	 (buffer-substring-no-properties (+ from 17) (+ to 1))))
-      (insert "\n"))
+	 (buffer-substring-no-properties from to)))
+      (insert "\n")
+      (setq pos (+ pos (- to from) 1)))
     (goto-char pos)))
 
 (define-key global-map (kbd "C-x l") 'beet)
