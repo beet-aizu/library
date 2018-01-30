@@ -14,6 +14,14 @@ struct SCC{
     rG[to].push_back(from);
   }
   
+  void input(int m,int offset=0){
+    int a,b;
+    for(int i=0;i<m;i++){
+      cin>>a>>b;
+      add_edge(a+offset,b+offset);
+    }
+  }
+  
   void dfs(int v){
     used[v]=1;
     for(int i=0;i<(int)G[v].size();i++){
