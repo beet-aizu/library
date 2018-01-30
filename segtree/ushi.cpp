@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+using Int = long long;
 //BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
@@ -45,10 +46,23 @@ struct SegmentTree{
     }
     return f(vl,vr);
   }
+
+  int find(int a,int b,function<bool(T)> &check,int k,int l,int r){
+    if(!check(dat[k])||r<=a||b<=l) return -1;
+    if(k>=n-1) return k-(n-1);
+    int m=(l+r)>>1;
+    int vl=find(a,b,check,k*2+1,l,m);
+    if(~vl) return vl;
+    return find(a,b,check,k*2+2,m,r);
+  }
+  
+  int find(int a,int b,function<bool(T)> &check){
+    return find(a,b,check,0,0,n);
+  }
   
 };
 //END CUT HERE
-signed main(){
+signed AOJ_DSL2A(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   int n,q;
@@ -70,3 +84,41 @@ signed main(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
 */
 
+signed ARC038_C(){
+  Int n;
+  cin>>n;
+  vector<Int> c(n,0),a(n,0);
+  for(Int i=1;i<n;i++) cin>>c[i]>>a[i];
+  
+  SegmentTree<Int, Int>::F f=[](Int a,Int b){return min(a,b);};
+  SegmentTree<Int, Int>::G g=[](Int a,Int b){return max(a,b);};
+  SegmentTree<Int, Int> seg(n,f,g,-1);
+  
+  vector<Int> dp(n);
+  dp[0]=0;
+  seg.update(0,0);
+  for(Int i=1;i<n;i++){
+    function<bool(Int)> check=[&](Int x){return x<i-c[i];};
+    dp[i]=seg.find(0,n,check);
+    seg.update(dp[i],i);
+    //cout<<i<<":"<<dp[i]<<endl;
+  }
+  
+  Int ans=0;
+  for(Int i=1;i<n;i++)
+    if(a[i]&1) ans^=dp[i];
+  
+  cout<<(ans?"First":"Second")<<endl;
+  return 0;
+}
+
+/*
+  verified on 2018/01/30
+  https://beta.atcoder.jp/contests/arc038/tasks/arc038_c
+*/
+
+signed main(){
+  //AOJ_DSL2A();
+  ARC038_C();
+  return 0;
+}
