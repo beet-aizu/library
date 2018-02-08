@@ -3,59 +3,6 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 
-template<typename T, typename E>
-struct FGC{
-  typedef function<T(T, E)> F;
-  typedef function<E(E, E)> G;
-  typedef function<bool(T,T)> C;
-  F &f;
-  G &g;
-  C &c;
-  FGC(F &f,G &g,C &c):f(f),g(g),c(c){}
-};
-
-template<typename T, typename E>
-struct SkewHeap{
-  SkewHeap *l,*r;
-  T val;
-  E add,e;
-  FGC<T, E> &fgc;
-  
-  SkewHeap(T val,E e,FGC<T,E> &fgc):
-    val(val),add(e),e(e),fgc(fgc){l=r=NULL;}
-  
-  void eval(){
-    if(add==e) return;
-    if(l) l->add=fgc.g(l->add,add);
-    if(r) r->add=fgc.g(r->add,add);
-    val=fgc.f(val,add);
-    add=e;
-  }
-  
-  T top(){
-    return fgc.f(val,add);
-  }
-  
-};
-
-template<typename T, typename E>
-SkewHeap<T, E>* meld(SkewHeap<T, E> *a,SkewHeap<T, E> *b){
-  if(!a) return b;
-  if(!b) return a;
-  if(a->fgc.c(a->top(),b->top()))  swap(a,b);
-  a->eval();
-  a->r=meld(a->r,b);
-  swap(a->l,a->r);
-  return a;
-}
-
-template<typename T, typename E>
-SkewHeap<T, E>* pop(SkewHeap<T, E>* a){
-  a->eval();
-  auto res=meld(a->l,a->r);
-  free(a);
-  return res;
-};
 
 //Without merge technique
 struct UnionFind{
@@ -77,6 +24,60 @@ struct UnionFind{
   }
 };
 
+template<typename T, typename E>
+struct SkewHeap{
+  typedef function<T(T, E)> F;
+  typedef function<E(E, E)> G;
+  typedef function<bool(T,T)> C;
+  F f;
+  G g;
+  C c;
+  E e;
+  SkewHeap(F f,G g,C c,E e):f(f),g(g),c(c),e(e){}
+
+  struct Node{
+    Node *l,*r;
+    T val;
+    E add;
+    Node(T val,E add):val(val),add(add){l=r=NULL;}
+  };
+
+  void eval(Node *a){
+    if(a->add==e) return;
+    if(a->l) a->l->add=g(a->l->add,a->add);
+    if(a->r) a->r->add=g(a->r->add,a->add);
+    a->val=f(a->val,a->add);
+    a->add=e;
+  }
+  
+  T top(Node *a){
+    return f(a->val,a->add);
+  }
+  
+  Node* push(T v){
+    return new Node(v,e);
+  }
+  
+  Node* meld(Node *a,Node *b){
+    if(!a) return b;
+    if(!b) return a;
+    if(c(top(a),top(b))) swap(a,b);
+    eval(a);
+    a->r=meld(a->r,b);
+    swap(a->l,a->r);
+    return a;
+  }
+  
+  Node* pop(Node* a){
+    eval(a);
+    auto res=meld(a->l,a->r);
+    free(a);
+    return res;
+  }
+  
+};
+
+//INSERT ABOVE HERE
 struct Arborescence{
   using P = pair<int, int>;
   using Heap = SkewHeap<P, int>;
@@ -90,7 +91,7 @@ struct Arborescence{
   int n;
   UnionFind uf;
   vector<edge> edges;
-  vector<Heap*> come;
+  vector<Heap::Node*> come;
   vector<int> used,from,cost;
   
   Arborescence(int n):n(n),uf(n),come(n,NULL),
@@ -109,15 +110,15 @@ struct Arborescence{
   }
 
   int build(int r){
-    FGC<P, int>::F f=[](P a,int b){return P(a.first+b,a.second);};
-    FGC<P, int>::G g=[](int a,int b){return a+b;};
-    FGC<P, int>::C c=[](P a, P b){return a>b;};
-    FGC<P, int> fgc(f,g,c);
+    Heap::F f=[](P a,int b){return P(a.first+b,a.second);};
+    Heap::G g=[](int a,int b){return a+b;};
+    Heap::C c=[](P a, P b){return a>b;};
+    Heap heap(f,g,c,0);
   
     used[r]=2;
     for(int i=0;i<(int)edges.size();i++){
       edge &e=edges[i];
-      come[e.to]=meld(come[e.to],new Heap(P(e.cost,i),0,fgc));
+      come[e.to]=heap.meld(come[e.to],heap.push(P(e.cost,i)));
     }
     
     int res=0;
@@ -130,8 +131,8 @@ struct Arborescence{
 	l.emplace_back(v);
 	if(!come[v]) return -1;
 	from[v]=uf.find(edges[come[v]->val.second].from);
-	cost[v]=come[v]->top().first;
-	come[v]=pop(come[v]);
+	cost[v]=heap.top(come[v]).first;
+	come[v]=heap.pop(come[v]);
 	if(from[v]==v) continue;
 	
 	res+=cost[v];
@@ -141,7 +142,7 @@ struct Arborescence{
 	    if(come[p]) come[p]->add-=cost[p];
 	    if(p!=v){
 	      uf.unite(v,p);
-	      come[v]=meld(come[v],come[p]);
+	      come[v]=heap.meld(come[v],come[p]);
 	    }
 	    p=uf.find(from[p]);
 	  }while(p!=v);
@@ -166,6 +167,6 @@ signed main(){
 }
 
 /*
-  verified on 2018/01/04
+  verified on 2018/02/08
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B&lang=jp
 */
