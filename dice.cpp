@@ -45,20 +45,21 @@ struct Dice{
       s[1]=b;
     }
     
-    // migi neji (not verified)
+    // migi neji 
     if(c=='R'){
-      b=s[1];
-      s[1]=s[3];
-      s[3]=s[4];
-      s[4]=s[2];
-      s[2]=b;
-    }
-    if(c=='L'){
       b=s[1];
       s[1]=s[2];
       s[2]=s[4];
       s[4]=s[3];
       s[3]=b;
+    }
+    
+    if(c=='L'){
+      b=s[1];
+      s[1]=s[3];
+      s[3]=s[4];
+      s[4]=s[2];
+      s[2]=b;
     }
     
   }
@@ -89,7 +90,7 @@ vector<Dice> makeDices(Dice d){
 }
 //END CUT HERE
 
-signed main(){
+signed ITP1_11_A(){
   Dice d;
   for(int i=0;i<6;i++) cin >> d.s[i];
   string s;cin >> s;
@@ -98,8 +99,38 @@ signed main(){
   return 0;
 }
 
-
 /*
-  verified on 2017/06/09
+  verified on 2018/02/09
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_A
 */
+
+signed AOJ_0502(){
+  Int n;
+  while(cin>>n,n){
+    Dice d;
+    for(Int i=0;i<6;i++) d.s[i]=i+1;
+
+    Int ans=d.top();
+    for(Int i=0;i<n;i++){
+      string s;
+      cin>>s;
+      d.roll(s[0]);
+      ans+=d.top();
+    }
+    cout<<ans<<endl;
+  }
+  
+  return 0;
+}
+
+
+/*
+  verified on 2018/02/09
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0502
+*/
+
+signed main(){
+  ITP1_11_A();
+  //AOJ_0502();
+  return 0;
+}

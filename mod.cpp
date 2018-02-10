@@ -3,9 +3,8 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 #define MOD 1000000007
-#define MAX_N 100000
 #define MAX_P 200005
-Int fact[MAX_P],inv[MAX_P];
+Int fact[MAX_P],inv[MAX_P],finv[MAX_P];;
 Int extgcd(Int a,Int b,Int& x,Int& y){
   Int d=a;
   if(b!=0){
@@ -20,28 +19,6 @@ Int mod_inverse(Int a,Int mod){
   Int x,y;
   extgcd(a,mod,x,y);
   return (mod+x%mod)%mod;
-}
-Int euler_phi(Int n){
-  Int res=n;
-  for(Int i=2;i*i<=n;i++){
-    if(n%i==0){
-      res=res/i*(i-1);
-      for(;n%i==0;n/=i);
-    }
-  }
-  if(n!=1) res=res/n*(n-1);
-  return res;
-}
-
-Int euler[MAX_N];
-
-void euler_phi2(){
-  for(Int i=0;i<MAX_N;i++) euler[i]=i;
-  for(Int i=2;i<MAX_N;i++){
-    if(euler[i]==i){
-      for(Int j=i;j<MAX_N;j+=i) euler[j]=euler[j]/i*(i-1);
-    }
-  }
 }
 
 Int mod_pow(Int x,Int n,Int mod){
@@ -66,6 +43,10 @@ void init(Int mod){
   inv[1]=1;
   for(Int i=2;i<MAX_P;i++)
     inv[i]=inv[mod%i]*(mod-mod/i)%mod;
+  
+  finv[0]=1;
+  for(Int i=1;i<MAX_P;i++)
+    finv[i]=finv[i-1]*inv[i]%mod;
 }
 
 Int mod_fact(Int n,Int mod,Int& e){
@@ -96,6 +77,12 @@ Int mod_comb2(Int n,Int k,Int mod){
   return res;
 }
 
+//only for prime mod
+Int mod_comb3(Int n,Int k,Int mod){
+  if(k<0||k>n) return 0;
+  return fact[n]*finv[k]%mod*finv[n-k]%mod;
+}
+
 Int montmort(Int n,Int mod){
   Int res=0,inv=1;
   for(Int k=2;k<=n;k++){
@@ -119,19 +106,6 @@ signed AOJ_NTL1B(){
 /*
   verified on 2017/12/31
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B&lang=jp
-*/
-
-
-//euler_phi:
-signed AOJ_NTL1D(){
-  Int n;
-  cin>>n;
-  cout<<euler_phi(n)<<endl;
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D&lang=jp
 */
 
 //extgcd
@@ -166,7 +140,6 @@ signed ARC009_C(){
 
 signed main(){
   //AOJ_NTL1B();
-  //AOJ_NTL1D();
   AOJ_NTL1E();
   
   //ARC009_C();
