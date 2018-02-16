@@ -24,6 +24,9 @@ struct UnionFind{
   }
 };
 
+
+
+
 template<typename T, typename E>
 struct SkewHeap{
   typedef function<T(T, E)> F;
@@ -32,17 +35,19 @@ struct SkewHeap{
   F f;
   G g;
   C c;
+  T INF;
   E e;
-  SkewHeap(F f,G g,C c,E e):f(f),g(g),c(c),e(e){}
-
+  SkewHeap(F f,G g,C c,T INF,E e):f(f),g(g),c(c),INF(INF),e(e){}
+  
   struct Node{
     Node *l,*r;
     T val;
     E add;
-    Node(T val,E add):val(val),add(add){l=r=NULL;}
+    Node(T val,E add):val(val),add(add){l=r=nullptr;}
   };
 
   void eval(Node *a){
+    if(a==nullptr) return;
     if(a->add==e) return;
     if(a->l) a->l->add=g(a->l->add,a->add);
     if(a->r) a->r->add=g(a->r->add,a->add);
@@ -51,7 +56,17 @@ struct SkewHeap{
   }
   
   T top(Node *a){
-    return f(a->val,a->add);
+    return a!=nullptr?f(a->val,a->add):INF;
+  }
+
+  T snd(Node *a){
+    eval(a);
+    return a!=nullptr?min(top(a->l),top(a->r)):INF;
+  }
+
+  Node* add(Node *a,E d){
+    if(a!=nullptr) a->add=g(a->add,d);
+    return a;
   }
   
   Node* push(T v){
@@ -59,8 +74,8 @@ struct SkewHeap{
   }
   
   Node* meld(Node *a,Node *b){
-    if(!a) return b;
-    if(!b) return a;
+    if(a==nullptr) return b;
+    if(b==nullptr) return a;
     if(c(top(a),top(b))) swap(a,b);
     eval(a);
     a->r=meld(a->r,b);
@@ -71,31 +86,35 @@ struct SkewHeap{
   Node* pop(Node* a){
     eval(a);
     auto res=meld(a->l,a->r);
-    free(a);
+    delete a;
     return res;
   }
   
 };
 
 //INSERT ABOVE HERE
+template<typename T>
 struct Arborescence{
-  using P = pair<int, int>;
+  using P = pair<T, int>;
   using Heap = SkewHeap<P, int>;
   
   struct edge{
-    int from,to,cost;
+    int from,to;
+    T cost;
     edge(){}
-    edge(int from,int to,int cost):from(from),to(to),cost(cost){}
+    edge(int from,int to,T cost):from(from),to(to),cost(cost){}
   };
   
   int n;
+  P INF;
   UnionFind uf;
   vector<edge> edges;
-  vector<Heap::Node*> come;
-  vector<int> used,from,cost;
+  vector<typename Heap::Node*> come;
+  vector<int> used,from;
+  vector<T> cost;
   
-  Arborescence(int n):n(n),uf(n),come(n,NULL),
-		      used(n,0),from(n,-1),cost(n,-1){};
+  Arborescence(int n,T INF):n(n),INF(INF,-1),uf(n),come(n,NULL),
+			    used(n,0),from(n,-1),cost(n,-1){};
 
   void add_edge(int from,int to,int cost){
     edges.emplace_back(from,to,cost);
@@ -103,17 +122,18 @@ struct Arborescence{
 
   void input(int m,int offset=0){
     for(int i=0;i<m;i++){
-      int u,v,c;
+      int u,v;
+      T c;
       cin>>u>>v>>c;
       add_edge(u+offset,v+offset,c);
     }
   }
 
-  int build(int r){
-    Heap::F f=[](P a,int b){return P(a.first+b,a.second);};
-    Heap::G g=[](int a,int b){return a+b;};
-    Heap::C c=[](P a, P b){return a>b;};
-    Heap heap(f,g,c,0);
+  T build(int r){
+    typename Heap::F f=[](P a,int b){return P(a.first+b,a.second);};
+    typename Heap::G g=[](int a,int b){return a+b;};
+    typename Heap::C c=[](P a, P b){return a>b;};
+    Heap heap(f,g,c,INF,0);
   
     used[r]=2;
     for(int i=0;i<(int)edges.size();i++){
@@ -121,7 +141,7 @@ struct Arborescence{
       come[e.to]=heap.meld(come[e.to],heap.push(P(e.cost,i)));
     }
     
-    int res=0;
+    T res=0;
     for(int i=0;i<n;i++){
       if(used[i]) continue;
       int v=i;
@@ -129,7 +149,7 @@ struct Arborescence{
       while(used[v]!=2){
 	used[v]=1;
 	l.emplace_back(v);
-	if(!come[v]) return -1;
+	if(!come[v]) return T(-1);
 	from[v]=uf.find(edges[come[v]->val.second].from);
 	cost[v]=heap.top(come[v]).first;
 	come[v]=heap.pop(come[v]);
@@ -139,7 +159,7 @@ struct Arborescence{
 	if(used[from[v]]==1){
 	  int p=v;
 	  do{
-	    if(come[p]) come[p]->add-=cost[p];
+	    if(come[p]!=nullptr) heap.add(come[p],-cost[p]);
 	    if(p!=v){
 	      uf.unite(v,p);
 	      come[v]=heap.meld(come[v],come[p]);
@@ -160,13 +180,14 @@ struct Arborescence{
 signed main(){
   int n,m,r;
   cin>>n>>m>>r;
-  Arborescence G(n);
+  const int INF = 1e8;
+  Arborescence<int> G(n,INF);
   G.input(m);
   cout<<G.build(r)<<endl;
   return 0;
 }
 
 /*
-  verified on 2018/02/08
+  verified on 2018/02/16
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B&lang=jp
 */

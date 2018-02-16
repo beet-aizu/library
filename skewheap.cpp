@@ -13,17 +13,19 @@ struct SkewHeap{
   F f;
   G g;
   C c;
+  T INF;
   E e;
-  SkewHeap(F f,G g,C c,E e):f(f),g(g),c(c),e(e){}
-
+  SkewHeap(F f,G g,C c,T INF,E e):f(f),g(g),c(c),INF(INF),e(e){}
+  
   struct Node{
     Node *l,*r;
     T val;
     E add;
-    Node(T val,E add):val(val),add(add){l=r=NULL;}
+    Node(T val,E add):val(val),add(add){l=r=nullptr;}
   };
 
   void eval(Node *a){
+    if(a==nullptr) return;
     if(a->add==e) return;
     if(a->l) a->l->add=g(a->l->add,a->add);
     if(a->r) a->r->add=g(a->r->add,a->add);
@@ -32,7 +34,17 @@ struct SkewHeap{
   }
   
   T top(Node *a){
-    return f(a->val,a->add);
+    return a!=nullptr?f(a->val,a->add):INF;
+  }
+
+  T snd(Node *a){
+    eval(a);
+    return a!=nullptr?min(top(a->l),top(a->r)):INF;
+  }
+
+  Node* add(Node *a,E d){
+    if(a!=nullptr) a->add=g(a->add,d);
+    return a;
   }
   
   Node* push(T v){
@@ -40,8 +52,8 @@ struct SkewHeap{
   }
   
   Node* meld(Node *a,Node *b){
-    if(!a) return b;
-    if(!b) return a;
+    if(a==nullptr) return b;
+    if(b==nullptr) return a;
     if(c(top(a),top(b))) swap(a,b);
     eval(a);
     a->r=meld(a->r,b);
@@ -52,7 +64,7 @@ struct SkewHeap{
   Node* pop(Node* a){
     eval(a);
     auto res=meld(a->l,a->r);
-    free(a);
+    delete a;
     return res;
   }
   
@@ -67,8 +79,8 @@ struct ALDS1_9_C{
     Heap::F f=[](int a,int b){return a+b;};
     Heap::G g=[](int a,int b){return a+b;};
     Heap::C c=[](int a,int b){return a<b;};
-
-    Heap heap(f,g,c,0);
+    int INF = -1;
+    Heap heap(f,g,c,INF,0);
     auto base=heap.push(0);
   
     string s;
@@ -87,7 +99,7 @@ struct ALDS1_9_C{
     return 0;
   }
   /*
-    verified on 2018/02/08
+    verified on 2018/02/16
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C&lang=jp
   */
 };
@@ -123,8 +135,9 @@ struct APC001_D{
     Heap::F f=[](auto a,auto b){return a+b;};
     Heap::G g=[](auto a,auto b){return a+b;};
     Heap::C c=[](auto a,auto b){return a>b;};
-    
-    Heap heap(f,g,c,0);
+
+    const Int INF = 1e16;
+    Heap heap(f,g,c,INF,0);
     vector<Heap::Node*> v(n);
     for(Int i=0;i<n;i++) v[i]=heap.push(a[i]);
     
@@ -170,14 +183,14 @@ struct APC001_D{
     return 0;
   }
   /*
-    verified on 2018/02/08
+    verified on 2018/02/16
     https://beta.atcoder.jp/contests/apc001/tasks/apc001_d
   */
 };
 
 signed main(){
-  ALDS1_9_C ans;
-  //APC001_D ans;
+  //ALDS1_9_C ans;
+  APC001_D ans;
   
   ans.solve();
 }
