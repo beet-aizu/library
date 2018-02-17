@@ -12,9 +12,9 @@ struct SegmentTree{
   F f;
   G g;
   H h;
-  P p;
   T d1;
   E d0;
+  P p;
   vector<T> dat;
   vector<E> laz;
   SegmentTree(int n_,F f,G g,H h,T d1,E d0,
@@ -88,7 +88,7 @@ signed main(){
 			  [](Int a,Int b){return a+b;},
 			  [](Int a,Int b){return a+b;},
 			  0,0,vector<Int>(n,0),
-			  [](Int a,int b){return a*b;});
+			  [](Int a,Int b){return a*b;});
   for(int i=0;i<q;i++){
     int c,s,t,x;
     cin>>c;
@@ -103,6 +103,6 @@ signed main(){
 }
 
 /*
-verified on 2017/12/01
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+  verified on 2017/12/01
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
 */
