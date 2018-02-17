@@ -3,7 +3,7 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 template<typename T,typename E>
-struct RBST{
+struct PRBST{
   int xor128(){
     static int x = 123456789;
     static int y = 362436069;
@@ -37,11 +37,11 @@ struct RBST{
       cnt(1),val(val),dat(val),laz(laz){l=r=nullptr;}
   };
 
-  const size_t LIM = 1e6;
+  const size_t LIM = 1e7;
   vector<Node> pool;
   size_t ptr;
 
-  RBST(F f,G g,H h,P p,T d1,E d0):
+  PRBST(F f,G g,H h,P p,T d1,E d0):
     f(f),g(g),h(h),p(p),d1(d1),d0(d0),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
@@ -60,6 +60,13 @@ struct RBST{
   
   Node* create(T v){
     return &(pool[ptr++]=Node(v,d0));
+  }
+
+  Node* clone(Node* a){
+    if(a==nullptr) return a;
+    Node* b=create();
+    *b=*a;
+    return b;
   }
   
   size_t count(const Node* a){
@@ -87,13 +94,15 @@ struct RBST{
 
   Node* update(Node* a){
     if(a==nullptr) return a;
-    Node *l=a->l,*r=a->r;
+    Node *l=clone(a->l),*r=clone(a->r);
     if(a->laz!=d0){ 
       a->val=g(a->val,p(a->laz,1));
       if(l!=nullptr) l->laz=h(l->laz,a->laz);
       if(r!=nullptr) r->laz=h(r->laz,a->laz);
       a->laz=d0;
     }
+    a->l=l;
+    a->r=r;
     a->cnt=count(l)+count(r)+1;
     a->dat=f(query(l),query(r));
     return a;
@@ -111,7 +120,7 @@ struct RBST{
   void update(Node *&a,size_t l,size_t r,E v){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
-    auto u=t.first;
+    auto u=clone(t.first);
     u->laz=h(u->laz,v);
     a=merge(merge(s.first,u),t.second);
   }
@@ -130,30 +139,38 @@ struct RBST{
     return v;
   }
 
+  Node* rebuild(Node* a){
+    auto v=dump(a);
+    ptr=0;
+    return build(v);
+  }
+  
   Node* merge(Node* a,Node* b){
     if(a==nullptr) return b;
     if(b==nullptr) return a;
-    if(xor128()%(count(a)+count(b))<count(a)){
-      a=update(a);
-      a->r=merge(a->r,b);
-      return update(a);
+    update(a);update(b);
+    Node* na=clone(a);
+    Node* nb=clone(b);
+    if(xor128()%(count(na)+count(nb))<count(na)){
+      na->r=merge(na->r,nb);
+      return update(na);
     }
-    b=update(b);
-    b->l=merge(a,b->l);
-    return update(b);
+    nb->l=merge(na,nb->l);
+    return update(nb);
   }
 
   pair<Node*, Node*> split(Node* a,size_t k){
     if(a==nullptr) return make_pair(a,a);
     update(a);
-    if(k<=count(a->l)){
-      auto s=split(a->l,k);
-      a->l=s.second;
-      return make_pair(s.first,update(a));
+    Node* na=clone(a);
+    if(k<=count(na->l)){
+      auto s=split(na->l,k);
+      na->l=s.second;
+      return make_pair(s.first,update(na));
     }
     auto s=split(a->r,k-(count(a->l)+1));
-    a->r=s.first;
-    return make_pair(update(a),s.second);
+    na->r=s.first;
+    return make_pair(update(na),s.second);
   } 
   
 };
@@ -167,106 +184,57 @@ struct FastIO{
 }fastio_beet;
 
 //INSERT ABOVE HERE
-signed AOJ_1508(){
+signed ARC030_D(){
   int n,q;
   cin>>n>>q;
-  vector<int> v(n);
+  vector<Int> v(n);
   for(int i=0;i<n;i++) cin>>v[i];
   
-  RBST<int, int>::F f=[](int a,int b){return min(a,b);};
-  RBST<int, int>::G g=[](int a,int b){return b<0?a:b;};
-  RBST<int, int>::H h=[](int a,int b){return b<0?a:b;};
-  RBST<int, size_t>::P p=[](int a,size_t b){++b;return a;};
-  const int INF = 1e9;
-  RBST<int, int> rbst(f,g,h,p,INF,-1);
-
-  auto root=rbst.build(v);
+  PRBST<Int, Int>::F f=[](Int a,Int b){return a+b;};
+  PRBST<Int, Int>::G g=[](Int a,Int b){return a+b;};
+  PRBST<Int, Int>::H h=[](Int a,Int b){return a+b;};
+  PRBST<Int, size_t>::P p=[](Int a,size_t b){return a*b;};
+  PRBST<Int, Int> prbst(f,g,h,p,0,0);
+  auto root=prbst.build(v);
   
   for(int i=0;i<q;i++){
-    int x,y,z;
-    cin>>x>>y>>z;
-    if(x==0){
-      int v=rbst.query(root,z,z+1);
-      root=rbst.erase(root,z);
-      root=rbst.insert(root,y,v);
+    int t;
+    cin>>t;
+    if(t==1){
+      int a,b,v;
+      cin>>a>>b>>v;
+      prbst.update(root,a-1,b,v);
     }
-    if(x==1){
-      cout<<rbst.query(root,y,z+1)<<endl;
+    if(t==2){
+      int a,b,c,d;
+      cin>>a>>b>>c>>d;
+      a--;c--;
+      auto s=prbst.split(root,a);
+      auto t=prbst.split(s.second,b-a);
+      auto u=prbst.split(root,c);
+      auto v=prbst.split(u.second,d-c);
+      
+      root=prbst.merge(prbst.merge(s.first,v.first),t.second);
     }
-    if(x==2){
-      rbst.update(root,y,y+1,z);
+    if(t==3){
+      int a,b;
+      cin>>a>>b;
+      cout<<prbst.query(root,a-1,b)<<endl;
     }
-  }
-  
-  return 0;
-}
-/*
-  verified on 2018/02/17
-  judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
-*/
-
-signed DSL_2_F(){
-  int n,q;
-  cin>>n>>q;
-  RBST<Int, Int>::F f=[](Int a,Int b){return min(a,b);};
-  RBST<Int, Int>::G g=[](Int a,Int b){return b<0?a:b;};
-  RBST<Int, Int>::H h=[](Int a,Int b){return b<0?a:b;};
-  RBST<Int, size_t>::P p=[](Int a,size_t b){++b;return a;};
-  RBST<Int, Int> rbst(f,g,h,p,INT_MAX,-1);
-  vector<Int> v(n,INT_MAX);
-  auto root=rbst.build(v);
-  
-  for(int i=0;i<q;i++){
-    int c,s,t,x;
-    cin>>c;
-    if(c){
-      cin>>s>>t;
-      cout<<rbst.query(root,s,t+1)<<endl;
-    }else{
-      cin>>s>>t>>x;
-      rbst.update(root,s,t+1,x);
-    }
+    
+    if(prbst.ptr>prbst.LIM*95/100)
+      root=prbst.rebuild(root);
+    
   }
   return 0;
 }
-/*
-  verified on 2018/02/17
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
-*/
 
-signed DSL_2_G(){
-  int n,q;
-  cin>>n>>q;
-  RBST<Int, Int>::F f=[](Int a,Int b){return a+b;};
-  RBST<Int, Int>::G g=[](Int a,Int b){return a+b;};
-  RBST<Int, Int>::H h=[](Int a,Int b){return a+b;};
-  RBST<Int, size_t>::P p=[](Int a,size_t b){return a*b;};
-  RBST<Int, Int> rbst(f,g,h,p,0,0);
-  vector<Int> v(n,0);
-  auto root=rbst.build(v);
-  
-  for(int i=0;i<q;i++){
-    int c,s,t,x;
-    cin>>c;
-    if(c){
-      cin>>s>>t;
-      cout<<rbst.query(root,s-1,t)<<endl;
-    }else{
-      cin>>s>>t>>x;
-      rbst.update(root,s-1,t,x);
-    }
-  }
-  return 0;
-}
 /*
   verified on 2018/02/17
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
 */
 
 signed main(){
-  //AOJ_1508();
-  DSL_2_F();
-  //DSL_2_G();
+  ARC030_D();
   return 0;
 }
-
