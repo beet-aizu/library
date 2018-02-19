@@ -45,36 +45,36 @@ struct SPRBST{
     return &pool[ptr++];
   }
   
-  Node* create(T v){
+  inline Node* create(T v){
     if(ptr>=LIM) exit(0);
     return &(pool[ptr++]=Node(v));
   }
 
-  Node* clone(Node* a){
+  inline Node* clone(Node* a){
     if(a==nullptr) return a;
     Node* b=create();
     *b=*a;
     return b;
   }
   
-  size_t count(const Node* a){
+  inline size_t count(const Node* a){
     if(a==nullptr) return 0;
     return a->cnt;
   }
 
-  Node* insert(Node* a,size_t pos,T v){
+  inline Node* insert(Node* a,size_t pos,T v){
     Node* b=create(v);
     auto s=split(a,pos);
     return a=merge(merge(s.first,b),s.second);
   }
 
-  Node* erase(Node* a,size_t pos){
+  inline Node* erase(Node* a,size_t pos){
     auto s=split(a,pos);
     auto t=split(s.second,1);
     return merge(s.first,t.second);
   }
 
-  Node* update(Node* a){
+  inline Node* update(Node* a){
     if(a==nullptr) return a;
     a->cnt=count(a->l)+count(a->r)+1;
     return a;
