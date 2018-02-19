@@ -54,52 +54,60 @@ struct RBST{
     return build(0,v.size(),v);
   }
   
-  Node* create(){
+  inline Node* create(){
     return &pool[ptr++];
   }
   
-  Node* create(T v){
+  inline Node* create(T v){
     return &(pool[ptr++]=Node(v,d0));
   }
   
-  size_t count(const Node* a){
+  inline size_t count(const Node* a){
     if(a==nullptr) return 0;
     return a->cnt;
   }
 
-  Node* insert(Node* a,size_t pos,T v){
+  inline Node* insert(Node* a,size_t pos,T v){
     Node* b=create(v);
     auto s=split(a,pos);
     return a=merge(merge(s.first,b),s.second);
   }
 
-  Node* erase(Node* a,size_t pos){
+  inline Node* erase(Node* a,size_t pos){
     auto s=split(a,pos);
     auto t=split(s.second,1);
     return merge(s.first,t.second);
   }
 
-  T query(const Node *a){
+  inline T query(const Node *a){
     if(a==nullptr) return d1;
-    return f(g(a->val,p(a->laz,1)),
-	     g(a->dat,p(a->laz,count(a)-1)));
+    return a->dat;
   }
-
-  Node* update(Node* a){
-    if(a==nullptr) return a;
-    Node *l=a->l,*r=a->r;
+  
+  Node* eval(Node* a){
     if(a->laz!=d0){ 
       a->val=g(a->val,p(a->laz,1));
-      if(l!=nullptr) l->laz=h(l->laz,a->laz);
-      if(r!=nullptr) r->laz=h(r->laz,a->laz);
+      if(a->l!=nullptr){
+	a->l->laz=h(a->l->laz,a->laz);
+	a->l->dat=g(a->l->dat,p(a->laz,count(a->l)));
+      }
+      if(a->r!=nullptr){
+	a->r->laz=h(a->r->laz,a->laz);
+	a->r->dat=g(a->r->dat,p(a->laz,count(a->r)));
+      }
       a->laz=d0;
     }
-    a->cnt=count(l)+count(r)+1;
-    a->dat=f(query(l),query(r));
+    return update(a);
+  }
+  
+  inline Node* update(Node* a){
+    if(a==nullptr) return a;
+    a->cnt=count(a->l)+count(a->r)+1;
+    a->dat=f(a->val,f(query(a->l),query(a->r)));
     return a;
   }
 
-  T query(Node *&a,size_t l,size_t r){
+  inline T query(Node *&a,size_t l,size_t r){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
     auto u=t.first;
@@ -108,17 +116,17 @@ struct RBST{
     return res;
   }
   
-  void update(Node *&a,size_t l,size_t r,E v){
+  inline void update(Node *&a,size_t l,size_t r,E v){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
     auto u=t.first;
     u->laz=h(u->laz,v);
-    a=merge(merge(s.first,u),t.second);
+    a=merge(merge(s.first,eval(u)),t.second);
   }
 
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
-    update(a);
+    a=eval(a);
     dump(a->l,it);
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
@@ -134,18 +142,18 @@ struct RBST{
     if(a==nullptr) return b;
     if(b==nullptr) return a;
     if(xor128()%(count(a)+count(b))<count(a)){
-      a=update(a);
+      a=eval(a);
       a->r=merge(a->r,b);
       return update(a);
     }
-    b=update(b);
+    b=eval(b);
     b->l=merge(a,b->l);
     return update(b);
   }
 
   pair<Node*, Node*> split(Node* a,size_t k){
     if(a==nullptr) return make_pair(a,a);
-    update(a);
+    a=eval(a);
     if(k<=count(a->l)){
       auto s=split(a->l,k);
       a->l=s.second;

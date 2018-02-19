@@ -2,7 +2,7 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template<typename T,typename E>
+template<typename T>
 struct SPRBST{
   int xor128(){
     static int x = 123456789;
@@ -40,7 +40,7 @@ struct SPRBST{
     return build(0,v.size(),v);
   }
   
-  Node* create(){
+  inline Node* create(){
     if(ptr>=LIM) exit(0);
     return &pool[ptr++];
   }
@@ -103,29 +103,27 @@ struct SPRBST{
   Node* merge(Node* a,Node* b){
     if(a==nullptr) return b;
     if(b==nullptr) return a;
-    update(a);update(b);
-    Node* na=clone(a);
-    Node* nb=clone(b);
-    if(xor128()%(count(na)+count(nb))<count(na)){
-      na->r=merge(na->r,nb);
-      return update(na);
+    if(xor128()%(count(a)+count(b))<count(a)){
+      a=clone(update(a));
+      a->r=merge(a->r,b);
+      return update(a);
     }
-    nb->l=merge(na,nb->l);
-    return update(nb);
+    b=clone(update(b));
+    b->l=merge(a,b->l);
+    return update(b);
   }
 
   pair<Node*, Node*> split(Node* a,size_t k){
     if(a==nullptr) return make_pair(a,a);
-    update(a);
-    Node* na=clone(a);
-    if(k<=count(na->l)){
-      auto s=split(na->l,k);
-      na->l=s.second;
-      return make_pair(s.first,update(na));
+    a=clone(update(a));
+    if(k<=count(a->l)){
+      auto s=split(a->l,k);
+      a->l=s.second;
+      return make_pair(s.first,update(a));
     }
     auto s=split(a->r,k-(count(a->l)+1));
-    na->r=s.first;
-    return make_pair(update(na),s.second);
+    a->r=s.first;
+    return make_pair(update(a),s.second);
   } 
   
 };
@@ -141,7 +139,7 @@ signed main(){
   vector<char> v(strlen(buf));
   for(int i=0;i<(int)v.size();i++) v[i]=buf[i];
   
-  SPRBST<char, char> sprbst;
+  SPRBST<char> sprbst;
   auto root=sprbst.build(v);
   
   int n;

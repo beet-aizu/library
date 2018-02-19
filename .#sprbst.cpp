@@ -1,0 +1,1 @@
+aki@wlan1219.u-aizu.ac.jp.22462
