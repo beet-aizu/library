@@ -101,6 +101,9 @@ fill_v(T &t,const V &v){
   for(auto &e:t) fill_v(e,v);
 }
 
+template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 signed CSA070_SQUAREDEND(){
   Int n,k;
@@ -136,7 +139,54 @@ signed CSA070_SQUAREDEND(){
   https://csacademy.com/contest/round-70/task/squared-ends/
 */
 
+signed TENKA12016FINAL_E(){
+  Int n,l;
+  cin>>n>>l;
+  auto a=make_v<Int>(n,l);
+  for(Int i=0;i<n;i++)
+    for(Int j=0;j<l;j++)
+      cin>>a[i][j];
+  
+  vector<Int> dp(l,0);
+  const Int INF = 1e16;
+  for(Int i=0;i<n;i++){
+    DynamicConvexHullTrick<Int,INF,1> cht;
+    for(Int j=0;j<l;j++)
+      cht.addLine(-2*j,a[i][j]+j*j);
+    for(Int j=0;j<l;j++)
+      dp[j]+=j*j+cht.query(j);
+  }
+  
+  cout<<*min_element(dp.begin(),dp.end())<<endl;
+  return 0;
+}
+
+/*
+  verified on 2018/02/25
+  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
+*/
+
+signed COLOPL2018FINAL_C(){
+  Int n;
+  cin>>n;
+  vector<Int> a(n);
+  for(Int i=0;i<n;i++) cin>>a[i];
+  const Int INF = 1e16;
+  DynamicConvexHullTrick<Int,INF,1> cht;
+  for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
+  for(Int i=0;i<n;i++) cout<<cht.query(i)+i*i<<endl;
+  return 0;
+}
+
+/*
+  verified on 2018/02/25
+  https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
+*/
+
+
 signed main(){
-  CSA070_SQUAREDEND();
+  //CSA070_SQUAREDEND();
+  //TENKA12016FINAL_E();
+  COLOPL2018FINAL_C();
   return 0;
 }

@@ -61,7 +61,7 @@ struct ConvexHullTrick {
   
 };
 //END CUT HERE
-signed main(){
+signed LiveArchive_5097(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   using P = pair<Int, Int>;
@@ -106,3 +106,83 @@ signed main(){
   verified on 2017/12/12
   http://rhodon.u-aizu.ac.jp:8080/arena/submission_log.jsp?no=3794&runID=2326224
 */
+
+
+template<typename T>
+vector<T> make_v(size_t a){return vector<T>(a);}
+template<typename T>
+vector<vector<T> > make_v(size_t a,size_t b){
+  return vector<vector<T> >(a,make_v<T>(b));
+}
+template<typename T>
+vector<vector<vector<T> > > make_v(size_t a,size_t b,size_t c){
+  return vector<vector<vector<T> > > (a,make_v<T>(b,c));
+}
+
+template<typename T,typename V>
+typename enable_if<is_class<T>::value==0>::type
+fill_v(T &t,const V &v){t=v;}
+
+template<typename T,typename V>
+typename enable_if<is_class<T>::value!=0>::type
+fill_v(T &t,const V &v){
+  for(auto &e:t) fill_v(e,v);
+}
+
+
+template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+//INSERT ABOVE HERE
+signed TENKA12016FINAL_E(){
+  Int n,l;
+  cin>>n>>l;
+  auto a=make_v<Int>(n,l);
+  for(Int i=0;i<n;i++)
+    for(Int j=0;j<l;j++)
+      cin>>a[i][j];
+  
+  vector<Int> dp(l,0);
+  
+  for(Int i=0;i<n;i++){
+    ConvexHullTrick<Int> cht;
+    for(Int j=0;j<l;j++)
+      cht.add(-2*j,a[i][j]+j*j);
+    for(Int j=0;j<l;j++)
+      dp[j]+=j*j+cht.get(j);
+  }
+  
+  cout<<*min_element(dp.begin(),dp.end())<<endl;
+  return 0;
+}
+
+/*
+  verified on 2018/02/25
+  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
+*/
+
+
+signed COLOPL2018FINAL_C(){
+  Int n;
+  cin>>n;
+  vector<Int> a(n);
+  for(Int i=0;i<n;i++) cin>>a[i];
+  ConvexHullTrick<Int> cht;
+  for(Int i=0;i<n;i++) cht.add(-2*i,a[i]+i*i);
+  for(Int i=0;i<n;i++) cout<<cht.get(i)+i*i<<endl;
+  return 0;
+}
+
+/*
+  verified on 2018/02/25
+  https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
+*/
+
+
+
+signed main(){
+  //LiveArchive_5097();
+  //TENKA12016FINAL_E();
+  COLOPL2018FINAL_C();
+  return 0;
+}
