@@ -177,7 +177,7 @@ struct Arborescence{
   
 };
 //END CUT HERE
-signed main(){
+signed AOJ_GRL_2B(){
   int n,m,r;
   cin>>n>>m>>r;
   const int INF = 1e8;
@@ -188,6 +188,34 @@ signed main(){
 }
 
 /*
-  verified on 2018/02/16
+  verified on 2018/02/28
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B&lang=jp
 */
+
+signed UVA11183(){
+  Int T;
+  cin>>T;
+  for(Int t=1;t<=T;t++){
+    Int n,m;
+    cin>>n>>m;
+    const Int INF = 1e15;
+    Arborescence<Int> G(n,INF);
+    G.input(m);
+    Int ans=G.build(0);
+    cout<<"Case #"<<t<<": "; 
+    if(ans<0) cout<<"Possums!"<<endl;
+    else cout<<ans<<endl;
+  }
+  return 0;
+}
+
+/*
+  verified on 2018/02/28
+  https://vjudge.net/problem/UVA-11183
+*/
+
+signed main(){
+  AOJ_GRL_2B();
+  //UVA11183();
+  return 0;
+}

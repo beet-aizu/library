@@ -134,6 +134,14 @@ struct PRBST{
     a=merge(merge(s.first,eval(u)),t.second);
   }
 
+  inline T get(Node *&a,size_t p){
+    auto s=split(a,p);
+    auto t=split(s.second,1);
+    T res=t.first->val;
+    a=merge(s.first,merge(t.first,t.second));
+    return res;
+  }
+  
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
     a=eval(a);

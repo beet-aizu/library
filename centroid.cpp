@@ -4,10 +4,10 @@ using Int = long long;
 //BEGIN CUT HERE
 struct Centroid{
   int n;
-  vector<int> sz,centroid;
+  vector<int> sz,centroid,used;
   vector<vector<int> > G;
   Centroid(){}
-  Centroid(int n):n(n),sz(n),G(n){}
+  Centroid(int n):n(n),sz(n,1),used(n,0),G(n){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);
@@ -25,7 +25,7 @@ struct Centroid{
   void dfs(int v,int p) {
     int ok=1;
     for (int u:G[v]){
-      if(u==p) continue;
+      if(u==p||used[u]) continue;
       dfs(u,v);
       sz[v]+=sz[u];
       ok&=(sz[u]<=n/2);
@@ -35,22 +35,33 @@ struct Centroid{
   };
   
   vector<int> build(int r=0) {
-    fill(sz.begin(),sz.end(),0);
-    queue<int> q;
-    sz[r]=1;
-    q.emplace(r);
-    while(!q.empty()){
-      int v=q.front();q.pop();
-      for(int u:G[v]){
-	if(sz[u]) continue;
-	sz[u]=1;
-	q.emplace(u);
+    n=0;
+    auto bfs=[&](int k){      
+      queue<int> q;
+      sz[r]=k;
+      q.emplace(r);
+      while(!q.empty()){
+	int v=q.front();q.pop();
+	n+=k;
+	for(int u:G[v]){
+	  if(sz[u]==k||used[u]) continue;
+	  sz[u]=k;
+	  q.emplace(u);
+	}
       }
-    }
-    n=accumulate(sz.begin(),sz.end(),0);
+    };
+    bfs(0);bfs(1);
     centroid.clear();
     dfs(r,-1);
     return centroid;
+  }
+
+  void disable(int v){
+    used[v]=1;
+  }
+
+  void enable(int v){
+    used[v]=0;
   }
 };
 //END CUT HERE
@@ -64,26 +75,23 @@ signed DWANGO2018QUAL_E(){
   int r=0;
   for(int l=0;l<q;l++){
     auto c=C.build(r);
-    auto rmv=[](vector<int> &v,int x){
-      v.erase(find(v.begin(),v.end(),x));
-    };
     if(c.size()==2u){
       cout<<"? "<<c[0]+1<<" "<<c[1]+1<<endl;
       int x;
       cin>>x;
       if(x==c[0]+1){
 	r=c[0];
-	rmv(C.G[c[0]],c[1]);
+	C.disable(c[1]);
       }
       if(x==c[1]+1){
 	r=c[1];
-	rmv(C.G[c[1]],c[0]);
+	C.disable(c[0]);
       }
     }else{
       using P = pair<int, int>;
       vector<P> vp;
       for(int u:C.G[c[0]])
-	vp.emplace_back(C.sz[u],u);
+	if(!C.used[u]) vp.emplace_back(C.sz[u],u);
       sort(vp.rbegin(),vp.rend());
       if(vp.empty()){
 	cout<<"! "<<c[0]+1<<endl;
@@ -103,17 +111,17 @@ signed DWANGO2018QUAL_E(){
 	int x;
 	cin>>x;
 	if(x==0){
-	  r=c[0];
-	  rmv(C.G[c[0]],a);
-	  rmv(C.G[c[0]],b);
+	  r=c[0];	  
+	  C.disable(a);
+	  C.disable(b);
 	}
 	if(x==a+1){
 	  r=a;
-	  rmv(C.G[a],c[0]);
+	  C.disable(c[0]);
 	}
 	if(x==b+1){
 	  r=b;
-	  rmv(C.G[b],c[0]);
+	  C.disable(c[0]);
 	}
       }
     }

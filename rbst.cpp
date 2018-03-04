@@ -124,6 +124,14 @@ struct RBST{
     a=merge(merge(s.first,eval(u)),t.second);
   }
 
+  inline T get(Node *&a,size_t p){
+    auto s=split(a,p);
+    auto t=split(s.second,1);
+    T res=t.first->val;
+    a=merge(s.first,merge(t.first,t.second));
+    return res;
+  }
+  
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
     a=eval(a);
@@ -271,10 +279,101 @@ signed DSL_2_G(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
 */
 
+char buf[114514];
+inline signed CODEFESTIVAL2014EXHIBITION_B(){
+  Int Q;
+  scanf("%lld",&Q);
+  scanf("%s\n",buf);
+  string S(buf);
+  using T = tuple<Int, Int, Int>;
+  using P = pair<Int, Int>;
+  RBST<T, P>::F f=[](T a,T b){
+    return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
+  };
+  RBST<T, P>::G g=[](T a,P b){
+    return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
+  };
+  RBST<T, P>::H h=[](P a,P b){
+    return P(a.first+b.first,a.second+b.second);
+  };
+  RBST<T, P>::P p=[](P a,Int b){++b;return a;};
+  const Int INF = 1e9;
+  RBST<T, P> rbst(f,g,h,p,T(INF,INF,0),P(0,0));
+  
+  vector<T> v(S.size()+2,T(0,0,0));
+  for(Int i=0;i<(Int)S.size();i++)
+    get<2>(v[i+1])=(S[i]=='('?1:-1);
+  
+  auto root=rbst.build(v);
+  for(Int i=1;i<=(Int)S.size();i++){
+    Int z=get<2>(rbst.get(root,i));
+    P q=P(z,-z);
+     
+    q.second=0;
+    rbst.update(root,i,rbst.count(root),q);
+    q.second=-z;
+    q.first=0;
+    rbst.update(root,0,i+1,q);      
+    q.first=z;
+  }
+
+  for(Int i=0;i<Q;i++){
+    char x;
+    Int y,z;
+    scanf("%c %lld %lld\n",&x,&y,&z);
+    z++;
+    if(x=='('||x==')'){
+      T prev=rbst.query(root,y-1,y);
+      T next=rbst.query(root,y,y+1);
+      z=(x=='('?1:-1);
+      P q=P(z,-z);
+      T curr(get<0>(prev),get<1>(next),z);
+      root=rbst.insert(root,y,curr);
+      
+      q.second=0;
+      rbst.update(root,y,rbst.count(root),q);
+      q.second=-z;
+      q.first=0;
+      rbst.update(root,0,y+1,q);      
+      q.first=z;
+    }
+    
+    if(x=='D'){
+      z=get<2>(rbst.get(root,y));
+      P q=P(-z,z);
+      root=rbst.erase(root,y);
+      
+      q.second=0;
+      rbst.update(root,y,rbst.count(root),q);
+      q.second=z;
+      q.first=0;
+      rbst.update(root,0,y,q);      
+      q.first=-z;
+    }
+    
+    if(x=='Q'){
+      T prev=rbst.query(root,y-1,y);
+      T curr=rbst.query(root,y,z);
+      T next=rbst.query(root,z,z+1);
+      Int ans=0;
+      if(get<0>(prev)>get<0>(curr)) ans+=get<0>(prev)-get<0>(curr);
+      if(get<1>(next)>get<1>(curr)) ans+=get<1>(next)-get<1>(curr);
+      printf("%lld\n",ans);
+    }
+  }
+  
+  return 0;
+}
+/*
+  verified on 2018/02/27
+  https://beta.atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
+*/
+
 signed main(){
   //AOJ_1508();
-  DSL_2_F();
+  //DSL_2_F();
   //DSL_2_G();
+  CODEFESTIVAL2014EXHIBITION_B();
   return 0;
 }
 
