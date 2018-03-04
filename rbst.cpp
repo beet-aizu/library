@@ -15,17 +15,17 @@ struct RBST{
     x = y; y = z; z = w;
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
-  typedef function<T(T,T)> F;
-  typedef function<T(T,E)> G;
-  typedef function<E(E,E)> H;
-  typedef function<E(E,size_t)> P;
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using P = function<E(E,size_t)>;
 
   F f;
   G g;
   H h;
   P p;
-  T d1;
-  E d0;
+  T ti;
+  E ei;
   
   struct Node{
     Node *l,*r;
@@ -41,8 +41,8 @@ struct RBST{
   vector<Node> pool;
   size_t ptr;
 
-  RBST(F f,G g,H h,P p,T d1,E d0):
-    f(f),g(g),h(h),p(p),d1(d1),d0(d0),pool(LIM),ptr(0){}
+  RBST(F f,G g,H h,P p,T ti,E ei):
+    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
     if(l+1==r) return create(v[l]);
@@ -59,7 +59,7 @@ struct RBST{
   }
   
   inline Node* create(T v){
-    return &(pool[ptr++]=Node(v,d0));
+    return &(pool[ptr++]=Node(v,ei));
   }
   
   inline size_t count(const Node* a){
@@ -80,12 +80,12 @@ struct RBST{
   }
 
   inline T query(const Node *a){
-    if(a==nullptr) return d1;
+    if(a==nullptr) return ti;
     return a->dat;
   }
   
   Node* eval(Node* a){
-    if(a->laz!=d0){ 
+    if(a->laz!=ei){ 
       a->val=g(a->val,p(a->laz,1));
       if(a->l!=nullptr){
 	a->l->laz=h(a->l->laz,a->laz);
@@ -95,7 +95,7 @@ struct RBST{
 	a->r->laz=h(a->r->laz,a->laz);
 	a->r->dat=g(a->r->dat,p(a->laz,count(a->r)));
       }
-      a->laz=d0;
+      a->laz=ei;
     }
     return update(a);
   }
@@ -281,12 +281,12 @@ signed DSL_2_G(){
 
 char buf[114514];
 inline signed CODEFESTIVAL2014EXHIBITION_B(){
-  Int Q;
-  scanf("%lld",&Q);
+  int Q;
+  scanf("%d",&Q);
   scanf("%s\n",buf);
   string S(buf);
-  using T = tuple<Int, Int, Int>;
-  using P = pair<Int, Int>;
+  using T = tuple<int, int, int>;
+  using P = pair<int, int>;
   RBST<T, P>::F f=[](T a,T b){
     return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
   };
@@ -296,17 +296,17 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
   RBST<T, P>::H h=[](P a,P b){
     return P(a.first+b.first,a.second+b.second);
   };
-  RBST<T, P>::P p=[](P a,Int b){++b;return a;};
-  const Int INF = 1e9;
+  RBST<T, P>::P p=[](P a,int b){++b;return a;};
+  const int INF = 1e9;
   RBST<T, P> rbst(f,g,h,p,T(INF,INF,0),P(0,0));
   
   vector<T> v(S.size()+2,T(0,0,0));
-  for(Int i=0;i<(Int)S.size();i++)
+  for(int i=0;i<(int)S.size();i++)
     get<2>(v[i+1])=(S[i]=='('?1:-1);
   
   auto root=rbst.build(v);
-  for(Int i=1;i<=(Int)S.size();i++){
-    Int z=get<2>(rbst.get(root,i));
+  for(int i=1;i<=(int)S.size();i++){
+    int z=get<2>(rbst.get(root,i));
     P q=P(z,-z);
      
     q.second=0;
@@ -317,10 +317,10 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
     q.first=z;
   }
 
-  for(Int i=0;i<Q;i++){
+  for(int i=0;i<Q;i++){
     char x;
-    Int y,z;
-    scanf("%c %lld %lld\n",&x,&y,&z);
+    int y,z;
+    scanf("%c %d %d\n",&x,&y,&z);
     z++;
     if(x=='('||x==')'){
       T prev=rbst.query(root,y-1,y);
@@ -355,17 +355,17 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
       T prev=rbst.query(root,y-1,y);
       T curr=rbst.query(root,y,z);
       T next=rbst.query(root,z,z+1);
-      Int ans=0;
+      int ans=0;
       if(get<0>(prev)>get<0>(curr)) ans+=get<0>(prev)-get<0>(curr);
       if(get<1>(next)>get<1>(curr)) ans+=get<1>(next)-get<1>(curr);
-      printf("%lld\n",ans);
+      printf("%d\n",ans);
     }
   }
   
   return 0;
 }
 /*
-  verified on 2018/02/27
+  verified on 2018/03/04
   https://beta.atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
 */
 

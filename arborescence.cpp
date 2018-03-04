@@ -29,15 +29,15 @@ struct UnionFind{
 
 template<typename T, typename E>
 struct SkewHeap{
-  typedef function<T(T, E)> F;
-  typedef function<E(E, E)> G;
-  typedef function<bool(T,T)> C;
-  F f;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using C = function<bool(T,T)>;
   G g;
+  H h;
   C c;
   T INF;
-  E e;
-  SkewHeap(F f,G g,C c,T INF,E e):f(f),g(g),c(c),INF(INF),e(e){}
+  E ei;
+  SkewHeap(G g,H h,C c,T INF,E ei):g(g),h(h),c(c),INF(INF),ei(ei){}
   
   struct Node{
     Node *l,*r;
@@ -48,15 +48,15 @@ struct SkewHeap{
 
   void eval(Node *a){
     if(a==nullptr) return;
-    if(a->add==e) return;
-    if(a->l) a->l->add=g(a->l->add,a->add);
-    if(a->r) a->r->add=g(a->r->add,a->add);
-    a->val=f(a->val,a->add);
-    a->add=e;
+    if(a->add==ei) return;
+    if(a->l) a->l->add=h(a->l->add,a->add);
+    if(a->r) a->r->add=h(a->r->add,a->add);
+    a->val=g(a->val,a->add);
+    a->add=ei;
   }
   
   T top(Node *a){
-    return a!=nullptr?f(a->val,a->add):INF;
+    return a!=nullptr?g(a->val,a->add):INF;
   }
 
   T snd(Node *a){
@@ -65,12 +65,12 @@ struct SkewHeap{
   }
 
   Node* add(Node *a,E d){
-    if(a!=nullptr) a->add=g(a->add,d);
+    if(a!=nullptr) a->add=h(a->add,d);
     return a;
   }
   
   Node* push(T v){
-    return new Node(v,e);
+    return new Node(v,ei);
   }
   
   Node* meld(Node *a,Node *b){
@@ -95,8 +95,8 @@ struct SkewHeap{
 //INSERT ABOVE HERE
 template<typename T>
 struct Arborescence{
-  using P = pair<T, int>;
-  using Heap = SkewHeap<P, int>;
+  typedef pair<T, int> P;
+  using Heap = SkewHeap<P, T>;
   
   struct edge{
     int from,to;
@@ -130,10 +130,10 @@ struct Arborescence{
   }
 
   T build(int r){
-    typename Heap::F f=[](P a,int b){return P(a.first+b,a.second);};
-    typename Heap::G g=[](int a,int b){return a+b;};
-    typename Heap::C c=[](P a, P b){return a>b;};
-    Heap heap(f,g,c,INF,0);
+    typename Heap::G g=[](P a,T b){return P(a.first+b,a.second);};
+    typename Heap::H h=[](T a,T b){return a+b;};
+    typename Heap::C c=[](P a,P b){return a>b;};
+    Heap heap(g,h,c,INF,0);
   
     used[r]=2;
     for(int i=0;i<(int)edges.size();i++){
@@ -177,45 +177,51 @@ struct Arborescence{
   
 };
 //END CUT HERE
-signed AOJ_GRL_2B(){
-  int n,m,r;
-  cin>>n>>m>>r;
-  const int INF = 1e8;
-  Arborescence<int> G(n,INF);
-  G.input(m);
-  cout<<G.build(r)<<endl;
-  return 0;
-}
+struct AOJ_GRL_2B{
+  signed solve(){
+    int n,m,r;
+    cin>>n>>m>>r;
+    const int INF = 1e8;
+    Arborescence<int> G(n,INF);
+    G.input(m);
+    cout<<G.build(r)<<endl;
+    return 0;
+  }
+};
 
 /*
-  verified on 2018/02/28
+  verified on 2018/03/04
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B&lang=jp
 */
 
-signed UVA11183(){
-  Int T;
-  cin>>T;
-  for(Int t=1;t<=T;t++){
-    Int n,m;
-    cin>>n>>m;
-    const Int INF = 1e15;
-    Arborescence<Int> G(n,INF);
-    G.input(m);
-    Int ans=G.build(0);
-    cout<<"Case #"<<t<<": "; 
-    if(ans<0) cout<<"Possums!"<<endl;
-    else cout<<ans<<endl;
+struct UVA11183{
+  signed solve(){
+    Int T;
+    cin>>T;
+    for(Int t=1;t<=T;t++){
+      Int n,m;
+      cin>>n>>m;
+      const Int INF = 1e15;
+      Arborescence<Int> G(n,INF);
+      G.input(m);
+      Int ans=G.build(0);
+      cout<<"Case #"<<t<<": "; 
+      if(ans<0) cout<<"Possums!"<<endl;
+      else cout<<ans<<endl;
+    }
+    return 0;
   }
-  return 0;
-}
+};
+
 
 /*
-  verified on 2018/02/28
+  verified on 2018/03/04
   https://vjudge.net/problem/UVA-11183
 */
 
 signed main(){
-  AOJ_GRL_2B();
-  //UVA11183();
+  AOJ_GRL_2B ans;
+  //UVA11183 ans;
+  ans.solve();
   return 0;
 }

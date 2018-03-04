@@ -15,17 +15,17 @@ struct PRBST{
     x = y; y = z; z = w;
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
-  typedef function<T(T,T)> F;
-  typedef function<T(T,E)> G;
-  typedef function<E(E,E)> H;
-  typedef function<E(E,size_t)> P;
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using P = function<E(E,size_t)>;
 
   F f;
   G g;
   H h;
   P p;
-  T d1;
-  E d0;
+  T ti;
+  E ei;
   
   struct Node{
     Node *l,*r;
@@ -41,8 +41,8 @@ struct PRBST{
   vector<Node> pool;
   size_t ptr;
 
-  PRBST(F f,G g,H h,P p,T d1,E d0):
-    f(f),g(g),h(h),p(p),d1(d1),d0(d0),pool(LIM),ptr(0){}
+  PRBST(F f,G g,H h,P p,T ti,E ei):
+    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
     if(l+1==r) return create(v[l]);
@@ -59,7 +59,7 @@ struct PRBST{
   }
   
   inline Node* create(T v){
-    return &(pool[ptr++]=Node(v,d0));
+    return &(pool[ptr++]=Node(v,ei));
   }
 
   inline Node* clone(Node* a){
@@ -87,13 +87,13 @@ struct PRBST{
   }
 
   inline T query(const Node *a){
-    if(a==nullptr) return d1;
+    if(a==nullptr) return ti;
     return a->dat;
   }
 
   Node* eval(Node* a){
     a=clone(a);
-    if(a->laz!=d0){ 
+    if(a->laz!=ei){ 
       a->val=g(a->val,p(a->laz,1));
       if(a->l!=nullptr){
 	a->l=clone(a->l);
@@ -105,7 +105,7 @@ struct PRBST{
 	a->r->laz=h(a->r->laz,a->laz);
 	a->r->dat=g(a->r->dat,p(a->laz,count(a->r)));
       }
-      a->laz=d0;
+      a->laz=ei;
     }
     return update(a);
   }
@@ -238,7 +238,7 @@ signed ARC030_D(){
 }
 
 /*
-  verified on 2018/02/17
+  verified on 2018/03/04
   https://beta.atcoder.jp/contests/arc030/tasks/arc030_4
 */
 
