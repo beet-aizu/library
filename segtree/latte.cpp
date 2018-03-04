@@ -3,29 +3,27 @@ using namespace std;
 //BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
-  typedef function<T(T,E)> G;
-  typedef function<T(E,E)> H;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
   int n;
   G g;
   H h;
-  T d1;
-  E d0;
+  T ti;
+  E ei;
   vector<T> dat;
   vector<E> laz;
   SegmentTree(){};
-  SegmentTree(int n_,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>()):
-    g(g),h(h),d1(d1),d0(d0){
+  SegmentTree(int n_,G g,H h,T ti,E ei):
+    g(g),h(h),ti(ti),ei(ei){
     init(n_);
-    if(n_==(int)v.size()) build(n_,v);
   }
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
-    dat.resize(n,d1);
+    dat.resize(n,ti);
     laz.clear();
-    laz.resize(2*n-1,d0);
+    laz.resize(2*n-1,ei);
   }
   void build(int n_, vector<T> v){
     for(int i=0;i<n_;i++) dat[i]=v[i];
@@ -78,6 +76,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/11/05
+  verified on 2018/03/04
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp
 */

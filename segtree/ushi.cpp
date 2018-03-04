@@ -4,26 +4,23 @@ using Int = long long;
 //BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
-  typedef function<T(T,T)> F;
-  typedef function<T(T,E)> G;
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
   int n;
   F f;
   G g;
-  T d1;
-  E d0;
+  T ti;
   vector<T> dat;
   SegmentTree(){};
-  SegmentTree(int n_,F f,G g,T d1,
-	      vector<T> v=vector<T>()):
-    f(f),g(g),d1(d1){
+  SegmentTree(int n_,F f,G g,T ti):
+    f(f),g(g),ti(ti){
     init(n_);
-    if(n_==(int)v.size()) build(n_,v);
   }
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
-    dat.resize(2*n-1,d1);
+    dat.resize(2*n-1,ti);
   }
   void build(int n_, vector<T> v){
     for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
@@ -39,7 +36,7 @@ struct SegmentTree{
     }
   }
   inline T query(int a,int b){
-    T vl=d1,vr=d1;
+    T vl=ti,vr=ti;
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
       if(l&1) vl=f(vl,dat[(l++)-1]);
       if(r&1) vr=f(dat[(--r)-1],vr);
@@ -69,7 +66,7 @@ signed AOJ_DSL2A(){
   cin>>n>>q;
   SegmentTree<int,int> rmq(n,
 			   [](int a,int b){return min(a,b);},
-			   [](int a,int b){return b;},
+			   [](int a,int b){++a;return b;},
 			   INT_MAX);
   for(int i=0;i<q;i++){
     int c,x,y;
@@ -80,7 +77,7 @@ signed AOJ_DSL2A(){
   return 0;
 }
 /*
-  verified on 2017/11/05
+  verified on 2018/03/04
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
 */
 
@@ -101,7 +98,6 @@ signed ARC038_C(){
     function<bool(Int)> check=[&](Int x){return x<i-c[i];};
     dp[i]=seg.find(0,n,check);
     seg.update(dp[i],i);
-    //cout<<i<<":"<<dp[i]<<endl;
   }
   
   Int ans=0;

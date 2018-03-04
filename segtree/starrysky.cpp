@@ -4,33 +4,32 @@ using Int = long long;
 //BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
-  typedef function<T(T,T)> F;
-  typedef function<T(T,E)> G;
-  typedef function<T(E,E)> H;
-  typedef function<E(E,int)> P;
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using P = function<E(E,size_t)>;
   int n;
   F f;
   G g;
   H h;
+  T ti;
+  E ei;
   P p;
-  T d1;
-  E d0;
   vector<T> dat;
   vector<E> laz;
   SegmentTree(){};
-  SegmentTree(int n_,F f,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>(),P p=[](E a,int b){return a;}):
-    f(f),g(g),h(h),d1(d1),d0(d0),p(p){
+  SegmentTree(int n_,F f,G g,H h,T ti,E ei,
+	      P p=[](E a,size_t b){b++;return a;}):
+    f(f),g(g),h(h),ti(ti),ei(ei),p(p){
     init(n_);
-    if(n_==(int)v.size()) build(n_,v);
   }
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
     dat.clear();
-    dat.resize(2*n-1,d1);
+    dat.resize(2*n-1,ti);
     laz.clear();
-    laz.resize(2*n-1,d0);
+    laz.resize(2*n-1,ei);
   }
   void build(int n_, vector<T> v){
     for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
@@ -52,7 +51,7 @@ struct SegmentTree{
     update(a,b,x,0,0,n);
   }
   T query(int a,int b,int k,int l,int r){
-    if(r<=a||b<=l) return d1;
+    if(r<=a||b<=l) return ti;
     if(a<=l&&r<=b) return g(dat[k],p(laz[k],r-l));
     T vl=query(a,b,k*2+1,l,(l+r)/2);
     T vr=query(a,b,k*2+2,(l+r)/2,r);
@@ -64,30 +63,26 @@ struct SegmentTree{
 };
 //END CUT HERE
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   Int n,q;
   cin>>n>>q;
-  SegmentTree<Int,Int> ss(n,
-			  [](Int a,Int b){return max(a,b);},
-			  plus<Int>(),
-			  plus<Int>(),
-			  INT_MIN,0,vector<Int>(n,0));
+  SegmentTree<Int, Int>::F f=[](Int a,Int b){return min(a,b);};
+  SegmentTree<Int, Int>::G g=[](Int a,Int b){return a+b;};
+  const Int INF = 1e15;
+  SegmentTree<Int, Int> seg(n,f,g,g,INF,0);
+  seg.build(n,vector<Int>(n,0));
   for(Int i=0;i<q;i++){
-    Int t,a,b;
-    cin>>t>>a>>b;
-    if(t==1){
-      Int x;
+    Int a,s,t,x;
+    cin>>a>>s>>t;
+    t++;
+    if(a) cout<<seg.query(s,t)<<endl;
+    if(!a){
       cin>>x;
-      ss.update(a,b,x);
-    }
-    if(t==2){
-      cout<<ss.query(a,b)<<endl;
+      seg.update(s,t,x);
     }
   }
   return 0;
 }
 /*
-  verified on 2017/12/01
-  https://hoj.hamako-ths.ed.jp/onlinejudge/problems/860
+  verified on 2018/03/04
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H&lang=jp
 */
