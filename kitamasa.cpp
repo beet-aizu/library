@@ -6,8 +6,8 @@ template<typename T>
 struct Kitamasa{
   using VT = vector<T>;
   VT a,c;
-  int m,base;
   vector<VT > rs;
+  int m,base;
   using F = function<T(T,T)>;
   F pl,ml;
   T d0,d1;
@@ -44,7 +44,6 @@ struct Kitamasa{
   }
 
   T calc(long long n){
-    n--;
     VT tmp,res(rs[0]);
     for(int i=0;n;i++,n>>=1){
       ensure_base(i+1);
@@ -60,7 +59,7 @@ struct Kitamasa{
 };
 //END CUT HERE
 
-signed main(){
+signed TDPC_F(){
   Int n,k;
   cin>>n>>k;
   const Int MOD = 1e9+7;
@@ -70,10 +69,34 @@ signed main(){
   Kitamasa<Int>::F ml=[](Int a,Int b){return (a*b)%MOD;};
   Kitamasa<Int> fib(a,c,pl,ml,0,1);
 
-  cout<<fib.calc(k)<<endl;
+  cout<<fib.calc(--k)<<endl;
   return 0;
 }
 /*
-  verified on 2018/01/16
+  verified on 2018/03/06
   https://beta.atcoder.jp/contests/tdpc/tasks/tdpc_fibonacci 
 */
+
+signed ARC009_D(){
+  Int k,m;
+  cin>>k>>m;
+  
+  vector<unsigned> a(k),c(k);
+  for(int i=0;i<k;i++) cin>>a[i];
+  for(int i=0;i<k;i++) cin>>c[k-(i+1)];
+  Kitamasa<unsigned>::F pl=[](unsigned a,unsigned b){return a^b;};
+  Kitamasa<unsigned>::F ml=[](unsigned a,unsigned b){return a&b;};
+  Kitamasa<unsigned> v(a,c,pl,ml,0u,~0u);
+
+  cout<<v.calc(--m)<<endl;
+  return 0;
+}
+/*
+  verified on 2018/03/06
+  https://beta.atcoder.jp/contests/abc009/tasks/abc009_4
+*/
+signed main(){
+  TDPC_F();
+  ARC009_D();
+  return 0;
+}
