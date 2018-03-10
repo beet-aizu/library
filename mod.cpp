@@ -94,6 +94,24 @@ Int montmort(Int n,Int mod){
     (res*=i)%=mod;
   return res;
 }
+
+// calculate P(t) from given points in [0,N]
+Int LagrangePolynomial(vector<Int> &y,Int t,const Int mod){
+  init(mod);
+  Int n=y.size()-1;
+  Int num=1;
+  for(Int i=0;i<=n;i++)
+    num=num*((t-i)%mod)%mod;
+  Int res=0;
+  for(Int i=0;i<=n;i++){
+    Int tmp=(y[i]*num%mod)*mod_inverse((t-i)%mod,mod)%mod;
+    tmp=tmp*finv[i]%mod;
+    tmp=tmp*finv[n-i]%mod;
+    if((n-i)&1) tmp=mod-tmp;
+    res=(res+tmp)%mod;
+  }
+  return res;
+}
 //END CUT HERE
 
 //mod_pow
@@ -138,10 +156,43 @@ signed ARC009_C(){
 */
 
 
+signed yuki_665(){
+  Int n,k;
+  cin>>n>>k;
+  vector<Int> y(k+2,0);
+  for(Int i=1;i<=k+1;i++) y[i]=(y[i-1]+mod_pow(i,k,MOD))%MOD;
+  if(n<=k+1) cout<<y[n]<<endl;
+  else cout<<LagrangePolynomial(y,n,MOD)<<endl;
+  return 0;
+}
+/*
+  verified on 2018/03/10
+  https://yukicoder.me/problems/no/665
+*/
+
+signed ARC033_D(){
+  Int n;
+  cin>>n;
+  vector<Int> y(n+1);
+  for(Int i=0;i<=n;i++) cin>>y[i];
+  Int t;
+  cin>>t;
+  if(t<=n) cout<<y[t]<<endl;
+  else cout<<LagrangePolynomial(y,t,MOD)<<endl;
+  return 0;
+}
+/*
+  verified on 2018/03/10
+  https://beta.atcoder.jp/contests/arc033/tasks/arc033_4
+*/
+
+
+
 signed main(){
   //AOJ_NTL1B();
-  AOJ_NTL1E();
-  
+  //AOJ_NTL1E();
   //ARC009_C();
+  //yuki_665();
+  ARC033_D();
   return 0;
 }
