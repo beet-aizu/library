@@ -7,8 +7,8 @@ struct Trie{
   struct Node{
     char c;
     vector<int> nxt;
-    int num;
-    Node(char c):c(c),nxt(X,-1),num(-1){}
+    int idx;
+    Node(char c):c(c),nxt(X,-1),idx(-1){}
   };
 
   using F = function<int(char)>;
@@ -30,7 +30,7 @@ struct Trie{
       v.emplace_back(s[i]);
       pos=npos;
     }
-    v[pos].num=x;
+    v[pos].idx=x;
   }
 
   int find(const string &s){
@@ -48,7 +48,7 @@ struct Trie{
   }
 
   int calc(int pos){
-    return (pos<0?pos:v[pos].num);
+    return (pos<0?pos:v[pos].idx);
   }
   
 };
