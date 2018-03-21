@@ -25,10 +25,8 @@ struct SegmentTree{
   void init(int n_){
     n=1;
     while(n<n_) n*=2;
-    dat.clear();
-    dat.resize(2*n-1,ti);
-    laz.clear();
-    laz.resize(2*n-1,ei);
+    dat.assign(2*n-1,ti);
+    laz.assign(2*n-1,ei);
   }
   void build(int n_, vector<T> v){
     for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
@@ -104,5 +102,5 @@ signed main(){
 
 /*
   verified on 2018/03/04
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
 */
