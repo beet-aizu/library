@@ -3,14 +3,11 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 template<typename T>
-vector<T> make_v(size_t a){return vector<T>(a);}
-template<typename T>
-vector<vector<T> > make_v(size_t a,size_t b){
-  return vector<vector<T> >(a,make_v<T>(b));
-}
-template<typename T>
-vector<vector<vector<T> > > make_v(size_t a,size_t b,size_t c){
-  return vector<vector<vector<T> > > (a,make_v<T>(b,c));
+vector<T> make_v(size_t a,T b){return vector<T>(a,b);}
+
+template<typename... Ts>
+auto make_v(size_t a,Ts... ts){
+  return vector<decltype(make_v(ts...))>(a,make_v(ts...));
 }
 
 template<typename T,typename V>
@@ -25,19 +22,11 @@ fill_v(T &t,const V &v){
 //END CUT HERE
 //INSERT ABOVE HERE
 signed main(){
-  auto v=make_v<int>(10,10);
-  fill_v(v,-1);
+  auto v=make_v(10,10,(int)-1);
   
   for(int i=0;i<10;i++)
     for(int j=0;j<10;j++)
       cout<<v[i][j]<<" \n"[j==9];
-
   
-  using P = pair<int, int>;
-  auto G=make_v<P>(10,0);
-  for(int i=0;i<10;i++) G[i].emplace_back(i,100);
-  for(int i=0;i<10;i++)
-    for(auto[u,c]:G[i])
-      cout<<i<<":"<<u<<" "<<c<<endl;
   return 0;
 }

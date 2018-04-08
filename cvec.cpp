@@ -5,21 +5,20 @@ using Int = long long;
 template<typename T,size_t... es>
 struct Vec{
   T v;
-  T* begin(){return &v;};
-  T* end(){return (&v)+1;};
+  T* begin(){return *v;};
+  T* end(){return (*v)+1;};
   void fill(T x){v=x;};
   T& operator=(T x){return v=x;};
   operator T&(){return v;};
 };
 
 template<typename T,size_t e,size_t... es>
-struct Vec<T,e,es...>{
-  vector<Vec<T, es...> > v;
-  Vec<T,e,es...>():v(e){};
-  Vec<T, es...>& operator[](int i){return v[i];};
-  typename vector<T>::iterator begin(){return v.begin();};
-  typename vector<T>::iterator end(){return v.end();};
-  void fill(T x){for(auto &a:v) a.fill(x);};
+struct Vec<T,e,es...> : array<Vec<T, es...>, e> {
+  Vec<T,e,es...>(){};
+  Vec<T,e,es...>(T x){fill(x);};
+  using array<Vec<T, es...>, e>::begin;
+  using array<Vec<T, es...>, e>::end;
+  void fill(T x){for(auto a=begin();a!=end();++a) a->fill(x);};
 };
 
 //END CUT HERE
