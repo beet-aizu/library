@@ -6,8 +6,8 @@ template<typename T>
 vector<T> make_v(size_t a){return vector<T>(a);}
 
 template<typename T,typename... Ts>
-auto make_v(size_t a,size_t b,Ts... ts){
-  return vector<decltype(make_v<T>(b,ts...))>(a,make_v<T>(b,ts...));
+auto make_v(size_t a,Ts... ts){
+  return vector<decltype(make_v<T>(ts...))>(a,make_v<T>(ts...));
 }
 
 template<typename T,typename V>
