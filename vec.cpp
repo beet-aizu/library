@@ -31,10 +31,10 @@ signed main(){
   for(int i=0;i<10;i++)
     for(int j=0;j<10;j++)
       cout<<v[i][j]<<" \n"[j==9];
+
   
   using P = pair<int, int>;
   auto G=make_v<P>(10,0);
-  vector<vector<P> > G(n); 
   for(int i=0;i<10;i++) G[i].emplace_back(i,100);
   for(int i=0;i<10;i++)
     for(auto[u,c]:G[i])
