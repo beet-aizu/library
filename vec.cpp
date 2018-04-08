@@ -3,11 +3,11 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 template<typename T>
-vector<T> make_v(size_t a,T b){return vector<T>(a,b);}
+vector<T> make_v(size_t a){return vector<T>(a);}
 
-template<typename... Ts>
-auto make_v(size_t a,Ts... ts){
-  return vector<decltype(make_v(ts...))>(a,make_v(ts...));
+template<typename T,typename... Ts>
+auto make_v(size_t a,size_t b,Ts... ts){
+  return vector<decltype(make_v<T>(b,ts...))>(a,make_v<T>(b,ts...));
 }
 
 template<typename T,typename V>
@@ -22,7 +22,12 @@ fill_v(T &t,const V &v){
 //END CUT HERE
 //INSERT ABOVE HERE
 signed main(){
-  auto v=make_v(10,10,(int)-1);
+  auto v=make_v<int>(10,10);
+  fill_v(v,-1);
+
+  for(int i=0;i<10;i++)
+    for(int j=0;j<10;j++)
+      v[i][j]=i+j;
   
   for(int i=0;i<10;i++)
     for(int j=0;j<10;j++)
