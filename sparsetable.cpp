@@ -19,7 +19,7 @@ struct SparseTable{
     for(int j=0;j<n;j++) dat[0][j]=v[j];
     for(int i=1,p=1;i<h;i++,p<<=1)
       for(int j=0;j<n;j++)
-        dat[i][j]=f(dat[i-1][j],dat[i-1][min(j+p,n_-1)]);
+        dat[i][j]=f(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
     ht.assign(n+1,0);
     for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;
   };

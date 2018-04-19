@@ -42,7 +42,7 @@ struct WeightedUnionFind{
   }
 };
 //END CUT HERE
-signed main(){
+signed AOJ_1330(){
   int n,m;
   while(cin>>n>>m,n||m){
     WeightedUnionFind<Int> u(n,0);
@@ -67,3 +67,31 @@ signed main(){
   verified on 2017/10/29
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330
 */
+
+signed DSL_1_B(){
+  Int n,q;
+  cin>>n>>q;
+  WeightedUnionFind<Int> wuf(n,0);
+  
+  for(Int i=0;i<q;i++){
+    Int t,x,y,z;
+    cin>>t>>x>>y;
+    //cout<<t<<":"<<x<<" "<<y<<endl;
+    if(t){
+      if(wuf.same(x,y)) cout<<wuf.diff(x,y)<<endl;
+      else cout<<"?"<<endl;
+    }else{
+      cin>>z;
+      wuf.unite(x,y,z);
+    }
+  }
+}
+/*
+  verified on 2018/04/16
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B&lang=jp
+*/
+
+signed main(){
+  //AOJ_1330();
+  DSL_1_B();
+}
