@@ -126,6 +126,7 @@ signed CSA070_SQUAREDEND(){
   for(Int i=0;i<n;i++){
     for(Int j=0;j<k;j++){
       dp[j+1][i+1]=v[j].query(a[i])+a[i]*a[i];
+      cout<<dp[j+1][i+1]<<endl;
       v[j+1].addLine(-2*a[i+1],dp[j+1][i+1]+a[i+1]*a[i+1]);
     }
   }
@@ -185,8 +186,8 @@ signed COLOPL2018FINAL_C(){
 
 
 signed main(){
-  //CSA070_SQUAREDEND();
+  CSA070_SQUAREDEND();
   //TENKA12016FINAL_E();
-  COLOPL2018FINAL_C();
+  //COLOPL2018FINAL_C();
   return 0;
 }
