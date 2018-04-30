@@ -13,41 +13,26 @@ struct BinaryTrie{
       f(f),laz(0),par(par),cnt(0){nxt[0]=nxt[1]=-1;}
   };
 
-  const int lim=7e6;
-  int idx;
   vector<Node> v;
-  BinaryTrie():idx(0),v(lim){emplace(0,-1);}
+  queue<int> q;
+  BinaryTrie(){v.reserve(int(6e6));v.emplace_back(0,-1);}
   
   void emplace(bool f,int par){
-    v[idx++]=Node(f,par);
-  }
-  
-  void rebuild(){
-    vector<T> vs;
-    vector<int> vc;
-    T a=val(xmin(0));
-    int pos=find(a);
-    vs.emplace_back(a);
-    vc.emplace_back(v[pos].cnt);
-    
-    while(val(xmax(0))!=a){
-      pos=next(pos);
-      a=val(pos);
-      vs.emplace_back(a);
-      vc.emplace_back(v[pos].cnt);
+    if(q.empty()){
+      v[par].nxt[f]=v.size();
+      v.emplace_back(f,par);
+    }else{
+      v[par].nxt[f]=q.front();
+      v[q.front()]=Node(f,par);
+      q.pop();
     }
-    
-    idx=0;
-    emplace(0,-1);
-    for(int i=0;i<(int)vs.size();i++)
-      for(int j=0;j<vc[i];j++) add(vs[i]);
   }
 
   inline int count(int x){
     return x<0?0:v[x].cnt;
   }
 
-  inline void eval(int i,int x){
+  inline void eval(int x,int i){
     if((v[x].laz>>i)&1){
       swap(v[x].nxt[0],v[x].nxt[1]);
       v[x].laz^=T(1)<<i;
@@ -63,16 +48,10 @@ struct BinaryTrie{
   void add(const T b){
     int pos=0;
     for(int i=X-1;i>=0;i--){
-      eval(i,pos);
+      eval(pos,i);
       bool f=(b>>i)&1;
-      if(~v[pos].nxt[f]){
-	pos=v[pos].nxt[f];
-	continue;
-      }
-      int npos=idx;
-      v[pos].nxt[f]=npos;
-      emplace(f,pos);
-      pos=npos;
+      if(v[pos].nxt[f]<0) emplace(f,pos);
+      pos=v[pos].nxt[f];
     }
     v[pos].cnt++;
     for(int i=0;i<X;i++){
@@ -88,7 +67,7 @@ struct BinaryTrie{
   int find(const T b){
     int pos=0;
     for(int i=X-1;i>=0;i--){
-      eval(i,pos);
+      eval(pos,i);
       bool f=(b>>i)&1;
       if(~v[pos].nxt[f]) pos=v[pos].nxt[f];
       else return -1;
@@ -97,20 +76,24 @@ struct BinaryTrie{
   }
 
   void erase(int pos){
-    if(pos<0) while(1);
     v[pos].cnt--;
     for(int i=0;i<X;i++){
       pos=v[pos].par;
       v[pos].cnt=count(v[pos].nxt[0])+count(v[pos].nxt[1]);
-      for(int k=0;k<2;k++)
-	if(!count(v[pos].nxt[k])) v[pos].nxt[k]=-1;
+      for(int k=0;k<2;k++){
+	if(!count(v[pos].nxt[k])){
+	  if(~v[pos].nxt[k])
+	    q.emplace(v[pos].nxt[k]);
+	  v[pos].nxt[k]=-1;
+	}
+      }
     }
   }
   
   int xmax(const T b){
     int pos=0;
     for(int i=X-1;i>=0;i--){
-      eval(i,pos);
+      eval(pos,i);
       bool f=(~b>>i)&1;
       f^=!~v[pos].nxt[f];
       pos=v[pos].nxt[f];
@@ -122,25 +105,42 @@ struct BinaryTrie{
     return xmax(~b&((T(1)<<X)-1));
   }
 
-  int next(int pos){
-    for(int i=-1;i<X;i++){
-      int par=v[pos].par;
-      if(v[pos].f==0&&~v[par].nxt[1])
-	return fmin(i,v[par].nxt[1]);
-      pos=par;
+  int lower_bound(T b){
+    int pos=0;
+    for(int i=X-1;i>=0;i--){
+      eval(pos,i);
+      bool f=(b>>i)&1;
+      if(~v[pos].nxt[f]){
+	pos=v[pos].nxt[f];
+	continue;
+      }
+      if(f) return next(pos,i);
+      return fmin(v[pos].nxt[!f],i-1);
     }
-    while(1);
     return pos;
   }
 
-  int fmin(int i,int pos){
+  int upper_bound(T b){
+    return lower_bound(b+1);
+  }
+  
+  int next(int pos,int i=-1){
+    for(;i<X;i++){
+      int par=v[pos].par;
+      if(v[pos].f==0&&~v[par].nxt[1])
+	return fmin(v[par].nxt[1],i);
+      pos=par;
+    }
+    return -1;
+  }
+
+  int fmin(int pos,int i){
     if(i==-1) return pos;
-    eval(i,pos);
-    return fmin(i-1,v[pos].nxt[v[pos].nxt[0]==-1]);
+    eval(pos,i);
+    return fmin(v[pos].nxt[v[pos].nxt[0]==-1],i-1);
   }
 
   T val(int pos){
-    if(pos<0) while(1);
     T res=0;
     for(int i=0;i<X;i++){
       res|=T(v[pos].f)<<i;
@@ -206,18 +206,14 @@ signed CFR470_C(){
   for(Int i=0;i<n;i++) scanf("%d",&a[i]);
   for(Int i=0;i<n;i++) scanf("%d",&p[i]);
 
-  map<int, int> r;
   BinaryTrie<int, 30> bt;
-  for(int i=0;i<n;i++){
-    bt.add(p[i]);
-    if(!r.count(bt.find(p[i])))
-      r[bt.find(p[i])]=i;
-  }
+  for(int i=0;i<n;i++) bt.add(p[i]);
+  
   for(Int i=0;i<n;i++){
     if(i) printf(" ");
-    int k=r[bt.xmin(a[i])];
-    printf("%d",a[i]^p[k]);
-    bt.erase(bt.find(p[k]));
+    int k=bt.xmin(a[i]);
+    printf("%d",a[i]^bt.val(k));
+    bt.erase(k);
   }
   puts("");
   return 0;
@@ -250,24 +246,19 @@ signed CFR477_C(){
   apply(x);
 
   for(Int i=1;i<n;i++){
-    bt.add(x);
-    Int pos=bt.find(x);
-    
-    if(bt.val(bt.xmax(0))==x){
+    if(bt.val(bt.xmax(0))<=x){
       printf("No\n");
       return 0; 
     }
     
-    Int nxt=bt.next(pos);
+    Int nxt=bt.upper_bound(x);
     Int y=bt.val(nxt);
     
     ans.emplace_back(y^z);
-    bt.erase(pos);
     bt.erase(nxt);
     apply(x^y);
     x=y;
     
-    if(bt.idx+1000>=bt.lim) bt.rebuild();
   }
   
   printf("Yes\n");
