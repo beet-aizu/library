@@ -17,7 +17,7 @@ struct BinaryTrie{
   queue<int> q;
   BinaryTrie(){v.reserve(int(6e6));v.emplace_back(0,-1);}
   
-  void emplace(bool f,int par){
+  inline void emplace(bool f,int par){
     if(q.empty()){
       v[par].nxt[f]=v.size();
       v.emplace_back(f,par);
@@ -45,7 +45,7 @@ struct BinaryTrie{
     v[x].laz=0;
   }
   
-  void add(const T b){
+  void add(const T b,int k=1){
     int pos=0;
     for(int i=X-1;i>=0;i--){
       eval(pos,i);
@@ -53,7 +53,7 @@ struct BinaryTrie{
       if(v[pos].nxt[f]<0) emplace(f,pos);
       pos=v[pos].nxt[f];
     }
-    v[pos].cnt++;
+    v[pos].cnt+=k;
     for(int i=0;i<X;i++){
       pos=v[pos].par;
       v[pos].cnt=count(v[pos].nxt[0])+count(v[pos].nxt[1]);
@@ -75,8 +75,8 @@ struct BinaryTrie{
     return pos;
   }
 
-  void erase(int pos){
-    v[pos].cnt--;
+  void erase(int pos,int k=1){
+    v[pos].cnt-=k;
     for(int i=0;i<X;i++){
       pos=v[pos].par;
       v[pos].cnt=count(v[pos].nxt[0])+count(v[pos].nxt[1]);
@@ -105,7 +105,7 @@ struct BinaryTrie{
     return xmax(~b&((T(1)<<X)-1));
   }
 
-  int lower_bound(T b){
+  int lower_bound(const T b){
     int pos=0;
     for(int i=X-1;i>=0;i--){
       eval(pos,i);
@@ -120,7 +120,7 @@ struct BinaryTrie{
     return pos;
   }
 
-  int upper_bound(T b){
+  int upper_bound(const T b){
     return lower_bound(b+1);
   }
   
@@ -162,6 +162,18 @@ struct BinaryTrie{
       }
     }
     return pos;
+  }
+
+  int order_of_key(const T b){
+    int res=0,pos=0;
+    for(int i=X-1;i>=0;i--){
+      eval(pos,i);
+      bool f=(b>>i)&1;
+      if(f) res+=count(v[pos].nxt[0]);
+      pos=v[pos].nxt[f];
+      if(pos<0) break;
+    }
+    return res;
   }
 
   void show(){
@@ -309,14 +321,32 @@ signed ARC033_C(){
 }
 
 /*
-  verified on 2017/12/31
+  verified on 2018/05/01
   https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
+*/
+
+signed AOJ_DSL2B(){
+  int n,q;
+  cin>>n>>q;
+  BinaryTrie<int, 30> bt;
+  for(int i=0;i<q;i++){
+    int c,x,y;
+    cin>>c>>x>>y;
+    if(c) cout<<bt.order_of_key(y+1)-bt.order_of_key(x)<<endl;
+    else bt.add(x,y);
+  }
+  return 0;
+}
+/*
+  verified on 2018/05/01
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
 */
 
 signed main(){
   //JAG2013SUMMERWARMINGUP_F();
   //CFR470_C();
   //CFR477_C();
-  ARC033_C();
+  //ARC033_C();
+  AOJ_DSL2B();
   return 0;
 }
