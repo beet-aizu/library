@@ -149,6 +149,21 @@ struct BinaryTrie{
     return res;
   }
 
+  int find_by_order(int k){
+    int pos=0;
+    if(count(pos)<=k) return -1;
+    for(int i=X-1;i>=0;i--){
+      eval(pos,i);
+      if(count(v[pos].nxt[0])<=k){
+	k-=count(v[pos].nxt[0]);
+	pos=v[pos].nxt[1];
+      }else{
+	pos=v[pos].nxt[0];
+      }
+    }
+    return pos;
+  }
+
   void show(){
     vector<T> vs;
     T a=val(xmin(0));
@@ -275,9 +290,33 @@ signed CFR477_C(){
   http://codeforces.com/contest/966/problem/C
 */
 
+
+signed ARC033_C(){
+  int q;
+  cin>>q;
+  BinaryTrie<int, 30> bt;
+  while(q--){
+    int t,x;
+    cin>>t>>x;
+    if(t==1) bt.add(x);
+    if(t==2){
+      int k=bt.find_by_order(x-1);
+      cout<<bt.val(k)<<endl;
+      bt.erase(k);
+    }
+  }
+  return 0;
+}
+
+/*
+  verified on 2017/12/31
+  https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
+*/
+
 signed main(){
   //JAG2013SUMMERWARMINGUP_F();
-  CFR470_C();
+  //CFR470_C();
   //CFR477_C();
+  ARC033_C();
   return 0;
 }
