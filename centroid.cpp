@@ -14,8 +14,8 @@ struct Centroid{
     G[v].emplace_back(u);
   }
 
-  void input(int m,int offset=0){
-    for(int i=0;i<m;i++){
+  void input(int offset=0){
+    for(int i=1;i<n;i++){
       int u,v;
       cin>>u>>v;
       add_edge(u+offset,v+offset);
