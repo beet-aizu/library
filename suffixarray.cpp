@@ -5,7 +5,7 @@ using Int = long long;
 struct SuffixArray{
   int n,k;
   string S;
-  vector<int> sa,lcp;
+  vector<int> sa,lcp,rev;
   SuffixArray(){}
   SuffixArray(string& S):S(S){init();}
   void init(){
@@ -78,19 +78,18 @@ struct SuffixArray{
   }
   
   void build_lcp(){
-    lcp.clear();
-    lcp.resize(n+1,0);
-    vector<int> r2(n+1);
-    for(int i=0;i<=n;i++) r2[sa[i]]=i;
+    lcp.assign(n,0);
+    rev.assign(n+1,0);
+    for(int i=0;i<=n;i++) rev[sa[i]]=i;
     int h=0;
     lcp[0]=0;
     for(int i=0;i<n;i++){
-      int j=sa[r2[i]-1];
+      int j=sa[rev[i]-1];
       if(h>0) h--;
       for(;j+h<n&&i+h<n;h++){
 	if(S[j+h]!=S[i+h]) break;
       }
-      lcp[r2[i]-1]=h;
+      lcp[rev[i]-1]=h;
     }
   }
   
@@ -100,34 +99,32 @@ struct SuffixArray{
     while(i<len&&S[p+d+i]==T[d+i]) i++;
     return i;
   }
-
+  
   struct RMQ{
-    int n;
-    vector<int> dat;
-    const int def=INT_MAX;
-    RMQ(){}
-    void init(int n_){
-      n=1;
-      while(n<n_) n*=2;
-      dat.clear();
-      dat.resize(2*n-1,def);
+    vector<vector<int> > dat;
+    vector<int> ht;
+    
+    void init(int n){
+      int h=1;
+      while((1<<h)<n) h++;
+      dat.assign(h,vector<int>(n));
+      ht.assign(n+1,0);
+      for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;
     }
-    void build(int n_, vector<int>& a){
-      for(int i=0;i<n_;i++) dat[i+n-1]=a[i];
-      for(int i=n-2;i>=0;i--)
-	dat[i]=min(dat[i*2+1],dat[i*2+2]);
-    }
-    int query(int a,int b,int k,int l,int r){
-      if(r<=a||b<=l) return def;
-      if(a<=l&&r<=b) return dat[k];
-      else{
-	int vl=query(a,b,k*2+1,l,(l+r)/2);
-	int vr=query(a,b,k*2+2,(l+r)/2,r);
-	return min(vl,vr);
-      }
-    }
+    
+    void build(int n,vector<int> &v){
+      int h=1;
+      while((1<<h)<n) h++;
+      for(int j=0;j<n;j++) dat[0][j]=v[j];
+      for(int i=1,p=1;i<h;i++,p<<=1)
+	for(int j=0;j<n;j++)
+	  dat[i][j]=min(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
+    };
+    
     int query(int a,int b){
-      return query(max(a,0),b,0,0,n);
+      if(a>b) swap(a,b);
+      int l=b-a;
+      return min(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);
     }
   };
   
@@ -220,8 +217,53 @@ signed JOI2009HO_A(){
   http://joi2009ho.contest.atcoder.jp/tasks/joi2009ho_a
 */
 
+
+signed ARC060_F(){
+  string s;
+  cin>>s;
+  Int n=s.size();
+  {
+    string t(s);
+    t.erase(unique(t.begin(),t.end()),t.end());
+    if(t.size()==1u){
+      cout<<n<<endl<<1<<endl;
+      return 0;
+    }
+  }
+  
+  vector<vector<Int> > v(n+1);
+  for(Int i=1;i<=n;i++)
+    for(Int j=i+i;j<=n;j+=i)
+      v[j].emplace_back(i);
+
+  SuffixArray sa(s);
+  auto check=[&](Int l,Int r)->Int{    
+    for(Int x:v[r-l])
+      if(sa.rmq.query(sa.rev[l],sa.rev[l+x])>=r-l-x) return 0;
+    return 1;
+  };
+  
+  if(check(0,n)){
+    cout<<1<<endl<<1<<endl;
+    return 0;
+  }
+  
+  Int ans=0;
+  for(Int i=1;i<n;i++)
+    ans+=check(0,i)&&check(i,n);
+  
+  cout<<2<<endl<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2018/05/10
+  https://beta.atcoder.jp/contests/arc060/tasks/arc060_d
+*/
+
+
 signed main(){
   //AOJ_ALDS114D();
-  JOI2009HO_A();
+  //JOI2009HO_A();
+  ARC060_F();
   return 0;
 };
