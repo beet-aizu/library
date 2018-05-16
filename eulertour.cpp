@@ -136,6 +136,82 @@ struct BIT{
   }
 };
 
+
+template <typename T,typename E>
+struct SegmentTree{
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using P = function<E(E,size_t)>;
+  int n;
+  F f;
+  G g;
+  H h;
+  T ti;
+  E ei;
+  P p;
+  vector<T> dat;
+  vector<E> laz;
+  SegmentTree(int n_,F f,G g,H h,T ti,E ei,
+	      P p=[](E a,size_t b){b++;return a;}):
+    f(f),g(g),h(h),ti(ti),ei(ei),p(p){
+    init(n_);
+  }
+  void init(int n_){
+    n=1;
+    while(n<n_) n*=2;
+    dat.assign(2*n-1,ti);
+    laz.assign(2*n-1,ei);
+  }
+  void build(int n_, vector<T> v){
+    for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
+    for(int i=n-2;i>=0;i--)
+      dat[i]=f(dat[i*2+1],dat[i*2+2]);
+  }
+  inline void eval(int len,int k){
+    if(laz[k]==ei) return;
+    if(k*2+1<n*2-1){
+      laz[k*2+1]=h(laz[k*2+1],laz[k]);
+      laz[k*2+2]=h(laz[k*2+2],laz[k]);
+    }
+    dat[k]=g(dat[k],p(laz[k],len));
+    laz[k]=ei;
+  }
+  T update(int a,int b,E x,int k,int l,int r){
+    eval(r-l,k);
+    if(r<=a||b<=l) return dat[k];
+    if(a<=l&&r<=b){
+      laz[k]=h(laz[k],x);
+      return g(dat[k],p(laz[k],r-l));
+    }
+    return dat[k]=f(update(a,b,x,k*2+1,l,(l+r)/2),
+		    update(a,b,x,k*2+2,(l+r)/2,r));
+  }
+  T update(int a,int b,E x){
+    return update(a,b,x,0,0,n);
+  }
+  T query(int a,int b,int k,int l,int r){
+    eval(r-l,k);
+    if(r<=a||b<=l) return ti;
+    if(a<=l&&r<=b) return dat[k];
+    T vl=query(a,b,k*2+1,l,(l+r)/2);
+    T vr=query(a,b,k*2+2,(l+r)/2,r);
+    return f(vl,vr);
+  }
+  T query(int a,int b){
+    return query(a,b,0,0,n);
+  }
+  void update(int k,T x){
+    query(k,k+1);//evaluate
+    k+=n-1;
+    dat[k]=x;
+    while(k){
+      k=(k-1)/2;
+      dat[k]=f(dat[k*2+1],dat[k*2+2]);
+    }
+  }
+};
+
 //INSERT ABOVE HERE
 signed CFR483_E(){
   int n;
@@ -271,7 +347,47 @@ signed CFR483_E(){
   http://codeforces.com/contest/983/problem/E
 */
 
+signed AOJ_2871(){
+  Int n,q;
+  cin>>n>>q;
+  EulerTour et(n);
+  for(int i=1;i<n;i++){
+    int p;
+    cin>>p;
+    et.add_edge(p-1,i);
+  }
+  et.build(0);
+  
+  vector<char> c(n);
+  for(Int i=0;i<n;i++) cin>>c[i];
+
+  vector<Int> v(n);
+  for(Int i=0;i<n;i++) v[et.ls[i]]=c[i]=='G';
+  SegmentTree<Int, Int>::F f=[](Int a,Int b){return a+b;};
+  SegmentTree<Int, Int>::G g=[](Int a,Int b){return b?b-a:a;};
+  SegmentTree<Int, Int>::H h=[](Int a,Int b){return a^b;};
+  SegmentTree<Int, Int>::P p=[](Int a,Int b){return a*b;};
+
+  SegmentTree<Int, Int> seg(n,f,g,h,0,0,p);
+  seg.build(n,v);
+
+  for(Int i=0;i<q;i++){
+    Int x;
+    cin>>x;
+    x--;
+    seg.update(et.ls[x],et.rs[x],1);
+    Int y=seg.query(0,n);
+    cout<<(y*2>n?"broccoli":"cauliflower")<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2018/05/18
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2871
+*/
+
 signed main(){
-  CFR483_E();
+  //CFR483_E();
+  AOJ_2871();
   return 0;
 }
