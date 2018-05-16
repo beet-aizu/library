@@ -41,6 +41,14 @@ struct BIT{
   void add0(int i,T a){
     add(i+1,a);
   }
+
+  T query(int l,int r){
+    return sum(r-1)-sum(l-1);
+  }
+
+  T query0(int l,int r){
+    return sum(r)-sum(l);
+  }
 };
 //END CUT HERE
 
@@ -51,13 +59,13 @@ signed AOJ_DSL2B(){
   for(int i=0;i<q;i++){
     int c,x,y;
     cin>>c>>x>>y;
-    if(c) cout<<bit.sum(y)-bit.sum(x-1)<<endl;
+    if(c) cout<<bit.query(x,y+1)<<endl;
     else bit.add(x,y);
   }
   return 0;
 }
 /*
-  verified on 2017/12/31
+  verified on 2018/05/18
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
 */
 
