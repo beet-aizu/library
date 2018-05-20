@@ -2,11 +2,12 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
+
 template<int X>
 struct Trie{
   struct Node{
     char c;
-    vector<int> nxt;
+    vector<int> nxt,idxs;
     int idx;
     Node(char c):c(c),nxt(X,-1),idx(-1){}
   };
@@ -31,10 +32,11 @@ struct Trie{
       pos=npos;
     }
     v[pos].idx=x;
+    v[pos].idxs.emplace_back(x);
   }
 
   int find(const string &s){
-    int pos;
+    int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
       if(v[pos].nxt[k]<0) return -1;
@@ -47,8 +49,12 @@ struct Trie{
     return v[pos].nxt[conv(c)];
   }
 
-  int calc(int pos){
-    return (pos<0?pos:v[pos].idx);
+  int idx(int pos){
+    return pos<0?-1:v[pos].idx;
+  }
+  
+  vector<int> idxs(int pos){
+    return pos<0?vector<int>():v[pos].idxs;
   }
   
 };
@@ -82,7 +88,7 @@ signed main(){
     for(int j=0;j<222&&i+j<n;j++){
       pos=trie.find(pos,s[i+j]);
       if(pos<0) break;
-      int k=trie.calc(pos);
+      int k=trie.idx(pos);
       if(~k) chmax(dp[i+p[k].size()],ans+w[k]);
     }
   }
@@ -92,6 +98,6 @@ signed main(){
 }
 
 /*
-  verified on 2018/01/18
+  verified on 2018/05/20
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
 */
