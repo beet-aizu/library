@@ -2,7 +2,7 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-#define MAX_N 100000
+#define MAX_N 1000000
 Int euler_phi(Int n){
   Int res=n;
   for(Int i=2;i*i<=n;i++){
@@ -40,6 +40,12 @@ signed AOJ_NTL1D(){
 */
 
 signed main(){
-  AOJ_NTL1D();
+  //AOJ_NTL1D();
+  euler_phi2();
+  int n;
+  cin>>n;
+  Int ans=0;
+  for(Int i=1;i<=n;i++) ans+=euler[i];
+  cout<<(ans*4+4)<<endl;
   return 0;
 }
