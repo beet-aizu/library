@@ -2,29 +2,48 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-namespace NTT{
+constexpr int bmds(int x){
+  if(x==0) return 1012924417;
+  if(x==1) return 924844033;
+  if(x==2) return 998244353;
+  if(x==3) return 897581057;
+  if(x==4) return 645922817;
+}
+constexpr int brts(int x){
+  if(x==0) return 5;
+  if(x==1) return 5;
+  if(x==2) return 3;
+  if(x==3) return 3;
+  if(x==4) return 3;
+}
+
+template<int X>
+struct NTT{
   using ull = unsigned long long;
-  const int bmds[5]={1012924417,924844033,998244353,897581057,645922817};
-  const int brts[5]={5,5,3,3,3};
-  int md,rt;
+  static constexpr int md = bmds(X);
+  static constexpr int rt = brts(X);
 
   struct num{
     int v;
     num(){v=0;}
     num(int v):v(v){}
-  };
 
-  inline num operator+(num a,num b){
-    return num((a.v+=b.v)>=md?a.v-md:a.v);
-  }
-  
-  inline num operator-(num a,num b){
-    return num((a.v+=md-b.v)>=md?a.v-md:a.v);
-  }
-  
-  inline num operator*(num a,num b){
-    return num(ull(a.v)*b.v%md);
-  }
+    inline num operator+(num b){
+      return num(v+b.v>=md?v+b.v-md:v+b.v);
+    }
+    
+    inline num operator-(num b){
+      return num(v>=b.v?v-b.v:v+md-b.v);
+    }
+    
+    inline num operator*(num b){
+      return num(ull(v)*b.v%md);
+    }
+    
+    inline num operator=(num b){
+      return this->v=b.v;
+    }
+  };
 
   inline num pow(num a,int b){
     num res=1;
@@ -40,17 +59,13 @@ namespace NTT{
     return pow(x,md-2);
   }
   
-  inline num operator/(num a,num b){
-    return a*inv(b);
-  }
-  
   int base;
   vector<num> rts,rrts;
   vector<int> rev;
 
-  void init(int k){
-    md=bmds[k];
-    rt=brts[k];
+  NTT(){init();};
+  
+  void init(){
     base=1;
     rts={num(0),num(1)};
     rev={0,1};
@@ -73,7 +88,7 @@ namespace NTT{
       }
       base++;
     }
-
+    
     rrts.resize(1<<nbase);
     for(int i=0;i<(1<<nbase);i++) rrts[i]=inv(rts[i]);
   }
@@ -88,18 +103,17 @@ namespace NTT{
     for(int i=0;i<n;i++)
       if(i<(rev[i]>>shift))
 	swap(a[i],a[rev[i]>>shift]);
- 
+
     for(int k=1;k<n;k<<=1){
       for(int i=0;i<n;i+=2*k){
 	for(int j=0;j<k;j++){
-	  num z;
-	  if(f) z=a[i+j+k]*rrts[j+k];
-	  else  z=a[i+j+k]*rts[j+k];
+	  num z=a[i+j+k]*(f?rrts[j+k]:rts[j+k]);
 	  a[i+j+k]=a[i+j]-z;
 	  a[i+j]=a[i+j]+z;
 	}
       }
     }
+    
     if(f){
       num tmp=inv(n);
       for(Int i=0;i<n;i++) a[i]=a[i]*tmp;
@@ -136,8 +150,8 @@ signed main(){
   cin>>n;
   vector<int> a(n+1,0),b(n+1,0);
   for(int i=1;i<=n;i++) cin>>a[i]>>b[i];
-  NTT::init(0);
-  auto c=NTT::multiply(a,b);
+  NTT<0> ntt;
+  auto c=ntt.multiply(a,b);
   for(int i=1;i<=n*2;i++) cout<<c[i]<<endl;
   return 0;
 }
