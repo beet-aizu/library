@@ -11,7 +11,7 @@ struct BIT{
   BIT(int n_,T d):n(n_),bit(n_+1,d){}
   
   T sum(int i){
-    T s=0;
+    T s=bit[0];
     for(int x=i;x>0;x-=(x&-x))
       s+=bit[x];
     return s;
@@ -65,7 +65,7 @@ signed AOJ_DSL2B(){
   return 0;
 }
 /*
-  verified on 2018/05/18
+  verified on 2018/06/07
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
 */
 
@@ -87,12 +87,12 @@ signed ARC033_C(){
   return 0;
 }
 /*
-  verified on 2017/12/31
+  verified on 2018/06/07
   https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
 */
 
 signed main(){
-  AOJ_DSL2B();
-  //ARC033_C();
+  //AOJ_DSL2B();
+  ARC033_C();
   return 0;
 }
