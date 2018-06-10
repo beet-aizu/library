@@ -5,13 +5,13 @@ using Int = long long;
 struct HLDecomposition {
   int n,pos;
   vector<vector<int> > G;
-  vector<int> vid, head, sub, hvy, par, dep, inv, type;
+  vector<int> vid, head, sub, hvy, par, dep, inv, type, ps, pt;
   
   HLDecomposition(){}
   HLDecomposition(int sz):
     n(sz),pos(0),G(n),
     vid(n,-1),head(n),sub(n,1),hvy(n,-1),
-    par(n),dep(n),inv(n),type(n){}
+    par(n),dep(n),inv(n),type(n),ps(n),pt(n){}
   
   void add_edge(int u, int v) {
     G[u].push_back(v);
@@ -43,26 +43,30 @@ struct HLDecomposition {
 	st.emplace(u,0);
       }else{
 	st.pop();
-	int res=0;
-	for(int u:G[v]){
-	  if(u==par[v]) continue;
+	for(int j=0;j<(int)G[v].size();j++){
+	  int &u=G[v][j];
+	  if(u==par[v]){
+	    swap(u,G[v].back());
+	    continue;
+	  }
 	  sub[v]+=sub[u];
-	  if(res<sub[u]) res=sub[u],hvy[v]=u;
+	  if(sub[u]>sub[G[v].front()]) swap(u,G[v].front());
 	}
       }
     }
   }
 
   void bfs(int r,int c) {
-    int &k=pos;
     queue<int> q({r});
     while(!q.empty()){
       int h=q.front();q.pop();
       for(int i=h;i!=-1;i=hvy[i]) {
 	type[i]=c;
-	vid[i]=k++;
+	vid[i]=pos++;
 	inv[vid[i]]=i;
 	head[i]=h;
+        hvy[i]=(G[i].empty()?-1:G[i][0]);
+	if(hvy[i]==par[i]) hvy[i]=-1;
 	for(int j:G[i])
 	  if(j!=par[i]&&j!=hvy[i]) q.push(j);
       }
@@ -284,7 +288,7 @@ signed YUKI_529(){
   hl.build();
   SegmentTree<int,int> rmq(V,
 			   [](int a,int b){return max(a,b);},
-			   [](int a,int b){return b;},
+			   [](int a,int b){a++;return b;},
 			   -1);
   vector<priority_queue<int> > pq(V);
   map<int,int> m;
