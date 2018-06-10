@@ -45,10 +45,8 @@ struct HLDecomposition {
 	st.pop();
 	for(int j=0;j<(int)G[v].size();j++){
 	  int &u=G[v][j];
-	  if(u==par[v]){
-	    swap(u,G[v].back());
-	    continue;
-	  }
+	  if(u==par[v]) swap(u,G[v].back());
+	  if(u==par[v]) continue;
 	  sub[v]+=sub[u];
 	  if(sub[u]>sub[G[v].front()]) swap(u,G[v].front());
 	}
@@ -57,18 +55,28 @@ struct HLDecomposition {
   }
 
   void bfs(int r,int c) {
-    queue<int> q({r});
-    while(!q.empty()){
-      int h=q.front();q.pop();
-      for(int i=h;i!=-1;i=hvy[i]) {
-	type[i]=c;
-	vid[i]=pos++;
-	inv[vid[i]]=i;
-	head[i]=h;
-        hvy[i]=(G[i].empty()?-1:G[i][0]);
-	if(hvy[i]==par[i]) hvy[i]=-1;
-	for(int j:G[i])
-	  if(j!=par[i]&&j!=hvy[i]) q.push(j);
+    using T = tuple<int, int, int>;
+    stack<T> st;
+    st.emplace(r,r,0);
+    while(!st.empty()){
+      int v,h;
+      tie(v,h,ignore)=st.top();
+      int &i=get<2>(st.top());
+      if(!i){
+	type[v]=c;
+	ps[v]=vid[v]=pos++;
+	inv[vid[v]]=v;
+	head[v]=h;
+        hvy[v]=(G[v].empty()?-1:G[v][0]);
+	if(hvy[v]==par[v]) hvy[v]=-1;
+      }
+      if(i<(int)G[v].size()){
+	int u=G[v][i++];
+	if(u==par[v]) continue;
+	st.emplace(u,(hvy[v]==u?h:u),0);
+      }else{
+	st.pop();
+	pt[v]=pos;
       }
     }
   }
@@ -92,7 +100,7 @@ struct HLDecomposition {
       if(head[u]!=head[v]){
 	f(vid[head[v]],vid[v]);
         v=par[head[v]];
-      } else{
+      }else{
 	if(u!=v) f(vid[u]+1,vid[v]);
 	break;
       }
