@@ -27,7 +27,7 @@
     (beginning-of-buffer)
     (replace-regexp "\\([^a-zA-z0-9_\"]\\)int\\([^a-zA-z0-9_\"]\\)" "\\1Int\\2")
     (beginning-of-buffer)
-    (replace-regexp "\\([(),]\\)int\\([(),]\\)" "\\1Int\\2")
+    (replace-regexp "\\([(),<]\\)int\\([(),>]\\)" "\\1Int\\2")
     (save-buffer)
     (mark-whole-buffer)
     (kill-ring-save (region-beginning) (region-end))
