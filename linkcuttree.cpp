@@ -23,10 +23,12 @@ struct LinkCutTree{
   using G = function<T(T,E)>;
   using H = function<E(E,E)>;
   using P = function<E(E,size_t)>;
+  using S = function<T(T)>;
   F f;
   G g;
   H h;
   P p;
+  S s;
   T ti;
   E ei;
   
@@ -34,8 +36,18 @@ struct LinkCutTree{
   vector<Node> pool;
   size_t ptr;
   
+  
+  LinkCutTree(F f,G g,H h,T ti,E ei):
+    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
+    p=[](E a,size_t b){b++;return a;};
+    s=[](T a){return a;};
+  }
+  
   LinkCutTree(F f,G g,H h,P p,T ti,E ei):
-    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){}
+    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){s=[](T a){return a;};}
+  
+  LinkCutTree(F f,G g,H h,P p,S s,T ti,E ei):
+    f(f),g(g),h(h),p(p),s(s),ti(ti),ei(ei),pool(LIM),ptr(0){}
   
   inline Node* create(){
     return &pool[ptr++];
@@ -53,6 +65,7 @@ struct LinkCutTree{
 
   void toggle(Node *t){
     swap(t->l,t->r);
+    t->dat=s(t->dat);
     t->rev^=1;
   }
 
@@ -182,8 +195,7 @@ signed GRL_5_C(){
   cin>>n;
   using LCT = LinkCutTree<int,int>;
   LCT::F f=[](int a,int b){return min(a,b);};
-  LCT::P p=[](int a,size_t b){b++;return a;};
-  LCT lc(f,f,f,p,0,0);
+  LCT lc(f,f,f,0,0);
 
   vector<LCT::Node*> v(n);
   for(int i=0;i<n;i++) v[i]=lc.create(i,0);
@@ -217,8 +229,7 @@ signed GRL_5_D(){
   cin>>n;
   using LCT = LinkCutTree<int,int>;
   LCT::F f=[](int a,int b){return a+b;};
-  LCT::P p=[](int a,size_t b){b++;return a;};
-  LCT lc(f,f,f,p,0,0);
+  LCT lc(f,f,f,0,0);
 
   vector<LCT::Node*> v(n);
   for(int i=0;i<n;i++) v[i]=lc.create(i,0);
@@ -312,8 +323,7 @@ signed JOISC2013_DAY4_3(){
   
   using LCT = LinkCutTree<int, int>;
   auto f=[](int a,int b){return a+b;};
-  auto p=[](int a,size_t b){b++;return a;};
-  LCT lct(f,f,f,p,0,0);
+  LCT lct(f,f,f,0,0);
   vector<LCT::Node*> vs(n);
   for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
 
@@ -351,36 +361,17 @@ signed AOJ_2450(){
   
   vector<LCT::Node* > vs(n);
   vector<int> ps(n,-1);
-  auto con=[&](int a,int b){return ps[a]==b||ps[b]==a;};
   
   auto f=[&](T a,T b){
-    if(a>b) swap(a,b);
-    
-    if(get<0>(a)<0) return b;
-    if(con(get<0>(a),get<1>(b))) swap(a,b);
-   
     int al,ar,as,ava,avi,avl,avr;
     tie(al,ar,as,ava,avi,avl,avr)=a;
     int bl,br,bs,bva,bvi,bvl,bvr;
     tie(bl,br,bs,bva,bvi,bvl,bvr)=b;
-    
-    if(!con(ar,bl)){
-      if(con(ar,br)){
-	swap(bl,br);
-	swap(bvl,bvr);
-      }else if(con(al,bl)){
-	swap(al,ar);
-	swap(avl,avr);
-      }else{
-	return d1;
-      }
-    }
     int cl=al,cr=br,cs=as+bs;
     int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
     cvi=max(cvi,avr+bvl);
     cvl=max(cvl,ava+bvl);
     cvr=max(cvr,avr+bva);
-    
     return T(cl,cr,cs,cva,cvi,cvl,cvr);
   };
   
@@ -396,8 +387,16 @@ signed AOJ_2450(){
   
   auto h=[&](P a,P b){a.first++;return b;};
   auto p=[&](P a,size_t b){b++;return a;};
-  LCT lct(f,g,h,p,d1,d0);
+  auto s=
+    [&](T a){      
+      int al,ar,as,ava,avi,avl,avr;
+      tie(al,ar,as,ava,avi,avl,avr)=a;
+      swap(al,ar);
+      swap(avl,avr);
+      return T(al,ar,as,ava,avi,avl,avr);
+    };
   
+  LCT lct(f,g,h,p,s,d1,d0);
   
   vector<int> w(n);
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
@@ -506,10 +505,9 @@ signed AOJ_0367(){
   
   auto g=[&](T a,Int b){b++;return a;};
   auto h=[&](Int a,Int b){b++;return a;};
-  auto p=[&](Int a,size_t b){b++;return a;};
   
   using LCT = LinkCutTree<T, Int>;
-  LCT lct(f,g,h,p,T(-1,-1,0),0);  
+  LCT lct(f,g,h,T(-1,-1,0),0);  
   vector<LCT::Node* > vs(n);
   for(Int i=0;i<n;i++) vs[i]=lct.create(i,T(i,i,0));
   
@@ -560,12 +558,116 @@ signed AOJ_0367(){
 
 
 
+struct M{
+  Int a,b,c,d;
+  M():a(1),b(0),c(0),d(1){}
+  M(Int a,Int b,Int c,Int d):a(a),b(b),c(c),d(d){}
+  //M(const M &v):a(v.a),b(v.b),c(v.c),d(v.d){}
+  bool operator!=(const M &x)const{
+    return a!=x.a||b!=x.b||c!=x.c||d!=x.d;
+  }
+  bool operator==(const M &x)const{
+    return !(*this!=x);
+  }
+};
+
+signed YUKI_650(){
+  const int MOD=1e9+7;
+  using M2 = pair<M, M>;
+  using LCT = LinkCutTree<M2, M2>;
+  auto f=[MOD](M x,M y){
+	   M r(0,0,0,0);
+	   r.a=x.a*y.a+x.b*y.c;
+	   r.b=x.a*y.b+x.b*y.d;
+	   r.c=x.c*y.a+x.d*y.c;
+	   r.d=x.c*y.b+x.d*y.d;	   
+	   r.a%=MOD;r.b%=MOD;r.c%=MOD;r.d%=MOD;
+	   return r;
+	 };
+  auto f2=[&](M2 x,M2 y){
+	    return M2(f(x.first,y.first),f(y.second,x.second));
+	  };
+  auto g=[](M2 x,M2 y){x.first.a++;return y;};
+  auto p=[](M2 x,size_t y){y++;return x;};
+  auto s=[](M2 x){swap(x.first,x.second);return x;};
+  
+  int n;
+  cin>>n;
+  vector<vector<int> > G(n);
+  vector<int> X,Y;
+  for(int i=1;i<n;i++){
+    int a,b;
+    cin>>a>>b;
+    X.emplace_back(a);
+    Y.emplace_back(b);
+    G[a].emplace_back(b);
+    G[b].emplace_back(a);
+  }
+  M ti=M();
+  M ei(-1,-1,-1,-1);
+  LCT lct(f2,g,g,p,s,M2(ti,ti),M2(ei,ei));
+
+  
+  vector<LCT::Node*> vs(n*2-1);
+  for(int i=0;i<(int)vs.size();i++) vs[i]=lct.create(i,M2(ti,ti));
+  
+  vector<map<int, int> > rev(n);
+  int idx=n;
+  {
+    using P = pair<int, int>;
+    queue<P> q;
+    q.emplace(0,-1);
+    while(!q.empty()){
+      int v,p;
+      tie(v,p)=q.front();q.pop();
+      if(~p){
+	lct.link(vs[p],vs[idx]);
+	lct.link(vs[idx],vs[v]);
+	rev[p][v]=rev[v][p]=idx++;
+      }
+      for(int u:G[v])
+	if(u!=p) q.emplace(u,v);
+    }
+  }
+  
+  int q;
+  cin>>q;
+  for(int i=0;i<q;i++){
+    char c;
+    cin>>c;
+    if(c=='x'){
+      Int v,a,b,c,d;
+      cin>>v>>a>>b>>c>>d;
+      int z=rev[X[v]][Y[v]];
+      lct.expose(vs[z]);
+      vs[z]->val=M2(M(a,b,c,d),M(a,b,c,d));      
+      lct.expose(vs[z]);
+    }
+    if(c=='g'){
+      Int x,y;
+      cin>>x>>y;
+      lct.evert(vs[x]);
+      lct.expose(vs[y]);
+      M ans=vs[y]->dat.first;
+      cout<<ans.a<<" "<<ans.b<<" "<<ans.c<<" "<<ans.d<<endl;
+    }
+  }
+  
+  return 0;
+}
+/*
+  verified on 2018/06/14
+  https://yukicoder.me/problems/no/650
+*/
+
+
 signed main(){
   //GRL_5_C();
   //GRL_5_D();
   //GRL_5_E();
   //JOISC2013_DAY4_3();
   //AOJ_2450();
-  AOJ_0367();
+  //AOJ_0367();
+  YUKI_650();
   return 0;
 }
