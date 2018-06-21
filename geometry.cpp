@@ -43,6 +43,17 @@ struct Point{
   }
 };
 
+struct EndPoint{
+  Point p;
+  int seg,st;
+  EndPoint(){}
+  EndPoint(Point p,int seg,int st):p(p),seg(seg),st(st){}
+  bool operator<(const EndPoint &ep)const{
+    if(p.y==ep.p.y) return st<ep.st;
+    return p.y<ep.p.y;
+  }
+};
+
 istream &operator >> (istream &is,Point &p){
   is>>p.x>>p.y;
   return is;
@@ -217,6 +228,16 @@ bool intersectSC(Segment s,Circle c){
   return getDistanceSP(s,c.c)<=c.r;
 }
 
+int intersectCS(Circle c,Segment s){
+  if(norm(project(s,c.c)-c.c)-c.r*c.r>EPS) return 0;
+  double d1=abs(c.c-s.p1),d2=abs(c.c-s.p2);
+  if(d1<c.r+EPS&&d2<c.r+EPS) return 0;
+  if((d1<c.r-EPS&&d2>c.r+EPS)||(d1>c.r+EPS&&d2<c.r-EPS)) return 1;
+  Point h=project(s,c.c);
+  if(dot(s.p1-h,s.p2-h)<0) return 2;
+  return 0;
+}
+
 double getDistanceLP(Line l,Point p){
   return abs(cross(l.p2-l.p1,p-l.p1)/abs(l.p2-l.p1));
 }
@@ -266,6 +287,18 @@ Polygon getCrossPointCL(Circle c,Line l){
   ps.emplace_back(pr-e*base);
   return ps;
 }
+
+Polygon getCrossPointCS(Circle c,Segment s){
+  Line l(s);
+  Polygon res=getCrossPointCL(c,l);
+  if(intersectCS(c,s)==2) return res;
+  if(res.size()>1u){
+    if(dot(l.p1-res[0],l.p2-res[0])>0) swap(res[0],res[1]);
+    res.pop_back();
+  }
+  return res;
+}
+
 
 Polygon getCrossPointCC(Circle c1,Circle c2){
   Polygon p(2);
@@ -515,7 +548,72 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
   }
   return G;
 }
-						       
+
+int manhattanIntersection(vector<Segment> ss,const int INF){
+  const int BTM = 0;
+  const int LFT = 1;
+  const int RGH = 2;
+  const int TOP = 3;
+  
+  int n=ss.size();
+  vector<EndPoint> ep;
+  for(int i=0;i<n;i++){
+    if(ss[i].p1.y==ss[i].p2.y){
+      if(ss[i].p1.x>ss[i].p2.x) swap(ss[i].p1,ss[i].p2);
+      ep.emplace_back(ss[i].p1,i,LFT);
+      ep.emplace_back(ss[i].p2,i,RGH);
+    }else{
+      if(ss[i].p1.y>ss[i].p2.y) swap(ss[i].p1,ss[i].p2);      
+      ep.emplace_back(ss[i].p1,i,BTM);
+      ep.emplace_back(ss[i].p2,i,TOP);
+    }    
+  }   
+  sort(ep.begin(),ep.end());
+
+  set<int> bt;
+  bt.insert(INF);
+  
+  int cnt=0;
+  for(int i=0;i<n*2;i++){
+    if(ep[i].st==TOP){
+      bt.erase(ep[i].p.x);
+    }else if(ep[i].st==BTM){
+      bt.emplace(ep[i].p.x);
+    }else if(ep[i].st==LFT){
+      auto b=bt.lower_bound(ss[ep[i].seg].p1.x);
+      auto e=bt.upper_bound(ss[ep[i].seg].p2.x);
+      cnt+=distance(b,e);
+    }    
+  }
+  
+  return cnt;
+}
+
+double area(Polygon ps,Circle c){
+  if(ps.size()<3u) return 0;
+  function<double(Circle, Point, Point)> dfs=
+    [&](Circle c,Point a,Point b){
+      Vector va=c.c-a,vb=c.c-b;
+      double f=cross(va,vb),res=0;
+      if(equals(f,0.0)) return res;
+      if(max(abs(va),abs(vb))<c.r+EPS) return f;
+      Vector d(a.x*b.x+a.y*b.y,a.x*b.y-a.y*b.x);
+      if(getDistanceSP(Segment(a,b),c.c)>c.r-EPS)
+	return c.r*c.r*atan2(d.y,d.x);
+      auto u=getCrossPointCS(c,Segment(a,b));
+      if(u.empty()) return res;
+      if(u.size()>1u&&dot(u[1]-u[0],a-u[0])>0) swap(u[0],u[1]);
+      u.emplace(u.begin(),a);
+      u.emplace_back(b);
+      for(int i=1;i<(int)u.size();i++)
+	res+=dfs(c,u[i-1],u[i]);
+      return res;
+    };
+  double res=0;
+  for(int i=0;i<(int)ps.size();i++)
+    res+=dfs(c,ps[i],ps[(i+1)%ps.size()]);
+  return res/2;
+}
 
 //END CUT HERE
 
@@ -761,6 +859,21 @@ signed AOJ_CGL5A(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_5_A&lang=jp
 */
 
+//manhattanIntersection:
+signed AOJ_CGL6A(){
+  int n;
+  cin>>n;
+  vector<Segment> ss(n);
+  for(int i=0;i<n;i++) cin>>ss[i];
+  //for(int i=0;i<n;i++) cout<<ss[i].p1<<":"<<ss[i].p2<<endl;
+  cout<<manhattanIntersection(ss,1e9+10)<<endl;
+  return 0;
+}
+/*
+  verified on 2018/06/18
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A&lang=jp
+*/
+
 //intersectCC
 signed AOJ_CGL7A(){
   Circle c1,c2;
@@ -832,6 +945,22 @@ signed AOJ_CGL7G(){
   for(auto l:ls) ps.emplace_back(getCrossPointCL(c1,l)[0]);
   sort(ps.begin(),ps.end());
   for(auto p:ps) cout<<p<<endl;
+  return 0;
+}
+/*
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge//description.jsp?id=CGL_7_G&lang=jp
+*/
+
+//Intersection of a Circle and a Polygon
+signed AOJ_CGL7H(){
+  int n;
+  double r;
+  cin>>n>>r;
+  Circle c(Point(0,0),r);
+  Polygon ps(n);
+  for(int i=0;i<n;i++) cin>>ps[i];
+  cout<<fixed<<setprecision(12)<<area(ps,c)<<endl;
   return 0;
 }
 /*
@@ -964,6 +1093,7 @@ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2454
 */
 
 
+
 signed main(){
   //AOJ_CGL1A();
   //AOJ_CGL1B();
@@ -983,15 +1113,18 @@ signed main(){
   //AOJ_CGL4C();
   
   //AOJ_CGL5A();
+
+  //AOJ_CGL6A();
   
   //AOJ_CGL7A();
   //AOJ_CGL7D();
   //AOJ_CGL7E();
   //AOJ_CGL7F();
   //AOJ_CGL7G();
+  AOJ_CGL7H();
 
   //AOJ_2572();
-  AOJ_2454();
+  //AOJ_2454();
   
   return 0;
 }
