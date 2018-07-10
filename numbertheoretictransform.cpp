@@ -19,140 +19,104 @@ constexpr int brts(int x){
 
 template<int X>
 struct NTT{
-  using ull = unsigned long long;
   static constexpr int md = bmds(X);
   static constexpr int rt = brts(X);
 
-  struct num{
-    int v;
-    num(){v=0;}
-    num(int v):v(v){}
-
-    inline num operator+(num b){
-      return num(v+b.v>=md?v+b.v-md:v+b.v);
-    }
-    
-    inline num operator-(num b){
-      return num(v>=b.v?v-b.v:v+md-b.v);
-    }
-    
-    inline num operator*(num b){
-      return num(ull(v)*b.v%md);
-    }
-    
-    inline num operator=(num b){
-      return this->v=b.v;
-    }
-  };
-
-  inline num pow(num a,int b){
-    num res=1;
+  inline int add(int a,int b){
+    a+=b;
+    if(a>=md) a-=md;
+    return a;
+  }
+  
+  inline int mul(int a,int b){
+    return 1LL*a*b%md;
+  }
+  
+  inline int pow(int a,int b){
+    int res=1;
     while(b){
-      if(b&1) res=res*a;
-      a=a*a;
+      if(b&1) res=mul(res,a);
+      a=mul(a,a);
       b>>=1;
     }
     return res;
   }
 
-  inline num inv(num x){
+  inline int inv(int x){
     return pow(x,md-2);
   }
   
-  int base;
-  vector<num> rts,rrts;
-  vector<int> rev;
-
-  NTT(){init();};
+  vector<vector<int> > rts,rrts;
   
-  void init(){
-    base=1;
-    rts={num(0),num(1)};
-    rev={0,1};
-    rrts.clear();
-  }
-  
-  void ensure_base(int nbase){
-    if(nbase<=base) return;
- 
-    rev.resize(1<<nbase);
-    for(int i=0;i<(1<<nbase);i++)
-      rev[i]=(rev[i>>1]>>1)+((i&1)<<(nbase-1));
- 
-    rts.resize(1<<nbase);
-    while(base<nbase){
-      num angle=pow(rt,(md-1)>>(base+1));
-      for(int i=1<<(base-1);i<(1<<base);i++){
-	rts[i<<1]=rts[i];
-	rts[(i<<1)+1]=pow(angle,2*i+1-(1<<base));
+  void ensure_base(int n){
+    if((int)rts.size()>=n) return;
+    rts.resize(n);rrts.resize(n);
+    for(int i=1;i<n;i<<=1){
+      if(!rts[i].empty()) continue;
+      int w=pow(rt,(md-1)/(i<<1));
+      int rw=inv(w);
+      rts[i].resize(i);rrts[i].resize(i);
+      rts[i][0]=1;rrts[i][0]=1;
+      for(int k=1;k<i;k++){
+	rts[i][k]=mul(rts[i][k-1],w);
+	rrts[i][k]=mul(rrts[i][k-1],rw);
       }
-      base++;
     }
-    
-    rrts.resize(1<<nbase);
-    for(int i=0;i<(1<<nbase);i++) rrts[i]=inv(rts[i]);
   }
 
-  void ntt(vector<num> &a,bool f,int n=-1){
+  void ntt(vector<int> &a,bool f,int n=-1){
     if(n==-1) n=a.size();
     assert((n&(n-1))==0);
- 
-    int zeros=__builtin_ctz(n);
-    ensure_base(zeros);
-    int shift=base-zeros;
-    for(int i=0;i<n;i++)
-      if(i<(rev[i]>>shift))
-	swap(a[i],a[rev[i]>>shift]);
+    
+    for(int i=0,j=1;j+1<n;j++){
+      for(int k=n>>1;k>(i^=k);k>>=1);
+      if(i>j) swap(a[i],a[j]);
+    }
 
-    for(int k=1;k<n;k<<=1){
-      for(int i=0;i<n;i+=2*k){
-	for(int j=0;j<k;j++){
-	  num z=a[i+j+k]*(f?rrts[j+k]:rts[j+k]);
-	  a[i+j+k]=a[i+j]-z;
-	  a[i+j]=a[i+j]+z;
+    for(int i=1;i<n;i<<=1){
+      for(int j=0;j<n;j+=i*2){
+	for(int k=0;k<i;k++){
+	  int z=mul(a[i+j+k],f?rrts[i][k]:rts[i][k]);
+	  a[i+j+k]=add(a[j+k],md-z);
+	  a[j+k]=add(a[j+k],z);
 	}
       }
     }
     
     if(f){
-      num tmp=inv(n);
-      for(Int i=0;i<n;i++) a[i]=a[i]*tmp;
+      int tmp=inv(n);
+      for(Int i=0;i<n;i++) a[i]=mul(a[i],tmp);
     }
   }
 
   vector<int> multiply(vector<int> &a,vector<int> &b){
     int need=a.size()+b.size()-1;
-    int nbase=0;
-    while((1<<nbase)<need) nbase++;
-    ensure_base(nbase);
+    int sz=1;
+    while(sz<need) sz<<=1;
+    ensure_base(sz);
     
-    int sz=1<<nbase;
-    
-    vector<num> f(sz),g(sz);
-    for(int i=0;i<(int)a.size();i++) f[i]=num(a[i]);
-    for(int i=0;i<(int)b.size();i++) g[i]=num(b[i]);
+    vector<int> f(sz),g(sz);
+    for(int i=0;i<(int)a.size();i++) f[i]=a[i];
+    for(int i=0;i<(int)b.size();i++) g[i]=b[i];
     ntt(f,0);ntt(g,0);
-    for(int i=0;i<sz;i++) f[i]=f[i]*g[i];
+    for(int i=0;i<sz;i++) f[i]=mul(f[i],g[i]);
     ntt(f,1);
-    
-    vector<int> res(need,0);
-    for(int i=0;i<need;i++) res[i]=f[i].v;
-    return res;
+
+    f.resize(need);
+    return f;
   }
   
 };
 //END CUT HERE
 
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   int n;
-  cin>>n;
+  scanf("%d",&n);
   vector<int> a(n+1,0),b(n+1,0);
-  for(int i=1;i<=n;i++) cin>>a[i]>>b[i];
+  for(int i=1;i<=n;i++) scanf("%d %d",&a[i],&b[i]);
   NTT<0> ntt;
   auto c=ntt.multiply(a,b);
-  for(int i=1;i<=n*2;i++) cout<<c[i]<<endl;
+  for(int i=1;i<=n*2;i++) printf("%d\n",c[i]);
   return 0;
 }
 

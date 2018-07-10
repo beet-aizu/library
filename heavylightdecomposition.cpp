@@ -91,6 +91,21 @@ struct HLDecomposition {
       else break;
     }
   }
+
+  template<typename T,typename Q,typename F>
+  T for_each(int u,int v,T ti,const Q &q,const F &f){
+    T l=ti,r=ti;
+    while(1){
+      if(vid[u]>vid[v]){
+	swap(u,v);
+	swap(l,r);
+      }
+      l=f(l,q(max(vid[head[v]],vid[u]),vid[v]));
+      if(head[u]!=head[v]) v=par[head[v]];
+      else break;
+    }
+    return f(l,r);
+  }
   
   // for_each(edge)
   // [l,r] <- attention!!
@@ -321,10 +336,8 @@ signed YUKI_529(){
       s--;t--;
       s=big.belong[s];
       t=big.belong[t];
-      int ans=-1;
-      hl.for_each(s, t, [&](int l, int r) {
-	  ans = max(ans,rmq.query(l, r + 1));
-	});
+      auto f=[&](int l, int r)->int{return rmq.query(l, r + 1);};
+      int ans=hl.for_each(s, t, -1, f, rmq.f);
       printf("%d\n",ans);
       if(~ans){
 	int k=m[ans];

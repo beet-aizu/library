@@ -110,14 +110,12 @@ namespace FFT{
 //END CUT HERE
 
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   int n;
-  cin>>n;
+  scanf("%d",&n);
   vector<int> a(n+1,0),b(n+1,0);
-  for(int i=1;i<=n;i++) cin>>a[i]>>b[i];
+  for(int i=1;i<=n;i++) scanf("%d %d",&a[i],&b[i]);
   auto c=FFT::multiply(a,b);
-  for(int i=1;i<=n*2;i++) cout<<c[i]<<endl;
+  for(int i=1;i<=n*2;i++) printf("%lld\n",c[i]);
   return 0;
 }
 
