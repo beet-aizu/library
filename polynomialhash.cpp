@@ -120,6 +120,25 @@ struct PolynomialHash{
     T r3=sub3(a3,b3);
     return V(r1,r2,r3);
   }
+  
+  V mul(const V &a,const V &b){
+    T a1,a2,a3,b1,b2,b3;
+    tie(a1,a2,a3)=a;
+    tie(b1,b2,b3)=b;
+    T r1=mul1(a1,b1);
+    T r2=mul2(a2,b2);
+    T r3=mul3(a3,b3);
+    return V(r1,r2,r3);
+  }
+  
+  V inv(const V &a){
+    T a1,a2,a3;
+    tie(a1,a2,a3)=a;
+    T r1=inv(a1,MOD1);
+    T r2=inv(a2,MOD2);
+    T r3=inv(a3,MOD3);
+    return V(r1,r2,r3);
+  }
 
   V term(int x,T k){
     T a1=mul1(po1[x],k);
