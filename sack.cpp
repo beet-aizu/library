@@ -107,26 +107,19 @@ signed CFR316_D(){
   
   vector<int> c(n),dep(n);
   vector<int> vs(q),hs(q),ans(q);
-  vector<vector<int> > cnt(26,vector<int>(n+1,0));
-  vector<int> odd(n+1,0);
+  vector<int> cnt(n+1,0),odd(n+1,0);
   
-  auto expand=
+  auto flip=
     [&](int v){
-      odd[dep[v]]-=cnt[c[v]][dep[v]]&1;
-      cnt[c[v]][dep[v]]++;
-      odd[dep[v]]+=cnt[c[v]][dep[v]]&1;
+      odd[dep[v]]-=(cnt[dep[v]]>>c[v])&1;
+      cnt[dep[v]]^=(1<<c[v]);
+      odd[dep[v]]+=(cnt[dep[v]]>>c[v])&1;
     };  
-  auto shrink=
-    [&](int v){
-      odd[dep[v]]-=cnt[c[v]][dep[v]]&1;
-      cnt[c[v]][dep[v]]--;
-      odd[dep[v]]+=cnt[c[v]][dep[v]]&1;
-    };
   
   auto query =[&](int k){ans[k]=odd[hs[k]]<=1;};
   auto reset =[&](int v){v++;};
   
-  Sack sc(n,expand,shrink,query,reset);
+  Sack sc(n,flip,flip,query,reset);
   for(int i=1;i<n;i++){
     int p;
     scanf("%d",&p);
@@ -168,8 +161,86 @@ signed CFR316_D(){
   http://codeforces.com/contest/570/problem/D
 */
 
+
+
+signed CFR130_E(){
+  int n;
+  scanf("%d",&n);
+  
+  vector<int> dep(n),rs;
+  vector<int> vs,hs,ans;
+  vector<int> cnt(n+1,0);
+  
+  auto expand=[&](int v){cnt[dep[v]]++;};  
+  auto shrink=[&](int v){cnt[dep[v]]--;};
+  auto query =[&](int k){ans[k]=cnt[dep[vs[k]]+hs[k]]-1;};
+  auto reset =[&](int v){v++;};
+  
+  Sack sc(n,expand,shrink,query,reset);
+  for(int i=0;i<n;i++){
+    int p;
+    scanf("%d",&p);
+    p--;
+    if(~p) sc.add_edge(p,i);
+    else rs.emplace_back(i);
+  }
+  sc.build();
+  
+  vector<vector<int> > ps(20,vector<int>(n,-1));
+  {
+    auto &G=sc.G;
+    function<void(int,int,int)> dfs=
+      [&](int v,int p,int d){
+	ps[0][v]=p;
+	dep[v]=d;
+	for(int u:G[v]){
+	  if(u==p) continue;
+	  dfs(u,v,d+1);
+	}	
+      };
+    for(int r:rs) dfs(r,-1,1);
+  }
+  
+  int q;
+  scanf("%d",&q);
+  vs.assign(q,0);
+  hs.assign(q,0);
+  ans.assign(q,0);
+
+  for(int k=0;k+1<20;k++)
+    for(int i=0;i<n;i++)
+      ps[k+1][i]=ps[k][i]<0?-1:ps[k][ps[k][i]];
+  
+  auto calc=
+    [&](int v,int k){
+      for(int i=0;~v&&i<20;i++)
+	if((k>>i)&1) v=ps[i][v];
+      return v;
+    };
+  
+  for(int i=0;i<q;i++){
+    scanf("%d %d",&vs[i],&hs[i]);
+    vs[i]--;
+    vs[i]=calc(vs[i],hs[i]);
+    if(~vs[i]) sc.add_query(vs[i],i);
+  }
+  
+  for(int r:rs) sc.dfs(r,-1,0);
+  for(int i=0;i<q;i++){
+    if(i) printf(" ");
+    printf("%d",ans[i]);
+  }
+  puts("");
+  return 0;
+}
+/*
+  verified on 2018/07/16
+  https://codeforces.com/contest/208/problem/E
+*/
+
 signed main(){
-  ECR2_E();
+  //ECR2_E();
   //CFR316_D();
+  CFR130_E();
   return 0;
 }
