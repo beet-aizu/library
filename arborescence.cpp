@@ -116,7 +116,7 @@ struct Arborescence{
   Arborescence(int n,T INF):n(n),INF(INF,-1),uf(n),come(n,NULL),
 			    used(n,0),from(n,-1),cost(n,-1){};
 
-  void add_edge(int from,int to,int cost){
+  void add_edge(int from,int to,T cost){
     edges.emplace_back(from,to,cost);
   }
 
@@ -219,9 +219,58 @@ struct UVA11183{
   https://vjudge.net/problem/UVA-11183
 */
 
+double v[111][111];
+double c[111][111];
+signed AOJ_2309(){
+  Int n,m;
+  cin>>n>>m;
+  for(Int i=0;i<m;i++)
+    for(Int j=0;j<n;j++)
+      cin>>v[i][j];
+ 
+  for(Int i=0;i<m;i++){
+    c[i][i]=0;
+    for(Int j=0;j<n;j++) c[i][i]+=v[i][j]*v[i][j];
+  }
+  for(Int i=0;i<m;i++){
+    for(Int j=0;j<m;j++){
+      if(i==j) continue;
+      if(c[j][j]==0){
+	c[i][j]=c[i][i];
+	continue;
+      }
+      double r=0;
+      for(Int k=0;k<n;k++)
+	r+=v[i][k]*v[j][k];
+      r/=c[j][j];
+      c[i][j]=0;
+      for(Int k=0;k<n;k++)
+	c[i][j]+=(v[i][k]-r*v[j][k])*(v[i][k]-r*v[j][k]);      
+    }    
+  }
+  const double INF = 1e12;
+  Arborescence<double> G(m+1,INF);
+  for(Int i=0;i<m;i++){
+    G.add_edge(m,i,c[i][i]);
+    for(Int j=0;j<m;j++){
+      //cout<<i<<" "<<j<<":"<<c[i][j]<<endl;
+      if(i==j) continue;
+      G.add_edge(j,i,c[i][j]);
+    }
+  }
+  cout<<fixed<<setprecision(12)<<G.build(m)<<endl;
+  return 0;
+}
+
+/*
+  verified on 2018/07/26
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2309
+*/
+
 signed main(){
-  AOJ_GRL_2B ans;
+  //AOJ_GRL_2B ans;
   //UVA11183 ans;
-  ans.solve();
+  //ans.solve();
+  AOJ_2309();
   return 0;
 }
