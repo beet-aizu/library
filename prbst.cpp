@@ -113,7 +113,7 @@ struct PRBST{
   inline Node* update(Node* a){
     if(a==nullptr) return a;
     a->cnt=count(a->l)+count(a->r)+1;
-    a->dat=f(a->val,f(query(a->l),query(a->r)));
+    a->dat=f(query(a->l),f(a->val,query(a->r)));
     return a;
   }
 
