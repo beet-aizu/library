@@ -70,6 +70,15 @@ struct SegmentTree{
   T query(int a,int b){
     return query(a,b,0,0,n);
   }
+  void update(int k,T x){
+    query(k,k+1);//evaluate
+    k+=n-1;
+    dat[k]=x;
+    while(k){
+      k=(k-1)/2;
+      dat[k]=f(dat[k*2+1],dat[k*2+2]);
+    }
+  }
 };
 //END CUT HERE
 signed CSA070_AndOrMAX(){
@@ -130,6 +139,59 @@ signed CSA070_AndOrMAX(){
   https://csacademy.com/contest/round-70/task/and-or-max
 */
 
+signed CFR250_D(){
+  Int n,q;
+  scanf("%lld %lld",&n,&q);
+  vector<Int> a(n);
+  for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
+
+  const Int INF = 1e12;
+  using P = pair<Int, Int>;
+  using PP = pair<P, int>;
+  auto ff=[](P a,P b){return P(a.first+b.first,max(a.second,b.second));};
+  auto gg=[](P a,Int b){return P(a.first%b,a.second%b);};
+  auto f=[&](PP a,PP b){return PP(ff(a.first,b.first),a.second+b.second);};  
+  auto g=[&](PP a,Int b){return PP(gg(a.first,b),a.second);};
+  
+  auto h=[](Int a,Int b){return (b==INF?a:b);};
+  auto ignore=[](PP a,Int b){return a.first.second<b;};
+  auto satisfy=[](PP a,Int b){b++;return a.second==1;};
+  
+  SegmentTree<PP, Int> seg(n,f,g,h,PP(P(0,0),0),INF,ignore,satisfy);
+  vector<PP> v(n);
+  for(Int i=0;i<n;i++) v[i]=PP(P(a[i],a[i]),1);
+  seg.build(n,v);
+
+  for(Int i=0;i<q;i++){
+    Int t;
+    scanf("%lld",&t);
+    if(t==1){
+      Int l,r;
+      scanf("%lld %lld",&l,&r);
+      l--;
+      printf("%lld\n",seg.query(l,r).first.first);  
+    }
+    if(t==2){
+      Int l,r,x;
+      scanf("%lld %lld %lld",&l,&r,&x);
+      l--;
+      seg.update(l,r,x);
+    }
+    if(t==3){
+      Int k,x;
+      scanf("%lld %lld",&k,&x);
+      k--;
+      seg.update(k,PP(P(x,x),1));
+    }
+  }
+  
+  return 0;
+}
+/*
+  verified on 2018/07/31
+  http://codeforces.com/contest/438/problem/D
+ */
 signed main(){
-  CSA070_AndOrMAX();
+  //CSA070_AndOrMAX();
+  CFR250_D();
 }
