@@ -3,7 +3,6 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 
-
 //Without merge technique
 struct UnionFind{
   int n;
@@ -23,9 +22,6 @@ struct UnionFind{
     p[y]=x;
   }
 };
-
-
-
 
 template<typename T, typename E>
 struct SkewHeap{
@@ -74,13 +70,25 @@ struct SkewHeap{
   }
   
   Node* meld(Node *a,Node *b){
-    if(a==nullptr) return b;
-    if(b==nullptr) return a;
-    if(c(top(a),top(b))) swap(a,b);
-    eval(a);
-    a->r=meld(a->r,b);
-    swap(a->l,a->r);
-    return a;
+    using V = tuple<Node*, Node*>;
+    stack<V> st;
+    Node* res;
+  ENTRYPOINT:
+    if(!a||!b) res=a?a:b;
+    else{
+      if(c(top(a),top(b))) swap(a,b);
+      eval(a);
+      st.emplace(a,b);
+      a=a->r;
+      goto ENTRYPOINT;
+    RETURNPOINT:
+      tie(a,b)=st.top();st.pop();
+      a->r=res;
+      swap(a->l,a->r);
+      res=a;
+    }
+    if(!st.empty()) goto RETURNPOINT;
+    return res;
   }
   
   Node* pop(Node* a){
