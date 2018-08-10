@@ -54,6 +54,18 @@ struct WaveletMatrix{
   FullyIndexableDictionary mat[MAXLOG];
   int zs[MAXLOG],buff1[MAXLOG],buff2[MAXLOG];
 
+  int freq_dfs(int d,int l,int r,T val,T a,T b){
+    if(l==r) return 0;
+    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
+    T nv=1ULL<<(MAXLOG-d-1)|val;
+    T nnv=((1ULL<<(MAXLOG-d-1))-1)|nv;
+    if(nnv<a||b<=val) return 0;
+    if(a<=val&&nnv<b) return r-l;
+    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
+    return freq_dfs(d+1,l-lc,r-rc,val,a,b)
+      +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);
+  }
+  
   WaveletMatrix(vector<T> data){
     len=data.size();
     vector<T> l(len),r(len);
@@ -130,11 +142,13 @@ struct WaveletMatrix{
     }
     return res;
   }
-  
+  int rangefreq(int left,int right,T lower,T upper){
+    return freq_dfs(0,left,right,0,lower,upper);
+  }
 };
 
 //END CUT HERE
-signed main(){
+signed UVA_13183(){
   int n,q;
   while(scanf("%d %d",&n,&q)!=EOF){
     vector<int> v(n);
@@ -149,8 +163,54 @@ signed main(){
   }
   return 0;
 }
-
 /*
-  verified on 2017/11/06
-  http://rhodon.u-aizu.ac.jp:8080/arena/room.jsp?id=3765
+  verified on 2018/08/10
+  https://vjudge.net/problem/UVA-13183
 */
+
+
+signed UNIVERSITYCODESPRINT04_F(){
+  int n;
+  scanf("%d",&n);
+  vector<int> t(n);
+  for(int i=0;i<n;i++) scanf("%d",&t[i]);
+  
+  vector<int> pre(n,-1),nxt(n,n),com(n+1,-1);
+  unordered_map<int, int> pos;
+  for(int i=0;i<n;i++){
+    if(pos.count(t[i])) pre[i]=pos[t[i]];
+    pos[t[i]]=i;
+  }
+  
+  pos.clear();
+  for(int i=n-1;i>=0;i--){
+    if(pos.count(t[i])) nxt[i]=pos[t[i]];
+    pos[t[i]]=i;
+    com[nxt[i]]=pre[i];
+  }
+  
+  WaveletMatrix<int, 30> wm1(pre),wm2(com);
+  
+  int q;
+  scanf("%d",&q);
+  for(int i=0;i<q;i++){
+    int A,B,ans;
+    scanf("%d %d",&A,&B);
+    ans=B-(--A);
+    ans-=wm1.rangefreq(A,B,A,B)<<1;
+    ans+=wm2.rangefreq(A,B,A,B);
+    printf("%d\n",ans);
+  }
+  
+  return 0;
+}
+/*
+  verified on 2018/08/10
+  https://www.hackerrank.com/contests/university-codesprint-4/challenges/unique-art/problem
+*/
+
+signed main(){
+  //UVA_13183();
+  UNIVERSITYCODESPRINT04_F();
+  return 0;
+}
