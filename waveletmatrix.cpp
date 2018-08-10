@@ -53,7 +53,8 @@ struct WaveletMatrix{
   int len;
   FullyIndexableDictionary mat[MAXLOG];
   int zs[MAXLOG],buff1[MAXLOG],buff2[MAXLOG];
-
+  static const T npos=-1;
+  
   int freq_dfs(int d,int l,int r,T val,T a,T b){
     if(l==r) return 0;
     if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
@@ -142,30 +143,70 @@ struct WaveletMatrix{
     }
     return res;
   }
+  
+  T rquantile(int l,int r,int k){
+    return quantile(l,r,r-l-k-1);
+  }
+  
+  // return number of points in [left, right) * [lower, upper)
   int rangefreq(int left,int right,T lower,T upper){
     return freq_dfs(0,left,right,0,lower,upper);
+  }
+
+  pair<int, int> ll(int l,int r,T v){
+    int res=0;
+    for(int dep=0;dep<MAXLOG;dep++){
+      buff1[dep]=l;buff2[dep]=r;
+      bool bit=(v>>(MAXLOG-(dep+1)))&1;
+      if(bit) res+=r-l+mat[dep].rank(bit,l)-mat[dep].rank(bit,r);
+      l=mat[dep].rank(bit,l)+zs[dep]*bit;
+      r=mat[dep].rank(bit,r)+zs[dep]*bit;
+    }
+    return make_pair(res,r-l);    
+  }
+  
+  int lt(int l,int r,T v){
+    auto p=ll(l,r,v);
+    return p.first;
+  }
+  
+  int le(int l,int r,T v){
+    auto p=ll(l,r,v);
+    return p.first+p.second;
+  }
+  
+  T succ(int l,int r,T v){
+    int k=le(l,r,v);
+    return k==r-l?npos:rquantile(l,r,k);
+  }
+
+  T pred(int l,int r,T v){
+    int k=lt(l,r,v);
+    return k?rquantile(l,r,k-1):npos;
   }
 };
 
 //END CUT HERE
-signed UVA_13183(){
+
+signed SPOJ_MKTHNUM(){
   int n,q;
-  while(scanf("%d %d",&n,&q)!=EOF){
-    vector<int> v(n);
-    for(int i=0;i<n;i++) scanf("%d",&v[i]);
-    WaveletMatrix<int,32> wm(v);
-    for(int i=0;i<q;i++){
-      int l,r,k;
-      scanf("%d %d %d",&l,&r,&k);
-      l--;
-      printf("%d\n",wm.quantile(l,r,(r-l)-k));
-    }
+  scanf("%d %d",&n,&q);
+  vector<int> v(n);
+  for(int i=0;i<n;i++) scanf("%d",&v[i]);
+  const int OFS = 1e9+1;
+  for(int i=0;i<n;i++) v[i]+=OFS;
+  WaveletMatrix<int,32> wm(v);
+  for(int i=0;i<q;i++){
+    int l,r,k;
+    scanf("%d %d %d",&l,&r,&k);
+    l--;k--;
+    printf("%d\n",wm.rquantile(l,r,k)-OFS);
   }
   return 0;
 }
 /*
   verified on 2018/08/10
-  https://vjudge.net/problem/UVA-13183
+  https://www.spoj.com/problems/MKTHNUM/
 */
 
 
@@ -210,7 +251,7 @@ signed UNIVERSITYCODESPRINT04_F(){
 */
 
 signed main(){
-  //UVA_13183();
-  UNIVERSITYCODESPRINT04_F();
+  SPOJ_MKTHNUM();
+  //UNIVERSITYCODESPRINT04_F();
   return 0;
 }
