@@ -27,6 +27,7 @@ struct LCA{
     E[k++]=d-1;
   }
 
+  // if it need leftmost, then add: if(E[i]==E[j]) return i<j?i:j;
   inline int comp(int i,int j){return E[i]<E[j]?i:j;};
   inline int comp(int i,int j,int k){return comp(comp(i,j),k);};
   
