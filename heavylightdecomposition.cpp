@@ -5,13 +5,13 @@ using Int = long long;
 struct HLDecomposition {
   int n,pos;
   vector<vector<int> > G;
-  vector<int> vid, head, sub, hvy, par, dep, inv, type, ps, pt;
+  vector<int> vid, head, sub, hvy, par, dep, inv, type;
   
   HLDecomposition(){}
   HLDecomposition(int sz):
     n(sz),pos(0),G(n),
     vid(n,-1),head(n),sub(n,1),hvy(n,-1),
-    par(n),dep(n),inv(n),type(n),ps(n),pt(n){}
+    par(n),dep(n),inv(n),type(n){}
   
   void add_edge(int u, int v) {
     G[u].push_back(v);
@@ -64,7 +64,7 @@ struct HLDecomposition {
       int &i=get<2>(st.top());
       if(!i){
 	type[v]=c;
-	ps[v]=vid[v]=pos++;
+	vid[v]=pos++;
 	inv[vid[v]]=v;
 	head[v]=h;
         hvy[v]=(G[v].empty()?-1:G[v][0]);
@@ -76,14 +76,14 @@ struct HLDecomposition {
 	st.emplace(u,(hvy[v]==u?h:u),0);
       }else{
 	st.pop();
-	pt[v]=pos;
       }
     }
   }
   
   // for_each(vertex)
-  // [l,r] <- attention!!
-  void for_each(int u, int v, const function<void(int, int)>& f) {
+  // [l,r] <- attention!!  
+  template<typename F>
+  void for_each(int u, int v, const F& f) {
     while(1){
       if(vid[u]>vid[v]) swap(u,v);
       f(max(vid[head[v]],vid[u]),vid[v]);
@@ -109,7 +109,8 @@ struct HLDecomposition {
   
   // for_each(edge)
   // [l,r] <- attention!!
-  void for_each_edge(int u, int v, const function<void(int, int)>& f) {
+  template<typename F>
+  void for_each_edge(int u, int v,const F& f) {
     while(1){
       if(vid[u]>vid[v]) swap(u,v);
       if(head[u]!=head[v]){
@@ -350,12 +351,236 @@ signed YUKI_529(){
   return 0;
 }
 
-/* verified on 2017/12/31
-https://yukicoder.me/problems/no/529
+/* 
+   verified on 2017/12/31
+   https://yukicoder.me/problems/no/529
 */
+
+
+
+template <typename T,typename E>
+struct Chien{
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using P = function<E(E,size_t)>;
+  int n;
+  F f;
+  G g;
+  H h;
+  T ti;
+  E ei;
+  P p;
+  vector<T> dat;
+  vector<E> laz;
+  Chien(int n_,F f,G g,H h,T ti,E ei,
+	      P p=[](E a,size_t b){b++;return a;}):
+    f(f),g(g),h(h),ti(ti),ei(ei),p(p){
+    init(n_);
+  }
+  void init(int n_){
+    n=1;
+    while(n<n_) n*=2;
+    dat.assign(2*n-1,ti);
+    laz.assign(2*n-1,ei);
+  }
+  void build(int n_, vector<T> v){
+    for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
+    for(int i=n-2;i>=0;i--)
+      dat[i]=f(dat[i*2+1],dat[i*2+2]);
+  }
+  inline void eval(int len,int k){
+    if(laz[k]==ei) return;
+    if(k*2+1<n*2-1){
+      laz[k*2+1]=h(laz[k*2+1],laz[k]);
+      laz[k*2+2]=h(laz[k*2+2],laz[k]);
+    }
+    dat[k]=g(dat[k],p(laz[k],len));
+    laz[k]=ei;
+  }
+  T update(int a,int b,E x,int k,int l,int r){
+    eval(r-l,k);
+    if(r<=a||b<=l) return dat[k];
+    if(a<=l&&r<=b){
+      laz[k]=h(laz[k],x);
+      return g(dat[k],p(laz[k],r-l));
+    }
+    return dat[k]=f(update(a,b,x,k*2+1,l,(l+r)/2),
+		    update(a,b,x,k*2+2,(l+r)/2,r));
+  }
+  T update(int a,int b,E x){
+    return update(a,b,x,0,0,n);
+  }
+  T query(int a,int b,int k,int l,int r){
+    eval(r-l,k);
+    if(r<=a||b<=l) return ti;
+    if(a<=l&&r<=b) return dat[k];
+    T vl=query(a,b,k*2+1,l,(l+r)/2);
+    T vr=query(a,b,k*2+2,(l+r)/2,r);
+    return f(vl,vr);
+  }
+  T query(int a,int b){
+    return query(a,b,0,0,n);
+  }
+  void update(int k,T x){
+    query(k,k+1);//evaluate
+    k+=n-1;
+    dat[k]=x;
+    while(k){
+      k=(k-1)/2;
+      dat[k]=f(dat[k*2+1],dat[k*2+2]);
+    }
+  }
+};
+
+
+signed AOJ_2667(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  HLDecomposition hld(n);
+  for(int i=1;i<n;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    hld.add_edge(a,b);
+  }
+  hld.build();
+  
+  auto f=[](Int a,Int b){return a+b;};
+  auto p=[](Int a,Int b){return a*b;};
+  Chien<Int, Int> seg(n,f,f,f,0,0,p);
+  
+  for(int i=0;i<q;i++){
+    int t;
+    scanf("%d",&t);
+    if(t==0){
+      int u,v;
+      scanf("%d %d",&u,&v);
+      Int ans=0;
+      hld.for_each_edge(u,v,[&](int l,int r){ans+=seg.query(l,r+1);});
+      printf("%lld\n",ans);
+    }
+    if(t==1){
+      int v,x;
+      scanf("%d %d",&v,&x);
+      seg.update(hld.vid[v]+1,hld.vid[v]+hld.sub[v],x);
+    }
+  }
+  return 0;
+}
+
+/* 
+   verified on 2018/08/14
+   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2667
+*/
+
+
+signed AOJ_2450(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  HLDecomposition hld(n);
+  vector<int> w(n);
+  for(int i=0;i<n;i++) scanf("%d",&w[i]);
+  using P = pair<int,int>;
+  for(int i=0;i<n-1;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    a--;b--;
+    hld.add_edge(a,b);
+  }
+  hld.build();
+  
+  using T = tuple<int,int,int,int,int,int,int>;
+  
+  T ti(-1,-1,-1,-1,-1,-1,-1);
+  P ei(-1,-114514);
+
+  auto &par=hld.par;
+  auto &vid=hld.vid;;
+  auto con=[&](int a,int b){
+    return par[a]==b||par[b]==a;
+  };
+  
+  auto f=[&](T a,T b){
+    if(a>b) swap(a,b);
+    
+    if(get<0>(a)<0) return b;
+    if(con(get<0>(a),get<1>(b))) swap(a,b);
+   
+    int al,ar,as,ava,avi,avl,avr;
+    tie(al,ar,as,ava,avi,avl,avr)=a;
+    int bl,br,bs,bva,bvi,bvl,bvr;
+    tie(bl,br,bs,bva,bvi,bvl,bvr)=b;
+    
+    if(!con(ar,bl)){
+      if(con(ar,br)){
+	swap(bl,br);
+	swap(bvl,bvr);
+      }else if(con(al,bl)){
+	swap(al,ar);
+	swap(avl,avr);
+      }else{
+	return ti;
+      }
+    }
+    int cl=al,cr=br,cs=as+bs;
+    int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
+    cvi=max(cvi,avr+bvl);
+    cvl=max(cvl,ava+bvl);
+    cvr=max(cvr,avr+bva);
+    
+    return T(cl,cr,cs,cva,cvi,cvl,cvr);
+  };
+  
+  auto g=[&](T a,P p){
+    if(p==ei) return a;
+    int al,ar,as,ava,avi,avl,avr;
+    tie(al,ar,as,ava,avi,avl,avr)=a;
+    int v=p.first,b=p.second;
+    if(~v) al=ar=v,as=1;
+    if(b>=0) return T(al,ar,as,b*as,b*as,b*as,b*as);
+    return T(al,ar,as,b*as,b,b,b);
+  };
+  auto h=[&](P a,P b){return b;};
+
+
+  Chien<T,P> seg(n,f,g,h,ti,ei);
+  
+  vector<T> vt(n);
+  for(int i=0;i<n;i++) vt[vid[i]]=g(ti,P(i,w[i]));
+  seg.build(n,vt);
+  
+  while(q--){
+    int t,a,b,c;
+    scanf("%d %d %d %d",&t,&a,&b,&c);
+    a--;b--;
+    if(t==1){
+      hld.for_each(a,b,[&](int l,int r){
+			 seg.update(l,r+1,P(-1,c));
+		       });
+    }
+    if(t==2){
+      auto ask=[&](int l,int r){return seg.query(l,r+1);};      
+      T v=hld.for_each(a,b,seg.ti,ask,f);
+      int vl,vr,vs,vva,vvi,vvl,vvr;
+      tie(vl,vr,vs,vva,vvi,vvl,vvr)=v;
+      printf("%d\n",max({vva,vvi,vvl,vvr}));
+    }
+  }
+  
+  return 0;
+}
+
+
+/* 
+   verified on 2018/08/14
+   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2450
+*/
+
 
 signed main(){
   //AOJ_GRL5C();
-  YUKI_529();
+  //YUKI_529();
+  //AOJ_2667();
+  AOJ_2450();
   return 0;
 };

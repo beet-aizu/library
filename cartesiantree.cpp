@@ -130,6 +130,10 @@ struct LCA{
   }
 };
 
+
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 
 signed DSL_3_D(){
@@ -157,7 +161,53 @@ signed DSL_3_D(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=jp
 */
 
+signed SPOJ_ADAPLANT(){
+  int T;
+  scanf("%d",&T);
+  while(T--){
+    int n,l;
+    scanf("%d %d",&n,&l);
+    vector<int> v(n);
+    for(int i=0;i<n;i++) scanf("%d",&v[i]);
+    
+    const int BS=1e9+100;
+    vector<int> w(n);    
+    for(int i=0;i<n;i++) w[i]=BS-v[i];
+    
+    CartesianTree ct1(n),ct2(n);
+    int r1=ct1.build(v);
+    int r2=ct2.build(w);
+    
+    
+    LCA lca1(n),lca2(n);    
+    for(int i=0;i<n;i++){
+      if(~ct1.P[i]) lca1.add_edge(i,ct1.P[i]);
+      if(~ct2.P[i]) lca2.add_edge(i,ct2.P[i]);
+    }
+    lca1.build(r1);
+    lca2.build(r2);
+
+    l++;
+    chmin(l,n-1);
+    
+    int ans=0;
+    for(int i=0;i+l<n;i++){
+      int x=v[lca1.lca(i,i+l)];
+      int y=BS-w[lca2.lca(i,i+l)];
+      chmax(ans,y-x);
+    }
+    
+    printf("%d\n",ans);
+  }
+  return 0;
+}
+/*
+  verified on 2018/08/13
+  https://www.spoj.com/problems/ADAPLANT/
+*/
+
 signed main(){
-  DSL_3_D();
+  //DSL_3_D();
+  SPOJ_ADAPLANT();
   return 0;
 }
