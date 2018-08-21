@@ -18,12 +18,10 @@ struct RBST{
   using F = function<T(T,T)>;
   using G = function<T(T,E)>;
   using H = function<E(E,E)>;
-  using P = function<E(E,size_t)>;
 
   F f;
   G g;
   H h;
-  P p;
   T ti;
   E ei;
   
@@ -41,8 +39,8 @@ struct RBST{
   vector<Node> pool;
   size_t ptr;
 
-  RBST(F f,G g,H h,P p,T ti,E ei):
-    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  RBST(F f,G g,H h,T ti,E ei):
+    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
     if(l+1==r) return create(v[l]);
@@ -86,14 +84,14 @@ struct RBST{
   
   Node* eval(Node* a){
     if(a->laz!=ei){ 
-      a->val=g(a->val,p(a->laz,1));
+      a->val=g(a->val,a->laz);
       if(a->l!=nullptr){
 	a->l->laz=h(a->l->laz,a->laz);
-	a->l->dat=g(a->l->dat,p(a->laz,count(a->l)));
+	a->l->dat=g(a->l->dat,a->laz);
       }
       if(a->r!=nullptr){
 	a->r->laz=h(a->r->laz,a->laz);
-	a->r->dat=g(a->r->dat,p(a->laz,count(a->r)));
+	a->r->dat=g(a->r->dat,a->laz);
       }
       a->laz=ei;
     }
@@ -175,39 +173,31 @@ struct RBST{
 };
 //END CUT HERE
 
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-
 //INSERT ABOVE HERE
 signed AOJ_1508(){
   int n,q;
-  cin>>n>>q;
+  scanf("%d %d",&n,&q);
   vector<int> v(n);
-  for(int i=0;i<n;i++) cin>>v[i];
+  for(int i=0;i<n;i++) scanf("%d",&v[i]);
   
-  RBST<int, int>::F f=[](int a,int b){return min(a,b);};
-  RBST<int, int>::G g=[](int a,int b){return b<0?a:b;};
-  RBST<int, int>::H h=[](int a,int b){return b<0?a:b;};
-  RBST<int, size_t>::P p=[](int a,size_t b){++b;return a;};
+  auto f=[](int a,int b){return min(a,b);};
+  auto g=[](int a,int b){return b<0?a:b;};
+  auto h=[](int a,int b){return b<0?a:b;};
   const int INF = 1e9;
-  RBST<int, int> rbst(f,g,h,p,INF,-1);
+  RBST<int, int> rbst(f,g,h,INF,-1);
 
   auto root=rbst.build(v);
   
   for(int i=0;i<q;i++){
     int x,y,z;
-    cin>>x>>y>>z;
+    scanf("%d %d %d",&x,&y,&z);
     if(x==0){
       int v=rbst.query(root,z,z+1);
       root=rbst.erase(root,z);
       root=rbst.insert(root,y,v);
     }
     if(x==1){
-      cout<<rbst.query(root,y,z+1)<<endl;
+      printf("%d\n",rbst.query(root,y,z+1));
     }
     if(x==2){
       rbst.update(root,y,y+1,z);
@@ -217,29 +207,28 @@ signed AOJ_1508(){
   return 0;
 }
 /*
-  verified on 2018/02/17
+  verified on 2018/08/21
   judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
 */
 
 signed DSL_2_F(){
   int n,q;
-  cin>>n>>q;
-  RBST<Int, Int>::F f=[](Int a,Int b){return min(a,b);};
-  RBST<Int, Int>::G g=[](Int a,Int b){return b<0?a:b;};
-  RBST<Int, Int>::H h=[](Int a,Int b){return b<0?a:b;};
-  RBST<Int, size_t>::P p=[](Int a,size_t b){++b;return a;};
-  RBST<Int, Int> rbst(f,g,h,p,INT_MAX,-1);
+  scanf("%d %d",&n,&q);
+  auto f=[](Int a,Int b){return min(a,b);};
+  auto g=[](Int a,Int b){return b<0?a:b;};
+  auto h=[](Int a,Int b){return b<0?a:b;};
+  RBST<Int, Int> rbst(f,g,h,INT_MAX,-1);
   vector<Int> v(n,INT_MAX);
   auto root=rbst.build(v);
   
   for(int i=0;i<q;i++){
-    int c,s,t,x;
-    cin>>c;
-    if(c){
-      cin>>s>>t;
-      cout<<rbst.query(root,s,t+1)<<endl;
+    int c,s,t,x;    
+    scanf("%d",&c);
+    if(c){      
+      scanf("%d %d",&s,&t);
+      printf("%lld\n",rbst.query(root,s,t+1));
     }else{
-      cin>>s>>t>>x;
+      scanf("%d %d %d",&s,&t,&x);
       rbst.update(root,s,t+1,x);
     }
   }
@@ -247,28 +236,28 @@ signed DSL_2_F(){
 }
 /*
   verified on 2018/02/17
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
+  https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_F
 */
 
 signed DSL_2_G(){
   int n,q;
-  cin>>n>>q;
-  RBST<Int, Int>::F f=[](Int a,Int b){return a+b;};
-  RBST<Int, Int>::G g=[](Int a,Int b){return a+b;};
-  RBST<Int, Int>::H h=[](Int a,Int b){return a+b;};
-  RBST<Int, size_t>::P p=[](Int a,size_t b){return a*b;};
-  RBST<Int, Int> rbst(f,g,h,p,0,0);
-  vector<Int> v(n,0);
+  scanf("%d %d",&n,&q);
+  using P = pair<Int, Int>;
+  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
+  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
+  auto h=[](Int a,Int b){return a+b;};
+  RBST<P, Int> rbst(f,g,h,P(0,0),0);
+  vector<P> v(n,P(0,1));
   auto root=rbst.build(v);
   
   for(int i=0;i<q;i++){
     int c,s,t,x;
-    cin>>c;
+    scanf("%d",&c);
     if(c){
-      cin>>s>>t;
-      cout<<rbst.query(root,s-1,t)<<endl;
+      scanf("%d %d",&s,&t);
+      printf("%lld\n",rbst.query(root,s-1,t).first);
     }else{
-      cin>>s>>t>>x;
+      scanf("%d %d %d",&s,&t,&x);
       rbst.update(root,s-1,t,x);
     }
   }
@@ -276,7 +265,7 @@ signed DSL_2_G(){
 }
 /*
   verified on 2018/02/17
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+  https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G
 */
 
 char buf[114514];
@@ -287,18 +276,17 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
   string S(buf);
   using T = tuple<int, int, int>;
   using P = pair<int, int>;
-  RBST<T, P>::F f=[](T a,T b){
+  auto f=[](T a,T b){
     return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
   };
-  RBST<T, P>::G g=[](T a,P b){
+  auto g=[](T a,P b){
     return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
   };
-  RBST<T, P>::H h=[](P a,P b){
+  auto h=[](P a,P b){
     return P(a.first+b.first,a.second+b.second);
   };
-  RBST<T, P>::P p=[](P a,int b){++b;return a;};
   const int INF = 1e9;
-  RBST<T, P> rbst(f,g,h,p,T(INF,INF,0),P(0,0));
+  RBST<T, P> rbst(f,g,h,T(INF,INF,0),P(0,0));
   
   vector<T> v(S.size()+2,T(0,0,0));
   for(int i=0;i<(int)S.size();i++)

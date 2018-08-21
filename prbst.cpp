@@ -18,12 +18,10 @@ struct PRBST{
   using F = function<T(T,T)>;
   using G = function<T(T,E)>;
   using H = function<E(E,E)>;
-  using P = function<E(E,size_t)>;
 
   F f;
   G g;
   H h;
-  P p;
   T ti;
   E ei;
   
@@ -37,12 +35,12 @@ struct PRBST{
       cnt(1),val(val),dat(val),laz(laz){l=r=nullptr;}
   };
 
-  const size_t LIM = 1.5e7;
+  const size_t LIM = 1e7;
   vector<Node> pool;
   size_t ptr;
 
-  PRBST(F f,G g,H h,P p,T ti,E ei):
-    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  PRBST(F f,G g,H h,T ti,E ei):
+    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
     if(l+1==r) return create(v[l]);
@@ -94,16 +92,16 @@ struct PRBST{
   Node* eval(Node* a){
     a=clone(a);
     if(a->laz!=ei){ 
-      a->val=g(a->val,p(a->laz,1));
+      a->val=g(a->val,a->laz);
       if(a->l!=nullptr){
 	a->l=clone(a->l);
 	a->l->laz=h(a->l->laz,a->laz);
-	a->l->dat=g(a->l->dat,p(a->laz,count(a->l)));
+	a->l->dat=g(a->l->dat,a->laz);
       }
       if(a->r!=nullptr){
 	a->r=clone(a->r);
 	a->r->laz=h(a->r->laz,a->laz);
-	a->r->dat=g(a->r->dat,p(a->laz,count(a->r)));
+	a->r->dat=g(a->r->dat,a->laz);
       }
       a->laz=ei;
     }
@@ -195,14 +193,15 @@ struct PRBST{
 signed ARC030_D(){
   int n,q;
   scanf("%d %d",&n,&q);
-  vector<Int> v(n);
-  for(int i=0;i<n;i++) scanf("%lld",&v[i]);
-  
-  PRBST<Int, Int>::F f=[](Int a,Int b){return a+b;};
-  PRBST<Int, Int>::G g=[](Int a,Int b){return a+b;};
-  PRBST<Int, Int>::H h=[](Int a,Int b){return a+b;};
-  PRBST<Int, size_t>::P p=[](Int a,size_t b){return a*b;};
-  PRBST<Int, Int> prbst(f,g,h,p,0,0);
+  using P = pair<Int, Int>;
+  vector<P> v(n,P(0,1));
+  for(int i=0;i<n;i++) scanf("%lld",&v[i].first);
+
+  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
+  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
+  auto h=[](Int a,Int b){return a+b;};
+
+  PRBST<P, Int> prbst(f,g,h,P(0,0),0);
   auto root=prbst.build(v);
   
   for(int i=0;i<q;i++){
@@ -227,7 +226,7 @@ signed ARC030_D(){
     if(t==3){
       int a,b;
       scanf("%d %d",&a,&b);
-      printf("%lld\n",prbst.query(root,a-1,b));
+      printf("%lld\n",prbst.query(root,a-1,b).first);
     }
     
     if(prbst.ptr>prbst.LIM*95/100)
