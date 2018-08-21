@@ -12,21 +12,18 @@ struct SegmentTree{
   
   void init(int n_){
     n=1;
-    while(n<n_) n*=2;
-    dat.clear();
-    dat.resize(2*n-1);
-  }
-  
+    while(n<n_) n<<=1;
+    dat.assign(n<<1,vector<int>());
+  }  
   void build(){
-    for(int i=0;i<(int)v.size();i++)
-      dat[v[i].first+(n-1)].emplace_back(v[i].second);
-    
+    for(auto p:v)
+      dat[p.first+n].emplace_back(p.second);    
     for(int i=0;i<n;i++)
-      sort(dat[i+n-1].begin(),dat[i+n-1].end());
+      sort(dat[i+n].begin(),dat[i+n].end());
     
-    for(int i=n-2;i>=0;i--){
-      merge(dat[i*2+1].begin(),dat[i*2+1].end(),
-	    dat[i*2+2].begin(),dat[i*2+2].end(),
+    for(int i=n-1;i;i--){
+      merge(dat[(i<<1)|0].begin(),dat[(i<<1)|0].end(),
+	    dat[(i<<1)|1].begin(),dat[(i<<1)|1].end(),
 	    back_inserter(dat[i]));
     }
   }
@@ -39,16 +36,35 @@ struct SegmentTree{
       return int(latte-malta);
     };
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
-      if(l&1) res+=calc(dat[(l++)-1]);
-      if(r&1) res+=calc(dat[(--r)-1]);
+      if(l&1) res+=calc(dat[l++]);
+      if(r&1) res+=calc(dat[--r]);
     }
     return res;
   }
   
 };
 
+signed ABC106_D(){
+  int n,m,q;
+  scanf("%d %d %d",&n,&m,&q);
+  vector<int> x(m),y(m);
+  for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
+ 
+  vector<P> vp;
+  for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
+ 
+  SegmentTree seg(n+1,vp);
+ 
+  for(int i=0;i<q;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    printf("%d\n",seg.query(a,b+1,a,b+1));    
+  }
+  return 0;
+}
 
 //END CUT HERE
 signed main(){
+  ABC106_D();
   return 0;
 }
