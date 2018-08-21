@@ -138,6 +138,210 @@ struct HLDecomposition {
 //END CUT HERE
 
 
+
+struct BiconectedGraph{
+  typedef pair<int,int> P;
+  int n;
+  vector<vector<int> > G,C,T;
+  vector<int> ord,low,belong;
+  vector<P> B;
+  BiconectedGraph(){}
+  BiconectedGraph(int sz):n(sz),G(sz),C(sz),T(sz){}
+  
+  void add_edge(int u,int v){
+    G[u].push_back(v);
+    G[v].push_back(u);
+  }
+
+  void input(int m,int offset=0){
+    int a,b;
+    for(int i=0;i<m;i++){
+      cin>>a>>b;
+      add_edge(a+offset,b+offset);
+    }
+  }
+  
+  bool is_bridge(int u,int v){
+    if(ord[u]>ord[v]) swap(u,v);
+    return ord[u]<low[v];
+  }
+  
+  void dfs(int v,int p,int &k){
+    ord[v]=low[v]=k;
+    ++k;
+    for(int u:G[v]){
+      if(u==p) continue;
+      if(ord[u]>=0){
+	low[v]=min(low[v],ord[u]);
+      }else{
+	dfs(u,v,k);
+	low[v]=min(low[v],low[u]);
+      }
+      if(is_bridge(u,v)) B.push_back(P(u,v));
+    }
+  }
+  
+  void fill_component(int c,int v){
+    C[c].push_back(v);
+    belong[v]=c;
+    for(int u:G[v]){
+      if(belong[u]>=0||is_bridge(u,v)) continue;
+      fill_component(c,u);
+    }
+  }
+  
+  void add_component(int v,int &k){
+    if(belong[v]>=0) return;
+    fill_component(k++,v);
+  }
+  
+  int build(){
+    int k=0;
+    ord.resize(n);
+    low.resize(n);
+    belong.resize(n);
+    fill(ord.begin(),ord.end(),-1);
+    fill(belong.begin(),belong.end(),-1);
+    for(int v=0;v<n;v++){
+      if(ord[v]>=0) continue;
+      dfs(v,-1,k);
+    }
+    k=0;
+    for(int i=0;i<(int)B.size();i++){
+      add_component(B[i].first,k);
+      add_component(B[i].second,k);
+    }
+    for(int v=0;v<n;v++) add_component(v,k);
+    for(int i=0;i<(int)B.size();i++){
+      int u=belong[B[i].first],v=belong[B[i].second];
+      T[u].push_back(v);
+      T[v].push_back(u);
+    }
+    return k;
+  }
+};
+
+
+template <typename T,typename E>
+struct SegmentTree{
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  int n;
+  F f;
+  G g;
+  T ti;
+  vector<T> dat;
+  SegmentTree(){};
+  SegmentTree(int n_,F f,G g,T ti):
+    f(f),g(g),ti(ti){
+    init(n_);
+  }
+  void init(int n_){
+    n=1;
+    while(n<n_) n<<=1;
+    dat.assign(n<<1,ti);
+  }
+  void build(int n_, vector<T> v){
+    for(int i=0;i<n_;i++) dat[n+i]=v[i];
+    for(int i=n-1;i;i--)
+      dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
+  }
+  void update(int k,E a){
+    k+=n;
+    dat[k]=g(dat[k],a);
+    while(k){
+      k>>=1;
+      dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
+    }
+  }
+  inline T query(int a,int b){
+    T vl=ti,vr=ti;
+    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
+      if(l&1) vl=f(vl,dat[l++]);
+      if(r&1) vr=f(dat[--r],vr);
+    }
+    return f(vl,vr);
+  }
+  template<typename C>
+  int find(int a,int b,C &check,int k,int l,int r){
+    if(!check(dat[k])||r<=a||b<=l) return -1;
+    if(k>=n) return k-n;
+    int m=(l+r)>>1;
+    int vl=find(a,b,check,(k<<1)|0,l,m);
+    if(~vl) return vl;
+    return find(a,b,check,(k<<1)|1,m,r);
+  }
+  template<typename C>
+  int find(int a,int b,C &check){
+    return find(a,b,check,1,0,n);
+  }
+};
+
+
+template <typename T,typename E>
+struct Chien{
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  int n,height;
+  F f;
+  G g;
+  H h;
+  T ti;
+  E ei;
+  vector<T> dat;
+  vector<E> laz;
+  Chien(int n_,F f,G g,H h,T ti,E ei):
+    f(f),g(g),h(h),ti(ti),ei(ei){init(n_);}
+  void init(int n_){
+    n=1;height=0;
+    while(n<n_) n<<=1,height++;
+    dat.assign(2*n,ti);
+    laz.assign(2*n,ei);
+  }
+  void build(int n_, vector<T> v){
+    for(int i=0;i<n_;i++) dat[n+i]=v[i];
+    for(int i=n-1;i;i--)
+      dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
+  }
+  T reflect(int k){
+    return g(dat[k],laz[k]);
+  }
+  inline void eval(int k){
+    if(laz[k]==ei) return;
+    laz[(k<<1)|0]=h(laz[(k<<1)|0],laz[k]);
+    laz[(k<<1)|1]=h(laz[(k<<1)|1],laz[k]);
+    dat[k]=reflect(k);
+    laz[k]=ei;
+  }
+  void update(int a,int b,E x){
+    a+=n;b+=n-1;
+    for(int i=height;i;i--) eval(a>>i);
+    for(int i=height;i;i--) eval(b>>i);
+    for(int l=a,r=b+1;l<r;l>>=1,r>>=1){
+      if(l&1) laz[l]=h(laz[l],x),l++;
+      if(r&1) --r,laz[r]=h(laz[r],x);
+    }
+    while(a>>=1)
+      dat[a]=f(reflect((a<<1)|0),reflect((a<<1)|1));
+    while(b>>=1)
+      dat[b]=f(reflect((b<<1)|0),reflect((b<<1)|1));
+  }
+  T query(int a,int b){
+    a+=n;b+=n-1;
+    for(int i=height;i;i--) eval(a>>i);
+    for(int i=height;i;i--) eval(b>>i);
+    T vl=ti,vr=ti;
+    for(int l=a,r=b+1;l<r;l>>=1,r>>=1) {
+      if(l&1) vl=f(vl,reflect(l++));
+      if(r&1) vr=f(reflect(--r),vr);
+    }
+    return f(vl,vr);
+  }
+};
+
+//INSERT ABOVE HERE
+
 signed AOJ_GRL5C(){
   int n;
   cin>>n;
@@ -166,135 +370,6 @@ signed AOJ_GRL5C(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
 */
 
-
-struct BiconectedGraph{
-  typedef pair<int,int> P;
-  int n;
-  vector<vector<int> > G,C,T;
-  vector<int> ord,low,belong;
-  vector<P> B;
-  BiconectedGraph(){}
-  BiconectedGraph(int sz):n(sz),G(sz),C(sz),T(sz){}
-  
-   void add_edge(int u,int v){
-    G[u].push_back(v);
-    G[v].push_back(u);
-  }
-
-   void input(int m,int offset){
-    int a,b;
-    for(int i=0;i<m;i++){
-      scanf("%d %d",&a,&b);
-      add_edge(a+offset,b+offset);
-    }
-  }
-  
-   bool is_bridge(int u,int v){
-    if(ord[u]>ord[v]) swap(u,v);
-    return ord[u]<low[v];
-  }
-  
-  void dfs(int u,int p,int &k){
-    ord[u]=low[u]=k;
-    ++k;
-    for(int v:G[u]){
-      if(v==p) continue;
-      if(ord[v]>=0){
-	low[u]=min(low[u],ord[v]);
-      }else{
-	dfs(v,u,k);
-	low[u]=min(low[u],low[v]);
-      }
-      if(is_bridge(u,v)) B.push_back(P(u,v));
-    }
-  }
-  
-  void fill_component(int c,int u){
-    C[c].push_back(u);
-    belong[u]=c;
-    for(int v:G[u]){
-      if(belong[v]>=0||is_bridge(u,v)) continue;
-      fill_component(c,v);
-    }
-  }
-  
-  void add_component(int u,int &k){
-    if(belong[u]>=0) return;
-    fill_component(k++,u);
-  }
-  
-  int build(){
-    int k=0;
-    ord.resize(n);
-    low.resize(n);
-    belong.resize(n);
-    fill(ord.begin(),ord.end(),-1);
-    fill(belong.begin(),belong.end(),-1);
-    for(int u=0;u<n;u++){
-      if(ord[u]>=0) continue;
-      dfs(u,-1,k);
-    }
-    k=0;
-    for(int i=0;i<(int)B.size();i++){
-      add_component(B[i].first,k);
-      add_component(B[i].second,k);
-    }
-    for(int u=0;u<n;u++) add_component(u,k);
-    for(int i=0;i<(int)B.size();i++){
-      int u=belong[B[i].first],v=belong[B[i].second];
-      T[u].push_back(v);
-      T[v].push_back(u);
-    }
-    return k;
-  }
-};
-
-template <typename T,typename E>
-struct SegmentTree{
-  typedef function<T(T,T)> F;
-  typedef function<T(T,E)> G;
-  int n;
-  F f;
-  G g;
-  T d1;
-  E d0;
-  vector<T> dat;
-  SegmentTree(){};
-  SegmentTree(int n_,F f,G g,T d1,
-	      vector<T> v=vector<T>()):
-    f(f),g(g),d1(d1){
-    init(n_);
-    if(n_==(int)v.size()) build(n_,v);
-  }
-  void init(int n_){
-    n=1;
-    while(n<n_) n*=2;
-    dat.clear();
-    dat.resize(2*n-1,d1);
-  }
-  void build(int n_, vector<T> v){
-    for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
-    for(int i=n-2;i>=0;i--)
-      dat[i]=f(dat[i*2+1],dat[i*2+2]);
-  }
-  void update(int k,E a){
-    k+=n-1;
-    dat[k]=g(dat[k],a);
-    while(k>0){
-      k=(k-1)/2;
-      dat[k]=f(dat[k*2+1],dat[k*2+2]);
-    }
-  }
-  inline T query(int a,int b){
-    T vl=d1,vr=d1;
-    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
-      if(l&1) vl=f(vl,dat[(l++)-1]);
-      if(r&1) vr=f(dat[(--r)-1],vr);
-    }
-    return f(vl,vr);
-  }
-  
-};
 
 signed YUKI_529(){
   int n,e,q;
@@ -356,84 +431,6 @@ signed YUKI_529(){
    https://yukicoder.me/problems/no/529
 */
 
-
-
-template <typename T,typename E>
-struct Chien{
-  using F = function<T(T,T)>;
-  using G = function<T(T,E)>;
-  using H = function<E(E,E)>;
-  using P = function<E(E,size_t)>;
-  int n;
-  F f;
-  G g;
-  H h;
-  T ti;
-  E ei;
-  P p;
-  vector<T> dat;
-  vector<E> laz;
-  Chien(int n_,F f,G g,H h,T ti,E ei,
-	      P p=[](E a,size_t b){b++;return a;}):
-    f(f),g(g),h(h),ti(ti),ei(ei),p(p){
-    init(n_);
-  }
-  void init(int n_){
-    n=1;
-    while(n<n_) n*=2;
-    dat.assign(2*n-1,ti);
-    laz.assign(2*n-1,ei);
-  }
-  void build(int n_, vector<T> v){
-    for(int i=0;i<n_;i++) dat[i+n-1]=v[i];
-    for(int i=n-2;i>=0;i--)
-      dat[i]=f(dat[i*2+1],dat[i*2+2]);
-  }
-  inline void eval(int len,int k){
-    if(laz[k]==ei) return;
-    if(k*2+1<n*2-1){
-      laz[k*2+1]=h(laz[k*2+1],laz[k]);
-      laz[k*2+2]=h(laz[k*2+2],laz[k]);
-    }
-    dat[k]=g(dat[k],p(laz[k],len));
-    laz[k]=ei;
-  }
-  T update(int a,int b,E x,int k,int l,int r){
-    eval(r-l,k);
-    if(r<=a||b<=l) return dat[k];
-    if(a<=l&&r<=b){
-      laz[k]=h(laz[k],x);
-      return g(dat[k],p(laz[k],r-l));
-    }
-    return dat[k]=f(update(a,b,x,k*2+1,l,(l+r)/2),
-		    update(a,b,x,k*2+2,(l+r)/2,r));
-  }
-  T update(int a,int b,E x){
-    return update(a,b,x,0,0,n);
-  }
-  T query(int a,int b,int k,int l,int r){
-    eval(r-l,k);
-    if(r<=a||b<=l) return ti;
-    if(a<=l&&r<=b) return dat[k];
-    T vl=query(a,b,k*2+1,l,(l+r)/2);
-    T vr=query(a,b,k*2+2,(l+r)/2,r);
-    return f(vl,vr);
-  }
-  T query(int a,int b){
-    return query(a,b,0,0,n);
-  }
-  void update(int k,T x){
-    query(k,k+1);//evaluate
-    k+=n-1;
-    dat[k]=x;
-    while(k){
-      k=(k-1)/2;
-      dat[k]=f(dat[k*2+1],dat[k*2+2]);
-    }
-  }
-};
-
-
 signed AOJ_2667(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -444,10 +441,13 @@ signed AOJ_2667(){
     hld.add_edge(a,b);
   }
   hld.build();
-  
-  auto f=[](Int a,Int b){return a+b;};
-  auto p=[](Int a,Int b){return a*b;};
-  Chien<Int, Int> seg(n,f,f,f,0,0,p);
+
+  using P = pair<Int, Int>;
+  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
+  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
+  auto h=[](Int a,Int b){return a+b;};
+  Chien<P, Int> seg(n,f,g,h,P(0,0),0);
+  seg.build(n,vector<P>(n,P(0,1)));
   
   for(int i=0;i<q;i++){
     int t;
@@ -456,7 +456,7 @@ signed AOJ_2667(){
       int u,v;
       scanf("%d %d",&u,&v);
       Int ans=0;
-      hld.for_each_edge(u,v,[&](int l,int r){ans+=seg.query(l,r+1);});
+      hld.for_each_edge(u,v,[&](int l,int r){ans+=seg.query(l,r+1).first;});
       printf("%lld\n",ans);
     }
     if(t==1){

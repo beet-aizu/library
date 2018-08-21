@@ -6,14 +6,13 @@ template<typename T,typename E>
 struct LinkCutTree{
   struct Node{
     Node *l,*r,*p;
-    size_t cnt;
     int idx;
     bool rev;
     T val,dat;
     E laz;
-    Node():cnt(0){}
+    Node(){}
     Node(int idx,T val,E laz):
-      cnt(1),idx(idx),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
+      idx(idx),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
     bool is_root(){
       return !p||(p->l!=this&&p->r!=this);
     }
@@ -22,12 +21,10 @@ struct LinkCutTree{
   using F = function<T(T,T)>;
   using G = function<T(T,E)>;
   using H = function<E(E,E)>;
-  using P = function<E(E,size_t)>;
   using S = function<T(T)>;
   F f;
   G g;
   H h;
-  P p;
   S s;
   T ti;
   E ei;
@@ -39,15 +36,11 @@ struct LinkCutTree{
   
   LinkCutTree(F f,G g,H h,T ti,E ei):
     f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
-    p=[](E a,size_t b){b++;return a;};
     s=[](T a){return a;};
   }
   
-  LinkCutTree(F f,G g,H h,P p,T ti,E ei):
-    f(f),g(g),h(h),p(p),ti(ti),ei(ei),pool(LIM),ptr(0){s=[](T a){return a;};}
-  
-  LinkCutTree(F f,G g,H h,P p,S s,T ti,E ei):
-    f(f),g(g),h(h),p(p),s(s),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  LinkCutTree(F f,G g,H h,S s,T ti,E ei):
+    f(f),g(g),h(h),s(s),ti(ti),ei(ei),pool(LIM),ptr(0){}
   
   inline Node* create(){
     return &pool[ptr++];
@@ -60,7 +53,7 @@ struct LinkCutTree{
   void propagate(Node *t,E v){
     t->laz=h(t->laz,v);
     t->val=g(t->val,v);
-    t->dat=g(t->dat,p(v,t->cnt));
+    t->dat=g(t->dat,v);
   }
 
   void toggle(Node *t){
@@ -83,10 +76,9 @@ struct LinkCutTree{
   }
 
   void update(Node *t){
-    t->cnt=1;
     t->dat=t->val;
-    if(t->l) t->cnt+=t->l->cnt,t->dat=f(t->l->dat,t->dat);
-    if(t->r) t->cnt+=t->r->cnt,t->dat=f(t->dat,t->r->dat);
+    if(t->l) t->dat=f(t->l->dat,t->dat);
+    if(t->r) t->dat=f(t->dat,t->r->dat);
   }
 
   void rotR(Node *t){
@@ -273,13 +265,16 @@ signed GRL_5_D(){
 signed GRL_5_E(){
   int n;
   cin>>n;
-  using LCT = LinkCutTree<Int,Int>;
-  LCT::F f=[](Int a,Int b){return a+b;};
-  LCT::P p=[](Int a,size_t b){return a*b;};
-  LCT lc(f,f,f,p,0,0);
+  using P = pair<Int, Int>;
+  using LCT = LinkCutTree<P, Int>;
+  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
+  auto g=[](P a,int b){return P(a.first+b*a.second,a.second);};
+  auto h=[](Int a,Int b){return a+b;};
+  
+  LCT lc(f,g,h,P(0,0),0);
 
   vector<LCT::Node*> v(n);
-  for(int i=0;i<n;i++) v[i]=lc.create(i,0);
+  for(int i=0;i<n;i++) v[i]=lc.create(i,P(0,1));
   for(int i=0;i<n;i++){
     int k;
     cin>>k;
@@ -306,7 +301,7 @@ signed GRL_5_E(){
       int a;
       cin>>a;
       lc.expose(v[a]);
-      cout<<v[a]->dat-c<<endl;
+      cout<<(v[a]->dat).first-c<<endl;
     }
   }
   
@@ -386,17 +381,16 @@ signed AOJ_2450(){
   };
   
   auto h=[&](P a,P b){a.first++;return b;};
-  auto p=[&](P a,size_t b){b++;return a;};
   auto s=
     [&](T a){      
       int al,ar,as,ava,avi,avl,avr;
       tie(al,ar,as,ava,avi,avl,avr)=a;
       swap(al,ar);
       swap(avl,avr);
-      return T(al,ar,as,ava,avi,avl,avr);
+      return a;
     };
   
-  LCT lct(f,g,h,p,s,d1,d0);
+  LCT lct(f,g,h,s,d1,d0);
   
   vector<int> w(n);
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
@@ -455,13 +449,13 @@ signed AOJ_2450(){
 
 signed AOJ_0367(){
   int n,k;
-  cin>>n>>k;
+  scanf("%d %d",&n,&k);
   
   vector<vector<int> > G(n); 
-  vector<map<Int, Int> > m(n);
+  vector<unordered_map<Int, Int> > m(n);
   for(Int i=0;i<n-1;i++){
-    Int a,b,c;
-    cin>>a>>b>>c;
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
     G[a].emplace_back(b);
     G[b].emplace_back(a);
     m[a][b]=m[b][a]=c;
@@ -478,36 +472,23 @@ signed AOJ_0367(){
 	    };
   
   auto f=[&](T a,T b){
-	   if(a>b) swap(a,b);
 	   Int al,ar,av;
 	   tie(al,ar,av)=a;
 	   Int bl,br,bv;
 	   tie(bl,br,bv)=b;
-	   if(al<0||ar<0) return b;
-	   Int cl,cr,cv=av+bv;
-	   if(m[al].count(bl)){
-	     cl=ar;cr=br;
-	     cv+=mget(al,bl);
-	   }else if(m[al].count(br)){
-	     cl=ar;cr=bl;
-	     cv+=mget(al,br);
-	   }else if(m[ar].count(bl)){
-	     cl=al;cr=br;
-	     cv+=mget(ar,bl);
-	   }else if(m[ar].count(br)){
-	     cl=al;cr=bl;
-	     cv+=mget(ar,br);
-	   }else{
-	     cl=cr=cv=-1;
-	   }
-	   return T(cl,cr,cv);
+	   return T(al,br,av+bv+mget(ar,bl));
 	 };
   
   auto g=[&](T a,Int b){b++;return a;};
   auto h=[&](Int a,Int b){b++;return a;};
+  auto s=[&](T a){
+	   Int al,ar,av;
+	   tie(al,ar,av)=a;
+	   return T(ar,al,av);
+	 };
   
   using LCT = LinkCutTree<T, Int>;
-  LCT lct(f,g,h,T(-1,-1,0),0);  
+  LCT lct(f,g,h,s,T(-1,-1,0),0);  
   vector<LCT::Node* > vs(n);
   for(Int i=0;i<n;i++) vs[i]=lct.create(i,T(i,i,0));
   
@@ -527,27 +508,27 @@ signed AOJ_0367(){
     } 
   }
   
-  Int q;
-  cin>>q;
+  char buf[10];
+  int q;
+  scanf("%d",&q);
   while(q--){
-    string op;
-    cin>>op;
+    scanf("%s",buf);
+    string op(buf);
     if(op=="add"){
-      Int x,d;
-      cin>>x>>d;
+      int x,d;      
+      scanf("%d %d",&x,&d);
       lct.expose(vs[x]);
       w[x]+=d;
       lct.update(vs[x]);
     }
     if(op=="send"){
-      Int s,t;
-      cin>>s>>t;
+      int s,t;
+      scanf("%d %d",&s,&t);
       lct.evert(vs[s]);
-      lct.expose(vs[t]);
-      cout<<get<2>(vs[t]->dat)<<endl;
+      lct.expose(vs[t]);      
+      printf("%lld\n",get<2>(vs[t]->dat));
     }
   }  
-  
   return 0;
 }
 
@@ -588,7 +569,6 @@ signed YUKI_650(){
 	    return M2(f(x.first,y.first),f(y.second,x.second));
 	  };
   auto g=[](M2 x,M2 y){x.first.a++;return y;};
-  auto p=[](M2 x,size_t y){y++;return x;};
   auto s=[](M2 x){swap(x.first,x.second);return x;};
   
   int n;
@@ -605,7 +585,7 @@ signed YUKI_650(){
   }
   M ti=M();
   M ei(-1,-1,-1,-1);
-  LCT lct(f2,g,g,p,s,M2(ti,ti),M2(ei,ei));
+  LCT lct(f2,g,g,s,M2(ti,ti),M2(ei,ei));
 
   
   vector<LCT::Node*> vs(n*2-1);
@@ -664,10 +644,10 @@ signed YUKI_650(){
 signed main(){
   //GRL_5_C();
   //GRL_5_D();
-  //GRL_5_E();
+  GRL_5_E();
   //JOISC2013_DAY4_3();
   //AOJ_2450();
   //AOJ_0367();
-  YUKI_650();
+  //YUKI_650();
   return 0;
 }
