@@ -6,13 +6,14 @@ template<typename T,typename E>
 struct LinkCutTree{
   struct Node{
     Node *l,*r,*p;
+    size_t sz;// tree size (only for root)
     int idx;
     bool rev;
     T val,dat;
     E laz;
-    Node(){}
+    Node():sz(1){}
     Node(int idx,T val,E laz):
-      idx(idx),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
+      sz(1),idx(idx),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
     bool is_root(){
       return !p||(p->l!=this&&p->r!=this);
     }
@@ -82,8 +83,10 @@ struct LinkCutTree{
   }
 
   void rotR(Node *t){
-    Node *x=t->p,*y=x->p;
-    if((x->l=t->r)) t->r->p=x;
+    Node *x=t->p,*y=x->p;    
+    x->sz-=t->sz;
+    t->sz+=x->sz;
+    if((x->l=t->r)) t->r->p=x,x->sz+=x->l->sz; 
     t->r=x;x->p=t;
     update(x);update(t);
     if((t->p=y)){
@@ -95,7 +98,9 @@ struct LinkCutTree{
   
   void rotL(Node *t){
     Node *x=t->p,*y=x->p;
-    if((x->r=t->l)) t->l->p=x;
+    x->sz-=t->sz;
+    t->sz+=x->sz;
+    if((x->r=t->l)) t->l->p=x,x->sz+=x->r->sz;
     t->l=x;x->p=t;
     update(x);update(t);
     if((t->p=y)){
@@ -144,6 +149,7 @@ struct LinkCutTree{
     expose(par);
     c->p=par;
     par->r=c;
+    par->sz+=c->sz;
   }
 
   void cut(Node *c){
@@ -151,6 +157,7 @@ struct LinkCutTree{
     Node *par=c->l;
     c->l=nullptr;
     par->p=nullptr;
+    c->sz-=par->sz;
   }
 
   void evert(Node *t){
@@ -180,6 +187,56 @@ struct LinkCutTree{
 };
 
 //END CUT HERE
+
+template<typename T> 
+struct BIT{
+  int n;
+  vector<T> bit;
+  //1-indexed
+  BIT():n(-1){}
+  BIT(int n_,T d):n(n_),bit(n_+1,d){}
+  
+  T sum(int i){
+    T s=bit[0];
+    for(int x=i;x>0;x-=(x&-x))
+      s+=bit[x];
+    return s;
+  }
+  void add(int i,T a){
+    if(i==0) return;
+    for(int x=i;x<=n;x+=(x&-x))
+      bit[x]+=a;
+  }
+  
+  int lower_bound(int w){
+    if(w<=0) return 0;
+    int x=0,r=1;
+    while(r<n) r<<=1;
+    for(int k=r;k>0;k>>=1){
+      if(x+k<=n&&bit[x+k]<w){
+	w-=bit[x+k];
+	x+=k;
+      }
+    }
+    return x+1;
+  }
+  
+  T sum0(int i){
+    return sum(i+1);
+  }
+  void add0(int i,T a){
+    add(i+1,a);
+  }
+
+  T query(int l,int r){
+    return sum(r-1)-sum(l-1);
+  }
+
+  T query0(int l,int r){
+    return sum(r)-sum(l);
+  }
+};
+
 //INSERT ABOVE HERE
 
 signed GRL_5_C(){
@@ -641,13 +698,160 @@ signed YUKI_650(){
 */
 
 
+signed UNIVERSITYCODESPRINT03_G(){
+  int n;  
+  scanf("%d",&n);
+  BIT<Int> bit(1e6+100,0);
+  vector<int> a(n),b(n),c(n);
+
+  vector<unordered_map<int,vector<int> > > G(n);
+  vector<unordered_map<int,int > > R(n);
+  
+  using P =  pair<int,int>;  
+  vector<P> edges;
+
+  int sz=0;
+  auto add_edge=[&](int x,int e){
+		  edges.push_back(P(x,e));
+		  if(!R[a[x]].count(e)) R[a[x]][e]=sz++;
+		  if(!R[b[x]].count(e)) R[b[x]][e]=sz++;
+		  G[a[x]][e].emplace_back(b[x]);
+		  G[b[x]][e].emplace_back(a[x]);
+		};
+  
+  for(int i=0;i+1<n;i++){
+    scanf("%d %d %d",&a[i],&b[i],&c[i]);
+    a[i]--;b[i]--;
+    add_edge(i,c[i]);
+  }
+
+  int Q;
+  scanf("%d",&Q);
+  vector<int> T(Q),A(Q),B(Q);
+  for(int i=0;i<Q;i++){
+    scanf("%d",&T[i]);
+    int t=T[i]; 
+    if(t==1){
+      scanf("%d %d",&A[i],&B[i]);
+      int x=A[i],e=B[i];
+      x--;
+      add_edge(x,e);
+    }
+    if(t==2){
+      scanf("%d %d",&A[i],&B[i]);
+    }
+    if(t==3){
+      scanf("%d",&A[i]);
+    }
+  }
+  
+  using LCT = LinkCutTree<int, int>;
+  auto f=[](int a,int b){return a+b;};
+  LCT lct(f,f,f,0,0);
+
+  vector<LCT::Node*> vs(sz);
+  for(int i=0;i<sz;i++) vs[i]=lct.create(i,1);
+
+  vector<int> used(sz,0),ps(sz);
+  auto calc=[](Int x)->Int{return x*(x-1)/2;};
+  
+  for(int i=0;i<n;i++){
+    for(auto x:R[i]){
+      if(used[x.second]) continue;
+      int c=x.first;      
+      queue<P> q;
+      q.emplace(i,-1);
+      used[R[i][c]]=1;      
+      ps[R[i][c]]=-1;
+      while(!q.empty()){
+	int v,p;
+	tie(v,p)=q.front();q.pop();
+	if(~p) lct.link(vs[R[p][c]],vs[R[v][c]]);
+	for(int u:G[v][c]){
+	  if(u==p||used[R[u][c]]) continue;
+	  q.emplace(u,v);	  
+	  used[R[u][c]]=1;
+	  ps[R[u][c]]=R[v][c];
+	}
+      }
+      lct.expose(vs[R[i][c]]);
+      bit.add(c,calc(vs[R[i][c]]->sz));
+    }
+  }
+
+  auto cut=[&](int x,int e){
+	     int p=R[a[x]][e],q=R[b[x]][e];
+	     if(ps[q]!=p) swap(p,q);
+	     lct.expose(vs[p]);
+	     bit.add(e,-calc(vs[p]->sz));
+	     
+	     lct.cut(vs[q]);
+	     
+	     lct.expose(vs[p]);
+	     lct.expose(vs[q]);
+	     bit.add(e,calc(vs[p]->sz));
+	     bit.add(e,calc(vs[q]->sz));
+	   };
+
+  auto con=[&](int x,int e){
+	     int p=R[a[x]][e],q=R[b[x]][e];
+	     if(ps[q]!=p) swap(p,q);
+	     lct.expose(vs[p]);
+	     lct.expose(vs[q]);
+	     bit.add(e,-calc(vs[p]->sz));
+	     bit.add(e,-calc(vs[q]->sz));
+	     
+	     lct.link(vs[p],vs[q]);
+	     
+	     lct.expose(vs[p]);
+	     bit.add(e,calc(vs[p]->sz));
+	   };    
+  
+  sort(edges.begin(),edges.end());
+  edges.erase(unique(edges.begin(),edges.end()),edges.end());
+  for(auto p:edges){
+    int x=p.first,e=p.second;
+    if(c[x]!=e) cut(x,e);
+  }
+  
+  for(int i=0;i<Q;i++){
+    int t=T[i];
+    if(t==1){
+      int x=A[i],e=B[i];
+      x--;
+      if(c[x]==e) continue;      
+      cut(x,c[x]);
+      con(x,e);
+      c[x]=e;
+    }
+    if(t==2){
+      int l=A[i],r=B[i];
+      printf("%lld\n",bit.sum(r)-bit.sum(l-1));
+    }
+    if(t==3){
+      int x=A[i];
+      x--;
+      int p=R[a[x]][c[x]];
+      lct.expose(vs[p]);
+      printf("%lld\n",calc(vs[p]->sz));
+    }
+  }
+  
+  return 0;
+}
+/*
+  verified on 2018/08/22
+  https://www.hackerrank.com/contests/university-codesprint-3/challenges/simple-tree-counting
+*/
+
 signed main(){
   //GRL_5_C();
   //GRL_5_D();
-  GRL_5_E();
+  //GRL_5_E();
   //JOISC2013_DAY4_3();
   //AOJ_2450();
   //AOJ_0367();
   //YUKI_650();
+  UNIVERSITYCODESPRINT03_G();
   return 0;
 }

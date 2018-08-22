@@ -250,8 +250,36 @@ signed UNIVERSITYCODESPRINT04_F(){
   https://www.hackerrank.com/contests/university-codesprint-4/challenges/unique-art/problem
 */
 
+signed ABC106_D(){
+  int n,m,q;
+  scanf("%d %d %d",&n,&m,&q);
+  vector<int> x(m),y(m);
+  for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
+  using P = pair<int, int>;
+  vector<P> vp;
+  for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
+  sort(vp.begin(),vp.end());
+  for(int i=0;i<m;i++) tie(x[i],y[i])=vp[i];
+ 
+  WaveletMatrix<int, 10> wm(y);
+ 
+  for(int i=0;i<q;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int l=lower_bound(x.begin(),x.end(),a)-x.begin();
+    int r=upper_bound(x.begin(),x.end(),b)-x.begin();
+    printf("%d\n",wm.rangefreq(l,r,a,b+1));
+  }
+  return 0;
+}
+/*
+  verified on 2018/08/21
+  https://beta.atcoder.jp/contests/abc106/tasks/abc106_d
+*/
+
 signed main(){
-  SPOJ_MKTHNUM();
+  //SPOJ_MKTHNUM();
   //UNIVERSITYCODESPRINT04_F();
+  ABC106_D();
   return 0;
 }
