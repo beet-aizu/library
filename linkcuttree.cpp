@@ -403,49 +403,48 @@ signed AOJ_2450(){
   int n,q;
   scanf("%d %d",&n,&q);
 
-  using T = tuple<int,int,int,int,int,int,int>;
+  using T = tuple<int,int,int,int,int>;
   using P = pair<int,int>;
-  using LCT = LinkCutTree<T, P>;
-
-  vector<vector<int> > G(n); 
-  T d1(-1,-1,-1,-1,-1,-1,-1);
+  
+  T d1(-1,-1,-1,-1,-1);
   P d0(-1,-114514);
   
-  vector<LCT::Node* > vs(n);
-  vector<int> ps(n,-1);
-  
   auto f=[&](T a,T b){
-    int al,ar,as,ava,avi,avl,avr;
-    tie(al,ar,as,ava,avi,avl,avr)=a;
-    int bl,br,bs,bva,bvi,bvl,bvr;
-    tie(bl,br,bs,bva,bvi,bvl,bvr)=b;
-    int cl=al,cr=br,cs=as+bs;
-    int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
-    cvi=max(cvi,avr+bvl);
-    cvl=max(cvl,ava+bvl);
-    cvr=max(cvr,avr+bva);
-    return T(cl,cr,cs,cva,cvi,cvl,cvr);
-  };
+	   int as,ava,avi,avl,avr;
+	   tie(as,ava,avi,avl,avr)=a;
+	   int bs,bva,bvi,bvl,bvr;
+	   tie(bs,bva,bvi,bvl,bvr)=b;
+	   int cs=as+bs;
+	   int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
+	   cvi=max(cvi,avr+bvl);
+	   cvl=max(cvl,ava+bvl);
+	   cvr=max(cvr,avr+bva);
+	   return T(cs,cva,cvi,cvl,cvr);
+	 };
   
   auto g=[&](T a,P p){
-    if(p==d0) return a;
-    int al,ar,as,ava,avi,avl,avr;
-    tie(al,ar,as,ava,avi,avl,avr)=a;
-    int v=p.first,b=p.second;
-    if(~v) al=ar=v,as=1;
-    if(b>=0) return T(al,ar,as,b*as,b*as,b*as,b*as);
-    return T(al,ar,as,b*as,b,b,b);
-  };
+	   if(p==d0) return a;
+	   int as,ava,avi,avl,avr;
+	   tie(as,ava,avi,avl,avr)=a;
+	   int v=p.first,b=p.second;
+	   if(~v) as=1;
+	   if(b>=0) return T(as,b*as,b*as,b*as,b*as);
+	   return T(as,b*as,b,b,b);
+	 };
   
   auto h=[&](P a,P b){a.first++;return b;};
   auto s=
     [&](T a){      
-      int al,ar,as,ava,avi,avl,avr;
-      tie(al,ar,as,ava,avi,avl,avr)=a;
-      swap(al,ar);
+      int as,ava,avi,avl,avr;
+      tie(as,ava,avi,avl,avr)=a;
       swap(avl,avr);
-      return a;
+      return T(as,ava,avi,avl,avr);
     };
+  
+  
+  using LCT = LinkCutTree<T, P>;
+  vector<LCT::Node* > vs(n);
+  vector<int> ps(n,-1);
   
   LCT lct(f,g,h,s,d1,d0);
   
@@ -453,6 +452,7 @@ signed AOJ_2450(){
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
   for(int i=0;i<n;i++) vs[i]=lct.create(i,g(d1,P(i,w[i])));
   
+  vector<vector<int> > G(n); 
   for(int i=0;i<n-1;i++){
     int a,b;
     scanf("%d %d",&a,&b);
@@ -491,13 +491,14 @@ signed AOJ_2450(){
       lct.evert(vs[a]);
       lct.expose(vs[b]);
       int vva,vvi,vvl,vvr;
-      tie(ignore,ignore,ignore,vva,vvi,vvl,vvr)=vs[b]->dat;
+      tie(ignore,vva,vvi,vvl,vvr)=vs[b]->dat;
       printf("%d\n",max({vva,vvi,vvl,vvr}));
     }
   }
   
   return 0;
 }
+
 
 /*
   verified on 2018/06/14
@@ -849,9 +850,9 @@ signed main(){
   //GRL_5_D();
   //GRL_5_E();
   //JOISC2013_DAY4_3();
-  //AOJ_2450();
+  AOJ_2450();
   //AOJ_0367();
   //YUKI_650();
-  UNIVERSITYCODESPRINT03_G();
+  //UNIVERSITYCODESPRINT03_G();
   return 0;
 }
