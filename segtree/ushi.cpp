@@ -109,8 +109,41 @@ signed ARC038_C(){
   https://beta.atcoder.jp/contests/arc038/tasks/arc038_c
 */
 
+signed KUPC2013_D(){
+  int n;
+  scanf("%d",&n);
+  vector<int> a(n+2,0);
+  for(int i=1;i<=n;i++) scanf("%d",&a[i]);
+
+  const int INF = 1.1e9;
+  auto f=[](int a,int b){return min(a,b);};
+  SegmentTree<int, int> seg(n+2,f,f,INF);
+  seg.build(n+2,a);
+
+  using P = pair<int, int>;
+  set<P> sp;
+  for(int k=0;k<2;k++){
+    for(int i=1;i<=n;i++){
+      auto check=[&](int x){return x<a[i];};
+      int l=seg.find(i,n+2,check);
+      sp.emplace(k?n+2-l:l,a[i]);
+    }
+    reverse(a.begin(),a.end());
+    seg.build(n+2,a);
+  }
+
+  printf("%d\n",(int)sp.size()/2);
+  return 0;
+}
+
+/*
+  verified on 2018/08/26
+  https://beta.atcoder.jp/contests/kupc2013/tasks/kupc2013_d
+*/
+
 signed main(){
   //AOJ_DSL2A();
-  ARC038_C();
+  //ARC038_C();
+  KUPC2013_D();
   return 0;
 }
