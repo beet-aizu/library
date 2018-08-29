@@ -188,6 +188,11 @@ struct WaveletMatrix{
 
 //END CUT HERE
 
+
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+//INSERT ABOVE HERE
 signed SPOJ_MKTHNUM(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -277,9 +282,45 @@ signed ABC106_D(){
   https://beta.atcoder.jp/contests/abc106/tasks/abc106_d
 */
 
+signed AOJ_1549(){
+  int n;
+  scanf("%d",&n);
+
+  const int OFS = 1e6;
+  vector<int> a(n);
+  for(int i=0;i<n;i++) scanf("%d",&a[i]),a[i]+=OFS;
+  WaveletMatrix<int, 21> wm(a);
+
+  int q;
+  scanf("%d",&q);
+  for(int i=0;i<q;i++){
+    int l,r,d;
+    scanf("%d %d %d",&l,&r,&d);
+    r++;
+    d+=OFS;
+    int ans=OFS*2;
+    if(wm.rank(d,l)<wm.rank(d,r)) ans=0;
+    else{
+      int succ=wm.succ(l,r,d);
+      if(~succ) chmin(ans,abs(succ-d));
+      int pred=wm.pred(l,r,d);
+      if(~pred) chmin(ans,abs(pred-d));
+    }
+    printf("%d\n",ans);
+  }
+  return 0;
+}
+
+/*
+  verified on 2018/08/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549
+*/
+
+
 signed main(){
   //SPOJ_MKTHNUM();
   //UNIVERSITYCODESPRINT04_F();
-  ABC106_D();
+  //ABC106_D();
+  AOJ_1549();
   return 0;
 }
