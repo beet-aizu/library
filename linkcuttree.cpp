@@ -493,10 +493,9 @@ signed AOJ_2450(){
       lct.update(vs[b],P(-1,c));      
     }
     if(t==2){
-      lct.evert(vs[a]);
-      lct.expose(vs[b]);
+      lct.evert(vs[a]);      
       int vva,vvi,vvl,vvr;
-      tie(ignore,vva,vvi,vvl,vvr)=vs[b]->dat;
+      tie(ignore,vva,vvi,vvl,vvr)=lct.query(vs[b]);
       printf("%d\n",max({vva,vvi,vvl,vvr}));
     }
   }
