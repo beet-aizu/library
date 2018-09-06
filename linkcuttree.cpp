@@ -76,7 +76,7 @@ struct LinkCutTree{
     }
   }
 
-  void update(Node *t){
+  void recalc(Node *t){
     t->dat=t->val;
     if(t->l) t->dat=f(t->l->dat,t->dat);
     if(t->r) t->dat=f(t->dat,t->r->dat);
@@ -88,11 +88,11 @@ struct LinkCutTree{
     t->sz+=x->sz;
     if((x->l=t->r)) t->r->p=x,x->sz+=x->l->sz; 
     t->r=x;x->p=t;
-    update(x);update(t);
+    recalc(x);recalc(t);
     if((t->p=y)){
       if(y->l==x) y->l=t;
       if(y->r==x) y->r=t;
-      update(y);
+      recalc(y);
     }
   }
   
@@ -102,11 +102,11 @@ struct LinkCutTree{
     t->sz+=x->sz;
     if((x->r=t->l)) t->l->p=x,x->sz+=x->r->sz;
     t->l=x;x->p=t;
-    update(x);update(t);
+    recalc(x);recalc(t);
     if((t->p=y)){
       if(y->l==x) y->l=t;
       if(y->r==x) y->r=t;
-      update(y);
+      recalc(y);
     }
   }
 
@@ -137,7 +137,7 @@ struct LinkCutTree{
     for(Node *c=t;c;c=c->p){
       splay(c);
       c->r=rp;
-      update(c);
+      recalc(c);
       rp=c;
     }
     splay(t);
@@ -178,8 +178,13 @@ struct LinkCutTree{
     expose(a);
     return expose(b);
   }
+  
+  T query(Node *t){
+    expose(t);
+    return t->dat;
+  }
 
-  void set_propagate(Node *t,E v){
+  void update(Node *t,E v){
     expose(t);
     propagate(t,v);
     eval(t);
@@ -351,7 +356,7 @@ signed GRL_5_E(){
     if(t==0){
       int a,b;
       cin>>a>>b;
-      lc.set_propagate(v[a],b);
+      lc.update(v[a],b);
       c+=b;
     }
     if(t==1){
@@ -406,8 +411,8 @@ signed AOJ_2450(){
   using T = tuple<int,int,int,int,int>;
   using P = pair<int,int>;
   
-  T d1(-1,-1,-1,-1,-1);
-  P d0(-1,-114514);
+  T ti(-1,-1,-1,-1,-1);
+  P ei(-1,-114514);
   
   auto f=[&](T a,T b){
 	   int as,ava,avi,avl,avr;
@@ -423,7 +428,7 @@ signed AOJ_2450(){
 	 };
   
   auto g=[&](T a,P p){
-	   if(p==d0) return a;
+	   if(p==ei) return a;
 	   int as,ava,avi,avl,avr;
 	   tie(as,ava,avi,avl,avr)=a;
 	   int v=p.first,b=p.second;
@@ -446,11 +451,11 @@ signed AOJ_2450(){
   vector<LCT::Node* > vs(n);
   vector<int> ps(n,-1);
   
-  LCT lct(f,g,h,s,d1,d0);
+  LCT lct(f,g,h,s,ti,ei);
   
   vector<int> w(n);
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,g(d1,P(i,w[i])));
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,g(ti,P(i,w[i])));
   
   vector<vector<int> > G(n); 
   for(int i=0;i<n-1;i++){
@@ -485,7 +490,7 @@ signed AOJ_2450(){
     a--;b--;
     if(t==1){
       lct.evert(vs[a]);
-      lct.set_propagate(vs[b],P(-1,c));      
+      lct.update(vs[b],P(-1,c));      
     }
     if(t==2){
       lct.evert(vs[a]);
@@ -577,14 +582,13 @@ signed AOJ_0367(){
       scanf("%d %d",&x,&d);
       lct.expose(vs[x]);
       w[x]+=d;
-      lct.update(vs[x]);
+      lct.recalc(vs[x]);
     }
     if(op=="send"){
       int s,t;
       scanf("%d %d",&s,&t);
       lct.evert(vs[s]);
-      lct.expose(vs[t]);      
-      printf("%lld\n",get<2>(vs[t]->dat));
+      printf("%lld\n",get<2>(lct.query(vs[t])));
     }
   }  
   return 0;
@@ -679,14 +683,13 @@ signed YUKI_650(){
       int z=rev[X[v]][Y[v]];
       lct.expose(vs[z]);
       vs[z]->val=M2(M(a,b,c,d),M(a,b,c,d));      
-      lct.expose(vs[z]);
+      lct.recalc(vs[z]);
     }
     if(c=='g'){
       Int x,y;
       cin>>x>>y;
-      lct.evert(vs[x]);
-      lct.expose(vs[y]);
-      M ans=vs[y]->dat.first;
+      lct.evert(vs[x]);      
+      M ans=lct.query(vs[y]).first;
       cout<<ans.a<<" "<<ans.b<<" "<<ans.c<<" "<<ans.d<<endl;
     }
   }
