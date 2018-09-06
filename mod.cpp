@@ -65,6 +65,8 @@ struct Mod{
   }
 
   Int H(Int n,Int k){
+    if(n<0||k<0) return 0;
+    if(!n&&!k) return 1;
     return C(n+k-1,n);
   }
 

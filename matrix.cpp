@@ -6,8 +6,8 @@ const Int MOD=1e9+9; //<- alert!!!
 typedef vector<Int> arr;
 typedef vector<arr> mat;
 inline arr mul(const mat &a,arr &b,Int mod){
-  arr res(b.size(),0);
-  for(int i=0;i<(int)b.size();i++)
+  arr res(a.size(),0);
+  for(int i=0;i<(int)a.size();i++)
     for(int j=0;j<(int)a[i].size();j++)
       (res[i]+=a[i][j]*b[j])%=mod;
   return res;
