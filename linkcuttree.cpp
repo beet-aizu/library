@@ -171,7 +171,7 @@ struct LinkCutTree{
     while(a->l) a=a->l;
     expose(b);
     while(b->l) b=b->l;
-    return a==b;
+    return expose(a)==expose(b);
   }
 
   Node *lca(Node *a,Node *b){
