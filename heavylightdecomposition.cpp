@@ -5,13 +5,12 @@ using Int = long long;
 struct HLDecomposition {
   int n,pos;
   vector<vector<int> > G;
-  vector<int> vid, head, sub, hvy, par, dep, inv, type;
+  vector<int> vid, head, sub, par, dep, inv, type;
   
   HLDecomposition(){}
-  HLDecomposition(int sz):
-    n(sz),pos(0),G(n),
-    vid(n,-1),head(n),sub(n,1),hvy(n,-1),
-    par(n),dep(n),inv(n),type(n){}
+  HLDecomposition(int n):
+    n(n),pos(0),G(n),vid(n,-1),head(n),sub(n,1),
+    par(n,-1),dep(n,0),inv(n),type(n){}
   
   void add_edge(int u, int v) {
     G[u].push_back(v);
@@ -21,63 +20,32 @@ struct HLDecomposition {
   void build(vector<int> rs={0}) {
     int c=0;
     for(int r:rs){
-      dfs(r);
-      bfs(r, c++);
+      dfs_sz(r);
+      head[r]=r;
+      dfs_hld(r,c++);
     }
   }
   
-  void dfs(int rt) {
-    using T = pair<int, int>;
-    stack<T> st;
-    par[rt]=-1;
-    dep[rt]=0;
-    st.emplace(rt,0);
-    while(!st.empty()){
-      int v=st.top().first;
-      int &i=st.top().second;
-      if(i<(int)G[v].size()){
-	int u=G[v][i++];
-	if(u==par[v]) continue;
-	par[u]=v;
-	dep[u]=dep[v]+1;
-	st.emplace(u,0);
-      }else{
-	st.pop();
-	for(int j=0;j<(int)G[v].size();j++){
-	  int &u=G[v][j];
-	  if(u==par[v]) swap(u,G[v].back());
-	  if(u==par[v]) continue;
-	  sub[v]+=sub[u];
-	  if(sub[u]>sub[G[v].front()]) swap(u,G[v].front());
-	}
-      }
+  void dfs_sz(int v) {
+    for(int &u:G[v]){
+      if(u==par[v]) continue;
+      par[u]=v;
+      dep[u]=dep[v]+1;
+      dfs_sz(u);      
+      sub[v]+=sub[u];      
+      if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);
     }
   }
 
-  void bfs(int r,int c) {
-    using T = tuple<int, int, int>;
-    stack<T> st;
-    st.emplace(r,r,0);
-    while(!st.empty()){
-      int v,h;
-      tie(v,h,ignore)=st.top();
-      int &i=get<2>(st.top());
-      if(!i){
-	type[v]=c;
-	vid[v]=pos++;
-	inv[vid[v]]=v;
-	head[v]=h;
-        hvy[v]=(G[v].empty()?-1:G[v][0]);
-	if(hvy[v]==par[v]) hvy[v]=-1;
-      }
-      if(i<(int)G[v].size()){
-	int u=G[v][i++];
-	if(u==par[v]) continue;
-	st.emplace(u,(hvy[v]==u?h:u),0);
-      }else{
-	st.pop();
-      }
-    }
+  void dfs_hld(int v,int c) {
+    vid[v]=pos++;
+    inv[vid[v]]=v;
+    type[v]=c;
+    for(int u:G[v]){
+      if(u==par[v]) continue;
+      head[u]=(u==G[v][0]?head[v]:u);
+      dfs_hld(u,c);
+    }    
   }
   
   // for_each(vertex)
@@ -122,7 +90,7 @@ struct HLDecomposition {
       }
     }
   }
-
+  
   int lca(int u,int v){
     while(1){
       if(vid[u]>vid[v]) swap(u,v);
@@ -540,7 +508,7 @@ signed AOJ_2450(){
     if(b>=0) return T(al,ar,as,b*as,b*as,b*as,b*as);
     return T(al,ar,as,b*as,b,b,b);
   };
-  auto h=[&](P a,P b){return b;};
+  auto h=[&](P a,P b){get<0>(a);return b;};
 
 
   Chien<T,P> seg(n,f,g,h,ti,ei);

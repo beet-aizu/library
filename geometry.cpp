@@ -76,7 +76,7 @@ typedef Point Vector;
 typedef vector<Point> Polygon;
 
 istream &operator >> (istream &is,Polygon &p){
-  for(int i=0;i<(int)p.size();i++) cin>>p[i];
+  for(int i=0;i<(int)p.size();i++) is>>p[i];
   return is;
 }
 

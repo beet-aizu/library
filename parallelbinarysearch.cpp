@@ -2,22 +2,22 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-vector<Int> parallelbinarysearch(Int n,Int q,
+vector<int> parallelbinarysearch(int n,int q,
 				 function<void(void)> init,
-				 function<void(Int)> apply,
-				 function<bool(Int)> check){
-  vector<vector<Int> > C(q);
-  vector<Int> L(n,-1),R(n,q);
+				 function<void(int)> apply,
+				 function<bool(int)> check){
+  vector<vector<int> > C(q);
+  vector<int> L(n,-1),R(n,q);
   bool flg=1;
   while(flg){
     flg=0;
     init();
-    for(Int i=0;i<n;i++)
+    for(int i=0;i<n;i++)
       if(L[i]+1<R[i]) C[(L[i]+R[i])>>1].emplace_back(i);
-    for(Int i=0;i<q;i++){
+    for(int i=0;i<q;i++){
       flg|=!C[i].empty();
       apply(i);
-      for(Int j:C[i]){
+      for(int j:C[i]){
 	if(check(j)) R[j]=i;
 	else L[j]=i;
       }
