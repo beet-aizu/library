@@ -233,7 +233,6 @@ signed DPL_5_B(){
 signed DPL_5_C(){
   int n,k;
   scanf("%d %d",&n,&k);
-  Mint<int>::init(k);
   printf("%d\n",(Mint<int>::S(n,k)*Mint<int>::fact[k]).v);
   return 0;
 }
