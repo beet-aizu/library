@@ -28,7 +28,7 @@ struct SegmentTree{
     for(int i=n-1;i;i--)
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
   }
-  T reflect(int k){
+  inline T reflect(int k){
     return g(dat[k],laz[k]);
   }
   inline void eval(int k){
@@ -38,31 +38,31 @@ struct SegmentTree{
     dat[k]=reflect(k);
     laz[k]=ei;
   }
+  inline void thrust(int k){
+    for(int i=height;i;i--) eval(k>>i);    
+  }
+  inline void recalc(int k){    
+    while(k>>=1)
+      dat[k]=f(reflect((k<<1)|0),reflect((k<<1)|1));
+  }
   void update(int a,int b,E x){
-    a+=n;b+=n-1;
-    for(int i=height;i;i--) eval(a>>i);
-    for(int i=height;i;i--) eval(b>>i);
+    thrust(a+=n);
+    thrust(b+=n-1);
     for(int l=a,r=b+1;l<r;l>>=1,r>>=1){
       if(l&1) laz[l]=h(laz[l],x),l++;
       if(r&1) --r,laz[r]=h(laz[r],x);
     }
-    while(a>>=1)
-      dat[a]=f(reflect((a<<1)|0),reflect((a<<1)|1));
-    while(b>>=1)
-      dat[b]=f(reflect((b<<1)|0),reflect((b<<1)|1));
+    recalc(a);
+    recalc(b);
   }
   void set_val(int a,T x){
-    a+=n;
-    for(int i=height;i;i--) eval(a>>i);
-    dat[a]=x;
-    laz[a]=ei;
-    while(a>>=1)
-      dat[a]=f(reflect((a<<1)|0),reflect((a<<1)|1));
+    thrust(a+=n);
+    dat[a]=x;laz[a]=ei;
+    recalc(a);
   }
   T query(int a,int b){
-    a+=n;b+=n-1;
-    for(int i=height;i;i--) eval(a>>i);
-    for(int i=height;i;i--) eval(b>>i);
+    thrust(a+=n);
+    thrust(b+=n-1);
     T vl=ti,vr=ti;
     for(int l=a,r=b+1;l<r;l>>=1,r>>=1) {
       if(l&1) vl=f(vl,reflect(l++));
