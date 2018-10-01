@@ -51,6 +51,14 @@ struct SegmentTree{
     while(b>>=1)
       dat[b]=f(reflect((b<<1)|0),reflect((b<<1)|1));
   }
+  void set_val(int a,T x){
+    a+=n;
+    for(int i=height;i;i--) eval(a>>i);
+    dat[a]=x;
+    laz[a]=ei;
+    while(a>>=1)
+      dat[a]=f(reflect((a<<1)|0),reflect((a<<1)|1));
+  }
   T query(int a,int b){
     a+=n;b+=n-1;
     for(int i=height;i;i--) eval(a>>i);
