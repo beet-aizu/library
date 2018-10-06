@@ -20,18 +20,18 @@ struct LiChao{
     while(n<n_) n<<=1;
     while((int)pos.size()<n)
       pos.emplace_back(T(pos.back()+1));
-    dat.assign(2*n-1,Line(0,-INF));
+    dat.assign(2*n,Line(0,-INF));
   }
 
   void addLine(T a,T b){
     if(isMin) a=-a,b=-b;
     Line x(a,b);
-    update(0,0,n-1,x);
+    update(1,0,n-1,x);
   }
   
   T query(T x){
     int t=lower_bound(pos.begin(),pos.end(),x)-pos.begin();
-    return (isMin?-1:1)*query(0,0,n-1,t);
+    return (isMin?-1:1)*query(1,0,n-1,t);
   }
 
   inline bool over(Line &a,Line &b,T lb,T ub){
@@ -47,16 +47,16 @@ struct LiChao{
     }
     int c=(l+r)>>1;
     if(dat[k].get(pos[c])<x.get(pos[c])) swap(dat[k],x);
-    if(dat[k].get(lb)<=x.get(lb)) update(k*2+1,l,c,x);
-    else update(k*2+2,c+1,r,x);
+    if(dat[k].get(lb)<=x.get(lb)) update((k<<1)|0,l,c,x);
+    else update((k<<1)|1,c+1,r,x);
   }
 
   T query(int k,int l,int r,int t){
     T res=dat[k].get(pos[t]);
     if(l==r) return res;
     int c=(l+r)>>1;
-    if(t<=c) return max(res,query(k*2+1,l,c,t));
-    return max(res,query(k*2+2,c+1,r,t));
+    if(t<=c) return max(res,query((k<<1)|0,l,c,t));
+    return max(res,query((k<<1)|1,c+1,r,t));
   }  
 };
 //END CUT HERE
@@ -123,26 +123,26 @@ signed CSA070_SQUAREDEND(){
 */
 
 signed TENKA12016FINAL_E(){
-  Int n,l;
-  cin>>n>>l;
+  int n,l;
+  scanf("%d %d",&n,&l);
   auto a=make_v<Int>(n,l);
   for(Int i=0;i<n;i++)
     for(Int j=0;j<l;j++)
-      cin>>a[i][j];
+      scanf("%lld",&a[i][j]);
   
   vector<Int> dp(l,0);
   const Int INF = 1e16;
   vector<Int> pos(l,0);
   iota(pos.begin(),pos.end(),0);
   for(Int i=0;i<n;i++){
-    LiChao<Int,INF,true> cht(l,pos);
+    LiChao<Int, INF, true> cht(l,pos);
     for(Int j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
   
-  cout<<*min_element(dp.begin(),dp.end())<<endl;
+  printf("%lld\n",*min_element(dp.begin(),dp.end()));
   return 0;
 }
 
@@ -152,16 +152,16 @@ signed TENKA12016FINAL_E(){
 */
 
 signed COLOPL2018FINAL_C(){
-  Int n;
-  cin>>n;
+  int n;
+  scanf("%d",&n);
   vector<Int> a(n);
-  for(Int i=0;i<n;i++) cin>>a[i];
+  for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
   const Int INF = 1e16;
   vector<Int> pos(n,0);
   iota(pos.begin(),pos.end(),0);
   LiChao<Int,INF,true> cht(n,pos);
   for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) cout<<cht.query(i)+i*i<<endl;
+  for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
   return 0;
 }
 

@@ -49,33 +49,33 @@ struct DisjointSparseTable{
 
 signed ARC023_D(){
   int n,m;
-  cin>>n>>m;
-  vector<Int> a(n),x(m);
-  for(int i=0;i<n;i++) cin>>a[i];
-  for(int i=0;i<m;i++) cin>>x[i];
+  scanf("%d %d",&n,&m);
+  vector<int> a(n),x(m);
+  for(int i=0;i<n;i++) scanf("%d",&a[i]);
+  for(int i=0;i<m;i++) scanf("%d",&x[i]);
 
-  DisjointSparseTable<Int>::F f=[](Int a,Int b){return __gcd(a,b);};
-  DisjointSparseTable<Int> dst(n,f);
-  dst.build(n,a);
+  DisjointSparseTable<int>::F f=[](int a,int b){return __gcd(a,b);};
+  DisjointSparseTable<int> st(n,f);
+  st.build(n,a);
   
-  map<Int, Int> ans;
+  map<int, long long> ans;
   for(int i=0;i<n;i++){
     int l=i;
-    Int pre=a[i],lst=dst.query(i,n);
+    int pre=a[i],lst=st.query(i,n);
     while(lst!=pre){
       int r=n,pl=l;
       while(l+1<r){
 	int m=(l+r)>>1;
-	if(dst.query(i,m)!=pre) r=m;
+	if(st.query(i,m)!=pre) r=m;
 	else l=m;
       }
       ans[pre]+=l-pl;
-      pre=dst.query(i,r);
+      pre=st.query(i,r);
     }
     ans[lst]+=n-l;
   }
   
-  for(int i=0;i<m;i++) cout<<ans[x[i]]<<endl;
+  for(int i=0;i<m;i++) printf("%lld\n",ans[x[i]]);
   return 0;
 }
 /*
@@ -126,6 +126,6 @@ signed CODECHEF_SEGPROD(){
 //INSERT ABOVE HERE
 signed main(){
   //ARC023_D();
-  CODECHEF_SEGPROD();
+  //CODECHEF_SEGPROD();
   return 0;
 }

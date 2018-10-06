@@ -3,19 +3,15 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 constexpr int bmds(int x){
-  if(x==0) return 1012924417;
-  if(x==1) return 924844033;
-  if(x==2) return 998244353;
-  if(x==3) return 897581057;
-  if(x==4) return 645922817;
+  const int v[] = {1012924417, 924844033, 998244353,
+		   897581057, 645922817};
+  return v[x];
 }
 constexpr int brts(int x){
-  if(x==0) return 5;
-  if(x==1) return 5;
-  if(x==2) return 3;
-  if(x==3) return 3;
-  if(x==4) return 3;
+  const int v[] = {5, 5, 3, 3, 3};
+  return v[x];
 }
+
 
 template<int X>
 struct NTT{

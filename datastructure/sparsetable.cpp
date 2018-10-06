@@ -39,19 +39,19 @@ struct SparseTable{
 
 signed ARC023_D(){
   int n,m;
-  cin>>n>>m;
-  vector<Int> a(n),x(m);
-  for(int i=0;i<n;i++) cin>>a[i];
-  for(int i=0;i<m;i++) cin>>x[i];
+  scanf("%d %d",&n,&m);
+  vector<int> a(n),x(m);
+  for(int i=0;i<n;i++) scanf("%d",&a[i]);
+  for(int i=0;i<m;i++) scanf("%d",&x[i]);
 
-  SparseTable<Int>::F f=[](Int a,Int b){return __gcd(a,b);};
-  SparseTable<Int> st(n,f);
+  SparseTable<int>::F f=[](int a,int b){return __gcd(a,b);};
+  SparseTable<int> st(n,f);
   st.build(n,a);
   
-  map<Int, Int> ans;
+  map<int, long long> ans;
   for(int i=0;i<n;i++){
     int l=i;
-    Int pre=a[i],lst=st.query(i,n);
+    int pre=a[i],lst=st.query(i,n);
     while(lst!=pre){
       int r=n,pl=l;
       while(l+1<r){
@@ -65,7 +65,7 @@ signed ARC023_D(){
     ans[lst]+=n-l;
   }
   
-  for(int i=0;i<m;i++) cout<<ans[x[i]]<<endl;
+  for(int i=0;i<m;i++) printf("%lld\n",ans[x[i]]);
   return 0;
 }
 
