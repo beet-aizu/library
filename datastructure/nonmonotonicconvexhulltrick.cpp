@@ -3,7 +3,7 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 template<typename T,T INF,bool isMin>
-struct DynamicConvexHullTrick {
+struct NonmonotonicConvexHullTrick {
   using number = double;
   struct Line {
     T m,b,val;
@@ -80,114 +80,95 @@ struct DynamicConvexHullTrick {
 } ;
 //END CUT HERE
 
-template<typename T>
-vector<T> make_v(size_t a){return vector<T>(a);}
-template<typename T>
-vector<vector<T> > make_v(size_t a,size_t b){
-  return vector<vector<T> >(a,make_v<T>(b));
-}
-template<typename T>
-vector<vector<vector<T> > > make_v(size_t a,size_t b,size_t c){
-  return vector<vector<vector<T> > > (a,make_v<T>(b,c));
-}
-
-template<typename T,typename V>
-typename enable_if<is_class<T>::value==0>::type
-fill_v(T &t,const V &v){t=v;}
-
-template<typename T,typename V>
-typename enable_if<is_class<T>::value!=0>::type
-fill_v(T &t,const V &v){
-  for(auto &e:t) fill_v(e,v);
-}
-
 template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //INSERT ABOVE HERE
-signed CSA070_SQUAREDEND(){
-  Int n,k;
-  scanf("%lld %lld",&n,&k);
-  vector<Int> a(n+1,0);
-  for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
-
-  if(n==1){
-    cout<<0<<endl;
-    return 0;
-  }
-  
-  const Int INF = 1e15;
-  auto dp=make_v<Int>(k+1,n+1);
-  fill_v(dp,INF);
-  dp[0][0]=0;
-  vector<DynamicConvexHullTrick<Int, INF, true> > v(k+1);
-  v[0].addLine(-2*a[0],a[0]*a[0]);
-  
-  for(Int i=0;i<n;i++){
-    for(Int j=0;j<k;j++){
-      dp[j+1][i+1]=v[j].query(a[i])+a[i]*a[i];
-      cout<<dp[j+1][i+1]<<endl;
-      v[j+1].addLine(-2*a[i+1],dp[j+1][i+1]+a[i+1]*a[i+1]);
-    }
-  }
-  
-  printf("%lld\n",dp[k][n]);
-  return 0;
-}
-
-/*
-  verified on 2018/02/22
-  https://csacademy.com/contest/round-70/task/squared-ends/
-*/
 
 signed TENKA12016FINAL_E(){
-  Int n,l;
-  cin>>n>>l;
-  auto a=make_v<Int>(n,l);
+  int n,l;
+  scanf("%d %d",&n,&l);
+  
+  vector<vector<int> > a(n,vector<int>(l));
   for(Int i=0;i<n;i++)
     for(Int j=0;j<l;j++)
-      cin>>a[i][j];
+      scanf("%d",&a[i][j]);
   
   vector<Int> dp(l,0);
   const Int INF = 1e16;
   for(Int i=0;i<n;i++){
-    DynamicConvexHullTrick<Int,INF,1> cht;
+    NonmonotonicConvexHullTrick<Int,INF,1> cht;
     for(Int j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
-  
-  cout<<*min_element(dp.begin(),dp.end())<<endl;
+    
+  printf("%lld\n",*min_element(dp.begin(),dp.end()));
   return 0;
 }
 
 /*
-  verified on 2018/02/25
+  verified on 2018/10/08
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
-signed COLOPL2018FINAL_C(){
-  Int n;
-  cin>>n;
+signed COLOPL2018FINAL_C(){  
+  int n;
+  scanf("%d",&n);
   vector<Int> a(n);
-  for(Int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++) scanf("%lld",&a[i]);
   const Int INF = 1e16;
-  DynamicConvexHullTrick<Int,INF,1> cht;
+  NonmonotonicConvexHullTrick<Int,INF,1> cht;
   for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) cout<<cht.query(i)+i*i<<endl;
+  for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2018/02/25
+  verified on 2018/10/08
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
 
+signed AOJ_2725(){
+  int n,x;
+  scanf("%d %d",&n,&x);
+  vector<Int> t(n),p(n),f(n);
+  for(Int i=0;i<n;i++) scanf("%lld %lld %lld",&t[i],&p[i],&f[i]);
+
+  using T = tuple<Int, Int, Int>;
+  vector<T> vt(n);
+  for(Int i=0;i<n;i++) vt[i]=T(f[i],p[i],t[i]);
+  sort(vt.begin(),vt.end());
+  for(Int i=0;i<n;i++) tie(f[i],p[i],t[i])=vt[i];
+  
+  const Int INF = 1e15;
+  vector<NonmonotonicConvexHullTrick<Int, INF, 0> > vh(x+1);
+  
+  Int ans=0;
+  for(Int i=0;i<n;i++){
+    for(Int j=x;j>t[i];j--){
+      Int val=vh[j-t[i]].query(f[i])+p[i]-f[i]*f[i];
+      vh[j].addLine(2*f[i],val-f[i]*f[i]);      
+      chmax(ans,val);
+    }
+    vh[t[i]].addLine(2*f[i],p[i]-f[i]*f[i]);
+    chmax(ans,p[i]); 
+  }
+  
+  printf("%lld\n",ans);
+  return 0;
+}
+
+/*
+  verified on 2018/10/08
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2725
+*/
+
 signed main(){
-  CSA070_SQUAREDEND();
   //TENKA12016FINAL_E();
   //COLOPL2018FINAL_C();
+  //AOJ_2725();
   return 0;
 }
