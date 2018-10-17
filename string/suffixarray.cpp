@@ -3,7 +3,7 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 struct SuffixArray{
-  int n,k;
+  int n;
   string S;
   vector<int> sa,lcp,rev;
   SuffixArray(){}
@@ -16,8 +16,7 @@ struct SuffixArray{
     build_rmq();
   }
   void build_sa(){
-    sa.clear();
-    sa.resize(n+1,0);
+    sa.assign(n+1,0);
     iota(sa.begin(),sa.end(),0);
     sort(sa.begin(),sa.end(),
 	 [&](int a,int b){

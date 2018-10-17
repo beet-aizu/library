@@ -8,26 +8,31 @@ struct Matrix{
   typedef vector<arr> mat;
   mat dat;
 
-  Matrix(int r,int c):dat(r,arr(c,K())){}
+  Matrix(size_t r,size_t c):dat(r,arr(c,K())){}
   Matrix(mat dat):dat(dat){}
+
+  size_t size() const{return dat.size();};
+  bool empty() const{return size()==0;};
+  arr& operator[](size_t k){return dat[k];};
+  const arr& operator[](size_t k) const {return dat[k];};
   
-  static Matrix cross(const Matrix &a,const Matrix &b){
-    Matrix res(a.dat.size(),b.dat[0].size());    
-    for(int i=0;i<(int)a.dat.size();i++)
-      for(int j=0;j<(int)b.dat[0].size();j++)
-	for(int k=0;k<(int)b.dat.size();k++)
-	  res.dat[i][j]+=a.dat[i][k]*b.dat[k][j];
+  static Matrix cross(const Matrix &A,const Matrix &B){
+    Matrix res(A.size(),B[0].size());    
+    for(int i=0;i<(int)A.size();i++)
+      for(int j=0;j<(int)B[0].size();j++)
+	for(int k=0;k<(int)B.size();k++)
+	  res[i][j]+=A[i][k]*B[k][j];
     return res;
   }
 
-  static Matrix identity(int n){
+  static Matrix identity(size_t n){
     Matrix res(n,n);
-    for(int i=0;i<n;i++) res.dat[i][i]=K(1);
+    for(int i=0;i<(int)n;i++) res[i][i]=K(1);
     return res;
   }
   
-  Matrix pow(long long n){
-    Matrix a(dat),res=identity(dat.size());
+  Matrix pow(long long n) const{
+    Matrix a(dat),res=identity(size());
     while(n){
       if(n&1) res=cross(res,a);
       a=cross(a,a);      
@@ -35,17 +40,122 @@ struct Matrix{
     }
     return res;
   }
+
+  template<typename T> using ET = enable_if<is_floating_point<T>::value>;
+  template<typename T> using EF = enable_if<!is_floating_point<T>::value>;
+  
+  template<typename T, typename ET<T>::type* = nullptr>
+  static T mabs(T x){return abs(x);}
+  template<typename T, typename EF<T>::type* = nullptr>
+  static T mabs(T x){return x;}
+   
+  template<typename T, typename ET<T>::type* = nullptr>
+  static bool is_zero(T x){return mabs(x)<1e-8;}
+  template<typename T, typename EF<T>::type* = nullptr>
+  static bool is_zero(T x){return x==T(0);}
+
+  static Matrix gauss_jordan(const Matrix &A,const Matrix &B){
+    int n=A.size(),l=B[0].size();
+    Matrix C(n,n+l);
+    for(int i=0;i<n;i++){
+      for(int j=0;j<n;j++)
+	C[i][j]=A[i][j];      
+      for(int j=0;j<l;j++)
+	C[i][n+j]=B[i][j];
+    }
+    for(int i=0;i<n;i++){
+      int p=i;
+      for(int j=i;j<n;j++)
+	if(mabs(C[p][i])<mabs(C[j][i])) p=j;
+      swap(C[i],C[p]);
+      if(is_zero(C[i][i])) return Matrix(0,0);
+      for(int j=i+1;j<n+l;j++) C[i][j]/=C[i][i];
+      for(int j=0;j<n;j++){
+	if(i==j) continue;
+	for(int k=i+1;k<n+l;k++)
+	  C[j][k]-=C[j][i]*C[i][k];
+      }
+    }
+    Matrix res(n,l);
+    for(int i=0;i<n;i++)
+      for(int j=0;j<l;j++)
+	res[i][j]=C[i][n+j];
+    return res;
+  }
+  
+  Matrix inv() const{
+    Matrix B=identity(size());
+    return gauss_jordan(*this,B);
+  }
+
+  static arr linear_equations(const Matrix &A,const arr &b){
+    Matrix B(b.size(),1);
+    for(int i=0;i<(int)b.size();i++) B[i][0]=b[i];
+    Matrix tmp=gauss_jordan(A,B);
+    arr res(tmp.size());
+    for(int i=0;i<(int)tmp.size();i++) res[i]=tmp[i][0];
+    return res;
+  }
+  
+  static K sigma(K x,long long n){
+    Matrix A(2,2);
+    A[0][0]=x;A[0][1]=0;
+    A[1][0]=1;A[1][1]=1;
+    return A.pow(n)[1][0];
+  }
 };
 //END CUT HERE
 
-template<typename T,T MOD = 1000000007>
+signed AOJ_1328(){
+  using M = Matrix<double>;
+  using arr = M::arr;
+  
+  int d;
+  while(scanf("%d",&d),d){
+    arr v(d+3);
+    for(int i=0;i<d+3;i++) scanf("%lf",&v[i]);
+    int ans=0;
+    M m(d+3,d+2);
+    for(int i=0;i<d+3;i++)
+      for(int j=0;j<d+1;j++)
+	m[i][j]=pow(1.0*i,j);
+    
+    for(int i=0;i<d+3;i++){
+      for(int j=i+1;j<d+3;j++){
+	arr b(d+1);
+	M A(d+1,d+1);
+	for(int k=0,l=0;k<d+3;k++)
+	  if(i!=k&&j!=k) A[l]=m[k],b[l]=v[k],l++;
+	
+	arr x=M::linear_equations(A,b);
+	if(x.empty()) continue;
+	double res[2]={};
+	for(int k=0;k<d+1;k++){
+	  res[0]+=x[k]*m[i][k];
+	  res[1]+=x[k]*m[j][k];
+	}
+	if(abs(res[0]-v[i])>0.5&&abs(res[1]-v[j])<1e-5) ans=i;
+	if(abs(res[0]-v[i])<1e-5&&abs(res[1]-v[j])>0.5) ans=j;
+      }
+    }
+    printf("%d\n",ans);
+  }
+  return 0;
+}
+/*
+  verified on 2018/10/17
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1328
+*/
+
+template<typename T>
 struct Mint{
+  static T MOD;
   T v;
   Mint():v(0){}
   Mint(signed v):v(v){}
   Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
 
-  Mint pow(int k){
+  Mint pow(long long k){
     Mint res(1),tmp(v);
     while(k){
       if(k&1) res*=tmp;
@@ -71,54 +181,59 @@ struct Mint{
 
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
-  
+  bool operator <(const Mint a)const{return v <a.v;};
 };
 
-//INSERT ABOVE HERE
-signed main(){
-  using M = Matrix< Mint<int, int(1e9+9)> >;
-  
-  Int w,h,n,cnt=0;
-  while(scanf("%lld %lld %lld",&w,&h,&n),w||h||n){    
-    vector<Int> x(n),y(n);
-    for(Int i=0;i<n;i++) scanf("%lld %lld",&x[i],&y[i]);
+template<typename T> T Mint<T>::MOD = 1e9+7;
 
-    using P = pair<Int, Int>;  
-    vector<P> p(n);
-    for(Int i=0;i<n;i++) p[i]=P(y[i],x[i]);
-    sort(p.begin(),p.end());
-    for(Int i=0;i<n;i++) tie(y[i],x[i])=p[i];
-    
-    M b(w,w);
-    for(Int i=0;i<w;i++){
-      b.dat[i][i]=1;
-      if(i-1>=0) b.dat[i][i-1]=1;
-      if(i+1<w)  b.dat[i][i+1]=1;
-    }
-    
-    M a(w,1);
-    a.dat[0][0]=1;
-    
-    Int d=1;
-    for(Int k=0;k<n;k++){
-      if(y[k]==d) continue;
-      a=M::cross(b.pow(y[k]-d-1),a);      
-      Int j=k;
-      M c=b;
-      while(j<n&&y[k]==y[j]){
-	for(Int i=0;i<w;i++) c.dat[x[j]-1][i]=0;
-	j++;
+signed ARC050_C(){
+  using ll = long long;
+  using M = Mint<ll>;
+  using MM = Matrix<M>;
+  ll a,b,m;
+  scanf("%lld %lld %lld",&a,&b,&m);
+  M::MOD = m;
+  ll c=__gcd(a,b);
+  M x=M((ll)10).pow(c);
+  M ans=MM::sigma(x,a/c)*MM::sigma(M((ll)10),b);
+  printf("%lld\n",ans.v);
+  return 0;
+}
+/*
+  verified on 2018/10/17
+  https://beta.atcoder.jp/contests/arc050/tasks/arc050_c
+*/
+
+signed SPOJ_MIFF(){
+  int first=1;
+  int n,p;
+  while(scanf("%d %d",&n,&p),n){
+    if(!first) puts("");
+    first=0;
+    using M = Mint<int>;
+    M::MOD = p;
+    using MM = Matrix<M>;
+    MM A(n,n);
+    for(int i=0;i<n;i++)
+      for(int j=0;j<n;j++)
+	scanf("%d",&A[i][j].v);
+    MM B=A.inv();
+    if(B.empty()) puts("singular");
+    else{
+      for(int i=0;i<n;i++){
+	for(int j=0;j<n;j++){
+	  if(j) printf(" ");
+	  printf("%d",B[i][j].v);
+	}
+	puts("");
       }
-      a=M::cross(c,a);
-      d=y[k];
-    }
-    a=M::cross(b.pow(h-d),a);    
-    printf("Case %lld: %d\n",++cnt,a.dat[w-1][0].v);    
+    }      
   }
   return 0;
 }
 
-/*
-  verified on 2018/01/17
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
-*/
+signed main(){
+  //AOJ_1328();
+  //ARC050_C();
+  //SPOJ_MIFF();
+}

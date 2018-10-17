@@ -89,7 +89,7 @@ signed CSA070_SQUAREDEND(){
   for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
 
   if(n==1){
-    cout<<0<<endl;
+    puts("0");
     return 0;
   }
   
