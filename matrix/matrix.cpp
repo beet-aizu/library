@@ -45,12 +45,7 @@ struct Matrix{
   template<typename T> using EF = enable_if<!is_floating_point<T>::value>;
   
   template<typename T, typename ET<T>::type* = nullptr>
-  static T mabs(T x){return abs(x);}
-  template<typename T, typename EF<T>::type* = nullptr>
-  static T mabs(T x){return x;}
-   
-  template<typename T, typename ET<T>::type* = nullptr>
-  static bool is_zero(T x){return mabs(x)<1e-8;}
+  static bool is_zero(T x){return abs(x)<1e-8;}
   template<typename T, typename EF<T>::type* = nullptr>
   static bool is_zero(T x){return x==T(0);}
 
@@ -66,7 +61,7 @@ struct Matrix{
     for(int i=0;i<n;i++){
       int p=i;
       for(int j=i;j<n;j++)
-	if(mabs(C[p][i])<mabs(C[j][i])) p=j;
+	if(abs(C[p][i])<abs(C[j][i])) p=j;
       swap(C[i],C[p]);
       if(is_zero(C[i][i])) return Matrix(0,0);
       for(int j=i+1;j<n+l;j++) C[i][j]/=C[i][i];
@@ -183,8 +178,9 @@ struct Mint{
   bool operator!=(const Mint a)const{return v!=a.v;}
   bool operator <(const Mint a)const{return v <a.v;};
 };
-
+template<typename T> Mint<T> abs(Mint<T> a){return a;};
 template<typename T> T Mint<T>::MOD = 1e9+7;
+
 
 signed ARC050_C(){
   using ll = long long;
