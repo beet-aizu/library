@@ -39,7 +39,9 @@ struct SegmentTree{
     laz[k]=ei;
   }
   inline void thrust(int k){
-    for(int i=height;i;i--) eval(k>>i);    
+    for(int i=height;i;i--) eval(k>>i);
+    dat[k]=reflect(k);
+    laz[k]=ei;
   }
   inline void recalc(int k){    
     while(k>>=1)
@@ -57,7 +59,7 @@ struct SegmentTree{
   }
   void set_val(int a,T x){
     thrust(a+=n);
-    dat[a]=x;laz[a]=ei;
+    dat[a]=x;
     recalc(a);
   }
   T query(int a,int b){
