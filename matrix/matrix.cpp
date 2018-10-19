@@ -227,6 +227,10 @@ signed SPOJ_MIFF(){
   }
   return 0;
 }
+/*
+  verified on 2018/10/17
+  https://beta.atcoder.jp/contests/arc050/tasks/arc050_c
+*/
 
 signed main(){
   //AOJ_1328();
