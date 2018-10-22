@@ -100,29 +100,29 @@ signed main(){
     for(int i=0;i<n;i++){
       cin>>name[i];
       if(!m.count(name[i])){
-	int k=m.size();
-	m[name[i]]=k;
+        int k=m.size();
+        m[name[i]]=k;
       }
       int x,y;
       while(cin>>x,~x){
-	cin>>y;
-	p[i].push_back(Point(x,y));
+        cin>>y;
+        p[i].push_back(Point(x,y));
       }
     }
     memset(e,0,sizeof(e));
     for(int i=0;i<n;i++){
       for(int j=i+1;j<n;j++){
-	if(name[i]==name[j]) continue;
-	for(int k=0;k<(int)p[i].size();k++){
-	  for(int l=0;l<(int)p[j].size();l++){
-	    e[m[name[i]]][m[name[j]]]|=
-	      calc(p[i][k],p[i][(k+1)%p[i].size()],
-		   p[j][l],p[j][(l+1)%p[j].size()]);
-	    e[m[name[j]]][m[name[i]]]|=
-	      calc(p[i][k],p[i][(k+1)%p[i].size()],
-		   p[j][l],p[j][(l+1)%p[j].size()]);
-	  }
-	}
+        if(name[i]==name[j]) continue;
+        for(int k=0;k<(int)p[i].size();k++){
+          for(int l=0;l<(int)p[j].size();l++){
+            e[m[name[i]]][m[name[j]]]|=
+              calc(p[i][k],p[i][(k+1)%p[i].size()],
+                   p[j][l],p[j][(l+1)%p[j].size()]);
+            e[m[name[j]]][m[name[i]]]|=
+              calc(p[i][k],p[i][(k+1)%p[i].size()],
+                   p[j][l],p[j][(l+1)%p[j].size()]);
+          }
+        }
       }
     }
     cout<<paint(m.size())<<endl;

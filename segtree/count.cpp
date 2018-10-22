@@ -23,18 +23,18 @@ struct SegmentTree{
     
     for(int i=n-1;i;i--){
       merge(dat[(i<<1)|0].begin(),dat[(i<<1)|0].end(),
-	    dat[(i<<1)|1].begin(),dat[(i<<1)|1].end(),
-	    back_inserter(dat[i]));
+            dat[(i<<1)|1].begin(),dat[(i<<1)|1].end(),
+            back_inserter(dat[i]));
     }
   }
   // [a,b) * [c,d)
   inline int query(int a,int b,int c,int d){
     int res=0;
     auto calc=[a,b,c,d](vector<int> &x){
-      auto latte=lower_bound(x.begin(),x.end(),d);
-      auto malta=lower_bound(x.begin(),x.end(),c);
-      return int(latte-malta);
-    };
+                auto latte=lower_bound(x.begin(),x.end(),d);
+                auto malta=lower_bound(x.begin(),x.end(),c);
+                return int(latte-malta);
+              };
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
       if(l&1) res+=calc(dat[l++]);
       if(r&1) res+=calc(dat[--r]);

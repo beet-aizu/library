@@ -19,7 +19,7 @@ double det(mat A){
     if(abs(A[i][i])<EPS) break;
     for(int j=i+1;j<n;j++)
       for(int k=n-1;k>=i;k--)
-	A[j][k]-=A[i][k]*A[j][i]/A[i][i];
+        A[j][k]-=A[i][k]*A[j][i]/A[i][i];
   }
   return res;
 }
@@ -53,18 +53,18 @@ signed main(){
     for(int i=0;i<n;i++) cin>>a[i];
     for(int i=0;i<n;i++){
       for(int j=i+1;j<n;j++){
-	for(int k=j+1;k<n;k++){
-	  for(int x=0;x<n;x++){
-	    if(i==x||j==x||k==x) continue;
-	    for(int y=0;y<n;y++){
-	      if(i==y||j==y||k==y||x==y) continue;
-	      for(int z=0;z<n;z++){
-		if(i==z||j==z||k==z||x==z||y==z) continue;
-		ans=max(ans,tetrahedra(a[i],a[j],a[k],a[x],a[y],a[z]));
-	      }
-	    }
-	  }
-	}
+        for(int k=j+1;k<n;k++){
+          for(int x=0;x<n;x++){
+            if(i==x||j==x||k==x) continue;
+            for(int y=0;y<n;y++){
+              if(i==y||j==y||k==y||x==y) continue;
+              for(int z=0;z<n;z++){
+                if(i==z||j==z||k==z||x==z||y==z) continue;
+                ans=max(ans,tetrahedra(a[i],a[j],a[k],a[x],a[y],a[z]));
+              }
+            }
+          }
+        }
       }
     }
     printf("%.10f\n",ans);

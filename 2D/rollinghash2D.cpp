@@ -16,8 +16,8 @@ struct RollingHash2D{
       S(S_),B(B_),len(S.length()),hash(len+1),p(len+1){
       hash[0]=0;p[0]=1;
       for(int i=0;i<len;i++){
-	hash[i+1]=hash[i]*B+S[i];
-	p[i+1]=p[i]*B;
+        hash[i+1]=hash[i]*B+S[i];
+        p[i+1]=p[i]*B;
       }
     }
     //S[l,r)
@@ -42,7 +42,7 @@ struct RollingHash2D{
     for(int j=0;j<w-c+1;j++){
       hash[0][j]=0;		    
       for(int i=0;i<h;i++)
-	hash[i+1][j]=hash[i][j]*B+rh[i].find(j,j+c);
+        hash[i+1][j]=hash[i][j]*B+rh[i].find(j,j+c);
     }
   }
   //[i,i+r) * [j,j+c)

@@ -52,12 +52,12 @@ signed AOJ_1330(){
       cin>>c>>a>>b;
       a--;b--;
       if(c=='!'){
-	Int w;
-	cin>>w;
-	u.unite(a,b,w);
+        Int w;
+        cin>>w;
+        u.unite(a,b,w);
       }else{
-	if(!u.same(a,b)) cout<<"UNKNOWN"<<endl;
-	else cout<<u.diff(a,b)<<endl;
+        if(!u.same(a,b)) cout<<"UNKNOWN"<<endl;
+        else cout<<u.diff(a,b)<<endl;
       }
     }
   }

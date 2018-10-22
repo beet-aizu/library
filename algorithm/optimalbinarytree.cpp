@@ -136,8 +136,8 @@ T optimalbinarytree(vector<T> s,T INF){
     }
 
     cs[i]=min({s[i]+s[rs[i]],
-	  min(s[i],s[rs[i]])+heap.top(hs[i]),
-	  heap.top(hs[i])+heap.snd(hs[i])});
+               min(s[i],s[rs[i]])+heap.top(hs[i]),
+               heap.top(hs[i])+heap.snd(hs[i])});
 
     pq.emplace(cs[i],i);
   }

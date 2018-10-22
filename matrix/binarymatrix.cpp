@@ -11,8 +11,8 @@ void gauss(mat &v){
   for(Int i=0;i<n;i++){
     for(Int k=i;k<n;k++){
       if(v[k][i]){
-	swap(v[i],v[k]);
-	break;
+        swap(v[i],v[k]);
+        break;
       }
     }
     for(Int k=0;k<n;k++)
@@ -27,10 +27,10 @@ int mrank(mat v,int m){
     int s=-1;
     while(c<m){
       for(int j=i;j<n;j++){
-	if(v[j][c]){
-	  s=j;
-	  break;
-	}
+        if(v[j][c]){
+          s=j;
+          break;
+        }
       }
       if(~s) break;
       c++;
@@ -53,7 +53,7 @@ mat mul(const mat &a,const mat &b){
   for(int i=0;i<n;i++)
     for(int j=0;j<n;j++)
       for(int k=0;k<n;k++)
-	tmp[i][j]+=(a[i][k]&b[k][j]);
+        tmp[i][j]+=(a[i][k]&b[k][j]);
   
   for(int i=0;i<n;i++)
     for(int j=0;j<n;j++)
@@ -95,8 +95,8 @@ signed CFR382_D(){
   return 0;
 }
 /*
-verified on 2018/01/22
-http://codeforces.com/contest/736/problem/D
+  verified on 2018/01/22
+  http://codeforces.com/contest/736/problem/D
 */
 
 signed ARC054_D(){
@@ -115,8 +115,8 @@ signed ARC054_D(){
   return 0;
 }
 /*
-verified on 2018/01/22
-https://beta.atcoder.jp/contests/arc054/tasks/arc054_c
+  verified on 2018/01/22
+  https://beta.atcoder.jp/contests/arc054/tasks/arc054_c
 */
 
 signed AOJ_1308(){
@@ -125,38 +125,38 @@ signed AOJ_1308(){
     vector<vector<int> > s(n,vector<int>(m));
     for(int i=0;i<n;i++)
       for(int j=0;j<m;j++)
-	cin>>s[i][j];
+        cin>>s[i][j];
 
     mat v(n*m,BS(0));
     auto idx=[&](int y,int x){return y*m+x;};
     auto in=[&](int y,int x){return 0<=y&&y<n&&0<=x&&x<m;};
     auto bfs=[&](int y,int x){
-      int z=idx(y,x);
-      v[z][z]=1;
-      v[z][n*m]=s[y][x];
+               int z=idx(y,x);
+               v[z][z]=1;
+               v[z][n*m]=s[y][x];
       
-      vector<vector<int> > dp(n,vector<int>(m,-1));
-      using P = pair<int, int>;
-      queue<P> q;
-      dp[y][x]=0;
-      q.emplace(y,x);
-      int dy[]={0,0,1,-1};
-      int dx[]={1,-1,0,0};
-      while(!q.empty()){
-	tie(y,x)=q.front();q.pop();
-	if(dp[y][x]==d) v[z][idx(y,x)]=1;
-	for(int k=0;k<4;k++){
-	  int ny=y+dy[k],nx=x+dx[k];
-	  if(!in(ny,nx)||~dp[ny][nx]) continue;
-	  dp[ny][nx]=dp[y][x]+1;
-	  q.emplace(ny,nx);
-	}
-      }
-    };
+               vector<vector<int> > dp(n,vector<int>(m,-1));
+               using P = pair<int, int>;
+               queue<P> q;
+               dp[y][x]=0;
+               q.emplace(y,x);
+               int dy[]={0,0,1,-1};
+               int dx[]={1,-1,0,0};
+               while(!q.empty()){
+                 tie(y,x)=q.front();q.pop();
+                 if(dp[y][x]==d) v[z][idx(y,x)]=1;
+                 for(int k=0;k<4;k++){
+                   int ny=y+dy[k],nx=x+dx[k];
+                   if(!in(ny,nx)||~dp[ny][nx]) continue;
+                   dp[ny][nx]=dp[y][x]+1;
+                   q.emplace(ny,nx);
+                 }
+               }
+             };
     
     for(int i=0;i<n;i++)
       for(int j=0;j<m;j++)
-	bfs(i,j);
+        bfs(i,j);
     
     int a=mrank(v,n*m);
     int b=mrank(v,n*m+1);
@@ -165,8 +165,8 @@ signed AOJ_1308(){
   return 0;
 }
 /*
-verified on 2018/01/23
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
+  verified on 2018/01/23
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
 */
 
 signed AOJ_2624(){
@@ -210,8 +210,8 @@ signed AOJ_2624(){
   return 0;
 }
 /*
-verified on 2018/01/22
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2624
+  verified on 2018/01/22
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2624
 */
 
 

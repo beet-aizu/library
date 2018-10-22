@@ -76,7 +76,7 @@ struct Polynomial{
     P res(n+m);
     for(int i=0;i<n;i++)
       for(int j=0;j<m;j++)
-	res[i+j]+=co[i]*a[j];
+        res[i+j]+=co[i]*a[j];
     res.shrink();
     return res;
   }
@@ -94,7 +94,7 @@ struct Polynomial{
     P rest=*this;
     for(int i=0;i<s;i++){
       if(rest[n-(i+1)]%a[m-1]!=0)
-	for(int &c:rest.co) c*=a[m-1];
+        for(int &c:rest.co) c*=a[m-1];
       int d=rest[n-(i+1)]/a[m-1];
       div[s-(i+1)]=d;
       for(int j=m;j>0;j--) rest[n-(i+j)]-=a[m-j]*d;

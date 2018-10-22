@@ -23,8 +23,8 @@ struct Trie{
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
       if(~v[pos].nxt[k]){
-	pos=v[pos].nxt[k];
-	continue;
+        pos=v[pos].nxt[k];
+        continue;
       }
       int npos=v.size();
       v[pos].nxt[k]=npos;

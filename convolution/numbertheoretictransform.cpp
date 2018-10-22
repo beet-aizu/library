@@ -4,7 +4,7 @@ using Int = long long;
 //BEGIN CUT HERE
 constexpr int bmds(int x){
   const int v[] = {1012924417, 924844033, 998244353,
-		   897581057, 645922817};
+                   897581057, 645922817};
   return v[x];
 }
 constexpr int brts(int x){
@@ -54,8 +54,8 @@ struct NTT{
       rts[i].resize(i);rrts[i].resize(i);
       rts[i][0]=1;rrts[i][0]=1;
       for(int k=1;k<i;k++){
-	rts[i][k]=mul(rts[i][k-1],w);
-	rrts[i][k]=mul(rrts[i][k-1],rw);
+        rts[i][k]=mul(rts[i][k-1],w);
+        rrts[i][k]=mul(rrts[i][k-1],rw);
       }
     }
   }
@@ -71,11 +71,11 @@ struct NTT{
 
     for(int i=1;i<n;i<<=1){
       for(int j=0;j<n;j+=i*2){
-	for(int k=0;k<i;k++){
-	  int z=mul(a[i+j+k],f?rrts[i][k]:rts[i][k]);
-	  a[i+j+k]=add(a[j+k],md-z);
-	  a[j+k]=add(a[j+k],z);
-	}
+        for(int k=0;k<i;k++){
+          int z=mul(a[i+j+k],f?rrts[i][k]:rts[i][k]);
+          a[i+j+k]=add(a[j+k],md-z);
+          a[j+k]=add(a[j+k],z);
+        }
       }
     }
     

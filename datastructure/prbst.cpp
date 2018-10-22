@@ -94,14 +94,14 @@ struct PRBST{
     if(a->laz!=ei){ 
       a->val=g(a->val,a->laz);
       if(a->l!=nullptr){
-	a->l=clone(a->l);
-	a->l->laz=h(a->l->laz,a->laz);
-	a->l->dat=g(a->l->dat,a->laz);
+        a->l=clone(a->l);
+        a->l->laz=h(a->l->laz,a->laz);
+        a->l->dat=g(a->l->dat,a->laz);
       }
       if(a->r!=nullptr){
-	a->r=clone(a->r);
-	a->r->laz=h(a->r->laz,a->laz);
-	a->r->dat=g(a->r->dat,a->laz);
+        a->r=clone(a->r);
+        a->r->laz=h(a->r->laz,a->laz);
+        a->r->dat=g(a->r->dat,a->laz);
       }
       a->laz=ei;
     }

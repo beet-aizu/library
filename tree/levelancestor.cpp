@@ -26,9 +26,9 @@ struct LevelAncestor{
       par[0][nxt[v]=v]=p;
       len[v]=dep[v]=d;
       for(int u:G[v]){
-	if(u==p) continue;
-	dfs(u,v,d+1,0);
-	if(len[v]<len[u]) nxt[v]=u,len[v]=len[u];
+        if(u==p) continue;
+        dfs(u,v,d+1,0);
+        if(len[v]<len[u]) nxt[v]=u,len[v]=len[u];
       }
     }
     if(!f) return;
@@ -41,7 +41,7 @@ struct LevelAncestor{
     }
     for(;;p=v,v=nxt[v]){	
       for(int u:G[v])
-	if(u!=p&&u!=nxt[v]) dfs(u,v,d+1,1);	
+        if(u!=p&&u!=nxt[v]) dfs(u,v,d+1,1);	
       if(v==nxt[v]) break;
     }
   }
@@ -50,22 +50,22 @@ struct LevelAncestor{
     dfs(r,-1,0,1);
     for(int k=0;k+1<h;k++){
       for(int v=0;v<n;v++){
-	if(par[k][v]<0) par[k+1][v]=-1;
-	else par[k+1][v]=par[k][par[k][v]];
+        if(par[k][v]<0) par[k+1][v]=-1;
+        else par[k+1][v]=par[k][par[k][v]];
       }
     }
     for(int i=0;i<(int)lad.size();i++){
       int v=lad[i][0],p=par[0][v];
       if(~p){
-	int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());
-	lad[i].resize(l+lad[i].size());
-	for(int j=0,m=lad[i].size();j+l<m;j++)
-	  lad[i][m-(j+1)]=lad[i][m-(j+l+1)];
-	for(int j=0;j<l;j++)
-	  lad[i][j]=lad[k][ord[p]-l+j+1];
+        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());
+        lad[i].resize(l+lad[i].size());
+        for(int j=0,m=lad[i].size();j+l<m;j++)
+          lad[i][m-(j+1)]=lad[i][m-(j+l+1)];
+        for(int j=0;j<l;j++)
+          lad[i][j]=lad[k][ord[p]-l+j+1];
       }
       for(int j=0;j<(int)lad[i].size();j++)
-	if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;
+        if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;
     }
   }
   
@@ -73,14 +73,14 @@ struct LevelAncestor{
     if(dep[u]>dep[v]) swap(u,v);
     for(int k=0;k<h;k++){
       if((dep[v]-dep[u])>>k&1){
-	v=par[k][v];
+        v=par[k][v];
       }
     }
     if(u==v) return u;
     for(int k=h-1;k>=0;k--){
       if(par[k][u]!=par[k][v]){
-	u=par[k][u];
-	v=par[k][v];
+        u=par[k][u];
+        v=par[k][v];
       }
     }
     return par[0][u];
@@ -125,11 +125,11 @@ signed solve(){
       int v,p;
       tie(v,p)=q.front();q.pop();
       for(auto e:G[v]){
-	int u,c;
-	tie(u,c)=e;
-	if(u==p) continue;
-	dep[u]=dep[v]+c;
-	q.emplace(u,v);
+        int u,c;
+        tie(u,c)=e;
+        if(u==p) continue;
+        dep[u]=dep[v]+c;
+        q.emplace(u,v);
       }
     }
   }

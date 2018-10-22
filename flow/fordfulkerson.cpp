@@ -31,12 +31,12 @@ struct Fordfulkerson{
     for(int i=0;i<(int)G[v].size();i++){
       edge &e = G[v][i];
       if(!used[e.to] && e.cap > 0 ){
-	int d=dfs(e.to,t,min(f,e.cap));
-	if(d>0){
-	  e.cap-=d;
-	  G[e.to][e.rev].cap+=d;
-	  return d;
-	}
+        int d=dfs(e.to,t,min(f,e.cap));
+        if(d>0){
+          e.cap-=d;
+          G[e.to][e.rev].cap+=d;
+          return d;
+        }
       } 
     }
     return 0;
@@ -74,6 +74,6 @@ signed main(){
 }
 
 /*
-verified on 2018/01/19
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
+  verified on 2018/01/19
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
 */

@@ -20,8 +20,8 @@ struct Matrix{
     Matrix res(A.size(),B[0].size());    
     for(int i=0;i<(int)A.size();i++)
       for(int j=0;j<(int)B[0].size();j++)
-	for(int k=0;k<(int)B.size();k++)
-	  res[i][j]+=A[i][k]*B[k][j];
+        for(int k=0;k<(int)B.size();k++)
+          res[i][j]+=A[i][k]*B[k][j];
     return res;
   }
 
@@ -54,33 +54,52 @@ struct Matrix{
     Matrix C(n,n+l);
     for(int i=0;i<n;i++){
       for(int j=0;j<n;j++)
-	C[i][j]=A[i][j];      
+        C[i][j]=A[i][j];      
       for(int j=0;j<l;j++)
-	C[i][n+j]=B[i][j];
+        C[i][n+j]=B[i][j];
     }
     for(int i=0;i<n;i++){
       int p=i;
       for(int j=i;j<n;j++)
-	if(abs(C[p][i])<abs(C[j][i])) p=j;
+        if(abs(C[p][i])<abs(C[j][i])) p=j;
       swap(C[i],C[p]);
       if(is_zero(C[i][i])) return Matrix(0,0);
       for(int j=i+1;j<n+l;j++) C[i][j]/=C[i][i];
       for(int j=0;j<n;j++){
-	if(i==j) continue;
-	for(int k=i+1;k<n+l;k++)
-	  C[j][k]-=C[j][i]*C[i][k];
+        if(i==j) continue;
+        for(int k=i+1;k<n+l;k++)
+          C[j][k]-=C[j][i]*C[i][k];
       }
     }
     Matrix res(n,l);
     for(int i=0;i<n;i++)
       for(int j=0;j<l;j++)
-	res[i][j]=C[i][n+j];
+        res[i][j]=C[i][n+j];
     return res;
   }
   
   Matrix inv() const{
     Matrix B=identity(size());
     return gauss_jordan(*this,B);
+  }
+  
+  K determinant() const{
+    Matrix A(dat);
+    K res(1);
+    int n=size();
+    for(int i=0;i<n;i++){
+      int p=i;
+      for(int j=i;j<n;j++)
+        if(abs(A[p][i])<abs(A[j][i])) p=j;      
+      if(i!=p) swap(A[i],A[p]),res=-res;      
+      if(is_zero(A[i][i])) return K(0);      
+      res*=A[i][i];
+      for(int j=i+1;j<n;j++) A[i][j]/=A[i][i];
+      for(int j=i+1;j<n;j++)
+        for(int k=i+1;k<n;k++)
+          A[j][k]-=A[j][i]*A[i][k];
+    }
+    return res;
   }
 
   static arr linear_equations(const Matrix &A,const arr &b){
@@ -113,24 +132,24 @@ signed AOJ_1328(){
     M m(d+3,d+2);
     for(int i=0;i<d+3;i++)
       for(int j=0;j<d+1;j++)
-	m[i][j]=pow(1.0*i,j);
+        m[i][j]=pow(1.0*i,j);
     
     for(int i=0;i<d+3;i++){
       for(int j=i+1;j<d+3;j++){
-	arr b(d+1);
-	M A(d+1,d+1);
-	for(int k=0,l=0;k<d+3;k++)
-	  if(i!=k&&j!=k) A[l]=m[k],b[l]=v[k],l++;
+        arr b(d+1);
+        M A(d+1,d+1);
+        for(int k=0,l=0;k<d+3;k++)
+          if(i!=k&&j!=k) A[l]=m[k],b[l]=v[k],l++;
 	
-	arr x=M::linear_equations(A,b);
-	if(x.empty()) continue;
-	double res[2]={};
-	for(int k=0;k<d+1;k++){
-	  res[0]+=x[k]*m[i][k];
-	  res[1]+=x[k]*m[j][k];
-	}
-	if(abs(res[0]-v[i])>0.5&&abs(res[1]-v[j])<1e-5) ans=i;
-	if(abs(res[0]-v[i])<1e-5&&abs(res[1]-v[j])>0.5) ans=j;
+        arr x=M::linear_equations(A,b);
+        if(x.empty()) continue;
+        double res[2]={};
+        for(int k=0;k<d+1;k++){
+          res[0]+=x[k]*m[i][k];
+          res[1]+=x[k]*m[j][k];
+        }
+        if(abs(res[0]-v[i])>0.5&&abs(res[1]-v[j])<1e-5) ans=i;
+        if(abs(res[0]-v[i])<1e-5&&abs(res[1]-v[j])>0.5) ans=j;
       }
     }
     printf("%d\n",ans);
@@ -212,16 +231,16 @@ signed SPOJ_MIFF(){
     MM A(n,n);
     for(int i=0;i<n;i++)
       for(int j=0;j<n;j++)
-	scanf("%d",&A[i][j].v);
+        scanf("%d",&A[i][j].v);
     MM B=A.inv();
     if(B.empty()) puts("singular");
     else{
       for(int i=0;i<n;i++){
-	for(int j=0;j<n;j++){
-	  if(j) printf(" ");
-	  printf("%d",B[i][j].v);
-	}
-	puts("");
+        for(int j=0;j<n;j++){
+          if(j) printf(" ");
+          printf("%d",B[i][j].v);
+        }
+        puts("");
       }
     }      
   }
@@ -229,11 +248,41 @@ signed SPOJ_MIFF(){
 }
 /*
   verified on 2018/10/17
-  https://beta.atcoder.jp/contests/arc050/tasks/arc050_c
+  https://www.spoj.com/problems/MIFF/
+*/
+
+signed SPOJ_MPOW(){
+  int T;
+  scanf("%d",&T);
+  while(T--){
+    int n,p;
+    scanf("%d %d",&n,&p);
+    using M = Mint<int>;
+    M::MOD = 1e9+7;
+    using MM = Matrix<M>;
+    MM A(n,n);
+    for(int i=0;i<n;i++)
+      for(int j=0;j<n;j++)
+        scanf("%d",&A[i][j].v);
+    MM B=A.pow(p);
+    for(int i=0;i<n;i++){
+      for(int j=0;j<n;j++){
+        if(j) printf(" ");
+        printf("%d",B[i][j].v);
+      }
+      puts("");
+    }      
+  }
+  return 0;
+}
+/*
+  verified on 2018/10/17
+  https://www.spoj.com/problems/MPOW/
 */
 
 signed main(){
   //AOJ_1328();
   //ARC050_C();
   //SPOJ_MIFF();
+  SPOJ_MPOW();
 }

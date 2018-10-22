@@ -181,126 +181,126 @@ signed CODEFLYER2018_F(){
       int A,B,C,D;
       
       {
-	auto latte=mrs.begin();
-	set<int> &s=latte->second;
-	latte++;
-	set<int> &t=latte->second;
-	if(*--s.end()-*s.begin()+1==(int)s.size()){
-	  a1=*s.begin();
-	  b1=*--s.end();
-	}
-	if(*--t.end()-*t.begin()+1==(int)t.size()){
-	  a2=*t.begin();
-	  b2=*--t.end(); 
-	}
-	A=*s.begin();
-	B=*t.begin();
+        auto latte=mrs.begin();
+        set<int> &s=latte->second;
+        latte++;
+        set<int> &t=latte->second;
+        if(*--s.end()-*s.begin()+1==(int)s.size()){
+          a1=*s.begin();
+          b1=*--s.end();
+        }
+        if(*--t.end()-*t.begin()+1==(int)t.size()){
+          a2=*t.begin();
+          b2=*--t.end(); 
+        }
+        A=*s.begin();
+        B=*t.begin();
       }
       if(a1<0&&a2<0){
-	puts("No");
-	return;
+        puts("No");
+        return;
       }
       
       {
-	auto latte=mcs.begin();
-	set<int> &s=latte->second;
-	latte++;
-	set<int> &t=latte->second;
-	if(*--s.end()-*s.begin()+1==(int)s.size()){
-	  c1=*s.begin();
-	  d1=*--s.end();
-	}
-	if(*--t.end()-*t.begin()+1==(int)t.size()){
-	  c2=*t.begin();
-	  d2=*--t.end(); 
-	}
-	C=*s.begin();
-	D=*t.begin();
+        auto latte=mcs.begin();
+        set<int> &s=latte->second;
+        latte++;
+        set<int> &t=latte->second;
+        if(*--s.end()-*s.begin()+1==(int)s.size()){
+          c1=*s.begin();
+          d1=*--s.end();
+        }
+        if(*--t.end()-*t.begin()+1==(int)t.size()){
+          c2=*t.begin();
+          d2=*--t.end(); 
+        }
+        C=*s.begin();
+        D=*t.begin();
       }
       
       if(c1<0&&c2<0){
-	puts("No");
-	return;
+        puts("No");
+        return;
       }
 
       {
-	int flg=0;
-	if(~c1){
-	  BS r=rs[A]^rs[B];
-	  r>>=c1;
-	  int k=r.count();
-	  r>>=(d1-c1+1);
-	  k-=r.count();
-	  flg|=(d1-c1+1)==k;
-	}
-	if(~c1){
-	  BS r=rs[A]^~rs[B];
-	  r>>=c1;
-	  int k=r.count();
-	  r>>=(d1-c1+1);
-	  k-=r.count();
-	  flg|=(d1-c1+1)==k;
-	}
-	if(~c2){
-	  BS r=rs[A]^rs[B];
-	  r>>=c2;
-	  int k=r.count();
-	  r>>=(d2-c2+1);
-	  k-=r.count();
-	  flg|=(d2-c2+1)==k;
-	}
-	if(~c2){
-	  BS r=rs[A]^~rs[B];
-	  r>>=c2;
-	  int k=r.count();
-	  r>>=(d2-c2+1);
-	  k-=r.count();
-	  flg|=(d2-c2+1)==k;
-	}
-	if(!flg){
-	  puts("No");
-	  return;
-	}
+        int flg=0;
+        if(~c1){
+          BS r=rs[A]^rs[B];
+          r>>=c1;
+          int k=r.count();
+          r>>=(d1-c1+1);
+          k-=r.count();
+          flg|=(d1-c1+1)==k;
+        }
+        if(~c1){
+          BS r=rs[A]^~rs[B];
+          r>>=c1;
+          int k=r.count();
+          r>>=(d1-c1+1);
+          k-=r.count();
+          flg|=(d1-c1+1)==k;
+        }
+        if(~c2){
+          BS r=rs[A]^rs[B];
+          r>>=c2;
+          int k=r.count();
+          r>>=(d2-c2+1);
+          k-=r.count();
+          flg|=(d2-c2+1)==k;
+        }
+        if(~c2){
+          BS r=rs[A]^~rs[B];
+          r>>=c2;
+          int k=r.count();
+          r>>=(d2-c2+1);
+          k-=r.count();
+          flg|=(d2-c2+1)==k;
+        }
+        if(!flg){
+          puts("No");
+          return;
+        }
       }
       
       {
-	int flg=0;
-	if(~a1){
-	  BS r=cs[C]^cs[D];
-	  r>>=a1;
-	  int k=r.count();
-	  r>>=(b1-a1+1);
-	  k-=r.count();
-	  flg|=(b1-a1+1)==k;
-	}
-	if(~a1){
-	  BS r=cs[C]^~cs[D];
-	  r>>=a1;
-	  int k=r.count();
-	  r>>=(b1-a1+1);
-	  k-=r.count();
-	  flg|=(b1-a1+1)==k;
-	}
-	if(~a2){
-	  BS r=cs[C]^cs[D];
-	  r>>=a2;
-	  int k=r.count();
-	  r>>=(b2-a2+1);
-	  k-=r.count();
-	  flg|=(b2-a2+1)==k;
-	}
-	if(~a2){
-	  BS r=cs[C]^~cs[D];
-	  r>>=a2;
-	  int k=r.count();
-	  r>>=(b2-a2+1);
-	  k-=r.count();
-	  flg|=(b2-a2+1)==k;
-	}
-	if(!flg){
-	  puts("No");
-	  return;
-	}
+        int flg=0;
+        if(~a1){
+          BS r=cs[C]^cs[D];
+          r>>=a1;
+          int k=r.count();
+          r>>=(b1-a1+1);
+          k-=r.count();
+          flg|=(b1-a1+1)==k;
+        }
+        if(~a1){
+          BS r=cs[C]^~cs[D];
+          r>>=a1;
+          int k=r.count();
+          r>>=(b1-a1+1);
+          k-=r.count();
+          flg|=(b1-a1+1)==k;
+        }
+        if(~a2){
+          BS r=cs[C]^cs[D];
+          r>>=a2;
+          int k=r.count();
+          r>>=(b2-a2+1);
+          k-=r.count();
+          flg|=(b2-a2+1)==k;
+        }
+        if(~a2){
+          BS r=cs[C]^~cs[D];
+          r>>=a2;
+          int k=r.count();
+          r>>=(b2-a2+1);
+          k-=r.count();
+          flg|=(b2-a2+1)==k;
+        }
+        if(!flg){
+          puts("No");
+          return;
+        }
       }
       
       puts("Yes");
@@ -309,17 +309,17 @@ signed CODEFLYER2018_F(){
   auto calc=
     [&](){
       if(mrs.size()>2u||mcs.size()>2u){
-	puts("No");
-	return;
+        puts("No");
+        return;
       }
       if(mrs.size()==1u||mcs.size()==1u){
-	puts("Yes");
-	return;
+        puts("Yes");
+        return;
       }
 
       if(mrs.size()==2u||mcs.size()==2u){
-	check();
-	return;
+        check();
+        return;
       }
       puts("No");
     };

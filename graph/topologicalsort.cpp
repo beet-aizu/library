@@ -23,11 +23,11 @@ struct TopologicalSort{
       int v=q.front();q.pop();
       p.push_back(v);
       for(int u:G[v]){
-	indeg[u]--;
-	if(indeg[u]==0&&!used[u]){
-	  used[u]=1;
-	  q.push(u);
-	}
+        indeg[u]--;
+        if(indeg[u]==0&&!used[u]){
+          used[u]=1;
+          q.push(u);
+        }
       }
     }
   }

@@ -26,8 +26,8 @@ struct LowLink{
     for(int u:G[v]){
       if(u==par[v]) continue;
       if(~ord[u]){
-	low[v]=min(low[v],ord[u]);
-	continue;
+        low[v]=min(low[v],ord[u]);
+        continue;
       }
       par[u]=v;
       dfs(u);

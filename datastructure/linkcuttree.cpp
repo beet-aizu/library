@@ -115,19 +115,19 @@ struct LinkCutTree{
     while(!t->is_root()){
       Node *q=t->p;
       if(q->is_root()){
-	eval(q);eval(t);
-	if(q->l==t) rotR(t);
-	else rotL(t);
+        eval(q);eval(t);
+        if(q->l==t) rotR(t);
+        else rotL(t);
       }else{
-	auto *r=q->p;
-	eval(r);eval(q);eval(t);
-	if(r->l==q){
-	  if(q->l==t) rotR(q),rotR(t);
-	  else rotL(t),rotR(t);
-	}else{	
-	  if(q->r==t) rotL(q),rotL(t);
-	  else rotR(t),rotL(t);
-	}
+        auto *r=q->p;
+        eval(r);eval(q);eval(t);
+        if(r->l==q){
+          if(q->l==t) rotR(q),rotR(t);
+          else rotL(t),rotR(t);
+        }else{	
+          if(q->r==t) rotL(q),rotL(t);
+          else rotR(t),rotL(t);
+        }
       }
     }
   }
@@ -219,8 +219,8 @@ struct BIT{
     while(r<n) r<<=1;
     for(int k=r;k>0;k>>=1){
       if(x+k<=n&&bit[x+k]<w){
-	w-=bit[x+k];
-	x+=k;
+        w-=bit[x+k];
+        x+=k;
       }
     }
     return x+1;
@@ -415,27 +415,27 @@ signed AOJ_2450(){
   P ei(-1,-114514);
   
   auto f=[&](T a,T b){
-	   int as,ava,avi,avl,avr;
-	   tie(as,ava,avi,avl,avr)=a;
-	   int bs,bva,bvi,bvl,bvr;
-	   tie(bs,bva,bvi,bvl,bvr)=b;
-	   int cs=as+bs;
-	   int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
-	   cvi=max(cvi,avr+bvl);
-	   cvl=max(cvl,ava+bvl);
-	   cvr=max(cvr,avr+bva);
-	   return T(cs,cva,cvi,cvl,cvr);
-	 };
+           int as,ava,avi,avl,avr;
+           tie(as,ava,avi,avl,avr)=a;
+           int bs,bva,bvi,bvl,bvr;
+           tie(bs,bva,bvi,bvl,bvr)=b;
+           int cs=as+bs;
+           int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
+           cvi=max(cvi,avr+bvl);
+           cvl=max(cvl,ava+bvl);
+           cvr=max(cvr,avr+bva);
+           return T(cs,cva,cvi,cvl,cvr);
+         };
   
   auto g=[&](T a,P p){
-	   if(p==ei) return a;
-	   int as,ava,avi,avl,avr;
-	   tie(as,ava,avi,avl,avr)=a;
-	   int v=p.first,b=p.second;
-	   if(~v) as=1;
-	   if(b>=0) return T(as,b*as,b*as,b*as,b*as);
-	   return T(as,b*as,b,b,b);
-	 };
+           if(p==ei) return a;
+           int as,ava,avi,avl,avr;
+           tie(as,ava,avi,avl,avr)=a;
+           int v=p.first,b=p.second;
+           if(~v) as=1;
+           if(b>=0) return T(as,b*as,b*as,b*as,b*as);
+           return T(as,b*as,b,b,b);
+         };
   
   auto h=[&](P a,P b){a.first++;return b;};
   auto s=
@@ -478,8 +478,8 @@ signed AOJ_2450(){
       if(~p) lct.link(vs[p],vs[v]);
       ps[v]=p;
       for(int u:G[v]){
-	if(u==p) continue;
-	q.emplace(u,v);
+        if(u==p) continue;
+        q.emplace(u,v);
       }
     }
   }
@@ -527,27 +527,27 @@ signed AOJ_0367(){
   vector<int> ps(n,-1);
   using T = tuple<Int, Int, Int>;
   auto mget=[&](Int a,Int b){
-	      if(ps[a]!=b&&ps[b]!=a) return 0LL;
-	      Int res=w[a]+w[b]+m[a][b];
-	      if(res%k) return res;
-	      return 0LL;
-	    };
+              if(ps[a]!=b&&ps[b]!=a) return 0LL;
+              Int res=w[a]+w[b]+m[a][b];
+              if(res%k) return res;
+              return 0LL;
+            };
   
   auto f=[&](T a,T b){
-	   Int al,ar,av;
-	   tie(al,ar,av)=a;
-	   Int bl,br,bv;
-	   tie(bl,br,bv)=b;
-	   return T(al,br,av+bv+mget(ar,bl));
-	 };
+           Int al,ar,av;
+           tie(al,ar,av)=a;
+           Int bl,br,bv;
+           tie(bl,br,bv)=b;
+           return T(al,br,av+bv+mget(ar,bl));
+         };
   
   auto g=[&](T a,Int b){b++;return a;};
   auto h=[&](Int a,Int b){b++;return a;};
   auto s=[&](T a){
-	   Int al,ar,av;
-	   tie(al,ar,av)=a;
-	   return T(ar,al,av);
-	 };
+           Int al,ar,av;
+           tie(al,ar,av)=a;
+           return T(ar,al,av);
+         };
   
   using LCT = LinkCutTree<T, Int>;
   LCT lct(f,g,h,s,T(-1,-1,0),0);  
@@ -564,8 +564,8 @@ signed AOJ_0367(){
       if(~p) lct.link(vs[p],vs[v]);
       ps[v]=p;
       for(int u:G[v]){
-	if(u==p) continue;
-	q.emplace(u,v);
+        if(u==p) continue;
+        q.emplace(u,v);
       }
     } 
   }
@@ -618,17 +618,17 @@ signed YUKI_650(){
   using M2 = pair<M, M>;
   using LCT = LinkCutTree<M2, M2>;
   auto f=[MOD](M x,M y){
-	   M r(0,0,0,0);
-	   r.a=x.a*y.a+x.b*y.c;
-	   r.b=x.a*y.b+x.b*y.d;
-	   r.c=x.c*y.a+x.d*y.c;
-	   r.d=x.c*y.b+x.d*y.d;	   
-	   r.a%=MOD;r.b%=MOD;r.c%=MOD;r.d%=MOD;
-	   return r;
-	 };
+           M r(0,0,0,0);
+           r.a=x.a*y.a+x.b*y.c;
+           r.b=x.a*y.b+x.b*y.d;
+           r.c=x.c*y.a+x.d*y.c;
+           r.d=x.c*y.b+x.d*y.d;	   
+           r.a%=MOD;r.b%=MOD;r.c%=MOD;r.d%=MOD;
+           return r;
+         };
   auto f2=[&](M2 x,M2 y){
-	    return M2(f(x.first,y.first),f(y.second,x.second));
-	  };
+            return M2(f(x.first,y.first),f(y.second,x.second));
+          };
   auto g=[](M2 x,M2 y){x.first.a++;return y;};
   auto s=[](M2 x){swap(x.first,x.second);return x;};
   
@@ -662,12 +662,12 @@ signed YUKI_650(){
       int v,p;
       tie(v,p)=q.front();q.pop();
       if(~p){
-	lct.link(vs[p],vs[idx]);
-	lct.link(vs[idx],vs[v]);
-	rev[p][v]=rev[v][p]=idx++;
+        lct.link(vs[p],vs[idx]);
+        lct.link(vs[idx],vs[v]);
+        rev[p][v]=rev[v][p]=idx++;
       }
       for(int u:G[v])
-	if(u!=p) q.emplace(u,v);
+        if(u!=p) q.emplace(u,v);
     }
   }
   
@@ -715,12 +715,12 @@ signed UNIVERSITYCODESPRINT03_G(){
 
   int sz=0;
   auto add_edge=[&](int x,int e){
-		  edges.push_back(P(x,e));
-		  if(!R[a[x]].count(e)) R[a[x]][e]=sz++;
-		  if(!R[b[x]].count(e)) R[b[x]][e]=sz++;
-		  G[a[x]][e].emplace_back(b[x]);
-		  G[b[x]][e].emplace_back(a[x]);
-		};
+                  edges.push_back(P(x,e));
+                  if(!R[a[x]].count(e)) R[a[x]][e]=sz++;
+                  if(!R[b[x]].count(e)) R[b[x]][e]=sz++;
+                  G[a[x]][e].emplace_back(b[x]);
+                  G[b[x]][e].emplace_back(a[x]);
+                };
   
   for(int i=0;i+1<n;i++){
     scanf("%d %d %d",&a[i],&b[i],&c[i]);
@@ -767,15 +767,15 @@ signed UNIVERSITYCODESPRINT03_G(){
       used[R[i][c]]=1;      
       ps[R[i][c]]=-1;
       while(!q.empty()){
-	int v,p;
-	tie(v,p)=q.front();q.pop();
-	if(~p) lct.link(vs[R[p][c]],vs[R[v][c]]);
-	for(int u:G[v][c]){
-	  if(u==p||used[R[u][c]]) continue;
-	  q.emplace(u,v);	  
-	  used[R[u][c]]=1;
-	  ps[R[u][c]]=R[v][c];
-	}
+        int v,p;
+        tie(v,p)=q.front();q.pop();
+        if(~p) lct.link(vs[R[p][c]],vs[R[v][c]]);
+        for(int u:G[v][c]){
+          if(u==p||used[R[u][c]]) continue;
+          q.emplace(u,v);	  
+          used[R[u][c]]=1;
+          ps[R[u][c]]=R[v][c];
+        }
       }
       lct.expose(vs[R[i][c]]);
       bit.add(c,calc(vs[R[i][c]]->sz));
@@ -783,32 +783,32 @@ signed UNIVERSITYCODESPRINT03_G(){
   }
 
   auto cut=[&](int x,int e){
-	     int p=R[a[x]][e],q=R[b[x]][e];
-	     if(ps[q]!=p) swap(p,q);
-	     lct.expose(vs[p]);
-	     bit.add(e,-calc(vs[p]->sz));
+             int p=R[a[x]][e],q=R[b[x]][e];
+             if(ps[q]!=p) swap(p,q);
+             lct.expose(vs[p]);
+             bit.add(e,-calc(vs[p]->sz));
 	     
-	     lct.cut(vs[q]);
+             lct.cut(vs[q]);
 	     
-	     lct.expose(vs[p]);
-	     lct.expose(vs[q]);
-	     bit.add(e,calc(vs[p]->sz));
-	     bit.add(e,calc(vs[q]->sz));
-	   };
+             lct.expose(vs[p]);
+             lct.expose(vs[q]);
+             bit.add(e,calc(vs[p]->sz));
+             bit.add(e,calc(vs[q]->sz));
+           };
 
   auto con=[&](int x,int e){
-	     int p=R[a[x]][e],q=R[b[x]][e];
-	     if(ps[q]!=p) swap(p,q);
-	     lct.expose(vs[p]);
-	     lct.expose(vs[q]);
-	     bit.add(e,-calc(vs[p]->sz));
-	     bit.add(e,-calc(vs[q]->sz));
+             int p=R[a[x]][e],q=R[b[x]][e];
+             if(ps[q]!=p) swap(p,q);
+             lct.expose(vs[p]);
+             lct.expose(vs[q]);
+             bit.add(e,-calc(vs[p]->sz));
+             bit.add(e,-calc(vs[q]->sz));
 	     
-	     lct.link(vs[p],vs[q]);
+             lct.link(vs[p],vs[q]);
 	     
-	     lct.expose(vs[p]);
-	     bit.add(e,calc(vs[p]->sz));
-	   };    
+             lct.expose(vs[p]);
+             bit.add(e,calc(vs[p]->sz));
+           };    
   
   sort(edges.begin(),edges.end());
   edges.erase(unique(edges.begin(),edges.end()),edges.end());

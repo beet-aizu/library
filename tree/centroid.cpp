@@ -37,19 +37,19 @@ struct Centroid{
   vector<int> build(int r=0) {
     n=0;
     auto bfs=[&](int k){      
-      queue<int> q;
-      sz[r]=k;
-      q.emplace(r);
-      while(!q.empty()){
-	int v=q.front();q.pop();
-	n+=k;
-	for(int u:G[v]){
-	  if(sz[u]==k||used[u]) continue;
-	  sz[u]=k;
-	  q.emplace(u);
-	}
-      }
-    };
+               queue<int> q;
+               sz[r]=k;
+               q.emplace(r);
+               while(!q.empty()){
+                 int v=q.front();q.pop();
+                 n+=k;
+                 for(int u:G[v]){
+                   if(sz[u]==k||used[u]) continue;
+                   sz[u]=k;
+                   q.emplace(u);
+                 }
+               }
+             };
     bfs(0);bfs(1);
     centroid.clear();
     dfs(r,-1);
@@ -80,49 +80,49 @@ signed DWANGO2018QUAL_E(){
       int x;
       cin>>x;
       if(x==c[0]+1){
-	r=c[0];
-	C.disable(c[1]);
+        r=c[0];
+        C.disable(c[1]);
       }
       if(x==c[1]+1){
-	r=c[1];
-	C.disable(c[0]);
+        r=c[1];
+        C.disable(c[0]);
       }
     }else{
       using P = pair<int, int>;
       vector<P> vp;
       for(int u:C.G[c[0]])
-	if(!C.used[u]) vp.emplace_back(C.sz[u],u);
+        if(!C.used[u]) vp.emplace_back(C.sz[u],u);
       sort(vp.rbegin(),vp.rend());
       if(vp.empty()){
-	cout<<"! "<<c[0]+1<<endl;
-	return 0;
+        cout<<"! "<<c[0]+1<<endl;
+        return 0;
       }
       if(vp.size()==1u){
-	c.emplace_back(vp[0].second);
-	cout<<"? "<<c[0]+1<<" "<<c[1]+1<<endl;
-	int x;
-	cin>>x;
-	cout<<"! "<<x<<endl;
-	return 0;
+        c.emplace_back(vp[0].second);
+        cout<<"? "<<c[0]+1<<" "<<c[1]+1<<endl;
+        int x;
+        cin>>x;
+        cout<<"! "<<x<<endl;
+        return 0;
       }else{
-	int a=vp[0].second;
-	int b=vp[1].second;
-	cout<<"? "<<a+1<<" "<<b+1<<endl;
-	int x;
-	cin>>x;
-	if(x==0){
-	  r=c[0];	  
-	  C.disable(a);
-	  C.disable(b);
-	}
-	if(x==a+1){
-	  r=a;
-	  C.disable(c[0]);
-	}
-	if(x==b+1){
-	  r=b;
-	  C.disable(c[0]);
-	}
+        int a=vp[0].second;
+        int b=vp[1].second;
+        cout<<"? "<<a+1<<" "<<b+1<<endl;
+        int x;
+        cin>>x;
+        if(x==0){
+          r=c[0];	  
+          C.disable(a);
+          C.disable(b);
+        }
+        if(x==a+1){
+          r=a;
+          C.disable(c[0]);
+        }
+        if(x==b+1){
+          r=b;
+          C.disable(c[0]);
+        }
       }
     }
   }

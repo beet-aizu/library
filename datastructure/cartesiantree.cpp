@@ -12,10 +12,10 @@ struct CartesianTree{
     int p=0;
     for(int i=1;i<n;i++){
       if(v[p]<=v[i]){
-	R[p]=i;
-	P[i]=p;
-	p=i;
-	continue;
+        R[p]=i;
+        P[i]=p;
+        p=i;
+        continue;
       }
       while(~P[p]&&v[i]<v[P[p]]) p=P[p];
       P[i]=P[p];
@@ -68,9 +68,9 @@ struct LCA{
     for(int b=0;b<sz;b++){
       int e=0,w=1,&x=T[b];
       for(int i=0;i<lg;i++){
-	if((b>>i)&1) e++;
-	else e--;
-	if(e<w) e=w,x=i;
+        if((b>>i)&1) e++;
+        else e--;
+        if(e<w) e=w,x=i;
       }
     }
 

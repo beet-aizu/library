@@ -73,9 +73,9 @@ struct AVL{
   node *balance(node *t){
     for(int i=0;i<2;i++){
       if(ht(t->child[!i])-ht(t->child[i])<-1){
-	if(ht(t->child[i]->child[!i])-ht(t->child[i]->child[i])>0)
-	  t->child[i]=rotate(t->child[i],i,!i);
-	return rotate(t,!i,i);
+        if(ht(t->child[i]->child[!i])-ht(t->child[i]->child[i])>0)
+          t->child[i]=rotate(t->child[i],i,!i);
+        return rotate(t,!i,i);
       }
     }
     if(t!=NULL) t->height=max(ht(t->child[0]),ht(t->child[1]))+1;

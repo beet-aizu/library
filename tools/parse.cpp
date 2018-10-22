@@ -39,8 +39,8 @@ int term(string s,int& p){
       p++;
       int tmp=factor(s,p);
       if(tmp==0){
-	f=1;
-	break;
+        f=1;
+        break;
       }
       res/=tmp;
       continue;

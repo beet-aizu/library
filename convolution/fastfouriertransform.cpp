@@ -42,9 +42,9 @@ namespace FFT{
     while(base<nbase){
       dbl angle=2*PI/(1<<(base+1));
       for(int i=1<<(base-1);i<(1<<base);i++){
-	rts[i<<1]=rts[i];
-	dbl angle_i=angle*(2*i+1-(1<<base));
-	rts[(i<<1)+1]=num(cos(angle_i),sin(angle_i));
+        rts[i<<1]=rts[i];
+        dbl angle_i=angle*(2*i+1-(1<<base));
+        rts[(i<<1)+1]=num(cos(angle_i),sin(angle_i));
       }
       base++;
     }
@@ -59,15 +59,15 @@ namespace FFT{
     int shift=base-zeros;
     for(int i=0;i<n;i++)
       if(i<(rev[i]>>shift))
-	swap(a[i],a[rev[i]>>shift]);
+        swap(a[i],a[rev[i]>>shift]);
  
     for(int k=1;k<n;k<<=1){
       for(int i=0;i<n;i+=2*k){
-	for(int j=0;j<k;j++){
-	  num z=a[i+j+k]*rts[j+k];
-	  a[i+j+k]=a[i+j]-z;
-	  a[i+j]=a[i+j]+z;
-	}
+        for(int j=0;j<k;j++){
+          num z=a[i+j+k]*rts[j+k];
+          a[i+j+k]=a[i+j]-z;
+          a[i+j]=a[i+j]+z;
+        }
       }
     }
   }
@@ -94,7 +94,7 @@ namespace FFT{
       int j=(sz-i)&(sz-1);
       num z=(fa[j]*fa[j]-conj(fa[i]*fa[i]))*r;
       if(i!=j)
-	fa[j]=(fa[i]*fa[i]-conj(fa[j]*fa[j]))*r;
+        fa[j]=(fa[i]*fa[i]-conj(fa[j]*fa[j]))*r;
       fa[i]=z;
     }
     fft(fa,sz);

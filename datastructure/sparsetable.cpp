@@ -55,9 +55,9 @@ signed ARC023_D(){
     while(lst!=pre){
       int r=n,pl=l;
       while(l+1<r){
-	int m=(l+r)>>1;
-	if(st.query(i,m)!=pre) r=m;
-	else l=m;
+        int m=(l+r)>>1;
+        if(st.query(i,m)!=pre) r=m;
+        else l=m;
       }
       ans[pre]+=l-pl;
       pre=st.query(i,r);

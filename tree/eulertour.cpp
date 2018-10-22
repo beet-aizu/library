@@ -58,8 +58,8 @@ struct LowestCommonAncestor{
     dfs(r,-1,0);
     for(int k=0;k+1<h;k++){
       for(int v=0;v<n;v++){
-	if(par[k][v]<0) par[k+1][v]=-1;
-	else par[k+1][v]=par[k][par[k][v]];
+        if(par[k][v]<0) par[k+1][v]=-1;
+        else par[k+1][v]=par[k][par[k][v]];
       }
     }
   }
@@ -68,14 +68,14 @@ struct LowestCommonAncestor{
     if(dep[u]>dep[v]) swap(u,v);
     for(int k=0;k<h;k++){
       if((dep[v]-dep[u])>>k&1){
-	v=par[k][v];
+        v=par[k][v];
       }
     }
     if(u==v) return u;
     for(int k=h-1;k>=0;k--){
       if(par[k][u]!=par[k][v]){
-	u=par[k][u];
-	v=par[k][v];
+        u=par[k][u];
+        v=par[k][v];
       }
     }
     return par[0][u];
@@ -113,8 +113,8 @@ struct BIT{
     while(r<n) r<<=1;
     for(int k=r;k>0;k>>=1){
       if(x+k<=n&&bit[x+k]<w){
-	w-=bit[x+k];
-	x+=k;
+        w-=bit[x+k];
+        x+=k;
       }
     }
     return x+1;
@@ -153,7 +153,7 @@ struct SegmentTree{
   vector<T> dat;
   vector<E> laz;
   SegmentTree(int n_,F f,G g,H h,T ti,E ei,
-	      P p=[](E a,size_t b){b++;return a;}):
+              P p=[](E a,size_t b){b++;return a;}):
     f(f),g(g),h(h),ti(ti),ei(ei),p(p){
     init(n_);
   }
@@ -185,7 +185,7 @@ struct SegmentTree{
       return g(dat[k],p(laz[k],r-l));
     }
     return dat[k]=f(update(a,b,x,k*2+1,l,(l+r)/2),
-		    update(a,b,x,k*2+2,(l+r)/2,r));
+                    update(a,b,x,k*2+2,(l+r)/2,r));
   }
   T update(int a,int b,E x){
     return update(a,b,x,0,0,n);
@@ -242,8 +242,8 @@ signed CFR483_E(){
   for(int i=0;i<n;i++) dp[0][i]=i;
 
   auto check=[&](int &a,int b){
-    if(a==n||lca.dep[a]>lca.dep[b]) a=b;
-  };
+               if(a==n||lca.dep[a]>lca.dep[b]) a=b;
+             };
   
   vector<vector<int> > oth(n);
   auto G=et.G;
@@ -257,12 +257,12 @@ signed CFR483_E(){
   }
 
   function<void(int,int)> dfs=[&](int v,int p){
-    for(int u:G[v]){
-      if(u==p) continue;
-      dfs(u,v);
-      check(dp[0][v],dp[0][u]);
-    }
-  };
+                                for(int u:G[v]){
+                                  if(u==p) continue;
+                                  dfs(u,v);
+                                  check(dp[0][v],dp[0][u]);
+                                }
+                              };
   dfs(0,-1);
   
   for(int k=1;k<LG;k++)
@@ -270,26 +270,26 @@ signed CFR483_E(){
       check(dp[k][i],dp[k-1][dp[k-1][i]]);
   
   auto count=[&](int x,int y)->int{
-    if(lca.dep[dp[LG-1][x]]>lca.dep[y]) return -1;
-    int res=0;
-    for(int i=LG-1;i>=0;i--){
-      if(lca.dep[dp[i][x]]<=lca.dep[y]) continue;
-      res+=1<<i;
-      x=dp[i][x];
-    }
-    if(lca.dep[x]>lca.dep[y]){
-      res++;
-      x=dp[0][x];
-    }
-    assert(lca.dep[x]<=lca.dep[y]);
-    return res;
-  };
+               if(lca.dep[dp[LG-1][x]]>lca.dep[y]) return -1;
+               int res=0;
+               for(int i=LG-1;i>=0;i--){
+                 if(lca.dep[dp[i][x]]<=lca.dep[y]) continue;
+                 res+=1<<i;
+                 x=dp[i][x];
+               }
+               if(lca.dep[x]>lca.dep[y]){
+                 res++;
+                 x=dp[0][x];
+               }
+               assert(lca.dep[x]<=lca.dep[y]);
+               return res;
+             };
 
   auto climb=[&](int x,int d)->int{
-    for(int i=0;i<LG;i++)
-      if((d>>i)&1) x=dp[i][x];
-    return x;
-  };
+               for(int i=0;i<LG;i++)
+                 if((d>>i)&1) x=dp[i][x];
+               return x;
+             };
   
   vector<int> ans(q),red(q,0);
   using P = pair<int, int>;
@@ -317,22 +317,22 @@ signed CFR483_E(){
   
   BIT<int> bit(n+10,0);
   function<void(int,int)> dfs2=[&](int v,int p){
-    int sz=idx[v].size();
-    vector<int> cur(sz);
-    for(int i=0;i<sz;i++){
-      int op=idx[v][i].second;
-      cur[i]=bit.query0(et.ls[op],et.rs[op]);
-    }
-    for(int u:oth[v]) bit.add0(et.ls[u],1);    
-    for(int u:G[v])
-      if(u!=p) dfs2(u,v);
+                                 int sz=idx[v].size();
+                                 vector<int> cur(sz);
+                                 for(int i=0;i<sz;i++){
+                                   int op=idx[v][i].second;
+                                   cur[i]=bit.query0(et.ls[op],et.rs[op]);
+                                 }
+                                 for(int u:oth[v]) bit.add0(et.ls[u],1);    
+                                 for(int u:G[v])
+                                   if(u!=p) dfs2(u,v);
     
-    for(int i=0;i<sz;i++){
-      int k=idx[v][i].first;
-      int op=idx[v][i].second;
-      red[k]|=(cur[i]<bit.query0(et.ls[op],et.rs[op]));
-    }
-  };
+                                 for(int i=0;i<sz;i++){
+                                   int k=idx[v][i].first;
+                                   int op=idx[v][i].second;
+                                   red[k]|=(cur[i]<bit.query0(et.ls[op],et.rs[op]));
+                                 }
+                               };
   dfs2(0,-1);
   
   for(int i=0;i<q;i++){

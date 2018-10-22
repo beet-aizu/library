@@ -29,8 +29,8 @@ struct LowestCommonAncestor{
     dfs(r,-1,0);
     for(int k=0;k+1<h;k++){
       for(int v=0;v<n;v++){
-	if(par[k][v]<0) par[k+1][v]=-1;
-	else par[k+1][v]=par[k][par[k][v]];
+        if(par[k][v]<0) par[k+1][v]=-1;
+        else par[k+1][v]=par[k][par[k][v]];
       }
     }
   }
@@ -39,14 +39,14 @@ struct LowestCommonAncestor{
     if(dep[u]>dep[v]) swap(u,v);
     for(int k=0;k<h;k++){
       if((dep[v]-dep[u])>>k&1){
-	v=par[k][v];
+        v=par[k][v];
       }
     }
     if(u==v) return u;
     for(int k=h-1;k>=0;k--){
       if(par[k][u]!=par[k][v]){
-	u=par[k][u];
-	v=par[k][v];
+        u=par[k][u];
+        v=par[k][v];
       }
     }
     return par[0][u];

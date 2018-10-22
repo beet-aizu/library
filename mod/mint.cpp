@@ -94,8 +94,8 @@ struct Mint{
     dp[0][0]=Mint(1);
     for(int i=0;i<=n;i++){
       for(int j=1;j<=m;j++){
-	if(i-j>=0) dp[i][j]=dp[i][j-1]+dp[i-j][j];
-	else dp[i][j]=dp[i][j-1];
+        if(i-j>=0) dp[i][j]=dp[i][j-1]+dp[i-j][j];
+        else dp[i][j]=dp[i][j-1];
       }
     }
     return dp;

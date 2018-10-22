@@ -66,17 +66,17 @@ struct KDTree{
     }
     if(depth%2==0){
       if(T[v].l!=NIL){
-	if(sx<=x) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
+        if(sx<=x) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
       }
       if(T[v].r!=NIL){
-	if(x<=tx) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
+        if(x<=tx) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
       }
     }else{
       if(T[v].l!=NIL){
-	if(sy<=y) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
+        if(sy<=y) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
       }
       if(T[v].r!=NIL){
-	if(y<=ty) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
+        if(y<=ty) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
       }
     }
   } 

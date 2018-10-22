@@ -65,8 +65,8 @@ struct HLDecomposition {
     T l=ti,r=ti;
     while(1){
       if(vid[u]>vid[v]){
-	swap(u,v);
-	swap(l,r);
+        swap(u,v);
+        swap(l,r);
       }
       l=f(l,q(max(vid[head[v]],vid[u]),vid[v]));
       if(head[u]!=head[v]) v=par[head[v]];
@@ -82,11 +82,11 @@ struct HLDecomposition {
     while(1){
       if(vid[u]>vid[v]) swap(u,v);
       if(head[u]!=head[v]){
-	f(vid[head[v]],vid[v]);
+        f(vid[head[v]],vid[v]);
         v=par[head[v]];
       }else{
-	if(u!=v) f(vid[u]+1,vid[v]);
-	break;
+        if(u!=v) f(vid[u]+1,vid[v]);
+        break;
       }
     }
   }
@@ -140,10 +140,10 @@ struct BiconectedGraph{
     for(int u:G[v]){
       if(u==p) continue;
       if(ord[u]>=0){
-	low[v]=min(low[v],ord[u]);
+        low[v]=min(low[v],ord[u]);
       }else{
-	dfs(u,v,k);
-	low[v]=min(low[v],low[u]);
+        dfs(u,v,k);
+        low[v]=min(low[v],low[u]);
       }
       if(is_bridge(u,v)) B.push_back(P(u,v));
     }
@@ -354,9 +354,9 @@ signed YUKI_529(){
   
   hl.build();
   SegmentTree<int,int> rmq(V,
-			   [](int a,int b){return max(a,b);},
-			   [](int a,int b){a++;return b;},
-			   -1);
+                           [](int a,int b){return max(a,b);},
+                           [](int a,int b){a++;return b;},
+                           -1);
   vector<priority_queue<int> > pq(V);
   map<int,int> m;
   int num=0;
@@ -384,10 +384,10 @@ signed YUKI_529(){
       int ans=hl.for_each(s, t, -1, f, rmq.f);
       printf("%d\n",ans);
       if(~ans){
-	int k=m[ans];
-	pq[k].pop();
-	rmq.update(k,(!pq[k].empty()?pq[k].top():-1));		 
-	num--;
+        int k=m[ans];
+        pq[k].pop();
+        rmq.update(k,(!pq[k].empty()?pq[k].top():-1));		 
+        num--;
       }
     }
   }
@@ -465,49 +465,49 @@ signed AOJ_2450(){
   auto &par=hld.par;
   auto &vid=hld.vid;;
   auto con=[&](int a,int b){
-    return par[a]==b||par[b]==a;
-  };
+             return par[a]==b||par[b]==a;
+           };
   
   auto f=[&](T a,T b){
-    if(a>b) swap(a,b);
+           if(a>b) swap(a,b);
     
-    if(get<0>(a)<0) return b;
-    if(con(get<0>(a),get<1>(b))) swap(a,b);
+           if(get<0>(a)<0) return b;
+           if(con(get<0>(a),get<1>(b))) swap(a,b);
    
-    int al,ar,as,ava,avi,avl,avr;
-    tie(al,ar,as,ava,avi,avl,avr)=a;
-    int bl,br,bs,bva,bvi,bvl,bvr;
-    tie(bl,br,bs,bva,bvi,bvl,bvr)=b;
+           int al,ar,as,ava,avi,avl,avr;
+           tie(al,ar,as,ava,avi,avl,avr)=a;
+           int bl,br,bs,bva,bvi,bvl,bvr;
+           tie(bl,br,bs,bva,bvi,bvl,bvr)=b;
     
-    if(!con(ar,bl)){
-      if(con(ar,br)){
-	swap(bl,br);
-	swap(bvl,bvr);
-      }else if(con(al,bl)){
-	swap(al,ar);
-	swap(avl,avr);
-      }else{
-	return ti;
-      }
-    }
-    int cl=al,cr=br,cs=as+bs;
-    int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
-    cvi=max(cvi,avr+bvl);
-    cvl=max(cvl,ava+bvl);
-    cvr=max(cvr,avr+bva);
+           if(!con(ar,bl)){
+             if(con(ar,br)){
+               swap(bl,br);
+               swap(bvl,bvr);
+             }else if(con(al,bl)){
+               swap(al,ar);
+               swap(avl,avr);
+             }else{
+               return ti;
+             }
+           }
+           int cl=al,cr=br,cs=as+bs;
+           int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
+           cvi=max(cvi,avr+bvl);
+           cvl=max(cvl,ava+bvl);
+           cvr=max(cvr,avr+bva);
     
-    return T(cl,cr,cs,cva,cvi,cvl,cvr);
-  };
+           return T(cl,cr,cs,cva,cvi,cvl,cvr);
+         };
   
   auto g=[&](T a,P p){
-    if(p==ei) return a;
-    int al,ar,as,ava,avi,avl,avr;
-    tie(al,ar,as,ava,avi,avl,avr)=a;
-    int v=p.first,b=p.second;
-    if(~v) al=ar=v,as=1;
-    if(b>=0) return T(al,ar,as,b*as,b*as,b*as,b*as);
-    return T(al,ar,as,b*as,b,b,b);
-  };
+           if(p==ei) return a;
+           int al,ar,as,ava,avi,avl,avr;
+           tie(al,ar,as,ava,avi,avl,avr)=a;
+           int v=p.first,b=p.second;
+           if(~v) al=ar=v,as=1;
+           if(b>=0) return T(al,ar,as,b*as,b*as,b*as,b*as);
+           return T(al,ar,as,b*as,b,b,b);
+         };
   auto h=[&](P a,P b){get<0>(a);return b;};
 
 
@@ -523,8 +523,8 @@ signed AOJ_2450(){
     a--;b--;
     if(t==1){
       hld.for_each(a,b,[&](int l,int r){
-			 seg.update(l,r+1,P(-1,c));
-		       });
+                         seg.update(l,r+1,P(-1,c));
+                       });
     }
     if(t==2){
       auto ask=[&](int l,int r){return seg.query(l,r+1);};      

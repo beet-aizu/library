@@ -114,9 +114,9 @@ signed main(){
   }
   dc.build();
   function<void(int)> f=[&](int x){
-    if(x>=q||t[x]!=3) return;
-    cout<<(dc.puf.same(u[x],v[x])?"YES":"NO")<<endl;
-  };
+                          if(x>=q||t[x]!=3) return;
+                          cout<<(dc.puf.same(u[x],v[x])?"YES":"NO")<<endl;
+                        };
   dc.exec(f);
   return 0;
 }

@@ -41,9 +41,9 @@ struct LCA{
     for(int b=0;b<sz;b++){
       int e=0,w=1,&x=T[b];
       for(int i=0;i<lg;i++){
-	if((b>>i)&1) e++;
-	else e--;
-	if(e<w) e=w,x=i;
+        if((b>>i)&1) e++;
+        else e--;
+        if(e<w) e=w,x=i;
       }
     }
 

@@ -69,8 +69,8 @@ signed ECR2_E(){
     [&](int v){
       cnt[c[v]]++;
       if(mx<cnt[c[v]]){
-	mx=cnt[c[v]];
-	res=0;
+        mx=cnt[c[v]];
+        res=0;
       }
       if(mx==cnt[c[v]]) res+=c[v];      
     };  
@@ -132,11 +132,11 @@ signed CFR316_D(){
     auto &G=sc.G;
     function<void(int,int,int)> dfs=
       [&](int v,int p,int d){
-	dep[v]=d;
-	for(int u:G[v]){
-	  if(u==p) continue;
-	  dfs(u,v,d+1);
-	}	
+        dep[v]=d;
+        for(int u:G[v]){
+          if(u==p) continue;
+          dfs(u,v,d+1);
+        }	
       };
     dfs(0,-1,1);
   }
@@ -191,12 +191,12 @@ signed CFR130_E(){
     auto &G=sc.G;
     function<void(int,int,int)> dfs=
       [&](int v,int p,int d){
-	ps[0][v]=p;
-	dep[v]=d;
-	for(int u:G[v]){
-	  if(u==p) continue;
-	  dfs(u,v,d+1);
-	}	
+        ps[0][v]=p;
+        dep[v]=d;
+        for(int u:G[v]){
+          if(u==p) continue;
+          dfs(u,v,d+1);
+        }	
       };
     for(int r:rs) dfs(r,-1,1);
   }
@@ -212,11 +212,11 @@ signed CFR130_E(){
       ps[k+1][i]=ps[k][i]<0?-1:ps[k][ps[k][i]];
   
   auto calc=
-    [&](int v,int k){
-      for(int i=0;~v&&i<20;i++)
-	if((k>>i)&1) v=ps[i][v];
-      return v;
-    };
+                          [&](int v,int k){
+                            for(int i=0;~v&&i<20;i++)
+                              if((k>>i)&1) v=ps[i][v];
+                            return v;
+                          };
   
   for(int i=0;i<q;i++){
     scanf("%d %d",&vs[i],&hs[i]);

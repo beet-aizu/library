@@ -86,12 +86,12 @@ struct RBST{
     if(a->laz!=ei){ 
       a->val=g(a->val,a->laz);
       if(a->l!=nullptr){
-	a->l->laz=h(a->l->laz,a->laz);
-	a->l->dat=g(a->l->dat,a->laz);
+        a->l->laz=h(a->l->laz,a->laz);
+        a->l->dat=g(a->l->dat,a->laz);
       }
       if(a->r!=nullptr){
-	a->r->laz=h(a->r->laz,a->laz);
-	a->r->dat=g(a->r->dat,a->laz);
+        a->r->laz=h(a->r->laz,a->laz);
+        a->r->dat=g(a->r->dat,a->laz);
       }
       a->laz=ei;
     }
@@ -277,14 +277,14 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
   using T = tuple<int, int, int>;
   using P = pair<int, int>;
   auto f=[](T a,T b){
-    return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
-  };
+           return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
+         };
   auto g=[](T a,P b){
-    return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
-  };
+           return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
+         };
   auto h=[](P a,P b){
-    return P(a.first+b.first,a.second+b.second);
-  };
+           return P(a.first+b.first,a.second+b.second);
+         };
   const int INF = 1e9;
   RBST<T, P> rbst(f,g,h,T(INF,INF,0),P(0,0));
   

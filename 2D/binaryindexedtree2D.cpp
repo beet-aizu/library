@@ -14,14 +14,14 @@ struct BIT2D{
     T s=d;
     for(int x=i;x>0;x-=(x&-x))
       for(int y=j;y>0;y-=(y&-y))
-	s+=bit[x][y];
+        s+=bit[x][y];
     return s;
   }
   void add(int i,int j,T a){
     if(i==0||j==0) return;
     for(int x=i;x<=n;x+=(x&-x))
       for(int y=j;y<=m;y+=(y&-y))
-	bit[x][y]+=a;
+        bit[x][y]+=a;
   }
   // (x1,x2] * (y1,y2];
   T sum(int x1,int y1,int x2,int y2){

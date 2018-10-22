@@ -32,34 +32,34 @@ struct PrimalDual{
       dist[s]=0;
       que.push(P(0,s));
       while(!que.empty()){
-	P p=que.top();que.pop();
-	int v=p.second;
-	if(dist[v]<p.first) continue;
-	for(int i=0;i<(int)G[v].size();i++){
-	  edge &e=G[v][i];
-	  if(e.cap>0&&dist[e.to]>dist[v]+e.cost+h[v]-h[e.to]){
-	    dist[e.to]=dist[v]+e.cost+h[v]-h[e.to];
-	    prevv[e.to]=v;
-	    preve[e.to]=i;
-	    que.push(P(dist[e.to],e.to));
-	  }
-	}
+        P p=que.top();que.pop();
+        int v=p.second;
+        if(dist[v]<p.first) continue;
+        for(int i=0;i<(int)G[v].size();i++){
+          edge &e=G[v][i];
+          if(e.cap>0&&dist[e.to]>dist[v]+e.cost+h[v]-h[e.to]){
+            dist[e.to]=dist[v]+e.cost+h[v]-h[e.to];
+            prevv[e.to]=v;
+            preve[e.to]=i;
+            que.push(P(dist[e.to],e.to));
+          }
+        }
       }
       if(dist[t]==INF){
-	return -1;
+        return -1;
       }
       for(int v=0;v<n;v++) h[v]+=dist[v];
 
       int d=f;
       for(int v=t;v!=s;v=prevv[v]){
-	d=min(d,G[prevv[v]][preve[v]].cap);
+        d=min(d,G[prevv[v]][preve[v]].cap);
       }
       f-=d;
       res+=d*h[t];
       for(int v=t;v!=s;v=prevv[v]){
-	edge &e=G[prevv[v]][preve[v]];
-	e.cap-=d;
-	G[v][e.rev].cap+=d;
+        edge &e=G[prevv[v]][preve[v]];
+        e.cap-=d;
+        G[v][e.rev].cap+=d;
       }
     }
     return res;

@@ -122,7 +122,7 @@ struct Arborescence{
   vector<T> cost;
   
   Arborescence(int n,T INF):n(n),INF(INF,-1),uf(n),come(n,NULL),
-			    used(n,0),from(n,-1),cost(n,-1){};
+                            used(n,0),from(n,-1),cost(n,-1){};
 
   void add_edge(int from,int to,T cost){
     edges.emplace_back(from,to,cost);
@@ -155,28 +155,28 @@ struct Arborescence{
       int v=i;
       vector<int> l;
       while(used[v]!=2){
-	used[v]=1;
-	l.emplace_back(v);
-	if(!come[v]) return T(-1);
-	from[v]=uf.find(edges[come[v]->val.second].from);
-	cost[v]=heap.top(come[v]).first;
-	come[v]=heap.pop(come[v]);
-	if(from[v]==v) continue;
+        used[v]=1;
+        l.emplace_back(v);
+        if(!come[v]) return T(-1);
+        from[v]=uf.find(edges[come[v]->val.second].from);
+        cost[v]=heap.top(come[v]).first;
+        come[v]=heap.pop(come[v]);
+        if(from[v]==v) continue;
 	
-	res+=cost[v];
-	if(used[from[v]]==1){
-	  int p=v;
-	  do{
-	    if(come[p]!=nullptr) heap.add(come[p],-cost[p]);
-	    if(p!=v){
-	      uf.unite(v,p);
-	      come[v]=heap.meld(come[v],come[p]);
-	    }
-	    p=uf.find(from[p]);
-	  }while(p!=v);
-	}else{
-	  v=from[v];
-	}
+        res+=cost[v];
+        if(used[from[v]]==1){
+          int p=v;
+          do{
+            if(come[p]!=nullptr) heap.add(come[p],-cost[p]);
+            if(p!=v){
+              uf.unite(v,p);
+              come[v]=heap.meld(come[v],come[p]);
+            }
+            p=uf.find(from[p]);
+          }while(p!=v);
+        }else{
+          v=from[v];
+        }
       }
       for(int u:l) used[u]=2;
     }
@@ -244,16 +244,16 @@ signed AOJ_2309(){
     for(Int j=0;j<m;j++){
       if(i==j) continue;
       if(c[j][j]==0){
-	c[i][j]=c[i][i];
-	continue;
+        c[i][j]=c[i][i];
+        continue;
       }
       double r=0;
       for(Int k=0;k<n;k++)
-	r+=v[i][k]*v[j][k];
+        r+=v[i][k]*v[j][k];
       r/=c[j][j];
       c[i][j]=0;
       for(Int k=0;k<n;k++)
-	c[i][j]+=(v[i][k]-r*v[j][k])*(v[i][k]-r*v[j][k]);      
+        c[i][j]+=(v[i][k]-r*v[j][k])*(v[i][k]-r*v[j][k]);      
     }    
   }
   const double INF = 1e12;

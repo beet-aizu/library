@@ -58,9 +58,9 @@ signed main(){
     Int r=R;
     vector<Int> v(n);
     for(Int i=0;i<n;i++){
-        Int k;
-        cin>>k;
-        v[i]=k;
+      Int k;
+      cin>>k;
+      v[i]=k;
     }
     Int g=v[0];
     for(Int i=0;i<n;i++) g=__gcd(g,v[i]);
@@ -70,18 +70,18 @@ signed main(){
     }
     vector<Int> ans(n,0);
     auto print=[&](){
-      Int tmp=0;
-      for(Int i=0;i<n;i++) tmp+=v[i]*ans[i];
-      assert(tmp==r);
-      for(Int i=0;i<n;i++) cout<<" "<<ans[i];
-      cout<<endl;
-    };
+                 Int tmp=0;
+                 for(Int i=0;i<n;i++) tmp+=v[i]*ans[i];
+                 assert(tmp==r);
+                 for(Int i=0;i<n;i++) cout<<" "<<ans[i];
+                 cout<<endl;
+               };
     bool f=0;
     for(Int i=0;i<n;i++){
       if(abs128(r)%v[i]==0){
-    ans[i]=r/v[i];
-    f=1;
-    break;
+        ans[i]=r/v[i];
+        f=1;
+        break;
       }
     }
     if(f){

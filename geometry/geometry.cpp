@@ -199,7 +199,7 @@ int ccw(Point p0,Point p1,Point p2){
 
 bool intersectSS(Point p1,Point p2,Point p3,Point p4){
   return (ccw(p1,p2,p3)*ccw(p1,p2,p4) <= 0 &&
-	  ccw(p3,p4,p1)*ccw(p3,p4,p2) <= 0 );
+          ccw(p3,p4,p1)*ccw(p3,p4,p2) <= 0 );
 }
 
 bool intersectSS(Segment s1,Segment s2){
@@ -251,7 +251,7 @@ double getDistanceSP(Segment s,Point p){
 double getDistanceSS(Segment s1,Segment s2){
   if(intersectSS(s1,s2)) return 0.0;
   return min(min(getDistanceSP(s1,s2.p1),getDistanceSP(s1,s2.p2)),
-	     min(getDistanceSP(s2,s1.p1),getDistanceSP(s2,s1.p2)));
+             min(getDistanceSP(s2,s1.p1),getDistanceSP(s2,s1.p2)));
 }
 
 Point getCrossPointSS(Segment s1,Segment s2){
@@ -527,7 +527,7 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
     ps.emplace_back(ss[i].p2);
     for(int j=i+1;j<n;j++)
       if(intersectSS(ss[i],ss[j]))
-	ps.emplace_back(getCrossPointSS(ss[i],ss[j]));
+        ps.emplace_back(getCrossPointSS(ss[i],ss[j]));
   }
   sort(ps.begin(),ps.end());
   ps.erase(unique(ps.begin(),ps.end()),ps.end());
@@ -537,7 +537,7 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
     vector<pair<double,int> > ls;
     for(int j=0;j<(int)ps.size();j++)
       if(getDistanceSP(ss[i],ps[j])<EPS)
-	ls.emplace_back(make_pair(norm(ss[i].p1-ps[j]),j));
+        ls.emplace_back(make_pair(norm(ss[i].p1-ps[j]),j));
       
     sort(ls.begin(),ls.end());
     for(int j=0;j+1<(int)ls.size();j++){
@@ -599,14 +599,14 @@ double area(Polygon ps,Circle c){
       if(max(abs(va),abs(vb))<c.r+EPS) return f;
       Vector d(a.x*b.x+a.y*b.y,a.x*b.y-a.y*b.x);
       if(getDistanceSP(Segment(a,b),c.c)>c.r-EPS)
-	return c.r*c.r*atan2(d.y,d.x);
+        return c.r*c.r*atan2(d.y,d.x);
       auto u=getCrossPointCS(c,Segment(a,b));
       if(u.empty()) return res;
       if(u.size()>1u&&dot(u[1]-u[0],a-u[0])>0) swap(u[0],u[1]);
       u.emplace(u.begin(),a);
       u.emplace_back(b);
       for(int i=1;i<(int)u.size();i++)
-	res+=dfs(c,u[i-1],u[i]);
+        res+=dfs(c,u[i-1],u[i]);
       return res;
     };
   double res=0;
@@ -1023,8 +1023,8 @@ signed AOJ_2572(){
   return 0;
 }
 /*
-verified on 2017/12/31
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572
+  verified on 2017/12/31
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572
 */
 
 //Segment Arrangement
@@ -1062,8 +1062,8 @@ signed AOJ_2454(){
     for(auto &e:G[v]){
       int u=e.first;
       if(!used[u]){
-	used[u]=1;
-	q.emplace(u);
+        used[u]=1;
+        q.emplace(u);
       }
     }
   }
@@ -1088,8 +1088,8 @@ signed AOJ_2454(){
   return 0;
 }
 /*
-verified on 2018/01/27
-http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2454
+  verified on 2018/01/27
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2454
 */
 
 

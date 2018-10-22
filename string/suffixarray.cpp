@@ -19,26 +19,26 @@ struct SuffixArray{
     sa.assign(n+1,0);
     iota(sa.begin(),sa.end(),0);
     sort(sa.begin(),sa.end(),
-	 [&](int a,int b){
-	   if(S[a]==S[b]) return a>b;
-	   return S[a]<S[b];
-	 });
+         [&](int a,int b){
+           if(S[a]==S[b]) return a>b;
+           return S[a]<S[b];
+         });
     vector<int> c(n+1,0),r(n+1),cnt(n+1),s(n+1);
     for(int i=0;i<=n;i++) r[i]=S[i];
     for(int len=1;len<=n;len*=2){
       for(int i=0;i<=n;i++){
-	 c[sa[i]]=
-	   i>0 &&
-	   r[sa[i-1]]==r[sa[i]] &&
-	   sa[i-1]+len<=n &&
-	   r[sa[i-1]+len/2]==r[sa[i]+len/2] ?
-	   c[sa[i-1]]:i;
+        c[sa[i]]=
+          i>0 &&
+          r[sa[i-1]]==r[sa[i]] &&
+          sa[i-1]+len<=n &&
+          r[sa[i-1]+len/2]==r[sa[i]+len/2] ?
+          c[sa[i-1]]:i;
       }
       iota(cnt.begin(),cnt.end(),0);
       copy(sa.begin(),sa.end(),r.begin());
       for(int i=0;i<=n;i++){
-	int s1=r[i]-len;
-	if(s1>=0) sa[cnt[c[s1]]++]=s1;
+        int s1=r[i]-len;
+        if(s1>=0) sa[cnt[c[s1]]++]=s1;
       }
       c.swap(r);
     }
@@ -86,7 +86,7 @@ struct SuffixArray{
       int j=sa[rev[i]-1];
       if(h>0) h--;
       for(;j+h<n&&i+h<n;h++){
-	if(S[j+h]!=S[i+h]) break;
+        if(S[j+h]!=S[i+h]) break;
       }
       lcp[rev[i]-1]=h;
     }
@@ -116,8 +116,8 @@ struct SuffixArray{
       while((1<<h)<n) h++;
       for(int j=0;j<n;j++) dat[0][j]=v[j];
       for(int i=1,p=1;i<h;i++,p<<=1)
-	for(int j=0;j<n;j++)
-	  dat[i][j]=min(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
+        for(int j=0;j<n;j++)
+          dat[i][j]=min(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
     };
     
     int query(int a,int b){
@@ -144,19 +144,19 @@ struct SuffixArray{
       int mid=(low+high)/2;
       int k;
       if(l>=r){
-	int m=rmq.query(low,mid);
-	if(m<l){
-	  high=mid,r=m;
-	  continue;
-	}
-	k=l+getlcp(sa[mid],T,l);
+        int m=rmq.query(low,mid);
+        if(m<l){
+          high=mid,r=m;
+          continue;
+        }
+        k=l+getlcp(sa[mid],T,l);
       }else{
-	int m=rmq.query(mid,high);
-	if(m<r){
-	  low=mid,l=m;
-	  continue;
-	}
-	k=r+getlcp(sa[mid],T,r);
+        int m=rmq.query(mid,high);
+        if(m<r){
+          low=mid,l=m;
+          continue;
+        }
+        k=r+getlcp(sa[mid],T,r);
       }
       if(k==p) high=mid,r=k;
       else if(S[sa[mid]+k]<T[k]) low=mid,l=k;
@@ -237,10 +237,10 @@ signed ARC060_F(){
 
   SuffixArray sa(s);
   auto check=[&](Int l,Int r)->Int{    
-    for(Int x:v[r-l])
-      if(sa.rmq.query(sa.rev[l],sa.rev[l+x])>=r-l-x) return 0;
-    return 1;
-  };
+               for(Int x:v[r-l])
+                 if(sa.rmq.query(sa.rev[l],sa.rev[l+x])>=r-l-x) return 0;
+               return 1;
+             };
   
   if(check(0,n)){
     cout<<1<<endl<<1<<endl;

@@ -20,19 +20,19 @@ struct BiMatch{
     for(int i=0;i<L;i++){
       level[i]=-1;
       if(match[i]<0){
-	level[i]=0;
-	q.emplace(i);
+        level[i]=0;
+        q.emplace(i);
       }
     }
     while(!q.empty()){
       int v=q.front();q.pop();
       for(int u:G[v]){
-	int w=match[u];
-	if(w<0) return true;
-	if(level[w]<0){
-	  level[w]=level[v]+1;
-	  q.emplace(w);
-	}
+        int w=match[u];
+        if(w<0) return true;
+        if(level[w]<0){
+          level[w]=level[v]+1;
+          q.emplace(w);
+        }
       }
     }
     return false;
@@ -42,9 +42,9 @@ struct BiMatch{
     for(int u:G[v]){
       int w=match[u];
       if(w<0||(level[w]>level[v]&&dfs(w))){
-	match[v]=u;
-	match[u]=v;
-	return true;
+        match[v]=u;
+        match[u]=v;
+        return true;
       }
     }
     return false;
@@ -54,8 +54,8 @@ struct BiMatch{
     int res=0;
     while(bfs())
       for(int i=0;i<L;i++)
-	if(match[i]<0&&dfs(i))
-	  res++;
+        if(match[i]<0&&dfs(i))
+          res++;
     return res;
   }
   

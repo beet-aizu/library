@@ -37,11 +37,11 @@ struct Dinic{
     while(!que.empty()){
       int v=que.front();que.pop();
       for(int i=0;i<(int)G[v].size();i++){
-	edge &e = G[v][i];
-	if(e.cap>0&&level[e.to]<0){
-	  level[e.to]=level[v]+1;
-	  que.push(e.to);
-	}
+        edge &e = G[v][i];
+        if(e.cap>0&&level[e.to]<0){
+          level[e.to]=level[v]+1;
+          que.push(e.to);
+        }
       }
     }
   }
@@ -51,12 +51,12 @@ struct Dinic{
     for(int &i=iter[v];i<(int)G[v].size();i++){
       edge &e=G[v][i];
       if(e.cap>0&&level[v]<level[e.to]){
-	int d = dfs(e.to,t,min(f,e.cap));
-	if(d>0){
-	  e.cap-=d;
-	  G[e.to][e.rev].cap+=d;
-	  return d;
-	}
+        int d = dfs(e.to,t,min(f,e.cap));
+        if(d>0){
+          e.cap-=d;
+          G[e.to][e.rev].cap+=d;
+          return d;
+        }
       }
     }
     return 0;
@@ -70,8 +70,8 @@ struct Dinic{
       fill(iter.begin(),iter.end(),0);
       int f;
       while((f=dfs(s,t,lim))>0){
-	fl+=f;
-	lim-=f;
+        fl+=f;
+        lim-=f;
       }
     }
   }
@@ -85,11 +85,11 @@ struct Dinic{
     for(int i=0;i<(int)G[from].size();i++) {
       edge& e=G[from][i];
       if(e.to==to) {
-	if(e.cap==0&&flow(from,to,1)==0) {
-	  flow(from,s,1);
-	  flow(t,to,1);
-	  return 1;
-	}
+        if(e.cap==0&&flow(from,to,1)==0) {
+          flow(from,s,1);
+          flow(t,to,1);
+          return 1;
+        }
       }
     }
     return 0;

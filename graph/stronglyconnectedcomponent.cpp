@@ -37,15 +37,15 @@ struct SCC{
     int k=0;
     for(int i=vs.size()-1;i>=0;i--){
       if(!used[vs[i]]){
-	T.emplace_back();
-	C.emplace_back();
-	rdfs(vs[i],k++);
+        T.emplace_back();
+        C.emplace_back();
+        rdfs(vs[i],k++);
       }
     }
     for(int v=0;v<n;v++)
       for(int u:G[v])
-	if(blg[v]!=blg[u])
-	  T[blg[v]].push_back(blg[u]);
+        if(blg[v]!=blg[u])
+          T[blg[v]].push_back(blg[u]);
     
     for(int i=0;i<k;i++){
       sort(T[i].begin(),T[i].end());
@@ -73,26 +73,26 @@ signed main(){
   
   SCC scc(m*2);
   auto add_edge=[&](vector<int> &a,vector<int> &b){
-    int x=min(a.size(),b.size());
-    int i;
-    for(i=0;i<x;i++){
-      if(a[i]==b[i]) continue;
-      if(a[i]<b[i]){
-	scc.add_edge(m+b[i],m+a[i]);
-	scc.add_edge(a[i],b[i]);
-      }else{
-	scc.add_edge(a[i],m+a[i]);
-	scc.add_edge(m+b[i],b[i]);
-      }
-      break;
-    }
-    if(i==x){
-      if(a.size()>b.size()){
-	puts("No");
-	exit(0);
-      }
-    }
-  };
+                  int x=min(a.size(),b.size());
+                  int i;
+                  for(i=0;i<x;i++){
+                    if(a[i]==b[i]) continue;
+                    if(a[i]<b[i]){
+                      scc.add_edge(m+b[i],m+a[i]);
+                      scc.add_edge(a[i],b[i]);
+                    }else{
+                      scc.add_edge(a[i],m+a[i]);
+                      scc.add_edge(m+b[i],b[i]);
+                    }
+                    break;
+                  }
+                  if(i==x){
+                    if(a.size()>b.size()){
+                      puts("No");
+                      exit(0);
+                    }
+                  }
+                };
   
   for(int i=0;i<n-1;i++)
     add_edge(G[i],G[i+1]);

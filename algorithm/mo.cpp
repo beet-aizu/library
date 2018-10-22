@@ -30,10 +30,10 @@ struct Mo{
     ord.resize(ls.size());
     iota(ord.begin(),ord.end(),0);
     sort(ord.begin(),ord.end(),
-	 [&](int a,int b){
-	   if(ls[a]/width!=ls[b]/width) return ls[a]<ls[b];
-	   return bool((rs[a]<rs[b])^((ls[a]/width)&1));
-	 });
+         [&](int a,int b){
+           if(ls[a]/width!=ls[b]/width) return ls[a]<ls[b];
+           return bool((rs[a]<rs[b])^((ls[a]/width)&1));
+         });
   }
 
   int process(){
@@ -135,19 +135,19 @@ signed DWANGO2017FINAL_B(){
 
   init(MOD);
   auto expand=[&](int idx){
-    for(auto p:v[idx]){
-      (ans*=inv[cnt[p.first]+1])%=MOD;
-      cnt[p.first]+=p.second;
-      (ans*=cnt[p.first]+1)%=MOD;
-    }
-  };
+                for(auto p:v[idx]){
+                  (ans*=inv[cnt[p.first]+1])%=MOD;
+                  cnt[p.first]+=p.second;
+                  (ans*=cnt[p.first]+1)%=MOD;
+                }
+              };
   auto shrink=[&](int idx){
-    for(auto p:v[idx]){
-      (ans*=inv[cnt[p.first]+1])%=MOD;
-      cnt[p.first]-=p.second;
-      (ans*=cnt[p.first]+1)%=MOD;
-    }
-  };
+                for(auto p:v[idx]){
+                  (ans*=inv[cnt[p.first]+1])%=MOD;
+                  cnt[p.first]-=p.second;
+                  (ans*=cnt[p.first]+1)%=MOD;
+                }
+              };
   Mo mo(n,400,expand,shrink);
   mo.input(q,-1,0);
   mo.build();

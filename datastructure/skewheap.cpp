@@ -1,9 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-#include<bits/stdc++.h>
-using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 template<typename T, typename E>
 struct SkewHeap{
@@ -99,13 +96,13 @@ struct ALDS1_9_C{
     while(cin>>s,s!="end"){
       int x;
       if(s=="insert"){
-	cin>>x;
-	base=heap.meld(base,heap.push(x));
+        cin>>x;
+        base=heap.meld(base,heap.push(x));
       }
       if(s=="extract"){
-	x=heap.top(base);
-	base=heap.pop(base);
-	cout<<x<<endl;
+        x=heap.top(base);
+        base=heap.pop(base);
+        cout<<x<<endl;
       }
     }
     return 0;
@@ -174,17 +171,17 @@ struct APC001_D{
     Int ans=0,cnt=0;
     for(Int i=0;i<n;i++){
       if(uf.find(i)==i){
-	ans+=heap.top(v[i]);
-	v[i]=heap.pop(v[i]);
-	base=heap.meld(base,v[i]);
-	cnt++;
+        ans+=heap.top(v[i]);
+        v[i]=heap.pop(v[i]);
+        base=heap.meld(base,v[i]);
+        cnt++;
       }
     }
     
     while(m*2+cnt<(n-1)*2){
       if(base==NULL){
-	cout<<"Impossible"<<endl;
-	return 0;
+        cout<<"Impossible"<<endl;
+        return 0;
       }
       ans+=heap.top(base);
       base=heap.pop(base);

@@ -74,9 +74,9 @@ struct WaveletMatrix{
       mat[dep]=FullyIndexableDictionary(len+1);
       int p=0,q=0;
       for(int i=0;i<len;i++){
-	bool k=(data[i]>>(MAXLOG-(dep+1)))&1;
-	if(k) r[q++]=data[i],mat[dep].set(i);
-	else  l[p++]=data[i];
+        bool k=(data[i]>>(MAXLOG-(dep+1)))&1;
+        if(k) r[q++]=data[i],mat[dep].set(i);
+        else  l[p++]=data[i];
       }
       zs[dep]=p;
       mat[dep].build();
@@ -132,13 +132,13 @@ struct WaveletMatrix{
       int p=mat[dep].rank(1,l);
       int q=mat[dep].rank(1,r);
       if(q-p>k){
-	l=p+zs[dep];
-	r=q+zs[dep];
-	res|=(1<<(MAXLOG-(dep+1)));
+        l=p+zs[dep];
+        r=q+zs[dep];
+        res|=(1<<(MAXLOG-(dep+1)));
       }else{
-	k-=(q-p);
-	l-=p;
-	r-=q;
+        k-=(q-p);
+        l-=p;
+        r-=q;
       }
     }
     return res;

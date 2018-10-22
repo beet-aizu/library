@@ -12,8 +12,8 @@ T KnuthYao(int n,T INF,F cost){
     for(int i=0;i+w<n;i++){
       int j=i+w;
       for(int r=nx[i][j-1];r<=nx[i+1][j];r++){
-	T c=dp[i][r]+dp[r+1][j]+cost(i,r,j);
-	if(dp[i][j]>c) dp[i][j]=c,nx[i][j]=r;
+        T c=dp[i][r]+dp[r+1][j]+cost(i,r,j);
+        if(dp[i][j]>c) dp[i][j]=c,nx[i][j]=r;
       }
     }
   }
@@ -27,8 +27,8 @@ signed AOJ_2488(){
   for(Int i=0;i<n;i++) cin>>x[i]>>y[i];
   const Int INF = 1e18;
   auto calc=[&](int i,int r,int j){	      
-	      return r+1<n?x[r+1]-x[i]+y[r]-y[j]:INF;
-	    };
+              return r+1<n?x[r+1]-x[i]+y[r]-y[j]:INF;
+            };
   cout<<KnuthYao(n,INF,calc)<<endl;
   return 0;
 }

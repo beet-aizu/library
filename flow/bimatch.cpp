@@ -20,9 +20,9 @@ struct BiMatch{
     for(int i=0;i<(int)G[v].size();i++){
       int u=G[v][i],w=match[u];
       if(w<0||(!used[w]&&dfs(w))){
-	match[v]=u;
-	match[u]=v;
-	return true;
+        match[v]=u;
+        match[u]=v;
+        return true;
       }
     }
     return false;
@@ -33,10 +33,10 @@ struct BiMatch{
     fill(match.begin(),match.end(),-1);
     for(int v=0;v<n;v++){
       if(match[v]<0){
-	fill(used.begin(),used.end(),0);
-	if(dfs(v)){
-	  res++;
-	}
+        fill(used.begin(),used.end(),0);
+        if(dfs(v)){
+          res++;
+        }
       }
     }
     return res;

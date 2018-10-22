@@ -28,8 +28,8 @@ struct BIT{
     while(r<n) r<<=1;
     for(int k=r;k>0;k>>=1){
       if(x+k<=n&&bit[x+k]<w){
-	w-=bit[x+k];
-	x+=k;
+        w-=bit[x+k];
+        x+=k;
       }
     }
     return x+1;

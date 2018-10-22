@@ -3,9 +3,9 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 vector<int> parallelbinarysearch(int n,int q,
-				 function<void(void)> init,
-				 function<void(int)> apply,
-				 function<bool(int)> check){
+                                 function<void(void)> init,
+                                 function<void(int)> apply,
+                                 function<bool(int)> check){
   vector<vector<int> > C(q);
   vector<int> L(n,-1),R(n,q);
   bool flg=1;
@@ -18,8 +18,8 @@ vector<int> parallelbinarysearch(int n,int q,
       flg|=!C[i].empty();
       apply(i);
       for(int j:C[i]){
-	if(check(j)) R[j]=i;
-	else L[j]=i;
+        if(check(j)) R[j]=i;
+        else L[j]=i;
       }
       C[i].clear();
     }
@@ -41,7 +41,7 @@ struct SegmentTree{
   vector<E> laz;
   SegmentTree(){};
   SegmentTree(Int n_,G g,H h,T d1,E d0,
-	      vector<T> v=vector<T>()):
+              vector<T> v=vector<T>()):
     g(g),h(h),d1(d1),d0(d0){
     init(n_);
     if(n_==(Int)v.size()) build(n_,v);
@@ -102,23 +102,23 @@ signed SPOJ_METEORS(){
   auto init=[&]{seg=SegmentTree<Int, Int>(m,g,g,0,0);};
   
   auto apply=[&](Int i){
-    if(l[i]<=r[i]) seg.update(l[i],r[i]+1,a[i]);
-    else{
-      seg.update(0,r[i]+1,a[i]);
-      seg.update(l[i],m,a[i]);
-    }
-  };
+               if(l[i]<=r[i]) seg.update(l[i],r[i]+1,a[i]);
+               else{
+                 seg.update(0,r[i]+1,a[i]);
+                 seg.update(l[i],m,a[i]);
+               }
+             };
   
   auto check=[&](Int i){
-    Int s=0;
-    for(Int j:x[i]){
-      s+=seg.query(j);
-      if(s>=p[i]) break;
-    }
-    return s>=p[i];
-  };
+               Int s=0;
+               for(Int j:x[i]){
+                 s+=seg.query(j);
+                 if(s>=p[i]) break;
+               }
+               return s>=p[i];
+             };
   
-  vector<Int> R=parallelbinarysearch(n,q,init,apply,check);
+  vector<int> R=parallelbinarysearch(n,q,init,apply,check);
 
   init();
   for(Int i=0;i<q;i++) apply(i);
@@ -187,4 +187,4 @@ signed main(){
   verified on 2017/12/31
   http://www.spoj.com/problems/METEORS/
   https://beta.atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_h
- */
+*/

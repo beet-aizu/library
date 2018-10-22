@@ -27,13 +27,13 @@ struct DisjointSparseTable{
     for(int i=1;i<h;i++){
       int s=1<<i;
       for(int j=0;j<n;j+=s<<1){
-	int t=min(j+s,n);
-	dat[i][t-1]=v[t-1];
-	for(int k=t-2;k>=j;k--) dat[i][k]=f(v[k],dat[i][k+1]);
-	if(n<=t) break;
-	dat[i][t]=v[t];
-	int r=min(t+s,n);
-	for(int k=t+1;k<r;k++) dat[i][k]=f(dat[i][k-1],v[k]);
+        int t=min(j+s,n);
+        dat[i][t-1]=v[t-1];
+        for(int k=t-2;k>=j;k--) dat[i][k]=f(v[k],dat[i][k+1]);
+        if(n<=t) break;
+        dat[i][t]=v[t];
+        int r=min(t+s,n);
+        for(int k=t+1;k<r;k++) dat[i][k]=f(dat[i][k-1],v[k]);
       }
     }
   }
@@ -65,9 +65,9 @@ signed ARC023_D(){
     while(lst!=pre){
       int r=n,pl=l;
       while(l+1<r){
-	int m=(l+r)>>1;
-	if(st.query(i,m)!=pre) r=m;
-	else l=m;
+        int m=(l+r)>>1;
+        if(st.query(i,m)!=pre) r=m;
+        else l=m;
       }
       ans[pre]+=l-pl;
       pre=st.query(i,r);
@@ -105,11 +105,11 @@ signed CODECHEF_SEGPROD(){
     int x=0,l=0,r=0;
     for(int i=0;i<q;i++){
       if(i%64==0){
-	l=(b[i/64]+x)%n;
-	r=(b[i/64+1]+x)%n;
+        l=(b[i/64]+x)%n;
+        r=(b[i/64+1]+x)%n;
       }else{
-	l=(l+x)%n;
-	r=(r+x)%n;
+        l=(l+x)%n;
+        r=(r+x)%n;
       }
       if(l>r) swap(l,r);
       x=(dst.query(l,r+1)+1)%p;

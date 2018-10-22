@@ -23,8 +23,8 @@ struct Trie{
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
       if(~v[pos].nxt[k]){
-	pos=v[pos].nxt[k];
-	continue;
+        pos=v[pos].nxt[k];
+        continue;
       }
       int npos=v.size();
       v[pos].nxt[k]=npos;
@@ -74,10 +74,10 @@ struct AhoCorasick : Trie<X+1>{
     queue<int> q;
     for(int i=0;i<X;i++){
       if(~v[0].nxt[i]){
-	v[v[0].nxt[i]].nxt[X]=0;
-	q.emplace(v[0].nxt[i]);
+        v[v[0].nxt[i]].nxt[X]=0;
+        q.emplace(v[0].nxt[i]);
       }else{
-	v[0].nxt[i]=0;
+        v[0].nxt[i]=0;
       }      
     }
 
@@ -86,20 +86,20 @@ struct AhoCorasick : Trie<X+1>{
       cnt[q.front()]+=cnt[x.nxt[X]];
       q.pop();
       for(int i=0;i<X;i++){
-	if(x.nxt[i]<0) continue;
-	int fail=x.nxt[X];
-	while(v[fail].nxt[i]<0) fail=v[fail].nxt[X];
-	v[x.nxt[i]].nxt[X]=v[fail].nxt[i];
-	if(heavy){
-	  auto &idx=v[x.nxt[i]].idxs;
-	  auto &idy=v[v[fail].nxt[i]].idxs;
-	  vector<int> idz;
-	  set_union(idx.begin(),idx.end(),
-		    idy.begin(),idy.end(),
-		    back_inserter(idz));
-	  idx=idz;
-	}
-	q.emplace(x.nxt[i]);
+        if(x.nxt[i]<0) continue;
+        int fail=x.nxt[X];
+        while(v[fail].nxt[i]<0) fail=v[fail].nxt[X];
+        v[x.nxt[i]].nxt[X]=v[fail].nxt[i];
+        if(heavy){
+          auto &idx=v[x.nxt[i]].idxs;
+          auto &idy=v[v[fail].nxt[i]].idxs;
+          vector<int> idz;
+          set_union(idx.begin(),idx.end(),
+                    idy.begin(),idy.end(),
+                    back_inserter(idz));
+          idx=idz;
+        }
+        q.emplace(x.nxt[i]);
       }
     }
   }
@@ -224,28 +224,28 @@ signed AOJ_2257(){
       //cout<<v[x]<<":"<<dp[c][f][x][p][pos]<<endl;
       
       if(p==(Int)v[x].size()){
-	for(Int y:G[x]){
-	  Int npos=aho.move(pos,v[y][0]);
-	  if(aho.cnt[npos]>1) continue;
-	  Int nc=aho.cnt[npos];
-	  if(c&&nc) continue;
-	  dp[c||nc][!f][y][1][npos]+=dp[c][f][x][p][pos];
-	  dp[c||nc][!f][y][1][npos]%=MOD;
-	  if(!used[c||nc][!f][y][1][npos])
-	    q.emplace((c||nc),d+1,y,1,npos);
-	  used[c||nc][!f][y][1][npos]=1;
-	}
+        for(Int y:G[x]){
+          Int npos=aho.move(pos,v[y][0]);
+          if(aho.cnt[npos]>1) continue;
+          Int nc=aho.cnt[npos];
+          if(c&&nc) continue;
+          dp[c||nc][!f][y][1][npos]+=dp[c][f][x][p][pos];
+          dp[c||nc][!f][y][1][npos]%=MOD;
+          if(!used[c||nc][!f][y][1][npos])
+            q.emplace((c||nc),d+1,y,1,npos);
+          used[c||nc][!f][y][1][npos]=1;
+        }
       }else{
-	Int npos=aho.move(pos,v[x][p]);
-	Int np=p+1;
-	if(aho.cnt[npos]>1) goto END;
-	Int nc=aho.cnt[npos];
-	if(c&&nc) goto END;
-	dp[c||nc][!f][x][np][npos]+=dp[c][f][x][p][pos];
-	dp[c||nc][!f][x][np][npos]%=MOD;
-	if(!used[c||nc][!f][x][np][npos])
-	  q.emplace((c||nc),d+1,x,np,npos);
-	used[c||nc][!f][x][np][npos]=1;
+        Int npos=aho.move(pos,v[x][p]);
+        Int np=p+1;
+        if(aho.cnt[npos]>1) goto END;
+        Int nc=aho.cnt[npos];
+        if(c&&nc) goto END;
+        dp[c||nc][!f][x][np][npos]+=dp[c][f][x][p][pos];
+        dp[c||nc][!f][x][np][npos]%=MOD;
+        if(!used[c||nc][!f][x][np][npos])
+          q.emplace((c||nc),d+1,x,np,npos);
+        used[c||nc][!f][x][np][npos]=1;
       }
     END:
       dp[c][f][x][p][pos]=0;
@@ -254,8 +254,8 @@ signed AOJ_2257(){
     Int ans=0;
     for(Int i=0;i<(Int)v.size();i++){
       for(Int j=0;j<l;j++){
-	ans+=dp[1][m&1][i][v[i].size()][j];
-	ans%=MOD;
+        ans+=dp[1][m&1][i][v[i].size()][j];
+        ans%=MOD;
       }
     }
     cout<<ans<<endl;

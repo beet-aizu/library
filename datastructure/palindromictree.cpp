@@ -48,8 +48,8 @@ struct PalindromicTree{
     while(1){
       cur=v[cur].suf;
       if(pos-1-v[cur].len>=0&&s[pos-1-v[cur].len]==ch){
-	v[suff].suf=v[cur].nxt[ch];
-	break;
+        v[suff].suf=v[cur].nxt[ch];
+        break;
       }
     }
     v[suff].hei=v[v[suff].suf].hei+1;

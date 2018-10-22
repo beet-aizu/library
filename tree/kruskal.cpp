@@ -49,15 +49,6 @@ struct Kruskal{
   void add_edge(int u,int v,T c){
     edges.emplace_back(u,v,c);
   }
-
-  void input(int m,int offset=0){
-    int a,b;
-    T c;
-    for(int i=0;i<m;i++){
-      cin>>a>>b>>c;
-      add_edge(a+offset,b+offset,c);
-    }
-  }
   
   T build(){
     sort(edges.begin(),edges.end());
@@ -65,9 +56,9 @@ struct Kruskal{
     T res=0;
     for(auto &e:edges){
       if(!same(e.from,e.to)){
-	res+=e.cost;
-	unite(e.from,e.to);
-	e.used=1;
+        res+=e.cost;
+        unite(e.from,e.to);
+        e.used=1;
       }
     }
     return res;
@@ -76,14 +67,18 @@ struct Kruskal{
 //END CUT HERE
 int main(){
   int V,E;
-  cin>>V>>E;
-  Kruskal<int> kruskal(V);
-  kruskal.input(E);
-  cout<<kruskal.build()<<endl;
+  scanf("%d %d",&V,&E);
+  Kruskal<int> ksk(V);
+  for(int i=0;i<E;i++){
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
+    ksk.add_edge(a,b,c);
+  }
+  printf("%d\n",ksk.build());
   return 0;
 }
 
 /*
-  verified on 2018/08/28
+  verified on 2018/10/22
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
 */
