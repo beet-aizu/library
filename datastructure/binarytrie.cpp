@@ -13,6 +13,12 @@ struct BinaryTrie{
   T acc;
   Node *root;
   BinaryTrie():acc(0){root=emplace(nullptr);}
+
+  void dfs(Node *a){
+    if(!a) return;
+    dfs(a->l);dfs(a->r);
+    delete(a);
+  }
   
   inline Node* emplace(Node* p){
     return new Node(p);
@@ -137,15 +143,16 @@ struct BinaryTrie{
     }
     return a;
   }
-
+  
   size_t order_of_key(const T b){
-    const T nb=b^acc;
     Node *a=root;
     size_t res=0;
-    for(int i=X-1;i>=0;i--){
-      bool f=(nb>>i)&1;
-      if(f) res+=count(a->l);      
-      a=f?a->r:a->l;
+    for(int i=X-1;i>=0;i--){      
+      Node *l=a->l,*r=a->r;
+      if((acc>>i)&1) swap(l,r);
+      bool f=(b>>i)&1;
+      if(f) res+=count(l); 
+      a=f?r:l;
       if(!a) break;
     }
     return res;
@@ -300,11 +307,177 @@ signed CFR477_C(){
   http://codeforces.com/contest/966/problem/C
 */
 
+
+struct HLDecomposition {
+  int n,pos;
+  vector<vector<int> > G;
+  vector<int> vid, head, sub, par, dep, inv, type;
+  
+  HLDecomposition(){}
+  HLDecomposition(int n):
+    n(n),pos(0),G(n),vid(n,-1),head(n),sub(n,1),
+    par(n,-1),dep(n,0),inv(n),type(n){}
+  
+  void add_edge(int u, int v) {
+    G[u].push_back(v);
+    G[v].push_back(u);
+  }
+
+  void build(vector<int> rs={0}) {
+    int c=0;
+    for(int r:rs){
+      dfs_sz(r);
+      head[r]=r;
+      dfs_hld(r,c++);
+    }
+  }
+  
+  void dfs_sz(int v) {
+    for(int &u:G[v]){
+      if(u==par[v]) continue;
+      par[u]=v;
+      dep[u]=dep[v]+1;
+      dfs_sz(u);      
+      sub[v]+=sub[u];      
+      if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);
+    }
+  }
+
+  void dfs_hld(int v,int c) {
+    vid[v]=pos++;
+    inv[vid[v]]=v;
+    type[v]=c;
+    for(int u:G[v]){
+      if(u==par[v]) continue;
+      head[u]=(u==G[v][0]?head[v]:u);
+      dfs_hld(u,c);
+    }    
+  }
+  
+  int lca(int u,int v){
+    while(1){
+      if(vid[u]>vid[v]) swap(u,v);
+      if(head[u]==head[v]) return u;
+      v=par[head[v]];
+    }
+  }
+  
+  Int la(Int v,Int k){
+    while(1){
+      Int u=head[v];
+      if(vid[v]-k>=vid[u]) return inv[vid[v]-k];
+      k-=vid[v]-vid[u]+1;
+      v=par[u];
+    }
+  }
+
+  int distance(int u,int v){
+    return dep[u]+dep[v]-2*dep[lca(u,v)];
+  }
+};
+
+//INSERT ABOVE HERE
+signed KUPC2018_M(){
+  using ll = long long;
+  int n;
+  scanf("%d",&n);
+  HLDecomposition hld(n);
+  for(int i=1;i<n;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    a--;b--;
+    hld.add_edge(a,b);
+  }
+  hld.build();
+
+  using T = BinaryTrie<int, 31>;
+  using E = pair<int, ll>;
+
+  struct SegmentTree{
+    int n;
+    vector<T> dat;
+    SegmentTree(int n_){
+      n=1;
+      while(n<n_) n<<=1;
+      dat=vector<T>(n*2);
+      for(int i=0;i<n*2;i++) dat[i]=T();
+    }
+    void reset(){
+      for(int i=0;i<n*2;i++) dat[i].dfs(dat[i].root);
+    }
+    void update(int a,int b,E x){
+      for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
+        if(l&1) dat[l++].add(x.first,x.second);
+        if(r&1) dat[--r].add(x.first,x.second);
+      }
+    }
+    ll query(int k,E x){
+      ll res=0;
+      k+=n;
+      while(k){
+        dat[k].update(x.first);
+        res+=dat[k].order_of_key(x.second+1);
+        dat[k].update(x.first);
+        k>>=1;
+      }
+      return res;
+    }
+  };
+  
+  int q;
+  scanf("%d",&q);
+
+  vector<int> type(q),vs(q),xs(q),ks(q),ys(q),zs(q);
+  vector<ll> ans(q);
+  for(int i=0;i<q;i++){
+    scanf("%d",&type[i]);
+    if(type[i]==1) scanf("%d %d %d",&vs[i],&xs[i],&ks[i]);      
+    if(type[i]==2) scanf("%d %d %d",&vs[i],&ys[i],&zs[i]);
+    if(type[i]==3) scanf("%d",&vs[i]);
+    vs[i]--;
+  }
+  
+  const int UKU = 5;
+  for(int uku=0;uku<UKU;uku++){
+    SegmentTree seg(n);
+    int rt=0;
+    for(int i=0;i<q;i++){
+      if(type[i]==1&&(i%UKU)==uku){
+        int v=vs[i],x=xs[i],k=ks[i];
+        if(rt==v){	
+          seg.update(0,n,E(x,k));
+        }else if(hld.lca(rt,v)==v){
+          int u=hld.la(rt,hld.distance(rt,v)-1);
+          int l=hld.vid[u],r=hld.vid[u]+hld.sub[u];
+          seg.update(0,l,E(x,k));
+          seg.update(r,n,E(x,k));
+        }else{	
+          int l=hld.vid[v],r=hld.vid[v]+hld.sub[v];
+          seg.update(l,r,E(x,k));
+        }
+      }
+      if(type[i]==2){
+        int v=vs[i],y=ys[i],z=zs[i];
+        ans[i]+=seg.query(hld.vid[v],E(y,z));
+      }
+      if(type[i]==3){
+        rt=vs[i];
+      }
+    }
+    seg.reset();
+  }
+  
+  for(int i=0;i<q;i++)
+    if(type[i]==2) printf("%lld\n",ans[i]);
+  return 0;
+}
+
 signed main(){
   //JAG2013SUMMERWARMINGUP_F();
   //ARC033_C();
   //AOJ_DSL2B();
-  CFR470_C();
+  //CFR470_C();
   //CFR477_C();
+  KUPC2018_M();
   return 0;
 }
