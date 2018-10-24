@@ -2,213 +2,172 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template<typename T,Int X>
+template<typename T,size_t X>
 struct BinaryTrie{
   struct Node{
-    bool f;
-    T laz;
-    int par,cnt,nxt[2];
-    Node(){}
-    Node(bool f,int par):
-      f(f),laz(0),par(par),cnt(0){nxt[0]=nxt[1]=-1;}
+    size_t cnt;
+    Node *p,*l,*r;
+    Node(Node* p):cnt(0),p(p){l=r=nullptr;}
   };
-
-  vector<Node> v;
-  queue<int> q;
-  BinaryTrie(){v.reserve(int(6e6));v.emplace_back(0,-1);}
   
-  inline void emplace(bool f,int par){
-    if(q.empty()){
-      v[par].nxt[f]=v.size();
-      v.emplace_back(f,par);
-    }else{
-      v[par].nxt[f]=q.front();
-      v[q.front()]=Node(f,par);
-      q.pop();
-    }
+  T acc;
+  Node *root;
+  BinaryTrie():acc(0){root=emplace(nullptr);}
+  
+  inline Node* emplace(Node* p){
+    return new Node(p);
   }
 
-  inline int count(int x){
-    return x<0?0:v[x].cnt;
-  }
-
-  inline void eval(int x,int i){
-    if((v[x].laz>>i)&1){
-      swap(v[x].nxt[0],v[x].nxt[1]);
-      v[x].laz^=T(1)<<i;
-    }
-    for(int k=0;k<2;k++){
-      if(!~v[x].nxt[k]) continue;
-      v[v[x].nxt[k]].laz^=v[x].laz;
-      v[v[x].nxt[k]].f=k;
-    }
-    v[x].laz=0;
+  inline size_t count(Node* a){
+    return a?a->cnt:0;
   }
   
-  void add(const T b,int k=1){
-    int pos=0;
+  void add(const T b,size_t k=1){
+    const T nb=b^acc;
+    Node* a=root;
     for(int i=X-1;i>=0;i--){
-      eval(pos,i);
-      bool f=(b>>i)&1;
-      if(v[pos].nxt[f]<0) emplace(f,pos);
-      pos=v[pos].nxt[f];
+      bool f=(nb>>i)&1;
+      if(!f&&!a->l) a->l=emplace(a);
+      if( f&&!a->r) a->r=emplace(a);
+      a=f?a->r:a->l;
     }
-    v[pos].cnt+=k;
-    for(int i=0;i<X;i++){
-      pos=v[pos].par;
-      v[pos].cnt=count(v[pos].nxt[0])+count(v[pos].nxt[1]);
-    }
+    a->cnt+=k;    
+    while((a=a->p)) a->cnt=count(a->l)+count(a->r);    
   }
 
-  void update(const T b){
-    v[0].laz^=b;
-  }
+  inline void update(const T b){acc^=b;}
 
-  int find(const T b){
-    int pos=0;
+  Node* find(const T b){
+    const T nb=b^acc;
+    Node* a=root;
     for(int i=X-1;i>=0;i--){
-      eval(pos,i);
-      bool f=(b>>i)&1;
-      if(~v[pos].nxt[f]) pos=v[pos].nxt[f];
-      else return -1;
+      bool f=(nb>>i)&1;
+      a=f?a->r:a->l;
+      if(!a) return a;
     }
-    return pos;
+    return a;
   }
 
-  void erase(int pos,int k=1){
-    v[pos].cnt-=k;
-    for(int i=0;i<X;i++){
-      pos=v[pos].par;
-      v[pos].cnt=count(v[pos].nxt[0])+count(v[pos].nxt[1]);
-      for(int k=0;k<2;k++){
-	if(!count(v[pos].nxt[k])){
-	  if(~v[pos].nxt[k])
-	    q.emplace(v[pos].nxt[k]);
-	  v[pos].nxt[k]=-1;
-	}
-      }
+  Node* check(Node *a){
+    if(!a||count(a)) return a;
+    delete(a);
+    return nullptr;
+  }
+
+  void sub(Node* a,size_t k=1){
+    assert(a&&a->cnt>=k);
+    a->cnt-=k;
+    while((a=a->p)){
+      a->l=check(a->l);
+      a->r=check(a->r);
+      a->cnt=count(a->l)+count(a->r);
     }
   }
   
-  int xmax(const T b){
-    int pos=0;
+  Node* xmax(const T b){
+    assert(count(root));
+    const T nb=b^acc;
+    Node* a=root;    
     for(int i=X-1;i>=0;i--){
-      eval(pos,i);
-      bool f=(~b>>i)&1;
-      f^=!~v[pos].nxt[f];
-      pos=v[pos].nxt[f];
+      bool f=(nb>>i)&1;
+      if(!a->l||!a->r) a=a->l?a->l:a->r;
+      else a=f?a->l:a->r;
     }
-    return pos;
+    return a;
   }
 
-  int xmin(const T b){
+  Node* xmin(const T b){
     return xmax(~b&((T(1)<<X)-1));
   }
 
-  int lower_bound(const T b){
-    int pos=0;
+  Node* ge(Node *a,int i){
+    if(!a) return a;
+    Node *l=a->l,*r=a->r;
+    if((acc>>i)&1) swap(l,r);
+    if(l||r) return ge(l?l:r,i+1);
+    return a;
+  }
+  
+  Node* next(Node* a,int i){
+    if(!(a->p)) return nullptr;
+    Node *l=a->p->l,*r=a->p->r;
+    if((acc>>(i+1))&1) swap(l,r);
+    if(a==l&&r) return ge(r,i);
+    return next(a->p,i+1);
+  }
+  
+  Node* lower_bound(const T b){
+    const T nb=b^acc;
+    Node* a=root;
     for(int i=X-1;i>=0;i--){
-      eval(pos,i);
-      bool f=(b>>i)&1;
-      if(~v[pos].nxt[f]){
-	pos=v[pos].nxt[f];
-	continue;
-      }
-      if(f) return next(pos,i);
-      return fmin(v[pos].nxt[!f],i-1);
+      bool f=(nb>>i)&1;
+      if(!f&&a->l){a=a->l;continue;}
+      if( f&&a->r){a=a->r;continue;}
+      if((b>>i)&1) return next(a,i);
+      return ge(a,i);
     }
-    return pos;
+    return a;
   }
 
-  int upper_bound(const T b){
+  Node* upper_bound(const T b){
     return lower_bound(b+1);
   }
   
-  int next(int pos,int i=-1){
-    for(;i<X;i++){
-      int par=v[pos].par;
-      if(v[pos].f==0&&~v[par].nxt[1])
-	return fmin(v[par].nxt[1],i);
-      pos=par;
+  T val(Node* a){
+    T res(0);
+    for(int i=0;i<(int)X;i++){
+      assert(a->p);
+      res|=(T(a==a->p->r)<<i);
+      a=a->p;
     }
-    return -1;
+    return res^acc;
   }
 
-  int fmin(int pos,int i){
-    if(i==-1) return pos;
-    eval(pos,i);
-    return fmin(v[pos].nxt[v[pos].nxt[0]==-1],i-1);
-  }
-
-  T val(int pos){
-    T res=0;
-    for(int i=0;i<X;i++){
-      res|=T(v[pos].f)<<i;
-      pos=v[pos].par;
-    }
-    return res;
-  }
-
-  int find_by_order(int k){
-    int pos=0;
-    if(count(pos)<=k) return -1;
+  Node* find_by_order(size_t k){
+    Node *a=root;
+    if(count(a)<=k) return nullptr;
     for(int i=X-1;i>=0;i--){
-      eval(pos,i);
-      if(count(v[pos].nxt[0])<=k){
-	k-=count(v[pos].nxt[0]);
-	pos=v[pos].nxt[1];
+      bool f=(acc>>i)&1;
+      if(count(f?a->r:a->l)<=k){
+        k-=count(f?a->r:a->l);
+        a=f?a->l:a->r;
       }else{
-	pos=v[pos].nxt[0];
+        a=f?a->r:a->l;
       }
     }
-    return pos;
+    return a;
   }
 
-  int order_of_key(const T b){
-    int res=0,pos=0;
+  size_t order_of_key(const T b){
+    const T nb=b^acc;
+    Node *a=root;
+    size_t res=0;
     for(int i=X-1;i>=0;i--){
-      eval(pos,i);
-      bool f=(b>>i)&1;
-      if(f) res+=count(v[pos].nxt[0]);
-      pos=v[pos].nxt[f];
-      if(pos<0) break;
+      bool f=(nb>>i)&1;
+      if(f) res+=count(a->l);      
+      a=f?a->r:a->l;
+      if(!a) break;
     }
     return res;
   }
-
-  void show(){
-    vector<T> vs;
-    T a=val(xmin(0));
-    vs.emplace_back(a);
-    int pos=find(a);
-    while(val(xmax(0))!=a){
-      pos=next(pos);
-      a=val(pos);
-      vs.emplace_back(a);
-    }
-    cout<<"#######"<<endl;
-    for(T x:vs) cout<<x<<" ";
-    cout<<endl;
-  }
-  
 };
 //END CUT HERE
 
-//INSERT ABOVE HERE
 signed JAG2013SUMMERWARMINGUP_F(){
   int n;
-  cin>>n;
+  scanf("%d",&n);
   vector<int> a(n);
-  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++) scanf("%d",&a[i]);
   vector<int> s(n+1,0);
   for(int i=0;i<n;i++) s[i+1]=s[i]^a[i];
-  map<int, int> r;
   BinaryTrie<int, 30> bt;
+  using ull = unsigned long long;
+  map<ull, int> r;
   bt.add(0);
-  r[bt.find(0)]=0;
+  r[(ull)bt.find(0)]=0;
   int ans=-1,idx=-1,idy=-1;
   for(int i=0;i<n;i++){
-    int k=r[bt.xmax(a[i])];
+    int k=r[(ull)bt.xmax(a[i])];
     int res=s[i+1]^s[k];
     if(ans<res||(ans==res&&idx>k)){
       ans=res;
@@ -217,15 +176,56 @@ signed JAG2013SUMMERWARMINGUP_F(){
     }
     bt.update(a[i]);
     bt.add(0);
-    if(!r.count(bt.find(0))) r[bt.find(0)]=i+1;
+    if(!r.count((ull)bt.find(0))) r[(ull)bt.find(0)]=i+1;
   }
-  cout<<ans<<" "<<idx+1<<" "<<idy+1<<endl;
+  printf("%d %d %d\n",ans,idx+1,idy+1);
   return 0;
 }
 /*
-  verified on 2018/04/30
+  verified on 2018/10/24
   https://beta.atcoder.jp/contests/jag2013summer-warmingup/tasks/icpc2013summer_warmingUp_f
 */
+
+signed ARC033_C(){
+  int q;
+  scanf("%d",&q);
+  BinaryTrie<int, 30> bt;
+  while(q--){
+    int t,x;
+    scanf("%d %d",&t,&x);
+    if(t==1) bt.add(x);
+    if(t==2){
+      auto k=bt.find_by_order(x-1);
+      printf("%d\n",bt.val(k));
+      bt.sub(k);
+    }
+  }
+  return 0;
+}
+
+/*
+  verified on 2018/10/24
+  https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
+*/
+
+signed AOJ_DSL2B(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  BinaryTrie<int, 30> bt;
+  for(int i=0;i<q;i++){
+    int c,x,y;
+    scanf("%d %d %d",&c,&x,&y);
+    if(c) printf("%zd\n",bt.order_of_key(y+1)-bt.order_of_key(x));
+    else bt.add(x,y);
+  }
+  return 0;
+}
+
+/*
+  verified on 2018/10/24
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
+*/
+
 signed CFR470_C(){
   int n;
   scanf("%d",&n);
@@ -238,15 +238,15 @@ signed CFR470_C(){
   
   for(Int i=0;i<n;i++){
     if(i) printf(" ");
-    int k=bt.xmin(a[i]);
+    auto k=bt.xmin(a[i]);
     printf("%d",a[i]^bt.val(k));
-    bt.erase(k);
+    bt.sub(k);
   }
   puts("");
   return 0;
 }
 /*
-  verified on 2018/04/30
+  verified on 2018/10/24
   http://codeforces.com/contest/947/problem/C
 */
 
@@ -256,20 +256,20 @@ signed CFR477_C(){
   vector<Int> b(n);
   for(Int i=0;i<n;i++) scanf("%lld",&b[i]);
   
-  BinaryTrie<Int, 60> bt;
+  BinaryTrie<Int, 61> bt;
   for(Int i=0;i<n;i++) bt.add(b[i]);
   
   Int z=0;
   auto apply=[&](Int a){
-    z^=a;
-    bt.update(a);
-  };
+               z^=a;
+               bt.update(a);
+             };
 
   vector<Int> ans;
   Int x=bt.val(bt.xmin(0));
   
   ans.emplace_back(x);
-  bt.erase(bt.find(x));
+  bt.sub(bt.find(x));
   apply(x);
 
   for(Int i=1;i<n;i++){
@@ -277,15 +277,14 @@ signed CFR477_C(){
       printf("No\n");
       return 0; 
     }
-    
-    Int nxt=bt.upper_bound(x);
+    auto nxt=bt.upper_bound(x);
+    //if(nxt==nullptr) exit(0);
     Int y=bt.val(nxt);
     
     ans.emplace_back(y^z);
-    bt.erase(nxt);
+    bt.sub(nxt);
     apply(x^y);
-    x=y;
-    
+    x=y;    
   }
   
   printf("Yes\n");
@@ -293,60 +292,19 @@ signed CFR477_C(){
     if(i) printf(" ");
     printf("%lld",ans[i]);
   }
-  printf("\n");
-  
+  puts("");
   return 0;
 }
 /*
-  verified on 2018/04/30
+  verified on 2018/10/24
   http://codeforces.com/contest/966/problem/C
-*/
-
-
-signed ARC033_C(){
-  int q;
-  cin>>q;
-  BinaryTrie<int, 30> bt;
-  while(q--){
-    int t,x;
-    cin>>t>>x;
-    if(t==1) bt.add(x);
-    if(t==2){
-      int k=bt.find_by_order(x-1);
-      cout<<bt.val(k)<<endl;
-      bt.erase(k);
-    }
-  }
-  return 0;
-}
-
-/*
-  verified on 2018/05/01
-  https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
-*/
-
-signed AOJ_DSL2B(){
-  int n,q;
-  cin>>n>>q;
-  BinaryTrie<int, 30> bt;
-  for(int i=0;i<q;i++){
-    int c,x,y;
-    cin>>c>>x>>y;
-    if(c) cout<<bt.order_of_key(y+1)-bt.order_of_key(x)<<endl;
-    else bt.add(x,y);
-  }
-  return 0;
-}
-/*
-  verified on 2018/05/01
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
 */
 
 signed main(){
   //JAG2013SUMMERWARMINGUP_F();
-  //CFR470_C();
-  //CFR477_C();
   //ARC033_C();
-  AOJ_DSL2B();
+  //AOJ_DSL2B();
+  CFR470_C();
+  //CFR477_C();
   return 0;
 }

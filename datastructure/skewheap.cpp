@@ -49,25 +49,12 @@ struct SkewHeap{
   }
   
   Node* meld(Node *a,Node *b){
-    using V = tuple<Node*, Node*>;
-    stack<V> st;
-    Node* res;
-  ENTRYPOINT:
-    if(!a||!b) res=a?a:b;
-    else{
-      if(c(top(a),top(b))) swap(a,b);
-      eval(a);
-      st.emplace(a,b);
-      a=a->r;
-      goto ENTRYPOINT;
-    RETURNPOINT:
-      tie(a,b)=st.top();st.pop();
-      a->r=res;
-      swap(a->l,a->r);
-      res=a;
-    }
-    if(!st.empty()) goto RETURNPOINT;
-    return res;
+    if(!a||!b) return a?a:b;
+    if(c(top(a),top(b))) swap(a,b);
+    eval(a);
+    a->r=meld(a->r,b);
+    swap(a->l,a->r);
+    return a;
   }
   
   Node* pop(Node* a){
@@ -85,9 +72,9 @@ struct ALDS1_9_C{
     ios::sync_with_stdio(0);
 
     using Heap=SkewHeap<int, int>;
-    Heap::G g=[](int a,int b){return a+b;};
-    Heap::H h=[](int a,int b){return a+b;};
-    Heap::C c=[](int a,int b){return a<b;};
+    auto g=[](int a,int b){return a+b;};
+    auto h=[](int a,int b){return a+b;};
+    auto c=[](int a,int b){return a<b;};
     int INF = -1;
     Heap heap(g,h,c,INF,0);
     auto base=heap.push(0);
@@ -141,9 +128,9 @@ struct APC001_D{
     vector<Int> a(n);
     for(Int i=0;i<n;i++) cin>>a[i];
     
-    Heap::G g=[](Int a,Int b){return a+b;};
-    Heap::H h=[](Int a,Int b){return a+b;};
-    Heap::C c=[](Int a,Int b){return a>b;};
+    auto g=[](Int a,Int b){return a+b;};
+    auto h=[](Int a,Int b){return a+b;};
+    auto c=[](Int a,Int b){return a>b;};
 
     const Int INF = 1e16;
     Heap heap(g,h,c,INF,0);
