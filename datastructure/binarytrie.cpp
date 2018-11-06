@@ -285,7 +285,6 @@ signed CFR477_C(){
       return 0; 
     }
     auto nxt=bt.upper_bound(x);
-    //if(nxt==nullptr) exit(0);
     Int y=bt.val(nxt);
     
     ans.emplace_back(y^z);
@@ -437,7 +436,7 @@ signed KUPC2018_M(){
     vs[i]--;
   }
   
-  const int UKU = 5;
+  const int UKU = 8;
   for(int uku=0;uku<UKU;uku++){
     SegmentTree seg(n);
     int rt=0;
@@ -471,6 +470,10 @@ signed KUPC2018_M(){
     if(type[i]==2) printf("%lld\n",ans[i]);
   return 0;
 }
+/*
+  verified on 2018/10/24
+  https://beta.atcoder.jp/contests/kupc2018/tasks/kupc2018_m
+*/
 
 signed main(){
   //JAG2013SUMMERWARMINGUP_F();
@@ -478,6 +481,6 @@ signed main(){
   //AOJ_DSL2B();
   //CFR470_C();
   //CFR477_C();
-  KUPC2018_M();
+  //KUPC2018_M();
   return 0;
 }

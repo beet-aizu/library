@@ -40,15 +40,15 @@ struct Mint{
 
   static vector<Mint> po,op;
   
-  static void init(int n, T BASE){
-    if(n+1<=(signed)po.size()) return;
+  static void init(size_t n, T BASE){
+    if(n+1<=po.size()) return;
     po.assign(n+1,1);
     op.assign(n+1,1);
     
     Mint x(BASE);
     Mint y=Mint(1)/x;
-    for(int i=1;i<=n;i++) po[i]=po[i-1]*x;
-    for(int i=1;i<=n;i++) op[i]=op[i-1]*y;
+    for(int i=1;i<=(int)n;i++) po[i]=po[i-1]*x;
+    for(int i=1;i<=(int)n;i++) op[i]=op[i-1]*y;
   }
 };
 template<typename T,T MOD>
@@ -61,7 +61,7 @@ struct PolynomialHash{
   using V = tuple<M1, M2, M3>;
   static const T BASE = 1777771;
   
-  PolynomialHash(const int n){
+  PolynomialHash(size_t n){
     M1::init(n, BASE);
     M2::init(n, BASE);
     M3::init(n, BASE);
@@ -105,10 +105,10 @@ struct PolynomialHash{
     return V(a1.inv(),a2.inv(),a3.inv());
   }
 
-  V term(int x,T k){
-    M1 a1=M1::po[x]*M1(k);
-    M2 a2=M2::po[x]*M2(k);
-    M3 a3=M3::po[x]*M3(k);
+  V term(size_t x,T k){
+    M1 a1=M1::po[x]*M1((long long)k);
+    M2 a2=M2::po[x]*M2((long long)k);
+    M3 a3=M3::po[x]*M3((long long)k);
     return V(a1,a2,a3);
   }
   

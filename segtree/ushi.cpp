@@ -12,16 +12,16 @@ struct SegmentTree{
   T ti;
   vector<T> dat;
   SegmentTree(){};
-  SegmentTree(int n_,F f,G g,T ti):
-    f(f),g(g),ti(ti){
-    init(n_);
-  }
-  void init(int n_){
+  SegmentTree(F f,G g,T ti):f(f),g(g),ti(ti){}
+
+  void init(int n_){    
     n=1;
     while(n<n_) n<<=1;
     dat.assign(n<<1,ti);
   }
-  void build(int n_, vector<T> v){
+  void build(const vector<T> &v){
+    int n_=v.size();
+    init(n_);
     for(int i=0;i<n_;i++) dat[n+i]=v[i];
     for(int i=n-1;i;i--)
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
@@ -29,10 +29,8 @@ struct SegmentTree{
   void update(int k,E a){
     k+=n;
     dat[k]=g(dat[k],a);
-    while(k){
-      k>>=1;
+    while(k>>=1)
       dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
-    }
   }
   inline T query(int a,int b){
     T vl=ti,vr=ti;
@@ -62,7 +60,8 @@ signed AOJ_DSL2A(){
   scanf("%d %d",&n,&q);
   auto f=[](int a,int b){return min(a,b);};
   auto g=[](int a,int b){++a;return b;};
-  SegmentTree<int,int> rmq(n,f,g,INT_MAX);
+  SegmentTree<int, int> rmq(f,g,INT_MAX);
+  rmq.init(n);
   
   for(int i=0;i<q;i++){
     int c,x,y;
@@ -85,7 +84,8 @@ signed ARC038_C(){
   
   auto f=[](Int a,Int b){return min(a,b);};
   auto g=[](Int a,Int b){return max(a,b);};
-  SegmentTree<Int, Int> seg(n,f,g,-1);
+  SegmentTree<Int, Int> seg(f,g,-1);
+  seg.init(n);
   
   vector<Int> dp(n);
   dp[0]=0;
@@ -117,8 +117,8 @@ signed KUPC2013_D(){
 
   const int INF = 1.1e9;
   auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int, int> seg(n+2,f,f,INF);
-  seg.build(n+2,a);
+  SegmentTree<int, int> seg(f,f,INF);
+  seg.build(a);
 
   using P = pair<int, int>;
   set<P> sp;
@@ -129,7 +129,7 @@ signed KUPC2013_D(){
       sp.emplace(k?n+2-l:l,a[i]);
     }
     reverse(a.begin(),a.end());
-    seg.build(n+2,a);
+    seg.build(a);
   }
 
   printf("%d\n",(int)sp.size()/2);
@@ -144,6 +144,6 @@ signed KUPC2013_D(){
 signed main(){
   //AOJ_DSL2A();
   //ARC038_C();
-  KUPC2013_D();
+  //KUPC2013_D();
   return 0;
 }

@@ -13,7 +13,7 @@ struct LiChao{
   int n;
   vector<T> pos;
   vector<Line> dat;
-  LiChao(int n_,vector<T> &pos):pos(pos){init(n_);}
+  LiChao(vector<T> &pos):pos(pos){init(pos.size());}
 
   void init(int n_){
     n=1;
@@ -103,7 +103,7 @@ signed CSA070_SQUAREDEND(){
   pos.erase(unique(pos.begin(),pos.end()),pos.end());
   
   vector<LiChao<Int, INF, true> > v;
-  for(int i=0;i<k+1;i++) v.emplace_back(n+1,pos);
+  for(int i=0;i<k+1;i++) v.emplace_back(pos);
   v[0].addLine(-2*a[0],a[0]*a[0]);
   
   for(Int i=0;i<n;i++){
@@ -135,7 +135,7 @@ signed TENKA12016FINAL_E(){
   vector<Int> pos(l,0);
   iota(pos.begin(),pos.end(),0);
   for(Int i=0;i<n;i++){
-    LiChao<Int, INF, true> cht(l,pos);
+    LiChao<Int, INF, true> cht(pos);
     for(Int j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
@@ -159,7 +159,7 @@ signed COLOPL2018FINAL_C(){
   const Int INF = 1e16;
   vector<Int> pos(n,0);
   iota(pos.begin(),pos.end(),0);
-  LiChao<Int,INF,true> cht(n,pos);
+  LiChao<Int,INF,true> cht(pos);
   for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
   for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
   return 0;
@@ -173,6 +173,6 @@ signed COLOPL2018FINAL_C(){
 signed main(){
   //CSA070_SQUAREDEND();
   //TENKA12016FINAL_E();
-  COLOPL2018FINAL_C();
+  //COLOPL2018FINAL_C();
   return 0;
 }

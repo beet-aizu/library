@@ -10,19 +10,15 @@ struct SparseTable{
   const F f;
   
   SparseTable(){}
-  SparseTable(int n,F f):f(f){init(n);}
+  SparseTable(F f):f(f){}
   
-  void init(int n){
-    int h=1;
+  void build(const vector<T> &v){
+    int n=v.size(),h=1;
     while((1<<h)<n) h++;
     dat.assign(h,vector<T>(n));
     ht.assign(n+1,0);
     for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;
-  }
-  
-  void build(int n,vector<T> &v){
-    int h=1;
-    while((1<<h)<n) h++;
+    
     for(int j=0;j<n;j++) dat[0][j]=v[j];
     for(int i=1,p=1;i<h;i++,p<<=1)
       for(int j=0;j<n;j++)
@@ -44,9 +40,9 @@ signed ARC023_D(){
   for(int i=0;i<n;i++) scanf("%d",&a[i]);
   for(int i=0;i<m;i++) scanf("%d",&x[i]);
 
-  SparseTable<int>::F f=[](int a,int b){return __gcd(a,b);};
-  SparseTable<int> st(n,f);
-  st.build(n,a);
+  auto f=[](int a,int b){return __gcd(a,b);};
+  SparseTable<int> st(f);
+  st.build(a);
   
   map<int, long long> ans;
   for(int i=0;i<n;i++){

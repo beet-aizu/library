@@ -15,15 +15,18 @@ struct SegmentTree{
   E ei;
   vector<T> dat;
   vector<E> laz;
-  SegmentTree(int n_,F f,G g,H h,T ti,E ei):
-    f(f),g(g),h(h),ti(ti),ei(ei){init(n_);}
+  SegmentTree(F f,G g,H h,T ti,E ei):
+    f(f),g(g),h(h),ti(ti),ei(ei){}
+  
   void init(int n_){
     n=1;height=0;
     while(n<n_) n<<=1,height++;
     dat.assign(2*n,ti);
     laz.assign(2*n,ei);
   }
-  void build(int n_, vector<T> v){
+  void build(const vector<T> &v){
+    int n_=v.size();
+    init(n_);
     for(int i=0;i<n_;i++) dat[n+i]=v[i];
     for(int i=n-1;i;i--)
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
@@ -80,8 +83,8 @@ signed DSL_2_G(){
   auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
   auto h=[](Int a,Int b){return a+b;};
   
-  SegmentTree<P,Int> ch(n,f,g,h,P(0,0),0);  
-  ch.build(n,vector<P>(n,P(0,1)));
+  SegmentTree<P,Int> ch(f,g,h,P(0,0),0);  
+  ch.build(vector<P>(n,P(0,1)));  
   for(int i=0;i<q;i++){
     int c,s,t,x;
     scanf("%d",&c);

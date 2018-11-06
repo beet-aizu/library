@@ -5,25 +5,22 @@ using Int = long long;
 //BEGIN CUT HERE
 template<typename T>
 struct DisjointSparseTable{
-  using F = function<T(T,T)>;
+  using F = function<T(T, T)>;
   vector<vector<T> > dat;
   vector<int> ht;
   const F f;
-  DisjointSparseTable(){}
-  DisjointSparseTable(int n,F f):f(f){init(n);}
   
-  void init(int n){
-    int h=1;
+  DisjointSparseTable(){}
+  DisjointSparseTable(F f):f(f){}
+  
+  void build(const vector<T> &v){
+    int n=v.size(),h=1;
     while((1<<h)<=n) h++;
     dat.assign(h,vector<T>(n));
-    ht.assign((1<<h),0);
-    for(int j=2;j<=(1<<h);j++) ht[j]=ht[j>>1]+1;
-  }
-  
-  void build(int n,vector<T> &v){
-    int h=1;
-    while((1<<h)<=n) h++;
-    for(int i=0;i<n;i++) dat[0][i]=v[i];
+    ht.assign((1<<h)+1,0);
+    for(int j=2;j<=(1<<h)+1;j++) ht[j]=ht[j>>1]+1;
+    
+    for(int j=0;j<n;j++) dat[0][j]=v[j];
     for(int i=1;i<h;i++){
       int s=1<<i;
       for(int j=0;j<n;j+=s<<1){
@@ -54,9 +51,9 @@ signed ARC023_D(){
   for(int i=0;i<n;i++) scanf("%d",&a[i]);
   for(int i=0;i<m;i++) scanf("%d",&x[i]);
 
-  DisjointSparseTable<int>::F f=[](int a,int b){return __gcd(a,b);};
-  DisjointSparseTable<int> st(n,f);
-  st.build(n,a);
+  auto f=[](int a,int b){return __gcd(a,b);};
+  DisjointSparseTable<int> st(f);
+  st.build(a);
   
   map<int, long long> ans;
   for(int i=0;i<n;i++){
@@ -88,19 +85,19 @@ signed CODECHEF_SEGPROD(){
   int T;
   scanf("%d",&T);
     
-  Int p;
-  DisjointSparseTable<Int>::F f=[&](Int a,Int b){return a*b%p;};
-  DisjointSparseTable<Int> dst(1e6+10,f);
-    
+  int p;
+  auto f=[&](int a,int b)->int{return (Int)a*b%p;};
+  DisjointSparseTable<int> dst(f);
+  
   for(int t=1;t<=T;t++){
     int n,q;
-    scanf("%d %lld %d",&n,&p,&q);
-    vector<Int> v(n);
-    for(int i=0;i<n;i++) scanf("%lld",&v[i]);
+    scanf("%d %d %d",&n,&p,&q);
+    vector<int> v(n);
+    for(int i=0;i<n;i++) scanf("%d",&v[i]),v[i]%=p;
     vector<int> b(q/64+2);
     for(int i=0;i<(q/64+2);i++) scanf("%d",&b[i]);
     
-    dst.build(n,v);
+    dst.build(v);
     
     int x=0,l=0,r=0;
     for(int i=0;i<q;i++){
@@ -112,7 +109,8 @@ signed CODECHEF_SEGPROD(){
         r=(r+x)%n;
       }
       if(l>r) swap(l,r);
-      x=(dst.query(l,r+1)+1)%p;
+      x=dst.query(l,r+1)+1;
+      if(x>=p) x-=p;
     }
     printf("%d\n",x);    
   }
