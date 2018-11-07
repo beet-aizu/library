@@ -3,21 +3,19 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 struct RollingHash{
-  typedef unsigned long long ull;
-  string S;
-  ull B;
-  int len;
+  using ull = unsigned long long;
   vector<ull> hash,p;
   RollingHash(){}
-  RollingHash(string S_,ull B_=1000000007LL):
-    S(S_),B(B_),len(S.length()),hash(len+1),p(len+1){
-    hash[0]=0;p[0]=1;
-    for(int i=0;i<len;i++){
+  RollingHash(const string &S,ull B=1000000007LL){
+    int n=S.size();
+    hash.assign(n+1,0);
+    p.assign(n+1,1);
+    for(int i=0;i<n;i++){
       hash[i+1]=hash[i]*B+S[i];
       p[i+1]=p[i]*B;
     }
   }
-  //S[l,r)
+  //S[l, r)
   ull find(int l,int r){
     return hash[r]-hash[l]*p[r-l];
   }
