@@ -32,7 +32,7 @@ struct SegmentTree{
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
   }
   inline T reflect(int k){
-    return g(dat[k],laz[k]);
+    return laz[k]==ei?dat[k]:g(dat[k],laz[k]);
   }
   inline void eval(int k){
     if(laz[k]==ei) return;

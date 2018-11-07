@@ -32,7 +32,12 @@ struct SegmentTree{
     while(k>>=1)
       dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
   }
-  inline T query(int a,int b){
+  void set_val(int k,T x){
+    dat[k+=n]=x;
+    while(k>>=1)
+      dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);    
+  }
+  T query(int a,int b){
     T vl=ti,vr=ti;
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
       if(l&1) vl=f(vl,dat[l++]);
@@ -59,15 +64,14 @@ signed AOJ_DSL2A(){
   int n,q;
   scanf("%d %d",&n,&q);
   auto f=[](int a,int b){return min(a,b);};
-  auto g=[](int a,int b){++a;return b;};
-  SegmentTree<int, int> rmq(f,g,INT_MAX);
+  SegmentTree<int, int> rmq(f,f,INT_MAX);
   rmq.init(n);
   
   for(int i=0;i<q;i++){
     int c,x,y;
     scanf("%d %d %d",&c,&x,&y);
     if(c) printf("%d\n",rmq.query(x,y+1));
-    else rmq.update(x,y);
+    else rmq.set_val(x,y);
   }
   return 0;
 }
