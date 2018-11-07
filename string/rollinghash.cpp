@@ -6,12 +6,12 @@ struct RollingHash{
   using ull = unsigned long long;
   vector<ull> hash,p;
   RollingHash(){}
-  RollingHash(const string &S,ull B=1000000007LL){
-    int n=S.size();
+  RollingHash(const string &s,ull B=1000000007LL){
+    int n=s.size();
     hash.assign(n+1,0);
     p.assign(n+1,1);
     for(int i=0;i<n;i++){
-      hash[i+1]=hash[i]*B+S[i];
+      hash[i+1]=hash[i]*B+s[i];
       p[i+1]=p[i]*B;
     }
   }
@@ -32,6 +32,6 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2017/10/29
+  verified on 2018/11/07
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B&lang=jp
 */

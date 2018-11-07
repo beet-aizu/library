@@ -7,7 +7,7 @@ struct SuffixArray{
   string S;
   vector<int> sa,lcp,rev;
   SuffixArray(){}
-  SuffixArray(string& S):S(S){init();}
+  SuffixArray(string &S):S(S){init();}
   void init(){
     n=S.length();
     S.push_back('$');
