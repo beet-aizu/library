@@ -9,7 +9,7 @@ struct Mint{
   Mint(signed v):v(v){}
   Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
 
-  Mint pow(int k){
+  Mint pow(long long k){
     Mint res(1),tmp(v);
     while(k){
       if(k&1) res*=tmp;
