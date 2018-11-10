@@ -75,7 +75,7 @@ struct Mint{
     if(n<0||k<0) return Mint(0);
     if(!n&&!k) return Mint(1);
     init(n+k-1);
-    return C(n+k-1,n);
+    return C(n+k-1,k);
   }
 
   static Mint S(int n,int k){
@@ -163,7 +163,7 @@ signed ABC110_D(){
   
   Mint<int> ans(1);
   auto x=factorize(m.v);
-  for(auto p:x) ans*=M::H(p.second,n);
+  for(auto p:x) ans*=M::H(n,p.second);
 
   printf("%d\n",ans.v);
   return 0;
@@ -244,7 +244,7 @@ signed DPL_5_C(){
 signed DPL_5_D(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",Mint<int>::H(n,k).v);
+  printf("%d\n",Mint<int>::H(k,n).v);
   return 0;
 }
 /*
@@ -340,6 +340,24 @@ signed DPL_5_L(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_L&lang=jp
 */
 
+
+signed YUKI_117(){
+  int T;
+  scanf("%d\n",&T);
+  using M = Mint<int>;
+  M::init(1e6+100);
+  while(T--){
+    char c;
+    int n,k;
+    scanf("%c(%d,%d)\n",&c,&n,&k);
+    if(c=='C') printf("%d\n",M::C(n,k).v);
+    if(c=='P') printf("%d\n",M::P(n,k).v);
+    if(c=='H') printf("%d\n",M::H(n,k).v);
+  }
+  return 0;
+}
+
+
 signed main(){
   //ABC110_D();
   //ARC009_C();
@@ -357,5 +375,7 @@ signed main(){
   //DPL_5_J();
   //DPL_5_K();
   //DPL_5_L();
+
+  //YUKI_117();
   return 0;
 }
