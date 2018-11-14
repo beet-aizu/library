@@ -118,7 +118,8 @@ struct Mint{
   }
 
   static Mint LagrangePolynomial(vector<Mint> &y,Mint t){
-    int n=y.size()-1;
+    int n=y.size()-1;    
+    if(t.v<=n) return y[t.v];
     init(n+1);
     Mint num(1);
     for(int i=0;i<=n;i++) num*=t-Mint(i);
@@ -345,7 +346,7 @@ signed YUKI_117(){
   int T;
   scanf("%d\n",&T);
   using M = Mint<int>;
-  M::init(1e6+100);
+  M::init(2e6+100);
   while(T--){
     char c;
     int n,k;
@@ -356,7 +357,38 @@ signed YUKI_117(){
   }
   return 0;
 }
+/*
+  verified on 2018/11/10
+  https://yukicoder.me/problems/no/117
+*/
 
+signed YUKI_042(){
+  using M = Mint<int, int(1e9+9)>;
+  const int MAX = 666 * 6 + 10;
+  M dp[MAX];
+  for(int j=0;j<MAX;j++) dp[j]=M(0);
+  dp[0]=M(1);
+  
+  vector<int> a({1,5,10,50,100,500});
+  for(int x:a)
+    for(int j=x;j<MAX;j++) dp[j]+=dp[j-x];
+  
+  int T;
+  scanf("%d",&T);
+  while(T--){
+    Int m;
+    scanf("%lld",&m);
+    vector<M> y(6);
+    for(int i=0;i<6;i++) y[i]=dp[(m%500)+(i*500)];
+    M ans=M::LagrangePolynomial(y,M(m/500));
+    printf("%d\n",ans.v);
+  }
+  return 0;
+}
+/*
+  verified on 2018/11/10
+  https://yukicoder.me/problems/no/42
+*/
 
 signed main(){
   //ABC110_D();
@@ -377,5 +409,6 @@ signed main(){
   //DPL_5_L();
 
   //YUKI_117();
+  //YUKI_042();
   return 0;
 }

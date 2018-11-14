@@ -25,7 +25,7 @@ void euler_phi2(){
     }
   }
 }
-
+//END CUT HERE
 
 //euler_phi:
 signed AOJ_NTL1D(){
