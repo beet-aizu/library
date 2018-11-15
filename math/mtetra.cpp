@@ -16,50 +16,90 @@ Int phi(Int n){
   return res;
 }
 
-Int mpow(Int x,Int n,Int m){
-  Int v=1;
-  while(n){
-    if(n&1) v=v*x%m;
-    x=x*x%m;
+Int mpow(Int a,Int n,Int m,Int &f){
+  using ull = unsigned long long;
+  if(a==1||n==0) return 1;
+  ull v=1,x=a,z=m;
+  f|=x>=z;
+  x%=m;
+  while(1){
+    if(n&1) v*=x;
+    if(v>=z) f=1,v%=m;
     n>>=1;
+    if(!n) break;
+    x=x*x;
+    if(x>=z) f=1,x%=m;
   }
   return v;
 }
 
-const Int MAX = 1e8;
-Int tetr(Int a,Int n){
-  if(n==0) return 1;  
-  if(a==1) return 1;
-  Int v=1;
-  for(Int i=0;i<n;i++){
-    Int u=1;
-    for(Int j=0;j<v;j++){
-      u*=a;
-      if(u>MAX) return -1;
-    }
-    v=u;
+Int mtetra(Int a,Int n,Int m,Int &f){
+  if(a==0) return ~n&1;
+  if(m==1) return f=1;
+  if(a==1||n==0) return 1;
+  if(n==1){
+    f|=a>=m;
+    return a%m+f*m;
   }
-  return v;
-}
-
-Int mtetra(Int a,Int n,Int m){
-  if(m==1) return 0;
-  if(n==0) return 1;
-  Int x=tetr(a,n-1);
-  if(~x) return mpow(a,x,m);
-  Int v=phi(m);
-  return mpow(a,MAX+((mtetra(a,n-1,v)-MAX)%v+v)%v,m);
+  Int z=mtetra(a,n-1,phi(m),f);
+  Int r=mpow(a,z,m,f);  
+  return r+f*m;
 }
 //END CUT HERE
 //INSERT ABOVE HERE
 
-signed solve(){
-  Int a,n,m;
+signed YUKI_181(){
+  Int a,n,m,f=0;
   cin>>a>>n>>m;
-  cout<<mtetra(a,n,m)<<endl;
+  cout<<mtetra(a,n,m,f)%m<<endl;
   return 0;
 }
+/*
+  verified on 2018/11/15
+  https://yukicoder.me/problems/no/181
+*/
+
+signed SPOJ_POWTOW(){
+  Int T;
+  cin>>T;
+  while(T--){
+    Int a,n,f=0;
+    cin>>a>>n;
+    stringstream ss;  
+    ss<<mtetra(a,n,1e9,f)%Int(1e9);
+    auto s=ss.str();
+    if(f){
+      while(s.size()<9u) s='0'+s;
+      cout<<"..."<<s<<endl;
+    }else{
+      cout<<s<<endl;
+    }
+  }
+  return 0;
+}
+/*
+  verified on 2018/11/15
+  https://www.spoj.com/problems/POWTOW/
+*/
+
+signed SPOJ_MTETRA(){
+  Int T;
+  scanf("%lld",&T);
+  while(T--){    
+    Int a,n,m,f=0;
+    scanf("%lld %lld %lld",&a,&n,&m);
+    printf("%lld\n",mtetra(a,n,m,f)%m);
+  }
+  return 0;
+}
+/*
+  verified on 2018/11/15
+  https://www.spoj.com/problems/MTETRA/
+*/
+
 
 signed main(){
-  solve();
+  //YUKI_181();
+  //SPOJ_POWTOW();
+  //SPOJ_MTETRA();
 }
