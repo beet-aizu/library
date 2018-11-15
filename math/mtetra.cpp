@@ -97,9 +97,35 @@ signed SPOJ_MTETRA(){
   https://www.spoj.com/problems/MTETRA/
 */
 
+signed SUMMERFES2018_F(){
+  Int a,m,k;
+  cin>>a>>m>>k;
+  Int ans=0;
+ 
+  k--;
+  for(Int i=0,p=-1;i<k;i++){
+    Int f=0;
+    Int x=mtetra(a,i,m,f)%m;
+    if(p==x){
+      ans+=(k-i)%m*x%m;
+      ans%=m;
+      break;
+    }
+    ans+=x;
+    ans%=m;
+    p=x;
+  }
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2018/11/15
+  https://beta.atcoder.jp/contests/summerfes2018-div1/tasks/summerfes2018_f
+*/
 
 signed main(){
   //YUKI_181();
   //SPOJ_POWTOW();
   //SPOJ_MTETRA();
+  //SUMMERFES2018_F();
 }
