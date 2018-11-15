@@ -597,7 +597,7 @@ double area(Polygon ps,Circle c){
       double f=cross(va,vb),res=0;
       if(equals(f,0.0)) return res;
       if(max(abs(va),abs(vb))<c.r+EPS) return f;
-      Vector d(a.x*b.x+a.y*b.y,a.x*b.y-a.y*b.x);
+      Vector d(dot(va,vb),cross(va,vb));
       if(getDistanceSP(Segment(a,b),c.c)>c.r-EPS)
         return c.r*c.r*atan2(d.y,d.x);
       auto u=getCrossPointCS(c,Segment(a,b));
