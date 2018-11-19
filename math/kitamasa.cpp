@@ -21,12 +21,12 @@ struct Kitamasa{
 
   VT merge(const VT &x,const VT &y){
     VT z(2*m+1,d0);
-    for(int i=1;i<m+1;i++)
-      for(int j=1;j<m+1;j++)
+    for(int i=1;i<=m;i++)
+      for(int j=1;j<=m;j++)
         z[i+j]=add(z[i+j],mul(x[i],y[j]));
     
     for(int i=2*m;i>m;z[i--]=d0)
-      for(int j=1;j<m+1;j++)
+      for(int j=1;j<=m;j++)
         z[i-j]=add(z[i-j],mul(c[m-j],z[i]));
     
     return z;
