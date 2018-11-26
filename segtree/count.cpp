@@ -44,6 +44,7 @@ struct SegmentTree{
   
 };
 
+//END CUT HERE
 signed ABC106_D(){
   int n,m,q;
   scanf("%d %d %d",&n,&m,&q);
@@ -63,7 +64,6 @@ signed ABC106_D(){
   return 0;
 }
 
-//END CUT HERE
 signed main(){
   ABC106_D();
   return 0;
