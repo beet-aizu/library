@@ -35,6 +35,29 @@ struct Mint{
 
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
+  bool operator <(const Mint a)const{return v <a.v;}
+
+  // find x s.t. a^x = b
+  static T log(Mint a,Mint b){
+    const T sq=40000;
+    unordered_map<T, T> dp;
+    dp.reserve(sq);
+    Mint res(1);
+    for(int r=0;r<sq;r++){
+      if(!dp.count(res)) dp[res]=r;
+      res*=a;
+    }
+    Mint p=pow(a.inv(),sq);
+    res=b;
+    for(int q=0;q<=MOD/sq+1;q++){
+      if(dp.count(res)){
+        T idx=q*sq+dp[res];
+        if(idx>0) return idx;
+      }
+      res*=p;
+    }    
+    return T(-1);
+  }
 
   static vector<Mint> fact,finv,invs;
   
@@ -206,7 +229,6 @@ signed ARC033_D(){
   verified on 2018/09/24
   https://beta.atcoder.jp/contests/arc033/tasks/arc033_4
 */
-
 
 signed DPL_5_A(){
   int n;

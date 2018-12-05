@@ -374,13 +374,53 @@ struct bigint {
     while(!res.empty()&&!res.back()) res.pop_back();
     return res;
   }
+  
+  static vll karatsubaMultiply(const vll &a,const vll &b){
+    ll n=a.size();
+    vll res(n+n);
+    if(n<=32){
+      for(ll i=0;i<n;i++)
+        for(ll j=0;j<n;j++)
+          res[i+j]+=a[i]*b[j];
+      return res;
+    }
 
+    ll k=n>>1;
+    vll a1(a.begin(),a.begin()+k);
+    vll a2(a.begin()+k,a.end());
+    vll b1(b.begin(),b.begin()+k);
+    vll b2(b.begin()+k,b.end());
+
+    vll a1b1=karatsubaMultiply(a1,b1);
+    vll a2b2=karatsubaMultiply(a2,b2);
+
+    for(ll i=0;i<k;i++) a2[i]+=a1[i];
+    for(ll i=0;i<k;i++) b2[i]+=b1[i];
+
+    vll r=karatsubaMultiply(a2,b2);
+    for(ll i=0;i<(ll)a1b1.size();i++) r[i]-=a1b1[i];
+    for(ll i=0;i<(ll)a2b2.size();i++) r[i]-=a2b2[i];
+
+    for(ll i=0;i<(ll)r.size();i++) res[i+k]+=r[i];
+    for(ll i=0;i<(ll)a1b1.size();i++) res[i]+=a1b1[i];
+    for(ll i=0;i<(ll)a2b2.size();i++) res[i+n]+=a2b2[i];
+    return res;
+  }
+  
   bigint operator*(const bigint &v) const{
     constexpr static ll nbase = 10000;
     constexpr static ll nbase_digits = 4;
     
     vll a=convert_base(this->a,base_digits,nbase_digits);
     vll b=convert_base(v.a,base_digits,nbase_digits);
+
+    /*
+      while(a.size()<b.size()) a.push_back(0);
+      while(b.size()<a.size()) b.push_back(0);
+      while(a.size() &(a.size()-1)) a.push_back(0),b.push_back(0);
+      vll c=karatsubaMultiply(a,b);
+    */    
+
     if(a.empty()) a.push_back(0);
     if(b.empty()) b.push_back(0);    
     vll c=FFT::multiply(a,b);
