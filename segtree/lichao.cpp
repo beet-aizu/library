@@ -2,8 +2,9 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template <typename T,T INF,bool isMin>
+template <typename T, bool isMin>
 struct LiChao{
+  static constexpr T INF = numeric_limits<T>::max();
   struct Line{
     T a,b;
     Line(T a,T b):a(a),b(b){}
@@ -102,7 +103,7 @@ signed CSA070_SQUAREDEND(){
   sort(pos.begin(),pos.end());
   pos.erase(unique(pos.begin(),pos.end()),pos.end());
   
-  vector<LiChao<Int, INF, true> > v;
+  vector<LiChao<Int, true> > v;
   for(int i=0;i<k+1;i++) v.emplace_back(pos);
   v[0].addLine(-2*a[0],a[0]*a[0]);
   
@@ -118,7 +119,7 @@ signed CSA070_SQUAREDEND(){
 }
 
 /*
-  verified on 2018/04/27
+  verified on 2019/01/16
   https://csacademy.com/contest/round-70/task/squared-ends/
 */
 
@@ -131,11 +132,10 @@ signed TENKA12016FINAL_E(){
       scanf("%lld",&a[i][j]);
   
   vector<Int> dp(l,0);
-  const Int INF = 1e16;
   vector<Int> pos(l,0);
   iota(pos.begin(),pos.end(),0);
   for(Int i=0;i<n;i++){
-    LiChao<Int, INF, true> cht(pos);
+    LiChao<Int, true> cht(pos);
     for(Int j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
@@ -147,7 +147,7 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2018/04/27
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
@@ -156,17 +156,16 @@ signed COLOPL2018FINAL_C(){
   scanf("%d",&n);
   vector<Int> a(n);
   for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
-  const Int INF = 1e16;
   vector<Int> pos(n,0);
   iota(pos.begin(),pos.end(),0);
-  LiChao<Int,INF,true> cht(pos);
+  LiChao<Int, true> cht(pos);
   for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
   for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2018/04/27
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 

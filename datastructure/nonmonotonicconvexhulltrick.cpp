@@ -2,9 +2,10 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template<typename T,T INF,bool isMin>
+template<typename T,bool isMin>
 struct NonmonotonicConvexHullTrick {
   using number = double;
+  static constexpr number INF = numeric_limits<T>::max();
   struct Line {
     T m,b,val;
     number x;
@@ -65,18 +66,18 @@ struct NonmonotonicConvexHullTrick {
     if(cNext(it)) update(next(it));
   }
 
+  bool empty() const{
+    return hull.empty();
+  }
+
   T query(T x){
-    if(hull.empty()){
-      if(isMin) return INF;
-      return -INF;
-    }
+    assert(!empty());
     Line q;
     q.val=x;q.q=1;
     iter it=--hull.lower_bound(q);
     if(isMin) return -(it->eval(x));
     return it->eval(x);
   }
-  
 } ;
 //END CUT HERE
 
@@ -95,9 +96,8 @@ signed TENKA12016FINAL_E(){
       scanf("%d",&a[i][j]);
   
   vector<Int> dp(l,0);
-  const Int INF = 1e16;
   for(Int i=0;i<n;i++){
-    NonmonotonicConvexHullTrick<Int,INF,1> cht;
+    NonmonotonicConvexHullTrick<Int, true> cht;
     for(Int j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
@@ -109,7 +109,7 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2018/10/08
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
@@ -118,15 +118,14 @@ signed COLOPL2018FINAL_C(){
   scanf("%d",&n);
   vector<Int> a(n);
   for(int i=0;i<n;i++) scanf("%lld",&a[i]);
-  const Int INF = 1e16;
-  NonmonotonicConvexHullTrick<Int,INF,1> cht;
+  NonmonotonicConvexHullTrick<Int, true> cht;
   for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
   for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2018/10/08
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
@@ -143,12 +142,12 @@ signed AOJ_2725(){
   sort(vt.begin(),vt.end());
   for(Int i=0;i<n;i++) tie(f[i],p[i],t[i])=vt[i];
   
-  const Int INF = 1e15;
-  vector<NonmonotonicConvexHullTrick<Int, INF, 0> > vh(x+1);
+  vector<NonmonotonicConvexHullTrick<Int, false> > vh(x+1);
   
   Int ans=0;
   for(Int i=0;i<n;i++){
     for(Int j=x;j>t[i];j--){
+      if(vh[j-t[i]].empty()) continue;
       Int val=vh[j-t[i]].query(f[i])+p[i]-f[i]*f[i];
       vh[j].addLine(2*f[i],val-f[i]*f[i]);      
       chmax(ans,val);
@@ -162,7 +161,7 @@ signed AOJ_2725(){
 }
 
 /*
-  verified on 2018/10/08
+  verified on 2019/01/16
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2725
 */
 

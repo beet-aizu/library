@@ -5,15 +5,12 @@ using Int = long long;
 template <typename T,typename E>
 struct SegmentTree{
   using F = function<T(T,T)>;
-  using G = function<T(T,E)>;
   int n;
   F f;
-  G g;
   T ti;
   vector<T> dat;
   SegmentTree(){};
-  SegmentTree(F f,G g,T ti):f(f),g(g),ti(ti){}
-
+  SegmentTree(F f,T ti):f(f),ti(ti){}
   void init(int n_){    
     n=1;
     while(n<n_) n<<=1;
@@ -25,12 +22,6 @@ struct SegmentTree{
     for(int i=0;i<n_;i++) dat[n+i]=v[i];
     for(int i=n-1;i;i--)
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
-  }
-  void update(int k,E a){
-    k+=n;
-    dat[k]=g(dat[k],a);
-    while(k>>=1)
-      dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
   }
   void set_val(int k,T x){
     dat[k+=n]=x;
@@ -64,7 +55,7 @@ signed AOJ_DSL2A(){
   int n,q;
   scanf("%d %d",&n,&q);
   auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int, int> rmq(f,f,INT_MAX);
+  SegmentTree<int, int> rmq(f,INT_MAX);
   rmq.init(n);
   
   for(int i=0;i<q;i++){
@@ -76,7 +67,7 @@ signed AOJ_DSL2A(){
   return 0;
 }
 /*
-  verified on 2018/08/21
+  verified on 2019/01/16
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
 */
 
@@ -87,17 +78,16 @@ signed ARC038_C(){
   for(Int i=1;i<n;i++) scanf("%lld %lld",&c[i],&a[i]);
   
   auto f=[](Int a,Int b){return min(a,b);};
-  auto g=[](Int a,Int b){return max(a,b);};
-  SegmentTree<Int, Int> seg(f,g,-1);
+  SegmentTree<Int, Int> seg(f,-1);
   seg.init(n);
   
   vector<Int> dp(n);
   dp[0]=0;
-  seg.update(0,0);
+  seg.set_val(0,0);
   for(Int i=1;i<n;i++){
     auto check=[&](Int x){return x<i-c[i];};
-    dp[i]=seg.find(0,n,check);
-    seg.update(dp[i],i);
+    dp[i]=seg.find(0,n,check);    
+    seg.set_val(dp[i],max(seg.query(dp[i],dp[i]+1),i));
   }
   
   Int ans=0;
@@ -109,7 +99,7 @@ signed ARC038_C(){
 }
 
 /*
-  verified on 2018/08/21
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/arc038/tasks/arc038_c
 */
 
@@ -121,7 +111,7 @@ signed KUPC2013_D(){
 
   const int INF = 1.1e9;
   auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int, int> seg(f,f,INF);
+  SegmentTree<int, int> seg(f,INF);
   seg.build(a);
 
   using P = pair<int, int>;
@@ -141,7 +131,7 @@ signed KUPC2013_D(){
 }
 
 /*
-  verified on 2018/08/26
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/kupc2013/tasks/kupc2013_d
 */
 

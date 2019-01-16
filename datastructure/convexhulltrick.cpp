@@ -2,7 +2,7 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template <typename T,T INF,bool isMin>
+template <typename T,bool isMin>
 struct ConvexHullTrick {
   using P = pair<T, T>;
   deque<P> L;
@@ -16,7 +16,7 @@ struct ConvexHullTrick {
       >= (b.second-a.second)*(c.first-b.first);
   }
   
-  void add(T a,T b){
+  void addLine(T a,T b){
     if(!isMin) a*=-1,b*=-1;
     P line(a,b);
     if(!L.empty()&&L.back().first==a){
@@ -27,8 +27,12 @@ struct ConvexHullTrick {
     L.emplace_back(line);    
   }
 
-  T get(T x){
-    if(L.empty()) return isMin?INF:-INF;
+  bool empty() const{
+    return L.empty();
+  }
+  
+  T query(T x){
+    assert(!empty());
     int low=-1,high=L.size()-1;
     while(low+1<high){
       int mid=(low+high)>>1;
@@ -38,8 +42,8 @@ struct ConvexHullTrick {
     return (!isMin?-1:1)*getY(L[high],x);
   }
   
-  T getMonotone(T x){
-    if(L.empty()) return isMin?INF:-INF;
+  T queryMonotone(T x){
+    assert(!empty());
     while(L.size()>=2&&getY(L[0],x)>=getY(L[1],x)) L.pop_front();
     return (!isMin?-1:1)*getY(L[0],x);
   }
@@ -59,13 +63,12 @@ signed TENKA12016FINAL_E(){
   
   vector<Int> dp(l,0);
   
-  const Int INF = 1e16;
   for(int i=0;i<n;i++){
-    ConvexHullTrick<Int, INF, 1> cht;
+    ConvexHullTrick<Int, true> cht;
     for(Int j=0;j<l;j++)
-      cht.add(-2*j,a[i][j]+j*j);
+      cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
-      dp[j]+=j*j+cht.getMonotone(j);
+      dp[j]+=j*j+cht.queryMonotone(j);
   }
   
   printf("%lld\n",*min_element(dp.begin(),dp.end()));
@@ -73,7 +76,7 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2018/10/08
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
@@ -82,15 +85,14 @@ signed COLOPL2018FINAL_C(){
   scanf("%d",&n);
   vector<Int> a(n);
   for(int i=0;i<n;i++) scanf("%lld",&a[i]);
-  const Int INF = 1e16;
-  ConvexHullTrick<Int, INF, 1> cht;
-  for(Int i=0;i<n;i++) cht.add(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) printf("%lld\n",cht.getMonotone(i)+i*i);
+  ConvexHullTrick<Int, true> cht;
+  for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
+  for(Int i=0;i<n;i++) printf("%lld\n",cht.queryMonotone(i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2018/10/08
+  verified on 2019/01/16
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
@@ -106,18 +108,17 @@ signed AOJ_2725(){
   sort(vt.begin(),vt.end());
   for(Int i=0;i<n;i++) tie(f[i],p[i],t[i])=vt[i];
   
-  const Int INF = 1e15;
-  vector<ConvexHullTrick<Int, INF, 0> > vh(x+1);
+  vector<ConvexHullTrick<Int, false> > vh(x+1);
   
   Int ans=0;
   for(Int i=0;i<n;i++){
     for(Int j=x;j>t[i];j--){
-      if(vh[j-t[i]].L.empty()) continue;
-      Int val=vh[j-t[i]].getMonotone(f[i])+p[i]-f[i]*f[i];
-      vh[j].add(2*f[i],val-f[i]*f[i]);      
+      if(vh[j-t[i]].empty()) continue;
+      Int val=vh[j-t[i]].queryMonotone(f[i])+p[i]-f[i]*f[i];
+      vh[j].addLine(2*f[i],val-f[i]*f[i]);      
       chmax(ans,val);
     }
-    vh[t[i]].add(2*f[i],p[i]-f[i]*f[i]);
+    vh[t[i]].addLine(2*f[i],p[i]-f[i]*f[i]);
     chmax(ans,p[i]); 
   }
   
@@ -125,7 +126,7 @@ signed AOJ_2725(){
   return 0;
 }
 /*
-  verified on 2018/10/08
+  verified on 2019/01/16
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2725
 */
 
