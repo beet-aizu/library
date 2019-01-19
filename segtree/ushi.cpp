@@ -2,7 +2,7 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template <typename T,typename E>
+template <typename T>
 struct SegmentTree{
   using F = function<T(T,T)>;
   int n;
@@ -55,7 +55,7 @@ signed AOJ_DSL2A(){
   int n,q;
   scanf("%d %d",&n,&q);
   auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int, int> rmq(f,INT_MAX);
+  SegmentTree<int> rmq(f,INT_MAX);
   rmq.init(n);
   
   for(int i=0;i<q;i++){
@@ -78,7 +78,7 @@ signed ARC038_C(){
   for(Int i=1;i<n;i++) scanf("%lld %lld",&c[i],&a[i]);
   
   auto f=[](Int a,Int b){return min(a,b);};
-  SegmentTree<Int, Int> seg(f,-1);
+  SegmentTree<Int> seg(f,-1);
   seg.init(n);
   
   vector<Int> dp(n);
@@ -111,7 +111,7 @@ signed KUPC2013_D(){
 
   const int INF = 1.1e9;
   auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int, int> seg(f,INF);
+  SegmentTree<int> seg(f,INF);
   seg.build(a);
 
   using P = pair<int, int>;
