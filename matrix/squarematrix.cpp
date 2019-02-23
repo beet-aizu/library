@@ -4,7 +4,7 @@ using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
-
+//BEGIN CUT HERE
 template<typename K, size_t N>
 struct SquareMatrix{
   typedef array<K, N> arr;
@@ -50,6 +50,7 @@ struct SquareMatrix{
     return res;
   }
 };
+//END CUT HERE
 
 template<typename T,T MOD = 1000000007>
 struct Mint{
