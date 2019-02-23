@@ -284,5 +284,5 @@ signed main(){
   //AOJ_1328();
   //ARC050_C();
   //SPOJ_MIFF();
-  SPOJ_MPOW();
+  //SPOJ_MPOW();
 }
