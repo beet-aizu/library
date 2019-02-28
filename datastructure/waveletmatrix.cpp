@@ -35,13 +35,13 @@ struct FullyIndexableDictionary{
 
   int select(bool v,int k){
     if(k<0||rank(v,len)<=k) return -1;
-    int low=0,high=len;
-    while(low+1<high){
-      int mid=(low+high)>>1;
-      if(rank(v,mid)>=k+1) high=mid;
-      else low=mid;
+    int l=0,r=len;
+    while(l+1<r){
+      int m=(l+r)>>1;
+      if(rank(v,m)>=k+1) r=m;
+      else l=m;
     }
-    return high-1;
+    return r-1;
   }
 
   int select(bool v,int i,int l){
@@ -88,9 +88,8 @@ struct WaveletMatrix{
   
   T access(int k){
     T res=0;
-    bool bit;
     for(int dep=0;dep<MAXLOG;dep++){
-      bit=mat[dep][k];
+      bool bit=mat[dep][k];
       res=(res<<1)|bit;
       k=mat[dep].rank(bit,k)+zs[dep]*dep;
     }
