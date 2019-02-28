@@ -59,8 +59,8 @@ struct WaveletMatrix{
   int freq_dfs(int d,int l,int r,T val,T a,T b){
     if(l==r) return 0;
     if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
-    T nv=1ULL<<(MAXLOG-d-1)|val;
-    T nnv=((1ULL<<(MAXLOG-d-1))-1)|nv;
+    T nv=T(1)<<(MAXLOG-d-1)|val;
+    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;
     if(nnv<a||b<=val) return 0;
     if(a<=val&&nnv<b) return r-l;
     int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
@@ -135,7 +135,7 @@ struct WaveletMatrix{
       if(q-p>k){
         l=p+zs[dep];
         r=q+zs[dep];
-        res|=(1<<(MAXLOG-(dep+1)));
+        res|=T(1)<<(MAXLOG-(dep+1));
       }else{
         k-=(q-p);
         l-=p;
@@ -236,7 +236,7 @@ signed UNIVERSITYCODESPRINT04_F(){
     com[nxt[i]]=pre[i];
   }
   
-  WaveletMatrix<int, 30> wm1(pre),wm2(com);
+  WaveletMatrix<int, 20> wm1(pre),wm2(com);
   
   int q;
   scanf("%d",&q);
@@ -322,6 +322,6 @@ signed main(){
   //SPOJ_MKTHNUM();
   //UNIVERSITYCODESPRINT04_F();
   //ABC106_D();
-  AOJ_1549();
+  //AOJ_1549();
   return 0;
 }
