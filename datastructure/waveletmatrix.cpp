@@ -4,14 +4,15 @@ using Int = long long;
 //BEGIN CUT HERE
 struct FullyIndexableDictionary{
   int len,blk;
-  vector<int> bit,sum;
+  vector<unsigned> bit;
+  vector<int> sum;
   
   FullyIndexableDictionary(){}
   FullyIndexableDictionary(int len)
     :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}
   
   void set(int k){
-    bit[k>>5]|=1<<(k&31);
+    bit[k>>5]|=1u<<(k&31);
   }
 
   void build(){
@@ -25,7 +26,7 @@ struct FullyIndexableDictionary{
   }
   
   int rank(int k){
-    return sum[k>>5]+__builtin_popcount(bit[k>>5]&((1<<(k&31))-1));
+    return sum[k>>5]+__builtin_popcount(bit[k>>5]&((1u<<(k&31))-1));
   }
   
   int rank(bool v,int k){
