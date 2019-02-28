@@ -112,7 +112,7 @@ namespace FFT{
 };
 
 struct bigint {  
-  using ll = long long; 
+  using ll = long long;
   using vll = vector<ll>;
   
   constexpr static ll base = 1000000000;
@@ -189,12 +189,12 @@ struct bigint {
   }
 
   friend pair<bigint,bigint> divmod(const bigint &a1,const bigint &b1){
-    ll norm=base/(b1.a.back()+1);   
+    ll norm=base/(b1.a.back()+1);
     bigint a=a1.abs()*norm;
     bigint b=b1.abs()*norm;
     bigint q,r;
     q.a.resize(a.a.size());
-
+    
     for(ll i=a.a.size()-1;i>=0;i--){
       r *=base;
       r+=a.a[i];
@@ -422,7 +422,7 @@ struct bigint {
     */    
 
     if(a.empty()) a.push_back(0);
-    if(b.empty()) b.push_back(0);    
+    if(b.empty()) b.push_back(0);
     vll c=FFT::multiply(a,b);
     bigint res;
     res.sign=sign*v.sign;
@@ -461,6 +461,52 @@ struct BIT{
   }
 };
 
+template<typename K, size_t N>
+struct SquareMatrix{
+  typedef array<K, N> arr;
+  typedef array<arr, N> mat;
+  mat dat;
+
+  SquareMatrix(){
+    for(size_t i=0;i<N;i++)
+      for(size_t j=0;j<N;j++)
+        dat[i][j]=K(0);
+  }
+  
+  size_t size() const{return N;};
+  arr& operator[](size_t k){return dat[k];};
+  const arr& operator[](size_t k) const {return dat[k];};
+  
+  static SquareMatrix cross(const SquareMatrix &A,const SquareMatrix &B){
+    SquareMatrix res;
+    for(size_t i=0;i<N;i++)
+      for(size_t j=0;j<N;j++)
+        for(size_t k=0;k<N;k++)
+          res[i][j]+=A[i][k]*B[k][j];
+    return res;
+  }
+
+  static SquareMatrix identity(){
+    SquareMatrix res;
+    for(size_t i=0;i<N;i++) res[i][i]=K(1);
+    return res;
+  }
+  
+  SquareMatrix pow(long long n) const{
+    SquareMatrix a,res=identity();
+    for(size_t i=0;i<N;i++)
+      for(size_t j=0;j<N;j++)
+        a[i][j]=dat[i][j];
+    
+    while(n){
+      if(n&1) res=cross(res,a);
+      a=cross(a,a);
+      n>>=1;
+    }
+    return res;
+  }
+};
+
 //INSERT ABOVE HERE
 const int MAX = 1e5+100;
 Int dp[MAX];
@@ -474,11 +520,11 @@ pair<bigint, bigint> dfs(int l,int r){
   t.second*=v.second;
   return t;
 }
-signed main(){
+signed YUKI_696(){
   int n;
   cin>>n;
   vector<int> p(n);
-  for(int i=0;i<n;i++) cin>>p[i];  
+  for(int i=0;i<n;i++) cin>>p[i];
   BIT<Int> bit(n+1,0);
   for(int i=0;i<n;i++) bit.add(p[i],1);
   for(int i=0;i<n;i++){
@@ -487,4 +533,133 @@ signed main(){
   }
   cout<<bigint(dfs(0,n).first+1)<<endl;
   return 0;
+}
+/*
+  verified on 2019/02/28
+  https://yukicoder.me/problems/no/696
+*/
+signed YUKI_129(){
+  bigint MOD = 1000000000;
+  long long n,m;
+  cin>>n>>m;
+  n/=1000;
+  n%=m;
+  bigint res(1);
+  for(int i=0;i<n;i++){
+    res*=m-i;
+    res/=i+1;
+  }
+  cout<<res%MOD<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  https://yukicoder.me/problems/no/129
+*/
+
+signed YUKI_303(){
+  Int l;
+  cin>>l;
+
+  if(l==2){
+    cout<<3<<endl;
+    cout<<"INF"<<endl;
+    return 0;
+  }
+  cout<<l<<endl;
+  
+  using M = SquareMatrix<bigint, 2>;
+  M A;
+  A[0][0]=1;A[0][1]=1;
+  A[1][0]=1;A[1][1]=0;
+  if(l&1) cout<<A.pow(l)[1][0]<<endl;
+  else{
+    auto B=A.pow(l/2);
+    auto X=M::cross(B,B)[1][0];
+    auto Y=B[1][0];
+    cout<<X-Y*Y<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  https://yukicoder.me/problems/no/303
+*/
+
+signed NTL_2_A(){
+  bigint a,b;
+  cin>>a>>b;
+  cout<<a+b<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_A&lang=jp
+*/
+
+signed NTL_2_B(){
+  bigint a,b;
+  cin>>a>>b;
+  cout<<a-b<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_B&lang=jp
+*/
+
+signed NTL_2_C(){
+  bigint a,b;
+  cin>>a>>b;
+  cout<<a*b<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_C&lang=jp
+*/
+
+signed NTL_2_D(){
+  bigint a,b;
+  cin>>a>>b;
+  cout<<a/b<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D&lang=jp
+*/
+
+signed NTL_2_E(){
+  bigint a,b;
+  cin>>a>>b;
+  cout<<a%b<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_E&lang=jp
+*/
+
+signed NTL_2_F(){
+  bigint a,b;
+  cin>>a>>b;
+  cout<<a*b<<endl;
+  return 0;
+}
+/*
+  verified on 2019/02/28
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_F&lang=jp
+*/
+
+signed main(){
+  //YUKI_696();
+  //YUKI_129();
+  //YUKI_303();
+  //NTL_2_A();
+  //NTL_2_B();
+  //NTL_2_C();
+  //NTL_2_D();
+  //NTL_2_E();
+  //NTL_2_F();
 }
