@@ -20,6 +20,9 @@ struct UnionFind{
     r[x]+=r[y];
     p[y]=x;
   }
+  int size(int x){
+    return r[find(x)];
+  }
 };
 //END CUT HERE
 
