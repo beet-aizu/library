@@ -17,6 +17,7 @@ struct IndependentSet{
   int build(){
     vector<int> deg(n,0);
     for(int i=0;i<n;i++) deg[i]=G[i].size();
+    
     int res=0,cnt=0,alive=n;
     vector<int> used(n,0),dead(n,0);
     function<void(void)> dfs=

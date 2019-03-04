@@ -262,8 +262,132 @@ signed DDCC2019_FINAL_D(){
   https://atcoder.jp/contests/ddcc2019-final/tasks/ddcc2019_final_d
 */
 
+struct HLDecomposition {
+  int n,pos;
+  vector<vector<int> > G;
+  vector<int> vid, head, sub, par, dep, inv, type;
+  
+  HLDecomposition(){}
+  HLDecomposition(int n):
+    n(n),pos(0),G(n),vid(n,-1),head(n),sub(n,1),
+    par(n,-1),dep(n,0),inv(n),type(n){}
+  
+  void add_edge(int u, int v) {
+    G[u].push_back(v);
+    G[v].push_back(u);
+  }
+
+  void build(vector<int> rs={0}) {
+    int c=0;
+    for(int r:rs){
+      dfs_sz(r);
+      head[r]=r;
+      dfs_hld(r,c++);
+    }
+  }
+  
+  void dfs_sz(int v) {
+    for(int &u:G[v]){
+      if(u==par[v]) continue;
+      par[u]=v;
+      dep[u]=dep[v]+1;
+      dfs_sz(u);      
+      sub[v]+=sub[u];      
+      if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);
+    }
+  }
+
+  void dfs_hld(int v,int c) {
+    vid[v]=pos++;
+    inv[vid[v]]=v;
+    type[v]=c;
+    for(int u:G[v]){
+      if(u==par[v]) continue;
+      head[u]=(u==G[v][0]?head[v]:u);
+      dfs_hld(u,c);
+    }    
+  }
+  
+  // for_each(edge)
+  // [l,r] <- attention!!
+  template<typename F>
+  void for_each_edge(int u, int v,const F& f) {
+    while(1){
+      if(vid[u]>vid[v]) swap(u,v);
+      if(head[u]!=head[v]){
+        f(vid[head[v]],vid[v]);
+        v=par[head[v]];
+      }else{
+        if(u!=v) f(vid[u]+1,vid[v]);
+        break;
+      }
+    }
+  }
+  
+  int lca(int u,int v){
+    while(1){
+      if(vid[u]>vid[v]) swap(u,v);
+      if(head[u]==head[v]) return u;
+      v=par[head[v]];
+    }
+  }
+};
+
+signed YUKI_650(){
+  using M = Mint<int>;
+  using MM = SquareMatrix<M, 2>;
+  auto f=[](MM a,MM b){return MM::cross(a,b);};
+  
+  int n;
+  cin>>n;
+  HLDecomposition hld(n);
+  vector<int> X,Y;
+  
+  for(int i=1;i<n;i++){
+    int a,b;
+    cin>>a>>b;
+    X.emplace_back(a);
+    Y.emplace_back(b);
+    hld.add_edge(a,b);    
+  }
+  hld.build();
+  
+  MM ti=MM::identity();
+  SegmentTree<MM, decltype(f)> seg(f,ti);
+  seg.build(vector<MM>(n,ti));
+    
+  int q;
+  cin>>q;
+  for(int i=0;i<q;i++){
+    char c;
+    cin>>c;
+    if(c=='x'){
+      int v,a,b,c,d;
+      cin>>v>>a>>b>>c>>d;
+      int x=max(hld.vid[X[v]],hld.vid[Y[v]]);
+      MM tmp;
+      tmp[0][0]=M(a);tmp[0][1]=M(b);
+      tmp[1][0]=M(c);tmp[1][1]=M(d);
+      seg.set_val(x,tmp);
+    }
+    if(c=='g'){
+      int x,y;
+      cin>>x>>y;
+      MM ans(ti);
+      auto q=[&](int l,int r){ans=f(seg.query(l,r+1),ans);};
+      hld.for_each_edge(x,y,q);  
+      cout<<ans[0][0].v<<" "<<ans[0][1].v<<" ";
+      cout<<ans[1][0].v<<" "<<ans[1][1].v<<"\n";
+    }
+  }
+  cout<<flush;
+  return 0;
+}
+
+
 signed main(){  
   //YAHOO2019_FINAL_D();
   //DDCC2019_FINAL_D();
+  //YUKI_650();
   return 0;
 }
