@@ -4,49 +4,80 @@ using Int = long long;
 //BEGIN CUT HERE
 template <typename T,bool isMin>
 struct ConvexHullTrick {
+  #define F first
+  #define S second
   using P = pair<T, T>;
-  deque<P> L;
+  deque<P> H;
+  bool empty()const{return H.empty();}
+  void clear(){H.clear();}
 
-  inline T getY(const P &a,const T &x){
-    return a.first*x+a.second; 
-  }
-
+  inline int sgn(T x){return x==0?0:(x<0?-1:1);}
+  
+  using D = long double;
   inline bool check(const P &a,const P &b,const P &c){
-    return (b.first-a.first)*(c.second-b.second)
-      >= (b.second-a.second)*(c.first-b.first);
+    if(b.S==a.S||c.S==b.S)
+      return sgn(b.F-a.F)*sgn(c.S-b.S) >= sgn(c.F-b.F)*sgn(b.S-a.S);
+    
+    //return (b.F-a.F)*(c.S-b.S) >= (b.S-a.S)*(c.F-b.F);
+    return
+      D(b.F-a.F)*sgn(c.S-b.S)/D(abs(b.S-a.S)) >=
+      D(c.F-b.F)*sgn(b.S-a.S)/D(abs(c.S-b.S));
+  }  
+  
+  void addLine(T m,T b){
+    if(!isMin) m*=-1,b*=-1;
+    P line(m,b);
+    if(empty()||H.front().F<=m){
+      while(H.size()>=2&&check(line,H.front(),H[1])) H.pop_front();
+      H.emplace_front(line);
+    }else{
+      assert(m<=H.back().F);      
+      while(H.size()>=2&&check(H[H.size()-2],H.back(),line)) H.pop_back();
+      H.emplace_back(line);
+    } 
   }
   
-  void addLine(T a,T b){
-    if(!isMin) a*=-1,b*=-1;
-    P line(a,b);
-    if(!L.empty()&&L.back().first==a){
-      line.second=min(line.second,L.back().second);
-      L.pop_back();
-    }
-    while(L.size()>=2&&check(L[L.size()-2],L[L.size()-1],line)) L.pop_back();
-    L.emplace_back(line);    
+  inline T getY(const P &a,const T &x){
+    return a.F*x+a.S; 
   }
 
-  bool empty() const{
-    return L.empty();
-  }
-  
   T query(T x){
     assert(!empty());
-    int low=-1,high=L.size()-1;
-    while(low+1<high){
-      int mid=(low+high)>>1;
-      if(getY(L[mid],x)>=getY(L[mid+1],x)) low=mid;
-      else high=mid;
+    int l=-1,r=H.size()-1;
+    while(l+1<r){
+      int m=(l+r)>>1;
+      if(getY(H[m],x)>=getY(H[m+1],x)) l=m;
+      else r=m;
     }
-    return (!isMin?-1:1)*getY(L[high],x);
+    if(!isMin) return -getY(H[r],x);
+    return getY(H[r],x);
+  }
+
+  T queryMonotoneFromLeft(T x){
+    assert(!empty()); 
+    while(H.size()>=2&&getY(H.front(),x)>=getY(H[1],x)) H.pop_front();
+    if(!isMin) return -getY(H.front(),x);
+    return getY(H.front(),x);
   }
   
-  T queryMonotone(T x){
+  T queryMonotoneFromRight(T x){
     assert(!empty());
-    while(L.size()>=2&&getY(L[0],x)>=getY(L[1],x)) L.pop_front();
-    return (!isMin?-1:1)*getY(L[0],x);
+    while(H.size()>=2&&getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
+    if(!isMin) return -getY(H.back(),x);
+    return getY(H.back(),x);
   }
+  
+  T queryMonotoneInc(T x){
+    if(!isMin) return queryMonotoneFromRight(x);
+    return queryMonotoneFromLeft(x);
+  }
+  
+  T queryMonotoneDec(T x){    
+    if(!isMin) return queryMonotoneFromLeft(x);
+    return queryMonotoneFromRight(x);
+  }
+  #undef F
+  #undef S
 };
 //END CUT HERE
 template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
@@ -68,7 +99,7 @@ signed TENKA12016FINAL_E(){
     for(Int j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(Int j=0;j<l;j++)
-      dp[j]+=j*j+cht.queryMonotone(j);
+      dp[j]+=j*j+cht.queryMonotoneInc(j);
   }
   
   printf("%lld\n",*min_element(dp.begin(),dp.end()));
@@ -76,7 +107,7 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2019/01/16
+  verified on 2019/03/11
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
@@ -87,12 +118,12 @@ signed COLOPL2018FINAL_C(){
   for(int i=0;i<n;i++) scanf("%lld",&a[i]);
   ConvexHullTrick<Int, true> cht;
   for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) printf("%lld\n",cht.queryMonotone(i)+i*i);
+  for(Int i=0;i<n;i++) printf("%lld\n",cht.queryMonotoneInc(i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2019/01/16
+  verified on 2019/03/11
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
@@ -114,7 +145,7 @@ signed AOJ_2725(){
   for(Int i=0;i<n;i++){
     for(Int j=x;j>t[i];j--){
       if(vh[j-t[i]].empty()) continue;
-      Int val=vh[j-t[i]].queryMonotone(f[i])+p[i]-f[i]*f[i];
+      Int val=vh[j-t[i]].queryMonotoneInc(f[i])+p[i]-f[i]*f[i];
       vh[j].addLine(2*f[i],val-f[i]*f[i]);      
       chmax(ans,val);
     }
@@ -126,7 +157,7 @@ signed AOJ_2725(){
   return 0;
 }
 /*
-  verified on 2019/01/16
+  verified on 2019/03/11
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2725
 */
 
