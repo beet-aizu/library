@@ -847,14 +847,51 @@ signed UNIVERSITYCODESPRINT03_G(){
   https://www.hackerrank.com/contests/university-codesprint-3/challenges/simple-tree-counting
 */
 
+
+signed SPOJ_DYNACON1(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  int n,m;
+  cin>>n>>m;
+  using LCT = LinkCutTree<int, int>;
+  auto f=[](int a,int b){return a+b;};
+  LCT lct(f,f,f,0,0);
+  vector<LCT::Node* > vs(n);
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);  
+  for(int i=0;i<m;i++){
+    string s;
+    int a,b;
+    cin>>s>>a>>b;
+    a--;b--;
+    if(s=="add"s){
+      lct.evert(vs[b]);
+      lct.link(vs[a],vs[b]);
+    }
+    if(s=="rem"s){
+      auto v=lct.lca(vs[a],vs[b])==vs[a]?vs[b]:vs[a];
+      lct.cut(v);
+    }
+    if(s=="conn"s)
+      cout<<(lct.is_connected(vs[a],vs[b])?"YES\n":"NO\n");   
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/03/17
+  https://www.spoj.com/problems/DYNACON1/
+*/
+
+
 signed main(){
   //GRL_5_C();
   //GRL_5_D();
   //GRL_5_E();
   //JOISC2013_DAY4_3();
-  AOJ_2450();
+  //AOJ_2450();
   //AOJ_0367();
   //YUKI_650();
   //UNIVERSITYCODESPRINT03_G();
+  //SPOJ_DYNACON1();
   return 0;
 }
