@@ -5,8 +5,10 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //BEGIN CUT HERE
-Int extgcd(Int a,Int b,Int &x,Int &y){
-  Int d=a;
+
+template<typename T>
+T extgcd(T a,T b,T &x,T &y){
+  T d=a;
   if(b!=0){
     d=extgcd(b,a%b,y,x);
     y-=(a/b)*x;
@@ -17,24 +19,26 @@ Int extgcd(Int a,Int b,Int &x,Int &y){
   return d;
 }
 
-Int mod_inverse(Int a,Int mod){
-  Int x,y;
+template<typename T>
+T mod_inverse(T a,T mod){
+  T x,y;
   extgcd(a,mod,x,y);
   return (mod+x%mod)%mod;
 }
 
-pair<Int, Int> linear_congruence(const vector<Int> &A,
-                                 const vector<Int> &B,
-                                 const vector<Int> &M){
-  Int x=0,m=1;
-  for(Int i=0;i<(Int)A.size();i++){
-    Int a=A[i]*m,b=B[i]-A[i]*x,d=__gcd(M[i],a);
+template<typename T>
+pair<T, T> linear_congruence(const vector<T> &A,
+                             const vector<T> &B,
+                             const vector<T> &M){
+  T x=0,m=1;
+  for(int i=0;i<(int)A.size();i++){
+    T a=A[i]*m,b=B[i]-A[i]*x,d=__gcd(M[i],a);
     if(b%d!=0) return make_pair(0,-1);
-    Int t=b/d*mod_inverse(a/d,M[i]/d)%(M[i]/d);
+    T t=b/d*mod_inverse(a/d,M[i]/d)%(M[i]/d);
     x=x+m*t;
     m*=M[i]/d;
   }
-  return make_pair(x%m,m);
+  return make_pair((x%m+m)%m,m);
 }
 //END CUT HERE
 
@@ -69,6 +73,7 @@ signed AOJ_2659(){
   }
   
   cout<<n<<endl;
+  return 0;
 }
 /* 
    verified on 2018/11/23
@@ -126,9 +131,23 @@ signed DDCC2018QUALB_D(){
    https://beta.atcoder.jp/contests/ddcc2019-qual/tasks/ddcc2018_qual_d
 */
 
+signed YUKI_186(){
+  vector<Int> A(3,1),B(3),M(3);
+  for(Int i=0;i<3;i++) cin>>B[i]>>M[i];
+  auto p=linear_congruence(A,B,M);
+  if(p.second==-1) cout<<-1<<endl;
+  else cout<<(p.first?p.first:p.second)<<endl;
+  return 0;
+}
+/* 
+   verified on 2019/03/26
+   https://yukicoder.me/problems/no/186
+*/
+
 //INSERT ABOVE HERE
 signed main(){
   //AOJ_2659();
   //DDCC2018QUALB_D();
+  //YUKI_186();
   return 0;
 }
