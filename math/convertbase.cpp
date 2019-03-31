@@ -49,9 +49,40 @@ signed AOJ_0233(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0233
 */
 
+signed YUKI_499(){ 
+  long long p;
+  cin>>p;
+  auto ans=convert_base(p,7LL);
+  for(auto x:ans) cout<<x;
+  cout<<endl;
+  return 0;
+}
+/*
+  verified on 2019/03/31
+  https://yukicoder.me/problems/no/499
+*/
+
+signed YUKI_782(){
+  long long t,b;
+  cin>>t>>b;
+  while(t--){    
+    long long p;
+    cin>>p;
+    auto ans=convert_base(p,b);
+    for(auto x:ans) cout<<x;
+    cout<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2019/03/31
+  https://yukicoder.me/problems/no/782
+*/
 
 signed main(){
   //ABC105_C();
   //AOJ_0233();
+  //YUKI_499();
+  //YUKI_782();
   return 0;
 }
