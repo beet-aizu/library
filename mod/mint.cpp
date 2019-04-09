@@ -62,15 +62,18 @@ struct Mint{
   static vector<Mint> fact,finv,invs;
   
   static void init(int n){
-    if(n+1<=(signed)fact.size()) return;
-    fact.assign(n+1,1);
-    finv.assign(n+1,1);
-    invs.assign(n+1,1);
+    int m=fact.size();
+    if(n<m) return;
     
-    for(int i=1;i<=n;i++) fact[i]=fact[i-1]*Mint(i);
+    fact.resize(n+1,1);
+    finv.resize(n+1,1);
+    invs.resize(n+1,1);
+    
+    if(m==0) m=1;
+    for(int i=m;i<=n;i++) fact[i]=fact[i-1]*Mint(i);
     finv[n]=Mint(1)/fact[n];
-    for(int i=n;i>=1;i--) finv[i-1]=finv[i]*Mint(i);
-    for(int i=1;i<=n;i++) invs[i]=finv[i]*fact[i-1];
+    for(int i=n;i>=m;i--) finv[i-1]=finv[i]*Mint(i);
+    for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];
   }
 
   static Mint comb(long long n,int k){

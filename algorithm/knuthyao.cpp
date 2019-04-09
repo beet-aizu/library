@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-//INSERT ABOVE HERE
-
+//BEGIN CUT HERE
 template<typename T,typename F>
 T KnuthYao(int n,T INF,F cost){
   vector<vector<T> > dp(n+1,vector<T>(n+1,INF));
@@ -19,6 +18,8 @@ T KnuthYao(int n,T INF,F cost){
   }
   return dp[0][n-1];
 }
+//END CUT HERE
+//INSERT ABOVE HERE
 
 signed AOJ_2488(){  
   Int n;
@@ -45,7 +46,7 @@ signed KUPC2012_J(){
   vector<Int> s(n+1);
   for(Int i=0;i<n;i++) s[i+1]=s[i]+w[i];
   const Int INF =1e18;
-  auto cost=[&](int i,int r,int j){return s[j+1]-s[i];};
+  auto cost=[&](int i,int r,int j){(void) r;return s[j+1]-s[i];};
   cout<<KnuthYao(n,INF,cost)<<endl;
   return 0;
 }

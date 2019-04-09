@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-//INSERT ABOVE HERE
+//BEGIN CUT HERE
 // https://link.springer.com/content/pdf/10.1007%2FBFb0066192.pdf
 struct SemiKernel{
   int n;
@@ -34,7 +34,8 @@ struct SemiKernel{
     return S;
   }
 };
-
+//END CUT HERE
+//INSERT ABOVE HERE
 signed CFR503_C(){
   int n,m;
   scanf("%d %d",&n,&m);

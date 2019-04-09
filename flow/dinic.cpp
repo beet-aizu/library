@@ -126,8 +126,34 @@ signed SPOJ_FASTFLOW(){
   https://www.spoj.com/problems/FASTFLOW/
 */
 
+signed SPOJ_BANKROB(){
+  int n,m,s,t;
+  cin>>n>>m>>s>>t;
+  s--;t--;
+  const int INF=5050;
+  Dinic<int, true> G(n*2,INF);
+  for(int i=0;i<m;i++){
+    int x,y;
+    cin>>x>>y;
+    x--;y--;
+    G.add_edge(n+x,y,INF);
+    G.add_edge(n+y,x,INF);
+  }
+  
+  for(int i=0;i<n;i++)
+    G.add_edge(i,n+i,1);
+
+  cout<<G.flow(n+s,t)<<endl;
+  return 0;
+}
+/*
+  verified on 2019/03/17
+  https://www.spoj.com/problems/BANKROB/
+*/
+
 signed main(){
   //GRL_6_A();
   //SPOJ_FASTFLOW();
+  //SPOJ_BANKROB();
   return 0;
 }
