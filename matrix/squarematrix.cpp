@@ -5,46 +5,51 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //BEGIN CUT HERE
-template<typename K, size_t N>
+template<size_t N,typename R,typename Add,typename Mul>
 struct SquareMatrix{
-  typedef array<K, N> arr;
+  typedef array<R, N> arr;
   typedef array<arr, N> mat;
   mat dat;
-
-  SquareMatrix(){
+  Add add;
+  Mul mul;
+  R r0,r1;
+  
+  SquareMatrix(Add add,Mul mul,R r0,R r1):
+    add(add),mul(mul),r0(r0),r1(r1){
     for(size_t i=0;i<N;i++)
       for(size_t j=0;j<N;j++)
-        dat[i][j]=K(0);
+        dat[i][j]=r0;
+  }
+  
+  SquareMatrix& operator=(const SquareMatrix& a){
+    dat=a.dat;
+    return (*this);
   }
   
   size_t size() const{return N;};
   arr& operator[](size_t k){return dat[k];};
   const arr& operator[](size_t k) const {return dat[k];};
   
-  static SquareMatrix cross(const SquareMatrix &A,const SquareMatrix &B){
-    SquareMatrix res;
+  SquareMatrix cross(const SquareMatrix &A,const SquareMatrix &B) const{
+    SquareMatrix res(add,mul,r0,r1);
     for(size_t i=0;i<N;i++)
       for(size_t j=0;j<N;j++)
         for(size_t k=0;k<N;k++)
-          res[i][j]+=A[i][k]*B[k][j];
+          res[i][j]=add(res[i][j],mul(A[i][k],B[k][j]));
     return res;
   }
-
-  static SquareMatrix identity(){
-    SquareMatrix res;    
-    for(size_t i=0;i<N;i++) res[i][i]=K(1);
+  
+  SquareMatrix identity() const{
+    SquareMatrix res(add,mul,r0,r1);   
+    for(size_t i=0;i<N;i++) res[i][i]=r1;
     return res;
   }
   
   SquareMatrix pow(long long n) const{
-    SquareMatrix a,res=identity();    
-    for(size_t i=0;i<N;i++)
-      for(size_t j=0;j<N;j++)
-        a[i][j]=dat[i][j];
-    
+    SquareMatrix a=*this,res=identity();    
     while(n){
-      if(n&1) res=cross(res,a);
-      a=cross(a,a);      
+      if(n&1) res=res.cross(res,a);      
+      a=a.cross(a,a);      
       n>>=1;
     }
     return res;
@@ -149,8 +154,11 @@ struct SegmentTree{
 
 //INSERT ABOVE HERE
 signed YAHOO2019_FINAL_D(){
-  using M = Mint<Int>;
-  using MM = SquareMatrix<M, 2>;
+  using M = Mint<Int>;  
+  auto add=[](M a,M b)->M{return a+b;};
+  auto mul=[](M a,M b)->M{return a*b;};
+  using MM = SquareMatrix<2, M, decltype(add), decltype(mul)>;
+
   Int n,q;
   cin>>n>>q;
   vector<Int> ts(q),ls(q),rs(q),ps(q);
@@ -179,7 +187,7 @@ signed YAHOO2019_FINAL_D(){
   vs=compress(vs);
   auto ms=dict(vs);
   
-  MM A;
+  MM A(add,mul,M(0),M(1));
   A[0][0]=M(1);A[0][1]=M(1);
   A[1][0]=M(1);A[1][1]=M(0);
 
@@ -188,8 +196,8 @@ signed YAHOO2019_FINAL_D(){
     vt[i]=A.pow(vs[i+1]-vs[i]);
   }
 
-  MM I=MM::identity();
-  auto f=[&](MM a,MM b){return MM::cross(b,a);};
+  MM I=A.identity();
+  auto f=[&](MM a,MM b){return a.cross(b,a);};
   SegmentTree<MM, decltype(f)> seg(f,I);
   seg.build(vt);
   
@@ -198,7 +206,7 @@ signed YAHOO2019_FINAL_D(){
     if(ts[i]==1){
       Int k=ms[ps[i]];
       used[k]^=1;
-      MM B;
+      MM B(add,mul,M(0),M(1));
       for(Int j=k;j<=k+2;j++){
         if(used[j]){
           B[0][0]=M(0);B[0][1]=M(0);
@@ -231,10 +239,13 @@ signed YAHOO2019_FINAL_D(){
 signed DDCC2019_FINAL_D(){
   string s;
   cin>>s;
-  using M = SquareMatrix<unsigned, 6>;
+  
+  auto add=[](unsigned a,unsigned b)->unsigned{return a+b;};
+  auto mul=[](unsigned a,unsigned b)->unsigned{return a*b;};
+  using M = SquareMatrix<6, unsigned, decltype(add), decltype(mul)>;
  
-  auto f=[](M a,M b){return M::cross(a,b);};
-  M ti=M::identity();
+  auto f=[](M a,M b){return a.cross(a,b);};
+  M ti=M(add,mul,0,1).identity();
   SegmentTree<M, decltype(f)> seg(f,ti);
   vector<M> vt(s.size(),ti);
   for(int i=0;i<(int)s.size();i++){
@@ -262,132 +273,162 @@ signed DDCC2019_FINAL_D(){
   https://atcoder.jp/contests/ddcc2019-final/tasks/ddcc2019_final_d
 */
 
-struct HLDecomposition {
-  int n,pos;
-  vector<vector<int> > G;
-  vector<int> vid, head, sub, par, dep, inv, type;
+signed AOJ_2397(){
+  const int MAX = 80;
+  const int MOD = 1e9+9;
+  using M = Mint<int, MOD>;
+  auto add=[](M a,M b)->M{return a+b;};
+  auto mul=[](M a,M b)->M{return a*b;};
   
-  HLDecomposition(){}
-  HLDecomposition(int n):
-    n(n),pos(0),G(n),vid(n,-1),head(n),sub(n,1),
-    par(n,-1),dep(n,0),inv(n),type(n){}
+  using SM = SquareMatrix<MAX, M, decltype(add), decltype(mul)>;
+
+  using ll = long long;
+  ll w,h,n;
+  ll cnt=0;
+  while(cin>>w>>h>>n,w){
+    vector<ll> x(n),y(n);
+    for(int i=0;i<n;i++) cin>>x[i]>>y[i];
+    {
+      using P = pair<ll, ll>;
+      vector<P> vp;
+      for(int i=0;i<n;i++) vp.emplace_back(y[i],x[i]);
+      sort(vp.begin(),vp.end());
+      for(int i=0;i<n;i++) tie(y[i],x[i])=vp[i];
+    }
+    SM b(add,mul,M(0),M(1));
+    for(int i=0;i<w;i++){
+      b[i][i]=M(1);
+      if(i-1>=0) b[i][i-1]=M(1);
+      if(i+1<w)  b[i][i+1]=M(1);
+    }
+    ll d=1;
+    SM res=b.identity();    
+    for(int k=0;k<n;k++){
+      if(y[k]==d) continue;
+      res=res.cross(b.pow(y[k]-d-1),res);
+      int j=k;
+      SM c(b);
+      while(j<n&&y[k]==y[j]){
+        for(int i=0;i<w;i++) c[x[j]-1][i]=0;
+        j++;
+      }
+      res=res.cross(c,res);
+      d=y[k];
+    }
+    res=res.cross(b.pow(h-d),res);
+    cout<<"Case "<<++cnt<<": "<<res[w-1][0].v<<endl;
+  }
+  return 0;
+}
+/*
+  verified on 2019/04/11
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
+*/
+
+signed AOJ_2432(){  
+  const int MAX = 160;
+  const int INF = 1e8;
+
+  auto add=[](int a,int b)->int{return max(a,b);};
+  auto mul=[](int a,int b)->int{return a+b;};
   
-  void add_edge(int u, int v) {
-    G[u].push_back(v);
-    G[v].push_back(u);
+  using SM = SquareMatrix<MAX, int, decltype(add), decltype(mul)>;
+
+  int n,m,k;
+  cin>>n>>m>>k;
+  vector<SM> vs,ws;
+  vs.emplace_back(add,mul,-INF,0);
+  ws.emplace_back(add,mul,-INF,0);
+  
+  for(int i=0;i<n;i++){
+    vs[0][i][i]=0;
+    ws[0][i][i]=0;
+  }
+  
+  for(int i=0;i<m;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    chmax(vs[0][a][b],c);
+  }
+  
+  for(int t=0;t<20;t++){
+    SM tv=vs[t].cross(vs[t],vs[t]);
+    SM tw=vs[t].cross(vs[t],ws[t]);
+    vs.emplace_back(tv);    
+    ws.emplace_back(tw); 
+  }
+  
+  auto len=[&](SM &sm)->int{
+             int res=0;
+             for(int i=0;i<n;i++)
+               for(int j=0;j<n;j++)
+                 chmax(res,sm[i][j]);
+             return res;
+           };
+
+  if(len(vs.back())<k){
+    cout<<-1<<endl;
+    return 0;
   }
 
-  void build(vector<int> rs={0}) {
-    int c=0;
-    for(int r:rs){
-      dfs_sz(r);
-      head[r]=r;
-      dfs_hld(r,c++);
+  int ans=0;
+  SM res(ws[0]);
+  for(int t=20;t>=0;t--){
+    SM tmp=res.cross(res,ws[t]);
+    SM nxt=res.cross(res,vs[t]);
+    if(len(tmp)<k){
+      res.dat=nxt.dat;
+      ans+=1<<t;
     }
   }
-  
-  void dfs_sz(int v) {
-    for(int &u:G[v]){
-      if(u==par[v]) continue;
-      par[u]=v;
-      dep[u]=dep[v]+1;
-      dfs_sz(u);      
-      sub[v]+=sub[u];      
-      if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);
-    }
-  }
+  cout<<ans<<endl;
+  if(ans>100) return 0;
 
-  void dfs_hld(int v,int c) {
-    vid[v]=pos++;
-    inv[vid[v]]=v;
-    type[v]=c;
-    for(int u:G[v]){
-      if(u==par[v]) continue;
-      head[u]=(u==G[v][0]?head[v]:u);
-      dfs_hld(u,c);
-    }    
+  int dp[MAX][MAX];
+  int pr[MAX][MAX];
+  for(int i=0;i<MAX;i++){
+    for(int j=0;j<MAX;j++){
+      dp[i][j]=-INF;
+      pr[i][j]=-1;
+    }
   }
-  
-  // for_each(edge)
-  // [l,r] <- attention!!
-  template<typename F>
-  void for_each_edge(int u, int v,const F& f) {
-    while(1){
-      if(vid[u]>vid[v]) swap(u,v);
-      if(head[u]!=head[v]){
-        f(vid[head[v]],vid[v]);
-        v=par[head[v]];
-      }else{
-        if(u!=v) f(vid[u]+1,vid[v]);
-        break;
+  for(int v=0;v<n;v++) dp[0][v]=0;
+  for(int i=0;i<ans;i++){
+    for(int v=0;v<n;v++){
+      for(int u=0;u<n;u++){
+        if(dp[i+1][u]<dp[i][v]+vs[0][v][u]){
+          dp[i+1][u]=dp[i][v]+vs[0][v][u];
+          pr[i+1][u]=v;
+        }
       }
     }
   }
-  
-  int lca(int u,int v){
-    while(1){
-      if(vid[u]>vid[v]) swap(u,v);
-      if(head[u]==head[v]) return u;
-      v=par[head[v]];
-    }
-  }
-};
+  int pos=0;
+  for(int v=0;v<n;v++)
+    if(dp[ans][v]>dp[ans][pos]) pos=v;
 
-signed YUKI_650(){
-  using M = Mint<int>;
-  using MM = SquareMatrix<M, 2>;
-  auto f=[](MM a,MM b){return MM::cross(a,b);};
-  
-  int n;
-  cin>>n;
-  HLDecomposition hld(n);
-  vector<int> X,Y;
-  
-  for(int i=1;i<n;i++){
-    int a,b;
-    cin>>a>>b;
-    X.emplace_back(a);
-    Y.emplace_back(b);
-    hld.add_edge(a,b);    
+  vector<int> vx;
+  for(int i=ans;i>=0;i--){
+    vx.emplace_back(pos);
+    pos=pr[i][pos];    
   }
-  hld.build();
-  
-  MM ti=MM::identity();
-  SegmentTree<MM, decltype(f)> seg(f,ti);
-  seg.build(vector<MM>(n,ti));
-    
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    char c;
-    cin>>c;
-    if(c=='x'){
-      int v,a,b,c,d;
-      cin>>v>>a>>b>>c>>d;
-      int x=max(hld.vid[X[v]],hld.vid[Y[v]]);
-      MM tmp;
-      tmp[0][0]=M(a);tmp[0][1]=M(b);
-      tmp[1][0]=M(c);tmp[1][1]=M(d);
-      seg.set_val(x,tmp);
-    }
-    if(c=='g'){
-      int x,y;
-      cin>>x>>y;
-      MM ans(ti);
-      auto q=[&](int l,int r){ans=f(seg.query(l,r+1),ans);};
-      hld.for_each_edge(x,y,q);  
-      cout<<ans[0][0].v<<" "<<ans[0][1].v<<" ";
-      cout<<ans[1][0].v<<" "<<ans[1][1].v<<"\n";
-    }
+  reverse(vx.begin(),vx.end());
+  for(int i=0;i<=ans;i++){
+    if(i) cout<<" ";
+    cout<<vx[i];
   }
-  cout<<flush;
+  cout<<endl;
   return 0;
 }
-
+/*
+  verified on 2019/04/11
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2432
+*/
 
 signed main(){  
   //YAHOO2019_FINAL_D();
   //DDCC2019_FINAL_D();
-  //YUKI_650();
+  //AOJ_2397();
+  //AOJ_2432();
   return 0;
 }

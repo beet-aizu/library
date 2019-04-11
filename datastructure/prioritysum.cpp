@@ -16,7 +16,7 @@ struct PrioritySum{
   PrioritySum(size_t num):num(num),sum(identity){}
 
   void resolve(){
-    assert(pq1.size()+pq2.size()>=num);
+    assert(size()>=num);
     while(pq2.size()<num){
       sum+=pq1.top();
       pq2.emplace(pq1.top());
@@ -43,6 +43,8 @@ struct PrioritySum{
   void push(const T &x){pq1.emplace(x);}
   void expand(){num++;}
   void shrink(){assert(num);num--;}
+
+  size_t size()const{return pq1.size()+pq2.size();}
 };
 template<typename T>
 using MaximumSum=PrioritySum<T, T(0), vector<T>, less<T>, greater<T> >;
@@ -92,7 +94,118 @@ signed ARC074_D(){
   https://atcoder.jp/contests/arc074/tasks/arc074_b 
 */
 
+signed CGR002_F(){
+  using ll = long long;
+  using P = pair<ll, ll>;
+  int n;
+  cin>>n;  
+  vector<vector<P> > G(n);
+  for(int i=1;i<n;i++){
+    ll a,b,c;
+    cin>>a>>b>>c;
+    a--;b--;
+    G[a].emplace_back(b,c);
+    G[b].emplace_back(a,c);
+  }
+  
+  auto cmp=[&](P a,P b){
+             return G[a.first].size()>G[b.first].size();
+           };
+  for(auto &v:G)
+    sort(v.begin(),v.end(),cmp);
+
+  vector<vector<int> > alive(n),death(n);
+  for(int i=0;i<n;i++){
+    for(int j=0;j<=(int)G[i].size();j++)
+      alive[j].emplace_back(i);
+    death[G[i].size()].emplace_back(i);
+  }
+
+  vector<MinimumSum<ll> > ms(n);
+
+  vector<int> par(n,-1),cst(n,0),children(n,0);
+  auto dfs=
+    [&](int v,int p,auto func)->void{
+      for(auto e:G[v]){
+        ll u=e.first,c=e.second;
+        if(u==p) continue;
+        par[u]=v;
+        cst[u]=c;
+        children[v]++;
+        func(u,v,func);
+      }
+    };
+  dfs(0,-1,dfs);
+
+  const ll INF = 1e18;
+  
+  vector<int> used(n,0),dead(n,0);
+  auto dfs2=
+    [&](int v,int p,int t,auto func)->P{
+      used[v]=1;
+      vector<ll> res;
+      ll sum=0;
+      for(auto e:G[v]){
+        ll u=e.first,c=e.second;        
+        if(u==p) continue;
+        if(dead[u]) break;
+        P tmp=func(u,v,t,func);
+        sum+=tmp.second;
+        res.emplace_back((tmp.first+c)-tmp.second);
+      }
+      sort(res.begin(),res.end());
+      
+      ll x=INF,y=INF,z=0;
+      int num=children[v]-t;
+      assert(num>=-1);
+      for(int i=0;i<=(int)res.size();i++){
+        int j=max(num-i,0);
+        if(j<=(int)ms[v].size()){
+          while((int)ms[v].num<j) ms[v].expand();
+          while((int)ms[v].num>j) ms[v].shrink();
+          chmin(x,sum+z+ms[v].query());
+        }
+        int k=max(num-i+1,0);
+        if(k<=(int)ms[v].size()){
+          while((int)ms[v].num<k) ms[v].expand();
+          while((int)ms[v].num>k) ms[v].shrink();
+          chmin(y,sum+z+ms[v].query());
+        }
+        if(i<(int)res.size()) z+=res[i];
+      }      
+      return P(x,y);
+    };
+  
+  for(int t=0;t<n;t++){
+    if(t) cout<<" ";
+    ll res=0;
+    for(int v:alive[t]){
+      if(used[v]) continue;
+      int u=v;
+      while(~par[u]&&!dead[par[u]]) u=par[u];
+      P tmp=dfs2(u,par[u],t,dfs2);
+      res+=min(tmp.first+cst[u],tmp.second);
+    }
+
+    cout<<res;
+    for(int v:alive[t]) used[v]=0;
+    for(int v:death[t]){
+      dead[v]=1;
+      for(auto e:G[v])
+        if(e.first==par[v])
+          ms[e.first].push(e.second);
+    }
+  }  
+  cout<<endl;
+  return 0;
+}
+/*
+  verified on 2019/04/10
+  https://codeforces.com/contest/1119/problem/F
+*/
+
 signed main(){
-  ARC074_D(); 
+  //ARC074_D();
+  CGR002_F();
   return 0;
 }
