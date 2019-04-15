@@ -128,8 +128,16 @@ struct Mint{
   }
 
   static Mint B(int n,int k){
+    if(n==0) return Mint(1);
+    k=min(k,n);
+    init(k);    
+    vector<Mint> dp(k+1);
+    dp[0]=Mint(1);
+    for(int i=1;i<=k;i++)
+      dp[i]=dp[i-1]+((i&1)?-finv[i]:finv[i]);    
     Mint res;
-    for(int j=1;j<=k;j++) res+=S(n,j);
+    for(int i=1;i<=k;i++)
+      res+=Mint(i).pow(n)*finv[i]*dp[k-i];    
     return res;
   }
 
@@ -180,58 +188,6 @@ map<T, int> factorize(T x){
 }
 
 //INSERT ABOVE HERE
-signed ABC110_D(){
-  int n;
-  using M = Mint<int>;
-  M m;
-  scanf("%d %d",&n,&m.v);
-
-  M::init(n+100);
-  
-  Mint<int> ans(1);
-  auto x=factorize(m.v);
-  for(auto p:x) ans*=M::H(n,p.second);
-
-  printf("%d\n",ans.v);
-  return 0;
-}
-/*
-  verified on 2018/09/24
-  https://beta.atcoder.jp/contests/abc110/tasks/abc110_d
-*/
-
-
-//montmort
-signed ARC009_C(){
-  Int n,k;
-  scanf("%lld %lld",&n,&k);
-  const int MMOD = 1777777777;
-  using MM = Mint<long long, MMOD>;
-  MM a=MM::montmort(k)*MM::comb(n,k);
-  printf("%lld\n",a.v);
-  return 0;
-}
-/*
-  verified on 2018/09/24
-  https://beta.atcoder.jp/contests/arc009/tasks/arc009_3
-*/
-
-
-signed ARC033_D(){
-  int n;
-  scanf("%d",&n);
-  using M = Mint<int>;
-  vector<M> y(n+1);
-  for(Int i=0;i<=n;i++) scanf("%d",&y[i].v);
-  int t;
-  scanf("%d",&t);
-  printf("%d\n",(t<=n?y[t]:M::LagrangePolynomial(y,M(t))).v);
-  return 0;
-}
-/*
-  verified on 2018/09/24
-  https://beta.atcoder.jp/contests/arc033/tasks/arc033_4
-*/
 
 signed DPL_5_A(){
   int n;
@@ -366,6 +322,56 @@ signed DPL_5_L(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_L&lang=jp
 */
 
+signed ABC110_D(){
+  int n;
+  using M = Mint<int>;
+  M m;
+  scanf("%d %d",&n,&m.v);
+
+  M::init(n+100);
+  
+  Mint<int> ans(1);
+  auto x=factorize(m.v);
+  for(auto p:x) ans*=M::H(n,p.second);
+
+  printf("%d\n",ans.v);
+  return 0;
+}
+/*
+  verified on 2018/09/24
+  https://beta.atcoder.jp/contests/abc110/tasks/abc110_d
+*/
+
+//montmort
+signed ARC009_C(){
+  Int n,k;
+  scanf("%lld %lld",&n,&k);
+  const int MMOD = 1777777777;
+  using MM = Mint<long long, MMOD>;
+  MM a=MM::montmort(k)*MM::comb(n,k);
+  printf("%lld\n",a.v);
+  return 0;
+}
+/*
+  verified on 2018/09/24
+  https://beta.atcoder.jp/contests/arc009/tasks/arc009_3
+*/
+
+signed ARC033_D(){
+  int n;
+  scanf("%d",&n);
+  using M = Mint<int>;
+  vector<M> y(n+1);
+  for(Int i=0;i<=n;i++) scanf("%d",&y[i].v);
+  int t;
+  scanf("%d",&t);
+  printf("%d\n",(t<=n?y[t]:M::LagrangePolynomial(y,M(t))).v);
+  return 0;
+}
+/*
+  verified on 2018/09/24
+  https://beta.atcoder.jp/contests/arc033/tasks/arc033_4
+*/
 
 signed YUKI_117(){
   int T;
@@ -415,11 +421,23 @@ signed YUKI_042(){
   https://yukicoder.me/problems/no/42
 */
 
-signed main(){
-  //ABC110_D();
-  //ARC009_C();
-  //ARC033_D();
+signed CFR315_B(){
+  int n;
+  cin>>n;
+  using M = Mint<int>;
+  M::init(n+1);
+  M res;
+  for(int i=0;i<n;i++)
+    res+=M::C(n,i)*M::B(i,i);  
+  cout<<res.v<<endl;
+  return 0;
+}
+/*
+  verified on 2019/04/15
+  https://codeforces.com/contest/568/problem/B
+*/
 
+signed main(){
   //DPL_5_A();
   //DPL_5_B();
   //DPL_5_C();
@@ -432,8 +450,14 @@ signed main(){
   //DPL_5_J();
   //DPL_5_K();
   //DPL_5_L();
+  
+  //ABC110_D();
+  //ARC009_C();
+  //ARC033_D();
 
   //YUKI_117();
   //YUKI_042();
+
+  CFR315_B();
   return 0;
 }
