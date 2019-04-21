@@ -2,14 +2,14 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-
-template<int X>
+template<size_t X>
 struct Trie{
   struct Node{
     char c;
-    vector<int> nxt,idxs;
+    array<int, X> nxt;
+    vector<int> idxs;
     int idx;
-    Node(char c):c(c),nxt(X,-1),idx(-1){}
+    Node(char c):c(c),idx(-1){fill(nxt.begin(),nxt.end(),-1);}
   };
 
   using F = function<int(char)>;
@@ -59,7 +59,7 @@ struct Trie{
   
 };
 
-template<int X>
+template<size_t X>
 struct AhoCorasick : Trie<X+1>{
   using TRIE = Trie<X+1>;
   using TRIE::TRIE;
@@ -72,7 +72,7 @@ struct AhoCorasick : Trie<X+1>{
     for(int i=0;i<n;i++) cnt[i]=v[i].idxs.size();
     
     queue<int> q;
-    for(int i=0;i<X;i++){
+    for(int i=0;i<(int)X;i++){
       if(~v[0].nxt[i]){
         v[v[0].nxt[i]].nxt[X]=0;
         q.emplace(v[0].nxt[i]);
@@ -80,12 +80,12 @@ struct AhoCorasick : Trie<X+1>{
         v[0].nxt[i]=0;
       }      
     }
-
+    
     while(!q.empty()){
       auto &x=v[q.front()];
       cnt[q.front()]+=cnt[x.nxt[X]];
       q.pop();
-      for(int i=0;i<X;i++){
+      for(int i=0;i<(int)X;i++){
         if(x.nxt[i]<0) continue;
         int fail=x.nxt[X];
         while(v[fail].nxt[i]<0) fail=v[fail].nxt[X];
@@ -125,7 +125,10 @@ struct AhoCorasick : Trie<X+1>{
     pos=v[pos].nxt[k];
     return pos;
   }
-  
+
+  int count(int pos){
+    return cnt[pos];
+  }
 };
 
 //END CUT HERE

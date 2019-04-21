@@ -2,14 +2,14 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-
-template<int X>
+template<size_t X>
 struct Trie{
   struct Node{
     char c;
-    vector<int> nxt,idxs;
+    array<int, X> nxt;
+    vector<int> idxs;
     int idx;
-    Node(char c):c(c),nxt(X,-1),idx(-1){}
+    Node(char c):c(c),idx(-1){fill(nxt.begin(),nxt.end(),-1);}
   };
 
   using F = function<int(char)>;
@@ -60,10 +60,18 @@ struct Trie{
 };
 //END CUT HERE
 
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+
+//INSERT ABOVE HERE
 template<typename T> void chmin(T &a,T b){if(a>b) a=b;}
 template<typename T> void chmax(T &a,T b){if(a<b) a=b;}
 
-signed main(){
+signed tenka1_2016_final_C(){
   string s;
   cin>>s;
   int m;
@@ -101,3 +109,8 @@ signed main(){
   verified on 2018/05/20
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
 */
+
+signed main(){
+  tenka1_2016_final_C();
+  return 0;
+}
