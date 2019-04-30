@@ -18,7 +18,7 @@ struct DisjointSparseTable{
     while((1<<h)<=n) h++;
     dat.assign(h,vector<T>(n));
     ht.assign((1<<h)+1,0);
-    for(int j=2;j<=(1<<h)+1;j++) ht[j]=ht[j>>1]+1;
+    for(int j=2;j<(1<<h)+1;j++) ht[j]=ht[j>>1]+1;
     
     for(int j=0;j<n;j++) dat[0][j]=v[j];
     for(int i=1;i<h;i++){

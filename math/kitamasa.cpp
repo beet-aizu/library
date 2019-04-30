@@ -69,7 +69,7 @@ signed TDPC_F(){
   https://beta.atcoder.jp/contests/tdpc/tasks/tdpc_fibonacci 
 */
 
-signed ARC009_D(){
+signed ABC009_D(){
   int k,m;
   scanf("%d %d",&k,&m);
   
@@ -89,6 +89,6 @@ signed ARC009_D(){
 */
 signed main(){
   //TDPC_F();
-  //ARC009_D();
+  //ABC009_D();
   return 0;
 }
