@@ -19,6 +19,9 @@ struct Mint{
     return res;
   }
   
+  static Mint add_identity(){return Mint(0);}
+  static Mint mul_identity(){return Mint(1);}
+  
   Mint inv(){return pow(MOD-2);}
   
   Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
@@ -31,7 +34,7 @@ struct Mint{
   Mint operator*(Mint a) const{return Mint(v)*=a;};
   Mint operator/(Mint a) const{return Mint(v)/=a;};
 
-  Mint operator-(){return v?MOD-v:v;}
+  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
 
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}

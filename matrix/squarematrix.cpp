@@ -5,51 +5,58 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //BEGIN CUT HERE
-template<size_t N,typename R,typename Add,typename Mul>
+template<size_t N,typename R>
 struct SquareMatrix{
   typedef array<R, N> arr;
   typedef array<arr, N> mat;
   mat dat;
-  Add add;
-  Mul mul;
-  R r0,r1;
   
-  SquareMatrix(Add add,Mul mul,R r0,R r1):
-    add(add),mul(mul),r0(r0),r1(r1){
+  SquareMatrix(){
     for(size_t i=0;i<N;i++)
       for(size_t j=0;j<N;j++)
-        dat[i][j]=r0;
+        dat[i][j]=R::add_identity();
   }
-  
   SquareMatrix& operator=(const SquareMatrix& a){
     dat=a.dat;
     return (*this);
+  }
+  bool operator==(const SquareMatrix& a) const{
+    return dat==a.dat;
   }
   
   size_t size() const{return N;};
   arr& operator[](size_t k){return dat[k];};
   const arr& operator[](size_t k) const {return dat[k];};
   
-  SquareMatrix cross(const SquareMatrix &A,const SquareMatrix &B) const{
-    SquareMatrix res(add,mul,r0,r1);
-    for(size_t i=0;i<N;i++)
-      for(size_t j=0;j<N;j++)
-        for(size_t k=0;k<N;k++)
-          res[i][j]=add(res[i][j],mul(A[i][k],B[k][j]));
+  static SquareMatrix add_identity(){return SquareMatrix();}  
+  static SquareMatrix mul_identity(){
+    SquareMatrix res;
+    for(size_t i=0;i<N;i++) res[i][i]=R::mul_identity();
     return res;
   }
   
-  SquareMatrix identity() const{
-    SquareMatrix res(add,mul,r0,r1);   
-    for(size_t i=0;i<N;i++) res[i][i]=r1;
+  SquareMatrix operator*(const SquareMatrix &B) const{
+    SquareMatrix res;
+    for(size_t i=0;i<N;i++)
+      for(size_t j=0;j<N;j++)
+        for(size_t k=0;k<N;k++)
+          res[i][j]=res[i][j]+(dat[i][k]*B[k][j]);
+    return res;
+  }
+  
+  SquareMatrix operator+(const SquareMatrix &B) const{
+    SquareMatrix res;
+    for(size_t i=0;i<N;i++)
+      for(size_t j=0;j<N;j++)
+        res[i][j]=dat[i][j]+B[i][j];
     return res;
   }
   
   SquareMatrix pow(long long n) const{
-    SquareMatrix a=*this,res=identity();    
+    SquareMatrix a=*this,res=mul_identity();    
     while(n){
-      if(n&1) res=res.cross(res,a);      
-      a=a.cross(a,a);      
+      if(n&1) res=res*a;      
+      a=a*a;      
       n>>=1;
     }
     return res;
@@ -74,6 +81,9 @@ struct Mint{
     return res;
   }
   
+  static Mint add_identity(){return Mint(0);}
+  static Mint mul_identity(){return Mint(1);}
+  
   Mint inv(){return pow(MOD-2);}
   
   Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
@@ -86,7 +96,7 @@ struct Mint{
   Mint operator*(Mint a) const{return Mint(v)*=a;};
   Mint operator/(Mint a) const{return Mint(v)/=a;};
 
-  Mint operator-(){return v?MOD-v:v;}
+  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
 
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
@@ -154,10 +164,8 @@ struct SegmentTree{
 
 //INSERT ABOVE HERE
 signed YAHOO2019_FINAL_D(){
-  using M = Mint<Int>;  
-  auto add=[](M a,M b)->M{return a+b;};
-  auto mul=[](M a,M b)->M{return a*b;};
-  using MM = SquareMatrix<2, M, decltype(add), decltype(mul)>;
+  using M = Mint<Int>; 
+  using MM = SquareMatrix<2, M>;
 
   Int n,q;
   cin>>n>>q;
@@ -187,7 +195,7 @@ signed YAHOO2019_FINAL_D(){
   vs=compress(vs);
   auto ms=dict(vs);
   
-  MM A(add,mul,M(0),M(1));
+  MM A;
   A[0][0]=M(1);A[0][1]=M(1);
   A[1][0]=M(1);A[1][1]=M(0);
 
@@ -196,8 +204,8 @@ signed YAHOO2019_FINAL_D(){
     vt[i]=A.pow(vs[i+1]-vs[i]);
   }
 
-  MM I=A.identity();
-  auto f=[&](MM a,MM b){return a.cross(b,a);};
+  MM I=MM::mul_identity();
+  auto f=[&](MM a,MM b){return b*a;};
   SegmentTree<MM, decltype(f)> seg(f,I);
   seg.build(vt);
   
@@ -206,7 +214,7 @@ signed YAHOO2019_FINAL_D(){
     if(ts[i]==1){
       Int k=ms[ps[i]];
       used[k]^=1;
-      MM B(add,mul,M(0),M(1));
+      MM B;
       for(Int j=k;j<=k+2;j++){
         if(used[j]){
           B[0][0]=M(0);B[0][1]=M(0);
@@ -239,15 +247,23 @@ signed YAHOO2019_FINAL_D(){
 signed DDCC2019_FINAL_D(){
   string s;
   cin>>s;
+
+  struct M{
+    uint32_t v;    
+    M(){*this=add_identity();}
+    M(uint32_t v):v(v){}
+    M operator+(const M &a)const{return M(v+a.v);}
+    M operator*(const M &a)const{return M(v*a.v);}
+    static M add_identity(){return M(0);}
+    static M mul_identity(){return M(1);}
+  };
   
-  auto add=[](unsigned a,unsigned b)->unsigned{return a+b;};
-  auto mul=[](unsigned a,unsigned b)->unsigned{return a*b;};
-  using M = SquareMatrix<6, unsigned, decltype(add), decltype(mul)>;
+  using SM = SquareMatrix<6, M>;
  
-  auto f=[](M a,M b){return a.cross(a,b);};
-  M ti=M(add,mul,0,1).identity();
-  SegmentTree<M, decltype(f)> seg(f,ti);
-  vector<M> vt(s.size(),ti);
+  auto f=[](SM a,SM b){return a*b;};
+  SM ti=SM::mul_identity();
+  SegmentTree<SM, decltype(f)> seg(f,ti);
+  vector<SM> vt(s.size(),ti);
   for(int i=0;i<(int)s.size();i++){
     if(s[i]=='D') vt[i][0][1]=1;
     if(s[i]=='I') vt[i][1][2]=1;
@@ -263,7 +279,7 @@ signed DDCC2019_FINAL_D(){
     int l,r;
     cin>>l>>r;
     l--;
-    cout<<seg.query(l,r)[0][5]<<"\n";
+    cout<<seg.query(l,r)[0][5].v<<"\n";
   }
   cout<<flush;
   return 0;
@@ -277,10 +293,7 @@ signed AOJ_2397(){
   const int MAX = 80;
   const int MOD = 1e9+9;
   using M = Mint<int, MOD>;
-  auto add=[](M a,M b)->M{return a+b;};
-  auto mul=[](M a,M b)->M{return a*b;};
-  
-  using SM = SquareMatrix<MAX, M, decltype(add), decltype(mul)>;
+  using SM = SquareMatrix<MAX, M>;
 
   using ll = long long;
   ll w,h,n;
@@ -295,27 +308,27 @@ signed AOJ_2397(){
       sort(vp.begin(),vp.end());
       for(int i=0;i<n;i++) tie(y[i],x[i])=vp[i];
     }
-    SM b(add,mul,M(0),M(1));
+    SM b;
     for(int i=0;i<w;i++){
       b[i][i]=M(1);
       if(i-1>=0) b[i][i-1]=M(1);
       if(i+1<w)  b[i][i+1]=M(1);
     }
     ll d=1;
-    SM res=b.identity();    
+    SM res=SM::mul_identity();    
     for(int k=0;k<n;k++){
       if(y[k]==d) continue;
-      res=res.cross(b.pow(y[k]-d-1),res);
+      res=b.pow(y[k]-d-1)*res;
       int j=k;
       SM c(b);
       while(j<n&&y[k]==y[j]){
         for(int i=0;i<w;i++) c[x[j]-1][i]=0;
         j++;
       }
-      res=res.cross(c,res);
+      res=c*res;
       d=y[k];
     }
-    res=res.cross(b.pow(h-d),res);
+    res=b.pow(h-d)*res;
     cout<<"Case "<<++cnt<<": "<<res[w-1][0].v<<endl;
   }
   return 0;
@@ -329,16 +342,20 @@ signed AOJ_2432(){
   const int MAX = 160;
   const int INF = 1e8;
 
-  auto add=[](int a,int b)->int{return max(a,b);};
-  auto mul=[](int a,int b)->int{return a+b;};
-  
-  using SM = SquareMatrix<MAX, int, decltype(add), decltype(mul)>;
+  struct M{
+    int v;
+    M(){*this=add_identity();}
+    M(int v):v(v){}
+    M operator+(const M &a)const{return M(max(v,a.v));}
+    M operator*(const M &a)const{return M(v+a.v);}
+    static M add_identity(){return M(-INF);}
+    static M mul_identity(){return M(0);}
+  };
+  using SM = SquareMatrix<MAX, M>;
 
   int n,m,k;
   cin>>n>>m>>k;
-  vector<SM> vs,ws;
-  vs.emplace_back(add,mul,-INF,0);
-  ws.emplace_back(add,mul,-INF,0);
+  vector<SM> vs(1),ws(1);
   
   for(int i=0;i<n;i++){
     vs[0][i][i]=0;
@@ -348,12 +365,12 @@ signed AOJ_2432(){
   for(int i=0;i<m;i++){
     int a,b,c;
     cin>>a>>b>>c;
-    chmax(vs[0][a][b],c);
+    chmax(vs[0][a][b].v,c);
   }
   
   for(int t=0;t<20;t++){
-    SM tv=vs[t].cross(vs[t],vs[t]);
-    SM tw=vs[t].cross(vs[t],ws[t]);
+    SM tv=vs[t]*vs[t];
+    SM tw=vs[t]*ws[t];
     vs.emplace_back(tv);    
     ws.emplace_back(tw); 
   }
@@ -362,7 +379,7 @@ signed AOJ_2432(){
              int res=0;
              for(int i=0;i<n;i++)
                for(int j=0;j<n;j++)
-                 chmax(res,sm[i][j]);
+                 chmax(res,sm[i][j].v);
              return res;
            };
 
@@ -374,8 +391,8 @@ signed AOJ_2432(){
   int ans=0;
   SM res(ws[0]);
   for(int t=20;t>=0;t--){
-    SM tmp=res.cross(res,ws[t]);
-    SM nxt=res.cross(res,vs[t]);
+    SM tmp=res*ws[t];
+    SM nxt=res*vs[t];
     if(len(tmp)<k){
       res.dat=nxt.dat;
       ans+=1<<t;
@@ -396,8 +413,8 @@ signed AOJ_2432(){
   for(int i=0;i<ans;i++){
     for(int v=0;v<n;v++){
       for(int u=0;u<n;u++){
-        if(dp[i+1][u]<dp[i][v]+vs[0][v][u]){
-          dp[i+1][u]=dp[i][v]+vs[0][v][u];
+        if(dp[i+1][u]<dp[i][v]+vs[0][v][u].v){
+          dp[i+1][u]=dp[i][v]+vs[0][v][u].v;
           pr[i+1][u]=v;
         }
       }
