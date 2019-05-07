@@ -13,8 +13,9 @@ struct QuickFind{
       v[i].resize(1,i);
     }
   }
-  bool same(int x,int y){
-    return p[x]==p[y];
+  int find(int x) const{return p[x];}
+  bool same(int x,int y) const{
+    return find(x)==find(y);
   }
   void unite(int x,int y){
     x=p[x];y=p[y];
@@ -27,6 +28,7 @@ struct QuickFind{
     }
     v[y].clear();
   }
+  const vector<int>& elements(int x) const{return v[x];}  
 };
 //END CUT HERE
 
