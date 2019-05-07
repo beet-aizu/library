@@ -24,11 +24,28 @@ struct DiameterForEdge{
       dfs(u,v,s);
     }
   }
-  T build(){  
+  pair<int, int> endPoints(){
     int s=0;
     dfs(s,-1,s);
-    dfs(s,-1,s);
-    return dp[s];
+    int t=s;
+    dfs(t,-1,t);
+    return make_pair(s,t);
+  }
+  T build(){
+    int t=endPoints().second;
+    return dp[t];
+  }
+  vector<T> distance(int v){
+    dfs(v,-1,v);
+    return dp;
+  }
+  vector<T> farthest(){
+    int t=endPoints().second;
+    auto ds=dp;
+    auto dt=distance(t);
+    for(int i=0;i<(int)ds.size();i++)
+      if(ds[i]<dt[i]) ds[i]=dt[i];
+    return ds;
   }
 };
 //END CUT HERE
@@ -58,7 +75,55 @@ signed GRL_5_A(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp
 */
 
+signed YAHOO2019_FINAL_B(){
+  int n;
+  cin>>n;
+  DiameterForEdge<int> G(n);
+  for(int i=1;i<n;i++){
+    int x,y;
+    cin>>x>>y;
+    x--;y--;
+    G.add_edge(x,y,1);
+  }
+  
+  int m;
+  cin>>m;
+  DiameterForEdge<int> H(m);
+  for(int i=1;i<m;i++){
+    int x,y;
+    cin>>x>>y;
+    x--;y--;
+    H.add_edge(x,y,1);
+  }
+
+  auto dp1=G.farthest();
+  auto dp2=H.farthest();
+  sort(dp1.begin(),dp1.end());
+  sort(dp2.begin(),dp2.end());
+    
+  using ll = long long;
+  vector<ll> s(m+1,0);
+  for(int i=0;i<m;i++) s[i+1]=s[i]+dp2[i];
+
+  ll ans=0;
+  ll di=max(dp1.back(),dp2.back());
+  
+  for(ll x:dp1){
+    ll y=lower_bound(dp2.begin(),dp2.end(),di-(x+1))-dp2.begin();
+    ans+=di*y;
+    ans+=(s[m]-s[y])+(m-y)*(x+1);
+  }
+  
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/07
+  https://atcoder.jp/contests/yahoo-procon2019-final/tasks/yahoo_procon2019_final_b
+*/
+
 signed main(){
-  GRL_5_A();  
+  //GRL_5_A();
+  //YAHOO2019_FINAL_B();
   return 0;
 }
