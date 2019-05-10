@@ -184,7 +184,7 @@ Polygon convexCut(Polygon p,Line l);
 Line bisector(Point p1,Point p2);
 Vector translate(Vector v,double theta);
 vector<Line> corner(Line l1,Line l2);
-vector<vector<pair<int, double> > >
+vector< vector<int> >
 segmentArrangement(vector<Segment> &ss, Polygon &ps);
   
 int ccw(Point p0,Point p1,Point p2){
@@ -402,7 +402,7 @@ double area(Polygon s){
   for(int i=0;i<(int)s.size();i++){
     res+=cross(s[i],s[(i+1)%s.size()])/2.0;
   }
-  return abs(res);
+  return res;
 }
 
 double area(Circle c1,Circle c2){
@@ -519,7 +519,7 @@ double closest_pair(Polygon &a,int l=0,int r=-1){
   return d;
 }
 
-vector<vector<pair<int, double> > >
+vector<vector<int> > 
 segmentArrangement(vector<Segment> &ss, Polygon &ps){
   int n=ss.size();
   for(int i=0;i<n;i++){
@@ -532,7 +532,7 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
   sort(ps.begin(),ps.end());
   ps.erase(unique(ps.begin(),ps.end()),ps.end());
 
-  vector<vector<pair<int, double> > > G(ps.size());
+  vector<vector<int> > G(ps.size());
   for(int i=0;i<n;i++){
     vector<pair<double,int> > ls;
     for(int j=0;j<(int)ps.size();j++)
@@ -542,9 +542,13 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
     sort(ls.begin(),ls.end());
     for(int j=0;j+1<(int)ls.size();j++){
       int a=ls[j].second,b=ls[j+1].second;
-      G[a].emplace_back(b,abs(ps[a]-ps[b]));
-      G[b].emplace_back(a,abs(ps[a]-ps[b]));
+      G[a].emplace_back(b);
+      G[b].emplace_back(a);
     }
+  }  
+  for(auto &v:G){
+    sort(v.begin(),v.end());
+    v.erase(unique(v.begin(),v.end()),v.end());    
   }
   return G;
 }
@@ -1042,7 +1046,10 @@ signed AOJ_2454(){
   ps.emplace_back(s);
   ps.emplace_back(g);
 
-  auto G=segmentArrangement(ss,ps);
+  auto H=segmentArrangement(ss,ps);
+  vector<vector<pair<int, double> > > G(H.size());
+  for(int i=0;i<(int)H.size();i++)
+    for(int j:H[i]) G[i].emplace_back(j,abs(ps[i]-ps[j]));
   
   double ans=0,tmp=0;
   for(int i=0;i<n;i++) ans+=abs(ss[i].p1-ss[i].p2);
@@ -1059,8 +1066,7 @@ signed AOJ_2454(){
       return 0;
     }
     if(mp.count(ps[v])) continue;
-    for(auto &e:G[v]){
-      int u=e.first;
+    for(int u:H[v]){
       if(!used[u]){
         used[u]=1;
         q.emplace(u);
@@ -1093,6 +1099,79 @@ signed AOJ_2454(){
 */
 
 
+struct Precision{
+  Precision(){
+    cout<<fixed<<setprecision(12);
+  }
+}precision_beet;
+
+
+template<typename F>
+struct FixPoint : F{
+  FixPoint(F&& f):F(forward<F>(f)){}
+  template<typename... Args>
+  decltype(auto) operator()(Args&&... args) const{
+    return F::operator()(*this,forward<Args>(args)...);
+  }  
+};
+template<typename F>
+inline decltype(auto) MFP(F&& f){
+  return FixPoint<F>{forward<F>(f)};
+}
+
+signed AOJ_2448(){
+  Int n;
+  cin>>n;
+  Polygon ps(n);
+  cin>>ps;
+  vector<Segment> ss(n-1);
+  for(Int i=0;i+1<n;i++){
+    ss[i].p1=ps[i];
+    ss[i].p2=ps[i+1];
+  }
+  Polygon qs;
+  auto G=segmentArrangement(ss,qs);
+
+  Int m=qs.size();  
+  Int s=0;
+  for(Int i=0;i<m;i++)
+    if(qs[i]<qs[s]) s=i;
+
+  
+  auto calc=[&](Vector a,Vector b){
+              double th=acos(max(-1.0,min(1.0,dot(a,b)/abs(a)/abs(b))));
+              if(cross(a,b)<-EPS) th=2*PI-th;
+              return th;
+            };  
+  double ans=0;
+  for(int t:G[s]){
+
+    Polygon res;
+    res.emplace_back(qs[s]);
+    
+    MFP([&](auto dfs,Int v,Int p)->void{
+          if(v==s) return;
+          Int z=G[v][0];
+          for(int u:G[v]){
+            double a1=calc(qs[p]-qs[v],qs[z]-qs[v]);
+            if(z==p) a1=8;
+            double a2=calc(qs[p]-qs[v],qs[u]-qs[v]);
+            if(u==p) a2=8;
+            if(a1>a2) z=u;
+          }
+          res.emplace_back(qs[v]);
+          dfs(z,v);
+        })(t,s);
+    
+    ans+=max(0.0,area(res));
+  }
+  cout<<ans<<endl;
+  return 0;            
+}
+/*
+  verified on 2019/05/10
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2448
+*/
 
 signed main(){
   //AOJ_CGL1A();
@@ -1121,10 +1200,10 @@ signed main(){
   //AOJ_CGL7E();
   //AOJ_CGL7F();
   //AOJ_CGL7G();
-  AOJ_CGL7H();
+  //AOJ_CGL7H();
 
   //AOJ_2572();
   //AOJ_2454();
-  
+  //AOJ_2448();
   return 0;
 }
