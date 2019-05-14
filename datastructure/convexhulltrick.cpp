@@ -14,7 +14,7 @@ struct ConvexHullTrick {
   inline int sgn(T x){return x==0?0:(x<0?-1:1);}
   
   using D = long double;
-  inline bool check(const P &a,const P &b,const P &c){
+  inline bool check(const P &a,const P &b,const P &c){    
     if(b.S==a.S||c.S==b.S)
       return sgn(b.F-a.F)*sgn(c.S-b.S) >= sgn(c.F-b.F)*sgn(b.S-a.S);
     
@@ -27,11 +27,23 @@ struct ConvexHullTrick {
   void addLine(T m,T b){
     if(!isMin) m*=-1,b*=-1;
     P line(m,b);
-    if(empty()||H.front().F<=m){
+    if(empty()){
+      H.emplace_front(line);
+      return;
+    }
+    if(H.front().F<=m){
+      if(H.front().F==m){
+        if(H.front().S<=b) return;
+        H.pop_front();        
+      }
       while(H.size()>=2&&check(line,H.front(),H[1])) H.pop_front();
       H.emplace_front(line);
     }else{
-      assert(m<=H.back().F);      
+      assert(m<=H.back().F);
+      if(H.back().F==m){
+        if(H.back().S<=b) return;
+        H.pop_back();        
+      }
       while(H.size()>=2&&check(H[H.size()-2],H.back(),line)) H.pop_back();
       H.emplace_back(line);
     } 
@@ -49,33 +61,23 @@ struct ConvexHullTrick {
       if(getY(H[m],x)>=getY(H[m+1],x)) l=m;
       else r=m;
     }
-    if(!isMin) return -getY(H[r],x);
-    return getY(H[r],x);
+    if(isMin) return getY(H[r],x);
+    return -getY(H[r],x);
   }
 
-  T queryMonotoneFromLeft(T x){
+  T queryMonotoneInc(T x){    
     assert(!empty()); 
     while(H.size()>=2&&getY(H.front(),x)>=getY(H[1],x)) H.pop_front();
-    if(!isMin) return -getY(H.front(),x);
-    return getY(H.front(),x);
-  }
-  
-  T queryMonotoneFromRight(T x){
-    assert(!empty());
-    while(H.size()>=2&&getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
-    if(!isMin) return -getY(H.back(),x);
-    return getY(H.back(),x);
-  }
-  
-  T queryMonotoneInc(T x){
-    if(!isMin) return queryMonotoneFromRight(x);
-    return queryMonotoneFromLeft(x);
+    if(isMin) return getY(H.front(),x);
+    return -getY(H.front(),x);
   }
   
   T queryMonotoneDec(T x){    
-    if(!isMin) return queryMonotoneFromLeft(x);
-    return queryMonotoneFromRight(x);
-  }
+    assert(!empty());
+    while(H.size()>=2&&getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
+    if(isMin) return getY(H.back(),x);
+    return -getY(H.back(),x);
+  }  
   #undef F
   #undef S
 };
@@ -107,7 +109,7 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2019/03/11
+  verified on 2019/05/14
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
@@ -116,14 +118,14 @@ signed COLOPL2018FINAL_C(){
   scanf("%d",&n);
   vector<Int> a(n);
   for(int i=0;i<n;i++) scanf("%lld",&a[i]);
-  ConvexHullTrick<Int, true> cht;
-  for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) printf("%lld\n",cht.queryMonotoneInc(i)+i*i);
+  ConvexHullTrick<Int, false> cht;
+  for(Int i=0;i<n;i++) cht.addLine(-2*i,-(a[i]+i*i));  
+  for(Int i=0;i<n;i++) printf("%lld\n",-cht.queryMonotoneDec(-i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2019/03/11
+  verified on 2019/05/14
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
@@ -157,7 +159,7 @@ signed AOJ_2725(){
   return 0;
 }
 /*
-  verified on 2019/03/11
+  verified on 2019/05/14
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2725
 */
 
