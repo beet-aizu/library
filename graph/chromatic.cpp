@@ -24,7 +24,7 @@ int chromatic(vector< vector<int> > &G){
       for(int b=1;b<s;b++){
         int ctz=__builtin_ctz(b);
         res[b]=res[b-(1<<ctz)]+res[(b-(1<<ctz))&~es[ctz]];
-        if(res[b]>=MOD) res[b]=MOD;
+        if(res[b]>=MOD) res[b]-=MOD;
       }
       return res;
     };
