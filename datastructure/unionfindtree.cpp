@@ -3,10 +3,10 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 struct UnionFind{
-  int n;
+  int n,num;
   vector<int> r,p;
   UnionFind(){}
-  UnionFind(int sz):n(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
+  UnionFind(int sz):n(sz),num(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
   int find(int x){
     return (x==p[x]?x:p[x]=find(p[x]));
   }
@@ -19,9 +19,13 @@ struct UnionFind{
     if(r[x]<r[y]) swap(x,y);
     r[x]+=r[y];
     p[y]=x;
+    num--;
   }
   int size(int x){
     return r[find(x)];
+  }
+  int count() const{
+    return num;
   }
 };
 //END CUT HERE
@@ -83,8 +87,29 @@ signed ABC120_D(){
   https://atcoder.jp/contests/abc120/tasks/abc120_d
 */
 
+signed ABC126_E(){
+  Int n,m;
+  cin>>n>>m;
+  UnionFind uf(n);
+  for(Int i=0;i<m;i++){
+    Int x,y,z;
+    cin>>x>>y>>z;
+    x--;y--;
+    z%=2;    
+    uf.unite(x,y);
+  }
+  cout<<uf.count()<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/19
+  https://atcoder.jp/contests/abc120/tasks/abc126_E
+*/
+
+
 signed main(){
   //DSL_1_A();
   //ABC120_D();
+  //ABC126_E();
   return 0; 
 }
