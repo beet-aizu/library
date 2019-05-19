@@ -8,27 +8,27 @@ template<typename T>
 struct fraction{
   T num,dom;
   fraction(){}
-  fraction(T num,T dom):num(num),dom(dom){}
-  fraction norm(){
-    if(num==T(0)) return fraction(0,1);
+  fraction(T num,T dom):num(num),dom(dom){
+    assert(dom!=0);    
     if(dom<0) num*=-1,dom*=-1;
     T tmp=__gcd(abs(num),abs(dom));
-    return fraction(num/tmp,dom/tmp);
+    num/=tmp;
+    dom/=tmp;    
   }
   fraction operator+(const fraction a) const{
-    return fraction(num*a.dom+a.num*dom,dom*a.dom).norm();
+    return fraction(num*a.dom+a.num*dom,dom*a.dom);
   }
   fraction operator-(const fraction a) const{
-    return fraction(num*a.dom-a.num*dom,dom*a.dom).norm();
+    return fraction(num*a.dom-a.num*dom,dom*a.dom);
   }
   fraction operator*(const fraction a) const{
-    return fraction(num*a.num,dom*a.dom).norm();
+    return fraction(num*a.num,dom*a.dom);
   }
   fraction operator/(const fraction a){
-    return fraction(num*a.dom,dom*a.num).norm();
+    return fraction(num*a.dom,dom*a.num);
   }
-  fraction operator*(T k) const{return fraction(num*k,dom).norm();}
-  fraction operator/(T k) const{return fraction(num,dom*k).norm();}
+  fraction operator*(T k) const{return fraction(num*k,dom);}
+  fraction operator/(T k) const{return fraction(num,dom*k);}
   bool operator<(const fraction a)const{
     return num*a.dom<a.num*dom;
   }
