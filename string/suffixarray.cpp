@@ -4,7 +4,7 @@ using Int = long long;
 //BEGIN CUT HERE
 struct SuffixArray{ 
   string s;
-  vector<int> sa;
+  vector<int> sa,rev;
   
   SuffixArray(){}
   SuffixArray(const string &S):s(S){
@@ -35,6 +35,8 @@ struct SuffixArray{
       }
       c.swap(r);
     }
+    rev.resize(n+1);
+    for(int i=0;i<=n;i++) rev[sa[i]]=i;    
   }
   int operator[](int i) const{return sa[i];}
   
