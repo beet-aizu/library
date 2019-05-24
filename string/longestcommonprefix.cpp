@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+//BEGIN CUT HERE
 struct SuffixArray{ 
   string s;
   vector<int> sa,rev;
@@ -71,7 +74,6 @@ struct SuffixArray{
     return upper_bound(T)-lower_bound(T);
   }  
 };
-//BEGIN CUT HERE
 struct LongestCommonPrefix{
   SuffixArray sa;
   
@@ -105,12 +107,12 @@ struct LongestCommonPrefix{
   }
   
   int query(int a,int b){
+    a=sa.rev[a];b=sa.rev[b];
     if(a>b) swap(a,b);
     int l=b-a;
     return min(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);
   }  
 };
-
 //END CUT HERE
 //INSERT ABOVE HERE
 signed ARC060_F(){
@@ -138,7 +140,7 @@ signed ARC060_F(){
   auto check=
     [&](int l,int r)->int{    
       for(int x:v[r-l])
-        if(lcp.query(lcp.sa.rev[l],lcp.sa.rev[l+x])>=r-l-x) return 0;
+        if(lcp.query(l,l+x)>=r-l-x) return 0;
       return 1;
     };
   
@@ -159,8 +161,28 @@ signed ARC060_F(){
   https://beta.atcoder.jp/contests/arc060/tasks/arc060_d
 */
 
+signed SPOJ_LCS(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  
+  string a,b;
+  cin>>a>>b;
+  string c=a+b;
+  LongestCommonPrefix lcp(c);
+  
+  int n=a.size(),m=b.size();
+  int ans=0;
+  for(int i=1;i<n+m;i++){
+    if(lcp.sa[i]< n&&lcp.sa[i+1]< n) continue;
+    if(lcp.sa[i]>=n&&lcp.sa[i+1]>=n) continue;
+    chmax(ans,lcp.lcp[i]);    
+  }
+  cout<<ans<<endl;
+  return 0;
+}
 
 signed main(){
-  ARC060_F();
+  //ARC060_F();
+  //SPOJ_LCS();
   return 0;
 };
