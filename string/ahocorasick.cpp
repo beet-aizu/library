@@ -71,7 +71,10 @@ struct AhoCorasick : Trie<X+1>{
     auto &v=TRIE::v;
     int n=v.size();
     cnt.resize(n);
-    for(int i=0;i<n;i++) cnt[i]=v[i].idxs.size();
+    for(int i=0;i<n;i++){
+      if(heavy) sort(v[i].idxs.begin(),v[i].idxs.end());      
+      cnt[i]=v[i].idxs.size();
+    }
     
     queue<int> q;
     for(int i=0;i<(int)X;i++){
@@ -139,48 +142,9 @@ struct AhoCorasick : Trie<X+1>{
 template<typename T> void chmin(T &a,T b){if(a>b) a=b;}
 template<typename T> void chmax(T &a,T b){if(a<b) a=b;}
 
-signed TENKA12016_C(){
-  string s;
-  cin>>s;
-  int m;
-  cin>>m;
-  vector<string> p(m);
-  for(int i=0;i<m;i++) cin>>p[i];
-  
-  vector<int> w(m);
-  for(int i=0;i<m;i++) cin>>w[i];
-
-  Trie<27>::F f=[](char c){return c-'a';};
-  AhoCorasick<26> aho(f);
-
-  for(int i=0;i<m;i++) aho.add(p[i],i);
-  aho.build(false);
-  
-  int n=s.size();
-  vector<int> dp(n+1,0);
-  int ans=0;
-  for(int i=0;i<n;i++){
-    chmax(ans,dp[i]);
-    int pos=0;
-    for(int j=0;j<222&&i+j<n;j++){
-      pos=aho.move(pos,s[i+j]);
-      if(pos<0) break;
-      int k=aho.idx(pos);
-      if(~k) chmax(dp[i+j+1],ans+w[k]);
-    }
-  }
-  chmax(ans,dp[n]);
-  cout<<ans<<endl;
-  return 0;
-}
-
-/*
-  verified on 2018/05/20
-  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
-*/
-
 signed dp[2][2][501][21][601];
 bool used[2][2][501][21][601];
+
 signed AOJ_2257(){
   Int n,m,k;
   while(cin>>n>>m>>k,n){
@@ -223,10 +187,7 @@ signed AOJ_2257(){
       Int c,d,x,p,pos;
       tie(c,d,x,p,pos)=q.front();q.pop();      
       if(d==m) break;
-      Int f=d&1;
-      
-      //cout<<c<<" "<<d<<" "<<x<<" "<<p<<" "<<pos<<endl;
-      //cout<<v[x]<<":"<<dp[c][f][x][p][pos]<<endl;
+      Int f=d&1;      
       
       if(p==(Int)v[x].size()){
         for(Int y:G[x]){
@@ -269,12 +230,60 @@ signed AOJ_2257(){
 }
 
 /*
-  verified on 2018/05/20
+  verified on 2019/05/24
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2257
 */
 
+signed SPOJ_BLHETA(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  string s;
+  cin>>s;
+    
+  int n;
+  cin>>n;
+  vector<string> ts(n);
+  for(int i=0;i<n;i++)cin>>ts[i];
+  
+  auto conv=[](char c){return c-'A';};
+  AhoCorasick<26> aho(conv);
+  for(int i=0;i<n;i++){
+    aho.add(ts[i],i);
+  }
+  aho.build();
+
+  int l=s.size();
+  int pos=0;
+  
+  vector<int> vs;
+  vs.emplace_back(pos);
+
+  string ans;
+  for(int i=0;i<l;i++){    
+    pos=aho.move(pos,s[i]);
+    vs.emplace_back(pos);
+    ans+=s[i];
+    if(aho.count(pos)){
+      int k=aho.v[pos].idxs[0];
+      for(int j=0;j<(int)ts[k].size();j++){
+        vs.pop_back();
+        pos=vs.back();
+        ans.pop_back();
+      }
+    }
+  }
+  
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/24
+  https://www.spoj.com/problems/BLHETA/
+*/
+
+
 signed main(){
-  //TENKA12016_C();
-  AOJ_2257();
+  //AOJ_2257();
+  //SPOJ_BLHETA();
   return 0;
 }

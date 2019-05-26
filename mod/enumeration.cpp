@@ -43,12 +43,12 @@ struct Mint{
   bool operator <(const Mint a)const{return v <a.v;}
   
   static Mint comb(long long n,int k){
-    Mint res(1);
+    Mint num(1),dom(1);
     for(int i=0;i<k;i++){
-      res*=Mint(n-i);
-      res/=Mint(i+1);
+      num*=Mint(n-i);
+      dom*=Mint(i+1);
     }
-    return res;
+    return num/dom;
   }
 };
 
@@ -451,6 +451,6 @@ signed main(){
   //YUKI_117();
   //YUKI_042();
 
-  CFR315_B();
+  //CFR315_B();
   return 0;
 }

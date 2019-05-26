@@ -10,6 +10,7 @@ void all_permutations(int n,F f){
   iota(vs.begin(),vs.end(),0);
   do f(vs); while(next_permutation(vs.begin(),vs.end()));
 }
+//END CUT HERE
 //INSERT ABOVE HERE
 signed ABC054_C(){
   int n,m;
@@ -23,7 +24,7 @@ signed ABC054_C(){
   }
   int ans=0;
   auto f=
-    [&](auto &vs){
+    [&](const auto &vs){
       if(!es[0][vs[0]+1]) return;
       for(int i=0;i+1<n-1;i++)
         if(!es[vs[i]+1][vs[i+1]+1]) return;

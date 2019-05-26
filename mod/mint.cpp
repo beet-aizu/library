@@ -41,7 +41,7 @@ struct Mint{
   bool operator <(const Mint a)const{return v <a.v;}
 
   // find x s.t. a^x = b
-  static T log(Mint a,Mint b){
+  static T log(T a,T b){
     const T sq=40000;
     unordered_map<T, T> dp;
     dp.reserve(sq);
@@ -50,7 +50,7 @@ struct Mint{
       if(!dp.count(res.v)) dp[res.v]=r;
       res*=a;
     }
-    Mint p=a.inv().pow(sq);
+    Mint p=Mint(a).inv().pow(sq);
     res=b;
     for(int q=0;q<=MOD/sq+1;q++){
       if(dp.count(res.v)){
@@ -64,12 +64,12 @@ struct Mint{
   }
   
   static Mint comb(long long n,int k){
-    Mint res(1);
+    Mint num(1),dom(1);
     for(int i=0;i<k;i++){
-      res*=Mint(n-i);
-      res/=Mint(i+1);
+      num*=Mint(n-i);
+      dom*=Mint(i+1);
     }
-    return res;
+    return num/dom;
   }
 };
 //END CUT HERE
@@ -115,8 +115,9 @@ struct Kitamasa{
   }  
 };
 
-Int extgcd(Int a,Int b,Int& x,Int& y){
-  Int d=a;
+template<typename T>
+T extgcd(T a,T b,T& x,T& y){
+  T d=a;
   if(b!=0){
     d=extgcd(b,a%b,y,x);
     y-=(a/b)*x;
@@ -126,32 +127,33 @@ Int extgcd(Int a,Int b,Int& x,Int& y){
   return d;
 }
 
-Int mod_inverse(Int a,Int mod){
-  Int x,y;
+template<typename T>
+T mod_inverse(T a,T mod){
+  T x,y;
   extgcd(a,mod,x,y);
   return (mod+x%mod)%mod;
 }
 
 //INSERT ABOVE HERE
 signed CFR536_F(){
-  const Int MOD = 998244353;
-  using M = Mint<Int, MOD>;
-  using P = Mint<Int, MOD-1>;
+  const int MOD = 998244353;
+  using M = Mint<int, MOD>;
+  using P = Mint<int, MOD-1>;
 
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  Int k;
+  int k;
   cin>>k;
 
   vector<P> bs(k);
-  for(Int i=0;i<k;i++){
-    Int b;
+  for(int i=0;i<k;i++){
+    int b;
     cin>>b;
     bs[i]=P(b);
   }
 
-  Int n,m;
+  int n,m;
   cin>>n>>m;
 
   reverse(bs.begin(),bs.end());
@@ -159,11 +161,11 @@ signed CFR536_F(){
   vector<P> as(k,0);
   as[k-1]=1;
   
-  Int v=ktms.calc(as,--n).v;
-  Int h=M::log(M(3),M(m))%(MOD-1);  
+  int v=ktms.calc(as,--n).v;
+  int h=M::log(3,m)%(MOD-1);  
 
   if(v!=0||h!=0){
-    Int g=__gcd(v,h);
+    int g=__gcd(v,h);
     v/=g;
     h/=g;
   }
@@ -173,15 +175,41 @@ signed CFR536_F(){
     return 0;
   }
   
-  cout<<M(3).pow(h*mod_inverse(v,MOD-1)).v<<endl;  
+  cout<<M(3).pow((long long)h*mod_inverse(v,MOD-1)).v<<endl;
   return 0;
 }
 /*
-  verified on 2019/05/19
+  verified on 2019/05/26
   https://codeforces.com/contest/1106/problem/F
 */
 
+signed ABC127_E(){  
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  
+  int h,w,k;
+  cin>>h>>w>>k;
+  using M = Mint<int>;
+ 
+  M ans{0};
+  for(int d=1;d<h;d++)
+    ans+=M(d)*M(h-d)*M(w)*M(w);
+ 
+  for(int d=1;d<w;d++)
+    ans+=M(d)*M(w-d)*M(h)*M(h);
+  
+  ans*=M::comb(h*w-2,k-2);
+  cout<<ans.v<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/26
+  https://atcoder.jp/contests/abc127/tasks/abc127_e
+*/
+
+
 signed main(){
-  CFR536_F();
+  //CFR536_F();
+  //ABC127_E();
   return 0;
 }

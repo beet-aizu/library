@@ -13,14 +13,6 @@ struct Centroid{
     G[u].emplace_back(v);
     G[v].emplace_back(u);
   }
-
-  void input(int offset=0){
-    for(int i=1;i<n;i++){
-      int u,v;
-      cin>>u>>v;
-      add_edge(u+offset,v+offset);
-    }
-  }
   
   void dfs(int v,int p) {
     int ok=1;
@@ -36,20 +28,21 @@ struct Centroid{
   
   vector<int> build(int r=0) {
     n=0;
-    auto bfs=[&](int k){      
-               queue<int> q;
-               sz[r]=k;
-               q.emplace(r);
-               while(!q.empty()){
-                 int v=q.front();q.pop();
-                 n+=k;
-                 for(int u:G[v]){
-                   if(sz[u]==k||used[u]) continue;
-                   sz[u]=k;
-                   q.emplace(u);
-                 }
-               }
-             };
+    auto bfs=
+      [&](int k){      
+        queue<int> q;
+        sz[r]=k;
+        q.emplace(r);
+        while(!q.empty()){
+          int v=q.front();q.pop();
+          n+=k;
+          for(int u:G[v]){
+            if(sz[u]==k||used[u]) continue;
+            sz[u]=k;
+            q.emplace(u);
+          }
+        }
+      };
     bfs(0);bfs(1);
     centroid.clear();
     dfs(r,-1);
@@ -70,7 +63,12 @@ signed DWANGO2018QUAL_E(){
   int n,q;
   cin>>n>>q;
   Centroid C(n);
-  C.input(n-1,-1);
+  for(int i=1;i<n;i++){
+    int x,y;
+    cin>>x>>y;
+    x--;y--;
+    C.add_edge(x,y);
+  }
   
   int r=0;
   for(int l=0;l<q;l++){
@@ -130,12 +128,11 @@ signed DWANGO2018QUAL_E(){
 }
 
 /*
-  verified on 2018/01/14
+  verified on 2019/05/24
   https://beta.atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_e
 */
 
-
 signed main(){
-  DWANGO2018QUAL_E();
+  //DWANGO2018QUAL_E();
   return 0;
 }

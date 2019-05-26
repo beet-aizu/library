@@ -9,7 +9,6 @@ struct Kruskal{
     int from,to;
     T cost;
     int used;
-    edge(){}
     edge(int from,int to,T cost):
       from(from),to(to),cost(cost),used(0){}
     bool operator<(const edge& e) const{
@@ -18,19 +17,15 @@ struct Kruskal{
   };
 
   int n;
-  vector<int> p,r;
-  vector<edge> edges;
+  vector<int> r,p;
+  vector<edge> es;
 
   Kruskal(){}
-  Kruskal(int n):n(n){}
-
-  void init(int n){
-    r.assign(n,1);
-    p.resize(n);
+  Kruskal(int n):n(n),r(n,1),p(n){
     iota(p.begin(),p.end(),0);
   }
   
-  int find(int x){
+  int find(int x){    
     return (x==p[x]?x:p[x]=find(p[x]));
   }
 
@@ -47,14 +42,13 @@ struct Kruskal{
   }
 
   void add_edge(int u,int v,T c){
-    edges.emplace_back(u,v,c);
+    es.emplace_back(u,v,c);
   }
   
   T build(){
-    sort(edges.begin(),edges.end());
-    init(n);
+    sort(es.begin(),es.end());
     T res=0;
-    for(auto &e:edges){
+    for(auto &e:es){
       if(!same(e.from,e.to)){
         res+=e.cost;
         unite(e.from,e.to);
