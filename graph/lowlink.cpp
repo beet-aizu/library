@@ -41,7 +41,7 @@ struct LowLink{
   void fill_component(int v){
     C[blg[v]].emplace_back(v);
     for(int u:G[v]){
-      if(~blg[u]) continue;
+      if(~blg[u]||is_bridge(u,v)) continue;
       blg[u]=blg[v];
       fill_component(u);
     }
@@ -54,7 +54,7 @@ struct LowLink{
     fill_component(v);
   }
   
-  void build(){
+  int build(){
     for(int i=0;i<n;i++)
       if(ord[i]<0) dfs(i);
     
@@ -75,12 +75,13 @@ struct LowLink{
     int k=0;    
     for(int i=0;i<n;i++) add_component(i,k);
 
-    T.assign(C.size(),vector<int>());
+    T.assign(k,vector<int>());    
     for(auto e:bs){
-      int u=blg[e.first],v=blg[e.first];
+      int u=blg[e.first],v=blg[e.second];
       T[u].emplace_back(v);
       T[v].emplace_back(u);
-    }      
+    }
+    return k;
   }
 };
 //END CUT HERE
@@ -224,9 +225,57 @@ signed ARC045_D(){
   https://atcoder.jp/contests/arc045/tasks/arc045_d
 */
 
+signed AOJ_0377(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  
+  int n,m;
+  cin>>n>>m;
+  LowLink bg(n);
+  for(int i=0;i<m;i++){
+    int a,b;
+    cin>>a>>b;
+    bg.add_edge(a,b);
+  }
+  int k=bg.build();
+  auto& G=bg.T;
+  
+  vector<int> c(k);
+  for(int i=0;i<k;i++) c[i]=bg.C[i].size();
+  vector<vector<int> > dp(2,vector<int>(k,0));
+  vector<int> used(k,0);
+  function<void(int,int)> dfs=[&](int v,int p){
+    if(used[v]) return;
+    used[v]=1;
+    dp[0][v]=0;
+    dp[1][v]=c[v];
+    for(int u:G[v]){
+      if(u==p) continue;
+      dfs(u,v);
+      dp[0][v]+=max(dp[0][u],dp[1][u]);
+      dp[1][v]+=dp[0][u];
+    }
+    return;
+  };
+  int ans=0;
+  for(int i=0;i<k;i++){
+    if(used[i]) continue;
+    dfs(i,-1);
+    ans+=max(dp[0][i],dp[1][i]);
+  }
+  cout<<ans<<endl;
+  return 0;
+}
+
+/*
+  verified on 2019/05/29
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0377
+*/
+
 signed main(){
   //GRL_3_A();
   //GRL_3_B();
   //ARC045_D();  
+  //AOJ_0377();  
   return 0;
 }
