@@ -24,3 +24,5 @@
 (define-auto-insert "\\.cpp$" "t.cpp")
 (define-auto-insert "\\.c$" "t.c")
 (define-auto-insert "\\.java$" "t.java")
+
+(setq-default tab-width 2 indent-tabs-mode nil)

@@ -3,11 +3,12 @@
 (global-set-key "\C-z" 'undo)
 (global-set-key "\C-r" 'query-replace)
 (setq inhibit-startup-message t)
+(setq-default tab-width 2 indent-tabs-mode nil)
 
 (setq initial-frame-alist
       (append (list
 	             '(top . 0)
-	             '(left . 750)
+	             '(left . 1000)
 	             )
 	            initial-frame-alist))
 (setq default-frame-alist initial-frame-alist)
