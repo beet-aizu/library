@@ -32,8 +32,13 @@ struct PrimalDual{
     T res=0;
     fill(h.begin(),h.end(),0);
     while(f>0){
-      using P = pair<T, int>;
-      priority_queue<P,vector<P>,greater<P> > que;
+      struct P{
+        T first;
+        int second;
+        P(T first,int second):first(first),second(second){}
+        bool operator<(const P&a) const{return first>a.first;}
+      };      
+      priority_queue<P> que;
       fill(dist.begin(),dist.end(),INF);
       
       dist[s]=0;
@@ -76,6 +81,8 @@ struct PrimalDual{
 //END CUT HERE
 
 int GRL_6_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
   int v,e,f;
   cin>>v>>e>>f;
   
@@ -146,6 +153,9 @@ signed SPOJ_GREED(){
 */
 
 signed CFR190_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  
   int n,m;
   cin>>n>>m;
   vector<string> vp(n);
@@ -190,12 +200,12 @@ signed CFR190_B(){
 }
 /*
   verified on 2018/03/17
-  https://codeforces.com/problemset/problem/321/B
+  https://codeforces.com/contest/321/problem/B
 */
 
 signed main(){
   //GRL_6_B();
   //SPOJ_GREED();
-  CFR190_B();
+  //CFR190_B();
   return 0;
 }

@@ -3,7 +3,6 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 //BEGIN CUT HERE
 template<typename T, typename F>
 struct RangeSlide{
@@ -46,8 +45,59 @@ vector<T> compress(vector<T> v){
   return v;
 }
 
+template<typename F>
+struct FixPoint : F{
+  FixPoint(F&& f):F(forward<F>(f)){}
+  template<typename... Args>
+  decltype(auto) operator()(Args&&... args) const{
+    return F::operator()(*this,forward<Args>(args)...);
+  }
+};
+template<typename F>
+inline decltype(auto) MFP(F&& f){
+  return FixPoint<F>{forward<F>(f)};
+}
+
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+
+
+struct Precision{
+  Precision(){
+    cout<<fixed<<setprecision(12);
+  }
+}precision_beet;
+
 //INSERT ABOVE HERE
-signed main(){
+
+signed AOJ_DSL_3_D(){
+  int n,l;
+  cin>>n>>l;
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+  
+  auto cmp=[](int a,int b){return a<b;};      
+  RangeSlide<int, decltype(cmp)> rs(as,cmp);
+
+  for(int i=0;i+l<=n;i++) rs.add_range(i,i+l);
+  auto res=rs.build();
+  for(int i=0;i+l<=n;i++){
+    if(i) cout<<" ";
+    cout<<as[res[i]];
+  }
+  cout<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/27
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=jp
+*/
+
+signed AOJ_0613(){
   Int n,d;
   cin>>n>>d;
   vector<Int> xs(n),ys(n);
@@ -62,17 +112,15 @@ signed main(){
   auto calc=
     [&](Int a,Int b){
       vector<P> res;
-      function<void(Int, Int, Int)> dfs=
-        [&](Int k,Int s,Int t){
-          if(k==b){
-            res.emplace_back(s,t);
-            return;
-          }
-          dfs(k+1,s,t);
-          dfs(k+1,s+xs[k],t+ys[k]);
-          dfs(k+1,s-xs[k],t-ys[k]);
-        };
-      dfs(a,0,0);
+      MFP([&](auto dfs,Int k,Int s,Int t)->void{
+            if(k==b){
+              res.emplace_back(s,t);
+              return;
+            }
+            dfs(k+1,s,t);
+            dfs(k+1,s+xs[k],t+ys[k]);
+            dfs(k+1,s-xs[k],t-ys[k]);
+          })(a,0,0);
       sort(res.begin(),res.end());
       return res;
     };
@@ -120,5 +168,59 @@ signed main(){
   Int ans=0;
   for(Int i=0;i<(Int)res.size();i++) chmax(ans,ws[res[i]]+ks[i]);
   cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/27
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0613
+*/
+
+signed YUKI_576(){
+  int n,k;
+  cin>>n>>k;
+  string s;
+  cin>>s;  
+  vector<int> a(n);
+  for(int i=0;i<n;i++) a[i]=s[i]-'0';
+  
+  using D = double;
+  auto check=
+    [&](D x)->int{
+      vector<D> b(n);
+      for(int i=0;i<n;i++) b[i]=a[i]-x;
+      
+      vector<D> sm(n*2+1,0);
+      for(int i=0;i<n*2;i++) 
+        sm[i+1]=sm[i]+b[i%n];
+
+      auto cmp=[](D a,D b){return a<b;};      
+      RangeSlide<D, decltype(cmp)> rs(sm,cmp);
+      for(int i=0;i<n;i++)
+        rs.add_range(i,i+n-k+1);      
+
+      auto res=rs.build();      
+      for(int i=0;i<n;i++)
+        if(sm[n+i]>sm[res[i]]) return 1;
+      return 0;
+    };
+
+  D L=0,R=1;
+  for(int k=0;k<20;k++){
+    D M=(L+R)/2;
+    if(check(M)) L=M;
+    else R=M;
+  }
+  cout<<L<<endl;
+  return 0;
+}
+/*
+  verified on 2019/05/27
+  https://yukicoder.me/problems/no/576
+*/
+
+signed main(){
+  //AOJ_DSL_3_D();
+  //AOJ_0613();
+  //YUKI_576();
   return 0;
 }
