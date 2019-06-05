@@ -2,6 +2,7 @@ import os
 import sys
 
 args = sys.argv
+assert(len(args)>=3)
 
 os.system("mkdir ./{}".format(args[1]))
 os.system("$EDITOR ./{}/t.cpp".format(args[1]))

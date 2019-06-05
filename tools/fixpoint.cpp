@@ -13,7 +13,7 @@ struct FixPoint : F{
   }  
 };
 template<typename F>
-inline decltype(auto) makeFixPoint(F&& f){
+inline decltype(auto) MFP(F&& f){
   return FixPoint<F>{forward<F>(f)};
 }
 //END CUT HERE
