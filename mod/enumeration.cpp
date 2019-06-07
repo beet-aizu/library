@@ -57,9 +57,10 @@ template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
 
 //BEGIN CUT HERE
 template<typename M>
-struct Enumeration{
+class Enumeration{
+private:
   static vector<M> fact,finv,invs;
-  
+public:
   static void init(int n){
     n=min<decltype(M::mod)>(n,M::mod-1);
     
@@ -220,7 +221,7 @@ signed DPL_5_C(){
   int n,k;
   scanf("%d %d",&n,&k);
   Enumeration<Mint<int>>::init(k);  
-  printf("%d\n",(Enumeration<Mint<int>>::S(n,k)*Enumeration<Mint<int>>::fact[k]).v);
+  printf("%d\n",(Enumeration<Mint<int>>::S(n,k)*Enumeration<Mint<int>>::Fact(k)).v);
   return 0;
 }
 /*
