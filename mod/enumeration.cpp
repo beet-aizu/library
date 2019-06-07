@@ -6,6 +6,8 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 template<typename T,T MOD = 1000000007>
 struct Mint{
+  static constexpr T mod = MOD;
+  
   T v;
   Mint():v(0){}
   Mint(signed v):v(v){}
@@ -51,6 +53,7 @@ struct Mint{
     return num/dom;
   }
 };
+template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
 
 //BEGIN CUT HERE
 template<typename M>
@@ -58,9 +61,11 @@ struct Enumeration{
   static vector<M> fact,finv,invs;
   
   static void init(int n){
+    n=min<decltype(M::mod)>(n,M::mod-1);
+    
     int m=fact.size();
     if(n<m) return;
-    
+
     fact.resize(n+1,1);
     finv.resize(n+1,1);
     invs.resize(n+1,1);
@@ -70,6 +75,19 @@ struct Enumeration{
     finv[n]=M(1)/fact[n];
     for(int i=n;i>=m;i--) finv[i-1]=finv[i]*M(i);
     for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];
+  }
+
+  static M Fact(int n){
+    init(n);
+    return fact[n];    
+  }  
+  static M Finv(int n){
+    init(n);
+    return finv[n];    
+  }
+  static M Invs(int n){
+    init(n);
+    return invs[n];    
   }
   
   static M C(int n,int k){
@@ -413,7 +431,10 @@ signed YUKI_042(){
   https://yukicoder.me/problems/no/42
 */
 
-signed CFR315_B(){
+signed CFR315_B(){  
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  
   int n;
   cin>>n;
   using M = Mint<int>;

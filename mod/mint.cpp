@@ -4,6 +4,7 @@ using Int = long long;
 //BEGIN CUT HERE
 template<typename T,T MOD = 1000000007>
 struct Mint{
+  static constexpr T mod = MOD;
   T v;
   Mint():v(0){}
   Mint(signed v):v(v){}
@@ -72,6 +73,7 @@ struct Mint{
     return num/dom;
   }
 };
+template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
 //END CUT HERE
 
 
