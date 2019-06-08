@@ -8,10 +8,10 @@ struct LinkCutTree{
     Node *l,*r,*p;
     int idx;
     bool rev;
-    A val;
+    A val,dat,sum;
     Node(){}
-    Node(int idx,A val):
-      idx(idx),rev(0),val(val){l=r=p=nullptr;}
+    Node(int idx,A val,A dat,A sum):
+      idx(idx),rev(0),val(val),dat(dat),sum(sum){l=r=p=nullptr;}
     bool is_root(){
       return !p||(p->l!=this&&p->r!=this);
     }
@@ -28,7 +28,7 @@ struct LinkCutTree{
   }
   
   inline Node* create(int idx,A val){
-    return &(pool[ptr++]=Node(idx,val));
+    return &(pool[ptr++]=Node(idx,val,ai,val));
   }
 
   void toggle(Node *t){
@@ -44,28 +44,42 @@ struct LinkCutTree{
     }
   }
 
+  inline A resolve(Node *t){
+    return t?t->sum:ai;
+  }
+  
+  inline void pushup(Node *t){
+    if(t==nullptr) return;   
+    t->sum=t->val;
+    t->sum+=t->dat;
+    t->sum+=resolve(t->l);
+    t->sum+=resolve(t->r);
+  }  
+  
   void rotR(Node *t){
     Node *x=t->p,*y=x->p;
-    x->val-=t->val;
-    t->val+=x->val;
-    if((x->l=t->r)) t->r->p=x,x->val+=x->l->val; 
+    if((x->l=t->r)) t->r->p=x;
     t->r=x;x->p=t;
     if((t->p=y)){
       if(y->l==x) y->l=t;
-      if(y->r==x) y->r=t;
+      if(y->r==x) y->r=t;      
     }
+    pushup(x);
+    pushup(t);
+    pushup(y);
   }
   
   void rotL(Node *t){
     Node *x=t->p,*y=x->p;
-    x->val-=t->val;
-    t->val+=x->val;
-    if((x->r=t->l)) t->l->p=x,x->val+=x->r->val;
+    if((x->r=t->l)) t->l->p=x;
     t->l=x;x->p=t;
     if((t->p=y)){
       if(y->l==x) y->l=t;
       if(y->r==x) y->r=t;
     }
+    pushup(x);
+    pushup(t);
+    pushup(y);
   }
 
   void splay(Node *t){
@@ -94,7 +108,10 @@ struct LinkCutTree{
     Node *rp=nullptr;
     for(Node *c=t;c;c=c->p){
       splay(c);
+      c->dat+=resolve(c->r);
       c->r=rp;
+      c->dat-=resolve(c->r);
+      pushup(c);
       rp=c;
     }
     splay(t);
@@ -106,15 +123,15 @@ struct LinkCutTree{
     expose(par);
     c->p=par;
     par->r=c;
-    par->val+=c->val;
+    pushup(par);
   }
 
   void cut(Node *c){
     expose(c);
     Node *par=c->l;
-    c->l=nullptr;
+    c->l=nullptr;    
+    pushup(c);
     par->p=nullptr;
-    c->val-=par->val;
   }
 
   void evert(Node *t){
@@ -135,20 +152,10 @@ struct LinkCutTree{
     expose(a);
     return expose(b);
   }
-  
+
   A query(Node *t){
     expose(t);
-    return t->val;
-  }
-
-  void add(Node *t,A a){
-    expose(t);
-    t->val+=a;    
-  }
-  
-  void sub(Node *t,A a){
-    expose(t);
-    t->val-=a;    
+    return t->sum;    
   }
 };
 
