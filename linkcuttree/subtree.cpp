@@ -17,7 +17,7 @@ struct LinkCutTree{
     }
   };
   A ai;
-  const size_t LIM = 5e5;
+  const size_t LIM = 1e6+10;
   vector<Node> pool;
   size_t ptr;
 
@@ -322,7 +322,6 @@ signed UNIVERSITYCODESPRINT03_G(){
   https://www.hackerrank.com/contests/university-codesprint-3/challenges/simple-tree-counting
 */
 
-
 signed CFR564_E(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -448,8 +447,71 @@ signed CFR564_E(){
   https://codeforces.com/contest/1172/problem/E
 */
 
+signed JOISC2013_DAY4_3(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+
+  using LCT = LinkCutTree<int>;
+  LCT lct;
+  vector<LCT::Node*> vs(n);
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
+
+  for(int i=0;i<q;i++){
+    int t,a,b=0;
+    scanf("%d %d",&t,&a);
+    if(t!=2) scanf("%d",&b);
+    a--;b--;
+    if(t==1) lct.link(vs[b],vs[a]);
+    if(t==2) lct.cut(vs[a]);
+    if(t==3){
+      if(!lct.is_connected(vs[a],vs[b])) puts("-1");
+      else printf("%d\n",lct.lca(vs[a],vs[b])->idx+1);
+    }
+  }
+  return 0;
+}
+/*
+  verified on 2019/06/08
+  https://atcoder.jp/contests/joisc2013-day4/tasks/joisc2013_spaceships
+*/
+
+signed SPOJ_DYNACON1(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  int n,m;
+  cin>>n>>m;
+  using LCT = LinkCutTree<int>;
+  LCT lct;
+  vector<LCT::Node* > vs(n);
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
+  for(int i=0;i<m;i++){
+    string s;
+    int a,b;
+    cin>>s>>a>>b;
+    a--;b--;
+    if(s=="add"s){
+      lct.evert(vs[b]);
+      lct.link(vs[a],vs[b]);
+    }
+    if(s=="rem"s){
+      auto v=lct.lca(vs[a],vs[b])==vs[a]?vs[b]:vs[a];
+      lct.cut(v);
+    }
+    if(s=="conn"s)
+      cout<<(lct.is_connected(vs[a],vs[b])?"YES\n":"NO\n");
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/06/08
+  https://www.spoj.com/problems/DYNACON1/
+*/
+
 signed main(){
   //UNIVERSITYCODESPRINT03_G();
-  CFR564_E();
+  //CFR564_E();
+  //JOISC2013_DAY4_3();
+  //SPOJ_DYNACON1();
   return 0;
 }

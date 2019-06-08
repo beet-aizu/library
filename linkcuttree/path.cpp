@@ -18,7 +18,7 @@ struct LinkCutTree{
       return !p||(p->l!=this&&p->r!=this);
     }
   };
-  
+
   using F = function<T(T,T)>;
   using G = function<T(T,E)>;
   using H = function<E(E,E)>;
@@ -29,24 +29,24 @@ struct LinkCutTree{
   S s;
   T ti;
   E ei;
-  
+
   const size_t LIM = 1e6;
   vector<Node> pool;
   size_t ptr;
-  
-  
+
+
   LinkCutTree(F f,G g,H h,T ti,E ei):
     f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
     s=[](T a){return a;};
   }
-  
+
   LinkCutTree(F f,G g,H h,S s,T ti,E ei):
     f(f),g(g),h(h),s(s),ti(ti),ei(ei),pool(LIM),ptr(0){}
-  
+
   inline Node* create(){
     return &pool[ptr++];
   }
-  
+
   inline Node* create(int idx,T v){
     return &(pool[ptr++]=Node(idx,v,ei));
   }
@@ -83,10 +83,10 @@ struct LinkCutTree{
   }
 
   void rotR(Node *t){
-    Node *x=t->p,*y=x->p;    
+    Node *x=t->p,*y=x->p;
     x->sz-=t->sz;
     t->sz+=x->sz;
-    if((x->l=t->r)) t->r->p=x,x->sz+=x->l->sz; 
+    if((x->l=t->r)) t->r->p=x,x->sz+=x->l->sz;
     t->r=x;x->p=t;
     recalc(x);recalc(t);
     if((t->p=y)){
@@ -95,7 +95,7 @@ struct LinkCutTree{
       recalc(y);
     }
   }
-  
+
   void rotL(Node *t){
     Node *x=t->p,*y=x->p;
     x->sz-=t->sz;
@@ -124,7 +124,7 @@ struct LinkCutTree{
         if(r->l==q){
           if(q->l==t) rotR(q),rotR(t);
           else rotL(t),rotR(t);
-        }else{	
+        }else{
           if(q->r==t) rotL(q),rotL(t);
           else rotR(t),rotL(t);
         }
@@ -166,19 +166,22 @@ struct LinkCutTree{
     eval(t);
   }
 
+  Node *root(Node *t){
+    expose(t);
+    while(t->l) t=t->l;
+    splay(t);
+    return t;
+  }
+
   bool is_connected(Node *a,Node *b){
-    expose(a);
-    while(a->l) a=a->l;
-    expose(b);
-    while(b->l) b=b->l;
-    return expose(a)==expose(b);
+    return root(a)==root(b);
   }
 
   Node *lca(Node *a,Node *b){
     expose(a);
     return expose(b);
   }
-  
+
   T query(Node *t){
     expose(t);
     return t->dat;
@@ -193,40 +196,6 @@ struct LinkCutTree{
 
 //END CUT HERE
 //INSERT ABOVE HERE
-
-signed GRL_5_C(){
-  int n;
-  cin>>n;
-  using LCT = LinkCutTree<int,int>;
-  LCT::F f=[](int a,int b){return min(a,b);};
-  LCT lc(f,f,f,0,0);
-
-  vector<LCT::Node*> v(n);
-  for(int i=0;i<n;i++) v[i]=lc.create(i,0);
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    for(int j=0;j<k;j++){
-      int c;
-      cin>>c;
-      lc.link(v[i],v[c]);
-    }
-  }
-  
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    int a,b;
-    cin>>a>>b;
-    cout<<lc.lca(v[a],v[b])->idx<<endl;
-  }
-  
-  return 0;
-}
-/*
-  verified on 2018/06/14
-  https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C
-*/
 
 signed GRL_5_D(){
   int n;
@@ -246,7 +215,7 @@ signed GRL_5_D(){
       lc.link(v[i],v[c]);
     }
   }
-  
+
   int q;
   cin>>q;
   for(int i=0;i<q;i++){
@@ -265,7 +234,7 @@ signed GRL_5_D(){
       cout<<v[a]->dat<<endl;
     }
   }
-  
+
   return 0;
 }
 /*
@@ -282,7 +251,7 @@ signed GRL_5_E(){
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,int b){return P(a.first+b*a.second,a.second);};
   auto h=[](Int a,Int b){return a+b;};
-  
+
   LCT lc(f,g,h,P(0,0),0);
 
   vector<LCT::Node*> v(n);
@@ -296,7 +265,7 @@ signed GRL_5_E(){
       lc.link(v[i],v[c]);
     }
   }
-  
+
   int q;
   cin>>q;
   Int c=0;
@@ -316,42 +285,12 @@ signed GRL_5_E(){
       cout<<(v[a]->dat).first-c<<endl;
     }
   }
-  
+
   return 0;
 }
 /*
   verified on 2018/06/14
   https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_E
-*/
-
-signed JOISC2013_DAY4_3(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  
-  using LCT = LinkCutTree<int, int>;
-  auto f=[](int a,int b){return a+b;};
-  LCT lct(f,f,f,0,0);
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
-
-  for(int i=0;i<q;i++){
-    int t,a,b=0;
-    scanf("%d %d",&t,&a);
-    if(t!=2) scanf("%d",&b);
-    a--;b--;
-    if(t==1) lct.link(vs[b],vs[a]);
-    if(t==2) lct.cut(vs[a]);
-    if(t==3){
-      if(!lct.is_connected(vs[a],vs[b])) puts("-1");
-      else printf("%d\n",lct.lca(vs[a],vs[b])->idx+1);
-    }
-  }
-  return 0;
-}
-
-/*
-  verified on 2018/06/14
-  https://beta.atcoder.jp/contests/joisc2013-day4/tasks/joisc2013_spaceships
 */
 
 signed AOJ_2450(){
@@ -360,10 +299,10 @@ signed AOJ_2450(){
 
   using T = tuple<int,int,int,int,int>;
   using P = pair<int,int>;
-  
+
   T ti(-1,-1,-1,-1,-1);
   P ei(-1,-114514);
-  
+
   auto f=[&](T a,T b){
            int as,ava,avi,avl,avr;
            tie(as,ava,avi,avl,avr)=a;
@@ -376,7 +315,7 @@ signed AOJ_2450(){
            cvr=max(cvr,avr+bva);
            return T(cs,cva,cvi,cvl,cvr);
          };
-  
+
   auto g=[&](T a,P p){
            if(p==ei) return a;
            int as,ava,avi,avl,avr;
@@ -386,28 +325,28 @@ signed AOJ_2450(){
            if(b>=0) return T(as,b*as,b*as,b*as,b*as);
            return T(as,b*as,b,b,b);
          };
-  
+
   auto h=[&](P a,P b){a.first++;return b;};
   auto s=
-    [&](T a){      
+    [&](T a){
       int as,ava,avi,avl,avr;
       tie(as,ava,avi,avl,avr)=a;
       swap(avl,avr);
       return T(as,ava,avi,avl,avr);
     };
-  
-  
+
+
   using LCT = LinkCutTree<T, P>;
   vector<LCT::Node* > vs(n);
   vector<int> ps(n,-1);
-  
+
   LCT lct(f,g,h,s,ti,ei);
-  
+
   vector<int> w(n);
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
   for(int i=0;i<n;i++) vs[i]=lct.create(i,g(ti,P(i,w[i])));
-  
-  vector<vector<int> > G(n); 
+
+  vector<vector<int> > G(n);
   for(int i=0;i<n-1;i++){
     int a,b;
     scanf("%d %d",&a,&b);
@@ -433,23 +372,23 @@ signed AOJ_2450(){
       }
     }
   }
-  
+
   while(q--){
     int t,a,b,c;
     scanf("%d %d %d %d",&t,&a,&b,&c);
     a--;b--;
     if(t==1){
       lct.evert(vs[a]);
-      lct.update(vs[b],P(-1,c));      
+      lct.update(vs[b],P(-1,c));
     }
     if(t==2){
-      lct.evert(vs[a]);      
+      lct.evert(vs[a]);
       int vva,vvi,vvl,vvr;
       tie(ignore,vva,vvi,vvl,vvr)=lct.query(vs[b]);
       printf("%d\n",max({vva,vvi,vvl,vvr}));
     }
   }
-  
+
   return 0;
 }
 
@@ -462,8 +401,8 @@ signed AOJ_2450(){
 signed AOJ_0367(){
   int n,k;
   scanf("%d %d",&n,&k);
-  
-  vector<vector<int> > G(n); 
+
+  vector<vector<int> > G(n);
   vector<unordered_map<Int, Int> > m(n);
   for(Int i=0;i<n-1;i++){
     int a,b,c;
@@ -472,7 +411,7 @@ signed AOJ_0367(){
     G[b].emplace_back(a);
     m[a][b]=m[b][a]=c;
   }
-  
+
   vector<Int> w(n,0);
   vector<int> ps(n,-1);
   using T = tuple<Int, Int, Int>;
@@ -482,7 +421,7 @@ signed AOJ_0367(){
               if(res%k) return res;
               return 0LL;
             };
-  
+
   auto f=[&](T a,T b){
            Int al,ar,av;
            tie(al,ar,av)=a;
@@ -490,7 +429,7 @@ signed AOJ_0367(){
            tie(bl,br,bv)=b;
            return T(al,br,av+bv+mget(ar,bl));
          };
-  
+
   auto g=[&](T a,Int b){b++;return a;};
   auto h=[&](Int a,Int b){b++;return a;};
   auto s=[&](T a){
@@ -498,12 +437,12 @@ signed AOJ_0367(){
            tie(al,ar,av)=a;
            return T(ar,al,av);
          };
-  
+
   using LCT = LinkCutTree<T, Int>;
-  LCT lct(f,g,h,s,T(-1,-1,0),0);  
+  LCT lct(f,g,h,s,T(-1,-1,0),0);
   vector<LCT::Node* > vs(n);
   for(Int i=0;i<n;i++) vs[i]=lct.create(i,T(i,i,0));
-  
+
   {
     using P = pair<Int, Int>;
     queue<P> q;
@@ -517,9 +456,9 @@ signed AOJ_0367(){
         if(u==p) continue;
         q.emplace(u,v);
       }
-    } 
+    }
   }
-  
+
   char buf[10];
   int q;
   scanf("%d",&q);
@@ -527,7 +466,7 @@ signed AOJ_0367(){
     scanf("%s",buf);
     string op(buf);
     if(op=="add"){
-      int x,d;      
+      int x,d;
       scanf("%d %d",&x,&d);
       lct.expose(vs[x]);
       w[x]+=d;
@@ -539,7 +478,7 @@ signed AOJ_0367(){
       lct.evert(vs[s]);
       printf("%lld\n",get<2>(lct.query(vs[t])));
     }
-  }  
+  }
   return 0;
 }
 
@@ -550,20 +489,23 @@ signed AOJ_0367(){
 
 
 
-struct M{
-  Int a,b,c,d;
-  M():a(1),b(0),c(0),d(1){}
-  M(Int a,Int b,Int c,Int d):a(a),b(b),c(c),d(d){}
-  //M(const M &v):a(v.a),b(v.b),c(v.c),d(v.d){}
-  bool operator!=(const M &x)const{
-    return a!=x.a||b!=x.b||c!=x.c||d!=x.d;
-  }
-  bool operator==(const M &x)const{
-    return !(*this!=x);
-  }
-};
-
 signed YUKI_650(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  struct M{
+    Int a,b,c,d;
+    M():a(1),b(0),c(0),d(1){}
+    M(Int a,Int b,Int c,Int d):a(a),b(b),c(c),d(d){}
+    //M(const M &v):a(v.a),b(v.b),c(v.c),d(v.d){}
+    bool operator!=(const M &x)const{
+      return a!=x.a||b!=x.b||c!=x.c||d!=x.d;
+    }
+    bool operator==(const M &x)const{
+      return !(*this!=x);
+    }
+  };
+
   const int MOD=1e9+7;
   using M2 = pair<M, M>;
   using LCT = LinkCutTree<M2, M2>;
@@ -572,7 +514,7 @@ signed YUKI_650(){
            r.a=x.a*y.a+x.b*y.c;
            r.b=x.a*y.b+x.b*y.d;
            r.c=x.c*y.a+x.d*y.c;
-           r.d=x.c*y.b+x.d*y.d;	   
+           r.d=x.c*y.b+x.d*y.d;
            r.a%=MOD;r.b%=MOD;r.c%=MOD;r.d%=MOD;
            return r;
          };
@@ -581,7 +523,7 @@ signed YUKI_650(){
           };
   auto g=[](M2 x,M2 y){x.first.a++;return y;};
   auto s=[](M2 x){swap(x.first,x.second);return x;};
-  
+
   int n;
   cin>>n;
   vector<vector<int> > G(n);
@@ -598,10 +540,10 @@ signed YUKI_650(){
   M ei(-1,-1,-1,-1);
   LCT lct(f2,g,g,s,M2(ti,ti),M2(ei,ei));
 
-  
+
   vector<LCT::Node*> vs(n*2-1);
   for(int i=0;i<(int)vs.size();i++) vs[i]=lct.create(i,M2(ti,ti));
-  
+
   vector<map<int, int> > rev(n);
   int idx=n;
   {
@@ -620,7 +562,7 @@ signed YUKI_650(){
         if(u!=p) q.emplace(u,v);
     }
   }
-  
+
   int q;
   cin>>q;
   for(int i=0;i<q;i++){
@@ -631,22 +573,22 @@ signed YUKI_650(){
       cin>>v>>a>>b>>c>>d;
       int z=rev[X[v]][Y[v]];
       lct.expose(vs[z]);
-      vs[z]->val=M2(M(a,b,c,d),M(a,b,c,d));      
+      vs[z]->val=M2(M(a,b,c,d),M(a,b,c,d));
       lct.recalc(vs[z]);
     }
     if(c=='g'){
       Int x,y;
       cin>>x>>y;
-      lct.evert(vs[x]);      
+      lct.evert(vs[x]);
       M ans=lct.query(vs[y]).first;
-      cout<<ans.a<<" "<<ans.b<<" "<<ans.c<<" "<<ans.d<<endl;
+      cout<<ans.a<<" "<<ans.b<<" "<<ans.c<<" "<<ans.d<<"\n";
     }
   }
-  
+  cout<<flush;
   return 0;
 }
 /*
-  verified on 2018/06/14
+  verified on 2019/06/08
   https://yukicoder.me/problems/no/650
 */
 
@@ -659,7 +601,7 @@ signed SPOJ_DYNACON1(){
   auto f=[](int a,int b){return a+b;};
   LCT lct(f,f,f,0,0);
   vector<LCT::Node* > vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);  
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
   for(int i=0;i<m;i++){
     string s;
     int a,b;
@@ -674,22 +616,20 @@ signed SPOJ_DYNACON1(){
       lct.cut(v);
     }
     if(s=="conn"s)
-      cout<<(lct.is_connected(vs[a],vs[b])?"YES\n":"NO\n");   
+      cout<<(lct.is_connected(vs[a],vs[b])?"YES\n":"NO\n");
   }
   cout<<flush;
   return 0;
 }
 /*
-  verified on 2019/03/17
+  verified on 2019/06/08
   https://www.spoj.com/problems/DYNACON1/
 */
 
 
 signed main(){
-  //GRL_5_C();
   //GRL_5_D();
   //GRL_5_E();
-  //JOISC2013_DAY4_3();
   //AOJ_2450();
   //AOJ_0367();
   //YUKI_650();
