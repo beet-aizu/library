@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-//BEGIN CUT HERE
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 template<typename T,bool directed>
 struct Dinic{
   struct edge {
@@ -77,82 +79,73 @@ struct Dinic{
     return flow(s,t,INF);
   }
 };
+//BEGIN CUT HERE
+template<typename T>
+struct LeastFlow{
+  Dinic<T, true> G;
+  int X,Y;
+  T sum;
+  LeastFlow(int n,T INF):G(n+2,INF),X(n),Y(n+1),sum(0){}
+
+  void add_edge(int from,int to,T low,T hgh){
+    assert(low<=hgh);
+    G.add_edge(from,to,hgh-low);
+    G.add_edge(X,to,low);
+    G.add_edge(from,Y,low);
+    sum+=low;
+  }
+
+  T flow(int s,int t){
+    T a=G.flow(X,Y);
+    T b=G.flow(s,Y);
+    T c=G.flow(X,t);
+    T d=G.flow(s,t);
+    return (b==c&&a+b==sum)?b+d:T(-1);
+  }
+};
 //END CUT HERE
 
 //INSERT ABOVE HERE
-signed GRL_6_A(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int V,E;
-  cin>>V>>E;
-  Dinic<int, true> dinic(V,1<<28);
-  for(int i=0;i<E;i++){
-    int u,v,c;
-    cin>>u>>v>>c;
-    dinic.add_edge(u,v,c);
-  }
-  cout<<dinic.flow(0,V-1)<<endl;
-  return 0;
-}
-
-/*
-  verified on 2019/03/17
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
-*/
-
-
-signed SPOJ_FASTFLOW(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  Int n,m;
-  cin>>n>>m;
-  Dinic<Int, false> G(n,1LL<<55);
-  for(Int i=0;i<m;i++){
-    Int a,b,c;
-    cin>>a>>b>>c;
-    if(a==b) continue;
-    a--;b--;
-    G.add_edge(a,b,c);
-  }
-  cout<<G.flow(0,n-1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/03/17
-  https://www.spoj.com/problems/FASTFLOW/
-*/
-
-signed SPOJ_BANKROB(){
+signed AOJ_1615(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  int n,m,s,t;
-  cin>>n>>m>>s>>t;
-  s--;t--;
-  const int INF=5050;
-  Dinic<int, true> G(n*2,INF);
-  for(int i=0;i<m;i++){
-    int x,y;
-    cin>>x>>y;
-    x--;y--;
-    G.add_edge(n+x,y,INF);
-    G.add_edge(n+y,x,INF);
+  int n,m;
+  while(cin>>n>>m,n){
+    vector<int> xs(m),ys(m);
+    for(int i=0;i<m;i++) cin>>xs[i]>>ys[i],xs[i]--,ys[i]--;
+
+    for(int d=0;d<=n;d++){
+      for(int l=n-d;l>=0;l--){
+        int r=l+d;
+
+        LeastFlow<int> G(n+m+2,(int)1e5);
+        int S=n+m,T=n+m+1;
+        for(int i=0;i<m;i++){
+          G.add_edge(S,i,1,1);
+          G.add_edge(i,m+ys[i],0,1);
+          G.add_edge(i,m+xs[i],0,1);
+        }
+        for(int i=0;i<n;i++)
+          G.add_edge(m+i,T,l,r);
+
+        if(G.flow(S,T)==m){
+          cout<<l<<" "<<r<<endl;
+          goto END;
+        }
+      }
+    }
+  END:
+    ;
   }
-
-  for(int i=0;i<n;i++)
-    G.add_edge(i,n+i,1);
-
-  cout<<G.flow(n+s,t)<<endl;
   return 0;
 }
 /*
-  verified on 2019/03/17
-  https://www.spoj.com/problems/BANKROB/
+  verified on 2019/06/10
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1615&lang=jp
 */
 
 signed main(){
-  //GRL_6_A();
-  //SPOJ_FASTFLOW();
-  //SPOJ_BANKROB();
+  //AOJ_1615();
   return 0;
 }
