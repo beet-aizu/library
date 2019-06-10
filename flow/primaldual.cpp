@@ -205,7 +205,7 @@ signed CFR190_B(){
   return 0;
 }
 /*
-  verified on 2018/03/17
+  verified on 2019/06/10
   https://codeforces.com/contest/321/problem/B
 */
 
