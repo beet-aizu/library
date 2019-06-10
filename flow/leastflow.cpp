@@ -14,12 +14,11 @@ struct Dinic{
     edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}
   };
 
-  T INF;
   vector<vector<edge> > G;
   vector<int> level,iter;
 
   Dinic(){}
-  Dinic(int n,T INF):INF(INF),G(n),level(n),iter(n){}
+  Dinic(int n):G(n),level(n),iter(n){}
 
   void add_edge(int from,int to,T cap){
     G[from].emplace_back(to,cap,G[to].size());
@@ -76,7 +75,7 @@ struct Dinic{
   }
 
   T flow(int s,int t){
-    return flow(s,t,INF);
+    return flow(s,t,numeric_limits<T>::max()/2);
   }
 };
 //BEGIN CUT HERE
@@ -85,7 +84,7 @@ struct LeastFlow{
   Dinic<T, true> G;
   int X,Y;
   T sum;
-  LeastFlow(int n,T INF):G(n+2,INF),X(n),Y(n+1),sum(0){}
+  LeastFlow(int n):G(n+2),X(n),Y(n+1),sum(0){}
 
   void add_edge(int from,int to,T low,T hgh){
     assert(low<=hgh);
@@ -119,7 +118,7 @@ signed AOJ_1615(){
       for(int l=n-d;l>=0;l--){
         int r=l+d;
 
-        LeastFlow<int> G(n+m+2,(int)1e5);
+        LeastFlow<int> G(n+m+2);
         int S=n+m,T=n+m+1;
         for(int i=0;i<m;i++){
           G.add_edge(S,i,1,1);
@@ -144,8 +143,20 @@ signed AOJ_1615(){
   verified on 2019/06/10
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1615&lang=jp
 */
+//signed main(){AOJ_1615();return 0;}
 
-signed main(){
-  //AOJ_1615();
-  return 0;
-}
+class SRMDiv0Easy {
+public:
+  int get(int N, vector <int> L, vector <int> R, vector <int> X, vector <int> Y) {
+    int M=L.size();
+    LeastFlow<int> G(N+1);
+    int S=0,T=N;
+    for(int i=0;i<M;i++)
+      G.add_edge(L[i],R[i]+1,X[i],Y[i]);
+    return G.flow(S,T);
+  }
+};
+/*
+  verified on 2019/06/10
+  https://vjudge.net/problem/TopCoder-14319
+*/

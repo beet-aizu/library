@@ -12,12 +12,11 @@ struct Dinic{
     edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}
   };
 
-  T INF;
   vector<vector<edge> > G;
   vector<int> level,iter;
 
   Dinic(){}
-  Dinic(int n,T INF):INF(INF),G(n),level(n),iter(n){}
+  Dinic(int n):G(n),level(n),iter(n){}
 
   void add_edge(int from,int to,T cap){
     G[from].emplace_back(to,cap,G[to].size());
@@ -74,7 +73,7 @@ struct Dinic{
   }
 
   T flow(int s,int t){
-    return flow(s,t,INF);
+    return flow(s,t,numeric_limits<T>::max()/2);
   }
 };
 //END CUT HERE
@@ -85,7 +84,7 @@ signed GRL_6_A(){
   ios::sync_with_stdio(0);
   int V,E;
   cin>>V>>E;
-  Dinic<int, true> dinic(V,1<<28);
+  Dinic<int, true> dinic(V);
   for(int i=0;i<E;i++){
     int u,v,c;
     cin>>u>>v>>c;
@@ -96,7 +95,7 @@ signed GRL_6_A(){
 }
 
 /*
-  verified on 2019/03/17
+  verified on 2019/06/10
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
 */
 
@@ -106,7 +105,7 @@ signed SPOJ_FASTFLOW(){
   ios::sync_with_stdio(0);
   Int n,m;
   cin>>n>>m;
-  Dinic<Int, false> G(n,1LL<<55);
+  Dinic<Int, false> G(n);
   for(Int i=0;i<m;i++){
     Int a,b,c;
     cin>>a>>b>>c;
@@ -118,7 +117,7 @@ signed SPOJ_FASTFLOW(){
   return 0;
 }
 /*
-  verified on 2019/03/17
+  verified on 2019/06/10
   https://www.spoj.com/problems/FASTFLOW/
 */
 
@@ -130,7 +129,7 @@ signed SPOJ_BANKROB(){
   cin>>n>>m>>s>>t;
   s--;t--;
   const int INF=5050;
-  Dinic<int, true> G(n*2,INF);
+  Dinic<int, true> G(n*2);
   for(int i=0;i<m;i++){
     int x,y;
     cin>>x>>y;
@@ -146,7 +145,7 @@ signed SPOJ_BANKROB(){
   return 0;
 }
 /*
-  verified on 2019/03/17
+  verified on 2019/06/10
   https://www.spoj.com/problems/BANKROB/
 */
 
