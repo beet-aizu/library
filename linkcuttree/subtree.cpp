@@ -59,26 +59,26 @@ struct LinkCutTree{
     Node *x=t->p,*y=x->p;
     if((x->l=t->r)) t->r->p=x;
     t->r=x;x->p=t;
+    pushup(x);
+    pushup(t);
     if((t->p=y)){
       if(y->l==x) y->l=t;
       if(y->r==x) y->r=t;
+      pushup(y);
     }
-    pushup(x);
-    pushup(t);
-    pushup(y);
   }
 
   void rotL(Node *t){
     Node *x=t->p,*y=x->p;
     if((x->r=t->l)) t->l->p=x;
     t->l=x;x->p=t;
+    pushup(x);
+    pushup(t);
     if((t->p=y)){
       if(y->l==x) y->l=t;
       if(y->r==x) y->r=t;
+      pushup(y);
     }
-    pushup(x);
-    pushup(t);
-    pushup(y);
   }
 
   void splay(Node *t){
@@ -318,7 +318,7 @@ signed UNIVERSITYCODESPRINT03_G(){
   return 0;
 }
 /*
-  verified on 2019/06/08
+  verified on 2019/06/14
   https://www.hackerrank.com/contests/university-codesprint-3/challenges/simple-tree-counting
 */
 
@@ -443,7 +443,7 @@ signed CFR564_E(){
   return 0;
 }
 /*
-  verified on 2019/06/08
+  verified on 2019/06/14
   https://codeforces.com/contest/1172/problem/E
 */
 
@@ -471,7 +471,7 @@ signed JOISC2013_DAY4_3(){
   return 0;
 }
 /*
-  verified on 2019/06/08
+  verified on 2019/06/14
   https://atcoder.jp/contests/joisc2013-day4/tasks/joisc2013_spaceships
 */
 
@@ -504,7 +504,7 @@ signed SPOJ_DYNACON1(){
   return 0;
 }
 /*
-  verified on 2019/06/08
+  verified on 2019/06/14
   https://www.spoj.com/problems/DYNACON1/
 */
 
