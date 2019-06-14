@@ -7,10 +7,11 @@ struct LinkCutTree{
   struct Node{
     Node *l,*r,*p;
     int idx;
+    bool rev;
     A val,dat,sum;
     Node(){}
     Node(int idx,A val,A dat,A sum):
-      idx(idx),val(val),dat(dat),sum(sum){l=r=p=nullptr;}
+      idx(idx),rev(0),val(val),dat(dat),sum(sum){l=r=p=nullptr;}
     bool is_root(){
       return !p||(p->l!=this&&p->r!=this);
     }
@@ -28,6 +29,19 @@ struct LinkCutTree{
 
   inline Node* create(int idx,A val){
     return &(pool[ptr++]=Node(idx,val,ai,val));
+  }
+
+  void toggle(Node *t){
+    swap(t->l,t->r);
+    t->rev^=1;
+  }
+
+  void eval(Node *t){
+    if(t->rev){
+      if(t->l) toggle(t->l);
+      if(t->r) toggle(t->r);
+      t->rev=false;
+    }
   }
 
   inline A resolve(Node *t){
@@ -68,13 +82,16 @@ struct LinkCutTree{
   }
 
   void splay(Node *t){
+    eval(t);
     while(!t->is_root()){
       Node *q=t->p;
       if(q->is_root()){
+        eval(q);eval(t);
         if(q->l==t) rotR(t);
         else rotL(t);
       }else{
         auto *r=q->p;
+        eval(r);eval(q);eval(t);
         if(r->l==q){
           if(q->l==t) rotR(q),rotR(t);
           else rotL(t),rotR(t);
@@ -116,6 +133,12 @@ struct LinkCutTree{
     par->p=nullptr;
   }
 
+  void evert(Node *t){
+    expose(t);
+    toggle(t);
+    eval(t);
+  }
+
   Node *root(Node *t){
     expose(t);
     while(t->l) t=t->l;
@@ -138,6 +161,7 @@ struct LinkCutTree{
   }
 };
 //END CUT HERE
+
 
 template<typename T>
 struct BIT{
@@ -451,9 +475,43 @@ signed JOISC2013_DAY4_3(){
   https://atcoder.jp/contests/joisc2013-day4/tasks/joisc2013_spaceships
 */
 
+signed SPOJ_DYNACON1(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  int n,m;
+  cin>>n>>m;
+  using LCT = LinkCutTree<int>;
+  LCT lct;
+  vector<LCT::Node* > vs(n);
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
+  for(int i=0;i<m;i++){
+    string s;
+    int a,b;
+    cin>>s>>a>>b;
+    a--;b--;
+    if(s=="add"s){
+      lct.evert(vs[b]);
+      lct.link(vs[a],vs[b]);
+    }
+    if(s=="rem"s){
+      auto v=lct.lca(vs[a],vs[b])==vs[a]?vs[b]:vs[a];
+      lct.cut(v);
+    }
+    if(s=="conn"s)
+      cout<<(lct.is_connected(vs[a],vs[b])?"YES\n":"NO\n");
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/06/08
+  https://www.spoj.com/problems/DYNACON1/
+*/
+
 signed main(){
   //UNIVERSITYCODESPRINT03_G();
   //CFR564_E();
   //JOISC2013_DAY4_3();
+  //SPOJ_DYNACON1();
   return 0;
 }
