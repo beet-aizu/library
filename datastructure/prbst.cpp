@@ -4,13 +4,14 @@ using Int = long long;
 //BEGIN CUT HERE
 template<typename T,typename E>
 struct PRBST{
-  int xor128(){
-    static int x = 123456789;
-    static int y = 362436069;
-    static int z = 521288629;
-    static int w = 88675123; 
-    int t;
-   
+  using u32 = uint32_t;
+  u32 xor128(){
+    static u32 x = 123456789;
+    static u32 y = 362436069;
+    static u32 z = 521288629;
+    static u32 w = 88675123;
+    u32 t;
+
     t = x ^ (x << 11);
     x = y; y = z; z = w;
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
@@ -24,7 +25,7 @@ struct PRBST{
   H h;
   T ti;
   E ei;
-  
+
   struct Node{
     Node *l,*r;
     size_t cnt;
@@ -47,15 +48,15 @@ struct PRBST{
     size_t m=(l+r)>>1;
     return merge(build(l,m,v),build(m,r,v));
   }
-  
+
   Node* build(vector<T> &v){
     return build(0,v.size(),v);
   }
-  
+
   inline Node* create(){
     return &pool[ptr++];
   }
-  
+
   inline Node* create(T v){
     return &(pool[ptr++]=Node(v,ei));
   }
@@ -66,7 +67,7 @@ struct PRBST{
     *b=*a;
     return b;
   }
-  
+
   inline size_t count(const Node* a){
     if(a==nullptr) return 0;
     return a->cnt;
@@ -91,7 +92,7 @@ struct PRBST{
 
   Node* eval(Node* a){
     a=clone(a);
-    if(a->laz!=ei){ 
+    if(a->laz!=ei){
       a->val=g(a->val,a->laz);
       if(a->l!=nullptr){
         a->l=clone(a->l);
@@ -107,7 +108,7 @@ struct PRBST{
     }
     return update(a);
   }
-  
+
   inline Node* update(Node* a){
     if(a==nullptr) return a;
     a->cnt=count(a->l)+count(a->r)+1;
@@ -123,7 +124,7 @@ struct PRBST{
     a=merge(s.first,merge(t.first,t.second));
     return res;
   }
-  
+
   inline void update(Node *&a,size_t l,size_t r,E v){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
@@ -139,7 +140,7 @@ struct PRBST{
     a=merge(s.first,merge(t.first,t.second));
     return res;
   }
-  
+
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
     a=eval(a);
@@ -147,7 +148,7 @@ struct PRBST{
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
   }
-  
+
   vector<T> dump(Node* a){
     vector<T> v(count(a));
     dump(a,v.begin());
@@ -159,7 +160,7 @@ struct PRBST{
     ptr=0;
     return build(v);
   }
-  
+
   Node* merge(Node* a,Node* b){
     if(a==nullptr) return b;
     if(b==nullptr) return a;
@@ -184,8 +185,8 @@ struct PRBST{
     auto s=split(a->r,k-(count(a->l)+1));
     a->r=s.first;
     return make_pair(update(a),s.second);
-  } 
-  
+  }
+
 };
 //END CUT HERE
 
@@ -203,7 +204,7 @@ signed ARC030_D(){
 
   PRBST<P, Int> prbst(f,g,h,P(0,0),0);
   auto root=prbst.build(v);
-  
+
   for(int i=0;i<q;i++){
     int t;
     scanf("%d",&t);
@@ -220,7 +221,7 @@ signed ARC030_D(){
       auto t=prbst.split(s.second,b-a);
       auto u=prbst.split(root,c);
       auto v=prbst.split(u.second,d-c);
-      
+
       root=prbst.merge(prbst.merge(s.first,v.first),t.second);
     }
     if(t==3){
@@ -228,16 +229,16 @@ signed ARC030_D(){
       scanf("%d %d",&a,&b);
       printf("%lld\n",prbst.query(root,a-1,b).first);
     }
-    
+
     if(prbst.ptr>prbst.LIM*95/100)
       root=prbst.rebuild(root);
-    
+
   }
   return 0;
 }
 
 /*
-  verified on 2018/03/04
+  verified on 2019/06/12
   https://beta.atcoder.jp/contests/arc030/tasks/arc030_4
 */
 

@@ -3,6 +3,7 @@ import sys
 
 args = sys.argv
 assert(len(args)>=3)
+assert(not os.path.exists("./{}".format(args[1])))
 
 os.system("mkdir ./{}".format(args[1]))
 os.system("$EDITOR ./{}/t.cpp".format(args[1]))

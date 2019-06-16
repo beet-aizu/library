@@ -4,18 +4,19 @@ using Int = long long;
 //BEGIN CUT HERE
 template<typename T>
 struct SPRBST{
-  int xor128(){
-    static int x = 123456789;
-    static int y = 362436069;
-    static int z = 521288629;
-    static int w = 88675123; 
-    int t;
-   
+  using u32 = uint32_t;
+  u32 xor128(){
+    static u32 x = 123456789;
+    static u32 y = 362436069;
+    static u32 z = 521288629;
+    static u32 w = 88675123;
+    u32 t;
+
     t = x ^ (x << 11);
     x = y; y = z; z = w;
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
-  
+
   struct Node{
     Node *l,*r;
     size_t cnt;
@@ -35,16 +36,16 @@ struct SPRBST{
     size_t m=(l+r)>>1;
     return merge(build(l,m,v),build(m,r,v));
   }
-  
+
   Node* build(vector<T> &v){
     return build(0,v.size(),v);
   }
-  
+
   inline Node* create(){
     if(ptr>=LIM) exit(0);
     return &pool[ptr++];
   }
-  
+
   inline Node* create(T v){
     if(ptr>=LIM) exit(0);
     return &(pool[ptr++]=Node(v));
@@ -56,7 +57,7 @@ struct SPRBST{
     *b=*a;
     return b;
   }
-  
+
   inline size_t count(const Node* a){
     if(a==nullptr) return 0;
     return a->cnt;
@@ -87,7 +88,7 @@ struct SPRBST{
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
   }
-  
+
   vector<T> dump(Node* a){
     vector<T> v(count(a));
     dump(a,v.begin());
@@ -99,7 +100,7 @@ struct SPRBST{
     ptr=0;
     return build(v);
   }
-  
+
   Node* merge(Node* a,Node* b){
     if(a==nullptr) return b;
     if(b==nullptr) return a;
@@ -124,24 +125,24 @@ struct SPRBST{
     auto s=split(a->r,k-(count(a->l)+1));
     a->r=s.first;
     return make_pair(update(a),s.second);
-  } 
-  
+  }
+
 };
 //END CUT HERE
 
 
 //INSERT ABOVE HERE
 char buf[1123456];
-signed main(){
+signed JOISC2012_COPYPASTE(){
   int m;
   scanf("%d",&m);
   scanf("%s",buf);
   vector<char> v(strlen(buf));
   for(int i=0;i<(int)v.size();i++) v[i]=buf[i];
-  
+
   SPRBST<char> sprbst;
   auto root=sprbst.build(v);
-  
+
   int n;
   scanf("%d",&n);
   for(int i=0;i<n;i++){
@@ -151,10 +152,10 @@ signed main(){
     auto t=sprbst.split(s.second,b-a);
     auto u=sprbst.split(root,c);
     root=sprbst.merge(sprbst.merge(u.first,t.first),u.second);
-    
+
     if((int)sprbst.count(root)>m)
       root=sprbst.split(root,m).first;
-    
+
     if(sprbst.ptr>sprbst.LIM*8/10)
       root=sprbst.rebuild(root);
   }
@@ -165,6 +166,11 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2018/02/17
+  verified on 2019/06/12
   https://beta.atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
 */
+
+signed main(){
+  JOISC2012_COPYPASTE();
+  return 0;
+}

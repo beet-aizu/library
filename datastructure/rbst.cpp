@@ -4,13 +4,14 @@ using Int = long long;
 //BEGIN CUT HERE
 template<typename T,typename E>
 struct RBST{
-  int xor128(){
-    static int x = 123456789;
-    static int y = 362436069;
-    static int z = 521288629;
-    static int w = 88675123; 
-    int t;
-   
+  using u32 = uint32_t;
+  u32 xor128(){
+    static u32 x = 123456789;
+    static u32 y = 362436069;
+    static u32 z = 521288629;
+    static u32 w = 88675123;
+    u32 t;
+
     t = x ^ (x << 11);
     x = y; y = z; z = w;
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
@@ -24,7 +25,7 @@ struct RBST{
   H h;
   T ti;
   E ei;
-  
+
   struct Node{
     Node *l,*r;
     size_t cnt;
@@ -47,19 +48,19 @@ struct RBST{
     size_t m=(l+r)>>1;
     return merge(build(l,m,v),build(m,r,v));
   }
-  
+
   Node* build(vector<T> &v){
     return build(0,v.size(),v);
   }
-  
+
   inline Node* create(){
     return &pool[ptr++];
   }
-  
+
   inline Node* create(T v){
     return &(pool[ptr++]=Node(v,ei));
   }
-  
+
   inline size_t count(const Node* a){
     if(a==nullptr) return 0;
     return a->cnt;
@@ -81,9 +82,9 @@ struct RBST{
     if(a==nullptr) return ti;
     return a->dat;
   }
-  
+
   Node* eval(Node* a){
-    if(a->laz!=ei){ 
+    if(a->laz!=ei){
       a->val=g(a->val,a->laz);
       if(a->l!=nullptr){
         a->l->laz=h(a->l->laz,a->laz);
@@ -97,7 +98,7 @@ struct RBST{
     }
     return update(a);
   }
-  
+
   inline Node* update(Node* a){
     if(a==nullptr) return a;
     a->cnt=count(a->l)+count(a->r)+1;
@@ -113,7 +114,7 @@ struct RBST{
     a=merge(s.first,merge(t.first,t.second));
     return res;
   }
-  
+
   inline void update(Node *&a,size_t l,size_t r,E v){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
@@ -129,7 +130,7 @@ struct RBST{
     a=merge(s.first,merge(t.first,t.second));
     return res;
   }
-  
+
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
     a=eval(a);
@@ -137,7 +138,7 @@ struct RBST{
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
   }
-  
+
   vector<T> dump(Node* a){
     vector<T> v(count(a));
     dump(a,v.begin());
@@ -168,8 +169,8 @@ struct RBST{
     auto s=split(a->r,k-(count(a->l)+1));
     a->r=s.first;
     return make_pair(update(a),s.second);
-  } 
-  
+  }
+
 };
 //END CUT HERE
 
@@ -179,7 +180,7 @@ signed AOJ_1508(){
   scanf("%d %d",&n,&q);
   vector<int> v(n);
   for(int i=0;i<n;i++) scanf("%d",&v[i]);
-  
+
   auto f=[](int a,int b){return min(a,b);};
   auto g=[](int a,int b){return b<0?a:b;};
   auto h=[](int a,int b){return b<0?a:b;};
@@ -187,7 +188,7 @@ signed AOJ_1508(){
   RBST<int, int> rbst(f,g,h,INF,-1);
 
   auto root=rbst.build(v);
-  
+
   for(int i=0;i<q;i++){
     int x,y,z;
     scanf("%d %d %d",&x,&y,&z);
@@ -203,11 +204,11 @@ signed AOJ_1508(){
       rbst.update(root,y,y+1,z);
     }
   }
-  
+
   return 0;
 }
 /*
-  verified on 2018/08/21
+  verified on 2019/06/12
   judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
 */
 
@@ -220,11 +221,11 @@ signed DSL_2_F(){
   RBST<Int, Int> rbst(f,g,h,INT_MAX,-1);
   vector<Int> v(n,INT_MAX);
   auto root=rbst.build(v);
-  
+
   for(int i=0;i<q;i++){
-    int c,s,t,x;    
+    int c,s,t,x;
     scanf("%d",&c);
-    if(c){      
+    if(c){
       scanf("%d %d",&s,&t);
       printf("%lld\n",rbst.query(root,s,t+1));
     }else{
@@ -235,8 +236,8 @@ signed DSL_2_F(){
   return 0;
 }
 /*
-  verified on 2018/02/17
-  https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_F
+  verified on 2019/06/12
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F&lang=jp
 */
 
 signed DSL_2_G(){
@@ -249,7 +250,7 @@ signed DSL_2_G(){
   RBST<P, Int> rbst(f,g,h,P(0,0),0);
   vector<P> v(n,P(0,1));
   auto root=rbst.build(v);
-  
+
   for(int i=0;i<q;i++){
     int c,s,t,x;
     scanf("%d",&c);
@@ -264,8 +265,8 @@ signed DSL_2_G(){
   return 0;
 }
 /*
-  verified on 2018/02/17
-  https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G
+  verified on 2019/06/12
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
 */
 
 char buf[114514];
@@ -287,21 +288,21 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
          };
   const int INF = 1e9;
   RBST<T, P> rbst(f,g,h,T(INF,INF,0),P(0,0));
-  
+
   vector<T> v(S.size()+2,T(0,0,0));
   for(int i=0;i<(int)S.size();i++)
     get<2>(v[i+1])=(S[i]=='('?1:-1);
-  
+
   auto root=rbst.build(v);
   for(int i=1;i<=(int)S.size();i++){
     int z=get<2>(rbst.get(root,i));
     P q=P(z,-z);
-     
+
     q.second=0;
     rbst.update(root,i,rbst.count(root),q);
     q.second=-z;
     q.first=0;
-    rbst.update(root,0,i+1,q);      
+    rbst.update(root,0,i+1,q);
     q.first=z;
   }
 
@@ -317,28 +318,28 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
       P q=P(z,-z);
       T curr(get<0>(prev),get<1>(next),z);
       root=rbst.insert(root,y,curr);
-      
+
       q.second=0;
       rbst.update(root,y,rbst.count(root),q);
       q.second=-z;
       q.first=0;
-      rbst.update(root,0,y+1,q);      
+      rbst.update(root,0,y+1,q);
       q.first=z;
     }
-    
+
     if(x=='D'){
       z=get<2>(rbst.get(root,y));
       P q=P(-z,z);
       root=rbst.erase(root,y);
-      
+
       q.second=0;
       rbst.update(root,y,rbst.count(root),q);
       q.second=z;
       q.first=0;
-      rbst.update(root,0,y,q);      
+      rbst.update(root,0,y,q);
       q.first=-z;
     }
-    
+
     if(x=='Q'){
       T prev=rbst.query(root,y-1,y);
       T curr=rbst.query(root,y,z);
@@ -349,11 +350,11 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
       printf("%d\n",ans);
     }
   }
-  
+
   return 0;
 }
 /*
-  verified on 2018/03/04
+  verified on 2019/06/12
   https://beta.atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
 */
 
@@ -361,7 +362,6 @@ signed main(){
   //AOJ_1508();
   //DSL_2_F();
   //DSL_2_G();
-  CODEFESTIVAL2014EXHIBITION_B();
+  //CODEFESTIVAL2014EXHIBITION_B();
   return 0;
 }
-
