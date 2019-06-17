@@ -3,7 +3,7 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-//BEGIN CUT HERE
+
 constexpr int bmds(int x){
   const int v[] = {1012924417, 924844033, 998244353,
                    897581057, 645922817};
@@ -164,135 +164,87 @@ struct ArbitraryModConvolution{
 NTT<0> ArbitraryModConvolution::ntt0;
 NTT<1> ArbitraryModConvolution::ntt1;
 NTT<2> ArbitraryModConvolution::ntt2;
-//END CUT HERE
 
-template<typename T,T MOD = 1000000007>
-struct Mint{
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
-
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  static Mint add_identity(){return Mint(0);}
-  static Mint mul_identity(){return Mint(1);}
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
-
-  static vector<Mint> fact,finv,invs;
-
-  static void init(int n){
-    int m=fact.size();
-    if(n<m) return;
-
-    fact.resize(n+1,1);
-    finv.resize(n+1,1);
-    invs.resize(n+1,1);
-
-    if(m==0) m=1;
-    for(int i=m;i<=n;i++) fact[i]=fact[i-1]*Mint(i);
-    finv[n]=Mint(1)/fact[n];
-    for(int i=n;i>=m;i--) finv[i-1]=finv[i]*Mint(i);
-    for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];
-  }
-
-  static Mint C(int n,int k){
-    if(n<k||k<0) return Mint(0);
-    init(n);
-    return fact[n]*finv[n-k]*finv[k];
-  }
-
-  static Mint H(int n,int k){
-    if(n<0||k<0) return Mint(0);
-    if(!n&&!k) return Mint(1);
-    init(n+k-1);
-    return C(n+k-1,k);
-  }
-};
-template<typename T,T MOD>
-vector<Mint<T, MOD> > Mint<T, MOD>::fact = vector<Mint<T, MOD> >();
-template<typename T,T MOD>
-vector<Mint<T, MOD> > Mint<T, MOD>::finv = vector<Mint<T, MOD> >();
-template<typename T,T MOD>
-vector<Mint<T, MOD> > Mint<T, MOD>::invs = vector<Mint<T, MOD> >();
-
-//INSERT ABOVE HERE
-signed  YUKI_829(){
-  using ll = long long;
-  int n,b;
-  cin>>n>>b;
-  vector<int> s(n);
-  for(Int i=0;i<n;i++) cin>>s[i];
-  using M = Mint<int>;
-  M::init(3e5);
-
-  vector<int> cnt(n,0);
-  for(int i=0;i<n;i++) cnt[s[i]]++;
-
-  using P = pair<int, vector<int> > ;
-  priority_queue<P> pq;
-  pq.emplace(-1,vector<int>(1,1));
-
-  int sum=0;
-  for(int i=n-1;i>=0;i--){
-    if(cnt[i]==0) continue;
-    M x=M::H(sum,cnt[i]);
-    M y=M::H(sum+1,cnt[i])-x;
-    x*=M::fact[cnt[i]];
-    y*=M::fact[cnt[i]];
-
-    pq.emplace(-2,vector<int>({x.v,y.v}));
-    sum+=cnt[i];
-  }
-
-  const int MOD = 1e9+7;
+//BEGIN CUT HERE
+int factorial(int n,int MOD){
+  if(n>=MOD) return 0;
   ArbitraryModConvolution arb;
-  while(pq.size()>1u){
-    auto a=pq.top().second;pq.pop();
-    auto b=pq.top().second;pq.pop();
-    auto c=arb.multiply(a,b,MOD);
-    pq.emplace(-(int)c.size(),c);
+  auto inv=[&](int a){return ArbitraryModConvolution::inv(a,MOD);};
+
+  using ll = long long;
+  auto add=[&](int a,int b){return a+b>=MOD?a+b-MOD:a+b;};
+  auto sub=[&](int a,int b){return a-b<0?a-b+MOD:a-b;};
+  auto mul=[&](int a,int b){return (ll)a*b%MOD;};
+  auto div=[&](int a,int b){return mul(a,inv(b));};
+
+  int d=1<<15;
+  vector<int> fact(d*2+1,1),finv(d*2+1,1);
+  for(int i=1;i<=d*2;i++) fact[i]=mul(fact[i-1],i);
+  finv[d*2]=inv(fact[d*2]);
+  for(int i=d*2-1;i>=0;i--) finv[i]=mul(finv[i+1],i+1);
+
+  vector<int> seq({1,d+1});
+  seq.reserve(d+1);
+
+  int sz=1;
+  while(sz<d){
+    vector<int> aux(sz,1);
+    vector<int> f(sz*4,0),g(sz*4,0);
+    for(int i=0;i<=sz;i++){
+      f[i]=mul(mul(finv[i],finv[sz-i]),seq[i]);
+      if(((sz+i)&1)&&(f[i]!=0)) f[i]=MOD-f[i];
+    }
+
+    vector<int> pf(f);
+    vector<int> as;
+    as.emplace_back(sz+1);
+    as.emplace_back(div(sz,d));
+    as.emplace_back(add(div(sz,d),sz+1));
+
+    for(int idx=0;idx<3;idx++){
+      for(int i=0;i<sz*4;i++) f[i]=pf[i];
+      for(int i=1;i<sz*2+2;i++)
+        g[i]=inv(as[idx]+MOD-sz+i-1);
+      f=arb.multiply(f,g,MOD);
+      f.resize(sz*4);
+
+      int prod=1;
+      for(int i=0;i<=sz;i++) prod=mul(prod,sub(as[idx],i));
+
+      for(int i=0;i<=sz;i++){
+        f[sz+i+1]=mul(f[sz+i+1],prod);
+        prod=mul(prod,add(as[idx],i+1));
+        prod=div(prod,sub(as[idx],sz-i));
+      }
+      if(idx==0){
+        for(int i=0;i<sz;i++)
+          aux[i]=f[sz+i+1];
+      }
+      if(idx==1){
+        for(int i=0;i<=sz;i++)
+          seq[i]=mul(seq[i],f[sz+i+1]);
+      }
+      if(idx==2){
+        for(int i=0;i<sz;i++)
+          aux[i]=mul(aux[i],f[sz+i+1]);
+      }
+    }
+    for(int x:aux) seq.emplace_back(x);
+    sz<<=1;
   }
 
-  auto dp=pq.top().second;
-  M ans(0),res(1);
-  for(int j=0;j<(int)dp.size();j++){
-    ans+=M((ll)j*(ll)dp[j])*res;
-    res*=M(b);
-  }
-  cout<<ans.v<<endl;
-  return 0;
+  int res=1;
+  int l=min(d,(n+1)/d);
+  for(int i=0;i<l;i++) res=mul(res,seq[i]);
+  for(int i=l*d+1;i<=n;i++) res=mul(res,i);
+  return res;
 }
-/*
-  verified on 2019/06/17
-  https://yukicoder.me/problems/no/829
-*/
+//END CUT HERE
+//INSERT ABOVE HERE
 signed main(){
-  YUKI_829();
+  const int MOD = 1e9+7;
+  int n;
+  cin>>n;
+  cout<<factorial(n,MOD)<<endl;
   return 0;
 }
