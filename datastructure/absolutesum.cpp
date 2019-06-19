@@ -48,7 +48,7 @@ struct AbsoluteSum{
       rp.erase(rp.find(x));
       rp.erase(rp.find(x));
       rp.emplace(*lp.rbegin());
-      lp.erase(lp.find(*lp.rbegin()));
+      lp.erase(lp.rbegin().base());
     }
     auto p=interval();
     T res=min(abs(p.first-x),abs(p.second-x));
