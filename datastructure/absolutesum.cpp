@@ -19,7 +19,7 @@ struct AbsoluteSum{
     lp.emplace(x);
     rp.emplace(x);
     if(p.first<=x&&x<=p.second) return T(0);
-    while(*lp.rbegin()>*rp.begin()){
+    if(*lp.rbegin()>*rp.begin()){
       T a=*lp.rbegin();
       T b=*rp.begin();
       lp.erase(lp.find(a));
@@ -51,6 +51,7 @@ struct AbsoluteSum{
       lp.erase(lp.rbegin().base());
     }
     auto p=interval();
+    if(p.first<=x&&x<=p.second) return T(0);
     T res=min(abs(p.first-x),abs(p.second-x));
     sum-=res;
     return res;
