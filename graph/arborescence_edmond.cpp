@@ -5,7 +5,6 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 struct SCC{
-  int n;
   vector<vector<int> > G,R;
   vector<int> vs,used,blg;
   SCC(){}
