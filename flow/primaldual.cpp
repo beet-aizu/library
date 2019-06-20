@@ -5,34 +5,35 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //BEGIN CUT HERE
-template<typename T>
+template<typename TF,typename TC>
 struct PrimalDual{
   struct edge{
     int to;
-    T cap,cost;
+    TF cap;
+    TC cost;
     int rev;
     edge(){}
-    edge(int to,T cap,T cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
+    edge(int to,TF cap,TC cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
   };
 
-  static const T INF = numeric_limits<T>::max()/2;
-  vector<vector<edge> > G;
-  vector<T> h,dist;
+  static constexpr TC INF = numeric_limits<TC>::max()/2;
+  vector<vector<edge>> G;
+  vector<TC> h,dist;
   vector<int> prevv,preve;
 
   PrimalDual(){}
   PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}
 
-  void add_edge(int from,int to,T cap,T cost){
-    G[from].emplace_back(to,cap,cost,G[to].size());
-    G[to].emplace_back(from,0,-cost,G[from].size()-1);
+  void add_edge(int u,int v,TF cap,TC cost){
+    G[u].emplace_back(v,cap,cost,G[v].size());
+    G[v].emplace_back(u,0,-cost,G[u].size()-1);
   }
 
   void dijkstra(int s){
     struct P{
-      T first;
+      TC first;
       int second;
-      P(T first,int second):first(first),second(second){}
+      P(TC first,int second):first(first),second(second){}
       bool operator<(const P&a) const{return first>a.first;}
     };
     priority_queue<P> que;
@@ -57,8 +58,8 @@ struct PrimalDual{
     }
   }
 
-  T flow(int s,int t,T f,int &ok){
-    T res=0;
+  TC flow(int s,int t,TF f,int &ok){
+    TC res=0;
     fill(h.begin(),h.end(),0);
     while(f>0){
       dijkstra(s);
@@ -66,7 +67,7 @@ struct PrimalDual{
 
       for(int v=0;v<(int)h.size();v++) h[v]+=dist[v];
 
-      T d=f;
+      TF d=f;
       for(int v=t;v!=s;v=prevv[v])
         d=min(d,G[prevv[v]][preve[v]].cap);
 
@@ -82,7 +83,7 @@ struct PrimalDual{
     return res;
   }
 };
-template<typename T> const T PrimalDual<T>::INF;
+template<typename TF, typename TC> constexpr TC PrimalDual<TF, TC>::INF;
 //END CUT HERE
 //INSERT ABOVE HERE
 int GRL_6_B(){
@@ -91,7 +92,7 @@ int GRL_6_B(){
   int v,e,f;
   cin>>v>>e>>f;
 
-  PrimalDual<int> pd(v);
+  PrimalDual<int, int> pd(v);
   for(int i=0;i<e;i++){
     int u,v,c,d;
     cin>>u>>v>>c>>d;
@@ -103,7 +104,7 @@ int GRL_6_B(){
   return 0;
 }
 /*
-  verified on 2019/06/10
+  verified on 2019/06/20
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B&lang=jp
 */
 
@@ -123,7 +124,7 @@ signed SPOJ_GREED(){
       using ll = long long;
       const ll INF = 1<<28;
       int S=n,T=n+1;
-      PrimalDual<ll> G(n+2);
+      PrimalDual<ll, ll> G(n+2);
 
       int m;
       cin>>m;
@@ -153,7 +154,7 @@ signed SPOJ_GREED(){
   return 0;
 }
 /*
-  verified on 2019/06/10
+  verified on 2019/06/20
   https://www.spoj.com/problems/GREED/
 */
 
@@ -172,7 +173,7 @@ signed CFR190_B(){
   using ll = long long;
   const ll INF = 1<<28;
 
-  PrimalDual<ll> G(n+m+3);
+  PrimalDual<ll, ll> G(n+m+3);
   int S=n+m,T=n+m+1,V=n+m+2;
 
   for(int i=0;i<m;i++){
@@ -205,13 +206,67 @@ signed CFR190_B(){
   return 0;
 }
 /*
-  verified on 2019/06/10
+  verified on 2019/06/20
   https://codeforces.com/contest/321/problem/B
+*/
+
+signed geocon2013_B(){
+  using D = double;
+
+  int n;
+  cin>>n;
+  vector<D> xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];
+
+  vector<int> pos,neg;
+  for(int i=0;i<n;i++){
+    if(xs[i]>0) pos.emplace_back(i);
+    if(xs[i]<0) neg.emplace_back(i);
+  }
+
+  int f=max(pos.size(),neg.size());
+  if(f==0){
+    cout<<0<<endl;
+    return 0;
+  }
+
+  PrimalDual<int, D> G(n+3);
+  int S=n,T=n+1,U=n+2;
+  for(int z:pos) G.add_edge(S,z,1,0);
+  for(int z:neg) G.add_edge(z,T,1,0);
+
+  int dif=pos.size()-neg.size();
+  if(dif>0){
+    G.add_edge(U,T,dif,0);
+    for(int p:pos)
+      G.add_edge(p,U,1,abs(xs[p]));
+  }
+  if(dif<0){
+    G.add_edge(S,U,-dif,0);
+    for(int q:neg)
+      G.add_edge(U,q,1,abs(xs[q]));
+  }
+
+  for(int p:pos)
+    for(int q:neg)
+      G.add_edge(p,q,1,
+                 min(hypot(xs[p]+xs[q],ys[p]-ys[q]),abs(xs[p])+abs(xs[q])));
+
+  int ok=0;
+  D ans=G.flow(S,T,f,ok);
+  assert(ok);
+  cout<<fixed<<setprecision(12)<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/06/20
+  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
 */
 
 signed main(){
   //GRL_6_B();
   //SPOJ_GREED();
   //CFR190_B();
+  //geocon2013_B();
   return 0;
 }
