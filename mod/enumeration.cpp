@@ -7,7 +7,7 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 template<typename T,T MOD = 1000000007>
 struct Mint{
   static constexpr T mod = MOD;
-  
+
   T v;
   Mint():v(0){}
   Mint(signed v):v(v){}
@@ -22,17 +22,17 @@ struct Mint{
     }
     return res;
   }
-  
+
   static Mint add_identity(){return Mint(0);}
   static Mint mul_identity(){return Mint(1);}
-  
+
   Mint inv(){return pow(MOD-2);}
-  
+
   Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
   Mint& operator/=(Mint a){return (*this)*=a.inv();}
-  
+
   Mint operator+(Mint a) const{return Mint(v)+=a;};
   Mint operator-(Mint a) const{return Mint(v)-=a;};
   Mint operator*(Mint a) const{return Mint(v)*=a;};
@@ -43,7 +43,7 @@ struct Mint{
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
   bool operator <(const Mint a)const{return v <a.v;}
-  
+
   static Mint comb(long long n,int k){
     Mint num(1),dom(1);
     for(int i=0;i<k;i++){
@@ -63,14 +63,14 @@ private:
 public:
   static void init(int n){
     n=min<decltype(M::mod)>(n,M::mod-1);
-    
+
     int m=fact.size();
     if(n<m) return;
 
     fact.resize(n+1,1);
     finv.resize(n+1,1);
     invs.resize(n+1,1);
-    
+
     if(m==0) m=1;
     for(int i=m;i<=n;i++) fact[i]=fact[i-1]*M(i);
     finv[n]=M(1)/fact[n];
@@ -80,17 +80,17 @@ public:
 
   static M Fact(int n){
     init(n);
-    return fact[n];    
-  }  
+    return fact[n];
+  }
   static M Finv(int n){
     init(n);
-    return finv[n];    
+    return finv[n];
   }
   static M Invs(int n){
     init(n);
-    return invs[n];    
+    return invs[n];
   }
-  
+
   static M C(int n,int k){
     if(n<k||k<0) return M(0);
     init(n);
@@ -102,7 +102,7 @@ public:
     init(n);
     return fact[n]*finv[n-k];
   }
-  
+
   static M H(int n,int k){
     if(n<0||k<0) return M(0);
     if(!n&&!k) return M(1);
@@ -117,7 +117,7 @@ public:
       M tmp=C(k,i)*M(i).pow(n);
       if((k-i)&1) res-=tmp;
       else res+=tmp;
-    }    
+    }
     return res*=finv[k];
   }
 
@@ -136,14 +136,14 @@ public:
   static M B(int n,int k){
     if(n==0) return M(1);
     k=min(k,n);
-    init(k);    
+    init(k);
     vector<M> dp(k+1);
     dp[0]=M(1);
     for(int i=1;i<=k;i++)
-      dp[i]=dp[i-1]+((i&1)?-finv[i]:finv[i]);    
+      dp[i]=dp[i-1]+((i&1)?-finv[i]:finv[i]);
     M res;
     for(int i=1;i<=k;i++)
-      res+=M(i).pow(n)*finv[i]*dp[k-i];    
+      res+=M(i).pow(n)*finv[i]*dp[k-i];
     return res;
   }
 
@@ -158,14 +158,15 @@ public:
   }
 
   static M LagrangePolynomial(vector<M> &y,M t){
-    int n=y.size()-1;    
+    int n=y.size()-1;
     if(t.v<=n) return y[t.v];
     init(n+1);
-    M num(1);
-    for(int i=0;i<=n;i++) num*=t-M(i);
-    M res;
+    vector<M> dp(n+1,1),pd(n+1,1);
+    for(int i=0;i<n;i++) dp[i+1]=dp[i]*(t-M(i));
+    for(int i=n;i>0;i--) pd[i-1]=pd[i]*(t-M(i));
+    M res{0};
     for(int i=0;i<=n;i++){
-      M tmp=y[i]*num/(t-M(i))*finv[i]*finv[n-i];
+      M tmp=y[i]*dp[i]*pd[i]*finv[i]*finv[n-i];
       if((n-i)&1) res-=tmp;
       else res+=tmp;
     }
@@ -180,7 +181,7 @@ template<typename M>
 vector<M> Enumeration<M>::invs = vector<M>();
 //END CUT HERE
 
-template<typename T> 
+template<typename T>
 map<T, int> factorize(T x){
   map<T, int> res;
   for(int i=2;i*i<=x;i++){
@@ -220,7 +221,7 @@ signed DPL_5_B(){
 signed DPL_5_C(){
   int n,k;
   scanf("%d %d",&n,&k);
-  Enumeration<Mint<int>>::init(k);  
+  Enumeration<Mint<int>>::init(k);
   printf("%d\n",(Enumeration<Mint<int>>::S(n,k)*Enumeration<Mint<int>>::Fact(k)).v);
   return 0;
 }
@@ -336,7 +337,7 @@ signed ABC110_D(){
   scanf("%d %d",&n,&m.v);
 
   E::init(n+100);
-  
+
   Mint<int> ans(1);
   auto x=factorize(m.v);
   for(auto p:x) ans*=E::H(n,p.second);
@@ -354,7 +355,7 @@ signed ARC009_C(){
   Int n,k;
   scanf("%lld %lld",&n,&k);
   const int MOD = 1777777777;
-  using M = Mint<long long, MOD>;  
+  using M = Mint<long long, MOD>;
   using E = Enumeration<M>;
   M a=E::montmort(k)*M::comb(n,k);
   printf("%lld\n",a.v);
@@ -368,17 +369,17 @@ signed ARC009_C(){
 signed ARC033_D(){
   int n;
   scanf("%d",&n);
-  using M = Mint<int>;  
+  using M = Mint<int>;
   using E = Enumeration<M>;
   vector<M> y(n+1);
   for(Int i=0;i<=n;i++) scanf("%d",&y[i].v);
   int t;
   scanf("%d",&t);
-  printf("%d\n",(t<=n?y[t]:E::LagrangePolynomial(y,M(t))).v);
+  printf("%d\n",E::LagrangePolynomial(y,M(t)).v);
   return 0;
 }
 /*
-  verified on 2019/05/19
+  verified on 2019/06/20
   https://beta.atcoder.jp/contests/arc033/tasks/arc033_4
 */
 
@@ -404,21 +405,20 @@ signed YUKI_117(){
 */
 
 signed YUKI_042(){
-  using M = Mint<int, int(1e9+9)>;  
+  using M = Mint<int, int(1e9+9)>;
   using E = Enumeration<M>;
   const int MAX = 666 * 6 + 10;
-  M dp[MAX];
-  for(int j=0;j<MAX;j++) dp[j]=M(0);
+  vector<M> dp(MAX,0);
   dp[0]=M(1);
-  
-  vector<int> a({1,5,10,50,100,500});
-  for(int x:a)
+
+  for(int x:{1,5,10,50,100,500})
     for(int j=x;j<MAX;j++) dp[j]+=dp[j-x];
-  
+
   int T;
   scanf("%d",&T);
   while(T--){
-    Int m;
+    using ll = long long;
+    ll m;
     scanf("%lld",&m);
     vector<M> y(6);
     for(int i=0;i<6;i++) y[i]=dp[(m%500)+(i*500)];
@@ -428,14 +428,14 @@ signed YUKI_042(){
   return 0;
 }
 /*
-  verified on 2019/05/19
+  verified on 2019/06/20
   https://yukicoder.me/problems/no/42
 */
 
-signed CFR315_B(){  
+signed CFR315_B(){
   cin.tie(0);
   ios::sync_with_stdio(0);
-  
+
   int n;
   cin>>n;
   using M = Mint<int>;
@@ -443,7 +443,7 @@ signed CFR315_B(){
   E::init(n+1);
   M res;
   for(int i=0;i<n;i++)
-    res+=E::C(n,i)*E::B(i,i);  
+    res+=E::C(n,i)*E::B(i,i);
   cout<<res.v<<endl;
   return 0;
 }
@@ -465,7 +465,7 @@ signed main(){
   //DPL_5_J();
   //DPL_5_K();
   //DPL_5_L();
-  
+
   //ABC110_D();
   //ARC009_C();
   //ARC033_D();
