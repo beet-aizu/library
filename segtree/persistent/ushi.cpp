@@ -111,3 +111,7 @@ signed main(){
   cout<<flush;
   return 0;
 }
+/*
+  verified on 2019/06/22
+  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query
+*/
