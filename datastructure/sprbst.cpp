@@ -75,7 +75,7 @@ struct SPRBST{
     return merge(s.first,t.second);
   }
 
-  inline Node* update(Node* a){
+  inline Node* reflect(Node* a){
     if(a==nullptr) return a;
     a->cnt=count(a->l)+count(a->r)+1;
     return a;
@@ -83,7 +83,7 @@ struct SPRBST{
 
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
-    update(a);
+    reflect(a);
     dump(a->l,it);
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
@@ -105,26 +105,26 @@ struct SPRBST{
     if(a==nullptr) return b;
     if(b==nullptr) return a;
     if(xor128()%(count(a)+count(b))<count(a)){
-      a=clone(update(a));
+      a=clone(a);
       a->r=merge(a->r,b);
-      return update(a);
+      return reflect(a);
     }
-    b=clone(update(b));
+    b=clone(b);
     b->l=merge(a,b->l);
-    return update(b);
+    return reflect(b);
   }
 
   pair<Node*, Node*> split(Node* a,size_t k){
     if(a==nullptr) return make_pair(a,a);
-    a=clone(update(a));
+    a=clone(a);
     if(k<=count(a->l)){
       auto s=split(a->l,k);
       a->l=s.second;
-      return make_pair(s.first,update(a));
+      return make_pair(s.first,reflect(a));
     }
     auto s=split(a->r,k-(count(a->l)+1));
     a->r=s.first;
-    return make_pair(update(a),s.second);
+    return make_pair(reflect(a),s.second);
   }
 
 };

@@ -83,6 +83,13 @@ struct RBST{
     return a->dat;
   }
 
+  inline Node* reflect(Node* a){
+    if(a==nullptr) return a;
+    a->cnt=count(a->l)+count(a->r)+1;
+    a->dat=f(query(a->l),f(a->val,query(a->r)));
+    return a;
+  }
+
   Node* eval(Node* a){
     if(a->laz!=ei){
       a->val=g(a->val,a->laz);
@@ -96,14 +103,7 @@ struct RBST{
       }
       a->laz=ei;
     }
-    return update(a);
-  }
-
-  inline Node* update(Node* a){
-    if(a==nullptr) return a;
-    a->cnt=count(a->l)+count(a->r)+1;
-    a->dat=f(query(a->l),f(a->val,query(a->r)));
-    return a;
+    return reflect(a);
   }
 
   inline T query(Node *&a,size_t l,size_t r){
@@ -151,11 +151,11 @@ struct RBST{
     if(xor128()%(count(a)+count(b))<count(a)){
       a=eval(a);
       a->r=merge(a->r,b);
-      return update(a);
+      return reflect(a);
     }
     b=eval(b);
     b->l=merge(a,b->l);
-    return update(b);
+    return reflect(b);
   }
 
   pair<Node*, Node*> split(Node* a,size_t k){
@@ -164,11 +164,11 @@ struct RBST{
     if(k<=count(a->l)){
       auto s=split(a->l,k);
       a->l=s.second;
-      return make_pair(s.first,update(a));
+      return make_pair(s.first,reflect(a));
     }
     auto s=split(a->r,k-(count(a->l)+1));
     a->r=s.first;
-    return make_pair(update(a),s.second);
+    return make_pair(reflect(a),s.second);
   }
 
 };
@@ -208,7 +208,7 @@ signed AOJ_1508(){
   return 0;
 }
 /*
-  verified on 2019/06/12
+  verified on 2019/06/22
   judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
 */
 
@@ -236,7 +236,7 @@ signed DSL_2_F(){
   return 0;
 }
 /*
-  verified on 2019/06/12
+  verified on 2019/06/22
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F&lang=jp
 */
 
@@ -265,7 +265,7 @@ signed DSL_2_G(){
   return 0;
 }
 /*
-  verified on 2019/06/12
+  verified on 2019/06/22
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
 */
 
@@ -354,7 +354,7 @@ inline signed CODEFESTIVAL2014EXHIBITION_B(){
   return 0;
 }
 /*
-  verified on 2019/06/12
+  verified on 2019/06/22
   https://beta.atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
 */
 
