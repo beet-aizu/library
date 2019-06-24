@@ -7,7 +7,7 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;};
 //BEGIN CUT HERE
 // no muliple edge
 template<typename Graph>
-bool hasMultipleEulerPath(Graph &G){
+bool hasMultipleEulerianTrail(Graph &G){
   int n=G.size();
   vector<int> ind(n,0),outd(n,0),pre(n,-1),loop(n,0);
   for(int v=0;v<n;v++){
@@ -18,12 +18,14 @@ bool hasMultipleEulerPath(Graph &G){
     }
   }
 
-  int st=-1,en=-1;
+  int st=-1,en=-1,sz=0;
   for(int i=0;i<n;i++){
     if(ind[i]>=3||outd[i]>=3) return true;
     if(ind[i]<outd[i]) st=i;
     if(ind[i]>outd[i]) en=i;
+    if(ind[i]+outd[i]) sz++;
   }
+  if(sz<2) return false;
   if(st<0) return true;
 
   while(ind[en]==1+loop[en]&&st!=en) en=pre[en];
@@ -105,7 +107,7 @@ signed main(){
       for(int u:G[v])
         H[v].emplace_back(u);
 
-    int flg=hasMultipleEulerPath(H);
+    int flg=hasMultipleEulerianTrail(H);
     cout<<(flg?m:m+1)<<endl;
   }
   return 0;
