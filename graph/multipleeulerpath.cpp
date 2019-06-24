@@ -5,15 +5,18 @@ using ll = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;};
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;};
 //BEGIN CUT HERE
-// for simple graph
-// (no muliple edge, no self loop)
+// no muliple edge
 template<typename Graph>
 bool hasMultipleEulerPath(Graph &G){
   int n=G.size();
-  vector<int> ind(n,0),outd(n,0),pre(n,-1);
-  for(int v=0;v<n;v++)
-    for(int u:G[v])
-      ind[u]++,outd[v]++,pre[u]=v;
+  vector<int> ind(n,0),outd(n,0),pre(n,-1),loop(n,0);
+  for(int v=0;v<n;v++){
+    for(int u:G[v]){
+      ind[u]++,outd[v]++;
+      if(u==v) loop[v]=1;
+      if(u!=v) pre[u]=v;
+    }
+  }
 
   int st=-1,en=-1;
   for(int i=0;i<n;i++){
@@ -23,7 +26,7 @@ bool hasMultipleEulerPath(Graph &G){
   }
   if(st<0) return true;
 
-  while(ind[en]==1&&st!=en) en=pre[en];
+  while(ind[en]==1+loop[en]&&st!=en) en=pre[en];
   if(st==en) return false;
 
   queue<int> que;
@@ -100,7 +103,7 @@ signed main(){
     vector< vector<int> > H(MAX);
     for(int v=0;v<MAX;v++)
       for(int u:G[v])
-        if(v!=u) H[v].emplace_back(u);
+        H[v].emplace_back(u);
 
     int flg=hasMultipleEulerPath(H);
     cout<<(flg?m:m+1)<<endl;
