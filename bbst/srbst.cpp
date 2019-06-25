@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-template<typename T, typename E>
+//BEGIN CUT HERE
+template<typename T>
 struct RBST{
   using u32 = uint32_t;
   u32 xor128(){
@@ -20,35 +21,28 @@ struct RBST{
     size_t cnt;
     bool rev;
     T val,dat;
-    E laz;
     Node():cnt(0),rev(0){l=r=nullptr;}
-    Node(T val,E laz):
-      cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=nullptr;}
+    Node(T val):
+      cnt(1),rev(0),val(val),dat(val){l=r=nullptr;}
   };
 
   using F = function<T(T,T)>;
-  using G = function<T(T,E)>;
-  using H = function<E(E,E)>;
   using S = function<T(T)>;
 
   F f;
-  G g;
-  H h;
   S flip;
   T ti;
-  E ei;
 
-  const size_t LIM = 1e7;
+  const size_t LIM = 1e6;
   vector<Node> pool;
   size_t ptr;
 
-  RBST(F f,G g,H h,T ti,E ei):
-    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
+  RBST(F f,T ti):f(f),ti(ti),pool(LIM),ptr(0){
     flip=[](T a){return a;};
   }
 
-  RBST(F f,G g,H h,S flip,T ti,E ei):
-    f(f),g(g),h(h),flip(flip),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  RBST(F f,S flip,T ti):
+    f(f),flip(flip),ti(ti),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
     if(l+1==r) return create(v[l]);
@@ -65,7 +59,7 @@ struct RBST{
   }
 
   inline Node* create(T v){
-    return &(pool[ptr++]=Node(v,ei));
+    return &(pool[ptr++]=Node(v));
   }
 
   size_t count(const Node *a){
@@ -84,24 +78,14 @@ struct RBST{
     return a;
   }
 
-  void propagate(Node *a,E v){
-    a->laz=h(a->laz,v);
-    a->val=g(a->val,v);
-    a->dat=g(a->dat,v);
-  }
-
   void toggle(Node *a){
     swap(a->l,a->r);
     a->dat=flip(a->dat);
     a->rev^=1;
   }
 
+  // remove "virtual" for optimization
   virtual Node* eval(Node* a){
-    if(a->laz!=ei){
-      if(a->l) propagate(a->l,a->laz);
-      if(a->r) propagate(a->r,a->laz);
-      a->laz=ei;
-    }
     if(a->rev){
       if(a->l) toggle(a->l);
       if(a->r) toggle(a->r);
@@ -165,14 +149,6 @@ struct RBST{
     return res;
   }
 
-  Node* update(Node *a,size_t l,size_t r,E x){
-    auto s=split(a,l);
-    auto t=split(s.second,r-l);
-    auto u=eval(t.first);
-    propagate(u,x);
-    return merge(s.first,merge(u,t.second));
-  }
-
   Node* set_val(Node *a,size_t k,T val){
     assert(k<count(a));
     a=eval(a);
@@ -206,97 +182,33 @@ struct RBST{
     return v;
   }
 };
-
-//BEGIN CUT HERE
-template<typename T, typename E>
-struct PRBST : RBST<T, E>{
-  using super = RBST<T, E>;
-  using super::RBST;
-  using typename super::Node;
-
-  inline Node* clone(Node* a){
-    if(a==nullptr) return a;
-    Node* b=super::create();
-    *b=*a;
-    return b;
-  }
-
-  Node* eval(Node* a){
-    a=clone(a);
-    a->l=clone(a->l);
-    a->r=clone(a->r);
-    return super::eval(a);
-  }
-
-  T query(Node *a,size_t l,size_t r){
-    auto s=super::split(a,l);
-    auto t=super::split(s.second,r-l);
-    return super::query(t.first);
-  }
-
-  Node* rebuild(Node* a){
-    auto v=super::dump(a);
-    super::ptr=0;
-    return super::build(v);
-  }
-
-  bool almost_full() const{
-    return super::ptr>super::LIM*9/10;
-  }
-};
 //END CUT HERE
 //INSERT ABOVE HERE
-signed ARC030_D(){
+signed DSL_2_A(){
   int n,q;
   scanf("%d %d",&n,&q);
-  using P = pair<Int, Int>;
-  vector<P> v(n,P(0,1));
-  for(int i=0;i<n;i++) scanf("%lld",&v[i].first);
-
-  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
-  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
-  auto h=[](Int a,Int b){return a+b;};
-
-  PRBST<P, Int> prbst(f,g,h,P(0,0),0);
-  auto rt=prbst.build(v);
+  auto f=[](int a,int b){return min(a,b);};
+  RBST<int> rbst(f,INT_MAX);
+  vector<int> v(n,INT_MAX);
+  auto rt=rbst.build(v);
 
   for(int i=0;i<q;i++){
-    int t;
-    scanf("%d",&t);
-    if(t==1){
-      int a,b,v;
-      scanf("%d %d %d",&a,&b,&v);
-      a--;
-      rt=prbst.update(rt,a,b,v);
+    int c,s,t;
+    scanf("%d %d %d",&c,&s,&t);
+    if(c){
+      printf("%d\n",rbst.query(rt,s,t+1));
+    }else{
+      rt=rbst.set_val(rt,s,t);
     }
-    if(t==2){
-      int a,b,c,d;
-      scanf("%d %d %d %d",&a,&b,&c,&d);
-      a--;c--;
-      auto s=prbst.split(rt,a);
-      auto t=prbst.split(s.second,b-a);
-      auto u=prbst.split(rt,c);
-      auto v=prbst.split(u.second,d-c);
-
-      rt=prbst.merge(prbst.merge(s.first,v.first),t.second);
-    }
-    if(t==3){
-      int a,b;
-      scanf("%d %d",&a,&b);
-      a--;
-      printf("%lld\n",prbst.query(rt,a,b).first);
-    }
-
-    if(prbst.almost_full()) rt=prbst.rebuild(rt);
   }
   return 0;
 }
 /*
-  verified on 2019/06/12
-  https://beta.atcoder.jp/contests/arc030/tasks/arc030_4
+  verified on 2019/06/24
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
 */
 
 signed main(){
-  ARC030_D();
+  DSL_2_A();
   return 0;
 }

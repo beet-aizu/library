@@ -1,8 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-template<typename T, typename E>
-struct RBST{
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+template<typename T>
+struct SRBST{
   using u32 = uint32_t;
   u32 xor128(){
     static u32 x = 123456789;
@@ -20,35 +23,28 @@ struct RBST{
     size_t cnt;
     bool rev;
     T val,dat;
-    E laz;
     Node():cnt(0),rev(0){l=r=nullptr;}
-    Node(T val,E laz):
-      cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=nullptr;}
+    Node(T val):
+      cnt(1),rev(0),val(val),dat(val){l=r=nullptr;}
   };
 
   using F = function<T(T,T)>;
-  using G = function<T(T,E)>;
-  using H = function<E(E,E)>;
   using S = function<T(T)>;
 
   F f;
-  G g;
-  H h;
   S flip;
   T ti;
-  E ei;
 
-  const size_t LIM = 1e7;
+  const size_t LIM = 1.3e7;
   vector<Node> pool;
   size_t ptr;
 
-  RBST(F f,G g,H h,T ti,E ei):
-    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
+  SRBST(F f,T ti):f(f),ti(ti),pool(LIM),ptr(0){
     flip=[](T a){return a;};
   }
 
-  RBST(F f,G g,H h,S flip,T ti,E ei):
-    f(f),g(g),h(h),flip(flip),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  SRBST(F f,S flip,T ti):
+    f(f),flip(flip),ti(ti),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
     if(l+1==r) return create(v[l]);
@@ -65,7 +61,7 @@ struct RBST{
   }
 
   inline Node* create(T v){
-    return &(pool[ptr++]=Node(v,ei));
+    return &(pool[ptr++]=Node(v));
   }
 
   size_t count(const Node *a){
@@ -84,24 +80,14 @@ struct RBST{
     return a;
   }
 
-  void propagate(Node *a,E v){
-    a->laz=h(a->laz,v);
-    a->val=g(a->val,v);
-    a->dat=g(a->dat,v);
-  }
-
   void toggle(Node *a){
     swap(a->l,a->r);
     a->dat=flip(a->dat);
     a->rev^=1;
   }
 
+  // remove "virtual" for optimization
   virtual Node* eval(Node* a){
-    if(a->laz!=ei){
-      if(a->l) propagate(a->l,a->laz);
-      if(a->r) propagate(a->r,a->laz);
-      a->laz=ei;
-    }
     if(a->rev){
       if(a->l) toggle(a->l);
       if(a->r) toggle(a->r);
@@ -165,14 +151,6 @@ struct RBST{
     return res;
   }
 
-  Node* update(Node *a,size_t l,size_t r,E x){
-    auto s=split(a,l);
-    auto t=split(s.second,r-l);
-    auto u=eval(t.first);
-    propagate(u,x);
-    return merge(s.first,merge(u,t.second));
-  }
-
   Node* set_val(Node *a,size_t k,T val){
     assert(k<count(a));
     a=eval(a);
@@ -206,12 +184,11 @@ struct RBST{
     return v;
   }
 };
-
 //BEGIN CUT HERE
-template<typename T, typename E>
-struct PRBST : RBST<T, E>{
-  using super = RBST<T, E>;
-  using super::RBST;
+template<typename T>
+struct PSRBST : SRBST<T>{
+  using super = SRBST<T>;
+  using super::SRBST;
   using typename super::Node;
 
   inline Node* clone(Node* a){
@@ -223,8 +200,6 @@ struct PRBST : RBST<T, E>{
 
   Node* eval(Node* a){
     a=clone(a);
-    a->l=clone(a->l);
-    a->r=clone(a->r);
     return super::eval(a);
   }
 
@@ -246,57 +221,100 @@ struct PRBST : RBST<T, E>{
 };
 //END CUT HERE
 //INSERT ABOVE HERE
-signed ARC030_D(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  using P = pair<Int, Int>;
-  vector<P> v(n,P(0,1));
-  for(int i=0;i<n;i++) scanf("%lld",&v[i].first);
+signed JOISC2012_COPYPASTE(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  int m;
+  string buf;
+  cin>>m>>buf;
 
-  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
-  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
-  auto h=[](Int a,Int b){return a+b;};
+  auto f=[](char a,char b){return max(a,b);};
+  char ti=0;
+  PSRBST<char> psrbst(f,ti);
 
-  PRBST<P, Int> prbst(f,g,h,P(0,0),0);
-  auto rt=prbst.build(v);
+  vector<char> v(buf.begin(),buf.end());
+  auto rt=psrbst.build(v);
 
-  for(int i=0;i<q;i++){
-    int t;
-    scanf("%d",&t);
-    if(t==1){
-      int a,b,v;
-      scanf("%d %d %d",&a,&b,&v);
-      a--;
-      rt=prbst.update(rt,a,b,v);
-    }
-    if(t==2){
-      int a,b,c,d;
-      scanf("%d %d %d %d",&a,&b,&c,&d);
-      a--;c--;
-      auto s=prbst.split(rt,a);
-      auto t=prbst.split(s.second,b-a);
-      auto u=prbst.split(rt,c);
-      auto v=prbst.split(u.second,d-c);
+  int n;
+  cin>>n;
+  for(int i=0;i<n;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    auto s=psrbst.split(rt,a);
+    auto t=psrbst.split(s.second,b-a);
+    auto u=psrbst.split(rt,c);
+    rt=psrbst.merge(psrbst.merge(u.first,t.first),u.second);
 
-      rt=prbst.merge(prbst.merge(s.first,v.first),t.second);
-    }
-    if(t==3){
-      int a,b;
-      scanf("%d %d",&a,&b);
-      a--;
-      printf("%lld\n",prbst.query(rt,a,b).first);
-    }
+    if((int)psrbst.count(rt)>m)
+      rt=psrbst.split(rt,m).first;
 
-    if(prbst.almost_full()) rt=prbst.rebuild(rt);
+    if(psrbst.almost_full()) rt=psrbst.rebuild(rt);
   }
+
+  auto d=psrbst.dump(rt);
+  buf.resize(d.size());
+  for(int i=0;i<(int)d.size();i++) buf[i]=d[i];
+  cout<<buf<<endl;
   return 0;
 }
 /*
-  verified on 2019/06/12
-  https://beta.atcoder.jp/contests/arc030/tasks/arc030_4
+  verified on 2019/06/24
+  https://atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
+*/
+
+signed HAPPYQUERY_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
+  cin>>n;
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  using RBST = PSRBST<int>;
+  auto f=[](int a,int b){return min(a,b);};
+  int ti=INT_MAX;
+  RBST rbst(f,ti);
+  auto rt=rbst.build(as);
+
+  vector<decltype(rt)> rts;
+  rts.emplace_back(rt);
+
+  int q1;
+  cin>>q1;
+  rts.reserve(q1+1);
+
+  for(int i=0;i<q1;i++){
+    int p,x;
+    cin>>p>>x;
+    p--;
+    rt=rbst.set_val(rt,p,x);
+    rts.emplace_back(rt);
+  }
+
+  int q2;
+  cin>>q2;
+  int x=0;
+  for(int i=0;i<q2;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    int k=a^x;
+    int l=(b^x)-1;
+    int r=(c^x);
+    assert(l<r);
+    x=rbst.query(rts[k],l,r);
+    cout<<x<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/06/24
+  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query/problem
 */
 
 signed main(){
-  ARC030_D();
+  //JOISC2012_COPYPASTE();
+  //HAPPYQUERY_B();
   return 0;
 }
