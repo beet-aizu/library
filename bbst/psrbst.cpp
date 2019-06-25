@@ -200,6 +200,10 @@ struct PSRBST : SRBST<T>{
 
   Node* eval(Node* a){
     a=clone(a);
+    if(a->rev){
+      a->l=clone(a->l);
+      a->r=clone(a->r);
+    }
     return super::eval(a);
   }
 

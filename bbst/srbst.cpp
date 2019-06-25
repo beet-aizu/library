@@ -3,7 +3,7 @@ using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
 template<typename T>
-struct RBST{
+struct SRBST{
   using u32 = uint32_t;
   u32 xor128(){
     static u32 x = 123456789;
@@ -37,11 +37,11 @@ struct RBST{
   vector<Node> pool;
   size_t ptr;
 
-  RBST(F f,T ti):f(f),ti(ti),pool(LIM),ptr(0){
+  SRBST(F f,T ti):f(f),ti(ti),pool(LIM),ptr(0){
     flip=[](T a){return a;};
   }
 
-  RBST(F f,S flip,T ti):
+  SRBST(F f,S flip,T ti):
     f(f),flip(flip),ti(ti),pool(LIM),ptr(0){}
 
   Node* build(size_t l,size_t r,vector<T> &v){
@@ -188,17 +188,17 @@ signed DSL_2_A(){
   int n,q;
   scanf("%d %d",&n,&q);
   auto f=[](int a,int b){return min(a,b);};
-  RBST<int> rbst(f,INT_MAX);
+  SRBST<int> srbst(f,INT_MAX);
   vector<int> v(n,INT_MAX);
-  auto rt=rbst.build(v);
+  auto rt=srbst.build(v);
 
   for(int i=0;i<q;i++){
     int c,s,t;
     scanf("%d %d %d",&c,&s,&t);
     if(c){
-      printf("%d\n",rbst.query(rt,s,t+1));
+      printf("%d\n",srbst.query(rt,s,t+1));
     }else{
-      rt=rbst.set_val(rt,s,t);
+      rt=srbst.set_val(rt,s,t);
     }
   }
   return 0;
@@ -208,7 +208,67 @@ signed DSL_2_A(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
 */
 
+signed HAPPYQUERY_C(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
+  cin>>n;
+  vector<int> vs(n);
+  for(int i=0;i<n;i++) cin>>vs[i];
+
+  int q;
+  cin>>q;
+  vector<int> ts(q);
+  vector<int> ls(q),rs(q);
+  vector<int> ps(q),xs(q);
+  vector<int> as(q),bs(q),cs(q),ds(q);
+  for(int i=0;i<q;i++){
+    cin>>ts[i];
+    if(ts[i]==1) cin>>ls[i]>>rs[i],ls[i]--;
+    if(ts[i]==2) cin>>ps[i]>>xs[i],ps[i]--;
+    if(ts[i]==3){
+      cin>>as[i]>>bs[i]>>cs[i]>>ds[i];
+      as[i]--;cs[i]--;
+    }
+  }
+
+  using ll = long long;
+  auto f=[](ll a,ll b){return a+b;};
+  ll ti=0;
+  SRBST<ll> srbst(f,ti);
+
+  unordered_map<int, ll> memo;
+  auto hs=
+    [&](int x){
+      if(!memo.count(x))
+        memo[x]=srbst.xor128();
+      return memo[x];
+    };
+
+  vector<ll> ws(n);
+  for(int i=0;i<n;i++) ws[i]=hs(vs[i]);
+  auto rt=srbst.build(ws);
+
+  for(int i=0;i<q;i++){
+    if(ts[i]==1) rt=srbst.toggle(rt,ls[i],rs[i]);
+    if(ts[i]==2) rt=srbst.set_val(rt,ps[i],hs(xs[i]));
+    if(ts[i]==3){
+      ll x=srbst.query(rt,as[i],bs[i]);
+      ll y=srbst.query(rt,cs[i],ds[i]);
+      cout<<(x==y?"Yes":"No")<<"\n";
+    }
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/06/24
+  https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query
+*/
+
 signed main(){
-  DSL_2_A();
+  //DSL_2_A();
+  HAPPYQUERY_C();
   return 0;
 }
