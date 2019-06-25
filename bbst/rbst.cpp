@@ -97,7 +97,8 @@ struct RBST{
     a->rev^=1;
   }
 
-  Node* eval(Node* a){
+  // remove "virtual" for optimization
+  virtual Node* eval(Node* a){
     if(a->laz!=ei){
       if(a->l) propagate(a->l,a->laz);
       if(a->r) propagate(a->r,a->laz);
@@ -152,9 +153,9 @@ struct RBST{
   Node* toggle(Node *a,size_t l,size_t r){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
-    auto u=t.first;
+    auto u=eval(t.first);
     toggle(u);
-    return merge(s.first,merge(eval(u),t.second));
+    return merge(s.first,merge(u,t.second));
   }
 
   T query(Node *&a,size_t l,size_t r){
@@ -169,9 +170,9 @@ struct RBST{
   Node* update(Node *a,size_t l,size_t r,E x){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
-    auto u=t.first;
+    auto u=eval(t.first);
     propagate(u,x);
-    return merge(s.first,merge(eval(u),t.second));
+    return merge(s.first,merge(u,t.second));
   }
 
   Node* set_val(Node *a,size_t k,T val){
@@ -377,6 +378,6 @@ signed main(){
   //AOJ_1508();
   //DSL_2_F();
   //DSL_2_G();
-  CODEFESTIVAL2014EXHIBITION_B();
+  //CODEFESTIVAL2014EXHIBITION_B();
   return 0;
 }
