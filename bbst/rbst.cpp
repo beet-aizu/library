@@ -1,0 +1,382 @@
+#include<bits/stdc++.h>
+using namespace std;
+using Int = long long;
+//BEGIN CUT HERE
+template<typename T, typename E>
+struct RBST{
+  using u32 = uint32_t;
+  u32 xor128(){
+    static u32 x = 123456789;
+    static u32 y = 362436069;
+    static u32 z = 521288629;
+    static u32 w = 88675123;
+
+    u32 t = x ^ (x << 11);
+    x = y; y = z; z = w;
+    return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
+  }
+
+  struct Node{
+    Node *l,*r;
+    size_t cnt;
+    bool rev;
+    T val,dat;
+    E laz;
+    Node():cnt(0),rev(0){l=r=nullptr;}
+    Node(T val,E laz):
+      cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=nullptr;}
+  };
+
+  using F = function<T(T,T)>;
+  using G = function<T(T,E)>;
+  using H = function<E(E,E)>;
+  using S = function<T(T)>;
+
+  F f;
+  G g;
+  H h;
+  S flip;
+  T ti;
+  E ei;
+
+  const size_t LIM = 1e6;
+  vector<Node> pool;
+  size_t ptr;
+
+  RBST(F f,G g,H h,T ti,E ei):
+    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
+    flip=[](T a){return a;};
+  }
+
+  RBST(F f,G g,H h,S flip,T ti,E ei):
+    f(f),g(g),h(h),flip(flip),ti(ti),ei(ei),pool(LIM),ptr(0){}
+
+  Node* build(size_t l,size_t r,vector<T> &v){
+    if(l+1==r) return create(v[l]);
+    size_t m=(l+r)>>1;
+    return merge(build(l,m,v),build(m,r,v));
+  }
+
+  Node* build(vector<T> &v){
+    return build(0,v.size(),v);
+  }
+
+  inline Node* create(){
+    return &pool[ptr++];
+  }
+
+  inline Node* create(T v){
+    return &(pool[ptr++]=Node(v,ei));
+  }
+
+  size_t count(const Node *a){
+    return a?a->cnt:0;
+  }
+
+  T query(const Node *a){
+    return a?a->dat:ti;
+  }
+
+  Node* recalc(Node *a){
+    a->cnt=count(a->l)+1+count(a->r);
+    a->dat=a->val;
+    if(a->l) a->dat=f(a->l->dat,a->dat);
+    if(a->r) a->dat=f(a->dat,a->r->dat);
+    return a;
+  }
+
+  void propagate(Node *a,E v){
+    a->laz=h(a->laz,v);
+    a->val=g(a->val,v);
+    a->dat=g(a->dat,v);
+  }
+
+  void toggle(Node *a){
+    swap(a->l,a->r);
+    a->dat=flip(a->dat);
+    a->rev^=1;
+  }
+
+  Node* eval(Node* a){
+    if(a->laz!=ei){
+      if(a->l) propagate(a->l,a->laz);
+      if(a->r) propagate(a->r,a->laz);
+      a->laz=ei;
+    }
+    if(a->rev){
+      if(a->l) toggle(a->l);
+      if(a->r) toggle(a->r);
+      a->rev=false;
+    }
+    return recalc(a);
+  }
+
+  pair<Node*, Node*> split(Node* a,size_t k){
+    if(a==nullptr) return make_pair(a,a);
+    a=eval(a);
+    if(k<=count(a->l)){
+      auto s=split(a->l,k);
+      a->l=s.second;
+      return make_pair(s.first,recalc(a));
+    }
+    auto s=split(a->r,k-(count(a->l)+1));
+    a->r=s.first;
+    return make_pair(recalc(a),s.second);
+  }
+
+  Node* merge(Node* a,Node* b){
+    if(a==nullptr) return b;
+    if(b==nullptr) return a;
+    if(xor128()%(count(a)+count(b))<count(a)){
+      a=eval(a);
+      a->r=merge(a->r,b);
+      return recalc(a);
+    }
+    b=eval(b);
+    b->l=merge(a,b->l);
+    return recalc(b);
+  }
+
+  Node* insert(Node *a,size_t pos,T v){
+    Node* b=create(v);
+    auto s=split(a,pos);
+    return a=merge(merge(s.first,b),s.second);
+  }
+
+  Node* erase(Node *a,size_t pos){
+    auto s=split(a,pos);
+    auto t=split(s.second,1);
+    return merge(s.first,t.second);
+  }
+
+  Node* toggle(Node *a,size_t l,size_t r){
+    auto s=split(a,l);
+    auto t=split(s.second,r-l);
+    auto u=t.first;
+    toggle(u);
+    return merge(s.first,merge(eval(u),t.second));
+  }
+
+  T query(Node *&a,size_t l,size_t r){
+    auto s=split(a,l);
+    auto t=split(s.second,r-l);
+    auto u=t.first;
+    T res=query(u);
+    a=merge(s.first,merge(u,t.second));
+    return res;
+  }
+
+  Node* update(Node *a,size_t l,size_t r,E x){
+    auto s=split(a,l);
+    auto t=split(s.second,r-l);
+    auto u=t.first;
+    propagate(u,x);
+    return merge(s.first,merge(eval(u),t.second));
+  }
+
+  Node* set_val(Node *a,size_t k,T val){
+    assert(k<count(a));
+    a=eval(a);
+    size_t num=count(a->l);
+    if(k<num) a->l=set_val(a->l,k,val);
+    if(k>num) a->r=set_val(a->r,k-(num+1),val);
+    if(k==num) a->val=val;
+    return recalc(a);
+  }
+
+  T get_val(Node *a,size_t k){
+    assert(k<count(a));
+    a=eval(a);
+    size_t num=count(a->l);
+    if(k<num) return get_val(a->l,k);
+    if(k>num) return get_val(a->r,k-(num+1));
+    return a->val;
+  }
+
+  void dump(Node* a,typename vector<T>::iterator it){
+    if(!count(a)) return;
+    a=eval(a);
+    dump(a->l,it);
+    *(it+count(a->l))=a->val;
+    dump(a->r,it+count(a->l)+1);
+  }
+
+  vector<T> dump(Node* a){
+    vector<T> v(count(a));
+    dump(a,v.begin());
+    return v;
+  }
+};
+//END CUT HERE
+
+//INSERT ABOVE HERE
+signed AOJ_1508(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  vector<int> v(n);
+  for(int i=0;i<n;i++) scanf("%d",&v[i]);
+
+  auto f=[](int a,int b){return min(a,b);};
+  const int INF = 1e9;
+  RBST<int, int> rbst(f,f,f,INF,-1);
+
+  auto rt=rbst.build(v);
+
+  for(int i=0;i<q;i++){
+    int x,y,z;
+    scanf("%d %d %d",&x,&y,&z);
+    if(x==0){
+      int l=y,r=z+1;
+      rt=rbst.toggle(rt,l,r);
+      rt=rbst.toggle(rt,l+1,r);
+    }
+    if(x==1){
+      int l=y,r=z+1;
+      printf("%d\n",rbst.query(rt,l,r));
+    }
+    if(x==2){
+      rt=rbst.set_val(rt,y,z);
+    }
+  }
+
+  return 0;
+}
+/*
+  verified on 2019/06/24
+  judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
+*/
+
+signed DSL_2_F(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  auto f=[](int a,int b){return min(a,b);};
+  auto g=[](int a,int b){(void)a;return b;};
+  RBST<int, int> rbst(f,g,g,INT_MAX,-1);
+  vector<int> v(n,INT_MAX);
+  auto rt=rbst.build(v);
+
+  for(int i=0;i<q;i++){
+    int c,s,t,x;
+    scanf("%d",&c);
+    if(c){
+      scanf("%d %d",&s,&t);
+      printf("%d\n",rbst.query(rt,s,t+1));
+    }else{
+      scanf("%d %d %d",&s,&t,&x);
+      rt=rbst.update(rt,s,t+1,x);
+    }
+  }
+  return 0;
+}
+/*
+  verified on 2019/06/24
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F&lang=jp
+*/
+
+signed DSL_2_G(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  using P = pair<Int, Int>;
+  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
+  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
+  auto h=[](Int a,Int b){return a+b;};
+  RBST<P, Int> rbst(f,g,h,P(0,0),0);
+  vector<P> v(n,P(0,1));
+  auto rt=rbst.build(v);
+
+  for(int i=0;i<q;i++){
+    int c,s,t,x;
+    scanf("%d",&c);
+    if(c){
+      scanf("%d %d",&s,&t);
+      printf("%lld\n",rbst.query(rt,s-1,t).first);
+    }else{
+      scanf("%d %d %d",&s,&t,&x);
+      rt=rbst.update(rt,s-1,t,x);
+    }
+  }
+  return 0;
+}
+/*
+  verified on 2019/06/24
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
+*/
+
+char buf[114514];
+signed CODEFESTIVAL2014EXHIBITION_B(){
+  int Q;
+  scanf("%d",&Q);
+  scanf("%s\n",buf);
+  string S(buf);
+  using T = tuple<int, int, int>;
+  using P = pair<int, int>;
+  auto f=[](T a,T b){
+           return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
+         };
+  auto g=[](T a,P b){
+           return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
+         };
+  auto h=[](P a,P b){
+           return P(a.first+b.first,a.second+b.second);
+         };
+  const int INF = 1e9;
+  RBST<T, P> rbst(f,g,h,T(INF,INF,0),P(0,0));
+
+  vector<T> v(S.size()+2,T(0,0,0));
+  for(int i=0;i<(int)S.size();i++)
+    get<2>(v[i+1])=(S[i]=='('?1:-1);
+
+  auto rt=rbst.build(v);
+  for(int i=1;i<=(int)S.size();i++){
+    int z=get<2>(rbst.get_val(rt,i));
+    rt=rbst.update(rt,i,rbst.count(rt),P(z,0));
+    rt=rbst.update(rt,0,i+1,P(0,-z));
+  }
+
+  for(int i=0;i<Q;i++){
+    char x;
+    int y,z;
+    scanf("%c %d %d\n",&x,&y,&z);
+    z++;
+    if(x=='('||x==')'){
+      z=(x=='('?1:-1);
+      T prev=rbst.get_val(rt,y-1);
+      T next=rbst.get_val(rt,y);
+      T curr(get<0>(prev),get<1>(next),z);
+      rt=rbst.insert(rt,y,curr);
+      rt=rbst.update(rt,y,rbst.count(rt),P(z,0));
+      rt=rbst.update(rt,0,y+1,P(0,-z));
+    }
+
+    if(x=='D'){
+      z=get<2>(rbst.get_val(rt,y));
+      rt=rbst.erase(rt,y);
+      rt=rbst.update(rt,y,rbst.count(rt),P(-z,0));
+      rt=rbst.update(rt,0,y,P(0,z));
+    }
+
+    if(x=='Q'){
+      T prev=rbst.get_val(rt,y-1);
+      T curr=rbst.query(rt,y,z);
+      T next=rbst.get_val(rt,z);
+      int ans=0;
+      if(get<0>(prev)>get<0>(curr)) ans+=get<0>(prev)-get<0>(curr);
+      if(get<1>(next)>get<1>(curr)) ans+=get<1>(next)-get<1>(curr);
+      printf("%d\n",ans);
+    }
+  }
+
+  return 0;
+}
+/*
+  verified on 2019/06/24
+  https://atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
+*/
+
+signed main(){
+  //AOJ_1508();
+  //DSL_2_F();
+  //DSL_2_G();
+  CODEFESTIVAL2014EXHIBITION_B();
+  return 0;
+}
