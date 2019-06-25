@@ -38,7 +38,7 @@ struct RBST{
   T ti;
   E ei;
 
-  const size_t LIM = 1.3e7;
+  const size_t LIM = 1e7;
   vector<Node> pool;
   size_t ptr;
 
