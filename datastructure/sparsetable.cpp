@@ -8,17 +8,17 @@ struct SparseTable{
   vector<vector<T> > dat;
   vector<int> ht;
   const F f;
-  
+
   SparseTable(){}
   SparseTable(F f):f(f){}
-  
+
   void build(const vector<T> &v){
     int n=v.size(),h=1;
-    while((1<<h)<n) h++;
+    while((1<<h)<=n) h++;
     dat.assign(h,vector<T>(n));
     ht.assign(n+1,0);
     for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;
-    
+
     for(int j=0;j<n;j++) dat[0][j]=v[j];
     for(int i=1,p=1;i<h;i++,p<<=1)
       for(int j=0;j<n;j++)
@@ -43,7 +43,7 @@ signed ARC023_D(){
   auto f=[](int a,int b){return __gcd(a,b);};
   SparseTable<int> st(f);
   st.build(a);
-  
+
   map<int, long long> ans;
   for(int i=0;i<n;i++){
     int l=i;
@@ -60,13 +60,13 @@ signed ARC023_D(){
     }
     ans[lst]+=n-l;
   }
-  
+
   for(int i=0;i<m;i++) printf("%lld\n",ans[x[i]]);
   return 0;
 }
 
 /*
-  verified on 2018/04/11
+  verified on 2019/06/26
   https://beta.atcoder.jp/contests/arc023/tasks/arc023_4
 */
 
@@ -74,4 +74,3 @@ signed main(){
   ARC023_D();
   return 0;
 }
-
