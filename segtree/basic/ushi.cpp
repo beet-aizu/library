@@ -59,6 +59,7 @@ struct SegmentTree{
   }
 };
 //END CUT HERE
+
 signed AOJ_DSL2A(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -137,15 +138,41 @@ signed KUPC2013_D(){
   printf("%d\n",(int)sp.size()/2);
   return 0;
 }
-
 /*
   verified on 2019/06/26
   https://atcoder.jp/contests/kupc2013/tasks/kupc2013_d
+*/
+
+signed ABC130_D(){
+  using ll = long long;
+  ll n,k;
+  cin>>n>>k;
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  auto f=[](ll a,ll b){return a+b;};
+  SegmentTree<ll> seg(f,0);
+  seg.build(as);
+
+  ll ans=0;
+  auto check=[&](ll d){return d>=k;};
+  for(int i=0;i<n;i++){
+    int idx=seg.find(i,check);
+    if(~idx) ans+=n-idx;
+  }
+
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/06/26
+  https://atcoder.jp/contests/abc130/tasks/abc130_d
 */
 
 signed main(){
   //AOJ_DSL2A();
   //ARC038_C();
   //KUPC2013_D();
+  //ABC130_D();
   return 0;
 }

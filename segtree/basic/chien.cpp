@@ -17,7 +17,7 @@ struct SegmentTree{
   vector<E> laz;
   SegmentTree(F f,G g,H h,T ti,E ei):
     f(f),g(g),h(h),ti(ti),ei(ei){}
-  
+
   void init(int n_){
     n=1;height=0;
     while(n<n_) n<<=1,height++;
@@ -44,7 +44,7 @@ struct SegmentTree{
   inline void thrust(int k){
     for(int i=height;i;i--) eval(k>>i);
   }
-  inline void recalc(int k){    
+  inline void recalc(int k){
     while(k>>=1)
       dat[k]=f(reflect((k<<1)|0),reflect((k<<1)|1));
   }
@@ -73,6 +73,29 @@ struct SegmentTree{
     }
     return f(vl,vr);
   }
+
+  template<typename C>
+  int find(int st,C &check,T &acc,int k,int l,int r){
+    if(l+1==r){
+      acc=f(acc,reflect(k));
+      return check(acc)?k-n:-1;
+    }
+    eval(k);
+    int m=(l+r)>>1;
+    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);
+    if(st<=l&&!check(f(acc,dat[k]))){
+      acc=f(acc,dat[k]);
+      return -1;
+    }
+    int vl=find(st,check,acc,(k<<1)|0,l,m);
+    if(~vl) return vl;
+    return find(st,check,acc,(k<<1)|1,m,r);
+  }
+  template<typename C>
+  int find(int st,C &check){
+    T acc=ti;
+    return find(st,check,acc,1,0,n);
+  }
 };
 //END CUT HERE
 signed DSL_2_G(){
@@ -82,9 +105,9 @@ signed DSL_2_G(){
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
   auto h=[](Int a,Int b){return a+b;};
-  
-  SegmentTree<P,Int> ch(f,g,h,P(0,0),0);  
-  ch.build(vector<P>(n,P(0,1)));  
+
+  SegmentTree<P,Int> ch(f,g,h,P(0,0),0);
+  ch.build(vector<P>(n,P(0,1)));
   for(int i=0;i<q;i++){
     int c,s,t,x;
     scanf("%d",&c);
@@ -98,13 +121,62 @@ signed DSL_2_G(){
   }
   return 0;
 }
-
 /*
-  verified on 2018/08/21
+  verified on 2019/06/26
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
 */
 
+signed CFR569_C(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m;
+  cin>>n>>m;
+  vector<int> as(n),bs(m);
+  for(int i=0;i<n;i++) cin>>as[i];
+  for(int i=0;i<m;i++) cin>>bs[i];
+
+  auto f=[](int a,int b){return max(a,b);};
+  auto g=[](int a,int b){return a+b;};
+  int ti=0,ei=0;
+  SegmentTree<int, int> seg(f,g,g,ti,ei);
+
+  const int sz = 1<<20;
+  seg.build(vector<int>(sz,0));
+
+  for(int i=0;i<n;i++) seg.update(sz-as[i],sz,+1);
+  for(int i=0;i<m;i++) seg.update(sz-bs[i],sz,-1);
+
+  int q;
+  cin>>q;
+  auto check=[](int d){return d>0;};
+  for(int i=0;i<q;i++){
+    int t,k,v;
+    cin>>t>>k>>v;
+    k--;
+    if(t==1){
+      seg.update(sz-as[k],sz,-1);
+      as[k]=v;
+      seg.update(sz-as[k],sz,+1);
+    }
+    if(t==2){
+      seg.update(sz-bs[k],sz,+1);
+      bs[k]=v;
+      seg.update(sz-bs[k],sz,-1);
+    }
+    int pos=seg.find(0,check);
+    cout<<(pos<0?pos:sz-pos)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/06/26
+  https://codeforces.com/contest/1179/problem/C
+*/
+
 signed main(){
-  DSL_2_G();
+  //DSL_2_G();
+  //CFR569_C();
   return 0;
 }
