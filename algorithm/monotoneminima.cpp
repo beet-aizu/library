@@ -2,72 +2,71 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template<typename T>
-struct MonotoneMinima{
-  using F = function<T(int, int)>;
-  int n;
-  F dist;
-  T INF;
-  vector<T> dp;
+namespace MonotoneMinima{
+  vector<int> used;
 
-  // dist(i,l) + dist(j,k) >= dist(i,k) + dist(j,l)
-  // if( i<=j && k<=l )
-  MonotoneMinima(int n,F dist,T INF):
-    n(n),dist(dist),INF(INF),dp(n+1,INF){}
-
-  void dfs(int l,int r,int a,int b){
+  template<typename T,typename F>
+  void dfs(int l,int r,int a,int b,vector<T> &dp,F dist){
     if(l==r) return;
     int m=(l+r)>>1;
-    T ma=INF;
-    int mi=-1;
+    int idx=a;
+    T res=dp[idx+1]+dist(idx,m);
     for(int i=a;i<b;i++){
       T tmp=dp[i+1]+dist(i,m);
-      if(tmp<ma) ma=tmp,mi=i;
+      if(tmp<res) res=tmp,idx=i;
     }
-    dp[m]=min(dp[m],ma);
-    dfs(l,m,a,mi+1);
-    dfs(m+1,r,mi,b);
+    if(!used[m]) dp[m]=res,used[m]=1;
+    else dp[m]=min(dp[m],res);
+    dfs(l,m,a,idx+1,dp,dist);
+    dfs(m+1,r,idx,b,dp,dist);
   }
-  
-  void solve(int l,int r){
+
+  template<typename T,typename F>
+  void solve(int l,int r,vector<T> &dp,F dist){
     if(l+1==r){
-      dp[l]=min(dp[l],dp[r]+dist(l,l));
+      if(!used[l]) dp[l]=dp[r]+dist(l,l),used[l]=1;
+      else dp[l]=min(dp[l],dp[r]+dist(l,l));
       return;
     }
     int m=(l+r)>>1;
-    solve(m,r);
-    dfs(l,m,m,r);
-    solve(l,m);
+    solve(m,r,dp,dist);
+    dfs(l,m,m,r,dp,dist);
+    solve(l,m,dp,dist);
   }
 
-  T solve(){
-    dp[n]=0;
-    solve(0,n);
+  // dist(i,l) + dist(j,k) >= dist(i,k) + dist(j,l)
+  // if( i<=j && k<=l )
+  template<typename T,typename F>
+  T solve(int n,F dist){
+    vector<T> dp(n+1,0);
+    used.assign(n+1,0);
+    used[n]=1;
+    solve(0,n,dp,dist);
     return dp[0];
   }
 };
 //END CUT HERE
 //INSERT ABOVE HERE
-
+using ll = long long;
 signed YUKI_703(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
-  vector<Int> a(n),x(n),y(n);
-  for(int i=0;i<n;i++) cin>>a[i];
-  for(int i=0;i<n;i++) cin>>x[i];
-  for(int i=0;i<n;i++) cin>>y[i];
+  vector<ll> as(n),xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+  for(int i=0;i<n;i++) cin>>xs[i];
+  for(int i=0;i<n;i++) cin>>ys[i];
 
   auto dist=
-    [&](int i,int j)->Int{
-      Int s=abs(a[i]-x[j]);
-      Int t=abs(y[j]);
+    [&](int i,int j)->ll{
+      ll s=abs(as[i]-xs[j]);
+      ll t=abs(ys[j]);
       return s*s+t*t;
     };
 
-  const Int INF = 1e18;
-  MonotoneMinima<Int> monge(n,dist,INF);
-  
-  cout<<monge.solve()<<endl;
+  cout<<MonotoneMinima::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
@@ -76,24 +75,24 @@ signed YUKI_703(){
 */
 
 signed YUKI_704(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
-  vector<Int> a(n),x(n),y(n);
-  for(int i=0;i<n;i++) cin>>a[i];
-  for(int i=0;i<n;i++) cin>>x[i];
-  for(int i=0;i<n;i++) cin>>y[i];
+  vector<ll> as(n),xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+  for(int i=0;i<n;i++) cin>>xs[i];
+  for(int i=0;i<n;i++) cin>>ys[i];
 
   auto dist=
-    [&](int i,int j)->Int{
-      Int s=abs(a[i]-x[j]);
-      Int t=abs(y[j]);
+    [&](int i,int j)->ll{
+      ll s=abs(as[i]-xs[j]);
+      ll t=abs(ys[j]);
       return s+t;
     };
 
-  const Int INF = 1e18;
-  MonotoneMinima<Int> monge(n,dist,INF);
-  
-  cout<<monge.solve()<<endl;
+  cout<<MonotoneMinima::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
@@ -102,24 +101,24 @@ signed YUKI_704(){
 */
 
 signed YUKI_705(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
-  vector<Int> a(n),x(n),y(n);
-  for(int i=0;i<n;i++) cin>>a[i];
-  for(int i=0;i<n;i++) cin>>x[i];
-  for(int i=0;i<n;i++) cin>>y[i];
+  vector<ll> as(n),xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+  for(int i=0;i<n;i++) cin>>xs[i];
+  for(int i=0;i<n;i++) cin>>ys[i];
 
   auto dist=
-    [&](int i,int j)->Int{
-      Int s=abs(a[i]-x[j]);
-      Int t=abs(y[j]);
+    [&](int i,int j)->ll{
+      ll s=abs(as[i]-xs[j]);
+      ll t=abs(ys[j]);
       return s*s*s+t*t*t;
     };
 
-  const Int INF = 1e18;
-  MonotoneMinima<Int> monge(n,dist,INF);
-  
-  cout<<monge.solve()<<endl;
+  cout<<MonotoneMinima::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
@@ -129,7 +128,7 @@ signed YUKI_705(){
 
 
 signed main(){
-  YUKI_703();
+  //YUKI_703();
   //YUKI_704();
   //YUKI_705();
   return 0;
