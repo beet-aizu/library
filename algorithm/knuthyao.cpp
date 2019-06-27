@@ -2,17 +2,20 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template<typename T,typename F>
-T KnuthYao(int n,T INF,F cost){
-  vector<vector<T> > dp(n+1,vector<T>(n+1,INF));
-  vector<vector<int> > nx(n,vector<int>(n));
-  for(int i=0;i<n;i++) dp[i][i]=0,nx[i][i]=i;
+template<typename T, typename F>
+T KnuthYao(int n,F cost){
+  vector< vector<T> > dp(n,vector<T>(n));
+  vector< vector<int> > ar(n,vector<int>(n));
+  for(int i=0;i<n;i++) dp[i][i]=T(0),ar[i][i]=i;
   for(int w=1;w<n;w++){
     for(int i=0;i+w<n;i++){
       int j=i+w;
-      for(int r=nx[i][j-1];r<=nx[i+1][j];r++){
-        T c=dp[i][r]+dp[r+1][j]+cost(i,r,j);
-        if(dp[i][j]>c) dp[i][j]=c,nx[i][j]=r;
+      int p=ar[i][j-1],q=ar[i+1][j];
+      dp[i][j]=dp[i][p]+dp[p+1][j]+cost(i,p,j);
+      ar[i][j]=p;
+      for(int k=p;k<=q&&k+1<=j;k++){
+        T res=dp[i][k]+dp[k+1][j]+cost(i,k,j);
+        if(res<dp[i][j]) dp[i][j]=res,ar[i][j]=k;
       }
     }
   }
@@ -21,38 +24,39 @@ T KnuthYao(int n,T INF,F cost){
 //END CUT HERE
 //INSERT ABOVE HERE
 
-signed AOJ_2488(){  
-  Int n;
+signed AOJ_2488(){
+  using ll = long long;
+  int n;
   cin>>n;
-  vector<Int> x(n),y(n);
-  for(Int i=0;i<n;i++) cin>>x[i]>>y[i];
-  const Int INF = 1e18;
-  auto calc=[&](int i,int r,int j){	      
-              return r+1<n?x[r+1]-x[i]+y[r]-y[j]:INF;
-            };
-  cout<<KnuthYao(n,INF,calc)<<endl;
+  vector<ll> xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];
+  auto calc=
+    [&](int i,int k,int j){
+      return xs[k+1]-xs[i]+ys[k]-ys[j];
+    };
+  cout<<KnuthYao<ll>(n,calc)<<endl;
   return 0;
 }
 /*
-  verified on 2018/09/30
+  verified on 2019/06/27
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2488
 */
 
 signed KUPC2012_J(){
-  Int n;
+  using ll = long long;
+  int n;
   cin>>n;
-  vector<Int> w(n);
-  for(Int i=0;i<n;i++) cin>>w[i];
-  vector<Int> s(n+1);
-  for(Int i=0;i<n;i++) s[i+1]=s[i]+w[i];
-  const Int INF =1e18;
-  auto cost=[&](int i,int r,int j){(void) r;return s[j+1]-s[i];};
-  cout<<KnuthYao(n,INF,cost)<<endl;
+  vector<ll> ws(n);
+  for(int i=0;i<n;i++) cin>>ws[i];
+  vector<ll> sm(n+1);
+  for(int i=0;i<n;i++) sm[i+1]=sm[i]+ws[i];
+  auto cost=[&](int i,int k,int j){(void) k;return sm[j+1]-sm[i];};
+  cout<<KnuthYao<ll>(n,cost)<<endl;
   return 0;
 }
 /*
-  verified on 2018/09/30
-  https://beta.atcoder.jp/contests/kupc2012/tasks/kupc2012_10
+  verified on 2019/06/27
+  https://atcoder.jp/contests/kupc2012/tasks/kupc2012_10
 */
 
 signed main(){
