@@ -2,11 +2,11 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-namespace MonotoneMinima{
+namespace OnlineOffLine{
   vector<int> used;
 
   template<typename T,typename F>
-  void dfs(int l,int r,int a,int b,vector<T> &dp,F dist){
+  void induce(int l,int r,int a,int b,vector<T> &dp,F dist){
     if(l==r) return;
     int m=(l+r)>>1;
     int idx=a;
@@ -17,8 +17,8 @@ namespace MonotoneMinima{
     }
     if(!used[m]) dp[m]=res,used[m]=1;
     else dp[m]=min(dp[m],res);
-    dfs(l,m,a,idx+1,dp,dist);
-    dfs(m+1,r,idx,b,dp,dist);
+    induce(l,m,a,idx+1,dp,dist);
+    induce(m+1,r,idx,b,dp,dist);
   }
 
   template<typename T,typename F>
@@ -30,12 +30,10 @@ namespace MonotoneMinima{
     }
     int m=(l+r)>>1;
     solve(m,r,dp,dist);
-    dfs(l,m,m,r,dp,dist);
+    induce(l,m,m,r,dp,dist);
     solve(l,m,dp,dist);
   }
 
-  // dist(i,l) + dist(j,k) >= dist(i,k) + dist(j,l)
-  // if( i<=j && k<=l )
   template<typename T,typename F>
   T solve(int n,F dist){
     vector<T> dp(n+1,0);
@@ -66,11 +64,11 @@ signed YUKI_703(){
       return s*s+t*t;
     };
 
-  cout<<MonotoneMinima::solve<ll>(n,dist)<<endl;
+  cout<<OnlineOffLine::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
-  verified on 2018/06/21
+  verified on 2019/06/28
   https://yukicoder.me/problems/no/703
 */
 
@@ -92,11 +90,11 @@ signed YUKI_704(){
       return s+t;
     };
 
-  cout<<MonotoneMinima::solve<ll>(n,dist)<<endl;
+  cout<<OnlineOffLine::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
-  verified on 2018/06/21
+  verified on 2019/06/28
   https://yukicoder.me/problems/no/704
 */
 
@@ -118,11 +116,11 @@ signed YUKI_705(){
       return s*s*s+t*t*t;
     };
 
-  cout<<MonotoneMinima::solve<ll>(n,dist)<<endl;
+  cout<<OnlineOffLine::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
-  verified on 2018/06/21
+  verified on 2019/06/28
   https://yukicoder.me/problems/no/705
 */
 
