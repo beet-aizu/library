@@ -23,11 +23,11 @@ struct NTT{
     if(a>=md) a-=md;
     return a;
   }
-  
+
   inline int mul(int a,int b){
     return 1LL*a*b%md;
   }
-  
+
   inline int pow(int a,int b){
     int res=1;
     while(b){
@@ -41,9 +41,9 @@ struct NTT{
   inline int inv(int x){
     return pow(x,md-2);
   }
-  
+
   vector<vector<int> > rts,rrts;
-  
+
   void ensure_base(int n){
     if((int)rts.size()>=n) return;
     rts.resize(n);rrts.resize(n);
@@ -63,7 +63,7 @@ struct NTT{
   void ntt(vector<int> &a,bool f,int n=-1){
     if(n==-1) n=a.size();
     assert((n&(n-1))==0);
-    
+
     for(int i=0,j=1;j+1<n;j++){
       for(int k=n>>1;k>(i^=k);k>>=1);
       if(i>j) swap(a[i],a[j]);
@@ -78,22 +78,38 @@ struct NTT{
         }
       }
     }
-    
+
     if(f){
       int tmp=inv(n);
       for(Int i=0;i<n;i++) a[i]=mul(a[i],tmp);
     }
   }
 
-  vector<int> multiply(vector<int> &a,vector<int> &b){
-    int need=a.size()+b.size()-1;
+  vector<int> add(vector<int> as,vector<int> bs){
+    int sz=max(as.size(),bs.size());
+    vector<int> cs(sz,0);
+    for(int i=0;i<(int)as.size();i++) cs[i]=add(cs[i],as[i]);
+    for(int i=0;i<(int)bs.size();i++) cs[i]=add(cs[i],bs[i]);
+    return cs;
+  }
+
+  vector<int> sub(vector<int> as,vector<int> bs){
+    int sz=max(as.size(),bs.size());
+    vector<int> cs(sz,0);
+    for(int i=0;i<(int)as.size();i++) cs[i]=add(cs[i],as[i]);
+    for(int i=0;i<(int)bs.size();i++) cs[i]=add(cs[i],md-bs[i]);
+    return cs;
+  }
+
+  vector<int> multiply(vector<int> as,vector<int> bs){
+    int need=as.size()+bs.size()-1;
     int sz=1;
     while(sz<need) sz<<=1;
     ensure_base(sz);
-    
+
     vector<int> f(sz),g(sz);
-    for(int i=0;i<(int)a.size();i++) f[i]=a[i];
-    for(int i=0;i<(int)b.size();i++) g[i]=b[i];
+    for(int i=0;i<(int)as.size();i++) f[i]=as[i];
+    for(int i=0;i<(int)bs.size();i++) g[i]=bs[i];
     ntt(f,0);ntt(g,0);
     for(int i=0;i<sz;i++) f[i]=mul(f[i],g[i]);
     ntt(f,1);
@@ -101,22 +117,86 @@ struct NTT{
     f.resize(need);
     return f;
   }
-  
+
+  vector<int> divide(vector<int> as,vector<int> bs){
+    assert(bs!=vector<int>(bs.size(),0));
+    assert(as.size()>=bs.size());
+
+    if(as==vector<int>(as.size(),0)) return {0};
+    reverse(as.begin(),as.end());
+    reverse(bs.begin(),bs.end());
+    while(bs.back()==0){
+      as.pop_back();
+      bs.pop_back();
+    }
+    reverse(as.begin(),as.end());
+    reverse(bs.begin(),bs.end());
+    int sz=1;
+    vector<int> rs({inv(bs[0])});
+    while(sz<(int)as.size()){
+      sz<<=1;
+      rs=sub(add(rs,rs),multiply(multiply(rs,rs),bs));
+      rs.resize(sz);
+    }
+    auto cs=multiply(as,rs);
+    cs.resize(as.size()-bs.size()+1);
+    return cs;
+  }
 };
 //END CUT HERE
 
-signed main(){
+signed ATC001_C(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
-  scanf("%d",&n);
-  vector<int> a(n+1,0),b(n+1,0);
-  for(int i=1;i<=n;i++) scanf("%d %d",&a[i],&b[i]);
+  cin>>n;
+  vector<int> as(n+1,0),bs(n+1,0);
+  for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
   NTT<0> ntt;
-  auto c=ntt.multiply(a,b);
-  for(int i=1;i<=n*2;i++) printf("%d\n",c[i]);
+  auto cs=ntt.multiply(as,bs);
+  for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
+  cout<<flush;
   return 0;
 }
-
 /*
-  verified on 2017/11/17
-  http://atc001.contest.atcoder.jp/tasks/fft_c
+  verified on 2019/06/28
+  https://atcoder.jp/contests/atc001/tasks/fft_c
 */
+
+signed HAPPYQUERY_E(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m,q;
+  cin>>n>>m>>q;
+  vector<int> ls(q),rs(q);
+  for(int i=0;i<q;i++) cin>>ls[i]>>rs[i],ls[i]--;
+
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  vector<int> cnt(n-m+1,0);
+  for(int l:ls) cnt[l]++;
+
+  NTT<0> ntt;
+  auto bs=ntt.divide(as,cnt);
+
+  assert((int)bs.size()==m);
+  for(int i=0;i<m;i++){
+    if(i) cout<<" ";
+    cout<<bs[i];
+  }
+  cout<<endl;
+  return 0;
+}
+/*
+  verified on 2019/06/28
+https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
+*/
+
+signed main(){
+  //ATC001_C();
+  //HAPPYQUERY_E();
+  return 0;
+}
