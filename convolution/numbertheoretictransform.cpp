@@ -42,6 +42,26 @@ struct NTT{
     return pow(x,md-2);
   }
 
+  // assume md % 4 = 1
+  // if md % 4 == 3, then x = a^{(md+1)/4}
+  inline int sqrt(int a){
+    if(a==0) return 0;
+    if(pow(a,(md-1)/2)!=1) return -1;
+    int q=md-1,m=0;
+    while(~q&1) q>>=1,m++;
+    mt19937 mt;
+    int z=mt()%md;
+    while(pow(z,(md-1)/2)!=md-1) z=mt()%md;
+    int c=pow(z,q),t=pow(a,q),r=pow(a,(q+1)/2);
+    while(m>1){
+      if(pow(t,1<<(m-2))!=1)
+        r=mul(r,c),t=mul(t,mul(c,c));
+      c=mul(c,c);
+      m--;
+    }
+    return r;
+  }
+
   vector<vector<int> > rts,rrts;
 
   void ensure_base(int n){
@@ -121,11 +141,13 @@ struct NTT{
   vector<int> divide(vector<int> as,vector<int> bs){
     assert(bs!=vector<int>(bs.size(),0));
     assert(as.size()>=bs.size());
+    int need=as.size()-bs.size()+1;
 
     if(as==vector<int>(as.size(),0)) return {0};
     reverse(as.begin(),as.end());
     reverse(bs.begin(),bs.end());
     while(bs.back()==0){
+      assert(as.back()==0);
       as.pop_back();
       bs.pop_back();
     }
@@ -138,9 +160,42 @@ struct NTT{
       rs=sub(add(rs,rs),multiply(multiply(rs,rs),bs));
       rs.resize(sz);
     }
+
+    while(as.back()==0) as.pop_back();
+    while(rs.back()==0) rs.pop_back();
     auto cs=multiply(as,rs);
-    cs.resize(as.size()-bs.size()+1);
+    cs.resize(need,0);
     return cs;
+  }
+
+  vector<int> sqrt(vector<int> as){
+    if(as==vector<int>(as.size(),0)) return {0};
+
+    int dg=0;
+    reverse(as.begin(),as.end());
+    while(as.back()==0){
+      dg++;
+      as.pop_back();
+      assert(as.back()==0);
+      as.pop_back();
+    }
+    reverse(as.begin(),as.end());
+
+    int sz=1,inv2=inv(2);
+    vector<int> ss({sqrt(as[0])});
+    while(sz<(int)as.size()){
+      sz<<=1;
+      vector<int> ts(as);
+      if((sz+sz/2)<(int)ts.size()) ts.resize(sz+sz/2);
+      ss=add(ss,divide(ts,ss));
+      ss.resize(sz);
+      for(int &x:ss) x=mul(x,inv2);
+    }
+
+    reverse(ss.begin(),ss.end());
+    for(int i=0;i<dg;i++) ss.emplace_back(0);
+    reverse(ss.begin(),ss.end());
+    return ss;
   }
 };
 //END CUT HERE
@@ -195,8 +250,40 @@ signed HAPPYQUERY_E(){
 https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
 */
 
+signed CFR250_E(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m;
+  cin>>n>>m;
+  vector<int> cs(n);
+  for(int i=0;i<n;i++) cin>>cs[i];
+
+  NTT<2> ntt;
+  vector<int> as(1<<18,0);
+  as[0]=1;
+  for(int c:cs) as[c]=ntt.add(as[c],ntt.md-4);
+
+  vector<int> bs=ntt.sqrt(as);
+  bs[0]=ntt.add(bs[0],1);
+  while(bs.back()==0) bs.pop_back();
+
+  vector<int> vs(bs.size()+m,0);
+  vs[0]=2;
+
+  vector<int> ans=ntt.divide(vs,bs);
+  for(int i=1;i<=m;i++) cout<<ans[i]<<"\n";
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/06/28
+  https://codeforces.com/contest/438/problem/E
+*/
+
 signed main(){
   //ATC001_C();
   //HAPPYQUERY_E();
+  //CFR250_E();
   return 0;
 }
