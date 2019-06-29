@@ -184,10 +184,12 @@ struct ArbitraryModConvolution{
 
   vector<int> divide(vector<int> as,vector<int> bs,int MOD){
     assert(bs!=vector<int>(bs.size(),0));
+    if(as==vector<int>(as.size(),0)) return {0};
+
     assert(as.size()>=bs.size());
     int need=as.size()-bs.size()+1;
+    as.resize(need);
 
-    if(as==vector<int>(as.size(),0)) return {0};
     if(bs[0]==0){
       reverse(as.begin(),as.end());
       reverse(bs.begin(),bs.end());
