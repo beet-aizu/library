@@ -141,10 +141,7 @@ struct NTT{
   vector<int> divide(vector<int> as,vector<int> bs){
     assert(bs!=vector<int>(bs.size(),0));
     if(as==vector<int>(as.size(),0)) return {0};
-
     assert(as.size()>=bs.size());
-    int need=as.size()-bs.size()+1;
-    as.resize(need);
 
     if(bs[0]==0){
       reverse(as.begin(),as.end());
@@ -157,11 +154,17 @@ struct NTT{
       reverse(as.begin(),as.end());
       reverse(bs.begin(),bs.end());
     }
+
+    int need=as.size()-bs.size()+1;
+    as.resize(need);
+
     int sz=1;
     vector<int> rs({inv(bs[0])});
     while(sz<need){
       sz<<=1;
-      rs=sub(add(rs,rs),multiply(multiply(rs,rs),bs));
+      vector<int> ts(min(sz,(int)bs.size()));
+      for(int i=0;i<(int)ts.size();i++) ts[i]=bs[i];
+      rs=sub(add(rs,rs),multiply(multiply(rs,rs),ts));
       rs.resize(sz);
     }
 
@@ -191,8 +194,8 @@ struct NTT{
     vector<int> ss({sqrt(as[0])});
     while(sz<(int)as.size()){
       sz<<=1;
-      vector<int> ts(as);
-      if((sz+sz/2-1)<(int)ts.size()) ts.resize(sz+sz/2-1);
+      vector<int> ts(min(sz+sz/2-1,(int)as.size()));
+      for(int i=0;i<(int)ts.size();i++) ts[i]=as[i];
       ss=add(ss,divide(ts,ss));
       ss.resize(sz);
       for(int &x:ss) x=mul(x,inv2);
@@ -244,7 +247,7 @@ signed HAPPYQUERY_E(){
 
   NTT<0> ntt;
   auto bs=ntt.divide(as,cnt);
-
+  if(bs.size()==1) bs.resize(m,0);
   assert((int)bs.size()==m);
   for(int i=0;i<m;i++){
     if(i) cout<<" ";
@@ -291,7 +294,7 @@ signed CFR250_E(){
 
 signed main(){
   //ATC001_C();
-  //HAPPYQUERY_E();
+  HAPPYQUERY_E();
   //CFR250_E();
   return 0;
 }
