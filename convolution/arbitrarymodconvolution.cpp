@@ -86,15 +86,15 @@ struct NTT{
     }
   }
 
-  vector<int> multiply(const vector<int> &a,const vector<int> &b){
-    int need=a.size()+b.size()-1;
+  vector<int> multiply(vector<int> as,vector<int> bs){
+    int need=as.size()+bs.size()-1;
     int sz=1;
     while(sz<need) sz<<=1;
     ensure_base(sz);
 
     vector<int> f(sz),g(sz);
-    for(int i=0;i<(int)a.size();i++) f[i]=a[i];
-    for(int i=0;i<(int)b.size();i++) g[i]=b[i];
+    for(int i=0;i<(int)as.size();i++) f[i]=as[i];
+    for(int i=0;i<(int)bs.size();i++) g[i]=bs[i];
     ntt(f,0);ntt(g,0);
     for(int i=0;i<sz;i++) f[i]=mul(f[i],g[i]);
     ntt(f,1);
@@ -102,7 +102,6 @@ struct NTT{
     f.resize(need);
     return f;
   }
-
 };
 
 struct ArbitraryModConvolution{
@@ -148,17 +147,71 @@ struct ArbitraryModConvolution{
     }
   }
 
-  vector<int> multiply(vector<int> a,vector<int> b,int MOD){
-    for(int& x:a) x%=MOD;
-    for(int& x:b) x%=MOD;
+  inline int add(int a,int b,int MOD){
+    a+=b;
+    if(a>=MOD) a-=MOD;
+    return a;
+  }
+
+  vector<int> add(vector<int> as,vector<int> bs,int MOD){
+    int sz=max(as.size(),bs.size());
+    vector<int> cs(sz,0);
+    for(int i=0;i<(int)as.size();i++) cs[i]=add(cs[i],as[i],MOD);
+    for(int i=0;i<(int)bs.size();i++) cs[i]=add(cs[i],bs[i],MOD);
+    return cs;
+  }
+
+  vector<int> sub(vector<int> as,vector<int> bs,int MOD){
+    int sz=max(as.size(),bs.size());
+    vector<int> cs(sz,0);
+    for(int i=0;i<(int)as.size();i++) cs[i]=add(cs[i],as[i],MOD);
+    for(int i=0;i<(int)bs.size();i++) cs[i]=add(cs[i],MOD-bs[i],MOD);
+    return cs;
+  }
+
+  vector<int> multiply(vector<int> as,vector<int> bs,int MOD){
+    for(int& x:as) x%=MOD;
+    for(int& x:bs) x%=MOD;
     vector< vector<int> > cs(3);
-    cs[0]=ntt0.multiply(a,b);
-    cs[1]=ntt1.multiply(a,b);
-    cs[2]=ntt2.multiply(a,b);
-    size_t sz=a.size()+b.size()-1;
+    cs[0]=ntt0.multiply(as,bs);
+    cs[1]=ntt1.multiply(as,bs);
+    cs[2]=ntt2.multiply(as,bs);
+    size_t sz=as.size()+bs.size()-1;
     for(auto& v:cs) v.resize(sz);
     garner(cs,MOD);
     return cs[0];
+  }
+
+  vector<int> divide(vector<int> as,vector<int> bs,int MOD){
+    assert(bs!=vector<int>(bs.size(),0));
+    assert(as.size()>=bs.size());
+    int need=as.size()-bs.size()+1;
+
+    if(as==vector<int>(as.size(),0)) return {0};
+    if(bs[0]==0){
+      reverse(as.begin(),as.end());
+      reverse(bs.begin(),bs.end());
+      while(bs.back()==0){
+        assert(as.back()==0);
+        as.pop_back();
+        bs.pop_back();
+      }
+      reverse(as.begin(),as.end());
+      reverse(bs.begin(),bs.end());
+    }
+    int sz=1;
+    vector<int> rs({inv(bs[0],MOD)});
+    while(sz<need){
+      sz<<=1;
+      rs=sub(add(rs,rs,MOD),multiply(multiply(rs,rs,MOD),bs,MOD),MOD);
+      rs.resize(sz);
+    }
+
+    while(as.back()==0) as.pop_back();
+    while(rs.back()==0) rs.pop_back();
+    auto cs=multiply(as,rs,MOD);
+    cs.resize(need,0);
+    return cs;
   }
 };
 NTT<0> ArbitraryModConvolution::ntt0;
@@ -243,6 +296,9 @@ vector<Mint<T, MOD> > Mint<T, MOD>::invs = vector<Mint<T, MOD> >();
 
 //INSERT ABOVE HERE
 signed  YUKI_829(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
   int n,b;
   cin>>n>>b;
@@ -289,10 +345,32 @@ signed  YUKI_829(){
   return 0;
 }
 /*
-  verified on 2019/06/17
+  verified on 2019/06/29
   https://yukicoder.me/problems/no/829
 */
+
+signed YUKI_3046(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int k,n;
+  cin>>k>>n;
+  vector<int> xs(n);
+  for(int i=0;i<n;i++) cin>>xs[i];
+  const int MOD = 1e9+7;
+  ArbitraryModConvolution arb;
+  vector<int> as((1<<17)+k),bs(1<<17);
+  as[0]=bs[0]=1;
+  for(int x:xs) bs[x]=MOD-1;
+  cout<<arb.divide(as,bs,MOD)[k]<<endl;
+  return 0;
+}
+/*
+  verified on 2019/06/29
+  https://yukicoder.me/problems/no/3046
+*/
 signed main(){
-  YUKI_829();
+  //YUKI_829();
+  //YUKI_3046();
   return 0;
 }

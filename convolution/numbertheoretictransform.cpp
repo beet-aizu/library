@@ -144,18 +144,20 @@ struct NTT{
     int need=as.size()-bs.size()+1;
 
     if(as==vector<int>(as.size(),0)) return {0};
-    reverse(as.begin(),as.end());
-    reverse(bs.begin(),bs.end());
-    while(bs.back()==0){
-      assert(as.back()==0);
-      as.pop_back();
-      bs.pop_back();
+    if(bs[0]==0){
+      reverse(as.begin(),as.end());
+      reverse(bs.begin(),bs.end());
+      while(bs.back()==0){
+        assert(as.back()==0);
+        as.pop_back();
+        bs.pop_back();
+      }
+      reverse(as.begin(),as.end());
+      reverse(bs.begin(),bs.end());
     }
-    reverse(as.begin(),as.end());
-    reverse(bs.begin(),bs.end());
     int sz=1;
     vector<int> rs({inv(bs[0])});
-    while(sz<(int)as.size()){
+    while(sz<need){
       sz<<=1;
       rs=sub(add(rs,rs),multiply(multiply(rs,rs),bs));
       rs.resize(sz);
@@ -172,29 +174,33 @@ struct NTT{
     if(as==vector<int>(as.size(),0)) return {0};
 
     int dg=0;
-    reverse(as.begin(),as.end());
-    while(as.back()==0){
-      dg++;
-      as.pop_back();
-      assert(as.back()==0);
-      as.pop_back();
+    if(as[0]==0){
+      reverse(as.begin(),as.end());
+      while(as.back()==0){
+        dg++;
+        as.pop_back();
+        assert(as.back()==0);
+        as.pop_back();
+      }
+      reverse(as.begin(),as.end());
     }
-    reverse(as.begin(),as.end());
 
     int sz=1,inv2=inv(2);
     vector<int> ss({sqrt(as[0])});
     while(sz<(int)as.size()){
       sz<<=1;
       vector<int> ts(as);
-      if((sz+sz/2)<(int)ts.size()) ts.resize(sz+sz/2);
+      if((sz+sz/2-1)<(int)ts.size()) ts.resize(sz+sz/2-1);
       ss=add(ss,divide(ts,ss));
       ss.resize(sz);
       for(int &x:ss) x=mul(x,inv2);
     }
 
-    reverse(ss.begin(),ss.end());
-    for(int i=0;i<dg;i++) ss.emplace_back(0);
-    reverse(ss.begin(),ss.end());
+    if(dg){
+      reverse(ss.begin(),ss.end());
+      for(int i=0;i<dg;i++) ss.emplace_back(0);
+      reverse(ss.begin(),ss.end());
+    }
     return ss;
   }
 };
@@ -247,7 +253,7 @@ signed HAPPYQUERY_E(){
 }
 /*
   verified on 2019/06/28
-https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
+  https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
 */
 
 signed CFR250_E(){
