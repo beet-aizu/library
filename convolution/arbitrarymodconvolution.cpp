@@ -82,7 +82,7 @@ struct NTT{
 
     if(f){
       int tmp=inv(n);
-      for(Int i=0;i<n;i++) a[i]=mul(a[i],tmp);
+      for(int i=0;i<n;i++) a[i]=mul(a[i],tmp);
     }
   }
 
