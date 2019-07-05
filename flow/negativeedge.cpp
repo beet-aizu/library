@@ -16,7 +16,7 @@ struct PrimalDual{
     edge(int to,TF cap,TC cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
   };
 
-  static constexpr TC INF = numeric_limits<TC>::max()/2;
+  static const TC INF;
   vector<vector<edge>> G;
   vector<TC> h,dist;
   vector<int> prevv,preve;
@@ -34,7 +34,7 @@ struct PrimalDual{
       TC first;
       int second;
       P(TC first,int second):first(first),second(second){}
-      bool operator<(const P&a) const{return first>a.first;}
+      bool operator<(const P&a) const{return a.first<first;}
     };
     priority_queue<P> que;
     fill(dist.begin(),dist.end(),INF);
@@ -48,7 +48,7 @@ struct PrimalDual{
       for(int i=0;i<(int)G[v].size();i++){
         edge &e=G[v][i];
         if(e.cap==0) continue;
-        if(dist[e.to]>dist[v]+e.cost+h[v]-h[e.to]){
+        if(dist[v]+e.cost+h[v]-h[e.to]<dist[e.to]){
           dist[e.to]=dist[v]+e.cost+h[v]-h[e.to];
           prevv[e.to]=v;
           preve[e.to]=i;
@@ -69,14 +69,14 @@ struct PrimalDual{
       }
 
       for(int v=0;v<(int)h.size();v++)
-        if(dist[v]<INF) h[v]+=dist[v];
+        if(dist[v]<INF) h[v]=h[v]+dist[v];
 
       TF d=f;
       for(int v=t;v!=s;v=prevv[v])
         d=min(d,G[prevv[v]][preve[v]].cap);
 
       f-=d;
-      res+=d*h[t];
+      res=res+h[t]*d;
       for(int v=t;v!=s;v=prevv[v]){
         edge &e=G[prevv[v]][preve[v]];
         e.cap-=d;
@@ -87,7 +87,7 @@ struct PrimalDual{
     return res;
   }
 };
-template<typename TF, typename TC> constexpr TC PrimalDual<TF, TC>::INF;
+template<typename TF, typename TC> const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
 
 //BEGIN CUT HERE
 template<typename TF,typename TC>
@@ -102,7 +102,7 @@ struct NegativeEdge{
   void use_edge(int u,int v,TF cap,TC cost){
     fs[u]-=cap;
     fs[v]+=cap;
-    sum+=cap*cost;
+    sum=sum+cost*cap;
   }
 
   void add_edge(int u,int v,TF cap,TC cost){
@@ -186,7 +186,7 @@ signed CFR190_B(){
   return 0;
 }
 /*
-  verified on 2019/06/20
+  verified on 2019/07/05
   https://codeforces.com/contest/321/problem/B
 */
 
@@ -230,8 +230,111 @@ signed AOJ_2627(){
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2627
 */
 
+const int MAX = 52;
+struct ARR{
+  array<int, MAX> val;
+  ARR(){fill(val.begin(),val.end(),0);}
+  ARR(int x){fill(val.begin(),val.end(),x);}
+  int& operator[](int k){return val[k];};
+  int operator[](int k)const{return val[k];};
+  ARR operator+(const ARR &oth) const{
+    ARR res;
+    for(int i=0;i<MAX;i++)
+      res[i]=val[i]+oth[i];
+    return res;
+  }
+  ARR operator-(const ARR &oth) const{
+    ARR res;
+    for(int i=0;i<MAX;i++)
+      res[i]=val[i]-oth[i];
+    return res;
+  }
+  ARR operator-() const{
+    ARR res;
+    for(int i=0;i<MAX;i++)
+      res[i]=-val[i];
+    return res;
+  }
+  ARR operator*(const int &k) const{
+    ARR res;
+    for(int i=0;i<MAX;i++)
+      res[i]=val[i]*k;
+    return res;
+  }
+  ARR operator/(const int &k) const{
+    ARR res;
+    for(int i=0;i<MAX;i++)
+      res[i]=val[i]/k;
+    return res;
+  }
+  bool operator< (const ARR &oth) const{
+    return val< oth.val;
+  }
+  bool operator==(const ARR &oth) const{
+    return val==oth.val;
+  }
+};
+
+namespace std {
+  template<> class numeric_limits<ARR> {
+  public:
+    static ARR max() {return ARR(numeric_limits<int>::max());};
+  };
+}
+
+signed AOJ_2679(){
+  int n;
+  cin>>n;
+  vector<string> vs(n);
+  for(int i=0;i<n;i++) cin>>vs[i];
+
+  auto enc=
+    [&](char c){
+      if(isupper(c)) return c-'A';
+      return 26+c-'a';
+    };
+  auto dec=
+    [&](int d){
+      if(d<26) return 'A'+d;
+      return 'a'+d-26;
+    };
+
+  int S=n*2,T=n*2+1;
+  NegativeEdge<int, ARR> G(n*2+2);
+  for(int i=0;i<n;i++){
+    G.add_edge(S,i,1,ARR());
+    G.add_edge(n+i,T,1,ARR());
+  }
+
+  for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+      ARR cost;
+      cost[enc(vs[i][j])]=-1;
+      G.add_edge(i,n+j,1,cost);
+    }
+  }
+
+  int ok;
+  auto res=G.flow(S,T,n,ok);
+  assert(ok);
+
+  string ans;
+  for(int i=0;i<MAX;i++)
+    for(int j=0;j<-res[i];j++)
+      ans+=dec(i);
+  cout<<ans<<endl;
+
+  return 0;
+}
+/*
+  verified on 2019/07/05
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2679
+*/
+
+
 signed main(){
   //CFR190_B();
   //AOJ_2627();
+  AOJ_2679();
   return 0;
 }
