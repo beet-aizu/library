@@ -106,7 +106,7 @@ struct NegativeEdge{
   }
 
   void add_edge(int u,int v,TF cap,TC cost){
-    if(cost<0){
+    if(cost<TC(0)){
       use_edge(u,v,cap,cost);
       swap(u,v);
       cost=-cost;
@@ -175,9 +175,10 @@ signed CFR190_B(){
 
   int ok;
   ll ans=0;
-
-  ll gv=G.flow(S,T,m,ok);
-  if(ok) chmin(ans,gv);
+  if(n<m){
+    ll gv=G.flow(S,T,m,ok);
+    if(ok) chmin(ans,gv);
+  }
   ll hv=H.flow(S,T,m,ok);
   if(ok) chmin(ans,hv);
 
