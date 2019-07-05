@@ -4,7 +4,7 @@ using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
-//BEGIN CUT HERE
+
 template<typename TF,typename TC>
 struct PrimalDual{
   struct edge{
@@ -88,136 +88,149 @@ struct PrimalDual{
   }
 };
 template<typename TF, typename TC> constexpr TC PrimalDual<TF, TC>::INF;
-//END CUT HERE
-//INSERT ABOVE HERE
-int GRL_6_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int v,e,f;
-  cin>>v>>e>>f;
 
-  PrimalDual<int, int> pd(v);
-  for(int i=0;i<e;i++){
-    int u,v,c,d;
-    cin>>u>>v>>c>>d;
-    pd.add_edge(u,v,c,d);
+//BEGIN CUT HERE
+template<typename TF,typename TC>
+struct NegativeEdge{
+  PrimalDual<TF, TC> G;
+  vector<TF> fs;
+  TC sum;
+  int S,T;
+  NegativeEdge(){}
+  NegativeEdge(int n):G(n+2),fs(n+2,0),sum(0),S(n),T(n+1){}
+
+  void use_edge(int u,int v,TF cap,TC cost){
+    fs[u]-=cap;
+    fs[v]+=cap;
+    sum+=cap*cost;
   }
-  int ok=0;
-  int res=pd.flow(0,v-1,f,ok);
-  cout<<(ok?res:-1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/07/05
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B&lang=jp
-*/
 
-signed SPOJ_GREED(){
+  void add_edge(int u,int v,TF cap,TC cost){
+    if(cost<0){
+      use_edge(u,v,cap,cost);
+      swap(u,v);
+      cost=-cost;
+    }
+    G.add_edge(u,v,cap,cost);
+  }
+
+  TC flow(int ts,int tt,TF tf,int &ok){
+    fs[ts]+=tf;
+    fs[tt]-=tf;
+
+    TF f=0;
+    for(int i=0;i<S;i++){
+      if(fs[i]>0){
+        f+=fs[i];
+        G.add_edge(S,i,+fs[i],TC(0));
+      }
+      if(fs[i]<0){
+        G.add_edge(i,T,-fs[i],TC(0));
+      }
+    }
+    return sum+G.flow(S,T,f,ok);
+  }
+};
+//END CUT HERE
+
+//INSERT ABOVE HERE
+signed CFR190_B(){
+  using ll = long long;
   cin.tie(0);
   ios::sync_with_stdio(0);
-  auto solve=
-    [](){
-      int n;
-      cin>>n;
-      vector<int> cnt(n,0);
-      for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
-        cnt[x-1]++;
+
+  int n,m;
+  cin>>n>>m;
+  vector<string> vp(n);
+  vector<int> vs(n);
+  for(int i=0;i<n;i++) cin>>vp[i]>>vs[i];
+  vector<int> ss(m);
+  for(int i=0;i<m;i++) cin>>ss[i];
+
+  int S=n+m,T=n+m+1;
+  NegativeEdge<ll, ll> G(n+m+2);
+
+  for(int i=0;i<m;i++){
+    G.add_edge(S,i,1,0);
+    for(int j=0;j<n;j++){
+      if(vp[j]=="ATK"){
+        if(ss[i]>=vs[j]) G.add_edge(i,m+j,1,vs[j]-ss[i]);
       }
-      using ll = long long;
-      const ll INF = 1<<28;
-      int S=n,T=n+1;
-      PrimalDual<ll, ll> G(n+2);
-
-      int m;
-      cin>>m;
-      for(int i=0;i<m;i++){
-        int x,y;
-        cin>>x>>y;
-        x--;y--;
-        G.add_edge(x,y,INF,1);
-        G.add_edge(y,x,INF,1);
+      if(vp[j]=="DEF"){
+        if(ss[i]> vs[j]) G.add_edge(i,m+j,1,0);
       }
+    }
+  }
 
-      for(int i=0;i<n;i++){
-        G.add_edge(S,i,cnt[i],0);
-        G.add_edge(i,T,1,0);
-      }
+  auto H=G;
+  for(int i=0;i<m;i++){
+    G.add_edge(i,T,1,-ss[i]);
+    H.add_edge(i,T,1,0);
+  }
 
-      int ok=0;
-      ll res=G.flow(S,T,n,ok);
-      assert(ok);
-      cout<<res<<endl;
-      return 0;
+  for(int j=0;j<n;j++){
+    G.use_edge(m+j,T,1,0);
+    H.add_edge(m+j,T,1,0);
+  }
 
-    };
-  int t;
-  cin>>t;
-  while(t--) solve();
+  int ok;
+  ll ans=0;
+
+  ll gv=G.flow(S,T,m,ok);
+  if(ok) chmin(ans,gv);
+  ll hv=H.flow(S,T,m,ok);
+  if(ok) chmin(ans,hv);
+
+  cout<<-ans<<endl;
   return 0;
 }
 /*
-  verified on 2019/07/05
-  https://www.spoj.com/problems/GREED/
+  verified on 2019/06/20
+  https://codeforces.com/contest/321/problem/B
 */
 
-signed geocon2013_B(){
-  using D = double;
+signed AOJ_2627(){
+  using ll = long long;
+  const ll INF = 1e9;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
 
   int n;
   cin>>n;
-  vector<D> xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];
+  NegativeEdge<int, ll> G(n+1);
 
-  vector<int> pos,neg;
   for(int i=0;i<n;i++){
-    if(xs[i]>0) pos.emplace_back(i);
-    if(xs[i]<0) neg.emplace_back(i);
+    int k;
+    cin>>k;
+    map<int, int> dst;
+    for(int j=0;j<k;j++){
+      int t,c;
+      cin>>t>>c;
+      t--;
+      G.use_edge(i,t,1,c);
+      if(!dst.count(t)) dst[t]=c;
+      chmin(dst[t],c);
+    }
+
+    for(auto p:dst)
+      G.add_edge(i,p.first,INF,p.second);
+
+    G.add_edge(i,n,INF,0);
   }
 
-  int f=max(pos.size(),neg.size());
-  if(f==0){
-    cout<<0<<endl;
-    return 0;
-  }
-
-  PrimalDual<int, D> G(n+3);
-  int S=n,T=n+1,U=n+2;
-  for(int z:pos) G.add_edge(S,z,1,0);
-  for(int z:neg) G.add_edge(z,T,1,0);
-
-  int dif=pos.size()-neg.size();
-  if(dif>0){
-    G.add_edge(U,T,dif,0);
-    for(int p:pos)
-      G.add_edge(p,U,1,abs(xs[p]));
-  }
-  if(dif<0){
-    G.add_edge(S,U,-dif,0);
-    for(int q:neg)
-      G.add_edge(U,q,1,abs(xs[q]));
-  }
-
-  for(int p:pos)
-    for(int q:neg)
-      G.add_edge(p,q,1,
-                 min(hypot(xs[p]+xs[q],ys[p]-ys[q]),abs(xs[p])+abs(xs[q])));
-
-  int ok=0;
-  D ans=G.flow(S,T,f,ok);
+  int ok;
+  ll ans=G.flow(0,n,INF,ok);
   assert(ok);
-  cout<<fixed<<setprecision(12)<<ans<<endl;
+  cout<<ans<<endl;
   return 0;
 }
 /*
   verified on 2019/07/05
-  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2627
 */
 
 signed main(){
-  //GRL_6_B();
-  //SPOJ_GREED();
-  //geocon2013_B();
+  //CFR190_B();
+  //AOJ_2627();
   return 0;
 }
