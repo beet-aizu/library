@@ -32,13 +32,8 @@ public:
   int idx(int v){return ls[v];}
 
   template<typename F>
-  void query(int v,F f){
+  void exec(int v,F f){
     f(ls[v],rs[v]);
-  }
-
-  template<typename G>
-  void update(int v,G g){
-    g(ls[v],rs[v]);
   }
 };
 //END CUT HERE
@@ -373,7 +368,7 @@ signed CFR483_E(){
         vector<int> cur(sz);
         for(int i=0;i<sz;i++){
           int op=idx[v][i].second;
-          et.query(op,[&](int l,int r){cur[i]=bit.query0(l,r);});
+          et.exec(op,[&](int l,int r){cur[i]=bit.query0(l,r);});
         }
         for(int u:oth[v]) bit.add0(et.idx(u),1);
         for(int u:G[v])
@@ -382,7 +377,7 @@ signed CFR483_E(){
         for(int i=0;i<sz;i++){
           int k=idx[v][i].first;
           int op=idx[v][i].second;
-          et.query(op,[&](int l,int r){red[k]|=cur[i]<bit.query0(l,r);});
+          et.exec(op,[&](int l,int r){red[k]|=cur[i]<bit.query0(l,r);});
         }
       })(0,-1);
 
@@ -437,8 +432,7 @@ signed AOJ_2871(){
     int v;
     cin>>v;
     v--;
-    auto g=[&](int l,int r){seg.update(l,r,1);};
-    et.update(v,g);
+    et.exec(v,[&](int l,int r){seg.update(l,r,1);});
     auto res=seg.query(0,n);
     cout<<(res.sum-res.one<res.one?"broccoli":"cauliflower")<<"\n";
   }

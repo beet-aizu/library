@@ -32,16 +32,13 @@ public:
 
   void build(int r=0){
     pos=0;
+    ds[r]=pos++;
     dfs(r,-1,0);
+    us[r]=pos++;
   }
 
   int child(int u,int v){
     return dep[u]<dep[v]?v:u;
-  }
-
-  template<typename F>
-  void query(int v,F f){
-    f(0,us[v]);
   }
 
   template<typename F>
@@ -243,7 +240,7 @@ signed AOJ_GRL_5_D(){
       int u;
       cin>>u;
       int res=0;
-      et.query(u,[&](int l,int r){res+=bit.query0(l,r);});
+      et.query(0,u,[&](int l,int r){res+=bit.query0(l,r);});
       cout<<res<<"\n";
     }
   }
