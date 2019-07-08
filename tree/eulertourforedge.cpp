@@ -4,19 +4,10 @@ using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
-struct EulerTourForEdge{
-  int n,pos;
-  vector<vector<int> > G;
-  vector<int> dep,ds,us;
-
-  EulerTourForEdge(){}
-  EulerTourForEdge(int n):
-    n(n),G(n),dep(n),ds(n),us(n){}
-
-  void add_edge(int u,int v){
-    G[u].emplace_back(v);
-    G[v].emplace_back(u);
-  }
+class EulerTourForEdge{
+private:
+  vector<int> ds,us;
+  int pos;
 
   void dfs(int v,int p,int d){
     dep[v]=d;
@@ -26,6 +17,18 @@ struct EulerTourForEdge{
       dfs(u,v,d+1);
       us[u]=pos++;
     }
+  }
+public:
+  vector<int> dep;
+  vector<vector<int> > G;
+
+  EulerTourForEdge(){}
+  EulerTourForEdge(int n):
+    ds(n),us(n),dep(n),G(n){}
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    G[v].emplace_back(u);
   }
 
   void build(int r=0){

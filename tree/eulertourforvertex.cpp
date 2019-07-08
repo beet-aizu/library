@@ -14,11 +14,10 @@ private:
     rs[v]=pos;
   }
 public:
-  int n;
   vector<vector<int> > G;
 
   EulerTourForVertex(){}
-  EulerTourForVertex(int n):ls(n),rs(n),n(n),G(n){}
+  EulerTourForVertex(int n):ls(n),rs(n),G(n){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);
