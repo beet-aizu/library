@@ -31,9 +31,9 @@ public:
 
   int idx(int v){return ls[v];}
 
-  template<typename T,typename F>
-  T query(int v,F f){
-    return f(ls[v],rs[v]);
+  template<typename F>
+  void query(int v,F f){
+    f(ls[v],rs[v]);
   }
 
   template<typename G>
@@ -368,13 +368,12 @@ signed CFR483_E(){
   }
 
   BIT<int> bit(n+10,0);
-  auto f=[&](int l,int r){return bit.query0(l,r);};
   MFP([&](auto dfs,int v,int p)->void{
         int sz=idx[v].size();
         vector<int> cur(sz);
         for(int i=0;i<sz;i++){
           int op=idx[v][i].second;
-          cur[i]=et.query<int>(op,f);
+          et.query(op,[&](int l,int r){cur[i]=bit.query0(l,r);});
         }
         for(int u:oth[v]) bit.add0(et.idx(u),1);
         for(int u:G[v])
@@ -383,7 +382,7 @@ signed CFR483_E(){
         for(int i=0;i<sz;i++){
           int k=idx[v][i].first;
           int op=idx[v][i].second;
-          red[k]|=(cur[i]<et.query<int>(op,f));
+          et.query(op,[&](int l,int r){red[k]|=cur[i]<bit.query0(l,r);});
         }
       })(0,-1);
 
