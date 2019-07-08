@@ -6,16 +6,17 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 class EulerTourForEdge{
 private:
-  vector<int> ds,us,dep;
-  int pos;
+  vector<int> ds,us,dep,btm;
 
   void dfs(int v,int p,int d){
     dep[v]=d;
     for(int u:G[v]){
       if(u==p) continue;
-      ds[u]=pos++;
+      ds[u]=btm.size();
+      btm.emplace_back(u);
       dfs(u,v,d+1);
-      us[u]=pos++;
+      us[u]=btm.size();
+      btm.emplace_back(u);
     }
   }
 public:
@@ -31,14 +32,20 @@ public:
   }
 
   void build(int r=0){
-    pos=0;
-    ds[r]=pos++;
+    btm.clear();
+    ds[r]=btm.size();
+    btm.emplace_back(r);
     dfs(r,-1,0);
-    us[r]=pos++;
+    us[r]=btm.size();
+    btm.emplace_back(r);
   }
 
   int child(int u,int v){
     return dep[u]<dep[v]?v:u;
+  }
+
+  int bottom(int e){
+    return btm[e];
   }
 
   // lca(u, v) must be u or v
@@ -344,6 +351,7 @@ signed ABC133_F(){
   verified on 2019/07/08
   https://atcoder.jp/contests/abc133/tasks/abc133_f
 */
+
 signed main(){
   //AOJ_GRL_5_D();
   //ABC133_F();

@@ -26,7 +26,7 @@ struct LinkCutTree{
   F f;
   G g;
   H h;
-  S s;
+  S flip;
   T ti;
   E ei;
 
@@ -37,11 +37,11 @@ struct LinkCutTree{
 
   LinkCutTree(F f,G g,H h,T ti,E ei):
     f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
-    s=[](T a){return a;};
+    flip=[](T a){return a;};
   }
 
-  LinkCutTree(F f,G g,H h,S s,T ti,E ei):
-    f(f),g(g),h(h),s(s),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  LinkCutTree(F f,G g,H h,S flip,T ti,E ei):
+    f(f),g(g),h(h),flip(flip),ti(ti),ei(ei),pool(LIM),ptr(0){}
 
   inline Node* create(){
     return &pool[ptr++];
@@ -59,7 +59,7 @@ struct LinkCutTree{
 
   void toggle(Node *t){
     swap(t->l,t->r);
-    t->dat=s(t->dat);
+    t->dat=flip(t->dat);
     t->rev^=1;
   }
 
