@@ -2,18 +2,10 @@
 using namespace std;
 using Int = signed;
 //BEGIN CUT HERE
-struct EulerTourForVertex{
-  int n,pos;
-  vector<vector<int> > G;
+class EulerTourForVertex{
+private:
   vector<int> ls,rs;
-
-  EulerTourForVertex(){}
-  EulerTourForVertex(int n):n(n),G(n),ls(n),rs(n){}
-
-  void add_edge(int u,int v){
-    G[u].emplace_back(v);
-    G[v].emplace_back(u);
-  }
+  int pos;
 
   void dfs(int v,int p){
     ls[v]=pos++;
@@ -21,12 +13,34 @@ struct EulerTourForVertex{
       if(u!=p) dfs(u,v);
     rs[v]=pos;
   }
+public:
+  int n;
+  vector<vector<int> > G;
+
+  EulerTourForVertex(){}
+  EulerTourForVertex(int n):ls(n),rs(n),n(n),G(n){}
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    G[v].emplace_back(u);
+  }
 
   void build(int r=0){
     pos=0;
     dfs(r,-1);
   }
 
+  int idx(int v){return ls[v];}
+
+  template<typename T,typename F>
+  T query(int v,F f){
+    return f(ls[v],rs[v]);
+  }
+
+  template<typename G>
+  void update(int v,G g){
+    g(ls[v],rs[v]);
+  }
 };
 //END CUT HERE
 
@@ -355,21 +369,22 @@ signed CFR483_E(){
   }
 
   BIT<int> bit(n+10,0);
+  auto f=[&](int l,int r){return bit.query0(l,r);};
   MFP([&](auto dfs,int v,int p)->void{
         int sz=idx[v].size();
         vector<int> cur(sz);
         for(int i=0;i<sz;i++){
           int op=idx[v][i].second;
-          cur[i]=bit.query0(et.ls[op],et.rs[op]);
+          cur[i]=et.query<int>(op,f);
         }
-        for(int u:oth[v]) bit.add0(et.ls[u],1);
+        for(int u:oth[v]) bit.add0(et.idx(u),1);
         for(int u:G[v])
           if(u!=p) dfs(u,v);
 
         for(int i=0;i<sz;i++){
           int k=idx[v][i].first;
           int op=idx[v][i].second;
-          red[k]|=(cur[i]<bit.query0(et.ls[op],et.rs[op]));
+          red[k]|=(cur[i]<et.query<int>(op,f));
         }
       })(0,-1);
 
@@ -417,14 +432,15 @@ signed AOJ_2871(){
 
   SegmentTree<T, E> seg(f,g,h,ti,ei);
   vector<T> vs(n,ti);
-  for(int i=0;i<n;i++) vs[et.ls[i]]=T(1,cs[i]=='G');
+  for(int i=0;i<n;i++) vs[et.idx(i)]=T(1,cs[i]=='G');
   seg.build(vs);
 
   for(int i=0;i<q;i++){
     int v;
     cin>>v;
     v--;
-    seg.update(et.ls[v],et.rs[v],1);
+    auto g=[&](int l,int r){seg.update(l,r,1);};
+    et.update(v,g);
     auto res=seg.query(0,n);
     cout<<(res.sum-res.one<res.one?"broccoli":"cauliflower")<<"\n";
   }
