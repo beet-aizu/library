@@ -41,15 +41,16 @@ public:
     return dep[u]<dep[v]?v:u;
   }
 
+  // lca(u, v) must be u or v
   template<typename F>
   void query(int u,int v,F f){
     if(dep[u]>dep[v]) swap(u,v);
-    f(us[u],us[v]);
+    f(ds[u]+1,ds[v]+1);
   }
 
   template<typename T,typename G>
   void update(int v,T x,G g){
-    g(ds[v],+x);
+    g(ds[v], x);
     g(us[v],-x);
   }
 };
@@ -317,9 +318,10 @@ signed ABC133_F(){
     for(int i:D[t]){
       int res=0,num=0;
       auto f=[&](int l,int r){
-             num+=cnt.query0(l,r);
-             res+=sum.query0(l,r);
-           };
+               assert(l<=r);
+               num+=cnt.query0(l,r);
+               res+=sum.query0(l,r);
+             };
       int r=lca.lca(us[i],vs[i]);
       et.query(r,us[i],f);
       et.query(r,vs[i],f);
