@@ -2,10 +2,8 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-class HLDecomposition {
+class HLD {
 private:
-  int pos;
-
   void dfs_sz(int v) {
     for(int &u:G[v]){
       if(u==par[v]) continue;
@@ -17,14 +15,14 @@ private:
     }
   }
 
-  void dfs_hld(int v,int c) {
+  void dfs_hld(int v,int c,int &pos) {
     vid[v]=pos++;
     inv[vid[v]]=v;
     type[v]=c;
     for(int u:G[v]){
       if(u==par[v]) continue;
       head[u]=(u==G[v][0]?head[v]:u);
-      dfs_hld(u,c);
+      dfs_hld(u,c,pos);
     }
   }
 
@@ -32,9 +30,8 @@ public:
   vector<vector<int> > G;
   vector<int> vid, head, sub, par, dep, inv, type;
 
-  HLDecomposition(){}
-  HLDecomposition(int n):
-    pos(0),G(n),vid(n,-1),head(n),sub(n,1),
+  HLD(int n):
+    G(n),vid(n,-1),head(n),sub(n,1),
     par(n,-1),dep(n,0),inv(n),type(n){}
 
   void add_edge(int u,int v) {
@@ -43,11 +40,11 @@ public:
   }
 
   void build(vector<int> rs={0}) {
-    int c=0;
+    int c=0,pos=0;
     for(int r:rs){
       dfs_sz(r);
       head[r]=r;
-      dfs_hld(r,c++);
+      dfs_hld(r,c++,pos);
     }
   }
 
@@ -107,89 +104,6 @@ public:
   }
 };
 //END CUT HERE
-
-struct BiconectedGraph{
-  typedef pair<int,int> P;
-  int n;
-  vector<vector<int> > G,C,T;
-  vector<int> ord,low,belong;
-  vector<P> B;
-  BiconectedGraph(){}
-  BiconectedGraph(int sz):n(sz),G(sz),C(sz),T(sz){}
-
-  void add_edge(int u,int v){
-    G[u].push_back(v);
-    G[v].push_back(u);
-  }
-
-  void input(int m,int offset=0){
-    int a,b;
-    for(int i=0;i<m;i++){
-      cin>>a>>b;
-      add_edge(a+offset,b+offset);
-    }
-  }
-
-  bool is_bridge(int u,int v){
-    if(ord[u]>ord[v]) swap(u,v);
-    return ord[u]<low[v];
-  }
-
-  void dfs(int v,int p,int &k){
-    ord[v]=low[v]=k;
-    ++k;
-    for(int u:G[v]){
-      if(u==p) continue;
-      if(ord[u]>=0){
-        low[v]=min(low[v],ord[u]);
-      }else{
-        dfs(u,v,k);
-        low[v]=min(low[v],low[u]);
-      }
-      if(is_bridge(u,v)) B.push_back(P(u,v));
-    }
-  }
-
-  void fill_component(int c,int v){
-    C[c].push_back(v);
-    belong[v]=c;
-    for(int u:G[v]){
-      if(belong[u]>=0||is_bridge(u,v)) continue;
-      fill_component(c,u);
-    }
-  }
-
-  void add_component(int v,int &k){
-    if(belong[v]>=0) return;
-    fill_component(k++,v);
-  }
-
-  int build(){
-    int k=0;
-    ord.resize(n);
-    low.resize(n);
-    belong.resize(n);
-    fill(ord.begin(),ord.end(),-1);
-    fill(belong.begin(),belong.end(),-1);
-    for(int v=0;v<n;v++){
-      if(ord[v]>=0) continue;
-      dfs(v,-1,k);
-    }
-    k=0;
-    for(int i=0;i<(int)B.size();i++){
-      add_component(B[i].first,k);
-      add_component(B[i].second,k);
-    }
-    for(int v=0;v<n;v++) add_component(v,k);
-    for(int i=0;i<(int)B.size();i++){
-      int u=belong[B[i].first],v=belong[B[i].second];
-      T[u].push_back(v);
-      T[v].push_back(u);
-    }
-    return k;
-  }
-};
-
 template <typename T>
 struct SegmentTree{
   using F = function<T(T,T)>;
@@ -343,12 +257,109 @@ struct Chien{
   }
 };
 
+
+struct LowLink{
+  int n,pos;
+  vector<int> ord,low,par,blg,num;
+  vector<vector<int> > G,C,T;
+  vector<vector<pair<int, int> > > E;
+
+  vector<int> ap;
+  vector<pair<int, int> > bs,cand;
+
+  LowLink(int n):n(n),pos(0),ord(n,-1),low(n),
+                 par(n,-1),blg(n,-1),num(n,1),G(n){}
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    G[v].emplace_back(u);
+  }
+
+  bool is_bridge(int u,int v){
+    if(ord[u]>ord[v]) swap(u,v);
+    return ord[u]<low[v];
+  }
+
+  void dfs(int v){
+    ord[v]=low[v]=pos++;
+    for(int u:G[v]){
+      if(u==par[v]) continue;
+      if(ord[u]<ord[v])
+        cand.emplace_back(min(u,v),max(u,v));
+      if(~ord[u]){
+        low[v]=min(low[v],ord[u]);
+        continue;
+      }
+      par[u]=v;
+      dfs(u);
+      num[v]+=num[u];
+      low[v]=min(low[v],low[u]);
+      if(is_bridge(u,v)) bs.emplace_back(u,v);
+      if(low[u]>=ord[v]){
+        E.emplace_back();
+        while(1){
+          auto e=cand.back();
+          cand.pop_back();
+          E.back().emplace_back(e);
+          if(make_pair(min(u,v),max(u,v))==e) break;
+        }
+      }
+    }
+  }
+
+  void fill_component(int v){
+    C[blg[v]].emplace_back(v);
+    for(int u:G[v]){
+      if(~blg[u]||is_bridge(u,v)) continue;
+      blg[u]=blg[v];
+      fill_component(u);
+    }
+  }
+
+  void add_component(int v,int &k){
+    if(~blg[v]) return;
+    blg[v]=k++;
+    C.emplace_back();
+    fill_component(v);
+  }
+
+  int build(){
+    for(int i=0;i<n;i++)
+      if(ord[i]<0) dfs(i);
+
+    vector<int> cnt(n,0);
+    for(int i=0;i<n;i++){
+      int p=par[i];
+      if(p<0) continue;
+      if(par[p]<0) cnt[p]++;
+      else if(ord[p]<=low[i]) ap.emplace_back(p);
+    }
+
+    for(int i=0;i<n;i++)
+      if(cnt[i]>1) ap.emplace_back(i);
+
+    sort(ap.begin(),ap.end());
+    ap.erase(unique(ap.begin(),ap.end()),ap.end());
+
+    int k=0;
+    for(int i=0;i<n;i++) add_component(i,k);
+
+    T.assign(k,vector<int>());
+    for(auto e:bs){
+      int u=blg[e.first],v=blg[e.second];
+      T[u].emplace_back(v);
+      T[v].emplace_back(u);
+    }
+    return k;
+  }
+};
+
 //INSERT ABOVE HERE
 
 signed AOJ_GRL5C(){
   int n;
   cin>>n;
-  HLDecomposition lca(n);
+  HLD lca(n);
   for(int i=0;i<n;i++){
     int k;
     cin>>k;
@@ -378,15 +389,20 @@ signed YUKI_529(){
   int n,e,q;
   scanf("%d %d %d",&n,&e,&q);
 
-  BiconectedGraph big(n);
-  big.input(e,-1);
+  LowLink big(n);
+  for(int i=0;i<e;i++){
+    int u,v;
+    scanf("%d %d",&u,&v);
+    u--;v--;
+    big.add_edge(u,v);
+  }
 
   int E=0,V=big.build();
-  HLDecomposition hl(V);
+  HLD hld(V);
   for(int i=0;i<V;i++)
     for(int j:big.T[i])
-      if(i<j) hl.add_edge(i,j),E++;
-  hl.build();
+      if(i<j) hld.add_edge(i,j),E++;
+  hld.build();
 
   SegmentTree<int> rmq([](int a,int b){return max(a,b);},-1);
   rmq.build(vector<int>(V,-1));
@@ -401,8 +417,8 @@ signed YUKI_529(){
       int u,w;
       scanf("%d %d",&u,&w);
       u--;
-      u=big.belong[u];
-      u=hl.vid[u];
+      u=big.blg[u];
+      u=hld.vid[u];
       m[w]=u;
       if(pq[u].empty()||pq[u].top()<w) rmq.set_val(u,w);
       pq[u].push(w);
@@ -412,10 +428,10 @@ signed YUKI_529(){
       int s,t;
       scanf("%d %d",&s,&t);
       s--;t--;
-      s=big.belong[s];
-      t=big.belong[t];
+      s=big.blg[s];
+      t=big.blg[t];
       auto f=[&](int l,int r){return rmq.query(l,r);};
-      int ans=hl.for_each(s,t,-1,f,rmq.f);
+      int ans=hld.for_each(s,t,-1,f,rmq.f);
       printf("%d\n",ans);
       if(~ans){
         int k=m[ans];
@@ -437,7 +453,7 @@ signed AOJ_2667(){
 
   int n,q;
   scanf("%d %d",&n,&q);
-  HLDecomposition hld(n);
+  HLD hld(n);
   for(int i=1;i<n;i++){
     int a,b;
     scanf("%d %d",&a,&b);
@@ -479,7 +495,7 @@ signed AOJ_2667(){
 signed AOJ_2450(){
   int n,q;
   scanf("%d %d",&n,&q);
-  HLDecomposition hld(n);
+  HLD hld(n);
   vector<int> w(n);
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
   using P = pair<int, int>;
