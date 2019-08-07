@@ -11,6 +11,9 @@ run() {
     url="$(grep -o '^# *define \+PROBLEM \(https\?://.*\)' < "$file" | sed 's/.* http/http/')"
     dir=test/$(echo -n "$url" | md5sum | sed 's/ .*//')
     mkdir -p ${dir}
+    if [[ $CXX =~ clang ]] && grep '^# *define \+GCC_ONLY\>' < "$file" > /dev/null ; then
+        return
+    fi
     $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
     if [[ -n ${url} ]] ; then
         if [[ ! -e ${dir}/test ]] ; then
