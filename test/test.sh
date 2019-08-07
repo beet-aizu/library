@@ -5,6 +5,7 @@ which oj > /dev/null
 
 CXX=${CXX:-g++}
 CXXFLAGS="${CXXFLAGS:--std=c++14 -O2 -Wall -g}"
+ulimit -s unlimited
 
 run() {
     file="$1"
