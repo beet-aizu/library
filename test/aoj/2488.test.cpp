@@ -1,4 +1,4 @@
-#define PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2488
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2488"
 #define main moin
 #include "../../algorithm/knuthyao.cpp"
 #undef main
