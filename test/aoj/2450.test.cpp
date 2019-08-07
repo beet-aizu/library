@@ -17,7 +17,7 @@ signed main(){
   vector<int> w(n);
   for(int i=0;i<n;i++) scanf("%d",&w[i]);
   using P = pair<int, int>;
-  for(int i=0;i<n-1;i++){
+  for(int i=0;i+1<n;i++){
     int a,b;
     scanf("%d %d",&a,&b);
     a--;b--;
