@@ -1,14 +1,12 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2450"
 
-#define main moin
-#define SegmentTree SegmentUkunichiakun
-#include "../../tree/heavylightdecomposition.cpp"
-#undef SegmentTree
-#undef main
+#include<bits/stdc++.h>
+using namespace std;
 
-#define main mpin
+#define call_from_test
+#include "../../tree/heavylightdecomposition.cpp"
 #include "../../segtree/basic/chien.cpp"
-#undef main
+#undef call_from_test
 
 signed main(){
   int n,q;

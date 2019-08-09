@@ -1,7 +1,12 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J"
-#define main moin
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#include "../../mod/mint.cpp"
 #include "../../mod/enumeration.cpp"
-#undef main
+#undef call_from_test
 
 signed main(){
   int n,k;
