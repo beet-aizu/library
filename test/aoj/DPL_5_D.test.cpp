@@ -1,4 +1,4 @@
-#define PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D"
 #define main moin
 #include "../../mod/enumeration.cpp"
 #undef main
