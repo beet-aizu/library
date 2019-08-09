@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template <typename T,typename E>
 struct SegmentTree{
@@ -98,6 +100,7 @@ struct SegmentTree{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 signed DSL_2_G(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -125,6 +128,35 @@ signed DSL_2_G(){
   verified on 2019/06/26
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
 */
+
+signed DSL_2_I(){
+  int n,q;
+  scanf("%d %d",&n,&q);
+  using P = pair<int, int>;
+  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
+  auto g=[](P a,int b){return P(a.second*b,a.second);};
+  auto h=[](int a,int b){(void)a;return b;};
+
+  SegmentTree<P, int> ch(f,g,h,P(0,0),-1010);
+  ch.build(vector<P>(n,P(0,1)));
+  for(int i=0;i<q;i++){
+    int c,s,t,x;
+    scanf("%d",&c);
+    if(c){
+      scanf("%d %d",&s,&t);
+      printf("%d\n",ch.query(s,t+1).first);
+    }else{
+      scanf("%d %d %d",&s,&t,&x);
+      ch.update(s,t+1,x);
+    }
+  }
+  return 0;
+}
+/*
+  verified on 2019/08/09
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I&lang=jp
+*/
+
 
 signed CFR569_C(){
   cin.tie(0);
@@ -177,6 +209,8 @@ signed CFR569_C(){
 
 signed main(){
   //DSL_2_G();
+  DSL_2_I();
   //CFR569_C();
   return 0;
 }
+#endif

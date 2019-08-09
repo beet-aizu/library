@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 class HLD {
 private:
@@ -104,6 +106,7 @@ public:
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 template <typename T>
 struct SegmentTree{
   using F = function<T(T,T)>;
@@ -324,3 +327,4 @@ signed main(){
   //YUKI_529();
   return 0;
 };
+#endif

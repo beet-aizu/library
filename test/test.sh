@@ -59,8 +59,6 @@ run() {
 
     if ! is-verified "$file" ; then
         # compile
-        echo $file
-        $CXX $CXXFLAGS -E "$file"
         $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
         if [[ -n ${url} ]] ; then
             # download

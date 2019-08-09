@@ -1,3 +1,4 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
@@ -55,6 +56,7 @@ struct Mint{
 };
 template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
 
+#endif
 //BEGIN CUT HERE
 template<typename M>
 class Enumeration{
@@ -181,6 +183,7 @@ template<typename M>
 vector<M> Enumeration<M>::invs = vector<M>();
 //END CUT HERE
 
+#ifndef call_from_test
 template<typename T>
 map<T, int> factorize(T x){
   map<T, int> res;
@@ -329,3 +332,4 @@ signed main(){
   //CFR315_B();
   return 0;
 }
+#endif

@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T, typename F>
 T KnuthYao(int n,F cost){
@@ -22,8 +24,8 @@ T KnuthYao(int n,F cost){
   return dp[0][n-1];
 }
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-
 signed AOJ_2488(){
   using ll = long long;
   int n;
@@ -64,3 +66,4 @@ signed main(){
   //KUPC2012_J();
   return 0;
 }
+#endif

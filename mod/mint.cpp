@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T,T MOD = 1000000007>
 struct Mint{
@@ -77,8 +79,7 @@ template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
 template<typename T,T MOD>
 ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 //END CUT HERE
-
-
+#ifndef call_from_test
 template<typename R>
 struct Kitamasa{
   using VR = vector<R>;
@@ -217,3 +218,4 @@ signed main(){
   //ABC127_E();
   return 0;
 }
+#endif
