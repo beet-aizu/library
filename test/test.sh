@@ -60,8 +60,8 @@ run() {
     if ! is-verified "$file" ; then
         # compile
         echo $file
+        $CXX $CXXFLAGS -E "$file"
         $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
-        echo $file
         if [[ -n ${url} ]] ; then
             # download
             if [[ ! -e ${dir}/test ]] ; then
