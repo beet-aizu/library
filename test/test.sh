@@ -84,6 +84,10 @@ if [[ $# -eq 0 ]] ; then
             run $f
         done
 
+        # show verified lists
+        for f in $(list-recently-updated) ; do
+            echo $f
+        done
     else
         # local
         for f in $(find . -name \*.test.cpp) ; do
