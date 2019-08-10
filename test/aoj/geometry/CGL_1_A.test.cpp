@@ -6,6 +6,8 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 // Projection
 signed main(){
   Point p1,p2;

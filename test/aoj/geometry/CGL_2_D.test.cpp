@@ -6,6 +6,8 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 //distanceSS
 signed main(){
   int q;
