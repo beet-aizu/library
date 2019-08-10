@@ -1,12 +1,13 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
-
 #define EPS (1e-10)
 #define equals(a,b) (fabs((a)-(b)) < EPS)
 #define PI 3.141592653589793238
- 
+
 // COUNTER CLOCKWISE
 static const int CCW_COUNTER_CLOCKWISE = 1;
 static const int CCW_CLOCKWISE = -1;
@@ -140,7 +141,7 @@ bool isParallel(Point a1,Point a2,Point b1,Point b2){
 }
 
 bool isParallel(Segment s1,Segment s2){
-  return equals(cross(s1.p2-s1.p1,s2.p2-s2.p1),0.0); 
+  return equals(cross(s1.p2-s1.p1,s2.p2-s2.p1),0.0);
 }
 
 Point project(Segment s,Point p){
@@ -186,7 +187,7 @@ Vector translate(Vector v,double theta);
 vector<Line> corner(Line l1,Line l2);
 vector< vector<int> >
 segmentArrangement(vector<Segment> &ss, Polygon &ps);
-  
+
 int ccw(Point p0,Point p1,Point p2){
   Vector a = p1-p0;
   Vector b = p2-p0;
@@ -256,7 +257,7 @@ double getDistanceSS(Segment s1,Segment s2){
 
 Point getCrossPointSS(Segment s1,Segment s2){
   for(int k=0;k<2;k++){
-    if(getDistanceSP(s1,s2.p1)<EPS) return s2.p1; 
+    if(getDistanceSP(s1,s2.p1)<EPS) return s2.p1;
     if(getDistanceSP(s1,s2.p2)<EPS) return s2.p2;
     swap(s1,s2);
   }
@@ -336,7 +337,7 @@ Polygon andrewScan(Polygon s){
       u.pop_back();
     }
     u.push_back(s[i]);
-  } 
+  }
   for(int i=s.size()-3;i>=0;i--){
     for(int n=l.size();n>=2&&ccw(l[n-2],l[n-1],s[i])!=CCW_CLOCKWISE;n--){
       l.pop_back();
@@ -346,7 +347,7 @@ Polygon andrewScan(Polygon s){
   reverse(l.begin(),l.end());
   for(int i=u.size()-2;i>=1;i--) l.push_back(u[i]);
   return l;
-} 
+}
 
 Polygon convex_hull(Polygon ps){
   int n=ps.size();
@@ -491,7 +492,7 @@ vector<Line> tangent(Circle c1,Circle c2){
       ls.emplace_back(c1.c+(uu-vv)*c1.r,c2.c-(uu-vv)*c2.r*s);
     }
   }
-  
+
   return ls;
 }
 
@@ -519,7 +520,7 @@ double closest_pair(Polygon &a,int l=0,int r=-1){
   return d;
 }
 
-vector<vector<int> > 
+vector<vector<int> >
 segmentArrangement(vector<Segment> &ss, Polygon &ps){
   int n=ss.size();
   for(int i=0;i<n;i++){
@@ -538,17 +539,17 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
     for(int j=0;j<(int)ps.size();j++)
       if(getDistanceSP(ss[i],ps[j])<EPS)
         ls.emplace_back(make_pair(norm(ss[i].p1-ps[j]),j));
-      
+
     sort(ls.begin(),ls.end());
     for(int j=0;j+1<(int)ls.size();j++){
       int a=ls[j].second,b=ls[j+1].second;
       G[a].emplace_back(b);
       G[b].emplace_back(a);
     }
-  }  
+  }
   for(auto &v:G){
     sort(v.begin(),v.end());
-    v.erase(unique(v.begin(),v.end()),v.end());    
+    v.erase(unique(v.begin(),v.end()),v.end());
   }
   return G;
 }
@@ -558,7 +559,7 @@ int manhattanIntersection(vector<Segment> ss,const int INF){
   const int LFT = 1;
   const int RGH = 2;
   const int TOP = 3;
-  
+
   int n=ss.size();
   vector<EndPoint> ep;
   for(int i=0;i<n;i++){
@@ -567,16 +568,16 @@ int manhattanIntersection(vector<Segment> ss,const int INF){
       ep.emplace_back(ss[i].p1,i,LFT);
       ep.emplace_back(ss[i].p2,i,RGH);
     }else{
-      if(ss[i].p1.y>ss[i].p2.y) swap(ss[i].p1,ss[i].p2);      
+      if(ss[i].p1.y>ss[i].p2.y) swap(ss[i].p1,ss[i].p2);
       ep.emplace_back(ss[i].p1,i,BTM);
       ep.emplace_back(ss[i].p2,i,TOP);
-    }    
-  }   
+    }
+  }
   sort(ep.begin(),ep.end());
 
   set<int> bt;
   bt.insert(INF);
-  
+
   int cnt=0;
   for(int i=0;i<n*2;i++){
     if(ep[i].st==TOP){
@@ -587,9 +588,9 @@ int manhattanIntersection(vector<Segment> ss,const int INF){
       auto b=bt.lower_bound(ss[ep[i].seg].p1.x);
       auto e=bt.upper_bound(ss[ep[i].seg].p2.x);
       cnt+=distance(b,e);
-    }    
+    }
   }
-  
+
   return cnt;
 }
 
@@ -618,134 +619,8 @@ double area(Polygon ps,Circle c){
     res+=dfs(c,ps[i],ps[(i+1)%ps.size()]);
   return res/2;
 }
-
 //END CUT HERE
-
-//Projection
-signed AOJ_CGL1A(){
-  Point p1,p2;
-  cin>>p1>>p2;
-  int q;
-  cin>>q;
-  while(q--){
-    Point p;
-    cin>>p;
-    cout<<project(Line(p1,p2),p)<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=jp
-*/
-
-//Reflect
-signed AOJ_CGL1B(){
-  Point p1,p2;
-  cin>>p1>>p2;
-  int q;
-  cin>>q;
-  while(q--){
-    Point p;
-    cin>>p;
-    cout<<reflect(Line(p1,p2),p)<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=jp
-*/
-
-//CCW
-signed AOJ_CGL1C(){
-  Point p0,p1;
-  cin>>p0>>p1;
-  int q;
-  cin>>q;
-  while(q--){
-    Point p2;
-    cin>>p2;
-    int t=ccw(p0,p1,p2);
-    if(t==CCW_COUNTER_CLOCKWISE) cout<<"COUNTER_CLOCKWISE"<<endl;
-    if(t==CCW_CLOCKWISE) cout<<"CLOCKWISE"<<endl;
-    if(t==CCW_ONLINE_BACK) cout<<"ONLINE_BACK"<<endl;
-    if(t==CCW_ONLINE_FRONT) cout<<"ONLINE_FRONT"<<endl;
-    if(t==CCW_ON_SEGMENT) cout<<"ON_SEGMENT"<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=jp
-*/
-
-//Parallel / Orthogonal
-signed AOJ_CGL2A(){
-  int q;
-  cin>>q;
-  while(q--){
-    Point p0,p1,p2,p3;
-    cin>>p0>>p1>>p2>>p3;
-    if(isParallel(Line(p0,p1),Line(p2,p3))) cout<<2<<endl;
-    else if(isOrthogonal(Line(p0,p1),Line(p2,p3))) cout<<1<<endl;
-    else cout<<0<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=jp
-*/
-
-//intersectSS
-signed AOJ_CGL2B(){
-  int q;
-  cin>>q;
-  while(q--){
-    Point p0,p1,p2,p3;
-    cin>>p0>>p1>>p2>>p3;
-    cout<<(intersectSS(Segment(p0,p1),Segment(p2,p3)))<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=jp
-*/
-
-//cross point
-signed AOJ_CGL2C(){
-  int q;
-  cin>>q;
-  while(q--){
-    Point p0,p1,p2,p3;
-    cin>>p0>>p1>>p2>>p3;
-    cout<<getCrossPointSS(Segment(p0,p1),Segment(p2,p3))<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=jp
-*/
-
-//distanceSS
-signed AOJ_CGL2D(){
-  int q;
-  cin>>q;
-  while(q--){
-    Point p0,p1,p2,p3;
-    cin>>p0>>p1>>p2>>p3;
-    printf("%.12f\n",getDistanceSS(Segment(p0,p1),Segment(p2,p3)));
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=jp
-*/
-
+#ifndef call_from_test
 //area of Polygon
 signed AOJ_CGL3A(){
   int n;
@@ -989,7 +864,7 @@ signed AOJ_2572(){
       else l=m;
     }
     c2.c.x=l;
-    
+
     double EPS3=1e-4;
     assert(abs(area(c1,c2)-ab)<=EPS3);
 
@@ -1003,11 +878,11 @@ signed AOJ_2572(){
     }
     c2.c=translate(c2.c,r);
     //cout<<c1.c<<"/"<<c2.c<<endl;
-    
+
     Vector v(c1.r,c1.r);
     c1.c=c1.c+v;
     c2.c=c2.c+v;
-    
+
     //cout<<c1.c<<"/"<<c2.c<<endl;
 
     if(f) swap(c1,c2);
@@ -1050,7 +925,7 @@ signed AOJ_2454(){
   vector<vector<pair<int, double> > > G(H.size());
   for(int i=0;i<(int)H.size();i++)
     for(int j:H[i]) G[i].emplace_back(j,abs(ps[i]-ps[j]));
-  
+
   double ans=0,tmp=0;
   for(int i=0;i<n;i++) ans+=abs(ss[i].p1-ss[i].p2);
 
@@ -1073,7 +948,7 @@ signed AOJ_2454(){
       }
     }
   }
-  
+
   for(int i=0;i<(int)G.size();i++)
     if(ps[i]==s) q.emplace(i);
 
@@ -1089,7 +964,7 @@ signed AOJ_2454(){
     }
   }
   tmp/=2;
-  
+
   cout<<fixed<<setprecision(12)<<ans-tmp<<endl;
   return 0;
 }
@@ -1112,7 +987,7 @@ struct FixPoint : F{
   template<typename... Args>
   decltype(auto) operator()(Args&&... args) const{
     return F::operator()(*this,forward<Args>(args)...);
-  }  
+  }
 };
 template<typename F>
 inline decltype(auto) MFP(F&& f){
@@ -1132,23 +1007,23 @@ signed AOJ_2448(){
   Polygon qs;
   auto G=segmentArrangement(ss,qs);
 
-  Int m=qs.size();  
+  Int m=qs.size();
   Int s=0;
   for(Int i=0;i<m;i++)
     if(qs[i]<qs[s]) s=i;
 
-  
+
   auto calc=[&](Vector a,Vector b){
               double th=acos(max(-1.0,min(1.0,dot(a,b)/abs(a)/abs(b))));
               if(cross(a,b)<-EPS) th=2*PI-th;
               return th;
-            };  
+            };
   double ans=0;
   for(int t:G[s]){
 
     Polygon res;
     res.emplace_back(qs[s]);
-    
+
     MFP([&](auto dfs,Int v,Int p)->void{
           if(v==s) return;
           Int z=G[v][0];
@@ -1162,11 +1037,11 @@ signed AOJ_2448(){
           res.emplace_back(qs[v]);
           dfs(z,v);
         })(t,s);
-    
+
     ans+=max(0.0,area(res));
   }
   cout<<ans<<endl;
-  return 0;            
+  return 0;
 }
 /*
   verified on 2019/05/10
@@ -1174,27 +1049,18 @@ signed AOJ_2448(){
 */
 
 signed main(){
-  //AOJ_CGL1A();
-  //AOJ_CGL1B();
-  //AOJ_CGL1C();
-
-  //AOJ_CGL2A();
-  //AOJ_CGL2B();
-  //AOJ_CGL2C();
-  //AOJ_CGL2D();
-  
   //AOJ_CGL3A();
   //AOJ_CGL3B();
   //AOJ_CGL3C();
-  
+
   //AOJ_CGL4A();
   //AOJ_CGL4B();
   //AOJ_CGL4C();
-  
+
   //AOJ_CGL5A();
 
   //AOJ_CGL6A();
-  
+
   //AOJ_CGL7A();
   //AOJ_CGL7D();
   //AOJ_CGL7E();
@@ -1207,3 +1073,4 @@ signed main(){
   //AOJ_2448();
   return 0;
 }
+#endif
