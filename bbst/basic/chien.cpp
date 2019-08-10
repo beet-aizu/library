@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T, typename E>
 struct RBST{
@@ -209,44 +211,8 @@ struct RBST{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
-signed AOJ_1508(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  vector<int> v(n);
-  for(int i=0;i<n;i++) scanf("%d",&v[i]);
-
-  auto f=[](int a,int b){return min(a,b);};
-  const int INF = 1e9;
-  RBST<int, int> rbst(f,f,f,INF,-1);
-
-  auto rt=rbst.build(v);
-
-  for(int i=0;i<q;i++){
-    int x,y,z;
-    scanf("%d %d %d",&x,&y,&z);
-    if(x==0){
-      int l=y,r=z+1;
-      rt=rbst.toggle(rt,l,r);
-      rt=rbst.toggle(rt,l+1,r);
-    }
-    if(x==1){
-      int l=y,r=z+1;
-      printf("%d\n",rbst.query(rt,l,r));
-    }
-    if(x==2){
-      rt=rbst.set_val(rt,y,z);
-    }
-  }
-
-  return 0;
-}
-/*
-  verified on 2019/06/24
-  judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
-*/
-
 signed DSL_2_F(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -381,3 +347,4 @@ signed main(){
   //CODEFESTIVAL2014EXHIBITION_B();
   return 0;
 }
+#endif

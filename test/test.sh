@@ -85,7 +85,7 @@ if [[ $# -eq 0 ]] ; then
         done
 
         # show verified lists
-        for f in $(list-recently-updated) ; do
+        for f in $(list-recently-updated | sort) ; do
             echo $f
         done
     else
