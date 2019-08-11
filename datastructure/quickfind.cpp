@@ -7,11 +7,9 @@ struct QuickFind{
   vector<int> r,p;
   vector<vector<int> > v;
   QuickFind(){}
-  QuickFind(int sz):n(sz),r(sz),p(sz),v(sz){
-    for(int i=0;i<n;i++){
-      r[i]=1,p[i]=i;
-      v[i].resize(1,i);
-    }
+  QuickFind(int sz):n(sz),r(sz,1),p(sz),v(sz){
+    iota(p.begin(),p.end(),0);
+    for(int i=0;i<n;i++) v[i].assign(1,i);
   }
   int find(int x) const{return p[x];}
   bool same(int x,int y) const{
@@ -22,17 +20,20 @@ struct QuickFind{
     if(x==y) return;
     if(r[x]<r[y]) swap(x,y);
     r[x]+=r[y];
-    for(int i=0;i<(int)v[y].size();i++){
-      p[v[y][i]]=x;
-      v[x].push_back(v[y][i]);
+    for(int e:v[y]){
+      p[e]=x;
+      v[x].push_back(e);
     }
     v[y].clear();
+    v[y].shrink_to_fit();
   }
-  const vector<int>& elements(int x) const{return v[x];}  
+  const vector<int>& elements(int x) const{return v[x];}
 };
 //END CUT HERE
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
   int n,q;
   cin>>n>>q;
   QuickFind qf(n);
@@ -45,6 +46,6 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2017/10/29
+  verified on 2019/08/11
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
 */
