@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template <typename T>
 struct SegmentTree{
@@ -59,26 +61,7 @@ struct SegmentTree{
   }
 };
 //END CUT HERE
-
-signed AOJ_DSL2A(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int> rmq(f,INT_MAX);
-  rmq.init(n);
-
-  for(int i=0;i<q;i++){
-    int c,x,y;
-    scanf("%d %d %d",&c,&x,&y);
-    if(c) printf("%d\n",rmq.query(x,y+1));
-    else rmq.set_val(x,y);
-  }
-  return 0;
-}
-/*
-  verified on 2019/06/26
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
-*/
+#ifndef call_from_test
 
 signed ARC038_C(){
   int n;
@@ -170,9 +153,9 @@ signed ABC130_D(){
 */
 
 signed main(){
-  //AOJ_DSL2A();
   //ARC038_C();
   //KUPC2013_D();
   //ABC130_D();
   return 0;
 }
+#endif
