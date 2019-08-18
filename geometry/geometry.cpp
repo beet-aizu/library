@@ -621,109 +621,6 @@ double area(Polygon ps,Circle c){
 }
 //END CUT HERE
 #ifndef call_from_test
-//area of Polygon
-signed AOJ_CGL3A(){
-  int n;
-  cin>>n;
-  Polygon p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  printf("%.1f\n",area(p));
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=jp
-*/
-
-
-//isConvex
-signed AOJ_CGL3B(){
-  int n;
-  cin>>n;
-  Polygon p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  cout<<isConvex(p)<<endl;
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=jp
-*/
-
-
-
-//contains
-signed AOJ_CGL3C(){
-  int n;
-  cin>>n;
-  Polygon p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  int q;
-  cin>>q;
-  while(q--){
-    Point r;
-    cin>>r;
-    cout<<contains(p,r)<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C
-*/
-
-
-//convex hull
-signed AOJ_CGL4A(){
-  int n;
-  cin>>n;
-  Polygon p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  Polygon q=convex_hull(p);
-  cout<<q.size()<<endl;
-  for(Point v:q) cout<<v.x<<" "<<v.y<<endl;
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=jp
-*/
-
-//diameter of Polygon
-signed AOJ_CGL4B(){
-  int n;
-  cin>>n;
-  Polygon p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  printf("%.12f\n",diameter(p));
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=jp
-*/
-
-//convexCut:
-signed AOJ_CGL4C(){
-  int n;
-  cin>>n;
-  Polygon g(n);
-  for(int i=0;i<n;i++) cin>>g[i];
-  Polygon p=andrewScan(g);
-  int q;
-  cin>>q;
-  while(q--){
-    Line l;
-    cin>>l.p1>>l.p2;
-    printf("%.12f\n",area(convexCut(p,l)));
-  }
-  return 0;
-}
-/*
-  verified on 2017/12/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=jp
-*/
-
 //closest pair:
 signed AOJ_CGL5A(){
   int n;
@@ -1049,14 +946,6 @@ signed AOJ_2448(){
 */
 
 signed main(){
-  //AOJ_CGL3A();
-  //AOJ_CGL3B();
-  //AOJ_CGL3C();
-
-  //AOJ_CGL4A();
-  //AOJ_CGL4B();
-  //AOJ_CGL4C();
-
   //AOJ_CGL5A();
 
   //AOJ_CGL6A();
