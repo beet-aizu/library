@@ -2,19 +2,21 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-template<typename T>
-vector<T> compress(vector<T> v){
+template<typename V>
+V compress(V v){
   sort(v.begin(),v.end());
   v.erase(unique(v.begin(),v.end()),v.end());
   return v;
 }
-
 template<typename T>
 map<T, int> dict(const vector<T> &v){
   map<T, int> res;
   for(int i=0;i<(int)v.size();i++)
     res[v[i]]=i;
   return res;
+}
+map<char, int> dict(const string &v){
+  return dict(vector<char>(v.begin(),v.end()));
 }
 //END CUT HERE
 
