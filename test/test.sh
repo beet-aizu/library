@@ -24,6 +24,11 @@ get-url() {
     list-defined "$file" | grep '^#define PROBLEM ' | sed 's/^#define PROBLEM "\(.*\)"$/\1/'
 }
 
+get-error() {
+    file="$1"
+    list-defined "$file" | grep '^#define ERROR ' | sed 's/^#define ERROR "\(.*\)"$/\1/'
+}
+
 is-verified() {
     file="$1"
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
@@ -67,7 +72,14 @@ run() {
                 oj download --system "$url" -d ${dir}/test
             fi
             # test
-            oj test -c ${dir}/a.out -d ${dir}/test
+
+            if list-defined "$file" | grep '^#define ERROR ' > /dev/null ; then
+                error=$(get-error "$file")
+                echo $error
+                oj test -e ${error} -c ${dir}/a.out -d ${dir}/test
+            else
+                oj test -c ${dir}/a.out -d ${dir}/test
+            fi
         else
             # run
             ${dir}/a.out
