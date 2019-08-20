@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename F>
 struct FixPoint : F{
@@ -17,7 +19,7 @@ inline decltype(auto) MFP(F&& f){
   return FixPoint<F>{forward<F>(f)};
 }
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
   int h,w;
@@ -49,3 +51,4 @@ signed main(){
 /*
   https://atcoder.jp/contests/atc001/tasks/dfs_a
 */
+#endif
