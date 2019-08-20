@@ -71,11 +71,9 @@ run() {
                 sleep 2
                 oj download --system "$url" -d ${dir}/test
             fi
-            # test
-
+            # test with tolerance error
             if list-defined "$file" | grep '^#define ERROR ' > /dev/null ; then
                 error=$(get-error "$file")
-                echo $error
                 oj test -e ${error} -c ${dir}/a.out -d ${dir}/test
             else
                 oj test -c ${dir}/a.out -d ${dir}/test

@@ -6,7 +6,7 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
 
-#define IGNORE
+#define ERROR "0.00000001"
 
 //cross point
 signed main(){
