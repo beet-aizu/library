@@ -57,7 +57,6 @@ signed COLOPL2018FINAL_C(){
 */
 signed main(){
   //COLOPL2018FINAL_C();
-  //AOJ_2603();
   return 0;
 }
 #endif

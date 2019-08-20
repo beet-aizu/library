@@ -26,24 +26,6 @@ T KnuthYao(int n,F cost){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed AOJ_2488(){
-  using ll = long long;
-  int n;
-  cin>>n;
-  vector<ll> xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];
-  auto calc=
-    [&](int i,int k,int j){
-      return xs[k+1]-xs[i]+ys[k]-ys[j];
-    };
-  cout<<KnuthYao<ll>(n,calc)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/27
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2488
-*/
-
 signed KUPC2012_J(){
   using ll = long long;
   int n;
@@ -62,7 +44,6 @@ signed KUPC2012_J(){
 */
 
 signed main(){
-  //AOJ_2488();
   //KUPC2012_J();
   return 0;
 }

@@ -31,22 +31,7 @@ T largestrectangle(vector<T> &v){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed DPL_3_C(){
-  using ll = long long;
-  ll n;
-  cin>>n;
-  vector<ll> v(n);
-  for(Int i=0;i<n;i++) cin>>v[i];
-  cout<<largestrectangle(v)<<endl;
-  return 0;
-}
-/*
-  verified on 2018/06/11
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C&lang=jp
-*/
-
 signed main(){
-  DPL_3_C();
   return 0;
 }
 #endif
