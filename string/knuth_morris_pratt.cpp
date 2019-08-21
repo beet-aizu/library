@@ -15,6 +15,7 @@ vector<int> knuth_morris_pratt(const string &s){
   }
   return mp;
 }
+// smallest d s.t. s[x] == s[x + d] for all x
 vector<int> minimun_period(const string &s){
   auto mp=knuth_morris_pratt(s);
   for(int i=1;i<(int)mp.size();i++) mp[i]=i-mp[i];
