@@ -16,7 +16,7 @@ vector<int> knuth_morris_pratt(const string &s){
   return mp;
 }
 // smallest d s.t. s[x] == s[x + d] for all x
-vector<int> minimun_period(const string &s){
+vector<int> minimum_period(const string &s){
   auto mp=knuth_morris_pratt(s);
   for(int i=1;i<(int)mp.size();i++) mp[i]=i-mp[i];
   return mp;
@@ -89,7 +89,7 @@ signed ARC060_F(){
     return 0;
   }
 
-  auto mp=minimun_period(w);
+  auto mp=minimum_period(w);
   if(n%mp[n]!=0||n==mp[n]){
     cout<<1<<endl<<1<<endl;
     return 0;
@@ -97,7 +97,7 @@ signed ARC060_F(){
 
   string w_rev=w;
   reverse(w_rev.begin(),w_rev.end());
-  auto mp_rev=minimun_period(w_rev);
+  auto mp_rev=minimum_period(w_rev);
 
   int cnt=0;
   for(int i=1;i<n;i++){
