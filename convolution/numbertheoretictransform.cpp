@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 constexpr int bmds(int x){
   const int v[] = {1012924417, 924844033, 998244353,
@@ -83,6 +85,7 @@ struct NTT{
   void ntt(vector<int> &a,bool f,int n=-1){
     if(n==-1) n=a.size();
     assert((n&(n-1))==0);
+    ensure_base(n);
 
     for(int i=0,j=1;j+1<n;j++){
       for(int k=n>>1;k>(i^=k);k>>=1);
@@ -210,7 +213,7 @@ struct NTT{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 signed ATC001_C(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -294,7 +297,8 @@ signed CFR250_E(){
 
 signed main(){
   //ATC001_C();
-  HAPPYQUERY_E();
+  //HAPPYQUERY_E();
   //CFR250_E();
   return 0;
 }
+#endif
