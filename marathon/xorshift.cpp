@@ -4,12 +4,12 @@ using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
-int xor128(){
-  static int x = 123456789;
-  static int y = 362436069;
-  static int z = 521288629;
-  static int w = 88675123; 
-  int t = x ^ (x << 11);
+uint32_t xor128(){
+  static uint32_t x = 123456789;
+  static uint32_t y = 362436069;
+  static uint32_t z = 521288629;
+  static uint32_t w = 88675123;
+  uint32_t t = x ^ (x << 11);
   x = y; y = z; z = w;
   return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
 }
