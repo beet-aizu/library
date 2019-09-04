@@ -10,7 +10,7 @@ struct LiChao{
     Line(T a,T b):a(a),b(b){}
     T get(T x){return a*x+b;}
   };
-  
+
   int n;
   vector<T> pos;
   vector<Line> dat;
@@ -29,7 +29,7 @@ struct LiChao{
     Line x(a,b);
     update(1,0,n-1,x);
   }
-  
+
   T query(T x){
     int t=lower_bound(pos.begin(),pos.end(),x)-pos.begin();
     return (isMin?-1:1)*query(1,0,n-1,t);
@@ -38,7 +38,7 @@ struct LiChao{
   inline bool over(Line &a,Line &b,T lb,T ub){
     return a.get(lb)>=b.get(lb)&&a.get(ub)>=b.get(ub);
   }
-  
+
   void update(int k,int l,int r,Line &x){
     T lb=pos[l],ub=pos[r];
     if(over(dat[k],x,lb,ub)) return;
@@ -58,8 +58,10 @@ struct LiChao{
     int c=(l+r)>>1;
     if(t<=c) return max(res,query((k<<1)|0,l,c,t));
     return max(res,query((k<<1)|1,c+1,r,t));
-  }  
+  }
 };
+template <typename T, bool isMin>
+constexpr T LiChao<T, isMin>::INF;
 //END CUT HERE
 
 
@@ -93,34 +95,34 @@ signed CSA070_SQUAREDEND(){
     puts("0");
     return 0;
   }
-  
+
   const Int INF = 1e15;
   auto dp=make_v<Int>(k+1,n+1);
   fill_v(dp,INF);
   dp[0][0]=0;
-  
+
   vector<Int> pos(a);
   sort(pos.begin(),pos.end());
   pos.erase(unique(pos.begin(),pos.end()),pos.end());
-  
+
   vector<LiChao<Int, true> > v;
   for(int i=0;i<k+1;i++) v.emplace_back(pos);
   v[0].addLine(-2*a[0],a[0]*a[0]);
-  
+
   for(Int i=0;i<n;i++){
     for(Int j=0;j<k;j++){
       dp[j+1][i+1]=v[j].query(a[i])+a[i]*a[i];
       v[j+1].addLine(-2*a[i+1],dp[j+1][i+1]+a[i+1]*a[i+1]);
     }
   }
-  
+
   printf("%lld\n",dp[k][n]);
   return 0;
 }
 
 /*
   verified on 2019/01/16
-  https://csacademy.com/contest/round-70/task/squared-ends/
+  https://csacademy.com/contest/archive/task/squared-ends
 */
 
 signed TENKA12016FINAL_E(){
@@ -130,7 +132,7 @@ signed TENKA12016FINAL_E(){
   for(Int i=0;i<n;i++)
     for(Int j=0;j<l;j++)
       scanf("%lld",&a[i][j]);
-  
+
   vector<Int> dp(l,0);
   vector<Int> pos(l,0);
   iota(pos.begin(),pos.end(),0);
@@ -141,7 +143,7 @@ signed TENKA12016FINAL_E(){
     for(Int j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
-  
+
   printf("%lld\n",*min_element(dp.begin(),dp.end()));
   return 0;
 }
