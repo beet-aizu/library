@@ -37,10 +37,6 @@ is-verified() {
     file="$1"
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
     timestamp="$(get-last-commit-date "$file")"
-    echo timestamp
-    echo $timestamp
-    echo $cache
-    echo $(cat $cache)
     [[ -e $cache ]] && [[ $timestamp = $(cat $cache) ]]
 }
 
