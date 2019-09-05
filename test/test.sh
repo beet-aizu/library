@@ -53,7 +53,7 @@ mark-verified() {
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
     mkdir -p test/timestamp
     timestamp="$(get-last-commit-date "$file")"
-    cat $timestamp > $cache
+    echo $timestamp > $cache
 }
 
 list-recently-updated() {
