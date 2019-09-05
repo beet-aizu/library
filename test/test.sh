@@ -53,6 +53,10 @@ mark-verified() {
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
     mkdir -p test/timestamp
     timestamp="$(get-last-commit-date "$file")"
+    echo $timestamp
+    echo $cache
+    pwd
+    ls -R
     echo $timestamp > $cache
 }
 
