@@ -23,4 +23,6 @@ jobs:
         pip3 install -U online-judge-tools=='6.*'
 
     - name: test
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: ./test/test.sh

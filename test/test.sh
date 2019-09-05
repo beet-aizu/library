@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 
+git config --global user.name "beet-aizu"
+git config --global user.email "aki.bdash@gmail.com"
+
+git remote set-url origin https://beet-aizu:${GITHUB_TOKEN}@github.com/beet-aizu/github_actions.git
+
+git checkout -b master
+git branch -a
+
 # you can install oj with: $ pip3 install --user -U online-judge-tools=='6.*'
 which oj > /dev/null
 
@@ -28,10 +36,15 @@ get-error() {
     list-defined "$file" | grep '^#define ERROR ' | sed 's/^#define ERROR "\(.*\)"$/\1/'
 }
 
+get-last-commit-date() {
+    file="$1"
+    list-dependencies "$file" | git log -1 --date=iso --pretty=%ad
+}
+
 is-verified() {
     file="$1"
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
-    timestamp="$(list-dependencies "$file" | xargs -I '{}' find "$file" '{}' -printf "%T+\t%p\n" | sort -nr | head -n 1 | cut -f 2)"
+    timestamp="$(get-last-commit-date "$file")"
     [[ -e $cache ]] && [[ $timestamp -ot $cache ]]
 }
 
@@ -39,7 +52,8 @@ mark-verified() {
     file="$1"
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
     mkdir -p test/timestamp
-    touch $cache
+    timestamp="$(get-last-commit-date "$file")"
+    cat $timestamp > $cache
 }
 
 list-recently-updated() {
@@ -92,16 +106,20 @@ if [[ $# -eq 0 ]] ; then
         for f in $(list-recently-updated) ; do
             run $f
         done
-
-        # show verified lists
-        for f in $(list-recently-updated | sort) ; do
-            echo $f
-        done
     else
-        # local
+        # local / github actions
         for f in $(find . -name \*.test.cpp) ; do
             run $f
         done
+
+        if [ -z "$(echo $last_commit_message | grep auto-verifier)" ]; then
+            last_commit="$(git log -1 | head -1)"
+            git add .
+            git commit -m "[auto-verifier] verify commit ${last_commit}"
+            git push origin HEAD
+        else
+            echo "nothing updated"
+        fi
     fi
 else
     # specified
