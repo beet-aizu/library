@@ -113,7 +113,7 @@ if [[ $# -eq 0 ]] ; then
         done
 
         git status -s
-        if [ -n $(git status -s) ]; then
+        if [ -n "$(git status -s)" ]; then
             last_commit="$(git log -1 | head -1)"
             git add .
             git commit -m "[auto-verifier] verify commit ${last_commit}"
