@@ -1,9 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
+#endif
 //BEGIN CUT HERE
 template<typename TF,typename TC>
 struct PrimalDual{
@@ -89,29 +88,8 @@ struct PrimalDual{
 };
 template<typename TF, typename TC> const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-int GRL_6_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int v,e,f;
-  cin>>v>>e>>f;
-
-  PrimalDual<int, int> pd(v);
-  for(int i=0;i<e;i++){
-    int u,v,c,d;
-    cin>>u>>v>>c>>d;
-    pd.add_edge(u,v,c,d);
-  }
-  int ok=0;
-  int res=pd.flow(0,v-1,f,ok);
-  cout<<(ok?res:-1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/07/05
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B&lang=jp
-*/
-
 signed SPOJ_GREED(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -214,113 +192,9 @@ signed geocon2013_B(){
   verified on 2019/07/05
   https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
 */
-
-const int MAX = 52;
-struct ARR{
-  array<int, MAX> val;
-  ARR(){fill(val.begin(),val.end(),0);}
-  ARR(int x){fill(val.begin(),val.end(),x);}
-  int& operator[](int k){return val[k];};
-  int operator[](int k)const{return val[k];};
-  ARR operator+(const ARR &oth) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]+oth[i];
-    return res;
-  }
-  ARR operator-(const ARR &oth) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]-oth[i];
-    return res;
-  }
-  ARR operator-() const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=-val[i];
-    return res;
-  }
-  ARR operator*(const int &k) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]*k;
-    return res;
-  }
-  ARR operator/(const int &k) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]/k;
-    return res;
-  }
-  bool operator< (const ARR &oth) const{
-    return val< oth.val;
-  }
-  bool operator==(const ARR &oth) const{
-    return val==oth.val;
-  }
-};
-
-namespace std {
-  template<> class numeric_limits<ARR> {
-  public:
-    static ARR max() {return ARR(numeric_limits<int>::max());};
-  };
-}
-
-signed AOJ_2679(){
-  int n;
-  cin>>n;
-  vector<string> vs(n);
-  for(int i=0;i<n;i++) cin>>vs[i];
-
-  auto enc=
-    [&](char c){
-      if(isupper(c)) return c-'A';
-      return 26+c-'a';
-    };
-  auto dec=
-    [&](int d){
-      if(d<26) return 'A'+d;
-      return 'a'+d-26;
-    };
-
-  int S=n*2,T=n*2+1;
-  PrimalDual<int, ARR> G(n*2+2);
-  for(int i=0;i<n;i++){
-    G.add_edge(S,i,1,ARR());
-    G.add_edge(n+i,T,1,ARR());
-  }
-
-  const int INF = 1e5;
-  for(int i=0;i<n;i++){
-    for(int j=0;j<n;j++){
-      ARR cost(INF);
-      cost[enc(vs[i][j])]=INF-1;
-      G.add_edge(i,n+j,1,cost);
-    }
-  }
-
-  int ok;
-  auto res=G.flow(S,T,n,ok);
-  assert(ok);
-
-  string ans;
-  for(int i=0;i<MAX;i++)
-    for(int j=0;j<n*INF-res[i];j++)
-      ans+=dec(i);
-  cout<<ans<<endl;
-
-  return 0;
-}
-/*
-  verified on 2019/07/05
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2679
-*/
-
 signed main(){
-  //GRL_6_B();
   //SPOJ_GREED();
   //geocon2013_B();
-  //AOJ_2679();
   return 0;
 }
+#endif
