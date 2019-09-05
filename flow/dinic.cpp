@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T,bool directed>
 struct Dinic{
@@ -92,7 +94,7 @@ struct Dinic{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T>
 vector<T> compress(vector<T> v){
   sort(v.begin(),v.end());
@@ -113,16 +115,15 @@ signed GRL_6_A(){
   ios::sync_with_stdio(0);
   int V,E;
   cin>>V>>E;
-  Dinic<int, true> dinic(V);
+  Dinic<int, true> G(V);
   for(int i=0;i<E;i++){
     int u,v,c;
     cin>>u>>v>>c;
-    dinic.add_edge(u,v,c);
+    G.add_edge(u,v,c);
   }
-  cout<<dinic.flow(0,V-1)<<endl;
+  cout<<G.flow(0,V-1)<<endl;
   return 0;
 }
-
 /*
   verified on 2019/06/10
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
@@ -285,3 +286,4 @@ signed main(){
   //AOJ_1599();
   return 0;
 }
+#endif
