@@ -103,7 +103,7 @@ if [[ $# -eq 0 ]] ; then
         git config --global user.name "beet-aizu"
         git config --global user.email "aki.bdash@gmail.com"
 
-        git remote set-url origin https://beet-aizu:${GITHUB_TOKEN}@github.com/beet-aizu/github_actions.git
+        git remote set-url origin https://beet-aizu:${GITHUB_TOKEN}@github.com/beet-aizu/library.git
 
         git checkout -b master
         git branch -a
