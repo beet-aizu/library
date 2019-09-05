@@ -44,7 +44,7 @@ signed KUPC2012_J(){
 */
 
 signed main(){
-  //KUPC2012_J();
+  KUPC2012_J();
   return 0;
 }
 #endif
