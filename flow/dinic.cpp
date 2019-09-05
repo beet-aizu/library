@@ -96,26 +96,6 @@ struct Dinic{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed GRL_6_A(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int V,E;
-  cin>>V>>E;
-  Dinic<int, true> G(V);
-  for(int i=0;i<E;i++){
-    int u,v,c;
-    cin>>u>>v>>c;
-    G.add_edge(u,v,c);
-  }
-  cout<<G.flow(0,V-1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/10
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
-*/
-
-
 signed SPOJ_FASTFLOW(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -166,7 +146,6 @@ signed SPOJ_BANKROB(){
 */
 
 signed main(){
-  //GRL_6_A();
   //SPOJ_FASTFLOW();
   //SPOJ_BANKROB();
   return 0;
