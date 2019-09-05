@@ -112,6 +112,7 @@ if [[ $# -eq 0 ]] ; then
             run $f
         done
 
+        git status -s
         if [ -n $(git status -s) ]; then
             last_commit="$(git log -1 | head -1)"
             git add .
