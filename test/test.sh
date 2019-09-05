@@ -30,7 +30,7 @@ get-error() {
 
 get-last-commit-date() {
     file="$1"
-    list-dependencies "$file" | git log -1 --date=iso --pretty=%ad
+    list-dependencies "$file" | xargs git log -1 --date=iso --pretty=%ad
 }
 
 is-verified() {
