@@ -112,10 +112,12 @@ if [[ $# -eq 0 ]] ; then
             run $f
         done
 
-        last_commit="$(git log -1 | head -1)"
-        git add .
-        git commit -m "[auto-verifier] verify commit ${last_commit}"
-        git push origin HEAD
+        if [ -n $(git status -s) ]; then
+            last_commit="$(git log -1 | head -1)"
+            git add .
+            git commit -m "[auto-verifier] verify commit ${last_commit}"
+            git push origin HEAD
+        fi
     fi
 else
     # specified
