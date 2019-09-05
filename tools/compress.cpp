@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename V>
 V compress(V v){
@@ -19,9 +21,8 @@ map<char, int> dict(const string &v){
   return dict(vector<char>(v.begin(),v.end()));
 }
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
-
 signed ABC036_C(){
   int n;
   cin>>n;
@@ -41,3 +42,4 @@ signed main(){
   ABC036_C();
   return 0;
 }
+#endif
