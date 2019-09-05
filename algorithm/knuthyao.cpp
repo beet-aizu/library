@@ -21,7 +21,7 @@ T KnuthYao(int n,F cost){
       }
     }
   }
-  return dp[0][n-1];
+  return dp[0][n-1]+1;
 }
 //END CUT HERE
 #ifndef call_from_test
