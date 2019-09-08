@@ -3,6 +3,51 @@
 using namespace std;
 using Int = long long;
 #endif
+
+template<typename T,T MOD = 1000000007>
+struct Mint{
+  static constexpr T mod = MOD;
+  T v;
+  Mint():v(0){}
+  Mint(signed v):v(v){}
+  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
+
+  Mint pow(long long k){
+    Mint res(1),tmp(v);
+    while(k){
+      if(k&1) res*=tmp;
+      tmp*=tmp;
+      k>>=1;
+    }
+    return res;
+  }
+
+  static Mint add_identity(){return Mint(0);}
+  static Mint mul_identity(){return Mint(1);}
+
+  Mint inv(){return pow(MOD-2);}
+
+  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
+  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
+  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
+  Mint& operator/=(Mint a){return (*this)*=a.inv();}
+
+  Mint operator+(Mint a) const{return Mint(v)+=a;};
+  Mint operator-(Mint a) const{return Mint(v)-=a;};
+  Mint operator*(Mint a) const{return Mint(v)*=a;};
+  Mint operator/(Mint a) const{return Mint(v)/=a;};
+
+  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
+
+  bool operator==(const Mint a)const{return v==a.v;}
+  bool operator!=(const Mint a)const{return v!=a.v;}
+  bool operator <(const Mint a)const{return v <a.v;}
+};
+template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
+template<typename T,T MOD>
+
+ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
+
 //BEGIN CUT HERE
 constexpr int bmds(int x){
   const int v[] = {1012924417, 924844033, 998244353,
@@ -14,204 +59,82 @@ constexpr int brts(int x){
   return v[x];
 }
 
-
 template<int X>
 struct NTT{
   static constexpr int md = bmds(X);
   static constexpr int rt = brts(X);
-
-  inline int add(int a,int b){
-    a+=b;
-    if(a>=md) a-=md;
-    return a;
-  }
-
-  inline int mul(int a,int b){
-    return 1LL*a*b%md;
-  }
-
-  inline int pow(int a,int b){
-    int res=1;
-    while(b){
-      if(b&1) res=mul(res,a);
-      a=mul(a,a);
-      b>>=1;
-    }
-    return res;
-  }
-
-  inline int inv(int x){
-    return pow(x,md-2);
-  }
-
-  // assume md % 4 = 1
-  // if md % 4 == 3, then x = a^{(md+1)/4}
-  inline int sqrt(int a){
-    if(a==0) return 0;
-    if(pow(a,(md-1)/2)!=1) return -1;
-    int q=md-1,m=0;
-    while(~q&1) q>>=1,m++;
-    mt19937 mt;
-    int z=mt()%md;
-    while(pow(z,(md-1)/2)!=md-1) z=mt()%md;
-    int c=pow(z,q),t=pow(a,q),r=pow(a,(q+1)/2);
-    while(m>1){
-      if(pow(t,1<<(m-2))!=1)
-        r=mul(r,c),t=mul(t,mul(c,c));
-      c=mul(c,c);
-      m--;
-    }
-    return r;
-  }
-
-  vector<vector<int> > rts,rrts;
+  using M = Mint<int, md>;
+  vector< vector<M> > rts,rrts;
 
   void ensure_base(int n){
     if((int)rts.size()>=n) return;
     rts.resize(n);rrts.resize(n);
     for(int i=1;i<n;i<<=1){
       if(!rts[i].empty()) continue;
-      int w=pow(rt,(md-1)/(i<<1));
-      int rw=inv(w);
+      M w=M(rt).pow((md-1)/(i<<1));
+      M rw=w.inv();
       rts[i].resize(i);rrts[i].resize(i);
-      rts[i][0]=1;rrts[i][0]=1;
+      rts[i][0]=M(1);rrts[i][0]=M(1);
       for(int k=1;k<i;k++){
-        rts[i][k]=mul(rts[i][k-1],w);
-        rrts[i][k]=mul(rrts[i][k-1],rw);
+        rts[i][k]=rts[i][k-1]*w;
+        rrts[i][k]=rrts[i][k-1]*rw;
       }
     }
   }
 
-  void ntt(vector<int> &a,bool f,int n=-1){
-    if(n==-1) n=a.size();
+  void ntt(vector<M> &as,bool f,int n=-1){
+    if(n==-1) n=as.size();
     assert((n&(n-1))==0);
     ensure_base(n);
 
     for(int i=0,j=1;j+1<n;j++){
       for(int k=n>>1;k>(i^=k);k>>=1);
-      if(i>j) swap(a[i],a[j]);
+      if(i>j) swap(as[i],as[j]);
     }
 
     for(int i=1;i<n;i<<=1){
       for(int j=0;j<n;j+=i*2){
         for(int k=0;k<i;k++){
-          int z=mul(a[i+j+k],f?rrts[i][k]:rts[i][k]);
-          a[i+j+k]=add(a[j+k],md-z);
-          a[j+k]=add(a[j+k],z);
+          M z=as[i+j+k]*(f?rrts[i][k]:rts[i][k]);
+          as[i+j+k]=as[j+k]-z;
+          as[j+k]+=z;
         }
       }
     }
 
     if(f){
-      int tmp=inv(n);
-      for(int i=0;i<n;i++) a[i]=mul(a[i],tmp);
+      M tmp=M(n).inv();
+      for(int i=0;i<n;i++) as[i]*=tmp;
     }
   }
 
-  vector<int> add(vector<int> as,vector<int> bs){
-    int sz=max(as.size(),bs.size());
-    vector<int> cs(sz,0);
-    for(int i=0;i<(int)as.size();i++) cs[i]=add(cs[i],as[i]);
-    for(int i=0;i<(int)bs.size();i++) cs[i]=add(cs[i],bs[i]);
-    return cs;
-  }
-
-  vector<int> sub(vector<int> as,vector<int> bs){
-    int sz=max(as.size(),bs.size());
-    vector<int> cs(sz,0);
-    for(int i=0;i<(int)as.size();i++) cs[i]=add(cs[i],as[i]);
-    for(int i=0;i<(int)bs.size();i++) cs[i]=add(cs[i],md-bs[i]);
-    return cs;
-  }
-
-  vector<int> multiply(vector<int> as,vector<int> bs){
+  vector<M> multiply(vector<M> as,vector<M> bs){
     int need=as.size()+bs.size()-1;
     int sz=1;
     while(sz<need) sz<<=1;
-    ensure_base(sz);
+    as.resize(sz,M(0));
+    bs.resize(sz,M(0));
 
-    vector<int> f(sz),g(sz);
-    for(int i=0;i<(int)as.size();i++) f[i]=as[i];
-    for(int i=0;i<(int)bs.size();i++) g[i]=bs[i];
-    ntt(f,0);ntt(g,0);
-    for(int i=0;i<sz;i++) f[i]=mul(f[i],g[i]);
-    ntt(f,1);
+    ntt(as,0);ntt(bs,0);
+    for(int i=0;i<sz;i++) as[i]*=bs[i];
+    ntt(as,1);
 
-    f.resize(need);
-    return f;
+    as.resize(need);
+    return as;
   }
 
-  vector<int> divide(vector<int> as,vector<int> bs){
-    assert(bs!=vector<int>(bs.size(),0));
-    if(as==vector<int>(as.size(),0)) return {0};
-    assert(as.size()>=bs.size());
-
-    if(bs[0]==0){
-      reverse(as.begin(),as.end());
-      reverse(bs.begin(),bs.end());
-      while(bs.back()==0){
-        assert(as.back()==0);
-        as.pop_back();
-        bs.pop_back();
-      }
-      reverse(as.begin(),as.end());
-      reverse(bs.begin(),bs.end());
-    }
-
-    int need=as.size()-bs.size()+1;
-    as.resize(need);
-
-    int sz=1;
-    vector<int> rs({inv(bs[0])});
-    while(sz<need){
-      sz<<=1;
-      vector<int> ts(min(sz,(int)bs.size()));
-      for(int i=0;i<(int)ts.size();i++) ts[i]=bs[i];
-      rs=sub(add(rs,rs),multiply(multiply(rs,rs),ts));
-      rs.resize(sz);
-    }
-
-    while(as.back()==0) as.pop_back();
-    while(rs.back()==0) rs.pop_back();
-    auto cs=multiply(as,rs);
-    cs.resize(need,0);
+  vector<int> multiply(vector<int> as,vector<int> bs){
+    vector<M> am(as.size()),bm(bs.size());
+    for(int i=0;i<(int)am.size();i++) am[i]=M(as[i]);
+    for(int i=0;i<(int)bm.size();i++) bm[i]=M(bs[i]);
+    vector<M> cm=multiply(am,bm);
+    vector<int> cs(cm.size());
+    for(int i=0;i<(int)cs.size();i++) cs[i]=cm[i].v;
     return cs;
   }
-
-  vector<int> sqrt(vector<int> as){
-    if(as==vector<int>(as.size(),0)) return {0};
-
-    int dg=0;
-    if(as[0]==0){
-      reverse(as.begin(),as.end());
-      while(as.back()==0){
-        dg++;
-        as.pop_back();
-        assert(as.back()==0);
-        as.pop_back();
-      }
-      reverse(as.begin(),as.end());
-    }
-
-    int sz=1,inv2=inv(2);
-    vector<int> ss({sqrt(as[0])});
-    while(sz<(int)as.size()){
-      sz<<=1;
-      vector<int> ts(min(sz+sz/2-1,(int)as.size()));
-      for(int i=0;i<(int)ts.size();i++) ts[i]=as[i];
-      ss=add(ss,divide(ts,ss));
-      ss.resize(sz);
-      for(int &x:ss) x=mul(x,inv2);
-    }
-
-    if(dg){
-      reverse(ss.begin(),ss.end());
-      for(int i=0;i<dg;i++) ss.emplace_back(0);
-      reverse(ss.begin(),ss.end());
-    }
-    return ss;
-  }
 };
+template<int X> constexpr int NTT<X>::md;
+template<int X> constexpr int NTT<X>::rt;
 //END CUT HERE
 #ifndef call_from_test
 signed ATC001_C(){
@@ -222,6 +145,7 @@ signed ATC001_C(){
   cin>>n;
   vector<int> as(n+1,0),bs(n+1,0);
   for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
+
   NTT<0> ntt;
   auto cs=ntt.multiply(as,bs);
   for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
@@ -229,76 +153,12 @@ signed ATC001_C(){
   return 0;
 }
 /*
-  verified on 2019/06/28
+  verified on 2019/09/08
   https://atcoder.jp/contests/atc001/tasks/fft_c
-*/
-
-signed HAPPYQUERY_E(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n,m,q;
-  cin>>n>>m>>q;
-  vector<int> ls(q),rs(q);
-  for(int i=0;i<q;i++) cin>>ls[i]>>rs[i],ls[i]--;
-
-  vector<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  vector<int> cnt(n-m+1,0);
-  for(int l:ls) cnt[l]++;
-
-  NTT<0> ntt;
-  auto bs=ntt.divide(as,cnt);
-  if(bs.size()==1) bs.resize(m,0);
-  assert((int)bs.size()==m);
-  for(int i=0;i<m;i++){
-    if(i) cout<<" ";
-    cout<<bs[i];
-  }
-  cout<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/28
-  https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
-*/
-
-signed CFR250_E(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n,m;
-  cin>>n>>m;
-  vector<int> cs(n);
-  for(int i=0;i<n;i++) cin>>cs[i];
-
-  NTT<2> ntt;
-  vector<int> as(1<<18,0);
-  as[0]=1;
-  for(int c:cs) as[c]=ntt.add(as[c],ntt.md-4);
-
-  vector<int> bs=ntt.sqrt(as);
-  bs[0]=ntt.add(bs[0],1);
-  while(bs.back()==0) bs.pop_back();
-
-  vector<int> vs(bs.size()+m,0);
-  vs[0]=2;
-
-  vector<int> ans=ntt.divide(vs,bs);
-  for(int i=1;i<=m;i++) cout<<ans[i]<<"\n";
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/06/28
-  https://codeforces.com/contest/438/problem/E
 */
 
 signed main(){
   //ATC001_C();
-  //HAPPYQUERY_E();
-  //CFR250_E();
   return 0;
 }
 #endif

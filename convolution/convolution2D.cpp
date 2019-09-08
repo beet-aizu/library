@@ -28,8 +28,7 @@ struct Convolution2D{
     }
   }
 
-  template<typename Mul>
-  Matrix multiply(Matrix as,Matrix bs,Mul mul){
+  Matrix multiply(Matrix as,Matrix bs){
     int nt=as.size()+bs.size()-1;
     int mt=as[0].size()+bs[0].size()-1;
     int n=1,m=1;
@@ -37,13 +36,13 @@ struct Convolution2D{
     while(m<mt) m<<=1;
     as.resize(n);bs.resize(n);
     for(int i=0;i<n;i++){
-      as[i].resize(m,T());
-      bs[i].resize(m,T());
+      as[i].resize(m,T(0));
+      bs[i].resize(m,T(0));
     }
     transform(as,0);transform(bs,0);
     for(int i=0;i<n;i++)
       for(int j=0;j<m;j++)
-        as[i][j]=mul(as[i][j],bs[i][j]);
+        as[i][j]*=bs[i][j];
     transform(as,1);
     return as;
   }

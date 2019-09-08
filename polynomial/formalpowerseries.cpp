@@ -3,6 +3,83 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+//BEGIN CUT HERE
+template<typename T>
+struct FormalPowerSeries{
+  using Poly = vector<T>;
+  using Conv = function<Poly(Poly, Poly)>;
+  Conv conv;
+  FormalPowerSeries(Conv conv):conv(conv){}
+
+  Poly add(Poly as,Poly bs){
+    int sz=max(as.size(),bs.size());
+    Poly cs(sz,T(0));
+    for(int i=0;i<(int)as.size();i++) cs[i]+=as[i];
+    for(int i=0;i<(int)bs.size();i++) cs[i]+=bs[i];
+    return cs;
+  }
+
+  Poly sub(Poly as,Poly bs){
+    int sz=max(as.size(),bs.size());
+    Poly cs(sz,T(0));
+    for(int i=0;i<(int)as.size();i++) cs[i]+=as[i];
+    for(int i=0;i<(int)bs.size();i++) cs[i]-=bs[i];
+    return cs;
+  }
+
+  Poly mul(Poly as,Poly bs){
+    return conv(as,bs);
+  }
+
+  // F(0) must not be 0
+  Poly inv(Poly as,int deg){
+    assert(as[0]!=T(0));
+    Poly rs({T(1)/as[0]});
+    int sz=1;
+    while(sz<deg){
+      sz<<=1;
+      Poly ts(min(sz,(int)as.size()));
+      for(int i=0;i<(int)ts.size();i++) ts[i]=as[i];
+      rs=sub(add(rs,rs),mul(mul(rs,rs),ts));
+      rs.resize(sz);
+    }
+    return rs;
+  }
+
+  // Only for divisable
+  Poly div(Poly as,Poly bs){
+    reverse(as.begin(),as.end());
+    reverse(bs.begin(),bs.end());
+    while(bs.back()==T(0)){
+      assert(as.back()==T(0));
+      as.pop_back();
+      bs.pop_back();
+    }
+    reverse(as.begin(),as.end());
+    reverse(bs.begin(),bs.end());
+    int need=as.size()-bs.size()+1;
+    return mul(as,inv(bs,need));
+  }
+
+  // as[0] must be 1
+  Poly sqrt(Poly as,int deg){
+    assert(as[0]==T(1));
+
+    int sz=1;
+    T inv2=T(1)/T(2);
+    Poly ss({T(1)});
+    while(sz<deg){
+      sz<<=1;
+      Poly ts(min(sz,(int)as.size()));
+      for(int i=0;i<(int)ts.size();i++) ts[i]=as[i];
+      ss=add(ss,mul(ts,inv(ss,sz)));
+      ss.resize(sz);
+      for(T &x:ss) x*=inv2;
+    }
+    return ss;
+  }
+};
+//END CUT HERE
 
 template<typename T,T MOD = 1000000007>
 struct Mint{
@@ -134,7 +211,6 @@ struct NTT{
 template<int X> constexpr int NTT<X>::md;
 template<int X> constexpr int NTT<X>::rt;
 
-//BEGIN CUT HERE
 struct ArbitraryModConvolution{
   using ll = long long;
   static NTT<0> ntt0;
@@ -207,189 +283,118 @@ struct ArbitraryModConvolution{
 NTT<0> ArbitraryModConvolution::ntt0;
 NTT<1> ArbitraryModConvolution::ntt1;
 NTT<2> ArbitraryModConvolution::ntt2;
-//END CUT HERE
-
-template<typename M>
-class Enumeration{
-private:
-  static vector<M> fact,finv,invs;
-public:
-  static void init(int n){
-    n=min<decltype(M::mod)>(n,M::mod-1);
-
-    int m=fact.size();
-    if(n<m) return;
-
-    fact.resize(n+1,1);
-    finv.resize(n+1,1);
-    invs.resize(n+1,1);
-
-    if(m==0) m=1;
-    for(int i=m;i<=n;i++) fact[i]=fact[i-1]*M(i);
-    finv[n]=M(1)/fact[n];
-    for(int i=n;i>=m;i--) finv[i-1]=finv[i]*M(i);
-    for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];
-  }
-
-  static M Fact(int n){
-    init(n);
-    return fact[n];
-  }
-  static M Finv(int n){
-    init(n);
-    return finv[n];
-  }
-  static M Invs(int n){
-    init(n);
-    return invs[n];
-  }
-
-  static M C(int n,int k){
-    if(n<k||k<0) return M(0);
-    init(n);
-    return fact[n]*finv[n-k]*finv[k];
-  }
-
-  static M P(int n,int k){
-    if(n<k||k<0) return M(0);
-    init(n);
-    return fact[n]*finv[n-k];
-  }
-
-  static M H(int n,int k){
-    if(n<0||k<0) return M(0);
-    if(!n&&!k) return M(1);
-    init(n+k-1);
-    return C(n+k-1,k);
-  }
-
-  static M S(int n,int k){
-    M res;
-    init(k);
-    for(int i=1;i<=k;i++){
-      M tmp=C(k,i)*M(i).pow(n);
-      if((k-i)&1) res-=tmp;
-      else res+=tmp;
-    }
-    return res*=finv[k];
-  }
-
-  static vector<vector<M> > D(int n,int m){
-    vector<vector<M> > dp(n+1,vector<M>(m+1,0));
-    dp[0][0]=M(1);
-    for(int i=0;i<=n;i++){
-      for(int j=1;j<=m;j++){
-        if(i-j>=0) dp[i][j]=dp[i][j-1]+dp[i-j][j];
-        else dp[i][j]=dp[i][j-1];
-      }
-    }
-    return dp;
-  }
-
-  static M B(int n,int k){
-    if(n==0) return M(1);
-    k=min(k,n);
-    init(k);
-    vector<M> dp(k+1);
-    dp[0]=M(1);
-    for(int i=1;i<=k;i++)
-      dp[i]=dp[i-1]+((i&1)?-finv[i]:finv[i]);
-    M res;
-    for(int i=1;i<=k;i++)
-      res+=M(i).pow(n)*finv[i]*dp[k-i];
-    return res;
-  }
-
-  static M montmort(int n){
-    M res;
-    init(n);
-    for(int k=2;k<=n;k++){
-      if(k&1) res-=finv[k];
-      else res+=finv[k];
-    }
-    return res*=fact[n];
-  }
-
-  static M LagrangePolynomial(vector<M> &y,M t){
-    int n=y.size()-1;
-    if(t.v<=n) return y[t.v];
-    init(n+1);
-    vector<M> dp(n+1,1),pd(n+1,1);
-    for(int i=0;i<n;i++) dp[i+1]=dp[i]*(t-M(i));
-    for(int i=n;i>0;i--) pd[i-1]=pd[i]*(t-M(i));
-    M res{0};
-    for(int i=0;i<=n;i++){
-      M tmp=y[i]*dp[i]*pd[i]*finv[i]*finv[n-i];
-      if((n-i)&1) res-=tmp;
-      else res+=tmp;
-    }
-    return res;
-  }
-};
-template<typename M>
-vector<M> Enumeration<M>::fact = vector<M>();
-template<typename M>
-vector<M> Enumeration<M>::finv = vector<M>();
-template<typename M>
-vector<M> Enumeration<M>::invs = vector<M>();
-
 //INSERT ABOVE HERE
-signed YUKI_829(){
+
+signed HAPPYQUERY_E(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  using ll = long long;
-  int n,b;
-  cin>>n>>b;
-  vector<int> s(n);
-  for(Int i=0;i<n;i++) cin>>s[i];
+  int n,m,q;
+  cin>>n>>m>>q;
+  vector<int> ls(q),rs(q);
+  for(int i=0;i<q;i++) cin>>ls[i]>>rs[i],ls[i]--;
+
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  if(as==vector<int>(n,0)){
+    for(int i=0;i<m;i++){
+      if(i) cout<<" ";
+      cout<<0;
+    }
+    cout<<endl;
+    return 0;
+  }
+
+  vector<int> cs(n-m+1,0);
+  for(int l:ls) cs[l]++;
+
+  NTT<0> ntt;
+  using M = NTT<0>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
+
+  vector<M> ps(as.size()),qs(cs.size());
+  for(int i=0;i<(int)ps.size();i++) ps[i]=M(as[i]);
+  for(int i=0;i<(int)qs.size();i++) qs[i]=M(cs[i]);
+
+  auto bs=FPS.div(ps,qs);
+  for(int i=0;i<m;i++){
+    if(i) cout<<" ";
+    cout<<bs[i];
+  }
+  cout<<endl;
+  return 0;
+}
+/*
+  verified on 2019/09/08
+  https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
+*/
+
+signed CFR250_E(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m;
+  cin>>n>>m;
+  vector<int> cs(n);
+  for(int i=0;i<n;i++) cin>>cs[i];
+
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
+
+  const int deg=1<<18;
+  vector<M> as(deg,0);
+  as[0]=M(1);
+  for(int c:cs) as[c]-=M(4);
+
+  auto bs=FPS.sqrt(as,deg);
+  bs[0]+=M(1);
+
+  vector<M> vs({2});
+
+  auto ans=FPS.mul(vs,FPS.inv(bs,deg));
+  for(int i=1;i<=m;i++) cout<<ans[i]<<"\n";
+  cout<<flush;
+
+  return 0;
+}
+/*
+  verified on 2019/09/08
+  https://codeforces.com/contest/438/problem/E
+*/
+
+signed YUKI_3046(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int k,n;
+  cin>>k>>n;
+  vector<int> xs(n);
+  for(int i=0;i<n;i++) cin>>xs[i];
+
   using M = Mint<int>;
-  using E = Enumeration<M>;
-  E::init(3e5);
-
-  vector<int> cnt(n,0);
-  for(int i=0;i<n;i++) cnt[s[i]]++;
-
-  using P = pair<int, vector<int> > ;
-  priority_queue<P> pq;
-  pq.emplace(-1,vector<int>(1,1));
-
-  int sum=0;
-  for(int i=n-1;i>=0;i--){
-    if(cnt[i]==0) continue;
-    M x=E::H(sum,cnt[i]);
-    M y=E::H(sum+1,cnt[i])-x;
-    x*=E::Fact(cnt[i]);
-    y*=E::Fact(cnt[i]);
-
-    pq.emplace(-2,vector<int>({x.v,y.v}));
-    sum+=cnt[i];
-  }
-
-  const int MOD = 1e9+7;
   ArbitraryModConvolution arb;
-  while(pq.size()>1u){
-    auto as=pq.top().second;pq.pop();
-    auto bs=pq.top().second;pq.pop();
-    auto cs=arb.multiply(as,bs,MOD);
-    pq.emplace(-(int)cs.size(),cs);
-  }
+  auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
 
-  auto dp=pq.top().second;
-  M ans(0),res(1);
-  for(int j=0;j<(int)dp.size();j++){
-    ans+=M((ll)j*(ll)dp[j])*res;
-    res*=M(b);
-  }
-  cout<<ans.v<<endl;
+  const int sz=1<<17;
+  vector<M> bs(sz,M(0));
+  bs[0]=1;
+  for(int x:xs) bs[x]-=M(1);
+  cout<<FPS.inv(bs,k+1)[k]<<endl;
   return 0;
 }
 /*
   verified on 2019/06/29
-  https://yukicoder.me/problems/no/829
+  https://yukicoder.me/problems/no/3046
 */
 
 signed main(){
-  //YUKI_829();
+  //HAPPYQUERY_E();
+  //CFR250_E();
+  //YUKI_3046();
   return 0;
 }
