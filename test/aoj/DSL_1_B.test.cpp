@@ -7,7 +7,7 @@ using namespace std;
 #include "../../datastructure/weightedunionfindtree.cpp"
 #undef call_from_test
 
-signed DSL_1_B(){
+int main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
