@@ -283,6 +283,7 @@ struct ArbitraryModConvolution{
 NTT<0> ArbitraryModConvolution::ntt0;
 NTT<1> ArbitraryModConvolution::ntt1;
 NTT<2> ArbitraryModConvolution::ntt2;
+
 //INSERT ABOVE HERE
 
 signed HAPPYQUERY_E(){
@@ -388,7 +389,7 @@ signed YUKI_3046(){
   return 0;
 }
 /*
-  verified on 2019/06/29
+  verified on 2019/09/08
   https://yukicoder.me/problems/no/3046
 */
 

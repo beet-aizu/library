@@ -123,8 +123,8 @@ struct NTT{
 
   vector<int> multiply(vector<int> as,vector<int> bs){
     vector<M> am(as.size()),bm(bs.size());
-    for(int i=0;i<(int)am.size();i++) am[i]=M(as[i]);
-    for(int i=0;i<(int)bm.size();i++) bm[i]=M(bs[i]);
+    for(int i=0;i<(int)am.size();i++) am[i]=M((long long)as[i]);
+    for(int i=0;i<(int)bm.size();i++) bm[i]=M((long long)bs[i]);
     vector<M> cm=multiply(am,bm);
     vector<int> cs(cm.size());
     for(int i=0;i<(int)cs.size();i++) cs[i]=cm[i].v;
@@ -385,7 +385,7 @@ signed YUKI_829(){
   return 0;
 }
 /*
-  verified on 2019/06/29
+  verified on 2019/09/08
   https://yukicoder.me/problems/no/829
 */
 
