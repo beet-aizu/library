@@ -56,7 +56,7 @@ list-recently-updated() {
     done | sort -nr | head -n 20 | cut -f 2
 }
 
-run() {
+run_aoj() {
     file="$1"
     url="$(get-url "$file")"
     dir=test/$(echo -n "$url" | md5sum | sed 's/ .*//')
@@ -91,12 +91,52 @@ run() {
     fi
 }
 
+run_yosupo() {
+    file="$1"
+    url="$(get-url "$file")"
+    dir=test/$(echo -n "$url" | md5sum | sed 's/ .*//')
+    mkdir -p ${dir}
+
+    # ignore if IGNORE is defined
+    if list-defined "$file" | grep '^#define IGNORE ' > /dev/null ; then
+        return
+    fi
+
+    if ! is-verified "$file" ; then
+        # compile
+        $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
+        if [[ -n ${url} ]] ; then
+            # build test
+
+            echo $url
+
+            if [[ ! -e ${dir}/test ]] ; then
+                cd library-checker-problems
+                ./generate.py problems.toml -p $(basename $url)
+                mkdir -p ${dir}/test
+                cp -r
+            fi
+
+            # test with tolerance error
+            if list-defined "$file" | grep '^#define ERROR ' > /dev/null ; then
+                error=$(get-error "$file")
+                oj test -e ${error} -c ${dir}/a.out -d ${dir}/test
+            else
+                oj test -c ${dir}/a.out -d ${dir}/test
+            fi
+        else
+            # run
+            ${dir}/a.out
+        fi
+        mark-verified "$file"
+    fi
+}
 
 if [[ $# -eq 0 ]] ; then
     if [[ $CI ]] ; then
         # CI
-        for f in $(list-recently-updated) ; do
-            run $f
+        for f in $(list-recently-updated | grep aoj) ; do
+            run_aoj $f
         done
     else
         # local / github actions
@@ -108,8 +148,14 @@ if [[ $# -eq 0 ]] ; then
         git checkout -b master
         git branch -a
 
+        git clone https://github.com/yosupo06/library-checker-problems.git
+
         for f in $(find . -name \*.test.cpp | grep aoj) ; do
-            run $f
+            run_aoj $f
+        done
+
+        for f in $(find . -name \*.test.cpp | grep yosupo) ; do
+            run_yosupo $f
         done
 
         git status -s

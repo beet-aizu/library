@@ -19,10 +19,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip3 install -U toml
         pip3 install -U setuptools
         pip3 install -U online-judge-tools=='6.*'
 
     - name: test
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: ./test/aoj/test.sh
+      run: ./test/test.sh
