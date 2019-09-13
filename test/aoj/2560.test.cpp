@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../convolution/convolution2D.cpp"
 #undef call_from_test

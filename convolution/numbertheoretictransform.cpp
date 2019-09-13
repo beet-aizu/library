@@ -2,7 +2,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-#endif
 
 template<typename T,T MOD = 1000000007>
 struct Mint{
@@ -48,6 +47,7 @@ template<typename T,T MOD>
 
 ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 
+#endif
 //BEGIN CUT HERE
 constexpr int bmds(int x){
   const int v[] = {1012924417, 924844033, 998244353,

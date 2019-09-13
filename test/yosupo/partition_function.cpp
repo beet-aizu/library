@@ -1,4 +1,4 @@
-#define PROBLEM "partition_function"
+#define PROBLEM "datastructure/partition_function"
 
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct FormalPowerSeries{
@@ -90,7 +92,7 @@ struct FormalPowerSeries{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T,T MOD = 1000000007>
 struct Mint{
   static constexpr T mod = MOD;
@@ -403,31 +405,10 @@ signed YUKI_3046(){
   https://yukicoder.me/problems/no/3046
 */
 
-signed yosupo_partition_function(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  auto ps=FPS.partition(n);
-  for(int i=0;i<=n;i++){
-    if(i) cout<<" ";
-    cout<<ps[i];
-  }
-  cout<<endl;
-  return 0;
-}
-
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
   //YUKI_3046();
-  yosupo_partition_function();
   return 0;
 }
+#endif
