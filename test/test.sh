@@ -112,9 +112,13 @@ run_yosupo() {
 
             if [[ ! -e ${dir}/test ]] ; then
                 cd library-checker-problems
-                ./generate.py problems.toml -p $(basename $url)
+                ./generate.py problems.toml -p $(basename ${url})
+                cd ..
                 mkdir -p ${dir}/test
-                cp -r
+                prob=library-checker-problems/${url}
+                echo $prob
+                cp -r ${prob}/in/*.in ${dir}/test/
+                cp -r ${prob}/out/*.out ${dir}/test/
             fi
 
             # test with tolerance error
