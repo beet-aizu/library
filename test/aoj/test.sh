@@ -108,7 +108,7 @@ if [[ $# -eq 0 ]] ; then
         git checkout -b master
         git branch -a
 
-        for f in $(find . -name \*.test.cpp) ; do
+        for f in $(find . -name \*.test.cpp | grep aoj) ; do
             run $f
         done
 

@@ -1,12 +1,14 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct UnionFind{
-  int n,num;
+  int num;
   vector<int> r,p;
   UnionFind(){}
-  UnionFind(int sz):n(sz),num(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
+  UnionFind(int n):num(n),r(n,1),p(n,0){iota(p.begin(),p.end(),0);}
   int find(int x){
     return (x==p[x]?x:p[x]=find(p[x]));
   }
@@ -29,7 +31,7 @@ struct UnionFind{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 struct FastIO{
   FastIO(){
     cin.tie(0);
@@ -38,25 +40,6 @@ struct FastIO{
 }fastio_beet;
 
 //INSERT ABOVE HERE
-
-signed DSL_1_A(){
-  int n,q;
-  cin>>n>>q;
-  UnionFind uf(n);
-  for(int i=0;i<q;i++){
-    int c,x,y;
-    cin>>c>>x>>y;
-    if(c) cout<<uf.same(x,y)<<"\n";
-    else uf.unite(x,y);
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/03/03
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
-*/
-
 signed ABC120_D(){
   int n,m;
   cin>>n>>m;
@@ -70,10 +53,10 @@ signed ABC120_D(){
     a[i]--;b[i]--;
     ans[i]=ans[i+1];
     if(uf.same(a[i],b[i])) continue;
-    
+
     Int x=uf.size(a[i]),y=uf.size(b[i]);
     ans[i]-=x*y;
-    
+
     uf.unite(a[i],b[i]);
   }
   ans.erase(ans.begin());
@@ -95,7 +78,7 @@ signed ABC126_E(){
     Int x,y,z;
     cin>>x>>y>>z;
     x--;y--;
-    z%=2;    
+    z%=2;
     uf.unite(x,y);
   }
   cout<<uf.count()<<endl;
@@ -108,8 +91,8 @@ signed ABC126_E(){
 
 
 signed main(){
-  //DSL_1_A();
   //ABC120_D();
   //ABC126_E();
-  return 0; 
+  return 0;
 }
+#endif
