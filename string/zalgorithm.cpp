@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 vector<int> zalgorithm(string s){
   int n=s.size();
@@ -24,15 +26,15 @@ vector<int> zalgorithm(string s){
   return a;
 }
 //END CUT HERE
-
-template<typename T> 
+#ifndef call_from_test
+template<typename T>
 struct BIT{
   int n;
   vector<T> bit;
   //1-indexed
   BIT():n(-1){}
   BIT(int n_,T d):n(n_),bit(n_+1,d){}
-  
+
   T sum(int i){
     T s=0;
     for(int x=i;x<=n;x+=(x&-x))
@@ -44,7 +46,7 @@ struct BIT{
     for(int x=i;x>0;x-=(x&-x))
       bit[x]+=a;
   }
-  
+
   T sum0(int i){
     return sum(i+1);
   }
@@ -80,3 +82,4 @@ signed main(){
   CFR432_D();
   return 0;
 }
+#endif
