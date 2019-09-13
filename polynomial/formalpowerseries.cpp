@@ -78,6 +78,16 @@ struct FormalPowerSeries{
     }
     return ss;
   }
+
+  Poly partition(int n){
+    Poly rs(n+1);
+    rs[0]=T(1);
+    for(int k=1;k<=n;k++){
+      if(1LL*k*(3*k+1)/2<=n) rs[k*(3*k+1)/2]+=T(k%2?-1LL:1LL);
+      if(1LL*k*(3*k-1)/2<=n) rs[k*(3*k-1)/2]+=T(k%2?-1LL:1LL);
+    }
+    return inv(rs,n+1);
+  }
 };
 //END CUT HERE
 
@@ -393,9 +403,31 @@ signed YUKI_3046(){
   https://yukicoder.me/problems/no/3046
 */
 
+signed yosupo_partition_function(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
+  cin>>n;
+
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
+
+  auto ps=FPS.partition(n);
+  for(int i=0;i<=n;i++){
+    if(i) cout<<" ";
+    cout<<ps[i];
+  }
+  cout<<endl;
+  return 0;
+}
+
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
   //YUKI_3046();
+  yosupo_partition_function();
   return 0;
 }
