@@ -33,6 +33,11 @@ struct FormalPowerSeries{
     return conv(as,bs);
   }
 
+  Poly mul(Poly as,T k){
+    for(auto &a:as) a*=k;
+    return as;
+  }
+
   // F(0) must not be 0
   Poly inv(Poly as,int deg){
     assert(as[0]!=T(0));
@@ -63,7 +68,7 @@ struct FormalPowerSeries{
     return mul(as,inv(bs,need));
   }
 
-  // as[0] must be 1
+  // F(0) must be 1
   Poly sqrt(Poly as,int deg){
     assert(as[0]==T(1));
 
@@ -89,6 +94,44 @@ struct FormalPowerSeries{
       if(1LL*k*(3*k-1)/2<=n) rs[k*(3*k-1)/2]+=T(k%2?-1LL:1LL);
     }
     return inv(rs,n+1);
+  }
+
+  Poly diff(Poly as){
+    int n=as.size();
+    Poly res(n-1);
+    for(int i=1;i<n;i++) res[i-1]=as[i]*T(i);
+    return res;
+  }
+
+  Poly integral(Poly as){
+    int n=as.size();
+    Poly res(n+1);
+    res[0]=T(0);
+    for(int i=0;i<n;i++) res[i+1]=as[i]/T(i+1);
+    return res;
+  }
+
+  Poly exp(Poly as,int deg){
+    Poly f({T(1)}),g({T(1)});
+
+    int sz=1;
+    while(sz<deg){
+      g=sub(mul(g,T(2)),mul(f,mul(g,g)));
+      g.resize(sz+1);
+      Poly q=diff(as);
+      q.resize(sz);
+      Poly w=add(q,mul(g,sub(diff(f),mul(f,q))));
+      w.resize(2*sz);
+      f=add(f,mul(f,sub(as,integral(w))));
+      f.resize(2*sz+1);
+      sz<<=1;
+    }
+    return f;
+  }
+
+  // F(0) must be 1
+  Poly log(Poly as,int deg){
+    return integral(mul(diff(as),inv(as,deg)));
   }
 };
 //END CUT HERE
@@ -131,6 +174,7 @@ struct Mint{
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
   bool operator <(const Mint a)const{return v <a.v;}
+
 };
 template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
 template<typename T,T MOD>
@@ -405,10 +449,87 @@ signed YUKI_3046(){
   https://yukicoder.me/problems/no/3046
 */
 
+const int md = 998244353;
+inline int add(int a,int b){
+  a+=b;
+  if(a>=md) a-=md;
+  return a;
+}
+
+inline int mul(int a,int b){
+  return 1LL*a*b%md;
+}
+
+inline int pow(int a,int b){
+  int res=1;
+  while(b){
+    if(b&1) res=mul(res,a);
+    a=mul(a,a);
+    b>>=1;
+  }
+  return res;
+}
+
+inline int sqrt(int a){
+  if(a==0) return 0;
+  if(pow(a,(md-1)/2)!=1) return -1;
+  int q=md-1,m=0;
+  while(~q&1) q>>=1,m++;
+  mt19937 mt;
+  int z=mt()%md;
+  while(pow(z,(md-1)/2)!=md-1) z=mt()%md;
+  int c=pow(z,q),t=pow(a,q),r=pow(a,(q+1)/2);
+  while(m>1){
+    if(pow(t,1<<(m-2))!=1)
+      r=mul(r,c),t=mul(t,mul(c,c));
+    c=mul(c,c);
+    m--;
+  }
+  return min(r,md-r);
+}
+
+signed LOJ_150(){
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
+
+  int n,k;
+  cin>>n>>k;
+
+  vector<M> F(n+1);
+  for(int i=0;i<=n;i++) cin>>F[i].v;
+
+  const int deg = 1<<17;
+  auto as=FPS.sqrt(FPS.mul(F,F[0].inv()),deg);
+  M s(sqrt(F[0].v));
+  for(auto &a:as) a*=s;
+  auto bs=FPS.inv(as,deg);
+  auto cs=FPS.integral(bs);
+  auto ds=FPS.exp(cs,deg);
+  auto es=FPS.sub(F,ds);
+  es[0]+=M(2);
+  es[0]-=F[0];
+  auto fs=FPS.log(es,deg);
+  fs[0]+=M(1);
+  auto gs=FPS.log(fs,deg);
+  auto hs=FPS.mul(gs,M(k));
+  auto is=FPS.exp(hs,deg);
+  auto G=FPS.diff(is);
+
+  for(int i=0;i<n;i++){
+    if(i) cout<<" ";
+    cout<<G[i];
+  }
+  cout<<endl;
+  return 0;
+}
+
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
   //YUKI_3046();
+  LOJ_150();
   return 0;
 }
 #endif
