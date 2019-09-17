@@ -15,7 +15,7 @@ signed main(){
   const int MAX = 80;
   const int MOD = 1e9+9;
   using M = Mint<int, MOD>;
-  using SM = SquareMatrix<MAX, M>;
+  using SM = SquareMatrix<M, MAX>;
 
   using ll = long long;
   ll w,h,n;

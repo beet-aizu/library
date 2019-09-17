@@ -28,7 +28,7 @@ signed main(){
     static M add_identity(){return M(-INF);}
     static M mul_identity(){return M(0);}
   };
-  using SM = SquareMatrix<MAX, M>;
+  using SM = SquareMatrix<M, MAX>;
 
   int n,m,k;
   cin>>n>>m>>k;

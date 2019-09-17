@@ -6,7 +6,7 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
-template<size_t N,typename R>
+template<typename R, size_t N>
 struct SquareMatrix{
   typedef array<R, N> arr;
   typedef array<arr, N> mat;
@@ -163,7 +163,7 @@ struct SegmentTree{
 //INSERT ABOVE HERE
 signed YAHOO2019_FINAL_D(){
   using M = Mint<Int>;
-  using MM = SquareMatrix<2, M>;
+  using MM = SquareMatrix<M, 2>;
 
   Int n,q;
   cin>>n>>q;
@@ -238,7 +238,7 @@ signed YAHOO2019_FINAL_D(){
   return 0;
 }
 /*
-  verified on 2019/08/22
+  verified on 2019/09/17
   https://atcoder.jp/contests/yahoo-procon2019-final/tasks/yahoo_procon2019_final_d
 */
 
@@ -256,7 +256,7 @@ signed DDCC2019_FINAL_D(){
     static M mul_identity(){return M(1);}
   };
 
-  using SM = SquareMatrix<6, M>;
+  using SM = SquareMatrix<M, 6>;
 
   auto f=[](SM a,SM b){return a*b;};
   SM ti=SM::mul_identity();
@@ -283,7 +283,7 @@ signed DDCC2019_FINAL_D(){
   return 0;
 }
 /*
-  verified on 2019/08/22
+  verified on 2019/09/17
   https://atcoder.jp/contests/ddcc2019-final/tasks/ddcc2019_final_d
 */
 
