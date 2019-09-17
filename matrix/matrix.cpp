@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename K>
 struct Matrix{
@@ -15,9 +17,9 @@ struct Matrix{
   bool empty() const{return size()==0;};
   arr& operator[](size_t k){return dat[k];};
   const arr& operator[](size_t k) const {return dat[k];};
-  
+
   static Matrix cross(const Matrix &A,const Matrix &B){
-    Matrix res(A.size(),B[0].size());    
+    Matrix res(A.size(),B[0].size());
     for(int i=0;i<(int)A.size();i++)
       for(int j=0;j<(int)B[0].size();j++)
         for(int k=0;k<(int)B.size();k++)
@@ -30,12 +32,12 @@ struct Matrix{
     for(int i=0;i<(int)n;i++) res[i][i]=K(1);
     return res;
   }
-  
+
   Matrix pow(long long n) const{
     Matrix a(dat),res=identity(size());
     while(n){
       if(n&1) res=cross(res,a);
-      a=cross(a,a);      
+      a=cross(a,a);
       n>>=1;
     }
     return res;
@@ -43,18 +45,19 @@ struct Matrix{
 
   template<typename T> using ET = enable_if<is_floating_point<T>::value>;
   template<typename T> using EF = enable_if<!is_floating_point<T>::value>;
-  
+
   template<typename T, typename ET<T>::type* = nullptr>
   static bool is_zero(T x){return abs(x)<1e-8;}
   template<typename T, typename EF<T>::type* = nullptr>
   static bool is_zero(T x){return x==T(0);}
 
+  // assume regularity
   static Matrix gauss_jordan(const Matrix &A,const Matrix &B){
     int n=A.size(),l=B[0].size();
     Matrix C(n,n+l);
     for(int i=0;i<n;i++){
       for(int j=0;j<n;j++)
-        C[i][j]=A[i][j];      
+        C[i][j]=A[i][j];
       for(int j=0;j<l;j++)
         C[i][n+j]=B[i][j];
     }
@@ -77,12 +80,13 @@ struct Matrix{
         res[i][j]=C[i][n+j];
     return res;
   }
-  
+
   Matrix inv() const{
     Matrix B=identity(size());
     return gauss_jordan(*this,B);
   }
-  
+
+  // not verified
   K determinant() const{
     Matrix A(dat);
     K res(1);
@@ -90,9 +94,9 @@ struct Matrix{
     for(int i=0;i<n;i++){
       int p=i;
       for(int j=i;j<n;j++)
-        if(abs(A[p][i])<abs(A[j][i])) p=j;      
-      if(i!=p) swap(A[i],A[p]),res=-res;      
-      if(is_zero(A[i][i])) return K(0);      
+        if(abs(A[p][i])<abs(A[j][i])) p=j;
+      if(i!=p) swap(A[i],A[p]),res=-res;
+      if(is_zero(A[i][i])) return K(0);
       res*=A[i][i];
       for(int j=i+1;j<n;j++) A[i][j]/=A[i][i];
       for(int j=i+1;j<n;j++)
@@ -110,7 +114,7 @@ struct Matrix{
     for(int i=0;i<(int)tmp.size();i++) res[i]=tmp[i][0];
     return res;
   }
-  
+
   static K sigma(K x,long long n){
     Matrix A(2,2);
     A[0][0]=x;A[0][1]=0;
@@ -119,48 +123,7 @@ struct Matrix{
   }
 };
 //END CUT HERE
-
-signed AOJ_1328(){
-  using M = Matrix<double>;
-  using arr = M::arr;
-  
-  int d;
-  while(scanf("%d",&d),d){
-    arr v(d+3);
-    for(int i=0;i<d+3;i++) scanf("%lf",&v[i]);
-    int ans=0;
-    M m(d+3,d+2);
-    for(int i=0;i<d+3;i++)
-      for(int j=0;j<d+1;j++)
-        m[i][j]=pow(1.0*i,j);
-    
-    for(int i=0;i<d+3;i++){
-      for(int j=i+1;j<d+3;j++){
-        arr b(d+1);
-        M A(d+1,d+1);
-        for(int k=0,l=0;k<d+3;k++)
-          if(i!=k&&j!=k) A[l]=m[k],b[l]=v[k],l++;
-	
-        arr x=M::linear_equations(A,b);
-        if(x.empty()) continue;
-        double res[2]={};
-        for(int k=0;k<d+1;k++){
-          res[0]+=x[k]*m[i][k];
-          res[1]+=x[k]*m[j][k];
-        }
-        if(abs(res[0]-v[i])>0.5&&abs(res[1]-v[j])<1e-5) ans=i;
-        if(abs(res[0]-v[i])<1e-5&&abs(res[1]-v[j])>0.5) ans=j;
-      }
-    }
-    printf("%d\n",ans);
-  }
-  return 0;
-}
-/*
-  verified on 2018/10/17
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1328
-*/
-
+#ifndef call_from_test
 template<typename T>
 struct Mint{
   static T MOD;
@@ -178,14 +141,14 @@ struct Mint{
     }
     return res;
   }
-  
+
   Mint inv(){return pow(MOD-2);}
-  
+
   Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
   Mint& operator/=(Mint a){return (*this)*=a.inv();}
-  
+
   Mint operator+(Mint a) const{return Mint(v)+=a;};
   Mint operator-(Mint a) const{return Mint(v)-=a;};
   Mint operator*(Mint a) const{return Mint(v)*=a;};
@@ -242,7 +205,7 @@ signed SPOJ_MIFF(){
         }
         puts("");
       }
-    }      
+    }
   }
   return 0;
 }
@@ -271,7 +234,7 @@ signed SPOJ_MPOW(){
         printf("%d",B[i][j].v);
       }
       puts("");
-    }      
+    }
   }
   return 0;
 }
@@ -281,8 +244,9 @@ signed SPOJ_MPOW(){
 */
 
 signed main(){
-  //AOJ_1328();
   //ARC050_C();
   //SPOJ_MIFF();
   //SPOJ_MPOW();
+  return 0;
 }
+#endif
