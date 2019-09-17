@@ -53,19 +53,18 @@ struct FormalPowerSeries{
     return rs;
   }
 
-  // Only for divisable
+  // not zero
   Poly div(Poly as,Poly bs){
-    reverse(as.begin(),as.end());
-    reverse(bs.begin(),bs.end());
-    while(bs.back()==T(0)){
-      assert(as.back()==T(0));
-      as.pop_back();
-      bs.pop_back();
-    }
+    while(as.back()==T(0)) as.pop_back();
+    while(bs.back()==T(0)) bs.pop_back();
+    if(bs.size()>as.size()) return Poly();
     reverse(as.begin(),as.end());
     reverse(bs.begin(),bs.end());
     int need=as.size()-bs.size()+1;
-    return mul(as,inv(bs,need));
+    Poly ds=mul(as,inv(bs,need));
+    ds.resize(need);
+    reverse(ds.begin(),ds.end());
+    return ds;
   }
 
   // F(0) must be 1
@@ -84,16 +83,6 @@ struct FormalPowerSeries{
       for(T &x:ss) x*=inv2;
     }
     return ss;
-  }
-
-  Poly partition(int n){
-    Poly rs(n+1);
-    rs[0]=T(1);
-    for(int k=1;k<=n;k++){
-      if(1LL*k*(3*k+1)/2<=n) rs[k*(3*k+1)/2]+=T(k%2?-1LL:1LL);
-      if(1LL*k*(3*k-1)/2<=n) rs[k*(3*k-1)/2]+=T(k%2?-1LL:1LL);
-    }
-    return inv(rs,n+1);
   }
 
   Poly diff(Poly as){
@@ -131,7 +120,19 @@ struct FormalPowerSeries{
 
   // F(0) must be 1
   Poly log(Poly as,int deg){
-    return integral(mul(diff(as),inv(as,deg)));
+    Poly rs=integral(mul(diff(as),inv(as,deg)));
+    rs.resize(deg);
+    return rs;
+  }
+
+  Poly partition(int n){
+    Poly rs(n+1);
+    rs[0]=T(1);
+    for(int k=1;k<=n;k++){
+      if(1LL*k*(3*k+1)/2<=n) rs[k*(3*k+1)/2]+=T(k%2?-1LL:1LL);
+      if(1LL*k*(3*k-1)/2<=n) rs[k*(3*k-1)/2]+=T(k%2?-1LL:1LL);
+    }
+    return inv(rs,n+1);
   }
 };
 //END CUT HERE
@@ -384,7 +385,7 @@ signed HAPPYQUERY_E(){
   return 0;
 }
 /*
-  verified on 2019/09/08
+  verified on 2019/09/17
   https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
 */
 
@@ -419,7 +420,7 @@ signed CFR250_E(){
   return 0;
 }
 /*
-  verified on 2019/09/08
+  verified on 2019/09/17
   https://codeforces.com/contest/438/problem/E
 */
 
@@ -445,7 +446,7 @@ signed YUKI_3046(){
   return 0;
 }
 /*
-  verified on 2019/09/08
+  verified on 2019/09/17
   https://yukicoder.me/problems/no/3046
 */
 
@@ -489,6 +490,9 @@ inline int sqrt(int a){
 }
 
 signed LOJ_150(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   NTT<2> ntt;
   using M = NTT<2>::M;
   auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
@@ -501,11 +505,10 @@ signed LOJ_150(){
   for(int i=0;i<=n;i++) cin>>F[i].v;
 
   const int deg = 1<<17;
-  auto as=FPS.sqrt(FPS.mul(F,F[0].inv()),deg);
+  auto as=FPS.log(FPS.mul(F,F[0].inv()),deg);
+  auto bs=FPS.exp(FPS.mul(as,M((md-1)/2)),deg);
   M s(sqrt(F[0].v));
-  for(auto &a:as) a*=s;
-  auto bs=FPS.inv(as,deg);
-  auto cs=FPS.integral(bs);
+  auto cs=FPS.integral(FPS.mul(bs,s.inv()));
   auto ds=FPS.exp(cs,deg);
   auto es=FPS.sub(F,ds);
   es[0]+=M(2);
@@ -524,6 +527,10 @@ signed LOJ_150(){
   cout<<endl;
   return 0;
 }
+/*
+  verified on 2019/09/17
+  https://loj.ac/problem/150
+*/
 
 signed main(){
   //HAPPYQUERY_E();
