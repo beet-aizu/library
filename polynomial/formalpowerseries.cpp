@@ -268,78 +268,162 @@ struct NTT{
 template<int X> constexpr int NTT<X>::md;
 template<int X> constexpr int NTT<X>::rt;
 
-struct ArbitraryModConvolution{
-  using ll = long long;
-  static NTT<0> ntt0;
-  static NTT<1> ntt1;
-  static NTT<2> ntt2;
 
-  static constexpr int pow(int a,int b,int md){
-    int res=1;
-    a=a%md;
-    while(b){
-      if(b&1) res=(ll)res*a%md;
-      a=(ll)a*a%md;
-      b>>=1;
+namespace FFT{
+  using dbl = double;
+
+  struct num{
+    dbl x,y;
+    num(){x=y=0;}
+    num(dbl x,dbl y):x(x),y(y){}
+  };
+
+  inline num operator+(num a,num b){
+    return num(a.x+b.x,a.y+b.y);
+  }
+  inline num operator-(num a,num b){
+    return num(a.x-b.x,a.y-b.y);
+  }
+  inline num operator*(num a,num b){
+    return num(a.x*b.x-a.y*b.y,a.x*b.y+a.y*b.x);
+  }
+  inline num conj(num a){
+    return num(a.x,-a.y);
+  }
+
+  int base=1;
+  vector<num> rts={{0,0},{1,0}};
+  vector<int> rev={0,1};
+
+  const dbl PI=acosl(-1.0);
+
+  void ensure_base(int nbase){
+    if(nbase<=base) return;
+
+    rev.resize(1<<nbase);
+    for(int i=0;i<(1<<nbase);i++)
+      rev[i]=(rev[i>>1]>>1)+((i&1)<<(nbase-1));
+
+    rts.resize(1<<nbase);
+    while(base<nbase){
+      dbl angle=2*PI/(1<<(base+1));
+      for(int i=1<<(base-1);i<(1<<base);i++){
+        rts[i<<1]=rts[i];
+        dbl angle_i=angle*(2*i+1-(1<<base));
+        rts[(i<<1)+1]=num(cos(angle_i),sin(angle_i));
+      }
+      base++;
     }
+  }
+
+  void fft(vector<num> &a,int n=-1){
+    if(n==-1) n=a.size();
+    assert((n&(n-1))==0);
+
+    int zeros=__builtin_ctz(n);
+    ensure_base(zeros);
+    int shift=base-zeros;
+    for(int i=0;i<n;i++)
+      if(i<(rev[i]>>shift))
+        swap(a[i],a[rev[i]>>shift]);
+
+    for(int k=1;k<n;k<<=1){
+      for(int i=0;i<n;i+=2*k){
+        for(int j=0;j<k;j++){
+          num z=a[i+j+k]*rts[j+k];
+          a[i+j+k]=a[i+j]-z;
+          a[i+j]=a[i+j]+z;
+        }
+      }
+    }
+  }
+
+  vector<num> fa;
+
+  vector<Int> multiply(vector<int> &a,vector<int> &b){
+    int need=a.size()+b.size()-1;
+    int nbase=0;
+    while((1<<nbase)<need) nbase++;
+    ensure_base(nbase);
+
+    int sz=1<<nbase;
+    if(sz>(int)fa.size()) fa.resize(sz);
+    for(int i=0;i<sz;i++){
+      int x=(i<(int)a.size()?a[i]:0);
+      int y=(i<(int)b.size()?b[i]:0);
+      fa[i]=num(x,y);
+    }
+    fft(fa,sz);
+
+    num r(0,-0.25/sz);
+    for(int i=0;i<=(sz>>1);i++){
+      int j=(sz-i)&(sz-1);
+      num z=(fa[j]*fa[j]-conj(fa[i]*fa[i]))*r;
+      if(i!=j)
+        fa[j]=(fa[i]*fa[i]-conj(fa[j]*fa[j]))*r;
+      fa[i]=z;
+    }
+    fft(fa,sz);
+
+    vector<Int> res(need);
+    for(int i=0;i<need;i++)
+      res[i]=fa[i].x+0.5;
+
     return res;
   }
 
-  static constexpr int inv(int x,int md){
-    return pow(x,md-2,md);
-  }
+};
 
-  inline void garner(int &c0,int c1,int c2,int m01,int MOD){
-    static constexpr int r01=inv(ntt0.md,ntt1.md);
-    static constexpr int r02=inv(ntt0.md,ntt2.md);
-    static constexpr int r12=inv(ntt1.md,ntt2.md);
 
-    c1=(ll)(c1-c0)*r01%ntt1.md;
-    if(c1<0) c1+=ntt1.md;
+template<typename T>
+struct ArbitraryModConvolution{
+  using dbl=FFT::dbl;
+  using num=FFT::num;
 
-    c2=(ll)(c2-c0)*r02%ntt2.md;
-    c2=(ll)(c2-c1)*r12%ntt2.md;
-    if(c2<0) c2+=ntt2.md;
+  vector<T> multiply(vector<T> as,vector<T> bs){
+    int need=as.size()+bs.size()-1;
+    int sz=1;
+    while(sz<need) sz<<=1;
+    vector<num> fa(sz),fb(sz);
+    for(int i=0;i<(int)as.size();i++)
+      fa[i]=num(as[i].v&((1<<15)-1),as[i].v>>15);
+    for(int i=0;i<(int)bs.size();i++)
+      fb[i]=num(bs[i].v&((1<<15)-1),bs[i].v>>15);
 
-    c0+=(ll)c1*ntt0.md%MOD;
-    if(c0>=MOD) c0-=MOD;
-    c0+=(ll)c2*m01%MOD;
-    if(c0>=MOD) c0-=MOD;
-  }
+    fft(fa,sz);fft(fb,sz);
 
-  inline void garner(vector< vector<int> > &cs,int MOD){
-    int m01 =(ll)ntt0.md*ntt1.md%MOD;
-    int sz=cs[0].size();
-    for(int i=0;i<sz;i++) garner(cs[0][i],cs[1][i],cs[2][i],m01,MOD);
-  }
+    dbl ratio=0.25/sz;
+    num r2(0,-1),r3(ratio,0),r4(0,-ratio),r5(0,1);
+    for(int i=0;i<=(sz>>1);i++){
+      int j=(sz-i)&(sz-1);
+      num a1=(fa[i]+conj(fa[j]));
+      num a2=(fa[i]-conj(fa[j]))*r2;
+      num b1=(fb[i]+conj(fb[j]))*r3;
+      num b2=(fb[i]-conj(fb[j]))*r4;
+      if(i!=j){
+        num c1=(fa[j]+conj(fa[i]));
+        num c2=(fa[j]-conj(fa[i]))*r2;
+        num d1=(fb[j]+conj(fb[i]))*r3;
+        num d2=(fb[j]-conj(fb[i]))*r4;
+        fa[i]=c1*d1+c2*d2*r5;
+        fb[i]=c1*d2+c2*d1;
+      }
+      fa[j]=a1*b1+a2*b2*r5;
+      fb[j]=a1*b2+a2*b1;
+    }
+    fft(fa,sz);fft(fb,sz);
 
-  vector<int> multiply(vector<int> as,vector<int> bs,int MOD){
-    vector< vector<int> > cs(3);
-    cs[0]=ntt0.multiply(as,bs);
-    cs[1]=ntt1.multiply(as,bs);
-    cs[2]=ntt2.multiply(as,bs);
-    size_t sz=as.size()+bs.size()-1;
-    for(auto& v:cs) v.resize(sz);
-    garner(cs,MOD);
-    return cs[0];
-  }
-
-  template<typename T,T MOD>
-  decltype(auto) multiply(vector< Mint<T, MOD> > am,
-                          vector< Mint<T, MOD> > bm){
-    using M = Mint<T, MOD>;
-    vector<int> as(am.size()),bs(bm.size());
-    for(int i=0;i<(int)as.size();i++) as[i]=am[i].v;
-    for(int i=0;i<(int)bs.size();i++) bs[i]=bm[i].v;
-    vector<int> cs=multiply(as,bs,MOD);
-    vector<M> cm(cs.size());
-    for(int i=0;i<(int)cm.size();i++) cm[i]=M(cs[i]);
-    return cm;
+    vector<T> cs(need);
+    using ll = long long;
+    for(int i=0;i<need;i++){
+      ll aa=T(llround(fa[i].x)).v;
+      ll bb=T(llround(fb[i].x)).v;
+      ll cc=T(llround(fa[i].y)).v;
+      cs[i]=T(aa+(bb<<15)+(cc<<30));
+    }
+    return cs;
   }
 };
-NTT<0> ArbitraryModConvolution::ntt0;
-NTT<1> ArbitraryModConvolution::ntt1;
-NTT<2> ArbitraryModConvolution::ntt2;
 
 //INSERT ABOVE HERE
 
@@ -434,7 +518,7 @@ signed YUKI_3046(){
   for(int i=0;i<n;i++) cin>>xs[i];
 
   using M = Mint<int>;
-  ArbitraryModConvolution arb;
+  ArbitraryModConvolution<M> arb;
   auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
   FormalPowerSeries<M> FPS(conv);
 
