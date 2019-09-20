@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 int isprime(int x){
   if(x<=1) return 0;
@@ -9,19 +11,8 @@ int isprime(int x){
   return 1;
 }
 //END CUT HERE
+#ifndef call_from_test
 signed main(){
-  int n;
-  cin>>n;
-  int ans=0;
-  for(int i=0;i<n;i++){
-    int x;
-    cin>>x;
-    ans+=isprime(x);
-  }
-  cout<<ans<<endl;
   return 0;
 }
-/*
-  verified on 2017/12/30
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C&lang=jp
-*/
+#endif
