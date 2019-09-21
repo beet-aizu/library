@@ -100,6 +100,7 @@ struct FormalPowerSeries{
     return res;
   }
 
+  // F(0) must be 0
   Poly exp(Poly as,int deg){
     Poly f({T(1)}),g({T(1)});
 
