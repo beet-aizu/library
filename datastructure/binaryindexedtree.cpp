@@ -1,15 +1,17 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
-template<typename T> 
+template<typename T>
 struct BIT{
   int n;
   vector<T> bit;
   //1-indexed
   BIT():n(-1){}
   BIT(int n_,T d):n(n_),bit(n_+1,d){}
-  
+
   T sum(int i){
     T s=bit[0];
     for(int x=i;x>0;x-=(x&-x))
@@ -21,7 +23,7 @@ struct BIT{
     for(int x=i;x<=n;x+=(x&-x))
       bit[x]+=a;
   }
-  
+
   int lower_bound(int w){
     if(w<=0) return 0;
     int x=0,r=1;
@@ -34,7 +36,7 @@ struct BIT{
     }
     return x+1;
   }
-  
+
   T sum0(int i){
     return sum(i+1);
   }
@@ -51,7 +53,7 @@ struct BIT{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 signed AOJ_DSL2B(){
   int n,q;
   cin>>n>>q;
@@ -96,3 +98,4 @@ signed main(){
   ARC033_C();
   return 0;
 }
+#endif

@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = signed;
+#endif
 //BEGIN CUT HERE
 class EulerTourForVertex{
 private:
@@ -37,7 +39,7 @@ public:
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 struct LowestCommonAncestor{
   int n,h;
   vector<vector<int> > G,par;
@@ -153,103 +155,6 @@ struct BIT{
 
   T query0(int l,int r){
     return sum(r)-sum(l);
-  }
-};
-
-
-template <typename T,typename E>
-struct SegmentTree{
-  using F = function<T(T,T)>;
-  using G = function<T(T,E)>;
-  using H = function<E(E,E)>;
-  int n,height;
-  F f;
-  G g;
-  H h;
-  T ti;
-  E ei;
-  vector<T> dat;
-  vector<E> laz;
-  SegmentTree(F f,G g,H h,T ti,E ei):
-    f(f),g(g),h(h),ti(ti),ei(ei){}
-
-  void init(int n_){
-    n=1;height=0;
-    while(n<n_) n<<=1,height++;
-    dat.assign(2*n,ti);
-    laz.assign(2*n,ei);
-  }
-  void build(const vector<T> &v){
-    int n_=v.size();
-    init(n_);
-    for(int i=0;i<n_;i++) dat[n+i]=v[i];
-    for(int i=n-1;i;i--)
-      dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
-  }
-  inline T reflect(int k){
-    return laz[k]==ei?dat[k]:g(dat[k],laz[k]);
-  }
-  inline void eval(int k){
-    if(laz[k]==ei) return;
-    laz[(k<<1)|0]=h(laz[(k<<1)|0],laz[k]);
-    laz[(k<<1)|1]=h(laz[(k<<1)|1],laz[k]);
-    dat[k]=reflect(k);
-    laz[k]=ei;
-  }
-  inline void thrust(int k){
-    for(int i=height;i;i--) eval(k>>i);
-  }
-  inline void recalc(int k){
-    while(k>>=1)
-      dat[k]=f(reflect((k<<1)|0),reflect((k<<1)|1));
-  }
-  void update(int a,int b,E x){
-    thrust(a+=n);
-    thrust(b+=n-1);
-    for(int l=a,r=b+1;l<r;l>>=1,r>>=1){
-      if(l&1) laz[l]=h(laz[l],x),l++;
-      if(r&1) --r,laz[r]=h(laz[r],x);
-    }
-    recalc(a);
-    recalc(b);
-  }
-  void set_val(int a,T x){
-    thrust(a+=n);
-    dat[a]=x;laz[a]=ei;
-    recalc(a);
-  }
-  T query(int a,int b){
-    thrust(a+=n);
-    thrust(b+=n-1);
-    T vl=ti,vr=ti;
-    for(int l=a,r=b+1;l<r;l>>=1,r>>=1) {
-      if(l&1) vl=f(vl,reflect(l++));
-      if(r&1) vr=f(reflect(--r),vr);
-    }
-    return f(vl,vr);
-  }
-
-  template<typename C>
-  int find(int st,C &check,T &acc,int k,int l,int r){
-    if(l+1==r){
-      acc=f(acc,reflect(k));
-      return check(acc)?k-n:-1;
-    }
-    eval(k);
-    int m=(l+r)>>1;
-    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);
-    if(st<=l&&!check(f(acc,dat[k]))){
-      acc=f(acc,dat[k]);
-      return -1;
-    }
-    int vl=find(st,check,acc,(k<<1)|0,l,m);
-    if(~vl) return vl;
-    return find(st,check,acc,(k<<1)|1,m,r);
-  }
-  template<typename C>
-  int find(int st,C &check){
-    T acc=ti;
-    return find(st,check,acc,1,0,n);
   }
 };
 
@@ -394,58 +299,8 @@ signed CFR483_E(){
   http://codeforces.com/contest/983/problem/E
 */
 
-signed AOJ_2871(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n,q;
-  cin>>n>>q;
-  EulerTourForVertex et(n);
-  for(int i=1;i<n;i++){
-    int p;
-    cin>>p;
-    p--;
-    et.add_edge(p,i);
-  }
-  et.build();
-
-  vector<char> cs(n);
-  for(int i=0;i<n;i++) cin>>cs[i];
-
-  struct T{
-    int sum,one;
-    T(int sum,int one):sum(sum),one(one){}
-  };
-  using E = int;
-  auto f=[](T a,T b){return T(a.sum+b.sum,a.one+b.one);};
-  auto g=[](T a,E b){return T(a.sum,b?a.sum-a.one:a.one);};
-  auto h=[](E a,E b){return a^b;};
-  T ti(0,0);
-  E ei(0);
-
-  SegmentTree<T, E> seg(f,g,h,ti,ei);
-  vector<T> vs(n,ti);
-  for(int i=0;i<n;i++) vs[et.idx(i)]=T(1,cs[i]=='G');
-  seg.build(vs);
-
-  for(int i=0;i<q;i++){
-    int v;
-    cin>>v;
-    v--;
-    et.exec(v,[&](int l,int r){seg.update(l,r,1);});
-    auto res=seg.query(0,n);
-    cout<<(res.sum-res.one<res.one?"broccoli":"cauliflower")<<"\n";
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/07/08
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2871&lang=jp
-*/
-
 signed main(){
   //CFR483_E();
-  //AOJ_2871();
   return 0;
 }
+#endif

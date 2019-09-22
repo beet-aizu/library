@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 class EulerTourForEdge{
 private:
@@ -62,7 +64,7 @@ public:
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T>
 struct BIT{
   int n;
@@ -214,52 +216,6 @@ struct LCA{
 };
 
 //INSERT ABOVE HERE
-signed AOJ_GRL_5_D(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  EulerTourForEdge et(n);
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    for(int j=0;j<k;j++){
-      int c;
-      cin>>c;
-      et.add_edge(i,c);
-    }
-  }
-  et.build();
-
-  BIT<int> bit(n*2+100,0);
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    int t;
-    cin>>t;
-    if(t==0){
-      int v,w;
-      cin>>v>>w;
-      auto g=[&](int k,int d){bit.add0(k,d);};
-      et.update(v,w,g);
-    }
-    if(t==1){
-      int u;
-      cin>>u;
-      int res=0;
-      et.query(0,u,[&](int l,int r){res+=bit.query0(l,r);});
-      cout<<res<<"\n";
-    }
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/07/08
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D&lang=jp
-*/
-
 signed ABC133_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -353,7 +309,7 @@ signed ABC133_F(){
 */
 
 signed main(){
-  //AOJ_GRL_5_D();
   //ABC133_F();
   return 0;
 }
+#endif
