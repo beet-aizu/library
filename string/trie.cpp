@@ -72,9 +72,6 @@ struct FastIO{
 }fastio_beet;
 
 //INSERT ABOVE HERE
-template<typename T> void chmin(T &a,T b){if(a>b) a=b;}
-template<typename T> void chmax(T &a,T b){if(a<b) a=b;}
-
 signed tenka1_2016_final_C(){
   string s;
   cin>>s;
@@ -110,8 +107,8 @@ signed tenka1_2016_final_C(){
 }
 
 /*
-  verified on 2018/05/20
-  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
+  verified on 2019/09/22
+  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
 */
 
 signed main(){
