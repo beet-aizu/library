@@ -1,9 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-using ll = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;};
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;};
+#endif
 //BEGIN CUT HERE
 // no muliple edge
 template<typename Graph>
@@ -43,6 +41,7 @@ bool hasMultipleEulerianTrail(Graph &G){
       que.emplace(u);
     }
   }
+
   vector<int> us(n,0);
   que.emplace(en);
   us[en]=1;
@@ -58,61 +57,6 @@ bool hasMultipleEulerianTrail(Graph &G){
   return false;
 }
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  const int MAX = 52;
-  auto idx=[&](char c)->int{
-             if(islower(c)) return c-'a';
-             assert(isupper(c));
-             return c-'A'+26;
-           };
-
-  string s;
-  while(cin>>s,s!="#"){
-    int n=s.size();
-    if(n<=2){
-      cout<<"No Results"<<endl;
-      continue;
-    }
-
-    vector< set<int> > G(MAX);
-    for(int i=0;i+1<n;i++){
-      int x=idx(s[i]);
-      int y=idx(s[i+1]);
-      G[x].emplace(y);
-    }
-
-    vector<int> ind(MAX,0),outd(MAX,0);
-    for(int v=0;v<MAX;v++)
-      for(int u:G[v]) ind[u]++,outd[v]++;
-
-    int res=0;
-    for(int i=0;i<MAX;i++)
-      res+=max<int>(ind[i]-outd[i],0);
-
-    int m=accumulate(ind.begin(),ind.end(),0)+1;
-    int add=max<int>(res-1,0);
-    m+=add;
-
-    if(m<n||add){
-      cout<<m<<endl;
-      continue;
-    }
-
-    vector< vector<int> > H(MAX);
-    for(int v=0;v<MAX;v++)
-      for(int u:G[v])
-        H[v].emplace_back(u);
-
-    int flg=hasMultipleEulerianTrail(H);
-    cout<<(flg?m:m+1)<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2019/06/24
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2324
-*/
+#endif
