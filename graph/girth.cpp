@@ -4,6 +4,7 @@ using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
+// size of minimum cycle
 int girth(vector< vector<int> > G){
   int n=G.size();
   int res=n+1;
