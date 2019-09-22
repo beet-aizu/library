@@ -54,22 +54,6 @@ struct BIT{
 };
 //END CUT HERE
 #ifndef call_from_test
-signed AOJ_DSL2B(){
-  int n,q;
-  cin>>n>>q;
-  BIT<Int> bit(n+100,0);
-  for(int i=0;i<q;i++){
-    int c,x,y;
-    cin>>c>>x>>y;
-    if(c) cout<<bit.query(x,y+1)<<endl;
-    else bit.add(x,y);
-  }
-  return 0;
-}
-/*
-  verified on 2018/06/07
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
-*/
 
 // lower_bound
 signed ARC033_C(){
@@ -94,7 +78,6 @@ signed ARC033_C(){
 */
 
 signed main(){
-  //AOJ_DSL2B();
   ARC033_C();
   return 0;
 }
