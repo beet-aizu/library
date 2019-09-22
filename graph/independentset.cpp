@@ -1,8 +1,20 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+template<typename F>
+struct FixPoint : F{
+  FixPoint(F&& f):F(forward<F>(f)){}
+  template<typename... Args>
+  decltype(auto) operator()(Args&&... args) const{
+    return F::operator()(*this,forward<Args>(args)...);
+  }
+};
+template<typename F>
+inline decltype(auto) MFP(F&& f){
+  return FixPoint<F>{forward<F>(f)};
+}
+#endif
 //BEGIN CUT HERE
 struct IndependentSet{
   int n;
@@ -17,56 +29,55 @@ struct IndependentSet{
   int build(){
     vector<int> deg(n,0);
     for(int i=0;i<n;i++) deg[i]=G[i].size();
-    
+
     int res=0,cnt=0,alive=n;
     vector<int> used(n,0),dead(n,0);
-    function<void(void)> dfs=
-      [&](){
-        if(cnt+alive<=res) return;        
-        int v=-1;
-        for(int i=0;i<n;i++){
-          if(used[i]||dead[i]) continue;
-          if(deg[i]<=1){
-            v=i;
-            break;
+    MFP([&](auto dfs)->void{
+          if(cnt+alive<=res) return;
+          int v=-1;
+          for(int i=0;i<n;i++){
+            if(used[i]||dead[i]) continue;
+            if(deg[i]<=1){
+              v=i;
+              break;
+            }
+            if(v<0||deg[v]<deg[i]) v=i;
           }
-          if(v<0||deg[v]<deg[i]) v=i;
-        }       
-        if(v<0) return;
-                
-        if(deg[v]!=1){
-          dead[v]=1;
-          alive--;
-          for(int u:G[v]) deg[u]--;
+          if(v<0) return;
 
-          dfs();
-          
-          dead[v]=0;
-          alive++;
-          for(int u:G[v]) deg[u]++;
-        }
-        {
-          used[v]=1;          
-          alive--;
-          for(int u:G[v])
-            if(0==dead[u]++) alive-=!used[u];
-          cnt++;
-          chmax(res,cnt);
+          if(deg[v]!=1){
+            dead[v]=1;
+            alive--;
+            for(int u:G[v]) deg[u]--;
 
-          dfs();
-          
-          used[v]=0;          
-          alive++;
-          for(int u:G[v])
-            if(--dead[u]==0) alive+=!used[u];
-          cnt--;          
-        }
-      };
-    dfs();
+            dfs();
+
+            dead[v]=0;
+            alive++;
+            for(int u:G[v]) deg[u]++;
+          }
+          {
+            used[v]=1;
+            alive--;
+            for(int u:G[v])
+              if(0==dead[u]++) alive-=!used[u];
+            cnt++;
+            res=max(res,cnt);
+
+            dfs();
+
+            used[v]=0;
+            alive++;
+            for(int u:G[v])
+              if(--dead[u]==0) alive+=!used[u];
+            cnt--;
+          }
+        })();
     return res;
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed CODETHANKSFESTIVAL2017_G(){
   int n,m;
@@ -89,7 +100,7 @@ signed CODETHANKSFESTIVAL2017_G(){
 signed CFR533_E(){
   cin.tie(0);
   ios::sync_with_stdio(0);
-  
+
   int n,m;
   cin>>n>>m;
 
@@ -111,11 +122,11 @@ signed CFR533_E(){
           sp.emplace(x,y);
           sp.emplace(y,x);
           G.add_edge(x,y);
-        }        
+        }
       }
       vs.clear();
     };
-  
+
   for(int i=0;i<n;i++){
     int t;
     cin>>t;
@@ -144,3 +155,4 @@ signed main(){
   CFR533_E();
   return 0;
 }
+#endif
