@@ -1,4 +1,4 @@
-#define PROBLEM "math/exp_of_formal_power_series"
+#define PROBLEM "math/log_of_formal_power_series"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -24,7 +24,7 @@ signed main(){
   vector<M> as(n);
   for(int i=0;i<n;i++) cin>>as[i].v;
 
-  auto bs=FPS.exp(as,n);
+  auto bs=FPS.log(as,n);
   for(int i=0;i<n;i++){
     if(i) cout<<" ";
     cout<<bs[i];
