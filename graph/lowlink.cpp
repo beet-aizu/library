@@ -1,12 +1,14 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
+#endif
 //BEGIN CUT HERE
 struct LowLink{
   int n,pos;
   vector<int> ord,low,par,blg,num;
   vector<vector<int> > G,C,T;
   vector<vector<pair<int, int> > > E;
-  
+
   vector<int> ap;
   vector<pair<int, int> > bs,cand;
 
@@ -26,9 +28,9 @@ struct LowLink{
   void dfs(int v){
     ord[v]=low[v]=pos++;
     for(int u:G[v]){
-      if(u==par[v]) continue;      
+      if(u==par[v]) continue;
       if(ord[u]<ord[v])
-        cand.emplace_back(min(u,v),max(u,v));      
+        cand.emplace_back(min(u,v),max(u,v));
       if(~ord[u]){
         low[v]=min(low[v],ord[u]);
         continue;
@@ -44,7 +46,7 @@ struct LowLink{
           auto e=cand.back();
           cand.pop_back();
           E.back().emplace_back(e);
-          if(make_pair(min(u,v),max(u,v))==e) break;          
+          if(make_pair(min(u,v),max(u,v))==e) break;
         }
       }
     }
@@ -65,11 +67,11 @@ struct LowLink{
     C.emplace_back();
     fill_component(v);
   }
-  
+
   int build(){
     for(int i=0;i<n;i++)
       if(ord[i]<0) dfs(i);
-    
+
     vector<int> cnt(n,0);
     for(int i=0;i<n;i++){
       int p=par[i];
@@ -77,17 +79,17 @@ struct LowLink{
       if(par[p]<0) cnt[p]++;
       else if(ord[p]<=low[i]) ap.emplace_back(p);
     }
-    
+
     for(int i=0;i<n;i++)
       if(cnt[i]>1) ap.emplace_back(i);
 
     sort(ap.begin(),ap.end());
     ap.erase(unique(ap.begin(),ap.end()),ap.end());
 
-    int k=0;    
+    int k=0;
     for(int i=0;i<n;i++) add_component(i,k);
 
-    T.assign(k,vector<int>());    
+    T.assign(k,vector<int>());
     for(auto e:bs){
       int u=blg[e.first],v=blg[e.second];
       T[u].emplace_back(v);
@@ -97,7 +99,7 @@ struct LowLink{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 struct UnionFind{
   int n,num;
   vector<int> r,p;
@@ -141,17 +143,17 @@ struct Mint{
     }
     return res;
   }
-  
+
   static Mint add_identity(){return Mint(0);}
   static Mint mul_identity(){return Mint(1);}
-  
+
   Mint inv(){return pow(MOD-2);}
-  
+
   Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
   Mint& operator/=(Mint a){return (*this)*=a.inv();}
-  
+
   Mint operator+(Mint a) const{return Mint(v)+=a;};
   Mint operator-(Mint a) const{return Mint(v)-=a;};
   Mint operator*(Mint a) const{return Mint(v)*=a;};
@@ -168,28 +170,28 @@ struct Mint{
 template<typename M>
 struct Enumeration{
   static vector<M> fact,finv,invs;
-  
+
   static void init(int n){
     int m=fact.size();
     if(n<m) return;
-    
+
     fact.resize(n+1,1);
     finv.resize(n+1,1);
     invs.resize(n+1,1);
-    
+
     if(m==0) m=1;
     for(int i=m;i<=n;i++) fact[i]=fact[i-1]*M(i);
     finv[n]=M(1)/fact[n];
     for(int i=n;i>=m;i--) finv[i-1]=finv[i]*M(i);
     for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];
   }
-  
+
   static M C(int n,int k){
     if(n<k||k<0) return M(0);
     init(n);
     return fact[n]*finv[n-k]*finv[k];
   }
-  
+
   static M H(int n,int k){
     if(n<0||k<0) return M(0);
     if(!n&&!k) return M(1);
@@ -205,103 +207,10 @@ template<typename M>
 vector<M> Enumeration<M>::invs = vector<M>();
 
 //INSERT ABOVE HERE
-signed GRL_3_A(){
-  int n,m;
-  scanf("%d %d",&n,&m);
-  LowLink G(n);
-  for(int i=0;i<m;i++){
-    int u,v;
-    scanf("%d %d",&u,&v);
-    G.add_edge(u,v);
-  }
-  G.build();
-  auto ap=G.ap;
-  sort(ap.begin(),ap.end());
-  for(int v:ap) printf("%d\n",v);
-  return 0;
-}
-/*
-  verified on 2019/05/29
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A&lang=jp
-*/
-
-signed GRL_3_B(){
-  int n,m;
-  scanf("%d %d",&n,&m);
-  
-  LowLink G(n);
-  for(int i=0;i<m;i++){
-    int u,v;
-    scanf("%d %d",&u,&v);
-    G.add_edge(u,v);
-  }
-  G.build();
-  
-  auto bs=G.bs;
-  for(auto &e:bs)
-    if(e.first>e.second) swap(e.first, e.second);
-  
-  sort(bs.begin(),bs.end());
-  for(auto e:bs) printf("%d %d\n",e.first, e.second);
-  
-  return 0;
-}
-/*
-  verified on 2019/05/29
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B&lang=jp
-*/
-
-signed AOJ_0377(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  
-  int n,m;
-  cin>>n>>m;
-  LowLink bg(n);
-  for(int i=0;i<m;i++){
-    int a,b;
-    cin>>a>>b;
-    bg.add_edge(a,b);
-  }
-  int k=bg.build();
-  auto& G=bg.T;
-  
-  vector<int> c(k);
-  for(int i=0;i<k;i++) c[i]=bg.C[i].size();
-  vector<vector<int> > dp(2,vector<int>(k,0));
-  vector<int> used(k,0);
-  function<void(int,int)> dfs=[&](int v,int p){
-    if(used[v]) return;
-    used[v]=1;
-    dp[0][v]=0;
-    dp[1][v]=c[v];
-    for(int u:G[v]){
-      if(u==p) continue;
-      dfs(u,v);
-      dp[0][v]+=max(dp[0][u],dp[1][u]);
-      dp[1][v]+=dp[0][u];
-    }
-    return;
-  };
-  int ans=0;
-  for(int i=0;i<k;i++){
-    if(used[i]) continue;
-    dfs(i,-1);
-    ans+=max(dp[0][i],dp[1][i]);
-  }
-  cout<<ans<<endl;
-  return 0;
-}
-
-/*
-  verified on 2019/05/29
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0377
-*/
-
 signed ARC045_D(){
   cin.tie(0);
   ios::sync_with_stdio(0);
-    
+
   int n;
   cin>>n;
   vector<int> xs(2*n+1),ys(2*n+1);
@@ -323,13 +232,13 @@ signed ARC045_D(){
     if(uf.size(i)&1) vs.emplace_back(i);
   }
   assert(!vs.empty());
-  
+
   if(vs.size()>1u){
     for(int i=0;i<2*n+1;i++) cout<<"NG\n";
     cout<<flush;
-    return 0;    
+    return 0;
   }
-  
+
   LowLink G(2*n+1);
   auto add_edge=
     [&](auto &V)->void{
@@ -344,8 +253,8 @@ signed ARC045_D(){
   add_edge(C);
 
   G.build();
-  auto ap=G.ap; 
-  
+  auto ap=G.ap;
+
   vector<int> ans(2*n+1,0);
   for(int i=0;i<2*n+1;i++)
     if(uf.same(vs[0],i)) ans[i]=1;
@@ -353,12 +262,12 @@ signed ARC045_D(){
   for(int v:ap){
     if(!uf.same(vs[0],v)) continue;
     for(int u:G.G[v]){
-      if(G.par[u]!=v) continue;    
-      if(~G.par[v]&&G.ord[v]>G.low[u]) continue;     
+      if(G.par[u]!=v) continue;
+      if(~G.par[v]&&G.ord[v]>G.low[u]) continue;
       if(G.num[u]&1) ans[v]=0;
     }
   }
-  
+
   for(int i=0;i<2*n+1;i++) cout<<(ans[i]?"OK\n":"NG\n");
   cout<<flush;
   return 0;
@@ -372,13 +281,13 @@ signed ARC045_D(){
 signed ARC062_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
-  
+
   int n,m,k;
   cin>>n>>m>>k;
 
   using P = pair<int, int>;
   map<P, int> idx;
-  
+
   LowLink G(n);
   for(int i=0;i<m;i++){
     int a,b;
@@ -389,30 +298,30 @@ signed ARC062_F(){
   }
 
   G.build();
-  
+
   UnionFind uf(m);
   for(auto vs:G.E)
-    for(auto p:vs) uf.unite(idx[p],idx[vs[0]]);  
+    for(auto p:vs) uf.unite(idx[p],idx[vs[0]]);
 
-  vector<set<int>> cnt(m);  
+  vector<set<int>> cnt(m);
   for(auto vs:G.E){
     for(auto p:vs){
-      cnt[uf.find(idx[p])].emplace(p.first);     
+      cnt[uf.find(idx[p])].emplace(p.first);
       cnt[uf.find(idx[p])].emplace(p.second);
     }
   }
-  
+
   using M = Mint<int>;
   using E = Enumeration<M>;
   E::init(1000);
-  
+
   auto calc1=
-    [&](int x)->M{     
+    [&](int x)->M{
       M res{0};
-      
+
       for(int i=0;i<x;i++)
         res+=M(k).pow(__gcd(i,x));
-      
+
       res*=E::invs[x];
       return res;
     };
@@ -423,7 +332,7 @@ signed ARC062_F(){
     if(uf.size(i)< (int)cnt[i].size()) ans*=M(k).pow(uf.size(i));
     if(uf.size(i)==(int)cnt[i].size()) ans*=calc1(uf.size(i));
     if(uf.size(i)> (int)cnt[i].size()) ans*=E::H(k,uf.size(i));
-  }  
+  }
   cout<<ans.v<<endl;
   return 0;
 }
@@ -434,10 +343,8 @@ signed ARC062_F(){
 
 
 signed main(){
-  //GRL_3_A();
-  //GRL_3_B();
-  //AOJ_0377();
-  //ARC045_D();  
+  //ARC045_D();
   //ARC062_F();
   return 0;
 }
+#endif
