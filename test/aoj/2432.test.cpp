@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../matrix/squarematrix.cpp"
+#include "../../linearalgebra/squarematrix.cpp"
 #undef call_from_test
 
 #define IGNORE

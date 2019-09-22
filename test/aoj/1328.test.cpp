@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../matrix/matrix.cpp"
+#include "../../linearalgebra/matrix.cpp"
 #undef call_from_test
 
 signed main(){
