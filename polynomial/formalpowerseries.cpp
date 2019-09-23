@@ -596,11 +596,51 @@ signed LOJ_150(){
   https://loj.ac/problem/150
 */
 
+signed CODECHEF_PSUM(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
+
+  int n,s,k;
+  cin>>n>>s>>k;
+  vector<int> cs(n),vs(n);
+  for(int i=0;i<n;i++) cin>>cs[i]>>vs[i];
+
+  const int deg = 1<<11;
+  vector< vector<M> > dp(s+1,vector<M>(deg,0));
+  dp[0][0]=M(1);
+
+  auto nx=dp;
+  for(int i=0;i<n;i++){
+    auto ps=FPS.exp(vector<M>({M(0),M(vs[i])}),deg);
+    for(int j=0;j+cs[i]<=s;j++){
+      auto rs=FPS.mul(ps,dp[j]);
+      for(int l=0;l<deg;l++) nx[j+cs[i]][l]+=rs[l];
+    }
+    dp=nx;
+  }
+
+  M ans{0};
+  for(int i=1;i<=s;i++) ans+=dp[i][k];
+  for(int i=1;i<=k;i++) ans*=M(i);
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/09/24
+  https://www.codechef.com/problems/PSUM
+*/
+
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
   //YUKI_3046();
-  LOJ_150();
+  //LOJ_150();
+  //CODECHEF_PSUM();
   return 0;
 }
 #endif
