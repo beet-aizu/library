@@ -13,6 +13,10 @@ struct FormalPowerSeries{
   Conv conv;
   FormalPowerSeries(Conv conv):conv(conv){}
 
+  Poly pre(const Poly &as,int deg){
+    return Poly(as.begin(),as.begin()+min((int)as.size(),deg));
+  }
+
   Poly add(Poly as,Poly bs){
     int sz=max(as.size(),bs.size());
     Poly cs(sz,T(0));
@@ -42,14 +46,8 @@ struct FormalPowerSeries{
   Poly inv(Poly as,int deg){
     assert(as[0]!=T(0));
     Poly rs({T(1)/as[0]});
-    int sz=1;
-    while(sz<deg){
-      sz<<=1;
-      Poly ts(min(sz,(int)as.size()));
-      for(int i=0;i<(int)ts.size();i++) ts[i]=as[i];
-      rs=sub(add(rs,rs),mul(mul(rs,rs),ts));
-      rs.resize(sz);
-    }
+    for(int i=1;i<deg;i<<=1)
+      rs=pre(sub(add(rs,rs),mul(mul(rs,rs),pre(as,i<<1))),i<<1);
     return rs;
   }
 
@@ -61,8 +59,7 @@ struct FormalPowerSeries{
     reverse(as.begin(),as.end());
     reverse(bs.begin(),bs.end());
     int need=as.size()-bs.size()+1;
-    Poly ds=mul(as,inv(bs,need));
-    ds.resize(need);
+    Poly ds=pre(mul(as,inv(bs,need)),need);
     reverse(ds.begin(),ds.end());
     return ds;
   }
@@ -70,16 +67,10 @@ struct FormalPowerSeries{
   // F(0) must be 1
   Poly sqrt(Poly as,int deg){
     assert(as[0]==T(1));
-
-    int sz=1;
     T inv2=T(1)/T(2);
     Poly ss({T(1)});
-    while(sz<deg){
-      sz<<=1;
-      Poly ts(min(sz,(int)as.size()));
-      for(int i=0;i<(int)ts.size();i++) ts[i]=as[i];
-      ss=add(ss,mul(ts,inv(ss,sz)));
-      ss.resize(sz);
+    for(int i=1;i<deg;i<<=1){
+      ss=pre(add(ss,mul(pre(as,i<<1),inv(ss,i<<1))),i<<1);
       for(T &x:ss) x*=inv2;
     }
     return ss;
@@ -100,30 +91,18 @@ struct FormalPowerSeries{
     return res;
   }
 
-  // F(0) must be 0
-  Poly exp(Poly as,int deg){
-    Poly f({T(1)}),g({T(1)});
-
-    int sz=1;
-    while(sz<deg){
-      g=sub(mul(g,T(2)),mul(f,mul(g,g)));
-      g.resize(sz+1);
-      Poly q=diff(as);
-      q.resize(sz);
-      Poly w=add(q,mul(g,sub(diff(f),mul(f,q))));
-      w.resize(2*sz);
-      f=add(f,mul(f,sub(as,integral(w))));
-      f.resize(2*sz+1);
-      sz<<=1;
-    }
-    return f;
-  }
-
   // F(0) must be 1
   Poly log(Poly as,int deg){
-    Poly rs=integral(mul(diff(as),inv(as,deg)));
-    rs.resize(deg);
-    return rs;
+    return pre(integral(mul(diff(as),inv(as,deg))),deg);
+  }
+
+  // F(0) must be 0
+  Poly exp(Poly as,int deg){
+    Poly f({T(1)});
+    as[0]+=T(1);
+    for(int i=1;i<deg;i<<=1)
+      f=pre(mul(f,sub(pre(as,i<<1),log(f,i<<1))),i<<1);
+    return f;
   }
 
   Poly partition(int n){
