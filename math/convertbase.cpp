@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T>
 vector<T> convert_base(T x,T b){
@@ -20,7 +22,7 @@ vector<T> convert_base(T x,T b){
   return res;
 }
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed ABC105_C(){
   long long p;
@@ -35,21 +37,7 @@ signed ABC105_C(){
   https://atcoder.jp/contests/abc105/tasks/abc105_c
 */
 
-signed AOJ_0233(){
-  long long p;
-  while(cin>>p,p){    
-    auto ans=convert_base(p,-10LL);
-    for(auto x:ans) cout<<x;
-    cout<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2019/03/31
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0233
-*/
-
-signed YUKI_499(){ 
+signed YUKI_499(){
   long long p;
   cin>>p;
   auto ans=convert_base(p,7LL);
@@ -65,7 +53,7 @@ signed YUKI_499(){
 signed YUKI_782(){
   long long t,b;
   cin>>t>>b;
-  while(t--){    
+  while(t--){
     long long p;
     cin>>p;
     auto ans=convert_base(p,b);
@@ -81,8 +69,8 @@ signed YUKI_782(){
 
 signed main(){
   //ABC105_C();
-  //AOJ_0233();
   //YUKI_499();
   //YUKI_782();
   return 0;
 }
+#endif
