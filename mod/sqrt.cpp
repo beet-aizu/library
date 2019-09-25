@@ -3,26 +3,6 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
-template<typename T>
-T extgcd(T a,T b,T& x,T& y){
-  T d=a;
-  if(b!=0){
-    d=extgcd(b,a%b,y,x);
-    y-=(a/b)*x;
-  }else{
-    x=1;y=0;
-  }
-  return d;
-}
-
-template<typename T>
-T mod_inverse(T a,T mod){
-  T x,y;
-  extgcd(a,mod,x,y);
-  return (x%mod+mod)%mod;
-}
-
 //BEGIN CUT HERE
 template<typename T>
 int jacobi(T a,T mod){
@@ -72,16 +52,11 @@ vector<T> mod_sqrt(T a,T mod){
   return {T(g0),T(mod-g0)};
 }
 //END CUT HERE
-
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-
 //INSERT ABOVE HERE
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int T;
   cin>>T;
   for(int t=0;t<T;t++){
@@ -94,3 +69,7 @@ signed main(){
   cout<<flush;
   return 0;
 }
+/*
+  verified on 2019/09/25
+  https://judge.yosupo.jp/problem/sqrt_mod
+*/

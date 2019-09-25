@@ -7,8 +7,6 @@ using namespace std;
 #include "../../math/convertbase.cpp"
 #undef call_from_test
 
-#define IGNORE
-
 signed main(){
   long long p;
   while(cin>>p,p){
