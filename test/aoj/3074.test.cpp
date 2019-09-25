@@ -38,11 +38,11 @@ Ring Ring::add_identity(){return add_id;};
 Ring Ring::mul_identity(){return mul_id;};
 
 signed main(){
-  int h,w;
-  long long k;
+  int h,w,k;
   cin>>h>>w>>k;
   h=1<<h;
   w=1<<w;
+
   vector< vector<int> > tt(h,vector<int>(w));
   vector< vector<int> > gg(h,vector<int>(w));
   for(int i=0;i<h;i++)
