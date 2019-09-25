@@ -80,11 +80,11 @@ struct SuffixArray{
 struct LongestCommonPrefix{
   SuffixArray sa;
 
-  vector<int> lcp,ht;
-  vector<vector<int> > dat;
+  vector<int> ht;
+  vector< vector<int> > dat;
   LongestCommonPrefix(string &s):sa(s){
     int n=s.size();
-    lcp.assign(n,0);
+    vector<int> lcp(n,0);
 
     int t=0;
     lcp[0]=0;
@@ -109,7 +109,8 @@ struct LongestCommonPrefix{
         dat[i][j]=min(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
   }
 
-  int query_with_sa(int a,int b){
+  // a, b are indices for suffix array
+  int query(int a,int b){
     assert(a!=b);
     if(a>b) swap(a,b);
     int l=b-a;
@@ -117,8 +118,8 @@ struct LongestCommonPrefix{
   }
 
   // a, b are indices for string
-  int query(int a,int b){
-    return query_with_sa(sa.rev[a],sa.rev[b]);
+  int lcp(int a,int b){
+    return query(sa.rev[a],sa.rev[b]);
   }
 };
 //END CUT HERE
@@ -149,7 +150,7 @@ signed ARC060_F(){
   auto check=
     [&](int l,int r)->int{
       for(int x:v[r-l])
-        if(lcp.query(l,l+x)>=r-l-x) return 0;
+        if(lcp.lcp(l,l+x)>=r-l-x) return 0;
       return 1;
     };
 
@@ -184,7 +185,7 @@ signed SPOJ_LCS(){
   for(int i=1;i<n+m;i++){
     if(lcp.sa[i]< n&&lcp.sa[i+1]< n) continue;
     if(lcp.sa[i]>=n&&lcp.sa[i+1]>=n) continue;
-    chmax(ans,lcp.lcp[i]);
+    chmax(ans,lcp.query(i,i+1));
   }
   cout<<ans<<endl;
   return 0;

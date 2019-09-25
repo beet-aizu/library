@@ -32,9 +32,9 @@ signed main(){
     if(k>=n) continue;
 
     auto it=ss.upper_bound(i);
-    if(it!=ss.end()) chmax(nx[k],lcp.query_with_sa(i,*it));
+    if(it!=ss.end()) chmax(nx[k],lcp.query(i,*it));
     if(it!=ss.begin()) it--;
-    if(it!=ss.end()) chmax(nx[k],lcp.query_with_sa(i,*it));
+    if(it!=ss.end()) chmax(nx[k],lcp.query(i,*it));
   }
 
   int len;
