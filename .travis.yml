@@ -2,16 +2,18 @@ language: cpp
 compiler:
     - gcc
     - clang
-dist: trusty
+dist: xenial
 addons:
     apt:
         packages:
-            - python3
-            - python3-pip
-            - python3-setuptools
+            - python
+            - python-pip
+            - python-setuptools
 
 before_install:
-    - pip3 install -U setuptools
-    - pip3 install -U online-judge-tools=='7.2.*'
+    - python --version
+    - pip install -U pip
+    - pip install -U setuptools
+    - pip install -U online-judge-tools=='7.2.*'
 script:
     - ./test/test.sh
