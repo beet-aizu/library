@@ -1,17 +1,17 @@
-dist: xenial
 language: cpp
 compiler:
     - gcc
     - clang
-
-python: 3.7
+dist: xenial
 addons:
     apt:
         packages:
             - python3
             - python3-pip
             - python3-setuptools
+
 before_install:
+    - pip3 install -U setuptools
     - pip3 install -U online-judge-tools=='7.2.*'
 script:
     - ./test/test.sh
