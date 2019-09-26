@@ -11,7 +11,7 @@ addons:
             - python3-setuptools
 
 before_install:
-    - pip3 install --upgrade pip3
+    - pip3 install --upgrade pip
     - pip3 install -U setuptools
     - pip3 install -U online-judge-tools=='7.2.*'
 script:
