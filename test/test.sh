@@ -95,7 +95,7 @@ if [[ $# -eq 0 ]] ; then
     if [[ $CI ]] ; then
         # CI
         for f in $(list-recently-updated | grep aoj) ; do
-            run_aoj $f
+            run $f
         done
     else
         # local / github actions
