@@ -9,13 +9,9 @@ addons:
     apt:
         packages:
             - python3
-            - python-pip
-            - python-setuptools
-
+            - python3-pip
+            - python3-setuptools
 before_install:
-    - python --version
-    - pip install -U pip
-    - pip install -U setuptools
-    - pip install -U online-judge-tools=='7.2.*'
+    - pip3 install -U online-judge-tools=='7.2.*'
 script:
     - ./test/test.sh
