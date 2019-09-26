@@ -1,4 +1,4 @@
-#define PROBLEM "math/exp_of_formal_power_series"
+#define PROBLEM "https://judge.yosupo.jp/problem/exp_of_formal_power_series"
 
 #include<bits/stdc++.h>
 using namespace std;

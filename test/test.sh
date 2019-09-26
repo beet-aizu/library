@@ -56,7 +56,7 @@ list-recently-updated() {
     done | sort -nr | head -n 20 | cut -f 2
 }
 
-run_aoj() {
+run() {
     file="$1"
     url="$(get-url "$file")"
     dir=test/$(echo -n "$url" | md5sum | sed 's/ .*//')
@@ -91,51 +91,6 @@ run_aoj() {
     fi
 }
 
-run_yosupo() {
-    file="$1"
-    url="$(get-url "$file")"
-    dir=test/$(echo -n "$url" | md5sum | sed 's/ .*//')
-    mkdir -p ${dir}
-
-    # ignore if IGNORE is defined
-    if list-defined "$file" | grep '^#define IGNORE ' > /dev/null ; then
-        return
-    fi
-
-    if ! is-verified "$file" ; then
-        # compile
-        $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
-        if [[ -n ${url} ]] ; then
-            # build test
-
-            echo $url
-
-            if [[ ! -e ${dir}/test ]] ; then
-                cd library-checker-problems
-                ./generate.py problems.toml -p $(basename ${url})
-                cd ..
-                mkdir -p ${dir}/test
-                prob=library-checker-problems/${url}
-                echo $prob
-                cp -r ${prob}/in/*.in ${dir}/test/
-                cp -r ${prob}/out/*.out ${dir}/test/
-            fi
-
-            # test with tolerance error
-            if list-defined "$file" | grep '^#define ERROR ' > /dev/null ; then
-                error=$(get-error "$file")
-                oj test -e ${error} -c ${dir}/a.out -d ${dir}/test
-            else
-                oj test -c ${dir}/a.out -d ${dir}/test
-            fi
-        else
-            # run
-            ${dir}/a.out
-        fi
-        mark-verified "$file"
-    fi
-}
-
 if [[ $# -eq 0 ]] ; then
     if [[ $CI ]] ; then
         # CI
@@ -154,12 +109,8 @@ if [[ $# -eq 0 ]] ; then
 
         git clone https://github.com/yosupo06/library-checker-problems.git
 
-        for f in $(find . -name \*.test.cpp | grep aoj) ; do
-            run_aoj $f
-        done
-
-        for f in $(find . -name \*.test.cpp | grep yosupo) ; do
-            run_yosupo $f
+        for f in $(find . -name \*.test.cpp) ; do
+            run $f
         done
 
         git status -s

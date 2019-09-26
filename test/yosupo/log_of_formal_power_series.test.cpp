@@ -1,4 +1,4 @@
-#define PROBLEM "math/log_of_formal_power_series"
+#define PROBLEM "https://judge.yosupo.jp/problem/log_of_formal_power_series"
 
 #include<bits/stdc++.h>
 using namespace std;

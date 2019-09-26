@@ -1,4 +1,4 @@
-#define PROBLEM "string/zalgorithm"
+#define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
 
 #include<bits/stdc++.h>
 using namespace std;
