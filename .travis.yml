@@ -2,7 +2,7 @@ language: cpp
 compiler:
     - gcc
     - clang
-dist: xenial
+dist: trusty
 addons:
     apt:
         packages:
@@ -11,7 +11,6 @@ addons:
             - python3-setuptools
 
 before_install:
-    - pip3 install --upgrade pip
     - pip3 install -U setuptools
     - pip3 install -U online-judge-tools=='7.2.*'
 script:
