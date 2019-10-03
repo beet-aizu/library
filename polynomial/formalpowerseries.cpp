@@ -78,17 +78,17 @@ struct FormalPowerSeries{
 
   Poly diff(Poly as){
     int n=as.size();
-    Poly res(n-1);
-    for(int i=1;i<n;i++) res[i-1]=as[i]*T(i);
-    return res;
+    Poly rs(n-1);
+    for(int i=1;i<n;i++) rs[i-1]=as[i]*T(i);
+    return rs;
   }
 
   Poly integral(Poly as){
     int n=as.size();
-    Poly res(n+1);
-    res[0]=T(0);
-    for(int i=0;i<n;i++) res[i+1]=as[i]/T(i+1);
-    return res;
+    Poly rs(n+1);
+    rs[0]=T(0);
+    for(int i=0;i<n;i++) rs[i+1]=as[i]/T(i+1);
+    return rs;
   }
 
   // F(0) must be 1
@@ -113,6 +113,18 @@ struct FormalPowerSeries{
       if(1LL*k*(3*k-1)/2<=n) rs[k*(3*k-1)/2]+=T(k%2?-1LL:1LL);
     }
     return inv(rs,n+1);
+  }
+
+  Poly bernoulli(int n){
+    Poly rs(n+1,1);
+    for(int i=1;i<=n;i++) rs[i]=rs[i-1]/T(i+1);
+    rs=inv(rs,n+1);
+    T tmp(1);
+    for(int i=1;i<=n;i++){
+      tmp*=T(i);
+      rs[i]*=tmp;
+    }
+    return rs;
   }
 };
 //END CUT HERE
@@ -699,7 +711,7 @@ signed main(){
   //YUKI_3046();
   //LOJ_150();
   //CODECHEF_PSUM();
-  YOSUPO_sqrt_of_formal_power_series();
+  //YOSUPO_sqrt_of_formal_power_series();
   return 0;
 }
 #endif
