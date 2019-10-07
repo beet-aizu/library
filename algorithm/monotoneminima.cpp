@@ -7,28 +7,25 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 namespace MonotoneMinima{
-  vector<int> ar;
-
   template<typename T,typename F>
-  void induce(int l,int r,int a,int b,vector<T> &dp,F dist){
+  void induce(int l,int r,int a,int b,vector<int> &dp,F dist){
     if(l==r) return;
     int m=(l+r)>>1;
-    int &idx=(ar[m]=a);
+    int &idx=(dp[m]=a);
     T res=dist(idx,m);
     for(int i=a;i<b;i++){
       T tmp=dist(i,m);
       if(tmp<res) res=tmp,idx=i;
     }
-    induce(l,m,a,idx+1,dp,dist);
-    induce(m+1,r,idx,b,dp,dist);
+    induce<T>(l,m,a,idx+1,dp,dist);
+    induce<T>(m+1,r,idx,b,dp,dist);
   }
 
   template<typename T,typename F>
   vector<int> args(int n,F dist){
-    ar.assign(n,-1);
-    vector<T> dp;
-    induce(0,n,0,n,dp,dist);
-    return ar;
+    vector<int> dp(n,-1);
+    induce<T>(0,n,0,n,dp,dist);
+    return dp;
   }
 }
 //END CUT HERE
