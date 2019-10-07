@@ -8,12 +8,12 @@ template<typename T>
 struct fraction{
   T num,dom;
   fraction(){}
-  fraction(T num,T dom):num(num),dom(dom){
-    assert(dom!=0);    
+  fraction(T n,T d):num(n),dom(d){
+    assert(dom!=0);
     if(dom<0) num*=-1,dom*=-1;
     T tmp=__gcd(abs(num),abs(dom));
     num/=tmp;
-    dom/=tmp;    
+    dom/=tmp;
   }
   fraction operator+(const fraction a) const{
     return fraction(num*a.dom+a.num*dom,dom*a.dom);
@@ -74,28 +74,28 @@ signed CPSCO2019_Session3_G(){
     Int p=x*a[i]/sum;
     pq.emplace(F(1,a[i]),i,p);
     if((x*a[i])%sum!=0)
-      pq.emplace(F(2*x,sum)-F(2*p+1,a[i]),i,1);  
+      pq.emplace(F(2*x,sum)-F(2*p+1,a[i]),i,1);
     pq.emplace(F(-1,a[i]),i,x+1);
   }
-  
+
   vector<Int> b(n,0);
   Int k=x;
   while(k>0){
     Int i,l;
     tie(ignore,i,l)=pq.top();pq.pop();
-    
+
     Int t=min(k,l);
     b[i]+=t;
     k-=t;
   }
-  
+
   for(Int i=0;i<n;i++) cout<<b[i]<<"\n";
   cout<<flush;
   return 0;
 }
 /*
-  verified on 2019/05/06
-  https://atcoder.jp/contests/cpsco2019-s3/tasks/cpsco2019_s3_g 
+  verified on 2019/10/07
+  https://atcoder.jp/contests/cpsco2019-s3/tasks/cpsco2019_s3_g
 */
 
 signed main(){
