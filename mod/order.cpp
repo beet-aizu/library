@@ -1,3 +1,4 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
@@ -11,7 +12,6 @@ struct FastIO{
   }
 }fastio_beet;
 
-//BEGIN CUT HERE
 template<typename T>
 map<T, T> factorize(T x){
   map<T, T> res;
@@ -26,16 +26,19 @@ map<T, T> factorize(T x){
 }
 
 template<typename T>
-T mpow(T x,T n,T MOD){
+T mod_pow(T a,long long n,T mod){
+  using ll = long long;
   T res(1);
   while(n){
-    if(n&1) res=res*x%MOD;
-    x=x*x%MOD;
+    if(n&1) res=(ll)res*a%mod;
+    a=(ll)a*a%mod;
     n>>=1;
   }
   return res;
 }
 
+#endif
+//BEGIN CUT HERE
 template<typename T>
 T order(T x,T MOD){
   static map<T, vector<T>> dp;
@@ -44,17 +47,17 @@ T order(T x,T MOD){
     auto fs=factorize(MOD-1);
     for(auto p:fs) ps.emplace_back(p.first);
   }
-
   T res=MOD-1;
   for(T p:ps){
     while(res%p==0){
-      if(mpow(x,res/p,MOD)!=1) break;
+      if(mod_pow(x,res/p,MOD)!=1) break;
       res/=p;
     }
   }
   return res;
 }
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed AOJ_3062(){
   using ll = long long;
@@ -104,3 +107,4 @@ signed main(){
   AOJ_3062();
   return 0;
 }
+#endif

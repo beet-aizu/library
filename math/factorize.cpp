@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
-template<typename T> 
+template<typename T>
 map<T, int> factorize(T x){
   map<T, int> res;
   for(int i=2;i*i<=x;i++){
@@ -15,6 +17,7 @@ map<T, int> factorize(T x){
   return res;
 }
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
   int a,b;
@@ -32,5 +35,6 @@ signed main(){
 }
 /*
   verified on 2018/01/29
-  https://beta.atcoder.jp/contests/arc034/tasks/arc034_3
+  https://atcoder.jp/contests/arc034/tasks/arc034_3
 */
+#endif
