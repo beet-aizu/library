@@ -9,7 +9,7 @@ struct BinaryTrie{
     Node *p,*l,*r;
     Node(Node* p):cnt(0),p(p){l=r=nullptr;}
   };
-  
+
   T acc;
   Node *root;
   BinaryTrie():acc(0){root=emplace(nullptr);}
@@ -19,7 +19,7 @@ struct BinaryTrie{
     dfs(a->l);dfs(a->r);
     delete(a);
   }
-  
+
   inline Node* emplace(Node* p){
     return new Node(p);
   }
@@ -27,7 +27,7 @@ struct BinaryTrie{
   inline size_t count(Node* a){
     return a?a->cnt:0;
   }
-  
+
   void add(const T b,size_t k=1){
     const T nb=b^acc;
     Node* a=root;
@@ -37,8 +37,8 @@ struct BinaryTrie{
       if( f&&!a->r) a->r=emplace(a);
       a=f?a->r:a->l;
     }
-    a->cnt+=k;    
-    while((a=a->p)) a->cnt=count(a->l)+count(a->r);    
+    a->cnt+=k;
+    while((a=a->p)) a->cnt=count(a->l)+count(a->r);
   }
 
   inline void update(const T b){acc^=b;}
@@ -69,11 +69,11 @@ struct BinaryTrie{
       a->cnt=count(a->l)+count(a->r);
     }
   }
-  
+
   Node* xmax(const T b){
     assert(count(root));
     const T nb=b^acc;
-    Node* a=root;    
+    Node* a=root;
     for(int i=X-1;i>=0;i--){
       bool f=(nb>>i)&1;
       if(!a->l||!a->r) a=a->l?a->l:a->r;
@@ -93,7 +93,7 @@ struct BinaryTrie{
     if(l||r) return ge(l?l:r,i+1);
     return a;
   }
-  
+
   Node* next(Node* a,int i){
     if(!(a->p)) return nullptr;
     Node *l=a->p->l,*r=a->p->r;
@@ -101,7 +101,7 @@ struct BinaryTrie{
     if(a==l&&r) return ge(r,i);
     return next(a->p,i+1);
   }
-  
+
   Node* lower_bound(const T b){
     const T nb=b^acc;
     Node* a=root;
@@ -118,7 +118,7 @@ struct BinaryTrie{
   Node* upper_bound(const T b){
     return lower_bound(b+1);
   }
-  
+
   T val(Node* a){
     T res(0);
     for(int i=0;i<(int)X;i++){
@@ -143,15 +143,15 @@ struct BinaryTrie{
     }
     return a;
   }
-  
+
   size_t order_of_key(const T b){
     Node *a=root;
     size_t res=0;
-    for(int i=X-1;i>=0;i--){      
+    for(int i=X-1;i>=0;i--){
       Node *l=a->l,*r=a->r;
       if((acc>>i)&1) swap(l,r);
       bool f=(b>>i)&1;
-      if(f) res+=count(l); 
+      if(f) res+=count(l);
       a=f?r:l;
       if(!a) break;
     }
@@ -242,7 +242,7 @@ signed CFR470_C(){
 
   BinaryTrie<int, 30> bt;
   for(int i=0;i<n;i++) bt.add(p[i]);
-  
+
   for(Int i=0;i<n;i++){
     if(i) printf(" ");
     auto k=bt.xmin(a[i]);
@@ -262,10 +262,10 @@ signed CFR477_C(){
   scanf("%lld",&n);
   vector<Int> b(n);
   for(Int i=0;i<n;i++) scanf("%lld",&b[i]);
-  
+
   BinaryTrie<Int, 61> bt;
   for(Int i=0;i<n;i++) bt.add(b[i]);
-  
+
   Int z=0;
   auto apply=[&](Int a){
                z^=a;
@@ -274,7 +274,7 @@ signed CFR477_C(){
 
   vector<Int> ans;
   Int x=bt.val(bt.xmin(0));
-  
+
   ans.emplace_back(x);
   bt.sub(bt.find(x));
   apply(x);
@@ -282,17 +282,17 @@ signed CFR477_C(){
   for(Int i=1;i<n;i++){
     if(bt.val(bt.xmax(0))<=x){
       printf("No\n");
-      return 0; 
+      return 0;
     }
     auto nxt=bt.upper_bound(x);
     Int y=bt.val(nxt);
-    
+
     ans.emplace_back(y^z);
     bt.sub(nxt);
     apply(x^y);
-    x=y;    
+    x=y;
   }
-  
+
   printf("Yes\n");
   for(Int i=0;i<n;i++){
     if(i) printf(" ");
@@ -311,12 +311,12 @@ struct HLDecomposition {
   int n,pos;
   vector<vector<int> > G;
   vector<int> vid, head, sub, par, dep, inv, type;
-  
+
   HLDecomposition(){}
   HLDecomposition(int n):
     n(n),pos(0),G(n),vid(n,-1),head(n),sub(n,1),
     par(n,-1),dep(n,0),inv(n),type(n){}
-  
+
   void add_edge(int u, int v) {
     G[u].push_back(v);
     G[v].push_back(u);
@@ -330,14 +330,14 @@ struct HLDecomposition {
       dfs_hld(r,c++);
     }
   }
-  
+
   void dfs_sz(int v) {
     for(int &u:G[v]){
       if(u==par[v]) continue;
       par[u]=v;
       dep[u]=dep[v]+1;
-      dfs_sz(u);      
-      sub[v]+=sub[u];      
+      dfs_sz(u);
+      sub[v]+=sub[u];
       if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);
     }
   }
@@ -350,9 +350,9 @@ struct HLDecomposition {
       if(u==par[v]) continue;
       head[u]=(u==G[v][0]?head[v]:u);
       dfs_hld(u,c);
-    }    
+    }
   }
-  
+
   int lca(int u,int v){
     while(1){
       if(vid[u]>vid[v]) swap(u,v);
@@ -360,7 +360,7 @@ struct HLDecomposition {
       v=par[head[v]];
     }
   }
-  
+
   Int la(Int v,Int k){
     while(1){
       Int u=head[v];
@@ -422,7 +422,7 @@ signed KUPC2018_M(){
       return res;
     }
   };
-  
+
   int q;
   scanf("%d",&q);
 
@@ -430,12 +430,12 @@ signed KUPC2018_M(){
   vector<ll> ans(q);
   for(int i=0;i<q;i++){
     scanf("%d",&type[i]);
-    if(type[i]==1) scanf("%d %d %d",&vs[i],&xs[i],&ks[i]);      
+    if(type[i]==1) scanf("%d %d %d",&vs[i],&xs[i],&ks[i]);
     if(type[i]==2) scanf("%d %d %d",&vs[i],&ys[i],&zs[i]);
     if(type[i]==3) scanf("%d",&vs[i]);
     vs[i]--;
   }
-  
+
   const int UKU = 8;
   for(int uku=0;uku<UKU;uku++){
     SegmentTree seg(n);
@@ -443,14 +443,14 @@ signed KUPC2018_M(){
     for(int i=0;i<q;i++){
       if(type[i]==1&&(i%UKU)==uku){
         int v=vs[i],x=xs[i],k=ks[i];
-        if(rt==v){	
+        if(rt==v){
           seg.update(0,n,E(x,k));
         }else if(hld.lca(rt,v)==v){
           int u=hld.la(rt,hld.distance(rt,v)-1);
           int l=hld.vid[u],r=hld.vid[u]+hld.sub[u];
           seg.update(0,l,E(x,k));
           seg.update(r,n,E(x,k));
-        }else{	
+        }else{
           int l=hld.vid[v],r=hld.vid[v]+hld.sub[v];
           seg.update(l,r,E(x,k));
         }
@@ -465,7 +465,7 @@ signed KUPC2018_M(){
     }
     seg.reset();
   }
-  
+
   for(int i=0;i<q;i++)
     if(type[i]==2) printf("%lld\n",ans[i]);
   return 0;

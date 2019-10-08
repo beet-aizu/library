@@ -1,16 +1,18 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct FullyIndexableDictionary{
   int len,blk;
   vector<unsigned> bit;
   vector<int> sum;
-  
+
   FullyIndexableDictionary(){}
   FullyIndexableDictionary(int len)
     :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}
-  
+
   void set(int k){
     bit[k>>5]|=1u<<(k&31);
   }
@@ -24,11 +26,11 @@ struct FullyIndexableDictionary{
   bool operator[](int k) const{
     return bool((bit[k>>5]>>(k&31))&1);
   }
-  
+
   int rank(int k){
     return sum[k>>5]+__builtin_popcount(bit[k>>5]&((1u<<(k&31))-1));
   }
-  
+
   int rank(bool v,int k){
     return (v?rank(k):k-rank(k));
   }
@@ -55,7 +57,7 @@ struct WaveletMatrix{
   FullyIndexableDictionary mat[MAXLOG];
   int zs[MAXLOG],buff1[MAXLOG],buff2[MAXLOG];
   static const T npos=-1;
-  
+
   int freq_dfs(int d,int l,int r,T val,T a,T b){
     if(l==r) return 0;
     if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
@@ -67,7 +69,7 @@ struct WaveletMatrix{
     return freq_dfs(d+1,l-lc,r-rc,val,a,b)
       +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);
   }
-  
+
   WaveletMatrix(vector<T> data){
     len=data.size();
     vector<T> l(len),r(len);
@@ -85,7 +87,7 @@ struct WaveletMatrix{
       for(int i=0;i<q;i++) data[p+i]=r[i];
     }
   }
-  
+
   T access(int k){
     T res=0;
     for(int dep=0;dep<MAXLOG;dep++){
@@ -143,11 +145,11 @@ struct WaveletMatrix{
     }
     return res;
   }
-  
+
   T rquantile(int l,int r,int k){
     return quantile(l,r,r-l-k-1);
   }
-  
+
   // return number of points in [left, right) * [lower, upper)
   int rangefreq(int left,int right,T lower,T upper){
     return freq_dfs(0,left,right,0,lower,upper);
@@ -162,19 +164,19 @@ struct WaveletMatrix{
       l=mat[dep].rank(bit,l)+zs[dep]*bit;
       r=mat[dep].rank(bit,r)+zs[dep]*bit;
     }
-    return make_pair(res,r-l);    
+    return make_pair(res,r-l);
   }
-  
+
   int lt(int l,int r,T v){
     auto p=ll(l,r,v);
     return p.first;
   }
-  
+
   int le(int l,int r,T v){
     auto p=ll(l,r,v);
     return p.first+p.second;
   }
-  
+
   T succ(int l,int r,T v){
     int k=le(l,r,v);
     return k==r-l?npos:rquantile(l,r,k);
@@ -185,10 +187,8 @@ struct WaveletMatrix{
     return k?rquantile(l,r,k-1):npos;
   }
 };
-
 //END CUT HERE
-
-
+#ifndef call_from_test
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
@@ -214,29 +214,28 @@ signed SPOJ_MKTHNUM(){
   https://www.spoj.com/problems/MKTHNUM/
 */
 
-
 signed UNIVERSITYCODESPRINT04_F(){
   int n;
   scanf("%d",&n);
   vector<int> t(n);
   for(int i=0;i<n;i++) scanf("%d",&t[i]);
-  
+
   vector<int> pre(n,-1),nxt(n,n),com(n+1,-1);
   unordered_map<int, int> pos;
   for(int i=0;i<n;i++){
     if(pos.count(t[i])) pre[i]=pos[t[i]];
     pos[t[i]]=i;
   }
-  
+
   pos.clear();
   for(int i=n-1;i>=0;i--){
     if(pos.count(t[i])) nxt[i]=pos[t[i]];
     pos[t[i]]=i;
     com[nxt[i]]=pre[i];
   }
-  
+
   WaveletMatrix<int, 20> wm1(pre),wm2(com);
-  
+
   int q;
   scanf("%d",&q);
   for(int i=0;i<q;i++){
@@ -247,7 +246,7 @@ signed UNIVERSITYCODESPRINT04_F(){
     ans+=wm2.rangefreq(A,B,A,B);
     printf("%d\n",ans);
   }
-  
+
   return 0;
 }
 /*
@@ -265,9 +264,9 @@ signed ABC106_D(){
   for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
   sort(vp.begin(),vp.end());
   for(int i=0;i<m;i++) tie(x[i],y[i])=vp[i];
- 
+
   WaveletMatrix<int, 10> wm(y);
- 
+
   for(int i=0;i<q;i++){
     int a,b;
     scanf("%d %d",&a,&b);
@@ -282,45 +281,10 @@ signed ABC106_D(){
   https://beta.atcoder.jp/contests/abc106/tasks/abc106_d
 */
 
-signed AOJ_1549(){
-  int n;
-  scanf("%d",&n);
-
-  const int OFS = 1e6;
-  vector<int> a(n);
-  for(int i=0;i<n;i++) scanf("%d",&a[i]),a[i]+=OFS;
-  WaveletMatrix<int, 21> wm(a);
-
-  int q;
-  scanf("%d",&q);
-  for(int i=0;i<q;i++){
-    int l,r,d;
-    scanf("%d %d %d",&l,&r,&d);
-    r++;
-    d+=OFS;
-    int ans=OFS*2;
-    if(wm.rank(d,l)<wm.rank(d,r)) ans=0;
-    else{
-      int succ=wm.succ(l,r,d);
-      if(~succ) chmin(ans,abs(succ-d));
-      int pred=wm.pred(l,r,d);
-      if(~pred) chmin(ans,abs(pred-d));
-    }
-    printf("%d\n",ans);
-  }
-  return 0;
-}
-
-/*
-  verified on 2018/08/29
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549
-*/
-
-
 signed main(){
   //SPOJ_MKTHNUM();
   //UNIVERSITYCODESPRINT04_F();
   //ABC106_D();
-  //AOJ_1549();
   return 0;
 }
+#endif
