@@ -20,6 +20,7 @@ signed main(){
     cin>>s>>t;
     G.add_edge(s,t);
   }
+  G.build();
 
   int q;
   cin>>q;
