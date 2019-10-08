@@ -12,7 +12,8 @@ struct PrimalDual{
     TC cost;
     int rev;
     edge(){}
-    edge(int to,TF cap,TC cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
+    edge(int to,TF cap,TC cost,int rev):
+      to(to),cap(cap),cost(cost),rev(rev){}
   };
 
   static const TC INF;
@@ -86,7 +87,8 @@ struct PrimalDual{
     return res;
   }
 };
-template<typename TF, typename TC> const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
+template<typename TF, typename TC>
+const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
