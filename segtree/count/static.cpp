@@ -9,18 +9,18 @@ struct SegmentTree{
   vector<vector<int> > dat;
   SegmentTree(){};
   SegmentTree(int n,vector<P> v):v(v){init(n);build();};
-  
+
   void init(int n_){
     n=1;
     while(n<n_) n<<=1;
     dat.assign(n<<1,vector<int>());
-  }  
+  }
   void build(){
     for(auto p:v)
-      dat[p.first+n].emplace_back(p.second);    
+      dat[p.first+n].emplace_back(p.second);
     for(int i=0;i<n;i++)
       sort(dat[i+n].begin(),dat[i+n].end());
-    
+
     for(int i=n-1;i;i--){
       merge(dat[(i<<1)|0].begin(),dat[(i<<1)|0].end(),
             dat[(i<<1)|1].begin(),dat[(i<<1)|1].end(),
@@ -41,7 +41,7 @@ struct SegmentTree{
     }
     return res;
   }
-  
+
 };
 
 //END CUT HERE
@@ -50,16 +50,16 @@ signed ABC106_D(){
   scanf("%d %d %d",&n,&m,&q);
   vector<int> x(m),y(m);
   for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
- 
+
   vector<P> vp;
   for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
- 
+
   SegmentTree seg(n+1,vp);
- 
+
   for(int i=0;i<q;i++){
     int a,b;
     scanf("%d %d",&a,&b);
-    printf("%d\n",seg.query(a,b+1,a,b+1));    
+    printf("%d\n",seg.query(a,b+1,a,b+1));
   }
   return 0;
 }

@@ -2,7 +2,7 @@
 using namespace std;
 using Int = long long;
 //BEGIN CUT HERE
-namespace OnlineOffLine{
+namespace OnlineOffline{
   vector<int> used;
 
   template<typename T,typename F>
@@ -64,7 +64,7 @@ signed YUKI_703(){
       return s*s+t*t;
     };
 
-  cout<<OnlineOffLine::solve<ll>(n,dist)<<endl;
+  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
@@ -90,7 +90,7 @@ signed YUKI_704(){
       return s+t;
     };
 
-  cout<<OnlineOffLine::solve<ll>(n,dist)<<endl;
+  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
@@ -116,7 +116,7 @@ signed YUKI_705(){
       return s*s*s+t*t*t;
     };
 
-  cout<<OnlineOffLine::solve<ll>(n,dist)<<endl;
+  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
   return 0;
 }
 /*
