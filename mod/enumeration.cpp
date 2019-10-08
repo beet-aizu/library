@@ -4,58 +4,6 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
-template<typename T,T MOD = 1000000007>
-struct Mint{
-  static constexpr T mod = MOD;
-
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
-
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  static Mint add_identity(){return Mint(0);}
-  static Mint mul_identity(){return Mint(1);}
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
-
-  static Mint comb(long long n,int k){
-    Mint num(1),dom(1);
-    for(int i=0;i<k;i++){
-      num*=Mint(n-i);
-      dom*=Mint(i+1);
-    }
-    return num/dom;
-  }
-};
-template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
-
 #endif
 //BEGIN CUT HERE
 template<typename M>
@@ -113,8 +61,8 @@ public:
   }
 
   static M S(int n,int k){
-    M res;
     init(k);
+    M res(0);
     for(int i=1;i<=k;i++){
       M tmp=C(k,i)*M(i).pow(n);
       if((k-i)&1) res-=tmp;
@@ -123,8 +71,8 @@ public:
     return res*=finv[k];
   }
 
-  static vector<vector<M> > D(int n,int m){
-    vector<vector<M> > dp(n+1,vector<M>(m+1,0));
+  static vector< vector<M> > D(int n,int m){
+    vector< vector<M> > dp(n+1,vector<M>(m+1,0));
     dp[0][0]=M(1);
     for(int i=0;i<=n;i++){
       for(int j=1;j<=m;j++){
@@ -143,15 +91,15 @@ public:
     dp[0]=M(1);
     for(int i=1;i<=k;i++)
       dp[i]=dp[i-1]+((i&1)?-finv[i]:finv[i]);
-    M res;
+    M res(0);
     for(int i=1;i<=k;i++)
       res+=M(i).pow(n)*finv[i]*dp[k-i];
     return res;
   }
 
   static M montmort(int n){
-    M res;
     init(n);
+    M res(0);
     for(int k=2;k<=n;k++){
       if(k&1) res-=finv[k];
       else res+=finv[k];
@@ -166,7 +114,7 @@ public:
     vector<M> dp(n+1,1),pd(n+1,1);
     for(int i=0;i<n;i++) dp[i+1]=dp[i]*(t-M(i));
     for(int i=n;i>0;i--) pd[i-1]=pd[i]*(t-M(i));
-    M res{0};
+    M res(0);
     for(int i=0;i<=n;i++){
       M tmp=y[i]*dp[i]*pd[i]*finv[i]*finv[n-i];
       if((n-i)&1) res-=tmp;
@@ -176,14 +124,66 @@ public:
   }
 };
 template<typename M>
-vector<M> Enumeration<M>::fact = vector<M>();
+vector<M> Enumeration<M>::fact=vector<M>();
 template<typename M>
-vector<M> Enumeration<M>::finv = vector<M>();
+vector<M> Enumeration<M>::finv=vector<M>();
 template<typename M>
-vector<M> Enumeration<M>::invs = vector<M>();
+vector<M> Enumeration<M>::invs=vector<M>();
 //END CUT HERE
-
 #ifndef call_from_test
+
+template<typename T,T MOD = 1000000007>
+struct Mint{
+  static constexpr T mod = MOD;
+  T v;
+  Mint():v(0){}
+  Mint(signed v):v(v){}
+  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
+
+  Mint pow(long long k){
+    Mint res(1),tmp(v);
+    while(k){
+      if(k&1) res*=tmp;
+      tmp*=tmp;
+      k>>=1;
+    }
+    return res;
+  }
+
+  static Mint add_identity(){return Mint(0);}
+  static Mint mul_identity(){return Mint(1);}
+
+  Mint inv(){return pow(MOD-2);}
+
+  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
+  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
+  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
+  Mint& operator/=(Mint a){return (*this)*=a.inv();}
+
+  Mint operator+(Mint a) const{return Mint(v)+=a;};
+  Mint operator-(Mint a) const{return Mint(v)-=a;};
+  Mint operator*(Mint a) const{return Mint(v)*=a;};
+  Mint operator/(Mint a) const{return Mint(v)/=a;};
+
+  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
+
+  bool operator==(const Mint a)const{return v==a.v;}
+  bool operator!=(const Mint a)const{return v!=a.v;}
+  bool operator <(const Mint a)const{return v <a.v;}
+
+  static Mint comb(long long n,int k){
+    Mint num(1),dom(1);
+    for(int i=0;i<k;i++){
+      num*=Mint(n-i);
+      dom*=Mint(i+1);
+    }
+    return num/dom;
+  }
+};
+template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
+template<typename T,T MOD>
+ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
+
 template<typename T>
 map<T, int> factorize(T x){
   map<T, int> res;
@@ -215,8 +215,8 @@ signed ABC110_D(){
   return 0;
 }
 /*
-  verified on 2019/05/19
-  https://beta.atcoder.jp/contests/abc110/tasks/abc110_d
+  verified on 2019/10/08
+  https://atcoder.jp/contests/abc110/tasks/abc110_d
 */
 
 //montmort
@@ -231,8 +231,8 @@ signed ARC009_C(){
   return 0;
 }
 /*
-  verified on 2019/05/19
-  https://beta.atcoder.jp/contests/arc009/tasks/arc009_3
+  verified on 2019/10/08
+  https://atcoder.jp/contests/arc009/tasks/arc009_3
 */
 
 signed ARC033_D(){
@@ -248,8 +248,8 @@ signed ARC033_D(){
   return 0;
 }
 /*
-  verified on 2019/06/20
-  https://beta.atcoder.jp/contests/arc033/tasks/arc033_4
+  verified on 2019/10/08
+  https://atcoder.jp/contests/arc033/tasks/arc033_4
 */
 
 signed YUKI_117(){
@@ -269,7 +269,7 @@ signed YUKI_117(){
   return 0;
 }
 /*
-  verified on 2019/05/19
+  verified on 2019/10/08
   https://yukicoder.me/problems/no/117
 */
 
@@ -297,7 +297,7 @@ signed YUKI_042(){
   return 0;
 }
 /*
-  verified on 2019/06/20
+  verified on 2019/10/08
   https://yukicoder.me/problems/no/42
 */
 
@@ -317,7 +317,7 @@ signed CFR315_B(){
   return 0;
 }
 /*
-  verified on 2019/05/19
+  verified on 2019/10/08
   https://codeforces.com/contest/568/problem/B
 */
 
