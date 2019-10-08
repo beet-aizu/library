@@ -37,7 +37,6 @@ istream &operator>>(istream &is,Int &val){
   if(s[0]=='-') val*=-1;
   return is;
 }
-
 //END CUT HERE
 
 Int extgcd(Int a,Int b,Int& x,Int& y){
@@ -50,6 +49,7 @@ Int extgcd(Int a,Int b,Int& x,Int& y){
   }
   return d;
 }
+
 signed main(){
   Int n,R;
   Int cnt=0;
@@ -88,7 +88,7 @@ signed main(){
       print();
       continue;
     }
- 
+
     //cout<<endl;
     Int res=v[0];
     ans[0]=1;
@@ -105,7 +105,7 @@ signed main(){
     for(Int i=0;i<n;i++) ans[i]*=(r/res);
     print();
   }
-   
+
   return 0;
 }
 
