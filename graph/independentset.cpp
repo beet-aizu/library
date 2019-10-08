@@ -2,77 +2,69 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-template<typename F>
-struct FixPoint : F{
-  FixPoint(F&& f):F(forward<F>(f)){}
-  template<typename... Args>
-  decltype(auto) operator()(Args&&... args) const{
-    return F::operator()(*this,forward<Args>(args)...);
-  }
-};
-template<typename F>
-inline decltype(auto) MFP(F&& f){
-  return FixPoint<F>{forward<F>(f)};
-}
 #endif
 //BEGIN CUT HERE
 struct IndependentSet{
   int n;
+  vector<int> deg,used,dead;
   vector<vector<int> > G;
-  IndependentSet(int n):n(n),G(n){}
+
+  IndependentSet(int n):
+    n(n),deg(n),used(n,0),dead(n,0),G(n){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);
     G[v].emplace_back(u);
   }
 
+  int res,cnt,alive;
+  void dfs(){
+    if(cnt+alive<=res) return;
+
+    int v=-1;
+    for(int i=0;i<n;i++){
+      if(used[i]||dead[i]) continue;
+      if(deg[i]<=1){
+        v=i;
+        break;
+      }
+      if(v<0||deg[v]<deg[i]) v=i;
+    }
+    if(v<0) return;
+
+    if(deg[v]!=1){
+      dead[v]=1;
+      alive--;
+      for(int u:G[v]) deg[u]--;
+
+      dfs();
+
+      dead[v]=0;
+      alive++;
+      for(int u:G[v]) deg[u]++;
+    }
+    {
+      used[v]=1;
+      alive--;
+      for(int u:G[v])
+        if(0==dead[u]++) alive-=!used[u];
+      cnt++;
+      res=max(res,cnt);
+
+      dfs();
+
+      used[v]=0;
+      alive++;
+      for(int u:G[v])
+        if(--dead[u]==0) alive+=!used[u];
+      cnt--;
+    }
+  }
+
   int build(){
-    vector<int> deg(n,0);
     for(int i=0;i<n;i++) deg[i]=G[i].size();
-
-    int res=0,cnt=0,alive=n;
-    vector<int> used(n,0),dead(n,0);
-    MFP([&](auto dfs)->void{
-          if(cnt+alive<=res) return;
-          int v=-1;
-          for(int i=0;i<n;i++){
-            if(used[i]||dead[i]) continue;
-            if(deg[i]<=1){
-              v=i;
-              break;
-            }
-            if(v<0||deg[v]<deg[i]) v=i;
-          }
-          if(v<0) return;
-
-          if(deg[v]!=1){
-            dead[v]=1;
-            alive--;
-            for(int u:G[v]) deg[u]--;
-
-            dfs();
-
-            dead[v]=0;
-            alive++;
-            for(int u:G[v]) deg[u]++;
-          }
-          {
-            used[v]=1;
-            alive--;
-            for(int u:G[v])
-              if(0==dead[u]++) alive-=!used[u];
-            cnt++;
-            res=max(res,cnt);
-
-            dfs();
-
-            used[v]=0;
-            alive++;
-            for(int u:G[v])
-              if(--dead[u]==0) alive+=!used[u];
-            cnt--;
-          }
-        })();
+    res=0,cnt=0,alive=n;
+    dfs();
     return res;
   }
 };
@@ -93,7 +85,7 @@ signed CODETHANKSFESTIVAL2017_G(){
   return 0;
 }
 /*
-  verified on 2019/02/21
+  verified on 2019/10/08
   https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_g
 */
 
@@ -147,12 +139,12 @@ signed CFR533_E(){
   return 0;
 }
 /*
-  verified on 2019/02/21
+  verified on 2019/10/08
   https://codeforces.com/contest/1105/problem/E
 */
 signed main(){
   //CODETHANKSFESTIVAL2017_G();
-  CFR533_E();
+  //CFR533_E();
   return 0;
 }
 #endif

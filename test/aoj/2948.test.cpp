@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fixpoint.cpp"
 #include "../../graph/independentset.cpp"
 #undef call_from_test
 
