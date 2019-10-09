@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T, typename F>
 struct RangeSlide{
@@ -15,7 +17,7 @@ struct RangeSlide{
     ls.emplace_back(l);
     rs.emplace_back(r);
   }
-  
+
   vector<size_t> build(){
     deque<size_t> deq;
     vector<size_t> res;
@@ -37,7 +39,7 @@ struct RangeSlide{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T>
 vector<T> compress(vector<T> v){
   sort(v.begin(),v.end());
@@ -79,8 +81,8 @@ signed AOJ_DSL_3_D(){
   cin>>n>>l;
   vector<int> as(n);
   for(int i=0;i<n;i++) cin>>as[i];
-  
-  auto cmp=[](int a,int b){return a<b;};      
+
+  auto cmp=[](int a,int b){return a<b;};
   RangeSlide<int, decltype(cmp)> rs(as,cmp);
 
   for(int i=0;i+l<=n;i++) rs.add_range(i,i+l);
@@ -96,109 +98,30 @@ signed AOJ_DSL_3_D(){
   verified on 2019/05/27
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=jp
 */
-
-signed AOJ_0613(){
-  Int n,d;
-  cin>>n>>d;
-  vector<Int> xs(n),ys(n);
-  for(Int i=0;i<n;i++) cin>>xs[i]>>ys[i];
-  if(n==1){
-    cout<<(xs[0]<=d?ys[0]:0)<<endl;
-    return 0;
-  }
-  
-  Int h=n/2;
-  using P = pair<Int, Int>;
-  auto calc=
-    [&](Int a,Int b){
-      vector<P> res;
-      MFP([&](auto dfs,Int k,Int s,Int t)->void{
-            if(k==b){
-              res.emplace_back(s,t);
-              return;
-            }
-            dfs(k+1,s,t);
-            dfs(k+1,s+xs[k],t+ys[k]);
-            dfs(k+1,s-xs[k],t-ys[k]);
-          })(a,0,0);
-      sort(res.begin(),res.end());
-      return res;
-    };
-  auto v1=calc(0,h);
-  auto v2=calc(h,n);
-  reverse(v2.begin(),v2.end());
-  
-  const Int INF = 1e17;
-  vector<Int> vs;
-  for(auto p:v1) vs.emplace_back(p.first);
-  vs.emplace_back(-INF);
-  vs.emplace_back(+INF);
-  vs=compress(vs);
-
-  vector<Int> ws(vs.size(),-INF);
-  {
-    Int k=0;
-    for(auto p:v1){
-      while(vs[k]<p.first) k++;
-      chmax(ws[k],p.second);
-    }
-  }
-  v1.clear();
-  
-  auto cmp=[](Int a,Int b){return a>b;};
-  RangeSlide<Int, decltype(cmp)> slide(ws,cmp);  
-  vector<Int> ks;
-
-  {
-    Int l=0,r=0;
-    for(auto p:v2){
-      Int x=p.first,k=p.second;
-      while(l<(Int)vs.size()&&vs[l]< -x-d) l++;
-      while(r<(Int)vs.size()&&vs[r]<=-x+d) r++;
-      if(l==r) continue;
-      slide.add_range(l,r);
-      ks.emplace_back(k);
-    }
-  }
-  vs.clear();
-  v2.clear();
-  
-  auto res=slide.build();
-  
-  Int ans=0;
-  for(Int i=0;i<(Int)res.size();i++) chmax(ans,ws[res[i]]+ks[i]);
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/05/27
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0613
-*/
-
 signed YUKI_576(){
   int n,k;
   cin>>n>>k;
   string s;
-  cin>>s;  
+  cin>>s;
   vector<int> a(n);
   for(int i=0;i<n;i++) a[i]=s[i]-'0';
-  
+
   using D = double;
   auto check=
     [&](D x)->int{
       vector<D> b(n);
       for(int i=0;i<n;i++) b[i]=a[i]-x;
-      
+
       vector<D> sm(n*2+1,0);
-      for(int i=0;i<n*2;i++) 
+      for(int i=0;i<n*2;i++)
         sm[i+1]=sm[i]+b[i%n];
 
-      auto cmp=[](D a,D b){return a<b;};      
+      auto cmp=[](D a,D b){return a<b;};
       RangeSlide<D, decltype(cmp)> rs(sm,cmp);
       for(int i=0;i<n;i++)
-        rs.add_range(i,i+n-k+1);      
+        rs.add_range(i,i+n-k+1);
 
-      auto res=rs.build();      
+      auto res=rs.build();
       for(int i=0;i<n;i++)
         if(sm[n+i]>sm[res[i]]) return 1;
       return 0;
@@ -220,7 +143,7 @@ signed YUKI_576(){
 
 signed main(){
   //AOJ_DSL_3_D();
-  //AOJ_0613();
   //YUKI_576();
   return 0;
 }
+#endif
