@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tree/heavylightdecomposition.cpp"
+#include "../../tree/lowestcommonancestor.cpp"
 #undef call_from_test
 
 signed main(){
@@ -13,7 +13,7 @@ signed main(){
 
   int n;
   cin>>n;
-  HLD lca(n);
+  LowestCommonAncestor lca(n);
   for(int i=0;i<n;i++){
     int k;
     cin>>k;

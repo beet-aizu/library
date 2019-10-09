@@ -12,7 +12,6 @@ struct LevelAncestor{
     h=1;
     while((1<<h)<=n) h++;
     par.assign(h,vector<int>(n,-1));
-    
     for(int i=2;i<=n;i++) hs[i]=hs[i>>1]+1;
   }
 
@@ -20,7 +19,7 @@ struct LevelAncestor{
     G[u].emplace_back(v);
     G[v].emplace_back(u);
   }
-  
+
   void dfs(int v,int p,int d,int f){
     if(nxt[v]<0){
       par[0][nxt[v]=v]=p;
@@ -39,13 +38,13 @@ struct LevelAncestor{
       pth[k]=pth[v];
       if(k==nxt[k]) break;
     }
-    for(;;p=v,v=nxt[v]){	
+    for(;;p=v,v=nxt[v]){
       for(int u:G[v])
-        if(u!=p&&u!=nxt[v]) dfs(u,v,d+1,1);	
+        if(u!=p&&u!=nxt[v]) dfs(u,v,d+1,1);
       if(v==nxt[v]) break;
     }
   }
-  
+
   void build(int r=0){
     dfs(r,-1,0,1);
     for(int k=0;k+1<h;k++){
@@ -68,7 +67,7 @@ struct LevelAncestor{
         if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;
     }
   }
-  
+
   int lca(int u,int v){
     if(dep[u]>dep[v]) swap(u,v);
     for(int k=0;k<h;k++){
@@ -92,7 +91,7 @@ struct LevelAncestor{
     d-=1LL<<hs[d];
     return lad[pth[v]][ord[v]-d];
   }
-  
+
   int distance(int u,int v){
     return dep[u]+dep[v]-dep[lca(u,v)]*2;
   }
@@ -133,7 +132,7 @@ signed solve(){
       }
     }
   }
-  
+
   while(scanf("%s",buf)){
     string s(buf);
     if(s=="DONE"s) break;
@@ -164,7 +163,7 @@ signed SPOJ_QTREE2(){
 }
 /*
   verified on 2018/08/25
-  https://www.spoj.com/problems/QTREE2/ 
+  https://www.spoj.com/problems/QTREE2/
 */
 
 signed main(){
