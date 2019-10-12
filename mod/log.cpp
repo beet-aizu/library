@@ -18,7 +18,7 @@ T mod_pow(T a,long long n,T mod){
 }
 #endif
 //BEGIN CUT HERE
-// find x s.t. a^x = b
+// find x s.t. a^x = b (x > 0)
 template<typename T>
 T mod_log(T a,T b,T mod){
   using ll = long long;
@@ -39,7 +39,7 @@ T mod_log(T a,T b,T mod){
     }
     res=(ll)res*p%mod;
   }
-  assert(0);
+  // not found
   return T(-1);
 }
 //END CUT HERE
@@ -155,6 +155,8 @@ T mod_inverse(T a,T mod){
   return (x%mod+mod)%mod;
 }
 
+template<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}
+
 //INSERT ABOVE HERE
 signed CFR536_F(){
   const int MOD = 998244353;
@@ -200,12 +202,47 @@ signed CFR536_F(){
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/10/12
   https://codeforces.com/contest/1106/problem/F
 */
 
+signed BBC002_F(){
+  using ll = long long;
+  ll n,p;
+  cin>>n>>p;
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+  ll x;
+  cin>>x;
+  if(x==1) drop(0);
+
+  ll s=1;
+  for(ll a:as) s=s*a%p;
+
+  const ll INF = 1e18;
+  ll ans=INF;
+  ll v=1;
+  for(int i=0;i<n;i++){
+    ll y=x*mod_inverse(v,p)%p;
+    ll t=mod_log(s,y,p);
+    if(~t) chmin(ans,t*n+i);
+    if(y==1) chmin(ans,i);
+    v*=as[i];
+    v%=p;
+  }
+
+  if(ans==INF) drop("Fracture");
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/10/12
+  https://www.hackerrank.com/contests/bbc002/challenges/bbc002-f/problem
+*/
+
 signed main(){
-  CFR536_F();
+  //CFR536_F();
+  BBC002_F();
   return 0;
 }
 #endif
