@@ -1,9 +1,9 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 
 template<typename TF,typename TC>
 struct PrimalDual{
@@ -88,7 +88,7 @@ struct PrimalDual{
   }
 };
 template<typename TF, typename TC> const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
-
+#endif
 //BEGIN CUT HERE
 template<typename TF,typename TC>
 struct NegativeEdge{
@@ -114,10 +114,7 @@ struct NegativeEdge{
     G.add_edge(u,v,cap,cost);
   }
 
-  TC flow(int ts,int tt,TF tf,int &ok){
-    fs[ts]+=tf;
-    fs[tt]-=tf;
-
+  TC flow(int &ok){
     TF f=0;
     for(int i=0;i<S;i++){
       if(fs[i]>0){
@@ -130,9 +127,15 @@ struct NegativeEdge{
     }
     return sum+G.flow(S,T,f,ok);
   }
+
+  TC flow(int ts,int tt,TF tf,int &ok){
+    fs[ts]+=tf;
+    fs[tt]-=tf;
+    return flow(ok);
+  }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed CFR190_B(){
   using ll = long long;
@@ -186,155 +189,11 @@ signed CFR190_B(){
   return 0;
 }
 /*
-  verified on 2019/07/05
+  verified on 2019/10/13
   https://codeforces.com/contest/321/problem/B
 */
-
-signed AOJ_2627(){
-  using ll = long long;
-  const ll INF = 1e9;
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  NegativeEdge<int, ll> G(n+1);
-
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    map<int, int> dst;
-    for(int j=0;j<k;j++){
-      int t,c;
-      cin>>t>>c;
-      t--;
-      G.use_edge(i,t,1,c);
-      if(!dst.count(t)) dst[t]=c;
-      chmin(dst[t],c);
-    }
-
-    for(auto p:dst)
-      G.add_edge(i,p.first,INF,p.second);
-
-    G.add_edge(i,n,INF,0);
-  }
-
-  int ok;
-  ll ans=G.flow(0,n,INF,ok);
-  assert(ok);
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/07/05
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2627
-*/
-
-const int MAX = 52;
-struct ARR{
-  array<int, MAX> val;
-  ARR(){fill(val.begin(),val.end(),0);}
-  ARR(int x){fill(val.begin(),val.end(),x);}
-  int& operator[](int k){return val[k];};
-  int operator[](int k)const{return val[k];};
-  ARR operator+(const ARR &oth) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]+oth[i];
-    return res;
-  }
-  ARR operator-(const ARR &oth) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]-oth[i];
-    return res;
-  }
-  ARR operator-() const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=-val[i];
-    return res;
-  }
-  ARR operator*(const int &k) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]*k;
-    return res;
-  }
-  ARR operator/(const int &k) const{
-    ARR res;
-    for(int i=0;i<MAX;i++)
-      res[i]=val[i]/k;
-    return res;
-  }
-  bool operator< (const ARR &oth) const{
-    return val< oth.val;
-  }
-  bool operator==(const ARR &oth) const{
-    return val==oth.val;
-  }
-};
-
-namespace std {
-  template<> class numeric_limits<ARR> {
-  public:
-    static ARR max() {return ARR(numeric_limits<int>::max());};
-  };
-}
-
-signed AOJ_2679(){
-  int n;
-  cin>>n;
-  vector<string> vs(n);
-  for(int i=0;i<n;i++) cin>>vs[i];
-
-  auto enc=
-    [&](char c){
-      if(isupper(c)) return c-'A';
-      return 26+c-'a';
-    };
-  auto dec=
-    [&](int d){
-      if(d<26) return 'A'+d;
-      return 'a'+d-26;
-    };
-
-  int S=n*2,T=n*2+1;
-  NegativeEdge<int, ARR> G(n*2+2);
-  for(int i=0;i<n;i++){
-    G.add_edge(S,i,1,ARR());
-    G.add_edge(n+i,T,1,ARR());
-  }
-
-  for(int i=0;i<n;i++){
-    for(int j=0;j<n;j++){
-      ARR cost;
-      cost[enc(vs[i][j])]=-1;
-      G.add_edge(i,n+j,1,cost);
-    }
-  }
-
-  int ok;
-  auto res=G.flow(S,T,n,ok);
-  assert(ok);
-
-  string ans;
-  for(int i=0;i<MAX;i++)
-    for(int j=0;j<-res[i];j++)
-      ans+=dec(i);
-  cout<<ans<<endl;
-
-  return 0;
-}
-/*
-  verified on 2019/07/05
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2679
-*/
-
-
 signed main(){
-  //CFR190_B();
-  //AOJ_2627();
-  AOJ_2679();
+  CFR190_B();
   return 0;
 }
+#endif
