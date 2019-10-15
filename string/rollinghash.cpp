@@ -8,6 +8,7 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 template<typename T,T MOD,T B>
 struct RollingHash{
+  using ll = long long;
   vector<T> hash,p;
   RollingHash(){}
   RollingHash(const string &s){
@@ -15,13 +16,13 @@ struct RollingHash{
     hash.assign(n+1,0);
     p.assign(n+1,1);
     for(int i=0;i<n;i++){
-      hash[i+1]=(hash[i]*B+s[i])%MOD;
-      p[i+1]=p[i]*B%MOD;
+      hash[i+1]=((ll)hash[i]*B+s[i])%MOD;
+      p[i+1]=(ll)p[i]*B%MOD;
     }
   }
   //S[l, r)
   T find(int l,int r){
-    T res=hash[r]+MOD-hash[l]*p[r-l]%MOD;
+    T res=(ll)hash[r]+MOD-(ll)hash[l]*p[r-l]%MOD;
     return res>=MOD?res-MOD:res;
   }
 };

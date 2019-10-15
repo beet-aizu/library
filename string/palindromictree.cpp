@@ -78,48 +78,58 @@ struct PalindromicTree{
 };
 //END CUT HERE
 #ifndef call_from_test
+
+template<typename T,T MOD,T B>
 struct RollingHash{
-  using ull = unsigned long long;
-  vector<ull> hash,p;
+  using ll = long long;
+  vector<T> hash,p;
   RollingHash(){}
-  RollingHash(const string &s,ull B=1e9+7){
+  RollingHash(const string &s){
     int n=s.size();
     hash.assign(n+1,0);
     p.assign(n+1,1);
     for(int i=0;i<n;i++){
-      hash[i+1]=hash[i]*B+s[i];
-      p[i+1]=p[i]*B;
+      hash[i+1]=((ll)hash[i]*B+s[i])%MOD;
+      p[i+1]=(ll)p[i]*B%MOD;
     }
   }
-  //s[l, r)
-  ull find(int l,int r){
-    return hash[r]-hash[l]*p[r-l];
+  //S[l, r)
+  T find(int l,int r){
+    T res=(ll)hash[r]+MOD-(ll)hash[l]*p[r-l]%MOD;
+    return res>=MOD?res-MOD:res;
   }
 };
-//INSERT ABOVE HERE
 
+//INSERT ABOVE HERE
 signed main(){
   using ll = long long;
   string s,t;
   cin>>s>>t;
+
   PalindromicTree p1(s),p2(t);
-  RollingHash r1(s),r2(t);
-  using ull = RollingHash::ull;
+  const int MOD = 1e9+7;
+  const int BASE1 = 1777771;
+  const int BASE2 = 1e6+3;
+  RollingHash<int, MOD, BASE1> rs1(s),rt1(t);
+  RollingHash<int, MOD, BASE2> rs2(s),rt2(t);
 
   const int MAX = 5e5+100;
-  map<ull, int> m1[MAX];
+  map<pair<int, int>, int> m1[MAX];
   for(int i=0;i<(int)p1.n;i++){
     PalindromicTree::node& u=p1.v[i];
     if(u.app<0) continue;
-    m1[u.len][r1.find(u.app,u.app+u.len)]=u.cnt;
+    auto p=make_pair(rs1.find(u.app,u.app+u.len),
+                     rs2.find(u.app,u.app+u.len));
+    m1[u.len][p]=u.cnt;
   }
 
   ll ans=0;
   for(int i=0;i<(int)p2.n;i++){
     PalindromicTree::node& u=p2.v[i];
-    ull x=r2.find(u.app,u.app+u.len);
-    if(u.app<0||!m1[u.len].count(x)) continue;
-    ans+=(ll)m1[u.len][x]*u.cnt;
+    auto p=make_pair(rt1.find(u.app,u.app+u.len),
+                     rt2.find(u.app,u.app+u.len));
+    if(u.app<0||!m1[u.len].count(p)) continue;
+    ans+=(ll)m1[u.len][p]*u.cnt;
   }
 
   cout<<ans<<endl;
