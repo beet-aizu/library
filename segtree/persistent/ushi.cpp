@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template <typename T>
 struct SegmentTree{
@@ -68,8 +70,12 @@ struct SegmentTree{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-signed main(){
+signed HAPPYQUERY_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   vector<int> as(n);
@@ -80,12 +86,12 @@ signed main(){
   SegmentTree<int> seg(f,ti);
   auto rt=seg.build(as);
 
-  vector<decltype(rt)> rts;
-  rts.emplace_back(rt);
-
   int q1;
   cin>>q1;
+
+  vector<decltype(rt)> rts;
   rts.reserve(q1+1);
+  rts.emplace_back(rt);
 
   for(int i=0;i<q1;i++){
     int p,x;
@@ -115,3 +121,8 @@ signed main(){
   verified on 2019/06/22
   https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query
 */
+signed main(){
+  HAPPYQUERY_B();
+  return 0;
+}
+#endif

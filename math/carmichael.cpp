@@ -6,7 +6,7 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
-// return maximum order in ((Z/nZ)*, *)
+// min m s.t. a^m = 1 mod n (a, n are coprime)
 template<typename T>
 T carmichael_lambda(T n){
   auto lcm=[](auto a,auto b){return a/__gcd(a,b)*b;};
