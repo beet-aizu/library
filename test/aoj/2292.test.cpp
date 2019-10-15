@@ -15,23 +15,28 @@ signed main(){
 
   PalindromicTree p1(s),p2(t);
   const int MOD = 1e9+7;
-  const int BASE = 1777771;
-  RollingHash<int, MOD, BASE> r1(s),r2(t);
+  const int BASE1 = 1777771;
+  const int BASE2 = 1e6+3;
+  RollingHash<int, MOD, BASE1> ra1(s),ra2(t);
+  RollingHash<int, MOD, BASE2> rb1(s),rb2(t);
 
   const int MAX = 5e5+100;
-  map<int, int> m1[MAX];
+  map<pair<int, int>, int> m1[MAX];
   for(int i=0;i<(int)p1.n;i++){
     PalindromicTree::node& u=p1.v[i];
     if(u.app<0) continue;
-    m1[u.len][r1.find(u.app,u.app+u.len)]=u.cnt;
+    auto p=make_pair(ra1.find(u.app,u.app+u.len),
+                     rb1.find(u.app,u.app+u.len));
+    m1[u.len][p]=u.cnt;
   }
 
   ll ans=0;
   for(int i=0;i<(int)p2.n;i++){
     PalindromicTree::node& u=p2.v[i];
-    int x=r2.find(u.app,u.app+u.len);
-    if(u.app<0||!m1[u.len].count(x)) continue;
-    ans+=(ll)m1[u.len][x]*u.cnt;
+    auto p=make_pair(ra2.find(u.app,u.app+u.len),
+                     rb2.find(u.app,u.app+u.len));
+    if(u.app<0||!m1[u.len].count(p)) continue;
+    ans+=(ll)m1[u.len][p]*u.cnt;
   }
 
   cout<<ans<<endl;
