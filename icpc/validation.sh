@@ -1,3 +1,4 @@
+#BEGIN CUT HERE
 #/bin/bash
 
 if [ $# -ne 3 ]; then
@@ -22,3 +23,4 @@ for i in {1..100}; do
         break
     fi
 done
+#END CUT HERE

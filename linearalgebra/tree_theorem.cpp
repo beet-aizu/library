@@ -17,7 +17,7 @@ struct Matrix{
   bool empty() const{return size()==0;};
   arr& operator[](size_t k){return dat[k];};
   const arr& operator[](size_t k) const {return dat[k];};
-  
+
   K determinant() const{
     Matrix A(dat);
     K res(1);
@@ -26,8 +26,8 @@ struct Matrix{
       int p=i;
       for(int j=i;j<n;j++)
         if(A[j][i]!=K(0)) p=j;
-      if(i!=p) swap(A[i],A[p]),res=-res;      
-      if(A[i][i]==K(0)) return K(0);      
+      if(i!=p) swap(A[i],A[p]),res=-res;
+      if(A[i][i]==K(0)) return K(0);
       res*=A[i][i];
       for(int j=i+1;j<n;j++) A[i][j]/=A[i][i];
       for(int j=i+1;j<n;j++)
@@ -82,7 +82,7 @@ struct MatrixTreeTheorem{
   void add_edge(int a,int b,T c){
     es.emplace_back(a,b,c);
   }
-  
+
   vector<int> bfs(int v){
     vector<int> vs;
     queue<int> q;
@@ -131,20 +131,20 @@ struct MatrixTreeTheorem{
         for(int x:vs)
           for(int y:H[x])
             if(x!=y) A[idx(x)][idx(y)]-=K(1);
-        
+
         for(int x=0;x<m;x++)
           for(int y=0;y<m;y++)
             if(x!=y) A[x][x]-=A[x][y];
-        
+
         A.dat.pop_back();
         for(auto &a:A.dat) a.pop_back();
 
-        res*=A.determinant();        
+        res*=A.determinant();
         for(int x:vs) uf.unite(v,x);
       }
       while(!r.empty()){
         int v=r.front();r.pop();
-        used[v]=0;        
+        used[v]=0;
       }
     }
     return res;
@@ -167,14 +167,14 @@ struct Mint{
     }
     return res;
   }
-  
+
   Mint inv(){return pow(MOD-2);}
-  
+
   Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
   Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
   Mint& operator/=(Mint a){return (*this)*=a.inv();}
-  
+
   Mint operator+(Mint a) const{return Mint(v)+=a;};
   Mint operator-(Mint a) const{return Mint(v)-=a;};
   Mint operator*(Mint a) const{return Mint(v)*=a;};
@@ -213,7 +213,7 @@ struct Kruskal{
     p.resize(n);
     iota(p.begin(),p.end(),0);
   }
-  
+
   int find(int x){
     return (x==p[x]?x:p[x]=find(p[x]));
   }
@@ -233,7 +233,7 @@ struct Kruskal{
   void add_edge(int u,int v,T c){
     edges.emplace_back(u,v,c);
   }
-  
+
   T build(){
     sort(edges.begin(),edges.end());
     init(n);

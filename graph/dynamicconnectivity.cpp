@@ -38,29 +38,29 @@ struct PersistentUnionFind{
 struct DynamicConnectivity{
   using edge = pair<int, int>;
   using range = edge;
-  
+
   int n,q;
   PersistentUnionFind puf;
   vector<vector<edge> > edges;
   vector<pair<range, edge> > prc;
   map<edge, int> cnt,app;
-  
+
   DynamicConnectivity(){}
   DynamicConnectivity(int n,int q_):n(n),q(1),puf(n){
     while(q<q_) q<<=1;
     edges.resize(q*2-1);
   }
-  
+
   void insert(int t,int u,int v){
     edge e=minmax(u,v);
     if(cnt[e]++==0) app[e]=t;
   }
-  
+
   void erase(int t,int u,int v){
     edge e=minmax(u,v);
     if(--cnt[e]==0) prc.emplace_back(range(app[e],t),e);
   }
-  
+
   void add(int a,int b,const edge &e,int k,int l,int r){
     if(r<=a||b<=l) return;
     if(a<=l&&r<=b){
@@ -71,11 +71,11 @@ struct DynamicConnectivity{
     add(a,b,e,k*2+1,l,m);
     add(a,b,e,k*2+2,m,r);
   }
-  
+
   void add(range &r,const edge &e){
     add(r.first,r.second,e,0,0,q);
   }
-  
+
   void build(){
     for(auto &e:cnt){
       if(!e.second) continue;
@@ -96,8 +96,8 @@ struct DynamicConnectivity{
       int x=k-(q-1);
       f(x);
     }
-    
-    puf.undo(edges[k].size()); 
+
+    puf.undo(edges[k].size());
   }
 };
 //END CUT HERE

@@ -1,3 +1,4 @@
+;BEGIN CUT HERE
 (show-paren-mode 1)
 (global-linum-mode t)
 (global-set-key "\C-z" 'undo)
@@ -7,10 +8,10 @@
 
 (setq initial-frame-alist
       (append (list '(top . 0) '(left . 750))
-	            initial-frame-alist))
+              initial-frame-alist))
 
 (setq default-frame-alist initial-frame-alist)
-(add-hook ’before-save-hook ’delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (require 'flymake)
 
@@ -26,7 +27,8 @@
                       "-fsyntax-only"
                       local-file))))
 
-(push '("\\.\\(cpp\\)$" flymake-cc-init) flymake-allowed-file-name-masks)
+(push '("\\.\\(cpp\\)$" flymake-cc-init)
+      flymake-allowed-file-name-masks)
 
 (add-hook 'c++-mode-hook
           '(lambda ()
@@ -56,3 +58,4 @@
     (goto-char pos)))
 
 (define-key global-map (kbd "C-x q") 'fmt)
+;END CUT HERE

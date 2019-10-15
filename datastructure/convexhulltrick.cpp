@@ -38,7 +38,8 @@ struct ConvexHullTrick {
         if(H.front().S<=b) return;
         H.pop_front();
       }
-      while(H.size()>=2&&check(line,H.front(),H[1])) H.pop_front();
+      while(H.size()>=2&&
+            check(line,H.front(),H[1])) H.pop_front();
       H.emplace_front(line);
     }else{
       assert(m<=H.back().F);
@@ -46,7 +47,8 @@ struct ConvexHullTrick {
         if(H.back().S<=b) return;
         H.pop_back();
       }
-      while(H.size()>=2&&check(H[H.size()-2],H.back(),line)) H.pop_back();
+      while(H.size()>=2&&
+            check(H[H.size()-2],H.back(),line)) H.pop_back();
       H.emplace_back(line);
     }
   }
@@ -69,14 +71,16 @@ struct ConvexHullTrick {
 
   T queryMonotoneInc(T x){
     assert(!empty());
-    while(H.size()>=2&&getY(H.front(),x)>=getY(H[1],x)) H.pop_front();
+    while(H.size()>=2&&
+          getY(H.front(),x)>=getY(H[1],x)) H.pop_front();
     if(isMin) return getY(H.front(),x);
     return -getY(H.front(),x);
   }
 
   T queryMonotoneDec(T x){
     assert(!empty());
-    while(H.size()>=2&&getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
+    while(H.size()>=2&&
+          getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
     if(isMin) return getY(H.back(),x);
     return -getY(H.back(),x);
   }

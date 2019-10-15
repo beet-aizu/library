@@ -11,7 +11,7 @@ struct NonmonotonicConvexHullTrick {
     number x;
     bool q;
     Line(T m=0,T b=0):m(m),b(b),val(0),x(-INF),q(false){}
-    
+
     T eval(T x) const{return m*x+b;}
     bool parallel(const Line &l) const{return m==l.m;}
     number intersect(const Line &l) const{
@@ -22,7 +22,7 @@ struct NonmonotonicConvexHullTrick {
       return m<l.m;
     }
   };
-  
+
   set<Line> hull;
   using iter = typename set<Line>::iterator;
 
@@ -44,7 +44,7 @@ struct NonmonotonicConvexHullTrick {
     it=hull.erase(it);
     return hull.insert(it,tmp);
   }
-  
+
   void addLine(T m,T b){
     if(isMin) m=-m,b=-b;
     Line l(m,b);
@@ -89,12 +89,12 @@ template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
 signed TENKA12016FINAL_E(){
   int n,l;
   scanf("%d %d",&n,&l);
-  
+
   vector<vector<int> > a(n,vector<int>(l));
   for(Int i=0;i<n;i++)
     for(Int j=0;j<l;j++)
       scanf("%d",&a[i][j]);
-  
+
   vector<Int> dp(l,0);
   for(Int i=0;i<n;i++){
     NonmonotonicConvexHullTrick<Int, true> cht;
@@ -103,7 +103,7 @@ signed TENKA12016FINAL_E(){
     for(Int j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
-    
+
   printf("%lld\n",*min_element(dp.begin(),dp.end()));
   return 0;
 }
@@ -113,7 +113,7 @@ signed TENKA12016FINAL_E(){
   https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
-signed COLOPL2018FINAL_C(){  
+signed COLOPL2018FINAL_C(){
   int n;
   scanf("%d",&n);
   vector<Int> a(n);
@@ -141,21 +141,21 @@ signed AOJ_2725(){
   for(Int i=0;i<n;i++) vt[i]=T(f[i],p[i],t[i]);
   sort(vt.begin(),vt.end());
   for(Int i=0;i<n;i++) tie(f[i],p[i],t[i])=vt[i];
-  
+
   vector<NonmonotonicConvexHullTrick<Int, false> > vh(x+1);
-  
+
   Int ans=0;
   for(Int i=0;i<n;i++){
     for(Int j=x;j>t[i];j--){
       if(vh[j-t[i]].empty()) continue;
       Int val=vh[j-t[i]].query(f[i])+p[i]-f[i]*f[i];
-      vh[j].addLine(2*f[i],val-f[i]*f[i]);      
+      vh[j].addLine(2*f[i],val-f[i]*f[i]);
       chmax(ans,val);
     }
     vh[t[i]].addLine(2*f[i],p[i]-f[i]*f[i]);
-    chmax(ans,p[i]); 
+    chmax(ans,p[i]);
   }
-  
+
   printf("%lld\n",ans);
   return 0;
 }
