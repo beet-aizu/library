@@ -13,7 +13,8 @@ struct PrimalDual{
     TC cost;
     int rev;
     edge(){}
-    edge(int to,TF cap,TC cost,int rev):to(to),cap(cap),cost(cost),rev(rev){}
+    edge(int to,TF cap,TC cost,int rev):
+      to(to),cap(cap),cost(cost),rev(rev){}
   };
 
   static const TC INF;
@@ -192,8 +193,38 @@ signed CFR190_B(){
   verified on 2019/10/13
   https://codeforces.com/contest/321/problem/B
 */
+
+signed KUPC2019_H(){
+  int n,m;
+  cin>>n>>m;
+  NegativeEdge<int, int> G(n+2);
+
+  int cap=1;
+  for(int i=0;i<m;i++){
+    int u,v,l;
+    cin>>u>>v>>l;
+    u--;v--;
+    G.add_edge(v,u,1,l-1);
+    if(l==0) cap++;
+  }
+
+  for(int i=0;i<n;i++){
+    G.add_edge(n,i,cap,2);
+    G.add_edge(i,n,cap,0);
+  }
+
+  int ok=0;
+  cout<<-G.flow(n,n,0,ok)<<endl;
+  return 0;
+}
+/*
+  verified on 2019/10/15
+  https://atcoder.jp/contests/kupc2019/tasks/kupc2019_h
+*/
+
 signed main(){
-  CFR190_B();
+  //CFR190_B();
+  KUPC2019_H();
   return 0;
 }
 #endif
