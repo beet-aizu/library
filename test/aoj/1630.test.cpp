@@ -30,12 +30,12 @@ V expr(string &s,int &p,int d){
       p++;
       V b=term(s,p,d);
       vs[d].emplace_back(b);
-      res=ph.add(res,b);
+      res+=b;
       continue;
     }
     break;
   }
-  vs[d].emplace_back(0,0,0);
+  vs[d].emplace_back(0);
   vm[d].emplace_back();
   return res;
 }
@@ -49,7 +49,7 @@ V term(string &s,int &p,int d){
       p++;
       V b=factor(s,p,d);
       vm[d].back().emplace_back(b);
-      res=ph.mul(res,b);
+      res*=b;
       continue;
     }
     break;
@@ -70,7 +70,7 @@ V factor(string &s,int &p,int d){
 
 V number(string &s,int &p){
   int k=s[p++]-'0';
-  return V(k,k,k);
+  return V(k);
 }
 
 signed main(){
@@ -83,7 +83,7 @@ signed main(){
     vs.assign(1010,vector<V>());
     vm.assign(1010,vector<vector<V> >());
 
-    V nv=ph.term(0,n);
+    V nv(n);
 
     int p=0;
     expr(s,p,0);
@@ -93,40 +93,47 @@ signed main(){
       auto &v=vs[i];
       if(v.empty()) continue;
       map<V, ll> dp;
-      V uku(0,0,0);
+      V uku(0);
+
       dp[uku]++;
       for(int j=0;j<(int)v.size();j++){
-        if(v[j]==V(0,0,0)){
+        if(v[j]==V(0)){
           dp.clear();
-          uku=V(0,0,0);
+          uku=V(0);
           dp[uku]++;
           continue;
         }
-        V malta(1,1,1);
-        for(int k=0;k<(int)vm[i][j].size();k++){
-          malta=ph.mul(malta,vm[i][j][k]);
-          ans+=dp[ph.sub(ph.add(uku,malta),nv)];
+
+        {
+          V malta(1);
+          for(int k=0;k<(int)vm[i][j].size();k++){
+            malta*=vm[i][j][k];
+            ans+=dp[uku+malta-nv];
+          }
         }
 
-        map<V, ll> dp2;
-        malta=V(1,1,1);
-        dp2[ph.mul(malta,nv)]++;
-        for(int k=1;k<(int)vm[i][j].size();k++){
-          malta=ph.mul(malta,vm[i][j][k]);
-          ans+=dp2[malta];
-          dp2[ph.mul(malta,nv)]++;
+        {
+          V malta(1);
+          map<V, ll> dp2;
+          dp2[malta*nv]++;
+          for(int k=1;k<(int)vm[i][j].size();k++){
+            malta*=vm[i][j][k];
+            ans+=dp2[malta];
+            dp2[malta*nv]++;
+          }
         }
 
-        uku=ph.add(uku,v[j]);
-        malta=V(1,1,1);
-        for(int k=0;k+1<(int)vm[i][j].size();k++){
-          malta=ph.mul(malta,vm[i][j][k]);
-          dp[ph.sub(uku,ph.mul(v[j],ph.inv(malta)))]++;
+        {
+          V malta(1);
+          uku+=v[j];
+          for(int k=0;k+1<(int)vm[i][j].size();k++){
+            malta*=vm[i][j][k];
+            dp[uku-v[j]/malta]++;
+          }
+          dp[uku]++;
         }
-        dp[uku]++;
       }
     }
-
     cout<<ans<<endl;
   }
   return 0;

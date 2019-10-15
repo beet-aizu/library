@@ -58,7 +58,31 @@ ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 //BEGIN CUT HERE
 template<typename T,typename M1,typename M2,typename M3>
 struct PolynomialHash{
-  using V = tuple<M1, M2, M3>;
+  struct V{
+    M1 v1;
+    M2 v2;
+    M3 v3;
+    V(){}
+    V(int x):v1(x),v2(x),v3(x){}
+    V(long long x):v1(x),v2(x),v3(x){}
+    V(M1 v1,M2 v2,M3 v3):v1(v1),v2(v2),v3(v3){}
+
+    V& operator+=(V a){v1+=a.v1;v2+=a.v2;v3+=a.v3;;return *this;}
+    V& operator-=(V a){v1-=a.v1;v2-=a.v2;v3-=a.v3;;return *this;}
+    V& operator*=(V a){v1*=a.v1;v2*=a.v2;v3*=a.v3;;return *this;}
+    V& operator/=(V a){v1/=a.v1;v2/=a.v2;v3/=a.v3;;return *this;}
+
+    V operator+(V a) const{return V(*this)+=a;};
+    V operator-(V a) const{return V(*this)-=a;};
+    V operator*(V a) const{return V(*this)*=a;};
+    V operator/(V a) const{return V(*this)/=a;};
+
+    tuple<M1, M2, M3> norm() const{return make_tuple(v1,v2,v3);}
+
+    bool operator==(const V a)const{return norm()==a.norm();}
+    bool operator!=(const V a)const{return norm()!=a.norm();}
+    bool operator <(const V a)const{return norm() <a.norm();}
+  };
   const T BASE = 1777771;
 
   vector<M1> po1,op1;
@@ -92,56 +116,31 @@ struct PolynomialHash{
     return V(r1,r2,r3);
   }
 
-  V add(const V &a,const V &b){
-    M1 a1=get<0>(a),b1=get<0>(b);
-    M2 a2=get<1>(a),b2=get<1>(b);
-    M3 a3=get<2>(a),b3=get<2>(b);
-    return V(a1+b1,a2+b2,a3+b3);
-  }
-
-  V sub(const V &a,const V &b){
-    M1 a1=get<0>(a),b1=get<0>(b);
-    M2 a2=get<1>(a),b2=get<1>(b);
-    M3 a3=get<2>(a),b3=get<2>(b);
-    return V(a1-b1,a2-b2,a3-b3);
-  }
-
-  V mul(const V &a,const V &b){
-    M1 a1=get<0>(a),b1=get<0>(b);
-    M2 a2=get<1>(a),b2=get<1>(b);
-    M3 a3=get<2>(a),b3=get<2>(b);
-    return V(a1*b1,a2*b2,a3*b3);
-  }
-
-  V inv(const V &a){
-    M1 a1;M2 a2;M3 a3;
-    tie(a1,a2,a3)=a;
-    return V(a1.inv(),a2.inv(),a3.inv());
-  }
-
   V term(size_t x,T k){
     M1 a1=po1[x]*M1((long long)k);
     M2 a2=po2[x]*M2((long long)k);
     M3 a3=po3[x]*M3((long long)k);
     return V(a1,a2,a3);
   }
-
 };
 //END CUT HERE
 #ifndef call_from_test
+
+template<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}
+
 //INSERT ABOVE HERE
 signed CODEFLYER2018_F(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   const int MAX = 2020;
   using BS = bitset<MAX>;
 
   int h,w,q;
-  scanf("%d %d %d",&h,&w,&q);
+  cin>>h>>w>>q;
+
   vector<string> s(h);
-  char buf[MAX];
-  for(int i=0;i<h;i++){
-    scanf("%s",buf);
-    s[i]=string(buf);
-  }
+  for(int i=0;i<h;i++) cin>>s[i];
 
   vector<BS> rs(h),cs(w);
   for(int i=0;i<h;i++){
@@ -174,18 +173,20 @@ signed CODEFLYER2018_F(){
   for(int i=0;i<h;i++){
     auto v=conv(rs[i],w);
     vrs[i]=ph.build(v);
-    if(rs[i][0]) vrs[i]=ph.sub(ri,vrs[i]);
+    if(rs[i][0]) vrs[i]=ri-vrs[i];
   }
 
   for(int j=0;j<w;j++){
     auto v=conv(cs[j],h);
     vcs[j]=ph.build(v);
-    if(cs[j][0]) vcs[j]=ph.sub(ci,vcs[j]);
+    if(cs[j][0]) vcs[j]=ci-vcs[j];
   }
 
   map<V, set<int> > mrs, mcs;
   for(int i=0;i<h;i++) mrs[vrs[i]].emplace(i);
   for(int j=0;j<w;j++) mcs[vcs[j]].emplace(j);
+
+  auto print=[&](string s){cout<<s<<"\n";};
 
   auto check=
     [&](){
@@ -211,7 +212,7 @@ signed CODEFLYER2018_F(){
         B=*t.begin();
       }
       if(a1<0&&a2<0){
-        puts("No");
+        print("No");
         return;
       }
 
@@ -233,7 +234,7 @@ signed CODEFLYER2018_F(){
       }
 
       if(c1<0&&c2<0){
-        puts("No");
+        print("No");
         return;
       }
 
@@ -272,7 +273,7 @@ signed CODEFLYER2018_F(){
           flg|=(d2-c2+1)==k;
         }
         if(!flg){
-          puts("No");
+          print("No");
           return;
         }
       }
@@ -312,22 +313,22 @@ signed CODEFLYER2018_F(){
           flg|=(b2-a2+1)==k;
         }
         if(!flg){
-          puts("No");
+          print("No");
           return;
         }
       }
 
-      puts("Yes");
+      print("Yes");
     };
 
   auto calc=
     [&](){
       if(mrs.size()>2u||mcs.size()>2u){
-        puts("No");
+        print("No");
         return;
       }
       if(mrs.size()==1u||mcs.size()==1u){
-        puts("Yes");
+        print("Yes");
         return;
       }
 
@@ -335,14 +336,14 @@ signed CODEFLYER2018_F(){
         check();
         return;
       }
-      puts("No");
+      print("No");
     };
 
   calc();
 
   for(int i=1;i<q;i++){
     int r,c;
-    scanf("%d %d",&r,&c);
+    cin>>r>>c;
     r--;c--;
 
     mrs[vrs[r]].erase(r);
@@ -350,22 +351,22 @@ signed CODEFLYER2018_F(){
     mcs[vcs[c]].erase(c);
     if(mcs[vcs[c]].empty()) mcs.erase(vcs[c]);
 
-    if(rs[r][0]) vrs[r]=ph.sub(ri,vrs[r]);
-    if(cs[c][0]) vcs[c]=ph.sub(ci,vcs[c]);
+    if(rs[r][0]) vrs[r]=ri-vrs[r];
+    if(cs[c][0]) vcs[c]=ci-vcs[c];
 
     if(rs[r][c]){
-      vrs[r]=ph.sub(vrs[r],ph.term(c,1));
-      vcs[c]=ph.sub(vcs[c],ph.term(r,1));
+      vrs[r]-=ph.term(c,1);
+      vcs[c]-=ph.term(r,1);
     }else{
-      vrs[r]=ph.add(vrs[r],ph.term(c,1));
-      vcs[c]=ph.add(vcs[c],ph.term(r,1));
+      vrs[r]+=ph.term(c,1);
+      vcs[c]+=ph.term(r,1);
     }
 
     rs[r][c].flip();
     cs[c][r].flip();
 
-    if(rs[r][0]) vrs[r]=ph.sub(ri,vrs[r]);
-    if(cs[c][0]) vcs[c]=ph.sub(ci,vcs[c]);
+    if(rs[r][0]) vrs[r]=ri-vrs[r];
+    if(cs[c][0]) vcs[c]=ci-vcs[c];
 
     mrs[vrs[r]].emplace(r);
     mcs[vcs[c]].emplace(c);
@@ -373,6 +374,7 @@ signed CODEFLYER2018_F(){
     calc();
   }
 
+  cout<<flush;
   return 0;
 }
 /*
@@ -391,18 +393,20 @@ struct Point{
   V x,y;
   Point(){}
   Point(V x,V y):x(x),y(y){}
-  Point operator+(const Point a){return Point(ph.add(x,a.x),ph.add(y,a.y));}
-  Point operator-(const Point a){return Point(ph.sub(x,a.x),ph.sub(y,a.y));}
 };
+
 using Vector = Point;
 
 Point getP(){
   int x,y;
   cin>>x>>y;
-  return Point(ph.term(0,x),ph.term(0,y));
+  return Point(V((long long)x),V((long long)y));
 }
 
 signed JAG2018SUMMER_DAY2_F(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   Point d=getP();
@@ -415,22 +419,14 @@ signed JAG2018SUMMER_DAY2_F(){
   }
 
   for(int i=0;i<n;i++){
-    if(c[i].x==d.x&&c[i].y==d.y){
-      cout<<i<<endl;
-      return 0;
-    }
+    if(c[i].x==d.x&&c[i].y==d.y) drop(i);
 
-    if(a[i].x==b[i].x&&c[i].x==d.x){
-      cout<<i<<endl;
-      return 0;
-    }
+    if(a[i].x==b[i].x&&c[i].x==d.x) drop(i);
 
     if(a[i].x==b[i].x){
       V nx=a[i].x;
       V ny=c[i].y;
-      ny=ph.add(ny,ph.mul(ph.mul(ph.sub(nx,c[i].x),
-                                 ph.inv(ph.sub(d.x,c[i].x))),
-                          ph.sub(d.y,c[i].y)));
+      ny+=(nx-c[i].x)/(d.x-c[i].x)*(d.y-c[i].y);
       d=Point(nx,ny);
       continue;
     }
@@ -438,31 +434,25 @@ signed JAG2018SUMMER_DAY2_F(){
     if(c[i].x==d.x){
       V nx=c[i].x;
       V ny=a[i].y;
-      ny=ph.add(ny,ph.mul(ph.mul(ph.sub(nx,a[i].x),
-                                 ph.inv(ph.sub(b[i].x,a[i].x))),
-                          ph.sub(b[i].y,a[i].y)));
+      ny+=(nx-a[i].x)/(b[i].x-a[i].x)*(b[i].y-a[i].y);
       d=Point(nx,ny);
       continue;
     }
 
+    V al=(b[i].y-a[i].y)/(b[i].x-a[i].x);
+    V bt=(d.y-c[i].y)/(d.x-c[i].x);
 
-    V al=ph.mul(ph.sub(b[i].y,a[i].y),ph.inv(ph.sub(b[i].x,a[i].x)));
-    V bt=ph.mul(ph.sub(d.y,c[i].y),ph.inv(ph.sub(d.x,c[i].x)));
+    if(al==bt) drop(i);
 
-    if(al==bt){
-      cout<<i<<endl;
-      return 0;
-    }
+    V nx=al*a[i].x;
+    nx-=bt*c[i].x;
+    nx-=a[i].y;
+    nx+=c[i].y;
+    nx/=al-bt;
 
-    V nx=ph.mul(al,a[i].x);
-    nx=ph.sub(nx,ph.mul(bt,c[i].x));
-    nx=ph.sub(nx,a[i].y);
-    nx=ph.add(nx,c[i].y);
-    nx=ph.mul(nx,ph.inv(ph.sub(al,bt)));
-
-    V ny=ph.mul(al,nx);
-    ny=ph.sub(ny,ph.mul(al,a[i].x));
-    ny=ph.add(ny,a[i].y);
+    V ny=al*nx;
+    ny-=al*a[i].x;
+    ny+=a[i].y;
 
     d=Point(nx,ny);
   }
@@ -477,7 +467,7 @@ signed JAG2018SUMMER_DAY2_F(){
 
 signed main(){
   //CODEFLYER2018_F();
-  JAG2018SUMMER_DAY2_F();
+  //JAG2018SUMMER_DAY2_F();
   return 0;
 }
 #endif
