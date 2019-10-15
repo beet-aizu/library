@@ -83,7 +83,7 @@ signed main(){
     vs.assign(1010,vector<V>());
     vm.assign(1010,vector<vector<V> >());
 
-    V nv(n);
+    V nv((ll)n);
 
     int p=0;
     expr(s,p,0);
@@ -130,8 +130,8 @@ signed main(){
             malta*=vm[i][j][k];
             dp[uku-v[j]/malta]++;
           }
-          dp[uku]++;
         }
+        dp[uku]++;
       }
     }
     cout<<ans<<endl;
