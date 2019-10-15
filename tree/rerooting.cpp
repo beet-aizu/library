@@ -12,14 +12,14 @@ struct ReRooting{
     Data data;
     Node(int to,int rev,Data data):to(to),rev(rev),data(data){}
   };
-  
+
   using F1 = function<T(T,T)>;
   using F2 = function<T(T,Data)>;
-  
+
   vector<vector<Node> > G;
   vector<vector<T> > ld,rd;
   vector<int> lp,rp;
-  
+
   const F1 f1;
   const F2 f2;
   const T id;
@@ -35,7 +35,7 @@ struct ReRooting{
   T dfs(int v,int p){
     while(lp[v]!=p&&lp[v]<(int)G[v].size()){
       auto &e=G[v][lp[v]];
-      ld[v][lp[v]+1]=f1(ld[v][lp[v]],f2(dfs(e.to,e.rev),e.data));      
+      ld[v][lp[v]+1]=f1(ld[v][lp[v]],f2(dfs(e.to,e.rev),e.data));
       lp[v]++;
     }
     while(rp[v]!=p&&rp[v]>=0){
@@ -44,7 +44,7 @@ struct ReRooting{
       rp[v]--;
     }
     if(p<0) return rd[v][0];
-    return f1(ld[v][p],rd[v][p+1]);    
+    return f1(ld[v][p],rd[v][p+1]);
   }
 
   vector<T> build(){
@@ -52,7 +52,7 @@ struct ReRooting{
       ld[i].assign((int)G[i].size()+1,id);
       rd[i].assign((int)G[i].size()+1,id);
       lp[i]=0;
-      rp[i]=(int)G[i].size()-1;      
+      rp[i]=(int)G[i].size()-1;
     }
     vector<T> res;
     for(int i=0;i<(int)G.size();i++){
@@ -75,7 +75,7 @@ signed YUKI_768(){
   int n;
   cin>>n;
   auto f1=[](int a,int b){return max(a,0)+max(b,0);};
-  auto f2=[](int a,int d){return d-a;};  
+  auto f2=[](int a,int d){return d-a;};
   ReRooting<int, int> G(n,f1,f2,0);
   for(int i=1;i<n;i++){
     int a,b;
@@ -86,7 +86,7 @@ signed YUKI_768(){
   auto res=G.build();
   vector<int> ans;
   for(int i=0;i<n;i++)
-    if(1-res[i]>0) ans.emplace_back(i);  
+    if(1-res[i]>0) ans.emplace_back(i);
   cout<<ans.size()<<"\n";
   for(int x:ans) cout<<x+1<<"\n";
   cout<<flush;
@@ -96,7 +96,30 @@ signed YUKI_768(){
   verified on 2019/03/04
   https://yukicoder.me/problems/no/768
 */
+
+signed DP_V(){
+  int n,m;
+  cin>>n>>m;
+  auto f1=[m](int a,int b)->int{return (long long)a*b%m;};
+  auto f2=[m](int a,int d)->int{return (a+d)%m;};
+  ReRooting<int, int> G(n,f1,f2,1);
+  for(int i=1;i<n;i++){
+    int x,y;
+    cin>>x>>y;
+    x--;y--;
+    G.add_edge(x,y,1);
+  }
+  auto ans=G.build();
+  for(int x:ans) cout<<x<<endl;
+  return 0;
+}
+/*
+  verified on 2019/10/15
+  https://atcoder.jp/contests/dp/tasks/dp_v
+*/
+
 signed main(){
   //YUKI_768();
+  DP_V();
   return 0;
 }
