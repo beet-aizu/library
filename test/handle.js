@@ -34,7 +34,9 @@ function format(data){
 $(document).ready(function(){
     var query = window.location.search.substring(1);
     var url = decodeURIComponent(query.split('&')[0].split('=')[1]);
-    getFile(url).done(function(data){
-        $("#status").html(format(data));
+    var github = 'https://github.com/beet-aizu/library/blob/master'
+    $('<a>').attr({href: github + url}).html('link').appendTo('#github');
+    getFile('/library' + url).done(function(data){
+        $('#status').html(format(data));
     });
 });
