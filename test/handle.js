@@ -28,7 +28,7 @@ function format(data){
     data = htmlEscape(data);
     l = data.search("BEGIN CUT HERE") + 15;
     r = data.search("END CUT HERE");
-    return '<pre><code>' + data.substr(l, r - l) + '</pre></code>'
+    return '<pre><code>' + data.substr(l, r - l) + '</code></pre>'
 }
 
 $(document).ready(function(){
