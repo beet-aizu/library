@@ -38,7 +38,7 @@ for t in test:
             d[s] = []
         d[s].append('/' + str(t))
 
-for key, val in d:
+for val in d.values():
     val.sort()
 
 print(json.dumps(d))
