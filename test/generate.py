@@ -11,9 +11,8 @@ d = {}
 d['library'] = []
 for l in library:
     if l not in test:
-        if str(l).search('library-checker-problems') < 0:
+        if 'library-checker-problems' not in str(l):
             d['library'].append('/' + str(l))
-d.sort()
 
 d['test'] = ['/' + str(t) for t in test]
 
@@ -38,5 +37,8 @@ for t in test:
         if not s in d:
             d[s] = []
         d[s].append('/' + str(t))
+
+for key, val in d:
+    val.sort()
 
 print(json.dumps(d))
