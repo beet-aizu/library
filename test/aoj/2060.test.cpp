@@ -7,6 +7,8 @@ using namespace std;
 #include "../../math/tetrahedra.cpp"
 #undef call_from_test
 
+#define ERROR "1e-6"
+
 signed main(){
   int n;
   while(cin>>n,n){
