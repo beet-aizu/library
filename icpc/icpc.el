@@ -21,7 +21,7 @@
          (local-file  (file-relative-name
                        temp-file
                        (file-name-directory buffer-file-name))))
-    (list "g++" (list "-std=c++11"
+    (list "g++" (list "-std=c++14"
                       "-Wall"
                       "-Wextra"
                       "-fsyntax-only"
@@ -39,7 +39,7 @@
   (let ((pos (point)))
     (setq case-fold-search nil)
     (goto-char (point-min))
-    (replace-regexp "\\([^a-zA-z0-9_\"]\\)int\\([^a-zA-z0-9_\"]\\)"
+    (replace-regexp "\\([^a-zA-Z0-9_\"]\\)int\\([^a-zA-Z0-9_\"]\\)"
                     "\\1Int\\2")
     (goto-char (point-min))
     (replace-regexp "\\([(),]\\)int\\([(),]\\)" "\\1Int\\2")

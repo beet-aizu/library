@@ -1,0 +1,4 @@
+{
+    "library" : ["/algorithm/knuthyao.cpp", "/algorithm/mo.cpp"],
+    "test" : ["/test/aoj/0233.test.cpp"]
+}
