@@ -35,34 +35,65 @@ const htmlEscape = (str) => {
     });
 }
 
+function a_tag(f){
+    return $('<a>').attr({href: 'status.html?url=' + f}).html(f);
+}
+
 function show_top(){
     getJson('list.json').done(function(data){
         for(f of data.library){
-            $('<a>')
-                .attr({href: 'status.html?url=' + f})
-                .html(f)
-                .appendTo('#list');
-            $('<br>').appendTo('#list');
+            var list = $('<ul>');
+
+            list.append(a_tag(f));
+
+            $.each(data[f], function(_, g){
+                list.append($('<li>').text('-> ').append(a_tag(g)));
+            });
+
+            list.appendTo('#list');
         }
     });
 }
 
-function show_library(data){
+function show_library(url, data){
+    $('#top').html($('<h1>').text(url));
+    var list = $('<ul>');
+    list.append($('<h2>').text('Dependency'));
+    getJson('list.json').done(function(data){
+        $.each(data[url], function(_, g){
+            list.append($('<li>').text('-> ').append(a_tag(g)));
+        });
+        list.appendTo('#dependency');
+    });
+    $('#dependency').html(list);
+
     data = htmlEscape(data);
     l = data.search("BEGIN CUT HERE") + 15;
     r = data.search(/\n[^\n]*END CUT HERE/);
-    data = 'LIBRARY<pre><code>' + data.substr(l, r - l) + '</code></pre>'
+    data = data.substr(l, r - l);
+    data = '<!-- LIBRARY --><pre><code>' + data + '</code></pre>';
     $('#status').html(data);
 }
 
-function show_test(data){
+function show_test(url, data){
+    $('#top').html($('<h1>').text(url));
+    var list = $('<ul>');
+    list.append($('<h2>').text('Dependency'));
+    getJson('list.json').done(function(data){
+        $.each(data[url], function(_, g){
+            list.append($('<li>').text('<- ').append(a_tag(g)));
+        });
+        list.appendTo('#dependency');
+    });
+    $('#dependency').html(list);
+
     data = htmlEscape(data);
-    data = 'TEST<pre><code>' + data + '</code></pre>'
+    data = '<!-- TEST --><pre><code>' + data + '</code></pre>';
     $('#status').html(data);
 }
 
 function show_content(url){
-    var github = 'https://github.com/beet-aizu/library/blob/master'
+    var github = 'https://github.com/beet-aizu/library/blob/master';
     $('<a>')
         .attr({href: github + url})
         .html('View on GitHub')
@@ -71,9 +102,9 @@ function show_content(url){
     var path = 'https://beet-aizu.github.io/library' + url;
     getFile(path).done(function(data){
         if(data.search('#define call_from_test') < 0){
-            show_library(data);
+            show_library(url, data);
         }else{
-            show_test(data);
+            show_test(url, data);
         }
     });
 }
