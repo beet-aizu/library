@@ -47,11 +47,18 @@ function show_top(){
     });
 }
 
-function format(data){
+function show_library(data){
     data = htmlEscape(data);
     l = data.search("BEGIN CUT HERE") + 15;
     r = data.search(/\n[^\n]*END CUT HERE/);
-    return '<pre><code>' + data.substr(l, r - l) + '</code></pre>'
+    data = 'LIBRARY<pre><code>' + data.substr(l, r - l) + '</code></pre>'
+    $('#status').html(data);
+}
+
+function show_test(data){
+    data = htmlEscape(data);
+    data = 'TEST<pre><code>' + data + '</code></pre>'
+    $('#status').html(data);
 }
 
 function show_content(url){
@@ -61,8 +68,13 @@ function show_content(url){
         .html('View on GitHub')
         .appendTo('#github');
 
-    getFile('https://beet-aizu.github.io/library' + url).done(function(data){
-        $('#status').html(format(data));
+    var path = 'https://beet-aizu.github.io/library' + url;
+    getFile(path).done(function(data){
+        if(data.search('/#define call_from_test') < 0){
+            show_library(data);
+        }else{
+            show_test(data);
+        }
     });
 }
 
