@@ -8,11 +8,11 @@ function getFile(url){
 	      });
 }
 
-function getJson(url){
+function getJson(){
     return $.ajax(
 	      {
 		        type     : 'GET',
-		        url      : url,
+		        url      : 'https://raw.githubusercontent.com/beet-aizu/library/master/test/list.json',
 		        dataType : 'json',
 		        timeout  : 20000,
 		        cache    : false,
@@ -41,7 +41,29 @@ function a_tag(f){
 
 function show_top(){
     $('#top').html($('<h1>').text('Verification Status'));
-    getJson('https://raw.githubusercontent.com/beet-aizu/library/master/test/list.json').done(function(data){
+    $('<button>').attr({type: "button", id: "unverified"})
+        .text('Show Only Unverified').appendTo('#list');
+
+    $('#unverified').on('click',function(){
+        getJson().done(function(data){
+            $('#list').html('');
+
+            $('<button>').attr({type: "button", id: "reloader"})
+                .text('Reset').appendTo('#list');
+
+            $('#reloader').on('click',function(){
+                location.reload();
+            });
+
+            for(f of data.library){
+                if(!data[f]){
+                    $('#list').append($('<ul>').append(a_tag(f)));
+                }
+            }
+        });
+    });
+
+    getJson().done(function(data){
         console.log(data);
         for(f of data.library){
             var list = $('<ul>');
@@ -62,7 +84,7 @@ function show_top(){
 function list_dependency(url, arrow){
     var list = $('<ul>');
     list.append($('<h2>').text('Dependency'));
-    getJson('https://raw.githubusercontent.com/beet-aizu/library/master/test/list.json').done(function(data){
+    getJson().done(function(data){
         $.each(data[url], function(_, g){
             list.append($('<li>').text(arrow).append(a_tag(g)));
         });
