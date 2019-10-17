@@ -84,10 +84,18 @@ function show_library(url, data){
     $('#status').html(data);
 }
 
+function get_problem_url(data){
+    return /#define PROBLEM \"(.*)\"/.exec(data)[1];
+}
+
 function show_test(url, data){
     $('#top').html($('<h1>').text(url));
 
     list_dependency(url, '<- ');
+
+    $('#problem').html($('<a>')
+                       .attr({href: get_problem_url(data)})
+                       .text('Problem Statement'));
 
     data = htmlEscape(data);
     data = '<!-- TEST --><pre><code>' + data + '</code></pre>';
@@ -96,10 +104,9 @@ function show_test(url, data){
 
 function show_content(url){
     var github = 'https://github.com/beet-aizu/library/blob/master';
-    $('<a>')
-        .attr({href: github + url})
-        .html('View on GitHub')
-        .appendTo('#github');
+    $('#github').html($('<a>')
+                      .attr({href: github + url})
+                      .text('View on GitHub'));
 
     var path = 'https://beet-aizu.github.io/library' + url;
     getFile(path).done(function(data){
