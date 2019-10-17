@@ -1,19 +1,19 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-//BEGIN CUT HERE
 
 namespace FFT{
   using dbl = double;
-  
+
   struct num{
     dbl x,y;
     num(){x=y=0;}
     num(dbl x,dbl y):x(x),y(y){}
   };
-  
+
   inline num operator+(num a,num b){
     return num(a.x+b.x,a.y+b.y);
   }
@@ -26,20 +26,20 @@ namespace FFT{
   inline num conj(num a){
     return num(a.x,-a.y);
   }
- 
+
   int base=1;
   vector<num> rts={{0,0},{1,0}};
   vector<int> rev={0,1};
- 
+
   const dbl PI=acosl(-1.0);
- 
+
   void ensure_base(int nbase){
     if(nbase<=base) return;
- 
+
     rev.resize(1<<nbase);
     for(int i=0;i<(1<<nbase);i++)
       rev[i]=(rev[i>>1]>>1)+((i&1)<<(nbase-1));
- 
+
     rts.resize(1<<nbase);
     while(base<nbase){
       dbl angle=2*PI/(1<<(base+1));
@@ -51,18 +51,18 @@ namespace FFT{
       base++;
     }
   }
- 
+
   void fft(vector<num> &a,int n=-1){
     if(n==-1) n=a.size();
     assert((n&(n-1))==0);
- 
+
     int zeros=__builtin_ctz(n);
     ensure_base(zeros);
     int shift=base-zeros;
     for(int i=0;i<n;i++)
       if(i<(rev[i]>>shift))
         swap(a[i],a[rev[i]>>shift]);
- 
+
     for(int k=1;k<n;k<<=1){
       for(int i=0;i<n;i+=2*k){
         for(int j=0;j<k;j++){
@@ -73,16 +73,15 @@ namespace FFT{
       }
     }
   }
- 
+
   vector<num> fa;
 
-  template<typename T>
-  vector<Int> multiply(const vector<T> &a,const vector<T> &b){
+  vector<long long> multiply(vector<int> &a,vector<int> &b){
     int need=a.size()+b.size()-1;
     int nbase=0;
     while((1<<nbase)<need) nbase++;
     ensure_base(nbase);
- 
+
     int sz=1<<nbase;
     if(sz>(int)fa.size()) fa.resize(sz);
     for(int i=0;i<sz;i++){
@@ -91,7 +90,7 @@ namespace FFT{
       fa[i]=num(x,y);
     }
     fft(fa,sz);
- 
+
     num r(0,-0.25/sz);
     for(int i=0;i<=(sz>>1);i++){
       int j=(sz-i)&(sz-1);
@@ -101,20 +100,21 @@ namespace FFT{
       fa[i]=z;
     }
     fft(fa,sz);
- 
-    vector<Int> res(need);
+
+    vector<long long> res(need);
     for(int i=0;i<need;i++)
       res[i]=fa[i].x+0.5;
-    
+
     return res;
   }
-  
-};
 
-struct bigint {  
+};
+#endif
+//BEGIN CUT HERE
+struct bigint {
   using ll = long long;
   using vll = vector<ll>;
-  
+
   constexpr static ll base = 1000000000;
   constexpr static ll base_digits = 9;
 
@@ -126,11 +126,6 @@ struct bigint {
   bigint(ll v){*this=v;}
 
   bigint(const string &s){read(s);}
-
-  void operator=(const bigint &v){
-    sign=v.sign;
-    a=v.a;
-  }
 
   void operator=(ll v){
     sign=1;
@@ -194,7 +189,7 @@ struct bigint {
     bigint b=b1.abs()*norm;
     bigint q,r;
     q.a.resize(a.a.size());
-    
+
     for(ll i=a.a.size()-1;i>=0;i--){
       r *=base;
       r+=a.a[i];
@@ -374,7 +369,7 @@ struct bigint {
     while(!res.empty()&&!res.back()) res.pop_back();
     return res;
   }
-  
+
   static vll karatsubaMultiply(const vll &a,const vll &b){
     ll n=a.size();
     vll res(n+n);
@@ -406,24 +401,25 @@ struct bigint {
     for(ll i=0;i<(ll)a2b2.size();i++) res[i+n]+=a2b2[i];
     return res;
   }
-  
+
   bigint operator*(const bigint &v) const{
     constexpr static ll nbase = 10000;
     constexpr static ll nbase_digits = 4;
-    
+
     vll a=convert_base(this->a,base_digits,nbase_digits);
     vll b=convert_base(v.a,base_digits,nbase_digits);
 
-    /*
-      while(a.size()<b.size()) a.push_back(0);
-      while(b.size()<a.size()) b.push_back(0);
-      while(a.size() &(a.size()-1)) a.push_back(0),b.push_back(0);
-      vll c=karatsubaMultiply(a,b);
-    */    
-
+    //*/
+    while(a.size()<b.size()) a.push_back(0);
+    while(b.size()<a.size()) b.push_back(0);
+    while(a.size() &(a.size()-1)) a.push_back(0),b.push_back(0);
+    vll c=karatsubaMultiply(a,b);
+    /*/
     if(a.empty()) a.push_back(0);
     if(b.empty()) b.push_back(0);
     vll c=FFT::multiply(a,b);
+    //*/
+
     bigint res;
     res.sign=sign*v.sign;
     for(ll i=0,carry=0;i<(ll)c.size();i++){
@@ -432,22 +428,22 @@ struct bigint {
       carry=(ll)(cur/nbase);
       if(i+1==(int)c.size()&&carry>0) c.push_back(0);
     }
-    
+
     res.a=convert_base(res.a,nbase_digits,base_digits);
     res.trim();
     return res;
   }
 };
 //END CUT HERE
-
-template<typename T> 
+#ifndef call_from_test
+template<typename T>
 struct BIT{
   int n;
   vector<T> bit;
   //1-indexed
   BIT():n(-1){}
   BIT(int n_,T d):n(n_),bit(n_+1,d){}
-  
+
   T sum(int i){
     T s=bit[0];
     for(int x=i;x>0;x-=(x&-x))
@@ -472,11 +468,11 @@ struct SquareMatrix{
       for(size_t j=0;j<N;j++)
         dat[i][j]=K(0);
   }
-  
+
   size_t size() const{return N;};
   arr& operator[](size_t k){return dat[k];};
   const arr& operator[](size_t k) const {return dat[k];};
-  
+
   static SquareMatrix cross(const SquareMatrix &A,const SquareMatrix &B){
     SquareMatrix res;
     for(size_t i=0;i<N;i++)
@@ -491,13 +487,13 @@ struct SquareMatrix{
     for(size_t i=0;i<N;i++) res[i][i]=K(1);
     return res;
   }
-  
+
   SquareMatrix pow(long long n) const{
     SquareMatrix a,res=identity();
     for(size_t i=0;i<N;i++)
       for(size_t j=0;j<N;j++)
         a[i][j]=dat[i][j];
-    
+
     while(n){
       if(n&1) res=cross(res,a);
       a=cross(a,a);
@@ -535,9 +531,10 @@ signed YUKI_696(){
   return 0;
 }
 /*
-  verified on 2019/02/28
+  verified on 2019/10/17
   https://yukicoder.me/problems/no/696
 */
+
 signed YUKI_129(){
   bigint MOD = 1000000000;
   long long n,m;
@@ -553,7 +550,7 @@ signed YUKI_129(){
   return 0;
 }
 /*
-  verified on 2019/02/28
+  verified on 2019/10/17
   https://yukicoder.me/problems/no/129
 */
 
@@ -567,7 +564,7 @@ signed YUKI_303(){
     return 0;
   }
   cout<<l<<endl;
-  
+
   using M = SquareMatrix<bigint, 2>;
   M A;
   A[0][0]=1;A[0][1]=1;
@@ -582,84 +579,14 @@ signed YUKI_303(){
   return 0;
 }
 /*
-  verified on 2019/02/28
+  verified on 2019/10/17
   https://yukicoder.me/problems/no/303
-*/
-
-signed NTL_2_A(){
-  bigint a,b;
-  cin>>a>>b;
-  cout<<a+b<<endl;
-  return 0;
-}
-/*
-  verified on 2019/02/28
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_A&lang=jp
-*/
-
-signed NTL_2_B(){
-  bigint a,b;
-  cin>>a>>b;
-  cout<<a-b<<endl;
-  return 0;
-}
-/*
-  verified on 2019/02/28
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_B&lang=jp
-*/
-
-signed NTL_2_C(){
-  bigint a,b;
-  cin>>a>>b;
-  cout<<a*b<<endl;
-  return 0;
-}
-/*
-  verified on 2019/02/28
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_C&lang=jp
-*/
-
-signed NTL_2_D(){
-  bigint a,b;
-  cin>>a>>b;
-  cout<<a/b<<endl;
-  return 0;
-}
-/*
-  verified on 2019/02/28
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D&lang=jp
-*/
-
-signed NTL_2_E(){
-  bigint a,b;
-  cin>>a>>b;
-  cout<<a%b<<endl;
-  return 0;
-}
-/*
-  verified on 2019/02/28
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_E&lang=jp
-*/
-
-signed NTL_2_F(){
-  bigint a,b;
-  cin>>a>>b;
-  cout<<a*b<<endl;
-  return 0;
-}
-/*
-  verified on 2019/02/28
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_F&lang=jp
 */
 
 signed main(){
   //YUKI_696();
   //YUKI_129();
   //YUKI_303();
-  //NTL_2_A();
-  //NTL_2_B();
-  //NTL_2_C();
-  //NTL_2_D();
-  //NTL_2_E();
-  //NTL_2_F();
+  return 0;
 }
+#endif
