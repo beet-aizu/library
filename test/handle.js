@@ -41,7 +41,7 @@ function a_tag(f){
 
 function show_top(){
     $('#top').html($('<h1>').text('Verification Status'));
-    getJson('list.json').done(function(data){
+    getJson('https://raw.githubusercontent.com/beet-aizu/library/master/test/list.json').done(function(data){
         console.log(data);
         for(f of data.library){
             var list = $('<ul>');
@@ -62,7 +62,7 @@ function show_top(){
 function list_dependency(url, arrow){
     var list = $('<ul>');
     list.append($('<h2>').text('Dependency'));
-    getJson('list.json').done(function(data){
+    getJson('https://raw.githubusercontent.com/beet-aizu/library/master/test/list.json').done(function(data){
         $.each(data[url], function(_, g){
             list.append($('<li>').text(arrow).append(a_tag(g)));
         });
