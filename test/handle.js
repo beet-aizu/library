@@ -40,6 +40,7 @@ function a_tag(f){
 }
 
 function show_top(){
+    $('#top').html($('<h1>').text('Verification Status'));
     getJson('list.json').done(function(data){
         for(f of data.library){
             var list = $('<ul>');
@@ -55,17 +56,22 @@ function show_top(){
     });
 }
 
-function show_library(url, data){
-    $('#top').html($('<h1>').text(url));
+function list_dependency(url, arrow){
     var list = $('<ul>');
     list.append($('<h2>').text('Dependency'));
     getJson('list.json').done(function(data){
         $.each(data[url], function(_, g){
-            list.append($('<li>').text('-> ').append(a_tag(g)));
+            list.append($('<li>').text(arrow).append(a_tag(g)));
         });
         list.appendTo('#dependency');
     });
     $('#dependency').html(list);
+}
+
+function show_library(url, data){
+    $('#top').html($('<h1>').text(url));
+
+    list_dependency(url, '-> ');
 
     data = htmlEscape(data);
     l = data.search("BEGIN CUT HERE") + 15;
@@ -77,15 +83,8 @@ function show_library(url, data){
 
 function show_test(url, data){
     $('#top').html($('<h1>').text(url));
-    var list = $('<ul>');
-    list.append($('<h2>').text('Dependency'));
-    getJson('list.json').done(function(data){
-        $.each(data[url], function(_, g){
-            list.append($('<li>').text('<- ').append(a_tag(g)));
-        });
-        list.appendTo('#dependency');
-    });
-    $('#dependency').html(list);
+
+    list_dependency(url, '<- ');
 
     data = htmlEscape(data);
     data = '<!-- TEST --><pre><code>' + data + '</code></pre>';
