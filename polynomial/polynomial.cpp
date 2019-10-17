@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct Polynomial{
   using P = Polynomial;
@@ -8,7 +10,7 @@ struct Polynomial{
   Polynomial():co(1,1){}
   Polynomial(int s):co(s,0){}
   Polynomial(vector<int> co):co(co){}
-  
+
   size_t size() const{
     return co.size();
   };
@@ -37,7 +39,7 @@ struct Polynomial{
       if(i!=n-1&&co[i]>0) cout<<"+";
       if(co[i]==-1) cout<<"-";
       else if(co[i]!=1) cout<<co[i];
-      
+
       cout<<"x";
       if(i!=1) cout<<"^"<<i;
     }
@@ -86,7 +88,7 @@ struct Polynomial{
     for(int i=0;i<k;i++) res=res*a;
     return res;
   }
-  
+
   pair<P, P> divide(const P &a) const{
     int n=size(),m=a.size(),s=n-m+1;
     if(s<0) return make_pair(P(1),*this);
@@ -101,9 +103,9 @@ struct Polynomial{
     }
     return make_pair(div,rest);
   }
-  
+
   P operator/(const P &a) const{return divide(a).first;};
-  P operator%(const P &a) const{return divide(a).second;};  
+  P operator%(const P &a) const{return divide(a).second;};
 };
 
 Polynomial gcd(Polynomial a,Polynomial b){
@@ -113,115 +115,10 @@ Polynomial gcd(Polynomial a,Polynomial b){
   if(b.size()==1u&&!b[0]) return a;
   return gcd(b,a%b);
 }
-
 //END CUT HERE
-
-Polynomial expr(string s,int &p);
-Polynomial factor(string s,int &p);
-Polynomial term(string s,int &p);
-int number(string s,int &p);
-
-Polynomial expr(string s,int &p){
-  //cout<<"expr"<<endl;
-  Polynomial res;
-  if(s[p]=='-'){
-    p++;
-    res=-factor(s,p);
-  }else res=factor(s,p);
-  
-  while(p<(int)s.size()){
-    //res.print();
-    if(s[p]=='+'){
-      p++;
-      res=res+factor(s,p);
-      continue;
-    }
-    if(s[p]=='-'){
-      p++;
-      res=res-factor(s,p);
-      continue;
-    }
-    break;
-  }
-  //res.print();
-  return res;
-}
-Polynomial factor(string s,int &p){
-  //cout<<"factor"<<endl;
-  Polynomial res=term(s,p);
-  while(p<(int)s.size()){
-    //res.print();
-    if(s[p]=='+') break;
-    if(s[p]=='-') break;
-    if(s[p]==')') break;
-    res=res*term(s,p);
-  }
-  return res;
-}
-Polynomial term(string s,int &p){
-  //cout<<"term"<<endl;
-  if(s[p]=='('){
-    p++;
-    Polynomial res=expr(s,p);
-    assert(s[p]==')');
-    p++;
-    if(s[p]=='^'){
-      p++;
-      int k=number(s,p);
-      res=res.pow(res,k);
-    }
-    //res.print();
-    return res;
-  }
-  int v=(s[p]=='x'?1:number(s,p));
-  if(p<(int)s.size()&&s[p]=='x'){      
-    p++;
-    if(p<(int)s.size()&&s[p]=='^'){
-      p++;
-      int k=number(s,p);
-      Polynomial res(k+1);
-      res[k]=v;
-      //res.print();
-      return res;
-    }
-    Polynomial res(2);
-    res[1]=v;
-    //res.print();
-    return res;
-  }
-  Polynomial res;
-  res[0]=v;
-  //res.print();
-  return res;
-}
-
-int number(string s,int &p){
-  int res=0;
-  while(p<(int)s.size()&&isdigit(s[p]))
-    res=res*10+(s[p++]-'0');
-  return res;
-}
-
-Polynomial calc(string s){
-  int p=0;
-  return expr(s,p);
-}
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  string s,t;
-  while(cin>>s,s!="."){
-    cin>>t;
-    Polynomial ps=calc(s);
-    Polynomial pt=calc(t);
-    if(0){
-      cout<<endl;
-      ps.print();
-      pt.print();
-      cout<<endl;
-    }
-    Polynomial ans=gcd(ps,pt);
-    ans.print();
-  }
   return 0;
 }
+#endif
