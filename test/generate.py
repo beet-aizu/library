@@ -11,7 +11,9 @@ d = {}
 d['library'] = []
 for l in library:
     if l not in test:
-        d['library'].append('/' + str(l))
+        if l.search('library-checker-problems') < 0:
+            d['library'].append('/' + str(l))
+d.sort()
 
 d['test'] = ['/' + str(t) for t in test]
 
