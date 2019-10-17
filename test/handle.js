@@ -70,7 +70,7 @@ function show_content(url){
 
     var path = 'https://beet-aizu.github.io/library' + url;
     getFile(path).done(function(data){
-        if(data.search('/#define call_from_test') < 0){
+        if(data.search('#define call_from_test') < 0){
             show_library(data);
         }else{
             show_test(data);
