@@ -1,7 +1,0 @@
-{
-    "library" : ["/algorithm/knuthyao.cpp", "/algorithm/mo.cpp"],
-    "test" : ["/test/aoj/0233.test.cpp"],
-    "/algorithm/knuthyao.cpp" : ["/test/aoj/2488.test.cpp"],
-    "/algorithm/mo.cpp" : [],
-    "/test/aoj/2488.test.cpp" : ["/algorithm/knuthyao.cpp"]
-}

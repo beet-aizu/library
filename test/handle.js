@@ -42,14 +42,17 @@ function a_tag(f){
 function show_top(){
     $('#top').html($('<h1>').text('Verification Status'));
     getJson('list.json').done(function(data){
+        console.log(data);
         for(f of data.library){
             var list = $('<ul>');
 
             list.append(a_tag(f));
 
-            $.each(data[f], function(_, g){
-                list.append($('<li>').text('-> ').append(a_tag(g)));
-            });
+            if(data[f]){
+                $.each(data[f], function(_, g){
+                    list.append($('<li>').text('-> ').append(a_tag(g)));
+                });
+            }
 
             list.appendTo('#list');
         }

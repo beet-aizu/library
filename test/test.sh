@@ -113,6 +113,8 @@ if [[ $# -eq 0 ]] ; then
             run $f
         done
 
+        python ./test/generate.py > ./test/list.json
+
         git status -s
         if [ -n "$(git status -s)" ]; then
             last_commit="$(git log -1 | head -1 | awk '{print $2}')"
