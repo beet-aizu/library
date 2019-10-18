@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T, typename E>
 struct SkewHeap{
@@ -13,7 +15,7 @@ struct SkewHeap{
   T INF;
   E ei;
   SkewHeap(G g,H h,C c,T INF,E ei):g(g),h(h),c(c),INF(INF),ei(ei){}
-  
+
   struct Node{
     Node *l,*r;
     T val;
@@ -29,7 +31,7 @@ struct SkewHeap{
     a->val=g(a->val,a->add);
     a->add=ei;
   }
-  
+
   T top(Node *a){
     return a!=nullptr?g(a->val,a->add):INF;
   }
@@ -43,11 +45,11 @@ struct SkewHeap{
     if(a!=nullptr) a->add=h(a->add,d);
     return a;
   }
-  
+
   Node* push(T v){
     return new Node(v,ei);
   }
-  
+
   Node* meld(Node *a,Node *b){
     if(!a||!b) return a?a:b;
     if(c(top(a),top(b))) swap(a,b);
@@ -56,49 +58,17 @@ struct SkewHeap{
     swap(a->l,a->r);
     return a;
   }
-  
+
   Node* pop(Node* a){
     eval(a);
     auto res=meld(a->l,a->r);
     delete a;
     return res;
   }
-  
+
 };
 //END CUT HERE
-struct ALDS1_9_C{
-  signed solve(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-
-    using Heap=SkewHeap<int, int>;
-    auto g=[](int a,int b){return a+b;};
-    auto h=[](int a,int b){return a+b;};
-    auto c=[](int a,int b){return a<b;};
-    int INF = -1;
-    Heap heap(g,h,c,INF,0);
-    auto base=heap.push(0);
-  
-    string s;
-    while(cin>>s,s!="end"){
-      int x;
-      if(s=="insert"){
-        cin>>x;
-        base=heap.meld(base,heap.push(x));
-      }
-      if(s=="extract"){
-        x=heap.top(base);
-        base=heap.pop(base);
-        cout<<x<<endl;
-      }
-    }
-    return 0;
-  }
-  /*
-    verified on 2018/03/04
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C&lang=jp
-  */
-};
+#ifndef call_from_test
 
 struct APC001_D{
   struct UnionFind{
@@ -120,14 +90,14 @@ struct APC001_D{
       p[y]=x;
     }
   };
-  
+
   signed solve(){
     using Heap = SkewHeap<Int, Int>;
     Int n,m;
     cin>>n>>m;
     vector<Int> a(n);
     for(Int i=0;i<n;i++) cin>>a[i];
-    
+
     auto g=[](Int a,Int b){return a+b;};
     auto h=[](Int a,Int b){return a+b;};
     auto c=[](Int a,Int b){return a>b;};
@@ -136,7 +106,7 @@ struct APC001_D{
     Heap heap(g,h,c,INF,0);
     vector<Heap::Node*> v(n);
     for(Int i=0;i<n;i++) v[i]=heap.push(a[i]);
-    
+
     UnionFind uf(n);
     for(Int i=0;i<m;i++){
       Int x,y;
@@ -147,14 +117,14 @@ struct APC001_D{
       v[x]=heap.meld(v[x],v[y]);
       v[y]=NULL;
     }
-    
+
     if(m==n-1){
       cout<<0<<endl;
       return 0;
     }
-    
+
     Heap::Node* base=NULL;
-    
+
     Int ans=0,cnt=0;
     for(Int i=0;i<n;i++){
       if(uf.find(i)==i){
@@ -164,7 +134,7 @@ struct APC001_D{
         cnt++;
       }
     }
-    
+
     while(m*2+cnt<(n-1)*2){
       if(base==NULL){
         cout<<"Impossible"<<endl;
@@ -174,7 +144,7 @@ struct APC001_D{
       base=heap.pop(base);
       cnt++;
     }
-  
+
     cout<<ans<<endl;
     return 0;
   }
@@ -185,8 +155,7 @@ struct APC001_D{
 };
 
 signed main(){
-  //ALDS1_9_C ans;
   APC001_D ans;
-  
   ans.solve();
 }
+#endif

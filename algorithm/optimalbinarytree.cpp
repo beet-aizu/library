@@ -1,8 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-//BEGIN CUT HERE
-
 template<typename T, typename E>
 struct SkewHeap{
   using G = function<T(T,E)>;
@@ -14,7 +13,7 @@ struct SkewHeap{
   T INF;
   E ei;
   SkewHeap(G g,H h,C c,T INF,E ei):g(g),h(h),c(c),INF(INF),ei(ei){}
-  
+
   struct Node{
     Node *l,*r;
     T val;
@@ -30,7 +29,7 @@ struct SkewHeap{
     a->val=g(a->val,a->add);
     a->add=ei;
   }
-  
+
   T top(Node *a){
     return a!=nullptr?g(a->val,a->add):INF;
   }
@@ -44,11 +43,11 @@ struct SkewHeap{
     if(a!=nullptr) a->add=h(a->add,d);
     return a;
   }
-  
+
   Node* push(T v){
     return new Node(v,ei);
   }
-  
+
   Node* meld(Node *a,Node *b){
     if(a==nullptr) return b;
     if(b==nullptr) return a;
@@ -58,39 +57,40 @@ struct SkewHeap{
     swap(a->l,a->r);
     return a;
   }
-  
+
   Node* pop(Node* a){
     eval(a);
     auto res=meld(a->l,a->r);
     delete a;
     return res;
   }
-  
-};
 
+};
+#endif
+//BEGIN CUT HERE
 template<typename T>
-T optimalbinarytree(vector<T> s,T INF){
-  using Heap=SkewHeap<T,T>;
-  
-  typename Heap::G g=[](T a,T b){return a+b;};
-  typename Heap::H h=[](T a,T b){return a+b;};
-  typename Heap::C c=[](T a,T b){return a>b;};
-  Heap heap(g,h,c,INF,0);
-  
-  int n=s.size();
+T optimalbinarytree(vector<T> ws){
+  const T INF = numeric_limits<T>::max()/2;
+  using Heap=SkewHeap<T, T>;
+
+  auto g=[](T a,T b){return a+b;};
+  auto c=[](T a,T b){return a>b;};
+  Heap heap(g,g,c,INF,0);
+
+  int n=ws.size();
   vector<typename Heap::Node* > hs(n-1,nullptr);
   vector<int> ls(n),rs(n);
   vector<T> cs(n-1);
-  
+
   using P = pair<T, int>;
   priority_queue<P,vector<P>,greater<P> > pq;
   for(int i=0;i<n-1;i++){
     ls[i]=i-1;
     rs[i]=i+1;
-    cs[i]=s[i]+s[i+1];
+    cs[i]=ws[i]+ws[i+1];
     pq.emplace(cs[i],i);
   }
-  
+
   T res=0;
   for(int k=0;k<n-1;k++){
     T c;
@@ -100,10 +100,10 @@ T optimalbinarytree(vector<T> s,T INF){
     }while(rs[i]<0||cs[i]!=c);
 
     bool ml=false,mr=false;
-    if(s[i]+heap.top(hs[i])==c){
+    if(ws[i]+heap.top(hs[i])==c){
       hs[i]=heap.pop(hs[i]);
       ml=true;
-    }else if(s[i]+s[rs[i]]==c){
+    }else if(ws[i]+ws[rs[i]]==c){
       ml=mr=true;
     }else if(heap.top(hs[i])+heap.snd(hs[i])==c){
       hs[i]=heap.pop(heap.pop(hs[i]));
@@ -115,8 +115,8 @@ T optimalbinarytree(vector<T> s,T INF){
     res+=c;
     hs[i]=heap.meld(hs[i],heap.push(c));
 
-    if(ml) s[i]=INF;
-    if(mr) s[rs[i]]=INF;
+    if(ml) ws[i]=INF;
+    if(mr) ws[rs[i]]=INF;
 
     if(ml&&i>0){
       int j=ls[i];
@@ -135,29 +135,17 @@ T optimalbinarytree(vector<T> s,T INF){
       ls[rs[i]]=i;
     }
 
-    cs[i]=min({s[i]+s[rs[i]],
-               min(s[i],s[rs[i]])+heap.top(hs[i]),
+    cs[i]=min({ws[i]+ws[rs[i]],INF,
+               min(ws[i],ws[rs[i]])+heap.top(hs[i]),
                heap.top(hs[i])+heap.snd(hs[i])});
-
     pq.emplace(cs[i],i);
   }
   return res;
 }
 //END CUT HERE
-
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  Int n;
-  cin>>n;
-  vector<Int> s(n);
-  for(Int i=0;i<n;i++) cin>>s[i];
-  const Int INF = 1e16;
-  cout<<optimalbinarytree(s,INF)<<endl;
   return 0;
 }
-
-/*
-  verified on 2018/02/16
-  https://beta.atcoder.jp/contests/atc002/tasks/atc002_c
-*/
+#endif
