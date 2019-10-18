@@ -9,26 +9,26 @@ vector<T> dijkstra(int s,vector< vector< pair<int, T> > > & G){
   const T INF = numeric_limits<T>::max();
   using P = pair<T, int>;
   int n=G.size();
-  vector<T> d(n,INF);
-  vector<int> b(n,-1);
-  priority_queue<P, vector<P>, greater<P> > q;
-  d[s]=0;
-  q.emplace(d[s],s);
-  while(!q.empty()){
-    P p=q.top();q.pop();
+  vector<T> ds(n,INF);
+  vector<int> bs(n,-1);
+  priority_queue<P, vector<P>, greater<P> > pq;
+  ds[s]=0;
+  pq.emplace(ds[s],s);
+  while(!pq.empty()){
+    P p=pq.top();pq.pop();
     int v=p.second;
-    if(d[v]<p.first) continue;
+    if(ds[v]<p.first) continue;
     for(auto& e:G[v]){
       int u=e.first;
       T c=e.second;
-      if(d[u]>d[v]+c){
-        d[u]=d[v]+c;
-        b[u]=v;
-        q.emplace(d[u],u);
+      if(ds[u]>ds[v]+c){
+        ds[u]=ds[v]+c;
+        bs[u]=v;
+        pq.emplace(ds[u],u);
       }
     }
   }
-  return d;
+  return ds;
 }
 //END CUT HERE
 #ifndef call_from_test
