@@ -1,10 +1,12 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct Kruskal{
-  
+
   struct edge{
     int from,to;
     T cost;
@@ -24,8 +26,8 @@ struct Kruskal{
   Kruskal(int n):n(n),r(n,1),p(n){
     iota(p.begin(),p.end(),0);
   }
-  
-  int find(int x){    
+
+  int find(int x){
     return (x==p[x]?x:p[x]=find(p[x]));
   }
 
@@ -44,7 +46,7 @@ struct Kruskal{
   void add_edge(int u,int v,T c){
     es.emplace_back(u,v,c);
   }
-  
+
   T build(){
     sort(es.begin(),es.end());
     T res=0;
@@ -59,20 +61,8 @@ struct Kruskal{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 int main(){
-  int V,E;
-  scanf("%d %d",&V,&E);
-  Kruskal<int> ksk(V);
-  for(int i=0;i<E;i++){
-    int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
-    ksk.add_edge(a,b,c);
-  }
-  printf("%d\n",ksk.build());
   return 0;
 }
-
-/*
-  verified on 2018/10/22
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
-*/
+#endif
