@@ -23,7 +23,7 @@ vector<int> minimum_period(const string &s){
   for(int i=1;i<(int)mp.size();i++) mp[i]=i-mp[i];
   return mp;
 }
-// positions for s that match t
+// positions for t that match s
 vector<int> pattern_match(string s,string t){
   int n=s.size(),m=t.size();
   vector<int> kmp=knuth_morris_pratt(s);
@@ -31,7 +31,7 @@ vector<int> pattern_match(string s,string t){
   vector<int> res;
   int i=0,j=0;
   while(i+j<m){
-    if(s[j]!=t[i+j]){
+    if(s[j]==t[i+j]){
       if(++j!=n) continue;
       res.emplace_back(i);
     }

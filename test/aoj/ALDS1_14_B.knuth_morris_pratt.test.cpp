@@ -14,7 +14,7 @@ signed main(){
   string t,p;
   cin>>t>>p;
 
-  vector<int> res=pattern_match(t,p);
+  vector<int> res=pattern_match(p,t);
   for(int x:res) cout<<x<<"\n";
   cout<<flush;
   return 0;
