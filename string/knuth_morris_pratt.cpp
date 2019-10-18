@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
@@ -21,8 +23,25 @@ vector<int> minimum_period(const string &s){
   for(int i=1;i<(int)mp.size();i++) mp[i]=i-mp[i];
   return mp;
 }
-//END CUT HERE
+// positions for s that match t
+vector<int> pattern_match(string s,string t){
+  int n=s.size(),m=t.size();
+  vector<int> kmp=knuth_morris_pratt(s);
 
+  vector<int> res;
+  int i=0,j=0;
+  while(i+j<m){
+    if(s[j]!=t[i+j]){
+      if(++j!=n) continue;
+      res.emplace_back(i);
+    }
+    i+=j-kmp[j];
+    j=max(kmp[j],0);
+  }
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed ABC135_D(){
   cin.tie(0);
@@ -118,3 +137,4 @@ signed main(){
   ARC060_F();
   return 0;
 }
+#endif
