@@ -7,6 +7,8 @@ using namespace std;
 #include "../../datastructure/skewheap.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
