@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../tools/chminmax.cpp"
 #include "../../datastructure/nonmonotonicconvexhulltrick.cpp"
 #undef call_from_test
 
