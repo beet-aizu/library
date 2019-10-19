@@ -201,6 +201,8 @@
     "/test/aoj/2983.test.cpp",
     "/test/aoj/2985.test.cpp",
     "/test/aoj/3024.test.cpp",
+    "/test/aoj/3033.test.cpp",
+    "/test/aoj/3035.test.cpp",
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3058.test.cpp",
     "/test/aoj/3062.test.cpp",
@@ -323,6 +325,8 @@
     "/tools/fastio.cpp"
   ],
   "/tools/fastio.cpp": [
+    "/test/aoj/3033.test.cpp",
+    "/test/aoj/3035.test.cpp",
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp"
@@ -418,6 +422,17 @@
     "/test/aoj/2397.test.cpp",
     "/test/aoj/2432.test.cpp",
     "/test/aoj/3074.test.cpp"
+  ],
+  "/test/aoj/3033.test.cpp": [
+    "/string/suffixarray.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/string/suffixarray.cpp": [
+    "/test/aoj/2644.test.cpp",
+    "/test/aoj/3033.test.cpp",
+    "/test/aoj/3063.test.cpp",
+    "/test/aoj/3112.test.cpp",
+    "/test/aoj/ALDS1_14_D.test.cpp"
   ],
   "/test/aoj/GRL_4_B.test.cpp": [
     "/graph/topologicalsort.cpp"
@@ -521,12 +536,6 @@
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
   ],
-  "/string/suffixarray.cpp": [
-    "/test/aoj/2644.test.cpp",
-    "/test/aoj/3063.test.cpp",
-    "/test/aoj/3112.test.cpp",
-    "/test/aoj/ALDS1_14_D.test.cpp"
-  ],
   "/test/aoj/2871.test.cpp": [
     "/segtree/basic/chien.cpp",
     "/tree/eulertourforvertex.cpp"
@@ -538,6 +547,7 @@
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2667.test.cpp",
     "/test/aoj/2871.test.cpp",
+    "/test/aoj/3035.test.cpp",
     "/test/aoj/3073.test.cpp"
   ],
   "/test/aoj/DPL_5_I.test.cpp": [
@@ -893,6 +903,10 @@
   ],
   "/segtree/persistent/ushi.cpp": [
     "/test/aoj/3024.test.cpp"
+  ],
+  "/test/aoj/3035.test.cpp": [
+    "/segtree/basic/chien.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2667.test.cpp": [
     "/segtree/basic/chien.cpp",
