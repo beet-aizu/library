@@ -41,4 +41,4 @@ for t in test:
 for val in d.values():
     val.sort()
 
-print(json.dumps(d))
+print(json.dumps(d, indent=2))
