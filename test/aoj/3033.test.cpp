@@ -8,6 +8,8 @@ using namespace std;
 #include "../../string/suffixarray.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 signed main(){
   using ll = long long;
   int n;
