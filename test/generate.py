@@ -17,6 +17,15 @@ for l in library:
 d['test'] = ['/' + str(t) for t in test]
 
 for t in test:
+    ignore = False
+    with open(str(t)) as f:
+        s = f.read()
+        if '#define IGNORE' in s:
+            ignore = True
+
+    if ignore:
+        continue
+
     proc1 = subprocess.Popen(
         ["g++", "-I", ".", "-MD", "-MF", "/dev/stdout", "-MM",
          str(t)],
