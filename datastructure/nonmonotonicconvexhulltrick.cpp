@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T,bool isMin>
 struct NonmonotonicConvexHullTrick {
@@ -80,7 +82,7 @@ struct NonmonotonicConvexHullTrick {
   }
 } ;
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
@@ -171,3 +173,4 @@ signed main(){
   //AOJ_2725();
   return 0;
 }
+#endif
