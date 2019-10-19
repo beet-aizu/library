@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct Precision{
   Precision(){
@@ -8,6 +10,7 @@ struct Precision{
   }
 }precision_beet;
 //END CUT HERE
+#ifndef call_from_test
 signed main(){
   Int n;
   cin>>n;
@@ -16,3 +19,4 @@ signed main(){
   cout<<(a.back()-a.front())/(n-1)<<endl;
   return 0;
 }
+#endif
