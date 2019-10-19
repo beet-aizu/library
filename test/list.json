@@ -197,6 +197,7 @@
     "/test/aoj/2871.test.cpp",
     "/test/aoj/2948.test.cpp",
     "/test/aoj/2959.test.cpp",
+    "/test/aoj/2975.test.cpp",
     "/test/aoj/2977.test.cpp",
     "/test/aoj/2983.test.cpp",
     "/test/aoj/2985.test.cpp",
@@ -326,6 +327,7 @@
     "/tools/fastio.cpp"
   ],
   "/tools/fastio.cpp": [
+    "/test/aoj/2975.test.cpp",
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp"
@@ -414,6 +416,34 @@
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp"
   ],
+  "/test/aoj/2975.test.cpp": [
+    "/datastructure/convexhulltrick.cpp",
+    "/tools/chminmax.cpp",
+    "/tools/fastio.cpp",
+    "/tools/precision.cpp"
+  ],
+  "/tools/precision.cpp": [
+    "/test/aoj/2975.test.cpp",
+    "/test/aoj/geometry/3049.test.cpp"
+  ],
+  "/tools/chminmax.cpp": [
+    "/test/aoj/0613.test.cpp",
+    "/test/aoj/1549.test.cpp",
+    "/test/aoj/2230.test.cpp",
+    "/test/aoj/2627.test.cpp",
+    "/test/aoj/2790.test.cpp",
+    "/test/aoj/2975.test.cpp",
+    "/test/aoj/3069.test.cpp",
+    "/test/aoj/3112.test.cpp",
+    "/test/aoj/ALDS1_10_C.test.cpp",
+    "/test/aoj/geometry/2334.test.cpp",
+    "/test/aoj/geometry/3049.test.cpp",
+    "/test/aoj/geometry/3056.test.cpp"
+  ],
+  "/datastructure/convexhulltrick.cpp": [
+    "/test/aoj/2725.test.cpp",
+    "/test/aoj/2975.test.cpp"
+  ],
   "/test/aoj/2977.test.cpp": [
     "/convolution/convolution2D.cpp",
     "/convolution/numbertheoretictransform.cpp",
@@ -444,19 +474,6 @@
   "/tools/compress.cpp": [
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1599.test.cpp"
-  ],
-  "/tools/chminmax.cpp": [
-    "/test/aoj/0613.test.cpp",
-    "/test/aoj/1549.test.cpp",
-    "/test/aoj/2230.test.cpp",
-    "/test/aoj/2627.test.cpp",
-    "/test/aoj/2790.test.cpp",
-    "/test/aoj/3069.test.cpp",
-    "/test/aoj/3112.test.cpp",
-    "/test/aoj/ALDS1_10_C.test.cpp",
-    "/test/aoj/geometry/2334.test.cpp",
-    "/test/aoj/geometry/3049.test.cpp",
-    "/test/aoj/geometry/3056.test.cpp"
   ],
   "/datastructure/rangeslide.cpp": [
     "/test/aoj/0613.test.cpp",
@@ -988,9 +1005,6 @@
   "/test/aoj/2725.test.cpp": [
     "/datastructure/convexhulltrick.cpp"
   ],
-  "/datastructure/convexhulltrick.cpp": [
-    "/test/aoj/2725.test.cpp"
-  ],
   "/test/aoj/DSL_1_A.test.cpp": [
     "/datastructure/unionfindtree.cpp"
   ],
@@ -1102,9 +1116,6 @@
     "/geometry/geometry.cpp",
     "/tools/chminmax.cpp",
     "/tools/precision.cpp"
-  ],
-  "/tools/precision.cpp": [
-    "/test/aoj/geometry/3049.test.cpp"
   ],
   "/test/aoj/geometry/CGL_1_A.test.cpp": [
     "/geometry/geometry.cpp"
