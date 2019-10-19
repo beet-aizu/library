@@ -49,7 +49,7 @@ signed main(){
   vector<A> mv(26);
   for(int x=0;x<26;x++){
     for(int i=0;i<(int)mv[x].size();i++)
-      mv[x][i]=aho.move(i,char('a'+x));
+      mv[x][i]=(i<(int)aho.v.size()?aho.move(i,char('a'+x)):i);
   }
 
   for(int i=0;i<q;i++){
@@ -71,7 +71,7 @@ signed main(){
       A res=seg.query(l,r);
       int ans=0;
       for(int j=0;j<(int)res.size();j++)
-        if(aho.count(j)) ans+=res[j];
+        if(j<(int)aho.v.size()&&aho.count(j)) ans+=res[j];
       cout<<ans<<"\n";
     }
   }

@@ -127,6 +127,7 @@ struct AhoCorasick : Trie<X+1>{
 
   int move(int pos,char c){
     auto &v=TRIE::v;
+    assert(pos<(int)v.size());
     int k=TRIE::conv(c);
     while(v[pos].nxt[k]<0) pos=v[pos].nxt[X];
     pos=v[pos].nxt[k];
