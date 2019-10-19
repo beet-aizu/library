@@ -325,8 +325,6 @@
     "/tools/fastio.cpp"
   ],
   "/tools/fastio.cpp": [
-    "/test/aoj/3033.test.cpp",
-    "/test/aoj/3035.test.cpp",
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp"
@@ -414,31 +412,6 @@
     "/test/aoj/0377.test.cpp",
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp"
-  ],
-  "/test/aoj/2432.test.cpp": [
-    "/linearalgebra/squarematrix.cpp"
-  ],
-  "/linearalgebra/squarematrix.cpp": [
-    "/test/aoj/2397.test.cpp",
-    "/test/aoj/2432.test.cpp",
-    "/test/aoj/3074.test.cpp"
-  ],
-  "/test/aoj/3033.test.cpp": [
-    "/string/suffixarray.cpp",
-    "/tools/fastio.cpp"
-  ],
-  "/string/suffixarray.cpp": [
-    "/test/aoj/2644.test.cpp",
-    "/test/aoj/3033.test.cpp",
-    "/test/aoj/3063.test.cpp",
-    "/test/aoj/3112.test.cpp",
-    "/test/aoj/ALDS1_14_D.test.cpp"
-  ],
-  "/test/aoj/GRL_4_B.test.cpp": [
-    "/graph/topologicalsort.cpp"
-  ],
-  "/graph/topologicalsort.cpp": [
-    "/test/aoj/GRL_4_B.test.cpp"
   ],
   "/test/aoj/2977.test.cpp": [
     "/convolution/convolution2D.cpp",
@@ -536,6 +509,12 @@
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
   ],
+  "/string/suffixarray.cpp": [
+    "/test/aoj/2644.test.cpp",
+    "/test/aoj/3063.test.cpp",
+    "/test/aoj/3112.test.cpp",
+    "/test/aoj/ALDS1_14_D.test.cpp"
+  ],
   "/test/aoj/2871.test.cpp": [
     "/segtree/basic/chien.cpp",
     "/tree/eulertourforvertex.cpp"
@@ -547,7 +526,6 @@
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2667.test.cpp",
     "/test/aoj/2871.test.cpp",
-    "/test/aoj/3035.test.cpp",
     "/test/aoj/3073.test.cpp"
   ],
   "/test/aoj/DPL_5_I.test.cpp": [
@@ -698,6 +676,10 @@
   "/test/aoj/2397.test.cpp": [
     "/linearalgebra/squarematrix.cpp",
     "/mod/mint.cpp"
+  ],
+  "/linearalgebra/squarematrix.cpp": [
+    "/test/aoj/2397.test.cpp",
+    "/test/aoj/3074.test.cpp"
   ],
   "/test/aoj/2624.test.cpp": [
     "/linearalgebra/binarymatrix.cpp"
@@ -892,8 +874,7 @@
     "/datastructure/skewheap.cpp"
   ],
   "/datastructure/skewheap.cpp": [
-    "/test/aoj/2415.test.cpp",
-    "/test/aoj/ALDS1_9_C.test.cpp"
+    "/test/aoj/2415.test.cpp"
   ],
   "/algorithm/optimalbinarytree.cpp": [
     "/test/aoj/2415.test.cpp"
@@ -903,10 +884,6 @@
   ],
   "/segtree/persistent/ushi.cpp": [
     "/test/aoj/3024.test.cpp"
-  ],
-  "/test/aoj/3035.test.cpp": [
-    "/segtree/basic/chien.cpp",
-    "/tools/fastio.cpp"
   ],
   "/test/aoj/2667.test.cpp": [
     "/segtree/basic/chien.cpp",
@@ -939,9 +916,6 @@
   ],
   "/algorithm/monotoneminima.cpp": [
     "/test/aoj/2603.test.cpp"
-  ],
-  "/test/aoj/ALDS1_9_C.test.cpp": [
-    "/datastructure/skewheap.cpp"
   ],
   "/test/aoj/DPL_5_J.test.cpp": [
     "/mod/enumeration.cpp",
@@ -1058,7 +1032,6 @@
     "/test/aoj/geometry/2334.test.cpp",
     "/test/aoj/geometry/2448.test.cpp",
     "/test/aoj/geometry/2454.test.cpp",
-    "/test/aoj/geometry/2572.test.cpp",
     "/test/aoj/geometry/3049.test.cpp",
     "/test/aoj/geometry/3056.test.cpp",
     "/test/aoj/geometry/CGL_1_A.test.cpp",
@@ -1157,9 +1130,6 @@
     "/geometry/geometry.cpp"
   ],
   "/test/aoj/geometry/CGL_7_A.test.cpp": [
-    "/geometry/geometry.cpp"
-  ],
-  "/test/aoj/geometry/2572.test.cpp": [
     "/geometry/geometry.cpp"
   ],
   "/test/aoj/geometry/3056.test.cpp": [
