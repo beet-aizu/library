@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 vector<int> manacher(string s){
   int n=s.size();
@@ -15,7 +17,7 @@ vector<int> manacher(string s){
   return v;
 }
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T>
 struct SparseTable{
   using F = function<T(T,T)>;
@@ -98,3 +100,4 @@ signed main(){
   //ukuku09_D();
   return 0;
 }
+#endif
