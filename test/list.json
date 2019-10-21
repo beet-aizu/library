@@ -254,6 +254,7 @@
     "/test/aoj/GRL_3_B.test.cpp",
     "/test/aoj/GRL_3_C.test.cpp",
     "/test/aoj/GRL_4_B.test.cpp",
+    "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp",
     "/test/aoj/GRL_5_C.test.cpp",
@@ -344,6 +345,7 @@
     "/test/aoj/ALDS1_14_C.test.cpp",
     "/test/aoj/DSL_2_B.binarytrie.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp"
   ],
   "/test/aoj/NTL_2_C.test.cpp": [
@@ -1123,6 +1125,13 @@
   ],
   "/test/aoj/NTL_2_B.test.cpp": [
     "/tools/bigint.cpp"
+  ],
+  "/test/aoj/GRL_5_A.test.cpp": [
+    "/tools/fastio.cpp",
+    "/tree/diameterforedge.cpp"
+  ],
+  "/tree/diameterforedge.cpp": [
+    "/test/aoj/GRL_5_A.test.cpp"
   ],
   "/test/aoj/3073.test.cpp": [
     "/segtree/basic/chien.cpp",
