@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 int expression(string,int&);
 int term(string,int&);
@@ -69,7 +71,7 @@ int number(string s,int& p){
   return res;
 }
 //END CUT HERE
-
+#ifndef call_from_test
 signed main(){
   int n;
   cin>>n;
@@ -86,3 +88,4 @@ signed main(){
   verified on 2017/11/20
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?lang=jp&id=0109
 */
+#endif
