@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../linearalgebra/matrix.cpp"
 #include "../../math/tetrahedra.cpp"
 #undef call_from_test
 
