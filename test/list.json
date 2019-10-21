@@ -245,6 +245,7 @@
     "/test/aoj/DSL_2_A.test.cpp",
     "/test/aoj/DSL_2_B.binarytrie.test.cpp",
     "/test/aoj/DSL_2_B.test.cpp",
+    "/test/aoj/DSL_2_C.test.cpp",
     "/test/aoj/DSL_2_D.test.cpp",
     "/test/aoj/DSL_2_E.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
@@ -611,6 +612,12 @@
     "/test/aoj/ITP1_11_B.test.cpp",
     "/test/aoj/ITP1_11_C.test.cpp",
     "/test/aoj/ITP1_11_D.test.cpp"
+  ],
+  "/test/aoj/DSL_2_C.test.cpp": [
+    "/datastructure/kdtree.cpp"
+  ],
+  "/datastructure/kdtree.cpp": [
+    "/test/aoj/DSL_2_C.test.cpp"
   ],
   "/test/aoj/DSL_2_D.test.cpp": [
     "/segtree/basic/dual.cpp"
