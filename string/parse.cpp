@@ -73,19 +73,6 @@ int number(string s,int& p){
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  int n;
-  cin>>n;
-  while(n--){
-    string s;
-    int p=0;
-    cin>>s;s.pop_back();
-    cout<<expression(s,p)<<endl;
-  }
   return 0;
 }
-
-/*
-  verified on 2017/11/20
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?lang=jp&id=0109
-*/
 #endif
