@@ -131,7 +131,8 @@ bool isTriangle(double a1,double a2,double a3){
   return 1;
 }
 
-double tetrahedra(double OA,double OB,double OC,double AB,double AC,double BC){
+double tetrahedra(double OA,double OB,double OC,
+                  double AB,double AC,double BC){
   if(!isTriangle(OA,OB,AB)) return 0;
   if(!isTriangle(OB,OC,BC)) return 0;
   if(!isTriangle(OC,OA,AC)) return 0;

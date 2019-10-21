@@ -43,8 +43,10 @@ struct Matrix{
     return res;
   }
 
-  template<typename T> using ET = enable_if<is_floating_point<T>::value>;
-  template<typename T> using EF = enable_if<!is_floating_point<T>::value>;
+  template<typename T>
+  using ET = enable_if<is_floating_point<T>::value>;
+  template<typename T>
+  using EF = enable_if<!is_floating_point<T>::value>;
 
   template<typename T, typename ET<T>::type* = nullptr>
   static bool is_zero(T x){return abs(x)<1e-8;}
@@ -91,6 +93,15 @@ struct Matrix{
     return gauss_jordan(*this,B);
   }
 
+  static arr linear_equations(const Matrix &A,const arr &b){
+    Matrix B(b.size(),1);
+    for(int i=0;i<(int)b.size();i++) B[i][0]=b[i];
+    Matrix tmp=gauss_jordan(A,B);
+    arr res(tmp.size());
+    for(int i=0;i<(int)tmp.size();i++) res[i]=tmp[i][0];
+    return res;
+  }
+
   K determinant() const{
     Matrix A(dat);
     K res(1);
@@ -107,15 +118,6 @@ struct Matrix{
         for(int k=i+1;k<n;k++)
           A[j][k]-=A[j][i]*A[i][k];
     }
-    return res;
-  }
-
-  static arr linear_equations(const Matrix &A,const arr &b){
-    Matrix B(b.size(),1);
-    for(int i=0;i<(int)b.size();i++) B[i][0]=b[i];
-    Matrix tmp=gauss_jordan(A,B);
-    arr res(tmp.size());
-    for(int i=0;i<(int)tmp.size();i++) res[i]=tmp[i][0];
     return res;
   }
 
@@ -183,7 +185,7 @@ signed ARC050_C(){
 }
 /*
   verified on 2018/10/17
-  https://beta.atcoder.jp/contests/arc050/tasks/arc050_c
+  https://atcoder.jp/contests/arc050/tasks/arc050_c
 */
 
 signed SPOJ_MIFF(){
