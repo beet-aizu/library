@@ -339,6 +339,8 @@
     "/test/aoj/1312.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
+    "/test/aoj/3033.test.cpp",
+    "/test/aoj/3035.test.cpp",
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp",
@@ -432,6 +434,17 @@
     "/test/aoj/0377.test.cpp",
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp"
+  ],
+  "/test/aoj/3033.test.cpp": [
+    "/string/suffixarray.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/string/suffixarray.cpp": [
+    "/test/aoj/2644.test.cpp",
+    "/test/aoj/3033.test.cpp",
+    "/test/aoj/3063.test.cpp",
+    "/test/aoj/3112.test.cpp",
+    "/test/aoj/ALDS1_14_D.test.cpp"
   ],
   "/test/aoj/2975.test.cpp": [
     "/datastructure/convexhulltrick.cpp",
@@ -547,12 +560,6 @@
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
   ],
-  "/string/suffixarray.cpp": [
-    "/test/aoj/2644.test.cpp",
-    "/test/aoj/3063.test.cpp",
-    "/test/aoj/3112.test.cpp",
-    "/test/aoj/ALDS1_14_D.test.cpp"
-  ],
   "/test/aoj/2871.test.cpp": [
     "/segtree/basic/chien.cpp",
     "/tree/eulertourforvertex.cpp"
@@ -564,6 +571,7 @@
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2667.test.cpp",
     "/test/aoj/2871.test.cpp",
+    "/test/aoj/3035.test.cpp",
     "/test/aoj/3073.test.cpp"
   ],
   "/test/aoj/DPL_5_I.test.cpp": [
@@ -956,7 +964,8 @@
     "/datastructure/skewheap.cpp"
   ],
   "/datastructure/skewheap.cpp": [
-    "/test/aoj/2415.test.cpp"
+    "/test/aoj/2415.test.cpp",
+    "/test/aoj/ALDS1_9_C.test.cpp"
   ],
   "/algorithm/optimalbinarytree.cpp": [
     "/test/aoj/2415.test.cpp"
@@ -966,6 +975,10 @@
   ],
   "/segtree/persistent/ushi.cpp": [
     "/test/aoj/3024.test.cpp"
+  ],
+  "/test/aoj/3035.test.cpp": [
+    "/segtree/basic/chien.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2667.test.cpp": [
     "/segtree/basic/chien.cpp",
@@ -1014,6 +1027,9 @@
   ],
   "/algorithm/monotoneminima.cpp": [
     "/test/aoj/2603.test.cpp"
+  ],
+  "/test/aoj/ALDS1_9_C.test.cpp": [
+    "/datastructure/skewheap.cpp"
   ],
   "/test/aoj/DPL_5_J.test.cpp": [
     "/mod/enumeration.cpp",
