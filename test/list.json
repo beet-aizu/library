@@ -239,6 +239,7 @@
     "/test/aoj/DPL_5_J.test.cpp",
     "/test/aoj/DPL_5_K.test.cpp",
     "/test/aoj/DPL_5_L.test.cpp",
+    "/test/aoj/DSL_1_A.quickfind.test.cpp",
     "/test/aoj/DSL_1_A.test.cpp",
     "/test/aoj/DSL_1_B.test.cpp",
     "/test/aoj/DSL_2_A.test.cpp",
@@ -349,6 +350,7 @@
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp",
     "/test/aoj/ALDS1_14_C.test.cpp",
+    "/test/aoj/DSL_1_A.quickfind.test.cpp",
     "/test/aoj/DSL_2_B.binarytrie.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
@@ -994,6 +996,13 @@
   "/test/aoj/3035.test.cpp": [
     "/segtree/basic/chien.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/aoj/DSL_1_A.quickfind.test.cpp": [
+    "/datastructure/quickfind.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/quickfind.cpp": [
+    "/test/aoj/DSL_1_A.quickfind.test.cpp"
   ],
   "/test/aoj/2667.test.cpp": [
     "/segtree/basic/chien.cpp",
