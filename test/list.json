@@ -195,6 +195,7 @@
     "/test/aoj/2790.test.cpp",
     "/test/aoj/2842.test.cpp",
     "/test/aoj/2871.test.cpp",
+    "/test/aoj/2934.test.cpp",
     "/test/aoj/2948.test.cpp",
     "/test/aoj/2959.test.cpp",
     "/test/aoj/2970.test.cpp",
@@ -945,6 +946,7 @@
     "/tools/fastio.cpp"
   ],
   "/tools/drop.cpp": [
+    "/test/aoj/2934.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2971.test.cpp"
   ],
@@ -1019,6 +1021,13 @@
   ],
   "/test/aoj/0502.test.cpp": [
     "/tools/dice.cpp"
+  ],
+  "/test/aoj/2934.test.cpp": [
+    "/string/manacher.cpp",
+    "/tools/drop.cpp"
+  ],
+  "/string/manacher.cpp": [
+    "/test/aoj/2934.test.cpp"
   ],
   "/test/aoj/DPL_5_E.test.cpp": [
     "/mod/enumeration.cpp",
