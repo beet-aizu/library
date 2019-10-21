@@ -1,51 +1,39 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct QuickFind{
   int n;
-  vector<int> r,p;
-  vector<vector<int> > v;
+  vector<int> rs,ps;
+  vector<vector<int> > vs;
   QuickFind(){}
-  QuickFind(int sz):n(sz),r(sz,1),p(sz),v(sz){
-    iota(p.begin(),p.end(),0);
-    for(int i=0;i<n;i++) v[i].assign(1,i);
+  QuickFind(int sz):n(sz),rs(sz,1),ps(sz),vs(sz){
+    iota(ps.begin(),ps.end(),0);
+    for(int i=0;i<n;i++) vs[i].assign(1,i);
   }
-  int find(int x) const{return p[x];}
+  int find(int x) const{return ps[x];}
   bool same(int x,int y) const{
     return find(x)==find(y);
   }
   void unite(int x,int y){
-    x=p[x];y=p[y];
+    x=ps[x];y=ps[y];
     if(x==y) return;
-    if(r[x]<r[y]) swap(x,y);
-    r[x]+=r[y];
-    for(int e:v[y]){
-      p[e]=x;
-      v[x].push_back(e);
+    if(rs[x]<rs[y]) swap(x,y);
+    rs[x]+=rs[y];
+    for(int e:vs[y]){
+      ps[e]=x;
+      vs[x].push_back(e);
     }
-    v[y].clear();
-    v[y].shrink_to_fit();
+    vs[y].clear();
+    vs[y].shrink_to_fit();
   }
-  const vector<int>& elements(int x) const{return v[x];}
+  const vector<int>& elements(int x) const{return vs[x];}
 };
 //END CUT HERE
-
+#ifndef call_from_test
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int n,q;
-  cin>>n>>q;
-  QuickFind qf(n);
-  for(int i=0;i<q;i++){
-    int c,x,y;
-    cin>>c>>x>>y;
-    if(c) cout<<qf.same(x,y)<<endl;
-    else qf.unite(x,y);
-  }
   return 0;
 }
-/*
-  verified on 2019/08/11
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
-*/
+#endif
