@@ -51,6 +51,11 @@ struct Matrix{
   template<typename T, typename EF<T>::type* = nullptr>
   static bool is_zero(T x){return x==T(0);}
 
+  template<typename T, typename ET<T>::type* = nullptr>
+  static bool compare(T x,T y){return abs(x)<abs(y);}
+  template<typename T, typename EF<T>::type* = nullptr>
+  static bool compare(T x,T y){(void)x;return y!=T(0);}
+
   // assume regularity
   static Matrix gauss_jordan(const Matrix &A,const Matrix &B){
     int n=A.size(),l=B[0].size();
@@ -64,7 +69,7 @@ struct Matrix{
     for(int i=0;i<n;i++){
       int p=i;
       for(int j=i;j<n;j++)
-        if(abs(C[p][i])<abs(C[j][i])) p=j;
+        if(compare(C[p][i],C[j][i])) p=j;
       swap(C[i],C[p]);
       if(is_zero(C[i][i])) return Matrix(0,0);
       for(int j=i+1;j<n+l;j++) C[i][j]/=C[i][i];
@@ -86,7 +91,6 @@ struct Matrix{
     return gauss_jordan(*this,B);
   }
 
-  // not verified
   K determinant() const{
     Matrix A(dat);
     K res(1);
@@ -94,7 +98,7 @@ struct Matrix{
     for(int i=0;i<n;i++){
       int p=i;
       for(int j=i;j<n;j++)
-        if(abs(A[p][i])<abs(A[j][i])) p=j;
+        if(compare(A[p][i],A[j][i])) p=j;
       if(i!=p) swap(A[i],A[p]),res=-res;
       if(is_zero(A[i][i])) return K(0);
       res*=A[i][i];

@@ -3,7 +3,8 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-//BEGIN CUT HERE
+
+
 template<typename K>
 struct Matrix{
   typedef vector<K> arr;
@@ -18,6 +19,79 @@ struct Matrix{
   arr& operator[](size_t k){return dat[k];};
   const arr& operator[](size_t k) const {return dat[k];};
 
+  static Matrix cross(const Matrix &A,const Matrix &B){
+    Matrix res(A.size(),B[0].size());
+    for(int i=0;i<(int)A.size();i++)
+      for(int j=0;j<(int)B[0].size();j++)
+        for(int k=0;k<(int)B.size();k++)
+          res[i][j]+=A[i][k]*B[k][j];
+    return res;
+  }
+
+  static Matrix identity(size_t n){
+    Matrix res(n,n);
+    for(int i=0;i<(int)n;i++) res[i][i]=K(1);
+    return res;
+  }
+
+  Matrix pow(long long n) const{
+    Matrix a(dat),res=identity(size());
+    while(n){
+      if(n&1) res=cross(res,a);
+      a=cross(a,a);
+      n>>=1;
+    }
+    return res;
+  }
+
+  template<typename T> using ET = enable_if<is_floating_point<T>::value>;
+  template<typename T> using EF = enable_if<!is_floating_point<T>::value>;
+
+  template<typename T, typename ET<T>::type* = nullptr>
+  static bool is_zero(T x){return abs(x)<1e-8;}
+  template<typename T, typename EF<T>::type* = nullptr>
+  static bool is_zero(T x){return x==T(0);}
+
+  template<typename T, typename ET<T>::type* = nullptr>
+  static bool compare(T x,T y){return abs(x)<abs(y);}
+  template<typename T, typename EF<T>::type* = nullptr>
+  static bool compare(T x,T y){(void)x;return y!=T(0);}
+
+  // assume regularity
+  static Matrix gauss_jordan(const Matrix &A,const Matrix &B){
+    int n=A.size(),l=B[0].size();
+    Matrix C(n,n+l);
+    for(int i=0;i<n;i++){
+      for(int j=0;j<n;j++)
+        C[i][j]=A[i][j];
+      for(int j=0;j<l;j++)
+        C[i][n+j]=B[i][j];
+    }
+    for(int i=0;i<n;i++){
+      int p=i;
+      for(int j=i;j<n;j++)
+        if(abs(C[p][i])<abs(C[j][i])) p=j;
+      swap(C[i],C[p]);
+      if(is_zero(C[i][i])) return Matrix(0,0);
+      for(int j=i+1;j<n+l;j++) C[i][j]/=C[i][i];
+      for(int j=0;j<n;j++){
+        if(i==j) continue;
+        for(int k=i+1;k<n+l;k++)
+          C[j][k]-=C[j][i]*C[i][k];
+      }
+    }
+    Matrix res(n,l);
+    for(int i=0;i<n;i++)
+      for(int j=0;j<l;j++)
+        res[i][j]=C[i][n+j];
+    return res;
+  }
+
+  Matrix inv() const{
+    Matrix B=identity(size());
+    return gauss_jordan(*this,B);
+  }
+
   K determinant() const{
     Matrix A(dat);
     K res(1);
@@ -25,9 +99,9 @@ struct Matrix{
     for(int i=0;i<n;i++){
       int p=i;
       for(int j=i;j<n;j++)
-        if(A[j][i]!=K(0)) p=j;
+        if(compare(A[p][i],A[j][i])) p=j;
       if(i!=p) swap(A[i],A[p]),res=-res;
-      if(A[i][i]==K(0)) return K(0);
+      if(is_zero(A[i][i])) return K(0);
       res*=A[i][i];
       for(int j=i+1;j<n;j++) A[i][j]/=A[i][i];
       for(int j=i+1;j<n;j++)
@@ -36,13 +110,30 @@ struct Matrix{
     }
     return res;
   }
+
+  static arr linear_equations(const Matrix &A,const arr &b){
+    Matrix B(b.size(),1);
+    for(int i=0;i<(int)b.size();i++) B[i][0]=b[i];
+    Matrix tmp=gauss_jordan(A,B);
+    arr res(tmp.size());
+    for(int i=0;i<(int)tmp.size();i++) res[i]=tmp[i][0];
+    return res;
+  }
+
+  static K sigma(K x,long long n){
+    Matrix A(2,2);
+    A[0][0]=x;A[0][1]=0;
+    A[1][0]=1;A[1][1]=1;
+    return A.pow(n)[1][0];
+  }
 };
 
+
 struct UnionFind{
-  int n;
+  int num;
   vector<int> r,p;
   UnionFind(){}
-  UnionFind(int sz):n(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
+  UnionFind(int n):num(n),r(n,1),p(n,0){iota(p.begin(),p.end(),0);}
   int find(int x){
     return (x==p[x]?x:p[x]=find(p[x]));
   }
@@ -55,9 +146,17 @@ struct UnionFind{
     if(r[x]<r[y]) swap(x,y);
     r[x]+=r[y];
     p[y]=x;
+    num--;
+  }
+  int size(int x){
+    return r[find(x)];
+  }
+  int count() const{
+    return num;
   }
 };
 
+//BEGIN CUT HERE
 template<typename K, typename T>
 struct MatrixTreeTheorem{
   using M = Matrix<K>;
@@ -125,8 +224,10 @@ struct MatrixTreeTheorem{
         if(m==1) continue;
 
         sort(vs.begin(),vs.end());
-        auto idx=[&](int x){
-                   return lower_bound(vs.begin(),vs.end(),x)-vs.begin();};
+        auto idx=
+          [&](int x){
+            return lower_bound(vs.begin(),vs.end(),x)-vs.begin();
+          };
         M A(m,m);
         for(int x:vs)
           for(int y:H[x])
@@ -151,14 +252,17 @@ struct MatrixTreeTheorem{
   }
 };
 //END CUT HERE
+
+
 template<typename T,T MOD = 1000000007>
 struct Mint{
+  static constexpr T mod = MOD;
   T v;
   Mint():v(0){}
   Mint(signed v):v(v){}
   Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
 
-  Mint pow(int k){
+  Mint pow(long long k){
     Mint res(1),tmp(v);
     while(k){
       if(k&1) res*=tmp;
@@ -167,6 +271,9 @@ struct Mint{
     }
     return res;
   }
+
+  static Mint add_identity(){return Mint(0);}
+  static Mint mul_identity(){return Mint(1);}
 
   Mint inv(){return pow(MOD-2);}
 
@@ -180,20 +287,33 @@ struct Mint{
   Mint operator*(Mint a) const{return Mint(v)*=a;};
   Mint operator/(Mint a) const{return Mint(v)/=a;};
 
-  Mint operator-(){return v?MOD-v:v;}
+  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
 
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
+  bool operator <(const Mint a)const{return v <a.v;}
+
+  static Mint comb(long long n,int k){
+    Mint num(1),dom(1);
+    for(int i=0;i<k;i++){
+      num*=Mint(n-i);
+      dom*=Mint(i+1);
+    }
+    return num/dom;
+  }
 };
+template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
+template<typename T,T MOD>
+ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 
 
 template<typename T>
 struct Kruskal{
+
   struct edge{
     int from,to;
     T cost;
     int used;
-    edge(){}
     edge(int from,int to,T cost):
       from(from),to(to),cost(cost),used(0){}
     bool operator<(const edge& e) const{
@@ -202,15 +322,11 @@ struct Kruskal{
   };
 
   int n;
-  vector<int> p,r;
-  vector<edge> edges;
+  vector<int> r,p;
+  vector<edge> es;
 
   Kruskal(){}
-  Kruskal(int n):n(n){}
-
-  void init(int n){
-    r.assign(n,1);
-    p.resize(n);
+  Kruskal(int n):n(n),r(n,1),p(n){
     iota(p.begin(),p.end(),0);
   }
 
@@ -231,14 +347,13 @@ struct Kruskal{
   }
 
   void add_edge(int u,int v,T c){
-    edges.emplace_back(u,v,c);
+    es.emplace_back(u,v,c);
   }
 
   T build(){
-    sort(edges.begin(),edges.end());
-    init(n);
-    T res(0);
-    for(auto &e:edges){
+    sort(es.begin(),es.end());
+    T res=0;
+    for(auto &e:es){
       if(!same(e.from,e.to)){
         res+=e.cost;
         unite(e.from,e.to);
@@ -256,20 +371,20 @@ signed ARC018_D(){
   int n,m;
   scanf("%d %d",&n,&m);
   MatrixTreeTheorem<M, int> mtt(n);
-  Kruskal<int> ksk(n);
+  Kruskal<int> G(n);
   for(int i=0;i<m;i++){
     int a,b,c;
     scanf("%d %d %d",&a,&b,&c);
     a--;b--;
     mtt.add_edge(a,b,c);
-    ksk.add_edge(a,b,c);
+    G.add_edge(a,b,c);
   }
-  printf("%d %d\n",ksk.build(),mtt.build().v);
+  printf("%d %d\n",G.build(),mtt.build().v);
   return 0;
 }
 /*
   verified on 2018/10/17
-  https://beta.atcoder.jp/contests/arc018/tasks/arc018_4
+  https://atcoder.jp/contests/arc018/tasks/arc018_4
 */
 
 signed main(){
