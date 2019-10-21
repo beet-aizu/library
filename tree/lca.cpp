@@ -25,7 +25,6 @@ struct LCA{
 
     using T = tuple<int, int, int>;
     stack<T> st;
-    st.emplace(v,p,d);
 
   START:
     D[v]=k;
@@ -37,12 +36,12 @@ struct LCA{
       st.emplace(v,p,d);
       p=v;v=u;d=d+1;
       goto START;
-
     END:
       tie(v,p,d)=st.top();st.pop();
-      A[k]=P[v];
-      E[k++]=d-1;
     }
+
+    A[k]=P[v];
+    E[k++]=d-1;
 
     if(!st.empty()) goto END;
   }
