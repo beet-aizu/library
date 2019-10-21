@@ -263,8 +263,10 @@
     "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp",
     "/test/aoj/GRL_5_C.test.cpp",
     "/test/aoj/GRL_5_D.test.cpp",
+    "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
     "/test/aoj/GRL_6_A.test.cpp",
     "/test/aoj/GRL_6_B.test.cpp",
+    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp",
     "/test/aoj/GRL_7_A.test.cpp",
     "/test/aoj/ITP1_11_A.test.cpp",
     "/test/aoj/ITP1_11_B.test.cpp",
@@ -356,7 +358,9 @@
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
-    "/test/aoj/GRL_5_C.lca.test.cpp"
+    "/test/aoj/GRL_5_C.lca.test.cpp",
+    "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
+    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
   ],
   "/test/aoj/NTL_2_C.test.cpp": [
     "/tools/bigint.cpp"
@@ -976,6 +980,13 @@
     "/tools/fastio.cpp",
     "/tree/lca.cpp"
   ],
+  "/test/aoj/GRL_6_A.fordfulkerson.test.cpp": [
+    "/flow/fordfulkerson.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/flow/fordfulkerson.cpp": [
+    "/test/aoj/GRL_6_A.fordfulkerson.test.cpp"
+  ],
   "/test/aoj/2415.test.cpp": [
     "/algorithm/optimalbinarytree.cpp",
     "/datastructure/skewheap.cpp"
@@ -1136,6 +1147,13 @@
   ],
   "/test/aoj/2725.test.cpp": [
     "/datastructure/convexhulltrick.cpp"
+  ],
+  "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp": [
+    "/flow/hopcroft_karp.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/flow/hopcroft_karp.cpp": [
+    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
   ],
   "/test/aoj/DSL_1_A.test.cpp": [
     "/datastructure/unionfindtree.cpp"
