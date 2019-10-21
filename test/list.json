@@ -244,12 +244,15 @@
     "/test/aoj/DSL_1_A.quickfind.test.cpp",
     "/test/aoj/DSL_1_A.test.cpp",
     "/test/aoj/DSL_1_B.test.cpp",
+    "/test/aoj/DSL_2_A.bbst.test.cpp",
     "/test/aoj/DSL_2_A.test.cpp",
     "/test/aoj/DSL_2_B.binarytrie.test.cpp",
     "/test/aoj/DSL_2_B.test.cpp",
     "/test/aoj/DSL_2_C.test.cpp",
     "/test/aoj/DSL_2_D.test.cpp",
     "/test/aoj/DSL_2_E.test.cpp",
+    "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_G.bbst.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
@@ -318,7 +321,36 @@
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/test/aoj/DSL_2_A.test.cpp": [
-    "/segtree/basic/ushi.cpp"
+    "/segtree/basic/ushi.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/tools/fastio.cpp": [
+    "/test/aoj/0109.test.cpp",
+    "/test/aoj/1312.test.cpp",
+    "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
+    "/test/aoj/2725.test.cpp",
+    "/test/aoj/2842.2D_BIT.test.cpp",
+    "/test/aoj/2970.test.cpp",
+    "/test/aoj/2975.test.cpp",
+    "/test/aoj/3033.test.cpp",
+    "/test/aoj/3035.test.cpp",
+    "/test/aoj/3047.test.cpp",
+    "/test/aoj/3069.test.cpp",
+    "/test/aoj/3073.test.cpp",
+    "/test/aoj/ALDS1_14_C.test.cpp",
+    "/test/aoj/DSL_1_A.quickfind.test.cpp",
+    "/test/aoj/DSL_2_A.bbst.test.cpp",
+    "/test/aoj/DSL_2_A.test.cpp",
+    "/test/aoj/DSL_2_B.binarytrie.test.cpp",
+    "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_G.bbst.test.cpp",
+    "/test/aoj/DSL_2_G.test.cpp",
+    "/test/aoj/DSL_2_I.test.cpp",
+    "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/GRL_5_A.test.cpp",
+    "/test/aoj/GRL_5_C.lca.test.cpp",
+    "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
+    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
   ],
   "/segtree/basic/ushi.cpp": [
     "/test/aoj/2644.test.cpp",
@@ -343,30 +375,6 @@
   "/test/aoj/3047.test.cpp": [
     "/flow/dinic.cpp",
     "/tools/fastio.cpp"
-  ],
-  "/tools/fastio.cpp": [
-    "/test/aoj/0109.test.cpp",
-    "/test/aoj/1312.test.cpp",
-    "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
-    "/test/aoj/2725.test.cpp",
-    "/test/aoj/2842.2D_BIT.test.cpp",
-    "/test/aoj/2970.test.cpp",
-    "/test/aoj/2975.test.cpp",
-    "/test/aoj/3033.test.cpp",
-    "/test/aoj/3035.test.cpp",
-    "/test/aoj/3047.test.cpp",
-    "/test/aoj/3069.test.cpp",
-    "/test/aoj/3073.test.cpp",
-    "/test/aoj/ALDS1_14_C.test.cpp",
-    "/test/aoj/DSL_1_A.quickfind.test.cpp",
-    "/test/aoj/DSL_2_B.binarytrie.test.cpp",
-    "/test/aoj/DSL_2_G.test.cpp",
-    "/test/aoj/DSL_2_I.test.cpp",
-    "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
-    "/test/aoj/GRL_5_A.test.cpp",
-    "/test/aoj/GRL_5_C.lca.test.cpp",
-    "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
-    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
   ],
   "/test/aoj/NTL_2_C.test.cpp": [
     "/tools/bigint.cpp"
@@ -580,7 +588,9 @@
     "/bbst/basic/chien.cpp"
   ],
   "/bbst/basic/chien.cpp": [
-    "/test/aoj/1508.test.cpp"
+    "/test/aoj/1508.test.cpp",
+    "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_G.bbst.test.cpp"
   ],
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
@@ -814,6 +824,13 @@
   "/string/knuth_morris_pratt.cpp": [
     "/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp"
   ],
+  "/test/aoj/DSL_2_A.bbst.test.cpp": [
+    "/bbst/basic/ushi.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/bbst/basic/ushi.cpp": [
+    "/test/aoj/DSL_2_A.bbst.test.cpp"
+  ],
   "/test/aoj/DPL_5_A.test.cpp": [
     "/mod/enumeration.cpp",
     "/mod/mint.cpp"
@@ -990,11 +1007,19 @@
     "/segtree/basic/chien.cpp",
     "/tree/heavylightdecomposition.cpp"
   ],
+  "/test/aoj/DSL_2_F.bbst.test.cpp": [
+    "/bbst/basic/chien.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/aoj/2948.test.cpp": [
     "/graph/independentset.cpp"
   ],
   "/graph/independentset.cpp": [
     "/test/aoj/2948.test.cpp"
+  ],
+  "/test/aoj/DSL_2_G.bbst.test.cpp": [
+    "/bbst/basic/chien.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_5_C.lca.test.cpp": [
     "/tools/fastio.cpp",
