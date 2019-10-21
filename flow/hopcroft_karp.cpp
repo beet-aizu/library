@@ -1,20 +1,22 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct BiMatch{
   int L,R;
   vector<vector<int> > G;
   vector<int> match,level;
-  
+
   BiMatch(){}
   BiMatch(int L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}
-  
+
   void add_edge(int u,int v){
     G[u].emplace_back(v+L);
     G[v+L].emplace_back(u);
   }
-  
+
   bool bfs(){
     fill(level.begin(),level.end(),-1);
     queue<int> q;
@@ -34,7 +36,7 @@ struct BiMatch{
         if(w==-1){
           found=true;
           continue;
-        }        
+        }
         if(~level[w]) continue;
         level[w]=level[u]+1;
         q.emplace(w);
@@ -58,7 +60,7 @@ struct BiMatch{
     level[v]=-1;
     return false;
   }
-  
+
   int build(){
     int res=0;
     while(bfs())
@@ -67,10 +69,10 @@ struct BiMatch{
           res++;
     return res;
   }
-  
+
 };
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename T>
 vector<T> compress(vector<T> v){
   sort(v.begin(),v.end());
@@ -87,30 +89,10 @@ map<T, int> dict(const vector<T> &v){
 }
 
 //INSERT ABOVE HERE
-signed AOJ_GRL_7A(){
+signed SPOJ_MATCHING(){
   cin.tie(0);
   ios::sync_with_stdio(0);
-    
-  int X,Y,E;
-  cin>>X>>Y>>E;
-  BiMatch bm(X,Y);
-  for(int i=0;i<E;i++){
-    int x,y;
-    cin>>x>>y;
-    bm.add_edge(x,y);
-  }
-  cout<<bm.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/05/26
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A&lang=jp
-*/
 
-signed SPOJ_MATCHING(){  
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-    
   int X,Y,E;
   cin>>X>>Y>>E;
   BiMatch bm(X,Y);
@@ -134,7 +116,7 @@ signed chokudai_S002_K(){
   cin>>n;
   vector<int> as(n),bs(n);
   for(int i=0;i<n;i++) cin>>as[i]>>bs[i];
-  
+
   vector<int> vs;
   for(int x:as) vs.emplace_back(x);
   for(int x:bs) vs.emplace_back(x);
@@ -146,7 +128,7 @@ signed chokudai_S002_K(){
     bm.add_edge(i,dc[as[i]]);
     bm.add_edge(i,dc[bs[i]]);
   }
-  
+
   cout<<bm.build()<<endl;
   return 0;
 }
@@ -157,8 +139,8 @@ signed chokudai_S002_K(){
 
 
 signed main(){
-  //AOJ_GRL_7A();
   //SPOJ_MATCHING();
   //chokudai_S002_K();
   return 0;
 }
+#endif
