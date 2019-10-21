@@ -241,9 +241,11 @@
     "/test/aoj/DSL_1_A.test.cpp",
     "/test/aoj/DSL_1_B.test.cpp",
     "/test/aoj/DSL_2_A.test.cpp",
+    "/test/aoj/DSL_2_B.binarytrie.test.cpp",
     "/test/aoj/DSL_2_B.test.cpp",
     "/test/aoj/DSL_2_D.test.cpp",
     "/test/aoj/DSL_2_E.test.cpp",
+    "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/DSL_3_D.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
     "/test/aoj/GRL_2_A.test.cpp",
@@ -252,6 +254,7 @@
     "/test/aoj/GRL_3_B.test.cpp",
     "/test/aoj/GRL_3_C.test.cpp",
     "/test/aoj/GRL_4_B.test.cpp",
+    "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp",
     "/test/aoj/GRL_5_C.test.cpp",
     "/test/aoj/GRL_5_D.test.cpp",
@@ -338,7 +341,10 @@
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp",
-    "/test/aoj/ALDS1_14_C.test.cpp"
+    "/test/aoj/ALDS1_14_C.test.cpp",
+    "/test/aoj/DSL_2_B.binarytrie.test.cpp",
+    "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/GRL_5_C.lca.test.cpp"
   ],
   "/test/aoj/NTL_2_C.test.cpp": [
     "/tools/bigint.cpp"
@@ -697,6 +703,18 @@
     "/flow/dinic.cpp",
     "/tools/compress.cpp"
   ],
+  "/test/aoj/DSL_3_D.cartesiantree.test.cpp": [
+    "/datastructure/cartesiantree.cpp",
+    "/tools/fastio.cpp",
+    "/tree/lca.cpp"
+  ],
+  "/datastructure/cartesiantree.cpp": [
+    "/test/aoj/DSL_3_D.cartesiantree.test.cpp"
+  ],
+  "/tree/lca.cpp": [
+    "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/GRL_5_C.lca.test.cpp"
+  ],
   "/test/aoj/GRL_7_A.test.cpp": [
     "/flow/bimatch.cpp"
   ],
@@ -870,6 +888,13 @@
   "/math/tetrahedra.cpp": [
     "/test/aoj/2060.test.cpp"
   ],
+  "/test/aoj/DSL_2_B.binarytrie.test.cpp": [
+    "/datastructure/binarytrie.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/binarytrie.cpp": [
+    "/test/aoj/DSL_2_B.binarytrie.test.cpp"
+  ],
   "/test/aoj/3112.test.cpp": [
     "/segtree/basic/dual.cpp",
     "/string/longestcommonprefix.cpp",
@@ -919,6 +944,10 @@
   ],
   "/graph/independentset.cpp": [
     "/test/aoj/2948.test.cpp"
+  ],
+  "/test/aoj/GRL_5_C.lca.test.cpp": [
+    "/tools/fastio.cpp",
+    "/tree/lca.cpp"
   ],
   "/test/aoj/2415.test.cpp": [
     "/algorithm/optimalbinarytree.cpp",
