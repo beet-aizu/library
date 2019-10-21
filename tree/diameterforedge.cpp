@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct DiameterForEdge{
@@ -16,11 +18,11 @@ struct DiameterForEdge{
   }
   void dfs(int v,int p,int &s){
     if(p<0) dp[v]=T(0);
-    if(dp[s]<dp[v]) s=v; 
+    if(dp[s]<dp[v]) s=v;
     for(Edge e:G[v]){
       int u=e.first;
       if(u==p) continue;
-      dp[u]=dp[v]+e.second;      
+      dp[u]=dp[v]+e.second;
       dfs(u,v,s);
     }
   }
@@ -49,7 +51,7 @@ struct DiameterForEdge{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 struct FastIO{
   FastIO(){
     cin.tie(0);
@@ -58,23 +60,6 @@ struct FastIO{
 }fastio_beet;
 
 //INSERT ABOVE HERE
-signed GRL_5_A(){
-  int n;
-  cin>>n;
-  DiameterForEdge<int> G(n);
-  for(int i=1;i<n;i++){
-    int s,t,w;
-    cin>>s>>t>>w;
-    G.add_edge(s,t,w);
-  }
-  cout<<G.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/05/07
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp
-*/
-
 signed YAHOO2019_FINAL_B(){
   int n;
   cin>>n;
@@ -85,7 +70,7 @@ signed YAHOO2019_FINAL_B(){
     x--;y--;
     G.add_edge(x,y,1);
   }
-  
+
   int m;
   cin>>m;
   DiameterForEdge<int> H(m);
@@ -100,20 +85,20 @@ signed YAHOO2019_FINAL_B(){
   auto dp2=H.farthest();
   sort(dp1.begin(),dp1.end());
   sort(dp2.begin(),dp2.end());
-    
+
   using ll = long long;
   vector<ll> s(m+1,0);
   for(int i=0;i<m;i++) s[i+1]=s[i]+dp2[i];
 
   ll ans=0;
   ll di=max(dp1.back(),dp2.back());
-  
+
   for(ll x:dp1){
     ll y=lower_bound(dp2.begin(),dp2.end(),di-(x+1))-dp2.begin();
     ans+=di*y;
     ans+=(s[m]-s[y])+(m-y)*(x+1);
   }
-  
+
   cout<<ans<<endl;
   return 0;
 }
@@ -123,7 +108,7 @@ signed YAHOO2019_FINAL_B(){
 */
 
 signed main(){
-  //GRL_5_A();
   //YAHOO2019_FINAL_B();
   return 0;
 }
+#endif
