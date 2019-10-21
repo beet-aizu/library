@@ -5,10 +5,10 @@ using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct LCA{
-  const int lg = 12;
+  const int lg = 1;
   const int sz = 1<<lg;
   const int ms = sz-1;
-  int n;
+  int n,cur;
   vector<int> P,D,E,A,B,T,ht;
   vector<vector<int> > G,dat;
   LCA(int n):
@@ -19,14 +19,14 @@ struct LCA{
     G[v].emplace_back(u);
   }
 
-  void dfs(int v,int p,int d,int &k){
-    D[v]=k;
-    A[k]=P[v]=p;
-    E[k++]=d;
+  void dfs(int v,int p,int d){
+    D[v]=cur;
+    A[cur]=P[v]=p;
+    E[cur++]=d;
     for(int u:G[v])
-      if(u!=p) dfs(u,v,d+1,k);
-    A[k]=P[v];
-    E[k++]=d-1;
+      if(u!=p) dfs(u,v,d+1);
+    A[cur]=P[v];
+    E[cur++]=d-1;
   }
 
   // if it need leftmost, then add: if(E[i]==E[j]) return i<j?i:j;
@@ -34,8 +34,8 @@ struct LCA{
   inline int comp(int i,int j,int k){return comp(comp(i,j),k);};
 
   void build(int r=0){
-    int k=0;
-    dfs(r,-1,1,k);
+    cur=0;
+    dfs(r,-1,1);
 
     B[0]=1;
     for(int i=1;i<n*2;i++) B[i/lg]|=(E[i-1]<E[i])<<(i%lg);
