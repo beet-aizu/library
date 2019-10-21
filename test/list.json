@@ -20,7 +20,7 @@
     "/convolution/fastfouriertransform.cpp",
     "/convolution/fastwalshhadamardtransform.cpp",
     "/convolution/numbertheoretictransform.cpp",
-    "/datastructure/2D/binaryindexedtree2D.cpp",
+    "/datastructure/2D_BIT.cpp",
     "/datastructure/absolutesum.cpp",
     "/datastructure/binaryindexedtree.cpp",
     "/datastructure/binarytrie.cpp",
@@ -196,6 +196,7 @@
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
     "/test/aoj/2790.test.cpp",
+    "/test/aoj/2842.2D_BIT.test.cpp",
     "/test/aoj/2842.test.cpp",
     "/test/aoj/2871.test.cpp",
     "/test/aoj/2934.test.cpp",
@@ -348,6 +349,7 @@
     "/test/aoj/1312.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
+    "/test/aoj/2842.2D_BIT.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
     "/test/aoj/3033.test.cpp",
@@ -489,6 +491,13 @@
   "/datastructure/convexhulltrick.cpp": [
     "/test/aoj/2725.test.cpp",
     "/test/aoj/2975.test.cpp"
+  ],
+  "/test/aoj/2842.2D_BIT.test.cpp": [
+    "/datastructure/2D_BIT.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/2D_BIT.cpp": [
+    "/test/aoj/2842.2D_BIT.test.cpp"
   ],
   "/test/aoj/2977.test.cpp": [
     "/convolution/convolution2D.cpp",
