@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct KDTree{
   class Node{
@@ -21,7 +23,7 @@ struct KDTree{
       printf("%d\n",id);
     }
   };
-  
+
   static const int NIL = -1;
 
   int N;
@@ -39,10 +41,10 @@ struct KDTree{
     P.resize(N);
     T.resize(N);
   }
-  
+
   static bool lessX(const Point &p1,const Point &p2){return p1.x<p2.x;}
   static bool lessY(const Point &p1,const Point &p2){return p1.y<p2.y;}
-  
+
   int makeKDTree(int l,int r,int depth){
     if(!(l<r)) return NIL;
     int mid=(l+r)/2;
@@ -57,7 +59,7 @@ struct KDTree{
     T[t].r=makeKDTree(mid+1,r,depth+1);
     return t;
   }
-  
+
   void find(int v,int sx,int tx,int sy,int ty,int depth,vector<Point> &ans){
     int x=P[T[v].location].x;
     int y=P[T[v].location].y;
@@ -79,42 +81,11 @@ struct KDTree{
         if(y<=ty) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
       }
     }
-  } 
+  }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 signed main(){
-  int x,y;
-  int N;
-  scanf("%d",&N);
-  KDTree kd(N);
-  for(int i=0;i<N;i++) {
-    scanf("%d %d",&x,&y);
-    kd.P[i]=KDTree::Point(i,x,y);
-    kd.T[i].l = kd.T[i].r = kd.T[i].p = kd.NIL;
-  }
-  kd.np=0;
-  int root=kd.makeKDTree(0,N,0);
-
-  int q;
-  scanf("%d",&q);
-  int sx,tx,sy,ty;
-  vector<KDTree::Point> ans;
-  for(int i=0;i<q;i++){
-    scanf("%d %d %d %d",&sx,&tx,&sy,&ty);
-    ans.clear();
-    kd.find(root,sx,tx,sy,ty,0,ans);
-    sort(ans.begin(),ans.end());
-    for(int j=0;j<(int)ans.size();j++){
-      ans[j].print();
-    }
-    printf("\n");
-  }
-  
   return 0;
 }
-
-/*
-  verified on 2017/10/29
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C&lang=jp
-*/
+#endif
