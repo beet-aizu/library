@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct SRBST{
@@ -183,31 +185,8 @@ struct SRBST{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-signed DSL_2_A(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  auto f=[](int a,int b){return min(a,b);};
-  SRBST<int> srbst(f,INT_MAX);
-  vector<int> v(n,INT_MAX);
-  auto rt=srbst.build(v);
-
-  for(int i=0;i<q;i++){
-    int c,s,t;
-    scanf("%d %d %d",&c,&s,&t);
-    if(c){
-      printf("%d\n",srbst.query(rt,s,t+1));
-    }else{
-      rt=srbst.set_val(rt,s,t);
-    }
-  }
-  return 0;
-}
-/*
-  verified on 2019/06/24
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A&lang=jp
-*/
-
 signed HAPPYQUERY_C(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -268,7 +247,7 @@ signed HAPPYQUERY_C(){
 */
 
 signed main(){
-  //DSL_2_A();
   HAPPYQUERY_C();
   return 0;
 }
+#endif

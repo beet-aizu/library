@@ -213,62 +213,6 @@ struct RBST{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed DSL_2_F(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  auto f=[](int a,int b){return min(a,b);};
-  auto g=[](int a,int b){(void)a;return b;};
-  RBST<int, int> rbst(f,g,g,INT_MAX,-1);
-  vector<int> v(n,INT_MAX);
-  auto rt=rbst.build(v);
-
-  for(int i=0;i<q;i++){
-    int c,s,t,x;
-    scanf("%d",&c);
-    if(c){
-      scanf("%d %d",&s,&t);
-      printf("%d\n",rbst.query(rt,s,t+1));
-    }else{
-      scanf("%d %d %d",&s,&t,&x);
-      rt=rbst.update(rt,s,t+1,x);
-    }
-  }
-  return 0;
-}
-/*
-  verified on 2019/06/24
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F&lang=jp
-*/
-
-signed DSL_2_G(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  using P = pair<Int, Int>;
-  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
-  auto g=[](P a,Int b){return P(a.first+b*a.second,a.second);};
-  auto h=[](Int a,Int b){return a+b;};
-  RBST<P, Int> rbst(f,g,h,P(0,0),0);
-  vector<P> v(n,P(0,1));
-  auto rt=rbst.build(v);
-
-  for(int i=0;i<q;i++){
-    int c,s,t,x;
-    scanf("%d",&c);
-    if(c){
-      scanf("%d %d",&s,&t);
-      printf("%lld\n",rbst.query(rt,s-1,t).first);
-    }else{
-      scanf("%d %d %d",&s,&t,&x);
-      rt=rbst.update(rt,s-1,t,x);
-    }
-  }
-  return 0;
-}
-/*
-  verified on 2019/06/24
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G&lang=jp
-*/
-
 char buf[114514];
 signed CODEFESTIVAL2014EXHIBITION_B(){
   int Q;
@@ -341,7 +285,6 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
 */
 
 signed main(){
-  //AOJ_1508();
   //DSL_2_F();
   //DSL_2_G();
   //CODEFESTIVAL2014EXHIBITION_B();
