@@ -860,7 +860,12 @@
     "/graph/stronglyconnectedcomponent.cpp"
   ],
   "/test/aoj/2060.test.cpp": [
+    "/linearalgebra/matrix.cpp",
     "/math/tetrahedra.cpp"
+  ],
+  "/linearalgebra/matrix.cpp": [
+    "/test/aoj/1328.test.cpp",
+    "/test/aoj/2060.test.cpp"
   ],
   "/math/tetrahedra.cpp": [
     "/test/aoj/2060.test.cpp"
@@ -882,9 +887,6 @@
   ],
   "/test/aoj/1328.test.cpp": [
     "/linearalgebra/matrix.cpp"
-  ],
-  "/linearalgebra/matrix.cpp": [
-    "/test/aoj/1328.test.cpp"
   ],
   "/test/aoj/1579.test.cpp": [
     "/bbst/basic/dual.cpp"
