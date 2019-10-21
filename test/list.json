@@ -21,7 +21,6 @@
     "/convolution/fastwalshhadamardtransform.cpp",
     "/convolution/numbertheoretictransform.cpp",
     "/datastructure/2D/binaryindexedtree2D.cpp",
-    "/datastructure/2D/rollinghash2D.cpp",
     "/datastructure/absolutesum.cpp",
     "/datastructure/binaryindexedtree.cpp",
     "/datastructure/binarytrie.cpp",
@@ -116,6 +115,7 @@
     "/string/longestcommonsubstring.cpp",
     "/string/manacher.cpp",
     "/string/palindromictree.cpp",
+    "/string/rectanglehash.cpp",
     "/string/rollinghash.cpp",
     "/string/suffixarray.cpp",
     "/string/trie.cpp",
@@ -160,6 +160,7 @@
     "/test/aoj/1254.test.cpp",
     "/test/aoj/1293.test.cpp",
     "/test/aoj/1308.test.cpp",
+    "/test/aoj/1312.test.cpp",
     "/test/aoj/1328.test.cpp",
     "/test/aoj/1508.test.cpp",
     "/test/aoj/1549.test.cpp",
@@ -220,6 +221,7 @@
     "/test/aoj/ALDS1_10_C.test.cpp",
     "/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp",
     "/test/aoj/ALDS1_14_B.test.cpp",
+    "/test/aoj/ALDS1_14_C.test.cpp",
     "/test/aoj/ALDS1_14_D.test.cpp",
     "/test/aoj/ALDS1_1_C.test.cpp",
     "/test/aoj/ALDS1_9_C.test.cpp",
@@ -330,11 +332,13 @@
     "/tools/fastio.cpp"
   ],
   "/tools/fastio.cpp": [
+    "/test/aoj/1312.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
     "/test/aoj/3047.test.cpp",
     "/test/aoj/3069.test.cpp",
-    "/test/aoj/3073.test.cpp"
+    "/test/aoj/3073.test.cpp",
+    "/test/aoj/ALDS1_14_C.test.cpp"
   ],
   "/test/aoj/NTL_2_C.test.cpp": [
     "/tools/bigint.cpp"
@@ -645,8 +649,10 @@
     "/test/aoj/2292.test.cpp"
   ],
   "/string/rollinghash.cpp": [
+    "/test/aoj/1312.test.cpp",
     "/test/aoj/2292.test.cpp",
-    "/test/aoj/ALDS1_14_B.test.cpp"
+    "/test/aoj/ALDS1_14_B.test.cpp",
+    "/test/aoj/ALDS1_14_C.test.cpp"
   ],
   "/test/aoj/3102.test.cpp": [
     "/graph/stronglyconnectedcomponent.cpp",
@@ -705,6 +711,15 @@
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2667.test.cpp",
     "/test/aoj/GRL_5_C.test.cpp"
+  ],
+  "/test/aoj/ALDS1_14_C.test.cpp": [
+    "/string/rectanglehash.cpp",
+    "/string/rollinghash.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/string/rectanglehash.cpp": [
+    "/test/aoj/1312.test.cpp",
+    "/test/aoj/ALDS1_14_C.test.cpp"
   ],
   "/test/aoj/2397.test.cpp": [
     "/linearalgebra/squarematrix.cpp",
@@ -922,6 +937,11 @@
   "/test/aoj/2667.test.cpp": [
     "/segtree/basic/chien.cpp",
     "/tree/heavylightdecomposition.cpp"
+  ],
+  "/test/aoj/1312.test.cpp": [
+    "/string/rectanglehash.cpp",
+    "/string/rollinghash.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_2_A.test.cpp": [
     "/graph/kruskal.cpp"
