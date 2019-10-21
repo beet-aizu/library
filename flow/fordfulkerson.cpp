@@ -1,21 +1,22 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
-
 template<typename T,bool directed>
-struct Fordfulkerson{
+struct FordFulkerson{
   struct edge{
     int to,cap,rev;
     edge(){}
     edge(int to,int cap,int rev):to(to),cap(cap),rev(rev){}
   };
 
-  vector<vector<edge> > G;
+  vector< vector<edge> > G;
   vector<int> used;
 
-  Fordfulkerson(){}
-  Fordfulkerson(int n):G(n),used(n){}
+  FordFulkerson(){}
+  FordFulkerson(int n):G(n),used(n){}
 
   void add_edge(int from,int to,T cap){
     G[from].emplace_back(to,cap,G[to].size());
@@ -57,24 +58,8 @@ struct Fordfulkerson{
 
 };
 //END CUT HERE
-
+#ifndef call_from_test
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int V,E;
-  cin>>V>>E;
-  Fordfulkerson<int, true> G(V);
-  for(int i=0;i<E;i++){
-    int u,v,c;
-    cin>>u>>v>>c;
-    G.add_edge(u,v,c);
-  }
-  cout<<G.flow(0,V-1)<<endl;
   return 0;
 }
-
-/*
-  verified on 2019/06/10
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A&lang=jp
-*/
+#endif

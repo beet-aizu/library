@@ -15,7 +15,7 @@ signed main(){
   for(int i=0;i<E;i++){
     int x,y;
     cin>>x>>y;
-    bm.add_edge(x,X+y);
+    bm.add_edge(x,y);
   }
   cout<<bm.build()<<endl;
   return 0;
