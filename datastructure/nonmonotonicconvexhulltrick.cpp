@@ -131,46 +131,9 @@ signed COLOPL2018FINAL_C(){
   https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
-
-signed AOJ_2725(){
-  int n,x;
-  scanf("%d %d",&n,&x);
-  vector<Int> t(n),p(n),f(n);
-  for(Int i=0;i<n;i++) scanf("%lld %lld %lld",&t[i],&p[i],&f[i]);
-
-  using T = tuple<Int, Int, Int>;
-  vector<T> vt(n);
-  for(Int i=0;i<n;i++) vt[i]=T(f[i],p[i],t[i]);
-  sort(vt.begin(),vt.end());
-  for(Int i=0;i<n;i++) tie(f[i],p[i],t[i])=vt[i];
-
-  vector<NonmonotonicConvexHullTrick<Int, false> > vh(x+1);
-
-  Int ans=0;
-  for(Int i=0;i<n;i++){
-    for(Int j=x;j>t[i];j--){
-      if(vh[j-t[i]].empty()) continue;
-      Int val=vh[j-t[i]].query(f[i])+p[i]-f[i]*f[i];
-      vh[j].addLine(2*f[i],val-f[i]*f[i]);
-      chmax(ans,val);
-    }
-    vh[t[i]].addLine(2*f[i],p[i]-f[i]*f[i]);
-    chmax(ans,p[i]);
-  }
-
-  printf("%lld\n",ans);
-  return 0;
-}
-
-/*
-  verified on 2019/01/16
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2725
-*/
-
 signed main(){
   //TENKA12016FINAL_E();
   //COLOPL2018FINAL_C();
-  //AOJ_2725();
   return 0;
 }
 #endif
