@@ -193,6 +193,7 @@
     "/test/aoj/2667.test.cpp",
     "/test/aoj/2679.test.cpp",
     "/test/aoj/2720.test.cpp",
+    "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
     "/test/aoj/2790.test.cpp",
     "/test/aoj/2842.test.cpp",
@@ -345,6 +346,8 @@
   "/tools/fastio.cpp": [
     "/test/aoj/0109.test.cpp",
     "/test/aoj/1312.test.cpp",
+    "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
+    "/test/aoj/2725.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
     "/test/aoj/3033.test.cpp",
@@ -711,6 +714,7 @@
     "/tools/fastio.cpp"
   ],
   "/datastructure/nonmonotonicconvexhulltrick.cpp": [
+    "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/3069.test.cpp"
   ],
   "/test/aoj/2983.test.cpp": [
@@ -1141,6 +1145,10 @@
   "/test/aoj/0502.test.cpp": [
     "/tools/dice.cpp"
   ],
+  "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp": [
+    "/datastructure/nonmonotonicconvexhulltrick.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/aoj/2934.test.cpp": [
     "/string/manacher.cpp",
     "/tools/drop.cpp"
@@ -1153,7 +1161,8 @@
     "/mod/mint.cpp"
   ],
   "/test/aoj/2725.test.cpp": [
-    "/datastructure/convexhulltrick.cpp"
+    "/datastructure/convexhulltrick.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp": [
     "/flow/hopcroft_karp.cpp",
