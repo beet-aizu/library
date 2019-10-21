@@ -20,28 +20,29 @@ struct LCA{
   }
 
   void dfs(int v,int p,int d){
-    int k=0;
+    int k=0,u;
+    vector<int> iter(n,0);
+
     using T = tuple<int, int, int>;
     stack<T> st;
     st.emplace(v,p,d);
-    vector<int> iter(n,0);
 
   START:
     D[v]=k;
     A[k]=P[v]=p;
     E[k++]=d;
-    for(int &i=iter[v];i<(int)G[v].size();i++){
-      int u=G[v][i];
+    for(;iter[v]<(int)G[v].size();iter[v]++){
+      u=G[v][iter[v]];
       if(u==p) continue;
       st.emplace(v,p,d);
       p=v;v=u;d=d+1;
       goto START;
-    }
 
-  END:
-    tie(v,p,d)=st.top();st.pop();
-    A[k]=P[v];
-    E[k++]=d-1;
+    END:
+      tie(v,p,d)=st.top();st.pop();
+      A[k]=P[v];
+      E[k++]=d-1;
+    }
 
     if(!st.empty()) goto END;
   }
