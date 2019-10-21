@@ -59,52 +59,7 @@ T order(T x,T MOD){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed AOJ_3062(){
-  using ll = long long;
-  ll MOD;
-  cin>>MOD;
-
-  int T;
-  cin>>T;
-  while(T--){
-    ll n;
-    cin>>n;
-
-    vector<ll> g(n);
-    for(ll i=0;i<n;i++) cin>>g[i];
-
-    ll a;
-    cin>>a;
-
-    if(a==1){
-      cout<<1<<"\n";
-      continue;
-    }
-
-    sort(g.rbegin(),g.rend());
-    if(g[0]==1){
-      cout<<0<<"\n";
-      continue;
-    }
-    while(g.back()==1) g.pop_back();
-
-    auto mlcm=[&](ll a,ll b){return a/__gcd(a,b)*b;};
-
-    ll res=order(g[0],MOD);
-    for(ll x:g) res=mlcm(res,order(x,MOD));
-
-    cout<<(res%order(a,MOD)==0?1:0)<<"\n";
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/06/16
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3062
-*/
-
 signed main(){
-  AOJ_3062();
   return 0;
 }
 #endif

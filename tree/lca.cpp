@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct LCA{
   const int lg = 12;
@@ -30,11 +32,11 @@ struct LCA{
   // if it need leftmost, then add: if(E[i]==E[j]) return i<j?i:j;
   inline int comp(int i,int j){return E[i]<E[j]?i:j;};
   inline int comp(int i,int j,int k){return comp(comp(i,j),k);};
-  
+
   void build(int r=0){
     int k=0;
     dfs(r,-1,1,k);
-    
+
     B[0]=1;
     for(int i=1;i<n*2;i++) B[i/lg]|=(E[i-1]<E[i])<<(i%lg);
 
@@ -53,12 +55,12 @@ struct LCA{
     dat.assign(h,vector<int>(m,-1));
     ht.assign(m+1,0);
     for(int j=2;j<=m;j++) ht[j]=ht[j>>1]+1;
-    
+
     for(int j=0;j<n*2;j++){
       if(dat[0][j/lg]<0) dat[0][j/lg]=j;
       dat[0][j/lg]=comp(dat[0][j/lg],j);
     }
-    
+
     for(int i=1,p=1;i<h;i++,p<<=1)
       for(int j=0;j<m;j++)
         dat[i][j]=comp(dat[i-1][j],dat[i-1][min(j+p,m-1)]);
@@ -74,7 +76,7 @@ struct LCA{
     int b=(((B[i]|(ms<<x))>>y)|(ms<<(lg-y)))&ms;
     return l+T[b];
   }
-  
+
   inline int ls(int i,int l){
     int k=l-i*lg;
     int b=((B[i]>>k)|(ms<<(lg-k)))&ms;
@@ -91,9 +93,9 @@ struct LCA{
     int i=l/lg,j=r/lg;
     if(i==j) return es(i,l,r);
     if(i+1==j) return comp(ls(i,l),rs(j,r));
-    return comp(ls(i,l),cs(i+1,j),rs(j,r));    
+    return comp(ls(i,l),cs(i+1,j),rs(j,r));
   }
-  
+
   int lca(int l,int r){
     if(l==r) return l;
     if(D[l]>D[r]) swap(l,r);
@@ -103,40 +105,9 @@ struct LCA{
   }
 };
 //END CUT HERE
-
-//INSERT ABOVE HERE
-signed GRL_5_C(){
-  int n;
-  scanf("%d",&n);
-  LCA lca(n);
-  for(int i=0;i<n;i++){
-    int k,c;
-    scanf("%d",&k);
-    for(int j=0;j<k;j++){
-      scanf("%d",&c);
-      lca.add_edge(i,c);
-    }
-  }
-  
-  lca.build();
-  int q;
-  scanf("%d",&q);
-  for(int i=0;i<q;i++){
-    int x,y;
-    scanf("%d %d",&x,&y);
-    printf("%d\n",lca.lca(x,y));
-  }
-  return 0;
-}
-
-/*
-  verified on 2018/08/13
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=jp
-*/
-
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  GRL_5_C();
   return 0;
 }
+#endif

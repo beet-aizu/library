@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T,size_t X>
 struct BinaryTrie{
@@ -159,7 +161,7 @@ struct BinaryTrie{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 signed JAG2013SUMMERWARMINGUP_F(){
   int n;
   scanf("%d",&n);
@@ -213,24 +215,6 @@ signed ARC033_C(){
 /*
   verified on 2018/10/24
   https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
-*/
-
-signed AOJ_DSL2B(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  BinaryTrie<int, 30> bt;
-  for(int i=0;i<q;i++){
-    int c,x,y;
-    scanf("%d %d %d",&c,&x,&y);
-    if(c) printf("%zd\n",bt.order_of_key(y+1)-bt.order_of_key(x));
-    else bt.add(x,y);
-  }
-  return 0;
-}
-
-/*
-  verified on 2018/10/24
-  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
 */
 
 signed CFR470_C(){
@@ -478,9 +462,9 @@ signed KUPC2018_M(){
 signed main(){
   //JAG2013SUMMERWARMINGUP_F();
   //ARC033_C();
-  //AOJ_DSL2B();
   //CFR470_C();
   //CFR477_C();
   //KUPC2018_M();
   return 0;
 }
+#endif
