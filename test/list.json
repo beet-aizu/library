@@ -115,6 +115,7 @@
     "/string/longestcommonsubstring.cpp",
     "/string/manacher.cpp",
     "/string/palindromictree.cpp",
+    "/string/parse.cpp",
     "/string/rectanglehash.cpp",
     "/string/rollinghash.cpp",
     "/string/suffixarray.cpp",
@@ -132,7 +133,6 @@
     "/tools/fixpoint.cpp",
     "/tools/int128.cpp",
     "/tools/iskado.cpp",
-    "/tools/parse.cpp",
     "/tools/precision.cpp",
     "/tools/split.cpp",
     "/tools/trio.cpp",
@@ -152,6 +152,7 @@
     "/tree/treeconstruction.cpp"
   ],
   "test": [
+    "/test/aoj/0109.test.cpp",
     "/test/aoj/0233.test.cpp",
     "/test/aoj/0377.test.cpp",
     "/test/aoj/0502.test.cpp",
@@ -338,6 +339,7 @@
     "/tools/fastio.cpp"
   ],
   "/tools/fastio.cpp": [
+    "/test/aoj/0109.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
@@ -675,6 +677,13 @@
     "/test/aoj/2292.test.cpp",
     "/test/aoj/ALDS1_14_B.test.cpp",
     "/test/aoj/ALDS1_14_C.test.cpp"
+  ],
+  "/test/aoj/0109.test.cpp": [
+    "/string/parse.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/string/parse.cpp": [
+    "/test/aoj/0109.test.cpp"
   ],
   "/test/aoj/3102.test.cpp": [
     "/graph/stronglyconnectedcomponent.cpp",
