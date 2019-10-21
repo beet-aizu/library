@@ -15,6 +15,7 @@ T extgcd(T a,T b,T& x,T& y){
   }
   return d;
 }
+
 template<typename T>
 T mod_inverse(T a,T mod){
   T x,y;

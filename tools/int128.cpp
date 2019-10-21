@@ -6,10 +6,10 @@ using namespace std;
   using Int = boost::multiprecision::cpp_int;
 */
 //BEGIN CUT HERE
-using Int = __int128_t;
-Int abs128(Int val){return val<0?-val:val;}
+using ll = __int128_t;
+ll abs128(ll val){return val<0?-val:val;}
 
-ostream &operator<<(ostream &os,Int val){
+ostream &operator<<(ostream &os,ll val){
   if(ostream::sentry(os)){
     __uint128_t tmp=abs128(val);
     char buf[64];
@@ -28,7 +28,7 @@ ostream &operator<<(ostream &os,Int val){
   return os;
 }
 
-istream &operator>>(istream &is,Int &val){
+istream &operator>>(istream &is,ll &val){
   string s;
   is>>s;
   val=0;
@@ -38,9 +38,9 @@ istream &operator>>(istream &is,Int &val){
   return is;
 }
 //END CUT HERE
-
-Int extgcd(Int a,Int b,Int& x,Int& y){
-  Int d=a;
+template<typename T>
+T extgcd(T a,T b,T& x,T& y){
+  T d=a;
   if(b!=0){
     d=extgcd(b,a%b,y,x);
     y-=(a/b)*x;
@@ -50,59 +50,68 @@ Int extgcd(Int a,Int b,Int& x,Int& y){
   return d;
 }
 
+template<typename T>
+T mod_inverse(T a,T mod){
+  T x,y;
+  extgcd(a,mod,x,y);
+  return (x%mod+mod)%mod;
+}
+
+//INSERT ABOVE HERE
 signed main(){
-  Int n,R;
-  Int cnt=0;
+  ll n,R;
+  ll cnt=0;
   while(cin>>n>>R,n){
     cout<<"Case #"<<++cnt<<":";
-    Int r=R;
-    vector<Int> v(n);
-    for(Int i=0;i<n;i++){
-      Int k;
+    ll r=R;
+    vector<ll> v(n);
+    for(ll i=0;i<n;i++){
+      ll k;
       cin>>k;
       v[i]=k;
     }
-    Int g=v[0];
-    for(Int i=0;i<n;i++) g=__gcd(g,v[i]);
+    ll g=v[0];
+    for(ll i=0;i<n;i++) g=__gcd(g,v[i]);
     if(abs128(r)%g){
       cout<<" Stupid keypad!"<<endl;
       continue;
     }
-    vector<Int> ans(n,0);
-    auto print=[&](){
-                 Int tmp=0;
-                 for(Int i=0;i<n;i++) tmp+=v[i]*ans[i];
-                 assert(tmp==r);
-                 for(Int i=0;i<n;i++) cout<<" "<<ans[i];
-                 cout<<endl;
-               };
+    vector<ll> ans(n,0);
+    auto print=
+      [&](){
+        ll tmp=0;
+        for(ll i=0;i<n;i++) tmp+=v[i]*ans[i];
+        assert(tmp==r);
+        for(ll i=0;i<n;i++) cout<<" "<<ans[i];
+        cout<<endl;
+      };
+
     bool f=0;
-    for(Int i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
       if(abs128(r)%v[i]==0){
         ans[i]=r/v[i];
         f=1;
         break;
       }
     }
+
     if(f){
       print();
       continue;
     }
 
-    //cout<<endl;
-    Int res=v[0];
+    ll res=v[0];
     ans[0]=1;
-    for(Int i=1;i<n;i++){
-      Int k=__gcd(res,v[i]);
+    for(ll i=1;i<n;i++){
+      ll k=__gcd(res,v[i]);
       if(k==res) continue;
-      Int x,y;
+      ll x,y;
       extgcd(res,v[i],x,y);
-      //cout<<res<<" "<<v[i]<<":"<<x<<" "<<y<<endl;
-      for(Int j=0;j<i;j++) ans[j]*=x;
+      for(ll j=0;j<i;j++) ans[j]*=x;
       ans[i]=y;
       res=k;
     }
-    for(Int i=0;i<n;i++) ans[i]*=(r/res);
+    for(ll i=0;i<n;i++) ans[i]*=(r/res);
     print();
   }
 
@@ -110,6 +119,6 @@ signed main(){
 }
 
 /*
-  verified on 2017/10/29
-  http://rhodon.u-aizu.ac.jp:8080/arena/room.jsp?id=3753
+  verified on 2019/10/22
+  https://vjudge.net/problem/UVA-12980
 */
