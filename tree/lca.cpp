@@ -19,15 +19,12 @@ struct LCA{
     G[v].emplace_back(u);
   }
 
-  void dfs(int v,int d,int &k){
+  void dfs(int v,int p,int d,int &k){
     D[v]=k;
-    A[k]=P[v];
+    A[k]=P[v]=p;
     E[k++]=d;
-    for(int u:G[v]){
-      if(u==P[v]) continue;
-      P[u]=v;
-      dfs(u,d+1,k);
-    }
+    for(int u:G[v])
+      if(u!=p) dfs(u,v,d+1,k);
     A[k]=P[v];
     E[k++]=d-1;
   }
@@ -38,7 +35,7 @@ struct LCA{
 
   void build(int r=0){
     int k=0;
-    dfs(r,1,k);
+    dfs(r,-1,1,k);
 
     B[0]=1;
     for(int i=1;i<n*2;i++) B[i/lg]|=(E[i-1]<E[i])<<(i%lg);
