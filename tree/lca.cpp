@@ -19,14 +19,31 @@ struct LCA{
     G[v].emplace_back(u);
   }
 
-  void dfs(int v,int p,int d,int &k){
+  void dfs(int v,int p,int d){
+    int k=0;
+    using T = tuple<int, int, int>;
+    stack<T> st;
+    st.emplace(v,p,d);
+    vector<int> iter(n,0);
+
+  START:
     D[v]=k;
     A[k]=P[v]=p;
     E[k++]=d;
-    for(int u:G[v])
-      if(u!=p) dfs(u,v,d+1,k);
+    for(int &i=iter[v];i<(int)G[v].size();i++){
+      int u=G[v][i];
+      if(u==p) continue;
+      st.emplace(v,p,d);
+      p=v;v=u;d=d+1;
+      goto START;
+    }
+
+  END:
+    tie(v,p,d)=st.top();st.pop();
     A[k]=P[v];
     E[k++]=d-1;
+
+    if(!st.empty()) goto END;
   }
 
   // if it need leftmost, then add: if(E[i]==E[j]) return i<j?i:j;
@@ -34,8 +51,7 @@ struct LCA{
   inline int comp(int i,int j,int k){return comp(comp(i,j),k);};
 
   void build(int r=0){
-    int k=0;
-    dfs(r,-1,1,k);
+    dfs(r,-1,1);
 
     B[0]=1;
     for(int i=1;i<n*2;i++) B[i/lg]|=(E[i-1]<E[i])<<(i%lg);
