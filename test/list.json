@@ -265,11 +265,13 @@
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/DSL_3_D.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
+    "/test/aoj/GRL_1_B.test.cpp",
     "/test/aoj/GRL_2_A.test.cpp",
     "/test/aoj/GRL_2_B.test.cpp",
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp",
     "/test/aoj/GRL_3_C.test.cpp",
+    "/test/aoj/GRL_4_A.test.cpp",
     "/test/aoj/GRL_4_B.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
@@ -364,6 +366,8 @@
     "/test/aoj/DSL_2_I.bbst.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/GRL_1_A.test.cpp",
+    "/test/aoj/GRL_1_B.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
@@ -459,7 +463,8 @@
     "/test/aoj/DPL_5_L.test.cpp"
   ],
   "/test/aoj/GRL_1_A.test.cpp": [
-    "/datastructure/radixheap.cpp"
+    "/datastructure/radixheap.cpp",
+    "/tools/fastio.cpp"
   ],
   "/datastructure/radixheap.cpp": [
     "/test/aoj/GRL_1_A.test.cpp"
@@ -536,6 +541,20 @@
   ],
   "/datastructure/2D_BIT.cpp": [
     "/test/aoj/2842.2D_BIT.test.cpp"
+  ],
+  "/test/aoj/GRL_1_B.test.cpp": [
+    "/graph/bellmanford.cpp",
+    "/tools/drop.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/tools/drop.cpp": [
+    "/test/aoj/2934.test.cpp",
+    "/test/aoj/2970.test.cpp",
+    "/test/aoj/2971.test.cpp",
+    "/test/aoj/GRL_1_B.test.cpp"
+  ],
+  "/graph/bellmanford.cpp": [
+    "/test/aoj/GRL_1_B.test.cpp"
   ],
   "/test/aoj/2977.test.cpp": [
     "/convolution/convolution2D.cpp",
@@ -1131,11 +1150,6 @@
     "/math/linearcongruence.cpp",
     "/tools/drop.cpp",
     "/tools/fastio.cpp"
-  ],
-  "/tools/drop.cpp": [
-    "/test/aoj/2934.test.cpp",
-    "/test/aoj/2970.test.cpp",
-    "/test/aoj/2971.test.cpp"
   ],
   "/test/aoj/NTL_1_D.test.cpp": [
     "/math/totient.cpp"
