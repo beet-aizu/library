@@ -154,6 +154,7 @@
   "test": [
     "/test/aoj/0109.test.cpp",
     "/test/aoj/0233.test.cpp",
+    "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/0377.test.cpp",
     "/test/aoj/0502.test.cpp",
     "/test/aoj/0613.test.cpp",
@@ -180,6 +181,7 @@
     "/test/aoj/2397.test.cpp",
     "/test/aoj/2415.test.cpp",
     "/test/aoj/2432.test.cpp",
+    "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2488.test.cpp",
     "/test/aoj/2513.test.cpp",
@@ -338,7 +340,9 @@
   ],
   "/tools/fastio.cpp": [
     "/test/aoj/0109.test.cpp",
+    "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/1312.test.cpp",
+    "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
     "/test/aoj/2842.2D_BIT.test.cpp",
@@ -1075,6 +1079,16 @@
   "/polynomial/polynomial.cpp": [
     "/test/aoj/1293.test.cpp"
   ],
+  "/test/aoj/2450.linkcuttree.test.cpp": [
+    "/linkcuttree/path.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/linkcuttree/path.cpp": [
+    "/test/aoj/0367.linkcuttree.test.cpp",
+    "/test/aoj/2450.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
+  ],
   "/test/aoj/DPL_3_C.test.cpp": [
     "/algorithm/largestrectangle.cpp"
   ],
@@ -1089,10 +1103,6 @@
   "/test/aoj/GRL_5_D.linkcuttree.test.cpp": [
     "/linkcuttree/path.cpp",
     "/tools/fastio.cpp"
-  ],
-  "/linkcuttree/path.cpp": [
-    "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
-    "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
   ],
   "/test/aoj/2948.test.cpp": [
     "/graph/independentset.cpp"
@@ -1287,6 +1297,10 @@
   "/test/aoj/DPL_5_E.test.cpp": [
     "/mod/enumeration.cpp",
     "/mod/mint.cpp"
+  ],
+  "/test/aoj/0367.linkcuttree.test.cpp": [
+    "/linkcuttree/path.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2725.test.cpp": [
     "/datastructure/convexhulltrick.cpp",
