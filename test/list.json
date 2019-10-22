@@ -13,6 +13,7 @@
     "/bbst/basic/dual.cpp",
     "/bbst/basic/ushi.cpp",
     "/bbst/pb_ds_tree.cpp",
+    "/bbst/persistent/array.cpp",
     "/bbst/persistent/chien.cpp",
     "/bbst/persistent/ushi.cpp",
     "/convolution/arbitrarymodconvolution.cpp",
