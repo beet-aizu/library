@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T,typename E>
 struct LinkCutTree{
@@ -193,106 +195,9 @@ struct LinkCutTree{
     eval(t);
   }
 };
-
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-
-signed GRL_5_D(){
-  int n;
-  cin>>n;
-  using LCT = LinkCutTree<int,int>;
-  LCT::F f=[](int a,int b){return a+b;};
-  LCT lc(f,f,f,0,0);
-
-  vector<LCT::Node*> v(n);
-  for(int i=0;i<n;i++) v[i]=lc.create(i,0);
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    for(int j=0;j<k;j++){
-      int c;
-      cin>>c;
-      lc.link(v[i],v[c]);
-    }
-  }
-
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    int t;
-    cin>>t;
-    if(t==0){
-      int a,b;
-      cin>>a>>b;
-      lc.expose(v[a]);
-      v[a]->val=f(v[a]->val,b);
-    }
-    if(t==1){
-      int a;
-      cin>>a;
-      lc.expose(v[a]);
-      cout<<v[a]->dat<<endl;
-    }
-  }
-
-  return 0;
-}
-/*
-  verified on 2018/06/14
-  https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_D
-*/
-
-
-signed GRL_5_E(){
-  int n;
-  cin>>n;
-  using P = pair<Int, Int>;
-  using LCT = LinkCutTree<P, Int>;
-  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
-  auto g=[](P a,int b){return P(a.first+b*a.second,a.second);};
-  auto h=[](Int a,Int b){return a+b;};
-
-  LCT lc(f,g,h,P(0,0),0);
-
-  vector<LCT::Node*> v(n);
-  for(int i=0;i<n;i++) v[i]=lc.create(i,P(0,1));
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    for(int j=0;j<k;j++){
-      int c;
-      cin>>c;
-      lc.link(v[i],v[c]);
-    }
-  }
-
-  int q;
-  cin>>q;
-  Int c=0;
-  for(int i=0;i<q;i++){
-    int t;
-    cin>>t;
-    if(t==0){
-      int a,b;
-      cin>>a>>b;
-      lc.update(v[a],b);
-      c+=b;
-    }
-    if(t==1){
-      int a;
-      cin>>a;
-      lc.expose(v[a]);
-      cout<<(v[a]->dat).first-c<<endl;
-    }
-  }
-
-  return 0;
-}
-/*
-  verified on 2018/06/14
-  https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_E
-*/
-
 signed AOJ_2450(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -626,13 +531,9 @@ signed SPOJ_DYNACON1(){
   https://www.spoj.com/problems/DYNACON1/
 */
 
-
 signed main(){
-  //GRL_5_D();
-  //GRL_5_E();
-  //AOJ_2450();
-  //AOJ_0367();
   //YUKI_650();
   //SPOJ_DYNACON1();
   return 0;
 }
+#endif

@@ -5,43 +5,43 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../tree/eulertourforedge.cpp"
-#include "../../datastructure/binaryindexedtree.cpp"
+#include "../../linkcuttree/path.cpp"
 #undef call_from_test
 
 signed main(){
   int n;
   cin>>n;
-  EulerTourForEdge et(n);
+  using LCT = LinkCutTree<int, int>;
+  LCT::F f=[](int a,int b){return a+b;};
+  LCT lct(f,f,f,0,0);
+
+  vector<LCT::Node*> vs(n);
+  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
   for(int i=0;i<n;i++){
     int k;
     cin>>k;
     for(int j=0;j<k;j++){
       int c;
       cin>>c;
-      et.add_edge(i,c);
+      lct.link(vs[i],vs[c]);
     }
   }
-  et.build();
 
-  BIT<int> bit(n*2+100,0);
   int q;
   cin>>q;
   for(int i=0;i<q;i++){
     int t;
     cin>>t;
     if(t==0){
-      int v,w;
-      cin>>v>>w;
-      auto g=[&](int k,int d){bit.add0(k,d);};
-      et.update(v,w,g);
+      int a,b;
+      cin>>a>>b;
+      lct.expose(vs[a]);
+      vs[a]->val=f(vs[a]->val,b);
     }
     if(t==1){
-      int u;
-      cin>>u;
-      int res=0;
-      et.query(0,u,[&](int l,int r){res+=bit.query0(l,r);});
-      cout<<res<<"\n";
+      int a;
+      cin>>a;
+      cout<<lct.query(vs[a])<<"\n";
     }
   }
   cout<<flush;
