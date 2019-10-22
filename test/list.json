@@ -255,6 +255,7 @@
     "/test/aoj/DSL_2_F.test.cpp",
     "/test/aoj/DSL_2_G.bbst.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
+    "/test/aoj/DSL_2_H.bbst.test.cpp",
     "/test/aoj/DSL_2_H.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
@@ -348,6 +349,7 @@
     "/test/aoj/DSL_2_F.test.cpp",
     "/test/aoj/DSL_2_G.bbst.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
+    "/test/aoj/DSL_2_H.bbst.test.cpp",
     "/test/aoj/DSL_2_H.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
@@ -464,6 +466,16 @@
     "/test/aoj/0377.test.cpp",
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp"
+  ],
+  "/test/aoj/DSL_2_H.bbst.test.cpp": [
+    "/bbst/basic/chien.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/bbst/basic/chien.cpp": [
+    "/test/aoj/1508.test.cpp",
+    "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_G.bbst.test.cpp",
+    "/test/aoj/DSL_2_H.bbst.test.cpp"
   ],
   "/test/aoj/3033.test.cpp": [
     "/string/suffixarray.cpp",
@@ -590,11 +602,6 @@
   ],
   "/test/aoj/1508.test.cpp": [
     "/bbst/basic/chien.cpp"
-  ],
-  "/bbst/basic/chien.cpp": [
-    "/test/aoj/1508.test.cpp",
-    "/test/aoj/DSL_2_F.bbst.test.cpp",
-    "/test/aoj/DSL_2_G.bbst.test.cpp"
   ],
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
