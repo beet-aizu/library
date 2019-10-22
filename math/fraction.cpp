@@ -1,8 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct fraction{
@@ -49,7 +51,7 @@ struct fraction{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 struct FastIO{
   FastIO(){
     cin.tie(0);
@@ -102,3 +104,4 @@ signed main(){
   CPSCO2019_Session3_G();
   return 0;
 }
+#endif
