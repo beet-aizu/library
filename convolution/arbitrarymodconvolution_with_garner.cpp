@@ -1,3 +1,4 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
@@ -133,7 +134,7 @@ struct NTT{
 };
 template<int X> constexpr int NTT<X>::md;
 template<int X> constexpr int NTT<X>::rt;
-
+#endif
 //BEGIN CUT HERE
 struct ArbitraryModConvolution{
   using ll = long long;
@@ -208,7 +209,7 @@ NTT<0> ArbitraryModConvolution::ntt0;
 NTT<1> ArbitraryModConvolution::ntt1;
 NTT<2> ArbitraryModConvolution::ntt2;
 //END CUT HERE
-
+#ifndef call_from_test
 template<typename M>
 class Enumeration{
 private:
@@ -390,6 +391,7 @@ signed YUKI_829(){
 */
 
 signed main(){
-  //YUKI_829();
+  YUKI_829();
   return 0;
 }
+#endif

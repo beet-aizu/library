@@ -6,8 +6,8 @@ using namespace std;
 #define call_from_test
 #include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
-#include "../../convolution/fastfouriertransform.cpp"
-#include "../../convolution/arbitrarymodconvolution.cpp"
+#include "../../convolution/numbertheoretictransform.cpp"
+#include "../../convolution/arbitrarymodconvolution_with_garner.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
@@ -16,7 +16,7 @@ signed main(){
   cin>>n;
 
   using M = Mint<int>;
-  ArbitraryModConvolution<M> arb;
+  ArbitraryModConvolution arb;
   auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
   FormalPowerSeries<M> FPS(conv);
 
