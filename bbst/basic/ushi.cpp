@@ -46,14 +46,14 @@ struct SRBST{
   SRBST(F f,S flip,T ti):
     f(f),flip(flip),ti(ti),pool(LIM),ptr(0){}
 
-  Node* build(size_t l,size_t r,vector<T> &v){
-    if(l+1==r) return create(v[l]);
+  Node* build(size_t l,size_t r,const vector<T> &vs){
+    if(l+1==r) return create(vs[l]);
     size_t m=(l+r)>>1;
-    return merge(build(l,m,v),build(m,r,v));
+    return merge(build(l,m,vs),build(m,r,vs));
   }
 
-  Node* build(vector<T> &v){
-    return build(0,v.size(),v);
+  Node* build(const vector<T> &vs){
+    return build(0,vs.size(),vs);
   }
 
   inline Node* create(){
