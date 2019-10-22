@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../datastructure/rangeslide.cpp"
+#include "../../datastructure/sparsetable.cpp"
 #undef call_from_test
 
 signed main(){
@@ -14,14 +14,13 @@ signed main(){
   vector<int> as(n);
   for(int i=0;i<n;i++) cin>>as[i];
 
-  auto cmp=[](int a,int b){return a<b;};
-  RangeSlide<int, decltype(cmp)> rs(as,cmp);
+  auto f=[](int a,int b){return min(a,b);};
+  SparseTable<int> st(f);
+  st.build(as);
 
-  for(int i=0;i+l<=n;i++) rs.add_range(i,i+l);
-  auto res=rs.build();
   for(int i=0;i+l<=n;i++){
     if(i) cout<<" ";
-    cout<<as[res[i]];
+    cout<<st.query(i,i+l);
   }
   cout<<endl;
   return 0;

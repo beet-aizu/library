@@ -1,7 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct DisjointSparseTable{
@@ -9,17 +10,17 @@ struct DisjointSparseTable{
   vector<vector<T> > dat;
   vector<int> ht;
   const F f;
-  
+
   DisjointSparseTable(){}
   DisjointSparseTable(F f):f(f){}
-  
+
   void build(const vector<T> &v){
     int n=v.size(),h=1;
     while((1<<h)<=n) h++;
     dat.assign(h,vector<T>(n));
     ht.assign((1<<h)+1,0);
     for(int j=2;j<(1<<h)+1;j++) ht[j]=ht[j>>1]+1;
-    
+
     for(int j=0;j<n;j++) dat[0][j]=v[j];
     for(int i=1;i<h;i++){
       int s=1<<i;
@@ -39,11 +40,10 @@ struct DisjointSparseTable{
     if(l>=--r) return dat[0][l];
     return f(dat[ht[l^r]][l],dat[ht[l^r]][r]);
   }
-  
+
 };
 //END CUT HERE
-
-
+#ifndef call_from_test
 signed ARC023_D(){
   int n,m;
   scanf("%d %d",&n,&m);
@@ -54,7 +54,7 @@ signed ARC023_D(){
   auto f=[](int a,int b){return __gcd(a,b);};
   DisjointSparseTable<int> st(f);
   st.build(a);
-  
+
   map<int, long long> ans;
   for(int i=0;i<n;i++){
     int l=i;
@@ -71,7 +71,7 @@ signed ARC023_D(){
     }
     ans[lst]+=n-l;
   }
-  
+
   for(int i=0;i<m;i++) printf("%lld\n",ans[x[i]]);
   return 0;
 }
@@ -84,11 +84,11 @@ signed ARC023_D(){
 signed CODECHEF_SEGPROD(){
   int T;
   scanf("%d",&T);
-    
+
   int p;
   auto f=[&](int a,int b)->int{return (Int)a*b%p;};
   DisjointSparseTable<int> dst(f);
-  
+
   for(int t=1;t<=T;t++){
     int n,q;
     scanf("%d %d %d",&n,&p,&q);
@@ -96,9 +96,9 @@ signed CODECHEF_SEGPROD(){
     for(int i=0;i<n;i++) scanf("%d",&v[i]),v[i]%=p;
     vector<int> b(q/64+2);
     for(int i=0;i<(q/64+2);i++) scanf("%d",&b[i]);
-    
+
     dst.build(v);
-    
+
     int x=0,l=0,r=0;
     for(int i=0;i<q;i++){
       if(i%64==0){
@@ -112,7 +112,7 @@ signed CODECHEF_SEGPROD(){
       x=dst.query(l,r+1)+1;
       if(x>=p) x-=p;
     }
-    printf("%d\n",x);    
+    printf("%d\n",x);
   }
   return 0;
 }
@@ -127,3 +127,4 @@ signed main(){
   //CODECHEF_SEGPROD();
   return 0;
 }
+#endif

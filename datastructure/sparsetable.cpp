@@ -1,11 +1,13 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct SparseTable{
-  using F = function<T(T,T)>;
-  vector<vector<T> > dat;
+  using F = function<T(T, T)>;
+  vector< vector<T> > dat;
   vector<int> ht;
   const F f;
 
@@ -31,8 +33,7 @@ struct SparseTable{
   }
 };
 //END CUT HERE
-
-
+#ifndef call_from_test
 signed ARC023_D(){
   int n,m;
   scanf("%d %d",&n,&m);
@@ -74,3 +75,4 @@ signed main(){
   ARC023_D();
   return 0;
 }
+#endif
