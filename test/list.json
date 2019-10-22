@@ -8,6 +8,7 @@
     "/algorithm/optimalbinarytree.cpp",
     "/algorithm/parallelbinarysearch.cpp",
     "/bbst/avltree.cpp",
+    "/bbst/basic/array.cpp",
     "/bbst/basic/chien.cpp",
     "/bbst/basic/dual.cpp",
     "/bbst/basic/ushi.cpp",
@@ -203,6 +204,7 @@
     "/test/aoj/2842.2D_BIT.test.cpp",
     "/test/aoj/2842.test.cpp",
     "/test/aoj/2871.test.cpp",
+    "/test/aoj/2890.test.cpp",
     "/test/aoj/2934.test.cpp",
     "/test/aoj/2948.test.cpp",
     "/test/aoj/2959.test.cpp",
@@ -352,6 +354,7 @@
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
     "/test/aoj/2842.2D_BIT.test.cpp",
+    "/test/aoj/2890.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
     "/test/aoj/3033.test.cpp",
@@ -678,6 +681,13 @@
   ],
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
+  ],
+  "/test/aoj/2890.test.cpp": [
+    "/bbst/basic/array.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/bbst/basic/array.cpp": [
+    "/test/aoj/2890.test.cpp"
   ],
   "/test/aoj/2871.test.cpp": [
     "/segtree/basic/chien.cpp",
