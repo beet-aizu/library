@@ -387,6 +387,7 @@
     "/test/aoj/GRL_1_B.test.cpp",
     "/test/aoj/GRL_2_B.tarjan.test.cpp",
     "/test/aoj/GRL_2_B.test.cpp",
+    "/test/aoj/GRL_4_A.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
@@ -451,7 +452,8 @@
     "/test/aoj/2647.test.cpp",
     "/test/aoj/3102.test.cpp",
     "/test/aoj/GRL_2_B.test.cpp",
-    "/test/aoj/GRL_3_C.test.cpp"
+    "/test/aoj/GRL_3_C.test.cpp",
+    "/test/aoj/GRL_4_A.test.cpp"
   ],
   "/graph/arborescence_edmond.cpp": [
     "/test/aoj/2309.tarjan.test.cpp",
@@ -773,6 +775,10 @@
   ],
   "/test/aoj/ITP1_11_A.test.cpp": [
     "/tools/dice.cpp"
+  ],
+  "/test/aoj/GRL_4_A.test.cpp": [
+    "/graph/stronglyconnectedcomponent.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/3062.test.cpp": [
     "/math/factorize.cpp",
