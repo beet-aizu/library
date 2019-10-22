@@ -252,6 +252,7 @@
     "/test/aoj/DSL_2_D.test.cpp",
     "/test/aoj/DSL_2_E.test.cpp",
     "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_F.test.cpp",
     "/test/aoj/DSL_2_G.bbst.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
@@ -343,6 +344,7 @@
     "/test/aoj/DSL_2_A.test.cpp",
     "/test/aoj/DSL_2_B.binarytrie.test.cpp",
     "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_F.test.cpp",
     "/test/aoj/DSL_2_G.bbst.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
@@ -608,6 +610,7 @@
     "/test/aoj/2871.test.cpp",
     "/test/aoj/3035.test.cpp",
     "/test/aoj/3073.test.cpp",
+    "/test/aoj/DSL_2_F.test.cpp",
     "/test/aoj/DSL_2_G.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp"
   ],
@@ -1189,6 +1192,10 @@
   ],
   "/string/manacher.cpp": [
     "/test/aoj/2934.test.cpp"
+  ],
+  "/test/aoj/DSL_2_F.test.cpp": [
+    "/segtree/basic/chien.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/DPL_5_E.test.cpp": [
     "/mod/enumeration.cpp",
