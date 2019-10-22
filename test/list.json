@@ -166,6 +166,7 @@
     "/test/aoj/1308.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1328.test.cpp",
+    "/test/aoj/1338.test.cpp",
     "/test/aoj/1508.test.cpp",
     "/test/aoj/1549.test.cpp",
     "/test/aoj/1579.test.cpp",
@@ -350,6 +351,7 @@
     "/test/aoj/0109.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/1312.test.cpp",
+    "/test/aoj/1338.test.cpp",
     "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
     "/test/aoj/2359.test.cpp",
@@ -1322,6 +1324,13 @@
   "/test/aoj/DSL_2_I.test.cpp": [
     "/segtree/basic/chien.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/aoj/1338.test.cpp": [
+    "/math/fraction.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/math/fraction.cpp": [
+    "/test/aoj/1338.test.cpp"
   ],
   "/test/aoj/NTL_2_F.test.cpp": [
     "/tools/bigint.cpp"
