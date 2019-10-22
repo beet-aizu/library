@@ -8,8 +8,6 @@ using namespace std;
 #include "../../graph/stronglyconnectedcomponent.cpp"
 #undef call_from_test
 
-#define IGNORE
-
 signed main(){
   int n,m;
   cin>>n>>m;
