@@ -179,6 +179,7 @@
     "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
     "/test/aoj/2324.test.cpp",
+    "/test/aoj/2359.test.cpp",
     "/test/aoj/2397.test.cpp",
     "/test/aoj/2415.test.cpp",
     "/test/aoj/2432.test.cpp",
@@ -346,6 +347,7 @@
     "/test/aoj/1312.test.cpp",
     "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
+    "/test/aoj/2359.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
@@ -596,6 +598,7 @@
     "/tools/fastio.cpp"
   ],
   "/tools/drop.cpp": [
+    "/test/aoj/2359.test.cpp",
     "/test/aoj/2934.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2971.test.cpp",
@@ -633,7 +636,8 @@
   ],
   "/tools/compress.cpp": [
     "/test/aoj/0613.test.cpp",
-    "/test/aoj/1599.test.cpp"
+    "/test/aoj/1599.test.cpp",
+    "/test/aoj/2359.test.cpp"
   ],
   "/datastructure/rangeslide.cpp": [
     "/test/aoj/0613.test.cpp",
@@ -683,6 +687,7 @@
     "/test/aoj/2871.test.cpp"
   ],
   "/segtree/basic/chien.cpp": [
+    "/test/aoj/2359.test.cpp",
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2667.test.cpp",
     "/test/aoj/2871.test.cpp",
@@ -737,6 +742,7 @@
     "/tools/fastio.cpp"
   ],
   "/segtree/basic/dual.cpp": [
+    "/test/aoj/2359.test.cpp",
     "/test/aoj/3112.test.cpp",
     "/test/aoj/DSL_2_D.test.cpp",
     "/test/aoj/DSL_2_E.test.cpp"
@@ -1068,6 +1074,13 @@
   ],
   "/datastructure/binarytrie.cpp": [
     "/test/aoj/DSL_2_B.binarytrie.test.cpp"
+  ],
+  "/test/aoj/2359.test.cpp": [
+    "/segtree/basic/chien.cpp",
+    "/segtree/basic/dual.cpp",
+    "/tools/compress.cpp",
+    "/tools/drop.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/3112.test.cpp": [
     "/segtree/basic/dual.cpp",
