@@ -1,6 +1,8 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
 template <typename T, bool isMin>
 struct LiChao{
@@ -32,7 +34,8 @@ struct LiChao{
 
   T query(T x){
     int t=lower_bound(pos.begin(),pos.end(),x)-pos.begin();
-    return (isMin?-1:1)*query(1,0,n-1,t);
+    if(isMin) return -query(1,0,n-1,t);
+    return query(1,0,n-1,t);
   }
 
   inline bool over(Line &a,Line &b,T lb,T ub){
@@ -63,8 +66,7 @@ struct LiChao{
 template <typename T, bool isMin>
 constexpr T LiChao<T, isMin>::INF;
 //END CUT HERE
-
-
+#ifndef call_from_test
 template<typename T>
 vector<T> make_v(size_t a){return vector<T>(a);}
 
@@ -177,3 +179,4 @@ signed main(){
   //COLOPL2018FINAL_C();
   return 0;
 }
+#endif
