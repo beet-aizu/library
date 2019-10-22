@@ -176,6 +176,7 @@
     "/test/aoj/2235.test.cpp",
     "/test/aoj/2257.test.cpp",
     "/test/aoj/2292.test.cpp",
+    "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
     "/test/aoj/2324.test.cpp",
     "/test/aoj/2397.test.cpp",
@@ -269,6 +270,7 @@
     "/test/aoj/GRL_1_A.test.cpp",
     "/test/aoj/GRL_1_B.test.cpp",
     "/test/aoj/GRL_2_A.test.cpp",
+    "/test/aoj/GRL_2_B.tarjan.test.cpp",
     "/test/aoj/GRL_2_B.test.cpp",
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp",
@@ -342,6 +344,8 @@
     "/test/aoj/0109.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/1312.test.cpp",
+    "/test/aoj/2309.tarjan.test.cpp",
+    "/test/aoj/2309.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
@@ -375,6 +379,8 @@
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
     "/test/aoj/GRL_1_B.test.cpp",
+    "/test/aoj/GRL_2_B.tarjan.test.cpp",
+    "/test/aoj/GRL_2_B.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
@@ -419,6 +425,33 @@
     "/test/aoj/NTL_2_D.test.cpp",
     "/test/aoj/NTL_2_E.test.cpp",
     "/test/aoj/NTL_2_F.test.cpp"
+  ],
+  "/test/aoj/2309.tarjan.test.cpp": [
+    "/graph/arborescence_edmond.cpp",
+    "/graph/stronglyconnectedcomponent.cpp",
+    "/tools/fastio.cpp",
+    "/tools/precision.cpp"
+  ],
+  "/tools/precision.cpp": [
+    "/test/aoj/2309.tarjan.test.cpp",
+    "/test/aoj/2309.test.cpp",
+    "/test/aoj/2975.test.cpp",
+    "/test/aoj/geometry/3049.test.cpp"
+  ],
+  "/graph/stronglyconnectedcomponent.cpp": [
+    "/test/aoj/2222.test.cpp",
+    "/test/aoj/2309.tarjan.test.cpp",
+    "/test/aoj/2309.test.cpp",
+    "/test/aoj/2647.test.cpp",
+    "/test/aoj/3102.test.cpp",
+    "/test/aoj/GRL_2_B.test.cpp",
+    "/test/aoj/GRL_3_C.test.cpp"
+  ],
+  "/graph/arborescence_edmond.cpp": [
+    "/test/aoj/2309.tarjan.test.cpp",
+    "/test/aoj/2309.test.cpp",
+    "/test/aoj/2647.test.cpp",
+    "/test/aoj/GRL_2_B.test.cpp"
   ],
   "/test/aoj/DSL_2_B.test.cpp": [
     "/datastructure/binaryindexedtree.cpp",
@@ -474,6 +507,13 @@
     "/test/aoj/DPL_5_K.test.cpp",
     "/test/aoj/DPL_5_L.test.cpp"
   ],
+  "/test/aoj/GRL_2_B.tarjan.test.cpp": [
+    "/graph/arborescence_tarjan.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/graph/arborescence_tarjan.cpp": [
+    "/test/aoj/GRL_2_B.tarjan.test.cpp"
+  ],
   "/test/aoj/GRL_1_A.test.cpp": [
     "/datastructure/radixheap.cpp",
     "/tools/fastio.cpp"
@@ -523,10 +563,6 @@
     "/tools/chminmax.cpp",
     "/tools/fastio.cpp",
     "/tools/precision.cpp"
-  ],
-  "/tools/precision.cpp": [
-    "/test/aoj/2975.test.cpp",
-    "/test/aoj/geometry/3049.test.cpp"
   ],
   "/tools/chminmax.cpp": [
     "/test/aoj/0613.test.cpp",
@@ -617,20 +653,8 @@
   ],
   "/test/aoj/GRL_2_B.test.cpp": [
     "/graph/arborescence_edmond.cpp",
-    "/graph/stronglyconnectedcomponent.cpp"
-  ],
-  "/graph/stronglyconnectedcomponent.cpp": [
-    "/test/aoj/2222.test.cpp",
-    "/test/aoj/2309.test.cpp",
-    "/test/aoj/2647.test.cpp",
-    "/test/aoj/3102.test.cpp",
-    "/test/aoj/GRL_2_B.test.cpp",
-    "/test/aoj/GRL_3_C.test.cpp"
-  ],
-  "/graph/arborescence_edmond.cpp": [
-    "/test/aoj/2309.test.cpp",
-    "/test/aoj/2647.test.cpp",
-    "/test/aoj/GRL_2_B.test.cpp"
+    "/graph/stronglyconnectedcomponent.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2659.test.cpp": [
     "/math/extgcd.cpp",
@@ -1023,7 +1047,9 @@
   ],
   "/test/aoj/2309.test.cpp": [
     "/graph/arborescence_edmond.cpp",
-    "/graph/stronglyconnectedcomponent.cpp"
+    "/graph/stronglyconnectedcomponent.cpp",
+    "/tools/fastio.cpp",
+    "/tools/precision.cpp"
   ],
   "/test/aoj/2060.test.cpp": [
     "/linearalgebra/matrix.cpp",
