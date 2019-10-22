@@ -1,9 +1,10 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct BellmanFord{
@@ -17,7 +18,7 @@ struct BellmanFord{
   int n;
   vector< vector<int> > G;
   vector<int> used,reach;
-  BellmanFord(int n):n(n),G(n),used(n,0),reach(n,0){}
+  BellmanFord(int n):n(n),G(n),used(n,0),reach(n,1){}
 
   vector<edge> es;
   void add_edge(int u,int v,T c){
@@ -25,18 +26,7 @@ struct BellmanFord{
     G[u].emplace_back(v);
   }
 
-  void dfs(int v){
-    if(used[v]) return;
-    used[v]=1;
-    for(int u:G[v]) dfs(u);
-  }
-
-  T build(int from,int to,int &neg_loop){
-    for(int i=0;i<n;i++){
-      fill(used.begin(),used.end(),0);
-      dfs(i);
-      reach[i]=used[to];
-    }
+  vector<T> build(int from,int &neg_loop){
     const T INF = numeric_limits<T>::max();
     vector<T> ds(n,INF);
     ds[from]=0;
@@ -52,16 +42,31 @@ struct BellmanFord{
       if(!update) break;
       if(j==n-1){
         neg_loop=1;
-        return INF;
+        return ds;
       }
     }
     neg_loop=0;
-    return ds[to];
+    return ds;
+  }
+
+  void dfs(int v){
+    if(used[v]) return;
+    used[v]=1;
+    for(int u:G[v]) dfs(u);
+  }
+
+  T shortest_path(int from,int to,int &neg_loop){
+    for(int i=0;i<n;i++){
+      fill(used.begin(),used.end(),0);
+      dfs(i);
+      reach[i]=used[to];
+    }
+    return build(from,neg_loop)[to];
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
-
 signed main(){
   int n,m,p;
   cin>>n>>m>>p;
@@ -73,7 +78,7 @@ signed main(){
     G.add_edge(a,b,p-c);
   }
   int neg_loop;
-  int res=G.build(0,n-1,neg_loop);
+  int res=G.shortest_path(0,n-1,neg_loop);
   if(neg_loop){
     cout<<-1<<endl;
     return 0;
@@ -85,3 +90,4 @@ signed main(){
   verified on 2019/08/10
   https://atcoder.jp/contests/abc137/tasks/abc137_e
 */
+#endif
