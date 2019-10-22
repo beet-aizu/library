@@ -228,6 +228,7 @@
     "/test/aoj/ALDS1_14_D.test.cpp",
     "/test/aoj/ALDS1_1_C.test.cpp",
     "/test/aoj/ALDS1_9_C.test.cpp",
+    "/test/aoj/DPL_3_B.test.cpp",
     "/test/aoj/DPL_3_C.test.cpp",
     "/test/aoj/DPL_5_A.test.cpp",
     "/test/aoj/DPL_5_B.test.cpp",
@@ -344,6 +345,7 @@
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp",
     "/test/aoj/ALDS1_14_C.test.cpp",
+    "/test/aoj/DPL_3_B.test.cpp",
     "/test/aoj/DSL_1_A.quickfind.test.cpp",
     "/test/aoj/DSL_2_A.bbst.test.cpp",
     "/test/aoj/DSL_2_A.test.cpp",
@@ -519,6 +521,7 @@
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3112.test.cpp",
     "/test/aoj/ALDS1_10_C.test.cpp",
+    "/test/aoj/DPL_3_B.test.cpp",
     "/test/aoj/geometry/2334.test.cpp",
     "/test/aoj/geometry/3049.test.cpp",
     "/test/aoj/geometry/3056.test.cpp"
@@ -664,6 +667,15 @@
   ],
   "/datastructure/kdtree.cpp": [
     "/test/aoj/DSL_2_C.test.cpp"
+  ],
+  "/test/aoj/DPL_3_B.test.cpp": [
+    "/algorithm/largestrectangle.cpp",
+    "/tools/chminmax.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/algorithm/largestrectangle.cpp": [
+    "/test/aoj/DPL_3_B.test.cpp",
+    "/test/aoj/DPL_3_C.test.cpp"
   ],
   "/test/aoj/DSL_2_D.test.cpp": [
     "/segtree/basic/dual.cpp",
@@ -1031,9 +1043,6 @@
   ],
   "/test/aoj/DPL_3_C.test.cpp": [
     "/algorithm/largestrectangle.cpp"
-  ],
-  "/algorithm/largestrectangle.cpp": [
-    "/test/aoj/DPL_3_C.test.cpp"
   ],
   "/test/aoj/2450.test.cpp": [
     "/segtree/basic/chien.cpp",
