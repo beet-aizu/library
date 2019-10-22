@@ -270,6 +270,8 @@
     "/test/aoj/DSL_2_I.bbst.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp",
+    "/test/aoj/DSL_3_D.sparsetable.test.cpp",
     "/test/aoj/DSL_3_D.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
     "/test/aoj/GRL_1_B.test.cpp",
@@ -383,6 +385,9 @@
     "/test/aoj/DSL_2_I.bbst.test.cpp",
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
+    "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp",
+    "/test/aoj/DSL_3_D.sparsetable.test.cpp",
+    "/test/aoj/DSL_3_D.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
     "/test/aoj/GRL_1_B.test.cpp",
     "/test/aoj/GRL_2_B.tarjan.test.cpp",
@@ -829,6 +834,13 @@
     "/test/aoj/ALDS1_14_B.test.cpp",
     "/test/aoj/ALDS1_14_C.test.cpp"
   ],
+  "/test/aoj/DSL_3_D.sparsetable.test.cpp": [
+    "/datastructure/sparsetable.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/sparsetable.cpp": [
+    "/test/aoj/DSL_3_D.sparsetable.test.cpp"
+  ],
   "/test/aoj/0109.test.cpp": [
     "/string/parse.cpp",
     "/tools/fastio.cpp"
@@ -1020,7 +1032,8 @@
     "/mod/mint.cpp"
   ],
   "/test/aoj/DSL_3_D.test.cpp": [
-    "/datastructure/rangeslide.cpp"
+    "/datastructure/rangeslide.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_3_B.test.cpp": [
     "/graph/lowlink.cpp"
@@ -1128,6 +1141,13 @@
   "/test/aoj/DPL_5_B.test.cpp": [
     "/mod/enumeration.cpp",
     "/mod/mint.cpp"
+  ],
+  "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp": [
+    "/datastructure/disjointsparsetable.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/disjointsparsetable.cpp": [
+    "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp"
   ],
   "/test/aoj/1293.test.cpp": [
     "/polynomial/polynomial.cpp"
