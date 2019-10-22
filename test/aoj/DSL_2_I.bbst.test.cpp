@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../segtree/basic/chien.cpp"
+#include "../../bbst/basic/chien.cpp"
 #undef call_from_test
 
 signed main(){
@@ -17,8 +17,8 @@ signed main(){
   auto g=[](P a,int b){return P(a.second*b,a.second);};
   auto h=[](int a,int b){(void)a;return b;};
 
-  SegmentTree<P, int> seg(f,g,h,P(0,0),-1010);
-  seg.build(vector<P>(n,P(0,1)));
+  RBST<P, int> rbst(f,g,h,P(0,0),-1010);
+  auto rt=rbst.build(vector<P>(n,P(0,1)));
 
   for(int i=0;i<q;i++){
     int c;
@@ -26,12 +26,12 @@ signed main(){
     if(c==0){
       int s,t,x;
       cin>>s>>t>>x;
-      seg.update(s,t+1,x);
+      rt=rbst.update(rt,s,t+1,x);
     }
     if(c==1){
       int s,t;
       cin>>s>>t;
-      cout<<seg.query(s,t+1).first<<"\n";
+      cout<<rbst.query(rt,s,t+1).first<<"\n";
     }
   }
   cout<<flush;

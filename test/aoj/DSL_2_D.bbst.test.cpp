@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../segtree/basic/dual.cpp"
+#include "../../bbst/basic/dual.cpp"
 #undef call_from_test
 
 signed main(){
@@ -14,8 +14,8 @@ signed main(){
 
   auto h=[](int a,int b){(void)a;return b;};
   int ei=INT_MAX;
-  SegmentTree<int> seg(h,ei);
-  seg.init(n);
+  RBST<int> rbst(h,ei);
+  auto rt=rbst.init(n);
 
   for(int i=0;i<q;i++){
     int tp;
@@ -23,12 +23,12 @@ signed main(){
     if(tp==0){
       int s,t,x;
       cin>>s>>t>>x;
-      seg.update(s,t+1,x);
+      rt=rbst.update(rt,s,t+1,x);
     }
     if(tp==1){
       int s;
       cin>>s;
-      cout<<seg.get_val(s)<<"\n";
+      cout<<rbst.get_val(rt,s)<<"\n";
     }
   }
   cout<<flush;
