@@ -223,6 +223,7 @@
     "/test/aoj/3058.test.cpp",
     "/test/aoj/3062.test.cpp",
     "/test/aoj/3063.test.cpp",
+    "/test/aoj/3069.lichao.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3072.test.cpp",
     "/test/aoj/3073.test.cpp",
@@ -365,6 +366,7 @@
     "/test/aoj/3033.test.cpp",
     "/test/aoj/3035.test.cpp",
     "/test/aoj/3047.test.cpp",
+    "/test/aoj/3069.lichao.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3073.test.cpp",
     "/test/aoj/ALDS1_14_C.test.cpp",
@@ -586,6 +588,7 @@
     "/test/aoj/2627.test.cpp",
     "/test/aoj/2790.test.cpp",
     "/test/aoj/2975.test.cpp",
+    "/test/aoj/3069.lichao.test.cpp",
     "/test/aoj/3069.test.cpp",
     "/test/aoj/3112.test.cpp",
     "/test/aoj/ALDS1_10_C.test.cpp",
@@ -1070,6 +1073,14 @@
   "/test/aoj/NTL_1_B.test.cpp": [
     "/mod/pow.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/aoj/3069.lichao.test.cpp": [
+    "/segtree/cht/lichao.cpp",
+    "/tools/chminmax.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/segtree/cht/lichao.cpp": [
+    "/test/aoj/3069.lichao.test.cpp"
   ],
   "/test/aoj/2985.test.cpp": [
     "/convolution/arbitrarymodconvolution.cpp",
