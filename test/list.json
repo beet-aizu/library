@@ -277,7 +277,9 @@
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp",
     "/test/aoj/GRL_5_C.test.cpp",
+    "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_D.test.cpp",
+    "/test/aoj/GRL_5_E.linkcuttree.test.cpp",
     "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
     "/test/aoj/GRL_6_A.test.cpp",
     "/test/aoj/GRL_6_B.test.cpp",
@@ -371,6 +373,9 @@
     "/test/aoj/GRL_1_B.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
+    "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_D.test.cpp",
+    "/test/aoj/GRL_5_E.linkcuttree.test.cpp",
     "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
     "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp",
     "/test/aoj/NTL_1_A.test.cpp",
@@ -909,6 +914,7 @@
   ],
   "/test/aoj/GRL_5_D.test.cpp": [
     "/datastructure/binaryindexedtree.cpp",
+    "/tools/fastio.cpp",
     "/tree/eulertourforedge.cpp"
   ],
   "/tree/eulertourforedge.cpp": [
@@ -1079,6 +1085,14 @@
   "/test/aoj/DSL_2_F.bbst.test.cpp": [
     "/bbst/basic/chien.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/aoj/GRL_5_D.linkcuttree.test.cpp": [
+    "/linkcuttree/path.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/linkcuttree/path.cpp": [
+    "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
   ],
   "/test/aoj/2948.test.cpp": [
     "/graph/independentset.cpp"
@@ -1321,6 +1335,10 @@
   ],
   "/test/aoj/NTL_2_B.test.cpp": [
     "/tools/bigint.cpp"
+  ],
+  "/test/aoj/GRL_5_E.linkcuttree.test.cpp": [
+    "/linkcuttree/path.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_5_A.test.cpp": [
     "/tools/fastio.cpp",
