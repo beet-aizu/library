@@ -287,6 +287,7 @@
     "/test/aoj/ITP1_11_B.test.cpp",
     "/test/aoj/ITP1_11_C.test.cpp",
     "/test/aoj/ITP1_11_D.test.cpp",
+    "/test/aoj/NTL_1_A.test.cpp",
     "/test/aoj/NTL_1_B.test.cpp",
     "/test/aoj/NTL_1_D.test.cpp",
     "/test/aoj/NTL_1_E.test.cpp",
@@ -371,7 +372,9 @@
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_6_A.fordfulkerson.test.cpp",
-    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
+    "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp",
+    "/test/aoj/NTL_1_A.test.cpp",
+    "/test/aoj/NTL_1_B.test.cpp"
   ],
   "/segtree/basic/ushi.cpp": [
     "/test/aoj/2644.test.cpp",
@@ -727,7 +730,8 @@
     "/mod/pow.cpp"
   ],
   "/math/factorize.cpp": [
-    "/test/aoj/3062.test.cpp"
+    "/test/aoj/3062.test.cpp",
+    "/test/aoj/NTL_1_A.test.cpp"
   ],
   "/mod/pow.cpp": [
     "/test/aoj/3062.test.cpp",
@@ -981,6 +985,10 @@
   "/tree/centroid.cpp": [
     "/test/aoj/2790.test.cpp"
   ],
+  "/test/aoj/NTL_1_A.test.cpp": [
+    "/math/factorize.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/aoj/2720.test.cpp": [
     "/math/carmichael.cpp"
   ],
@@ -988,7 +996,8 @@
     "/test/aoj/2720.test.cpp"
   ],
   "/test/aoj/NTL_1_B.test.cpp": [
-    "/mod/pow.cpp"
+    "/mod/pow.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2985.test.cpp": [
     "/convolution/arbitrarymodconvolution.cpp",
