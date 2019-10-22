@@ -8,6 +8,8 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 template<typename T>
 struct BellmanFord{
+  static constexpr T INF = numeric_limits<T>::max();
+
   struct edge{
     int u,v;
     T w;
@@ -27,7 +29,6 @@ struct BellmanFord{
   }
 
   vector<T> build(int from,int &neg_loop){
-    const T INF = numeric_limits<T>::max();
     vector<T> ds(n,INF);
     ds[from]=0;
     for(int j=0;j<n;j++){
@@ -64,6 +65,8 @@ struct BellmanFord{
     return build(from,neg_loop)[to];
   }
 };
+template<typename T>
+constexpr T BellmanFord<T>::INF;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

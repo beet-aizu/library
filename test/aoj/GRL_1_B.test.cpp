@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../tools/drop.cpp"
 #include "../../graph/bellmanford.cpp"
 #undef call_from_test
 
@@ -20,13 +21,13 @@ signed main(){
   }
 
   int neg_loop;
-  auto res=G.build(0,neg_loop);
-  if(neg_loop){
-    cout<<-1<<endl;
-    return 0;
-  }
+  auto res=G.build(r,neg_loop);
+  if(neg_loop) drop("NEGATIVE CYCLE");
 
-  for(int x:res) cout<<x<<"\n";
+  for(int x:res){
+    if(x==BellmanFord<int>::INF) cout<<"INF\n";
+    else cout<<x<<"\n";
+  }
   cout<<flush;
   return 0;
 }
