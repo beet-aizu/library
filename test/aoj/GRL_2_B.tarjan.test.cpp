@@ -5,8 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../graph/stronglyconnectedcomponent.cpp"
-#include "../../graph/arborescence_edmond.cpp"
+#include "../../graph/arborescence_tarjan.cpp"
 #undef call_from_test
 
 signed main(){
