@@ -35,7 +35,7 @@ struct SRBST{
   S flip;
   T ti;
 
-  const size_t LIM = 1.3e7;
+  const size_t LIM = 1e7;
   vector<Node> pool;
   size_t ptr;
 
@@ -46,14 +46,14 @@ struct SRBST{
   SRBST(F f,S flip,T ti):
     f(f),flip(flip),ti(ti),pool(LIM),ptr(0){}
 
-  Node* build(size_t l,size_t r,vector<T> &v){
-    if(l+1==r) return create(v[l]);
+  Node* build(size_t l,size_t r,const vector<T> &vs){
+    if(l+1==r) return create(vs[l]);
     size_t m=(l+r)>>1;
-    return merge(build(l,m,v),build(m,r,v));
+    return merge(build(l,m,vs),build(m,r,vs));
   }
 
-  Node* build(vector<T> &v){
-    return build(0,v.size(),v);
+  Node* build(const vector<T> &vs){
+    return build(0,vs.size(),vs);
   }
 
   inline Node* create(){
@@ -172,7 +172,11 @@ struct SRBST{
 
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
-    a=eval(a);
+    if(a->rev){
+      if(a->l) toggle(a->l);
+      if(a->r) toggle(a->r);
+      a->rev=false;
+    }
     dump(a->l,it);
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
@@ -225,47 +229,6 @@ struct PSRBST : SRBST<T>{
 };
 //END CUT HERE
 //INSERT ABOVE HERE
-signed JOISC2012_COPYPASTE(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int m;
-  string buf;
-  cin>>m>>buf;
-
-  auto f=[](char a,char b){return max(a,b);};
-  char ti=0;
-  PSRBST<char> psrbst(f,ti);
-
-  vector<char> v(buf.begin(),buf.end());
-  auto rt=psrbst.build(v);
-
-  int n;
-  cin>>n;
-  for(int i=0;i<n;i++){
-    int a,b,c;
-    cin>>a>>b>>c;
-    auto s=psrbst.split(rt,a);
-    auto t=psrbst.split(s.second,b-a);
-    auto u=psrbst.split(rt,c);
-    rt=psrbst.merge(psrbst.merge(u.first,t.first),u.second);
-
-    if((int)psrbst.count(rt)>m)
-      rt=psrbst.split(rt,m).first;
-
-    if(psrbst.almost_full()) rt=psrbst.rebuild(rt);
-  }
-
-  auto d=psrbst.dump(rt);
-  buf.resize(d.size());
-  for(int i=0;i<(int)d.size();i++) buf[i]=d[i];
-  cout<<buf<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/24
-  https://atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
-*/
-
 signed HAPPYQUERY_B(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -313,12 +276,11 @@ signed HAPPYQUERY_B(){
   return 0;
 }
 /*
-  verified on 2019/06/24
+  verified on 2019/10/22
   https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query/problem
 */
 
 signed main(){
-  //JOISC2012_COPYPASTE();
-  //HAPPYQUERY_B();
+  HAPPYQUERY_B();
   return 0;
 }

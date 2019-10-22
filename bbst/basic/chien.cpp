@@ -205,9 +205,9 @@ struct RBST{
   }
 
   vector<T> dump(Node* a){
-    vector<T> v(count(a));
-    dump(a,v.begin());
-    return v;
+    vector<T> vs(count(a));
+    dump(a,vs.begin());
+    return vs;
   }
 };
 //END CUT HERE
@@ -280,14 +280,12 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
   return 0;
 }
 /*
-  verified on 2019/06/24
+  verified on 2019/10/22
   https://atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
 */
 
 signed main(){
-  //DSL_2_F();
-  //DSL_2_G();
-  //CODEFESTIVAL2014EXHIBITION_B();
+  CODEFESTIVAL2014EXHIBITION_B();
   return 0;
 }
 #endif

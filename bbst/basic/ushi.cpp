@@ -172,12 +172,17 @@ struct SRBST{
 
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
-    a=eval(a);
+    if(a->rev){
+      if(a->l) toggle(a->l);
+      if(a->r) toggle(a->r);
+      a->rev=false;
+    }
     dump(a->l,it);
     *(it+count(a->l))=a->val;
     dump(a->r,it+count(a->l)+1);
   }
 
+  // destroy data
   vector<T> dump(Node* a){
     vector<T> v(count(a));
     dump(a,v.begin());

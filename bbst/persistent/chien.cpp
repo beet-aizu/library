@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+
 template<typename T, typename E>
 struct RBST{
   using u32 = uint32_t;
@@ -50,14 +51,14 @@ struct RBST{
   RBST(F f,G g,H h,S flip,T ti,E ei):
     f(f),g(g),h(h),flip(flip),ti(ti),ei(ei),pool(LIM),ptr(0){}
 
-  Node* build(size_t l,size_t r,vector<T> &v){
-    if(l+1==r) return create(v[l]);
+  Node* build(size_t l,size_t r,const vector<T> &vs){
+    if(l+1==r) return create(vs[l]);
     size_t m=(l+r)>>1;
-    return merge(build(l,m,v),build(m,r,v));
+    return merge(build(l,m,vs),build(m,r,vs));
   }
 
-  Node* build(vector<T> &v){
-    return build(0,v.size(),v);
+  Node* build(const vector<T> &vs){
+    return build(0,vs.size(),vs);
   }
 
   inline Node* create(){
@@ -96,6 +97,7 @@ struct RBST{
     a->rev^=1;
   }
 
+  // remove "virtual" for optimization
   virtual Node* eval(Node* a){
     if(a->laz!=ei){
       if(a->l) propagate(a->l,a->laz);
@@ -201,12 +203,11 @@ struct RBST{
   }
 
   vector<T> dump(Node* a){
-    vector<T> v(count(a));
-    dump(a,v.begin());
-    return v;
+    vector<T> vs(count(a));
+    dump(a,vs.begin());
+    return vs;
   }
 };
-
 //BEGIN CUT HERE
 template<typename T, typename E>
 struct PRBST : RBST<T, E>{
@@ -235,9 +236,9 @@ struct PRBST : RBST<T, E>{
   }
 
   Node* rebuild(Node* a){
-    auto v=super::dump(a);
+    auto vs=super::dump(a);
     super::ptr=0;
-    return super::build(v);
+    return super::build(vs);
   }
 
   bool almost_full() const{
@@ -292,8 +293,8 @@ signed ARC030_D(){
   return 0;
 }
 /*
-  verified on 2019/06/12
-  https://beta.atcoder.jp/contests/arc030/tasks/arc030_4
+  verified on 2019/10/22
+  https://atcoder.jp/contests/arc030/tasks/arc030_4
 */
 
 signed main(){
