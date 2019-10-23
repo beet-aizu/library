@@ -346,6 +346,7 @@
     "/test/aoj/geometry/CGL_7_H.test.cpp",
     "/test/yosupo/bernoulli_number.test.cpp",
     "/test/yosupo/convolution_mod.test.cpp",
+    "/test/yosupo/discrete_logarithm_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
@@ -425,6 +426,7 @@
     "/test/aoj/NTL_1_B.test.cpp",
     "/test/yosupo/bernoulli_number.test.cpp",
     "/test/yosupo/convolution_mod.test.cpp",
+    "/test/yosupo/discrete_logarithm_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
@@ -1652,6 +1654,13 @@
   ],
   "/test/aoj/geometry/CGL_7_D.test.cpp": [
     "/geometry/geometry.cpp"
+  ],
+  "/test/yosupo/discrete_logarithm_mod.test.cpp": [
+    "/mod/log.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/mod/log.cpp": [
+    "/test/yosupo/discrete_logarithm_mod.test.cpp"
   ],
   "/test/yosupo/zalgorithm.test.cpp": [
     "/string/zalgorithm.cpp",
