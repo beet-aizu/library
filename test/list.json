@@ -201,6 +201,7 @@
     "/test/aoj/2647.test.cpp",
     "/test/aoj/2659.test.cpp",
     "/test/aoj/2667.test.cpp",
+    "/test/aoj/2674.count.test.cpp",
     "/test/aoj/2674.test.cpp",
     "/test/aoj/2679.test.cpp",
     "/test/aoj/2720.test.cpp",
@@ -366,6 +367,7 @@
     "/test/aoj/2359.test.cpp",
     "/test/aoj/2444.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
+    "/test/aoj/2674.count.test.cpp",
     "/test/aoj/2674.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
@@ -1208,6 +1210,13 @@
     "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
+  ],
+  "/test/aoj/2674.count.test.cpp": [
+    "/segtree/count/static.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/segtree/count/static.cpp": [
+    "/test/aoj/2674.count.test.cpp"
   ],
   "/test/aoj/DPL_3_C.test.cpp": [
     "/algorithm/largestrectangle.cpp"
