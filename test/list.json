@@ -187,6 +187,7 @@
     "/test/aoj/2397.test.cpp",
     "/test/aoj/2415.test.cpp",
     "/test/aoj/2432.test.cpp",
+    "/test/aoj/2444.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2488.test.cpp",
@@ -359,6 +360,7 @@
     "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
     "/test/aoj/2359.test.cpp",
+    "/test/aoj/2444.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
@@ -580,6 +582,17 @@
     "/test/aoj/3063.test.cpp",
     "/test/aoj/3112.test.cpp",
     "/test/aoj/ALDS1_14_D.test.cpp"
+  ],
+  "/test/aoj/2444.test.cpp": [
+    "/string/rollinghash.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/string/rollinghash.cpp": [
+    "/test/aoj/1312.test.cpp",
+    "/test/aoj/2292.test.cpp",
+    "/test/aoj/2444.test.cpp",
+    "/test/aoj/ALDS1_14_B.test.cpp",
+    "/test/aoj/ALDS1_14_C.test.cpp"
   ],
   "/test/aoj/2975.test.cpp": [
     "/datastructure/convexhulltrick.cpp",
@@ -842,12 +855,6 @@
   ],
   "/string/palindromictree.cpp": [
     "/test/aoj/2292.test.cpp"
-  ],
-  "/string/rollinghash.cpp": [
-    "/test/aoj/1312.test.cpp",
-    "/test/aoj/2292.test.cpp",
-    "/test/aoj/ALDS1_14_B.test.cpp",
-    "/test/aoj/ALDS1_14_C.test.cpp"
   ],
   "/test/aoj/DSL_3_D.sparsetable.test.cpp": [
     "/datastructure/sparsetable.cpp",
