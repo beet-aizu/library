@@ -6,6 +6,7 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
+// longest common prefix of s and s[i:n]
 vector<int> zalgorithm(string s){
   int n=s.size();
   vector<int> a(n,0);
