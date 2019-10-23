@@ -4,43 +4,55 @@ using namespace std;
 using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
-template<typename T>
-T mod_pow(T a,long long n,T mod){
-  using ll = long long;
-  T res(1);
-  while(n){
-    if(n&1) res=(ll)res*a%mod;
-    a=(ll)a*a%mod;
-    n>>=1;
-  }
-  return res;
-}
 #endif
 //BEGIN CUT HERE
-// find x s.t. a^x = b (x > 0)
+// find x s.t. a^x = b (x >= 0)
 template<typename T>
 T mod_log(T a,T b,T mod){
   using ll = long long;
-  const T sq=sqrt(mod);
-  unordered_map<T, T> dp;
-  dp.reserve(sq);
-  T res(1);
-  for(int r=0;r<sq;r++){
-    if(!dp.count(res)) dp[res]=r;
-    res=(ll)res*a%mod;
-  }
-  T p=mod_pow(a,(ll)(mod-2)*sq,mod);
-  res=b;
-  for(int q=0;q<=mod/sq+1;q++){
-    if(dp.count(res)){
-      T idx=q*sq+dp[res];
-      if(idx>0) return idx;
+  ll g=1;
+  {
+    ll m=mod;
+    while(m){
+      g=(ll)g*a%mod;
+      m>>=1;
     }
-    res=(ll)res*p%mod;
+  }
+  g=__gcd(g,(ll)mod);
+  ll c=0,t=1;
+  while(t%g){
+    if(t==b) return c;
+    t=t*a%mod;
+    c++;
   }
   // not found
-  return T(-1);
+  if(b%g) return mod;
+  t/=g;b/=g;
+  const ll n=mod/g;
+  ll h=0,gs=1;
+  while(h*h<n){
+    gs=gs*a%n;
+    ++h;
+  }
+  unordered_map<ll, ll> bs;
+  {
+    ll s=0,e=b;
+    while(s<h){
+      e=e*a%n;
+      bs[e]=++s;
+    }
+  }
+  {
+    ll s=0,e=t;
+    while(s<n){
+      e=e*gs%n;
+      s+=h;
+      if(bs.count(e))
+        return c+s-bs[e];
+    }
+  }
+  // not found
+  return mod;
 }
 //END CUT HERE
 #ifndef call_from_test
@@ -225,8 +237,7 @@ signed BBC002_F(){
   for(int i=0;i<n;i++){
     ll y=x*mod_inverse(v,p)%p;
     ll t=mod_log(s,y,p);
-    if(~t) chmin(ans,t*n+i);
-    if(y==1) chmin(ans,i);
+    if(t!=p) chmin(ans,t*n+i);
     v*=as[i];
     v%=p;
   }
