@@ -83,14 +83,19 @@ struct Dinic{
     static_assert(directed, "must be directed");
     auto &e=G[x][a];
     int y=e.to;
-    T ce=e.cap,cr=G[y][e.rev].cap;
-    if(cr==0) return 0;
+    T cr=G[y][e.rev].cap;
+    if(cr==0) return e.cap=0;
     e.cap=G[y][e.rev].cap=0;
     T cap=cr-flow(x,y,cr);
     if(x!=s&&cap!=0) flow(x,s,cap);
     if(t!=y&&cap!=0) flow(t,y,cap);
-    e.cap=ce+cr;
     return cap;
+  }
+
+  T link(int s,int t,int x,int a,T f){
+    auto &e=G[x][a];
+    e.cap+=f;
+    return flow(s,t,f);
   }
 };
 //END CUT HERE

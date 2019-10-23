@@ -95,10 +95,8 @@ int main(){
   for(auto s:as){
     int x=mp[s].first;
     int a=mp[s].second;
-    if(G.cut(S,T,x,a)==1){
-      G.G[x][a].cap=0;
+    if(G.cut(S,T,x,a)==1)
       cout<<restore(s)<<"\n";
-    }
   }
   cout<<flush;
   return 0;
