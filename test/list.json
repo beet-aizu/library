@@ -174,6 +174,7 @@
     "/test/aoj/1615.test.cpp",
     "/test/aoj/1630.test.cpp",
     "/test/aoj/2060.test.cpp",
+    "/test/aoj/2212.test.cpp",
     "/test/aoj/2222.test.cpp",
     "/test/aoj/2230.test.cpp",
     "/test/aoj/2235.test.cpp",
@@ -354,6 +355,7 @@
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1338.test.cpp",
+    "/test/aoj/2212.test.cpp",
     "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
     "/test/aoj/2359.test.cpp",
@@ -669,10 +671,12 @@
     "/string/trie.cpp"
   ],
   "/string/trie.cpp": [
+    "/test/aoj/2212.test.cpp",
     "/test/aoj/2257.test.cpp",
     "/test/aoj/3073.test.cpp"
   ],
   "/string/ahocorasick.cpp": [
+    "/test/aoj/2212.test.cpp",
     "/test/aoj/2257.test.cpp",
     "/test/aoj/3073.test.cpp"
   ],
@@ -1057,6 +1061,11 @@
     "/convolution/numbertheoretictransform.cpp",
     "/linearalgebra/squarematrix.cpp",
     "/mod/mint.cpp"
+  ],
+  "/test/aoj/2212.test.cpp": [
+    "/string/ahocorasick.cpp",
+    "/string/trie.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2790.test.cpp": [
     "/tools/chminmax.cpp",
