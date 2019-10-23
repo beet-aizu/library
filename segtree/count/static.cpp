@@ -1,12 +1,15 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+#endif
 //BEGIN CUT HERE
-using P = pair<int, int>;
+template<typename T>
 struct SegmentTree{
+  using P = pair<int, T>;
   int n;
   vector<P> v;
-  vector<vector<int> > dat;
+  vector< vector<T> > dat;
   SegmentTree(){};
   SegmentTree(int n,vector<P> v):v(v){init(n);build();};
 
@@ -15,9 +18,11 @@ struct SegmentTree{
     while(n<n_) n<<=1;
     dat.assign(n<<1,vector<int>());
   }
+
   void build(){
     for(auto p:v)
       dat[p.first+n].emplace_back(p.second);
+
     for(int i=0;i<n;i++)
       sort(dat[i+n].begin(),dat[i+n].end());
 
@@ -27,10 +32,11 @@ struct SegmentTree{
             back_inserter(dat[i]));
     }
   }
+
   // [a,b) * [c,d)
-  inline int query(int a,int b,int c,int d){
+  inline int query(int a,int b,T c,T d){
     int res=0;
-    auto calc=[a,b,c,d](vector<int> &x){
+    auto calc=[a,b,c,d](vector<T> &x){
                 auto latte=lower_bound(x.begin(),x.end(),d);
                 auto malta=lower_bound(x.begin(),x.end(),c);
                 return int(latte-malta);
@@ -41,20 +47,20 @@ struct SegmentTree{
     }
     return res;
   }
-
 };
-
 //END CUT HERE
+#ifndef call_from_test
 signed ABC106_D(){
   int n,m,q;
   scanf("%d %d %d",&n,&m,&q);
   vector<int> x(m),y(m);
   for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
 
+  using P = pair<int, int>;
   vector<P> vp;
   for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
 
-  SegmentTree seg(n+1,vp);
+  SegmentTree<int> seg(n+1,vp);
 
   for(int i=0;i<q;i++){
     int a,b;
@@ -68,3 +74,4 @@ signed main(){
   ABC106_D();
   return 0;
 }
+#endif
