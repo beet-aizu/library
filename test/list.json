@@ -345,10 +345,12 @@
     "/test/aoj/geometry/CGL_7_G.test.cpp",
     "/test/aoj/geometry/CGL_7_H.test.cpp",
     "/test/yosupo/bernoulli_number.test.cpp",
+    "/test/yosupo/convolution_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/test/aoj/DSL_2_A.test.cpp": [
@@ -422,10 +424,12 @@
     "/test/aoj/NTL_1_A.test.cpp",
     "/test/aoj/NTL_1_B.test.cpp",
     "/test/yosupo/bernoulli_number.test.cpp",
+    "/test/yosupo/convolution_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/segtree/basic/ushi.cpp": [
@@ -529,6 +533,7 @@
     "/test/aoj/DPL_5_K.test.cpp",
     "/test/aoj/DPL_5_L.test.cpp",
     "/test/yosupo/bernoulli_number.test.cpp",
+    "/test/yosupo/convolution_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
@@ -597,7 +602,8 @@
     "/test/aoj/3033.test.cpp",
     "/test/aoj/3063.test.cpp",
     "/test/aoj/3112.test.cpp",
-    "/test/aoj/ALDS1_14_D.test.cpp"
+    "/test/aoj/ALDS1_14_D.test.cpp",
+    "/test/yosupo/suffixarray.test.cpp"
   ],
   "/test/aoj/2444.test.cpp": [
     "/string/rollinghash.cpp",
@@ -671,6 +677,7 @@
     "/test/aoj/3072.test.cpp",
     "/test/aoj/3074.test.cpp",
     "/test/yosupo/bernoulli_number.test.cpp",
+    "/test/yosupo/convolution_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
@@ -1653,10 +1660,19 @@
   "/string/zalgorithm.cpp": [
     "/test/yosupo/zalgorithm.test.cpp"
   ],
+  "/test/yosupo/suffixarray.test.cpp": [
+    "/string/suffixarray.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/yosupo/bernoulli_number.test.cpp": [
     "/convolution/numbertheoretictransform.cpp",
     "/mod/mint.cpp",
     "/polynomial/formalpowerseries.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/convolution_mod.test.cpp": [
+    "/convolution/numbertheoretictransform.cpp",
+    "/mod/mint.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/exp_of_formal_power_series.test.cpp": [
