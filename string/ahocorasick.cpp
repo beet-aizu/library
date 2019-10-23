@@ -135,6 +135,8 @@ struct AhoCorasick : Trie<X+1>{
   int count(int pos){
     return cnt[pos];
   }
+
+  int size(){return TRIE::vs.size();}
 };
 //END CUT HERE
 #ifndef call_from_test

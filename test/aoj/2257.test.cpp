@@ -29,7 +29,7 @@ signed main(){
     AhoCorasick<26> aho(f);
     for(int i=0;i<k;i++) aho.add(season[i],i);
     aho.build();
-    int l=aho.v.size();
+    int l=aho.size();
 
     vector<string> v;
     for(int i=0;i<n;i++){
