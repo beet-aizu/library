@@ -13,9 +13,7 @@ signed main(){
   cin>>s;
 
   auto zs=zalgorithm(s);
-
-  int n=s.size();
-  for(int i=0;i<n;i++){
+  for(int i=0;i<(int)s.size();i++){
     if(i) cout<<" ";
     cout<<zs[i];
   }

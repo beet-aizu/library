@@ -13,9 +13,7 @@ signed main(){
   cin>>s;
 
   SuffixArray sa(s);
-
-  int n=s.size();
-  for(int i=0;i<n;i++){
+  for(int i=0;i<(int)s.size();i++){
     if(i) cout<<" ";
     cout<<sa[i+1];
   }
