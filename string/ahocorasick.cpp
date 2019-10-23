@@ -16,51 +16,52 @@ struct Trie{
   };
 
   using F = function<int(char)>;
-  vector<Node> v;
+  vector<Node> vs;
   F conv;
 
-  Trie(F conv,char c='$'):conv(conv){v.emplace_back(c);}
+  Trie(F conv,char c='$'):conv(conv){vs.emplace_back(c);}
 
   void add(const string &s,int x){
     int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
-      if(~v[pos].nxt[k]){
-        pos=v[pos].nxt[k];
+      if(~vs[pos].nxt[k]){
+        pos=vs[pos].nxt[k];
         continue;
       }
-      int npos=v.size();
-      v[pos].nxt[k]=npos;
-      v.emplace_back(s[i]);
+      int npos=vs.size();
+      vs[pos].nxt[k]=npos;
+      vs.emplace_back(s[i]);
       pos=npos;
     }
-    v[pos].idx=x;
-    v[pos].idxs.emplace_back(x);
+    vs[pos].idx=x;
+    vs[pos].idxs.emplace_back(x);
   }
 
   int find(const string &s){
     int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
-      if(v[pos].nxt[k]<0) return -1;
-      pos=v[pos].nxt[k];
+      if(vs[pos].nxt[k]<0) return -1;
+      pos=vs[pos].nxt[k];
     }
     return pos;
   }
 
   int find(int pos,char c){
-    return v[pos].nxt[conv(c)];
+    return vs[pos].nxt[conv(c)];
   }
 
   int idx(int pos){
-    return pos<0?-1:v[pos].idx;
+    return pos<0?-1:vs[pos].idx;
   }
 
   vector<int> idxs(int pos){
-    return pos<0?vector<int>():v[pos].idxs;
+    return pos<0?vector<int>():vs[pos].idxs;
   }
 
 };
+
 #endif
 //BEGIN CUT HERE
 template<size_t X>
@@ -70,68 +71,65 @@ struct AhoCorasick : Trie<X+1>{
   vector<int> cnt;
 
   void build(bool heavy=true){
-    auto &v=TRIE::v;
-    int n=v.size();
+    auto &vs=TRIE::vs;
+    int n=vs.size();
     cnt.resize(n);
     for(int i=0;i<n;i++){
-      if(heavy) sort(v[i].idxs.begin(),v[i].idxs.end());
-      cnt[i]=v[i].idxs.size();
+      if(heavy) sort(vs[i].idxs.begin(),vs[i].idxs.end());
+      cnt[i]=vs[i].idxs.size();
     }
 
-    queue<int> q;
+    queue<int> que;
     for(int i=0;i<(int)X;i++){
-      if(~v[0].nxt[i]){
-        v[v[0].nxt[i]].nxt[X]=0;
-        q.emplace(v[0].nxt[i]);
+      if(~vs[0].nxt[i]){
+        vs[vs[0].nxt[i]].nxt[X]=0;
+        que.emplace(vs[0].nxt[i]);
       }else{
-        v[0].nxt[i]=0;
+        vs[0].nxt[i]=0;
       }
     }
 
-    while(!q.empty()){
-      auto &x=v[q.front()];
-      cnt[q.front()]+=cnt[x.nxt[X]];
-      q.pop();
+    while(!que.empty()){
+      auto &x=vs[que.front()];
+      cnt[que.front()]+=cnt[x.nxt[X]];
+      que.pop();
       for(int i=0;i<(int)X;i++){
-        if(x.nxt[i]<0) continue;
+        if(x.nxt[i]<0){
+          x.nxt[i]=vs[x.nxt[X]].nxt[i];
+          continue;
+        }
         int fail=x.nxt[X];
-        while(v[fail].nxt[i]<0) fail=v[fail].nxt[X];
-        v[x.nxt[i]].nxt[X]=v[fail].nxt[i];
+        vs[x.nxt[i]].nxt[X]=vs[fail].nxt[i];
         if(heavy){
-          auto &idx=v[x.nxt[i]].idxs;
-          auto &idy=v[v[fail].nxt[i]].idxs;
+          auto &idx=vs[x.nxt[i]].idxs;
+          auto &idy=vs[vs[fail].nxt[i]].idxs;
           vector<int> idz;
           set_union(idx.begin(),idx.end(),
                     idy.begin(),idy.end(),
                     back_inserter(idz));
           idx=idz;
         }
-        q.emplace(x.nxt[i]);
+        que.emplace(x.nxt[i]);
       }
     }
   }
 
   vector<int> match(string s,int heavy=true){
-    auto &v=TRIE::v;
+    auto &vs=TRIE::vs;
     vector<int> res(heavy?TRIE::size():1);
     int pos=0;
     for(auto &c:s){
-      int k=TRIE::conv(c);
-      while(v[pos].nxt[k]<0) pos=v[pos].nxt[X];
-      pos=v[pos].nxt[k];
-      if(heavy) for(auto &x:v[pos].idxs) res[x]++;
+      pos=vs[pos].nxt[TRIE::conv(c)];
+      if(heavy) for(auto &x:vs[pos].idxs) res[x]++;
       else res[0]+=cnt[pos];
     }
     return res;
   }
 
   int move(int pos,char c){
-    auto &v=TRIE::v;
-    assert(pos<(int)v.size());
-    int k=TRIE::conv(c);
-    while(v[pos].nxt[k]<0) pos=v[pos].nxt[X];
-    pos=v[pos].nxt[k];
-    return pos;
+    auto &vs=TRIE::vs;
+    assert(pos<(int)vs.size());
+    return vs[pos].nxt[TRIE::conv(c)];
   }
 
   int count(int pos){
@@ -171,7 +169,7 @@ signed SPOJ_BLHETA(){
     vs.emplace_back(pos);
     ans+=s[i];
     if(aho.count(pos)){
-      int k=aho.v[pos].idxs[0];
+      int k=aho.vs[pos].idxs[0];
       for(int j=0;j<(int)ts[k].size();j++){
         vs.pop_back();
         pos=vs.back();
@@ -184,12 +182,12 @@ signed SPOJ_BLHETA(){
   return 0;
 }
 /*
-  verified on 2019/05/24
+  verified on 2019/10/23
   https://www.spoj.com/problems/BLHETA/
 */
 
 signed main(){
-  //SPOJ_BLHETA();
+  SPOJ_BLHETA();
   return 0;
 }
 #endif

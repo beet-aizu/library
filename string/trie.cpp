@@ -17,48 +17,48 @@ struct Trie{
   };
 
   using F = function<int(char)>;
-  vector<Node> v;
+  vector<Node> vs;
   F conv;
 
-  Trie(F conv,char c='$'):conv(conv){v.emplace_back(c);}
+  Trie(F conv,char c='$'):conv(conv){vs.emplace_back(c);}
 
   void add(const string &s,int x){
     int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
-      if(~v[pos].nxt[k]){
-        pos=v[pos].nxt[k];
+      if(~vs[pos].nxt[k]){
+        pos=vs[pos].nxt[k];
         continue;
       }
-      int npos=v.size();
-      v[pos].nxt[k]=npos;
-      v.emplace_back(s[i]);
+      int npos=vs.size();
+      vs[pos].nxt[k]=npos;
+      vs.emplace_back(s[i]);
       pos=npos;
     }
-    v[pos].idx=x;
-    v[pos].idxs.emplace_back(x);
+    vs[pos].idx=x;
+    vs[pos].idxs.emplace_back(x);
   }
 
   int find(const string &s){
     int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
-      if(v[pos].nxt[k]<0) return -1;
-      pos=v[pos].nxt[k];
+      if(vs[pos].nxt[k]<0) return -1;
+      pos=vs[pos].nxt[k];
     }
     return pos;
   }
 
   int find(int pos,char c){
-    return v[pos].nxt[conv(c)];
+    return vs[pos].nxt[conv(c)];
   }
 
   int idx(int pos){
-    return pos<0?-1:v[pos].idx;
+    return pos<0?-1:vs[pos].idx;
   }
 
   vector<int> idxs(int pos){
-    return pos<0?vector<int>():v[pos].idxs;
+    return pos<0?vector<int>():vs[pos].idxs;
   }
 
 };
