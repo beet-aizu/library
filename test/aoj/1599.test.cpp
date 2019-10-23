@@ -4,14 +4,12 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../tools/compress.cpp"
 #include "../../flow/dinic.cpp"
 #undef call_from_test
 
 int main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n;
   cin>>n;
   vector<string> es(n);
@@ -95,8 +93,11 @@ int main(){
   for(auto s:as){
     int x=mp[s].first;
     int a=mp[s].second;
-    if(G.cut(S,T,x,a)==1)
+    if(G.cut(S,T,x,a)==1){
       cout<<restore(s)<<"\n";
+    }else{
+      G.link(S,T,x,a,1);
+    }
   }
   cout<<flush;
   return 0;
