@@ -70,6 +70,7 @@
     "/graph/voronoiminimumspanningtree.cpp",
     "/heuristic/timer.cpp",
     "/heuristic/xorshift.cpp",
+    "/icpc/hash.cpp",
     "/icpc/t.cpp",
     "/leetcode/treenode.cpp",
     "/linearalgebra/binarymatrix.cpp",
