@@ -365,6 +365,7 @@
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1338.test.cpp",
+    "/test/aoj/1579.test.cpp",
     "/test/aoj/1599.test.cpp",
     "/test/aoj/2212.test.cpp",
     "/test/aoj/2309.tarjan.test.cpp",
@@ -751,7 +752,10 @@
     "/tools/fastio.cpp"
   ],
   "/bbst/basic/base.cpp": [
-    "/test/aoj/2890.test.cpp"
+    "/test/aoj/1579.test.cpp",
+    "/test/aoj/2890.test.cpp",
+    "/test/aoj/DSL_2_D.bbst.test.cpp",
+    "/test/aoj/DSL_2_E.bbst.test.cpp"
   ],
   "/bbst/basic/array.cpp": [
     "/test/aoj/2890.test.cpp"
@@ -1202,7 +1206,9 @@
     "/linearalgebra/matrix.cpp"
   ],
   "/test/aoj/1579.test.cpp": [
-    "/bbst/basic/dual.cpp"
+    "/bbst/basic/base.cpp",
+    "/bbst/basic/dual.cpp",
+    "/tools/fastio.cpp"
   ],
   "/bbst/basic/dual.cpp": [
     "/test/aoj/1579.test.cpp",
@@ -1420,10 +1426,12 @@
     "/tools/bigint.cpp"
   ],
   "/test/aoj/DSL_2_E.bbst.test.cpp": [
+    "/bbst/basic/base.cpp",
     "/bbst/basic/dual.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/aoj/DSL_2_D.bbst.test.cpp": [
+    "/bbst/basic/base.cpp",
     "/bbst/basic/dual.cpp",
     "/tools/fastio.cpp"
   ],
