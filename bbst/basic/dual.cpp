@@ -144,7 +144,7 @@ struct Dual : BBSTBase<Node, LIM>{
   using super::split;
 
   Node* build(size_t l,size_t r){
-    if(l+1==r) return create();
+    if(l+1==r) return create(Node(ei,ei));
     size_t m=(l+r)>>1;
     return merge(build(l,m),build(m,r));
   }
