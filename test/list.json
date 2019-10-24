@@ -10,12 +10,12 @@
     "/bbst/avltree.cpp",
     "/bbst/basic/array.cpp",
     "/bbst/basic/base.cpp",
-    "/bbst/basic/chien.cpp",
     "/bbst/basic/dual.cpp",
+    "/bbst/basic/lazy.cpp",
     "/bbst/basic/ushi.cpp",
     "/bbst/pb_ds_tree.cpp",
     "/bbst/persistent/array.cpp",
-    "/bbst/persistent/chien.cpp",
+    "/bbst/persistent/lazy.cpp",
     "/bbst/persistent/ushi.cpp",
     "/convolution/arbitrarymodconvolution.cpp",
     "/convolution/arbitrarymodconvolution_with_garner.cpp",
@@ -588,11 +588,23 @@
     "/test/aoj/GRL_3_B.test.cpp"
   ],
   "/test/aoj/DSL_2_H.bbst.test.cpp": [
-    "/bbst/basic/chien.cpp",
+    "/bbst/basic/base.cpp",
+    "/bbst/basic/lazy.cpp",
     "/tools/fastio.cpp"
   ],
-  "/bbst/basic/chien.cpp": [
+  "/bbst/basic/base.cpp": [
     "/test/aoj/1508.test.cpp",
+    "/test/aoj/1579.test.cpp",
+    "/test/aoj/2890.test.cpp",
+    "/test/aoj/DSL_2_A.bbst.test.cpp",
+    "/test/aoj/DSL_2_D.bbst.test.cpp",
+    "/test/aoj/DSL_2_E.bbst.test.cpp",
+    "/test/aoj/DSL_2_F.bbst.test.cpp",
+    "/test/aoj/DSL_2_G.bbst.test.cpp",
+    "/test/aoj/DSL_2_H.bbst.test.cpp",
+    "/test/aoj/DSL_2_I.bbst.test.cpp"
+  ],
+  "/bbst/basic/lazy.cpp": [
     "/test/aoj/DSL_2_F.bbst.test.cpp",
     "/test/aoj/DSL_2_G.bbst.test.cpp",
     "/test/aoj/DSL_2_H.bbst.test.cpp",
@@ -741,7 +753,12 @@
     "/test/aoj/2970.test.cpp"
   ],
   "/test/aoj/1508.test.cpp": [
-    "/bbst/basic/chien.cpp"
+    "/bbst/basic/base.cpp",
+    "/bbst/basic/ushi.cpp"
+  ],
+  "/bbst/basic/ushi.cpp": [
+    "/test/aoj/1508.test.cpp",
+    "/test/aoj/DSL_2_A.bbst.test.cpp"
   ],
   "/test/aoj/ALDS1_14_D.test.cpp": [
     "/string/suffixarray.cpp"
@@ -750,12 +767,6 @@
     "/bbst/basic/array.cpp",
     "/bbst/basic/base.cpp",
     "/tools/fastio.cpp"
-  ],
-  "/bbst/basic/base.cpp": [
-    "/test/aoj/1579.test.cpp",
-    "/test/aoj/2890.test.cpp",
-    "/test/aoj/DSL_2_D.bbst.test.cpp",
-    "/test/aoj/DSL_2_E.bbst.test.cpp"
   ],
   "/bbst/basic/array.cpp": [
     "/test/aoj/2890.test.cpp"
@@ -1014,11 +1025,9 @@
     "/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp"
   ],
   "/test/aoj/DSL_2_A.bbst.test.cpp": [
+    "/bbst/basic/base.cpp",
     "/bbst/basic/ushi.cpp",
     "/tools/fastio.cpp"
-  ],
-  "/bbst/basic/ushi.cpp": [
-    "/test/aoj/DSL_2_A.bbst.test.cpp"
   ],
   "/test/aoj/DPL_5_A.test.cpp": [
     "/mod/enumeration.cpp",
@@ -1257,7 +1266,8 @@
     "/tree/heavylightdecomposition.cpp"
   ],
   "/test/aoj/DSL_2_F.bbst.test.cpp": [
-    "/bbst/basic/chien.cpp",
+    "/bbst/basic/base.cpp",
+    "/bbst/basic/lazy.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_5_D.linkcuttree.test.cpp": [
@@ -1271,7 +1281,8 @@
     "/test/aoj/2948.test.cpp"
   ],
   "/test/aoj/DSL_2_G.bbst.test.cpp": [
-    "/bbst/basic/chien.cpp",
+    "/bbst/basic/base.cpp",
+    "/bbst/basic/lazy.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_5_C.lca.test.cpp": [
@@ -1391,7 +1402,8 @@
     "/flow/bimatch.cpp"
   ],
   "/test/aoj/DSL_2_I.bbst.test.cpp": [
-    "/bbst/basic/chien.cpp",
+    "/bbst/basic/base.cpp",
+    "/bbst/basic/lazy.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/aoj/ALDS1_14_B.test.cpp": [
