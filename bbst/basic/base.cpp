@@ -29,9 +29,8 @@ struct BBSTBase{
     return &pool[ptr++];
   }
 
-  template<typename T>
-  inline Node* create(T v){
-    return &(pool[ptr++]=Node(v));
+  inline Node* create(Node v){
+    return &(pool[ptr++]=v);
   }
 
   virtual void toggle(Node *a)=0;
@@ -78,8 +77,7 @@ struct BBSTBase{
     return make_pair(recalc(a),s.second);
   }
 
-  template<typename T>
-  Node* insert(Node *a,size_t pos,T v){
+  Node* insert(Node *a,size_t pos,Node v){
     Node* b=create(v);
     auto s=split(a,pos);
     return a=merge(merge(s.first,b),s.second);
@@ -113,15 +111,13 @@ struct BBSTBase{
     return res;
   }
 
-  template<typename T>
-  Node* build(size_t l,size_t r,const vector<T> &vs){
+  Node* build(size_t l,size_t r,const vector<Node> &vs){
     if(l+1==r) return create(vs[l]);
     size_t m=(l+r)>>1;
     return merge(build(l,m,vs),build(m,r,vs));
   }
 
-  template<typename T>
-  Node* build(const vector<T> &vs){
+  Node* build(const vector<Node> &vs){
     return build(0,vs.size(),vs);
   }
 };

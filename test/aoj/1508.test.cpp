@@ -4,35 +4,39 @@
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/basic/chien.cpp"
+#include "../../bbst/basic/base.cpp"
+#include "../../bbst/basic/ushi.cpp"
 #undef call_from_test
 
 signed main(){
   int n,q;
   scanf("%d %d",&n,&q);
-  vector<int> v(n);
-  for(int i=0;i<n;i++) scanf("%d",&v[i]);
+  vector<int> vs(n);
+  for(int i=0;i<n;i++) scanf("%d",&vs[i]);
 
   auto f=[](int a,int b){return min(a,b);};
   const int INF = 1e9;
-  RBST<int, int> rbst(f,f,f,INF,-1);
 
-  auto rt=rbst.build(v);
+  using Node = NodeBase<int>;
+  constexpr size_t LIM = 1e6;
+  Ushi<Node, LIM> G(f,INF);
+
+  auto rt=G.build(vector<Node>(vs.begin(),vs.end()));
 
   for(int i=0;i<q;i++){
     int x,y,z;
     scanf("%d %d %d",&x,&y,&z);
     if(x==0){
       int l=y,r=z+1;
-      rt=rbst.toggle(rt,l,r);
-      rt=rbst.toggle(rt,l+1,r);
+      rt=G.toggle(rt,l,r);
+      rt=G.toggle(rt,l+1,r);
     }
     if(x==1){
       int l=y,r=z+1;
-      printf("%d\n",rbst.query(rt,l,r));
+      printf("%d\n",G.query(rt,l,r));
     }
     if(x==2){
-      rt=rbst.set_val(rt,y,z);
+      rt=G.set_val(rt,y,z);
     }
   }
 

@@ -2,76 +2,50 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+
+#define call_from_test
+#include "base.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
-template<typename T>
-struct SRBST{
-  using u32 = uint32_t;
-  u32 xor128(){
-    static u32 x = 123456789;
-    static u32 y = 362436069;
-    static u32 z = 521288629;
-    static u32 w = 88675123;
+template<typename Tp>
+struct NodeBase{
+  using T = Tp;
+  NodeBase *l,*r,*p;
+  size_t cnt;
+  bool rev;
+  T val,dat;
+  NodeBase():cnt(0),rev(0){l=r=p=nullptr;}
+  NodeBase(T val):
+    cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}
+};
 
-    u32 t = x ^ (x << 11);
-    x = y; y = z; z = w;
-    return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
-  }
+template<typename Node, size_t LIM>
+struct Ushi : BBSTBase<Node, LIM>{
+  using super = BBSTBase<Node, LIM>;
 
-  struct Node{
-    Node *l,*r;
-    size_t cnt;
-    bool rev;
-    T val,dat;
-    Node():cnt(0),rev(0){l=r=nullptr;}
-    Node(T val):
-      cnt(1),rev(0),val(val),dat(val){l=r=nullptr;}
-  };
+  using T = typename Node::T;
 
-  using F = function<T(T,T)>;
+  using F = function<T(T, T)>;
   using S = function<T(T)>;
 
   F f;
   S flip;
   T ti;
 
-  const size_t LIM = 1e6;
-  vector<Node> pool;
-  size_t ptr;
-
-  SRBST(F f,T ti):f(f),ti(ti),pool(LIM),ptr(0){
+  Ushi(F f,T ti):super(),f(f),ti(ti){
     flip=[](T a){return a;};
   }
 
-  SRBST(F f,S flip,T ti):
-    f(f),flip(flip),ti(ti),pool(LIM),ptr(0){}
-
-  Node* build(size_t l,size_t r,const vector<T> &vs){
-    if(l+1==r) return create(vs[l]);
-    size_t m=(l+r)>>1;
-    return merge(build(l,m,vs),build(m,r,vs));
-  }
-
-  Node* build(const vector<T> &vs){
-    return build(0,vs.size(),vs);
-  }
-
-  inline Node* create(){
-    return &pool[ptr++];
-  }
-
-  inline Node* create(T v){
-    return &(pool[ptr++]=Node(v));
-  }
-
-  size_t count(const Node *a){
-    return a?a->cnt:0;
-  }
+  Ushi(F f,S flip,T ti):
+    super(),f(f),flip(flip),ti(ti){}
 
   T query(const Node *a){
     return a?a->dat:ti;
   }
 
+  using super::count;
   Node* recalc(Node *a){
     a->cnt=count(a->l)+1+count(a->r);
     a->dat=a->val;
@@ -80,6 +54,7 @@ struct SRBST{
     return a;
   }
 
+  using super::toggle;
   void toggle(Node *a){
     swap(a->l,a->r);
     a->dat=flip(a->dat);
@@ -96,51 +71,8 @@ struct SRBST{
     return recalc(a);
   }
 
-  pair<Node*, Node*> split(Node* a,size_t k){
-    if(a==nullptr) return make_pair(a,a);
-    a=eval(a);
-    if(k<=count(a->l)){
-      auto s=split(a->l,k);
-      a->l=s.second;
-      return make_pair(s.first,recalc(a));
-    }
-    auto s=split(a->r,k-(count(a->l)+1));
-    a->r=s.first;
-    return make_pair(recalc(a),s.second);
-  }
-
-  Node* merge(Node* a,Node* b){
-    if(a==nullptr) return b;
-    if(b==nullptr) return a;
-    if(xor128()%(count(a)+count(b))<count(a)){
-      a=eval(a);
-      a->r=merge(a->r,b);
-      return recalc(a);
-    }
-    b=eval(b);
-    b->l=merge(a,b->l);
-    return recalc(b);
-  }
-
-  Node* insert(Node *a,size_t pos,T v){
-    Node* b=create(v);
-    auto s=split(a,pos);
-    return a=merge(merge(s.first,b),s.second);
-  }
-
-  Node* erase(Node *a,size_t pos){
-    auto s=split(a,pos);
-    auto t=split(s.second,1);
-    return merge(s.first,t.second);
-  }
-
-  Node* toggle(Node *a,size_t l,size_t r){
-    auto s=split(a,l);
-    auto t=split(s.second,r-l);
-    auto u=eval(t.first);
-    toggle(u);
-    return merge(s.first,merge(u,t.second));
-  }
+  using super::merge;
+  using super::split;
 
   T query(Node *&a,size_t l,size_t r){
     auto s=split(a,l);
@@ -162,12 +94,7 @@ struct SRBST{
   }
 
   T get_val(Node *a,size_t k){
-    assert(k<count(a));
-    a=eval(a);
-    size_t num=count(a->l);
-    if(k<num) return get_val(a->l,k);
-    if(k>num) return get_val(a->r,k-(num+1));
-    return a->val;
+    return super::find_by_order(a,k)->val;
   }
 
   void dump(Node* a,typename vector<T>::iterator it){
@@ -184,9 +111,9 @@ struct SRBST{
 
   // destroy data
   vector<T> dump(Node* a){
-    vector<T> v(count(a));
-    dump(a,v.begin());
-    return v;
+    vector<T> vs(count(a));
+    dump(a,vs.begin());
+    return vs;
   }
 };
 //END CUT HERE
@@ -220,26 +147,29 @@ signed HAPPYQUERY_C(){
   using ll = long long;
   auto f=[](ll a,ll b){return a+b;};
   ll ti=0;
-  SRBST<ll> srbst(f,ti);
+
+  using Node=NodeBase<ll>;
+  constexpr size_t LIM = 1e6;
+  Ushi<Node, LIM> G(f,ti);
 
   unordered_map<int, ll> memo;
   auto hs=
     [&](int x){
       if(!memo.count(x))
-        memo[x]=srbst.xor128();
+        memo[x]=G.xor128();
       return memo[x];
     };
 
-  vector<ll> ws(n);
-  for(int i=0;i<n;i++) ws[i]=hs(vs[i]);
-  auto rt=srbst.build(ws);
+  vector<Node> ws(n);
+  for(int i=0;i<n;i++) ws[i]=Node(hs(vs[i]));
+  auto rt=G.build(ws);
 
   for(int i=0;i<q;i++){
-    if(ts[i]==1) rt=srbst.toggle(rt,ls[i],rs[i]);
-    if(ts[i]==2) rt=srbst.set_val(rt,ps[i],hs(xs[i]));
+    if(ts[i]==1) rt=G.toggle(rt,ls[i],rs[i]);
+    if(ts[i]==2) rt=G.set_val(rt,ps[i],hs(xs[i]));
     if(ts[i]==3){
-      ll x=srbst.query(rt,as[i],bs[i]);
-      ll y=srbst.query(rt,cs[i],ds[i]);
+      ll x=G.query(rt,as[i],bs[i]);
+      ll y=G.query(rt,cs[i],ds[i]);
       cout<<(x==y?"Yes":"No")<<"\n";
     }
   }

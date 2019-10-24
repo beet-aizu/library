@@ -2,36 +2,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
+
+#define call_from_test
+#include "base.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
-template<typename T, typename E>
-struct RBST{
-  using u32 = uint32_t;
-  u32 xor128(){
-    static u32 x = 123456789;
-    static u32 y = 362436069;
-    static u32 z = 521288629;
-    static u32 w = 88675123;
+template<typename Tp, typename Ep>
+struct NodeBase{
+  using T = Tp;
+  using E = Ep;
+  NodeBase *l,*r,*p;
+  size_t cnt;
+  bool rev;
+  T val,dat;
+  E laz;
+  NodeBase():cnt(0),rev(0){l=r=p=nullptr;}
+  NodeBase(T val,E laz):
+    cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
+};
 
-    u32 t = x ^ (x << 11);
-    x = y; y = z; z = w;
-    return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
-  }
+template<typename Node, size_t LIM>
+struct Lazy : BBSTBase<Node, LIM>{
+  using super = BBSTBase<Node, LIM>;
 
-  struct Node{
-    Node *l,*r;
-    size_t cnt;
-    bool rev;
-    T val,dat;
-    E laz;
-    Node():cnt(0),rev(0){l=r=nullptr;}
-    Node(T val,E laz):
-      cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=nullptr;}
-  };
+  using T = typename Node::T;
+  using E = typename Node::E;
 
-  using F = function<T(T,T)>;
-  using G = function<T(T,E)>;
-  using H = function<E(E,E)>;
+  using F = function<T(T, T)>;
+  using G = function<T(T, E)>;
+  using H = function<E(E, E)>;
   using S = function<T(T)>;
 
   F f;
@@ -41,20 +42,20 @@ struct RBST{
   T ti;
   E ei;
 
-  const size_t LIM = 1e6;
-  vector<Node> pool;
-  size_t ptr;
-
-  RBST(F f,G g,H h,T ti,E ei):
-    f(f),g(g),h(h),ti(ti),ei(ei),pool(LIM),ptr(0){
+  Lazy(F f,G g,H h,T ti,E ei):
+    super(),f(f),g(g),h(h),ti(ti),ei(ei){
     flip=[](T a){return a;};
   }
 
-  RBST(F f,G g,H h,S flip,T ti,E ei):
-    f(f),g(g),h(h),flip(flip),ti(ti),ei(ei),pool(LIM),ptr(0){}
+  Lazy(F f,G g,H h,S flip,T ti,E ei):
+    super(),f(f),g(g),h(h),flip(flip),ti(ti),ei(ei){}
+
+  using super::create;
+  using super::merge;
+  using super::split;
 
   Node* build(size_t l,size_t r,const vector<T> &vs){
-    if(l+1==r) return create(vs[l]);
+    if(l+1==r) return create(Node(vs[l],ei));
     size_t m=(l+r)>>1;
     return merge(build(l,m,vs),build(m,r,vs));
   }
@@ -63,22 +64,11 @@ struct RBST{
     return build(0,vs.size(),vs);
   }
 
-  inline Node* create(){
-    return &pool[ptr++];
-  }
-
-  inline Node* create(T v){
-    return &(pool[ptr++]=Node(v,ei));
-  }
-
-  size_t count(const Node *a){
-    return a?a->cnt:0;
-  }
-
   T query(const Node *a){
     return a?a->dat:ti;
   }
 
+  using super::count;
   Node* recalc(Node *a){
     a->cnt=count(a->l)+1+count(a->r);
     a->dat=a->val;
@@ -93,6 +83,7 @@ struct RBST{
     a->dat=g(a->dat,v);
   }
 
+  using super::toggle;
   void toggle(Node *a){
     swap(a->l,a->r);
     a->dat=flip(a->dat);
@@ -112,52 +103,6 @@ struct RBST{
       a->rev=false;
     }
     return recalc(a);
-  }
-
-  pair<Node*, Node*> split(Node* a,size_t k){
-    if(a==nullptr) return make_pair(a,a);
-    a=eval(a);
-    if(k<=count(a->l)){
-      auto s=split(a->l,k);
-      a->l=s.second;
-      return make_pair(s.first,recalc(a));
-    }
-    auto s=split(a->r,k-(count(a->l)+1));
-    a->r=s.first;
-    return make_pair(recalc(a),s.second);
-  }
-
-  Node* merge(Node* a,Node* b){
-    if(a==nullptr) return b;
-    if(b==nullptr) return a;
-    if(xor128()%(count(a)+count(b))<count(a)){
-      a=eval(a);
-      a->r=merge(a->r,b);
-      return recalc(a);
-    }
-    b=eval(b);
-    b->l=merge(a,b->l);
-    return recalc(b);
-  }
-
-  Node* insert(Node *a,size_t pos,T v){
-    Node* b=create(v);
-    auto s=split(a,pos);
-    return a=merge(merge(s.first,b),s.second);
-  }
-
-  Node* erase(Node *a,size_t pos){
-    auto s=split(a,pos);
-    auto t=split(s.second,1);
-    return merge(s.first,t.second);
-  }
-
-  Node* toggle(Node *a,size_t l,size_t r){
-    auto s=split(a,l);
-    auto t=split(s.second,r-l);
-    auto u=eval(t.first);
-    toggle(u);
-    return merge(s.first,merge(u,t.second));
   }
 
   T query(Node *&a,size_t l,size_t r){
@@ -231,17 +176,20 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
            return P(a.first+b.first,a.second+b.second);
          };
   const int INF = 1e9;
-  RBST<T, P> rbst(f,g,h,T(INF,INF,0),P(0,0));
+
+  using Node = NodeBase<T, P>;
+  constexpr size_t LIM = 1e6;
+  Lazy<Node, LIM> G(f,g,h,T(INF,INF,0),P(0,0));
 
   vector<T> v(S.size()+2,T(0,0,0));
   for(int i=0;i<(int)S.size();i++)
     get<2>(v[i+1])=(S[i]=='('?1:-1);
 
-  auto rt=rbst.build(v);
+  auto rt=G.build(v);
   for(int i=1;i<=(int)S.size();i++){
-    int z=get<2>(rbst.get_val(rt,i));
-    rt=rbst.update(rt,i,rbst.count(rt),P(z,0));
-    rt=rbst.update(rt,0,i+1,P(0,-z));
+    int z=get<2>(G.get_val(rt,i));
+    rt=G.update(rt,i,G.count(rt),P(z,0));
+    rt=G.update(rt,0,i+1,P(0,-z));
   }
 
   for(int i=0;i<Q;i++){
@@ -251,25 +199,25 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
     z++;
     if(x=='('||x==')'){
       z=(x=='('?1:-1);
-      T prev=rbst.get_val(rt,y-1);
-      T next=rbst.get_val(rt,y);
+      T prev=G.get_val(rt,y-1);
+      T next=G.get_val(rt,y);
       T curr(get<0>(prev),get<1>(next),z);
-      rt=rbst.insert(rt,y,curr);
-      rt=rbst.update(rt,y,rbst.count(rt),P(z,0));
-      rt=rbst.update(rt,0,y+1,P(0,-z));
+      rt=G.insert(rt,y,Node(curr,P(0,0)));
+      rt=G.update(rt,y,G.count(rt),P(z,0));
+      rt=G.update(rt,0,y+1,P(0,-z));
     }
 
     if(x=='D'){
-      z=get<2>(rbst.get_val(rt,y));
-      rt=rbst.erase(rt,y);
-      rt=rbst.update(rt,y,rbst.count(rt),P(-z,0));
-      rt=rbst.update(rt,0,y,P(0,z));
+      z=get<2>(G.get_val(rt,y));
+      rt=G.erase(rt,y);
+      rt=G.update(rt,y,G.count(rt),P(-z,0));
+      rt=G.update(rt,0,y,P(0,z));
     }
 
     if(x=='Q'){
-      T prev=rbst.get_val(rt,y-1);
-      T curr=rbst.query(rt,y,z);
-      T next=rbst.get_val(rt,z);
+      T prev=G.get_val(rt,y-1);
+      T curr=G.query(rt,y,z);
+      T next=G.get_val(rt,z);
       int ans=0;
       if(get<0>(prev)>get<0>(curr)) ans+=get<0>(prev)-get<0>(curr);
       if(get<1>(next)>get<1>(curr)) ans+=get<1>(next)-get<1>(curr);

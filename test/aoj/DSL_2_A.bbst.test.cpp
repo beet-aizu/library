@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../bbst/basic/base.cpp"
 #include "../../bbst/basic/ushi.cpp"
 #undef call_from_test
 
@@ -13,9 +14,10 @@ signed main(){
   cin>>n>>q;
 
   auto f=[](int a,int b){return min(a,b);};
-  SRBST<int> rmq(f,INT_MAX);
-  vector<int> vs(n,INT_MAX);
-  auto rt=rmq.build(vs);
+  using Node = NodeBase<int>;
+  constexpr size_t LIM = 1e6;
+  Ushi<Node, LIM> rmq(f,INT_MAX);
+  auto rt=rmq.build(vector<Node>(n,INT_MAX));
 
   for(int i=0;i<q;i++){
     int c,x,y;
