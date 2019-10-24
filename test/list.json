@@ -9,6 +9,7 @@
     "/algorithm/parallelbinarysearch.cpp",
     "/bbst/avltree.cpp",
     "/bbst/basic/array.cpp",
+    "/bbst/basic/base.cpp",
     "/bbst/basic/chien.cpp",
     "/bbst/basic/dual.cpp",
     "/bbst/basic/ushi.cpp",
@@ -746,7 +747,11 @@
   ],
   "/test/aoj/2890.test.cpp": [
     "/bbst/basic/array.cpp",
+    "/bbst/basic/base.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/bbst/basic/base.cpp": [
+    "/test/aoj/2890.test.cpp"
   ],
   "/bbst/basic/array.cpp": [
     "/test/aoj/2890.test.cpp"
