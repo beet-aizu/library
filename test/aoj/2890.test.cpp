@@ -5,14 +5,17 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../bbst/basic/base.cpp"
 #include "../../bbst/basic/array.cpp"
 #undef call_from_test
 
 signed main(){
   int n,q;
   cin>>n>>q;
-  Array<int> as;
-  using Node = decltype(as)::Node;
+
+  using Node = NodeBase<int>;
+  const int LIM = 1e6;
+  Array<Node, LIM> as;
 
   Node* rt=nullptr;
   vector<Node*> vs(n+1);
