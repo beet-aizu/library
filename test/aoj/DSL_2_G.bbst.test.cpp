@@ -5,7 +5,8 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../bbst/basic/chien.cpp"
+#include "../../bbst/basic/base.cpp"
+#include "../../bbst/basic/lazy.cpp"
 #undef call_from_test
 
 signed main(){
@@ -17,9 +18,11 @@ signed main(){
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,ll b){return P(a.first+b*a.second,a.second);};
   auto h=[](ll a,ll b){return a+b;};
-  RBST<P, ll> rbst(f,g,h,P(0,0),0);
-  vector<P> vs(n,P(0,1));
-  auto rt=rbst.build(vs);
+
+  using Node = NodeBase<P, ll>;
+  constexpr size_t LIM = 1e6;
+  Lazy<Node, LIM> G(f,g,h,P(0,0),0);
+  auto rt=G.build(vector<Node>(n,Node(P(0,1),0)));
 
   for(int i=0;i<q;i++){
     int c;
@@ -28,13 +31,13 @@ signed main(){
       int s,t,x;
       cin>>s>>t>>x;
       s--;
-      rt=rbst.update(rt,s,t,x);
+      rt=G.update(rt,s,t,x);
     }
     if(c==1){
       int s,t;
       cin>>s>>t;
       s--;
-      cout<<rbst.query(rt,s,t).first<<"\n";
+      cout<<G.query(rt,s,t).first<<"\n";
     }
   }
   cout<<flush;

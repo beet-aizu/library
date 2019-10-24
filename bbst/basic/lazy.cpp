@@ -54,16 +54,6 @@ struct Lazy : BBSTBase<Node, LIM>{
   using super::merge;
   using super::split;
 
-  Node* build(size_t l,size_t r,const vector<T> &vs){
-    if(l+1==r) return create(Node(vs[l],ei));
-    size_t m=(l+r)>>1;
-    return merge(build(l,m,vs),build(m,r,vs));
-  }
-
-  Node* build(const vector<T> &vs){
-    return build(0,vs.size(),vs);
-  }
-
   T query(const Node *a){
     return a?a->dat:ti;
   }
