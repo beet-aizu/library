@@ -100,6 +100,19 @@ struct BBSTBase{
     return a;
   }
 
+  inline bool is_right(Node* a){
+    return a->p&&a->p->r==a;
+  }
+
+  size_t order_of_key(Node* a){
+    size_t res=count(a->l);
+    while(a){
+      if(is_right(a)) res+=count(a->p->l)+1;
+      a=a->p;
+    }
+    return res;
+  }
+
   template<typename T>
   Node* build(size_t l,size_t r,const vector<T> &vs){
     if(l+1==r) return create(vs[l]);
@@ -116,6 +129,18 @@ template<typename Node, size_t LIM>
 array<Node, LIM> BBSTBase<Node, LIM>::pool;
 #endif
 //BEGIN CUT HERE
+template<typename Tp>
+struct NodeBase{
+  using T = Tp;
+  NodeBase *p,*l,*r;
+  size_t cnt;
+  bool rev;
+  T val;
+  NodeBase():cnt(0),rev(0){p=l=r=nullptr;}
+  NodeBase(T val):
+    cnt(1),rev(0),val(val){p=l=r=nullptr;}
+};
+
 template<typename Node, size_t LIM>
 struct Array : BBSTBase<Node, LIM>{
   using T = typename Node::T;
@@ -157,19 +182,6 @@ struct Array : BBSTBase<Node, LIM>{
     return find_by_order(a,k)->val;
   }
 
-  inline bool is_right(Node* a){
-    return a->p&&a->p->r==a;
-  }
-
-  size_t order_of_key(Node* a){
-    size_t res=count(a->l);
-    while(a){
-      if(is_right(a)) res+=count(a->p->l)+1;
-      a=a->p;
-    }
-    return res;
-  }
-
   void dump(Node* a,typename vector<T>::iterator it){
     if(!count(a)) return;
     if(a->rev){
@@ -187,17 +199,6 @@ struct Array : BBSTBase<Node, LIM>{
     dump(a,vs.begin());
     return vs;
   }
-};
-template<typename Tp>
-struct NodeBase{
-  using T = Tp;
-  NodeBase *p,*l,*r;
-  size_t cnt;
-  bool rev;
-  T val;
-  NodeBase():cnt(0),rev(0){p=l=r=nullptr;}
-  NodeBase(T val):
-    cnt(1),rev(0),val(val){p=l=r=nullptr;}
 };
 //END CUT HERE
 #ifndef call_from_test

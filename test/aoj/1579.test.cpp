@@ -4,13 +4,12 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
+#include "../../bbst/basic/base.cpp"
 #include "../../bbst/basic/dual.cpp"
 #undef call_from_test
 
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n,a,d;
   cin>>n>>a>>d;
 
@@ -24,20 +23,23 @@ signed main(){
     }
   };
 
-  const ll LIM = 1e9;
+  const ll MAX = 1e9;
   auto h=
     [](E a,E b){
       E c(a.a+a.b*(a.c+b.a),a.b*b.b,0);
       c.c=c.a/c.b+b.c;
       c.a%=c.b;
-      if(c.b>LIM){
-        c.a=max(0LL,LIM-(c.b-c.a));
-        c.b=LIM;
+      if(c.b>MAX){
+        c.a=max(0LL,MAX-(c.b-c.a));
+        c.b=MAX;
       }
       return c;
     };
   E ei(0,1,0);
-  RBST<E> G(h,ei);
+
+  using Node = NodeBase<E>;
+  constexpr size_t LIM = 1e6;
+  Dual<Node, LIM> G(h,ei);
 
   auto r=G.init(n);
   for(int i=0;i<n;i++){

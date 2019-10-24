@@ -100,6 +100,19 @@ struct BBSTBase{
     return a;
   }
 
+  inline bool is_right(Node* a){
+    return a->p&&a->p->r==a;
+  }
+
+  size_t order_of_key(Node* a){
+    size_t res=count(a->l);
+    while(a){
+      if(is_right(a)) res+=count(a->p->l)+1;
+      a=a->p;
+    }
+    return res;
+  }
+
   template<typename T>
   Node* build(size_t l,size_t r,const vector<T> &vs){
     if(l+1==r) return create(vs[l]);

@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../bbst/basic/base.cpp"
 #include "../../bbst/basic/dual.cpp"
 #undef call_from_test
 
@@ -14,8 +15,12 @@ signed main(){
 
   auto h=[](int a,int b){return a+b;};
   int ei=0;
-  RBST<int> rbst(h,ei);
-  auto rt=rbst.init(n);
+
+  using Node = NodeBase<int>;
+  constexpr size_t LIM = 1e6;
+  Dual<Node, LIM> G(h,ei);
+
+  auto rt=G.init(n);
 
   for(int i=0;i<q;i++){
     int tp;
@@ -24,13 +29,13 @@ signed main(){
       int s,t,x;
       cin>>s>>t>>x;
       s--;
-      rt=rbst.update(rt,s,t,x);
+      rt=G.update(rt,s,t,x);
     }
     if(tp==1){
       int s;
       cin>>s;
       s--;
-      cout<<rbst.get_val(rt,s)<<"\n";
+      cout<<G.get_val(rt,s)<<"\n";
     }
   }
   cout<<flush;

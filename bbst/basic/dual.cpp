@@ -1,13 +1,8 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-#endif
-//BEGIN CUT HERE
-template<typename E>
-struct RBST{
+template<typename Node, size_t LIM>
+struct BBSTBase{
   using u32 = uint32_t;
   u32 xor128(){
     static u32 x = 123456789;
@@ -20,30 +15,133 @@ struct RBST{
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
 
-  struct Node{
-    Node *l,*r;
-    size_t cnt;
-    bool rev;
-    E dat,laz;
-    Node(){}
-    Node(E dat,E laz):
-      cnt(1),rev(0),dat(dat),laz(laz){l=r=nullptr;}
-  };
+  static array<Node, LIM> pool;
+  size_t ptr;
+  BBSTBase():ptr(0){}
 
-  using H = function<E(E,E)>;
+  size_t count(const Node *a){
+    return a?a->cnt:0;
+  }
+
+  inline Node* create(){
+    return &pool[ptr++];
+  }
+
+  template<typename T>
+  inline Node* create(T v){
+    return &(pool[ptr++]=Node(v));
+  }
+
+  virtual void toggle(Node *a)=0;
+  virtual Node* eval(Node* a)=0;
+  virtual Node* recalc(Node* a)=0;
+
+  Node* toggle(Node *a,size_t l,size_t r){
+    auto s=split(a,l);
+    auto t=split(s.second,r-l);
+    auto u=eval(t.first);
+    toggle(u);
+    return merge(s.first,merge(u,t.second));
+  }
+
+  Node* merge(Node* a,Node* b){
+    if(a==nullptr) return b;
+    if(b==nullptr) return a;
+    if(xor128()%(count(a)+count(b))<count(a)){
+      a=eval(a);
+      a->r=merge(a->r,b);
+      a->r->p=a;
+      return recalc(a);
+    }
+    b=eval(b);
+    b->l=merge(a,b->l);
+    b->l->p=b;
+    return recalc(b);
+  }
+
+  pair<Node*, Node*> split(Node* a,size_t k){
+    if(a==nullptr) return make_pair(a,a);
+    a=eval(a);
+    if(k<=count(a->l)){
+      if(a->l) a->l->p=nullptr;
+      auto s=split(a->l,k);
+      a->l=s.second;
+      if(a->l) a->l->p=a;
+      return make_pair(s.first,recalc(a));
+    }
+    if(a->r) a->r->p=nullptr;
+    auto s=split(a->r,k-(count(a->l)+1));
+    a->r=s.first;
+    if(a->r) a->r->p=a;
+    return make_pair(recalc(a),s.second);
+  }
+
+  template<typename T>
+  Node* insert(Node *a,size_t pos,T v){
+    Node* b=create(v);
+    auto s=split(a,pos);
+    return a=merge(merge(s.first,b),s.second);
+  }
+
+  Node* erase(Node *a,size_t pos){
+    auto s=split(a,pos);
+    auto t=split(s.second,1);
+    return merge(s.first,t.second);
+  }
+
+  Node* find_by_order(Node *a,size_t k){
+    assert(k<count(a));
+    a=eval(a);
+    size_t num=count(a->l);
+    if(k<num) return find_by_order(a->l,k);
+    if(k>num) return find_by_order(a->r,k-(num+1));
+    return a;
+  }
+
+  template<typename T>
+  Node* build(size_t l,size_t r,const vector<T> &vs){
+    if(l+1==r) return create(vs[l]);
+    size_t m=(l+r)>>1;
+    return merge(build(l,m,vs),build(m,r,vs));
+  }
+
+  template<typename T>
+  Node* build(const vector<T> &vs){
+    return build(0,vs.size(),vs);
+  }
+};
+template<typename Node, size_t LIM>
+array<Node, LIM> BBSTBase<Node, LIM>::pool;
+#endif
+//INSERT ABOVE HERE
+//BEGIN CUT HERE
+
+template<typename Ep>
+struct NodeBase{
+  using E = Ep;
+  NodeBase *l,*r,*p;
+  size_t cnt;
+  bool rev;
+  E dat,laz;
+  NodeBase(){}
+  NodeBase(E dat,E laz):
+    cnt(1),rev(0),dat(dat),laz(laz){l=r=p=nullptr;}
+};
+
+template<typename Node, size_t LIM>
+struct Dual : BBSTBase<Node, LIM>{
+  using E = typename Node::E;
+  using super = BBSTBase<Node, LIM>;
+  using H = function<E(E, E)>;
 
   H h;
   E ei;
 
-  const size_t LIM = 1e6;
-  vector<Node> pool;
-  size_t ptr;
+  Dual(H h,E ei):super(),h(h),ei(ei){}
 
-  RBST(H h,E ei):h(h),ei(ei),pool(LIM),ptr(0){}
-
-  inline Node* create(){
-    return &(pool[ptr++]=Node(ei,ei));
-  }
+  using super::create;
+  using super::merge;
+  using super::split;
 
   Node* build(size_t l,size_t r){
     if(l+1==r) return create();
@@ -55,10 +153,7 @@ struct RBST{
     return build(0,n);
   }
 
-  size_t count(const Node *a){
-    return a?a->cnt:0;
-  }
-
+  using super::count;
   Node* recalc(Node *a){
     a->cnt=count(a->l)+1+count(a->r);
     return a;
@@ -69,6 +164,7 @@ struct RBST{
     a->laz=h(a->laz,x);
   }
 
+  using super::toggle;
   void toggle(Node *a){
     swap(a->l,a->r);
     a->rev^=1;
@@ -87,52 +183,6 @@ struct RBST{
       a->rev=false;
     }
     return recalc(a);
-  }
-
-  pair<Node*, Node*> split(Node* a,size_t k){
-    if(a==nullptr) return make_pair(a,a);
-    a=eval(a);
-    if(k<=count(a->l)){
-      auto s=split(a->l,k);
-      a->l=s.second;
-      return make_pair(s.first,recalc(a));
-    }
-    auto s=split(a->r,k-(count(a->l)+1));
-    a->r=s.first;
-    return make_pair(recalc(a),s.second);
-  }
-
-  Node* merge(Node* a,Node* b){
-    if(a==nullptr) return b;
-    if(b==nullptr) return a;
-    if(xor128()%(count(a)+count(b))<count(a)){
-      a=eval(a);
-      a->r=merge(a->r,b);
-      return recalc(a);
-    }
-    b=eval(b);
-    b->l=merge(a,b->l);
-    return recalc(b);
-  }
-
-  Node* insert(Node *a,size_t pos){
-    Node* b=create();
-    auto s=split(a,pos);
-    return a=merge(merge(s.first,b),s.second);
-  }
-
-  Node* erase(Node *a,size_t pos){
-    auto s=split(a,pos);
-    auto t=split(s.second,1);
-    return merge(s.first,t.second);
-  }
-
-  Node* toggle(Node *a,size_t l,size_t r){
-    auto s=split(a,l);
-    auto t=split(s.second,r-l);
-    auto u=eval(t.first);
-    toggle(u);
-    return merge(s.first,merge(u,t.second));
   }
 
   Node* update(Node *a,size_t l,size_t r,E x){
@@ -171,9 +221,9 @@ struct RBST{
   }
 
   vector<E> dump(Node* a){
-    vector<E> v(count(a));
-    dump(a,v.begin());
-    return v;
+    vector<E> vs(count(a));
+    dump(a,vs.begin());
+    return vs;
   }
 };
 //END CUT HERE
