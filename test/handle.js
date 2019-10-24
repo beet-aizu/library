@@ -132,7 +132,7 @@ function show_content(url){
 
     var path = 'https://beet-aizu.github.io/library' + url;
     getFile(path).done(function(data){
-        if(data.search('#define call_from_test') < 0){
+        if(url.search(/.*\.test\.cpp$/) < 0){
             show_library(url, data);
         }else{
             show_test(url, data);
