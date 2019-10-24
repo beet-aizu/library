@@ -1,51 +1,10 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 
-template<typename T,T MOD = 1000000007>
-struct Mint{
-  static constexpr T mod = MOD;
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
-
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  static Mint add_identity(){return Mint(0);}
-  static Mint mul_identity(){return Mint(1);}
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
-};
-template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
-template<typename T,T MOD>
-
-ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
+#define call_from_test
+#include "../mod/mint.cpp"
+#undef call_from_test
 
 #endif
 //BEGIN CUT HERE
@@ -153,12 +112,12 @@ signed ATC001_C(){
   return 0;
 }
 /*
-  verified on 2019/09/08
+  verified on 2019/10/24
   https://atcoder.jp/contests/atc001/tasks/fft_c
 */
 
 signed main(){
-  //ATC001_C();
+  ATC001_C();
   return 0;
 }
 #endif

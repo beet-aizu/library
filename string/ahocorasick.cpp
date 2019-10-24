@@ -2,65 +2,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
-template<size_t X>
-struct Trie{
-  struct Node{
-    char c;
-    array<int, X> nxt;
-    vector<int> idxs;
-    int idx;
-    Node(char c):c(c),idx(-1){fill(nxt.begin(),nxt.end(),-1);}
-  };
-
-  using F = function<int(char)>;
-  vector<Node> vs;
-  F conv;
-
-  Trie(F conv,char c='$'):conv(conv){vs.emplace_back(c);}
-
-  void add(const string &s,int x){
-    int pos=0;
-    for(int i=0;i<(int)s.size();i++){
-      int k=conv(s[i]);
-      if(~vs[pos].nxt[k]){
-        pos=vs[pos].nxt[k];
-        continue;
-      }
-      int npos=vs.size();
-      vs[pos].nxt[k]=npos;
-      vs.emplace_back(s[i]);
-      pos=npos;
-    }
-    vs[pos].idx=x;
-    vs[pos].idxs.emplace_back(x);
-  }
-
-  int find(const string &s){
-    int pos=0;
-    for(int i=0;i<(int)s.size();i++){
-      int k=conv(s[i]);
-      if(vs[pos].nxt[k]<0) return -1;
-      pos=vs[pos].nxt[k];
-    }
-    return pos;
-  }
-
-  int find(int pos,char c){
-    return vs[pos].nxt[conv(c)];
-  }
-
-  int idx(int pos){
-    return pos<0?-1:vs[pos].idx;
-  }
-
-  vector<int> idxs(int pos){
-    return pos<0?vector<int>():vs[pos].idxs;
-  }
-
-};
+#define call_from_test
+#include "trie.cpp"
+#undef call_from_test
 
 #endif
 //BEGIN CUT HERE

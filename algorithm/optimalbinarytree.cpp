@@ -1,71 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T, typename E>
-struct SkewHeap{
-  using G = function<T(T,E)>;
-  using H = function<E(E,E)>;
-  using C = function<bool(T,T)>;
-  G g;
-  H h;
-  C c;
-  T INF;
-  E ei;
-  SkewHeap(G g,H h,C c,T INF,E ei):g(g),h(h),c(c),INF(INF),ei(ei){}
 
-  struct Node{
-    Node *l,*r;
-    T val;
-    E add;
-    Node(T val,E add):val(val),add(add){l=r=nullptr;}
-  };
+#define call_from_test
+#include "../datastructure/skewheap.cpp"
+#undef call_from_test
 
-  void eval(Node *a){
-    if(a==nullptr) return;
-    if(a->add==ei) return;
-    if(a->l) a->l->add=h(a->l->add,a->add);
-    if(a->r) a->r->add=h(a->r->add,a->add);
-    a->val=g(a->val,a->add);
-    a->add=ei;
-  }
-
-  T top(Node *a){
-    return a!=nullptr?g(a->val,a->add):INF;
-  }
-
-  T snd(Node *a){
-    eval(a);
-    return a!=nullptr?min(top(a->l),top(a->r)):INF;
-  }
-
-  Node* add(Node *a,E d){
-    if(a!=nullptr) a->add=h(a->add,d);
-    return a;
-  }
-
-  Node* push(T v){
-    return new Node(v,ei);
-  }
-
-  Node* meld(Node *a,Node *b){
-    if(a==nullptr) return b;
-    if(b==nullptr) return a;
-    if(c(top(a),top(b))) swap(a,b);
-    eval(a);
-    a->r=meld(a->r,b);
-    swap(a->l,a->r);
-    return a;
-  }
-
-  Node* pop(Node* a){
-    eval(a);
-    auto res=meld(a->l,a->r);
-    delete a;
-    return res;
-  }
-
-};
 #endif
 //BEGIN CUT HERE
 template<typename T>

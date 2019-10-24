@@ -1,9 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+#define call_from_test
+#include "../mod/mint.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
 template<typename M>
@@ -132,70 +134,10 @@ vector<M> Enumeration<M>::invs=vector<M>();
 //END CUT HERE
 #ifndef call_from_test
 
-template<typename T,T MOD = 1000000007>
-struct Mint{
-  static constexpr T mod = MOD;
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
+#define call_from_test
+#include "../math/factorize.cpp"
+#undef call_from_test
 
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  static Mint add_identity(){return Mint(0);}
-  static Mint mul_identity(){return Mint(1);}
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
-
-  static Mint comb(long long n,int k){
-    Mint num(1),dom(1);
-    for(int i=0;i<k;i++){
-      num*=Mint(n-i);
-      dom*=Mint(i+1);
-    }
-    return num/dom;
-  }
-};
-template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
-template<typename T,T MOD>
-ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
-
-template<typename T>
-map<T, int> factorize(T x){
-  map<T, int> res;
-  for(int i=2;i*i<=x;i++){
-    while(x%i==0){
-      x/=i;
-      res[i]++;
-    }
-  }
-  if(x!=1) res[x]++;
-  return res;
-}
 //INSERT ABOVE HERE
 
 signed ABC110_D(){
@@ -221,7 +163,7 @@ signed ABC110_D(){
 
 //montmort
 signed ARC009_C(){
-  Int n,k;
+  long long n,k;
   scanf("%lld %lld",&n,&k);
   const int MOD = 1777777777;
   using M = Mint<long long, MOD>;
@@ -241,7 +183,7 @@ signed ARC033_D(){
   using M = Mint<int>;
   using E = Enumeration<M>;
   vector<M> y(n+1);
-  for(Int i=0;i<=n;i++) scanf("%d",&y[i].v);
+  for(int i=0;i<=n;i++) scanf("%d",&y[i].v);
   int t;
   scanf("%d",&t);
   printf("%d\n",E::LagrangePolynomial(y,M(t)).v);
@@ -269,7 +211,7 @@ signed YUKI_117(){
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/10/24
   https://yukicoder.me/problems/no/117
 */
 
@@ -297,7 +239,7 @@ signed YUKI_042(){
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/10/24
   https://yukicoder.me/problems/no/42
 */
 
