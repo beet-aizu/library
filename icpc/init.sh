@@ -6,5 +6,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+#setxkbmap -option ctrl:nocaps
+
 ulimit -s 65532
 #END CUT HERE
