@@ -13,14 +13,13 @@ struct NodeBase{
   using T = Tp;
   using E = Ep;
   NodeBase *l,*r,*p;
-  size_t sz;// tree size (only for root)
   int idx;
   bool rev;
   T val,dat;
   E laz;
-  NodeBase():sz(1){}
+  NodeBase(){}
   NodeBase(int idx,T val,E laz):
-    sz(1),idx(idx),rev(0),val(val),dat(val),laz(laz){
+    idx(idx),rev(0),val(val),dat(val),laz(laz){
     l=r=p=nullptr;}
 };
 
@@ -54,19 +53,19 @@ struct Path : LinkCutTreeBase<Np, LIM>{
     return super::create(Node(idx,val,ei));
   }
 
-  void propagate(Node *t,E v){
+  inline void propagate(Node *t,E v){
     t->laz=h(t->laz,v);
     t->val=g(t->val,v);
     t->dat=g(t->dat,v);
   }
 
-  void toggle(Node *t){
+  inline void toggle(Node *t){
     swap(t->l,t->r);
     t->dat=flip(t->dat);
     t->rev^=1;
   }
 
-  void eval(Node *t){
+  inline void eval(Node *t){
     if(t->laz!=ei){
       if(t->l) propagate(t->l,t->laz);
       if(t->r) propagate(t->r,t->laz);
@@ -79,7 +78,7 @@ struct Path : LinkCutTreeBase<Np, LIM>{
     }
   }
 
-  void pushup(Node *t){
+  inline void pushup(Node *t){
     t->dat=t->val;
     if(t->l) t->dat=f(t->l->dat,t->dat);
     if(t->r) t->dat=f(t->dat,t->r->dat);

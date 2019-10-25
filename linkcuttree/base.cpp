@@ -24,9 +24,7 @@ struct LinkCutTreeBase{
 
   void rotR(Node *t){
     Node *x=t->p,*y=x->p;
-    x->sz-=t->sz;
-    t->sz+=x->sz;
-    if((x->l=t->r)) t->r->p=x,x->sz+=x->l->sz;
+    if((x->l=t->r)) t->r->p=x;
     t->r=x;x->p=t;
     pushup(x);pushup(t);
     if((t->p=y)){
@@ -38,9 +36,7 @@ struct LinkCutTreeBase{
 
   void rotL(Node *t){
     Node *x=t->p,*y=x->p;
-    x->sz-=t->sz;
-    t->sz+=x->sz;
-    if((x->r=t->l)) t->l->p=x,x->sz+=x->r->sz;
+    if((x->r=t->l)) t->l->p=x;
     t->l=x;x->p=t;
     pushup(x);pushup(t);
     if((t->p=y)){
@@ -76,7 +72,7 @@ struct LinkCutTreeBase{
     }
   }
 
-  Node* expose(Node *t){
+  virtual Node* expose(Node *t){
     Node *rp=nullptr;
     for(Node *c=t;c;c=c->p){
       splay(c);
@@ -93,7 +89,6 @@ struct LinkCutTreeBase{
     expose(par);
     c->p=par;
     par->r=c;
-    par->sz+=c->sz;
     pushup(par);
   }
 
@@ -103,7 +98,6 @@ struct LinkCutTreeBase{
     c->l=nullptr;
     pushup(c);
     par->p=nullptr;
-    c->sz-=par->sz;
   }
 
   void evert(Node *t){
