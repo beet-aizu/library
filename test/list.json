@@ -23,7 +23,7 @@
     "/convolution/fastfouriertransform.cpp",
     "/convolution/fastwalshhadamardtransform.cpp",
     "/convolution/numbertheoretictransform.cpp",
-    "/datastructure/2D_BIT.cpp",
+    "/datastructure/BIT2D.cpp",
     "/datastructure/absolutesum.cpp",
     "/datastructure/binaryindexedtree.cpp",
     "/datastructure/binarytrie.cpp",
@@ -382,6 +382,7 @@
     "/test/aoj/2890.test.cpp",
     "/test/aoj/2970.test.cpp",
     "/test/aoj/2975.test.cpp",
+    "/test/aoj/2983.test.cpp",
     "/test/aoj/2985.garner.test.cpp",
     "/test/aoj/2985.test.cpp",
     "/test/aoj/3033.test.cpp",
@@ -521,6 +522,7 @@
     "/test/aoj/2959.test.cpp",
     "/test/aoj/2971.test.cpp",
     "/test/aoj/2977.test.cpp",
+    "/test/aoj/2983.test.cpp",
     "/test/aoj/2985.garner.test.cpp",
     "/test/aoj/2985.test.cpp",
     "/test/aoj/3072.test.cpp",
@@ -660,10 +662,10 @@
     "/test/aoj/2975.test.cpp"
   ],
   "/test/aoj/2842.2D_BIT.test.cpp": [
-    "/datastructure/2D_BIT.cpp",
+    "/datastructure/BIT2D.cpp",
     "/tools/fastio.cpp"
   ],
-  "/datastructure/2D_BIT.cpp": [
+  "/datastructure/BIT2D.cpp": [
     "/test/aoj/2842.2D_BIT.test.cpp"
   ],
   "/test/aoj/GRL_1_B.test.cpp": [
@@ -935,7 +937,9 @@
     "/test/aoj/3069.test.cpp"
   ],
   "/test/aoj/2983.test.cpp": [
-    "/graph/maximalmatching.cpp"
+    "/graph/maximalmatching.cpp",
+    "/mod/mint.cpp",
+    "/tools/fastio.cpp"
   ],
   "/graph/maximalmatching.cpp": [
     "/test/aoj/2983.test.cpp"
