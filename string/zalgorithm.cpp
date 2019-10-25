@@ -47,7 +47,7 @@ signed CFR432_D(){
     ss.emplace(as[i]);
   }
   cout<<ss.size()<<endl;
-  for(auto x:ss) cout<<x<<" "<<bit.sum0(x)<<endl;
+  for(auto x:ss) cout<<x<<" "<<bit.query0(x,n+100)<<endl;
   return 0;
 }
 /*

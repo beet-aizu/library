@@ -1,26 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-template<typename T>
-T extgcd(T a,T b,T& x,T& y){
-  T d=a;
-  if(b!=0){
-    d=extgcd(b,a%b,y,x);
-    y-=(a/b)*x;
-  }else{
-    x=1;y=0;
-  }
-  return d;
-}
-template<typename T>
-T mod_inverse(T a,T mod){
-  T x,y;
-  extgcd(a,mod,x,y);
-  return (x%mod+mod)%mod;
-}
+
+#define call_from_test
+#include "extgcd.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -40,41 +25,42 @@ pair<T, T> linear_congruence(const vector<T> &A,
 //END CUT HERE
 #ifndef call_from_test
 
-int is_prime(Int x){
+int is_prime(int x){
   if(x<=1) return 0;
-  for(Int i=2;i*i<=x;i++)
+  for(int i=2;i*i<=x;i++)
     if(x%i==0) return 0;
   return 1;
 }
 
 signed DDCC2018QUALB_D(){
-  const Int n = 30;
-  vector<Int> A,B,M;
+  using ll = long long;
+  const int n = 30;
+  vector<ll> A,B,M;
 
-  vector<Int> x(n+1);
-  for(Int i=2;i<=n;i++){
-    cin>>x[i];
+  vector<ll> xs(n+1);
+  for(int i=2;i<=n;i++){
+    cin>>xs[i];
     if(!is_prime(i-1)) continue;
     A.emplace_back(1);
-    B.emplace_back(x[i]%(i-1));
+    B.emplace_back(xs[i]%(i-1));
     M.emplace_back(i-1);
   }
   auto p=linear_congruence(A,B,M);
-  if(p.second<Int(0)){
+  if(p.second<int(0)){
     cout<<"invalid"s<<endl;
     return 0;
   }
-  Int LIM(1e12);
-  Int res=p.first,dif=p.second;
+  ll LIM=1e12;
+  ll res=p.first,dif=p.second;
   while(res<=LIM){
-    Int flg=1;
-    for(Int i=2;i<=n;i++){
-      Int sum=0,tmp=res;
-      while(tmp>Int(0)){
+    int flg=1;
+    for(int i=2;i<=n;i++){
+      ll sum=0,tmp=res;
+      while(tmp>int(0)){
         sum+=tmp%i;
-        tmp/=Int(i);
+        tmp/=int(i);
       }
-      flg&=(sum==x[i]);
+      flg&=(sum==xs[i]);
     }
     if(flg){
       cout<<res<<endl;
@@ -86,20 +72,21 @@ signed DDCC2018QUALB_D(){
   return 0;
 }
 /*
-   verified on 2019/10/08
+   verified on 2019/10/25
    https://atcoder.jp/contests/ddcc2019-qual/tasks/ddcc2018_qual_d
 */
 
 signed YUKI_186(){
-  vector<Int> A(3,1),B(3),M(3);
-  for(Int i=0;i<3;i++) cin>>B[i]>>M[i];
+  using ll = long long;
+  vector<ll> A(3,1),B(3),M(3);
+  for(int i=0;i<3;i++) cin>>B[i]>>M[i];
   auto p=linear_congruence(A,B,M);
   if(p.second==-1) cout<<-1<<endl;
   else cout<<(p.first?p.first:p.second)<<endl;
   return 0;
 }
 /*
-   verified on 2019/10/08
+   verified on 2019/10/25
    https://yukicoder.me/problems/no/186
 */
 
