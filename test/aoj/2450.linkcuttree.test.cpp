@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/path.cpp"
 #undef call_from_test
 
@@ -51,8 +52,10 @@ signed main(){
     };
 
 
-  using LCT = LinkCutTree<T, P>;
-  vector<LCT::Node* > vs(n);
+  using Node = NodeBase<T, P>;
+  constexpr size_t LIM = 1e6;
+  using LCT = Path<Node, LIM>;
+  vector<LCT::Node*> vs(n);
   vector<int> ps(n,-1);
 
   LCT lct(f,g,h,s,ti,ei);

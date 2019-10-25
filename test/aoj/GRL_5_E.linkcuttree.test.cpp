@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/path.cpp"
 #undef call_from_test
 
@@ -15,7 +16,10 @@ signed main(){
   cin>>n;
 
   using P = pair<ll, ll>;
-  using LCT = LinkCutTree<P, ll>;
+  using Node = NodeBase<P, ll>;
+  constexpr size_t LIM = 1e6;
+  using LCT = Path<Node, LIM>;
+
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,int b){return P(a.first+b*a.second,a.second);};
   auto h=[](ll a,ll b){return a+b;};

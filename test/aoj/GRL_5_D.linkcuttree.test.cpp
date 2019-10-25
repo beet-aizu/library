@@ -5,14 +5,19 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/path.cpp"
 #undef call_from_test
 
 signed main(){
   int n;
   cin>>n;
-  using LCT = LinkCutTree<int, int>;
-  LCT::F f=[](int a,int b){return a+b;};
+
+  using Node = NodeBase<int, int>;
+  constexpr size_t LIM = 1e6;
+  using LCT = Path<Node, LIM>;
+
+  auto f=[](int a,int b){return a+b;};
   LCT lct(f,f,f,0,0);
 
   vector<LCT::Node*> vs(n);
