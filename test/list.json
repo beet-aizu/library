@@ -160,6 +160,7 @@
     "/test/aoj/0233.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/0377.test.cpp",
+    "/test/aoj/0391.test.cpp",
     "/test/aoj/0502.test.cpp",
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1197.test.cpp",
@@ -642,6 +643,7 @@
     "/tools/precision.cpp"
   ],
   "/tools/chminmax.cpp": [
+    "/test/aoj/0391.test.cpp",
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1549.test.cpp",
     "/test/aoj/2230.test.cpp",
@@ -977,6 +979,7 @@
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp"
   ],
   "/tree/lca.cpp": [
+    "/test/aoj/0391.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp"
   ],
@@ -1108,6 +1111,14 @@
   "/test/aoj/DSL_3_D.test.cpp": [
     "/datastructure/rangeslide.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/aoj/0391.test.cpp": [
+    "/tools/chminmax.cpp",
+    "/tree/lca.cpp",
+    "/tree/levelancestor.cpp"
+  ],
+  "/tree/levelancestor.cpp": [
+    "/test/aoj/0391.test.cpp"
   ],
   "/test/aoj/GRL_3_B.test.cpp": [
     "/graph/lowlink.cpp"
