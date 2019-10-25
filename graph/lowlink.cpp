@@ -100,117 +100,17 @@ struct LowLink{
 };
 //END CUT HERE
 #ifndef call_from_test
-struct UnionFind{
-  int n,num;
-  vector<int> r,p;
-  UnionFind(){}
-  UnionFind(int sz):n(sz),num(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
-  int find(int x){
-    return (x==p[x]?x:p[x]=find(p[x]));
-  }
-  bool same(int x,int y){
-    return find(x)==find(y);
-  }
-  void unite(int x,int y){
-    x=find(x);y=find(y);
-    if(x==y) return;
-    if(r[x]<r[y]) swap(x,y);
-    r[x]+=r[y];
-    p[y]=x;
-    num--;
-  }
-  int size(int x){
-    return r[find(x)];
-  }
-  int count() const{
-    return num;
-  }
-};
 
-template<typename T,T MOD = 1000000007>
-struct Mint{
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "../datastructure/unionfindtree.cpp"
+#include "../mod/mint.cpp"
+#include "../mod/enumeration.cpp"
+#undef call_from_test
 
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  static Mint add_identity(){return Mint(0);}
-  static Mint mul_identity(){return Mint(1);}
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
-};
-
-
-template<typename M>
-struct Enumeration{
-  static vector<M> fact,finv,invs;
-
-  static void init(int n){
-    int m=fact.size();
-    if(n<m) return;
-
-    fact.resize(n+1,1);
-    finv.resize(n+1,1);
-    invs.resize(n+1,1);
-
-    if(m==0) m=1;
-    for(int i=m;i<=n;i++) fact[i]=fact[i-1]*M(i);
-    finv[n]=M(1)/fact[n];
-    for(int i=n;i>=m;i--) finv[i-1]=finv[i]*M(i);
-    for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];
-  }
-
-  static M C(int n,int k){
-    if(n<k||k<0) return M(0);
-    init(n);
-    return fact[n]*finv[n-k]*finv[k];
-  }
-
-  static M H(int n,int k){
-    if(n<0||k<0) return M(0);
-    if(!n&&!k) return M(1);
-    init(n+k-1);
-    return C(n+k-1,k);
-  }
-};
-template<typename M>
-vector<M> Enumeration<M>::fact = vector<M>();
-template<typename M>
-vector<M> Enumeration<M>::finv = vector<M>();
-template<typename M>
-vector<M> Enumeration<M>::invs = vector<M>();
 
 //INSERT ABOVE HERE
 signed ARC045_D(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n;
   cin>>n;
   vector<int> xs(2*n+1),ys(2*n+1);
@@ -273,15 +173,12 @@ signed ARC045_D(){
   return 0;
 }
 /*
-  verified on 2019/05/29
+  verified on 2019/10/25
   https://atcoder.jp/contests/arc045/tasks/arc045_d
 */
 
 
 signed ARC062_F(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n,m,k;
   cin>>n>>m>>k;
 
@@ -322,7 +219,7 @@ signed ARC062_F(){
       for(int i=0;i<x;i++)
         res+=M(k).pow(__gcd(i,x));
 
-      res*=E::invs[x];
+      res*=E::Invs(x);
       return res;
     };
 
@@ -337,7 +234,7 @@ signed ARC062_F(){
   return 0;
 }
 /*
-  verified on 2019/05/29
+  verified on 2019/10/25
   https://atcoder.jp/contests/arc062/tasks/arc062_d
 */
 

@@ -1,8 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct VoronoiMST{
@@ -18,7 +17,7 @@ struct VoronoiMST{
   void add_edge(int u,int v,T c){
     G[u+n].emplace_back(v+n,c);
     G[v+n].emplace_back(u+n,c);
-  }  
+  }
   vector<vector<E> > build(){
     priority_queue<P, vector<P>, greater<P> > pq;
     const T INF = numeric_limits<T>::max();
@@ -58,88 +57,21 @@ struct VoronoiMST{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 
-
-
-template<typename T>
-struct Kruskal{
-  
-  struct edge{
-    int from,to;
-    T cost;
-    int used;
-    edge(){}
-    edge(int from,int to,T cost):
-      from(from),to(to),cost(cost),used(0){}
-    bool operator<(const edge& e) const{
-      return cost<e.cost;
-    }
-  };
-
-  int n;
-  vector<int> p,r;
-  vector<edge> edges;
-
-  Kruskal(){}
-  Kruskal(int n):n(n){}
-
-  void init(int n){
-    r.assign(n,1);
-    p.resize(n);
-    iota(p.begin(),p.end(),0);
-  }
-  
-  int find(int x){
-    return (x==p[x]?x:p[x]=find(p[x]));
-  }
-
-  bool same(int x,int y){
-    return find(x)==find(y);
-  }
-
-  void unite(int x,int y){
-    x=find(x);y=find(y);
-    if(x==y) return;
-    if(r[x]<r[y]) swap(x,y);
-    r[x]+=r[y];
-    p[y]=x;
-  }
-
-  void add_edge(int u,int v,T c){
-    edges.emplace_back(u,v,c);
-  }
-  
-  T build(){
-    sort(edges.begin(),edges.end());
-    init(n);
-    T res=0;
-    for(auto &e:edges){
-      if(!same(e.from,e.to)){
-        res+=e.cost;
-        unite(e.from,e.to);
-        e.used=1;
-      }
-    }
-    return res;
-  }
-};
-
-
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "kruskal.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
-
 signed CF17FINAL_J(){
+  using ll = long long;
   int n;
   cin>>n;
-  vector<Int> x(n);
+  vector<ll> x(n);
   for(int i=0;i<n;i++) cin>>x[i];
-  VoronoiMST<Int> vo(x);
+  VoronoiMST<ll> vo(x);
   for(int i=1;i<n;i++){
     int a,b,c;
     cin>>a>>b>>c;
@@ -147,11 +79,11 @@ signed CF17FINAL_J(){
     vo.add_edge(a,b,c);
   }
   auto G=vo.build();
-  Kruskal<Int> ks(n);
+  Kruskal<ll> ks(n);
   for(int v=0;v<n;v++){
     for(auto e:G[v]){
       int u=e.first;
-      Int c=e.second;
+      ll c=e.second;
       if(v<u) ks.add_edge(v,u,c);
     }
   }
@@ -159,25 +91,27 @@ signed CF17FINAL_J(){
   return 0;
 }
 /*
-  verified on 2019/01/16
+  verified on 2019/10/25
   https://atcoder.jp/contests/cf17-final/tasks/cf17_final_j
 */
 
 signed KEYENCE2019_E(){
+  using ll = long long;
+
   int n,d;
   cin>>n>>d;
-  vector<Int> a(n);
+  vector<ll> a(n);
   for(int i=0;i<n;i++) cin>>a[i];
-  VoronoiMST<Int> vo(a);
+  VoronoiMST<ll> vo(a);
   for(int i=1;i<n;i++){
     vo.add_edge(i-1,i,d);
   }
   auto G=vo.build();
-  Kruskal<Int> ks(n);
+  Kruskal<ll> ks(n);
   for(int v=0;v<n;v++){
     for(auto e:G[v]){
       int u=e.first;
-      Int c=e.second;
+      ll c=e.second;
       if(v<u) ks.add_edge(v,u,c);
     }
   }
@@ -185,7 +119,7 @@ signed KEYENCE2019_E(){
   return 0;
 }
 /*
-  verified on 2019/01/16
+  verified on 2019/10/25
   https://atcoder.jp/contests/keyence2019/tasks/keyence2019_e
 */
 
@@ -194,3 +128,4 @@ signed main(){
   //KEYENCE2019_E();
   return 0;
 }
+#endif
