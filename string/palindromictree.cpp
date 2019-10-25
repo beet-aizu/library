@@ -79,29 +79,12 @@ struct PalindromicTree{
 //END CUT HERE
 #ifndef call_from_test
 
-template<typename T,T MOD,T B>
-struct RollingHash{
-  using ll = long long;
-  vector<T> hash,p;
-  RollingHash(){}
-  RollingHash(const string &s){
-    int n=s.size();
-    hash.assign(n+1,0);
-    p.assign(n+1,1);
-    for(int i=0;i<n;i++){
-      hash[i+1]=((ll)hash[i]*B+s[i])%MOD;
-      p[i+1]=(ll)p[i]*B%MOD;
-    }
-  }
-  //S[l, r)
-  T find(int l,int r){
-    T res=(ll)hash[r]+MOD-(ll)hash[l]*p[r-l]%MOD;
-    return res>=MOD?res-MOD:res;
-  }
-};
+#define call_from_test
+#include "rollinghash.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
-signed main(){
+signed YUKI_263(){
   using ll = long long;
   string s,t;
   cin>>s>>t;
@@ -136,7 +119,12 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2019/10/15
+  verified on 2019/10/25
   https://yukicoder.me/problems/no/263
 */
+
+signed main(){
+  YUKI_263();
+  return 0;
+}
 #endif
