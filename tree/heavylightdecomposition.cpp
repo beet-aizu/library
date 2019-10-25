@@ -107,158 +107,11 @@ public:
 };
 //END CUT HERE
 #ifndef call_from_test
-template <typename T>
-struct SegmentTree{
-  using F = function<T(T,T)>;
-  int n;
-  F f;
-  T ti;
-  vector<T> dat;
-  SegmentTree(){};
-  SegmentTree(F f,T ti):f(f),ti(ti){}
-  void init(int n_){
-    n=1;
-    while(n<n_) n<<=1;
-    dat.assign(n<<1,ti);
-  }
-  void build(const vector<T> &v){
-    int n_=v.size();
-    init(n_);
-    for(int i=0;i<n_;i++) dat[n+i]=v[i];
-    for(int i=n-1;i;i--)
-      dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
-  }
-  void set_val(int k,T x){
-    dat[k+=n]=x;
-    while(k>>=1)
-      dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
-  }
-  T query(int a,int b){
-    T vl=ti,vr=ti;
-    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
-      if(l&1) vl=f(vl,dat[l++]);
-      if(r&1) vr=f(dat[--r],vr);
-    }
-    return f(vl,vr);
-  }
-  template<typename C>
-  int find(int st,C &check,T &acc,int k,int l,int r){
-    if(l+1==r){
-      acc=f(acc,dat[k]);
-      return check(acc)?k-n:-1;
-    }
-    int m=(l+r)>>1;
-    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);
-    if(st<=l&&!check(f(acc,dat[k]))){
-      acc=f(acc,dat[k]);
-      return -1;
-    }
-    int vl=find(st,check,acc,(k<<1)|0,l,m);
-    if(~vl) return vl;
-    return find(st,check,acc,(k<<1)|1,m,r);
-  }
-  template<typename C>
-  int find(int st,C &check){
-    T acc=ti;
-    return find(st,check,acc,1,0,n);
-  }
-};
 
-struct LowLink{
-  int n,pos;
-  vector<int> ord,low,par,blg,num;
-  vector<vector<int> > G,C,T;
-  vector<vector<pair<int, int> > > E;
-
-  vector<int> ap;
-  vector<pair<int, int> > bs,cand;
-
-  LowLink(int n):n(n),pos(0),ord(n,-1),low(n),
-                 par(n,-1),blg(n,-1),num(n,1),G(n){}
-
-  void add_edge(int u,int v){
-    G[u].emplace_back(v);
-    G[v].emplace_back(u);
-  }
-
-  bool is_bridge(int u,int v){
-    if(ord[u]>ord[v]) swap(u,v);
-    return ord[u]<low[v];
-  }
-
-  void dfs(int v){
-    ord[v]=low[v]=pos++;
-    for(int u:G[v]){
-      if(u==par[v]) continue;
-      if(ord[u]<ord[v])
-        cand.emplace_back(min(u,v),max(u,v));
-      if(~ord[u]){
-        low[v]=min(low[v],ord[u]);
-        continue;
-      }
-      par[u]=v;
-      dfs(u);
-      num[v]+=num[u];
-      low[v]=min(low[v],low[u]);
-      if(is_bridge(u,v)) bs.emplace_back(u,v);
-      if(low[u]>=ord[v]){
-        E.emplace_back();
-        while(1){
-          auto e=cand.back();
-          cand.pop_back();
-          E.back().emplace_back(e);
-          if(make_pair(min(u,v),max(u,v))==e) break;
-        }
-      }
-    }
-  }
-
-  void fill_component(int v){
-    C[blg[v]].emplace_back(v);
-    for(int u:G[v]){
-      if(~blg[u]||is_bridge(u,v)) continue;
-      blg[u]=blg[v];
-      fill_component(u);
-    }
-  }
-
-  void add_component(int v,int &k){
-    if(~blg[v]) return;
-    blg[v]=k++;
-    C.emplace_back();
-    fill_component(v);
-  }
-
-  int build(){
-    for(int i=0;i<n;i++)
-      if(ord[i]<0) dfs(i);
-
-    vector<int> cnt(n,0);
-    for(int i=0;i<n;i++){
-      int p=par[i];
-      if(p<0) continue;
-      if(par[p]<0) cnt[p]++;
-      else if(ord[p]<=low[i]) ap.emplace_back(p);
-    }
-
-    for(int i=0;i<n;i++)
-      if(cnt[i]>1) ap.emplace_back(i);
-
-    sort(ap.begin(),ap.end());
-    ap.erase(unique(ap.begin(),ap.end()),ap.end());
-
-    int k=0;
-    for(int i=0;i<n;i++) add_component(i,k);
-
-    T.assign(k,vector<int>());
-    for(auto e:bs){
-      int u=blg[e.first],v=blg[e.second];
-      T[u].emplace_back(v);
-      T[v].emplace_back(u);
-    }
-    return k;
-  }
-};
+#define call_from_test
+#include "../graph/lowlink.cpp"
+#include "../segtree/basic/ushi.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed YUKI_529(){
@@ -320,11 +173,11 @@ signed YUKI_529(){
   return 0;
 }
 /*
-  verified on 2019/07/08
+  verified on 2019/10/25
   https://yukicoder.me/problems/no/529
 */
 signed main(){
-  //YUKI_529();
+  YUKI_529();
   return 0;
 };
 #endif
