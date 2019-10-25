@@ -1,12 +1,12 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-#endif
 
 #define call_from_test
 #include "../mod/mint.cpp"
 #undef call_from_test
 
+#endif
 //BEGIN CUT HERE
 int maximal_matching(vector< vector<int> > G){
   int n=G.size();
