@@ -78,6 +78,7 @@
     "/linearalgebra/matrix.cpp",
     "/linearalgebra/squarematrix.cpp",
     "/linearalgebra/tree_theorem.cpp",
+    "/linkcuttree/base.cpp",
     "/linkcuttree/farthest.cpp",
     "/linkcuttree/path.cpp",
     "/linkcuttree/subtree.cpp",
@@ -1257,8 +1258,15 @@
     "/test/aoj/1293.test.cpp"
   ],
   "/test/aoj/2450.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
     "/linkcuttree/path.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/linkcuttree/base.cpp": [
+    "/test/aoj/0367.linkcuttree.test.cpp",
+    "/test/aoj/2450.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
   ],
   "/linkcuttree/path.cpp": [
     "/test/aoj/0367.linkcuttree.test.cpp",
@@ -1286,6 +1294,7 @@
     "/tools/fastio.cpp"
   ],
   "/test/aoj/GRL_5_D.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
     "/linkcuttree/path.cpp",
     "/tools/fastio.cpp"
   ],
@@ -1503,6 +1512,7 @@
     "/mod/mint.cpp"
   ],
   "/test/aoj/0367.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
     "/linkcuttree/path.cpp",
     "/tools/fastio.cpp"
   ],
@@ -1565,6 +1575,7 @@
     "/tools/bigint.cpp"
   ],
   "/test/aoj/GRL_5_E.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
     "/linkcuttree/path.cpp",
     "/tools/fastio.cpp"
   ],
