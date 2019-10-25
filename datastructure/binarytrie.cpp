@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,size_t X>
@@ -191,8 +190,8 @@ signed JAG2013SUMMERWARMINGUP_F(){
   return 0;
 }
 /*
-  verified on 2018/10/24
-  https://beta.atcoder.jp/contests/jag2013summer-warmingup/tasks/icpc2013summer_warmingUp_f
+  verified on 2019/10/25
+  https://atcoder.jp/contests/jag2013summer-warmingup/tasks/icpc2013summer_warmingUp_f
 */
 
 signed ARC033_C(){
@@ -213,21 +212,21 @@ signed ARC033_C(){
 }
 
 /*
-  verified on 2018/10/24
-  https://beta.atcoder.jp/contests/arc033/tasks/arc033_3
+  verified on 2019/10/25
+  https://atcoder.jp/contests/arc033/tasks/arc033_3
 */
 
 signed CFR470_C(){
   int n;
   scanf("%d",&n);
   vector<int> a(n),p(n);
-  for(Int i=0;i<n;i++) scanf("%d",&a[i]);
-  for(Int i=0;i<n;i++) scanf("%d",&p[i]);
+  for(int i=0;i<n;i++) scanf("%d",&a[i]);
+  for(int i=0;i<n;i++) scanf("%d",&p[i]);
 
   BinaryTrie<int, 30> bt;
   for(int i=0;i<n;i++) bt.add(p[i]);
 
-  for(Int i=0;i<n;i++){
+  for(int i=0;i<n;i++){
     if(i) printf(" ");
     auto k=bt.xmin(a[i]);
     printf("%d",a[i]^bt.val(k));
@@ -237,39 +236,41 @@ signed CFR470_C(){
   return 0;
 }
 /*
-  verified on 2018/10/24
+  verified on 2019/10/25
   http://codeforces.com/contest/947/problem/C
 */
 
 signed CFR477_C(){
-  Int n;
-  scanf("%lld",&n);
-  vector<Int> b(n);
-  for(Int i=0;i<n;i++) scanf("%lld",&b[i]);
+  using ll = long long;
 
-  BinaryTrie<Int, 61> bt;
-  for(Int i=0;i<n;i++) bt.add(b[i]);
+  int n;
+  scanf("%d",&n);
+  vector<ll> bs(n);
+  for(int i=0;i<n;i++) scanf("%lld",&bs[i]);
 
-  Int z=0;
-  auto apply=[&](Int a){
+  BinaryTrie<ll, 61> bt;
+  for(int i=0;i<n;i++) bt.add(bs[i]);
+
+  ll z=0;
+  auto apply=[&](ll a){
                z^=a;
                bt.update(a);
              };
 
-  vector<Int> ans;
-  Int x=bt.val(bt.xmin(0));
+  vector<ll> ans;
+  ll x=bt.val(bt.xmin(0));
 
   ans.emplace_back(x);
   bt.sub(bt.find(x));
   apply(x);
 
-  for(Int i=1;i<n;i++){
+  for(int i=1;i<n;i++){
     if(bt.val(bt.xmax(0))<=x){
       printf("No\n");
       return 0;
     }
     auto nxt=bt.upper_bound(x);
-    Int y=bt.val(nxt);
+    ll y=bt.val(nxt);
 
     ans.emplace_back(y^z);
     bt.sub(nxt);
@@ -278,7 +279,7 @@ signed CFR477_C(){
   }
 
   printf("Yes\n");
-  for(Int i=0;i<n;i++){
+  for(int i=0;i<n;i++){
     if(i) printf(" ");
     printf("%lld",ans[i]);
   }
@@ -286,92 +287,31 @@ signed CFR477_C(){
   return 0;
 }
 /*
-  verified on 2018/10/24
+  verified on 2019/10/25
   http://codeforces.com/contest/966/problem/C
 */
 
-
-struct HLDecomposition {
-  int n,pos;
-  vector<vector<int> > G;
-  vector<int> vid, head, sub, par, dep, inv, type;
-
-  HLDecomposition(){}
-  HLDecomposition(int n):
-    n(n),pos(0),G(n),vid(n,-1),head(n),sub(n,1),
-    par(n,-1),dep(n,0),inv(n),type(n){}
-
-  void add_edge(int u, int v) {
-    G[u].push_back(v);
-    G[v].push_back(u);
-  }
-
-  void build(vector<int> rs={0}) {
-    int c=0;
-    for(int r:rs){
-      dfs_sz(r);
-      head[r]=r;
-      dfs_hld(r,c++);
-    }
-  }
-
-  void dfs_sz(int v) {
-    for(int &u:G[v]){
-      if(u==par[v]) continue;
-      par[u]=v;
-      dep[u]=dep[v]+1;
-      dfs_sz(u);
-      sub[v]+=sub[u];
-      if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);
-    }
-  }
-
-  void dfs_hld(int v,int c) {
-    vid[v]=pos++;
-    inv[vid[v]]=v;
-    type[v]=c;
-    for(int u:G[v]){
-      if(u==par[v]) continue;
-      head[u]=(u==G[v][0]?head[v]:u);
-      dfs_hld(u,c);
-    }
-  }
-
-  int lca(int u,int v){
-    while(1){
-      if(vid[u]>vid[v]) swap(u,v);
-      if(head[u]==head[v]) return u;
-      v=par[head[v]];
-    }
-  }
-
-  Int la(Int v,Int k){
-    while(1){
-      Int u=head[v];
-      if(vid[v]-k>=vid[u]) return inv[vid[v]-k];
-      k-=vid[v]-vid[u]+1;
-      v=par[u];
-    }
-  }
-
-  int distance(int u,int v){
-    return dep[u]+dep[v]-2*dep[lca(u,v)];
-  }
-};
+#define call_from_test
+#include "../tree/heavylightdecomposition.cpp"
+#include "../tree/levelancestor.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed KUPC2018_M(){
   using ll = long long;
   int n;
   scanf("%d",&n);
-  HLDecomposition hld(n);
+  HLD hld(n);
+  LevelAncestor la(n);
   for(int i=1;i<n;i++){
     int a,b;
     scanf("%d %d",&a,&b);
     a--;b--;
     hld.add_edge(a,b);
+    la.add_edge(a,b);
   }
   hld.build();
+  la.build();
 
   using T = BinaryTrie<int, 31>;
   using E = pair<int, ll>;
@@ -430,7 +370,7 @@ signed KUPC2018_M(){
         if(rt==v){
           seg.update(0,n,E(x,k));
         }else if(hld.lca(rt,v)==v){
-          int u=hld.la(rt,hld.distance(rt,v)-1);
+          int u=la.up(rt,hld.distance(rt,v)-1);
           int l=hld.vid[u],r=hld.vid[u]+hld.sub[u];
           seg.update(0,l,E(x,k));
           seg.update(r,n,E(x,k));
@@ -455,8 +395,8 @@ signed KUPC2018_M(){
   return 0;
 }
 /*
-  verified on 2018/10/24
-  https://beta.atcoder.jp/contests/kupc2018/tasks/kupc2018_m
+  verified on 2019/10/25
+  https://atcoder.jp/contests/kupc2018/tasks/kupc2018_m
 */
 
 signed main(){

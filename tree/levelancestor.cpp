@@ -1,6 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
+#endif
 //BEGIN CUT HERE
 struct LevelAncestor{
   int n,h;
@@ -97,10 +98,11 @@ struct LevelAncestor{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 char buf[256];
 signed solve(){
+  using ll = long long;
   int n;
   scanf("%d",&n);
   using P = pair<int, int>;
@@ -116,7 +118,7 @@ signed solve(){
   }
   la.build();
 
-  vector<Int> dep(n,0);
+  vector<ll> dep(n,0);
   {
     queue<P> q;
     q.emplace(0,-1);
@@ -162,7 +164,7 @@ signed SPOJ_QTREE2(){
   return 0;
 }
 /*
-  verified on 2018/08/25
+  verified on 2019/10/25
   https://www.spoj.com/problems/QTREE2/
 */
 
@@ -170,3 +172,4 @@ signed main(){
   SPOJ_QTREE2();
   return 0;
 }
+#endif

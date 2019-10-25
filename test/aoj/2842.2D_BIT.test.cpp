@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../datastructure/2D_BIT.cpp"
+#include "../../datastructure/BIT2D.cpp"
 #undef call_from_test
 
 signed main(){
