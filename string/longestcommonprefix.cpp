@@ -101,7 +101,7 @@ signed ARC060_F(){
   return 0;
 }
 /*
-  verified on 2019/09/25
+  verified on 2019/10/25
   https://atcoder.jp/contests/arc060/tasks/arc060_d
 */
 

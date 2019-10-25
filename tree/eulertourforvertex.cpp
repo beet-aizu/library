@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = signed;
 #endif
 //BEGIN CUT HERE
 class EulerTourForVertex{
@@ -40,129 +39,16 @@ public:
 };
 //END CUT HERE
 #ifndef call_from_test
-struct LowestCommonAncestor{
-  int n,h;
-  vector<vector<int> > G,par;
-  vector<int> dep;
-  LowestCommonAncestor(){}
-  LowestCommonAncestor(int n):n(n),G(n),dep(n){
-    h=1;
-    while((1<<h)<=n) h++;
-    par.assign(h,vector<int>(n,-1));
-  }
 
-  void add_edge(int u,int v){
-    G[u].emplace_back(v);
-    G[v].emplace_back(u);
-  }
-
-  void dfs(int v,int p,int d){
-    par[0][v]=p;
-    dep[v]=d;
-    for(int u:G[v])
-      if(u!=p) dfs(u,v,d+1);
-  }
-
-  void build(int r=0){
-    dfs(r,-1,0);
-    for(int k=0;k+1<h;k++){
-      for(int v=0;v<n;v++){
-        if(par[k][v]<0) par[k+1][v]=-1;
-        else par[k+1][v]=par[k][par[k][v]];
-      }
-    }
-  }
-
-  int lca(int u,int v){
-    if(dep[u]>dep[v]) swap(u,v);
-    for(int k=0;k<h;k++){
-      if((dep[v]-dep[u])>>k&1){
-        v=par[k][v];
-      }
-    }
-    if(u==v) return u;
-    for(int k=h-1;k>=0;k--){
-      if(par[k][u]!=par[k][v]){
-        u=par[k][u];
-        v=par[k][v];
-      }
-    }
-    return par[0][u];
-  }
-
-  int distance(int u,int v){
-    return dep[u]+dep[v]-dep[lca(u,v)]*2;
-  }
-};
-
-template<typename F>
-struct FixPoint : F{
-  FixPoint(F&& f):F(forward<F>(f)){}
-  template<typename... Args>
-  decltype(auto) operator()(Args&&... args) const{
-    return F::operator()(*this,forward<Args>(args)...);
-  }
-};
-template<typename F>
-inline decltype(auto) MFP(F&& f){
-  return FixPoint<F>{forward<F>(f)};
-}
-
-
-template<typename T>
-struct BIT{
-  int n;
-  vector<T> bit;
-  //1-indexed
-  BIT():n(-1){}
-  BIT(int n_,T d):n(n_),bit(n_+1,d){}
-
-  T sum(int i){
-    T s=bit[0];
-    for(int x=i;x>0;x-=(x&-x))
-      s+=bit[x];
-    return s;
-  }
-  void add(int i,T a){
-    if(i==0) return;
-    for(int x=i;x<=n;x+=(x&-x))
-      bit[x]+=a;
-  }
-
-  int lower_bound(int w){
-    if(w<=0) return 0;
-    int x=0,r=1;
-    while(r<n) r<<=1;
-    for(int k=r;k>0;k>>=1){
-      if(x+k<=n&&bit[x+k]<w){
-        w-=bit[x+k];
-        x+=k;
-      }
-    }
-    return x+1;
-  }
-
-  T sum0(int i){
-    return sum(i+1);
-  }
-  void add0(int i,T a){
-    add(i+1,a);
-  }
-
-  T query(int l,int r){
-    return sum(r-1)-sum(l-1);
-  }
-
-  T query0(int l,int r){
-    return sum(r)-sum(l);
-  }
-};
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "../tools/fixpoint.cpp"
+#include "../datastructure/binaryindexedtree.cpp"
+#include "lowestcommonancestor.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed CFR483_E(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n;
   cin>>n;
   LowestCommonAncestor lca(n);
@@ -295,12 +181,12 @@ signed CFR483_E(){
   return 0;
 }
 /*
-  verified on 2019/07/08
+  verified on 2019/10/25
   http://codeforces.com/contest/983/problem/E
 */
 
 signed main(){
-  //CFR483_E();
+  CFR483_E();
   return 0;
 }
 #endif
