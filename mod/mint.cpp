@@ -32,10 +32,10 @@ struct Mint{
   Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
   Mint& operator/=(Mint a){return (*this)*=a.inv();}
 
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
+  Mint operator+(Mint a) const{return Mint(v)+=a;}
+  Mint operator-(Mint a) const{return Mint(v)-=a;}
+  Mint operator*(Mint a) const{return Mint(v)*=a;}
+  Mint operator/(Mint a) const{return Mint(v)/=a;}
 
   Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
 

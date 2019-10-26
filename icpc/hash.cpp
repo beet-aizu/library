@@ -1,8 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //BEGIN CUT HERE
 signed main(){
@@ -10,6 +7,8 @@ signed main(){
   long long res=0;
   string s;
   while(getline(cin,s)){
+    if(s.find("//")!=string::npos)
+      s=s.substr(0,s.find("//"));
     for(char c:s){
       if(c==' ') continue;
       res=(res*B+c)%MOD;

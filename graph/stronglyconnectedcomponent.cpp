@@ -55,7 +55,7 @@ struct SCC{
     }
     return k;
   }
-  int operator[](int k) const{return blg[k];};
+  int operator[](int k) const{return blg[k];}
 };
 //END CUT HERE
 #ifndef call_from_test

@@ -22,9 +22,9 @@ struct SquareMatrix{
     return dat==a.dat;
   }
 
-  size_t size() const{return N;};
-  arr& operator[](size_t k){return dat[k];};
-  const arr& operator[](size_t k) const {return dat[k];};
+  size_t size() const{return N;}
+  arr& operator[](size_t k){return dat[k];}
+  const arr& operator[](size_t k) const {return dat[k];}
 
   static SquareMatrix add_identity(){return SquareMatrix();}
   static SquareMatrix mul_identity(){

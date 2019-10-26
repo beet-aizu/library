@@ -13,10 +13,10 @@ struct Matrix{
   Matrix(size_t r,size_t c):dat(r,arr(c,K())){}
   Matrix(mat dat):dat(dat){}
 
-  size_t size() const{return dat.size();};
-  bool empty() const{return size()==0;};
-  arr& operator[](size_t k){return dat[k];};
-  const arr& operator[](size_t k) const {return dat[k];};
+  size_t size() const{return dat.size();}
+  bool empty() const{return size()==0;}
+  arr& operator[](size_t k){return dat[k];}
+  const arr& operator[](size_t k) const {return dat[k];}
 
   static Matrix cross(const Matrix &A,const Matrix &B){
     Matrix res(A.size(),B[0].size());

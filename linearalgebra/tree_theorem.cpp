@@ -19,7 +19,7 @@ struct MatrixTreeTheorem{
     edge(int a,int b,T c):a(a),b(b),c(c){}
     bool operator<(const edge &e)const{
       return c<e.c;
-    };
+    }
   };
 
   int n;

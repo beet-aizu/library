@@ -33,7 +33,7 @@ struct Centroid{
     }
     ok&=(tmp-sz[v]<=tmp/2);
     if(ok) cs.push_back(v);
-  };
+  }
 
   vector<int> build(int r) {
     int tmp=dfs(r,-1);

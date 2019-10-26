@@ -24,10 +24,10 @@ struct PolynomialHash{
     V& operator*=(V a){v1*=a.v1;v2*=a.v2;v3*=a.v3;;return *this;}
     V& operator/=(V a){v1/=a.v1;v2/=a.v2;v3/=a.v3;;return *this;}
 
-    V operator+(V a) const{return V(*this)+=a;};
-    V operator-(V a) const{return V(*this)-=a;};
-    V operator*(V a) const{return V(*this)*=a;};
-    V operator/(V a) const{return V(*this)/=a;};
+    V operator+(V a) const{return V(*this)+=a;}
+    V operator-(V a) const{return V(*this)-=a;}
+    V operator*(V a) const{return V(*this)*=a;}
+    V operator/(V a) const{return V(*this)/=a;}
 
     tuple<M1, M2, M3> norm() const{return make_tuple(v1,v2,v3);}
 
