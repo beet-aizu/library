@@ -1,50 +1,48 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+#define call_from_test
+#include "base.cpp"
+#undef call_from_test
+
+#endif
 //BEGIN CUT HERE
+template<typename Tp>
+struct NodeBase{
+  using T = Tp;
+  NodeBase *l,*r,*p;
+  int idx;
+  bool rev;
+  T val,ld,rd,smd;
+  multiset<T> td;
+  NodeBase(){}
+  NodeBase(int idx,T val):
+    idx(idx),rev(0),val(val){
+    l=r=p=nullptr;
+    ld=rd=smd=val;
+    td.emplace(0);
+  }
+};
+template<typename Np, size_t LIM>
+struct Farthest : LinkCutTreeBase<Np, LIM>{
+  using super = LinkCutTreeBase<Np, LIM>;
+  using Node = Np;
+  using T = typename Node::T;
 
-template<typename T>
-struct LinkCutTree{
-  struct Node{
-    Node *l,*r,*p;
-    int idx;
-    bool rev;
-    T val,ld,rd,smd;
-    multiset<T> td;
-    Node(){}
-    Node(int idx,T val):
-      idx(idx),rev(0),val(val){
-      l=r=p=nullptr;
-      ld=rd=smd=val;
-      td.emplace(0);
-    }
-    bool is_root(){
-      return !p||(p->l!=this&&p->r!=this);
-    }
-  };
-  const size_t LIM = 1e6+10;
-  vector<Node> pool;
-  size_t ptr;
+  Farthest():super(){}
 
-  LinkCutTree():pool(LIM),ptr(0){}
-
-  inline Node* create(){
-    return &pool[ptr++];
+  Node* create(int idx,T val){
+    return super::create(Node(idx,val));
   }
 
-  inline Node* create(int idx,T val){
-    return &(pool[ptr++]=Node(idx,val));
-  }
-
-  void toggle(Node *t){
+  inline void toggle(Node *t){
     swap(t->l,t->r);
     swap(t->ld,t->rd);
     t->rev^=1;
   }
 
-  void eval(Node *t){
+  inline void eval(Node *t){
     if(t->rev){
       if(t->l) toggle(t->l);
       if(t->r) toggle(t->r);
@@ -71,53 +69,7 @@ struct LinkCutTree{
     if(t->l) t->rd=max(t->rd,rsmd+t->val+t->l->rd);
   }
 
-  void rotR(Node *t){
-    Node *x=t->p,*y=x->p;
-    if((x->l=t->r)) t->r->p=x;
-    t->r=x;x->p=t;
-    pushup(x);
-    pushup(t);
-    if((t->p=y)){
-      if(y->l==x) y->l=t;
-      if(y->r==x) y->r=t;
-      pushup(y);
-    }
-  }
-
-  void rotL(Node *t){
-    Node *x=t->p,*y=x->p;
-    if((x->r=t->l)) t->l->p=x;
-    t->l=x;x->p=t;
-    pushup(x);
-    pushup(t);
-    if((t->p=y)){
-      if(y->l==x) y->l=t;
-      if(y->r==x) y->r=t;
-      pushup(y);
-    }
-  }
-
-  void splay(Node *t){
-    eval(t);
-    while(!t->is_root()){
-      Node *q=t->p;
-      if(q->is_root()){
-        eval(q);eval(t);
-        if(q->l==t) rotR(t);
-        else rotL(t);
-      }else{
-        auto *r=q->p;
-        eval(r);eval(q);eval(t);
-        if(r->l==q){
-          if(q->l==t) rotR(q),rotR(t);
-          else rotL(t),rotR(t);
-        }else{
-          if(q->r==t) rotL(q),rotL(t);
-          else rotR(t),rotL(t);
-        }
-      }
-    }
-  }
+  using super::splay;
 
   Node* expose(Node *t){
     Node *rp=nullptr;
@@ -132,44 +84,6 @@ struct LinkCutTree{
     splay(t);
     return rp;
   }
-
-  void link(Node *par,Node *c){
-    expose(c);
-    expose(par);
-    c->p=par;
-    par->r=c;
-    pushup(par);
-  }
-
-  void cut(Node *c){
-    expose(c);
-    Node *par=c->l;
-    c->l=nullptr;
-    pushup(c);
-    par->p=nullptr;
-  }
-
-  void evert(Node *t){
-    expose(t);
-    toggle(t);
-    eval(t);
-  }
-
-  Node *root(Node *t){
-    expose(t);
-    while(t->l) t=t->l;
-    splay(t);
-    return t;
-  }
-
-  bool is_connected(Node *a,Node *b){
-    return root(a)==root(b);
-  }
-
-  Node *lca(Node *a,Node *b){
-    expose(a);
-    return expose(b);
-  }
 };
 //END CUT HERE
 //INSERT ABOVE HERE
@@ -177,9 +91,11 @@ signed TKPPC2015_J(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   using ll = long long;
-  using LCT = LinkCutTree<ll>;
-
+  using Node = NodeBase<ll>;
+  constexpr size_t LIM = 1e6;
+  using LCT = Farthest<Node, LIM>;
   LCT lct;
+
   vector<LCT::Node*> vs;
   vector<LCT::Node*> es;
   vs.reserve(5e5+100);
@@ -216,9 +132,10 @@ signed TKPPC2015_J(){
   return 0;
 }
 /*
-  verified on 2019/06/14
+  verified on 2019/10/25
   https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
 */
+
 signed main(){
   TKPPC2015_J();
   return 0;
