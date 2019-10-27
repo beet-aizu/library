@@ -22,16 +22,20 @@ struct Trie{
 
   Trie(F conv,char c='$'):conv(conv){vs.emplace_back(c);}
 
+  inline int &next(int i,int j){
+    return vs[i].nxt[j];
+  }
+
   void add(const string &s,int x){
     int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
-      if(~vs[pos].nxt[k]){
-        pos=vs[pos].nxt[k];
+      if(~next(pos,k)){
+        pos=next(pos,k);
         continue;
       }
       int npos=vs.size();
-      vs[pos].nxt[k]=npos;
+      next(pos,k)=npos;
       vs.emplace_back(s[i]);
       pos=npos;
     }
@@ -43,14 +47,14 @@ struct Trie{
     int pos=0;
     for(int i=0;i<(int)s.size();i++){
       int k=conv(s[i]);
-      if(vs[pos].nxt[k]<0) return -1;
-      pos=vs[pos].nxt[k];
+      if(next(pos,k)<0) return -1;
+      pos=next(pos,k);
     }
     return pos;
   }
 
   int find(int pos,char c){
-    return vs[pos].nxt[conv(c)];
+    return next(pos,conv(c));
   }
 
   int idx(int pos){
@@ -107,7 +111,7 @@ signed tenka1_2016_final_C(){
 }
 
 /*
-  verified on 2019/09/22
+  verified on 2019/10/28
   https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
 */
 

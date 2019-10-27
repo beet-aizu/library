@@ -13,11 +13,8 @@ template<size_t X>
 struct AhoCorasick : Trie<X+1>{
   using TRIE = Trie<X+1>;
   using TRIE::TRIE;
+  using TRIE::next;
   vector<int> cnt;
-
-  inline int &next(int i,int j){
-    return TRIE::vs[i].nxt[j];
-  }
 
   void build(int heavy=true){
     auto &vs=TRIE::vs;
@@ -71,7 +68,7 @@ struct AhoCorasick : Trie<X+1>{
     vector<int> res(heavy?TRIE::size():1);
     int pos=0;
     for(auto &c:s){
-      pos=vs[pos].nxt[TRIE::conv(c)];
+      pos=next(pos,TRIE::conv(c));
       if(heavy) for(auto &x:vs[pos].idxs) res[x]++;
       else res[0]+=cnt[pos];
     }
@@ -81,7 +78,7 @@ struct AhoCorasick : Trie<X+1>{
   int move(int pos,char c){
     auto &vs=TRIE::vs;
     assert(pos<(int)vs.size());
-    return vs[pos].nxt[TRIE::conv(c)];
+    return next(pos,TRIE::conv(c));
   }
 
   int count(int pos){
@@ -136,7 +133,7 @@ signed SPOJ_BLHETA(){
   return 0;
 }
 /*
-  verified on 2019/10/23
+  verified on 2019/10/28
   https://www.spoj.com/problems/BLHETA/
 */
 
