@@ -15,7 +15,7 @@ struct AhoCorasick : Trie<X+1>{
   using TRIE::TRIE;
   vector<int> cnt;
 
-  void build(bool heavy=true){
+  void build(int heavy=true){
     auto &vs=TRIE::vs;
     int n=vs.size();
     cnt.resize(n);
