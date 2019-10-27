@@ -33,29 +33,4 @@
 (add-hook 'c++-mode-hook
           '(lambda ()
              (flymake-mode t)))
-
-(defun repl ()
-  (interactive)
-  (let ((pos (point)))
-    (setq case-fold-search nil)
-    (goto-char (point-min))
-    (replace-regexp "\\([^a-zA-Z0-9_\"]\\)int\\([^a-zA-Z0-9_\"]\\)"
-                    "\\1Int\\2")
-    (goto-char (point-min))
-    (replace-regexp "\\([(),]\\)int\\([(),]\\)" "\\1Int\\2")
-    (save-buffer)
-    (mark-whole-buffer)
-    (kill-ring-save (region-beginning) (region-end))
-    (goto-char pos)))
-
-(define-key global-map (kbd "C-x r") 'repl)
-
-(defun fmt ()
-  (interactive)
-  (let ((pos (point)))
-    (mark-whole-buffer)
-    (indent-region (region-beginning) (region-end))
-    (goto-char pos)))
-
-(define-key global-map (kbd "C-x q") 'fmt)
 ;END CUT HERE
