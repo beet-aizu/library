@@ -40,16 +40,18 @@ struct AhoCorasick : Trie<X+1>{
 
     while(!que.empty()){
       auto &x=vs[que.front()];
-      cnt[que.front()]+=cnt[x.nxt[X]];
+      int fail=x.nxt[X];
+
+      cnt[que.front()]+=cnt[fail];
       que.pop();
 
-      int fail=x.nxt[X];
       for(int i=0;i<(int)X;i++){
         int &nx=x.nxt[i];
         if(nx<0){
           nx=next(fail,i);
           continue;
         }
+        que.emplace(nx);
         next(nx,X)=next(fail,i);
         if(heavy){
           auto &idx=vs[nx].idxs;
@@ -60,7 +62,6 @@ struct AhoCorasick : Trie<X+1>{
                     back_inserter(idz));
           idx=idz;
         }
-        que.emplace(nx);
       }
     }
   }
