@@ -75,17 +75,9 @@ struct AhoCorasick : Trie<X+1>{
     return res;
   }
 
-  int move(int pos,char c){
-    auto &vs=TRIE::vs;
-    assert(pos<(int)vs.size());
-    return next(pos,TRIE::conv(c));
-  }
-
   int count(int pos){
     return cnt[pos];
   }
-
-  int size(){return TRIE::vs.size();}
 };
 //END CUT HERE
 #ifndef call_from_test

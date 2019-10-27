@@ -53,9 +53,12 @@ struct Trie{
     return pos;
   }
 
-  int find(int pos,char c){
-    return next(pos,conv(c));
+  int move(int pos,char c){
+    assert(pos<(int)vs.size());
+    return pos<0?-1:next(pos,conv(c));
   }
+
+  int size(){return vs.size();}
 
   int idx(int pos){
     return pos<0?-1:vs[pos].idx;
@@ -99,7 +102,7 @@ signed tenka1_2016_final_C(){
     chmax(ans,dp[i]);
     int pos=0;
     for(int j=0;j<222&&i+j<n;j++){
-      pos=trie.find(pos,s[i+j]);
+      pos=trie.move(pos,s[i+j]);
       if(pos<0) break;
       int k=trie.idx(pos);
       if(~k) chmax(dp[i+p[k].size()],ans+w[k]);
