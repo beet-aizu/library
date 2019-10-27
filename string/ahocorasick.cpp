@@ -15,6 +15,10 @@ struct AhoCorasick : Trie<X+1>{
   using TRIE::TRIE;
   vector<int> cnt;
 
+  inline int &next(int i,int j){
+    return TRIE::vs[i].nxt[j];
+  }
+
   void build(int heavy=true){
     auto &vs=TRIE::vs;
     int n=vs.size();
@@ -26,11 +30,11 @@ struct AhoCorasick : Trie<X+1>{
 
     queue<int> que;
     for(int i=0;i<(int)X;i++){
-      if(~vs[0].nxt[i]){
-        vs[vs[0].nxt[i]].nxt[X]=0;
-        que.emplace(vs[0].nxt[i]);
+      if(~next(0,i)){
+        next(next(0,i),X)=0;
+        que.emplace(next(0,i));
       }else{
-        vs[0].nxt[i]=0;
+        next(0,i)=0;
       }
     }
 
@@ -38,23 +42,25 @@ struct AhoCorasick : Trie<X+1>{
       auto &x=vs[que.front()];
       cnt[que.front()]+=cnt[x.nxt[X]];
       que.pop();
+
+      int fail=x.nxt[X];
       for(int i=0;i<(int)X;i++){
-        if(x.nxt[i]<0){
-          x.nxt[i]=vs[x.nxt[X]].nxt[i];
+        int &nx=x.nxt[i];
+        if(nx<0){
+          nx=next(fail,i);
           continue;
         }
-        int fail=x.nxt[X];
-        vs[x.nxt[i]].nxt[X]=vs[fail].nxt[i];
+        next(nx,X)=next(fail,i);
         if(heavy){
-          auto &idx=vs[x.nxt[i]].idxs;
-          auto &idy=vs[vs[fail].nxt[i]].idxs;
+          auto &idx=vs[nx].idxs;
+          auto &idy=vs[next(fail,i)].idxs;
           vector<int> idz;
           set_union(idx.begin(),idx.end(),
                     idy.begin(),idy.end(),
                     back_inserter(idz));
           idx=idz;
         }
-        que.emplace(x.nxt[i]);
+        que.emplace(nx);
       }
     }
   }
