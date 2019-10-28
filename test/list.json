@@ -356,9 +356,11 @@
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/point_add_range_sum.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
+    "/test/yosupo/unionfind.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/test/aoj/DSL_2_A.test.cpp": [
@@ -441,9 +443,11 @@
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/point_add_range_sum.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
+    "/test/yosupo/unionfind.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/segtree/basic/ushi.cpp": [
@@ -516,7 +520,8 @@
   ],
   "/datastructure/binaryindexedtree.cpp": [
     "/test/aoj/DSL_2_B.test.cpp",
-    "/test/aoj/GRL_5_D.test.cpp"
+    "/test/aoj/GRL_5_D.test.cpp",
+    "/test/yosupo/point_add_range_sum.test.cpp"
   ],
   "/test/aoj/DPL_5_L.test.cpp": [
     "/mod/enumeration.cpp",
@@ -1540,7 +1545,8 @@
     "/datastructure/unionfindtree.cpp"
   ],
   "/datastructure/unionfindtree.cpp": [
-    "/test/aoj/DSL_1_A.test.cpp"
+    "/test/aoj/DSL_1_A.test.cpp",
+    "/test/yosupo/unionfind.test.cpp"
   ],
   "/test/aoj/2222.test.cpp": [
     "/graph/stronglyconnectedcomponent.cpp",
@@ -1734,6 +1740,10 @@
   "/string/zalgorithm.cpp": [
     "/test/yosupo/zalgorithm.test.cpp"
   ],
+  "/test/yosupo/unionfind.test.cpp": [
+    "/datastructure/unionfindtree.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/yosupo/suffixarray.test.cpp": [
     "/string/suffixarray.cpp",
     "/tools/fastio.cpp"
@@ -1775,6 +1785,10 @@
     "/convolution/numbertheoretictransform.cpp",
     "/mod/mint.cpp",
     "/polynomial/formalpowerseries.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/point_add_range_sum.test.cpp": [
+    "/datastructure/binaryindexedtree.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/lca.test.cpp": [
