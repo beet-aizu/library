@@ -7,18 +7,18 @@ using Int = long long;
 template <typename T>
 struct WeightedUnionFind{
   T d;
-  vector<int> r,p;
+  vector<int> rs,ps;
   vector<T> ws;
 
   WeightedUnionFind(){}
   WeightedUnionFind(int n,T d):
-    d(d),r(n,1),p(n),ws(n,d){iota(p.begin(),p.end(),0);}
+    d(d),rs(n,1),ps(n),ws(n,d){iota(ps.begin(),ps.end(),0);}
 
   int find(int x){
-    if(x==p[x]) return x;
-    int t=find(p[x]);
-    ws[x]+=ws[p[x]];
-    return p[x]=t;
+    if(x==ps[x]) return x;
+    int t=find(ps[x]);
+    ws[x]+=ws[ps[x]];
+    return ps[x]=t;
   }
 
   T weight(int x){
@@ -35,9 +35,9 @@ struct WeightedUnionFind{
     w-=weight(y);
     x=find(x);y=find(y);
     if(x==y) return;
-    if(r[x]<r[y]) swap(x,y),w=-w;
-    r[x]+=r[y];
-    p[y]=x;
+    if(rs[x]<rs[y]) swap(x,y),w=-w;
+    rs[x]+=rs[y];
+    ps[y]=x;
     ws[y]=w;
   }
 
