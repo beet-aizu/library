@@ -6,14 +6,13 @@ using Int = long long;
 //BEGIN CUT HERE
 struct PersistentUnionFind{
   using T = pair<int, int>;
-  int n;
-  vector<int> r,p;
+  vector<int> rs,ps;
   stack<T> st;
   PersistentUnionFind(){}
-  PersistentUnionFind(int sz):
-    n(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
+  PersistentUnionFind(int n):
+    rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}
   int find(int x){
-    return x==p[x]?p[x]:find(p[x]);
+    return x==ps[x]?ps[x]:find(ps[x]);
   }
   bool same(int x,int y){
     return find(x)==find(y);
@@ -22,9 +21,9 @@ struct PersistentUnionFind{
     x=find(x);y=find(y);
     st.emplace(-1,-1);
     if(x==y) return;
-    if(r[x]<r[y]) swap(x,y);
-    r[x]+=r[y];
-    p[y]=x;
+    if(rs[x]<rs[y]) swap(x,y);
+    rs[x]+=rs[y];
+    ps[y]=x;
     st.top()=T(x,y);
   }
   void undo(int t=1){
@@ -32,8 +31,8 @@ struct PersistentUnionFind{
       int x,y;
       tie(x,y)=st.top();st.pop();
       if(x<0) continue;
-      r[x]-=r[y];
-      p[y]=y;
+      rs[x]-=rs[y];
+      ps[y]=y;
     }
   }
 };
