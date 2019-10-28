@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct SuffixArray{
@@ -19,23 +18,23 @@ struct SuffixArray{
            if(s[a]==s[b]) return a>b;
            return s[a]<s[b];
          });
-    vector<int> c(n+1,0),r(n+1),cnt(n+1);
-    for(int i=0;i<=n;i++) r[i]=s[i];
+    vector<int> cs(n+1,0),rs(n+1),cnt(n+1);
+    for(int i=0;i<=n;i++) rs[i]=s[i];
     for(int len=1;len<=n;len*=2){
       for(int i=0;i<=n;i++){
-        c[sa[i]]=i;
+        cs[sa[i]]=i;
         if(i>0 &&
-           r[sa[i-1]]==r[sa[i]] &&
+           rs[sa[i-1]]==rs[sa[i]] &&
            sa[i-1]+len<=n &&
-           r[sa[i-1]+len/2]==r[sa[i]+len/2]) c[sa[i]]=c[sa[i-1]];
+           rs[sa[i-1]+len/2]==rs[sa[i]+len/2]) cs[sa[i]]=cs[sa[i-1]];
       }
       iota(cnt.begin(),cnt.end(),0);
-      copy(sa.begin(),sa.end(),r.begin());
+      copy(sa.begin(),sa.end(),rs.begin());
       for(int i=0;i<=n;i++){
-        int s1=r[i]-len;
-        if(s1>=0) sa[cnt[c[s1]]++]=s1;
+        int s1=rs[i]-len;
+        if(s1>=0) sa[cnt[cs[s1]]++]=s1;
       }
-      c.swap(r);
+      cs.swap(rs);
     }
     rev.resize(n+1);
     for(int i=0;i<=n;i++) rev[sa[i]]=i;
@@ -91,12 +90,12 @@ signed JOI2009HO_A(){
   return 0;
 }
 /*
-  verified on 2019/05/23
+  verified on 2019/10/28
   https://atcoder.jp/contests/joi2009ho/tasks/joi2009ho_a
 */
 
 signed main(){
-  //JOI2009HO_A();
+  JOI2009HO_A();
   return 0;
 };
 #endif
