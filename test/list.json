@@ -353,6 +353,7 @@
     "/test/yosupo/discrete_logarithm_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
+    "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
@@ -435,6 +436,7 @@
     "/test/yosupo/discrete_logarithm_mod.test.cpp",
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
+    "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
@@ -1064,7 +1066,8 @@
     "/tree/lowestcommonancestor.cpp"
   ],
   "/tree/lowestcommonancestor.cpp": [
-    "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp"
+    "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp",
+    "/test/yosupo/lca.test.cpp"
   ],
   "/test/aoj/3063.test.cpp": [
     "/datastructure/waveletmatrix.cpp",
@@ -1759,5 +1762,9 @@
     "/mod/mint.cpp",
     "/polynomial/formalpowerseries.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/lca.test.cpp": [
+    "/tools/fastio.cpp",
+    "/tree/lowestcommonancestor.cpp"
   ]
 }
