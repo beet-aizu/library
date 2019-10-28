@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template <typename T,typename E>
@@ -26,6 +25,7 @@ struct SegmentTree{
     dat.assign(2*n,ti);
     laz.assign(2*n,ei);
   }
+
   void build(const vector<T> &v){
     int n_=v.size();
     init(n_);
@@ -33,23 +33,28 @@ struct SegmentTree{
     for(int i=n-1;i;i--)
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
   }
+
   inline T reflect(int k){
     return laz[k]==ei?dat[k]:g(dat[k],laz[k]);
   }
-  inline void eval(int k){
+
+  inline void propagate(int k){
     if(laz[k]==ei) return;
     laz[(k<<1)|0]=h(laz[(k<<1)|0],laz[k]);
     laz[(k<<1)|1]=h(laz[(k<<1)|1],laz[k]);
     dat[k]=reflect(k);
     laz[k]=ei;
   }
+
   inline void thrust(int k){
-    for(int i=height;i;i--) eval(k>>i);
+    for(int i=height;i;i--) propagate(k>>i);
   }
+
   inline void recalc(int k){
     while(k>>=1)
       dat[k]=f(reflect((k<<1)|0),reflect((k<<1)|1));
   }
+
   void update(int a,int b,E x){
     thrust(a+=n);
     thrust(b+=n-1);
@@ -60,11 +65,13 @@ struct SegmentTree{
     recalc(a);
     recalc(b);
   }
+
   void set_val(int a,T x){
     thrust(a+=n);
     dat[a]=x;laz[a]=ei;
     recalc(a);
   }
+
   T query(int a,int b){
     thrust(a+=n);
     thrust(b+=n-1);
@@ -82,7 +89,7 @@ struct SegmentTree{
       acc=f(acc,reflect(k));
       return check(acc)?k-n:-1;
     }
-    eval(k);
+    propagate(k);
     int m=(l+r)>>1;
     if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);
     if(st<=l&&!check(f(acc,dat[k]))){
@@ -93,6 +100,7 @@ struct SegmentTree{
     if(~vl) return vl;
     return find(st,check,acc,(k<<1)|1,m,r);
   }
+
   template<typename C>
   int find(int st,C &check){
     T acc=ti;
@@ -147,12 +155,12 @@ signed CFR569_C(){
   return 0;
 }
 /*
-  verified on 2019/06/26
+  verified on 2019/10/28
   https://codeforces.com/contest/1179/problem/C
 */
 
 signed main(){
-  //CFR569_C();
+  CFR569_C();
   return 0;
 }
 #endif

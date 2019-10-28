@@ -1,9 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 template <typename E>
@@ -13,21 +10,26 @@ struct SegmentTree{
   H h;
   E ei;
   vector<E> laz;
+
   SegmentTree(H h,E ei):h(h),ei(ei){}
+
   void init(int n_){
     n=1;height=0;
     while(n<n_) n<<=1,height++;
     laz.assign(2*n,ei);
   }
-  inline void eval(int k){
+
+  inline void propagate(int k){
     if(laz[k]==ei) return;
     laz[(k<<1)|0]=h(laz[(k<<1)|0],laz[k]);
     laz[(k<<1)|1]=h(laz[(k<<1)|1],laz[k]);
     laz[k]=ei;
   }
+
   inline void thrust(int k){
-    for(int i=height;i;i--) eval(k>>i);
+    for(int i=height;i;i--) propagate(k>>i);
   }
+
   void update(int a,int b,E x){
     thrust(a+=n);
     thrust(b+=n-1);
@@ -36,10 +38,12 @@ struct SegmentTree{
       if(r&1) --r,laz[r]=h(laz[r],x);
     }
   }
+
   E get_val(int a){
     thrust(a+=n);
     return laz[a];
   }
+
   void set_val(int a,E x){
     thrust(a+=n);
     laz[a]=x;
