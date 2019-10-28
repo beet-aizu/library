@@ -356,6 +356,8 @@
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
+    "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
@@ -439,6 +441,8 @@
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
+    "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
@@ -916,7 +920,8 @@
     "/tools/fastio.cpp"
   ],
   "/datastructure/sparsetable.cpp": [
-    "/test/aoj/DSL_3_D.sparsetable.test.cpp"
+    "/test/aoj/DSL_3_D.sparsetable.test.cpp",
+    "/test/yosupo/staticrmq.sparsetable.test.cpp"
   ],
   "/test/aoj/0109.test.cpp": [
     "/string/parse.cpp",
@@ -1252,7 +1257,8 @@
     "/tools/fastio.cpp"
   ],
   "/datastructure/disjointsparsetable.cpp": [
-    "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp"
+    "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp",
+    "/test/yosupo/staticrmq.disjointsparsetable.test.cpp"
   ],
   "/test/aoj/1293.test.cpp": [
     "/polynomial/polynomial.cpp"
@@ -1717,6 +1723,10 @@
   "/mod/log.cpp": [
     "/test/yosupo/discrete_logarithm_mod.test.cpp"
   ],
+  "/test/yosupo/staticrmq.disjointsparsetable.test.cpp": [
+    "/datastructure/disjointsparsetable.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/yosupo/zalgorithm.test.cpp": [
     "/string/zalgorithm.cpp",
     "/tools/fastio.cpp"
@@ -1743,6 +1753,10 @@
     "/convolution/numbertheoretictransform.cpp",
     "/mod/mint.cpp",
     "/polynomial/formalpowerseries.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/staticrmq.sparsetable.test.cpp": [
+    "/datastructure/sparsetable.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/log_of_formal_power_series.test.cpp": [
