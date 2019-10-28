@@ -9,22 +9,22 @@ template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 // longest common prefix of s and s[i:n]
 vector<int> zalgorithm(string s){
   int n=s.size();
-  vector<int> a(n,0);
-  a[0]=n;
+  vector<int> as(n,0);
+  as[0]=n;
   int i=1,j=0;
   while(i<n){
     while(i+j<n&&s[j]==s[i+j]) j++;
-    a[i]=j;
+    as[i]=j;
     if(j==0){
       i++;
       continue;
     }
     int k=1;
-    while(i+k<n&&k+a[k]<j) a[i+k]=a[k],k++;
+    while(i+k<n&&k+as[k]<j) as[i+k]=as[k],k++;
     i+=k;
     j-=k;
   }
-  return a;
+  return as;
 }
 //END CUT HERE
 #ifndef call_from_test
@@ -51,7 +51,7 @@ signed CFR432_D(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/10/28
   http://codeforces.com/problemset/problem/432/D
 */
 
