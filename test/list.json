@@ -356,6 +356,7 @@
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
+    "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
     "/test/yosupo/rectangle_sum.test.cpp",
@@ -446,6 +447,7 @@
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
+    "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
     "/test/yosupo/rectangle_sum.test.cpp",
@@ -642,6 +644,7 @@
     "/test/aoj/3063.test.cpp",
     "/test/aoj/3112.test.cpp",
     "/test/aoj/ALDS1_14_D.test.cpp",
+    "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/suffixarray.test.cpp"
   ],
   "/test/aoj/2444.test.cpp": [
@@ -1099,7 +1102,8 @@
   ],
   "/string/longestcommonprefix.cpp": [
     "/test/aoj/3063.test.cpp",
-    "/test/aoj/3112.test.cpp"
+    "/test/aoj/3112.test.cpp",
+    "/test/yosupo/number_of_substrings.test.cpp"
   ],
   "/datastructure/waveletmatrix.cpp": [
     "/test/aoj/1549.test.cpp",
@@ -1818,6 +1822,11 @@
   ],
   "/test/yosupo/point_add_range_sum.test.cpp": [
     "/datastructure/binaryindexedtree.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/number_of_substrings.test.cpp": [
+    "/string/longestcommonprefix.cpp",
+    "/string/suffixarray.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/lca.test.cpp": [
