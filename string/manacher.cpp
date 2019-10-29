@@ -5,15 +5,15 @@ using namespace std;
 //BEGIN CUT HERE
 vector<int> manacher(string s){
   int n=s.size();
-  vector<int> v(n);
+  vector<int> vs(n);
   for(int i=0,j=0;i<n;){
     while(i-j>=0&&i+j<n&&s[i-j]==s[i+j]) j++;
-    v[i]=j;
+    vs[i]=j;
     int k=1;
-    while(i-k>=0&&i+k<n&&k+v[i-k]<j) v[i+k]=v[i-k],k++;
+    while(i-k>=0&&i+k<n&&k+vs[i-k]<j) vs[i+k]=vs[i-k],k++;
     i+=k;j-=k;
   }
-  return v;
+  return vs;
 }
 //END CUT HERE
 #ifndef call_from_test
@@ -28,12 +28,12 @@ signed SPOJ_LPS(){
     t.push_back(s[i]);
     t.push_back('$');
   }
-  vector<int> v=manacher(t);
-  cout<<*max_element(v.begin(),v.end())-1<<endl;
+  auto vs=manacher(t);
+  cout<<*max_element(vs.begin(),vs.end())-1<<endl;
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/10/29
   http://www.spoj.com/problems/LPS/
 */
 
@@ -66,7 +66,7 @@ signed ukuku09_D(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/10/29
   https://atcoder.jp/contests/ukuku09/tasks/ukuku09_d
 */
 
