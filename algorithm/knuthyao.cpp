@@ -4,6 +4,7 @@ using namespace std;
 using Int = long long;
 #endif
 //BEGIN CUT HERE
+// f(i,l) + f(j,k) >= f(i,k) + f(j,l) (i <= j <= k <= l)
 template<typename T, typename F>
 T KnuthYao(int n,F cost){
   vector< vector<T> > dp(n,vector<T>(n));
@@ -39,7 +40,7 @@ signed KUPC2012_J(){
   return 0;
 }
 /*
-  verified on 2019/06/27
+  verified on 2019/10/29
   https://atcoder.jp/contests/kupc2012/tasks/kupc2012_10
 */
 
