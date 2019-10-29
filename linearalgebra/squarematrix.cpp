@@ -1,9 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 template<typename R, size_t N>
@@ -62,119 +59,30 @@ struct SquareMatrix{
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T,T MOD = 1000000007>
-struct Mint{
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
 
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  static Mint add_identity(){return Mint(0);}
-  static Mint mul_identity(){return Mint(1);}
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
-};
-
-
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-
-
-template<typename T>
-vector<T> compress(vector<T> v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
-}
-
-template<typename T>
-map<T, Int> dict(const vector<T> &v){
-  map<T, Int> res;
-  for(Int i=0;i<(Int)v.size();i++)
-    res[v[i]]=i;
-  return res;
-}
-
-template <typename T, typename F>
-struct SegmentTree{
-  Int n;
-  F f;
-  T ti;
-  vector<T> dat;
-  SegmentTree(){};
-  SegmentTree(F f,T ti):f(f),ti(ti){}
-  void init(Int n_){
-    n=1;
-    while(n<n_) n<<=1;
-    dat.assign(n<<1,ti);
-  }
-  void build(const vector<T> &v){
-    Int n_=v.size();
-    init(n_);
-    for(Int i=0;i<n_;i++) dat[n+i]=v[i];
-    for(Int i=n-1;i;i--)
-      dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
-  }
-  void set_val(Int k,T x){
-    dat[k+=n]=x;
-    while(k>>=1)
-      dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
-  }
-  T query(Int a,Int b){
-    T vl=ti,vr=ti;
-    for(Int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
-      if(l&1) vl=f(vl,dat[l++]);
-      if(r&1) vr=f(dat[--r],vr);
-    }
-    return f(vl,vr);
-  }
-};
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "../tools/compress.cpp"
+#include "../mod/mint.cpp"
+#include "../segtree/basic/ushi.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed YAHOO2019_FINAL_D(){
-  using M = Mint<Int>;
+  using ll = long long;
+  using M = Mint<int>;
   using MM = SquareMatrix<M, 2>;
 
-  Int n,q;
+  int n,q;
   cin>>n>>q;
-  vector<Int> ts(q),ls(q),rs(q),ps(q);
-  for(Int i=0;i<q;i++){
+  vector<ll> ts(q),ls(q),rs(q),ps(q);
+  for(ll i=0;i<q;i++){
     cin>>ts[i];
     if(ts[i]==1) cin>>ps[i];
     if(ts[i]==2) cin>>ls[i]>>rs[i];
   }
-  vector<Int> vs;
-  for(Int i=0;i<q;i++){
+  vector<ll> vs;
+  for(ll i=0;i<q;i++){
     if(ts[i]==1){
       vs.emplace_back(ps[i]);
       vs.emplace_back(ps[i]+1);
@@ -198,22 +106,22 @@ signed YAHOO2019_FINAL_D(){
   A[1][0]=M(1);A[1][1]=M(0);
 
   vector<MM> vt(vs.size()-1,A);
-  for(Int i=0;i+1<(Int)vs.size();i++){
+  for(ll i=0;i+1<(ll)vs.size();i++){
     vt[i]=A.pow(vs[i+1]-vs[i]);
   }
 
   MM I=MM::mul_identity();
   auto f=[&](MM a,MM b){return b*a;};
-  SegmentTree<MM, decltype(f)> seg(f,I);
+  SegmentTree<MM> seg(f,I);
   seg.build(vt);
 
-  vector<Int> used(vs.size(),0);
-  for(Int i=0;i<q;i++){
+  vector<int> used(vs.size(),0);
+  for(ll i=0;i<q;i++){
     if(ts[i]==1){
-      Int k=ms[ps[i]];
+      ll k=ms[ps[i]];
       used[k]^=1;
       MM B;
-      for(Int j=k;j<=k+2;j++){
+      for(ll j=k;j<=k+2;j++){
         if(used[j]){
           B[0][0]=M(0);B[0][1]=M(0);
           B[1][0]=M(1);B[1][1]=M(0);
@@ -225,7 +133,7 @@ signed YAHOO2019_FINAL_D(){
       }
     }
     if(ts[i]==2){
-      Int l=ms[ls[i]],r=ms[rs[i]];
+      ll l=ms[ls[i]],r=ms[rs[i]];
       if(used[l]){
         cout<<0<<"\n";
         continue;
@@ -238,7 +146,7 @@ signed YAHOO2019_FINAL_D(){
   return 0;
 }
 /*
-  verified on 2019/09/17
+  verified on 2019/10/29
   https://atcoder.jp/contests/yahoo-procon2019-final/tasks/yahoo_procon2019_final_d
 */
 
@@ -260,7 +168,7 @@ signed DDCC2019_FINAL_D(){
 
   auto f=[](SM a,SM b){return a*b;};
   SM ti=SM::mul_identity();
-  SegmentTree<SM, decltype(f)> seg(f,ti);
+  SegmentTree<SM> seg(f,ti);
   vector<SM> vt(s.size(),ti);
   for(int i=0;i<(int)s.size();i++){
     if(s[i]=='D') vt[i][0][1]=1;
@@ -283,7 +191,7 @@ signed DDCC2019_FINAL_D(){
   return 0;
 }
 /*
-  verified on 2019/09/17
+  verified on 2019/10/29
   https://atcoder.jp/contests/ddcc2019-final/tasks/ddcc2019_final_d
 */
 
