@@ -7,31 +7,31 @@ using Int = long long;
 template<typename T>
 struct DisjointSparseTable{
   using F = function<T(T, T)>;
-  vector<vector<T> > dat;
+  vector< vector<T> > dat;
   vector<int> ht;
   const F f;
 
   DisjointSparseTable(){}
   DisjointSparseTable(F f):f(f){}
 
-  void build(const vector<T> &v){
-    int n=v.size(),h=1;
+  void build(const vector<T> &vs){
+    int n=vs.size(),h=1;
     while((1<<h)<=n) h++;
     dat.assign(h,vector<T>(n));
     ht.assign((1<<h)+1,0);
     for(int j=2;j<(1<<h)+1;j++) ht[j]=ht[j>>1]+1;
 
-    for(int j=0;j<n;j++) dat[0][j]=v[j];
+    for(int j=0;j<n;j++) dat[0][j]=vs[j];
     for(int i=1;i<h;i++){
       int s=1<<i;
       for(int j=0;j<n;j+=s<<1){
         int t=min(j+s,n);
-        dat[i][t-1]=v[t-1];
-        for(int k=t-2;k>=j;k--) dat[i][k]=f(v[k],dat[i][k+1]);
+        dat[i][t-1]=vs[t-1];
+        for(int k=t-2;k>=j;k--) dat[i][k]=f(vs[k],dat[i][k+1]);
         if(n<=t) break;
-        dat[i][t]=v[t];
+        dat[i][t]=vs[t];
         int r=min(t+s,n);
-        for(int k=t+1;k<r;k++) dat[i][k]=f(dat[i][k-1],v[k]);
+        for(int k=t+1;k<r;k++) dat[i][k]=f(dat[i][k-1],vs[k]);
       }
     }
   }
@@ -76,8 +76,8 @@ signed ARC023_D(){
   return 0;
 }
 /*
-  verified on 2018/05/08
-  https://beta.atcoder.jp/contests/arc023/tasks/arc023_4
+  verified on 2019/10/29
+  https://atcoder.jp/contests/arc023/tasks/arc023_4
 */
 
 
@@ -117,7 +117,7 @@ signed CODECHEF_SEGPROD(){
   return 0;
 }
 /*
-  verified on 2018/05/08
+  verified on 2019/10/29
   https://www.codechef.com/problems/SEGPROD
 */
 
