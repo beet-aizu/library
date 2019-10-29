@@ -358,10 +358,12 @@
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
+    "/test/yosupo/rectangle_sum.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/unionfind.test.cpp",
+    "/test/yosupo/vertex_add_path_sum.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/test/aoj/DSL_2_A.test.cpp": [
@@ -446,10 +448,12 @@
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
+    "/test/yosupo/rectangle_sum.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/unionfind.test.cpp",
+    "/test/yosupo/vertex_add_path_sum.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/segtree/basic/ushi.cpp": [
@@ -523,7 +527,8 @@
   "/datastructure/binaryindexedtree.cpp": [
     "/test/aoj/DSL_2_B.test.cpp",
     "/test/aoj/GRL_5_D.test.cpp",
-    "/test/yosupo/point_add_range_sum.test.cpp"
+    "/test/yosupo/point_add_range_sum.test.cpp",
+    "/test/yosupo/vertex_add_path_sum.test.cpp"
   ],
   "/test/aoj/DPL_5_L.test.cpp": [
     "/mod/enumeration.cpp",
@@ -733,7 +738,8 @@
   "/tools/compress.cpp": [
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1599.test.cpp",
-    "/test/aoj/2359.test.cpp"
+    "/test/aoj/2359.test.cpp",
+    "/test/yosupo/rectangle_sum.test.cpp"
   ],
   "/datastructure/rangeslide.cpp": [
     "/test/aoj/0613.test.cpp",
@@ -978,7 +984,8 @@
     "/segtree/count/dynamic_offline.cpp"
   ],
   "/segtree/count/dynamic_offline.cpp": [
-    "/test/aoj/2842.test.cpp"
+    "/test/aoj/2842.test.cpp",
+    "/test/yosupo/rectangle_sum.test.cpp"
   ],
   "/test/aoj/GRL_3_C.test.cpp": [
     "/graph/stronglyconnectedcomponent.cpp"
@@ -1014,7 +1021,8 @@
   "/tree/heavylightdecomposition.cpp": [
     "/test/aoj/2450.test.cpp",
     "/test/aoj/2667.test.cpp",
-    "/test/aoj/GRL_5_C.test.cpp"
+    "/test/aoj/GRL_5_C.test.cpp",
+    "/test/yosupo/vertex_add_path_sum.test.cpp"
   ],
   "/test/aoj/ALDS1_14_C.test.cpp": [
     "/string/rectanglehash.cpp",
@@ -1790,6 +1798,16 @@
     "/convolution/numbertheoretictransform.cpp",
     "/mod/mint.cpp",
     "/polynomial/formalpowerseries.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/vertex_add_path_sum.test.cpp": [
+    "/datastructure/binaryindexedtree.cpp",
+    "/tools/fastio.cpp",
+    "/tree/heavylightdecomposition.cpp"
+  ],
+  "/test/yosupo/rectangle_sum.test.cpp": [
+    "/segtree/count/dynamic_offline.cpp",
+    "/tools/compress.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/inv_of_formal_power_series.test.cpp": [
