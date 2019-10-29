@@ -12,16 +12,16 @@ struct PalindromicTree{
     node(int len,int suf,int app,int cnt)
       :len(len),suf(suf),app(app),cnt(cnt){}
   };
-  vector<node> v;
+  vector<node> vs;
   vector<int> ord;
   int n,ptr;
 
   PalindromicTree(){}
   PalindromicTree(const string &s)
-    :v(s.size()+10),n(2),ptr(1){
+    :vs(s.size()+10),n(2),ptr(1){
 
-    v[0]=node(-1,0,-1,0);
-    v[1]=node( 0,0,-1,0);
+    vs[0]=node(-1,0,-1,0);
+    vs[1]=node( 0,0,-1,0);
 
     for(int i=0;i<(int)s.size();i++) add_char(s,i);
     calc_order();
@@ -32,31 +32,31 @@ struct PalindromicTree{
     char ch=s[pos];
     int cur=ptr;
     while(1){
-      int rev=pos-1-v[cur].len;
+      int rev=pos-1-vs[cur].len;
       if(rev>=0&&s[rev]==ch) break;
-      cur=v[cur].suf;
+      cur=vs[cur].suf;
     }
 
-    if(v[cur].nxt.count(ch)){
-      ptr=v[cur].nxt[ch];
-      v[ptr].cnt++;
+    if(vs[cur].nxt.count(ch)){
+      ptr=vs[cur].nxt[ch];
+      vs[ptr].cnt++;
       return false;
     }
     ptr=n++;
 
-    v[ptr]=node(v[cur].len+2,-1,pos-v[cur].len-1,1);
-    v[cur].nxt[ch]=ptr;
+    vs[ptr]=node(vs[cur].len+2,-1,pos-vs[cur].len-1,1);
+    vs[cur].nxt[ch]=ptr;
 
-    if(v[ptr].len==1){
-      v[ptr].suf=1;
+    if(vs[ptr].len==1){
+      vs[ptr].suf=1;
       return true;
     }
 
     while(1){
-      cur=v[cur].suf;
-      int rev=pos-1-v[cur].len;
+      cur=vs[cur].suf;
+      int rev=pos-1-vs[cur].len;
       if(rev>=0&&s[rev]==ch){
-        v[ptr].suf=v[cur].nxt[ch];
+        vs[ptr].suf=vs[cur].nxt[ch];
         break;
       }
     }
@@ -68,18 +68,19 @@ struct PalindromicTree{
     ord.push_back(0);
     ord.push_back(1);
     for(int i=0;i<(int)ord.size();i++)
-      for(auto &p:v[ord[i]].nxt) ord.push_back(p.second);
+      for(auto &p:vs[ord[i]].nxt) ord.push_back(p.second);
   }
 
   void calc_count(){
     for(int i=(int)ord.size()-1;i>=0;i--)
-      v[v[ord[i]].suf].cnt+=v[ord[i]].cnt;
+      vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;
   }
 };
 //END CUT HERE
 #ifndef call_from_test
 
 #define call_from_test
+#include "../tools/fastio.cpp"
 #include "rollinghash.cpp"
 #undef call_from_test
 
@@ -99,7 +100,7 @@ signed YUKI_263(){
   const int MAX = 5e5+100;
   map<pair<int, int>, int> m1[MAX];
   for(int i=0;i<(int)p1.n;i++){
-    PalindromicTree::node& u=p1.v[i];
+    PalindromicTree::node& u=p1.vs[i];
     if(u.app<0) continue;
     auto p=make_pair(rs1.find(u.app,u.app+u.len),
                      rs2.find(u.app,u.app+u.len));
@@ -108,7 +109,7 @@ signed YUKI_263(){
 
   ll ans=0;
   for(int i=0;i<(int)p2.n;i++){
-    PalindromicTree::node& u=p2.v[i];
+    PalindromicTree::node& u=p2.vs[i];
     auto p=make_pair(rt1.find(u.app,u.app+u.len),
                      rt2.find(u.app,u.app+u.len));
     if(u.app<0||!m1[u.len].count(p)) continue;
@@ -119,7 +120,7 @@ signed YUKI_263(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/10/29
   https://yukicoder.me/problems/no/263
 */
 
