@@ -380,6 +380,7 @@
     "/test/aoj/1579.test.cpp",
     "/test/aoj/1599.test.cpp",
     "/test/aoj/2212.test.cpp",
+    "/test/aoj/2292.test.cpp",
     "/test/aoj/2309.tarjan.test.cpp",
     "/test/aoj/2309.test.cpp",
     "/test/aoj/2313.test.cpp",
@@ -934,7 +935,8 @@
   ],
   "/test/aoj/2292.test.cpp": [
     "/string/palindromictree.cpp",
-    "/string/rollinghash.cpp"
+    "/string/rollinghash.cpp",
+    "/tools/fastio.cpp"
   ],
   "/string/palindromictree.cpp": [
     "/test/aoj/2292.test.cpp"
