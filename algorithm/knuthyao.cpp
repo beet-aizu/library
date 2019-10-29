@@ -4,7 +4,7 @@ using namespace std;
 using Int = long long;
 #endif
 //BEGIN CUT HERE
-// f(i,l) + f(j,k) >= f(i,k) + f(j,l) (i <= j <= k <= l)
+// f(i,l) + f(j,k) >= f(i,k) + f(j,l) (i <= j, k <= l)
 template<typename T, typename F>
 T KnuthYao(int n,F cost){
   vector< vector<T> > dp(n,vector<T>(n));
