@@ -12,19 +12,20 @@ namespace MonotoneMinima{
     if(l==r) return;
     int m=(l+r)>>1;
     int &idx=(dp[m]=a);
-    T res=dist(idx,m);
+    T res=dist(m,idx);
     for(int i=a;i<b;i++){
-      T tmp=dist(i,m);
+      T tmp=dist(m,i);
       if(tmp<res) res=tmp,idx=i;
     }
     induce<T>(l,m,a,idx+1,dp,dist);
     induce<T>(m+1,r,idx,b,dp,dist);
   }
 
+  // p < q -> argmin f(p, *) < argmin f(q, *)
   template<typename T,typename F>
-  vector<int> args(int n,F dist){
+  vector<int> args(int n,int m,F dist){
     vector<int> dp(n,-1);
-    induce<T>(0,n,0,n,dp,dist);
+    induce<T>(0,n,0,m,dp,dist);
     return dp;
   }
 }
@@ -41,15 +42,15 @@ signed COLOPL2018FINAL_C(){
   vector<ll> as(n);
   for(int i=0;i<n;i++) cin>>as[i];
 
-  auto dist=[&](int i,int j){return as[i]+(ll)(i-j)*(i-j);};
-  auto res=MonotoneMinima::args<ll>(n,dist);
+  auto dist=[&](int i,int j){return as[j]+(ll)(i-j)*(i-j);};
+  auto res=MonotoneMinima::args<ll>(n,n,dist);
 
-  for(int i=0;i<n;i++) cout<<dist(res[i],i)<<"\n";
+  for(int i=0;i<n;i++) cout<<dist(i,res[i])<<"\n";
   cout<<flush;
   return 0;
 }
 /*
-  verified on 2019/06/28
+  verified on 2019/10/29
   https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 signed main(){

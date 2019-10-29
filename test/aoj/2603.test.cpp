@@ -4,13 +4,11 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../algorithm/monotoneminima.cpp"
 #undef call_from_test
 
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int s,n,m;
   cin>>s>>n>>m;
   vector<int> xs(s);
@@ -32,11 +30,11 @@ signed main(){
   for(int k=0;k<m;k++){
     auto dist=
       [&](int i,int j){
-        return i>j?INF:dp[i]+vs[j-1]*(j-i)-(sm[j]-sm[i]);
+        return i<j?INF:dp[j]+(i?vs[i-1]:0)*(i-j)-(sm[i]-sm[j]);
       };
-    auto res=MonotoneMinima::args<int>(n+1,dist);
+    auto res=MonotoneMinima::args<int>(n+1,n+1,dist);
     vector<int> nx(n+1);
-    for(int i=0;i<=n;i++) nx[i]=dist(res[i],i);
+    for(int i=0;i<=n;i++) nx[i]=dist(i,res[i]);
     swap(dp,nx);
   }
   cout<<dp[n]<<endl;
