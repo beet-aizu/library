@@ -386,6 +386,7 @@
     "/test/aoj/2359.test.cpp",
     "/test/aoj/2444.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
+    "/test/aoj/2603.test.cpp",
     "/test/aoj/2674.count.test.cpp",
     "/test/aoj/2674.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
@@ -1435,7 +1436,8 @@
     "/test/aoj/NTL_1_D.test.cpp"
   ],
   "/test/aoj/2603.test.cpp": [
-    "/algorithm/monotoneminima.cpp"
+    "/algorithm/monotoneminima.cpp",
+    "/tools/fastio.cpp"
   ],
   "/algorithm/monotoneminima.cpp": [
     "/test/aoj/2603.test.cpp"
