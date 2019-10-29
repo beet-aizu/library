@@ -356,6 +356,7 @@
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
+    "/test/yosupo/matrix_det.test.cpp",
     "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
@@ -447,6 +448,7 @@
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/lca.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
+    "/test/yosupo/matrix_det.test.cpp",
     "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
@@ -566,6 +568,7 @@
     "/test/yosupo/exp_of_formal_power_series.test.cpp",
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
+    "/test/yosupo/matrix_det.test.cpp",
     "/test/yosupo/partition_function.test.cpp"
   ],
   "/mod/enumeration.cpp": [
@@ -1223,7 +1226,8 @@
   ],
   "/linearalgebra/matrix.cpp": [
     "/test/aoj/1328.test.cpp",
-    "/test/aoj/2060.test.cpp"
+    "/test/aoj/2060.test.cpp",
+    "/test/yosupo/matrix_det.test.cpp"
   ],
   "/math/tetrahedra.cpp": [
     "/test/aoj/2060.test.cpp"
@@ -1827,6 +1831,11 @@
   "/test/yosupo/number_of_substrings.test.cpp": [
     "/string/longestcommonprefix.cpp",
     "/string/suffixarray.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/matrix_det.test.cpp": [
+    "/linearalgebra/matrix.cpp",
+    "/mod/mint.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/lca.test.cpp": [
