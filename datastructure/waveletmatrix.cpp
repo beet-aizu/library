@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct FullyIndexableDictionary{
@@ -72,19 +71,19 @@ struct WaveletMatrix{
 
   WaveletMatrix(vector<T> data){
     len=data.size();
-    vector<T> l(len),r(len);
+    vector<T> ls(len),rs(len);
     for(int dep=0;dep<MAXLOG;dep++){
       mat[dep]=FullyIndexableDictionary(len+1);
       int p=0,q=0;
       for(int i=0;i<len;i++){
         bool k=(data[i]>>(MAXLOG-(dep+1)))&1;
-        if(k) r[q++]=data[i],mat[dep].set(i);
-        else  l[p++]=data[i];
+        if(k) rs[q++]=data[i],mat[dep].set(i);
+        else  ls[p++]=data[i];
       }
       zs[dep]=p;
       mat[dep].build();
-      swap(l,data);
-      for(int i=0;i<q;i++) data[p+i]=r[i];
+      swap(ls,data);
+      for(int i=0;i<q;i++) data[p+i]=rs[i];
     }
   }
 
@@ -189,18 +188,20 @@ struct WaveletMatrix{
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+#define call_from_test
+#include "../tools/chminmax.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed SPOJ_MKTHNUM(){
   int n,q;
   scanf("%d %d",&n,&q);
-  vector<int> v(n);
-  for(int i=0;i<n;i++) scanf("%d",&v[i]);
+  vector<int> vs(n);
+  for(int i=0;i<n;i++) scanf("%d",&vs[i]);
   const int OFS = 1e9+1;
-  for(int i=0;i<n;i++) v[i]+=OFS;
-  WaveletMatrix<int,32> wm(v);
+  for(int i=0;i<n;i++) vs[i]+=OFS;
+  WaveletMatrix<int,32> wm(vs);
   for(int i=0;i<q;i++){
     int l,r,k;
     scanf("%d %d %d",&l,&r,&k);
@@ -210,7 +211,7 @@ signed SPOJ_MKTHNUM(){
   return 0;
 }
 /*
-  verified on 2018/08/10
+  verified on 2019/10/29
   https://www.spoj.com/problems/MKTHNUM/
 */
 
@@ -250,7 +251,7 @@ signed UNIVERSITYCODESPRINT04_F(){
   return 0;
 }
 /*
-  verified on 2018/08/10
+  verified on 2019/10/29
   https://www.hackerrank.com/contests/university-codesprint-4/challenges/unique-art/problem
 */
 
@@ -277,8 +278,8 @@ signed ABC106_D(){
   return 0;
 }
 /*
-  verified on 2018/08/21
-  https://beta.atcoder.jp/contests/abc106/tasks/abc106_d
+  verified on 2019/10/29
+  https://atcoder.jp/contests/abc106/tasks/abc106_d
 */
 
 signed main(){
