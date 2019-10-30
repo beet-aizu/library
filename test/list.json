@@ -175,6 +175,7 @@
     "/test/aoj/1508.test.cpp",
     "/test/aoj/1549.test.cpp",
     "/test/aoj/1579.test.cpp",
+    "/test/aoj/1595.linkcuttree.test.cpp",
     "/test/aoj/1595.test.cpp",
     "/test/aoj/1599.test.cpp",
     "/test/aoj/1615.test.cpp",
@@ -298,6 +299,7 @@
     "/test/aoj/GRL_3_C.test.cpp",
     "/test/aoj/GRL_4_A.test.cpp",
     "/test/aoj/GRL_4_B.test.cpp",
+    "/test/aoj/GRL_5_A.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp",
@@ -381,6 +383,7 @@
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1338.test.cpp",
     "/test/aoj/1579.test.cpp",
+    "/test/aoj/1595.linkcuttree.test.cpp",
     "/test/aoj/1595.test.cpp",
     "/test/aoj/1599.test.cpp",
     "/test/aoj/2212.test.cpp",
@@ -439,6 +442,7 @@
     "/test/aoj/GRL_2_B.tarjan.test.cpp",
     "/test/aoj/GRL_2_B.test.cpp",
     "/test/aoj/GRL_4_A.test.cpp",
+    "/test/aoj/GRL_5_A.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_A.test.cpp",
     "/test/aoj/GRL_5_C.lca.test.cpp",
     "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
@@ -559,6 +563,7 @@
     "/test/aoj/0391.test.cpp",
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1549.test.cpp",
+    "/test/aoj/1595.linkcuttree.test.cpp",
     "/test/aoj/2230.test.cpp",
     "/test/aoj/2627.test.cpp",
     "/test/aoj/2790.test.cpp",
@@ -568,6 +573,7 @@
     "/test/aoj/3112.test.cpp",
     "/test/aoj/ALDS1_10_C.test.cpp",
     "/test/aoj/DPL_3_B.test.cpp",
+    "/test/aoj/GRL_5_A.linkcuttree.test.cpp",
     "/test/aoj/geometry/2334.test.cpp",
     "/test/aoj/geometry/3049.test.cpp",
     "/test/aoj/geometry/3056.test.cpp"
@@ -724,7 +730,9 @@
   ],
   "/linkcuttree/base.cpp": [
     "/test/aoj/0367.linkcuttree.test.cpp",
+    "/test/aoj/1595.linkcuttree.test.cpp",
     "/test/aoj/2450.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_A.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
   ],
@@ -1096,6 +1104,16 @@
   ],
   "/test/aoj/GRL_6_B.test.cpp": [
     "/flow/primaldual.cpp"
+  ],
+  "/test/aoj/1595.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
+    "/linkcuttree/farthest.cpp",
+    "/tools/chminmax.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/linkcuttree/farthest.cpp": [
+    "/test/aoj/1595.linkcuttree.test.cpp",
+    "/test/aoj/GRL_5_A.linkcuttree.test.cpp"
   ],
   "/test/aoj/2659.test.cpp": [
     "/math/extgcd.cpp",
@@ -1556,6 +1574,12 @@
   ],
   "/test/aoj/3069.test.cpp": [
     "/datastructure/nonmonotonicconvexhulltrick.cpp",
+    "/tools/chminmax.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/aoj/GRL_5_A.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
+    "/linkcuttree/farthest.cpp",
     "/tools/chminmax.cpp",
     "/tools/fastio.cpp"
   ],
