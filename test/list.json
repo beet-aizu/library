@@ -159,6 +159,7 @@
   "test": [
     "/test/aoj/0109.test.cpp",
     "/test/aoj/0233.test.cpp",
+    "/test/aoj/0314.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/0377.test.cpp",
     "/test/aoj/0391.test.cpp",
@@ -375,6 +376,7 @@
   ],
   "/tools/fastio.cpp": [
     "/test/aoj/0109.test.cpp",
+    "/test/aoj/0314.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1338.test.cpp",
@@ -474,6 +476,7 @@
     "/mod/mint.cpp"
   ],
   "/mod/mint.cpp": [
+    "/test/aoj/0314.test.cpp",
     "/test/aoj/1630.test.cpp",
     "/test/aoj/2222.test.cpp",
     "/test/aoj/2397.test.cpp",
@@ -1111,6 +1114,7 @@
     "/linearalgebra/matrix.cpp"
   ],
   "/linearalgebra/matrix.cpp": [
+    "/test/aoj/0314.test.cpp",
     "/test/aoj/1328.test.cpp",
     "/test/aoj/2060.test.cpp",
     "/test/yosupo/matrix_det.test.cpp"
@@ -1335,6 +1339,21 @@
     "/segtree/basic/chien.cpp",
     "/tools/fastio.cpp"
   ],
+  "/test/aoj/0314.test.cpp": [
+    "/datastructure/unionfindtree.cpp",
+    "/linearalgebra/matrix.cpp",
+    "/linearalgebra/tree_theorem.cpp",
+    "/mod/mint.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/unionfindtree.cpp": [
+    "/test/aoj/0314.test.cpp",
+    "/test/aoj/DSL_1_A.test.cpp",
+    "/test/yosupo/unionfind.test.cpp"
+  ],
+  "/linearalgebra/tree_theorem.cpp": [
+    "/test/aoj/0314.test.cpp"
+  ],
   "/test/aoj/2230.test.cpp": [
     "/flow/negativeedge.cpp",
     "/flow/primaldual.cpp",
@@ -1546,10 +1565,6 @@
   ],
   "/test/aoj/DSL_1_A.test.cpp": [
     "/datastructure/unionfindtree.cpp"
-  ],
-  "/datastructure/unionfindtree.cpp": [
-    "/test/aoj/DSL_1_A.test.cpp",
-    "/test/yosupo/unionfind.test.cpp"
   ],
   "/test/aoj/2627.test.cpp": [
     "/flow/negativeedge.cpp",
