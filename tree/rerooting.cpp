@@ -1,9 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
+#endif
 //BEGIN CUT HERE
 template<typename Data, typename T>
 struct ReRooting{
@@ -13,8 +11,8 @@ struct ReRooting{
     Node(int to,int rev,Data data):to(to),rev(rev),data(data){}
   };
 
-  using F1 = function<T(T,T)>;
-  using F2 = function<T(T,Data)>;
+  using F1 = function<T(T, T)>;
+  using F2 = function<T(T, Data)>;
 
   vector<vector<Node> > G;
   vector<vector<T> > ld,rd;
@@ -62,7 +60,7 @@ struct ReRooting{
   }
 };
 //END CUT HERE
-
+#ifndef call_from_test
 struct FastIO{
   FastIO(){
     cin.tie(0);
@@ -93,7 +91,7 @@ signed YUKI_768(){
   return 0;
 };
 /*
-  verified on 2019/03/04
+  verified on 2019/10/30
   https://yukicoder.me/problems/no/768
 */
 
@@ -110,11 +108,12 @@ signed DP_V(){
     G.add_edge(x,y,1);
   }
   auto ans=G.build();
-  for(int x:ans) cout<<x<<endl;
+  for(int x:ans) cout<<x<<"\n";
+  cout<<flush;
   return 0;
 }
 /*
-  verified on 2019/10/15
+  verified on 2019/10/30
   https://atcoder.jp/contests/dp/tasks/dp_v
 */
 
@@ -123,3 +122,4 @@ signed main(){
   DP_V();
   return 0;
 }
+#endif
