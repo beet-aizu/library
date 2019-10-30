@@ -15,20 +15,18 @@ struct MatrixTreeTheorem{
   struct edge{
     int a,b;
     T c;
-    edge(){}
     edge(int a,int b,T c):a(a),b(b),c(c){}
     bool operator<(const edge &e)const{
       return c<e.c;
     }
   };
 
-  int n;
   vector<edge> es;
   vector<int> used;
   vector<vector<int> > H;
+  UnionFind uf;
 
-  MatrixTreeTheorem(){}
-  MatrixTreeTheorem(int n):n(n),used(n),H(n){}
+  MatrixTreeTheorem(int n):used(n),H(n),uf(n){}
 
   void add_edge(int a,int b,T c){
     es.emplace_back(a,b,c);
@@ -52,7 +50,6 @@ struct MatrixTreeTheorem{
   }
 
   K build(){
-    UnionFind uf(n);
     sort(es.begin(),es.end());
     fill(used.begin(),used.end(),0);
     K res(1);
@@ -129,7 +126,7 @@ signed ARC018_D(){
   return 0;
 }
 /*
-  verified on 2018/10/24
+  verified on 2018/10/30
   https://atcoder.jp/contests/arc018/tasks/arc018_4
 */
 

@@ -53,18 +53,13 @@ signed main(){
         if(((b>>i)&1)==((b>>j)&1))
           tmp.unite(rs[i],rs[j]);
 
-    UnionFind ch(n);
-    for(auto e:es)
-      if(tmp.same(e.a,e.b))
-        ch.unite(e.a,e.b);
-    if(ch.count()!=2) continue;
-
     MatrixTreeTheorem<M, int> G(n);
     for(auto e:es)
       if(tmp.same(e.a,e.b))
         G.add_edge(e.a,e.b,0);
 
-    ans+=G.build();
+    if(G.uf.count()==2)
+      ans+=G.build();
   }
   cout<<ans<<endl;
   return 0;
