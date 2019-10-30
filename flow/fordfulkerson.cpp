@@ -7,9 +7,11 @@ using Int = long long;
 template<typename T,bool directed>
 struct FordFulkerson{
   struct edge{
-    int to,cap,rev;
+    int to;
+    T cap;
+    int rev;
     edge(){}
-    edge(int to,int cap,int rev):to(to),cap(cap),rev(rev){}
+    edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}
   };
 
   vector< vector<edge> > G;
@@ -27,20 +29,19 @@ struct FordFulkerson{
     if(v==t) return f;
     used[v]=true;
     for(int i=0;i<(int)G[v].size();i++){
-      edge &e = G[v][i];
+      edge &e=G[v][i];
       if(!used[e.to]&&e.cap>0){
         T d=dfs(e.to,t,min(f,e.cap));
-        if(d>0){
-          e.cap-=d;
-          G[e.to][e.rev].cap+=d;
-          return d;
-        }
+        if(d==0) continue;
+        e.cap-=d;
+        G[e.to][e.rev].cap+=d;
+        return d;
       }
     }
     return 0;
   }
 
-  int flow(int s,int t,T lim){
+  T flow(int s,int t,T lim){
     T fl=0;
     while(1){
       fill(used.begin(),used.end(),0);
@@ -52,7 +53,7 @@ struct FordFulkerson{
     return fl;
   }
 
-  int flow(int s,int t){
+  T flow(int s,int t){
     return flow(s,t,numeric_limits<T>::max()/2);
   }
 
