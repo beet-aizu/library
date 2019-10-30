@@ -86,13 +86,14 @@ struct Farthest : LinkCutTreeBase<Np, LIM>{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed TKPPC2015_J(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   using ll = long long;
   using Node = NodeBase<ll>;
-  constexpr size_t LIM = 1e6;
+  constexpr size_t LIM = 1e6+200;
   using LCT = Farthest<Node, LIM>;
   LCT lct;
 
@@ -132,7 +133,7 @@ signed TKPPC2015_J(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/10/30
   https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
 */
 
@@ -140,3 +141,4 @@ signed main(){
   TKPPC2015_J();
   return 0;
 }
+#endif
