@@ -58,8 +58,10 @@ signed main(){
       if(tmp.same(e.a,e.b))
         G.add_edge(e.a,e.b,0);
 
+    M res=G.build();
+
     if(G.uf.count()==2)
-      ans+=G.build();
+      ans+=res;
   }
   cout<<ans<<endl;
   return 0;
