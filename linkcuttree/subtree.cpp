@@ -422,11 +422,72 @@ signed SPOJ_DYNACON1(){
   https://www.spoj.com/problems/DYNACON1/
 */
 
+signed NIKKEI2019_QUAL_E(){
+  int n,m;
+  cin>>n>>m;
+  vector<int> xs(n);
+  for(int i=0;i<n;i++) cin>>xs[i];
+  using T = tuple<int, int, int>;
+  vector<T> vt;
+  for(int i=0;i<m;i++){
+    int a,b,y;
+    cin>>a>>b>>y;
+    a--;b--;
+    vt.emplace_back(y,a,b);
+  }
+  sort(vt.begin(),vt.end());
+
+  using ll = long long;
+  using Node = NodeBase<ll>;
+  constexpr size_t LIM = 1e6;
+  using LCT = SubTree<Node, LIM>;
+  LCT lct;
+
+  vector<LCT::Node*> vs(n);
+  for(int i=0;i<n;i++)
+    vs[i]=lct.create(i,xs[i]);
+
+  using P = pair<int, int>;
+  set<P> es;
+  for(auto t:vt){
+    int a,b;
+    tie(ignore,a,b)=t;
+    if(lct.is_connected(vs[a],vs[b])) continue;
+    lct.evert(vs[b]);
+    lct.link(vs[a],vs[b]);
+    es.emplace(a,b);
+  }
+
+  int ans=0;
+  reverse(vt.begin(),vt.end());
+  for(auto t:vt){
+    int y,a,b;
+    tie(y,a,b)=t;
+    auto rt=lct.root(vs[a]);
+    ll sum=lct.query(rt);
+    if(sum>=y) continue;
+    ans++;
+    if(es.count(P(a,b))){
+      lct.evert(vs[a]);
+      lct.cut(vs[b]);
+    }
+  }
+
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/10/31
+  https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_e
+*/
+
+
 signed main(){
   //UNIVERSITYCODESPRINT03_G();
   //CFR564_E();
   //JOISC2013_DAY4_3();
   //SPOJ_DYNACON1();
+  //NIKKEI2019_QUAL_E();
   return 0;
 }
 #endif
