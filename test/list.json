@@ -371,6 +371,7 @@
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/unionfind.test.cpp",
     "/test/yosupo/vertex_add_path_sum.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp",
     "/test/yosupo/vertex_add_subtree_sum.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
@@ -471,6 +472,7 @@
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/unionfind.test.cpp",
     "/test/yosupo/vertex_add_path_sum.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp",
     "/test/yosupo/vertex_add_subtree_sum.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
@@ -737,7 +739,8 @@
     "/test/aoj/2450.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_A.linkcuttree.test.cpp",
     "/test/aoj/GRL_5_D.linkcuttree.test.cpp",
-    "/test/aoj/GRL_5_E.linkcuttree.test.cpp"
+    "/test/aoj/GRL_5_E.linkcuttree.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp"
   ],
   "/linkcuttree/path.cpp": [
     "/test/aoj/0367.linkcuttree.test.cpp",
@@ -1882,6 +1885,14 @@
     "/datastructure/binaryindexedtree.cpp",
     "/tools/fastio.cpp",
     "/tree/eulertourforvertex.cpp"
+  ],
+  "/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp": [
+    "/linkcuttree/base.cpp",
+    "/linkcuttree/subtree.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/linkcuttree/subtree.cpp": [
+    "/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp"
   ],
   "/test/yosupo/zalgorithm.test.cpp": [
     "/string/zalgorithm.cpp",
