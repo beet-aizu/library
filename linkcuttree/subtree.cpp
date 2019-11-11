@@ -1,14 +1,13 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-#endif
 
 #define call_from_test
 #include "base.cpp"
 #undef call_from_test
 
+#endif
 //BEGIN CUT HERE
-
 template<typename Ap>
 struct NodeBase{
   using A = Ap;
@@ -78,6 +77,12 @@ struct SubTree : LinkCutTreeBase<Np, LIM>{
     expose(t);
     return t->sum;
   }
+
+  void set_val(Node *t,A a){
+    expose(t);
+    t->val=a;
+    pushup(t);
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
@@ -92,7 +97,7 @@ signed UNIVERSITYCODESPRINT03_G(){
   using ll = long long;
   int n;
   cin>>n;
-  BIT<ll> bit(1e6+100,0);
+  BIT<ll> bit(1e6+100);
   vector<int> as(n),bs(n),cs(n);
 
   vector<unordered_map<int, vector<int> > > G(n);
@@ -480,7 +485,6 @@ signed NIKKEI2019_QUAL_E(){
   verified on 2019/10/31
   https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_e
 */
-
 
 signed main(){
   //UNIVERSITYCODESPRINT03_G();

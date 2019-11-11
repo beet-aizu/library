@@ -106,6 +106,14 @@ struct LinkCutTreeBase{
     eval(t);
   }
 
+  Node *parent(Node *t){
+    expose(t);
+    t=t->l;
+    while(t&&t->r) t=t->r;
+    if(t) splay(t);
+    return t;
+  }
+
   Node *root(Node *t){
     expose(t);
     while(t->l) t=t->l;
