@@ -11,7 +11,7 @@ using namespace std;
 signed main(){
   int n,q;
   cin>>n>>q;
-  BIT<long long> bit(n+100,0);
+  BIT<long long> bit(n+100);
   for(int i=0;i<q;i++){
     int c,x,y;
     cin>>c>>x>>y;

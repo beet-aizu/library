@@ -34,6 +34,7 @@ struct SparseTable{
 };
 //END CUT HERE
 #ifndef call_from_test
+
 signed ARC023_D(){
   int n,m;
   scanf("%d %d",&n,&m);
@@ -67,8 +68,8 @@ signed ARC023_D(){
 }
 
 /*
-  verified on 2019/06/26
-  https://beta.atcoder.jp/contests/arc023/tasks/arc023_4
+  verified on 2019/11/11
+  https://atcoder.jp/contests/arc023/tasks/arc023_4
 */
 
 signed main(){

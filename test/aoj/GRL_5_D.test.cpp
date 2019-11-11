@@ -24,7 +24,7 @@ signed main(){
   }
   et.build();
 
-  BIT<int> bit(n*2+100,0);
+  BIT<int> bit(n*2+100);
   int q;
   cin>>q;
   for(int i=0;i<q;i++){

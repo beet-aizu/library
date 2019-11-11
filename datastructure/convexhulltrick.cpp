@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template <typename T,bool isMin>
@@ -89,25 +88,29 @@ struct ConvexHullTrick {
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+#define call_from_test
+#include "../tools/chminmax.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed TENKA12016FINAL_E(){
+  using ll = long long;
+
   int n,l;
   scanf("%d %d",&n,&l);
-  vector<vector<int> > a(n,vector<int>(l));
+  vector<vector<int> > as(n,vector<int>(l));
   for(int i=0;i<n;i++)
     for(int j=0;j<l;j++)
-      scanf("%d",&a[i][j]);
+      scanf("%d",&as[i][j]);
 
-  vector<Int> dp(l,0);
+  vector<ll> dp(l,0);
 
   for(int i=0;i<n;i++){
-    ConvexHullTrick<Int, true> cht;
-    for(Int j=0;j<l;j++)
-      cht.addLine(-2*j,a[i][j]+j*j);
-    for(Int j=0;j<l;j++)
+    ConvexHullTrick<ll, true> cht;
+    for(ll j=0;j<l;j++)
+      cht.addLine(-2*j,as[i][j]+j*j);
+    for(ll j=0;j<l;j++)
       dp[j]+=j*j+cht.queryMonotoneInc(j);
   }
 
@@ -115,22 +118,24 @@ signed TENKA12016FINAL_E(){
   return 0;
 }
 /*
-  verified on 2019/05/14
+  verified on 2019/11/11
   https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
 signed COLOPL2018FINAL_C(){
+  using ll = long long;
+
   int n;
   scanf("%d",&n);
-  vector<Int> a(n);
-  for(int i=0;i<n;i++) scanf("%lld",&a[i]);
-  ConvexHullTrick<Int, false> cht;
-  for(Int i=0;i<n;i++) cht.addLine(-2*i,-(a[i]+i*i));
-  for(Int i=0;i<n;i++) printf("%lld\n",-cht.queryMonotoneDec(-i)+i*i);
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) scanf("%lld",&as[i]);
+  ConvexHullTrick<ll, false> cht;
+  for(ll i=0;i<n;i++) cht.addLine(-2*i,-(as[i]+i*i));
+  for(ll i=0;i<n;i++) printf("%lld\n",-cht.queryMonotoneDec(-i)+i*i);
   return 0;
 }
 /*
-  verified on 2019/05/14
+  verified on 2019/11/11
   https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
