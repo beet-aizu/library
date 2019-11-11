@@ -371,6 +371,7 @@
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/unionfind.test.cpp",
     "/test/yosupo/vertex_add_path_sum.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/test/aoj/NTL_1_A.test.cpp": [
@@ -470,6 +471,7 @@
     "/test/yosupo/suffixarray.test.cpp",
     "/test/yosupo/unionfind.test.cpp",
     "/test/yosupo/vertex_add_path_sum.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.test.cpp",
     "/test/yosupo/zalgorithm.test.cpp"
   ],
   "/math/factorize.cpp": [
@@ -992,7 +994,8 @@
     "/test/aoj/DSL_2_B.test.cpp",
     "/test/aoj/GRL_5_D.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
-    "/test/yosupo/vertex_add_path_sum.test.cpp"
+    "/test/yosupo/vertex_add_path_sum.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.test.cpp"
   ],
   "/test/aoj/GRL_5_C.test.cpp": [
     "/tree/heavylightdecomposition.cpp"
@@ -1470,7 +1473,8 @@
     "/tree/eulertourforvertex.cpp"
   ],
   "/tree/eulertourforvertex.cpp": [
-    "/test/aoj/2871.test.cpp"
+    "/test/aoj/2871.test.cpp",
+    "/test/yosupo/vertex_add_subtree_sum.test.cpp"
   ],
   "/test/aoj/GRL_2_B.test.cpp": [
     "/graph/arborescence_edmond.cpp",
@@ -1873,6 +1877,11 @@
   ],
   "/mod/log.cpp": [
     "/test/yosupo/discrete_logarithm_mod.test.cpp"
+  ],
+  "/test/yosupo/vertex_add_subtree_sum.test.cpp": [
+    "/datastructure/binaryindexedtree.cpp",
+    "/tools/fastio.cpp",
+    "/tree/eulertourforvertex.cpp"
   ],
   "/test/yosupo/zalgorithm.test.cpp": [
     "/string/zalgorithm.cpp",
