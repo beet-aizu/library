@@ -15,7 +15,7 @@ signed main(){
   vector<int> as(n);
   for(int i=0;i<n;i++) cin>>as[i];
 
-  BIT<long long> bit(n,0);
+  BIT<long long> bit(n);
   for(int i=0;i<n;i++) bit.add0(i,as[i]);
 
   for(int i=0;i<q;i++){

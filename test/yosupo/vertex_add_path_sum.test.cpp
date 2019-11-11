@@ -25,7 +25,7 @@ signed main(){
   G.build();
 
   using ll = long long;
-  BIT<ll> bit(n,0);
+  BIT<ll> bit(n);
   for(int i=0;i<n;i++)
     bit.add0(G.vid[i],as[i]);
 
