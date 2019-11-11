@@ -10,9 +10,9 @@ struct BIT2D{
   vector< vector<T> > bit;
   //1-indexed
   BIT2D():n(-1),m(-1){}
-  BIT2D(int n_,int m_,T d_):n(n_),m(m_),d(d_),bit(n_+1,vector<T>(m+1,d_)){}
+  BIT2D(int n_,int m_):n(n_),m(m_),bit(n_+1,vector<T>(m+1,0)){}
   T sum(int i,int j){
-    T s=d;
+    T s(0);
     for(int x=i;x>0;x-=(x&-x))
       for(int y=j;y>0;y-=(y&-y))
         s+=bit[x][y];

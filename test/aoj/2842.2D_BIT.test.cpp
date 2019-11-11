@@ -11,10 +11,10 @@ using namespace std;
 signed main(){
   int h,w,t,q;
   cin>>h>>w>>t>>q;
-  BIT2D<int> beet(h+100,w+100,0);
-  BIT2D<int> ushi(h+100,w+100,0);
-  typedef pair<int,int> P;
-  typedef pair<int,P> PP;
+  BIT2D<int> beet(h+100,w+100);
+  BIT2D<int> ushi(h+100,w+100);
+  using P = pair<int, int>;
+  using PP = pair<int, P>;
   queue<PP> qq;
   for(int i=0;i<q;i++){
     int a,c,x1,y1;
