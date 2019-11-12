@@ -7,12 +7,17 @@ struct Mo{
   using F = function<void(int)>;
   vector<int> ls,rs,ord;
   int n,width,nl,nr,ptr;
-  vector<bool> flg;
-  F expand,shrink;
+  F expandL,expandR;
+  F shrinkL,shrinkR;
 
-  Mo(int n,int width,F expand,F shrink):
-    n(n),width(width),nl(0),nr(0),ptr(0),flg(n,0),
-    expand(expand),shrink(shrink){}
+  Mo(int n,int width,F expandL,F expandR,F shrinkL,F shrinkR):
+    n(n),width(width),nl(0),nr(0),ptr(0),
+    expandL(expandL),expandR(expandR),
+    shrinkL(shrinkL),shrinkR(shrinkR){}
+
+  Mo(int n,int width,F expand,F shrink){
+    *this=Mo(n,width,expand,expand,shrink,shrink);
+  }
 
   void add(int l,int r){
     ls.emplace_back(l);
@@ -32,19 +37,12 @@ struct Mo{
   int process(){
     if(ptr==(int)ord.size()) return -1;
     const int idx=ord[ptr++];
-    while(nl>ls[idx]) calc(--nl);
-    while(nr<rs[idx]) calc(nr++);
-    while(nl<ls[idx]) calc(nl++);
-    while(nr>rs[idx]) calc(--nr);
+    while(nl>ls[idx]) expandL(--nl);
+    while(nr<rs[idx]) expandR(nr++);
+    while(nl<ls[idx]) shrinkL(nl++);
+    while(nr>rs[idx]) shrinkR(--nr);
     return idx;
   }
-
-  inline void calc(int idx){
-    flg[idx].flip();
-    if(flg[idx]) expand(idx);
-    else         shrink(idx);
-  }
-
 };
 //END CUT HERE
 #ifndef call_from_test
@@ -139,7 +137,7 @@ signed DWANGO2017FINAL_B(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/11/12
   https://atcoder.jp/contests/dwacon2017-honsen/tasks/dwango2017final_b
 */
 
@@ -203,7 +201,7 @@ signed ABC133_F(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/11/12
   https://atcoder.jp/contests/abc133/tasks/abc133_f
 */
 
