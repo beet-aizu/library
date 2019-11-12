@@ -1,12 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 #define EPS (1e-10)
 #define equals(a,b) (fabs((a)-(b)) < EPS)
-#define PI 3.141592653589793238
+const double PI = asinl(1) * 2;
 
 // COUNTER CLOCKWISE
 static const int CCW_COUNTER_CLOCKWISE = 1;
@@ -413,10 +412,14 @@ double area(Circle c1,Circle c2){
     double r=min(c1.r,c2.r);
     return PI*r*r;
   }
-  double rc=(d*d+c1.r*c1.r-c2.r*c2.r)/(2*d);
-  double th=acos(rc/c1.r);
-  double ph=acos((d-rc)/c2.r);
-  return c1.r*c1.r*th+c2.r*c2.r*ph-d*c1.r*sin(th);
+  double res=0;
+  for(int k=0;k<2;k++){
+    double rc=(d*d+c1.r*c1.r-c2.r*c2.r)/(2*d*c1.r);
+    double th=acosl(rc)*2;
+    res+=(th-sin(th))*c1.r*c1.r/2;
+    swap(c1,c2);
+  }
+  return res;
 }
 
 Polygon convexCut(Polygon p,Line l){
@@ -621,7 +624,16 @@ double area(Polygon ps,Circle c){
 }
 //END CUT HERE
 #ifndef call_from_test
+
+signed ECR002_D(){
+  Circle c1,c2;
+  cin>>c1>>c2;
+  cout<<fixed<<setprecision(12)<<area(c1,c2)<<endl;
+  return 0;
+}
+
 signed main(){
+  ECR002_D();
   return 0;
 }
 #endif
