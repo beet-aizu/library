@@ -164,6 +164,7 @@
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/0377.test.cpp",
     "/test/aoj/0391.test.cpp",
+    "/test/aoj/0415.test.cpp",
     "/test/aoj/0502.test.cpp",
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1197.test.cpp",
@@ -383,6 +384,7 @@
     "/test/aoj/0109.test.cpp",
     "/test/aoj/0314.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
+    "/test/aoj/0415.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1338.test.cpp",
     "/test/aoj/1579.test.cpp",
@@ -566,6 +568,7 @@
   ],
   "/tools/chminmax.cpp": [
     "/test/aoj/0391.test.cpp",
+    "/test/aoj/0415.test.cpp",
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1549.test.cpp",
     "/test/aoj/1595.linkcuttree.test.cpp",
@@ -927,6 +930,7 @@
   ],
   "/graph/lowlink.cpp": [
     "/test/aoj/0377.test.cpp",
+    "/test/aoj/0415.test.cpp",
     "/test/aoj/GRL_3_A.test.cpp",
     "/test/aoj/GRL_3_B.test.cpp"
   ],
@@ -1478,6 +1482,15 @@
   "/tree/eulertourforvertex.cpp": [
     "/test/aoj/2871.test.cpp",
     "/test/yosupo/vertex_add_subtree_sum.test.cpp"
+  ],
+  "/test/aoj/0415.test.cpp": [
+    "/graph/lowlink.cpp",
+    "/tools/chminmax.cpp",
+    "/tools/fastio.cpp",
+    "/tree/diameterforvertex.cpp"
+  ],
+  "/tree/diameterforvertex.cpp": [
+    "/test/aoj/0415.test.cpp"
   ],
   "/test/aoj/GRL_2_B.test.cpp": [
     "/graph/arborescence_edmond.cpp",
