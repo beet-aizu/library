@@ -631,6 +631,10 @@ signed ECR002_D(){
   cout<<fixed<<setprecision(12)<<area(c1,c2)<<endl;
   return 0;
 }
+/*
+  verified on 2019/11/12
+  https://codeforces.com/contest/600/problem/D
+*/
 
 signed main(){
   ECR002_D();
