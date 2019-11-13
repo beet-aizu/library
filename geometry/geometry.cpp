@@ -332,13 +332,17 @@ Polygon andrewScan(Polygon s){
   l.push_back(s[s.size()-1]);
   l.push_back(s[s.size()-2]);
   for(int i=2;i<(int)s.size();i++){
-    for(int n=u.size();n>=2&&ccw(u[n-2],u[n-1],s[i])!=CCW_CLOCKWISE;n--){
+    for(int n=u.size();
+        n>=2&&ccw(u[n-2],u[n-1],s[i])!=CCW_CLOCKWISE;
+        n--){
       u.pop_back();
     }
     u.push_back(s[i]);
   }
   for(int i=s.size()-3;i>=0;i--){
-    for(int n=l.size();n>=2&&ccw(l[n-2],l[n-1],s[i])!=CCW_CLOCKWISE;n--){
+    for(int n=l.size();
+        n>=2&&ccw(l[n-2],l[n-1],s[i])!=CCW_CLOCKWISE;
+        n--){
       l.pop_back();
     }
     l.push_back(s[i]);
@@ -416,7 +420,7 @@ double area(Circle c1,Circle c2){
   for(int k=0;k<2;k++){
     double rc=(d*d+c1.r*c1.r-c2.r*c2.r)/(2*d*c1.r);
     double th=acosl(rc)*2;
-    res+=(th-sin(th))*c1.r*c1.r/2;
+    res+=(th-sinl(th))*c1.r*c1.r/2;
     swap(c1,c2);
   }
   return res;
@@ -632,7 +636,7 @@ signed ECR002_D(){
   return 0;
 }
 /*
-  verified on 2019/11/12
+  verified on 2019/11/13
   https://codeforces.com/contest/600/problem/D
 */
 
