@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 
 #define call_from_test
 #include "trie.cpp"
@@ -81,10 +80,15 @@ struct AhoCorasick : Trie<X+1>{
 };
 //END CUT HERE
 #ifndef call_from_test
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "../tools/fixpoint.cpp"
+#include "../tools/chminmax.cpp"
+#undef call_from_test
+
 //INSERT ABOVE HERE
 signed SPOJ_BLHETA(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   string s;
   cin>>s;
 
@@ -125,12 +129,76 @@ signed SPOJ_BLHETA(){
   return 0;
 }
 /*
-  verified on 2019/10/28
+  verified on 2019/11/14
   https://www.spoj.com/problems/BLHETA/
 */
 
+signed JSC2019_FINAL_E(){
+  using ll = long long;
+
+  int n,q,x,y;
+  cin>>n>>q>>x>>y;
+  vector<string> ss(n);
+  for(int i=0;i<n;i++) cin>>ss[i];
+
+  auto f=[&](char c){return c-'a';};
+  AhoCorasick<26> aho(f);
+
+  for(int i=0;i<n;i++)
+    aho.add(ss[i],i);
+
+  int m=aho.vs.size();
+  vector< vector<int> > G(m);
+  for(int i=0;i<m;i++)
+    for(int j=0;j<26;j++)
+      if(~aho.vs[i].nxt[j])
+        G[i].emplace_back(aho.vs[i].nxt[j]);
+
+  aho.build();
+
+  const ll INF = 1e17;
+  vector<ll> dp(m,INF),dep(m,0);
+  MFP([&](auto dfs,int v)->void{
+        if(~aho.idx(v)) dp[v]=0;
+        for(int u:G[v]){
+          dep[u]=dep[v]+1;
+          dfs(u);
+          chmin(dp[v],dp[u]+y);
+        }
+      })(0);
+
+  queue<int> que;
+  que.emplace(0);
+  while(!que.empty()){
+    int v=que.front();que.pop();
+    for(int u:G[v]) que.emplace(u);
+
+    int f=aho.next(v,26);
+    if(~f) chmin(dp[v],dp[f]+(dep[v]-dep[f])*x);
+  }
+
+  for(int i=0;i<q;i++){
+    string t;
+    cin>>t;
+    ll pos=0,len=t.size();
+    ll ans=dp[0]+len*x;
+    for(char c:t){
+      pos=aho.move(pos,c);
+      chmin(ans,dp[pos]+(len-dep[pos])*x);
+    }
+    cout<<ans<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
+/*
+  verified on 2019/11/14
+  https://atcoder.jp/contests/jsc2019-final/tasks/jsc2019_final_e
+*/
+
 signed main(){
-  SPOJ_BLHETA();
+  //SPOJ_BLHETA();
+  //JSC2019_FINAL_E();
   return 0;
 }
 #endif
