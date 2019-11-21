@@ -165,6 +165,9 @@
     "/test/aoj/0377.test.cpp",
     "/test/aoj/0391.test.cpp",
     "/test/aoj/0415.test.cpp",
+    "/test/aoj/0423.test.cpp",
+    "/test/aoj/0424.test.cpp",
+    "/test/aoj/0425.test.cpp",
     "/test/aoj/0502.test.cpp",
     "/test/aoj/0613.test.cpp",
     "/test/aoj/1197.test.cpp",
@@ -385,6 +388,9 @@
     "/test/aoj/0314.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/0415.test.cpp",
+    "/test/aoj/0423.test.cpp",
+    "/test/aoj/0424.test.cpp",
+    "/test/aoj/0425.test.cpp",
     "/test/aoj/1312.test.cpp",
     "/test/aoj/1338.test.cpp",
     "/test/aoj/1579.test.cpp",
@@ -681,6 +687,7 @@
     "/tools/fastio.cpp"
   ],
   "/flow/hopcroft_karp.cpp": [
+    "/test/aoj/0424.test.cpp",
     "/test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
   ],
   "/test/aoj/3063.test.cpp": [
@@ -1013,6 +1020,10 @@
     "/test/aoj/GRL_5_C.test.cpp",
     "/test/yosupo/vertex_add_path_sum.test.cpp"
   ],
+  "/test/aoj/0424.test.cpp": [
+    "/flow/hopcroft_karp.cpp",
+    "/tools/fastio.cpp"
+  ],
   "/test/aoj/GRL_6_A.test.cpp": [
     "/flow/dinic.cpp"
   ],
@@ -1069,6 +1080,13 @@
   ],
   "/math/fraction.cpp": [
     "/test/aoj/1338.test.cpp"
+  ],
+  "/test/aoj/0425.test.cpp": [
+    "/algorithm/mo.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/algorithm/mo.cpp": [
+    "/test/aoj/0425.test.cpp"
   ],
   "/test/aoj/DSL_2_F.bbst.test.cpp": [
     "/bbst/basic/base.cpp",
@@ -1263,6 +1281,14 @@
     "/algorithm/largestrectangle.cpp",
     "/tools/chminmax.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/aoj/0423.test.cpp": [
+    "/graph/dijkstra.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/graph/dijkstra.cpp": [
+    "/test/aoj/0423.test.cpp",
+    "/test/aoj/geometry/2334.test.cpp"
   ],
   "/test/aoj/3072.test.cpp": [
     "/convolution/numbertheoretictransform.cpp",
@@ -1771,9 +1797,6 @@
     "/geometry/geometry.cpp",
     "/graph/dijkstra.cpp",
     "/tools/chminmax.cpp"
-  ],
-  "/graph/dijkstra.cpp": [
-    "/test/aoj/geometry/2334.test.cpp"
   ],
   "/test/aoj/geometry/CGL_7_H.test.cpp": [
     "/geometry/geometry.cpp"
