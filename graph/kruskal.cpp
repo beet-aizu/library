@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -17,13 +16,11 @@ struct Kruskal{
       return cost<e.cost;
     }
   };
-
-  int n;
   vector<int> r,p;
   vector<edge> es;
 
   Kruskal(){}
-  Kruskal(int n):n(n),r(n,1),p(n){
+  Kruskal(int n):r(n,1),p(n){
     iota(p.begin(),p.end(),0);
   }
 
