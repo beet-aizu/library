@@ -55,6 +55,7 @@
     "/graph/arborescence_edmond.cpp",
     "/graph/arborescence_tarjan.cpp",
     "/graph/bellmanford.cpp",
+    "/graph/chebyshevneighbors.cpp",
     "/graph/chromatic.cpp",
     "/graph/dijkstra.cpp",
     "/graph/dynamicconnectivity.cpp",
@@ -164,6 +165,7 @@
     "/test/aoj/0367.linkcuttree.test.cpp",
     "/test/aoj/0377.test.cpp",
     "/test/aoj/0391.test.cpp",
+    "/test/aoj/0403.test.cpp",
     "/test/aoj/0415.test.cpp",
     "/test/aoj/0423.test.cpp",
     "/test/aoj/0424.test.cpp",
@@ -387,6 +389,7 @@
     "/test/aoj/0109.test.cpp",
     "/test/aoj/0314.test.cpp",
     "/test/aoj/0367.linkcuttree.test.cpp",
+    "/test/aoj/0403.test.cpp",
     "/test/aoj/0415.test.cpp",
     "/test/aoj/0423.test.cpp",
     "/test/aoj/0424.test.cpp",
@@ -1088,6 +1091,18 @@
   "/algorithm/mo.cpp": [
     "/test/aoj/0425.test.cpp"
   ],
+  "/test/aoj/0403.test.cpp": [
+    "/graph/chebyshevneighbors.cpp",
+    "/graph/kruskal.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/graph/chebyshevneighbors.cpp": [
+    "/test/aoj/0403.test.cpp"
+  ],
+  "/graph/kruskal.cpp": [
+    "/test/aoj/0403.test.cpp",
+    "/test/aoj/GRL_2_A.test.cpp"
+  ],
   "/test/aoj/DSL_2_F.bbst.test.cpp": [
     "/bbst/basic/base.cpp",
     "/bbst/basic/lazy.cpp",
@@ -1662,9 +1677,6 @@
   ],
   "/test/aoj/GRL_2_A.test.cpp": [
     "/graph/kruskal.cpp"
-  ],
-  "/graph/kruskal.cpp": [
-    "/test/aoj/GRL_2_A.test.cpp"
   ],
   "/test/aoj/2644.test.cpp": [
     "/segtree/basic/ushi.cpp",
