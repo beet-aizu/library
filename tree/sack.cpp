@@ -79,7 +79,7 @@ signed ECR002_E(){
     };
   auto shrink=[&](int v){cnt[c[v]]--;};
   auto query =[&](int v){ans[v]=res;};
-  auto reset =[&](int v){v++;mx=res=0;};
+  auto reset =[&](int v){(void)v;mx=res=0;};
   Sack sc(n,expand,shrink,query,reset);
   for(int i=1;i<n;i++){
     int x,y;
@@ -118,7 +118,7 @@ signed CFR316_D(){
     };
 
   auto query =[&](int k){ans[k]=odd[hs[k]]<=1;};
-  auto reset =[&](int v){v++;};
+  auto reset =[&](int v){(void)v;};
 
   Sack sc(n,flip,flip,query,reset);
   for(int i=1;i<n;i++){
@@ -162,7 +162,6 @@ signed CFR316_D(){
   http://codeforces.com/contest/570/problem/D
 */
 
-
 signed CFR130_E(){
   int n;
   scanf("%d",&n);
@@ -174,7 +173,7 @@ signed CFR130_E(){
   auto expand=[&](int v){cnt[dep[v]]++;};
   auto shrink=[&](int v){cnt[dep[v]]--;};
   auto query =[&](int k){ans[k]=cnt[dep[vs[k]]+hs[k]]-1;};
-  auto reset =[&](int v){v++;};
+  auto reset =[&](int v){(void)v;};
 
   Sack sc(n,expand,shrink,query,reset);
   for(int i=0;i<n;i++){
