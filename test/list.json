@@ -371,6 +371,7 @@
     "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
+    "/test/yosupo/point_set_range_composite.test.cpp",
     "/test/yosupo/rectangle_sum.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
@@ -477,6 +478,7 @@
     "/test/yosupo/number_of_substrings.test.cpp",
     "/test/yosupo/partition_function.test.cpp",
     "/test/yosupo/point_add_range_sum.test.cpp",
+    "/test/yosupo/point_set_range_composite.test.cpp",
     "/test/yosupo/rectangle_sum.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
@@ -527,7 +529,8 @@
     "/test/yosupo/inv_of_formal_power_series.test.cpp",
     "/test/yosupo/log_of_formal_power_series.test.cpp",
     "/test/yosupo/matrix_det.test.cpp",
-    "/test/yosupo/partition_function.test.cpp"
+    "/test/yosupo/partition_function.test.cpp",
+    "/test/yosupo/point_set_range_composite.test.cpp"
   ],
   "/mod/enumeration.cpp": [
     "/test/aoj/DPL_5_A.test.cpp",
@@ -850,7 +853,8 @@
   ],
   "/segtree/basic/ushi.cpp": [
     "/test/aoj/2644.test.cpp",
-    "/test/aoj/DSL_2_A.test.cpp"
+    "/test/aoj/DSL_2_A.test.cpp",
+    "/test/yosupo/point_set_range_composite.test.cpp"
   ],
   "/test/aoj/GRL_4_A.test.cpp": [
     "/graph/stronglyconnectedcomponent.cpp",
@@ -1885,6 +1889,11 @@
   "/test/yosupo/convolution_mod.test.cpp": [
     "/convolution/numbertheoretictransform.cpp",
     "/mod/mint.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/point_set_range_composite.test.cpp": [
+    "/mod/mint.cpp",
+    "/segtree/basic/ushi.cpp",
     "/tools/fastio.cpp"
   ],
   "/test/yosupo/log_of_formal_power_series.test.cpp": [
