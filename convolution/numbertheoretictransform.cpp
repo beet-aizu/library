@@ -41,8 +41,8 @@ struct NTT{
     }
   }
 
-  void ntt(vector<M> &as,bool f,int n=-1){
-    if(n==-1) n=as.size();
+  void ntt(vector<M> &as,bool f){
+    int n=as.size();
     assert((n&(n-1))==0);
     ensure_base(n);
 
@@ -112,7 +112,7 @@ signed ATC001_C(){
   return 0;
 }
 /*
-  verified on 2019/10/24
+  verified on 2019/11/26
   https://atcoder.jp/contests/atc001/tasks/fft_c
 */
 

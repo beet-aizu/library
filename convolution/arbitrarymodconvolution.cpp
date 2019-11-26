@@ -23,7 +23,7 @@ struct ArbitraryModConvolution{
     for(int i=0;i<(int)bs.size();i++)
       fb[i]=num(bs[i].v&((1<<15)-1),bs[i].v>>15);
 
-    fft(fa,sz);fft(fb,sz);
+    fft(fa);fft(fb);
 
     dbl ratio=0.25/sz;
     num r2(0,-1),r3(ratio,0),r4(0,-ratio),r5(0,1);
@@ -44,7 +44,7 @@ struct ArbitraryModConvolution{
       fa[j]=a1*b1+a2*b2*r5;
       fb[j]=a1*b2+a2*b1;
     }
-    fft(fa,sz);fft(fb,sz);
+    fft(fa);fft(fb);
 
     vector<T> cs(need);
     using ll = long long;
