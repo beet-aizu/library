@@ -29,7 +29,7 @@ namespace FFT{
   vector<num> rts={{0,0},{1,0}};
   vector<int> rev={0,1};
 
-  const dbl PI=acosl(-1.0);
+  const dbl PI=asinl(1)*2;
 
   void ensure_base(int nbase){
     if(nbase<=base) return;
@@ -50,8 +50,8 @@ namespace FFT{
     }
   }
 
-  void fft(vector<num> &a,int n=-1){
-    if(n==-1) n=a.size();
+  void fft(vector<num> &as){
+    int n=as.size();
     assert((n&(n-1))==0);
 
     int zeros=__builtin_ctz(n);
@@ -59,35 +59,33 @@ namespace FFT{
     int shift=base-zeros;
     for(int i=0;i<n;i++)
       if(i<(rev[i]>>shift))
-        swap(a[i],a[rev[i]>>shift]);
+        swap(as[i],as[rev[i]>>shift]);
 
     for(int k=1;k<n;k<<=1){
       for(int i=0;i<n;i+=2*k){
         for(int j=0;j<k;j++){
-          num z=a[i+j+k]*rts[j+k];
-          a[i+j+k]=a[i+j]-z;
-          a[i+j]=a[i+j]+z;
+          num z=as[i+j+k]*rts[j+k];
+          as[i+j+k]=as[i+j]-z;
+          as[i+j]=as[i+j]+z;
         }
       }
     }
   }
 
-  vector<num> fa;
-
-  vector<long long> multiply(vector<int> &a,vector<int> &b){
-    int need=a.size()+b.size()-1;
+  vector<long long> multiply(vector<int> &as,vector<int> &bs){
+    int need=as.size()+bs.size()-1;
     int nbase=0;
     while((1<<nbase)<need) nbase++;
     ensure_base(nbase);
 
     int sz=1<<nbase;
-    if(sz>(int)fa.size()) fa.resize(sz);
+    vector<num> fa(sz);
     for(int i=0;i<sz;i++){
-      int x=(i<(int)a.size()?a[i]:0);
-      int y=(i<(int)b.size()?b[i]:0);
+      int x=(i<(int)as.size()?as[i]:0);
+      int y=(i<(int)bs.size()?bs[i]:0);
       fa[i]=num(x,y);
     }
-    fft(fa,sz);
+    fft(fa);
 
     num r(0,-0.25/sz);
     for(int i=0;i<=(sz>>1);i++){
@@ -97,7 +95,7 @@ namespace FFT{
         fa[j]=(fa[i]*fa[i]-conj(fa[j]*fa[j]))*r;
       fa[i]=z;
     }
-    fft(fa,sz);
+    fft(fa);
 
     vector<long long> res(need);
     for(int i=0;i<need;i++)
@@ -112,14 +110,14 @@ namespace FFT{
 signed main(){
   int n;
   scanf("%d",&n);
-  vector<int> a(n+1,0),b(n+1,0);
-  for(int i=1;i<=n;i++) scanf("%d %d",&a[i],&b[i]);
-  auto c=FFT::multiply(a,b);
-  for(int i=1;i<=n*2;i++) printf("%lld\n",c[i]);
+  vector<int> as(n+1,0),bs(n+1,0);
+  for(int i=1;i<=n;i++) scanf("%d %d",&as[i],&bs[i]);
+  auto cs=FFT::multiply(as,bs);
+  for(int i=1;i<=n*2;i++) printf("%lld\n",cs[i]);
   return 0;
 }
 /*
-  verified on 2017/11/14
-  http://atc001.contest.atcoder.jp/tasks/fft_c
+  verified on 2019/11/26
+  https://atcoder.jp/contests/atc001/tasks/fft_c
 */
 #endif
