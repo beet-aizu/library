@@ -22,7 +22,6 @@ signed main(){
   using LCT = SubTree<Node, LIM>;
   LCT lct;
 
-
   vector<LCT::Node*> vs(n);
   for(int i=0;i<n;i++)
     vs[i]=lct.create(i,as[i]);

@@ -23,7 +23,6 @@ signed main(){
   }
   G.build(0);
 
-
   BIT<long long> bit(n);
   for(int i=0;i<n;i++)
     bit.add0(G.idx(i),as[i]);
