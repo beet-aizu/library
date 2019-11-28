@@ -218,6 +218,7 @@
     "/test/aoj/2674.count.test.cpp",
     "/test/aoj/2674.test.cpp",
     "/test/aoj/2679.test.cpp",
+    "/test/aoj/2711.test.cpp",
     "/test/aoj/2720.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
@@ -413,6 +414,7 @@
     "/test/aoj/2603.test.cpp",
     "/test/aoj/2674.count.test.cpp",
     "/test/aoj/2674.test.cpp",
+    "/test/aoj/2711.test.cpp",
     "/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp",
     "/test/aoj/2725.test.cpp",
     "/test/aoj/2842.2D_BIT.test.cpp",
@@ -703,6 +705,7 @@
   ],
   "/string/suffixarray.cpp": [
     "/test/aoj/2644.test.cpp",
+    "/test/aoj/2711.test.cpp",
     "/test/aoj/3033.test.cpp",
     "/test/aoj/3063.test.cpp",
     "/test/aoj/3112.test.cpp",
@@ -711,6 +714,7 @@
     "/test/yosupo/suffixarray.test.cpp"
   ],
   "/string/longestcommonprefix.cpp": [
+    "/test/aoj/2711.test.cpp",
     "/test/aoj/3063.test.cpp",
     "/test/aoj/3112.test.cpp",
     "/test/yosupo/number_of_substrings.test.cpp"
@@ -1586,6 +1590,11 @@
   ],
   "/convolution/arbitrarymodconvolution_with_garner.cpp": [
     "/test/aoj/2985.garner.test.cpp"
+  ],
+  "/test/aoj/2711.test.cpp": [
+    "/string/longestcommonprefix.cpp",
+    "/string/suffixarray.cpp",
+    "/tools/fastio.cpp"
   ],
   "/test/aoj/2934.test.cpp": [
     "/string/manacher.cpp",
