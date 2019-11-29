@@ -97,12 +97,16 @@ if [[ $# -eq 0 ]] ; then
         for f in $(list-recently-updated | grep aoj) ; do
             run $f
         done
-    else
-        # local / github actions
-        git config --global user.name "beet-aizu"
-        git config --global user.email "aki.bdash@gmail.com"
+    fi
 
-        git remote set-url origin https://beet-aizu:${GITHUB_TOKEN}@github.com/beet-aizu/library.git
+    if [[ $GITHUB_ACTIONS ]] ; then
+        # github actions
+        username=`git remote get-url origin | sed -e 's/\(.*github.com\/\)\(.*\)\/\(.*\)/\2/'`
+        reponame=`git remote get-url origin | sed -e 's/\(.*github.com\/\)\(.*\)\/\(.*\)/\3/'`
+        git config --global user.name ${username}
+        git config --global user.email "online-judge-verify-helper@example.com"
+
+        git remote set-url origin https://${username}:${GITHUB_TOKEN}@github.com/${username}/${reponame}
 
         git checkout -b master
         git branch -a
