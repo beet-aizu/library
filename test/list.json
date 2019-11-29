@@ -39,6 +39,7 @@
     "/datastructure/radixheap.cpp",
     "/datastructure/rangeslide.cpp",
     "/datastructure/skewheap.cpp",
+    "/datastructure/slidingwindowaggregation.cpp",
     "/datastructure/sparsetable.cpp",
     "/datastructure/unionfindtree.cpp",
     "/datastructure/waveletmatrix.cpp",
@@ -295,6 +296,7 @@
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp",
+    "/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp",
     "/test/aoj/DSL_3_D.sparsetable.test.cpp",
     "/test/aoj/DSL_3_D.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
@@ -452,6 +454,7 @@
     "/test/aoj/DSL_2_I.test.cpp",
     "/test/aoj/DSL_3_D.cartesiantree.test.cpp",
     "/test/aoj/DSL_3_D.disjointsparsetable.test.cpp",
+    "/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp",
     "/test/aoj/DSL_3_D.sparsetable.test.cpp",
     "/test/aoj/DSL_3_D.test.cpp",
     "/test/aoj/GRL_1_A.test.cpp",
@@ -1351,6 +1354,13 @@
   ],
   "/test/aoj/ITP1_11_D.test.cpp": [
     "/tools/dice.cpp"
+  ],
+  "/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp": [
+    "/datastructure/slidingwindowaggregation.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/datastructure/slidingwindowaggregation.cpp": [
+    "/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp"
   ],
   "/test/aoj/2720.test.cpp": [
     "/math/carmichael.cpp"
