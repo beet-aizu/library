@@ -1,13 +1,9 @@
 name: verify
 
-on:
-  push:
-    branches:
-    - master
+on: push
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +15,7 @@ jobs:
     - name: Install dependencies
       run: pip3 install -U git+https://github.com/kmyk/online-judge-verify-helper.git@v1
 
-    - name: test
+    - name: Run tests
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: oj-verify run
