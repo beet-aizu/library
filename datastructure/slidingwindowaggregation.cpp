@@ -2,6 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+//BEGIN CUT HERE
 template<typename T,typename S>
 struct SWAG{
   using F = function<S(S,T)>;
@@ -33,6 +34,7 @@ struct SWAG{
   template<typename Q>
   void fold(Q q){q(ls.back(),rs.back());}
 };
+//END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
