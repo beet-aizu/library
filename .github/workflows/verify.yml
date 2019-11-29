@@ -17,13 +17,9 @@ jobs:
       uses: actions/setup-python@v1
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip3 install -U toml
-        pip3 install -U setuptools
-        pip3 install -U online-judge-tools=='7.2.*'
+      run: pip3 install -U git+https://github.com/kmyk/online-judge-verify-helper.git@v1
 
     - name: test
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: ./test/test.sh
+      run: oj-verify run
