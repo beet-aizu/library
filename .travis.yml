@@ -1,21 +1,19 @@
-name: verify
+language: cpp
+compiler:
+    - gcc
+    - clang
+dist: xenial
+addons:
+    apt:
+        packages:
+            - python3
+            - python3-pip
+            - python3-setuptools
 
-on: push
+before_install:
+    - pip3 install -U setuptools
+    - pip3 install -U online-judge-tools=='7.2.*'
+    - pip3 install -U git+https://github.com/kmyk/online-judge-verify-helper.git@master
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-
-    - name: Set up Python
-      uses: actions/setup-python@v1
-
-    - name: Install dependencies
-      run: pip3 install -U git+https://github.com/kmyk/online-judge-verify-helper.git@master
-
-    - name: Run tests
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: oj-verify run
+script:
+    - oj-verify run
