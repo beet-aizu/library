@@ -1,6 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
+#endif
 //BEGIN CUT HERE
 vector<string> split(string& s,char c){
   int n=s.size();
@@ -14,6 +15,21 @@ vector<string> split(string& s,char c){
   return res;
 }
 //END CUT HERE
-signed main(){
+#ifndef call_from_test
+signed YUKI_932(){
+  string s;
+  cin>>s;
+  auto ss=split(s,',');
+  cout<<(ss==vector<string>(ss.size(),"AC")?"Done!":"Failed...")<<endl;
   return 0;
 }
+/*
+  verified 2019/11/30
+  https://yukicoder.me/problems/no/932
+*/
+
+signed main(){
+  YUKI_932();
+  return 0;
+}
+#endif
