@@ -103,6 +103,7 @@ if [[ $# -eq 0 ]] ; then
         # github actions
         username=`git remote get-url origin | sed -e 's/\(.*github.com\/\)\(.*\)\/\(.*\)/\2/'`
         reponame=`git remote get-url origin | sed -e 's/\(.*github.com\/\)\(.*\)\/\(.*\)/\3/'`
+
         git config --global user.name ${username}
         git config --global user.email "online-judge-verify-helper@example.com"
 
@@ -110,8 +111,6 @@ if [[ $# -eq 0 ]] ; then
 
         git checkout -b master
         git branch -a
-
-        git clone https://github.com/yosupo06/library-checker-problems.git
 
         for f in $(find . -name \*.test.cpp) ; do
             run $f
@@ -122,7 +121,7 @@ if [[ $# -eq 0 ]] ; then
         git status -s
         if [ -n "$(git status -s)" ]; then
             last_commit="$(git log -1 | head -1 | awk '{print $2}')"
-            git add ./test
+            git add test/timestamp/
             git commit -m "[auto-verifier] verify commit ${last_commit}"
             git push origin HEAD
         fi
