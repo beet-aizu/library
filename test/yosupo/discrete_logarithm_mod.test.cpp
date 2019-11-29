@@ -9,9 +9,9 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
-  int T;
-  cin>>T;
-  while(T--){
+  int t;
+  cin>>t;
+  while(t--){
     int x,y,m;
     cin>>x>>y>>m;
     int l=mod_log(x,y,m);
