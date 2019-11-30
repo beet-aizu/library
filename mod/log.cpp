@@ -1,9 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 // find x s.t. a^x = b (x >= 0)
@@ -59,6 +56,7 @@ T mod_log(T a,T b,T mod){
 
 #define call_from_test
 #include "mint.cpp"
+#include "../tools/chminmax.cpp"
 #include "../math/kitamasa.cpp"
 #include "../math/extgcd.cpp"
 #include "../tools/drop.cpp"
