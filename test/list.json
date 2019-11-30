@@ -376,6 +376,7 @@
     "/test/yosupo/point_add_range_sum.test.cpp",
     "/test/yosupo/point_set_range_composite.test.cpp",
     "/test/yosupo/rectangle_sum.test.cpp",
+    "/test/yosupo/sqrt_mod.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
@@ -485,6 +486,7 @@
     "/test/yosupo/point_add_range_sum.test.cpp",
     "/test/yosupo/point_set_range_composite.test.cpp",
     "/test/yosupo/rectangle_sum.test.cpp",
+    "/test/yosupo/sqrt_mod.test.cpp",
     "/test/yosupo/staticrmq.disjointsparsetable.test.cpp",
     "/test/yosupo/staticrmq.sparsetable.test.cpp",
     "/test/yosupo/suffixarray.test.cpp",
@@ -1951,6 +1953,13 @@
     "/segtree/count/dynamic_offline.cpp",
     "/tools/compress.cpp",
     "/tools/fastio.cpp"
+  ],
+  "/test/yosupo/sqrt_mod.test.cpp": [
+    "/mod/sqrt.cpp",
+    "/tools/fastio.cpp"
+  ],
+  "/mod/sqrt.cpp": [
+    "/test/yosupo/sqrt_mod.test.cpp"
   ],
   "/test/yosupo/staticrmq.disjointsparsetable.test.cpp": [
     "/datastructure/disjointsparsetable.cpp",
