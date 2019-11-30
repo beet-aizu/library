@@ -56,8 +56,4 @@ vector<T> mod_sqrt(T a,T mod){
 signed main(){
   return 0;
 }
-/*
-  verified on 2019/09/25
-  https://judge.yosupo.jp/problem/sqrt_mod
-*/
 #endif

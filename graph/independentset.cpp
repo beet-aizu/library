@@ -1,12 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct IndependentSet{
   int n;
-  vector<int> deg,used,dead;
+  vector<int> deg,used,dead,pre,ans;
   vector<vector<int> > G;
 
   IndependentSet(int n):
@@ -49,6 +48,7 @@ struct IndependentSet{
       for(int u:G[v])
         if(0==dead[u]++) alive-=!used[u];
       cnt++;
+      if(res<cnt) pre=used;
       res=max(res,cnt);
 
       dfs();
@@ -65,6 +65,8 @@ struct IndependentSet{
     for(int i=0;i<n;i++) deg[i]=G[i].size();
     res=0,cnt=0,alive=n;
     dfs();
+    for(int i=0;i<n;i++)
+      if(pre[i]) ans.emplace_back(i);
     return res;
   }
 };
@@ -85,7 +87,7 @@ signed CODETHANKSFESTIVAL2017_G(){
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/11/30
   https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_g
 */
 
@@ -139,7 +141,7 @@ signed CFR533_E(){
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/11/30
   https://codeforces.com/contest/1105/problem/E
 */
 signed main(){
