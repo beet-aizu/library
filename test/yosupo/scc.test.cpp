@@ -19,6 +19,7 @@ signed main(){
   }
   int k=G.build();
   cout<<k<<endl;
+  reverse(G.C.begin(),G.C.end());
   for(int i=0;i<k;i++){
     cout<<G.C[i].size();
     for(int v:G.C[i]) cout<<" "<<v;
