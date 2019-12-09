@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -37,6 +41,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 #define PROBLEM "https://judge.yosupo.jp/problem/exp_of_formal_power_series"
 
@@ -72,6 +77,7 @@ signed main(){
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 
