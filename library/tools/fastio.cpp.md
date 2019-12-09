@@ -83,6 +83,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/2450.linkcuttree.test.cpp](../../verify/test/aoj/2450.linkcuttree.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2488.test.cpp](../../verify/test/aoj/2488.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2603.test.cpp](../../verify/test/aoj/2603.test.cpp.html)
+* :heavy_check_mark: [test/aoj/2646.test.cpp](../../verify/test/aoj/2646.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2674.count.test.cpp](../../verify/test/aoj/2674.count.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2674.test.cpp](../../verify/test/aoj/2674.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2711.test.cpp](../../verify/test/aoj/2711.test.cpp.html)

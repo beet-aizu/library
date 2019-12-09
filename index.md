@@ -314,6 +314,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/2624.test.cpp](verify/test/aoj/2624.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2627.test.cpp](verify/test/aoj/2627.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2644.test.cpp](verify/test/aoj/2644.test.cpp.html)
+* :heavy_check_mark: [test/aoj/2646.test.cpp](verify/test/aoj/2646.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2647.test.cpp](verify/test/aoj/2647.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2659.test.cpp](verify/test/aoj/2659.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2667.test.cpp](verify/test/aoj/2667.test.cpp.html)
