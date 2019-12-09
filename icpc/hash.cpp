@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+#define IGNORE
 //BEGIN CUT HERE
 signed main(){
   const int MOD = 1e9+7,B=1e8+7;

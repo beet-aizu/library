@@ -1,3 +1,4 @@
+#define IGNORE
 //BEGIN CUT HERE
 #include<bits/stdc++.h>
 using namespace std;
