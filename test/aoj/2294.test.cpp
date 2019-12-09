@@ -9,6 +9,8 @@ using namespace std;
 #include "../../tools/vec.cpp"
 #undef call_from_test
 
+#define ERROR "1e-6"
+
 signed main(){
   using D = long double;
   int h,n,p,m,k;
