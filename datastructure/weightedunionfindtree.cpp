@@ -1,18 +1,16 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template <typename T>
 struct WeightedUnionFind{
-  T d;
   vector<int> rs,ps;
   vector<T> ws;
 
   WeightedUnionFind(){}
-  WeightedUnionFind(int n,T d):
-    d(d),rs(n,1),ps(n),ws(n,d){iota(ps.begin(),ps.end(),0);}
+  WeightedUnionFind(int n):
+    rs(n,1),ps(n),ws(n,T(0)){iota(ps.begin(),ps.end(),0);}
 
   int find(int x){
     if(x==ps[x]) return x;
