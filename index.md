@@ -45,7 +45,7 @@ layout: default
 
 ### bbst
 * :warning: [bbst/avltree.cpp](library/bbst/avltree.cpp.html)
-* :warning: [bbst/pb_ds_tree.cpp](library/bbst/pb_ds_tree.cpp.html)
+* :heavy_check_mark: [bbst/pb_ds_tree.cpp](library/bbst/pb_ds_tree.cpp.html)
 
 
 ### bbst/basic
@@ -272,6 +272,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/0424.test.cpp](verify/test/aoj/0424.test.cpp.html)
 * :heavy_check_mark: [test/aoj/0425.test.cpp](verify/test/aoj/0425.test.cpp.html)
 * :heavy_check_mark: [test/aoj/0502.test.cpp](verify/test/aoj/0502.test.cpp.html)
+* :heavy_check_mark: [test/aoj/0563.test.cpp](verify/test/aoj/0563.test.cpp.html)
 * :heavy_check_mark: [test/aoj/0613.test.cpp](verify/test/aoj/0613.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1197.test.cpp](verify/test/aoj/1197.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1254.test.cpp](verify/test/aoj/1254.test.cpp.html)
@@ -286,6 +287,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/1595.linkcuttree.test.cpp](verify/test/aoj/1595.linkcuttree.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1595.test.cpp](verify/test/aoj/1595.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1599.test.cpp](verify/test/aoj/1599.test.cpp.html)
+* :heavy_check_mark: [test/aoj/1607.test.cpp](verify/test/aoj/1607.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1615.test.cpp](verify/test/aoj/1615.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1630.test.cpp](verify/test/aoj/1630.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2060.test.cpp](verify/test/aoj/2060.test.cpp.html)

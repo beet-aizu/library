@@ -34,6 +34,7 @@ layout: default
 
 
 ## Verified
+* :heavy_check_mark: [test/aoj/1607.test.cpp](../../verify/test/aoj/1607.test.cpp.html)
 * :heavy_check_mark: [test/aoj/GRL_1_A.test.cpp](../../verify/test/aoj/GRL_1_A.test.cpp.html)
 
 

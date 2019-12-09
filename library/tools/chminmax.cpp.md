@@ -50,6 +50,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/0613.test.cpp](../../verify/test/aoj/0613.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1549.test.cpp](../../verify/test/aoj/1549.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1595.linkcuttree.test.cpp](../../verify/test/aoj/1595.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/aoj/1607.test.cpp](../../verify/test/aoj/1607.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2230.test.cpp](../../verify/test/aoj/2230.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2627.test.cpp](../../verify/test/aoj/2627.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2790.test.cpp](../../verify/test/aoj/2790.test.cpp.html)

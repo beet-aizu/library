@@ -40,6 +40,7 @@ layout: default
 ## Verified
 * :heavy_check_mark: [test/aoj/0613.test.cpp](../../verify/test/aoj/0613.test.cpp.html)
 * :heavy_check_mark: [test/aoj/1599.test.cpp](../../verify/test/aoj/1599.test.cpp.html)
+* :heavy_check_mark: [test/aoj/1607.test.cpp](../../verify/test/aoj/1607.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2359.test.cpp](../../verify/test/aoj/2359.test.cpp.html)
 * :heavy_check_mark: [test/yosupo/rectangle_sum.test.cpp](../../verify/test/yosupo/rectangle_sum.test.cpp.html)
 
