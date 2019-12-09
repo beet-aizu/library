@@ -35,6 +35,7 @@ layout: default
 
 ## Dependencies
 * :heavy_check_mark: [datastructure/weightedunionfindtree.cpp](../../../library/datastructure/weightedunionfindtree.cpp.html)
+* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
 
 
 ## Code
@@ -46,16 +47,14 @@ layout: default
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../datastructure/weightedunionfindtree.cpp"
 #undef call_from_test
 
 int main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n,q;
   cin>>n>>q;
-  WeightedUnionFind<int> wuf(n,0);
+  WeightedUnionFind<int> wuf(n);
 
   for(int i=0;i<q;i++){
     int t,x,y,z;

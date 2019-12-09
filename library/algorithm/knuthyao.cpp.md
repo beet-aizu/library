@@ -43,7 +43,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 // f(i,l) + f(j,k) >= f(i,k) + f(j,l) (i <= j, k <= l)

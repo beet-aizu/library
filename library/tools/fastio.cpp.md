@@ -103,6 +103,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/ALDS1_14_C.test.cpp](../../verify/test/aoj/ALDS1_14_C.test.cpp.html)
 * :heavy_check_mark: [test/aoj/DPL_3_B.test.cpp](../../verify/test/aoj/DPL_3_B.test.cpp.html)
 * :heavy_check_mark: [test/aoj/DSL_1_A.quickfind.test.cpp](../../verify/test/aoj/DSL_1_A.quickfind.test.cpp.html)
+* :heavy_check_mark: [test/aoj/DSL_1_B.test.cpp](../../verify/test/aoj/DSL_1_B.test.cpp.html)
 * :heavy_check_mark: [test/aoj/DSL_2_A.bbst.test.cpp](../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html)
 * :heavy_check_mark: [test/aoj/DSL_2_A.test.cpp](../../verify/test/aoj/DSL_2_A.test.cpp.html)
 * :heavy_check_mark: [test/aoj/DSL_2_B.binarytrie.test.cpp](../../verify/test/aoj/DSL_2_B.binarytrie.test.cpp.html)
