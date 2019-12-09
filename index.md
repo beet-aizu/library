@@ -82,7 +82,7 @@ layout: default
 * :heavy_check_mark: [datastructure/disjointsparsetable.cpp](library/datastructure/disjointsparsetable.cpp.html)
 * :heavy_check_mark: [datastructure/kdtree.cpp](library/datastructure/kdtree.cpp.html)
 * :heavy_check_mark: [datastructure/nonmonotonicconvexhulltrick.cpp](library/datastructure/nonmonotonicconvexhulltrick.cpp.html)
-* :warning: [datastructure/pb_ds_cc_hash_table.cpp](library/datastructure/pb_ds_cc_hash_table.cpp.html)
+* :heavy_check_mark: [datastructure/pb_ds_cc_hash_table.cpp](library/datastructure/pb_ds_cc_hash_table.cpp.html)
 * :warning: [datastructure/prioritysum.cpp](library/datastructure/prioritysum.cpp.html)
 * :heavy_check_mark: [datastructure/quickfind.cpp](library/datastructure/quickfind.cpp.html)
 * :heavy_check_mark: [datastructure/radixheap.cpp](library/datastructure/radixheap.cpp.html)
@@ -240,7 +240,7 @@ layout: default
 * :heavy_check_mark: [tools/precision.cpp](library/tools/precision.cpp.html)
 * :warning: [tools/split.cpp](library/tools/split.cpp.html)
 * :warning: [tools/trio.cpp](library/tools/trio.cpp.html)
-* :warning: [tools/vec.cpp](library/tools/vec.cpp.html)
+* :heavy_check_mark: [tools/vec.cpp](library/tools/vec.cpp.html)
 * :warning: [tools/zip.cpp](library/tools/zip.cpp.html)
 
 
@@ -297,6 +297,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/2235.test.cpp](verify/test/aoj/2235.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2257.test.cpp](verify/test/aoj/2257.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2292.test.cpp](verify/test/aoj/2292.test.cpp.html)
+* :heavy_check_mark: [test/aoj/2294.test.cpp](verify/test/aoj/2294.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2309.tarjan.test.cpp](verify/test/aoj/2309.tarjan.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2309.test.cpp](verify/test/aoj/2309.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2313.test.cpp](verify/test/aoj/2313.test.cpp.html)

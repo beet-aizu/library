@@ -36,7 +36,7 @@ layout: default
 ## Dependencies
 * :heavy_check_mark: [math/factorize.cpp](../math/factorize.cpp.html)
 * :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
-* :warning: [tools/vec.cpp](../tools/vec.cpp.html)
+* :heavy_check_mark: [tools/vec.cpp](../tools/vec.cpp.html)
 * :heavy_check_mark: [tree/eulertourforedge.cpp](../tree/eulertourforedge.cpp.html)
 
 

@@ -25,12 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/pb_ds_cc_hash_table.cpp
+# :heavy_check_mark: datastructure/pb_ds_cc_hash_table.cpp
 * category: datastructure
 
 
 [Back to top page](../../index.html)
 
+
+
+## Verified
+* :heavy_check_mark: [test/aoj/2646.test.cpp](../../verify/test/aoj/2646.test.cpp.html)
 
 
 ## Code
@@ -43,8 +47,8 @@ using namespace std;
 //BEGIN CUT HERE
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
-template<typename T,typename U>
-using gmap = cc_hash_table<T, U, hash<T> >;
+template<typename T,typename U, typename H=hash<T> >
+using gmap = cc_hash_table<T, U, H>;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

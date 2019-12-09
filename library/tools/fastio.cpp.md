@@ -75,6 +75,7 @@ layout: default
 * :heavy_check_mark: [test/aoj/1607.test.cpp](../../verify/test/aoj/1607.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2212.test.cpp](../../verify/test/aoj/2212.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2292.test.cpp](../../verify/test/aoj/2292.test.cpp.html)
+* :heavy_check_mark: [test/aoj/2294.test.cpp](../../verify/test/aoj/2294.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2309.tarjan.test.cpp](../../verify/test/aoj/2309.tarjan.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2309.test.cpp](../../verify/test/aoj/2309.test.cpp.html)
 * :heavy_check_mark: [test/aoj/2313.test.cpp](../../verify/test/aoj/2313.test.cpp.html)
