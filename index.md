@@ -139,12 +139,6 @@ layout: default
 * :warning: [heuristic/xorshift.cpp](library/heuristic/xorshift.cpp.html)
 
 
-### icpc
-* :warning: [icpc/hash.cpp](library/icpc/hash.cpp.html)
-* :warning: [icpc/hash_gen.cpp](library/icpc/hash_gen.cpp.html)
-* :warning: [icpc/t.cpp](library/icpc/t.cpp.html)
-
-
 ### linearalgebra
 * :heavy_check_mark: [linearalgebra/binarymatrix.cpp](library/linearalgebra/binarymatrix.cpp.html)
 * :heavy_check_mark: [linearalgebra/matrix.cpp](library/linearalgebra/matrix.cpp.html)
