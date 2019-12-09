@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/zalgorithm.cpp
+# :heavy_check_mark: string/zalgorithm.cpp
 * category: string
 
 

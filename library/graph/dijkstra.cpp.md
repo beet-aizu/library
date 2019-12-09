@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/dijkstra.cpp
+# :heavy_check_mark: graph/dijkstra.cpp
 * category: graph
 
 

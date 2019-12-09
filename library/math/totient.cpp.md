@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/totient.cpp
+# :heavy_check_mark: math/totient.cpp
 * category: math
 
 

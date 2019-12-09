@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/kdtree.cpp
+# :heavy_check_mark: datastructure/kdtree.cpp
 * category: datastructure
 
 

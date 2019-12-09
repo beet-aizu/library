@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/skewheap.cpp
+# :heavy_check_mark: datastructure/skewheap.cpp
 * category: datastructure
 
 

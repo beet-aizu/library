@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/centroid.cpp
+# :heavy_check_mark: tree/centroid.cpp
 * category: tree
 
 

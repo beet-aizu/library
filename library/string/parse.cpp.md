@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/parse.cpp
+# :heavy_check_mark: string/parse.cpp
 * category: string
 
 

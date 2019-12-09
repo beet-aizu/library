@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/weightedunionfindtree.cpp
+# :heavy_check_mark: datastructure/weightedunionfindtree.cpp
 * category: datastructure
 
 

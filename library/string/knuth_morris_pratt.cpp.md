@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/knuth_morris_pratt.cpp
+# :heavy_check_mark: string/knuth_morris_pratt.cpp
 * category: string
 
 

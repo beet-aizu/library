@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: linearalgebra/tree_theorem.cpp
+# :heavy_check_mark: linearalgebra/tree_theorem.cpp
 * category: linearalgebra
 
 

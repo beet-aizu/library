@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/trie.cpp
+# :heavy_check_mark: string/trie.cpp
 * category: string
 
 

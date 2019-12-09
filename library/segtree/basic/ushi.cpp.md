@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: segtree/basic/ushi.cpp
+# :heavy_check_mark: segtree/basic/ushi.cpp
 * category: segtree/basic
 
 

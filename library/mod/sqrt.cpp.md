@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/sqrt.cpp
+# :heavy_check_mark: mod/sqrt.cpp
 * category: mod
 
 

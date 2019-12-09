@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/factorize.cpp
+# :heavy_check_mark: math/factorize.cpp
 * category: math
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/kruskal.cpp
+# :heavy_check_mark: graph/kruskal.cpp
 * category: graph
 
 

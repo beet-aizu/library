@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/bigint.cpp
+# :heavy_check_mark: tools/bigint.cpp
 * category: tools
 
 

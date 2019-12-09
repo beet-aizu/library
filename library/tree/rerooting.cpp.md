@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/rerooting.cpp
+# :heavy_check_mark: tree/rerooting.cpp
 * category: tree
 
 

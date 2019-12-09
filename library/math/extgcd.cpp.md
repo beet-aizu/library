@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/extgcd.cpp
+# :heavy_check_mark: math/extgcd.cpp
 * category: math
 
 

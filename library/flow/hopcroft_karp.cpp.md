@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: flow/hopcroft_karp.cpp
+# :heavy_check_mark: flow/hopcroft_karp.cpp
 * category: flow
 
 

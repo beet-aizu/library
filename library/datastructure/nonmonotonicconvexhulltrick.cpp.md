@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/nonmonotonicconvexhulltrick.cpp
+# :heavy_check_mark: datastructure/nonmonotonicconvexhulltrick.cpp
 * category: datastructure
 
 

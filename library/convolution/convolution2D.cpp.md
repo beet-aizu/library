@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: convolution/convolution2D.cpp
+# :heavy_check_mark: convolution/convolution2D.cpp
 * category: convolution
 
 

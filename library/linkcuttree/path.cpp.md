@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: linkcuttree/path.cpp
+# :heavy_check_mark: linkcuttree/path.cpp
 * category: linkcuttree
 
 

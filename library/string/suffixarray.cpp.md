@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/suffixarray.cpp
+# :heavy_check_mark: string/suffixarray.cpp
 * category: string
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/basic/lazy.cpp
+# :heavy_check_mark: bbst/basic/lazy.cpp
 * category: bbst/basic
 
 

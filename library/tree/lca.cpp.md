@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/lca.cpp
+# :heavy_check_mark: tree/lca.cpp
 * category: tree
 
 

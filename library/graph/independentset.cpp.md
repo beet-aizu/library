@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/independentset.cpp
+# :heavy_check_mark: graph/independentset.cpp
 * category: graph
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: algorithm/knuthyao.cpp
+# :heavy_check_mark: algorithm/knuthyao.cpp
 * category: algorithm
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/compress.cpp
+# :heavy_check_mark: tools/compress.cpp
 * category: tools
 
 

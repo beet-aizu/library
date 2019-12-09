@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/arborescence_edmond.cpp
+# :heavy_check_mark: graph/arborescence_edmond.cpp
 * category: graph
 
 

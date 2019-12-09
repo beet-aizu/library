@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/eulertourforedge.cpp
+# :heavy_check_mark: tree/eulertourforedge.cpp
 * category: tree
 
 

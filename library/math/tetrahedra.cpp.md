@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/tetrahedra.cpp
+# :heavy_check_mark: math/tetrahedra.cpp
 * category: math
 
 

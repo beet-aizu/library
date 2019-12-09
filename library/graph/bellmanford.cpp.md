@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/bellmanford.cpp
+# :heavy_check_mark: graph/bellmanford.cpp
 * category: graph
 
 

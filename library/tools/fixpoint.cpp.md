@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/fixpoint.cpp
+# :heavy_check_mark: tools/fixpoint.cpp
 * category: tools
 
 

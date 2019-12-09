@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/lowestcommonancestor.cpp
+# :heavy_check_mark: tree/lowestcommonancestor.cpp
 * category: tree
 
 

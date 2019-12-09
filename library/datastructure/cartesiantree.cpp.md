@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/cartesiantree.cpp
+# :heavy_check_mark: datastructure/cartesiantree.cpp
 * category: datastructure
 
 

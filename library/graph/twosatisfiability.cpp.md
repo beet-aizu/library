@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/twosatisfiability.cpp
+# :heavy_check_mark: graph/twosatisfiability.cpp
 * category: graph
 
 

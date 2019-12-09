@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/precision.cpp
+# :heavy_check_mark: tools/precision.cpp
 * category: tools
 
 

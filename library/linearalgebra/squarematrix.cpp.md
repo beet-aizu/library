@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: linearalgebra/squarematrix.cpp
+# :heavy_check_mark: linearalgebra/squarematrix.cpp
 * category: linearalgebra
 
 

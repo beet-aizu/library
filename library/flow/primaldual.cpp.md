@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: flow/primaldual.cpp
+# :heavy_check_mark: flow/primaldual.cpp
 * category: flow
 
 

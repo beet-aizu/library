@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/order.cpp
+# :heavy_check_mark: mod/order.cpp
 * category: mod
 
 

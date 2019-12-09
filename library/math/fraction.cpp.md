@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/fraction.cpp
+# :heavy_check_mark: math/fraction.cpp
 * category: math
 
 

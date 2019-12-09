@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/stronglyconnectedcomponent.cpp
+# :heavy_check_mark: graph/stronglyconnectedcomponent.cpp
 * category: graph
 
 

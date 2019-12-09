@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/chebyshevneighbors.cpp
+# :heavy_check_mark: graph/chebyshevneighbors.cpp
 * category: graph
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/enumeration.cpp
+# :heavy_check_mark: mod/enumeration.cpp
 * category: mod
 
 

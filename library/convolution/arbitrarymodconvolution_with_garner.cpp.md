@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: convolution/arbitrarymodconvolution_with_garner.cpp
+# :heavy_check_mark: convolution/arbitrarymodconvolution_with_garner.cpp
 * category: convolution
 
 

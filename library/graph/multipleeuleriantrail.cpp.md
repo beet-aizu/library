@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/multipleeuleriantrail.cpp
+# :heavy_check_mark: graph/multipleeuleriantrail.cpp
 * category: graph
 
 

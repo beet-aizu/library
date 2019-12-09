@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: segtree/cht/lichao.cpp
+# :heavy_check_mark: segtree/cht/lichao.cpp
 * category: segtree/cht
 
 

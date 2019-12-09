@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/is_prime.cpp
+# :heavy_check_mark: math/is_prime.cpp
 * category: math
 
 
