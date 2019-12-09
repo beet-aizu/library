@@ -1,0 +1,195 @@
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+
+
+# :warning: linkcuttree/base.cpp
+* category: linkcuttree
+
+
+[Back to top page](../../index.html)
+
+
+
+## Required
+* :heavy_check_mark: [linkcuttree/farthest.cpp](farthest.cpp.html)
+* :heavy_check_mark: [linkcuttree/path.cpp](path.cpp.html)
+* :heavy_check_mark: [linkcuttree/subtree.cpp](subtree.cpp.html)
+
+
+## Verified
+* :heavy_check_mark: [test/aoj/0367.linkcuttree.test.cpp](../../verify/test/aoj/0367.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/aoj/1595.linkcuttree.test.cpp](../../verify/test/aoj/1595.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/aoj/2450.linkcuttree.test.cpp](../../verify/test/aoj/2450.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/aoj/GRL_5_A.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/aoj/GRL_5_D.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_D.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/aoj/GRL_5_E.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html)
+* :heavy_check_mark: [test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp](../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html)
+
+
+## Code
+```cpp
+#ifndef call_from_test
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename Node, size_t LIM>
+struct LinkCutTreeBase{
+  static array<Node, LIM> pool;
+  size_t ptr;
+
+  LinkCutTreeBase():ptr(0){}
+
+  inline Node* create(){
+    return &pool[ptr++];
+  }
+
+  inline Node* create(Node v){
+    return &(pool[ptr++]=v);
+  }
+
+  virtual void toggle(Node *t) = 0;
+  virtual void eval(Node *t) = 0;
+  virtual void pushup(Node *t) = 0;
+
+  void rotR(Node *t){
+    Node *x=t->p,*y=x->p;
+    if((x->l=t->r)) t->r->p=x;
+    t->r=x;x->p=t;
+    pushup(x);pushup(t);
+    if((t->p=y)){
+      if(y->l==x) y->l=t;
+      if(y->r==x) y->r=t;
+      pushup(y);
+    }
+  }
+
+  void rotL(Node *t){
+    Node *x=t->p,*y=x->p;
+    if((x->r=t->l)) t->l->p=x;
+    t->l=x;x->p=t;
+    pushup(x);pushup(t);
+    if((t->p=y)){
+      if(y->l==x) y->l=t;
+      if(y->r==x) y->r=t;
+      pushup(y);
+    }
+  }
+
+  bool is_root(Node *t){
+    return !t->p||(t->p->l!=t&&t->p->r!=t);
+  }
+
+  void splay(Node *t){
+    eval(t);
+    while(!is_root(t)){
+      Node *q=t->p;
+      if(is_root(q)){
+        eval(q);eval(t);
+        if(q->l==t) rotR(t);
+        else rotL(t);
+      }else{
+        auto *r=q->p;
+        eval(r);eval(q);eval(t);
+        if(r->l==q){
+          if(q->l==t) rotR(q),rotR(t);
+          else rotL(t),rotR(t);
+        }else{
+          if(q->r==t) rotL(q),rotL(t);
+          else rotR(t),rotL(t);
+        }
+      }
+    }
+  }
+
+  virtual Node* expose(Node *t){
+    Node *rp=nullptr;
+    for(Node *c=t;c;c=c->p){
+      splay(c);
+      c->r=rp;
+      pushup(c);
+      rp=c;
+    }
+    splay(t);
+    return rp;
+  }
+
+  void link(Node *par,Node *c){
+    expose(c);
+    expose(par);
+    c->p=par;
+    par->r=c;
+    pushup(par);
+  }
+
+  void cut(Node *c){
+    expose(c);
+    Node *par=c->l;
+    c->l=nullptr;
+    pushup(c);
+    par->p=nullptr;
+  }
+
+  void evert(Node *t){
+    expose(t);
+    toggle(t);
+    eval(t);
+  }
+
+  Node *parent(Node *t){
+    expose(t);
+    t=t->l;
+    while(t&&t->r) t=t->r;
+    if(t) splay(t);
+    return t;
+  }
+
+  Node *root(Node *t){
+    expose(t);
+    while(t->l) t=t->l;
+    splay(t);
+    return t;
+  }
+
+  bool is_connected(Node *a,Node *b){
+    return root(a)==root(b);
+  }
+
+  Node *lca(Node *a,Node *b){
+    expose(a);
+    return expose(b);
+  }
+};
+template<typename Node, size_t LIM>
+array<Node, LIM> LinkCutTreeBase<Node, LIM>::pool;
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+
+```
+
+[Back to top page](../../index.html)
+
