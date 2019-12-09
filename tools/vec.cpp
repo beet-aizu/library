@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -25,21 +24,6 @@ fill_v(U &u,const V... v){
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  auto v=make_v<int>(10,10);
-  fill_v<int>(v,-1);
-
-  for(int i=0;i<10;i++)
-    for(int j=0;j<10;j++)
-      v[i][j]=i+j;
-
-  for(int i=0;i<10;i++)
-    for(int j=0;j<10;j++)
-      cout<<v[i][j]<<" \n"[j==9];
-
-  auto vt=make_v<tuple<int, double> >(3,3);
-  fill_v<tuple<int, double> >(vt,2,0.5);
-  cout<<get<0>(vt[0][0])<<endl;
-  cout<<get<1>(vt[2][2])<<endl;
   return 0;
 }
 #endif
