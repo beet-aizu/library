@@ -145,10 +145,6 @@ layout: default
 * :warning: [icpc/t.cpp](library/icpc/t.cpp.html)
 
 
-### leetcode
-* :warning: [leetcode/treenode.cpp](library/leetcode/treenode.cpp.html)
-
-
 ### linearalgebra
 * :heavy_check_mark: [linearalgebra/binarymatrix.cpp](library/linearalgebra/binarymatrix.cpp.html)
 * :heavy_check_mark: [linearalgebra/matrix.cpp](library/linearalgebra/matrix.cpp.html)
