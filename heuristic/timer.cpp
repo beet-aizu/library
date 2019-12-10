@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+#define IGNORE
 
 //BEGIN CUT HERE
 using i16 = int16_t;
@@ -15,7 +14,7 @@ using u64 = uint64_t;
 
 // AtCoder
 const i64 CYCLES_PER_SEC = 2800000000;
- 
+
 struct Timer {
 	i64 start;
 	Timer(){reset();}
@@ -43,12 +42,12 @@ signed main(){
   cout<<fixed<<setprecision(12);
   auto start1=clock(),stop1=clock();
   for(int i=0;i<1000000;i++) stop1=clock();
-  
+
   double d=0;
   auto start2=clock();
-  for(int i=0;i<1000000;i++) d=timer.get();
+  for(int i=0;i<1000000;i++) d+=timer.get();
   auto stop2=clock();
-  
+
   cout<<(double)(stop1-start1)/CLOCKS_PER_SEC<<endl;
   cout<<(double)(stop2-start2)/CLOCKS_PER_SEC<<endl;
   return 0;

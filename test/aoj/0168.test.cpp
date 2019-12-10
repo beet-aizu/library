@@ -7,6 +7,8 @@ using namespace std;
 #include "../../math/kitamasa.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 template<typename T>
 struct Z{
   T v;

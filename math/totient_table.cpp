@@ -1,8 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 vector<int> totient_table(int n){
   vector<int> ts(n+1);
@@ -14,7 +13,7 @@ vector<int> totient_table(int n){
   return ts;
 }
 //END CUT HERE
-
+#ifndef call_from_test
 //INSERT ABOVE HERE
 class CatAndMice {
   using ll = long long;
@@ -35,3 +34,4 @@ public:
   verified on 2019/09/25
   https://vjudge.net/problem/TopCoder-15530
 */
+#endif
