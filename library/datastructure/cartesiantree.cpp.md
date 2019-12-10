@@ -35,7 +35,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/diameterforvertex.cpp
+# :heavy_check_mark: tree/diameterforvertex.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
@@ -35,7 +35,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
 
 
 ## Code

@@ -35,8 +35,8 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../basic/array.cpp.html">bbst/basic/array.cpp</a>
-* :warning: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="../basic/array.cpp.html">bbst/basic/array.cpp</a>
+* :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Code

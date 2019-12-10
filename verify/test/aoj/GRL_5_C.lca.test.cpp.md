@@ -35,7 +35,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 

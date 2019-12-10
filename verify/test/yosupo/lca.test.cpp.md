@@ -35,7 +35,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 
 

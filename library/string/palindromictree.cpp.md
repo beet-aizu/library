@@ -36,7 +36,7 @@ layout: default
 
 ## Dependencies
 * :heavy_check_mark: <a href="rollinghash.cpp.html">string/rollinghash.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified

@@ -37,7 +37,7 @@ layout: default
 ## Dependencies
 * :heavy_check_mark: <a href="../../../library/segtree/count/dynamic_offline.cpp.html">segtree/count/dynamic_offline.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

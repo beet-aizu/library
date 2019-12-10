@@ -36,7 +36,7 @@ layout: default
 
 ## Required
 * :warning: <a href="../algorithm/parallelbinarysearch.cpp.html">algorithm/parallelbinarysearch.cpp</a>
-* :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
+* :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 

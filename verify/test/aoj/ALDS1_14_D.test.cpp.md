@@ -35,7 +35,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
+* :heavy_check_mark: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 
 
 ## Code

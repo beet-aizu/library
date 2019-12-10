@@ -42,7 +42,7 @@ layout: default
 ## Required
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
-* :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
+* :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 
 
 ## Verified
