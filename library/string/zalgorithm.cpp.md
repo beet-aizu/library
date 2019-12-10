@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 
 
 ## Verified

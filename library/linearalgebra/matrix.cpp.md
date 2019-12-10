@@ -42,7 +42,7 @@ layout: default
 * :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1328.test.cpp.html">test/aoj/1328.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
-* :warning: <a href="../../verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
 
 
 ## Code

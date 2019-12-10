@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/factorize.cpp
+# :heavy_check_mark: math/factorize.cpp
 * category: math
 
 
@@ -41,7 +41,7 @@ layout: default
 
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/NTL_1_A.test.cpp.html">test/aoj/NTL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_A.test.cpp.html">test/aoj/NTL_1_A.test.cpp</a>
 
 
 ## Code

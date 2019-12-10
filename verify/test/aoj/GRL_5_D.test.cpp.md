@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/GRL_5_D.test.cpp
+# :heavy_check_mark: test/aoj/GRL_5_D.test.cpp
 
 
 <a href="../../../index.html">Back to top page</a>
@@ -34,9 +34,9 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :warning: <a href="../../../library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Code

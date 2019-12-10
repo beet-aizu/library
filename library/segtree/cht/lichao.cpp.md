@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: segtree/cht/lichao.cpp
+# :heavy_check_mark: segtree/cht/lichao.cpp
 * category: segtree/cht
 
 
@@ -34,7 +34,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
 
 
 ## Code
