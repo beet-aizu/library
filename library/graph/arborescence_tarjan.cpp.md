@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/arborescence_tarjan.cpp
+# :warning: graph/arborescence_tarjan.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/GRL_2_B.tarjan.test.cpp](../../verify/test/aoj/GRL_2_B.tarjan.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/GRL_2_B.tarjan.test.cpp.html">test/aoj/GRL_2_B.tarjan.test.cpp</a>
 
 
 ## Code
@@ -226,5 +226,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

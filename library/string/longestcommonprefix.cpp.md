@@ -25,25 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/longestcommonprefix.cpp
+# :warning: string/longestcommonprefix.cpp
 * category: string
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [string/suffixarray.cpp](suffixarray.cpp.html)
-* :heavy_check_mark: [tools/chminmax.cpp](../tools/chminmax.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="suffixarray.cpp.html">string/suffixarray.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2711.test.cpp](../../verify/test/aoj/2711.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3063.test.cpp](../../verify/test/aoj/3063.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3112.test.cpp](../../verify/test/aoj/3112.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/number_of_substrings.test.cpp](../../verify/test/yosupo/number_of_substrings.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2711.test.cpp.html">test/aoj/2711.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3063.test.cpp.html">test/aoj/3063.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/number_of_substrings.test.cpp.html">test/yosupo/number_of_substrings.test.cpp</a>
 
 
 ## Code
@@ -165,5 +165,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

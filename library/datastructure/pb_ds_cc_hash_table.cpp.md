@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/pb_ds_cc_hash_table.cpp
+# :warning: datastructure/pb_ds_cc_hash_table.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2646.test.cpp](../../verify/test/aoj/2646.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2646.test.cpp.html">test/aoj/2646.test.cpp</a>
 
 
 ## Code
@@ -85,5 +85,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

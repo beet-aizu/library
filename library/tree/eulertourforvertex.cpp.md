@@ -29,20 +29,20 @@ layout: default
 * category: tree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/binaryindexedtree.cpp](../datastructure/binaryindexedtree.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
-* :heavy_check_mark: [tools/fixpoint.cpp](../tools/fixpoint.cpp.html)
-* :heavy_check_mark: [tree/lowestcommonancestor.cpp](lowestcommonancestor.cpp.html)
+* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :heavy_check_mark: <a href="lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2871.test.cpp](../../verify/test/aoj/2871.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/vertex_add_subtree_sum.test.cpp](../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2871.test.cpp.html">test/aoj/2871.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 
 
 ## Code
@@ -244,5 +244,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

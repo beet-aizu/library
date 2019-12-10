@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/kruskal.cpp
+# :warning: graph/kruskal.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :warning: [graph/voronoiminimumspanningtree.cpp](voronoiminimumspanningtree.cpp.html)
-* :heavy_check_mark: [linearalgebra/tree_theorem.cpp](../linearalgebra/tree_theorem.cpp.html)
+* :warning: <a href="voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
+* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0403.test.cpp](../../verify/test/aoj/0403.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_2_A.test.cpp](../../verify/test/aoj/GRL_2_A.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_2_A.test.cpp.html">test/aoj/GRL_2_A.test.cpp</a>
 
 
 ## Code
@@ -115,5 +115,5 @@ int main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

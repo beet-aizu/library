@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/rectanglehash.cpp
+# :warning: string/rectanglehash.cpp
 * category: string
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1312.test.cpp](../../verify/test/aoj/1312.test.cpp.html)
-* :heavy_check_mark: [test/aoj/ALDS1_14_C.test.cpp](../../verify/test/aoj/ALDS1_14_C.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/1312.test.cpp.html">test/aoj/1312.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ALDS1_14_C.test.cpp.html">test/aoj/ALDS1_14_C.test.cpp</a>
 
 
 ## Code
@@ -105,5 +105,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/aoj/DPL_5_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [mod/enumeration.cpp](../../../library/mod/enumeration.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../../../library/mod/mint.cpp.html)
+* :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Code
@@ -62,5 +62,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

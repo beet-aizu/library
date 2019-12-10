@@ -25,24 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: flow/negativeedge.cpp
+# :warning: flow/negativeedge.cpp
 * category: flow
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [flow/primaldual.cpp](primaldual.cpp.html)
-* :heavy_check_mark: [tools/chminmax.cpp](../tools/chminmax.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="primaldual.cpp.html">flow/primaldual.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2230.test.cpp](../../verify/test/aoj/2230.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2627.test.cpp](../../verify/test/aoj/2627.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2872.test.cpp](../../verify/test/aoj/2872.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2230.test.cpp.html">test/aoj/2230.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2627.test.cpp.html">test/aoj/2627.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2872.test.cpp.html">test/aoj/2872.test.cpp</a>
 
 
 ## Code
@@ -203,5 +203,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

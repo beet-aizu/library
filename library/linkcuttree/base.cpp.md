@@ -25,28 +25,28 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: linkcuttree/base.cpp
+# :warning: linkcuttree/base.cpp
 * category: linkcuttree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [linkcuttree/farthest.cpp](farthest.cpp.html)
-* :heavy_check_mark: [linkcuttree/path.cpp](path.cpp.html)
-* :heavy_check_mark: [linkcuttree/subtree.cpp](subtree.cpp.html)
+* :warning: <a href="farthest.cpp.html">linkcuttree/farthest.cpp</a>
+* :warning: <a href="path.cpp.html">linkcuttree/path.cpp</a>
+* :heavy_check_mark: <a href="subtree.cpp.html">linkcuttree/subtree.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0367.linkcuttree.test.cpp](../../verify/test/aoj/0367.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1595.linkcuttree.test.cpp](../../verify/test/aoj/1595.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2450.linkcuttree.test.cpp](../../verify/test/aoj/2450.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_A.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_D.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_D.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_E.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp](../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1595.linkcuttree.test.cpp.html">test/aoj/1595.linkcuttree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_D.linkcuttree.test.cpp.html">test/aoj/GRL_5_D.linkcuttree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html">test/aoj/GRL_5_E.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 
 
 ## Code
@@ -197,5 +197,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

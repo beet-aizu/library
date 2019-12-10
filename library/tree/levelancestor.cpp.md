@@ -29,16 +29,16 @@ layout: default
 * category: tree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [datastructure/binarytrie.cpp](../datastructure/binarytrie.cpp.html)
+* :warning: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0391.test.cpp](../../verify/test/aoj/0391.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
 
 
 ## Code
@@ -223,5 +223,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

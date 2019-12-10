@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/bellmanford.cpp
+# :warning: graph/bellmanford.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2872.test.cpp](../../verify/test/aoj/2872.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_1_B.test.cpp](../../verify/test/aoj/GRL_1_B.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2872.test.cpp.html">test/aoj/2872.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_1_B.test.cpp.html">test/aoj/GRL_1_B.test.cpp</a>
 
 
 ## Code
@@ -141,5 +141,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

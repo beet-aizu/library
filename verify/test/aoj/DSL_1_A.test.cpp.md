@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/DSL_1_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/unionfindtree.cpp](../../../library/datastructure/unionfindtree.cpp.html)
+* :warning: <a href="../../../library/datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 
 
 ## Code
@@ -69,5 +69,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

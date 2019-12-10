@@ -25,24 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/rollinghash.cpp
+# :warning: string/rollinghash.cpp
 * category: string
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [string/palindromictree.cpp](palindromictree.cpp.html)
+* :warning: <a href="palindromictree.cpp.html">string/palindromictree.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1312.test.cpp](../../verify/test/aoj/1312.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2292.test.cpp](../../verify/test/aoj/2292.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2444.test.cpp](../../verify/test/aoj/2444.test.cpp.html)
-* :heavy_check_mark: [test/aoj/ALDS1_14_B.test.cpp](../../verify/test/aoj/ALDS1_14_B.test.cpp.html)
-* :heavy_check_mark: [test/aoj/ALDS1_14_C.test.cpp](../../verify/test/aoj/ALDS1_14_C.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/1312.test.cpp.html">test/aoj/1312.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2292.test.cpp.html">test/aoj/2292.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2444.test.cpp.html">test/aoj/2444.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_14_B.test.cpp.html">test/aoj/ALDS1_14_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ALDS1_14_C.test.cpp.html">test/aoj/ALDS1_14_C.test.cpp</a>
 
 
 ## Code
@@ -90,5 +90,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

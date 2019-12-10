@@ -28,16 +28,16 @@ layout: default
 # :heavy_check_mark: test/yosupo/log_of_formal_power_series.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/log_of_formal_power_series](https://judge.yosupo.jp/problem/log_of_formal_power_series)
+* see: <a href="https://judge.yosupo.jp/problem/log_of_formal_power_series">https://judge.yosupo.jp/problem/log_of_formal_power_series</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [convolution/numbertheoretictransform.cpp](../../../library/convolution/numbertheoretictransform.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../../../library/mod/mint.cpp.html)
-* :heavy_check_mark: [polynomial/formalpowerseries.cpp](../../../library/polynomial/formalpowerseries.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -79,5 +79,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

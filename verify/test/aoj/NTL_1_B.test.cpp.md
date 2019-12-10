@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/NTL_1_B.test.cpp
+# :warning: test/aoj/NTL_1_B.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [mod/pow.cpp](../../../library/mod/pow.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/mod/pow.cpp.html">mod/pow.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -63,5 +63,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

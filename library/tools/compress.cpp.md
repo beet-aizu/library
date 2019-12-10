@@ -25,24 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/compress.cpp
+# :warning: tools/compress.cpp
 * category: tools
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [linearalgebra/squarematrix.cpp](../linearalgebra/squarematrix.cpp.html)
+* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0613.test.cpp](../../verify/test/aoj/0613.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1599.test.cpp](../../verify/test/aoj/1599.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1607.test.cpp](../../verify/test/aoj/1607.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2359.test.cpp](../../verify/test/aoj/2359.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/rectangle_sum.test.cpp](../../verify/test/yosupo/rectangle_sum.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1599.test.cpp.html">test/aoj/1599.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 
 
 ## Code
@@ -97,5 +97,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

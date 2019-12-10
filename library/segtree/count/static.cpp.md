@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/count/static.cpp
+# :warning: segtree/count/static.cpp
 * category: segtree/count
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2674.count.test.cpp](../../../verify/test/aoj/2674.count.test.cpp.html)
+* :warning: <a href="../../../verify/test/aoj/2674.count.test.cpp.html">test/aoj/2674.count.test.cpp</a>
 
 
 ## Code
@@ -121,5 +121,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

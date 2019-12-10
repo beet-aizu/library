@@ -25,24 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/unionfindtree.cpp
+# :warning: datastructure/unionfindtree.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :warning: [algorithm/parallelbinarysearch.cpp](../algorithm/parallelbinarysearch.cpp.html)
-* :heavy_check_mark: [graph/lowlink.cpp](../graph/lowlink.cpp.html)
-* :heavy_check_mark: [linearalgebra/tree_theorem.cpp](../linearalgebra/tree_theorem.cpp.html)
+* :warning: <a href="../algorithm/parallelbinarysearch.cpp.html">algorithm/parallelbinarysearch.cpp</a>
+* :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
+* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0314.test.cpp](../../verify/test/aoj/0314.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_1_A.test.cpp](../../verify/test/aoj/DSL_1_A.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/unionfind.test.cpp](../../verify/test/yosupo/unionfind.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
 
 
 ## Code
@@ -150,5 +150,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

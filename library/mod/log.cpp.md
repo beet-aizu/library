@@ -29,21 +29,21 @@ layout: default
 * category: mod
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [math/extgcd.cpp](../math/extgcd.cpp.html)
-* :warning: [math/kitamasa.cpp](../math/kitamasa.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](mint.cpp.html)
-* :heavy_check_mark: [tools/chminmax.cpp](../tools/chminmax.cpp.html)
-* :heavy_check_mark: [tools/drop.cpp](../tools/drop.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
+* :warning: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
+* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/yosupo/discrete_logarithm_mod.test.cpp](../../verify/test/yosupo/discrete_logarithm_mod.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/yosupo/discrete_logarithm_mod.test.cpp.html">test/yosupo/discrete_logarithm_mod.test.cpp</a>
 
 
 ## Code
@@ -203,5 +203,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

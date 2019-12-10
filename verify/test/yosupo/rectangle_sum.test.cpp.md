@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/rectangle_sum.test.cpp
+# :warning: test/yosupo/rectangle_sum.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/rectangle_sum](https://judge.yosupo.jp/problem/rectangle_sum)
+* see: <a href="https://judge.yosupo.jp/problem/rectangle_sum">https://judge.yosupo.jp/problem/rectangle_sum</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [segtree/count/dynamic_offline.cpp](../../../library/segtree/count/dynamic_offline.cpp.html)
-* :heavy_check_mark: [tools/compress.cpp](../../../library/tools/compress.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/segtree/count/dynamic_offline.cpp.html">segtree/count/dynamic_offline.cpp</a>
+* :warning: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -87,5 +87,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/yosupo/bipartitematching.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/bipartitematching](https://judge.yosupo.jp/problem/bipartitematching)
+* see: <a href="https://judge.yosupo.jp/problem/bipartitematching">https://judge.yosupo.jp/problem/bipartitematching</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [flow/hopcroft_karp.cpp](../../../library/flow/hopcroft_karp.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/flow/hopcroft_karp.cpp.html">flow/hopcroft_karp.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -72,5 +72,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

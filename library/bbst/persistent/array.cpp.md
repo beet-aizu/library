@@ -29,13 +29,13 @@ layout: default
 * category: bbst/persistent
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [bbst/basic/array.cpp](../basic/array.cpp.html)
-* :heavy_check_mark: [bbst/basic/base.cpp](../basic/base.cpp.html)
+* :warning: <a href="../basic/array.cpp.html">bbst/basic/array.cpp</a>
+* :warning: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Code
@@ -136,5 +136,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

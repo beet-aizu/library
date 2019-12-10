@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/DSL_2_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/kdtree.cpp](../../../library/datastructure/kdtree.cpp.html)
+* :heavy_check_mark: <a href="../../../library/datastructure/kdtree.cpp.html">datastructure/kdtree.cpp</a>
 
 
 ## Code
@@ -82,5 +82,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

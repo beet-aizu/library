@@ -29,12 +29,12 @@ layout: default
 * category: algorithm
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/unionfindtree.cpp](../datastructure/unionfindtree.cpp.html)
+* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 
 
 ## Code
@@ -115,5 +115,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

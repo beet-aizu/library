@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: algorithm/largestrectangle.cpp
+# :warning: algorithm/largestrectangle.cpp
 * category: algorithm
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/DPL_3_B.test.cpp](../../verify/test/aoj/DPL_3_B.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_3_C.test.cpp](../../verify/test/aoj/DPL_3_C.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
 
 
 ## Code
@@ -79,5 +79,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

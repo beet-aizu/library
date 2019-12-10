@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_D.test.cpp
+# :warning: test/aoj/GRL_5_D.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/binaryindexedtree.cpp](../../../library/datastructure/binaryindexedtree.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
-* :heavy_check_mark: [tree/eulertourforedge.cpp](../../../library/tree/eulertourforedge.cpp.html)
+* :warning: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../../../library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Code
@@ -95,5 +95,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

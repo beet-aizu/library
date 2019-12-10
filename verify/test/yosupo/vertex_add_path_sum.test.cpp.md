@@ -28,15 +28,15 @@ layout: default
 # :heavy_check_mark: test/yosupo/vertex_add_path_sum.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/vertex_add_path_sum](https://judge.yosupo.jp/problem/vertex_add_path_sum)
+* see: <a href="https://judge.yosupo.jp/problem/vertex_add_path_sum">https://judge.yosupo.jp/problem/vertex_add_path_sum</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/binaryindexedtree.cpp](../../../library/datastructure/binaryindexedtree.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
-* :heavy_check_mark: [tree/heavylightdecomposition.cpp](../../../library/tree/heavylightdecomposition.cpp.html)
+* :warning: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 
 
 ## Code
@@ -98,5 +98,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

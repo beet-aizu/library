@@ -29,18 +29,18 @@ layout: default
 * category: mod
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [math/factorize.cpp](../math/factorize.cpp.html)
-* :heavy_check_mark: [mod/pow.cpp](pow.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
+* :warning: <a href="pow.cpp.html">mod/pow.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/3062.test.cpp](../../verify/test/aoj/3062.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
 
 
 ## Code
@@ -86,5 +86,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

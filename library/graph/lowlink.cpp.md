@@ -25,30 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/lowlink.cpp
+# :warning: graph/lowlink.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/unionfindtree.cpp](../datastructure/unionfindtree.cpp.html)
-* :heavy_check_mark: [mod/enumeration.cpp](../mod/enumeration.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [tree/heavylightdecomposition.cpp](../tree/heavylightdecomposition.cpp.html)
+* :heavy_check_mark: <a href="../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0377.test.cpp](../../verify/test/aoj/0377.test.cpp.html)
-* :heavy_check_mark: [test/aoj/0415.test.cpp](../../verify/test/aoj/0415.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_3_A.test.cpp](../../verify/test/aoj/GRL_3_A.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_3_B.test.cpp](../../verify/test/aoj/GRL_3_B.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/0377.test.cpp.html">test/aoj/0377.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_3_A.test.cpp.html">test/aoj/GRL_3_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_3_B.test.cpp.html">test/aoj/GRL_3_B.test.cpp</a>
 
 
 ## Code
@@ -305,5 +305,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

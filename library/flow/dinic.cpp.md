@@ -25,25 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: flow/dinic.cpp
+# :warning: flow/dinic.cpp
 * category: flow
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [flow/leastflow.cpp](leastflow.cpp.html)
+* :heavy_check_mark: <a href="leastflow.cpp.html">flow/leastflow.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1599.test.cpp](../../verify/test/aoj/1599.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1615.test.cpp](../../verify/test/aoj/1615.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2313.test.cpp](../../verify/test/aoj/2313.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3047.test.cpp](../../verify/test/aoj/3047.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3058.test.cpp](../../verify/test/aoj/3058.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_6_A.test.cpp](../../verify/test/aoj/GRL_6_A.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/1599.test.cpp.html">test/aoj/1599.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2313.test.cpp.html">test/aoj/2313.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3047.test.cpp.html">test/aoj/3047.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3058.test.cpp.html">test/aoj/3058.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_6_A.test.cpp.html">test/aoj/GRL_6_A.test.cpp</a>
 
 
 ## Code
@@ -211,5 +211,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

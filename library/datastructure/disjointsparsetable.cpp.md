@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/disjointsparsetable.cpp
+# :warning: datastructure/disjointsparsetable.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/DSL_3_D.disjointsparsetable.test.cpp](../../verify/test/aoj/DSL_3_D.disjointsparsetable.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/staticrmq.disjointsparsetable.test.cpp](../../verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/DSL_3_D.disjointsparsetable.test.cpp.html">test/aoj/DSL_3_D.disjointsparsetable.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 
 
 ## Code
@@ -175,5 +175,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

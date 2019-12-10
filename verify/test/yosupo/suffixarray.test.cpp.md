@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/yosupo/suffixarray.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/suffixarray](https://judge.yosupo.jp/problem/suffixarray)
+* see: <a href="https://judge.yosupo.jp/problem/suffixarray">https://judge.yosupo.jp/problem/suffixarray</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [string/suffixarray.cpp](../../../library/string/suffixarray.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -67,5 +67,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

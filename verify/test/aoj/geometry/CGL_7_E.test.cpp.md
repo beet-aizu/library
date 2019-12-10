@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/geometry/CGL_7_E.test.cpp
 
 
-[Back to top page](../../../../index.html)
+<a href="../../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [geometry/geometry.cpp](../../../../library/geometry/geometry.cpp.html)
+* :heavy_check_mark: <a href="../../../../library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
 
 
 ## Code
@@ -64,5 +64,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../../index.html)
+<a href="../../../../index.html">Back to top page</a>
 

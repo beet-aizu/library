@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/dijkstra.cpp
+# :warning: graph/dijkstra.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0423.test.cpp](../../verify/test/aoj/0423.test.cpp.html)
-* :heavy_check_mark: [test/aoj/geometry/2334.test.cpp](../../verify/test/aoj/geometry/2334.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0423.test.cpp.html">test/aoj/0423.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
 
 
 ## Code
@@ -102,5 +102,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

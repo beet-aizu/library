@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/eulertourforedge.cpp
+# :warning: tree/eulertourforedge.cpp
 * category: tree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/binaryindexedtree.cpp](../datastructure/binaryindexedtree.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
-* :heavy_check_mark: [tree/lca.cpp](lca.cpp.html)
+* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [algorithm/mo.cpp](../algorithm/mo.cpp.html)
+* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/GRL_5_D.test.cpp](../../verify/test/aoj/GRL_5_D.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/GRL_5_D.test.cpp.html">test/aoj/GRL_5_D.test.cpp</a>
 
 
 ## Code
@@ -221,5 +221,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

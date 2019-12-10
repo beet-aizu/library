@@ -29,7 +29,7 @@ layout: default
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
@@ -85,5 +85,5 @@ struct TopologicalSort{
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

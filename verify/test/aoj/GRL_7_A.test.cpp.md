@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/GRL_7_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [flow/bimatch.cpp](../../../library/flow/bimatch.cpp.html)
+* :heavy_check_mark: <a href="../../../library/flow/bimatch.cpp.html">flow/bimatch.cpp</a>
 
 
 ## Code
@@ -68,5 +68,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

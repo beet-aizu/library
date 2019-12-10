@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/vec.cpp
+# :warning: tools/vec.cpp
 * category: tools
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [algorithm/mo.cpp](../algorithm/mo.cpp.html)
+* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2294.test.cpp](../../verify/test/aoj/2294.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
 
 
 ## Code
@@ -77,5 +77,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

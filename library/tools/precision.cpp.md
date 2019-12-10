@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/precision.cpp
+# :warning: tools/precision.cpp
 * category: tools
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2294.test.cpp](../../verify/test/aoj/2294.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2309.tarjan.test.cpp](../../verify/test/aoj/2309.tarjan.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2309.test.cpp](../../verify/test/aoj/2309.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2975.test.cpp](../../verify/test/aoj/2975.test.cpp.html)
-* :heavy_check_mark: [test/aoj/geometry/3049.test.cpp](../../verify/test/aoj/geometry/3049.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
 
 
 ## Code
@@ -70,5 +70,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

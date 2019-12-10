@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/GRL_3_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [graph/lowlink.cpp](../../../library/graph/lowlink.cpp.html)
+* :warning: <a href="../../../library/graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 
 
 ## Code
@@ -74,5 +74,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

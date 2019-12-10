@@ -29,12 +29,12 @@ layout: default
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1254.test.cpp](../../verify/test/aoj/1254.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/1254.test.cpp.html">test/aoj/1254.test.cpp</a>
 
 
 ## Code
@@ -102,5 +102,5 @@ int chromatic(vector< vector<int> > G){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

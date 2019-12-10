@@ -29,16 +29,16 @@ layout: default
 * category: math
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [mod/log.cpp](../mod/log.cpp.html)
+* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
 ## Code
@@ -151,5 +151,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/trie.cpp
+# :warning: string/trie.cpp
 * category: string
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [string/ahocorasick.cpp](ahocorasick.cpp.html)
+* :warning: <a href="ahocorasick.cpp.html">string/ahocorasick.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2212.test.cpp](../../verify/test/aoj/2212.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2257.test.cpp](../../verify/test/aoj/2257.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3073.test.cpp](../../verify/test/aoj/3073.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
 
 
 ## Code
@@ -175,5 +175,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

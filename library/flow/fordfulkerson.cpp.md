@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: flow/fordfulkerson.cpp
+# :warning: flow/fordfulkerson.cpp
 * category: flow
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/GRL_6_A.fordfulkerson.test.cpp](../../verify/test/aoj/GRL_6_A.fordfulkerson.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/GRL_6_A.fordfulkerson.test.cpp.html">test/aoj/GRL_6_A.fordfulkerson.test.cpp</a>
 
 
 ## Code
@@ -110,5 +110,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/sparsetable.cpp
+# :warning: datastructure/sparsetable.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [string/manacher.cpp](../string/manacher.cpp.html)
+* :heavy_check_mark: <a href="../string/manacher.cpp.html">string/manacher.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/DSL_3_D.sparsetable.test.cpp](../../verify/test/aoj/DSL_3_D.sparsetable.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/staticrmq.sparsetable.test.cpp](../../verify/test/yosupo/staticrmq.sparsetable.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/DSL_3_D.sparsetable.test.cpp.html">test/aoj/DSL_3_D.sparsetable.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
 
 
 ## Code
@@ -128,5 +128,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

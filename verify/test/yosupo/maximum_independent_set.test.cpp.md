@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/yosupo/maximum_independent_set.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/maximum_independent_set](https://judge.yosupo.jp/problem/maximum_independent_set)
+* see: <a href="https://judge.yosupo.jp/problem/maximum_independent_set">https://judge.yosupo.jp/problem/maximum_independent_set</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [graph/independentset.cpp](../../../library/graph/independentset.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :heavy_check_mark: <a href="../../../library/graph/independentset.cpp.html">graph/independentset.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -73,5 +73,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

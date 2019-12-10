@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/basic/ushi.cpp
+# :warning: segtree/basic/ushi.cpp
 * category: segtree/basic
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [linearalgebra/squarematrix.cpp](../../linearalgebra/squarematrix.cpp.html)
-* :heavy_check_mark: [tree/heavylightdecomposition.cpp](../../tree/heavylightdecomposition.cpp.html)
+* :heavy_check_mark: <a href="../../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
+* :heavy_check_mark: <a href="../../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2644.test.cpp](../../../verify/test/aoj/2644.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_A.test.cpp](../../../verify/test/aoj/DSL_2_A.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/point_set_range_composite.test.cpp](../../../verify/test/yosupo/point_set_range_composite.test.cpp.html)
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_A.test.cpp.html">test/aoj/DSL_2_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
 
 
 ## Code
@@ -212,5 +212,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

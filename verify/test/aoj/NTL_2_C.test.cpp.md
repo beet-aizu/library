@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/NTL_2_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [tools/bigint.cpp](../../../library/tools/bigint.cpp.html)
+* :heavy_check_mark: <a href="../../../library/tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
 ## Code
@@ -59,5 +59,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -28,15 +28,15 @@ layout: default
 # :heavy_check_mark: test/yosupo/number_of_substrings.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/number_of_substrings](https://judge.yosupo.jp/problem/number_of_substrings)
+* see: <a href="https://judge.yosupo.jp/problem/number_of_substrings">https://judge.yosupo.jp/problem/number_of_substrings</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [string/longestcommonprefix.cpp](../../../library/string/longestcommonprefix.cpp.html)
-* :heavy_check_mark: [string/suffixarray.cpp](../../../library/string/suffixarray.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
+* :warning: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -70,5 +70,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/fastfouriertransform.cpp
+# :warning: convolution/fastfouriertransform.cpp
 * category: convolution
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [convolution/arbitrarymodconvolution.cpp](arbitrarymodconvolution.cpp.html)
-* :heavy_check_mark: [polynomial/formalpowerseries.cpp](../polynomial/formalpowerseries.cpp.html)
+* :warning: <a href="arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
+* :warning: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2985.test.cpp](../../verify/test/aoj/2985.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 
 
 ## Code
@@ -172,5 +172,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

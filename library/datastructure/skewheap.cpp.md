@@ -29,17 +29,17 @@ layout: default
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [algorithm/optimalbinarytree.cpp](../algorithm/optimalbinarytree.cpp.html)
+* :heavy_check_mark: <a href="../algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2415.test.cpp](../../verify/test/aoj/2415.test.cpp.html)
-* :heavy_check_mark: [test/aoj/ALDS1_9_C.test.cpp](../../verify/test/aoj/ALDS1_9_C.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
 
 
 ## Code
@@ -210,5 +210,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

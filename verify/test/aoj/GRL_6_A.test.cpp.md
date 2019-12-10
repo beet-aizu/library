@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/GRL_6_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [flow/dinic.cpp](../../../library/flow/dinic.cpp.html)
+* :warning: <a href="../../../library/flow/dinic.cpp.html">flow/dinic.cpp</a>
 
 
 ## Code
@@ -67,5 +67,5 @@ int main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

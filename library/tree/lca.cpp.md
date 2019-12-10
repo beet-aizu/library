@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/lca.cpp
+# :warning: tree/lca.cpp
 * category: tree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [datastructure/cartesiantree.cpp](../datastructure/cartesiantree.cpp.html)
-* :heavy_check_mark: [tree/eulertourforedge.cpp](eulertourforedge.cpp.html)
+* :warning: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :warning: <a href="eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0391.test.cpp](../../verify/test/aoj/0391.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_3_D.cartesiantree.test.cpp](../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_C.lca.test.cpp](../../verify/test/aoj/GRL_5_C.lca.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>
 
 
 ## Code
@@ -180,5 +180,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

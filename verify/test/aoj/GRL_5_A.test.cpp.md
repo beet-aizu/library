@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_A.test.cpp
+# :warning: test/aoj/GRL_5_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
-* :heavy_check_mark: [tree/diameterforedge.cpp](../../../library/tree/diameterforedge.cpp.html)
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../../../library/tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 
 
 ## Code
@@ -67,5 +67,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

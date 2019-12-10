@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/pow.cpp
+# :warning: mod/pow.cpp
 * category: mod
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [mod/order.cpp](order.cpp.html)
+* :heavy_check_mark: <a href="order.cpp.html">mod/order.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/3062.test.cpp](../../verify/test/aoj/3062.test.cpp.html)
-* :heavy_check_mark: [test/aoj/NTL_1_B.test.cpp](../../verify/test/aoj/NTL_1_B.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
 
 
 ## Code
@@ -75,5 +75,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

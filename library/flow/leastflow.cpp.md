@@ -29,16 +29,16 @@ layout: default
 * category: flow
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [flow/dinic.cpp](dinic.cpp.html)
+* :warning: <a href="dinic.cpp.html">flow/dinic.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1615.test.cpp](../../verify/test/aoj/1615.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
 
 
 ## Code
@@ -101,5 +101,5 @@ public:
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

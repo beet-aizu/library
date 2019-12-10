@@ -25,45 +25,46 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/chminmax.cpp
+# :warning: tools/chminmax.cpp
 * category: tools
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [datastructure/cartesiantree.cpp](../datastructure/cartesiantree.cpp.html)
-* :heavy_check_mark: [datastructure/convexhulltrick.cpp](../datastructure/convexhulltrick.cpp.html)
-* :heavy_check_mark: [datastructure/slidingwindowaggregation.cpp](../datastructure/slidingwindowaggregation.cpp.html)
-* :heavy_check_mark: [datastructure/waveletmatrix.cpp](../datastructure/waveletmatrix.cpp.html)
-* :heavy_check_mark: [flow/negativeedge.cpp](../flow/negativeedge.cpp.html)
-* :heavy_check_mark: [mod/log.cpp](../mod/log.cpp.html)
-* :heavy_check_mark: [string/ahocorasick.cpp](../string/ahocorasick.cpp.html)
-* :heavy_check_mark: [string/longestcommonprefix.cpp](../string/longestcommonprefix.cpp.html)
+* :warning: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :warning: <a href="../datastructure/convexhulltrick.cpp.html">datastructure/convexhulltrick.cpp</a>
+* :warning: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
+* :warning: <a href="../datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
+* :warning: <a href="../flow/negativeedge.cpp.html">flow/negativeedge.cpp</a>
+* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
+* :warning: <a href="../string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
+* :warning: <a href="../string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0391.test.cpp](../../verify/test/aoj/0391.test.cpp.html)
-* :heavy_check_mark: [test/aoj/0415.test.cpp](../../verify/test/aoj/0415.test.cpp.html)
-* :heavy_check_mark: [test/aoj/0613.test.cpp](../../verify/test/aoj/0613.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1549.test.cpp](../../verify/test/aoj/1549.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1595.linkcuttree.test.cpp](../../verify/test/aoj/1595.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1607.test.cpp](../../verify/test/aoj/1607.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2230.test.cpp](../../verify/test/aoj/2230.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2627.test.cpp](../../verify/test/aoj/2627.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2790.test.cpp](../../verify/test/aoj/2790.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2975.test.cpp](../../verify/test/aoj/2975.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3069.lichao.test.cpp](../../verify/test/aoj/3069.lichao.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3069.test.cpp](../../verify/test/aoj/3069.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3112.test.cpp](../../verify/test/aoj/3112.test.cpp.html)
-* :heavy_check_mark: [test/aoj/ALDS1_10_C.test.cpp](../../verify/test/aoj/ALDS1_10_C.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_3_B.test.cpp](../../verify/test/aoj/DPL_3_B.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_A.linkcuttree.test.cpp](../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html)
-* :heavy_check_mark: [test/aoj/geometry/2334.test.cpp](../../verify/test/aoj/geometry/2334.test.cpp.html)
-* :heavy_check_mark: [test/aoj/geometry/3049.test.cpp](../../verify/test/aoj/geometry/3049.test.cpp.html)
-* :heavy_check_mark: [test/aoj/geometry/3056.test.cpp](../../verify/test/aoj/geometry/3056.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/1549.test.cpp.html">test/aoj/1549.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1595.linkcuttree.test.cpp.html">test/aoj/1595.linkcuttree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2187.test.cpp.html">test/aoj/2187.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2230.test.cpp.html">test/aoj/2230.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2627.test.cpp.html">test/aoj/2627.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3069.test.cpp.html">test/aoj/3069.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_10_C.test.cpp.html">test/aoj/ALDS1_10_C.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3056.test.cpp.html">test/aoj/geometry/3056.test.cpp</a>
 
 
 ## Code
@@ -87,5 +88,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

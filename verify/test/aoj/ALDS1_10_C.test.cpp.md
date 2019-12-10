@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/aoj/ALDS1_10_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [string/longestcommonsubstring.cpp](../../../library/string/longestcommonsubstring.cpp.html)
-* :heavy_check_mark: [tools/chminmax.cpp](../../../library/tools/chminmax.cpp.html)
+* :heavy_check_mark: <a href="../../../library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
+* :warning: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Code
@@ -69,5 +69,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

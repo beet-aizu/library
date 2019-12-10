@@ -25,24 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: bbst/basic/array.cpp
+# :warning: bbst/basic/array.cpp
 * category: bbst/basic
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [bbst/basic/base.cpp](base.cpp.html)
+* :warning: <a href="base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Required
-* :warning: [bbst/persistent/array.cpp](../persistent/array.cpp.html)
+* :warning: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2890.test.cpp](../../../verify/test/aoj/2890.test.cpp.html)
+* :warning: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
 
 
 ## Code
@@ -141,5 +141,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

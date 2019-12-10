@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: bbst/basic/dual.cpp
+# :warning: bbst/basic/dual.cpp
 * category: bbst/basic
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [bbst/basic/base.cpp](base.cpp.html)
+* :warning: <a href="base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1579.test.cpp](../../../verify/test/aoj/1579.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_D.bbst.test.cpp](../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_E.bbst.test.cpp](../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html)
+* :warning: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>
 
 
 ## Code
@@ -177,5 +177,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

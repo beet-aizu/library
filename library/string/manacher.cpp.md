@@ -29,16 +29,16 @@ layout: default
 * category: string
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/sparsetable.cpp](../datastructure/sparsetable.cpp.html)
+* :warning: <a href="../datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2934.test.cpp](../../verify/test/aoj/2934.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2934.test.cpp.html">test/aoj/2934.test.cpp</a>
 
 
 ## Code
@@ -126,5 +126,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

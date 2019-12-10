@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/count/dynamic_offline.cpp
+# :warning: segtree/count/dynamic_offline.cpp
 * category: segtree/count
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2842.test.cpp](../../../verify/test/aoj/2842.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/rectangle_sum.test.cpp](../../../verify/test/yosupo/rectangle_sum.test.cpp.html)
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2842.test.cpp.html">test/aoj/2842.test.cpp</a>
+* :warning: <a href="../../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 
 
 ## Code
@@ -170,5 +170,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

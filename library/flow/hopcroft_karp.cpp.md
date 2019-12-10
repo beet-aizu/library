@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: flow/hopcroft_karp.cpp
+# :warning: flow/hopcroft_karp.cpp
 * category: flow
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0424.test.cpp](../../verify/test/aoj/0424.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_7_A.hopcroft_karp.test.cpp](../../verify/test/aoj/GRL_7_A.hopcroft_karp.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/bipartitematching.test.cpp](../../verify/test/yosupo/bipartitematching.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0424.test.cpp.html">test/aoj/0424.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_7_A.hopcroft_karp.test.cpp.html">test/aoj/GRL_7_A.hopcroft_karp.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/bipartitematching.test.cpp.html">test/yosupo/bipartitematching.test.cpp</a>
 
 
 ## Code
@@ -192,5 +192,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

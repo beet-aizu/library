@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/maximalmatching.cpp
+# :warning: graph/maximalmatching.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2983.test.cpp](../../verify/test/aoj/2983.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2983.test.cpp.html">test/aoj/2983.test.cpp</a>
 
 
 ## Code
@@ -103,5 +103,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

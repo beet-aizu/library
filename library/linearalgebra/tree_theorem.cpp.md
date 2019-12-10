@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: linearalgebra/tree_theorem.cpp
+# :warning: linearalgebra/tree_theorem.cpp
 * category: linearalgebra
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/unionfindtree.cpp](../datastructure/unionfindtree.cpp.html)
-* :heavy_check_mark: [graph/kruskal.cpp](../graph/kruskal.cpp.html)
-* :heavy_check_mark: [linearalgebra/matrix.cpp](matrix.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
+* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :warning: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
+* :warning: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0314.test.cpp](../../verify/test/aoj/0314.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 
 
 ## Code
@@ -188,5 +188,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

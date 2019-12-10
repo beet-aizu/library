@@ -25,27 +25,27 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/arbitrarymodconvolution.cpp
+# :warning: convolution/arbitrarymodconvolution.cpp
 * category: convolution
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [convolution/fastfouriertransform.cpp](fastfouriertransform.cpp.html)
-* :heavy_check_mark: [mod/enumeration.cpp](../mod/enumeration.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
+* :heavy_check_mark: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [polynomial/formalpowerseries.cpp](../polynomial/formalpowerseries.cpp.html)
+* :warning: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2985.test.cpp](../../verify/test/aoj/2985.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 
 
 ## Code
@@ -179,5 +179,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

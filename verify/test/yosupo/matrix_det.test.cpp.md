@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/matrix_det.test.cpp
+# :warning: test/yosupo/matrix_det.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/matrix_det](https://judge.yosupo.jp/problem/matrix_det)
+* see: <a href="https://judge.yosupo.jp/problem/matrix_det">https://judge.yosupo.jp/problem/matrix_det</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [linearalgebra/matrix.cpp](../../../library/linearalgebra/matrix.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../../../library/mod/mint.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -71,5 +71,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

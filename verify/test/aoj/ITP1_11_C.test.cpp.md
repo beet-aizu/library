@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/ITP1_11_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [tools/dice.cpp](../../../library/tools/dice.cpp.html)
+* :heavy_check_mark: <a href="../../../library/tools/dice.cpp.html">tools/dice.cpp</a>
 
 
 ## Code
@@ -68,5 +68,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

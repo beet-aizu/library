@@ -29,24 +29,24 @@ layout: default
 * category: linearalgebra
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
-* :heavy_check_mark: [segtree/basic/ushi.cpp](../segtree/basic/ushi.cpp.html)
-* :heavy_check_mark: [tools/compress.cpp](../tools/compress.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :warning: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [linkcuttree/path.cpp](../linkcuttree/path.cpp.html)
+* :warning: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2397.test.cpp](../../verify/test/aoj/2397.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3074.test.cpp](../../verify/test/aoj/3074.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
 
 
 ## Code
@@ -259,5 +259,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

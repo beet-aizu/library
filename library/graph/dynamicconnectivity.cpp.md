@@ -29,12 +29,12 @@ layout: default
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2235.test.cpp](../../verify/test/aoj/2235.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2235.test.cpp.html">test/aoj/2235.test.cpp</a>
 
 
 ## Code
@@ -154,5 +154,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

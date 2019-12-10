@@ -29,24 +29,24 @@ layout: default
 * category: tree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [graph/lowlink.cpp](../graph/lowlink.cpp.html)
-* :heavy_check_mark: [segtree/basic/ushi.cpp](../segtree/basic/ushi.cpp.html)
+* :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
+* :warning: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [datastructure/binarytrie.cpp](../datastructure/binarytrie.cpp.html)
+* :warning: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2450.test.cpp](../../verify/test/aoj/2450.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2667.test.cpp](../../verify/test/aoj/2667.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_C.test.cpp](../../verify/test/aoj/GRL_5_C.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/vertex_add_path_sum.test.cpp](../../verify/test/yosupo/vertex_add_path_sum.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2667.test.cpp.html">test/aoj/2667.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.test.cpp.html">test/aoj/GRL_5_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_path_sum.test.cpp.html">test/yosupo/vertex_add_path_sum.test.cpp</a>
 
 
 ## Code
@@ -239,5 +239,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

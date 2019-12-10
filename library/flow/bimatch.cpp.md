@@ -29,13 +29,13 @@ layout: default
 * category: flow
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2513.test.cpp](../../verify/test/aoj/2513.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_7_A.test.cpp](../../verify/test/aoj/GRL_7_A.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2513.test.cpp.html">test/aoj/2513.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_7_A.test.cpp.html">test/aoj/GRL_7_A.test.cpp</a>
 
 
 ## Code
@@ -114,5 +114,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

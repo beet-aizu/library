@@ -29,16 +29,16 @@ layout: default
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [graph/stronglyconnectedcomponent.cpp](stronglyconnectedcomponent.cpp.html)
+* :warning: <a href="stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/3102.test.cpp](../../verify/test/aoj/3102.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/3102.test.cpp.html">test/aoj/3102.test.cpp</a>
 
 
 ## Code
@@ -240,5 +240,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

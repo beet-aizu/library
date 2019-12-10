@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/binarytrie.cpp
+# :warning: datastructure/binarytrie.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [tree/heavylightdecomposition.cpp](../tree/heavylightdecomposition.cpp.html)
-* :heavy_check_mark: [tree/levelancestor.cpp](../tree/levelancestor.cpp.html)
+* :heavy_check_mark: <a href="../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
+* :heavy_check_mark: <a href="../tree/levelancestor.cpp.html">tree/levelancestor.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/DSL_2_B.binarytrie.test.cpp](../../verify/test/aoj/DSL_2_B.binarytrie.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/DSL_2_B.binarytrie.test.cpp.html">test/aoj/DSL_2_B.binarytrie.test.cpp</a>
 
 
 ## Code
@@ -459,5 +459,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

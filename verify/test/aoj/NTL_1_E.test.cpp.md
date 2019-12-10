@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/NTL_1_E.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [math/extgcd.cpp](../../../library/math/extgcd.cpp.html)
+* :warning: <a href="../../../library/math/extgcd.cpp.html">math/extgcd.cpp</a>
 
 
 ## Code
@@ -61,5 +61,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

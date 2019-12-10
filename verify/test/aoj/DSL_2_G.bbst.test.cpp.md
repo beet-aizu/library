@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DSL_2_G.bbst.test.cpp
+# :warning: test/aoj/DSL_2_G.bbst.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [bbst/basic/base.cpp](../../../library/bbst/basic/base.cpp.html)
-* :heavy_check_mark: [bbst/basic/lazy.cpp](../../../library/bbst/basic/lazy.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
+* :warning: <a href="../../../library/bbst/basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -91,5 +91,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
+# :warning: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/disjointsparsetable.cpp](../../../library/datastructure/disjointsparsetable.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/datastructure/disjointsparsetable.cpp.html">datastructure/disjointsparsetable.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -72,5 +72,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -25,25 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/fixpoint.cpp
+# :warning: tools/fixpoint.cpp
 * category: tools
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [string/ahocorasick.cpp](../string/ahocorasick.cpp.html)
-* :heavy_check_mark: [tree/eulertourforvertex.cpp](../tree/eulertourforvertex.cpp.html)
+* :warning: <a href="../string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
+* :heavy_check_mark: <a href="../tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0377.test.cpp](../../verify/test/aoj/0377.test.cpp.html)
-* :heavy_check_mark: [test/aoj/0613.test.cpp](../../verify/test/aoj/0613.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2646.test.cpp](../../verify/test/aoj/2646.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2790.test.cpp](../../verify/test/aoj/2790.test.cpp.html)
-* :heavy_check_mark: [test/aoj/geometry/2448.test.cpp](../../verify/test/aoj/geometry/2448.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/0377.test.cpp.html">test/aoj/0377.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2646.test.cpp.html">test/aoj/2646.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
 
 
 ## Code
@@ -107,5 +107,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

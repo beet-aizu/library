@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/yosupo/discrete_logarithm_mod.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/discrete_logarithm_mod](https://judge.yosupo.jp/problem/discrete_logarithm_mod)
+* see: <a href="https://judge.yosupo.jp/problem/discrete_logarithm_mod">https://judge.yosupo.jp/problem/discrete_logarithm_mod</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [mod/log.cpp](../../../library/mod/log.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :heavy_check_mark: <a href="../../../library/mod/log.cpp.html">mod/log.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -68,5 +68,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

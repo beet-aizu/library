@@ -25,25 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/basic/chien.cpp
+# :warning: segtree/basic/chien.cpp
 * category: segtree/basic
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2359.test.cpp](../../../verify/test/aoj/2359.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2450.test.cpp](../../../verify/test/aoj/2450.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2667.test.cpp](../../../verify/test/aoj/2667.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2871.test.cpp](../../../verify/test/aoj/2871.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3035.test.cpp](../../../verify/test/aoj/3035.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3073.test.cpp](../../../verify/test/aoj/3073.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_F.test.cpp](../../../verify/test/aoj/DSL_2_F.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_G.test.cpp](../../../verify/test/aoj/DSL_2_G.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_H.test.cpp](../../../verify/test/aoj/DSL_2_H.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_I.test.cpp](../../../verify/test/aoj/DSL_2_I.test.cpp.html)
+* :warning: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2667.test.cpp.html">test/aoj/2667.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2871.test.cpp.html">test/aoj/2871.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/3035.test.cpp.html">test/aoj/3035.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_F.test.cpp.html">test/aoj/DSL_2_F.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_G.test.cpp.html">test/aoj/DSL_2_G.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_H.test.cpp.html">test/aoj/DSL_2_H.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_I.test.cpp.html">test/aoj/DSL_2_I.test.cpp</a>
 
 
 ## Code
@@ -219,5 +219,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

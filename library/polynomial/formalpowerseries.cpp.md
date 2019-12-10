@@ -25,33 +25,33 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/formalpowerseries.cpp
+# :warning: polynomial/formalpowerseries.cpp
 * category: polynomial
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [convolution/arbitrarymodconvolution.cpp](../convolution/arbitrarymodconvolution.cpp.html)
-* :heavy_check_mark: [convolution/fastfouriertransform.cpp](../convolution/fastfouriertransform.cpp.html)
-* :heavy_check_mark: [convolution/numbertheoretictransform.cpp](../convolution/numbertheoretictransform.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../mod/mint.cpp.html)
-* :heavy_check_mark: [mod/sqrt.cpp](../mod/sqrt.cpp.html)
-* :heavy_check_mark: [tools/drop.cpp](../tools/drop.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
+* :warning: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
+* :warning: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../mod/sqrt.cpp.html">mod/sqrt.cpp</a>
+* :warning: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2985.garner.test.cpp](../../verify/test/aoj/2985.garner.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2985.test.cpp](../../verify/test/aoj/2985.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3072.test.cpp](../../verify/test/aoj/3072.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/bernoulli_number.test.cpp](../../verify/test/yosupo/bernoulli_number.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/exp_of_formal_power_series.test.cpp](../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/inv_of_formal_power_series.test.cpp](../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/log_of_formal_power_series.test.cpp](../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/partition_function.test.cpp](../../verify/test/yosupo/partition_function.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3072.test.cpp.html">test/aoj/3072.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 
 
 ## Code
@@ -432,5 +432,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

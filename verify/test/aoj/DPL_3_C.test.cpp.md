@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/DPL_3_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [algorithm/largestrectangle.cpp](../../../library/algorithm/largestrectangle.cpp.html)
+* :warning: <a href="../../../library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
 
 
 ## Code
@@ -62,5 +62,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

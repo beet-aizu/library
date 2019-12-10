@@ -25,24 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: linearalgebra/matrix.cpp
+# :warning: linearalgebra/matrix.cpp
 * category: linearalgebra
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [linearalgebra/tree_theorem.cpp](tree_theorem.cpp.html)
-* :heavy_check_mark: [math/tetrahedra.cpp](../math/tetrahedra.cpp.html)
+* :warning: <a href="tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
+* :heavy_check_mark: <a href="../math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0314.test.cpp](../../verify/test/aoj/0314.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1328.test.cpp](../../verify/test/aoj/1328.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2060.test.cpp](../../verify/test/aoj/2060.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/matrix_det.test.cpp](../../verify/test/yosupo/matrix_det.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/1328.test.cpp.html">test/aoj/1328.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
 
 
 ## Code
@@ -309,5 +309,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

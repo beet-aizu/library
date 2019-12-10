@@ -28,14 +28,14 @@ layout: default
 # :heavy_check_mark: test/yosupo/lca.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/lca](https://judge.yosupo.jp/problem/lca)
+* see: <a href="https://judge.yosupo.jp/problem/lca">https://judge.yosupo.jp/problem/lca</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
-* :heavy_check_mark: [tree/lowestcommonancestor.cpp](../../../library/tree/lowestcommonancestor.cpp.html)
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 
 
 ## Code
@@ -75,5 +75,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

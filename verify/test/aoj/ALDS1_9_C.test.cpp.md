@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/ALDS1_9_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/skewheap.cpp](../../../library/datastructure/skewheap.cpp.html)
+* :heavy_check_mark: <a href="../../../library/datastructure/skewheap.cpp.html">datastructure/skewheap.cpp</a>
 
 
 ## Code
@@ -80,5 +80,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

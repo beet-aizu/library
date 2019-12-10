@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/convexhulltrick.cpp
+# :warning: datastructure/convexhulltrick.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [tools/chminmax.cpp](../tools/chminmax.cpp.html)
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2725.test.cpp](../../verify/test/aoj/2725.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2975.test.cpp](../../verify/test/aoj/2975.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/2725.test.cpp.html">test/aoj/2725.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
 
 
 ## Code
@@ -196,5 +196,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

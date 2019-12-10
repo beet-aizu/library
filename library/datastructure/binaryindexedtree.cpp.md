@@ -25,31 +25,31 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/binaryindexedtree.cpp
+# :warning: datastructure/binaryindexedtree.cpp
 * category: datastructure
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required
-* :heavy_check_mark: [linkcuttree/subtree.cpp](../linkcuttree/subtree.cpp.html)
-* :heavy_check_mark: [string/zalgorithm.cpp](../string/zalgorithm.cpp.html)
-* :heavy_check_mark: [tree/eulertourforedge.cpp](../tree/eulertourforedge.cpp.html)
-* :heavy_check_mark: [tree/eulertourforvertex.cpp](../tree/eulertourforvertex.cpp.html)
+* :heavy_check_mark: <a href="../linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>
+* :heavy_check_mark: <a href="../string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
+* :warning: <a href="../tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
+* :heavy_check_mark: <a href="../tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/DSL_2_B.test.cpp](../../verify/test/aoj/DSL_2_B.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_5_D.test.cpp](../../verify/test/aoj/GRL_5_D.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/point_add_range_sum.test.cpp](../../verify/test/yosupo/point_add_range_sum.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/vertex_add_path_sum.test.cpp](../../verify/test/yosupo/vertex_add_path_sum.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/vertex_add_subtree_sum.test.cpp](../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_D.test.cpp.html">test/aoj/GRL_5_D.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_path_sum.test.cpp.html">test/yosupo/vertex_add_path_sum.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 
 
 ## Code
@@ -148,5 +148,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

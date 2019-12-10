@@ -29,18 +29,22 @@ layout: default
 * category: tools
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
+
+
+## Verified
+* :warning: <a href="../../verify/test/aoj/2187.test.cpp.html">test/aoj/2187.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3053.test.cpp.html">test/aoj/3053.test.cpp</a>
 
 
 ## Code
 {% raw %}
 ```cpp
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename F>
 void all_permutations(int n,F f){
@@ -49,6 +53,7 @@ void all_permutations(int n,F f){
   do f(vs); while(next_permutation(vs.begin(),vs.end()));
 }
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 signed ABC054_C(){
   int n,m;
@@ -73,16 +78,18 @@ signed ABC054_C(){
   return 0;
 }
 /*
-  verified on 2019/05/19
+  verified on 2019/12/09
   https://atcoder.jp/contests/abc054/tasks/abc054_c
 */
+
 signed main(){
   ABC054_C();
   return 0;
 }
+#endif
 
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -29,17 +29,17 @@ layout: default
 * category: tree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [tree/eulertourforvertex.cpp](eulertourforvertex.cpp.html)
+* :heavy_check_mark: <a href="eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/GRL_5_C.lowestcommonancestor.test.cpp](../../verify/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/lca.test.cpp](../../verify/test/yosupo/lca.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp.html">test/aoj/GRL_5_C.lowestcommonancestor.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 
 
 ## Code
@@ -111,5 +111,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

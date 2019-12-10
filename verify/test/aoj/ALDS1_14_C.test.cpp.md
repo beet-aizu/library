@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/ALDS1_14_C.test.cpp
+# :warning: test/aoj/ALDS1_14_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [string/rectanglehash.cpp](../../../library/string/rectanglehash.cpp.html)
-* :heavy_check_mark: [string/rollinghash.cpp](../../../library/string/rollinghash.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/string/rectanglehash.cpp.html">string/rectanglehash.cpp</a>
+* :warning: <a href="../../../library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -80,5 +80,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

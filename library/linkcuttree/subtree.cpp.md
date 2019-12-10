@@ -29,18 +29,18 @@ layout: default
 * category: linkcuttree
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/binaryindexedtree.cpp](../datastructure/binaryindexedtree.cpp.html)
-* :heavy_check_mark: [linkcuttree/base.cpp](base.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../tools/fastio.cpp.html)
+* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="base.cpp.html">linkcuttree/base.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp](../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 
 
 ## Code
@@ -547,5 +547,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/GRL_2_A.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [graph/kruskal.cpp](../../../library/graph/kruskal.cpp.html)
+* :warning: <a href="../../../library/graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 
 
 ## Code
@@ -70,5 +70,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

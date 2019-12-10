@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/ALDS1_14_B.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [string/rollinghash.cpp](../../../library/string/rollinghash.cpp.html)
+* :warning: <a href="../../../library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
 
 
 ## Code
@@ -71,5 +71,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

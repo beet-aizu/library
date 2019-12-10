@@ -25,29 +25,29 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/stronglyconnectedcomponent.cpp
+# :warning: graph/stronglyconnectedcomponent.cpp
 * category: graph
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [graph/arborescence_edmond.cpp](arborescence_edmond.cpp.html)
-* :heavy_check_mark: [graph/twosatisfiability.cpp](twosatisfiability.cpp.html)
+* :warning: <a href="arborescence_edmond.cpp.html">graph/arborescence_edmond.cpp</a>
+* :heavy_check_mark: <a href="twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2222.test.cpp](../../verify/test/aoj/2222.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2309.tarjan.test.cpp](../../verify/test/aoj/2309.tarjan.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2309.test.cpp](../../verify/test/aoj/2309.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2647.test.cpp](../../verify/test/aoj/2647.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3102.test.cpp](../../verify/test/aoj/3102.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_2_B.test.cpp](../../verify/test/aoj/GRL_2_B.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_3_C.test.cpp](../../verify/test/aoj/GRL_3_C.test.cpp.html)
-* :heavy_check_mark: [test/aoj/GRL_4_A.test.cpp](../../verify/test/aoj/GRL_4_A.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/scc.test.cpp](../../verify/test/yosupo/scc.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2222.test.cpp.html">test/aoj/2222.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2647.test.cpp.html">test/aoj/2647.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3102.test.cpp.html">test/aoj/3102.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_2_B.test.cpp.html">test/aoj/GRL_2_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_3_C.test.cpp.html">test/aoj/GRL_3_C.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_4_A.test.cpp.html">test/aoj/GRL_4_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/scc.test.cpp.html">test/yosupo/scc.test.cpp</a>
 
 
 ## Code
@@ -122,5 +122,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

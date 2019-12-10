@@ -29,16 +29,16 @@ layout: default
 * category: algorithm
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/skewheap.cpp](../datastructure/skewheap.cpp.html)
+* :heavy_check_mark: <a href="../datastructure/skewheap.cpp.html">datastructure/skewheap.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2415.test.cpp](../../verify/test/aoj/2415.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
 
 
 ## Code
@@ -139,5 +139,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

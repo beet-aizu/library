@@ -28,15 +28,15 @@ layout: default
 # :heavy_check_mark: test/yosupo/convolution_mod.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/convolution_mod](https://judge.yosupo.jp/problem/convolution_mod)
+* see: <a href="https://judge.yosupo.jp/problem/convolution_mod">https://judge.yosupo.jp/problem/convolution_mod</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [convolution/numbertheoretictransform.cpp](../../../library/convolution/numbertheoretictransform.cpp.html)
-* :heavy_check_mark: [mod/mint.cpp](../../../library/mod/mint.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -73,5 +73,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -25,65 +25,65 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/mint.cpp
+# :warning: mod/mint.cpp
 * category: mod
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [convolution/arbitrarymodconvolution.cpp](../convolution/arbitrarymodconvolution.cpp.html)
-* :heavy_check_mark: [convolution/arbitrarymodconvolution_with_garner.cpp](../convolution/arbitrarymodconvolution_with_garner.cpp.html)
-* :warning: [convolution/fastwalshhadamardtransform.cpp](../convolution/fastwalshhadamardtransform.cpp.html)
-* :heavy_check_mark: [convolution/numbertheoretictransform.cpp](../convolution/numbertheoretictransform.cpp.html)
-* :heavy_check_mark: [graph/lowlink.cpp](../graph/lowlink.cpp.html)
-* :heavy_check_mark: [graph/maximalmatching.cpp](../graph/maximalmatching.cpp.html)
-* :heavy_check_mark: [linearalgebra/squarematrix.cpp](../linearalgebra/squarematrix.cpp.html)
-* :heavy_check_mark: [linearalgebra/tree_theorem.cpp](../linearalgebra/tree_theorem.cpp.html)
-* :heavy_check_mark: [linkcuttree/path.cpp](../linkcuttree/path.cpp.html)
-* :warning: [math/kitamasa.cpp](../math/kitamasa.cpp.html)
-* :heavy_check_mark: [mod/enumeration.cpp](enumeration.cpp.html)
-* :heavy_check_mark: [mod/log.cpp](log.cpp.html)
-* :heavy_check_mark: [polynomial/formalpowerseries.cpp](../polynomial/formalpowerseries.cpp.html)
-* :heavy_check_mark: [polynomial/hash.cpp](../polynomial/hash.cpp.html)
+* :warning: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
+* :warning: <a href="../convolution/arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
+* :warning: <a href="../convolution/fastwalshhadamardtransform.cpp.html">convolution/fastwalshhadamardtransform.cpp</a>
+* :warning: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
+* :warning: <a href="../graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
+* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
+* :warning: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :warning: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="log.cpp.html">mod/log.cpp</a>
+* :warning: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="../polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/0314.test.cpp](../../verify/test/aoj/0314.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1630.test.cpp](../../verify/test/aoj/1630.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2222.test.cpp](../../verify/test/aoj/2222.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2397.test.cpp](../../verify/test/aoj/2397.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2560.test.cpp](../../verify/test/aoj/2560.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2959.test.cpp](../../verify/test/aoj/2959.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2971.test.cpp](../../verify/test/aoj/2971.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2977.test.cpp](../../verify/test/aoj/2977.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2983.test.cpp](../../verify/test/aoj/2983.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2985.garner.test.cpp](../../verify/test/aoj/2985.garner.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2985.test.cpp](../../verify/test/aoj/2985.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3072.test.cpp](../../verify/test/aoj/3072.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3074.test.cpp](../../verify/test/aoj/3074.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_A.test.cpp](../../verify/test/aoj/DPL_5_A.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_B.test.cpp](../../verify/test/aoj/DPL_5_B.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_C.test.cpp](../../verify/test/aoj/DPL_5_C.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_D.test.cpp](../../verify/test/aoj/DPL_5_D.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_E.test.cpp](../../verify/test/aoj/DPL_5_E.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_F.test.cpp](../../verify/test/aoj/DPL_5_F.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_G.test.cpp](../../verify/test/aoj/DPL_5_G.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_H.test.cpp](../../verify/test/aoj/DPL_5_H.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_I.test.cpp](../../verify/test/aoj/DPL_5_I.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_J.test.cpp](../../verify/test/aoj/DPL_5_J.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_K.test.cpp](../../verify/test/aoj/DPL_5_K.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DPL_5_L.test.cpp](../../verify/test/aoj/DPL_5_L.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/bernoulli_number.test.cpp](../../verify/test/yosupo/bernoulli_number.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/convolution_mod.test.cpp](../../verify/test/yosupo/convolution_mod.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/exp_of_formal_power_series.test.cpp](../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/inv_of_formal_power_series.test.cpp](../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/log_of_formal_power_series.test.cpp](../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/matrix_det.test.cpp](../../verify/test/yosupo/matrix_det.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/partition_function.test.cpp](../../verify/test/yosupo/partition_function.test.cpp.html)
-* :heavy_check_mark: [test/yosupo/point_set_range_composite.test.cpp](../../verify/test/yosupo/point_set_range_composite.test.cpp.html)
+* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/1630.test.cpp.html">test/aoj/1630.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2222.test.cpp.html">test/aoj/2222.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2560.test.cpp.html">test/aoj/2560.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2959.test.cpp.html">test/aoj/2959.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2971.test.cpp.html">test/aoj/2971.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2977.test.cpp.html">test/aoj/2977.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2983.test.cpp.html">test/aoj/2983.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3072.test.cpp.html">test/aoj/3072.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_A.test.cpp.html">test/aoj/DPL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_B.test.cpp.html">test/aoj/DPL_5_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_C.test.cpp.html">test/aoj/DPL_5_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_D.test.cpp.html">test/aoj/DPL_5_D.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_E.test.cpp.html">test/aoj/DPL_5_E.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_F.test.cpp.html">test/aoj/DPL_5_F.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_H.test.cpp.html">test/aoj/DPL_5_H.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_K.test.cpp.html">test/aoj/DPL_5_K.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/convolution_mod.test.cpp.html">test/yosupo/convolution_mod.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
 
 
 ## Code
@@ -182,5 +182,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

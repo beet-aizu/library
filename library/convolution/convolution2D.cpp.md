@@ -29,14 +29,14 @@ layout: default
 * category: convolution
 
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/2560.test.cpp](../../verify/test/aoj/2560.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2977.test.cpp](../../verify/test/aoj/2977.test.cpp.html)
-* :heavy_check_mark: [test/aoj/3074.test.cpp](../../verify/test/aoj/3074.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/aoj/2560.test.cpp.html">test/aoj/2560.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2977.test.cpp.html">test/aoj/2977.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
 
 
 ## Code
@@ -96,5 +96,5 @@ struct Convolution2D{
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

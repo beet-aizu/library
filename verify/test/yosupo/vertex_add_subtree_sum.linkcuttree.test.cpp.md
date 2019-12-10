@@ -28,15 +28,15 @@ layout: default
 # :heavy_check_mark: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [https://judge.yosupo.jp/problem/vertex_add_subtree_sum](https://judge.yosupo.jp/problem/vertex_add_subtree_sum)
+* see: <a href="https://judge.yosupo.jp/problem/vertex_add_subtree_sum">https://judge.yosupo.jp/problem/vertex_add_subtree_sum</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [linkcuttree/base.cpp](../../../library/linkcuttree/base.cpp.html)
-* :heavy_check_mark: [linkcuttree/subtree.cpp](../../../library/linkcuttree/subtree.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
+* :heavy_check_mark: <a href="../../../library/linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -101,5 +101,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

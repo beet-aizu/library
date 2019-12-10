@@ -28,13 +28,13 @@ layout: default
 # :heavy_check_mark: test/aoj/ALDS1_1_C.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [math/is_prime.cpp](../../../library/math/is_prime.cpp.html)
+* :heavy_check_mark: <a href="../../../library/math/is_prime.cpp.html">math/is_prime.cpp</a>
 
 
 ## Code
@@ -65,5 +65,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

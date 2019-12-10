@@ -25,35 +25,35 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: bbst/basic/base.cpp
+# :warning: bbst/basic/base.cpp
 * category: bbst/basic
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
 
 
 ## Required
-* :heavy_check_mark: [bbst/basic/array.cpp](array.cpp.html)
-* :heavy_check_mark: [bbst/basic/dual.cpp](dual.cpp.html)
-* :heavy_check_mark: [bbst/basic/lazy.cpp](lazy.cpp.html)
-* :heavy_check_mark: [bbst/basic/ushi.cpp](ushi.cpp.html)
-* :warning: [bbst/persistent/array.cpp](../persistent/array.cpp.html)
-* :warning: [bbst/persistent/lazy.cpp](../persistent/lazy.cpp.html)
-* :warning: [bbst/persistent/ushi.cpp](../persistent/ushi.cpp.html)
+* :warning: <a href="array.cpp.html">bbst/basic/array.cpp</a>
+* :warning: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
+* :warning: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
+* :warning: <a href="ushi.cpp.html">bbst/basic/ushi.cpp</a>
+* :warning: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
+* :warning: <a href="../persistent/lazy.cpp.html">bbst/persistent/lazy.cpp</a>
+* :warning: <a href="../persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
 
 
 ## Verified
-* :heavy_check_mark: [test/aoj/1508.test.cpp](../../../verify/test/aoj/1508.test.cpp.html)
-* :heavy_check_mark: [test/aoj/1579.test.cpp](../../../verify/test/aoj/1579.test.cpp.html)
-* :heavy_check_mark: [test/aoj/2890.test.cpp](../../../verify/test/aoj/2890.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_A.bbst.test.cpp](../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_D.bbst.test.cpp](../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_E.bbst.test.cpp](../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_F.bbst.test.cpp](../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_G.bbst.test.cpp](../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_H.bbst.test.cpp](../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html)
-* :heavy_check_mark: [test/aoj/DSL_2_I.bbst.test.cpp](../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html)
+* :heavy_check_mark: <a href="../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html">test/aoj/DSL_2_A.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html">test/aoj/DSL_2_H.bbst.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html">test/aoj/DSL_2_I.bbst.test.cpp</a>
 
 
 ## Code
@@ -195,5 +195,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

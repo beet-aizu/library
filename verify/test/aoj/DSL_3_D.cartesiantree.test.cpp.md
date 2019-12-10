@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DSL_3_D.cartesiantree.test.cpp
+# :warning: test/aoj/DSL_3_D.cartesiantree.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [datastructure/cartesiantree.cpp](../../../library/datastructure/cartesiantree.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
-* :heavy_check_mark: [tree/lca.cpp](../../../library/tree/lca.cpp.html)
+* :warning: <a href="../../../library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Code
@@ -79,5 +79,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

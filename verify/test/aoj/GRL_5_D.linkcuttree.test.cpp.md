@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_D.linkcuttree.test.cpp
+# :warning: test/aoj/GRL_5_D.linkcuttree.test.cpp
 
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [linkcuttree/base.cpp](../../../library/linkcuttree/base.cpp.html)
-* :heavy_check_mark: [linkcuttree/path.cpp](../../../library/linkcuttree/path.cpp.html)
-* :heavy_check_mark: [tools/fastio.cpp](../../../library/tools/fastio.cpp.html)
+* :warning: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
+* :warning: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -100,5 +100,5 @@ signed main(){
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
