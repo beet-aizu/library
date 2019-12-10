@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/diameterforedge.cpp
+# :heavy_check_mark: tree/diameterforedge.cpp
 * category: tree
 
 
@@ -34,7 +34,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/GRL_5_A.test.cpp.html">test/aoj/GRL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_A.test.cpp.html">test/aoj/GRL_5_A.test.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/BIT2D.cpp
+# :heavy_check_mark: datastructure/BIT2D.cpp
 * category: datastructure
 
 
@@ -34,7 +34,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/2842.2D_BIT.test.cpp.html">test/aoj/2842.2D_BIT.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2842.2D_BIT.test.cpp.html">test/aoj/2842.2D_BIT.test.cpp</a>
 
 
 ## Code

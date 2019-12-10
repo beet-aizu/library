@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: segtree/basic/dual.cpp
+# :heavy_check_mark: segtree/basic/dual.cpp
 * category: segtree/basic
 
 
@@ -34,10 +34,10 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_D.test.cpp.html">test/aoj/DSL_2_D.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_E.test.cpp.html">test/aoj/DSL_2_E.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_D.test.cpp.html">test/aoj/DSL_2_D.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_E.test.cpp.html">test/aoj/DSL_2_E.test.cpp</a>
 
 
 ## Code

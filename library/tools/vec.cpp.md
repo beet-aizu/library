@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/vec.cpp
+# :heavy_check_mark: tools/vec.cpp
 * category: tools
 
 
@@ -38,7 +38,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
 
 
 ## Code

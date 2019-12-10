@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/arborescence_tarjan.cpp
+# :heavy_check_mark: graph/arborescence_tarjan.cpp
 * category: graph
 
 
@@ -34,7 +34,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/GRL_2_B.tarjan.test.cpp.html">test/aoj/GRL_2_B.tarjan.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_2_B.tarjan.test.cpp.html">test/aoj/GRL_2_B.tarjan.test.cpp</a>
 
 
 ## Code

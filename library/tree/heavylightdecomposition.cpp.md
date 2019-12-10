@@ -39,7 +39,7 @@ layout: default
 
 
 ## Required
-* :warning: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 
 
 ## Verified
