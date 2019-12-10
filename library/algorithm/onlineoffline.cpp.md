@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: algorithm
-* <a href="{{ site.github.repository_url }}/blob/master/algorithm/onlineoffline.cpp">View this file on GitHub</a> (Last commit date: 2019-10-29 14:40:47 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/onlineoffline.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-29 14:40:47 +0900
 
 
 

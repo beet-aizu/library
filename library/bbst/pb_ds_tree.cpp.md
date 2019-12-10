@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: bbst
-* <a href="{{ site.github.repository_url }}/blob/master/bbst/pb_ds_tree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 22:54:40 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/pb_ds_tree.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 22:54:40 +0900
 
 
 

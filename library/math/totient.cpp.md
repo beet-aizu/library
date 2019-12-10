@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: math
-* <a href="{{ site.github.repository_url }}/blob/master/math/totient.cpp">View this file on GitHub</a> (Last commit date: 2019-09-25 21:45:05 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/math/totient.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-09-25 21:45:05 +0900
 
 
 

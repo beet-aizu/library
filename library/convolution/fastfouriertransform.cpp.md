@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: convolution
-* <a href="{{ site.github.repository_url }}/blob/master/convolution/fastfouriertransform.cpp">View this file on GitHub</a> (Last commit date: 2019-11-26 16:21:08 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/convolution/fastfouriertransform.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-26 16:21:08 +0900
 
 
 

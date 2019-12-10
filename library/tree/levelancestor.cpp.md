@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
-* <a href="{{ site.github.repository_url }}/blob/master/tree/levelancestor.cpp">View this file on GitHub</a> (Last commit date: 2019-10-25 17:59:09 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/tree/levelancestor.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-25 17:59:09 +0900
 
 
 

@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: math
-* <a href="{{ site.github.repository_url }}/blob/master/math/combination.cpp">View this file on GitHub</a> (Last commit date: 2019-05-26 16:24:26 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/math/combination.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-05-26 16:24:26 +0900
 
 
 

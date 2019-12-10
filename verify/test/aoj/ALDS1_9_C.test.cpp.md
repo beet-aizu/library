@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: test/aoj/ALDS1_9_C.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_9_C.test.cpp">View this file on GitHub</a> (Last commit date: 2019-10-21 19:29:29 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_9_C.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-21 19:29:29 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C</a>

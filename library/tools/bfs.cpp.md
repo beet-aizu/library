@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: tools
-* <a href="{{ site.github.repository_url }}/blob/master/tools/bfs.cpp">View this file on GitHub</a> (Last commit date: 2018-09-26 22:54:03 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/tools/bfs.cpp">View this file on GitHub</a>
+    - Last commit date: 2018-09-26 22:54:03 +0900
 
 
 

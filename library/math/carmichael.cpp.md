@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: math
-* <a href="{{ site.github.repository_url }}/blob/master/math/carmichael.cpp">View this file on GitHub</a> (Last commit date: 2019-10-15 21:27:34 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/math/carmichael.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-15 21:27:34 +0900
 
 
 

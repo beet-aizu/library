@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: graph
-* <a href="{{ site.github.repository_url }}/blob/master/graph/dynamicconnectivity.cpp">View this file on GitHub</a> (Last commit date: 2019-10-28 14:10:42 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/graph/dynamicconnectivity.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-28 14:10:42 +0900
 
 
 

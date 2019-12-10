@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: convolution
-* <a href="{{ site.github.repository_url }}/blob/master/convolution/arbitrarymodconvolution_with_garner.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/convolution/arbitrarymodconvolution_with_garner.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 23:51:01 +0900
 
 
 

@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
-* <a href="{{ site.github.repository_url }}/blob/master/tree/lowestcommonancestor.cpp">View this file on GitHub</a> (Last commit date: 2019-10-09 10:45:08 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/tree/lowestcommonancestor.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-09 10:45:08 +0900
 
 
 

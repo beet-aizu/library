@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
-* <a href="{{ site.github.repository_url }}/blob/master/tree/diameterforvertex.cpp">View this file on GitHub</a> (Last commit date: 2019-11-12 19:01:48 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/tree/diameterforvertex.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-12 19:01:48 +0900
 
 
 

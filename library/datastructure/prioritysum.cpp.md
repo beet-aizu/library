@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: datastructure
-* <a href="{{ site.github.repository_url }}/blob/master/datastructure/prioritysum.cpp">View this file on GitHub</a> (Last commit date: 2019-04-11 20:10:39 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/prioritysum.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-04-11 20:10:39 +0900
 
 
 

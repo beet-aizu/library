@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: tools
-* <a href="{{ site.github.repository_url }}/blob/master/tools/zip.cpp">View this file on GitHub</a> (Last commit date: 2019-08-24 00:11:17 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/tools/zip.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-08-24 00:11:17 +0900
 
 
 

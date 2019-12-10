@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: mod
-* <a href="{{ site.github.repository_url }}/blob/master/mod/mint.cpp">View this file on GitHub</a> (Last commit date: 2019-10-26 15:31:15 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/mod/mint.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-10-26 15:31:15 +0900
 
 
 
