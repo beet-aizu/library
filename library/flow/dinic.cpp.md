@@ -25,11 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: flow/dinic.cpp
-* category: flow
-
-
+# :heavy_check_mark: flow/dinic.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: flow
+* <a href="{{ site.github.repository_url }}/blob/master/flow/dinic.cpp">View this file on GitHub</a> (Last commit date: 2019-10-23 21:02:10 +0900)
+
 
 
 
@@ -41,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/1599.test.cpp.html">test/aoj/1599.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2313.test.cpp.html">test/aoj/2313.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/3047.test.cpp.html">test/aoj/3047.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3047.test.cpp.html">test/aoj/3047.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3058.test.cpp.html">test/aoj/3058.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_6_A.test.cpp.html">test/aoj/GRL_6_A.test.cpp</a>
 

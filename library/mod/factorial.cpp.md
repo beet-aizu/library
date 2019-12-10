@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: mod/factorial.cpp
-* category: mod
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: mod
+* <a href="{{ site.github.repository_url }}/blob/master/mod/factorial.cpp">View this file on GitHub</a> (Last commit date: 2019-06-17 15:36:46 +0900)
+
 
 
 

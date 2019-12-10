@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: datastructure/waveletmatrix.cpp
-* category: datastructure
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/waveletmatrix.cpp">View this file on GitHub</a> (Last commit date: 2019-10-29 14:52:10 +0900)
+
 
 
 

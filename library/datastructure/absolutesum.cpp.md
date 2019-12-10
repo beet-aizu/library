@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: datastructure/absolutesum.cpp
-* category: datastructure
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/absolutesum.cpp">View this file on GitHub</a> (Last commit date: 2019-06-19 15:03:20 +0900)
+
 
 
 

@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: math/factorize.cpp
-* category: math
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/factorize.cpp">View this file on GitHub</a> (Last commit date: 2019-10-08 13:17:56 +0900)
+
 
 
 
 ## Required
-* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 * :heavy_check_mark: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../mod/order.cpp.html">mod/order.cpp</a>
 

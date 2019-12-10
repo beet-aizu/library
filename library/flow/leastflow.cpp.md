@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: flow/leastflow.cpp
-* category: flow
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: flow
+* <a href="{{ site.github.repository_url }}/blob/master/flow/leastflow.cpp">View this file on GitHub</a> (Last commit date: 2019-10-25 00:13:55 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="dinic.cpp.html">flow/dinic.cpp</a>
+* :heavy_check_mark: <a href="dinic.cpp.html">flow/dinic.cpp</a>
 
 
 ## Verified

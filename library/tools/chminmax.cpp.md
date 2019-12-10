@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: tools/chminmax.cpp
-* category: tools
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tools
+* <a href="{{ site.github.repository_url }}/blob/master/tools/chminmax.cpp">View this file on GitHub</a> (Last commit date: 2019-09-22 19:20:57 +0900)
+
 
 
 
 ## Required
-* :warning: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :warning: <a href="../datastructure/convexhulltrick.cpp.html">datastructure/convexhulltrick.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
 * :warning: <a href="../datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
@@ -57,7 +58,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/3069.test.cpp.html">test/aoj/3069.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3069.test.cpp.html">test/aoj/3069.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_10_C.test.cpp.html">test/aoj/ALDS1_10_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>

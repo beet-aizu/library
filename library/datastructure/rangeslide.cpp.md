@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: datastructure/rangeslide.cpp
-* category: datastructure
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/rangeslide.cpp">View this file on GitHub</a> (Last commit date: 2019-10-15 17:55:58 +0900)
+
 
 
 

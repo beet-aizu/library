@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: tree/diameterforedge.cpp
-* category: tree
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tree
+* <a href="{{ site.github.repository_url }}/blob/master/tree/diameterforedge.cpp">View this file on GitHub</a> (Last commit date: 2019-10-21 19:22:19 +0900)
+
 
 
 

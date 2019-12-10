@@ -26,9 +26,10 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/GRL_6_B.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_6_B.test.cpp">View this file on GitHub</a> (Last commit date: 2019-10-08 11:49:04 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B</a>
 

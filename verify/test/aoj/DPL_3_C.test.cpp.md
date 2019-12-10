@@ -26,9 +26,10 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/DPL_3_C.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_C.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-29 14:49:03 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C</a>
 

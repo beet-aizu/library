@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: tools/compress.cpp
-* category: tools
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tools
+* <a href="{{ site.github.repository_url }}/blob/master/tools/compress.cpp">View this file on GitHub</a> (Last commit date: 2019-09-05 17:26:09 +0900)
+
 
 
 

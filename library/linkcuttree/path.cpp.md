@@ -25,25 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: linkcuttree/path.cpp
-* category: linkcuttree
-
-
+# :heavy_check_mark: linkcuttree/path.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: linkcuttree
+* <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/path.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
 ## Dependencies
 * :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
-* :warning: <a href="base.cpp.html">linkcuttree/base.cpp</a>
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="base.cpp.html">linkcuttree/base.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/GRL_5_D.linkcuttree.test.cpp.html">test/aoj/GRL_5_D.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_D.linkcuttree.test.cpp.html">test/aoj/GRL_5_D.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html">test/aoj/GRL_5_E.linkcuttree.test.cpp</a>
 
 

@@ -25,11 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/basic/dual.cpp
-* category: bbst/basic
-
-
+# :heavy_check_mark: bbst/basic/dual.cpp
 <a href="../../../index.html">Back to top page</a>
+
+* category: bbst/basic
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/dual.cpp">View this file on GitHub</a> (Last commit date: 2019-10-24 23:20:46 +0900)
+
 
 
 
@@ -38,7 +39,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>
 

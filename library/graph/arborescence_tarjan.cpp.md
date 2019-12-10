@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: graph/arborescence_tarjan.cpp
-* category: graph
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/arborescence_tarjan.cpp">View this file on GitHub</a> (Last commit date: 2019-10-22 13:50:01 +0900)
+
 
 
 

@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: polynomial/polynomial.cpp
-* category: polynomial
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: polynomial
+* <a href="{{ site.github.repository_url }}/blob/master/polynomial/polynomial.cpp">View this file on GitHub</a> (Last commit date: 2019-10-17 20:37:29 +0900)
+
 
 
 

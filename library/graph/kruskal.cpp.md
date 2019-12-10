@@ -26,16 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: graph/kruskal.cpp
-* category: graph
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/kruskal.cpp">View this file on GitHub</a> (Last commit date: 2019-11-21 16:50:01 +0900)
+
 
 
 
 ## Required
 * :warning: <a href="voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
-* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
 ## Verified

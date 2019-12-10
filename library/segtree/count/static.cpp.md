@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: segtree/count/static.cpp
-* category: segtree/count
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* category: segtree/count
+* <a href="{{ site.github.repository_url }}/blob/master/segtree/count/static.cpp">View this file on GitHub</a> (Last commit date: 2019-10-23 21:22:07 +0900)
+
 
 
 

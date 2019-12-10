@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: bbst/basic/base.cpp
-* category: bbst/basic
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* category: bbst/basic
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/base.cpp">View this file on GitHub</a> (Last commit date: 2019-10-24 23:20:46 +0900)
+
 
 
 
 ## Required
 * :warning: <a href="array.cpp.html">bbst/basic/array.cpp</a>
-* :warning: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
-* :warning: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
+* :heavy_check_mark: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
+* :heavy_check_mark: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
 * :heavy_check_mark: <a href="ushi.cpp.html">bbst/basic/ushi.cpp</a>
 * :warning: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
 * :warning: <a href="../persistent/lazy.cpp.html">bbst/persistent/lazy.cpp</a>
@@ -45,13 +46,13 @@ layout: default
 
 ## Verified
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
 * :warning: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html">test/aoj/DSL_2_A.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html">test/aoj/DSL_2_H.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html">test/aoj/DSL_2_I.bbst.test.cpp</a>
 

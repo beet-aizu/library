@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/NTL_1_E.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_1_E.test.cpp">View this file on GitHub</a> (Last commit date: 2019-10-22 00:53:43 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E</a>
 
 
 ## Dependencies
-* :warning: <a href="../../../library/math/extgcd.cpp.html">math/extgcd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/math/extgcd.cpp.html">math/extgcd.cpp</a>
 
 
 ## Code

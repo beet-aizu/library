@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: tools/precision.cpp
-* category: tools
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tools
+* <a href="{{ site.github.repository_url }}/blob/master/tools/precision.cpp">View this file on GitHub</a> (Last commit date: 2019-10-19 16:00:23 +0900)
+
 
 
 
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
 

@@ -26,19 +26,20 @@ layout: default
 
 
 # :heavy_check_mark: mod/log.cpp
-* category: mod
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: mod
+* <a href="{{ site.github.repository_url }}/blob/master/mod/log.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
+* :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :warning: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
-* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :warning: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
+* :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

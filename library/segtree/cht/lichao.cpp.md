@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: segtree/cht/lichao.cpp
-* category: segtree/cht
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* category: segtree/cht
+* <a href="{{ site.github.repository_url }}/blob/master/segtree/cht/lichao.cpp">View this file on GitHub</a> (Last commit date: 2019-10-22 17:26:30 +0900)
+
 
 
 

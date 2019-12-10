@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: polynomial/hash.cpp
-* category: polynomial
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: polynomial
+* <a href="{{ site.github.repository_url }}/blob/master/polynomial/hash.cpp">View this file on GitHub</a> (Last commit date: 2019-10-26 15:31:15 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified

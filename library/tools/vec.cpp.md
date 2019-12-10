@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: tools/vec.cpp
-* category: tools
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tools
+* <a href="{{ site.github.repository_url }}/blob/master/tools/vec.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:10:40 +0900)
+
 
 
 
 ## Required
-* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified

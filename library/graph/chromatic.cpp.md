@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: graph/chromatic.cpp
-* category: graph
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/chromatic.cpp">View this file on GitHub</a> (Last commit date: 2019-09-22 14:20:07 +0900)
+
 
 
 

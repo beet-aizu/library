@@ -26,16 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: mod/enumeration.cpp
-* category: mod
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: mod
+* <a href="{{ site.github.repository_url }}/blob/master/mod/enumeration.cpp">View this file on GitHub</a> (Last commit date: 2019-10-26 15:31:15 +0900)
+
 
 
 
 ## Dependencies
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
-* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required

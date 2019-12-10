@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: datastructure/weightedunionfindtree.cpp
-* category: datastructure
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/weightedunionfindtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 21:56:26 +0900)
+
 
 
 

@@ -26,9 +26,10 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp">View this file on GitHub</a> (Last commit date: 2019-10-18 21:03:56 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 

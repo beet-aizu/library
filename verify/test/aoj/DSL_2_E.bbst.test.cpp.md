@@ -26,16 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/DSL_2_E.bbst.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_E.bbst.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E</a>
 
 
 ## Dependencies
 * :warning: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :warning: <a href="../../../library/bbst/basic/dual.cpp.html">bbst/basic/dual.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/basic/dual.cpp.html">bbst/basic/dual.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

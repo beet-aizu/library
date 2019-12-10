@@ -25,11 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: segtree/basic/chien.cpp
-* category: segtree/basic
-
-
+# :heavy_check_mark: segtree/basic/chien.cpp
 <a href="../../../index.html">Back to top page</a>
+
+* category: segtree/basic
+* <a href="{{ site.github.repository_url }}/blob/master/segtree/basic/chien.cpp">View this file on GitHub</a> (Last commit date: 2019-10-28 23:13:10 +0900)
+
 
 
 
@@ -42,7 +43,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_F.test.cpp.html">test/aoj/DSL_2_F.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_G.test.cpp.html">test/aoj/DSL_2_G.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_H.test.cpp.html">test/aoj/DSL_2_H.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_H.test.cpp.html">test/aoj/DSL_2_H.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_I.test.cpp.html">test/aoj/DSL_2_I.test.cpp</a>
 
 

@@ -25,21 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/cartesiantree.cpp
-* category: datastructure
-
-
+# :heavy_check_mark: datastructure/cartesiantree.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/cartesiantree.cpp">View this file on GitHub</a> (Last commit date: 2019-10-25 00:13:55 +0900)
+
 
 
 
 ## Dependencies
 * :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :warning: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
+* :heavy_check_mark: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
 
 
 ## Code

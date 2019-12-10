@@ -26,21 +26,22 @@ layout: default
 
 
 # :heavy_check_mark: tree/eulertourforedge.cpp
-* category: tree
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tree
+* <a href="{{ site.github.repository_url }}/blob/master/tree/eulertourforedge.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
 ## Dependencies
 * :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :warning: <a href="lca.cpp.html">tree/lca.cpp</a>
+* :heavy_check_mark: <a href="lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Required
-* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified

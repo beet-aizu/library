@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: graph/twosatisfiability.cpp
-* category: graph
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/twosatisfiability.cpp">View this file on GitHub</a> (Last commit date: 2019-10-26 15:31:15 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
+* :heavy_check_mark: <a href="stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
 
 
 ## Verified

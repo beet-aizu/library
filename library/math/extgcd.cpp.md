@@ -25,22 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/extgcd.cpp
-* category: math
-
-
+# :heavy_check_mark: math/extgcd.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/extgcd.cpp">View this file on GitHub</a> (Last commit date: 2019-10-22 00:53:43 +0900)
+
 
 
 
 ## Required
-* :warning: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
+* :heavy_check_mark: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
 * :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/2659.test.cpp.html">test/aoj/2659.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_E.test.cpp.html">test/aoj/NTL_1_E.test.cpp</a>
 
 

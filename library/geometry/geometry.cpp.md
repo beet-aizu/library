@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: geometry/geometry.cpp
-* category: geometry
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: geometry
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/geometry.cpp">View this file on GitHub</a> (Last commit date: 2019-11-13 14:47:25 +0900)
+
 
 
 

@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: algorithm/parallelbinarysearch.cpp
-* category: algorithm
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: algorithm
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/parallelbinarysearch.cpp">View this file on GitHub</a> (Last commit date: 2019-10-25 17:18:18 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 
 
 ## Code

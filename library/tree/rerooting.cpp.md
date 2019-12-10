@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: tree/rerooting.cpp
-* category: tree
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tree
+* <a href="{{ site.github.repository_url }}/blob/master/tree/rerooting.cpp">View this file on GitHub</a> (Last commit date: 2019-10-30 14:55:12 +0900)
+
 
 
 

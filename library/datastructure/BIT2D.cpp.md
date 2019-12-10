@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: datastructure/BIT2D.cpp
-* category: datastructure
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/BIT2D.cpp">View this file on GitHub</a> (Last commit date: 2019-11-11 16:56:38 +0900)
+
 
 
 

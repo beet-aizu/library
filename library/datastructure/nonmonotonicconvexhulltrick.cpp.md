@@ -25,17 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/nonmonotonicconvexhulltrick.cpp
-* category: datastructure
-
-
+# :heavy_check_mark: datastructure/nonmonotonicconvexhulltrick.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/nonmonotonicconvexhulltrick.cpp">View this file on GitHub</a> (Last commit date: 2019-10-22 00:38:58 +0900)
+
 
 
 
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp.html">test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/3069.test.cpp.html">test/aoj/3069.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3069.test.cpp.html">test/aoj/3069.test.cpp</a>
 
 
 ## Code

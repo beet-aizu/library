@@ -25,11 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/mint.cpp
-* category: mod
-
-
+# :heavy_check_mark: mod/mint.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: mod
+* <a href="{{ site.github.repository_url }}/blob/master/mod/mint.cpp">View this file on GitHub</a> (Last commit date: 2019-10-26 15:31:15 +0900)
+
 
 
 
@@ -41,8 +42,8 @@ layout: default
 * :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="../graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
-* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
-* :warning: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
+* :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :warning: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
 * :heavy_check_mark: <a href="log.cpp.html">mod/log.cpp</a>
@@ -51,7 +52,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1630.test.cpp.html">test/aoj/1630.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2222.test.cpp.html">test/aoj/2222.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>

@@ -25,22 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/unionfindtree.cpp
-* category: datastructure
-
-
+# :heavy_check_mark: datastructure/unionfindtree.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/unionfindtree.cpp">View this file on GitHub</a> (Last commit date: 2019-09-13 18:43:13 +0900)
+
 
 
 
 ## Required
 * :warning: <a href="../algorithm/parallelbinarysearch.cpp.html">algorithm/parallelbinarysearch.cpp</a>
 * :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
-* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
 

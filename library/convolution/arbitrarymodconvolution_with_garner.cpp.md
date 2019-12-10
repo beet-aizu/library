@@ -26,17 +26,18 @@ layout: default
 
 
 # :heavy_check_mark: convolution/arbitrarymodconvolution_with_garner.cpp
-* category: convolution
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: convolution
+* <a href="{{ site.github.repository_url }}/blob/master/convolution/arbitrarymodconvolution_with_garner.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
 ## Dependencies
 * :heavy_check_mark: <a href="numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

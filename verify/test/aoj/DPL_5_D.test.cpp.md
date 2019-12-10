@@ -26,16 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/DPL_5_D.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_D.test.cpp">View this file on GitHub</a> (Last commit date: 2019-10-26 15:31:15 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D</a>
 
 
 ## Dependencies
 * :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
-* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Code

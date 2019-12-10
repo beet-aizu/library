@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: math/totient_table.cpp
-* category: math
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/totient_table.cpp">View this file on GitHub</a> (Last commit date: 2019-09-25 21:45:05 +0900)
+
 
 
 

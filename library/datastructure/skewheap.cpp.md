@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: datastructure/skewheap.cpp
-* category: datastructure
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: datastructure
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/skewheap.cpp">View this file on GitHub</a> (Last commit date: 2019-10-18 19:45:59 +0900)
+
 
 
 

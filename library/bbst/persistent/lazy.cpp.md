@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: bbst/persistent/lazy.cpp
-* category: bbst/persistent
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* category: bbst/persistent
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/persistent/lazy.cpp">View this file on GitHub</a> (Last commit date: 2019-10-24 23:32:19 +0900)
+
 
 
 
 ## Dependencies
 * :warning: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :warning: <a href="../basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
+* :heavy_check_mark: <a href="../basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
 
 
 ## Code

@@ -26,16 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: test/yosupo/bernoulli_number.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/bernoulli_number.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 * see: <a href="https://judge.yosupo.jp/problem/bernoulli_number">https://judge.yosupo.jp/problem/bernoulli_number</a>
 
 
 ## Dependencies
 * :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 

@@ -25,11 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: algorithm/mo.cpp
-* category: algorithm
-
-
+# :heavy_check_mark: algorithm/mo.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: algorithm
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/mo.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
@@ -41,7 +42,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/0425.test.cpp.html">test/aoj/0425.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0425.test.cpp.html">test/aoj/0425.test.cpp</a>
 
 
 ## Code

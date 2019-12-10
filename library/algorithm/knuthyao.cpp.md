@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: algorithm/knuthyao.cpp
-* category: algorithm
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: algorithm
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/knuthyao.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 21:56:26 +0900)
+
 
 
 

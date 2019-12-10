@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: geometry/3D/geometry3D.cpp
-* category: geometry/3D
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* category: geometry/3D
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/3D/geometry3D.cpp">View this file on GitHub</a> (Last commit date: 2019-10-22 00:53:43 +0900)
+
 
 
 

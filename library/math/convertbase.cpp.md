@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: math/convertbase.cpp
-* category: math
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/convertbase.cpp">View this file on GitHub</a> (Last commit date: 2019-09-25 12:27:29 +0900)
+
 
 
 

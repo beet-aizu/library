@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: segtree/basic/dual.cpp
-* category: segtree/basic
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* category: segtree/basic
+* <a href="{{ site.github.repository_url }}/blob/master/segtree/basic/dual.cpp">View this file on GitHub</a> (Last commit date: 2019-10-28 23:13:10 +0900)
+
 
 
 

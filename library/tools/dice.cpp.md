@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: tools/dice.cpp
-* category: tools
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tools
+* <a href="{{ site.github.repository_url }}/blob/master/tools/dice.cpp">View this file on GitHub</a> (Last commit date: 2019-09-22 15:00:51 +0900)
+
 
 
 

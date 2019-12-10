@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: tools/iskado.cpp
-* category: tools
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tools
+* <a href="{{ site.github.repository_url }}/blob/master/tools/iskado.cpp">View this file on GitHub</a> (Last commit date: 2019-04-16 19:45:00 +0900)
+
 
 
 

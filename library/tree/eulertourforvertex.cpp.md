@@ -26,10 +26,11 @@ layout: default
 
 
 # :heavy_check_mark: tree/eulertourforvertex.cpp
-* category: tree
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: tree
+* <a href="{{ site.github.repository_url }}/blob/master/tree/eulertourforvertex.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 

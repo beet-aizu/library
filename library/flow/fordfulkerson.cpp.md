@@ -25,16 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: flow/fordfulkerson.cpp
-* category: flow
-
-
+# :heavy_check_mark: flow/fordfulkerson.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: flow
+* <a href="{{ site.github.repository_url }}/blob/master/flow/fordfulkerson.cpp">View this file on GitHub</a> (Last commit date: 2019-10-30 21:05:51 +0900)
+
 
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/GRL_6_A.fordfulkerson.test.cpp.html">test/aoj/GRL_6_A.fordfulkerson.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_6_A.fordfulkerson.test.cpp.html">test/aoj/GRL_6_A.fordfulkerson.test.cpp</a>
 
 
 ## Code

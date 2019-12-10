@@ -26,16 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/GRL_5_C.lca.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_C.lca.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C</a>
 
 
 ## Dependencies
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :warning: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Code

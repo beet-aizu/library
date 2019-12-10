@@ -26,15 +26,16 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/GRL_6_A.test.cpp
-
-
 <a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_6_A.test.cpp">View this file on GitHub</a> (Last commit date: 2019-10-23 21:02:10 +0900)
+
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A</a>
 
 
 ## Dependencies
-* :warning: <a href="../../../library/flow/dinic.cpp.html">flow/dinic.cpp</a>
+* :heavy_check_mark: <a href="../../../library/flow/dinic.cpp.html">flow/dinic.cpp</a>
 
 
 ## Code

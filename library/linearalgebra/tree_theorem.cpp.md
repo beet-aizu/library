@@ -25,23 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: linearalgebra/tree_theorem.cpp
-* category: linearalgebra
-
-
+# :heavy_check_mark: linearalgebra/tree_theorem.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: linearalgebra
+* <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/tree_theorem.cpp">View this file on GitHub</a> (Last commit date: 2019-11-21 16:50:01 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :warning: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 
 
 ## Code

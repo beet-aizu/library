@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: heuristic/timer.cpp
-* category: heuristic
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: heuristic
+* <a href="{{ site.github.repository_url }}/blob/master/heuristic/timer.cpp">View this file on GitHub</a> (Last commit date: 2019-09-25 12:08:40 +0900)
+
 
 
 

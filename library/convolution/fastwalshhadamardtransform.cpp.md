@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: convolution/fastwalshhadamardtransform.cpp
-* category: convolution
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: convolution
+* <a href="{{ site.github.repository_url }}/blob/master/convolution/fastwalshhadamardtransform.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

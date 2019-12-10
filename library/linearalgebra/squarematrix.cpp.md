@@ -26,22 +26,23 @@ layout: default
 
 
 # :heavy_check_mark: linearalgebra/squarematrix.cpp
-* category: linearalgebra
-
-
 <a href="../../index.html">Back to top page</a>
+
+* category: linearalgebra
+* <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/squarematrix.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 23:51:01 +0900)
+
 
 
 
 ## Dependencies
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 * :heavy_check_mark: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required
-* :warning: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 
 
 ## Verified

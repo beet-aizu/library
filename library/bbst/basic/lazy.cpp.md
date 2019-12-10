@@ -25,11 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/basic/lazy.cpp
-* category: bbst/basic
-
-
+# :heavy_check_mark: bbst/basic/lazy.cpp
 <a href="../../../index.html">Back to top page</a>
+
+* category: bbst/basic
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/lazy.cpp">View this file on GitHub</a> (Last commit date: 2019-10-24 23:32:19 +0900)
+
 
 
 
@@ -42,8 +43,8 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html">test/aoj/DSL_2_H.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html">test/aoj/DSL_2_I.bbst.test.cpp</a>
 

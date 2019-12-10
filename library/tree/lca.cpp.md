@@ -25,22 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/lca.cpp
-* category: tree
-
-
+# :heavy_check_mark: tree/lca.cpp
 <a href="../../index.html">Back to top page</a>
+
+* category: tree
+* <a href="{{ site.github.repository_url }}/blob/master/tree/lca.cpp">View this file on GitHub</a> (Last commit date: 2019-10-21 21:15:06 +0900)
+
 
 
 
 ## Required
-* :warning: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>
 
 
