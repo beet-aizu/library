@@ -41,7 +41,7 @@ layout: default
 ## Verified
 * :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>
 
 
 ## Code

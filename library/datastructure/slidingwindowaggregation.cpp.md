@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/slidingwindowaggregation.cpp
+# :heavy_check_mark: datastructure/slidingwindowaggregation.cpp
 * category: datastructure
 
 
@@ -39,7 +39,7 @@ layout: default
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp.html">test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp.html">test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp</a>
 
 
 ## Code
