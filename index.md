@@ -131,11 +131,6 @@ layout: default
 * :warning: <a href="library/graph/voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
 
 
-### heuristic
-* :warning: <a href="library/heuristic/timer.cpp.html">heuristic/timer.cpp</a>
-* :warning: <a href="library/heuristic/xorshift.cpp.html">heuristic/xorshift.cpp</a>
-
-
 ### linearalgebra
 * :heavy_check_mark: <a href="library/linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
@@ -162,7 +157,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/linearcongruence.cpp.html">math/linearcongruence.cpp</a>
 * :heavy_check_mark: <a href="library/math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient.cpp.html">math/totient.cpp</a>
-* :warning: <a href="library/math/totient_table.cpp.html">math/totient_table.cpp</a>
+* :heavy_check_mark: <a href="library/math/totient_table.cpp.html">math/totient_table.cpp</a>
 
 
 ### mod
@@ -294,6 +289,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2230.test.cpp.html">test/aoj/2230.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2235.test.cpp.html">test/aoj/2235.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2286.test.cpp.html">test/aoj/2286.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2292.test.cpp.html">test/aoj/2292.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
