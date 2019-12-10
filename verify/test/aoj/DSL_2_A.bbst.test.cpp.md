@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DSL_2_A.bbst.test.cpp
+# :heavy_check_mark: test/aoj/DSL_2_A.bbst.test.cpp
 
 
 <a href="../../../index.html">Back to top page</a>
@@ -35,7 +35,7 @@ layout: default
 
 ## Dependencies
 * :warning: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :warning: <a href="../../../library/bbst/basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

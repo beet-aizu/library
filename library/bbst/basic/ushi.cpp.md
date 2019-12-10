@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/basic/ushi.cpp
+# :heavy_check_mark: bbst/basic/ushi.cpp
 * category: bbst/basic
 
 
@@ -43,7 +43,7 @@ layout: default
 
 ## Verified
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html">test/aoj/DSL_2_A.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html">test/aoj/DSL_2_A.bbst.test.cpp</a>
 
 
 ## Code

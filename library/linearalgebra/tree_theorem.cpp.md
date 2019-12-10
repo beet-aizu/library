@@ -35,7 +35,7 @@ layout: default
 
 ## Dependencies
 * :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
-* :warning: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
+* :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :warning: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 

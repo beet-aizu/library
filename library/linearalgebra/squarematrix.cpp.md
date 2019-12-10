@@ -35,7 +35,7 @@ layout: default
 
 ## Dependencies
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 * :warning: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 

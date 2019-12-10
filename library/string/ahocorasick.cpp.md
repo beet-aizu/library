@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/ahocorasick.cpp
+# :heavy_check_mark: string/ahocorasick.cpp
 * category: string
 
 
@@ -34,14 +34,14 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="trie.cpp.html">string/trie.cpp</a>
+* :heavy_check_mark: <a href="trie.cpp.html">string/trie.cpp</a>
 * :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :warning: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :heavy_check_mark: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
 

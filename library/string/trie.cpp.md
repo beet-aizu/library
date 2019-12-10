@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/trie.cpp
+# :heavy_check_mark: string/trie.cpp
 * category: string
 
 
@@ -34,11 +34,11 @@ layout: default
 
 
 ## Required
-* :warning: <a href="ahocorasick.cpp.html">string/ahocorasick.cpp</a>
+* :heavy_check_mark: <a href="ahocorasick.cpp.html">string/ahocorasick.cpp</a>
 
 
 ## Verified
-* :warning: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
 

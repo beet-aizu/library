@@ -35,7 +35,7 @@ layout: default
 
 ## Dependencies
 * :warning: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :warning: <a href="../basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
 
 
 ## Code

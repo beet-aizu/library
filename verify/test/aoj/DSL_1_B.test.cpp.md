@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DSL_1_B.test.cpp
+# :heavy_check_mark: test/aoj/DSL_1_B.test.cpp
 
 
 <a href="../../../index.html">Back to top page</a>
@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: <a href="../../../library/datastructure/weightedunionfindtree.cpp.html">datastructure/weightedunionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/weightedunionfindtree.cpp.html">datastructure/weightedunionfindtree.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
