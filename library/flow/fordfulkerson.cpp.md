@@ -30,7 +30,7 @@ layout: default
 
 * category: flow
 * <a href="{{ site.github.repository_url }}/blob/master/flow/fordfulkerson.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-30 21:05:51 +0900
+    - Last commit date: 2019-12-10 15:04:21 +0900
 
 
 
@@ -45,7 +45,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,bool directed>
@@ -100,7 +99,6 @@ struct FordFulkerson{
   T flow(int s,int t){
     return flow(s,t,numeric_limits<T>::max()/2);
   }
-
 };
 //END CUT HERE
 #ifndef call_from_test

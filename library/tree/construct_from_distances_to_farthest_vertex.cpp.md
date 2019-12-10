@@ -30,7 +30,7 @@ layout: default
 
 * category: tree
 * <a href="{{ site.github.repository_url }}/blob/master/tree/construct_from_distances_to_farthest_vertex.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 14:46:35 +0900
+    - Last commit date: 2019-12-10 15:04:21 +0900
 
 
 
@@ -83,7 +83,7 @@ construct_from_distances_to_farthest_vertex(vector<int> ds){
   }
 
   if(dm&1){
-    add_edge(xs[dm/2],ys[dm/2]);
+    add_edge(xs[dm/2+1],ys[dm/2+1]);
   }else{
     xs[dm/2]=qs[dm/2].front();qs[dm/2].pop();
     add_edge(xs[dm/2+1],xs[dm/2]);
@@ -111,7 +111,7 @@ public:
   }
 };
 /*
-  not verified yet
+  verified on 2019/12/10
   https://vjudge.net/problem/TopCoder-14468
 */
 #endif

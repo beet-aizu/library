@@ -30,7 +30,7 @@ layout: default
 
 * category: flow
 * <a href="{{ site.github.repository_url }}/blob/master/flow/dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-23 21:02:10 +0900
+    - Last commit date: 2019-12-10 15:04:21 +0900
 
 
 
@@ -43,6 +43,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/1599.test.cpp.html">test/aoj/1599.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2313.test.cpp.html">test/aoj/2313.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2328.test.cpp.html">test/aoj/2328.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3047.test.cpp.html">test/aoj/3047.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3058.test.cpp.html">test/aoj/3058.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_6_A.test.cpp.html">test/aoj/GRL_6_A.test.cpp</a>
@@ -54,7 +55,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,bool directed>
@@ -155,13 +155,14 @@ struct Dinic{
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed SPOJ_FASTFLOW(){
+  using ll = long long;
   cin.tie(0);
   ios::sync_with_stdio(0);
-  Int n,m;
+  ll n,m;
   cin>>n>>m;
-  Dinic<Int, false> G(n);
-  for(Int i=0;i<m;i++){
-    Int a,b,c;
+  Dinic<ll, false> G(n);
+  for(int i=0;i<m;i++){
+    ll a,b,c;
     cin>>a>>b>>c;
     if(a==b) continue;
     a--;b--;

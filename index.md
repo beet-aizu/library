@@ -211,6 +211,7 @@ layout: default
 * :heavy_check_mark: <a href="library/string/parse.cpp.html">string/parse.cpp</a>
 * :heavy_check_mark: <a href="library/string/rectanglehash.cpp.html">string/rectanglehash.cpp</a>
 * :heavy_check_mark: <a href="library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
+* :heavy_check_mark: <a href="library/string/split.cpp.html">string/split.cpp</a>
 * :heavy_check_mark: <a href="library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 * :heavy_check_mark: <a href="library/string/trie.cpp.html">string/trie.cpp</a>
 * :heavy_check_mark: <a href="library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
@@ -229,7 +230,6 @@ layout: default
 * :warning: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
-* :warning: <a href="library/tools/split.cpp.html">tools/split.cpp</a>
 * :warning: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
 * :warning: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
@@ -296,6 +296,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2313.test.cpp.html">test/aoj/2313.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2324.test.cpp.html">test/aoj/2324.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2328.test.cpp.html">test/aoj/2328.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
