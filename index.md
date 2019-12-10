@@ -218,11 +218,10 @@ layout: default
 
 ### tools
 * :heavy_check_mark: <a href="library/tools/all_permutations.cpp.html">tools/all_permutations.cpp</a>
-* :warning: <a href="library/tools/bfs.cpp.html">tools/bfs.cpp</a>
+* :heavy_check_mark: <a href="library/tools/bfs.cpp.html">tools/bfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bigint.cpp.html">tools/bigint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
-* :warning: <a href="library/tools/debug.cpp.html">tools/debug.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
@@ -238,6 +237,7 @@ layout: default
 
 ### tree
 * :heavy_check_mark: <a href="library/tree/centroid.cpp.html">tree/centroid.cpp</a>
+* :warning: <a href="library/tree/construct_from_distances_to_farthest_vertex.cpp.html">tree/construct_from_distances_to_farthest_vertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 * :heavy_check_mark: <a href="library/tree/diameterforvertex.cpp.html">tree/diameterforvertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
@@ -248,7 +248,6 @@ layout: default
 * :heavy_check_mark: <a href="library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 * :heavy_check_mark: <a href="library/tree/rerooting.cpp.html">tree/rerooting.cpp</a>
 * :warning: <a href="library/tree/sack.cpp.html">tree/sack.cpp</a>
-* :warning: <a href="library/tree/treeconstruction.cpp.html">tree/treeconstruction.cpp</a>
 
 
 ## Verify Files
@@ -264,6 +263,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0424.test.cpp.html">test/aoj/0424.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0425.test.cpp.html">test/aoj/0425.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0502.test.cpp.html">test/aoj/0502.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0563.test.cpp.html">test/aoj/0563.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1197.test.cpp.html">test/aoj/1197.test.cpp</a>
