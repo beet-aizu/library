@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,bool directed>
@@ -56,7 +55,6 @@ struct FordFulkerson{
   T flow(int s,int t){
     return flow(s,t,numeric_limits<T>::max()/2);
   }
-
 };
 //END CUT HERE
 #ifndef call_from_test

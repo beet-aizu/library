@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,bool directed>
@@ -102,13 +101,14 @@ struct Dinic{
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed SPOJ_FASTFLOW(){
+  using ll = long long;
   cin.tie(0);
   ios::sync_with_stdio(0);
-  Int n,m;
+  ll n,m;
   cin>>n>>m;
-  Dinic<Int, false> G(n);
-  for(Int i=0;i<m;i++){
-    Int a,b,c;
+  Dinic<ll, false> G(n);
+  for(int i=0;i<m;i++){
+    ll a,b,c;
     cin>>a>>b>>c;
     if(a==b) continue;
     a--;b--;
