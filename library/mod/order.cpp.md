@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/order.cpp
+# :heavy_check_mark: mod/order.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: mod
@@ -36,13 +36,13 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
+* :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
 * :warning: <a href="pow.cpp.html">mod/pow.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
 
 
 ## Code

@@ -36,11 +36,11 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="order.cpp.html">mod/order.cpp</a>
+* :heavy_check_mark: <a href="order.cpp.html">mod/order.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
 
 

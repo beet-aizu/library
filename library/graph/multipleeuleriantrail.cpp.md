@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/multipleeuleriantrail.cpp
+# :heavy_check_mark: graph/multipleeuleriantrail.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: graph
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/2324.test.cpp.html">test/aoj/2324.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2324.test.cpp.html">test/aoj/2324.test.cpp</a>
 
 
 ## Code

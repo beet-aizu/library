@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
+* :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :heavy_check_mark: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>

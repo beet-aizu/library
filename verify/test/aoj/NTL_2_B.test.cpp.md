@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/tools/bigint.cpp.html">tools/bigint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
 ## Code

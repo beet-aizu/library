@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/extgcd.cpp
+# :heavy_check_mark: math/extgcd.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: math
@@ -36,13 +36,13 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
+* :heavy_check_mark: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
 * :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
 ## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2659.test.cpp.html">test/aoj/2659.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_E.test.cpp.html">test/aoj/NTL_1_E.test.cpp</a>
 
 

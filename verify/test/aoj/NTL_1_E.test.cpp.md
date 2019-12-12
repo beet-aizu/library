@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/math/extgcd.cpp.html">math/extgcd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/math/extgcd.cpp.html">math/extgcd.cpp</a>
 
 
 ## Code
