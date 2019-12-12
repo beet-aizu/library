@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
 
 
 ## Verified With

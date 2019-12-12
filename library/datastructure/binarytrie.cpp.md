@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
+* :heavy_check_mark: <a href="../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 * :warning: <a href="../tree/levelancestor.cpp.html">tree/levelancestor.cpp</a>
 
 
