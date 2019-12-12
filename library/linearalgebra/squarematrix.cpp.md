@@ -43,7 +43,7 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 
 
 ## Verified With

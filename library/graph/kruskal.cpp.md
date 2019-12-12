@@ -37,7 +37,7 @@ layout: default
 
 ## Required By
 * :warning: <a href="voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
-* :warning: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
 ## Verified With

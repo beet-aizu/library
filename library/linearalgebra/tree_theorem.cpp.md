@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: linearalgebra/tree_theorem.cpp
+# :heavy_check_mark: linearalgebra/tree_theorem.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: linearalgebra
@@ -36,14 +36,14 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :warning: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 
 
 ## Code

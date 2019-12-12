@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/tetrahedra.cpp
+# :heavy_check_mark: math/tetrahedra.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: math
@@ -36,11 +36,11 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
 
 
 ## Code

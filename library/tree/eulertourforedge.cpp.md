@@ -38,11 +38,11 @@ layout: default
 ## Depends On
 * :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :warning: <a href="lca.cpp.html">tree/lca.cpp</a>
+* :heavy_check_mark: <a href="lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Required By
-* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified With

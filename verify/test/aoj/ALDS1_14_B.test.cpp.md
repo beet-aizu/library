@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
+* :heavy_check_mark: <a href="../../../library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
 
 
 ## Code

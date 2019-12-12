@@ -36,7 +36,7 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified With

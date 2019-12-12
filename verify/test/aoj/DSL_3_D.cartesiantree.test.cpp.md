@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DSL_3_D.cartesiantree.test.cpp
+# :heavy_check_mark: test/aoj/DSL_3_D.cartesiantree.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_3_D.cartesiantree.test.cpp">View this file on GitHub</a>
@@ -36,9 +36,9 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :warning: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Code
