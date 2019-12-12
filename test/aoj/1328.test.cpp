@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../linearalgebra/matrix.cpp"
 #undef call_from_test
 
@@ -12,9 +13,9 @@ signed main(){
   using arr = M::arr;
 
   int d;
-  while(scanf("%d",&d),d){
-    arr v(d+3);
-    for(int i=0;i<d+3;i++) scanf("%lf",&v[i]);
+  while(cin>>d,d){
+    arr vs(d+3);
+    for(int i=0;i<d+3;i++) cin>>vs[i];
     int ans=0;
     M m(d+3,d+2);
     for(int i=0;i<d+3;i++)
@@ -26,7 +27,7 @@ signed main(){
         arr b(d+1);
         M A(d+1,d+1);
         for(int k=0,l=0;k<d+3;k++)
-          if(i!=k&&j!=k) A[l]=m[k],b[l]=v[k],l++;
+          if(i!=k&&j!=k) A[l]=m[k],b[l]=vs[k],l++;
 
         arr x=M::linear_equations(A,b);
         if(x.empty()) continue;
@@ -36,11 +37,11 @@ signed main(){
           res[1]+=x[k]*m[j][k];
         }
         const double EPS = 1e-5;
-        if(abs(res[0]-v[i])>0.5&&abs(res[1]-v[j])<EPS) ans=i;
-        if(abs(res[0]-v[i])<EPS&&abs(res[1]-v[j])>0.5) ans=j;
+        if(abs(res[0]-vs[i])>0.5&&abs(res[1]-vs[j])<EPS) ans=i;
+        if(abs(res[0]-vs[i])<EPS&&abs(res[1]-vs[j])>0.5) ans=j;
       }
     }
-    printf("%d\n",ans);
+    cout<<ans<<endl;
   }
   return 0;
 }

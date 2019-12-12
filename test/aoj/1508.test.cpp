@@ -4,15 +4,16 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../bbst/basic/base.cpp"
 #include "../../bbst/basic/ushi.cpp"
 #undef call_from_test
 
 signed main(){
   int n,q;
-  scanf("%d %d",&n,&q);
+  cin>>n>>q;
   vector<int> vs(n);
-  for(int i=0;i<n;i++) scanf("%d",&vs[i]);
+  for(int i=0;i<n;i++) cin>>vs[i];
 
   auto f=[](int a,int b){return min(a,b);};
   const int INF = 1e9;
@@ -25,7 +26,7 @@ signed main(){
 
   for(int i=0;i<q;i++){
     int x,y,z;
-    scanf("%d %d %d",&x,&y,&z);
+    cin>>x>>y>>z;
     if(x==0){
       int l=y,r=z+1;
       rt=G.toggle(rt,l,r);
@@ -33,12 +34,13 @@ signed main(){
     }
     if(x==1){
       int l=y,r=z+1;
-      printf("%d\n",G.query(rt,l,r));
+      cout<<G.query(rt,l,r)<<"\n";
     }
     if(x==2){
       rt=G.set_val(rt,y,z);
     }
   }
+  cout<<flush;
 
   return 0;
 }

@@ -4,35 +4,33 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../datastructure/kdtree.cpp"
 #undef call_from_test
 
 signed main(){
-  int N;
-  scanf("%d",&N);
-  KDTree kd(N);
-  for(int i=0;i<N;i++) {
+  int n;
+  cin>>n;
+  KDTree<int> kd;
+  for(int i=0;i<n;i++) {
     int x,y;
-    scanf("%d %d",&x,&y);
-    kd.P[i]=KDTree::Point(i,x,y);
-    kd.T[i].l = kd.T[i].r = kd.T[i].p = kd.NIL;
+    cin>>x>>y;
+    kd.add_point(i,x,y);
   }
-  kd.np=0;
-  int root=kd.makeKDTree(0,N,0);
+  int root=kd.build();
 
   int q;
-  scanf("%d",&q);
+  cin>>q;
   int sx,tx,sy,ty;
-  vector<KDTree::Point> ans;
+  vector<decltype(kd)::Point> ans;
   for(int i=0;i<q;i++){
-    scanf("%d %d %d %d",&sx,&tx,&sy,&ty);
+    cin>>sx>>tx>>sy>>ty;
     ans.clear();
     kd.find(root,sx,tx,sy,ty,0,ans);
     sort(ans.begin(),ans.end());
-    for(int j=0;j<(int)ans.size();j++){
-      ans[j].print();
-    }
-    printf("\n");
+    for(auto p:ans) cout<<p.id<<"\n";
+    cout<<"\n";
   }
+  cout<<flush;
   return 0;
 }

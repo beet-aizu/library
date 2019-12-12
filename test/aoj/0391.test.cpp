@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../tree/lca.cpp"
 #include "../../tree/levelancestor.cpp"
@@ -11,14 +12,14 @@ using namespace std;
 
 signed main(){
   int n,q;
-  scanf("%d %d",&n,&q);
+  cin>>n>>q;
   using P = pair<int, int>;
   vector<vector<P> > G(n);
   LCA lca(n);
   LevelAncestor la(n);
   for(int i=1;i<n;i++){
     int u,v,w;
-    scanf("%d %d %d",&u,&v,&w);
+    cin>>u>>v>>w;
     u--;v--;
     lca.add_edge(u,v);
     la.add_edge(u,v);
@@ -58,7 +59,7 @@ signed main(){
 
   for(int i=0;i<q;i++){
     int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
+    cin>>a>>b>>c;
     a--;b--;c--;
     auto calc=
       [&](int v,int u=-1){
@@ -83,7 +84,8 @@ signed main(){
       chmin(ans,calc(path(u,v,l)));
       chmin(ans,calc(path(u,v,r)));
     }
-    printf("%d\n",ans);
+    cout<<ans<<"\n";
   }
+  cout<<flush;
   return 0;
 }

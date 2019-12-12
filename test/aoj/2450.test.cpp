@@ -4,20 +4,21 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
 #include "../../tree/heavylightdecomposition.cpp"
 #include "../../segtree/basic/chien.cpp"
 #undef call_from_test
 
 signed main(){
   int n,q;
-  scanf("%d %d",&n,&q);
+  cin>>n>>q;
   HLD hld(n);
-  vector<int> w(n);
-  for(int i=0;i<n;i++) scanf("%d",&w[i]);
+  vector<int> ws(n);
+  for(int i=0;i<n;i++) cin>>ws[i];
   using P = pair<int, int>;
   for(int i=0;i+1<n;i++){
     int a,b;
-    scanf("%d %d",&a,&b);
+    cin>>a>>b;
     a--;b--;
     hld.add_edge(a,b);
   }
@@ -81,12 +82,12 @@ signed main(){
   SegmentTree<T, P> seg(f,g,h,ti,ei);
 
   vector<T> vt(n);
-  for(int i=0;i<n;i++) vt[vid[i]]=g(ti,P(i,w[i]));
+  for(int i=0;i<n;i++) vt[vid[i]]=g(ti,P(i,ws[i]));
   seg.build(vt);
 
-  while(q--){
+  for(int i=0;i<q;i++){
     int t,a,b,c;
-    scanf("%d %d %d %d",&t,&a,&b,&c);
+    cin>>t>>a>>b>>c;
     a--;b--;
     if(t==1){
       hld.for_each(a,b,[&](int l,int r){seg.update(l,r,P(-1,c));});
@@ -96,8 +97,9 @@ signed main(){
       T v=hld.for_each(a,b,seg.ti,ask,f);
       int vl,vr,vs,vva,vvi,vvl,vvr;
       tie(vl,vr,vs,vva,vvi,vvl,vvr)=v;
-      printf("%d\n",max({vva,vvi,vvl,vvr}));
+      cout<<max({vva,vvi,vvl,vvr})<<"\n";
     }
   }
+  cout<<flush;
   return 0;
 }
