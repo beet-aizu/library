@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/eulertourforvertex.cpp
+# :warning: tree/eulertourforvertex.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
@@ -36,15 +36,15 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :heavy_check_mark: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
-* :heavy_check_mark: <a href="lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
+* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :warning: <a href="lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/2871.test.cpp.html">test/aoj/2871.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2871.test.cpp.html">test/aoj/2871.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 
 
 ## Code

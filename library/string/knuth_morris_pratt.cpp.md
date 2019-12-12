@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/knuth_morris_pratt.cpp
+# :warning: string/knuth_morris_pratt.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: string
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp.html">test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp.html">test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp</a>
 
 
 ## Code

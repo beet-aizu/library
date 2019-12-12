@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/is_prime.cpp
+# :warning: math/is_prime.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: math
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_1_C.test.cpp.html">test/aoj/ALDS1_1_C.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ALDS1_1_C.test.cpp.html">test/aoj/ALDS1_1_C.test.cpp</a>
 
 
 ## Code

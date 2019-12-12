@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/cht/lichao.cpp
+# :warning: segtree/cht/lichao.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * category: segtree/cht
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
 
 
 ## Code

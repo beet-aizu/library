@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/levelancestor.cpp
+# :warning: tree/levelancestor.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
@@ -36,11 +36,11 @@ layout: default
 
 
 ## Required By
-* :heavy_check_mark: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
+* :warning: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
 
 
 ## Code

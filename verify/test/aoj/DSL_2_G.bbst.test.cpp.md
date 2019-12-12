@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DSL_2_G.bbst.test.cpp
+# :warning: test/aoj/DSL_2_G.bbst.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_G.bbst.test.cpp">View this file on GitHub</a>
@@ -36,9 +36,9 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :heavy_check_mark: <a href="../../../library/bbst/basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
+* :warning: <a href="../../../library/bbst/basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

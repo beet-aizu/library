@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/eulertourforedge.cpp
+# :warning: tree/eulertourforedge.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: tree
@@ -36,17 +36,17 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :heavy_check_mark: <a href="lca.cpp.html">tree/lca.cpp</a>
+* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Required By
-* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_D.test.cpp.html">test/aoj/GRL_5_D.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_D.test.cpp.html">test/aoj/GRL_5_D.test.cpp</a>
 
 
 ## Code

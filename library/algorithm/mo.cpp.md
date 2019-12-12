@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: algorithm/mo.cpp
+# :warning: algorithm/mo.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: algorithm
@@ -36,14 +36,14 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :heavy_check_mark: <a href="../tools/vec.cpp.html">tools/vec.cpp</a>
-* :heavy_check_mark: <a href="../tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
+* :warning: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/vec.cpp.html">tools/vec.cpp</a>
+* :warning: <a href="../tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/0425.test.cpp.html">test/aoj/0425.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/0425.test.cpp.html">test/aoj/0425.test.cpp</a>
 
 
 ## Code

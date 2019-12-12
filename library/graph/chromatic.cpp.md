@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/chromatic.cpp
+# :warning: graph/chromatic.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: graph
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/1254.test.cpp.html">test/aoj/1254.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1254.test.cpp.html">test/aoj/1254.test.cpp</a>
 
 
 ## Code

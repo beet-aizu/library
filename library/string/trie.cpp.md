@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/trie.cpp
+# :warning: string/trie.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: string
@@ -36,13 +36,13 @@ layout: default
 
 
 ## Required By
-* :heavy_check_mark: <a href="ahocorasick.cpp.html">string/ahocorasick.cpp</a>
+* :warning: <a href="ahocorasick.cpp.html">string/ahocorasick.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>
 
 
 ## Code

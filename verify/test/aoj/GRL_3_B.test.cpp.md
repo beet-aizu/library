@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_3_B.test.cpp
+# :warning: test/aoj/GRL_3_B.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_3_B.test.cpp">View this file on GitHub</a>
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../../../library/graph/lowlink.cpp.html">graph/lowlink.cpp</a>
+* :warning: <a href="../../../library/graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: algorithm/largestrectangle.cpp
+# :warning: algorithm/largestrectangle.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: algorithm
@@ -36,8 +36,8 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
 
 
 ## Code

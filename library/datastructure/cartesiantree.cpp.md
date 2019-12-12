@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/cartesiantree.cpp
+# :warning: datastructure/cartesiantree.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: datastructure
@@ -36,12 +36,12 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
 
 
 ## Code

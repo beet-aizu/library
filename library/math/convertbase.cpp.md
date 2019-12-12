@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/convertbase.cpp
+# :warning: math/convertbase.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: math
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/0233.test.cpp.html">test/aoj/0233.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/0233.test.cpp.html">test/aoj/0233.test.cpp</a>
 
 
 ## Code

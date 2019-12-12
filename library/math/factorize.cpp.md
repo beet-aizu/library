@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/factorize.cpp
+# :warning: math/factorize.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: math
@@ -36,14 +36,14 @@ layout: default
 
 
 ## Required By
-* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
-* :heavy_check_mark: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
-* :heavy_check_mark: <a href="../mod/order.cpp.html">mod/order.cpp</a>
+* :warning: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
+* :warning: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="../mod/order.cpp.html">mod/order.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_A.test.cpp.html">test/aoj/NTL_1_A.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/NTL_1_A.test.cpp.html">test/aoj/NTL_1_A.test.cpp</a>
 
 
 ## Code

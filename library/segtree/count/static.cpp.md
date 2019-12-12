@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/count/static.cpp
+# :warning: segtree/count/static.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * category: segtree/count
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../../verify/test/aoj/2674.count.test.cpp.html">test/aoj/2674.count.test.cpp</a>
+* :warning: <a href="../../../verify/test/aoj/2674.count.test.cpp.html">test/aoj/2674.count.test.cpp</a>
 
 
 ## Code

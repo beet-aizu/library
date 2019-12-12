@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/manacher.cpp
+# :warning: string/manacher.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: string
@@ -36,11 +36,11 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
+* :warning: <a href="../datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/2934.test.cpp.html">test/aoj/2934.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2934.test.cpp.html">test/aoj/2934.test.cpp</a>
 
 
 ## Code

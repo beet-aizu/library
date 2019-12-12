@@ -36,8 +36,8 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

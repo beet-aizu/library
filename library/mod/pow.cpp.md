@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/pow.cpp
+# :warning: mod/pow.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: mod
@@ -36,12 +36,12 @@ layout: default
 
 
 ## Required By
-* :heavy_check_mark: <a href="order.cpp.html">mod/order.cpp</a>
+* :warning: <a href="order.cpp.html">mod/order.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: flow/leastflow.cpp
+# :warning: flow/leastflow.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: flow
@@ -36,11 +36,11 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="dinic.cpp.html">flow/dinic.cpp</a>
+* :warning: <a href="dinic.cpp.html">flow/dinic.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
 
 
 ## Code

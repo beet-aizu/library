@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/log.cpp
+# :warning: mod/log.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: mod
@@ -36,16 +36,16 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
+* :warning: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :warning: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
-* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/yosupo/discrete_logarithm_mod.test.cpp.html">test/yosupo/discrete_logarithm_mod.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/discrete_logarithm_mod.test.cpp.html">test/yosupo/discrete_logarithm_mod.test.cpp</a>
 
 
 ## Code

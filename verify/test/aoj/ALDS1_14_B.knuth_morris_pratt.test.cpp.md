@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp
+# :warning: test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp">View this file on GitHub</a>
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../../../library/string/knuth_morris_pratt.cpp.html">string/knuth_morris_pratt.cpp</a>
+* :warning: <a href="../../../library/string/knuth_morris_pratt.cpp.html">string/knuth_morris_pratt.cpp</a>
 
 
 ## Code

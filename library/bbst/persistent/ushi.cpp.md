@@ -36,8 +36,8 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :heavy_check_mark: <a href="../basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
+* :warning: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
+* :warning: <a href="../basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_1_B.test.cpp
+# :warning: test/aoj/GRL_1_B.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_1_B.test.cpp">View this file on GitHub</a>
@@ -36,9 +36,9 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../../../library/graph/bellmanford.cpp.html">graph/bellmanford.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../../../library/graph/bellmanford.cpp.html">graph/bellmanford.cpp</a>
+* :warning: <a href="../../../library/tools/drop.cpp.html">tools/drop.cpp</a>
+* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
