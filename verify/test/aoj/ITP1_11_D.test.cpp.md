@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/ITP1_11_D.test.cpp
+# :heavy_check_mark: test/aoj/ITP1_11_D.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ITP1_11_D.test.cpp">View this file on GitHub</a>
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/tools/dice.cpp.html">tools/dice.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/dice.cpp.html">tools/dice.cpp</a>
 
 
 ## Code

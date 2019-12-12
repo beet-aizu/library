@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/kruskal.cpp
+# :heavy_check_mark: graph/kruskal.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: graph
@@ -41,7 +41,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_2_A.test.cpp.html">test/aoj/GRL_2_A.test.cpp</a>
 
 

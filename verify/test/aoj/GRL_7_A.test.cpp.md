@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/flow/bimatch.cpp.html">flow/bimatch.cpp</a>
+* :heavy_check_mark: <a href="../../../library/flow/bimatch.cpp.html">flow/bimatch.cpp</a>
 
 
 ## Code

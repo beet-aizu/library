@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: polynomial/polynomial.cpp
+# :heavy_check_mark: polynomial/polynomial.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: polynomial
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/1293.test.cpp.html">test/aoj/1293.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/1293.test.cpp.html">test/aoj/1293.test.cpp</a>
 
 
 ## Code

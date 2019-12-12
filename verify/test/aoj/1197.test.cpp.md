@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/tools/dice.cpp.html">tools/dice.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/dice.cpp.html">tools/dice.cpp</a>
 
 
 ## Code

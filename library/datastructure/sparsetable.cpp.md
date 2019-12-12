@@ -36,7 +36,7 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="../string/manacher.cpp.html">string/manacher.cpp</a>
+* :heavy_check_mark: <a href="../string/manacher.cpp.html">string/manacher.cpp</a>
 
 
 ## Verified With

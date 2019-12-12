@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: convolution/arbitrarymodconvolution.cpp
+# :heavy_check_mark: convolution/arbitrarymodconvolution.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: convolution
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
+* :heavy_check_mark: <a href="fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 * :warning: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
@@ -47,7 +47,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 
 
 ## Code
