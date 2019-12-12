@@ -1,3 +1,4 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
 /*
@@ -5,6 +6,7 @@ using namespace std;
   #include <boost/multiprecision/cpp_int.hpp>
   using Int = boost::multiprecision::cpp_int;
 */
+#endif
 //BEGIN CUT HERE
 using ll = __int128_t;
 ll abs128(ll val){return val<0?-val:val;}
@@ -38,6 +40,8 @@ istream &operator>>(istream &is,ll &val){
   return is;
 }
 //END CUT HERE
+#ifndef call_from_test
+
 template<typename T>
 T extgcd(T a,T b,T& x,T& y){
   T d=a;
@@ -122,3 +126,4 @@ signed main(){
   verified on 2019/10/22
   https://vjudge.net/problem/UVA-12980
 */
+#endif
