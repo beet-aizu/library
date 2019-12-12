@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/flow/primaldual.cpp.html">flow/primaldual.cpp</a>
+* :heavy_check_mark: <a href="../../../library/flow/primaldual.cpp.html">flow/primaldual.cpp</a>
 
 
 ## Code

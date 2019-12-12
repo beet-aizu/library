@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/basic/array.cpp
+# :heavy_check_mark: bbst/basic/array.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * category: bbst/basic
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="base.cpp.html">bbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Required By
@@ -44,7 +44,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
 
 
 ## Code

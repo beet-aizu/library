@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="base.cpp.html">bbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Required By

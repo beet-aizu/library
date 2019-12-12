@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/convexhulltrick.cpp
+# :heavy_check_mark: datastructure/convexhulltrick.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: datastructure
@@ -41,7 +41,7 @@ layout: default
 
 ## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2725.test.cpp.html">test/aoj/2725.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
 
 
 ## Code

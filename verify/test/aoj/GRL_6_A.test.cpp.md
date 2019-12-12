@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/flow/dinic.cpp.html">flow/dinic.cpp</a>
+* :heavy_check_mark: <a href="../../../library/flow/dinic.cpp.html">flow/dinic.cpp</a>
 
 
 ## Code
