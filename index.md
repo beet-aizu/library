@@ -227,7 +227,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
-* :warning: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
+* :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :warning: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
@@ -267,6 +267,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0563.test.cpp.html">test/aoj/0563.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/1069.test.cpp.html">test/aoj/1069.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1197.test.cpp.html">test/aoj/1197.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1254.test.cpp.html">test/aoj/1254.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1293.test.cpp.html">test/aoj/1293.test.cpp</a>
