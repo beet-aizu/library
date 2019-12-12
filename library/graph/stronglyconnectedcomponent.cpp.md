@@ -37,7 +37,7 @@ layout: default
 
 ## Required By
 * :warning: <a href="arborescence_edmond.cpp.html">graph/arborescence_edmond.cpp</a>
-* :warning: <a href="twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
+* :heavy_check_mark: <a href="twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
 
 
 ## Verified With
@@ -45,7 +45,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/2647.test.cpp.html">test/aoj/2647.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/3102.test.cpp.html">test/aoj/3102.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3102.test.cpp.html">test/aoj/3102.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/GRL_2_B.test.cpp.html">test/aoj/GRL_2_B.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/GRL_3_C.test.cpp.html">test/aoj/GRL_3_C.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/GRL_4_A.test.cpp.html">test/aoj/GRL_4_A.test.cpp</a>
