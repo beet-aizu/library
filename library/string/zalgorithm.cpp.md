@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/zalgorithm.cpp
+# :heavy_check_mark: string/zalgorithm.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: string
@@ -36,11 +36,11 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
 
 
 ## Code

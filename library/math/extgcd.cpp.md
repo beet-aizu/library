@@ -37,13 +37,13 @@ layout: default
 
 ## Required By
 * :warning: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
-* :warning: <a href="../mod/log.cpp.html">mod/log.cpp</a>
+* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/2659.test.cpp.html">test/aoj/2659.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2659.test.cpp.html">test/aoj/2659.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/NTL_1_E.test.cpp.html">test/aoj/NTL_1_E.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_E.test.cpp.html">test/aoj/NTL_1_E.test.cpp</a>
 
 
 ## Code

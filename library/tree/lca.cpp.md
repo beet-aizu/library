@@ -37,7 +37,7 @@ layout: default
 
 ## Required By
 * :warning: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
-* :warning: <a href="eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
+* :heavy_check_mark: <a href="eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Verified With

@@ -40,7 +40,7 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="../mod/log.cpp.html">mod/log.cpp</a>
+* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
 ## Verified With

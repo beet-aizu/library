@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: datastructure/skewheap.cpp
+# :heavy_check_mark: datastructure/skewheap.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: datastructure
@@ -36,12 +36,12 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="../algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
+* :heavy_check_mark: <a href="../algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
 
 
 ## Code

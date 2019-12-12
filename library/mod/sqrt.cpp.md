@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/sqrt.cpp
+# :heavy_check_mark: mod/sqrt.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: mod
@@ -40,7 +40,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/yosupo/sqrt_mod.test.cpp.html">test/yosupo/sqrt_mod.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_mod.test.cpp.html">test/yosupo/sqrt_mod.test.cpp</a>
 
 
 ## Code
