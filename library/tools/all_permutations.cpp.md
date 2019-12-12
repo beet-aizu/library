@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/all_permutations.cpp
+# :heavy_check_mark: tools/all_permutations.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: tools
@@ -37,7 +37,7 @@ layout: default
 
 ## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2187.test.cpp.html">test/aoj/2187.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/3053.test.cpp.html">test/aoj/3053.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3053.test.cpp.html">test/aoj/3053.test.cpp</a>
 
 
 ## Code

@@ -36,10 +36,10 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
 * :warning: <a href="../../../verify/test/aoj/DSL_2_D.test.cpp.html">test/aoj/DSL_2_D.test.cpp</a>
-* :warning: <a href="../../../verify/test/aoj/DSL_2_E.test.cpp.html">test/aoj/DSL_2_E.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_E.test.cpp.html">test/aoj/DSL_2_E.test.cpp</a>
 
 
 ## Code

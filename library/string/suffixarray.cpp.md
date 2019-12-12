@@ -40,7 +40,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2711.test.cpp.html">test/aoj/2711.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/3033.test.cpp.html">test/aoj/3033.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/3063.test.cpp.html">test/aoj/3063.test.cpp</a>

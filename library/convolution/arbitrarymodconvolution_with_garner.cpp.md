@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :warning: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>

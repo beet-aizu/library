@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2667.test.cpp.html">test/aoj/2667.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2871.test.cpp.html">test/aoj/2871.test.cpp</a>

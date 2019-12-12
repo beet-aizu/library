@@ -37,11 +37,11 @@ layout: default
 
 ## Depends On
 * :warning: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
-* :warning: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 
 
 ## Required By
-* :warning: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 
 
 ## Verified With

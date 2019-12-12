@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/bfs.cpp
+# :heavy_check_mark: tools/bfs.cpp
 <a href="../../index.html">Back to top page</a>
 
 * category: tools
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
 
 
 ## Code

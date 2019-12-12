@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DSL_2_B.binarytrie.test.cpp
+# :heavy_check_mark: test/aoj/DSL_2_B.binarytrie.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_B.binarytrie.test.cpp">View this file on GitHub</a>
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
