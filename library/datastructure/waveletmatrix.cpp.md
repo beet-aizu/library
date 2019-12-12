@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Verified With

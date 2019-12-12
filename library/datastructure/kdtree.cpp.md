@@ -30,7 +30,7 @@ layout: default
 
 * category: datastructure
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/kdtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 00:34:45 +0900
+    - Last commit date: 2019-12-12 16:34:45 +0900
 
 
 
@@ -45,84 +45,81 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
+template<typename T>
 struct KDTree{
+  static const int NIL = -1;
+
   class Node{
   public:
-    int location;
-    int p,l,r;
-    Node(){}
+    int pos,p,l,r;
+    Node(){pos=p=l=r=NIL;}
   };
+
   class Point{
   public:
-    int id,x,y;
+    int id;
+    T x,y;
     Point(){}
-    Point(int id,int x,int y): id(id),x(x),y(y){}
+    Point(int id,T x,T y): id(id),x(x),y(y){}
     bool operator<(const Point &p)const{
       return id<p.id;
     }
-    void print(){
-      printf("%d\n",id);
-    }
   };
 
-  static const int NIL = -1;
-
-  int N;
-  vector<Point> P;
-  vector<Node> T;
+  vector<Point> ps;
+  vector<Node> ts;
   int np;
 
-  KDTree(){}
-  KDTree(int N){init(N);}
-
-  void init(int N_){
-    N=N_;
-    P.clear();
-    T.clear();
-    P.resize(N);
-    T.resize(N);
+  void add_point(int i,int x,int y){
+    ps.emplace_back(i,x,y);
+    ts.emplace_back();
   }
 
   static bool lessX(const Point &p1,const Point &p2){return p1.x<p2.x;}
   static bool lessY(const Point &p1,const Point &p2){return p1.y<p2.y;}
 
-  int makeKDTree(int l,int r,int depth){
-    if(!(l<r)) return NIL;
+  int dfs(int l,int r,int depth){
+    if(l>=r) return NIL;
     int mid=(l+r)/2;
-    int t = np++;
+    int t=np++;
     if(depth%2==0){
-      sort(P.begin()+l,P.begin()+r,lessX);
+      sort(ps.begin()+l,ps.begin()+r,lessX);
     }else{
-      sort(P.begin()+l,P.begin()+r,lessY);
+      sort(ps.begin()+l,ps.begin()+r,lessY);
     }
-    T[t].location=mid;
-    T[t].l=makeKDTree(l,mid,depth+1);
-    T[t].r=makeKDTree(mid+1,r,depth+1);
+    ts[t].pos=mid;
+    ts[t].l=dfs(l,mid,depth+1);
+    ts[t].r=dfs(mid+1,r,depth+1);
     return t;
   }
 
-  void find(int v,int sx,int tx,int sy,int ty,int depth,vector<Point> &ans){
-    int x=P[T[v].location].x;
-    int y=P[T[v].location].y;
-    if(sx<=x&&x<=tx&&sy<=y&&y<=ty){
-      ans.push_back(P[T[v].location]);
-    }
+  int build(){
+    np=0;
+    return dfs(0,ps.size(),0);
+  }
+
+  // [sx, tx] * [sy, ty]
+  void find(int v,T sx,T tx,T sy,T ty,int depth,vector<Point> &ans){
+    T x=ps[ts[v].pos].x;
+    T y=ps[ts[v].pos].y;
+    if(sx<=x&&x<=tx&&sy<=y&&y<=ty)
+      ans.push_back(ps[ts[v].pos]);
+
     if(depth%2==0){
-      if(T[v].l!=NIL){
-        if(sx<=x) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
+      if(ts[v].l!=NIL){
+        if(sx<=x) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);
       }
-      if(T[v].r!=NIL){
-        if(x<=tx) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
+      if(ts[v].r!=NIL){
+        if(x<=tx) find(ts[v].r,sx,tx,sy,ty,depth+1,ans);
       }
     }else{
-      if(T[v].l!=NIL){
-        if(sy<=y) find(T[v].l,sx,tx,sy,ty,depth+1,ans);
+      if(ts[v].l!=NIL){
+        if(sy<=y) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);
       }
-      if(T[v].r!=NIL){
-        if(y<=ty) find(T[v].r,sx,tx,sy,ty,depth+1,ans);
+      if(ts[v].r!=NIL){
+        if(y<=ty) find(ts[v].r,sx,tx,sy,ty,depth+1,ans);
       }
     }
   }

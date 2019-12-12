@@ -25,11 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/geometry/CGL_2_D.test.cpp
+# :heavy_check_mark: test/aoj/geometry/CGL_2_D.test.cpp
 <a href="../../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/geometry/CGL_2_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-13 14:47:25 +0900
+    - Last commit date: 2019-12-12 16:34:45 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D</a>
@@ -37,6 +37,7 @@ layout: default
 
 ## Depends On
 * :warning: <a href="../../../../library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
+* :heavy_check_mark: <a href="../../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
 
 
 ## Code
@@ -48,6 +49,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../../geometry/geometry.cpp"
+#include "../../../tools/precision.cpp"
 #undef call_from_test
 
 #define ERROR "0.00000001"
@@ -56,10 +58,10 @@ using namespace std;
 signed main(){
   int q;
   cin>>q;
-  while(q--){
+  for(int i=0;i<q;i++){
     Point p0,p1,p2,p3;
     cin>>p0>>p1>>p2>>p3;
-    printf("%.12f\n",getDistanceSS(Segment(p0,p1),Segment(p2,p3)));
+    cout<<getDistanceSS(Segment(p0,p1),Segment(p2,p3))<<endl;
   }
   return 0;
 }
