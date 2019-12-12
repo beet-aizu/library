@@ -37,7 +37,7 @@ layout: default
 
 ## Required By
 * :warning: <a href="../string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
-* :warning: <a href="../tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
+* :heavy_check_mark: <a href="../tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
 ## Verified With

@@ -36,7 +36,7 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 
 
 ## Verified With

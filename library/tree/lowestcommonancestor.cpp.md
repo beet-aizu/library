@@ -36,7 +36,7 @@ layout: default
 
 
 ## Required By
-* :warning: <a href="eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
+* :heavy_check_mark: <a href="eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
 ## Verified With
