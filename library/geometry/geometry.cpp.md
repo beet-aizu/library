@@ -36,32 +36,32 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/2454.test.cpp.html">test/aoj/geometry/2454.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/3056.test.cpp.html">test/aoj/geometry/3056.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_1_A.test.cpp.html">test/aoj/geometry/CGL_1_A.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_1_B.test.cpp.html">test/aoj/geometry/CGL_1_B.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_1_C.test.cpp.html">test/aoj/geometry/CGL_1_C.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_2_A.test.cpp.html">test/aoj/geometry/CGL_2_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_2_A.test.cpp.html">test/aoj/geometry/CGL_2_A.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_2_B.test.cpp.html">test/aoj/geometry/CGL_2_B.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_2_C.test.cpp.html">test/aoj/geometry/CGL_2_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_2_C.test.cpp.html">test/aoj/geometry/CGL_2_C.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_3_A.test.cpp.html">test/aoj/geometry/CGL_3_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_3_A.test.cpp.html">test/aoj/geometry/CGL_3_A.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_3_B.test.cpp.html">test/aoj/geometry/CGL_3_B.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_3_C.test.cpp.html">test/aoj/geometry/CGL_3_C.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_4_A.test.cpp.html">test/aoj/geometry/CGL_4_A.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_4_B.test.cpp.html">test/aoj/geometry/CGL_4_B.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_4_C.test.cpp.html">test/aoj/geometry/CGL_4_C.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_5_A.test.cpp.html">test/aoj/geometry/CGL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_3_C.test.cpp.html">test/aoj/geometry/CGL_3_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_4_A.test.cpp.html">test/aoj/geometry/CGL_4_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_4_B.test.cpp.html">test/aoj/geometry/CGL_4_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_4_C.test.cpp.html">test/aoj/geometry/CGL_4_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_5_A.test.cpp.html">test/aoj/geometry/CGL_5_A.test.cpp</a>
 * :warning: <a href="../../verify/test/aoj/geometry/CGL_6_A.test.cpp.html">test/aoj/geometry/CGL_6_A.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_7_A.test.cpp.html">test/aoj/geometry/CGL_7_A.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_7_D.test.cpp.html">test/aoj/geometry/CGL_7_D.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_7_E.test.cpp.html">test/aoj/geometry/CGL_7_E.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_7_F.test.cpp.html">test/aoj/geometry/CGL_7_F.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_7_G.test.cpp.html">test/aoj/geometry/CGL_7_G.test.cpp</a>
-* :warning: <a href="../../verify/test/aoj/geometry/CGL_7_H.test.cpp.html">test/aoj/geometry/CGL_7_H.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_A.test.cpp.html">test/aoj/geometry/CGL_7_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_D.test.cpp.html">test/aoj/geometry/CGL_7_D.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_E.test.cpp.html">test/aoj/geometry/CGL_7_E.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_F.test.cpp.html">test/aoj/geometry/CGL_7_F.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_G.test.cpp.html">test/aoj/geometry/CGL_7_G.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_H.test.cpp.html">test/aoj/geometry/CGL_7_H.test.cpp</a>
 
 
 ## Code

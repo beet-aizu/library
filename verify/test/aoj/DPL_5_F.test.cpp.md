@@ -36,8 +36,8 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
-* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Code
