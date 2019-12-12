@@ -35,12 +35,12 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 * :heavy_check_mark: <a href="../math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1328.test.cpp.html">test/aoj/1328.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>

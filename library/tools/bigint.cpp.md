@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_2_A.test.cpp.html">test/aoj/NTL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_2_B.test.cpp.html">test/aoj/NTL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_2_C.test.cpp.html">test/aoj/NTL_2_C.test.cpp</a>

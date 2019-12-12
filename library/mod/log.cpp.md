@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :warning: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/yosupo/discrete_logarithm_mod.test.cpp.html">test/yosupo/discrete_logarithm_mod.test.cpp</a>
 
 

@@ -35,11 +35,11 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="base.cpp.html">linkcuttree/base.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.linkcuttree.test.cpp.html">test/aoj/1595.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
 

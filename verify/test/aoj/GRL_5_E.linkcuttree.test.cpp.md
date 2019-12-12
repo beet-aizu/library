@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
 * :heavy_check_mark: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>

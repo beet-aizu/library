@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
 * :warning: <a href="../convolution/fastwalshhadamardtransform.cpp.html">convolution/fastwalshhadamardtransform.cpp</a>
@@ -52,7 +52,7 @@ layout: default
 * :heavy_check_mark: <a href="../polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1630.test.cpp.html">test/aoj/1630.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2222.test.cpp.html">test/aoj/2222.test.cpp</a>

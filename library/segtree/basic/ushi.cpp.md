@@ -35,12 +35,12 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="../../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_A.test.cpp.html">test/aoj/DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>

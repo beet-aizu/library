@@ -35,11 +35,11 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="base.cpp.html">bbst/basic/base.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>

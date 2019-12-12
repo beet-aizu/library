@@ -35,12 +35,12 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 * :heavy_check_mark: <a href="../tree/levelancestor.cpp.html">tree/levelancestor.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_2_B.binarytrie.test.cpp.html">test/aoj/DSL_2_B.binarytrie.test.cpp</a>
 
 

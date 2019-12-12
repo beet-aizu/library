@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
 * :heavy_check_mark: <a href="../../../library/bbst/basic/dual.cpp.html">bbst/basic/dual.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>

@@ -35,11 +35,11 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/3102.test.cpp.html">test/aoj/3102.test.cpp</a>
 
 

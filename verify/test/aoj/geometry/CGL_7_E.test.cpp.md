@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../../library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
 
 

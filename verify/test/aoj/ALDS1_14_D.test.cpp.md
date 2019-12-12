@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 
 

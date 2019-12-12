@@ -35,16 +35,16 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2560.test.cpp.html">test/aoj/2560.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2959.test.cpp.html">test/aoj/2959.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2977.test.cpp.html">test/aoj/2977.test.cpp</a>

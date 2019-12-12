@@ -35,12 +35,12 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
 * :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2659.test.cpp.html">test/aoj/2659.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_E.test.cpp.html">test/aoj/NTL_1_E.test.cpp</a>

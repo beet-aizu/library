@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/convexhulltrick.cpp.html">datastructure/convexhulltrick.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
@@ -46,7 +46,7 @@ layout: default
 * :heavy_check_mark: <a href="../string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>

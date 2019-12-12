@@ -35,12 +35,16 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
+
+
+## Verified With
+* :warning: <a href="../../verify/test/aoj/0168.test.cpp.html">test/aoj/0168.test.cpp</a>
 
 
 ## Code

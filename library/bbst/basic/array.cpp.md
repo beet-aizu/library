@@ -35,15 +35,15 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="base.cpp.html">bbst/basic/base.cpp</a>
 
 
-## Required
+## Required By
 * :warning: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
 
 

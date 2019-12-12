@@ -35,7 +35,7 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/bipartitematching">https://judge.yosupo.jp/problem/bipartitematching</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/flow/hopcroft_karp.cpp.html">flow/hopcroft_karp.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 

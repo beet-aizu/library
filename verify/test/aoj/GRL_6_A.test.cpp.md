@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/flow/dinic.cpp.html">flow/dinic.cpp</a>
 
 

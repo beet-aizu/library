@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 

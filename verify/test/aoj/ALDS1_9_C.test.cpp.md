@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/datastructure/skewheap.cpp.html">datastructure/skewheap.cpp</a>
 
 

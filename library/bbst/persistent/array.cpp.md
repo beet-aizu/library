@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../basic/array.cpp.html">bbst/basic/array.cpp</a>
 * :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
 

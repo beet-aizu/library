@@ -35,12 +35,12 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.cartesiantree.test.cpp.html">test/aoj/DSL_3_D.cartesiantree.test.cpp</a>
 
 

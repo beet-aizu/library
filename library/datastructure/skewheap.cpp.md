@@ -35,11 +35,11 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
 

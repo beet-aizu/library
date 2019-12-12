@@ -35,14 +35,14 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="trie.cpp.html">string/trie.cpp</a>
 * :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2257.test.cpp.html">test/aoj/2257.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3073.test.cpp.html">test/aoj/3073.test.cpp</a>

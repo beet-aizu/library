@@ -35,7 +35,7 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/discrete_logarithm_mod">https://judge.yosupo.jp/problem/discrete_logarithm_mod</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/mod/log.cpp.html">mod/log.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 

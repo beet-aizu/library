@@ -35,7 +35,7 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/number_of_substrings">https://judge.yosupo.jp/problem/number_of_substrings</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 * :heavy_check_mark: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>

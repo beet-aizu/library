@@ -35,11 +35,11 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2711.test.cpp.html">test/aoj/2711.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3033.test.cpp.html">test/aoj/3033.test.cpp</a>

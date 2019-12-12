@@ -35,17 +35,17 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="lca.cpp.html">tree/lca.cpp</a>
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_D.test.cpp.html">test/aoj/GRL_5_D.test.cpp</a>
 
 

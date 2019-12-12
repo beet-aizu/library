@@ -35,7 +35,7 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/datastructure/disjointsparsetable.cpp.html">datastructure/disjointsparsetable.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 

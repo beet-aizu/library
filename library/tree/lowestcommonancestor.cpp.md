@@ -35,11 +35,11 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp.html">test/aoj/GRL_5_C.lowestcommonancestor.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 

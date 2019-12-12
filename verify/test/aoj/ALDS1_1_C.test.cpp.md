@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/math/is_prime.cpp.html">math/is_prime.cpp</a>
 
 

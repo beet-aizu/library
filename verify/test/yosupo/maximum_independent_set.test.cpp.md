@@ -35,7 +35,7 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/maximum_independent_set">https://judge.yosupo.jp/problem/maximum_independent_set</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/graph/independentset.cpp.html">graph/independentset.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 

@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/datastructure/kdtree.cpp.html">datastructure/kdtree.cpp</a>
 
 

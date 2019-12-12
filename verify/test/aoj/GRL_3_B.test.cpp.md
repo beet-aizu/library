@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 
 

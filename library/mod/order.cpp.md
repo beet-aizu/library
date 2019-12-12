@@ -35,13 +35,13 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
 * :heavy_check_mark: <a href="pow.cpp.html">mod/pow.cpp</a>
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
 
 

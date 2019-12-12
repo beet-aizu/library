@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/string/knuth_morris_pratt.cpp.html">string/knuth_morris_pratt.cpp</a>
 
 

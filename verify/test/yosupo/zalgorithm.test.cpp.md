@@ -35,7 +35,7 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/zalgorithm">https://judge.yosupo.jp/problem/zalgorithm</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 

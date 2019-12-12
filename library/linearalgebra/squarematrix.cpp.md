@@ -35,18 +35,18 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 * :heavy_check_mark: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
 

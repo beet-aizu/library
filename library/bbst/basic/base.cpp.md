@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="array.cpp.html">bbst/basic/array.cpp</a>
 * :heavy_check_mark: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
 * :heavy_check_mark: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
@@ -45,7 +45,7 @@ layout: default
 * :warning: <a href="../persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>

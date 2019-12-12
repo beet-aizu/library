@@ -35,12 +35,12 @@ layout: default
 
 
 
-## Required
+## Required By
 * :warning: <a href="voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_2_A.test.cpp.html">test/aoj/GRL_2_A.test.cpp</a>
 

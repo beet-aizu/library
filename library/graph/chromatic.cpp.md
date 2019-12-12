@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/1254.test.cpp.html">test/aoj/1254.test.cpp</a>
 
 

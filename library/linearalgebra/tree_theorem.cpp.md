@@ -35,14 +35,14 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 
 

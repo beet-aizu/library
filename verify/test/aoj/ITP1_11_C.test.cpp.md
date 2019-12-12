@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_11_C</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/tools/dice.cpp.html">tools/dice.cpp</a>
 
 

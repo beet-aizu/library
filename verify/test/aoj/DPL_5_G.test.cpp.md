@@ -35,7 +35,7 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G</a>
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 

@@ -35,13 +35,13 @@ layout: default
 
 
 
-## Required
+## Required By
 * :heavy_check_mark: <a href="farthest.cpp.html">linkcuttree/farthest.cpp</a>
 * :heavy_check_mark: <a href="path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="subtree.cpp.html">linkcuttree/subtree.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.linkcuttree.test.cpp.html">test/aoj/1595.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
