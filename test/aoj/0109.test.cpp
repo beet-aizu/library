@@ -14,7 +14,8 @@ signed main(){
   while(n--){
     string s;
     int p=0;
-    cin>>s;s.pop_back();
+    cin>>s;
+    s.pop_back();
     cout<<expression(s,p)<<endl;
   }
   return 0;
