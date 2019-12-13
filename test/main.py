@@ -34,30 +34,30 @@ def main(paths: List[pathlib.Path], *, timeout: float = math.inf) -> None:
 
         verified = False
         for cxx in compilers:
-            print(cxx)
             macros = utils.list_defined_macros(path, compiler=cxx)
-            print(macros)
 
             assert ('PROBLEM' in macros)
-            url = macros['PROBLEM']
+            url = shlex.split(macros['PROBLEM'])[0]
             directory = pathlib.Path('.verify-helper') / hashlib.md5(
                 url.encode()).hexdigest()
-            subprocess.check_call(['mkdir', '-p', str(directory)])
 
             print(url)
             if 'IGNORE' in macros:
                 continue
+
+            if not directory.exists():
+                directory.mkdir()
+                exec_command(['sleep', '2'])
+                exec_command([
+                    'oj', 'download', '--system', url, '-d',
+                    str(directory / 'test')
+                ])
 
             print("$ $CXX $CXXFLAGS -I . $file")
             exec_command([
                 cxx, cxxflags, '-I', '.', '-o',
                 str(directory / 'a.out'),
                 str(path)
-            ])
-            exec_command(['sleep', '2'])
-            exec_command([
-                'oj', 'download', '--system', url, '-d',
-                str(directory / 'test')
             ])
 
             if 'judge.yosupo.jp' in url:
@@ -66,18 +66,19 @@ def main(paths: List[pathlib.Path], *, timeout: float = math.inf) -> None:
                 with open(directory / "checker.cpp", "wb") as f:
                     f.write(checker)
 
-                exec_command([
-                    'curl'
-                    'https://raw.githubusercontent.com/MikeMirzayanov/testlib/master/testlib.h',
-                    '>',
-                    str(directory / 'testlib.h')
-                ])
+                with open(directory / 'testlib.h', 'w') as f:
+                    subprocess.call([
+                        'curl',
+                        'https://raw.githubusercontent.com/MikeMirzayanov/testlib/master/testlib.h'
+                    ],
+                                    stdout=f)
 
                 exec_command([
                     cxx, cxxflags, '-I', '.', '-o',
                     str(directory / 'checker.out'),
                     str(directory / 'checker.cpp')
                 ])
+
                 exec_command([
                     'oj', 'test', '--judge-command',
                     str(directory / 'checker.out'), '-c',
@@ -85,7 +86,7 @@ def main(paths: List[pathlib.Path], *, timeout: float = math.inf) -> None:
                     str(directory / 'test')
                 ])
             elif 'ERROR' in macros:
-                error = macros['ERROR']
+                error = shlex.split(macros['ERROR'])[0]
                 exec_command([
                     'oj', 'test', '-e', error, '-c',
                     str(directory / 'a.out'), '-d',

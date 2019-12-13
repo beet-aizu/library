@@ -8,10 +8,12 @@ from typing import *
 
 CXXFLAGS = os.environ.get('CXXFLAGS', '--std=c++17 -O2 -Wall -g')
 
-path_timestamp = '.verify-helper/timestamp/timestamp.json'
 timestamps = {'~': 'dummy'}
-with open(path_timestamp, 'r') as f:
-    timestamps = json.loads(f.read())
+
+path_timestamp = pathlib.Path('.verify-helper/timestamp/timestamp.json')
+if path_timestamp.exists():
+    with open(path_timestamp, 'r') as f:
+        timestamps = json.loads(f.read())
 
 
 def list_depending_files(path: pathlib.Path, *, compiler: str) -> List[pathlib.Path]:
@@ -38,10 +40,10 @@ def get_last_commit_time_to_verify(path: pathlib.Path, *, compiler: str) -> str:
 
 
 def is_verified(path: pathlib.Path, compiler: str) -> bool:
-    return get_last_commit_time_to_verify(path, compiler=compiler) == timestamps[str(path)]
+    return get_last_commit_time_to_verify(path, compiler=compiler) == timestamps.get(str(path), None)
 
 
-def mark_verified(path: pathlib.Path):
+def mark_verified(path: pathlib.Path, compiler: str):
     timestamps[str(path)] = get_last_commit_time_to_verify(path, compiler=compiler)
 
 
