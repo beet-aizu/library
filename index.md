@@ -32,6 +32,7 @@ layout: default
 ## Library Files
 <div id="ed469618898d75b149e5c7c4b6a1c415"></div>
 ### algorithm
+* :warning: <a href="library/algorithm/knuthyao.cpp.html">algorithm/knuthyao.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/monotoneminima.cpp.html">algorithm/monotoneminima.cpp</a>
