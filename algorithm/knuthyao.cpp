@@ -2,6 +2,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+
+#define IGNORE
+
 //BEGIN CUT HERE
 // f(i,l) + f(j,k) >= f(i,k) + f(j,l) (i <= j, k <= l)
 template<typename T, typename F>
