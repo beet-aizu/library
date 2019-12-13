@@ -28,7 +28,7 @@ layout: default
 # :warning: datastructure/convexhulltrickwithindex.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: datastructure
+* category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/convexhulltrickwithindex.cpp">View this file on GitHub</a>
     - Last commit date: 2019-05-14 19:55:01 +0900
 

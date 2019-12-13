@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: linearalgebra/tree_theorem.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: linearalgebra
+* category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/tree_theorem.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-21 16:50:01 +0900
 
@@ -36,9 +36,9 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :warning: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 

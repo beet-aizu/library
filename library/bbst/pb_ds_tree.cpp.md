@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: bbst/pb_ds_tree.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: bbst
+* category: <a href="../../index.html#d342894e126a2cdd0812cd3a6c903bbd">bbst</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/pb_ds_tree.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 22:54:40 +0900
 

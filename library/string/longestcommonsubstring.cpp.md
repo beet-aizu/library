@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: string/longestcommonsubstring.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: string
+* category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/longestcommonsubstring.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-18 20:46:22 +0900
 

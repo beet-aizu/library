@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: segtree/count/dynamic_offline.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: segtree/count
+* category: <a href="../../../index.html#8c0b38b9c664244572b7839d3b5c6123">segtree/count</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/count/dynamic_offline.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-09 00:32:13 +0900
 

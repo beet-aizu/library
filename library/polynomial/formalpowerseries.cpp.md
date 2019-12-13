@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: polynomial/formalpowerseries.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: polynomial
+* category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01 +0900
 
@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../mod/sqrt.cpp.html">mod/sqrt.cpp</a>
 * :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified With

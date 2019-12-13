@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: algorithm/mo.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: algorithm
+* category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/mo.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01 +0900
 
@@ -37,7 +37,7 @@ layout: default
 
 ## Depends On
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../tools/vec.cpp.html">tools/vec.cpp</a>
 * :heavy_check_mark: <a href="../tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 

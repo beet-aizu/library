@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: mod/log.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: mod
+* category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/log.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-10 13:41:29 +0900
 
@@ -41,7 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified With

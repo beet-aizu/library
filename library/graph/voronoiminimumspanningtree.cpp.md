@@ -28,7 +28,7 @@ layout: default
 # :warning: graph/voronoiminimumspanningtree.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: graph
+* category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/voronoiminimumspanningtree.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01 +0900
 
@@ -37,7 +37,7 @@ layout: default
 
 ## Depends On
 * :heavy_check_mark: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: string/rectanglehash.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: string
+* category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/rectanglehash.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-21 14:48:19 +0900
 

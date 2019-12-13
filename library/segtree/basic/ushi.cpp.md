@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: segtree/basic/ushi.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: segtree/basic
+* category: <a href="../../../index.html#d554a8ac704505de7b361b88fc36eeb2">segtree/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/basic/ushi.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-26 15:31:15 +0900
 

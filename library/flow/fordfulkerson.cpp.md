@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: flow/fordfulkerson.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: flow
+* category: <a href="../../index.html#cff5497121104c2b8e0cb41ed2083a9b">flow</a>
 * <a href="{{ site.github.repository_url }}/blob/master/flow/fordfulkerson.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-10 15:04:21 +0900
 

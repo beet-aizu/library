@@ -25,10 +25,10 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/parse.cpp
+# :warning: string/parse.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: string
+* category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/parse.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-22 00:17:44 +0900
 
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :heavy_check_mark: <a href="../../verify/test/aoj/0109.test.cpp.html">test/aoj/0109.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/0109.test.cpp.html">test/aoj/0109.test.cpp</a>
 
 
 ## Code

@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: graph/bellmanford.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: graph
+* category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/bellmanford.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-22 13:11:34 +0900
 

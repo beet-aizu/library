@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: datastructure/binaryindexedtree.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: datastructure
+* category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/binaryindexedtree.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01 +0900
 
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required By

@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: linkcuttree/subtree.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: linkcuttree
+* category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/subtree.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01 +0900
 
@@ -38,7 +38,7 @@ layout: default
 ## Depends On
 * :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :heavy_check_mark: <a href="base.cpp.html">linkcuttree/base.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified With

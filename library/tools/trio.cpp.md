@@ -28,7 +28,7 @@ layout: default
 # :warning: tools/trio.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: tools
+* category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/trio.cpp">View this file on GitHub</a>
     - Last commit date: 2019-05-09 17:17:37 +0900
 

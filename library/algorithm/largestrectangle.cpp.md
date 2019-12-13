@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: algorithm/largestrectangle.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: algorithm
+* category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/largestrectangle.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-29 14:49:03 +0900
 

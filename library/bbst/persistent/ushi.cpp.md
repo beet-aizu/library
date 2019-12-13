@@ -28,7 +28,7 @@ layout: default
 # :warning: bbst/persistent/ushi.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: bbst/persistent
+* category: <a href="../../../index.html#9c18e90622c99f987841c06d60e235e9">bbst/persistent</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/persistent/ushi.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-24 23:20:46 +0900
 

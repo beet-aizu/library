@@ -28,7 +28,7 @@ layout: default
 # :warning: math/combination.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: math
+* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/combination.cpp">View this file on GitHub</a>
     - Last commit date: 2019-05-26 16:24:26 +0900
 

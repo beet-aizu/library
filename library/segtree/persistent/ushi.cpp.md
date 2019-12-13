@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: segtree/persistent/ushi.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: segtree/persistent
+* category: <a href="../../../index.html#5ac9307619d7e01a7fe6a139bee809d8">segtree/persistent</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/persistent/ushi.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-15 21:27:34 +0900
 

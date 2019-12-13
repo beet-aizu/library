@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: linkcuttree/farthest.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: linkcuttree
+* category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/farthest.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-11 22:28:12 +0900
 

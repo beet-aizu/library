@@ -28,7 +28,7 @@ layout: default
 # :warning: tree/sack.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: tree
+* category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/sack.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-23 16:53:18 +0900
 

@@ -28,7 +28,7 @@ layout: default
 # :warning: bbst/avltree.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: bbst
+* category: <a href="../../index.html#d342894e126a2cdd0812cd3a6c903bbd">bbst</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/avltree.cpp">View this file on GitHub</a>
     - Last commit date: 2019-06-25 14:45:15 +0900
 

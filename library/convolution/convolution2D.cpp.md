@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: convolution/convolution2D.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: convolution
+* category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/convolution2D.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-25 17:18:18 +0900
 

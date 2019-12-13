@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: mod/mint.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: mod
+* category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/mint.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-26 15:31:15 +0900
 
