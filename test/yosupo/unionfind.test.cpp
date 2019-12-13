@@ -13,7 +13,6 @@ signed main(){
   cin>>n>>q;
 
   UnionFind uf(n);
-
   for(int i=0;i<q;i++){
     int t,u,v;
     cin>>t>>u>>v;
