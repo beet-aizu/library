@@ -93,7 +93,7 @@ layout: default
 * :heavy_check_mark: <a href="library/datastructure/skewheap.cpp.html">datastructure/skewheap.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
-* :warning: <a href="library/datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="library/datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/weightedunionfindtree.cpp.html">datastructure/weightedunionfindtree.cpp</a>
 
@@ -144,7 +144,7 @@ layout: default
 <div id="1bbf1d9f5340fa94bf2c5fb5ce73a5f5"></div>
 ### linearalgebra
 * :heavy_check_mark: <a href="library/linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
-* :warning: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
@@ -168,7 +168,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/is_prime.cpp.html">math/is_prime.cpp</a>
 * :heavy_check_mark: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="library/math/linearcongruence.cpp.html">math/linearcongruence.cpp</a>
-* :warning: <a href="library/math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
+* :heavy_check_mark: <a href="library/math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient.cpp.html">math/totient.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient_table.cpp.html">math/totient_table.cpp</a>
 
@@ -229,7 +229,7 @@ layout: default
 * :heavy_check_mark: <a href="library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
 * :heavy_check_mark: <a href="library/string/manacher.cpp.html">string/manacher.cpp</a>
 * :heavy_check_mark: <a href="library/string/palindromictree.cpp.html">string/palindromictree.cpp</a>
-* :warning: <a href="library/string/parse.cpp.html">string/parse.cpp</a>
+* :heavy_check_mark: <a href="library/string/parse.cpp.html">string/parse.cpp</a>
 * :heavy_check_mark: <a href="library/string/rectanglehash.cpp.html">string/rectanglehash.cpp</a>
 * :heavy_check_mark: <a href="library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
 * :heavy_check_mark: <a href="library/string/split.cpp.html">string/split.cpp</a>
@@ -247,7 +247,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :warning: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
@@ -274,7 +274,7 @@ layout: default
 
 
 ## Verify Files
-* :warning: <a href="verify/test/aoj/0109.test.cpp.html">test/aoj/0109.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/0109.test.cpp.html">test/aoj/0109.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0168.test.cpp.html">test/aoj/0168.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0233.test.cpp.html">test/aoj/0233.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
@@ -307,7 +307,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1630.test.cpp.html">test/aoj/1630.test.cpp</a>
-* :warning: <a href="verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2187.test.cpp.html">test/aoj/2187.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2212.test.cpp.html">test/aoj/2212.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2222.test.cpp.html">test/aoj/2222.test.cpp</a>
@@ -505,7 +505,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_path_sum.test.cpp.html">test/yosupo/vertex_add_path_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>

@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 
 
 ## Code

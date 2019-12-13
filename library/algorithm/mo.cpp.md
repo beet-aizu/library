@@ -37,7 +37,7 @@ layout: default
 
 ## Depends On
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../tools/vec.cpp.html">tools/vec.cpp</a>
 * :heavy_check_mark: <a href="../tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
