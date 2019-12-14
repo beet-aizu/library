@@ -15,6 +15,12 @@ jobs:
     - name: Install dependencies
       run: pip3 install -U git+https://github.com/kmyk/online-judge-verify-helper.git@master
 
+    - name: Cache test cases
+      uses: actions/cache@v1
+      with:
+        path: .verify-helper/cache
+        key: verify-helper-cache
+
     - name: Run tests
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
