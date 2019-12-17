@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/prioritysum.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-04-11 20:10:39 +0900
+    - Last commit date: 2019-12-17 21:51:08 +0900
 
 
 
@@ -43,16 +43,13 @@ layout: default
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 // return sum of top K element (default: maximum)
 template<typename T, T identity, typename V=vector<T>,
          typename C1=less<T>, typename C2=greater<T> >
 struct PrioritySum{
   size_t num;
-  T sum;  
+  T sum;
   priority_queue<T, V, C1> pq1;
   priority_queue<T, V, C2> pq2;
   PrioritySum():num(0),sum(identity){}
@@ -82,7 +79,7 @@ struct PrioritySum{
   }
 
   T query(){resolve();return sum;}
-  
+
   void push(const T &x){pq1.emplace(x);}
   void expand(){num++;}
   void shrink(){assert(num);num--;}
@@ -103,10 +100,13 @@ struct FastIO{
   }
 }fastio_beet;
 
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 signed ARC074_D(){
   using ll = long long;
-  
+
   int n;
   cin>>n;
   vector<ll> a(3*n);
@@ -118,7 +118,7 @@ signed ARC074_D(){
     if(i>=n) dp1[i]=ps1.query();
     ps1.push(a[i]);
   }
-  
+
   MinimumSum<ll> ps2(n);
   vector<ll> dp2(3*n);
   for(int i=3*n-1;i>=0;i--){
@@ -126,22 +126,22 @@ signed ARC074_D(){
     if(i<=2*n) dp2[i]=ps2.query();
   }
 
-  ll ans=dp1[n]-dp2[n];  
+  ll ans=dp1[n]-dp2[n];
   for(int i=n;i<=2*n;i++) chmax(ans,dp1[i]-dp2[i]);
-  
+
   cout<<ans<<endl;
   return 0;
 }
 /*
   verified on 2019/04/09
-  https://atcoder.jp/contests/arc074/tasks/arc074_b 
+  https://atcoder.jp/contests/arc074/tasks/arc074_b
 */
 
 signed CGR002_F(){
   using ll = long long;
   using P = pair<ll, ll>;
   int n;
-  cin>>n;  
+  cin>>n;
   vector<vector<P> > G(n);
   for(int i=1;i<n;i++){
     ll a,b,c;
@@ -150,7 +150,7 @@ signed CGR002_F(){
     G[a].emplace_back(b,c);
     G[b].emplace_back(a,c);
   }
-  
+
   auto cmp=[&](P a,P b){
              return G[a.first].size()>G[b.first].size();
            };
@@ -181,7 +181,7 @@ signed CGR002_F(){
   dfs(0,-1,dfs);
 
   const ll INF = 1e18;
-  
+
   vector<int> used(n,0),dead(n,0);
   auto dfs2=
     [&](int v,int p,int t,auto func)->P{
@@ -189,7 +189,7 @@ signed CGR002_F(){
       vector<ll> res;
       ll sum=0;
       for(auto e:G[v]){
-        ll u=e.first,c=e.second;        
+        ll u=e.first,c=e.second;
         if(u==p) continue;
         if(dead[u]) break;
         P tmp=func(u,v,t,func);
@@ -197,7 +197,7 @@ signed CGR002_F(){
         res.emplace_back((tmp.first+c)-tmp.second);
       }
       sort(res.begin(),res.end());
-      
+
       ll x=INF,y=INF,z=0;
       int num=children[v]-t;
       assert(num>=-1);
@@ -215,10 +215,10 @@ signed CGR002_F(){
           chmin(y,sum+z+ms[v].query());
         }
         if(i<(int)res.size()) z+=res[i];
-      }      
+      }
       return P(x,y);
     };
-  
+
   for(int t=0;t<n;t++){
     if(t) cout<<" ";
     ll res=0;
@@ -238,7 +238,7 @@ signed CGR002_F(){
         if(e.first==par[v])
           ms[e.first].push(e.second);
     }
-  }  
+  }
   cout<<endl;
   return 0;
 }
@@ -249,7 +249,7 @@ signed CGR002_F(){
 
 signed main(){
   //ARC074_D();
-  CGR002_F();
+  //CGR002_F();
   return 0;
 }
 
@@ -262,16 +262,13 @@ signed main(){
 #line 1 "datastructure/prioritysum.cpp"
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 // return sum of top K element (default: maximum)
 template<typename T, T identity, typename V=vector<T>,
          typename C1=less<T>, typename C2=greater<T> >
 struct PrioritySum{
   size_t num;
-  T sum;  
+  T sum;
   priority_queue<T, V, C1> pq1;
   priority_queue<T, V, C2> pq2;
   PrioritySum():num(0),sum(identity){}
@@ -301,7 +298,7 @@ struct PrioritySum{
   }
 
   T query(){resolve();return sum;}
-  
+
   void push(const T &x){pq1.emplace(x);}
   void expand(){num++;}
   void shrink(){assert(num);num--;}
@@ -322,10 +319,13 @@ struct FastIO{
   }
 }fastio_beet;
 
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 signed ARC074_D(){
   using ll = long long;
-  
+
   int n;
   cin>>n;
   vector<ll> a(3*n);
@@ -337,7 +337,7 @@ signed ARC074_D(){
     if(i>=n) dp1[i]=ps1.query();
     ps1.push(a[i]);
   }
-  
+
   MinimumSum<ll> ps2(n);
   vector<ll> dp2(3*n);
   for(int i=3*n-1;i>=0;i--){
@@ -345,22 +345,22 @@ signed ARC074_D(){
     if(i<=2*n) dp2[i]=ps2.query();
   }
 
-  ll ans=dp1[n]-dp2[n];  
+  ll ans=dp1[n]-dp2[n];
   for(int i=n;i<=2*n;i++) chmax(ans,dp1[i]-dp2[i]);
-  
+
   cout<<ans<<endl;
   return 0;
 }
 /*
   verified on 2019/04/09
-  https://atcoder.jp/contests/arc074/tasks/arc074_b 
+  https://atcoder.jp/contests/arc074/tasks/arc074_b
 */
 
 signed CGR002_F(){
   using ll = long long;
   using P = pair<ll, ll>;
   int n;
-  cin>>n;  
+  cin>>n;
   vector<vector<P> > G(n);
   for(int i=1;i<n;i++){
     ll a,b,c;
@@ -369,7 +369,7 @@ signed CGR002_F(){
     G[a].emplace_back(b,c);
     G[b].emplace_back(a,c);
   }
-  
+
   auto cmp=[&](P a,P b){
              return G[a.first].size()>G[b.first].size();
            };
@@ -400,7 +400,7 @@ signed CGR002_F(){
   dfs(0,-1,dfs);
 
   const ll INF = 1e18;
-  
+
   vector<int> used(n,0),dead(n,0);
   auto dfs2=
     [&](int v,int p,int t,auto func)->P{
@@ -408,7 +408,7 @@ signed CGR002_F(){
       vector<ll> res;
       ll sum=0;
       for(auto e:G[v]){
-        ll u=e.first,c=e.second;        
+        ll u=e.first,c=e.second;
         if(u==p) continue;
         if(dead[u]) break;
         P tmp=func(u,v,t,func);
@@ -416,7 +416,7 @@ signed CGR002_F(){
         res.emplace_back((tmp.first+c)-tmp.second);
       }
       sort(res.begin(),res.end());
-      
+
       ll x=INF,y=INF,z=0;
       int num=children[v]-t;
       assert(num>=-1);
@@ -434,10 +434,10 @@ signed CGR002_F(){
           chmin(y,sum+z+ms[v].query());
         }
         if(i<(int)res.size()) z+=res[i];
-      }      
+      }
       return P(x,y);
     };
-  
+
   for(int t=0;t<n;t++){
     if(t) cout<<" ";
     ll res=0;
@@ -457,7 +457,7 @@ signed CGR002_F(){
         if(e.first==par[v])
           ms[e.first].push(e.second);
     }
-  }  
+  }
   cout<<endl;
   return 0;
 }
@@ -468,7 +468,7 @@ signed CGR002_F(){
 
 signed main(){
   //ARC074_D();
-  CGR002_F();
+  //CGR002_F();
   return 0;
 }
 

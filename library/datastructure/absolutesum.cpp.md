@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/absolutesum.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-06-19 15:03:20 +0900
+    - Last commit date: 2019-12-17 21:51:08 +0900
 
 
 
@@ -43,9 +43,6 @@ layout: default
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 template<typename T>
 struct AbsoluteSum{
@@ -187,9 +184,6 @@ signed main(){
 #line 1 "datastructure/absolutesum.cpp"
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 template<typename T>
 struct AbsoluteSum{

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/fraction.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 17:20:26 +0900
+    - Last commit date: 2019-12-17 21:37:46 +0900
 
 
 
@@ -49,9 +49,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -109,47 +106,51 @@ struct FastIO{
 
 //INSERT ABOVE HERE
 signed CPSCO2019_Session3_G(){
-  Int n,x;
+  using ll = long long;
+
+  int n,x;
   cin>>n>>x;
-  vector<Int> a(n);
-  for(Int i=0;i<n;i++) cin>>a[i];
-  using F = fraction<Int>;
-  using T = tuple<F, Int, Int>;
+
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  using F = fraction<ll>;
+  using T = tuple<F, int, int>;
   priority_queue<T> pq;
 
-  Int sum=0;
-  for(Int i=0;i<n;i++) sum+=a[i];
+  int sum=0;
+  for(int i=0;i<n;i++) sum+=as[i];
 
-  for(Int i=0;i<n;i++){
-    Int p=x*a[i]/sum;
-    pq.emplace(F(1,a[i]),i,p);
-    if((x*a[i])%sum!=0)
-      pq.emplace(F(2*x,sum)-F(2*p+1,a[i]),i,1);
-    pq.emplace(F(-1,a[i]),i,x+1);
+  for(int i=0;i<n;i++){
+    int p=x*as[i]/sum;
+    pq.emplace(F(1,as[i]),i,p);
+    if((x*as[i])%sum!=0)
+      pq.emplace(F(2*x,sum)-F(2*p+1,as[i]),i,1);
+    pq.emplace(F(-1,as[i]),i,x+1);
   }
 
-  vector<Int> b(n,0);
-  Int k=x;
+  vector<int> bs(n,0);
+  int k=x;
   while(k>0){
-    Int i,l;
+    int i,l;
     tie(ignore,i,l)=pq.top();pq.pop();
 
-    Int t=min(k,l);
-    b[i]+=t;
+    int t=min(k,l);
+    bs[i]+=t;
     k-=t;
   }
 
-  for(Int i=0;i<n;i++) cout<<b[i]<<"\n";
+  for(int i=0;i<n;i++) cout<<bs[i]<<"\n";
   cout<<flush;
   return 0;
 }
 /*
-  verified on 2019/10/07
+  verified on 2019/12/17
   https://atcoder.jp/contests/cpsco2019-s3/tasks/cpsco2019_s3_g
 */
 
 signed main(){
-  CPSCO2019_Session3_G();
+  //CPSCO2019_Session3_G();
   return 0;
 }
 #endif
@@ -161,26 +162,11 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 175, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 72, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 89, in main
-    exec_command(command)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
-    subprocess.check_call(command)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
-    raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['oj', 'test', '-c', '.verify-helper/cache/b645b11408d085ff850a88e829fefff4/a.out', '-d', '.verify-helper/cache/b645b11408d085ff850a88e829fefff4/test', '-j', '2']' returned non-zero exit status 1.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 339, in write_contents
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: math/fraction.cpp: line 8: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: math/fraction.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

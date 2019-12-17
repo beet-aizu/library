@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/girth.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-09-22 14:20:07 +0900
+    - Last commit date: 2019-12-17 21:51:08 +0900
 
 
 
@@ -43,9 +43,6 @@ layout: default
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 // size of minimum cycle
 int girth(vector< vector<int> > G){
@@ -131,9 +128,6 @@ signed main(){
 #line 1 "graph/girth.cpp"
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //BEGIN CUT HERE
 // size of minimum cycle
 int girth(vector< vector<int> > G){

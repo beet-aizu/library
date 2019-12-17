@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/semikernel.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-04-09 21:09:55 +0900
+    - Last commit date: 2019-12-17 21:51:08 +0900
 
 
 
@@ -43,7 +43,6 @@ layout: default
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 // https://link.springer.com/content/pdf/10.1007%2FBFb0066192.pdf
 struct SemiKernel{
@@ -56,7 +55,7 @@ struct SemiKernel{
     G[u].emplace_back(v);
     R[v].emplace_back(u);
   }
-  
+
   void dfs(int v){
     if(v==n) return;
     if(used[v]){
@@ -84,14 +83,14 @@ signed CFR503_C(){
   scanf("%d %d",&n,&m);
 
   SemiKernel sk(n);
-  
+
   for(int i=0;i<m;i++){
-    int a,b;    
+    int a,b;
     scanf("%d %d",&a,&b);
     a--;b--;
     sk.add_edge(a,b);
   }
-  
+
   auto ans=sk.build();
   printf("%d\n",(int)ans.size());
   for(int i=0;i<(int)ans.size();i++){
@@ -120,7 +119,6 @@ signed main(){
 #line 1 "graph/semikernel.cpp"
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 // https://link.springer.com/content/pdf/10.1007%2FBFb0066192.pdf
 struct SemiKernel{
@@ -133,7 +131,7 @@ struct SemiKernel{
     G[u].emplace_back(v);
     R[v].emplace_back(u);
   }
-  
+
   void dfs(int v){
     if(v==n) return;
     if(used[v]){
@@ -161,14 +159,14 @@ signed CFR503_C(){
   scanf("%d %d",&n,&m);
 
   SemiKernel sk(n);
-  
+
   for(int i=0;i<m;i++){
-    int a,b;    
+    int a,b;
     scanf("%d %d",&a,&b);
     a--;b--;
     sk.add_edge(a,b);
   }
-  
+
   auto ans=sk.build();
   printf("%d\n",(int)ans.size());
   for(int i=0;i<(int)ans.size();i++){

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#a739ede2a6d479067a4ee19dfc8519a0">geometry/3D</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/3D/geometry3D.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 00:53:43 +0900
+    - Last commit date: 2019-12-17 21:37:46 +0900
 
 
 
@@ -43,7 +43,6 @@ layout: default
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 
 #define EPS (1e-10)
@@ -324,7 +323,6 @@ signed main(){
 #line 1 "geometry/3D/geometry3D.cpp"
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 
 #define EPS (1e-10)
