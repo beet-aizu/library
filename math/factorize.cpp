@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -27,14 +26,14 @@ signed main(){
     auto x=factorize(i);
     for(auto p:x) m[p.first]+=p.second;
   }
-  const Int MOD = 1e9+7;
-  Int ans=1;
+  const int MOD = 1e9+7;
+  long long ans=1;
   for(auto p:m) (ans*=(p.second+1))%=MOD;
   cout<<ans<<endl;
   return 0;
 }
 /*
-  verified on 2018/01/29
+  verified on 2019/12/17
   https://atcoder.jp/contests/arc034/tasks/arc034_3
 */
 #endif
