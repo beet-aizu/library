@@ -1,12 +1,12 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 const int MAX = 2002;
 using BS = bitset<MAX*2>;
 using mat = vector<BS>;
+
 void gauss(mat &v){
   int n=v.size();
   for(int i=0;i<n;i++){
@@ -77,26 +77,30 @@ mat mat_pow(mat v,long long k){
 }
 //END CUT HERE
 #ifndef call_from_test
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#undef call_from_test
+
 signed CFR382_D(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  Int n,m;
+  int n,m;
   cin>>n>>m;
   mat v(n,BS(0));
-  for(Int i=0;i<n;i++) v[i][n+i]=1;
-  vector<Int> a(m),b(m);
-  for(Int i=0;i<m;i++){
-    cin>>a[i]>>b[i];
-    a[i]--;b[i]--;
-    v[a[i]][b[i]]=1;
+  for(int i=0;i<n;i++) v[i][n+i]=1;
+  vector<int> as(m),bs(m);
+  for(int i=0;i<m;i++){
+    cin>>as[i]>>bs[i];
+    as[i]--;bs[i]--;
+    v[as[i]][bs[i]]=1;
   }
   gauss(v);
-  for(Int i=0;i<m;i++)
-    cout<<(v[b[i]][a[i]+n]?"NO":"YES")<<endl;
+  for(int i=0;i<m;i++)
+    cout<<(v[bs[i]][as[i]+n]?"NO":"YES")<<"\n";
+  cout<<flush;
   return 0;
 }
 /*
-  verified on 2018/01/22
+  verified on 2019/12/17
   http://codeforces.com/contest/736/problem/D
 */
 
@@ -116,8 +120,8 @@ signed ARC054_D(){
   return 0;
 }
 /*
-  verified on 2018/01/22
-  https://beta.atcoder.jp/contests/arc054/tasks/arc054_c
+  verified on 2019/12/17
+  https://atcoder.jp/contests/arc054/tasks/arc054_c
 */
 
 signed main(){

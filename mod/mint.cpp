@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,T MOD = 1000000007>
@@ -57,6 +56,7 @@ template<typename T,T MOD>
 ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 //END CUT HERE
 #ifndef call_from_test
+
 //INSERT ABOVE HERE
 signed ABC127_E(){
   cin.tie(0);
