@@ -19,4 +19,4 @@ jobs:
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: oj-verify all
+      run: oj-verify all -j 2
