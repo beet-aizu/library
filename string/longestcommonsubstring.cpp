@@ -1,9 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
+#define call_from_test
+#include "../tools/chminmax.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
 int longest_common_substring(string s,string t){

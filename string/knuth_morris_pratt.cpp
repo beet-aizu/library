@@ -1,9 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
@@ -42,6 +39,10 @@ vector<int> pattern_match(string s,string t){
 }
 //END CUT HERE
 #ifndef call_from_test
+
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 signed ABC135_D(){
   cin.tie(0);
@@ -129,12 +130,13 @@ signed ARC060_F(){
   return 0;
 }
 /*
-  verified on 2019/08/21https://atcoder.jp/contests/arc060/tasks/arc060_d
+  verified on 2019/08/21
+  https://atcoder.jp/contests/arc060/tasks/arc060_d
 */
 
 signed main(){
   //ABC135_D();
-  ARC060_F();
+  //ARC060_F();
   return 0;
 }
 #endif
