@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/monotoneminima.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 15:48:59 +0900
+    - Last commit date: 2019-12-17 15:56:23 +0900
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
@@ -76,10 +81,13 @@ namespace MonotoneMinima{
 }
 //END CUT HERE
 #ifndef call_from_test
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#undef call_from_test
+
 //INSERT ABOVE HERE
 signed COLOPL2018FINAL_C(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   using ll = long long;
 
   int n;
@@ -95,7 +103,7 @@ signed COLOPL2018FINAL_C(){
   return 0;
 }
 /*
-  verified on 2019/10/29
+  verified on 2019/12/17
   https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 

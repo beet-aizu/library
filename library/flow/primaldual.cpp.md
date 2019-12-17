@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#cff5497121104c2b8e0cb41ed2083a9b">flow</a>
 * <a href="{{ site.github.repository_url }}/blob/master/flow/primaldual.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-08 11:49:04 +0900
+    - Last commit date: 2019-12-17 15:56:23 +0900
 
 
 
@@ -58,7 +58,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename TF,typename TC>
@@ -195,7 +194,7 @@ signed SPOJ_GREED(){
   return 0;
 }
 /*
-  verified on 2019/07/05
+  verified on 2019/12/17
   https://www.spoj.com/problems/GREED/
 */
 
@@ -248,9 +247,10 @@ signed geocon2013_B(){
   return 0;
 }
 /*
-  verified on 2019/07/05
+  verified on 2019/12/17
   https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
 */
+
 signed main(){
   //SPOJ_GREED();
   //geocon2013_B();
@@ -269,7 +269,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 125, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: flow/primaldual.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: flow/primaldual.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

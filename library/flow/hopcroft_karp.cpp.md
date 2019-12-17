@@ -31,9 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#cff5497121104c2b8e0cb41ed2083a9b">flow</a>
 * <a href="{{ site.github.repository_url }}/blob/master/flow/hopcroft_karp.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 00:26:25 +0900
+    - Last commit date: 2019-12-17 15:56:23 +0900
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
@@ -51,7 +57,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct BiMatch{
@@ -123,26 +128,14 @@ struct BiMatch{
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T>
-vector<T> compress(vector<T> v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
-}
 
-template<typename T>
-map<T, int> dict(const vector<T> &v){
-  map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
-  return res;
-}
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "../tools/compress.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed SPOJ_MATCHING(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int X,Y,E;
   cin>>X>>Y>>E;
   BiMatch bm(X,Y);
@@ -155,13 +148,11 @@ signed SPOJ_MATCHING(){
   return 0;
 }
 /*
-  verified on 2019/05/26
+  verified on 2019/12/17
   http://www.spoj.com/problems/MATCHING/
 */
 
 signed chokudai_S002_K(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   int n;
   cin>>n;
   vector<int> as(n),bs(n);
@@ -183,7 +174,7 @@ signed chokudai_S002_K(){
   return 0;
 }
 /*
-  verified on 2019/05/26
+  verified on 2019/12/17
   https://atcoder.jp/contests/chokudai_S002/tasks/chokudai_S002_k
 */
 
@@ -206,7 +197,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 125, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: flow/hopcroft_karp.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: flow/hopcroft_karp.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
