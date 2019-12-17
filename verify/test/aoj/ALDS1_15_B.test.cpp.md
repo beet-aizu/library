@@ -25,22 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/2627.test.cpp
+# :warning: test/aoj/ALDS1_15_B.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/2627.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 15:56:23 +0900
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_15_B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-17 16:46:59 +0900
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2627">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2627</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/flow/negativeedge.cpp.html">flow/negativeedge.cpp</a>
-* :heavy_check_mark: <a href="../../../library/flow/primaldual.cpp.html">flow/primaldual.cpp</a>
-* :warning: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
 
 
 ## Code
@@ -48,50 +46,39 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2627"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/chminmax.cpp"
-#include "../../flow/primaldual.cpp"
-#include "../../flow/negativeedge.cpp"
+#include "../../tools/precision.cpp"
 #undef call_from_test
 
+#define ERROR "1e-6"
+
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
+  using D = double;
 
-  using ll = long long;
-  const ll INF = 1e9;
+  int n,w;
+  cin>>n>>w;
+  vector<D> vs(n),ws(n);
+  for(int i=0;i<n;i++) cin>>vs[i]>>ws[i];
 
-  int n;
-  cin>>n;
-  NegativeEdge<int, ll> G(n+1);
+  using P = pair<D, int>;
+  vector<P> vp;
+  for(int i=0;i<n;i++)
+    vp.emplace_back(vs[i]/ws[i],i);
 
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    map<int, int> dst;
-    for(int j=0;j<k;j++){
-      int t,c;
-      cin>>t>>c;
-      t--;
-      G.use_edge(i,t,1,c);
-      if(!dst.count(t)) dst[t]=c;
-      chmin(dst[t],c);
-    }
+  sort(vp.rbegin(),vp.rend());
 
-    for(auto p:dst)
-      G.add_edge(i,p.first,INF,p.second);
-
-    G.add_edge(i,n,INF,0);
+  D ans=0,res=w;
+  for(auto p:vp){
+    D amount=min(ws[p.second],res);
+    res-=amount;
+    ans+=amount*p.first;
   }
 
-  int ok;
-  ll ans=G.flow(0,n,INF,ok);
-  assert(ok);
   cout<<ans<<endl;
   return 0;
 }
@@ -109,7 +96,7 @@ Traceback (most recent call last):
     self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 54, in _resolve
     raise BundleError(path, -1, "no such header")
-onlinejudge_verify.bundle.BundleError: ../../tools/chminmax.cpp: line -1: no such header
+onlinejudge_verify.bundle.BundleError: ../../tools/precision.cpp: line -1: no such header
 
 ```
 {% endraw %}

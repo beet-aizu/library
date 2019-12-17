@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/precision.cpp
+# :warning: tools/precision.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/precision.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-19 16:00:23 +0900
+    - Last commit date: 2019-12-17 16:46:59 +0900
 
 
 
@@ -42,8 +42,9 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ALDS1_15_B.test.cpp.html">test/aoj/ALDS1_15_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
 
 
 ## Code
@@ -54,7 +55,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct Precision{
@@ -65,11 +65,6 @@ struct Precision{
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  Int n;
-  cin>>n;
-  vector<double> a(n);
-  for(Int i=0;i<n;i++) cin>>a[i];
-  cout<<(a.back()-a.front())/(n-1)<<endl;
   return 0;
 }
 #endif
@@ -81,26 +76,11 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
-    subcommand_run(paths=[])
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 70, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 87, in main
-    exec_command(command)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
-    subprocess.check_call(command)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
-    raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['oj', 'test', '-c', '.verify-helper/cache/c36a49005ac83bc17634badc8dd1bcb9/a.out', '-d', '.verify-helper/cache/c36a49005ac83bc17634badc8dd1bcb9/test', '-e', '\'"1e-8"\'']' returned non-zero exit status 2.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 345, in write_contents
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 125, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: tools/precision.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: tools/precision.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
