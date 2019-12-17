@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 
 #define EPS (1e-10)

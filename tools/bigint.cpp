@@ -309,7 +309,7 @@ struct bigint {
     vll a=convert_base(this->a,base_digits,nbase_digits);
     vll b=convert_base(v.a,base_digits,nbase_digits);
 
-    /*/
+    //*/
     while(a.size()<b.size()) a.push_back(0);
     while(b.size()<a.size()) b.push_back(0);
     while(a.size() &(a.size()-1)) a.push_back(0),b.push_back(0);

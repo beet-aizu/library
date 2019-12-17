@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../math/is_prime.cpp"
+#include "../../math/isprime.cpp"
 #undef call_from_test
 
 signed main(){

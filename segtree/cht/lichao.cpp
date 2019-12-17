@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template <typename T, bool isMin>
@@ -16,6 +15,11 @@ struct LiChao{
   int n;
   vector<T> pos;
   vector<Line> dat;
+  LiChao(int n){
+    pos.resize(n);
+    iota(pos.begin(),pos.end(),T(0));
+    init(n);
+  }
   LiChao(vector<T> &pos):pos(pos){init(pos.size());}
 
   void init(int n_){
@@ -67,110 +71,96 @@ template <typename T, bool isMin>
 constexpr T LiChao<T, isMin>::INF;
 //END CUT HERE
 #ifndef call_from_test
-template<typename T>
-vector<T> make_v(size_t a){return vector<T>(a);}
 
-template<typename T,typename... Ts>
-auto make_v(size_t a,Ts... ts){
-  return vector<decltype(make_v<T>(ts...))>(a,make_v<T>(ts...));
-}
-
-template<typename T,typename V>
-typename enable_if<is_class<T>::value==0>::type
-fill_v(T &t,const V &v){t=v;}
-
-template<typename T,typename V>
-typename enable_if<is_class<T>::value!=0>::type
-fill_v(T &t,const V &v){
-  for(auto &e:t) fill_v(e,v);
-}
+#define call_from_test
+#include "../../tools/fastio.cpp"
+#include "../../tools/vec.cpp"
+#include "../../tools/compress.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 
 signed CSA070_SQUAREDEND(){
-  Int n,k;
-  scanf("%lld %lld",&n,&k);
-  vector<Int> a(n+1,0);
-  for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
+  using ll = long long;
+
+  int n,k;
+  cin>>n>>k;
+  vector<ll> as(n+1,0);
+  for(int i=0;i<n;i++) cin>>as[i];
 
   if(n==1){
     puts("0");
     return 0;
   }
 
-  const Int INF = 1e15;
-  auto dp=make_v<Int>(k+1,n+1);
-  fill_v(dp,INF);
+  vector<ll> pos=compress(as);
+  vector<LiChao<ll, true> > vs;
+  for(int i=0;i<k+1;i++) vs.emplace_back(pos);
+  vs[0].addLine(-2*as[0],as[0]*as[0]);
+
+  const ll INF = 1e15;
+  auto dp=make_v<ll>(k+1,n+1);
+  fill_v<ll>(dp,INF);
   dp[0][0]=0;
 
-  vector<Int> pos(a);
-  sort(pos.begin(),pos.end());
-  pos.erase(unique(pos.begin(),pos.end()),pos.end());
-
-  vector<LiChao<Int, true> > v;
-  for(int i=0;i<k+1;i++) v.emplace_back(pos);
-  v[0].addLine(-2*a[0],a[0]*a[0]);
-
-  for(Int i=0;i<n;i++){
-    for(Int j=0;j<k;j++){
-      dp[j+1][i+1]=v[j].query(a[i])+a[i]*a[i];
-      v[j+1].addLine(-2*a[i+1],dp[j+1][i+1]+a[i+1]*a[i+1]);
+  for(int i=0;i<n;i++){
+    for(int j=0;j<k;j++){
+      dp[j+1][i+1]=vs[j].query(as[i])+as[i]*as[i];
+      vs[j+1].addLine(-2*as[i+1],dp[j+1][i+1]+as[i+1]*as[i+1]);
     }
   }
 
-  printf("%lld\n",dp[k][n]);
+  cout<<dp[k][n]<<endl;
   return 0;
 }
 
 /*
-  verified on 2019/01/16
+  verified on 2019/12/17
   https://csacademy.com/contest/archive/task/squared-ends
 */
 
 signed TENKA12016FINAL_E(){
-  int n,l;
-  scanf("%d %d",&n,&l);
-  auto a=make_v<Int>(n,l);
-  for(Int i=0;i<n;i++)
-    for(Int j=0;j<l;j++)
-      scanf("%lld",&a[i][j]);
+  using ll = long long;
 
-  vector<Int> dp(l,0);
-  vector<Int> pos(l,0);
-  iota(pos.begin(),pos.end(),0);
-  for(Int i=0;i<n;i++){
-    LiChao<Int, true> cht(pos);
-    for(Int j=0;j<l;j++)
+  int n,l;
+  cin>>n>>l;
+  auto a=make_v<ll>(n,l);
+  for(int i=0;i<n;i++)
+    for(int j=0;j<l;j++)
+      cin>>a[i][j];
+
+  vector<ll> dp(n,0);
+  for(int i=0;i<n;i++){
+    LiChao<ll, true> cht(n);
+    for(ll j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
-    for(Int j=0;j<l;j++)
+    for(ll j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
 
-  printf("%lld\n",*min_element(dp.begin(),dp.end()));
+  cout<<*min_element(dp.begin(),dp.end())<<endl;
   return 0;
 }
-
 /*
-  verified on 2019/01/16
-  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
+  verified on 2019/12/17
+  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
 signed COLOPL2018FINAL_C(){
+  using ll = long long;
   int n;
-  scanf("%d",&n);
-  vector<Int> a(n);
-  for(Int i=0;i<n;i++) scanf("%lld",&a[i]);
-  vector<Int> pos(n,0);
-  iota(pos.begin(),pos.end(),0);
-  LiChao<Int, true> cht(pos);
-  for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
+  cin>>n;
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+  LiChao<ll, true> cht(n);
+  for(ll i=0;i<n;i++) cht.addLine(-2*i,as[i]+i*i);
+  for(ll i=0;i<n;i++) cout<<cht.query(i)+i*i<<"\n";
   return 0;
 }
 
 /*
-  verified on 2019/01/16
-  https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
+  verified on 2019/12/17
+  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
 signed main(){
