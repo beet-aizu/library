@@ -39,7 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
-* :warning: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../mod/order.cpp.html">mod/order.cpp</a>
 
 
