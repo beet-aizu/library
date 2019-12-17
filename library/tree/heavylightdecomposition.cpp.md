@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/heavylightdecomposition.cpp
+# :warning: tree/heavylightdecomposition.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/heavylightdecomposition.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 13:36:48 +0900
+    - Last commit date: 2019-12-17 21:09:31 +0900
 
 
 
@@ -49,10 +49,10 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2667.test.cpp.html">test/aoj/2667.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.test.cpp.html">test/aoj/GRL_5_C.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_path_sum.test.cpp.html">test/yosupo/vertex_add_path_sum.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2667.test.cpp.html">test/aoj/2667.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_5_C.test.cpp.html">test/aoj/GRL_5_C.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/vertex_add_path_sum.test.cpp.html">test/yosupo/vertex_add_path_sum.test.cpp</a>
 
 
 ## Code
@@ -63,14 +63,16 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 class HLD {
 private:
   void dfs_sz(int v) {
+    for(int &u:G[v])
+      if(u==par[v]) swap(u,G[v].back());
+    if(~par[v]) G[v].pop_back();
+
     for(int &u:G[v]){
-      if(u==par[v]) continue;
       par[u]=v;
       dep[u]=dep[v]+1;
       dfs_sz(u);
@@ -91,7 +93,7 @@ private:
   }
 
 public:
-  vector<vector<int> > G;
+  vector< vector<int> > G;
   vector<int> vid, head, sub, par, dep, inv, type;
 
   HLD(int n):
@@ -199,7 +201,7 @@ signed YUKI_529(){
   rmq.build(vector<int>(V,-1));
 
   vector<priority_queue<int> > pq(V);
-  map<int,int> m;
+  map<int, int> m;
   int num=0;
   for(int i=0;i<q;i++){
     int d;
@@ -235,11 +237,12 @@ signed YUKI_529(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/529
 */
+
 signed main(){
-  YUKI_529();
+  //YUKI_529();
   return 0;
 };
 #endif
@@ -251,11 +254,26 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 175, in main
+    subcommand_run(paths=[], jobs=parsed.jobs)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 72, in subcommand_run
+    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 89, in main
+    exec_command(command)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
+    subprocess.check_call(command)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['oj', 'test', '-c', '.verify-helper/cache/b645b11408d085ff850a88e829fefff4/a.out', '-d', '.verify-helper/cache/b645b11408d085ff850a88e829fefff4/test', '-j', '2']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 339, in write_contents
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: tree/heavylightdecomposition.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: tree/heavylightdecomposition.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
