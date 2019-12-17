@@ -6,12 +6,12 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
 
-// manhattanIntersection
+// manhattan_intersection
 signed main(){
   int n;
   cin>>n;
   vector<Segment> ss(n);
   for(int i=0;i<n;i++) cin>>ss[i];
-  cout<<manhattanIntersection(ss,1e9+10)<<endl;
+  cout<<manhattan_intersection(ss,1e9+10)<<endl;
   return 0;
 }

@@ -14,7 +14,7 @@ static const int CCW_ONLINE_BACK = 2;
 static const int CCW_ONLINE_FRONT = -2;
 static const int CCW_ON_SEGMENT = 0;
 
-//Intercsect Circle & Circle
+// intercsect of circles
 static const int ICC_SEPERATE = 4;
 static const int ICC_CIRCUMSCRIBE = 3;
 static const int ICC_INTERSECT = 2;
@@ -561,7 +561,7 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
   return G;
 }
 
-int manhattanIntersection(vector<Segment> ss,const int INF){
+int manhattan_intersection(vector<Segment> ss,const int INF){
   const int BTM = 0;
   const int LFT = 1;
   const int RGH = 2;

@@ -4,11 +4,12 @@ using namespace std;
 
 #define call_from_test
 #include "../../../geometry/geometry.cpp"
+#include "../../../tools/precision.cpp"
 #undef call_from_test
 
 #define ERROR "0.00001"
 
-//Intersection of a Circle and a Polygon
+// intersection of a circle and a polygon
 signed main(){
   int n;
   double r;
@@ -16,6 +17,6 @@ signed main(){
   Circle c(Point(0,0),r);
   Polygon ps(n);
   for(int i=0;i<n;i++) cin>>ps[i];
-  cout<<fixed<<setprecision(12)<<area(ps,c)<<endl;
+  cout<<area(ps,c)<<endl;
   return 0;
 }
