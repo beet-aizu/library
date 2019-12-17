@@ -129,9 +129,9 @@ signed TENKA12016FINAL_E(){
     for(int j=0;j<l;j++)
       cin>>a[i][j];
 
-  vector<ll> dp(n,0);
+  vector<ll> dp(l,0);
   for(int i=0;i<n;i++){
-    LiChao<ll, true> cht(n);
+    LiChao<ll, true> cht(l);
     for(ll j=0;j<l;j++)
       cht.addLine(-2*j,a[i][j]+j*j);
     for(ll j=0;j<l;j++)

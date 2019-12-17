@@ -46,4 +46,4 @@ signed main(){
   // !! not verified !!
   return 0;
 }
-#undef call_from_test
+#endif

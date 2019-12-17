@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 // https://link.springer.com/content/pdf/10.1007%2FBFb0066192.pdf
 struct SemiKernel{
@@ -13,7 +12,7 @@ struct SemiKernel{
     G[u].emplace_back(v);
     R[v].emplace_back(u);
   }
-  
+
   void dfs(int v){
     if(v==n) return;
     if(used[v]){
@@ -41,14 +40,14 @@ signed CFR503_C(){
   scanf("%d %d",&n,&m);
 
   SemiKernel sk(n);
-  
+
   for(int i=0;i<m;i++){
-    int a,b;    
+    int a,b;
     scanf("%d %d",&a,&b);
     a--;b--;
     sk.add_edge(a,b);
   }
-  
+
   auto ans=sk.build();
   printf("%d\n",(int)ans.size());
   for(int i=0;i<(int)ans.size();i++){

@@ -1,13 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+#define IGNORE
+
 #include<ext/pb_ds/assoc_container.hpp>
 #include<ext/pb_ds/tree_policy.hpp>
 #include<ext/pb_ds/tag_and_trait.hpp>
 using namespace __gnu_pbds;
 
-
-struct RangeTypes{  
+struct RangeTypes{
   template <typename T>
   using gtree = tree<T, null_type, less<T>, rb_tree_tag,
                      tree_order_statistics_node_update>;
@@ -19,7 +20,7 @@ struct RangeTypes{
       return l<a.l;
     }
   };
-  
+
   int n,m,time;
   vector<int> nxt,dat,upd;
   set<int> sx;
@@ -27,7 +28,7 @@ struct RangeTypes{
   set<range> sr;
   vector<set<range> > se;
   vector<gtree<int> > rc;
-  
+
   RangeTypes(int n_,int m):m(m),time(0),se(m+1){
     n=1;
     while(n<n_+1) n<<=1;
@@ -37,15 +38,15 @@ struct RangeTypes{
 
     sr.emplace(0,n,m);
     se[m].emplace(0,n,m);
-    
+
     dat.assign(n<<1,0);
     upd.assign(n<<1,0);
-    
+
     rc.resize(n<<1);
     for(int i=0;i<n;i++)
       for(int k=i+n;k;k>>=1)
         rc[k].insert(nxt[i]);
-    
+
     for(int i=0;i<n*2;i++)
       rc[i].insert(INT_MAX);
   }
@@ -54,10 +55,10 @@ struct RangeTypes{
     k+=n;
     int t=upd[k],c=dat[k];
     while(k>>=1)
-      if(t<upd[k]) t=upd[k],c=dat[k]; 
+      if(t<upd[k]) t=upd[k],c=dat[k];
     return c;
   }
-  
+
   void reset(int a,int v){
     if(nxt[a]==v) return;
     int k=a+n;
@@ -86,31 +87,31 @@ struct RangeTypes{
       vx.emplace_back(b-1);
       vc.emplace_back(get(b-1));
     }
-    
+
     vector<range> vr;
     {
       auto it=sr.lower_bound(range(a,0,0));
       if(it!=sr.begin()) --it;
       if(it->l<a&&a<it->r) vr.emplace_back(*it);
-    }    
+    }
     for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){
       if(it->l>=b) break;
       vr.emplace_back(*it);
     }
-    
+
     // update information
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
       if(l&1) dat[l]=c,upd[l]=time,l++;
       if(r&1) --r,dat[r]=c,upd[r]=time;
     }
-    
+
     for(auto r:vr){
       sr.erase(r);
       se[r.c].erase(r);
     }
     sr.emplace(a,b,c);
     se[c].emplace(a,b,c);
-    
+
     {
       auto r=vr.front();
       if(r.l<a){
@@ -125,14 +126,14 @@ struct RangeTypes{
         se[r.c].emplace(b,r.r,r.c);
       }
     }
-    
+
     for(int x:vx){
       if(x<b-1){
         if(sx.count(x)) sx.erase(x);
         reset(x,x+1);
       }
     }
-    
+
     {
       int nb=n+(++time);
       auto it=se[c].upper_bound(range(a,0,0));
@@ -140,7 +141,7 @@ struct RangeTypes{
       reset(b-1,nb);
       if(nb!=b) sx.emplace(b-1);
     }
-        
+
     sort(vc.begin(),vc.end());
     vc.erase(unique(vc.begin(),vc.end()),vc.end());
     for(int x:vc){
@@ -149,30 +150,29 @@ struct RangeTypes{
       int ny=(it==se[x].end()?n+(++time):it->l),y=(--it)->r-1;
       reset(y,ny);
       if(ny!=y+1) sx.emplace(y);
-    }    
+    }
   }
-  
+
   int query(const int a,const int b,const int c,const int d) const{
     int res=0;
     auto calc=[&](const gtree<int> &g){
                 int lb=*g.lower_bound(c);
                 int ub=*g.upper_bound(d);
-                return g.order_of_key(ub)-g.order_of_key(lb);                
+                return g.order_of_key(ub)-g.order_of_key(lb);
               };
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
       if(l&1) res+=calc(rc[l++]);
-      if(r&1) res+=calc(rc[--r]);      
+      if(r&1) res+=calc(rc[--r]);
     }
     return res;
   }
-  
+
   int count(const int a,const int b) const{
     return query(a,b,b,INT_MAX-1);
-  }  
+  }
 };
 
 
-using Int = long long;
 template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
@@ -181,7 +181,7 @@ struct EulerTour{
   int n,pos;
   vector<vector<int> > G;
   vector<int> ls,rs;
-  
+
   EulerTour(){}
   EulerTour(int n):n(n),G(n),ls(n),rs(n){}
 
@@ -196,12 +196,12 @@ struct EulerTour{
       if(u!=p) dfs(u,v);
     rs[v]=pos;
   }
-  
+
   void build(int r=0){
     pos=0;
     dfs(r,-1);
   }
-  
+
 };
 
 //INSERT ABOVE HERE
@@ -211,7 +211,7 @@ signed main(){
 
   int casecnt=0;
   for(int t=1;t<=T;t++){
-    printf("Case #%d:\n",t);    
+    printf("Case #%d:\n",t);
     int n;
     scanf("%d",&n);
     EulerTour et(n);
@@ -231,7 +231,7 @@ signed main(){
     if(n<=5000||q<=5000||casecnt>=2){
       vector<int> val(n),used(n+1,-1);
       for(int i=0;i<n;i++) val[et.ls[i]]=c[i];
-      
+
       for(int i=0;i<q;i++){
         int type;
         scanf("%d",&type);
@@ -245,18 +245,18 @@ signed main(){
           int u;
           scanf("%d",&u);
           u--;
-          int cnt=0;          
+          int cnt=0;
           for(int j=et.ls[u];j<et.rs[u];j++){
             if(used[val[j]]!=i) cnt++;
             used[val[j]]=i;
-          }          
+          }
           printf("%d\n",cnt);
         }
       }
       continue;
     }
     casecnt++;
-    
+
     RangeTypes rt(n,n+10);
     function<void(int, int)> dfs=
       [&](int v,int p){
@@ -265,7 +265,7 @@ signed main(){
           if(p!=u) dfs(u,v);
       };
     dfs(0, -1);
-    
+
     for(int i=0;i<q;i++){
       int type;
       scanf("%d",&type);
@@ -276,7 +276,7 @@ signed main(){
         u--;
         rt.update(et.ls[u],et.rs[u],w);
       }
-      if(type==1){       
+      if(type==1){
         int u;
         scanf("%d",&u);
         u--;
