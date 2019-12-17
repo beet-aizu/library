@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/onlineoffline.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-29 14:40:47 +0900
+    - Last commit date: 2019-12-17 15:48:59 +0900
 
 
 
@@ -43,7 +43,6 @@ layout: default
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 namespace OnlineOffline{
   vector<int> used;
@@ -185,7 +184,6 @@ signed main(){
 #line 1 "algorithm/onlineoffline.cpp"
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 namespace OnlineOffline{
   vector<int> used;
