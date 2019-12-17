@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/NTL_2_D.test.cpp
+# :warning: test/aoj/NTL_2_D.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_2_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-17 20:13:51 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tools/bigint.cpp.html">tools/bigint.cpp</a>
+* :warning: <a href="../../../library/tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
 ## Code

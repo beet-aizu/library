@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
+* :warning: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 
 
 ## Code

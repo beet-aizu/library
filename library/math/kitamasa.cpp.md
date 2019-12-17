@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required by

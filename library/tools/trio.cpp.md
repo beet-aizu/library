@@ -31,9 +31,16 @@ layout: default
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/trio.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-05-09 17:17:37 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
+
+
+## Depends on
+
+* :warning: <a href="chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="fixpoint.cpp.html">tools/fixpoint.cpp</a>
 
 
 ## Code
@@ -41,11 +48,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+#endif
 //BEGIN CUT HERE
 template<typename T, typename U, typename V>
 struct trio{
@@ -65,76 +71,72 @@ struct trio{
   bool operator< (const trio&a) const{return (X)(*this)< (X)a;}
   bool operator<=(const trio&a) const{return (X)(*this)<=(X)a;}
   bool operator> (const trio&a) const{return (X)(*this)> (X)a;}
-  bool operator>=(const trio&a) const{return (X)(*this)>=(X)a;}  
+  bool operator>=(const trio&a) const{return (X)(*this)>=(X)a;}
 };
 template<typename T, typename U, typename V>
 trio<T, U, V> make_trio(T first,U second,V third){
   return trio<T, U, V>(first,second,third);
 }
 //END CUT HERE
+#ifndef call_from_test
 
-template<typename F>
-struct FixPoint : F{
-  FixPoint(F&& f):F(forward<F>(f)){}
-  template<typename... Args>
-  decltype(auto) operator()(Args&&... args) const{
-    return F::operator()(*this,forward<Args>(args)...);
-  }  
-};
-template<typename F>
-inline decltype(auto) MFP(F&& f){
-  return FixPoint<F>{forward<F>(f)};
-}
+#define call_from_test
+#include "fastio.cpp"
+#include "fixpoint.cpp"
+#include "chminmax.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
-signed CPSCO2019_SESSION1_H(){  
-  Int n,sum;
+signed CPSCO2019_SESSION1_H(){
+  using ll = long long;
+
+  int n,sum;
   cin>>n>>sum;
-  vector<Int> a(n);
-  for(Int i=0;i<n;i++) cin>>a[i];
-  
-  const Int MAX = 1e5+10;
-  Int ans=0;
-  MFP([&](auto dfs,Int l,Int r)->void{
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  const int MAX = 1e5+10;
+  ll ans=0;
+  MFP([&](auto dfs,int l,int r)->void{
         if(l+1==r){
-          if(a[l]*3==sum) ans++;
+          if(as[l]*3==sum) ans++;
           return;
         }
-        Int m=(l+r)>>1;
+        int m=(l+r)>>1;
         dfs(l,m);
         dfs(m,r);
-        using T = trio<Int, Int, Int>;
-        vector<T> vx,vy;        
+        using T = trio<int, int, int>;
+        vector<T> vx,vy;
         {
           vx.reserve(r-m);
-          Int res=-1,cnt=0;
-          for(Int i=m;i<r;i++){
-            if(res<a[i]) res=a[i],cnt=0;
-            if(res==a[i]) cnt++;
-            vx.emplace_back(res,cnt,a[i]);
+          int res=-1,cnt=0;
+          for(int i=m;i<r;i++){
+            if(res<as[i]) res=as[i],cnt=0;
+            if(res==as[i]) cnt++;
+            vx.emplace_back(res,cnt,as[i]);
           }
         }
         {
           vy.reserve(m-l);
-          Int res=-1,cnt=0;
-          for(Int i=m-1;i>=l;i--){
-            if(res<a[i]) res=a[i],cnt=0;
-            if(res==a[i]) cnt++;
-            vy.emplace_back(res,cnt,a[i]);
+          int res=-1,cnt=0;
+          for(int i=m-1;i>=l;i--){
+            if(res<as[i]) res=as[i],cnt=0;
+            if(res==as[i]) cnt++;
+            vy.emplace_back(res,cnt,as[i]);
           }
         }
         sort(vx.begin(),vx.end());
         sort(vy.begin(),vy.end());
-        
-        map<Int, Int> cx,cy;
-        Int sx=vx.size(),sy=vy.size();
-        Int i=0,j=0;
+
+        map<int, int> cx,cy;
+        int sx=vx.size(),sy=vy.size();
+        int i=0,j=0;
         while(i<sx||j<sy){
-          Int k=MAX;
+          int k=MAX;
           if(i<sx) chmin(k,vx[i].first);
           if(j<sy) chmin(k,vy[j].first);
 
-          vector<Int> tx,ty;
+          vector<int> tx,ty;
           while(i<sx&&k==vx[i].first){
             cx[vx[i].third]++;
             tx.emplace_back(i++);
@@ -144,13 +146,14 @@ signed CPSCO2019_SESSION1_H(){
             ty.emplace_back(j++);
           }
 
-          for(Int x:tx)
-            ans+=vx[x].second*cy[sum-(k+vx[x].third)];
-          for(Int y:ty)
-            ans+=vy[y].second*cx[sum-(k+vy[y].third)];
+          for(int x:tx)
+            ans+=(ll)vx[x].second*cy[sum-(k+vx[x].third)];
+
+          for(int y:ty)
+            ans+=(ll)vy[y].second*cx[sum-(k+vy[y].third)];
         }
       })(0,n);
-  
+
   cout<<ans<<endl;
   return 0;
 }
@@ -163,6 +166,7 @@ signed main(){
   //CPSCO2019_SESSION1_H();
   return 0;
 }
+#endif
 
 ```
 {% endraw %}
@@ -170,129 +174,12 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tools/trio.cpp"
-#include<bits/stdc++.h>
-using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-//BEGIN CUT HERE
-template<typename T, typename U, typename V>
-struct trio{
-  T first;
-  U second;
-  V third;
-  trio(){}
-  trio(T first,U second,V third):
-    first(first),second(second),third(third){}
-  operator tuple<T&, U&, V&>(){
-    return forward_as_tuple(first,second,third);
-  }
-  using X = tuple<T, U, V>;
-  operator X() const{return make_tuple(first,second,third);}
-  bool operator==(const trio&a) const{return (X)(*this)==(X)a;}
-  bool operator!=(const trio&a) const{return (X)(*this)!=(X)a;}
-  bool operator< (const trio&a) const{return (X)(*this)< (X)a;}
-  bool operator<=(const trio&a) const{return (X)(*this)<=(X)a;}
-  bool operator> (const trio&a) const{return (X)(*this)> (X)a;}
-  bool operator>=(const trio&a) const{return (X)(*this)>=(X)a;}  
-};
-template<typename T, typename U, typename V>
-trio<T, U, V> make_trio(T first,U second,V third){
-  return trio<T, U, V>(first,second,third);
-}
-//END CUT HERE
-
-template<typename F>
-struct FixPoint : F{
-  FixPoint(F&& f):F(forward<F>(f)){}
-  template<typename... Args>
-  decltype(auto) operator()(Args&&... args) const{
-    return F::operator()(*this,forward<Args>(args)...);
-  }  
-};
-template<typename F>
-inline decltype(auto) MFP(F&& f){
-  return FixPoint<F>{forward<F>(f)};
-}
-
-//INSERT ABOVE HERE
-signed CPSCO2019_SESSION1_H(){  
-  Int n,sum;
-  cin>>n>>sum;
-  vector<Int> a(n);
-  for(Int i=0;i<n;i++) cin>>a[i];
-  
-  const Int MAX = 1e5+10;
-  Int ans=0;
-  MFP([&](auto dfs,Int l,Int r)->void{
-        if(l+1==r){
-          if(a[l]*3==sum) ans++;
-          return;
-        }
-        Int m=(l+r)>>1;
-        dfs(l,m);
-        dfs(m,r);
-        using T = trio<Int, Int, Int>;
-        vector<T> vx,vy;        
-        {
-          vx.reserve(r-m);
-          Int res=-1,cnt=0;
-          for(Int i=m;i<r;i++){
-            if(res<a[i]) res=a[i],cnt=0;
-            if(res==a[i]) cnt++;
-            vx.emplace_back(res,cnt,a[i]);
-          }
-        }
-        {
-          vy.reserve(m-l);
-          Int res=-1,cnt=0;
-          for(Int i=m-1;i>=l;i--){
-            if(res<a[i]) res=a[i],cnt=0;
-            if(res==a[i]) cnt++;
-            vy.emplace_back(res,cnt,a[i]);
-          }
-        }
-        sort(vx.begin(),vx.end());
-        sort(vy.begin(),vy.end());
-        
-        map<Int, Int> cx,cy;
-        Int sx=vx.size(),sy=vy.size();
-        Int i=0,j=0;
-        while(i<sx||j<sy){
-          Int k=MAX;
-          if(i<sx) chmin(k,vx[i].first);
-          if(j<sy) chmin(k,vy[j].first);
-
-          vector<Int> tx,ty;
-          while(i<sx&&k==vx[i].first){
-            cx[vx[i].third]++;
-            tx.emplace_back(i++);
-          }
-          while(j<sy&&k==vy[j].first){
-            cy[vy[j].third]++;
-            ty.emplace_back(j++);
-          }
-
-          for(Int x:tx)
-            ans+=vx[x].second*cy[sum-(k+vx[x].third)];
-          for(Int y:ty)
-            ans+=vy[y].second*cx[sum-(k+vy[y].third)];
-        }
-      })(0,n);
-  
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/05/09
-  https://atcoder.jp/contests/cpsco2019-s1/tasks/cpsco2019_s1_h
-*/
-
-signed main(){
-  //CPSCO2019_SESSION1_H();
-  return 0;
-}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 339, in write_contents
+    bundler.update(self.file_class.file_path)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
+    raise BundleError(path, i + 1, "found codes out of include guard")
+onlinejudge_verify.bundle.BundleError: tools/trio.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

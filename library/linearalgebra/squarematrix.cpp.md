@@ -31,22 +31,23 @@ layout: default
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/squarematrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:09:50 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
-* :heavy_check_mark: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Required by
 
 * :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :warning: <a href="../tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
 ## Verified with

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/log.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:09:50 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
 
@@ -40,10 +40,10 @@ layout: default
 
 * :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :heavy_check_mark: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
-* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with

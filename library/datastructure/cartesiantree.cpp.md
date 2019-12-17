@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/cartesiantree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-25 00:13:55 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">tree/lca.cpp</a>
 
 

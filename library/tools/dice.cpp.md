@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/dice.cpp
+# :warning: tools/dice.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/dice.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-09-22 15:00:51 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
 
@@ -40,10 +40,10 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0502.test.cpp.html">test/aoj/0502.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1197.test.cpp.html">test/aoj/1197.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/ITP1_11_A.test.cpp.html">test/aoj/ITP1_11_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/ITP1_11_B.test.cpp.html">test/aoj/ITP1_11_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/ITP1_11_C.test.cpp.html">test/aoj/ITP1_11_C.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/ITP1_11_D.test.cpp.html">test/aoj/ITP1_11_D.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ITP1_11_A.test.cpp.html">test/aoj/ITP1_11_A.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ITP1_11_B.test.cpp.html">test/aoj/ITP1_11_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ITP1_11_C.test.cpp.html">test/aoj/ITP1_11_C.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ITP1_11_D.test.cpp.html">test/aoj/ITP1_11_D.test.cpp</a>
 
 
 ## Code
@@ -54,7 +54,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct Die{
@@ -97,6 +96,7 @@ struct Die{
     return 1;
   }
 };
+
 vector<Die> makeDice(Die d){
   vector<Die> res;
   for(int i=0;i<6;i++){
@@ -131,7 +131,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: tools/dice.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: tools/dice.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

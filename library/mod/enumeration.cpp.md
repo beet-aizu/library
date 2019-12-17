@@ -39,12 +39,12 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
-* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
+* :warning: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
 * :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 

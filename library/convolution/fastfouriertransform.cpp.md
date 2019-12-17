@@ -25,26 +25,27 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/fastfouriertransform.cpp
+# :warning: convolution/fastfouriertransform.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/fastfouriertransform.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-26 16:21:08 +0900
+    - Last commit date: 2019-12-17 20:42:16 +0900
 
 
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
-* :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :warning: <a href="arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
+* :warning: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :warning: <a href="../tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 
 
 ## Code
@@ -126,7 +127,8 @@ namespace FFT{
     }
   }
 
-  vector<long long> multiply(vector<int> &as,vector<int> &bs){
+  template<typename T>
+  vector<long long> multiply(vector<T> &as,vector<T> &bs){
     int need=as.size()+bs.size()-1;
     int nbase=0;
     while((1<<nbase)<need) nbase++;
@@ -135,8 +137,8 @@ namespace FFT{
     int sz=1<<nbase;
     vector<num> fa(sz);
     for(int i=0;i<sz;i++){
-      int x=(i<(int)as.size()?as[i]:0);
-      int y=(i<(int)bs.size()?bs[i]:0);
+      T x=(i<(int)as.size()?as[i]:0);
+      T y=(i<(int)bs.size()?bs[i]:0);
       fa[i]=num(x,y);
     }
     fft(fa);
@@ -163,15 +165,15 @@ namespace FFT{
 #ifndef call_from_test
 signed main(){
   int n;
-  scanf("%d",&n);
+  cin>>n;
   vector<int> as(n+1,0),bs(n+1,0);
-  for(int i=1;i<=n;i++) scanf("%d %d",&as[i],&bs[i]);
+  for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
   auto cs=FFT::multiply(as,bs);
-  for(int i=1;i<=n*2;i++) printf("%lld\n",cs[i]);
+  for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
   return 0;
 }
 /*
-  verified on 2019/11/26
+  verified on 2019/12/17
   https://atcoder.jp/contests/atc001/tasks/fft_c
 */
 #endif
