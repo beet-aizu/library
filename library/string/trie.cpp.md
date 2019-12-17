@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/trie.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-28 00:24:39 +0900
+    - Last commit date: 2019-12-17 22:01:05 +0900
 
 
 
@@ -56,9 +56,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 template<size_t X>
@@ -133,6 +130,9 @@ struct FastIO{
   }
 }fastio_beet;
 
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 signed tenka1_2016_final_C(){
   string s;
@@ -190,7 +190,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: string/trie.cpp: line 8: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: string/trie.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

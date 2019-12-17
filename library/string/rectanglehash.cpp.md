@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/rectanglehash.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-21 14:48:19 +0900
+    - Last commit date: 2019-12-17 22:01:05 +0900
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="rollinghash.cpp.html">string/rollinghash.cpp</a>
 
 
 ## Verified with
@@ -50,36 +55,11 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
-template<typename T,T MOD,T B>
-struct RollingHash{
-  using ll = long long;
-  vector<T> hash,p;
-  RollingHash(){}
-  RollingHash(vector<T> vs){init(vs);}
-  RollingHash(string &s){
-    vector<T> vs;
-    for(char c:s) vs.emplace_back(c);
-    init(vs);
-  }
-  void init(vector<T> vs){
-    int n=vs.size();
-    hash.assign(n+1,0);
-    p.assign(n+1,1);
-    for(int i=0;i<n;i++){
-      hash[i+1]=((ll)hash[i]*B+vs[i])%MOD;
-      p[i+1]=(ll)p[i]*B%MOD;
-    }
-  }
-  //S[l, r)
-  T find(int l,int r){
-    T res=(ll)hash[r]+MOD-(ll)hash[l]*p[r-l]%MOD;
-    return res>=MOD?res-MOD:res;
-  }
-};
+#define call_from_test
+#include "rollinghash.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
 template<typename T,T MOD,T B1,T B2>
@@ -117,9 +97,11 @@ signed main(){
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 339, in write_contents
     bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: string/rectanglehash.cpp: line 35: found codes out of include guard
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 150, in update
+    self.update(self._resolve(included, included_from=path))
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 52, in _resolve
+    raise BundleError(path, -1, "no such header")
+onlinejudge_verify.bundle.BundleError: rollinghash.cpp: line -1: no such header
 
 ```
 {% endraw %}

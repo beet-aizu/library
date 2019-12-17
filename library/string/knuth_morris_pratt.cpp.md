@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/knuth_morris_pratt.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-18 21:03:56 +0900
+    - Last commit date: 2019-12-17 22:01:05 +0900
 
 
 
@@ -49,9 +49,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
@@ -90,6 +87,10 @@ vector<int> pattern_match(string s,string t){
 }
 //END CUT HERE
 #ifndef call_from_test
+
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+
 //INSERT ABOVE HERE
 signed ABC135_D(){
   cin.tie(0);
@@ -177,12 +178,13 @@ signed ARC060_F(){
   return 0;
 }
 /*
-  verified on 2019/08/21https://atcoder.jp/contests/arc060/tasks/arc060_d
+  verified on 2019/08/21
+  https://atcoder.jp/contests/arc060/tasks/arc060_d
 */
 
 signed main(){
   //ABC135_D();
-  ARC060_F();
+  //ARC060_F();
   return 0;
 }
 #endif
@@ -198,7 +200,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: string/knuth_morris_pratt.cpp: line 8: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: string/knuth_morris_pratt.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

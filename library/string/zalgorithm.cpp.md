@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/zalgorithm.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-11 16:39:56 +0900
+    - Last commit date: 2019-12-17 22:01:05 +0900
 
 
 
@@ -54,9 +54,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 // longest common prefix of s and s[i:n]
@@ -93,18 +90,18 @@ signed CFR432_D(){
   vector<int> as=zalgorithm(s);
   int n=s.size();
   set<int> ss;
-  BIT<int> bit(n+100,0);
+  BIT<int> bit(n+100);
   for(int i=0;i<n;i++){
     bit.add0(as[i],1);
     if(i+as[i]!=n) continue;
     ss.emplace(as[i]);
   }
-  cout<<ss.size()<<endl;
-  for(auto x:ss) cout<<x<<" "<<bit.query0(x,n+100)<<endl;
+  cout<<ss.size()<<"\n";
+  for(auto x:ss) cout<<x<<" "<<bit.query0(x,n+100)<<"\n";
   return 0;
 }
 /*
-  verified on 2019/10/28
+  verified on 2019/12/17
   http://codeforces.com/problemset/problem/432/D
 */
 
@@ -125,7 +122,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: string/zalgorithm.cpp: line 8: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: string/zalgorithm.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/parse.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 00:17:44 +0900
+    - Last commit date: 2019-12-17 22:01:05 +0900
 
 
 
@@ -49,7 +49,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 int expression(string,int&);
@@ -136,7 +135,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: string/parse.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: string/parse.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

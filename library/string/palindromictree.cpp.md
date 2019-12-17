@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/palindromictree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:51:01 +0900
+    - Last commit date: 2019-12-17 22:01:05 +0900
 
 
 
@@ -55,7 +55,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct PalindromicTree{
@@ -154,7 +153,7 @@ signed YUKI_263(){
   const int MAX = 5e5+100;
   map<pair<int, int>, int> m1[MAX];
   for(int i=0;i<(int)p1.n;i++){
-    PalindromicTree::node& u=p1.vs[i];
+    auto& u=p1.vs[i];
     if(u.app<0) continue;
     auto p=make_pair(rs1.find(u.app,u.app+u.len),
                      rs2.find(u.app,u.app+u.len));
@@ -163,7 +162,7 @@ signed YUKI_263(){
 
   ll ans=0;
   for(int i=0;i<(int)p2.n;i++){
-    PalindromicTree::node& u=p2.vs[i];
+    auto& u=p2.vs[i];
     auto p=make_pair(rt1.find(u.app,u.app+u.len),
                      rt2.find(u.app,u.app+u.len));
     if(u.app<0||!m1[u.len].count(p)) continue;
@@ -195,7 +194,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: string/palindromictree.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: string/palindromictree.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

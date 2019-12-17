@@ -39,6 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="palindromictree.cpp.html">string/palindromictree.cpp</a>
+* :heavy_check_mark: <a href="rectanglehash.cpp.html">string/rectanglehash.cpp</a>
 
 
 ## Verified with
