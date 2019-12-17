@@ -1,5 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
+#endif
 //BEGIN CUT HERE
 namespace OnlineOffline{
   vector<int> used;
@@ -44,12 +46,15 @@ namespace OnlineOffline{
   }
 };
 //END CUT HERE
+#ifndef call_from_test
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#undef call_from_test
+
 //INSERT ABOVE HERE
 using ll = long long;
 signed YUKI_703(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n;
   cin>>n;
   vector<ll> as(n),xs(n),ys(n);
@@ -68,14 +73,11 @@ signed YUKI_703(){
   return 0;
 }
 /*
-  verified on 2019/06/28
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/703
 */
 
 signed YUKI_704(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n;
   cin>>n;
   vector<ll> as(n),xs(n),ys(n);
@@ -94,14 +96,11 @@ signed YUKI_704(){
   return 0;
 }
 /*
-  verified on 2019/06/28
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/704
 */
 
 signed YUKI_705(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int n;
   cin>>n;
   vector<ll> as(n),xs(n),ys(n);
@@ -120,7 +119,7 @@ signed YUKI_705(){
   return 0;
 }
 /*
-  verified on 2019/06/28
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/705
 */
 
@@ -131,3 +130,4 @@ signed main(){
   //YUKI_705();
   return 0;
 }
+#endif

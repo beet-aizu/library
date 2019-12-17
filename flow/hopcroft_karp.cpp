@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct BiMatch{
@@ -73,26 +72,14 @@ struct BiMatch{
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T>
-vector<T> compress(vector<T> v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
-}
 
-template<typename T>
-map<T, int> dict(const vector<T> &v){
-  map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
-  return res;
-}
+#define call_from_test
+#include "../tools/fastio.cpp"
+#include "../tools/compress.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed SPOJ_MATCHING(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   int X,Y,E;
   cin>>X>>Y>>E;
   BiMatch bm(X,Y);
@@ -105,13 +92,11 @@ signed SPOJ_MATCHING(){
   return 0;
 }
 /*
-  verified on 2019/05/26
+  verified on 2019/12/17
   http://www.spoj.com/problems/MATCHING/
 */
 
 signed chokudai_S002_K(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   int n;
   cin>>n;
   vector<int> as(n),bs(n);
@@ -133,7 +118,7 @@ signed chokudai_S002_K(){
   return 0;
 }
 /*
-  verified on 2019/05/26
+  verified on 2019/12/17
   https://atcoder.jp/contests/chokudai_S002/tasks/chokudai_S002_k
 */
 

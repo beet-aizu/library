@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename TF,typename TC>
@@ -138,7 +137,7 @@ signed SPOJ_GREED(){
   return 0;
 }
 /*
-  verified on 2019/07/05
+  verified on 2019/12/17
   https://www.spoj.com/problems/GREED/
 */
 
@@ -191,9 +190,10 @@ signed geocon2013_B(){
   return 0;
 }
 /*
-  verified on 2019/07/05
+  verified on 2019/12/17
   https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
 */
+
 signed main(){
   //SPOJ_GREED();
   //geocon2013_B();

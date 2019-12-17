@@ -28,10 +28,13 @@ namespace MonotoneMinima{
 }
 //END CUT HERE
 #ifndef call_from_test
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#undef call_from_test
+
 //INSERT ABOVE HERE
 signed COLOPL2018FINAL_C(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
   using ll = long long;
 
   int n;
@@ -47,7 +50,7 @@ signed COLOPL2018FINAL_C(){
   return 0;
 }
 /*
-  verified on 2019/10/29
+  verified on 2019/12/17
   https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
