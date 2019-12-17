@@ -1,9 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 namespace MonotoneMinima{
@@ -53,6 +50,7 @@ signed COLOPL2018FINAL_C(){
   verified on 2019/10/29
   https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
+
 signed main(){
   //COLOPL2018FINAL_C();
   return 0;
