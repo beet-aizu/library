@@ -1,14 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 struct Centroid{
   vector<int> sz,dead;
-  vector<vector<int> > G;
+  vector< vector<int> > G;
   Centroid(){}
   Centroid(int n):sz(n,1),dead(n,0),G(n){}
 
@@ -54,22 +51,12 @@ struct Centroid{
     return !dead[v];
   }
 };
-
 //END CUT HERE
 #ifndef call_from_test
 
-template<typename F>
-struct FixPoint : F{
-  FixPoint(F&& f):F(forward<F>(f)){}
-  template<typename... Args>
-  decltype(auto) operator()(Args&&... args) const{
-    return F::operator()(*this,forward<Args>(args)...);
-  }
-};
-template<typename F>
-inline decltype(auto) MFP(F&& f){
-  return FixPoint<F>{forward<F>(f)};
-}
+#define call_from_test
+#include "../tools/fixpoint.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed DWANGO2018QUAL_E(){
@@ -141,7 +128,7 @@ signed DWANGO2018QUAL_E(){
 }
 /*
   verified on 2019/06/24
-  https://beta.atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_e
+  https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_e
 */
 
 signed YAHOO2018FINAL_C(){
@@ -215,7 +202,7 @@ signed YAHOO2018FINAL_C(){
   return 0;
 }
 /*
-  verified on 2019/06/24
+  verified on 2019/12/17
   https://atcoder.jp/contests/yahoo-procon2018-final-open/tasks/yahoo_procon2018_final_c
 */
 

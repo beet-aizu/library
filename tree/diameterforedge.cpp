@@ -1,9 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -52,12 +49,10 @@ struct DiameterForEdge{
 };
 //END CUT HERE
 #ifndef call_from_test
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
 signed YAHOO2019_FINAL_B(){
@@ -103,7 +98,7 @@ signed YAHOO2019_FINAL_B(){
   return 0;
 }
 /*
-  verified on 2019/05/07
+  verified on 2019/12/17
   https://atcoder.jp/contests/yahoo-procon2019-final/tasks/yahoo_procon2019_final_b
 */
 

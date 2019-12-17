@@ -1,14 +1,16 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 class HLD {
 private:
   void dfs_sz(int v) {
+    for(int &u:G[v])
+      if(u==par[v]) swap(u,G[v].back());
+    if(~par[v]) G[v].pop_back();
+
     for(int &u:G[v]){
-      if(u==par[v]) continue;
       par[u]=v;
       dep[u]=dep[v]+1;
       dfs_sz(u);
@@ -29,7 +31,7 @@ private:
   }
 
 public:
-  vector<vector<int> > G;
+  vector< vector<int> > G;
   vector<int> vid, head, sub, par, dep, inv, type;
 
   HLD(int n):
@@ -137,7 +139,7 @@ signed YUKI_529(){
   rmq.build(vector<int>(V,-1));
 
   vector<priority_queue<int> > pq(V);
-  map<int,int> m;
+  map<int, int> m;
   int num=0;
   for(int i=0;i<q;i++){
     int d;
@@ -173,11 +175,12 @@ signed YUKI_529(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/529
 */
+
 signed main(){
-  YUKI_529();
+  //YUKI_529();
   return 0;
 };
 #endif
