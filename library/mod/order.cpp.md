@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/order.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:51:01 +0900
+    - Last commit date: 2019-12-17 20:56:59 +0900
 
 
 
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
-* :heavy_check_mark: <a href="pow.cpp.html">mod/pow.cpp</a>
+* :warning: <a href="pow.cpp.html">mod/pow.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

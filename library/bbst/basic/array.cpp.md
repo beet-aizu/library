@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/array.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-24 23:20:46 +0900
+    - Last commit date: 2019-12-17 20:56:59 +0900
 
 
 
@@ -59,7 +59,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 
 #define call_from_test
 #include "base.cpp"

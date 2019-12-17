@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/polynomial.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-17 20:37:29 +0900
+    - Last commit date: 2019-12-17 20:56:59 +0900
 
 
 
@@ -49,15 +49,15 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
+template<typename T>
 struct Polynomial{
   using P = Polynomial;
-  vector<int> co;
-  Polynomial():co(1,1){}
-  Polynomial(int s):co(s,0){}
-  Polynomial(vector<int> co):co(co){}
+  vector<T> co;
+  Polynomial():co(1,T(1)){}
+  Polynomial(int sz):co(sz,0){}
+  Polynomial(vector<T> co):co(co){}
 
   size_t size() const{
     return co.size();
@@ -69,12 +69,12 @@ struct Polynomial{
   }
 
   void reduce(){
-    int g=abs(co.back());
+    T g=abs(co.back());
     if(!g) return;
-    for(int c:co)
+    for(T c:co)
       if(c!=0) g=__gcd(g,abs(c));
     if(co.back()<0) g*=-1;
-    for(int &c:co) c/=g;
+    for(T &c:co) c/=g;
   }
 
   void print(){
@@ -98,17 +98,17 @@ struct Polynomial{
     cout<<endl;
   }
 
-  int operator[](int i) const{
+  T operator[](int i) const{
     return co[i];
   }
 
-  int &operator[](int i){
+  T &operator[](int i){
     return co[i];
   }
 
   P operator-() const{
     P res=*this;
-    for(int &c:res.co) c*=-1;
+    for(T &c:res.co) c*=-1;
     return res;
   }
 
@@ -119,6 +119,7 @@ struct Polynomial{
     for(int i=0;i<m;i++) res[i]+=a[i];
     return res;
   }
+
   P operator-(const P &a) const{return *this+(-a);};
 
   P operator*(const P &a) const{
@@ -144,8 +145,8 @@ struct Polynomial{
     P rest=*this;
     for(int i=0;i<s;i++){
       if(rest[n-(i+1)]%a[m-1]!=0)
-        for(int &c:rest.co) c*=a[m-1];
-      int d=rest[n-(i+1)]/a[m-1];
+        for(T &c:rest.co) c*=a[m-1];
+      T d=rest[n-(i+1)]/a[m-1];
       div[s-(i+1)]=d;
       for(int j=m;j>0;j--) rest[n-(i+j)]-=a[m-j]*d;
     }
@@ -156,7 +157,8 @@ struct Polynomial{
   P operator%(const P &a) const{return divide(a).second;};
 };
 
-Polynomial gcd(Polynomial a,Polynomial b){
+template<typename T>
+Polynomial<T> gcd(Polynomial<T> a,Polynomial<T> b){
   a.shrink();a.reduce();
   b.shrink();b.reduce();
   if(a.size()<b.size()) swap(a,b);
@@ -182,7 +184,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: polynomial/polynomial.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: polynomial/polynomial.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
