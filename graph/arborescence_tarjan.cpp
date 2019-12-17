@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -151,18 +150,19 @@ struct Arborescence{
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed UVA_11183(){
-  Int T;
+  using ll = long long;
+  int T;
   cin>>T;
-  for(Int t=1;t<=T;t++){
-    Int n,m;
+  for(int t=1;t<=T;t++){
+    int n,m;
     cin>>n>>m;
-    Arborescence<Int> G(n);
+    Arborescence<ll> G(n);
     for(int i=0;i<m;i++){
       int s,t,w;
       cin>>s>>t>>w;
       G.add_edge(s,t,w);
     }
-    Int ans=G.build(0);
+    ll ans=G.build(0);
     cout<<"Case #"<<t<<": ";
     if(ans<0) cout<<"Possums!"<<endl;
     else cout<<ans<<endl;
@@ -170,7 +170,7 @@ signed UVA_11183(){
   return 0;
 }
 /*
-  verified on 2019/05/24
+  verified on 2019/12/17
   https://vjudge.net/problem/UVA-11183
 */
 

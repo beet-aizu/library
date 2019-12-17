@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -86,7 +85,7 @@ signed CODECHEF_SEGPROD(){
   scanf("%d",&T);
 
   int p;
-  auto f=[&](int a,int b)->int{return (Int)a*b%p;};
+  auto f=[&](int a,int b)->int{return (long long)a*b%p;};
   DisjointSparseTable<int> dst(f);
 
   for(int t=1;t<=T;t++){

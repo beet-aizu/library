@@ -1,11 +1,10 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct SCC{
-  vector<vector<int> > G,R,T,C;
+  vector< vector<int> > G,R,T,C;
   vector<int> vs,used,blg;
   SCC(){}
   SCC(int n):G(n),R(n),used(n),blg(n){}
@@ -44,6 +43,7 @@ struct SCC{
         rdfs(vs[i],k++);
       }
     }
+
     for(int v=0;v<n;v++)
       for(int u:G[v])
         if(blg[v]!=blg[u])
@@ -55,6 +55,7 @@ struct SCC{
     }
     return k;
   }
+
   int operator[](int k) const{return blg[k];}
 };
 //END CUT HERE

@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template <typename T>
@@ -36,7 +35,7 @@ signed main(){
   int n,l;
   scanf("%d %d",&n,&l);
 
-  using P = pair<int, Int>;
+  using P = pair<int, long long>;
   vector<vector<P> > G(l+1);
   for(int i=0;i<n;i++){
     int a,b,c;

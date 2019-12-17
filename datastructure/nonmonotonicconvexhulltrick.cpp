@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,bool isMin>
@@ -89,20 +88,22 @@ template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //INSERT ABOVE HERE
 
 signed TENKA12016FINAL_E(){
+  using ll = long long;
+
   int n,l;
   scanf("%d %d",&n,&l);
+  vector<vector<int> > as(n,vector<int>(l));
+  for(int i=0;i<n;i++)
+    for(int j=0;j<l;j++)
+      scanf("%d",&as[i][j]);
 
-  vector<vector<int> > a(n,vector<int>(l));
-  for(Int i=0;i<n;i++)
-    for(Int j=0;j<l;j++)
-      scanf("%d",&a[i][j]);
+  vector<ll> dp(l,0);
 
-  vector<Int> dp(l,0);
-  for(Int i=0;i<n;i++){
-    NonmonotonicConvexHullTrick<Int, true> cht;
-    for(Int j=0;j<l;j++)
-      cht.addLine(-2*j,a[i][j]+j*j);
-    for(Int j=0;j<l;j++)
+  for(int i=0;i<n;i++){
+    NonmonotonicConvexHullTrick<ll, true> cht;
+    for(ll j=0;j<l;j++)
+      cht.addLine(-2*j,as[i][j]+j*j);
+    for(ll j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
 
@@ -111,24 +112,26 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2019/01/16
-  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
+  verified on 2019/12/17
+  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
 signed COLOPL2018FINAL_C(){
+  using ll = long long;
+
   int n;
   scanf("%d",&n);
-  vector<Int> a(n);
-  for(int i=0;i<n;i++) scanf("%lld",&a[i]);
-  NonmonotonicConvexHullTrick<Int, true> cht;
-  for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) scanf("%lld",&as[i]);
+  NonmonotonicConvexHullTrick<ll, false> cht;
+  for(ll i=0;i<n;i++) cht.addLine(-2*i,-(as[i]+i*i));
+  for(ll i=0;i<n;i++) printf("%lld\n",-cht.query(-i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2019/01/16
-  https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
+  verified on 2019/12/17
+  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
 signed main(){
