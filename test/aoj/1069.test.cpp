@@ -8,6 +8,8 @@ using namespace std;
 #include "../../tools/int128.cpp"
 #undef call_from_test
 
+using ll = __int128_t;
+
 ll sqrt(ll x){
   assert(x>=0);
   if(x<=1) return x;
