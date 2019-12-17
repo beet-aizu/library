@@ -72,7 +72,8 @@ namespace FFT{
     }
   }
 
-  vector<long long> multiply(vector<int> &as,vector<int> &bs){
+  template<typename T>
+  vector<long long> multiply(vector<T> &as,vector<T> &bs){
     int need=as.size()+bs.size()-1;
     int nbase=0;
     while((1<<nbase)<need) nbase++;
@@ -81,8 +82,8 @@ namespace FFT{
     int sz=1<<nbase;
     vector<num> fa(sz);
     for(int i=0;i<sz;i++){
-      int x=(i<(int)as.size()?as[i]:0);
-      int y=(i<(int)bs.size()?bs[i]:0);
+      T x=(i<(int)as.size()?as[i]:0);
+      T y=(i<(int)bs.size()?bs[i]:0);
       fa[i]=num(x,y);
     }
     fft(fa);
@@ -109,15 +110,15 @@ namespace FFT{
 #ifndef call_from_test
 signed main(){
   int n;
-  scanf("%d",&n);
+  cin>>n;
   vector<int> as(n+1,0),bs(n+1,0);
-  for(int i=1;i<=n;i++) scanf("%d %d",&as[i],&bs[i]);
+  for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
   auto cs=FFT::multiply(as,bs);
-  for(int i=1;i<=n*2;i++) printf("%lld\n",cs[i]);
+  for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
   return 0;
 }
 /*
-  verified on 2019/11/26
+  verified on 2019/12/17
   https://atcoder.jp/contests/atc001/tasks/fft_c
 */
 #endif

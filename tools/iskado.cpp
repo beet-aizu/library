@@ -1,9 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
+#endif
 //BEGIN CUT HERE
 template<typename T>
 bool is_kado(T a,T b,T c){
@@ -13,6 +11,7 @@ bool is_kado(T a,T b,T c){
   return 0;
 }
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 
 signed main(){
@@ -33,8 +32,8 @@ signed main(){
   if(st[0][0]!=st[1][0]){
     dp[T(0,0,1,0)]=1;
     qu.emplace(0,0,1,0);
-  }  
-  
+  }
+
   int dy[]={0,0,1,-1};
   int dx[]={1,-1,0,0};
   auto in=[&](int y,int x){return 0<=y&&y<h&&0<=x&&x<w;};
@@ -61,7 +60,7 @@ signed main(){
   return 0;
 }
 /*
-  verified on 2019/04/16
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/124
 */
-
+#endif

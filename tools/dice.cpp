@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct Die{
@@ -44,6 +43,7 @@ struct Die{
     return 1;
   }
 };
+
 vector<Die> makeDice(Die d){
   vector<Die> res;
   for(int i=0;i<6;i++){

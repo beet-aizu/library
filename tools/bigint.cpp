@@ -1,114 +1,11 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
-namespace FFT{
-  using dbl = double;
+#define call_from_test
+#include "../convolution/fastfouriertransform.cpp"
+#undef call_from_test
 
-  struct num{
-    dbl x,y;
-    num(){x=y=0;}
-    num(dbl x,dbl y):x(x),y(y){}
-  };
-
-  inline num operator+(num a,num b){
-    return num(a.x+b.x,a.y+b.y);
-  }
-  inline num operator-(num a,num b){
-    return num(a.x-b.x,a.y-b.y);
-  }
-  inline num operator*(num a,num b){
-    return num(a.x*b.x-a.y*b.y,a.x*b.y+a.y*b.x);
-  }
-  inline num conj(num a){
-    return num(a.x,-a.y);
-  }
-
-  int base=1;
-  vector<num> rts={{0,0},{1,0}};
-  vector<int> rev={0,1};
-
-  const dbl PI=acosl(-1.0);
-
-  void ensure_base(int nbase){
-    if(nbase<=base) return;
-
-    rev.resize(1<<nbase);
-    for(int i=0;i<(1<<nbase);i++)
-      rev[i]=(rev[i>>1]>>1)+((i&1)<<(nbase-1));
-
-    rts.resize(1<<nbase);
-    while(base<nbase){
-      dbl angle=2*PI/(1<<(base+1));
-      for(int i=1<<(base-1);i<(1<<base);i++){
-        rts[i<<1]=rts[i];
-        dbl angle_i=angle*(2*i+1-(1<<base));
-        rts[(i<<1)+1]=num(cos(angle_i),sin(angle_i));
-      }
-      base++;
-    }
-  }
-
-  void fft(vector<num> &a,int n=-1){
-    if(n==-1) n=a.size();
-    assert((n&(n-1))==0);
-
-    int zeros=__builtin_ctz(n);
-    ensure_base(zeros);
-    int shift=base-zeros;
-    for(int i=0;i<n;i++)
-      if(i<(rev[i]>>shift))
-        swap(a[i],a[rev[i]>>shift]);
-
-    for(int k=1;k<n;k<<=1){
-      for(int i=0;i<n;i+=2*k){
-        for(int j=0;j<k;j++){
-          num z=a[i+j+k]*rts[j+k];
-          a[i+j+k]=a[i+j]-z;
-          a[i+j]=a[i+j]+z;
-        }
-      }
-    }
-  }
-
-  vector<num> fa;
-
-  vector<long long> multiply(vector<int> &a,vector<int> &b){
-    int need=a.size()+b.size()-1;
-    int nbase=0;
-    while((1<<nbase)<need) nbase++;
-    ensure_base(nbase);
-
-    int sz=1<<nbase;
-    if(sz>(int)fa.size()) fa.resize(sz);
-    for(int i=0;i<sz;i++){
-      int x=(i<(int)a.size()?a[i]:0);
-      int y=(i<(int)b.size()?b[i]:0);
-      fa[i]=num(x,y);
-    }
-    fft(fa,sz);
-
-    num r(0,-0.25/sz);
-    for(int i=0;i<=(sz>>1);i++){
-      int j=(sz-i)&(sz-1);
-      num z=(fa[j]*fa[j]-conj(fa[i]*fa[i]))*r;
-      if(i!=j)
-        fa[j]=(fa[i]*fa[i]-conj(fa[j]*fa[j]))*r;
-      fa[i]=z;
-    }
-    fft(fa,sz);
-
-    vector<long long> res(need);
-    for(int i=0;i<need;i++)
-      res[i]=fa[i].x+0.5;
-
-    return res;
-  }
-
-};
 #endif
 //BEGIN CUT HERE
 struct bigint {
@@ -126,6 +23,9 @@ struct bigint {
   bigint(ll v){*this=v;}
 
   bigint(const string &s){read(s);}
+
+  static bigint add_identity(){return bigint(0);}
+  static bigint mul_identity(){return bigint(1);}
 
   void operator=(ll v){
     sign=1;
@@ -409,7 +309,7 @@ struct bigint {
     vll a=convert_base(this->a,base_digits,nbase_digits);
     vll b=convert_base(v.a,base_digits,nbase_digits);
 
-    //*/
+    /*/
     while(a.size()<b.size()) a.push_back(0);
     while(b.size()<a.size()) b.push_back(0);
     while(a.size() &(a.size()-1)) a.push_back(0),b.push_back(0);
@@ -436,108 +336,18 @@ struct bigint {
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T>
-struct BIT{
-  int n;
-  vector<T> bit;
-  //1-indexed
-  BIT():n(-1){}
-  BIT(int n_,T d):n(n_),bit(n_+1,d){}
 
-  T sum(int i){
-    T s=bit[0];
-    for(int x=i;x>0;x-=(x&-x))
-      s+=bit[x];
-    return s;
-  }
-  void add(int i,T a){
-    if(i==0) return;
-    for(int x=i;x<=n;x+=(x&-x))
-      bit[x]+=a;
-  }
-};
-
-template<typename K, size_t N>
-struct SquareMatrix{
-  typedef array<K, N> arr;
-  typedef array<arr, N> mat;
-  mat dat;
-
-  SquareMatrix(){
-    for(size_t i=0;i<N;i++)
-      for(size_t j=0;j<N;j++)
-        dat[i][j]=K(0);
-  }
-
-  size_t size() const{return N;};
-  arr& operator[](size_t k){return dat[k];};
-  const arr& operator[](size_t k) const {return dat[k];};
-
-  static SquareMatrix cross(const SquareMatrix &A,const SquareMatrix &B){
-    SquareMatrix res;
-    for(size_t i=0;i<N;i++)
-      for(size_t j=0;j<N;j++)
-        for(size_t k=0;k<N;k++)
-          res[i][j]+=A[i][k]*B[k][j];
-    return res;
-  }
-
-  static SquareMatrix identity(){
-    SquareMatrix res;
-    for(size_t i=0;i<N;i++) res[i][i]=K(1);
-    return res;
-  }
-
-  SquareMatrix pow(long long n) const{
-    SquareMatrix a,res=identity();
-    for(size_t i=0;i<N;i++)
-      for(size_t j=0;j<N;j++)
-        a[i][j]=dat[i][j];
-
-    while(n){
-      if(n&1) res=cross(res,a);
-      a=cross(a,a);
-      n>>=1;
-    }
-    return res;
-  }
-};
+#define call_from_test
+#include "../datastructure/binaryindexedtree.cpp"
+#include "../linearalgebra/squarematrix.cpp"
+#undef call_from_test
 
 //INSERT ABOVE HERE
-const int MAX = 1e5+100;
-Int dp[MAX];
-pair<bigint, bigint> dfs(int l,int r){
-  if(l+1>=r) return make_pair(bigint(dp[l]),bigint(l+1));
-  int m=(l+r)>>1;
-  auto v=dfs(l,m);
-  auto t=dfs(m,r);
-  t.first*=v.second;
-  t.first+=v.first;
-  t.second*=v.second;
-  return t;
-}
-signed YUKI_696(){
-  int n;
-  cin>>n;
-  vector<int> p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  BIT<Int> bit(n+1,0);
-  for(int i=0;i<n;i++) bit.add(p[i],1);
-  for(int i=0;i<n;i++){
-    dp[n-(i+1)]=bit.sum(p[i]-1);
-    bit.add(p[i],-1);
-  }
-  cout<<bigint(dfs(0,n).first+1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/17
-  https://yukicoder.me/problems/no/696
-*/
+using ll = long long;
 
 signed YUKI_129(){
   bigint MOD = 1000000000;
-  long long n,m;
+  ll n,m;
   cin>>n>>m;
   n/=1000;
   n%=m;
@@ -550,12 +360,12 @@ signed YUKI_129(){
   return 0;
 }
 /*
-  verified on 2019/10/17
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/129
 */
 
 signed YUKI_303(){
-  Int l;
+  ll l;
   cin>>l;
 
   if(l==2){
@@ -572,21 +382,53 @@ signed YUKI_303(){
   if(l&1) cout<<A.pow(l)[1][0]<<endl;
   else{
     auto B=A.pow(l/2);
-    auto X=M::cross(B,B)[1][0];
+    auto X=(B*B)[1][0];
     auto Y=B[1][0];
     cout<<X-Y*Y<<endl;
   }
   return 0;
 }
 /*
-  verified on 2019/10/17
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/303
 */
 
+const int MAX = 1e5+100;
+ll dp[MAX];
+pair<bigint, bigint> dfs(int l,int r){
+  if(l+1>=r) return make_pair(bigint(dp[l]),bigint(l+1));
+  int m=(l+r)>>1;
+  auto v=dfs(l,m);
+  auto t=dfs(m,r);
+  t.first*=v.second;
+  t.first+=v.first;
+  t.second*=v.second;
+  return t;
+}
+
+signed YUKI_696(){
+  int n;
+  cin>>n;
+  vector<int> p(n);
+  for(int i=0;i<n;i++) cin>>p[i];
+  BIT<ll> bit(n+1);
+  for(int i=0;i<n;i++) bit.add(p[i],1);
+  for(int i=0;i<n;i++){
+    dp[n-(i+1)]=bit.sum(p[i]-1);
+    bit.add(p[i],-1);
+  }
+  cout<<bigint(dfs(0,n).first+1)<<endl;
+  return 0;
+}
+/*
+  verified on 2019/12/17
+  https://yukicoder.me/problems/no/696
+*/
+
 signed main(){
-  //YUKI_696();
   //YUKI_129();
   //YUKI_303();
+  //YUKI_696();
   return 0;
 }
 #endif

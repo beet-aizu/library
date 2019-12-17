@@ -1,22 +1,12 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
-template<typename T>
-T totient(T n){
-  T res=n;
-  for(T i=2;i*i<=n;i++){
-    if(n%i==0){
-      res=res/i*(i-1);
-      for(;n%i==0;n/=i);
-    }
-  }
-  if(n!=1) res=res/n*(n-1);
-  return res;
-}
+#define call_from_test
+#include "../math/totient.cpp"
+#undef call_from_test
 
+#endif
 //BEGIN CUT HERE
 template<typename T>
 T mpow(T a,T n,T m,T &f){
@@ -49,17 +39,24 @@ T tetration(T a,T n,T m,T &f){
   T r=mpow(a,z,m,f);
   return r+f*m;
 }
+
+template<typename T>
+T tetration(T a,T n,T m){
+  T f=0;
+  return tetration(a,n,m,f)%m;
+}
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
 
 signed YUKI_181(){
-  int a,n,m,f=0;
+  int a,n,m;
   cin>>a>>n>>m;
-  cout<<tetration(a,n,m,f)%m<<endl;
+  cout<<tetration(a,n,m)<<endl;
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/12/17
   https://yukicoder.me/problems/no/181
 */
 
@@ -72,8 +69,7 @@ signed SUMMERFES2018_F(){
 
   k--;
   for(ll i=0,p=-1;i<k;i++){
-    ll f=0;
-    ll x=tetration(a,i,m,f)%m;
+    ll x=tetration(a,i,m);
     if(p==x){
       ans+=(k-i)%m*x%m;
       ans%=m;
@@ -87,7 +83,7 @@ signed SUMMERFES2018_F(){
   return 0;
 }
 /*
-  verified on 2019/10/08
+  verified on 2019/12/17
   https://atcoder.jp/contests/summerfes2018-div1/tasks/summerfes2018_f
 */
 
@@ -121,9 +117,9 @@ signed SPOJ_MTETRA(){
   int T;
   cin>>T;
   while(T--){
-    ll a,n,m,f=0;
+    ll a,n,m;
     cin>>a>>n>>m;
-    cout<<tetration(a,n,m,f)%m<<endl;;
+    cout<<tetration(a,n,m)<<endl;;
   }
   return 0;
 }
@@ -138,3 +134,4 @@ signed main(){
   //SPOJ_POWTOW();
   //SPOJ_MTETRA();
 }
+#endif

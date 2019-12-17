@@ -4,7 +4,7 @@ using namespace std;
 /*
   multiprecision:
   #include <boost/multiprecision/cpp_int.hpp>
-  using Int = boost::multiprecision::cpp_int;
+  using ll = boost::multiprecision::cpp_int;
 */
 #endif
 //BEGIN CUT HERE
