@@ -30,7 +30,7 @@ layout: default
 <a href="../../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/geometry/CGL_6_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-13 14:47:25 +0900
+    - Last commit date: 2019-12-17 20:13:07 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A</a>
@@ -54,13 +54,13 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
 
-// manhattanIntersection
+// manhattan_intersection
 signed main(){
   int n;
   cin>>n;
   vector<Segment> ss(n);
   for(int i=0;i<n;i++) cin>>ss[i];
-  cout<<manhattanIntersection(ss,1e9+10)<<endl;
+  cout<<manhattan_intersection(ss,1e9+10)<<endl;
   return 0;
 }
 

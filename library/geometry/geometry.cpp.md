@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed7daeb157cd9b31e53896ad3c771a26">geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/geometry.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-13 14:47:25 +0900
+    - Last commit date: 2019-12-17 20:13:07 +0900
 
 
 
@@ -87,7 +87,7 @@ static const int CCW_ONLINE_BACK = 2;
 static const int CCW_ONLINE_FRONT = -2;
 static const int CCW_ON_SEGMENT = 0;
 
-//Intercsect Circle & Circle
+// intercsect of circles
 static const int ICC_SEPERATE = 4;
 static const int ICC_CIRCUMSCRIBE = 3;
 static const int ICC_INTERSECT = 2;
@@ -634,7 +634,7 @@ segmentArrangement(vector<Segment> &ss, Polygon &ps){
   return G;
 }
 
-int manhattanIntersection(vector<Segment> ss,const int INF){
+int manhattan_intersection(vector<Segment> ss,const int INF){
   const int BTM = 0;
   const int LFT = 1;
   const int RGH = 2;

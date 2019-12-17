@@ -30,7 +30,7 @@ layout: default
 <a href="../../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/geometry/CGL_7_H.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-13 14:47:25 +0900
+    - Last commit date: 2019-12-17 20:13:07 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_H">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_H</a>
@@ -39,6 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../../library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
+* :heavy_check_mark: <a href="../../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
 
 
 ## Code
@@ -52,11 +53,12 @@ using namespace std;
 
 #define call_from_test
 #include "../../../geometry/geometry.cpp"
+#include "../../../tools/precision.cpp"
 #undef call_from_test
 
 #define ERROR "0.00001"
 
-//Intersection of a Circle and a Polygon
+// intersection of a circle and a polygon
 signed main(){
   int n;
   double r;
@@ -64,7 +66,7 @@ signed main(){
   Circle c(Point(0,0),r);
   Polygon ps(n);
   for(int i=0;i<n;i++) cin>>ps[i];
-  cout<<fixed<<setprecision(12)<<area(ps,c)<<endl;
+  cout<<area(ps,c)<<endl;
   return 0;
 }
 
