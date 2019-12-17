@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 //BEGIN CUT HERE
 template<typename T>
 struct AVL{
@@ -89,8 +88,8 @@ struct AVL{
     if(t==NULL) return NULL;
     int m=sz(t->child[0]);
     if(k<m) return rank(t->child[0],k);
-    if(k==m) return t;
     if(k>m) return rank(t->child[1],k-m-1);
+    return t;
   }
   int index(T key){
     if(find(key)==NULL) return -1;
@@ -111,32 +110,31 @@ signed ARC028_B(){
   for(int i=0;i<n;i++) cin>>x[i];
   map<int,int> m;
   for(int i=0;i<n;i++) m[x[i]]=i+1;
-  AVL<Int> avl;
+  AVL<long long> avl;
   for(int i=0;i<k-1;i++) avl.insert(x[i]);
   for(int i=k-1;i<n;i++){
     avl.insert(x[i]);
-    Int key=avl.rank(k-1)->key;
+    auto key=avl.rank(k-1)->key;
     cout<<m[key]<<endl;
     assert(avl.index(key)==k-1);
   }
   return 0;
 }
-
 /*
-  verified on 2017/12/31
-  http://arc028.contest.atcoder.jp/tasks/arc028_2
+  verified on 2019/12/17
+  https://atcoder.jp/contests/arc028/tasks/arc028_2
 */
 
 signed ARC033_C(){
   int q;
   cin>>q;
-  AVL<Int> avl;
+  AVL<long long> avl;
   for(int i=0;i<q;i++){
     int t,x;
     cin>>t>>x;
     if(t==1) avl.insert(x);
     else{
-      Int key=avl.rank(x-1)->key;
+      auto key=avl.rank(x-1)->key;
       cout<<key<<endl;
       avl.erase(key);
     }
@@ -144,12 +142,12 @@ signed ARC033_C(){
   return 0;
 }
 /*
-  verified on 2017/12/31
-  http://arc033.contest.atcoder.jp/tasks/arc033_3
+  verified on 2019/12/17
+  https://atcoder.jp/contests/arc033/tasks/arc033_3
 */
 
 signed main(){
   //ARC028_B();
-  ARC033_C();
+  //ARC033_C();
   return 0;
 }
