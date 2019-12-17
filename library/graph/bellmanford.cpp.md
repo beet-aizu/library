@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/bellmanford.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 13:11:34 +0900
+    - Last commit date: 2019-12-17 22:09:22 +0900
 
 
 
@@ -50,9 +50,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 #endif
 //BEGIN CUT HERE
 template<typename T>
@@ -155,7 +152,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: graph/bellmanford.cpp: line 8: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: graph/bellmanford.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

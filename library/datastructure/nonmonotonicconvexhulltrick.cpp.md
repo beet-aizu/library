@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/nonmonotonicconvexhulltrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 00:38:58 +0900
+    - Last commit date: 2019-12-17 22:09:22 +0900
 
 
 
@@ -50,7 +50,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T,bool isMin>
@@ -138,20 +137,22 @@ template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
 //INSERT ABOVE HERE
 
 signed TENKA12016FINAL_E(){
+  using ll = long long;
+
   int n,l;
   scanf("%d %d",&n,&l);
+  vector<vector<int> > as(n,vector<int>(l));
+  for(int i=0;i<n;i++)
+    for(int j=0;j<l;j++)
+      scanf("%d",&as[i][j]);
 
-  vector<vector<int> > a(n,vector<int>(l));
-  for(Int i=0;i<n;i++)
-    for(Int j=0;j<l;j++)
-      scanf("%d",&a[i][j]);
+  vector<ll> dp(l,0);
 
-  vector<Int> dp(l,0);
-  for(Int i=0;i<n;i++){
-    NonmonotonicConvexHullTrick<Int, true> cht;
-    for(Int j=0;j<l;j++)
-      cht.addLine(-2*j,a[i][j]+j*j);
-    for(Int j=0;j<l;j++)
+  for(int i=0;i<n;i++){
+    NonmonotonicConvexHullTrick<ll, true> cht;
+    for(ll j=0;j<l;j++)
+      cht.addLine(-2*j,as[i][j]+j*j);
+    for(ll j=0;j<l;j++)
       dp[j]+=j*j+cht.query(j);
   }
 
@@ -160,24 +161,26 @@ signed TENKA12016FINAL_E(){
 }
 
 /*
-  verified on 2019/01/16
-  https://beta.atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
+  verified on 2019/12/17
+  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
 */
 
 signed COLOPL2018FINAL_C(){
+  using ll = long long;
+
   int n;
   scanf("%d",&n);
-  vector<Int> a(n);
-  for(int i=0;i<n;i++) scanf("%lld",&a[i]);
-  NonmonotonicConvexHullTrick<Int, true> cht;
-  for(Int i=0;i<n;i++) cht.addLine(-2*i,a[i]+i*i);
-  for(Int i=0;i<n;i++) printf("%lld\n",cht.query(i)+i*i);
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) scanf("%lld",&as[i]);
+  NonmonotonicConvexHullTrick<ll, false> cht;
+  for(ll i=0;i<n;i++) cht.addLine(-2*i,-(as[i]+i*i));
+  for(ll i=0;i<n;i++) printf("%lld\n",-cht.query(-i)+i*i);
   return 0;
 }
 
 /*
-  verified on 2019/01/16
-  https://beta.atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
+  verified on 2019/12/17
+  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 */
 
 signed main(){
@@ -198,7 +201,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: datastructure/nonmonotonicconvexhulltrick.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: datastructure/nonmonotonicconvexhulltrick.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

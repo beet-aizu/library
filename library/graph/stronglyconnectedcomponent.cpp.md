@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/stronglyconnectedcomponent.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-26 15:31:15 +0900
+    - Last commit date: 2019-12-17 22:09:22 +0900
 
 
 
@@ -63,11 +63,10 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct SCC{
-  vector<vector<int> > G,R,T,C;
+  vector< vector<int> > G,R,T,C;
   vector<int> vs,used,blg;
   SCC(){}
   SCC(int n):G(n),R(n),used(n),blg(n){}
@@ -106,6 +105,7 @@ struct SCC{
         rdfs(vs[i],k++);
       }
     }
+
     for(int v=0;v<n;v++)
       for(int u:G[v])
         if(blg[v]!=blg[u])
@@ -117,6 +117,7 @@ struct SCC{
     }
     return k;
   }
+
   int operator[](int k) const{return blg[k];}
 };
 //END CUT HERE
@@ -137,7 +138,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: graph/stronglyconnectedcomponent.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: graph/stronglyconnectedcomponent.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
