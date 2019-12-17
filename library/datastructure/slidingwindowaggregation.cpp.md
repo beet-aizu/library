@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: datastructure/slidingwindowaggregation.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
@@ -35,16 +36,20 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp.html">test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: test/aoj/ALDS1_14_B.test.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_B.test.cpp">View this file on GitHub</a>
@@ -35,11 +36,14 @@ layout: default
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../../../library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"

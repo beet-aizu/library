@@ -26,33 +26,37 @@ layout: default
 
 
 # :heavy_check_mark: segtree/basic/ushi.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#d554a8ac704505de7b361b88fc36eeb2">segtree/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/basic/ushi.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-26 15:31:15 +0900
+    - Last commit date: 2019-12-17 13:36:48 +0900
 
 
 
 
-## Required By
+## Required by
+
 * :heavy_check_mark: <a href="../../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="../../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_A.test.cpp.html">test/aoj/DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template <typename T>
@@ -62,13 +66,16 @@ struct SegmentTree{
   F f;
   T ti;
   vector<T> dat;
+
   SegmentTree(){}
   SegmentTree(F f,T ti):f(f),ti(ti){}
+
   void init(int n_){
     n=1;
     while(n<n_) n<<=1;
     dat.assign(n<<1,ti);
   }
+
   void build(const vector<T> &v){
     int n_=v.size();
     init(n_);
@@ -76,12 +83,15 @@ struct SegmentTree{
     for(int i=n-1;i;i--)
       dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);
   }
+
   void set_val(int k,T x){
     dat[k+=n]=x;
     while(k>>=1)
       dat[k]=f(dat[(k<<1)|0],dat[(k<<1)|1]);
   }
+
   T query(int a,int b){
+    if(a>=b) return ti;
     T vl=ti,vr=ti;
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
       if(l&1) vl=f(vl,dat[l++]);
@@ -89,6 +99,7 @@ struct SegmentTree{
     }
     return f(vl,vr);
   }
+
   template<typename C>
   int find(int st,C &check,T &acc,int k,int l,int r){
     if(l+1==r){

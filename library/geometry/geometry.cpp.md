@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: geometry/geometry.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed7daeb157cd9b31e53896ad3c771a26">geometry</a>
@@ -35,7 +36,8 @@ layout: default
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2454.test.cpp.html">test/aoj/geometry/2454.test.cpp</a>
@@ -65,6 +67,8 @@ layout: default
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

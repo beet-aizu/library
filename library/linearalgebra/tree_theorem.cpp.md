@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: linearalgebra/tree_theorem.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
@@ -35,18 +36,22 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

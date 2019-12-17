@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: mod/log.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
@@ -35,20 +36,24 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :heavy_check_mark: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/yosupo/discrete_logarithm_mod.test.cpp.html">test/yosupo/discrete_logarithm_mod.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

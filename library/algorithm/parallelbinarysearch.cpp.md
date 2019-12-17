@@ -26,6 +26,7 @@ layout: default
 
 
 # :warning: algorithm/parallelbinarysearch.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
@@ -35,11 +36,14 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

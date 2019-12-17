@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: segtree/count/dynamic_offline.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#8c0b38b9c664244572b7839d3b5c6123">segtree/count</a>
@@ -35,12 +36,15 @@ layout: default
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2842.test.cpp.html">test/aoj/2842.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

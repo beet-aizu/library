@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: datastructure/skewheap.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
@@ -35,16 +36,20 @@ layout: default
 
 
 
-## Required By
+## Required by
+
 * :heavy_check_mark: <a href="../algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

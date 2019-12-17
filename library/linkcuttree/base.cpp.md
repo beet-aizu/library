@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: linkcuttree/base.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
@@ -35,13 +36,15 @@ layout: default
 
 
 
-## Required By
+## Required by
+
 * :heavy_check_mark: <a href="farthest.cpp.html">linkcuttree/farthest.cpp</a>
 * :heavy_check_mark: <a href="path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="subtree.cpp.html">linkcuttree/subtree.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.linkcuttree.test.cpp.html">test/aoj/1595.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
@@ -52,6 +55,8 @@ layout: default
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

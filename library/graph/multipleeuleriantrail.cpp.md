@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: graph/multipleeuleriantrail.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
@@ -35,11 +36,14 @@ layout: default
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/2324.test.cpp.html">test/aoj/2324.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

@@ -26,6 +26,7 @@ layout: default
 
 
 # :warning: convolution/fastwalshhadamardtransform.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
@@ -35,12 +36,15 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

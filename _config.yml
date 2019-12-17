@@ -1,9 +1,7 @@
 docs:
   categorize_library: true
   categorize_verify: false
-  description: ''
   html: false
-  title: C++ Competitive Programming Library
   toc: false
 plugins:
 - jemoji

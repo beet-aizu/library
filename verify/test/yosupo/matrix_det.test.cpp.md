@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: test/yosupo/matrix_det.test.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/matrix_det.test.cpp">View this file on GitHub</a>
@@ -35,13 +36,16 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/matrix_det">https://judge.yosupo.jp/problem/matrix_det</a>
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../../../library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #define PROBLEM "https://judge.yosupo.jp/problem/matrix_det"

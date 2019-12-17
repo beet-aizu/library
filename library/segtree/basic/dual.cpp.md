@@ -26,16 +26,18 @@ layout: default
 
 
 # :heavy_check_mark: segtree/basic/dual.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#d554a8ac704505de7b361b88fc36eeb2">segtree/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/basic/dual.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-28 23:13:10 +0900
+    - Last commit date: 2019-12-17 13:36:48 +0900
 
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_D.test.cpp.html">test/aoj/DSL_2_D.test.cpp</a>
@@ -43,6 +45,8 @@ layout: default
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test
@@ -78,6 +82,7 @@ struct SegmentTree{
   }
 
   void update(int a,int b,E x){
+    if(a>=b) return;
     thrust(a+=n);
     thrust(b+=n-1);
     for(int l=a,r=b+1;l<r;l>>=1,r>>=1){

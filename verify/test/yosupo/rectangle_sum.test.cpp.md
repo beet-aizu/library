@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: test/yosupo/rectangle_sum.test.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/rectangle_sum.test.cpp">View this file on GitHub</a>
@@ -35,13 +36,16 @@ layout: default
 * see: <a href="https://judge.yosupo.jp/problem/rectangle_sum">https://judge.yosupo.jp/problem/rectangle_sum</a>
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../../../library/segtree/count/dynamic_offline.cpp.html">segtree/count/dynamic_offline.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #define PROBLEM "https://judge.yosupo.jp/problem/rectangle_sum"

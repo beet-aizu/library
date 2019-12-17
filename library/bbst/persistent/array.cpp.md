@@ -26,6 +26,7 @@ layout: default
 
 
 # :warning: bbst/persistent/array.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#9c18e90622c99f987841c06d60e235e9">bbst/persistent</a>
@@ -35,12 +36,15 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../basic/array.cpp.html">bbst/basic/array.cpp</a>
 * :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

@@ -26,32 +26,38 @@ layout: default
 
 
 # :heavy_check_mark: linearalgebra/squarematrix.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/squarematrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:51:01 +0900
+    - Last commit date: 2019-12-17 13:36:48 +0900
 
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 * :heavy_check_mark: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Required By
+## Required by
+
 * :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

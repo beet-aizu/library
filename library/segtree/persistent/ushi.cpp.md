@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: segtree/persistent/ushi.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#5ac9307619d7e01a7fe6a139bee809d8">segtree/persistent</a>
@@ -35,11 +36,14 @@ layout: default
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3024.test.cpp.html">test/aoj/3024.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

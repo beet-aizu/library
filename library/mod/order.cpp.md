@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: mod/order.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
@@ -35,17 +36,21 @@ layout: default
 
 
 
-## Depends On
+## Depends on
+
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
 * :heavy_check_mark: <a href="pow.cpp.html">mod/pow.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/3062.test.cpp.html">test/aoj/3062.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

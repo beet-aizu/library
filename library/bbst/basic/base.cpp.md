@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: bbst/basic/base.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
@@ -35,7 +36,8 @@ layout: default
 
 
 
-## Required By
+## Required by
+
 * :heavy_check_mark: <a href="array.cpp.html">bbst/basic/array.cpp</a>
 * :heavy_check_mark: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
 * :heavy_check_mark: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
@@ -45,7 +47,8 @@ layout: default
 * :warning: <a href="../persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
@@ -59,6 +62,8 @@ layout: default
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

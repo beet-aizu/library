@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: linearalgebra/binarymatrix.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
@@ -35,12 +36,15 @@ layout: default
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/1308.test.cpp.html">test/aoj/1308.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2624.test.cpp.html">test/aoj/2624.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

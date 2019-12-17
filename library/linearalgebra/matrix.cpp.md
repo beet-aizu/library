@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: linearalgebra/matrix.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
@@ -35,12 +36,14 @@ layout: default
 
 
 
-## Required By
+## Required by
+
 * :heavy_check_mark: <a href="tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 * :heavy_check_mark: <a href="../math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1328.test.cpp.html">test/aoj/1328.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
@@ -48,6 +51,8 @@ layout: default
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test

@@ -26,6 +26,7 @@ layout: default
 
 
 # :heavy_check_mark: polynomial/polynomial.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
@@ -35,11 +36,14 @@ layout: default
 
 
 
-## Verified With
+## Verified with
+
 * :heavy_check_mark: <a href="../../verify/test/aoj/1293.test.cpp.html">test/aoj/1293.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #ifndef call_from_test
