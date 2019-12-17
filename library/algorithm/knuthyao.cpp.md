@@ -31,13 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/knuthyao.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-13 17:53:41 +0900
+    - Last commit date: 2019-12-17 22:20:47 +0900
 
 
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj/2415.knuthyao.test.cpp.html">test/aoj/2415.knuthyao.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2488.test.cpp.html">test/aoj/2488.test.cpp</a>
 
 
@@ -74,25 +75,7 @@ T KnuthYao(int n,F cost){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed KUPC2012_J(){
-  using ll = long long;
-  int n;
-  cin>>n;
-  vector<ll> ws(n);
-  for(int i=0;i<n;i++) cin>>ws[i];
-  vector<ll> sm(n+1);
-  for(int i=0;i<n;i++) sm[i+1]=sm[i]+ws[i];
-  auto cost=[&](int i,int k,int j){(void) k;return sm[j+1]-sm[i];};
-  cout<<KnuthYao<ll>(n,cost)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://atcoder.jp/contests/kupc2012/tasks/kupc2012_10
-*/
-
 signed main(){
-  KUPC2012_J();
   return 0;
 }
 #endif

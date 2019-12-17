@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/skewheap.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-18 19:45:59 +0900
+    - Last commit date: 2019-12-17 22:20:47 +0900
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 
 
 ## Required by
@@ -55,7 +60,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 template<typename T, typename E>
@@ -124,93 +128,75 @@ struct SkewHeap{
 //END CUT HERE
 #ifndef call_from_test
 
-struct APC001_D{
-  struct UnionFind{
-    int n;
-    vector<int> r,p;
-    UnionFind(){}
-    UnionFind(int sz):n(sz),r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
-    int find(int x){
-      return (x==p[x]?x:p[x]=find(p[x]));
-    }
-    bool same(int x,int y){
-      return find(x)==find(y);
-    }
-    void unite(int x,int y){
-      x=find(x);y=find(y);
-      if(x==y) return;
-      if(r[x]<r[y]) swap(x,y);
-      r[x]+=r[y];
-      p[y]=x;
-    }
-  };
+#define call_from_test
+#include "unionfindtree.cpp"
+#undef call_from_test
 
-  signed solve(){
-    using Heap = SkewHeap<Int, Int>;
-    Int n,m;
-    cin>>n>>m;
-    vector<Int> a(n);
-    for(Int i=0;i<n;i++) cin>>a[i];
+signed APC001_D(){
+  using ll = long long;
+  using Heap = SkewHeap<ll, ll>;
+  ll n,m;
+  cin>>n>>m;
+  vector<ll> a(n);
+  for(ll i=0;i<n;i++) cin>>a[i];
 
-    auto g=[](Int a,Int b){return a+b;};
-    auto h=[](Int a,Int b){return a+b;};
-    auto c=[](Int a,Int b){return a>b;};
+  auto g=[](ll a,ll b){return a+b;};
+  auto h=[](ll a,ll b){return a+b;};
+  auto c=[](ll a,ll b){return a>b;};
 
-    const Int INF = 1e16;
-    Heap heap(g,h,c,INF,0);
-    vector<Heap::Node*> v(n);
-    for(Int i=0;i<n;i++) v[i]=heap.push(a[i]);
+  const ll INF = 1e16;
+  Heap heap(g,h,c,INF,0);
+  vector<Heap::Node*> v(n);
+  for(ll i=0;i<n;i++) v[i]=heap.push(a[i]);
 
-    UnionFind uf(n);
-    for(Int i=0;i<m;i++){
-      Int x,y;
-      cin>>x>>y;
-      x=uf.find(x);y=uf.find(y);
-      uf.unite(x,y);
-      if(uf.find(x)!=x) swap(x,y);
-      v[x]=heap.meld(v[x],v[y]);
-      v[y]=NULL;
-    }
+  UnionFind uf(n);
+  for(ll i=0;i<m;i++){
+    ll x,y;
+    cin>>x>>y;
+    x=uf.find(x);y=uf.find(y);
+    uf.unite(x,y);
+    if(uf.find(x)!=x) swap(x,y);
+    v[x]=heap.meld(v[x],v[y]);
+    v[y]=NULL;
+  }
 
-    if(m==n-1){
-      cout<<0<<endl;
-      return 0;
-    }
-
-    Heap::Node* base=NULL;
-
-    Int ans=0,cnt=0;
-    for(Int i=0;i<n;i++){
-      if(uf.find(i)==i){
-        ans+=heap.top(v[i]);
-        v[i]=heap.pop(v[i]);
-        base=heap.meld(base,v[i]);
-        cnt++;
-      }
-    }
-
-    while(m*2+cnt<(n-1)*2){
-      if(base==NULL){
-        cout<<"Impossible"<<endl;
-        return 0;
-      }
-      ans+=heap.top(base);
-      base=heap.pop(base);
-      cnt++;
-    }
-
-    cout<<ans<<endl;
+  if(m==n-1){
+    cout<<0<<endl;
     return 0;
   }
-  /*
-    verified on 2018/03/04
-    https://beta.atcoder.jp/contests/apc001/tasks/apc001_d
-  */
-};
+
+  Heap::Node* base=NULL;
+
+  ll ans=0,cnt=0;
+  for(ll i=0;i<n;i++){
+    if(uf.find(i)==i){
+      ans+=heap.top(v[i]);
+      v[i]=heap.pop(v[i]);
+      base=heap.meld(base,v[i]);
+      cnt++;
+    }
+  }
+
+  while(m*2+cnt<(n-1)*2){
+    if(base==NULL){
+      cout<<"Impossible"<<endl;
+      return 0;
+    }
+    ans+=heap.top(base);
+    base=heap.pop(base);
+    cnt++;
+  }
+
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/12/17
+  https://atcoder.jp/contests/apc001/tasks/apc001_d
+*/
 
 signed main(){
-  APC001_D ans;
-  ans.solve();
+  APC001_D();
 }
 #endif
 
@@ -225,7 +211,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: datastructure/skewheap.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: datastructure/skewheap.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/quickfind.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-22 00:23:31 +0900
+    - Last commit date: 2019-12-17 22:20:47 +0900
 
 
 
@@ -49,7 +49,6 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 struct QuickFind{
@@ -97,7 +96,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: datastructure/quickfind.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: datastructure/quickfind.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
