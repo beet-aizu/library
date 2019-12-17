@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/yosupo/point_set_range_composite.test.cpp
+# :heavy_check_mark: test/yosupo/point_set_range_composite.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,9 +38,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="../../../library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

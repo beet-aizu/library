@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
 
 
 ## Code

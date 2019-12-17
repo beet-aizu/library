@@ -84,7 +84,7 @@ layout: default
 * :heavy_check_mark: <a href="library/convolution/convolution2D.cpp.html">convolution/convolution2D.cpp</a>
 * :heavy_check_mark: <a href="library/convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 * :warning: <a href="library/convolution/fastwalshhadamardtransform.cpp.html">convolution/fastwalshhadamardtransform.cpp</a>
-* :warning: <a href="library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 
 
 <div id="8dc87745f885a4cc532acd7b15b8b5fe"></div>
@@ -131,7 +131,7 @@ layout: default
 
 ### geometry
 
-* :warning: <a href="library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
+* :heavy_check_mark: <a href="library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
 
 
 <div id="a739ede2a6d479067a4ee19dfc8519a0"></div>
@@ -170,7 +170,7 @@ layout: default
 ### linearalgebra
 
 * :heavy_check_mark: <a href="library/linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
-* :warning: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
@@ -210,7 +210,7 @@ layout: default
 * :heavy_check_mark: <a href="library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
-* :warning: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
 * :heavy_check_mark: <a href="library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
@@ -221,7 +221,7 @@ layout: default
 
 ### polynomial
 
-* :warning: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/polynomial.cpp.html">polynomial/polynomial.cpp</a>
 
@@ -232,7 +232,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/segtree/basic/chien.cpp.html">segtree/basic/chien.cpp</a>
 * :heavy_check_mark: <a href="library/segtree/basic/dual.cpp.html">segtree/basic/dual.cpp</a>
-* :warning: <a href="library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 
 
 <div id="10d9c4a68fc97fbc913ae15313e9b2f4"></div>
@@ -291,15 +291,15 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/all_permutations.cpp.html">tools/all_permutations.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bfs.cpp.html">tools/bfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bigint.cpp.html">tools/bigint.cpp</a>
-* :warning: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :warning: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
-* :warning: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
+* :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :warning: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
 * :warning: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
@@ -514,7 +514,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/2454.test.cpp.html">test/aoj/geometry/2454.test.cpp</a>
-* :warning: <a href="verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/3056.test.cpp.html">test/aoj/geometry/3056.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_1_A.test.cpp.html">test/aoj/geometry/CGL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_1_B.test.cpp.html">test/aoj/geometry/CGL_1_B.test.cpp</a>
@@ -522,7 +522,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_2_A.test.cpp.html">test/aoj/geometry/CGL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_2_B.test.cpp.html">test/aoj/geometry/CGL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_2_C.test.cpp.html">test/aoj/geometry/CGL_2_C.test.cpp</a>
-* :warning: <a href="verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_3_A.test.cpp.html">test/aoj/geometry/CGL_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_3_B.test.cpp.html">test/aoj/geometry/CGL_3_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_3_C.test.cpp.html">test/aoj/geometry/CGL_3_C.test.cpp</a>
@@ -537,20 +537,20 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_7_F.test.cpp.html">test/aoj/geometry/CGL_7_F.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_7_G.test.cpp.html">test/aoj/geometry/CGL_7_G.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_7_H.test.cpp.html">test/aoj/geometry/CGL_7_H.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/bipartitematching.test.cpp.html">test/yosupo/bipartitematching.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/convolution_mod.test.cpp.html">test/yosupo/convolution_mod.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/convolution_mod.test.cpp.html">test/yosupo/convolution_mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/discrete_logarithm_mod.test.cpp.html">test/yosupo/discrete_logarithm_mod.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/maximum_independent_set.test.cpp.html">test/yosupo/maximum_independent_set.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/number_of_substrings.test.cpp.html">test/yosupo/number_of_substrings.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/scc.test.cpp.html">test/yosupo/scc.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/sqrt_mod.test.cpp.html">test/yosupo/sqrt_mod.test.cpp</a>

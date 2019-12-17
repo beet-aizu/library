@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
-* :warning: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 
 
 ## Required by

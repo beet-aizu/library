@@ -39,8 +39,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="suffixarray.cpp.html">string/suffixarray.cpp</a>
-* :warning: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
