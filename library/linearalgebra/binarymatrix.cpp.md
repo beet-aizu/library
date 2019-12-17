@@ -25,21 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: linearalgebra/binarymatrix.cpp
+# :warning: linearalgebra/binarymatrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/binarymatrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-09-22 19:09:46 +0900
+    - Last commit date: 2019-12-17 16:09:50 +0900
 
 
+
+
+## Depends on
+
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/1308.test.cpp.html">test/aoj/1308.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2624.test.cpp.html">test/aoj/2624.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/2624.test.cpp.html">test/aoj/2624.test.cpp</a>
 
 
 ## Code
@@ -50,12 +55,12 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-using Int = long long;
 #endif
 //BEGIN CUT HERE
 const int MAX = 2002;
 using BS = bitset<MAX*2>;
 using mat = vector<BS>;
+
 void gauss(mat &v){
   int n=v.size();
   for(int i=0;i<n;i++){
@@ -126,26 +131,30 @@ mat mat_pow(mat v,long long k){
 }
 //END CUT HERE
 #ifndef call_from_test
+
+#define call_from_test
+#include "../tools/fastio.cpp"
+#undef call_from_test
+
 signed CFR382_D(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  Int n,m;
+  int n,m;
   cin>>n>>m;
   mat v(n,BS(0));
-  for(Int i=0;i<n;i++) v[i][n+i]=1;
-  vector<Int> a(m),b(m);
-  for(Int i=0;i<m;i++){
-    cin>>a[i]>>b[i];
-    a[i]--;b[i]--;
-    v[a[i]][b[i]]=1;
+  for(int i=0;i<n;i++) v[i][n+i]=1;
+  vector<int> as(m),bs(m);
+  for(int i=0;i<m;i++){
+    cin>>as[i]>>bs[i];
+    as[i]--;bs[i]--;
+    v[as[i]][bs[i]]=1;
   }
   gauss(v);
-  for(Int i=0;i<m;i++)
-    cout<<(v[b[i]][a[i]+n]?"NO":"YES")<<endl;
+  for(int i=0;i<m;i++)
+    cout<<(v[bs[i]][as[i]+n]?"NO":"YES")<<"\n";
+  cout<<flush;
   return 0;
 }
 /*
-  verified on 2018/01/22
+  verified on 2019/12/17
   http://codeforces.com/contest/736/problem/D
 */
 
@@ -165,8 +174,8 @@ signed ARC054_D(){
   return 0;
 }
 /*
-  verified on 2018/01/22
-  https://beta.atcoder.jp/contests/arc054/tasks/arc054_c
+  verified on 2019/12/17
+  https://atcoder.jp/contests/arc054/tasks/arc054_c
 */
 
 signed main(){
@@ -184,11 +193,26 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 173, in main
+    subcommand_run(paths=[])
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 70, in subcommand_run
+    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 87, in main
+    exec_command(command)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
+    subprocess.check_call(command)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['oj', 'test', '-c', '.verify-helper/cache/c36a49005ac83bc17634badc8dd1bcb9/a.out', '-d', '.verify-helper/cache/c36a49005ac83bc17634badc8dd1bcb9/test', '-e', '\'"1e-8"\'']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 345, in write_contents
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 125, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: linearalgebra/binarymatrix.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: linearalgebra/binarymatrix.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
