@@ -133,7 +133,6 @@ struct FormalPowerSeries{
 #include "../convolution/fastfouriertransform.cpp"
 #include "../convolution/arbitrarymodconvolution.cpp"
 #include "../mod/sqrt.cpp"
-#include "../tools/drop.cpp"
 #include "../tools/fastio.cpp"
 #undef call_from_test
 
@@ -313,59 +312,12 @@ signed CODECHEF_PSUM(){
   https://www.codechef.com/problems/PSUM
 */
 
-signed YOSUPO_sqrt_of_formal_power_series(){
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  int n;
-  cin>>n;
-
-  deque<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  while(!as.empty()&&as.front()==0) as.pop_front();
-
-  if(as.empty()){
-    for(int i=0;i<n;i++){
-      if(i) cout<<" ";
-      cout<<0;
-    }
-    cout<<endl;
-    return 0;
-  }
-
-  int m=as.size();
-  if((n-m)&1) drop(-1);
-
-  auto ss=mod_sqrt(as[0],ntt.md);
-  if(ss.empty()) drop(-1);
-
-  vector<M> ps(n,M(0));
-  for(int i=0;i<m;i++) ps[i]=M(as[i])/M(as[0]);
-
-  auto bs=FPS.sqrt(ps,n);
-  bs.insert(bs.begin(),(n-m)/2,M(0));
-  for(int i=0;i<n;i++){
-    if(i) cout<<" ";
-    cout<<bs[i]*ss[0];
-  }
-  cout<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/24
-  https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
-*/
-
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
   //YUKI_3046();
   //LOJ_150();
   //CODECHEF_PSUM();
-  //YOSUPO_sqrt_of_formal_power_series();
   return 0;
 }
 #endif
