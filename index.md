@@ -84,7 +84,7 @@ layout: default
 * :heavy_check_mark: <a href="library/convolution/convolution2D.cpp.html">convolution/convolution2D.cpp</a>
 * :heavy_check_mark: <a href="library/convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 * :warning: <a href="library/convolution/fastwalshhadamardtransform.cpp.html">convolution/fastwalshhadamardtransform.cpp</a>
-* :warning: <a href="library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 
 
 <div id="8dc87745f885a4cc532acd7b15b8b5fe"></div>
@@ -212,12 +212,12 @@ layout: default
 * :warning: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
 * :warning: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
-* :warning: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
 * :heavy_check_mark: <a href="library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
-* :warning: <a href="library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
+* :heavy_check_mark: <a href="library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
 * :heavy_check_mark: <a href="library/mod/stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 * :warning: <a href="library/mod/tetration.cpp.html">mod/tetration.cpp</a>
 
@@ -226,7 +226,7 @@ layout: default
 
 ### polynomial
 
-* :warning: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/polynomial.cpp.html">polynomial/polynomial.cpp</a>
 
@@ -291,8 +291,8 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
-* :warning: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :warning: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
+* :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
@@ -552,7 +552,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/scc.test.cpp.html">test/yosupo/scc.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/sqrt_mod.test.cpp.html">test/yosupo/sqrt_mod.test.cpp</a>
-* :warning: <a href="verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
