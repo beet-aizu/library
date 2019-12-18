@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DPL_5_C.test.cpp
+# :heavy_check_mark: test/aoj/DPL_5_C.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:44:32 +0900
+    - Last commit date: 2019-12-18 10:56:15 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C</a>
@@ -40,6 +40,7 @@ layout: default
 
 * :warning: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 
 
 ## Code
@@ -55,14 +56,16 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../mod/enumeration.cpp"
+#include "../../mod/stirling_2nd.cpp"
 #undef call_from_test
 
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  Enumeration<Mint<int>>::init(k);
-  printf("%d\n",(Enumeration<Mint<int>>::S(n,k)*
-                 Enumeration<Mint<int>>::Fact(k)).v);
+  using M = Mint<int>;
+  using E = Enumeration<M>;
+  E::init(k);
+  printf("%d\n",(stirling_2nd<M>(n,k)*E::Fact(k)).v);
   return 0;
 }
 
@@ -83,7 +86,7 @@ Traceback (most recent call last):
     subprocess.check_call(command)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
     raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/9a267fd1c42d1001b78ef88b806279fc/a.out', 'test/aoj/DPL_5_C.test.cpp']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/16dac329c1e113b662496f1e7b48d8fa/a.out', 'test/aoj/DPL_5_J.test.cpp']' returned non-zero exit status 1.
 
 During handling of the above exception, another exception occurred:
 

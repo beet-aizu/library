@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/formalpowerseries.cpp
+# :warning: polynomial/formalpowerseries.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16 +0900
+    - Last commit date: 2019-12-18 10:56:15 +0900
 
 
 
@@ -40,11 +40,10 @@ layout: default
 
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
 * :heavy_check_mark: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
-* :heavy_check_mark: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :warning: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../mod/sqrt.cpp.html">mod/sqrt.cpp</a>
-* :heavy_check_mark: <a href="../tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="../mod/sqrt.cpp.html">mod/sqrt.cpp</a>
+* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
@@ -52,11 +51,12 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3072.test.cpp.html">test/aoj/3072.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 
 
 ## Code
@@ -199,7 +199,6 @@ struct FormalPowerSeries{
 #include "../convolution/fastfouriertransform.cpp"
 #include "../convolution/arbitrarymodconvolution.cpp"
 #include "../mod/sqrt.cpp"
-#include "../tools/drop.cpp"
 #include "../tools/fastio.cpp"
 #undef call_from_test
 
@@ -379,59 +378,12 @@ signed CODECHEF_PSUM(){
   https://www.codechef.com/problems/PSUM
 */
 
-signed YOSUPO_sqrt_of_formal_power_series(){
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  int n;
-  cin>>n;
-
-  deque<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  while(!as.empty()&&as.front()==0) as.pop_front();
-
-  if(as.empty()){
-    for(int i=0;i<n;i++){
-      if(i) cout<<" ";
-      cout<<0;
-    }
-    cout<<endl;
-    return 0;
-  }
-
-  int m=as.size();
-  if((n-m)&1) drop(-1);
-
-  auto ss=mod_sqrt(as[0],ntt.md);
-  if(ss.empty()) drop(-1);
-
-  vector<M> ps(n,M(0));
-  for(int i=0;i<m;i++) ps[i]=M(as[i])/M(as[0]);
-
-  auto bs=FPS.sqrt(ps,n);
-  bs.insert(bs.begin(),(n-m)/2,M(0));
-  for(int i=0;i<n;i++){
-    if(i) cout<<" ";
-    cout<<bs[i]*ss[0];
-  }
-  cout<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/24
-  https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
-*/
-
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
   //YUKI_3046();
   //LOJ_150();
   //CODECHEF_PSUM();
-  //YOSUPO_sqrt_of_formal_power_series();
   return 0;
 }
 #endif
@@ -453,7 +405,7 @@ Traceback (most recent call last):
     subprocess.check_call(command)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
     raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/9a267fd1c42d1001b78ef88b806279fc/a.out', 'test/aoj/DPL_5_C.test.cpp']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/16dac329c1e113b662496f1e7b48d8fa/a.out', 'test/aoj/DPL_5_J.test.cpp']' returned non-zero exit status 1.
 
 During handling of the above exception, another exception occurred:
 

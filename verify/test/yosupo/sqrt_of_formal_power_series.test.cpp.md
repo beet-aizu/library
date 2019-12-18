@@ -25,20 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/staticrmq.sparsetable.test.cpp
+# :warning: test/yosupo/sqrt_of_formal_power_series.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/staticrmq.sparsetable.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:20:47 +0900
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/sqrt_of_formal_power_series.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-18 10:56:15 +0900
 
 
-* see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
+* see: <a href="https://judge.yosupo.jp/problem/exp_of_formal_power_series">https://judge.yosupo.jp/problem/exp_of_formal_power_series</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
+* :warning: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="../../../library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
+* :warning: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :warning: <a href="../../../library/tools/drop.cpp.html">tools/drop.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -47,33 +51,59 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+#define PROBLEM "https://judge.yosupo.jp/problem/exp_of_formal_power_series"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../datastructure/sparsetable.cpp"
+#include "../../tools/drop.cpp"
+#include "../../mod/sqrt.cpp"
+#include "../../mod/mint.cpp"
+#include "../../convolution/numbertheoretictransform.cpp"
+#include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
 signed main(){
-  int n,q;
-  cin>>n>>q;
+  int n;
+  cin>>n;
 
-  vector<int> as(n);
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
+
+  deque<int> as(n);
   for(int i=0;i<n;i++) cin>>as[i];
 
-  auto f=[](int a,int b){return min(a,b);};
-  SparseTable<int> rmq(f);
-  rmq.build(as);
+  while(!as.empty()&&as.front()==0) as.pop_front();
 
-  for(int i=0;i<q;i++){
-    int l,r;
-    cin>>l>>r;
-    cout<<rmq.query(l,r)<<"\n";
+  if(as.empty()){
+    for(int i=0;i<n;i++){
+      if(i) cout<<" ";
+      cout<<0;
+    }
+    cout<<endl;
+    return 0;
   }
-  cout<<flush;
+
+  int m=as.size();
+  if((n-m)&1) drop(-1);
+
+  auto ss=mod_sqrt(as[0],ntt.md);
+  if(ss.empty()) drop(-1);
+
+  vector<M> ps(n,M(0));
+  for(int i=0;i<m;i++) ps[i]=M(as[i])/M(as[0]);
+
+  auto bs=FPS.sqrt(ps,n);
+  bs.insert(bs.begin(),(n-m)/2,M(0));
+  for(int i=0;i<n;i++){
+    if(i) cout<<" ";
+    cout<<bs[i]*ss[0];
+  }
+  cout<<endl;
   return 0;
 }
 
