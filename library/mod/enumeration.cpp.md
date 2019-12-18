@@ -47,7 +47,6 @@ layout: default
 * :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
 * :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="bell.cpp.html">mod/bell.cpp</a>
-* :warning: <a href="montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 
 

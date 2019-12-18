@@ -31,15 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/montmort.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:44:32 +0900
+    - Last commit date: 2019-12-18 12:54:18 +0900
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
-* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
 
 
 ## Code
@@ -50,46 +49,49 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-
-#define call_from_test
-#include "../mod/enumeration.cpp"
-#undef call_from_test
-
 #endif
 //BEGIN CUT HERE
 // number of permutations with p_i != i
-template<typename M>
+template<typename T>
 struct Montmort{
-  using E = Enumeration<M>;
-  vector<M> dp;
+  using ll = long long;
+  vector<T> dp;
 
-  Montmort(int n):dp(n+1,0){
-    E::init(n);
-    M res(0);
+  Montmort(int n,int mod):dp(n+1,0){
     for(int k=2;k<=n;k++){
-      if(k&1) res-=E::Finv(k);
-      else res+=E::Finv(k);
-      dp[k]=res*E::Fact(k);
+      dp[k]=(ll)dp[k-1]*k%mod;
+      if(~k&1) dp[k]+=1;
+      else dp[k]+=mod-1;
+      if(dp[k]>=mod) dp[k]-=mod;
     }
   }
 
-  M operator()(int n){return dp[n];}
+  T operator[](int n){return dp[n];}
 };
 //END CUT HERE
 #ifndef call_from_test
 
 #define call_from_test
-#include "../mod/mint.cpp"
+#include "../math/extgcd.cpp"
 #undef call_from_test
 
-//montmort
+// montmort
 signed ARC009_C(){
-  long long n,k;
+  using ll = long long;
+
+  ll n,k;
   scanf("%lld %lld",&n,&k);
   const int MOD = 1777777777;
-  using M = Mint<long long, MOD>;
-  Montmort<M> as(k);
-  printf("%lld\n",(as(k)*M::comb(n,k)).v);
+  int ans=Montmort<ll>(k,MOD)[k];
+
+  int dom=1;
+  for(int i=0;i<k;i++){
+    ans=(ll)ans*((n-i)%MOD)%MOD;
+    dom=(ll)dom*(i+1)%MOD;
+  }
+
+  ans=(ll)ans*mod_inverse<ll>(dom,MOD)%MOD;
+  printf("%d\n",ans);
   return 0;
 }
 /*
@@ -112,11 +114,9 @@ signed main(){
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 339, in write_contents
     bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 150, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 52, in _resolve
-    raise BundleError(path, -1, "no such header")
-onlinejudge_verify.bundle.BundleError: ../mod/enumeration.cpp: line -1: no such header
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
+    raise BundleError(path, i + 1, "found codes out of include guard")
+onlinejudge_verify.bundle.BundleError: mod/montmort.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

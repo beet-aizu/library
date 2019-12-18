@@ -53,7 +53,6 @@ layout: default
 * :warning: <a href="factorial.cpp.html">mod/factorial.cpp</a>
 * :warning: <a href="lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="log.cpp.html">mod/log.cpp</a>
-* :warning: <a href="montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 
