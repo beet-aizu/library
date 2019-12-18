@@ -6,11 +6,12 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../mod/enumeration.cpp"
+#include "../../mod/bell.cpp"
 #undef call_from_test
 
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",Enumeration<Mint<int>>::B(n,k).v);
+  printf("%d\n",bell<Mint<int>>(n,k).v);
   return 0;
 }
