@@ -207,13 +207,18 @@ layout: default
 
 ### mod
 
-* :heavy_check_mark: <a href="library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="library/mod/bell.cpp.html">mod/bell.cpp</a>
+* :warning: <a href="library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
+* :warning: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
-* :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
+* :warning: <a href="library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
 * :heavy_check_mark: <a href="library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
+* :warning: <a href="library/mod/stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 * :warning: <a href="library/mod/tetration.cpp.html">mod/tetration.cpp</a>
 
 
@@ -433,16 +438,16 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DPL_5_A.test.cpp.html">test/aoj/DPL_5_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DPL_5_B.test.cpp.html">test/aoj/DPL_5_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_C.test.cpp.html">test/aoj/DPL_5_C.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_D.test.cpp.html">test/aoj/DPL_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_E.test.cpp.html">test/aoj/DPL_5_E.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_F.test.cpp.html">test/aoj/DPL_5_F.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_H.test.cpp.html">test/aoj/DPL_5_H.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_K.test.cpp.html">test/aoj/DPL_5_K.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_C.test.cpp.html">test/aoj/DPL_5_C.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_D.test.cpp.html">test/aoj/DPL_5_D.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_E.test.cpp.html">test/aoj/DPL_5_E.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_F.test.cpp.html">test/aoj/DPL_5_F.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_H.test.cpp.html">test/aoj/DPL_5_H.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_K.test.cpp.html">test/aoj/DPL_5_K.test.cpp</a>
+* :warning: <a href="verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_1_A.quickfind.test.cpp.html">test/aoj/DSL_1_A.quickfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_1_B.test.cpp.html">test/aoj/DSL_1_B.test.cpp</a>
