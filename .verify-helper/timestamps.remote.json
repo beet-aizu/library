@@ -233,6 +233,7 @@
 "test/yosupo/staticrmq.disjointsparsetable.test.cpp": "2019-12-17 22:09:22 +0900",
 "test/yosupo/staticrmq.sparsetable.test.cpp": "2019-12-17 22:20:47 +0900",
 "test/yosupo/suffixarray.test.cpp": "2019-12-09 23:51:01 +0900",
+"test/yosupo/tetration_mod.test.cpp": "2019-12-18 17:55:28 +0900",
 "test/yosupo/unionfind.test.cpp": "2019-12-17 22:20:47 +0900",
 "test/yosupo/vertex_add_path_sum.test.cpp": "2019-12-17 21:09:31 +0900",
 "test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp": "2019-12-09 23:51:01 +0900",
