@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DPL_5_J.test.cpp
+# :heavy_check_mark: test/aoj/DPL_5_J.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_J.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:44:32 +0900
+    - Last commit date: 2019-12-18 11:12:58 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J</a>
@@ -38,8 +38,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 
 
 ## Code
@@ -55,12 +56,13 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../mod/enumeration.cpp"
+#include "../../mod/partition_function.cpp"
 #undef call_from_test
 
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",Enumeration<Mint<int>>::D(n,k)[n][k].v);
+  printf("%d\n",Partition<Mint<int>>(n,k)(n,k).v);
   return 0;
 }
 
@@ -75,13 +77,13 @@ Traceback (most recent call last):
     subcommand_run(paths=[], jobs=parsed.jobs)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 72, in subcommand_run
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 71, in main
-    exec_command([cxx, *cxxflags, '-I', '.', '-o', shlex.quote(str(directory / 'a.out')), shlex.quote(str(path))])
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 89, in main
+    exec_command(command)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 26, in exec_command
     subprocess.check_call(command)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/subprocess.py", line 364, in check_call
     raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-O2', '-Wall', '-g', '-I', '.', '-o', '.verify-helper/cache/16dac329c1e113b662496f1e7b48d8fa/a.out', 'test/aoj/DPL_5_J.test.cpp']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['oj', 'test', '-c', '.verify-helper/cache/1112bf5aedcf80f614b3e755249be9a3/a.out', '-d', '.verify-helper/cache/1112bf5aedcf80f614b3e755249be9a3/test', '--judge-command', '.verify-helper/cache/1112bf5aedcf80f614b3e755249be9a3/checker.out', '-j', '2']' returned non-zero exit status 1.
 
 During handling of the above exception, another exception occurred:
 
