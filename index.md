@@ -210,7 +210,7 @@ layout: default
 * :heavy_check_mark: <a href="library/mod/bell.cpp.html">mod/bell.cpp</a>
 * :heavy_check_mark: <a href="library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
-* :warning: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
+* :heavy_check_mark: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
 * :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :warning: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
@@ -403,6 +403,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2934.test.cpp.html">test/aoj/2934.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2948.test.cpp.html">test/aoj/2948.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2951.test.cpp.html">test/aoj/2951.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2959.test.cpp.html">test/aoj/2959.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2971.test.cpp.html">test/aoj/2971.test.cpp</a>
