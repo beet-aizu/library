@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/eulertourforedge.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:09:31 +0900
+    - Last commit date: 2019-12-17 21:09:31+09:00
 
 
 
@@ -233,9 +233,9 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 339, in write_contents
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 328, in write_contents
     bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 119, in update
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
 onlinejudge_verify.bundle.BundleError: tree/eulertourforedge.cpp: line 5: found codes out of include guard
 

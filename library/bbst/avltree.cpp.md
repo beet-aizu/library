@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d342894e126a2cdd0812cd3a6c903bbd">bbst</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/avltree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:56:59 +0900
+    - Last commit date: 2019-12-17 20:56:59+09:00
 
 
 

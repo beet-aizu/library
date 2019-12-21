@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/convexhulltrickwithindex.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:51:08 +0900
+    - Last commit date: 2019-12-17 21:51:08+09:00
 
 
 
@@ -311,6 +311,10 @@ signed main(){
   cout<<flush;
   return 0;
 }
+/*
+  verified on 2019/05/14
+  https://codeforces.com/contest/1137/problem/E
+*/
 
 ```
 {% endraw %}

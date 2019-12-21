@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#a739ede2a6d479067a4ee19dfc8519a0">geometry/3D</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/3D/geometry3D.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:37:46 +0900
+    - Last commit date: 2019-12-17 21:37:46+09:00
 
 
 
@@ -588,6 +588,11 @@ signed main(){
   }
   return 0;
 }
+
+/*
+  verified on 2019/10/22
+  https://vjudge.net/problem/HDU-3662
+*/
 
 ```
 {% endraw %}

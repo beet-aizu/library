@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/girth.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:51:08 +0900
+    - Last commit date: 2019-12-17 21:51:08+09:00
 
 
 

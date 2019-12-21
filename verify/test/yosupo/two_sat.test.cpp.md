@@ -21,24 +21,26 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/geometry/CGL_2_B.test.cpp
+# :heavy_check_mark: test/yosupo/two_sat.test.cpp
 
-<a href="../../../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/geometry/CGL_2_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:13:07+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/two_sat.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-21 17:46:48+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B</a>
+* see: <a href="https://judge.yosupo.jp/problem/two_sat">https://judge.yosupo.jp/problem/two_sat</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../../library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -46,23 +48,45 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B"
+#define PROBLEM "https://judge.yosupo.jp/problem/two_sat"
+
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../../geometry/geometry.cpp"
+#include "../../tools/fastio.cpp"
+#include "../../graph/stronglyconnectedcomponent.cpp"
+#include "../../graph/twosatisfiability.cpp"
 #undef call_from_test
 
-//intersectSS
 signed main(){
-  int q;
-  cin>>q;
-  while(q--){
-    Point p0,p1,p2,p3;
-    cin>>p0>>p1>>p2>>p3;
-    cout<<(intersectSS(Segment(p0,p1),Segment(p2,p3)))<<endl;
+  string s;
+  cin>>s;
+  cin>>s;
+
+  int n,m;
+  cin>>n>>m;
+
+  TwoSat ts(n+1);
+  for(int i=0;i<m;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    if(a<0) a=ts.negate(abs(a));
+    if(b<0) b=ts.negate(abs(b));
+    ts.add_or(a,b);
   }
+
+  auto res=ts.build();
+  if(res.empty()){
+    cout<<"s UNSATISFIABLE"<<endl;
+    return 0;
+  }
+
+  cout<<"s SATISFIABLE"<<endl;
+  cout<<"v";
+  for(int i=1;i<=n;i++)
+    cout<<" "<<(res[i]?i:-i);
+  cout<<" "<<0<<endl;
   return 0;
 }
 
@@ -79,10 +103,10 @@ Traceback (most recent call last):
     self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: geometry/geometry.cpp: line 5: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
 
-<a href="../../../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
