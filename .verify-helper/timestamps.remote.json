@@ -238,6 +238,7 @@
 "test/yosupo/staticrmq.disjointsparsetable.test.cpp": "2019-12-17 22:09:22 +0900",
 "test/yosupo/staticrmq.sparsetable.test.cpp": "2019-12-17 22:20:47 +0900",
 "test/yosupo/suffixarray.test.cpp": "2019-12-09 23:51:01 +0900",
+"test/yosupo/sum_of_floor_of_linear.test.cpp": "2019-12-21 18:07:05 +0900",
 "test/yosupo/tetration_mod.test.cpp": "2019-12-18 17:55:28 +0900",
 "test/yosupo/two_sat.test.cpp": "2019-12-21 17:46:48 +0900",
 "test/yosupo/unionfind.test.cpp": "2019-12-17 22:20:47 +0900",
