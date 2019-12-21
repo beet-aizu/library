@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/2985.test.cpp
+# :heavy_check_mark: test/yosupo/multipoint_evaluation.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/2985.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/multipoint_evaluation.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-21 21:34:54+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2985">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2985</a>
+* see: <a href="https://judge.yosupo.jp/problem/multipoint_evaluation">https://judge.yosupo.jp/problem/multipoint_evaluation</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
-* :heavy_check_mark: <a href="../../../library/convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
+* :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/multipoint_evaluation.cpp.html">polynomial/multipoint_evaluation.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -50,7 +50,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2985"
+#define PROBLEM "https://judge.yosupo.jp/problem/multipoint_evaluation"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -58,31 +58,30 @@ using namespace std;
 #define call_from_test
 #include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
-#include "../../convolution/fastfouriertransform.cpp"
-#include "../../convolution/arbitrarymodconvolution.cpp"
+#include "../../convolution/numbertheoretictransform.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
+#include "../../polynomial/multipoint_evaluation.cpp"
 #undef call_from_test
 
 signed main(){
-  int n;
-  cin>>n;
+  int n,m;
+  cin>>n>>m;
 
-  using M = Mint<int>;
-  ArbitraryModConvolution<M> arb;
-  auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  MultiEval<M> me(conv);
 
-  vector<M> line(n+1,0),quad(n+1,0);
-  for(int i=1;i<=n;i++){
-    line[i]=M(i).pow(0);
-    quad[i]=M(i).pow(1);
+  vector<M> cs(n),ps(m);
+  for(int i=0;i<n;i++) cin>>cs[i].v;
+  for(int i=0;i<m;i++) cin>>ps[i].v;
+
+  auto ans=me.build(cs,ps);
+  for(int i=0;i<m;i++){
+    if(i) cout<<" ";
+    cout<<ans[i];
   }
-
-  M v1=FPS.exp(line,n+1)[n];
-  M v2=FPS.exp(quad,n+1)[n];
-
-  M ans=v2-v1*v1;
-  cout<<ans<<endl;
+  cout<<endl;
   return 0;
 }
 

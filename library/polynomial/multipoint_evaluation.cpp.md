@@ -1,0 +1,130 @@
+---
+layout: default
+---
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+
+
+# :heavy_check_mark: polynomial/multipoint_evaluation.cpp
+
+<a href="../../index.html">Back to top page</a>
+
+* category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
+* <a href="{{ site.github.repository_url }}/blob/master/polynomial/multipoint_evaluation.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-21 21:34:54+09:00
+
+
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
+
+
+## Code
+
+<a id="unbundled"></a>
+{% raw %}
+```cpp
+#ifndef call_from_test
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#include "formalpowerseries.cpp"
+#undef call_from_test
+
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct MultiEval{
+  FormalPowerSeries<T> FPS;
+  using Poly = typename FormalPowerSeries<T>::Poly;
+  using Conv = typename FormalPowerSeries<T>::Conv;
+
+  MultiEval(Conv conv):FPS(conv){}
+
+  using P = pair<int, int>;
+  map<P, Poly> mem;
+  void dfs(const vector<T> &cs,int l,int r){
+    if(l+1==r){
+      mem[{l,r}]=Poly({-cs[l],T(1)});
+      return;
+    }
+    int m=(l+r)>>1;
+    dfs(cs,l,m);
+    dfs(cs,m,r);
+    mem[{l,r}]=FPS.mul(mem[{l,m}],mem[{m,r}]);
+  }
+
+  vector<T> ans;
+  void multi_eval(Poly ps,int l,int r){
+    if(l+1==r){
+      ans[l]=FPS.mod(ps,mem[{l,r}])[0];
+      return;
+    }
+    int m=(l+r)>>1;
+    multi_eval(FPS.mod(ps,mem[{l,m}]),l,m);
+    multi_eval(FPS.mod(ps,mem[{m,r}]),m,r);
+  }
+
+  vector<T> build(Poly ps,const vector<T> &cs){
+    mem.clear();
+    dfs(cs,0,cs.size());
+    ans.resize(cs.size());
+    multi_eval(ps,0,cs.size());
+    return ans;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 328, in write_contents
+    bundler.update(self.file_class.file_path)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
+    self.update(self._resolve(included, included_from=path))
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
+    raise BundleError(path, i + 1, "found codes out of include guard")
+onlinejudge_verify.bundle.BundleError: polynomial/formalpowerseries.cpp: line 5: found codes out of include guard
+
+```
+{% endraw %}
+
+<a href="../../index.html">Back to top page</a>
+

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:56:15+09:00
+    - Last commit date: 2019-12-21 21:34:54+09:00
 
 
 
@@ -46,6 +46,11 @@ layout: default
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
+## Required by
+
+* :heavy_check_mark: <a href="multipoint_evaluation.cpp.html">polynomial/multipoint_evaluation.cpp</a>
+
+
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
@@ -55,6 +60,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 
@@ -125,6 +131,14 @@ struct FormalPowerSeries{
     Poly ds=pre(mul(as,inv(bs,need)),need);
     reverse(ds.begin(),ds.end());
     return ds;
+  }
+
+  Poly mod(Poly as,Poly bs){
+    if(as==Poly(as.size(),0)) return Poly({0});
+    as=sub(as,mul(div(as,bs),bs));
+    if(as==Poly(as.size(),0)) return Poly({0});
+    while(as.back()==T(0)) as.pop_back();
+    return as;
   }
 
   // F(0) must be 1
