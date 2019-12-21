@@ -220,6 +220,7 @@
 "test/yosupo/bipartitematching.test.cpp": "2019-12-17 15:56:23 +0900",
 "test/yosupo/convolution_mod.test.cpp": "2019-12-17 16:09:50 +0900",
 "test/yosupo/discrete_logarithm_mod.test.cpp": "2019-12-09 23:51:01 +0900",
+"test/yosupo/dominatortree.test.cpp": "2019-12-21 20:40:33 +0900",
 "test/yosupo/exp_of_formal_power_series.test.cpp": "2019-12-18 10:56:15 +0900",
 "test/yosupo/inv_of_formal_power_series.test.cpp": "2019-12-18 10:56:15 +0900",
 "test/yosupo/kth_root_integer.test.cpp": "2019-12-21 17:52:42 +0900",
