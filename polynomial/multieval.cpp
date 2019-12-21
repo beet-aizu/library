@@ -8,6 +8,7 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+// O(N log^2 N)
 template<typename T>
 struct MultiEval{
   FormalPowerSeries<T> FPS;

@@ -9,6 +9,7 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+// O(N log^2 N)
 template<typename T>
 struct Interpolate : MultiEval<T>{
   using super=MultiEval<T>;
