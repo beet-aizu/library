@@ -198,6 +198,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">math/isprime.cpp</a>
 * :heavy_check_mark: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="library/math/linearcongruence.cpp.html">math/linearcongruence.cpp</a>
+* :heavy_check_mark: <a href="library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
 * :heavy_check_mark: <a href="library/math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient.cpp.html">math/totient.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient_table.cpp.html">math/totient_table.cpp</a>
@@ -558,6 +559,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/sum_of_floor_of_linear.test.cpp.html">test/yosupo/sum_of_floor_of_linear.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/two_sat.test.cpp.html">test/yosupo/two_sat.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
