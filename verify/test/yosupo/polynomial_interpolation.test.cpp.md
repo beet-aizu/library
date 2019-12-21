@@ -25,15 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/multipoint_evaluation.test.cpp
+# :heavy_check_mark: test/yosupo/polynomial_interpolation.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/multipoint_evaluation.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/polynomial_interpolation.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-21 22:13:07+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/multipoint_evaluation">https://judge.yosupo.jp/problem/multipoint_evaluation</a>
+* see: <a href="https://judge.yosupo.jp/problem/polynomial_interpolation">https://judge.yosupo.jp/problem/polynomial_interpolation</a>
 
 
 ## Depends on
@@ -41,6 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
@@ -50,7 +51,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/multipoint_evaluation"
+#define PROBLEM "https://judge.yosupo.jp/problem/polynomial_interpolation"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -61,23 +62,24 @@ using namespace std;
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #include "../../polynomial/multieval.cpp"
+#include "../../polynomial/interpolate.cpp"
 #undef call_from_test
 
 signed main(){
-  int n,m;
-  cin>>n>>m;
+  int n;
+  cin>>n;
 
   NTT<2> ntt;
   using M = NTT<2>::M;
   auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  MultiEval<M> me(conv);
+  Interpolate<M> ip(conv);
 
-  vector<M> cs(n),ps(m);
-  for(int i=0;i<n;i++) cin>>cs[i].v;
-  for(int i=0;i<m;i++) cin>>ps[i].v;
+  vector<M> xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>xs[i].v;
+  for(int i=0;i<n;i++) cin>>ys[i].v;
 
-  auto ans=me.build(cs,ps);
-  for(int i=0;i<m;i++){
+  auto ans=ip.build(xs,ys);
+  for(int i=0;i<n;i++){
     if(i) cout<<" ";
     cout<<ans[i];
   }

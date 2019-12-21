@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/multipoint_evaluation.cpp
+# :heavy_check_mark: polynomial/interpolate.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
-* <a href="{{ site.github.repository_url }}/blob/master/polynomial/multipoint_evaluation.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-21 21:34:54+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/polynomial/interpolate.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-21 22:13:07+09:00
 
 
 
@@ -39,11 +39,12 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 
 
 ## Code
@@ -57,48 +58,37 @@ using namespace std;
 
 #define call_from_test
 #include "formalpowerseries.cpp"
+#include "multieval.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
 template<typename T>
-struct MultiEval{
-  FormalPowerSeries<T> FPS;
-  using Poly = typename FormalPowerSeries<T>::Poly;
-  using Conv = typename FormalPowerSeries<T>::Conv;
+struct Interpolate : MultiEval<T>{
+  using super=MultiEval<T>;
+  using super::super;
 
-  MultiEval(Conv conv):FPS(conv){}
+  using typename super::Poly;
+  using super::FPS;
+  using super::mem;
 
-  using P = pair<int, int>;
-  map<P, Poly> mem;
-  void dfs(const vector<T> &cs,int l,int r){
-    if(l+1==r){
-      mem[{l,r}]=Poly({-cs[l],T(1)});
-      return;
-    }
+  Poly interpolate(const vector<T> &xs,const vector<T> &ws,int l,int r){
+    if(l+1==r) return Poly({ws[l]});
     int m=(l+r)>>1;
-    dfs(cs,l,m);
-    dfs(cs,m,r);
-    mem[{l,r}]=FPS.mul(mem[{l,m}],mem[{m,r}]);
+    return FPS.add(FPS.mul(interpolate(xs,ws,l,m),mem[{m,r}]),
+                   FPS.mul(interpolate(xs,ws,m,r),mem[{l,m}]));
   }
 
-  vector<T> ans;
-  void multi_eval(Poly ps,int l,int r){
-    if(l+1==r){
-      ans[l]=FPS.mod(ps,mem[{l,r}])[0];
-      return;
-    }
-    int m=(l+r)>>1;
-    multi_eval(FPS.mod(ps,mem[{l,m}]),l,m);
-    multi_eval(FPS.mod(ps,mem[{m,r}]),m,r);
-  }
-
-  vector<T> build(Poly ps,const vector<T> &cs){
+  vector<T> build(const vector<T> &xs,const vector<T> &ys){
+    int n=xs.size();
     mem.clear();
-    dfs(cs,0,cs.size());
-    ans.resize(cs.size());
-    multi_eval(ps,0,cs.size());
-    return ans;
+    super::dfs(xs,0,n);
+    auto ls=FPS.diff(mem[{0,n}]);
+    ls.resize(n,T(0));
+    vector<T> ws(n);
+    super::multi_eval(ls,ws,0,n);
+    for(int i=0;i<n;i++) ws[i]=ys[i]/ws[i];
+    return interpolate(xs,ws,0,n);
   }
 };
 //END CUT HERE
