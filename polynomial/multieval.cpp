@@ -29,23 +29,23 @@ struct MultiEval{
     mem[{l,r}]=FPS.mul(mem[{l,m}],mem[{m,r}]);
   }
 
-  vector<T> ans;
-  void multi_eval(Poly ps,int l,int r){
+  void multi_eval(Poly ps,vector<T> &ws,int l,int r){
     if(l+1==r){
-      ans[l]=FPS.mod(ps,mem[{l,r}])[0];
+      ws[l]=FPS.mod(ps,mem[{l,r}])[0];
       return;
     }
     int m=(l+r)>>1;
-    multi_eval(FPS.mod(ps,mem[{l,m}]),l,m);
-    multi_eval(FPS.mod(ps,mem[{m,r}]),m,r);
+    multi_eval(FPS.mod(ps,mem[{l,m}]),ws,l,m);
+    multi_eval(FPS.mod(ps,mem[{m,r}]),ws,m,r);
   }
 
   vector<T> build(Poly ps,const vector<T> &cs){
+    int n=cs.size();
     mem.clear();
-    dfs(cs,0,cs.size());
-    ans.resize(cs.size());
-    multi_eval(ps,0,cs.size());
-    return ans;
+    dfs(cs,0,n);
+    vector<T> ws(n);
+    multi_eval(ps,ws,0,n);
+    return ws;
   }
 };
 //END CUT HERE

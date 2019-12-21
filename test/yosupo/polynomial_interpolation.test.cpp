@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/multipoint_evaluation"
+#define PROBLEM "https://judge.yosupo.jp/problem/polynomial_interpolation"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -9,23 +9,24 @@ using namespace std;
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #include "../../polynomial/multieval.cpp"
+#include "../../polynomial/interpolate.cpp"
 #undef call_from_test
 
 signed main(){
-  int n,m;
-  cin>>n>>m;
+  int n;
+  cin>>n;
 
   NTT<2> ntt;
   using M = NTT<2>::M;
   auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  MultiEval<M> me(conv);
+  Interpolate<M> ip(conv);
 
-  vector<M> cs(n),ps(m);
-  for(int i=0;i<n;i++) cin>>cs[i].v;
-  for(int i=0;i<m;i++) cin>>ps[i].v;
+  vector<M> xs(n),ys(n);
+  for(int i=0;i<n;i++) cin>>xs[i].v;
+  for(int i=0;i<n;i++) cin>>ys[i].v;
 
-  auto ans=me.build(cs,ps);
-  for(int i=0;i<m;i++){
+  auto ans=ip.build(xs,ys);
+  for(int i=0;i<n;i++){
     if(i) cout<<" ";
     cout<<ans[i];
   }
