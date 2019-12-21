@@ -151,7 +151,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/chebyshevneighbors.cpp.html">graph/chebyshevneighbors.cpp</a>
 * :heavy_check_mark: <a href="library/graph/chromatic.cpp.html">graph/chromatic.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
-* :heavy_check_mark: <a href="library/graph/dominatortree.cpp.html">graph/dominatortree.cpp</a>
+* :warning: <a href="library/graph/dominatortree.cpp.html">graph/dominatortree.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dynamicconnectivity.cpp.html">graph/dynamicconnectivity.cpp</a>
 * :warning: <a href="library/graph/girth.cpp.html">graph/girth.cpp</a>
 * :heavy_check_mark: <a href="library/graph/independentset.cpp.html">graph/independentset.cpp</a>
@@ -294,7 +294,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
@@ -327,6 +327,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0109.test.cpp.html">test/aoj/0109.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0168.test.cpp.html">test/aoj/0168.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0233.test.cpp.html">test/aoj/0233.test.cpp</a>
+* :warning: <a href="verify/test/aoj/0294.test.cpp.html">test/aoj/0294.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0377.test.cpp.html">test/aoj/0377.test.cpp</a>
