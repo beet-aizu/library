@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/interpolate.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-21 22:13:07+09:00
+    - Last commit date: 2019-12-21 22:21:05+09:00
 
 
 
@@ -63,6 +63,7 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+// O(N log^2 N)
 template<typename T>
 struct Interpolate : MultiEval<T>{
   using super=MultiEval<T>;

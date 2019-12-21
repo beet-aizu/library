@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/multipoint_evaluation.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-21 22:13:07+09:00
+    - Last commit date: 2019-12-21 22:21:05+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/multipoint_evaluation">https://judge.yosupo.jp/problem/multipoint_evaluation</a>

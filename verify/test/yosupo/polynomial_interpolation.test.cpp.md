@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/polynomial_interpolation.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-21 22:13:07+09:00
+    - Last commit date: 2019-12-21 22:21:05+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/polynomial_interpolation">https://judge.yosupo.jp/problem/polynomial_interpolation</a>
