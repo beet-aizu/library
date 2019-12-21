@@ -61,6 +61,14 @@ struct FormalPowerSeries{
     return ds;
   }
 
+  Poly mod(Poly as,Poly bs){
+    if(as==Poly(as.size(),0)) return Poly({0});
+    as=sub(as,mul(div(as,bs),bs));
+    if(as==Poly(as.size(),0)) return Poly({0});
+    while(as.back()==T(0)) as.pop_back();
+    return as;
+  }
+
   // F(0) must be 1
   Poly sqrt(Poly as,int deg){
     assert(as[0]==T(1));
