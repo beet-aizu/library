@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#10d9c4a68fc97fbc913ae15313e9b2f4">segtree/cht</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/cht/lichao.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:51:08+09:00
+    - Last commit date: 2019-12-24 08:49:31+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/yosupo/line_add_get_min.test.cpp.html">test/yosupo/line_add_get_min.test.cpp</a>
 
 
 ## Code
@@ -75,7 +76,8 @@ struct LiChao{
     iota(pos.begin(),pos.end(),T(0));
     init(n);
   }
-  LiChao(vector<T> &pos):pos(pos){init(pos.size());}
+
+  LiChao(const vector<T> &pos):pos(pos){init(pos.size());}
 
   void init(int n_){
     n=1;
@@ -174,54 +176,8 @@ signed CSA070_SQUAREDEND(){
   https://csacademy.com/contest/archive/task/squared-ends
 */
 
-signed TENKA12016FINAL_E(){
-  using ll = long long;
-
-  int n,l;
-  cin>>n>>l;
-  auto a=make_v<ll>(n,l);
-  for(int i=0;i<n;i++)
-    for(int j=0;j<l;j++)
-      cin>>a[i][j];
-
-  vector<ll> dp(l,0);
-  for(int i=0;i<n;i++){
-    LiChao<ll, true> cht(l);
-    for(ll j=0;j<l;j++)
-      cht.addLine(-2*j,a[i][j]+j*j);
-    for(ll j=0;j<l;j++)
-      dp[j]+=j*j+cht.query(j);
-  }
-
-  cout<<*min_element(dp.begin(),dp.end())<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
-*/
-
-signed COLOPL2018FINAL_C(){
-  using ll = long long;
-  int n;
-  cin>>n;
-  vector<ll> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-  LiChao<ll, true> cht(n);
-  for(ll i=0;i<n;i++) cht.addLine(-2*i,as[i]+i*i);
-  for(ll i=0;i<n;i++) cout<<cht.query(i)+i*i<<"\n";
-  return 0;
-}
-
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
-*/
-
 signed main(){
   //CSA070_SQUAREDEND();
-  //TENKA12016FINAL_E();
-  //COLOPL2018FINAL_C();
   return 0;
 }
 #endif

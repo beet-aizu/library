@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/3069.lichao.test.cpp
+# :heavy_check_mark: test/yosupo/line_add_get_min.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/3069.lichao.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/line_add_get_min.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-24 08:49:31+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3069">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3069</a>
+* see: <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -48,90 +48,41 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3069"
+#define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../tools/chminmax.cpp"
+#include "../../tools/compress.cpp"
 #include "../../segtree/cht/lichao.cpp"
 #undef call_from_test
 
 signed main(){
   using ll = long long;
-  int n,m,q;
-  cin>>n>>m>>q;
+  int n,q;
+  cin>>n>>q;
+  vector<ll> as(n),bs(n);
+  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];
 
-  vector<ll> ds(n);
-  for(int i=0;i<n;i++) cin>>ds[i];
-  for(int i=0;i<n;i++) ds.emplace_back(int(ds[i]));
-  for(int i=0;i<n;i++) ds.emplace_back(int(ds[i]));
-
-  vector<ll> sm(n*3+1,0);
-  for(int i=0;i<n*3;i++) sm[i+1]=sm[i]+ds[i];
-
-  vector<char> cs(m);
-  vector<int> bs(m),ts(m);
-  for(int i=0;i<m;i++) cin>>cs[i]>>bs[i]>>ts[i],bs[i]--;
-
-  vector< vector<ll> > G(n*3);
-  vector<ll> xs(q),ys(q);
+  vector<ll> ts(q),xs(q),ys(q);
+  vector<ll> ps;
   for(int i=0;i<q;i++){
-    cin>>xs[i]>>ys[i];
-    xs[i]--,ys[i]--;
-    xs[i]+=n,ys[i]+=n;
-    G[xs[i]].emplace_back(i);
-  }
-
-  const ll INF = 1e18;
-  vector<ll> R(n*3,INF),L(n*3,INF);
-  int exR=0,exL=0;
-  for(int i=0;i<m;i++){
-    if(cs[i]=='R'){
-      exR=1;
-      chmin(R[bs[i]+n*0],ts[i]);
-      chmin(R[bs[i]+n*1],ts[i]);
-      chmin(R[bs[i]+n*2],ts[i]);
-    }
-    if(cs[i]=='L'){
-      exL=1;
-      chmin(L[bs[i]+n*0],ts[i]);
-      chmin(L[bs[i]+n*1],ts[i]);
-      chmin(L[bs[i]+n*2],ts[i]);
+    cin>>ts[i];
+    if(ts[i]==0) cin>>xs[i]>>ys[i];
+    if(ts[i]==1){
+      cin>>xs[i];
+      ps.emplace_back(xs[i]);
     }
   }
 
-  vector<ll> ans(q,INF);
-
-  // use R
-  if(exR){
-    LiChao<ll, true> cht(sm);
-    for(int x=0;x<n*2;x++){
-      if(R[x]!=INF) cht.addLine(R[x],-R[x]*sm[x]);
-      for(int i:G[x]){
-        int y=ys[i];
-        if(x>y) y+=n;
-        chmin(ans[i],cht.query(sm[y]));
-      }
-    }
+  LiChao<ll, true> seg(compress(ps));
+  for(int i=0;i<n;i++) seg.addLine(as[i],bs[i]);
+  for(int i=0;i<q;i++){
+    if(ts[i]==0) seg.addLine(xs[i],ys[i]);
+    if(ts[i]==1) cout<<seg.query(xs[i])<<"\n";
   }
-
-  // use L
-  if(exL){
-    LiChao<ll, true> cht(sm);
-    for(int x=n*3-1;x>=n;x--){
-      if(L[x]!=INF) cht.addLine(-L[x],L[x]*sm[x]);
-      for(int i:G[x]){
-        int y=ys[i];
-        if(x<y) y-=n;
-        chmin(ans[i],cht.query(sm[y]));
-      }
-    }
-  }
-
-  for(int i=0;i<q;i++) cout<<ans[i]<<"\n";
   cout<<flush;
   return 0;
 }
