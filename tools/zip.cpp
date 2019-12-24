@@ -1,5 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
+#endif
 //BEGIN CUT HERE
 template<typename ...Ts>
 decltype(auto) zip(vector<Ts>... args){
@@ -10,6 +12,7 @@ decltype(auto) zip(vector<Ts>... args){
   return res;
 }
 //END CUT HERE
+#ifndef call_from_test
 signed main(){
   vector<int> as({1,2,3});
   vector<string> bs({"a","b","c"});
@@ -17,3 +20,4 @@ signed main(){
   for(auto [x,y]:zs) cout<<x<<" "<<y<<endl;
   return 0;
 }
+#endif

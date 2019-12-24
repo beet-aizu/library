@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../tools/zip.cpp"
 #include "../../tools/fusion.cpp"
 #include "../../tools/compress.cpp"
 #include "../../algorithm/parallelbinarysearch.cpp"
@@ -22,9 +23,7 @@ signed main(){
     cin>>as[i]>>bs[i]>>vs[i],as[i]--;
 
   {
-    using T = tuple<int, int, int>;
-    vector<T> vt;
-    for(int i=0;i<m;i++) vt.emplace_back(vs[i],as[i],bs[i]);
+    auto vt=zip(vs,as,bs);
     sort(vt.begin(),vt.end());
     for(int i=0;i<m;i++) tie(vs[i],as[i],bs[i])=vt[i];
   }
