@@ -215,7 +215,7 @@ layout: default
 * :heavy_check_mark: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
 * :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
+* :heavy_check_mark: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
 * :heavy_check_mark: <a href="library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
@@ -554,6 +554,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/matrix_det.test.cpp.html">test/yosupo/matrix_det.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/maximum_independent_set.test.cpp.html">test/yosupo/maximum_independent_set.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/montmort_number_mod.test.cpp.html">test/yosupo/montmort_number_mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/number_of_substrings.test.cpp.html">test/yosupo/number_of_substrings.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>

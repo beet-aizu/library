@@ -41,7 +41,7 @@ layout: default
 * :warning: <a href="combination.cpp.html">math/combination.cpp</a>
 * :heavy_check_mark: <a href="linearcongruence.cpp.html">math/linearcongruence.cpp</a>
 * :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
-* :warning: <a href="../mod/montmort.cpp.html">mod/montmort.cpp</a>
+* :heavy_check_mark: <a href="../mod/montmort.cpp.html">mod/montmort.cpp</a>
 
 
 ## Verified with

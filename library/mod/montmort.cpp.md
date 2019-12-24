@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/montmort.cpp
+# :heavy_check_mark: mod/montmort.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,6 +39,11 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../math/extgcd.cpp.html">math/extgcd.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yosupo/montmort_number_mod.test.cpp.html">test/yosupo/montmort_number_mod.test.cpp</a>
 
 
 ## Code
