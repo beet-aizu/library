@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: algorithm/parallelbinarysearch.cpp
+# :heavy_check_mark: algorithm/parallelbinarysearch.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/parallelbinarysearch.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:20:47+09:00
+    - Last commit date: 2019-12-24 09:48:02+09:00
 
 
 
@@ -39,6 +39,11 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj/2563.test.cpp.html">test/aoj/2563.test.cpp</a>
 
 
 ## Code
@@ -51,11 +56,12 @@ layout: default
 using namespace std;
 #endif
 //BEGIN CUT HERE
-vector<int> parallelbinarysearch(int n,int q,
-                                 function<void(void)> init,
-                                 function<void(int)> apply,
-                                 function<bool(int)> check){
-  vector<vector<int> > C(q);
+// n questions, q operations
+vector<int> parallel_binary_search(int n,int q,
+                                   function<void(void)> init,
+                                   function<void(int)> apply,
+                                   function<bool(int)> check){
+  vector< vector<int> > C(q);
   vector<int> L(n,-1),R(n,q);
   bool flg=1;
   while(flg){
@@ -100,7 +106,7 @@ signed CODETHANKSFESTIVAL2017_H(){
   auto apply=[&](int i){uf.unite(a[i],b[i]);};
   auto check=[&](int i){return uf.same(x[i],y[i]);};
 
-  auto ans=parallelbinarysearch(q,m,init,apply,check);
+  auto ans=parallel_binary_search(q,m,init,apply,check);
 
   for(int i=0;i<q;i++)
     cout<<(ans[i]==m?-1:ans[i]+1)<<endl;

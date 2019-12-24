@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="library/algorithm/monotoneminima.cpp.html">algorithm/monotoneminima.cpp</a>
 * :warning: <a href="library/algorithm/onlineoffline.cpp.html">algorithm/onlineoffline.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
-* :warning: <a href="library/algorithm/parallelbinarysearch.cpp.html">algorithm/parallelbinarysearch.cpp</a>
+* :heavy_check_mark: <a href="library/algorithm/parallelbinarysearch.cpp.html">algorithm/parallelbinarysearch.cpp</a>
 
 
 <div id="d342894e126a2cdd0812cd3a6c903bbd"></div>
@@ -298,6 +298,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :heavy_check_mark: <a href="library/tools/fusion.cpp.html">tools/fusion.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
@@ -385,6 +386,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2488.test.cpp.html">test/aoj/2488.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2513.test.cpp.html">test/aoj/2513.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2560.test.cpp.html">test/aoj/2560.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2563.test.cpp.html">test/aoj/2563.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2603.test.cpp.html">test/aoj/2603.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2624.test.cpp.html">test/aoj/2624.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2627.test.cpp.html">test/aoj/2627.test.cpp</a>

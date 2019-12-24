@@ -25,33 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/compress.cpp
+# :heavy_check_mark: tools/fusion.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tools/compress.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tools/fusion.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-24 09:48:02+09:00
 
 
-
-
-## Required by
-
-* :heavy_check_mark: <a href="../flow/hopcroft_karp.cpp.html">flow/hopcroft_karp.cpp</a>
-* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
-* :heavy_check_mark: <a href="../segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/1599.test.cpp.html">test/aoj/1599.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2563.test.cpp.html">test/aoj/2563.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/line_add_get_min.test.cpp.html">test/yosupo/line_add_get_min.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 
 
 ## Code
@@ -64,42 +51,15 @@ layout: default
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename V>
-V compress(V v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
-}
-template<typename T>
-map<T, int> dict(const vector<T> &v){
-  map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
-  return res;
-}
-map<char, int> dict(const string &v){
-  return dict(vector<char>(v.begin(),v.end()));
+template<typename T, typename ...Ts>
+vector<T> fusion(vector<T> bs,Ts... ts){
+  auto append=[&](auto vs){for(auto v:vs) bs.emplace_back(v);};
+  initializer_list<int>{(void(append(ts)),0)...};
+  return bs;
 }
 //END CUT HERE
 #ifndef call_from_test
-//INSERT ABOVE HERE
-signed ABC036_C(){
-  int n;
-  cin>>n;
-  vector<int> a(n);
-  for(int i=0;i<n;i++) cin>>a[i];
-  auto v=compress(a);
-  auto m=dict(v);
-  for(int i=0;i<n;i++) cout<<m[a[i]]<<endl;
-  return 0;
-}
-/*
-  verified on 2018/08/26
-  https://abc036.contest.atcoder.jp/tasks/abc036_c
-*/
-
 signed main(){
-  ABC036_C();
   return 0;
 }
 #endif
@@ -115,7 +75,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: tools/compress.cpp: line 5: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: tools/fusion.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
