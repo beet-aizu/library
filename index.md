@@ -302,7 +302,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
-* :warning: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
+* :heavy_check_mark: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
 * :heavy_check_mark: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
 
@@ -333,6 +333,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0294.test.cpp.html">test/aoj/0294.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/0367.test.cpp.html">test/aoj/0367.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0377.test.cpp.html">test/aoj/0377.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>

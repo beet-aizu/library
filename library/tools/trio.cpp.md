@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/trio.cpp
+# :heavy_check_mark: tools/trio.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -41,6 +41,11 @@ layout: default
 * :heavy_check_mark: <a href="chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="fixpoint.cpp.html">tools/fixpoint.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj/0367.test.cpp.html">test/aoj/0367.test.cpp</a>
 
 
 ## Code

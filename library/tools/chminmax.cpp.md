@@ -47,7 +47,7 @@ layout: default
 * :heavy_check_mark: <a href="../string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
 * :heavy_check_mark: <a href="../string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 * :heavy_check_mark: <a href="../string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
-* :warning: <a href="trio.cpp.html">tools/trio.cpp</a>
+* :heavy_check_mark: <a href="trio.cpp.html">tools/trio.cpp</a>
 
 
 ## Verified with
