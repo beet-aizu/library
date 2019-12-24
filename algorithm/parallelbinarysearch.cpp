@@ -3,11 +3,12 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-vector<int> parallelbinarysearch(int n,int q,
-                                 function<void(void)> init,
-                                 function<void(int)> apply,
-                                 function<bool(int)> check){
-  vector<vector<int> > C(q);
+// n questions, q operations
+vector<int> parallel_binary_search(int n,int q,
+                                   function<void(void)> init,
+                                   function<void(int)> apply,
+                                   function<bool(int)> check){
+  vector< vector<int> > C(q);
   vector<int> L(n,-1),R(n,q);
   bool flg=1;
   while(flg){
@@ -52,7 +53,7 @@ signed CODETHANKSFESTIVAL2017_H(){
   auto apply=[&](int i){uf.unite(a[i],b[i]);};
   auto check=[&](int i){return uf.same(x[i],y[i]);};
 
-  auto ans=parallelbinarysearch(q,m,init,apply,check);
+  auto ans=parallel_binary_search(q,m,init,apply,check);
 
   for(int i=0;i<q;i++)
     cout<<(ans[i]==m?-1:ans[i]+1)<<endl;
