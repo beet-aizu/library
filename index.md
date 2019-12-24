@@ -304,7 +304,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :warning: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
-* :warning: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
+* :heavy_check_mark: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
 
 
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>

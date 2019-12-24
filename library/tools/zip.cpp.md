@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tools/zip.cpp
+# :heavy_check_mark: tools/zip.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/zip.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-08-24 00:11:17+09:00
+    - Last commit date: 2019-12-24 09:53:16+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj/2563.test.cpp.html">test/aoj/2563.test.cpp</a>
 
 
 ## Code
@@ -41,8 +46,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
+#endif
 //BEGIN CUT HERE
 template<typename ...Ts>
 decltype(auto) zip(vector<Ts>... args){
@@ -53,6 +60,7 @@ decltype(auto) zip(vector<Ts>... args){
   return res;
 }
 //END CUT HERE
+#ifndef call_from_test
 signed main(){
   vector<int> as({1,2,3});
   vector<string> bs({"a","b","c"});
@@ -60,6 +68,7 @@ signed main(){
   for(auto [x,y]:zs) cout<<x<<" "<<y<<endl;
   return 0;
 }
+#endif
 
 ```
 {% endraw %}
@@ -67,26 +76,12 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tools/zip.cpp"
-#include<bits/stdc++.h>
-using namespace std;
-//BEGIN CUT HERE
-template<typename ...Ts>
-decltype(auto) zip(vector<Ts>... args){
-  vector<decltype(make_tuple(args[0]...))> res;
-  int n=min({args.size()...});
-  res.reserve(n);
-  for(int i=0;i<n;i++) res.emplace_back(args[i]...);
-  return res;
-}
-//END CUT HERE
-signed main(){
-  vector<int> as({1,2,3});
-  vector<string> bs({"a","b","c"});
-  auto zs=zip(as,bs);
-  for(auto [x,y]:zs) cout<<x<<" "<<y<<endl;
-  return 0;
-}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 328, in write_contents
+    bundler.update(self.file_class.file_path)
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
+    raise BundleError(path, i + 1, "found codes out of include guard")
+onlinejudge_verify.bundle.BundleError: tools/zip.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
