@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#d554a8ac704505de7b361b88fc36eeb2">segtree/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/basic/ushi.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 13:36:48+09:00
+    - Last commit date: 2019-12-26 23:04:57+09:00
 
 
 
@@ -117,6 +117,7 @@ struct SegmentTree{
     if(~vl) return vl;
     return find(st,check,acc,(k<<1)|1,m,r);
   }
+
   template<typename C>
   int find(int st,C &check){
     T acc=ti;
@@ -126,38 +127,7 @@ struct SegmentTree{
 //END CUT HERE
 #ifndef call_from_test
 
-signed ARC038_C(){
-  int n;
-  scanf("%d",&n);
-  vector<int> cs(n),as(n);
-  for(int i=1;i<n;i++) scanf("%d %d",&cs[i],&as[i]);
-
-  const int INF = 1e9;
-  auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int> seg(f,INF);
-  seg.build(vector<int>(n,-1));
-
-  vector<int> dp(n);
-  dp[0]=0;
-  seg.set_val(0,0);
-  for(int i=1;i<n;i++){
-    auto check=[&](int x){return x<i-cs[i];};
-    dp[i]=seg.find(0,check);
-    seg.set_val(dp[i],max(seg.query(dp[i],dp[i]+1),i));
-  }
-
-  int ans=0;
-  for(int i=1;i<n;i++)
-    if(as[i]&1) ans^=dp[i];
-
-  puts(ans?"First":"Second");
-  return 0;
-}
-/*
-  verified on 2019/06/26
-  https://atcoder.jp/contests/arc038/tasks/arc038_c
-*/
-
+// find with non-invertible monoid
 signed KUPC2013_D(){
   int n;
   scanf("%d",&n);
@@ -185,40 +155,12 @@ signed KUPC2013_D(){
   return 0;
 }
 /*
-  verified on 2019/06/26
+  verified on 2019/12/26
   https://atcoder.jp/contests/kupc2013/tasks/kupc2013_d
 */
 
-signed ABC130_D(){
-  using ll = long long;
-  ll n,k;
-  cin>>n>>k;
-  vector<ll> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  auto f=[](ll a,ll b){return a+b;};
-  SegmentTree<ll> seg(f,0);
-  seg.build(as);
-
-  ll ans=0;
-  auto check=[&](ll d){return d>=k;};
-  for(int i=0;i<n;i++){
-    int idx=seg.find(i,check);
-    if(~idx) ans+=n-idx;
-  }
-
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/26
-  https://atcoder.jp/contests/abc130/tasks/abc130_d
-*/
-
 signed main(){
-  //ARC038_C();
   //KUPC2013_D();
-  //ABC130_D();
   return 0;
 }
 #endif
