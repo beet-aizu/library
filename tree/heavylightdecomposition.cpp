@@ -109,78 +109,7 @@ public:
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../graph/lowlink.cpp"
-#include "../segtree/basic/ushi.cpp"
-#undef call_from_test
-
-//INSERT ABOVE HERE
-signed YUKI_529(){
-  int n,e,q;
-  scanf("%d %d %d",&n,&e,&q);
-
-  LowLink big(n);
-  for(int i=0;i<e;i++){
-    int u,v;
-    scanf("%d %d",&u,&v);
-    u--;v--;
-    big.add_edge(u,v);
-  }
-
-  int E=0,V=big.build();
-  HLD hld(V);
-  for(int i=0;i<V;i++)
-    for(int j:big.T[i])
-      if(i<j) hld.add_edge(i,j),E++;
-  hld.build();
-
-  SegmentTree<int> rmq([](int a,int b){return max(a,b);},-1);
-  rmq.build(vector<int>(V,-1));
-
-  vector<priority_queue<int> > pq(V);
-  map<int, int> m;
-  int num=0;
-  for(int i=0;i<q;i++){
-    int d;
-    scanf("%d",&d);
-    if(d==1){
-      int u,w;
-      scanf("%d %d",&u,&w);
-      u--;
-      u=big.blg[u];
-      u=hld.vid[u];
-      m[w]=u;
-      if(pq[u].empty()||pq[u].top()<w) rmq.set_val(u,w);
-      pq[u].push(w);
-      num++;
-    }
-    if(d==2){
-      int s,t;
-      scanf("%d %d",&s,&t);
-      s--;t--;
-      s=big.blg[s];
-      t=big.blg[t];
-      auto f=[&](int l,int r){return rmq.query(l,r);};
-      int ans=hld.for_each(s,t,-1,f,rmq.f);
-      printf("%d\n",ans);
-      if(~ans){
-        int k=m[ans];
-        pq[k].pop();
-        rmq.set_val(k,(!pq[k].empty()?pq[k].top():-1));
-        num--;
-      }
-    }
-  }
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/529
-*/
-
 signed main(){
-  //YUKI_529();
   return 0;
 };
 #endif

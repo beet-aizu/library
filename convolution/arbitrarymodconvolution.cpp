@@ -59,66 +59,7 @@ struct ArbitraryModConvolution{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#include "../mod/mint.cpp"
-#include "../mod/enumeration.cpp"
-#undef call_from_test
-
-//INSERT ABOVE HERE
-signed YUKI_829(){
-  int n,b;
-  cin>>n>>b;
-  vector<int> s(n);
-  for(int i=0;i<n;i++) cin>>s[i];
-  using M = Mint<int>;
-  using E = Enumeration<M>;
-  E::init(3e5);
-
-  vector<int> cnt(n,0);
-  for(int i=0;i<n;i++) cnt[s[i]]++;
-
-  using P = pair<int, vector<M> > ;
-  priority_queue<P> pq;
-  pq.emplace(-1,vector<M>(1,1));
-
-  int sum=0;
-  for(int i=n-1;i>=0;i--){
-    if(cnt[i]==0) continue;
-    M x=E::H(sum,cnt[i]);
-    M y=E::H(sum+1,cnt[i])-x;
-    x*=E::Fact(cnt[i]);
-    y*=E::Fact(cnt[i]);
-
-    pq.emplace(-2,vector<M>({x,y}));
-    sum+=cnt[i];
-  }
-
-  ArbitraryModConvolution<M> arb;
-  while(pq.size()>1u){
-    auto as=pq.top().second;pq.pop();
-    auto bs=pq.top().second;pq.pop();
-    auto cs=arb.multiply(as,bs);
-    pq.emplace(-(int)cs.size(),cs);
-  }
-
-  auto dp=pq.top().second;
-  M ans(0),res(1);
-  for(int j=0;j<(int)dp.size();j++){
-    ans+=M(j)*dp[j]*res;
-    res*=M(b);
-  }
-  cout<<ans.v<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/24
-  https://yukicoder.me/problems/no/829
-*/
-
 signed main(){
-  YUKI_829();
   return 0;
 }
 #endif

@@ -66,28 +66,7 @@ template<typename T>
 constexpr T BellmanFord<T>::INF;
 //END CUT HERE
 #ifndef call_from_test
-//INSERT ABOVE HERE
 signed main(){
-  int n,m,p;
-  cin>>n>>m>>p;
-  BellmanFord<int> G(n);
-  for(int i=0;i<m;i++){
-    int a,b,c;
-    cin>>a>>b>>c;
-    a--;b--;
-    G.add_edge(a,b,p-c);
-  }
-  int neg_loop;
-  int res=G.shortest_path(0,n-1,neg_loop);
-  if(neg_loop){
-    cout<<-1<<endl;
-    return 0;
-  }
-  cout<<max(-res,0)<<endl;
   return 0;
 }
-/*
-  verified on 2019/08/10
-  https://atcoder.jp/contests/abc137/tasks/abc137_e
-*/
 #endif
