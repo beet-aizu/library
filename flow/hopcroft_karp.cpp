@@ -18,16 +18,15 @@ struct BiMatch{
 
   bool bfs(){
     fill(level.begin(),level.end(),-1);
-    queue<int> q;
+    queue<int> que;
     for(int i=0;i<L;i++){
-      if(match[i]<0){
-        level[i]=0;
-        q.emplace(i);
-      }
+      if(~match[i]) continue;
+      level[i]=0;
+      que.emplace(i);
     }
     bool found=false;
-    while(!q.empty()){
-      int v=q.front();q.pop();
+    while(!que.empty()){
+      int v=que.front();que.pop();
       for(int u:G[v]){
         if(~level[u]) continue;
         level[u]=level[v]+1;
@@ -38,7 +37,7 @@ struct BiMatch{
         }
         if(~level[w]) continue;
         level[w]=level[u]+1;
-        q.emplace(w);
+        que.emplace(w);
       }
     }
     return found;
@@ -72,60 +71,8 @@ struct BiMatch{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#include "../tools/compress.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-signed SPOJ_MATCHING(){
-  int X,Y,E;
-  cin>>X>>Y>>E;
-  BiMatch bm(X,Y);
-  for(int i=0;i<E;i++){
-    int x,y;
-    cin>>x>>y;
-    bm.add_edge(--x,--y);
-  }
-  cout<<bm.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  http://www.spoj.com/problems/MATCHING/
-*/
-
-signed chokudai_S002_K(){
-  int n;
-  cin>>n;
-  vector<int> as(n),bs(n);
-  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];
-
-  vector<int> vs;
-  for(int x:as) vs.emplace_back(x);
-  for(int x:bs) vs.emplace_back(x);
-  vs=compress(vs);
-  auto dc=dict(vs);
-
-  BiMatch bm(n,dc.size());
-  for(int i=0;i<n;i++){
-    bm.add_edge(i,dc[as[i]]);
-    bm.add_edge(i,dc[bs[i]]);
-  }
-
-  cout<<bm.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/chokudai_S002/tasks/chokudai_S002_k
-*/
-
-
 signed main(){
-  //SPOJ_MATCHING();
-  //chokudai_S002_K();
   return 0;
 }
 #endif
