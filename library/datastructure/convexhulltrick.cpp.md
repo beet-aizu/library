@@ -31,14 +31,9 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/convexhulltrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2019-12-27 08:27:21+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Verified with
@@ -57,7 +52,7 @@ layout: default
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template <typename T,bool isMin>
+template <typename T, bool isMin>
 struct ConvexHullTrick {
   #define F first
   #define S second
@@ -142,60 +137,7 @@ struct ConvexHullTrick {
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/chminmax.cpp"
-#undef call_from_test
-
-//INSERT ABOVE HERE
-signed TENKA12016FINAL_E(){
-  using ll = long long;
-
-  int n,l;
-  scanf("%d %d",&n,&l);
-  vector<vector<int> > as(n,vector<int>(l));
-  for(int i=0;i<n;i++)
-    for(int j=0;j<l;j++)
-      scanf("%d",&as[i][j]);
-
-  vector<ll> dp(l,0);
-
-  for(int i=0;i<n;i++){
-    ConvexHullTrick<ll, true> cht;
-    for(ll j=0;j<l;j++)
-      cht.addLine(-2*j,as[i][j]+j*j);
-    for(ll j=0;j<l;j++)
-      dp[j]+=j*j+cht.queryMonotoneInc(j);
-  }
-
-  printf("%lld\n",*min_element(dp.begin(),dp.end()));
-  return 0;
-}
-/*
-  verified on 2019/11/11
-  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
-*/
-
-signed COLOPL2018FINAL_C(){
-  using ll = long long;
-
-  int n;
-  scanf("%d",&n);
-  vector<ll> as(n);
-  for(int i=0;i<n;i++) scanf("%lld",&as[i]);
-  ConvexHullTrick<ll, false> cht;
-  for(ll i=0;i<n;i++) cht.addLine(-2*i,-(as[i]+i*i));
-  for(ll i=0;i<n;i++) printf("%lld\n",-cht.queryMonotoneDec(-i)+i*i);
-  return 0;
-}
-/*
-  verified on 2019/11/11
-  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
-*/
-
 signed main(){
-  //TENKA12016FINAL_E();
-  //COLOPL2018FINAL_C();
   return 0;
 }
 #endif
