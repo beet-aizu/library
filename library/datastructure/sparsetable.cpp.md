@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :heavy_check_mark: <a href="../string/manacher.cpp.html">string/manacher.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.sparsetable.test.cpp.html">test/aoj/DSL_3_D.sparsetable.test.cpp</a>

@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_6_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 15:04:21+09:00
+    - Last commit date: 2019-12-26 22:42:32+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A</a>

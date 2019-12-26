@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/levelancestor.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-25 17:59:09+09:00
+    - Last commit date: 2019-12-26 22:42:32+09:00
 
 
 
@@ -154,76 +154,7 @@ struct LevelAncestor{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-char buf[256];
-signed solve(){
-  using ll = long long;
-  int n;
-  scanf("%d",&n);
-  using P = pair<int, int>;
-  vector<vector<P> > G(n);
-  LevelAncestor la(n);
-  for(int i=1;i<n;i++){
-    int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
-    a--;b--;
-    la.add_edge(a,b);
-    G[a].emplace_back(b,c);
-    G[b].emplace_back(a,c);
-  }
-  la.build();
-
-  vector<ll> dep(n,0);
-  {
-    queue<P> q;
-    q.emplace(0,-1);
-    while(!q.empty()){
-      int v,p;
-      tie(v,p)=q.front();q.pop();
-      for(auto e:G[v]){
-        int u,c;
-        tie(u,c)=e;
-        if(u==p) continue;
-        dep[u]=dep[v]+c;
-        q.emplace(u,v);
-      }
-    }
-  }
-
-  while(scanf("%s",buf)){
-    string s(buf);
-    if(s=="DONE"s) break;
-    if(s=="DIST"s){
-      int a,b;
-      scanf("%d %d",&a,&b);
-      a--;b--;
-      printf("%lld\n",dep[a]+dep[b]-2*dep[la.lca(a,b)]);
-    }
-    if(s=="KTH"s){
-      int a,b,k;
-      scanf("%d %d %d",&a,&b,&k);
-      a--;b--;k--;
-      int l=la.lca(a,b);
-      int x=la.distance(a,l),y=la.distance(l,b);
-      assert(0<=k&&k<=x+y);
-      printf("%d\n",(k<=x?la.up(a,k):la.up(b,x+y-k))+1);
-    }
-  }
-  return 0;
-}
-
-signed SPOJ_QTREE2(){
-  int t;
-  scanf("%d",&t);
-  for(int i=0;i<t;i++) solve();
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://www.spoj.com/problems/QTREE2/
-*/
-
 signed main(){
-  SPOJ_QTREE2();
   return 0;
 }
 #endif

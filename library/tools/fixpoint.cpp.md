@@ -38,7 +38,6 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
 * :heavy_check_mark: <a href="trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="../tree/centroid.cpp.html">tree/centroid.cpp</a>
 * :heavy_check_mark: <a href="../tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>

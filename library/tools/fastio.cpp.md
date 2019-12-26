@@ -57,7 +57,6 @@ layout: default
 * :heavy_check_mark: <a href="../mod/order.cpp.html">mod/order.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="../segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
-* :heavy_check_mark: <a href="../string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
 * :heavy_check_mark: <a href="../string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 * :heavy_check_mark: <a href="../string/palindromictree.cpp.html">string/palindromictree.cpp</a>
 * :heavy_check_mark: <a href="trio.cpp.html">tools/trio.cpp</a>
