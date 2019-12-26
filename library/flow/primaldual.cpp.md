@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#cff5497121104c2b8e0cb41ed2083a9b">flow</a>
 * <a href="{{ site.github.repository_url }}/blob/master/flow/primaldual.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 15:56:23+09:00
+    - Last commit date: 2019-12-26 22:36:29+09:00
 
 
 
@@ -148,56 +148,6 @@ const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed SPOJ_GREED(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  auto solve=
-    [](){
-      int n;
-      cin>>n;
-      vector<int> cnt(n,0);
-      for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
-        cnt[x-1]++;
-      }
-      using ll = long long;
-      const ll INF = 1<<28;
-      int S=n,T=n+1;
-      PrimalDual<ll, ll> G(n+2);
-
-      int m;
-      cin>>m;
-      for(int i=0;i<m;i++){
-        int x,y;
-        cin>>x>>y;
-        x--;y--;
-        G.add_edge(x,y,INF,1);
-        G.add_edge(y,x,INF,1);
-      }
-
-      for(int i=0;i<n;i++){
-        G.add_edge(S,i,cnt[i],0);
-        G.add_edge(i,T,1,0);
-      }
-
-      int ok=0;
-      ll res=G.flow(S,T,n,ok);
-      assert(ok);
-      cout<<res<<endl;
-      return 0;
-
-    };
-  int t;
-  cin>>t;
-  while(t--) solve();
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://www.spoj.com/problems/GREED/
-*/
-
 signed geocon2013_B(){
   using D = double;
 
@@ -252,7 +202,6 @@ signed geocon2013_B(){
 */
 
 signed main(){
-  //SPOJ_GREED();
   //geocon2013_B();
   return 0;
 }
