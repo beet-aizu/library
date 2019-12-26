@@ -32,25 +32,6 @@ vector<T> dijkstra(int s,vector< vector< pair<int, T> > > & G){
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  int n,l;
-  scanf("%d %d",&n,&l);
-
-  using P = pair<int, long long>;
-  vector<vector<P> > G(l+1);
-  for(int i=0;i<n;i++){
-    int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
-    G[a].emplace_back(b,c);
-  }
-
-  for(int i=0;i<l;i++)
-    G[i+1].emplace_back(i,0);
-
-  printf("%lld\n",dijkstra(0,G)[l]);
   return 0;
 }
-/*
-  verified on 2018/01/16
-  https://atcoder.jp/contests/arc026/tasks/arc026_3
-*/
 #endif

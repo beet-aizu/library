@@ -55,58 +55,8 @@ struct LongestCommonPrefix{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#include "../tools/chminmax.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-signed ARC060_F(){
-  string s;
-  cin>>s;
-  int n=s.size();
-  {
-    string t(s);
-    t.erase(unique(t.begin(),t.end()),t.end());
-    if(t.size()==1u){
-      cout<<n<<endl<<1<<endl;
-      return 0;
-    }
-  }
-
-  vector<vector<int> > v(n+1);
-  for(int i=1;i<=n;i++)
-    for(int j=i+i;j<=n;j+=i)
-      v[j].emplace_back(i);
-
-  LongestCommonPrefix lcp(s);
-  auto check=
-    [&](int l,int r)->int{
-      for(int x:v[r-l])
-        if(lcp.lcp(l,l+x)>=r-l-x) return 0;
-      return 1;
-    };
-
-  if(check(0,n)){
-    cout<<1<<endl<<1<<endl;
-    return 0;
-  }
-
-  int ans=0;
-  for(int i=1;i<n;i++)
-    ans+=check(0,i)&&check(i,n);
-
-  cout<<2<<endl<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://atcoder.jp/contests/arc060/tasks/arc060_d
-*/
-
 signed main(){
-  ARC060_F();
   return 0;
 };
 #endif

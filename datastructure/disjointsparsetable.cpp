@@ -44,7 +44,7 @@ struct DisjointSparseTable{
 //END CUT HERE
 #ifndef call_from_test
 
-// find with non-invertible monoid
+// find with non-idempotent monoid
 signed CODECHEF_SEGPROD(){
   int T;
   scanf("%d",&T);

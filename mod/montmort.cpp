@@ -22,37 +22,7 @@ struct Montmort{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../math/extgcd.cpp"
-#undef call_from_test
-
-// montmort
-signed ARC009_C(){
-  using ll = long long;
-
-  ll n,k;
-  scanf("%lld %lld",&n,&k);
-  const int MOD = 1777777777;
-  int ans=Montmort<ll>(k,MOD)[k];
-
-  int dom=1;
-  for(int i=0;i<k;i++){
-    ans=(ll)ans*((n-i)%MOD)%MOD;
-    dom=(ll)dom*(i+1)%MOD;
-  }
-
-  ans=(ll)ans*mod_inverse<ll>(dom,MOD)%MOD;
-  printf("%d\n",ans);
-  return 0;
-}
-/*
-  verified on 2019/12/18
-  https://atcoder.jp/contests/arc009/tasks/arc009_3
-*/
-
 signed main(){
-  ARC009_C();
   return 0;
 }
 #endif

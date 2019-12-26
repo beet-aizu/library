@@ -19,21 +19,6 @@ map<T, int> factorize(T x){
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  int a,b;
-  cin>>a>>b;
-  map<int, int> m;
-  for(int i=b+1;i<=a;i++){
-    auto x=factorize(i);
-    for(auto p:x) m[p.first]+=p.second;
-  }
-  const int MOD = 1e9+7;
-  long long ans=1;
-  for(auto p:m) (ans*=(p.second+1))%=MOD;
-  cout<<ans<<endl;
   return 0;
 }
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/arc034/tasks/arc034_3
-*/
 #endif
