@@ -4,18 +4,14 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fastio.cpp"
+#include "../../tools/chminmax.cpp"
 #include "../../linearalgebra/squarematrix.cpp"
 #undef call_from_test
 
 #define IGNORE
 
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 signed main(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
   const int MAX = 160;
   const int INF = 1e8;
 
