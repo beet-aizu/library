@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/maximum_independent_set.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:51:01+09:00
+    - Last commit date: 2019-12-26 22:59:22+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/maximum_independent_set">https://judge.yosupo.jp/problem/maximum_independent_set</a>

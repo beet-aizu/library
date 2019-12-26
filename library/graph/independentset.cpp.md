@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/independentset.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-30 20:19:31+09:00
+    - Last commit date: 2019-12-26 22:59:22+09:00
 
 
 
@@ -122,80 +122,7 @@ struct IndependentSet{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed CODETHANKSFESTIVAL2017_G(){
-  int n,m;
-  cin>>n>>m;
-  IndependentSet G(n);
-  for(int i=0;i<m;i++){
-    int a,b;
-    cin>>a>>b;
-    a--;b--;
-    G.add_edge(a,b);
-  }
-  cout<<G.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/11/30
-  https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_g
-*/
-
-signed CFR533_E(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n,m;
-  cin>>n>>m;
-
-  IndependentSet G(m);
-  map<string, int> rev;
-
-  vector<int> vs;
-
-  using P = pair<int, int>;
-  set<P> sp;
-  auto add_edge=
-    [&](){
-      sort(vs.begin(),vs.end());
-      vs.erase(unique(vs.begin(),vs.end()),vs.end());
-      for(int x:vs){
-        for(int y:vs){
-          if(x==y) continue;
-          if(sp.count(P(x,y))) continue;
-          sp.emplace(x,y);
-          sp.emplace(y,x);
-          G.add_edge(x,y);
-        }
-      }
-      vs.clear();
-    };
-
-  for(int i=0;i<n;i++){
-    int t;
-    cin>>t;
-    if(t==1) add_edge();
-    if(t==2){
-      string s;
-      cin>>s;
-      if(!rev.count(s)){
-        int sz=rev.size();
-        rev[s]=sz;
-      }
-      vs.emplace_back(rev[s]);
-    }
-  }
-  add_edge();
-
-  cout<<G.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/11/30
-  https://codeforces.com/contest/1105/problem/E
-*/
 signed main(){
-  //CODETHANKSFESTIVAL2017_G();
-  //CFR533_E();
   return 0;
 }
 #endif
