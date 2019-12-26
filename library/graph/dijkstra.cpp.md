@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:09:22+09:00
+    - Last commit date: 2019-12-26 23:22:59+09:00
 
 
 
@@ -81,27 +81,8 @@ vector<T> dijkstra(int s,vector< vector< pair<int, T> > > & G){
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  int n,l;
-  scanf("%d %d",&n,&l);
-
-  using P = pair<int, long long>;
-  vector<vector<P> > G(l+1);
-  for(int i=0;i<n;i++){
-    int a,b,c;
-    scanf("%d %d %d",&a,&b,&c);
-    G[a].emplace_back(b,c);
-  }
-
-  for(int i=0;i<l;i++)
-    G[i+1].emplace_back(i,0);
-
-  printf("%lld\n",dijkstra(0,G)[l]);
   return 0;
 }
-/*
-  verified on 2018/01/16
-  https://atcoder.jp/contests/arc026/tasks/arc026_3
-*/
 #endif
 
 ```

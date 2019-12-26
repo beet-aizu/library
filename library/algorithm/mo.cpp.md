@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/mo.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:19:27+09:00
+    - Last commit date: 2019-12-26 23:22:59+09:00
 
 
 

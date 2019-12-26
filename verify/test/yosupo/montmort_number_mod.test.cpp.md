@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/montmort_number_mod.test.cpp
+# :warning: test/yosupo/montmort_number_mod.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/montmort_number_mod.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-24 09:20:03+09:00
+    - Last commit date: 2019-12-26 23:22:59+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/montmort_number_mod">https://judge.yosupo.jp/problem/montmort_number_mod</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/mod/montmort.cpp.html">mod/montmort.cpp</a>
+* :warning: <a href="../../../library/mod/montmort.cpp.html">mod/montmort.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

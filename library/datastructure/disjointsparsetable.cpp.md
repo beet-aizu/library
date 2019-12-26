@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/disjointsparsetable.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:10:12+09:00
+    - Last commit date: 2019-12-26 23:22:59+09:00
 
 
 
 
 ## Verified with
 
-* :warning: <a href="../../verify/test/aoj/DSL_3_D.disjointsparsetable.test.cpp.html">test/aoj/DSL_3_D.disjointsparsetable.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.disjointsparsetable.test.cpp.html">test/aoj/DSL_3_D.disjointsparsetable.test.cpp</a>
 * :warning: <a href="../../verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 
 
@@ -93,7 +93,7 @@ struct DisjointSparseTable{
 //END CUT HERE
 #ifndef call_from_test
 
-// find with non-invertible monoid
+// find with non-idempotent monoid
 signed CODECHEF_SEGPROD(){
   int T;
   scanf("%d",&T);
