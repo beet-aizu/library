@@ -13,7 +13,7 @@ struct Dinic{
     edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}
   };
 
-  vector<vector<edge> > G;
+  vector< vector<edge> > G;
   vector<int> level,iter;
 
   Dinic(){}
@@ -100,59 +100,7 @@ struct Dinic{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed SPOJ_FASTFLOW(){
-  using ll = long long;
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  ll n,m;
-  cin>>n>>m;
-  Dinic<ll, false> G(n);
-  for(int i=0;i<m;i++){
-    ll a,b,c;
-    cin>>a>>b>>c;
-    if(a==b) continue;
-    a--;b--;
-    G.add_edge(a,b,c);
-  }
-  cout<<G.flow(0,n-1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/10
-  https://www.spoj.com/problems/FASTFLOW/
-*/
-
-signed SPOJ_BANKROB(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n,m,s,t;
-  cin>>n>>m>>s>>t;
-  s--;t--;
-  const int INF=5050;
-  Dinic<int, true> G(n*2);
-  for(int i=0;i<m;i++){
-    int x,y;
-    cin>>x>>y;
-    x--;y--;
-    G.add_edge(n+x,y,INF);
-    G.add_edge(n+y,x,INF);
-  }
-
-  for(int i=0;i<n;i++)
-    G.add_edge(i,n+i,1);
-
-  cout<<G.flow(n+s,t)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/10
-  https://www.spoj.com/problems/BANKROB/
-*/
-
 signed main(){
-  //SPOJ_FASTFLOW();
-  //SPOJ_BANKROB();
   return 0;
 }
 #endif
