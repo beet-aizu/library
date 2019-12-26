@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/rerooting.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-30 14:55:12+09:00
+    - Last commit date: 2019-12-26 22:51:15+09:00
 
 
 
@@ -78,6 +78,7 @@ struct ReRooting{
     G[v].emplace_back(u,(int)G[u].size()-1,d);
   }
 
+  // p: idx for edge (not vertex)
   T dfs(int v,int p){
     while(lp[v]!=p&&lp[v]<(int)G[v].size()){
       auto &e=G[v][lp[v]];
@@ -143,6 +144,7 @@ signed YUKI_768(){
   https://yukicoder.me/problems/no/768
 */
 
+// verify non-invertible
 signed DP_V(){
   int n,m;
   cin>>n>>m;
@@ -167,7 +169,7 @@ signed DP_V(){
 
 signed main(){
   //YUKI_768();
-  DP_V();
+  //DP_V();
   return 0;
 }
 #endif

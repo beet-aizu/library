@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/split.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 15:04:21+09:00
+    - Last commit date: 2019-12-26 22:51:15+09:00
 
 
 
@@ -64,20 +64,7 @@ vector<string> split(string& s,char c){
 }
 //END CUT HERE
 #ifndef call_from_test
-signed YUKI_932(){
-  string s;
-  cin>>s;
-  auto ss=split(s,',');
-  cout<<(ss==vector<string>(ss.size(),"AC")?"Done!":"Failed...")<<endl;
-  return 0;
-}
-/*
-  verified 2019/11/30
-  https://yukicoder.me/problems/no/932
-*/
-
 signed main(){
-  YUKI_932();
   return 0;
 }
 #endif

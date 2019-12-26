@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/enumeration.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:44:32+09:00
+    - Last commit date: 2019-12-26 22:51:15+09:00
 
 
 
@@ -143,31 +143,8 @@ template<typename M>
 vector<M> Enumeration<M>::invs=vector<M>();
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-signed YUKI_117(){
-  int T;
-  scanf("%d\n",&T);
-  using M = Mint<int>;
-  using E = Enumeration<M>;
-  E::init(2e6+100);
-  while(T--){
-    char c;
-    int n,k;
-    scanf("%c(%d,%d)\n",&c,&n,&k);
-    if(c=='C') printf("%d\n",E::C(n,k).v);
-    if(c=='P') printf("%d\n",E::P(n,k).v);
-    if(c=='H') printf("%d\n",E::H(n,k).v);
-  }
-  return 0;
-}
-/*
-  verified on 2019/12/18
-  https://yukicoder.me/problems/no/117
-*/
-
 signed main(){
-  //YUKI_117();
   return 0;
 }
 #endif
