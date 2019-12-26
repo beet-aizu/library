@@ -71,31 +71,8 @@ template<typename M>
 vector<M> Enumeration<M>::invs=vector<M>();
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-signed YUKI_117(){
-  int T;
-  scanf("%d\n",&T);
-  using M = Mint<int>;
-  using E = Enumeration<M>;
-  E::init(2e6+100);
-  while(T--){
-    char c;
-    int n,k;
-    scanf("%c(%d,%d)\n",&c,&n,&k);
-    if(c=='C') printf("%d\n",E::C(n,k).v);
-    if(c=='P') printf("%d\n",E::P(n,k).v);
-    if(c=='H') printf("%d\n",E::H(n,k).v);
-  }
-  return 0;
-}
-/*
-  verified on 2019/12/18
-  https://yukicoder.me/problems/no/117
-*/
-
 signed main(){
-  //YUKI_117();
   return 0;
 }
 #endif

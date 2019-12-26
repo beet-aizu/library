@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-
 #endif
 //BEGIN CUT HERE
 template<typename M>
@@ -33,24 +32,7 @@ M lagrange_interpolation(vector<M> &y,M t){
 #include "../mod/mint.cpp"
 #undef call_from_test
 
-signed ARC033_D(){
-  int n;
-  scanf("%d",&n);
-
-  using M = Mint<int>;
-  vector<M> y(n+1);
-  for(int i=0;i<=n;i++) scanf("%d",&y[i].v);
-
-  int t;
-  scanf("%d",&t);
-  printf("%d\n",lagrange_interpolation(y,M(t)).v);
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/arc033/tasks/arc033_4
-*/
-
+// polynomial if divided by mod 500
 signed YUKI_042(){
   using M = Mint<int, int(1e9+9)>;
   const int MAX = 666 * 6 + 10;
@@ -66,9 +48,9 @@ signed YUKI_042(){
     using ll = long long;
     ll m;
     scanf("%lld",&m);
-    vector<M> y(6);
-    for(int i=0;i<6;i++) y[i]=dp[(m%500)+(i*500)];
-    printf("%d\n",lagrange_interpolation(y,M(m/500)).v);
+    vector<M> ys(6);
+    for(int i=0;i<6;i++) ys[i]=dp[(m%500)+(i*500)];
+    printf("%d\n",lagrange_interpolation(ys,M(m/500)).v);
   }
   return 0;
 }
@@ -78,7 +60,6 @@ signed YUKI_042(){
 */
 
 signed main(){
-  //ARC033_D();
   //YUKI_042();
   return 0;
 }

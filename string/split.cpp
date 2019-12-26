@@ -16,20 +16,7 @@ vector<string> split(string& s,char c){
 }
 //END CUT HERE
 #ifndef call_from_test
-signed YUKI_932(){
-  string s;
-  cin>>s;
-  auto ss=split(s,',');
-  cout<<(ss==vector<string>(ss.size(),"AC")?"Done!":"Failed...")<<endl;
-  return 0;
-}
-/*
-  verified 2019/11/30
-  https://yukicoder.me/problems/no/932
-*/
-
 signed main(){
-  YUKI_932();
   return 0;
 }
 #endif
