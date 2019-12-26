@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/twosatisfiability.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:09:22+09:00
+    - Last commit date: 2019-12-27 08:35:29+09:00
 
 
 
@@ -100,6 +100,8 @@ struct TwoSat{
 };
 //END CUT HERE
 #ifndef call_from_test
+
+// test add_if, set_true, set_false
 signed CFR441_C(){
   int n,m;
   scanf("%d %d",&n,&m);
@@ -159,34 +161,7 @@ signed CFR441_C(){
   http://codeforces.com/contest/875/problem/C
 */
 
-signed YUKI_274(){
-  int n,m;
-  cin>>n>>m;
-  vector<int> l(n),r(n);
-  for(int i=0;i<n;i++) cin>>l[i]>>r[i],r[i]++;
-
-  auto check=[&](int al,int ar,int bl,int br){
-               return max(al,bl)<min(ar,br);};
-
-  TwoSat ts(n);
-  for(int i=0;i<n;i++){
-    for(int j=0;j<i;j++){
-      if(check(l[i],r[i],l[j],r[j])) ts.add_nand(i,j);
-      if(check(l[i],r[i],m-r[j],m-l[j])) ts.add_nand(i,ts.negate(j));
-      if(check(m-r[i],m-l[i],l[j],r[j])) ts.add_nand(ts.negate(i),j);
-      if(check(m-r[i],m-l[i],m-r[j],m-l[j]))
-        ts.add_nand(ts.negate(i),ts.negate(j));
-    }
-  }
-
-  cout<<(ts.build().empty()?"NO":"YES")<<endl;
-  return 0;
-}
-/*
-  verified 2019/10/24
-  https://yukicoder.me/problems/no/274
-*/
-
+// test add_nand
 signed YUKI_470(){
   int n;
   cin>>n;
@@ -239,7 +214,6 @@ signed YUKI_470(){
 
 signed main(){
   //CFR441_C();
-  //YUKI_274();
   //YUKI_470();
   return 0;
 }

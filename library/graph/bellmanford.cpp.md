@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/bellmanford.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:09:22+09:00
+    - Last commit date: 2019-12-27 08:35:29+09:00
 
 
 
@@ -115,30 +115,9 @@ template<typename T>
 constexpr T BellmanFord<T>::INF;
 //END CUT HERE
 #ifndef call_from_test
-//INSERT ABOVE HERE
 signed main(){
-  int n,m,p;
-  cin>>n>>m>>p;
-  BellmanFord<int> G(n);
-  for(int i=0;i<m;i++){
-    int a,b,c;
-    cin>>a>>b>>c;
-    a--;b--;
-    G.add_edge(a,b,p-c);
-  }
-  int neg_loop;
-  int res=G.shortest_path(0,n-1,neg_loop);
-  if(neg_loop){
-    cout<<-1<<endl;
-    return 0;
-  }
-  cout<<max(-res,0)<<endl;
   return 0;
 }
-/*
-  verified on 2019/08/10
-  https://atcoder.jp/contests/abc137/tasks/abc137_e
-*/
 #endif
 
 ```

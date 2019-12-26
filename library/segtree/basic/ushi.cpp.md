@@ -39,7 +39,6 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
-* :heavy_check_mark: <a href="../../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 
 
 ## Verified with
