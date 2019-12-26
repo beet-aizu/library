@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d342894e126a2cdd0812cd3a6c903bbd">bbst</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/pb_ds_tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 22:54:40+09:00
+    - Last commit date: 2019-12-26 22:03:57+09:00
 
 
 
@@ -39,6 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0563.test.cpp.html">test/aoj/0563.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3117.test.cpp.html">test/aoj/3117.test.cpp</a>
 
 
 ## Code
@@ -56,7 +57,7 @@ using namespace std;
 #include<ext/pb_ds/tag_and_trait.hpp>
 using namespace __gnu_pbds;
 template <typename T>
-using gtree = tree<T,null_type,less<T>,rb_tree_tag,
+using gtree = tree<T, null_type, less<T>, rb_tree_tag,
                    tree_order_statistics_node_update>;
 // usage:
 // find_by_order(int k):
@@ -64,54 +65,7 @@ using gtree = tree<T,null_type,less<T>,rb_tree_tag,
 // order_of_key(T key):  return the index of key in tree
 //END CUT HERE
 #ifndef call_from_test
-signed ARC028_B(){
-  using ll = long long;
-  int n,k;
-  cin>>n>>k;
-  vector<int> xs(n);
-  for(int i=0;i<n;i++) cin>>xs[i];
-  map<int, int> mp;
-  for(int i=0;i<n;i++) mp[xs[i]]=i+1;
-  gtree<ll> G;
-  for(int i=0;i<k-1;i++) G.insert(xs[i]);
-  for(int i=k-1;i<n;i++){
-    G.insert(xs[i]);
-    auto key=*G.find_by_order(k-1);
-    cout<<mp[key]<<endl;
-  }
-  return 0;
-}
-
-/*
-  verified on 2019/12/09
-  https://atcoder.jp/contests/arc028/tasks/arc028_2
-*/
-
-signed ARC033_C(){
-  int q;
-  cin>>q;
-  gtree<int> G;
-  while(q--){
-    int t,x;
-    cin>>t>>x;
-    if(t==1) G.insert(x);
-    if(t==2){
-      int k=*G.find_by_order(x-1);
-      G.erase(k);
-      cout<<k<<endl;
-    }
-  }
-  return 0;
-}
-
-/*
-  verified on 2019/12/09
-  https://atcoder.jp/contests/arc033/tasks/arc033_3
-*/
-
 signed main(){
-  //ARC028_B();
-  //ARC033_C();
   return 0;
 }
 #endif
