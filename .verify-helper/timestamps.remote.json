@@ -108,6 +108,7 @@
 "test/aoj/3074.test.cpp": "2019-12-17 16:09:50 +0900",
 "test/aoj/3102.test.cpp": "2019-12-17 22:09:22 +0900",
 "test/aoj/3112.test.cpp": "2019-12-17 20:42:16 +0900",
+"test/aoj/3120.test.cpp": "2019-12-26 17:25:44 +0900",
 "test/aoj/ALDS1_10_C.test.cpp": "2019-12-17 22:01:05 +0900",
 "test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp": "2019-12-17 22:01:05 +0900",
 "test/aoj/ALDS1_14_B.test.cpp": "2019-10-28 14:24:34 +0900",
