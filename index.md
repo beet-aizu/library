@@ -435,6 +435,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/3102.test.cpp.html">test/aoj/3102.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/3120.test.cpp.html">test/aoj/3120.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_10_C.test.cpp.html">test/aoj/ALDS1_10_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp.html">test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.test.cpp.html">test/aoj/ALDS1_14_B.test.cpp</a>

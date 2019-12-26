@@ -44,6 +44,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3120.test.cpp.html">test/aoj/3120.test.cpp</a>
 
 
 ## Code
