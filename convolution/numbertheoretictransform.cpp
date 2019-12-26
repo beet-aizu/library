@@ -96,28 +96,7 @@ template<int X> constexpr int NTT<X>::md;
 template<int X> constexpr int NTT<X>::rt;
 //END CUT HERE
 #ifndef call_from_test
-signed ATC001_C(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  vector<int> as(n+1,0),bs(n+1,0);
-  for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
-
-  NTT<0> ntt;
-  auto cs=ntt.multiply(as,bs);
-  for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/11/26
-  https://atcoder.jp/contests/atc001/tasks/fft_c
-*/
-
 signed main(){
-  ATC001_C();
   return 0;
 }
 #endif

@@ -77,25 +77,7 @@ struct SuffixArray{
 
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed JOI2009HO_A(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int n,m;
-  string s;
-  cin>>n>>m>>s;
-  SuffixArray sa(s);
-  string t="I";
-  for(int i=0;i<n;i++) t+="OI";
-  cout<<sa.count(t)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/28
-  https://atcoder.jp/contests/joi2009ho/tasks/joi2009ho_a
-*/
-
 signed main(){
-  JOI2009HO_A();
   return 0;
 };
 #endif

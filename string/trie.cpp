@@ -79,6 +79,8 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //INSERT ABOVE HERE
+
+// test trie without aho-corasick
 signed tenka1_2016_final_C(){
   string s;
   cin>>s;

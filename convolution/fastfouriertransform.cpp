@@ -109,16 +109,6 @@ namespace FFT{
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  int n;
-  cin>>n;
-  vector<int> as(n+1,0),bs(n+1,0);
-  for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
-  auto cs=FFT::multiply(as,bs);
-  for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
   return 0;
 }
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/atc001/tasks/fft_c
-*/
 #endif
