@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/squarematrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:04:57+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
-* :heavy_check_mark: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
+* :warning: <a href="../tools/compress.cpp.html">tools/compress.cpp</a>
 * :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

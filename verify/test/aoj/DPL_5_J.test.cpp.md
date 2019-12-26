@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 

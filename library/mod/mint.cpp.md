@@ -48,11 +48,9 @@ layout: default
 * :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 * :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
-* :heavy_check_mark: <a href="bell.cpp.html">mod/bell.cpp</a>
-* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
+* :warning: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
-* :heavy_check_mark: <a href="log.cpp.html">mod/log.cpp</a>
 * :warning: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 
@@ -79,7 +77,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_D.test.cpp.html">test/aoj/DPL_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_E.test.cpp.html">test/aoj/DPL_5_E.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_F.test.cpp.html">test/aoj/DPL_5_F.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_H.test.cpp.html">test/aoj/DPL_5_H.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>

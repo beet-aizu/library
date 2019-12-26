@@ -25,26 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/bell.cpp
+# :warning: mod/bell.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/bell.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:51:15+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
-* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
 
 
 ## Code
@@ -83,35 +82,7 @@ M bell(int n,int k){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#undef call_from_test
-
-signed CFR315_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  using M = Mint<int>;
-  using E = Enumeration<M>;
-  E::init(n+1);
-
-  M res;
-  for(int i=0;i<n;i++)
-    res+=E::C(n,i)*bell<M>(i,i);
-
-  cout<<res.v<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/18
-  https://codeforces.com/contest/568/problem/B
-*/
-
 signed main(){
-  CFR315_B();
   return 0;
 }
 #endif

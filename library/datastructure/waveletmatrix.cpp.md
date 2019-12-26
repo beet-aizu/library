@@ -31,14 +31,9 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/waveletmatrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Verified with
@@ -243,12 +238,9 @@ struct WaveletMatrix{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/chminmax.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
+
+// test rquantile
 signed SPOJ_MKTHNUM(){
   int n,q;
   scanf("%d %d",&n,&q);
@@ -270,77 +262,8 @@ signed SPOJ_MKTHNUM(){
   https://www.spoj.com/problems/MKTHNUM/
 */
 
-signed UNIVERSITYCODESPRINT04_F(){
-  int n;
-  scanf("%d",&n);
-  vector<int> t(n);
-  for(int i=0;i<n;i++) scanf("%d",&t[i]);
-
-  vector<int> pre(n,-1),nxt(n,n),com(n+1,-1);
-  unordered_map<int, int> pos;
-  for(int i=0;i<n;i++){
-    if(pos.count(t[i])) pre[i]=pos[t[i]];
-    pos[t[i]]=i;
-  }
-
-  pos.clear();
-  for(int i=n-1;i>=0;i--){
-    if(pos.count(t[i])) nxt[i]=pos[t[i]];
-    pos[t[i]]=i;
-    com[nxt[i]]=pre[i];
-  }
-
-  WaveletMatrix<int, 20> wm1(pre),wm2(com);
-
-  int q;
-  scanf("%d",&q);
-  for(int i=0;i<q;i++){
-    int A,B,ans;
-    scanf("%d %d",&A,&B);
-    ans=B-(--A);
-    ans-=wm1.rangefreq(A,B,A,B)<<1;
-    ans+=wm2.rangefreq(A,B,A,B);
-    printf("%d\n",ans);
-  }
-
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://www.hackerrank.com/contests/university-codesprint-4/challenges/unique-art/problem
-*/
-
-signed ABC106_D(){
-  int n,m,q;
-  scanf("%d %d %d",&n,&m,&q);
-  vector<int> x(m),y(m);
-  for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
-  using P = pair<int, int>;
-  vector<P> vp;
-  for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
-  sort(vp.begin(),vp.end());
-  for(int i=0;i<m;i++) tie(x[i],y[i])=vp[i];
-
-  WaveletMatrix<int, 10> wm(y);
-
-  for(int i=0;i<q;i++){
-    int a,b;
-    scanf("%d %d",&a,&b);
-    int l=lower_bound(x.begin(),x.end(),a)-x.begin();
-    int r=upper_bound(x.begin(),x.end(),b)-x.begin();
-    printf("%d\n",wm.rangefreq(l,r,a,b+1));
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://atcoder.jp/contests/abc106/tasks/abc106_d
-*/
-
 signed main(){
   //SPOJ_MKTHNUM();
-  //UNIVERSITYCODESPRINT04_F();
-  //ABC106_D();
   return 0;
 }
 #endif

@@ -31,14 +31,9 @@ layout: default
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/drop.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
-
-
-## Required by
-
-* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 
 
 ## Verified with
@@ -47,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2934.test.cpp.html">test/aoj/2934.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2970.test.cpp.html">test/aoj/2970.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2971.test.cpp.html">test/aoj/2971.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_1_B.test.cpp.html">test/aoj/GRL_1_B.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/GRL_1_B.test.cpp.html">test/aoj/GRL_1_B.test.cpp</a>
 * :warning: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 
 
@@ -66,19 +61,8 @@ template<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  int a,b,c,d,e,k;
-  cin>>a>>b>>c>>d>>e>>k;
-  vector<int> vs({a,b,c,d,e});
-  for(int i=0;i<5;i++)
-    for(int j=0;j<5;j++)
-      if(abs(vs[i]-vs[j])>k) drop(":(");
-  drop("Yay!"s);
   return 0;
 }
-/*
-  verified on 2019/07/08
-  https://atcoder.jp/contests/abc123/tasks/abc123_a
-*/
 #endif
 
 ```

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/compress.cpp
+# :warning: tools/compress.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/compress.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
@@ -39,7 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
-* :heavy_check_mark: <a href="../segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
+* :warning: <a href="../segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
 
 
 ## Verified with
@@ -49,8 +49,8 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2563.test.cpp.html">test/aoj/2563.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/line_add_get_min.test.cpp.html">test/yosupo/line_add_get_min.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/line_add_get_min.test.cpp.html">test/yosupo/line_add_get_min.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 
 
 ## Code
@@ -82,23 +82,7 @@ map<char, int> dict(const string &v){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed ABC036_C(){
-  int n;
-  cin>>n;
-  vector<int> a(n);
-  for(int i=0;i<n;i++) cin>>a[i];
-  auto v=compress(a);
-  auto m=dict(v);
-  for(int i=0;i<n;i++) cout<<m[a[i]]<<endl;
-  return 0;
-}
-/*
-  verified on 2018/08/26
-  https://abc036.contest.atcoder.jp/tasks/abc036_c
-*/
-
 signed main(){
-  ABC036_C();
   return 0;
 }
 #endif

@@ -25,20 +25,19 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/fixpoint.cpp
+# :warning: tools/fixpoint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/fixpoint.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="../tree/centroid.cpp.html">tree/centroid.cpp</a>
 * :heavy_check_mark: <a href="../tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
@@ -50,7 +49,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2646.test.cpp.html">test/aoj/2646.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
 
 
 ## Code
@@ -79,35 +78,8 @@ inline decltype(auto) MFP(F&& f){
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  int h,w;
-  cin>>h>>w;
-  vector<string> st(h);
-  for(int i=0;i<h;i++) cin>>st[i];
-
-  vector<vector<int> > used(h,vector<int>(w,0));
-
-  auto dfs=
-    MFP([&](auto dfs,int y,int x)->void{
-          used[y][x]=1;
-          if(y  >0&&st[y-1][x]!='#'&&!used[y-1][x]) dfs(y-1,x);
-          if(y+1<h&&st[y+1][x]!='#'&&!used[y+1][x]) dfs(y+1,x);
-          if(x  >0&&st[y][x-1]!='#'&&!used[y][x-1]) dfs(y,x-1);
-          if(x+1<w&&st[y][x+1]!='#'&&!used[y][x+1]) dfs(y,x+1);
-        });
-
-  for(int i=0;i<h;i++)
-    for(int j=0;j<w;j++)
-      if(st[i][j]=='s') dfs(i,j);
-
-  for(int i=0;i<h;i++)
-    for(int j=0;j<w;j++)
-      if(st[i][j]=='g')
-        cout<<(used[i][j]?"Yes":"No")<<endl;
   return 0;
 }
-/*
-  https://atcoder.jp/contests/atc001/tasks/dfs_a
-*/
 #endif
 
 ```

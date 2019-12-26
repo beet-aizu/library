@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/totient_table.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:55:14+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
@@ -63,25 +63,9 @@ vector<int> totient_table(int n){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-class CatAndMice {
-  using ll = long long;
-public:
-  long long countDirections(int n, int c) {
-    if(n==c) return 8;
-
-    auto ts=totient_table(n);
-
-    ll ans=0;
-    for(int i=1;i<=n;i++)
-      if((n/i)==c) ans+=ts[i];
-
-    return ans*8LL;
-  }
-};
-/*
-  verified on 2019/09/25
-  https://vjudge.net/problem/TopCoder-15530
-*/
+signed main(){
+  return 0;
+}
 #endif
 
 ```

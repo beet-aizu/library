@@ -41,10 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/convexhulltrick.cpp.html">datastructure/convexhulltrick.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
-* :heavy_check_mark: <a href="../datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
-* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
 * :heavy_check_mark: <a href="../string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
-* :heavy_check_mark: <a href="trio.cpp.html">tools/trio.cpp</a>
 
 
 ## Verified with

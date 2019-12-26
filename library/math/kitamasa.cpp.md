@@ -41,11 +41,6 @@ layout: default
 * :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
-## Required by
-
-* :heavy_check_mark: <a href="../mod/log.cpp.html">mod/log.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0168.test.cpp.html">test/aoj/0168.test.cpp</a>

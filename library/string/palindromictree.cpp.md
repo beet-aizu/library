@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/palindromictree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:01:05+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
@@ -138,6 +138,8 @@ struct PalindromicTree{
 #undef call_from_test
 
 //INSERT ABOVE HERE
+
+// larger constraints than AOJ 2292
 signed YUKI_263(){
   using ll = long long;
   string s,t;

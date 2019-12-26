@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segtree/cht/lichao.cpp
+# :warning: segtree/cht/lichao.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#10d9c4a68fc97fbc913ae15313e9b2f4">segtree/cht</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/cht/lichao.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-24 08:49:31+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../tools/compress.cpp.html">tools/compress.cpp</a>
+* :warning: <a href="../../tools/compress.cpp.html">tools/compress.cpp</a>
 * :warning: <a href="../../tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../../tools/vec.cpp.html">tools/vec.cpp</a>
 
@@ -46,7 +46,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/aoj/3069.lichao.test.cpp.html">test/aoj/3069.lichao.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/yosupo/line_add_get_min.test.cpp.html">test/yosupo/line_add_get_min.test.cpp</a>
+* :warning: <a href="../../../verify/test/yosupo/line_add_get_min.test.cpp.html">test/yosupo/line_add_get_min.test.cpp</a>
 
 
 ## Code

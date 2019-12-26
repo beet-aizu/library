@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/line_add_get_min.test.cpp
+# :warning: test/yosupo/line_add_get_min.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/line_add_get_min.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-24 08:49:31+09:00
+    - Last commit date: 2019-12-26 23:42:22+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a>
@@ -38,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
+* :warning: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
+* :warning: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
