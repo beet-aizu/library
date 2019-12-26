@@ -51,7 +51,6 @@ layout: default
 
 ### bbst
 
-* :warning: <a href="library/bbst/avltree.cpp.html">bbst/avltree.cpp</a>
 * :heavy_check_mark: <a href="library/bbst/pb_ds_tree.cpp.html">bbst/pb_ds_tree.cpp</a>
 
 
