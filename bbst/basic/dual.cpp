@@ -15,7 +15,7 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   E dat,laz;
-  NodeBase(){}
+  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(E dat,E laz):
     cnt(1),rev(0),dat(dat),laz(laz){l=r=p=nullptr;}
 };

@@ -15,7 +15,7 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   T val,dat;
-  NodeBase():cnt(0),rev(0){l=r=p=nullptr;}
+  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val):
     cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}
 };
@@ -118,6 +118,8 @@ struct Ushi : BBSTBase<Node, LIM>{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
+
+// test toggle
 signed HAPPYQUERY_C(){
   cin.tie(0);
   ios::sync_with_stdio(0);

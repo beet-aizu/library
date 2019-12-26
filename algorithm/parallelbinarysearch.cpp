@@ -30,43 +30,7 @@ vector<int> parallel_binary_search(int n,int q,
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../datastructure/unionfindtree.cpp"
-#undef call_from_test
-
-signed CODETHANKSFESTIVAL2017_H(){
-  int n,m;
-  cin>>n>>m;
-  vector<int> a(m),b(m);
-  for(int i=0;i<m;i++) cin>>a[i]>>b[i];
-  int q;
-  cin>>q;
-  vector<int> x(q),y(q);
-  for(int i=0;i<q;i++) cin>>x[i]>>y[i];
-
-  for(int i=0;i<m;i++) a[i]--,b[i]--;
-  for(int i=0;i<q;i++) x[i]--,y[i]--;
-
-  UnionFind uf;
-  auto init=[&]{uf=UnionFind(n);};
-  auto apply=[&](int i){uf.unite(a[i],b[i]);};
-  auto check=[&](int i){return uf.same(x[i],y[i]);};
-
-  auto ans=parallel_binary_search(q,m,init,apply,check);
-
-  for(int i=0;i<q;i++)
-    cout<<(ans[i]==m?-1:ans[i]+1)<<endl;
-
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_h
-*/
-
 signed main(){
-  CODETHANKSFESTIVAL2017_H();
   return 0;
 }
 #endif
