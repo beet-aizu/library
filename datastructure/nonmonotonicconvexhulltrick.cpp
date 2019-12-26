@@ -3,9 +3,8 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename T,bool isMin>
+template<typename T, bool isMin, typename number = double>
 struct NonmonotonicConvexHullTrick {
-  using number = double;
   static constexpr number INF = numeric_limits<T>::max();
   struct Line {
     T m,b,val;
@@ -82,61 +81,8 @@ struct NonmonotonicConvexHullTrick {
 } ;
 //END CUT HERE
 #ifndef call_from_test
-template<typename T1,typename T2> void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 //INSERT ABOVE HERE
-
-signed TENKA12016FINAL_E(){
-  using ll = long long;
-
-  int n,l;
-  scanf("%d %d",&n,&l);
-  vector<vector<int> > as(n,vector<int>(l));
-  for(int i=0;i<n;i++)
-    for(int j=0;j<l;j++)
-      scanf("%d",&as[i][j]);
-
-  vector<ll> dp(l,0);
-
-  for(int i=0;i<n;i++){
-    NonmonotonicConvexHullTrick<ll, true> cht;
-    for(ll j=0;j<l;j++)
-      cht.addLine(-2*j,as[i][j]+j*j);
-    for(ll j=0;j<l;j++)
-      dp[j]+=j*j+cht.query(j);
-  }
-
-  printf("%lld\n",*min_element(dp.begin(),dp.end()));
-  return 0;
-}
-
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_e
-*/
-
-signed COLOPL2018FINAL_C(){
-  using ll = long long;
-
-  int n;
-  scanf("%d",&n);
-  vector<ll> as(n);
-  for(int i=0;i<n;i++) scanf("%lld",&as[i]);
-  NonmonotonicConvexHullTrick<ll, false> cht;
-  for(ll i=0;i<n;i++) cht.addLine(-2*i,-(as[i]+i*i));
-  for(ll i=0;i<n;i++) printf("%lld\n",-cht.query(-i)+i*i);
-  return 0;
-}
-
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
-*/
-
 signed main(){
-  //TENKA12016FINAL_E();
-  //COLOPL2018FINAL_C();
   return 0;
 }
 #endif
