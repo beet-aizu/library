@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/trie.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:01:05+09:00
+    - Last commit date: 2019-12-26 23:10:12+09:00
 
 
 
@@ -134,6 +134,8 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //INSERT ABOVE HERE
+
+// test trie without aho-corasick
 signed tenka1_2016_final_C(){
   string s;
   cin>>s;

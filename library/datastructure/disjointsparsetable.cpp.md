@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/disjointsparsetable.cpp
+# :warning: datastructure/disjointsparsetable.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/disjointsparsetable.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:09:22+09:00
+    - Last commit date: 2019-12-26 23:10:12+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.disjointsparsetable.test.cpp.html">test/aoj/DSL_3_D.disjointsparsetable.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/DSL_3_D.disjointsparsetable.test.cpp.html">test/aoj/DSL_3_D.disjointsparsetable.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 
 
 ## Code
@@ -92,43 +92,8 @@ struct DisjointSparseTable{
 };
 //END CUT HERE
 #ifndef call_from_test
-signed ARC023_D(){
-  int n,m;
-  scanf("%d %d",&n,&m);
-  vector<int> a(n),x(m);
-  for(int i=0;i<n;i++) scanf("%d",&a[i]);
-  for(int i=0;i<m;i++) scanf("%d",&x[i]);
 
-  auto f=[](int a,int b){return __gcd(a,b);};
-  DisjointSparseTable<int> st(f);
-  st.build(a);
-
-  map<int, long long> ans;
-  for(int i=0;i<n;i++){
-    int l=i;
-    int pre=a[i],lst=st.query(i,n);
-    while(lst!=pre){
-      int r=n,pl=l;
-      while(l+1<r){
-        int m=(l+r)>>1;
-        if(st.query(i,m)!=pre) r=m;
-        else l=m;
-      }
-      ans[pre]+=l-pl;
-      pre=st.query(i,r);
-    }
-    ans[lst]+=n-l;
-  }
-
-  for(int i=0;i<m;i++) printf("%lld\n",ans[x[i]]);
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://atcoder.jp/contests/arc023/tasks/arc023_4
-*/
-
-
+// find with non-invertible monoid
 signed CODECHEF_SEGPROD(){
   int T;
   scanf("%d",&T);
@@ -171,7 +136,6 @@ signed CODECHEF_SEGPROD(){
 
 //INSERT ABOVE HERE
 signed main(){
-  //ARC023_D();
   //CODECHEF_SEGPROD();
   return 0;
 }

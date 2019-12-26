@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/fastfouriertransform.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2019-12-26 23:10:12+09:00
 
 
 
@@ -39,7 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
-* :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :warning: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="../tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
@@ -164,18 +164,8 @@ namespace FFT{
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  int n;
-  cin>>n;
-  vector<int> as(n+1,0),bs(n+1,0);
-  for(int i=1;i<=n;i++) cin>>as[i]>>bs[i];
-  auto cs=FFT::multiply(as,bs);
-  for(int i=1;i<=n*2;i++) cout<<cs[i]<<"\n";
   return 0;
 }
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/atc001/tasks/fft_c
-*/
 #endif
 
 ```

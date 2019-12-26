@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
-* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
+* :warning: <a href="mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified with

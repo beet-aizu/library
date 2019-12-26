@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="fastio.cpp.html">tools/fastio.cpp</a>
+* :warning: <a href="fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="fixpoint.cpp.html">tools/fixpoint.cpp</a>
 
 

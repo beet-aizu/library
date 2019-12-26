@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/suffixarray.cpp
+# :warning: string/suffixarray.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/suffixarray.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-28 14:24:34+09:00
+    - Last commit date: 2019-12-26 23:10:12+09:00
 
 
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
+* :warning: <a href="longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 
 
 ## Verified with
@@ -48,9 +48,9 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/3033.test.cpp.html">test/aoj/3033.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3063.test.cpp.html">test/aoj/3063.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_14_D.test.cpp.html">test/aoj/ALDS1_14_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/number_of_substrings.test.cpp.html">test/yosupo/number_of_substrings.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
+* :warning: <a href="../../verify/test/aoj/ALDS1_14_D.test.cpp.html">test/aoj/ALDS1_14_D.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/number_of_substrings.test.cpp.html">test/yosupo/number_of_substrings.test.cpp</a>
+* :warning: <a href="../../verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
 
 
 ## Code
@@ -137,25 +137,7 @@ struct SuffixArray{
 
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed JOI2009HO_A(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int n,m;
-  string s;
-  cin>>n>>m>>s;
-  SuffixArray sa(s);
-  string t="I";
-  for(int i=0;i<n;i++) t+="OI";
-  cout<<sa.count(t)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/28
-  https://atcoder.jp/contests/joi2009ho/tasks/joi2009ho_a
-*/
-
 signed main(){
-  JOI2009HO_A();
   return 0;
 };
 #endif
