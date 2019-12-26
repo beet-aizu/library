@@ -29,35 +29,7 @@ M bell(int n,int k){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#undef call_from_test
-
-signed CFR315_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  using M = Mint<int>;
-  using E = Enumeration<M>;
-  E::init(n+1);
-
-  M res;
-  for(int i=0;i<n;i++)
-    res+=E::C(n,i)*bell<M>(i,i);
-
-  cout<<res.v<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/18
-  https://codeforces.com/contest/568/problem/B
-*/
-
 signed main(){
-  CFR315_B();
   return 0;
 }
 #endif

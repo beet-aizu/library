@@ -84,6 +84,8 @@ struct PalindromicTree{
 #undef call_from_test
 
 //INSERT ABOVE HERE
+
+// larger constraints than AOJ 2292
 signed YUKI_263(){
   using ll = long long;
   string s,t;

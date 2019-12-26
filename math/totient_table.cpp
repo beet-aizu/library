@@ -15,23 +15,7 @@ vector<int> totient_table(int n){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-class CatAndMice {
-  using ll = long long;
-public:
-  long long countDirections(int n, int c) {
-    if(n==c) return 8;
-
-    auto ts=totient_table(n);
-
-    ll ans=0;
-    for(int i=1;i<=n;i++)
-      if((n/i)==c) ans+=ts[i];
-
-    return ans*8LL;
-  }
-};
-/*
-  verified on 2019/09/25
-  https://vjudge.net/problem/TopCoder-15530
-*/
+signed main(){
+  return 0;
+}
 #endif
