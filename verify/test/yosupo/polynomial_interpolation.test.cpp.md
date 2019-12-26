@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/yosupo/polynomial_interpolation.test.cpp
+# :heavy_check_mark: test/yosupo/polynomial_interpolation.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,12 +38,12 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :warning: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
-* :warning: <a href="../../../library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
-* :warning: <a href="../../../library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

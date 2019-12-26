@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
 
 
 ## Verified with

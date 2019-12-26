@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/math/totient.cpp.html">math/totient.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/tetration.cpp.html">mod/tetration.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

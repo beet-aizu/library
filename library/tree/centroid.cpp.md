@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :heavy_check_mark: <a href="../tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 
 
 ## Verified with

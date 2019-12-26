@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/bell.cpp
+# :heavy_check_mark: mod/bell.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,12 +38,12 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
 
 
 ## Verified with
 
-* :warning: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
 
 
 ## Code

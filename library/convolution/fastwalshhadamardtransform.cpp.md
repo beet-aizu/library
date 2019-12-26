@@ -38,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :warning: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

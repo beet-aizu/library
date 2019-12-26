@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/yosupo/line_add_get_min.test.cpp
+# :heavy_check_mark: test/yosupo/line_add_get_min.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,9 +38,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
-* :warning: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
-* :warning: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code

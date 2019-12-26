@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: polynomial/interpolate.cpp
+# :heavy_check_mark: polynomial/interpolate.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,13 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
-* :warning: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
+* :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
 
 
 ## Verified with
 
-* :warning: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 
 
 ## Code
