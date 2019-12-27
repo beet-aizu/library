@@ -19,7 +19,7 @@ struct LinkCutTreeBase{
   }
 
   inline size_t idx(Node *t){
-    return t-&pool.begin();
+    return t-&pool[0];
   }
 
   Node* operator[](size_t k){

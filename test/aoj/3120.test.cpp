@@ -28,29 +28,27 @@ signed main(){
   G.add_edge(0,1);
   G.build(0);
 
-  vector<LCT::Node*> vs(n+1);
-  for(int i=0;i<=n;i++)
-    vs[i]=lct.create(i,1);
+  for(int i=0;i<=n;i++) lct.create(1);
 
   for(int i=1;i<=n;i++)
-    lct.link(vs[G.par[0][i]],vs[i]);
+    lct.link(lct[G.par[0][i]],lct[i]);
 
   for(int i=0;i<q;i++){
     int t,v;
     cin>>t>>v;
     if(t==1){
-      if(lct.root(vs[v])==vs[v]){
-        lct.link(vs[G.par[0][v]],vs[v]);
+      if(lct.root(lct[v])==lct[v]){
+        lct.link(lct[G.par[0][v]],lct[v]);
       }else{
-        lct.cut(vs[v]);
+        lct.cut(lct[v]);
       }
     }
     if(t==2){
-      int k=lct.root(vs[v])->idx;
+      int k=lct.idx(lct.root(lct[v]));
       int t=G.up(v,G.dep[v]-G.dep[k]-1);
-      lct.cut(vs[t]);
-      cout<<lct.query(vs[t])<<"\n";
-      lct.link(vs[k],vs[t]);
+      lct.cut(lct[t]);
+      cout<<lct.query(lct[t])<<"\n";
+      lct.link(lct[k],lct[t]);
     }
   }
   cout<<flush;

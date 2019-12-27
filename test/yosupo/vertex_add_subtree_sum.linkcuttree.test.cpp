@@ -22,14 +22,12 @@ signed main(){
   using LCT = SubTree<Node, LIM>;
   LCT lct;
 
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++)
-    vs[i]=lct.create(i,as[i]);
+  for(int i=0;i<n;i++) lct.create(as[i]);
 
   for(int i=1;i<n;i++){
     int p;
     cin>>p;
-    lct.link(vs[p],vs[i]);
+    lct.link(lct[p],lct[i]);
   }
 
   for(int i=0;i<q;i++){
@@ -39,15 +37,15 @@ signed main(){
       int u,x;
       cin>>u>>x;
       as[u]+=x;
-      lct.set_val(vs[u],as[u]);
+      lct.set_val(lct[u],as[u]);
     }
     if(t==1){
       int u;
       cin>>u;
-      Node* p=lct.parent(vs[u]);
-      if(p) lct.cut(vs[u]);
-      cout<<lct.query(vs[u])<<"\n";
-      if(p) lct.link(p,vs[u]);
+      Node* p=lct.parent(lct[u]);
+      if(p) lct.cut(lct[u]);
+      cout<<lct.query(lct[u])<<"\n";
+      if(p) lct.link(p,lct[u]);
     }
   }
   cout<<flush;
