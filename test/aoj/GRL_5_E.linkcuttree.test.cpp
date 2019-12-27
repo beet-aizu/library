@@ -25,15 +25,14 @@ signed main(){
   auto h=[](ll a,ll b){return a+b;};
   LCT lct(f,g,h,P(0,0),0);
 
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,P(0,1));
+  for(int i=0;i<n;i++) lct.create(P(0,1));
   for(int i=0;i<n;i++){
     int k;
     cin>>k;
     for(int j=0;j<k;j++){
       int c;
       cin>>c;
-      lct.link(vs[i],vs[c]);
+      lct.link(lct[i],lct[c]);
     }
   }
 
@@ -46,13 +45,13 @@ signed main(){
     if(t==0){
       int a,b;
       cin>>a>>b;
-      lct.update(vs[a],b);
+      lct.update(lct[a],b);
       sum+=b;
     }
     if(t==1){
       int a;
       cin>>a;
-      cout<<lct.query(vs[a]).first-sum<<"\n";
+      cout<<lct.query(lct[a]).first-sum<<"\n";
     }
   }
   cout<<flush;

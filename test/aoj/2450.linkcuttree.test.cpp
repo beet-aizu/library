@@ -55,14 +55,13 @@ signed main(){
   using Node = NodeBase<T, P>;
   constexpr size_t LIM = 1e6;
   using LCT = Path<Node, LIM>;
-  vector<LCT::Node*> vs(n);
   vector<int> ps(n,-1);
 
   LCT lct(f,g,h,s,ti,ei);
 
   vector<int> ws(n);
   for(int i=0;i<n;i++) cin>>ws[i];
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,g(ti,P(i,ws[i])));
+  for(int i=0;i<n;i++) lct.create(g(ti,P(i,ws[i])));
 
   vector<vector<int> > G(n);
   for(int i=0;i<n-1;i++){
@@ -82,7 +81,7 @@ signed main(){
     while(!q.empty()){
       int v,p;
       tie(v,p)=q.front();q.pop();
-      if(~p) lct.link(vs[p],vs[v]);
+      if(~p) lct.link(lct[p],lct[v]);
       ps[v]=p;
       for(int u:G[v]){
         if(u==p) continue;
@@ -96,13 +95,13 @@ signed main(){
     cin>>t>>a>>b>>c;
     a--;b--;
     if(t==1){
-      lct.evert(vs[a]);
-      lct.update(vs[b],P(-1,c));
+      lct.evert(lct[a]);
+      lct.update(lct[b],P(-1,c));
     }
     if(t==2){
-      lct.evert(vs[a]);
+      lct.evert(lct[a]);
       int vva,vvi,vvl,vvr;
-      tie(ignore,vva,vvi,vvl,vvr)=lct.query(vs[b]);
+      tie(ignore,vva,vvi,vvl,vvr)=lct.query(lct[b]);
       cout<<max({vva,vvi,vvl,vvr})<<"\n";
     }
   }

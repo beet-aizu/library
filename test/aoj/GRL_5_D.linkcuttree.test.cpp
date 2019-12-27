@@ -20,15 +20,14 @@ signed main(){
   auto f=[](int a,int b){return a+b;};
   LCT lct(f,f,f,0,0);
 
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
+  for(int i=0;i<n;i++) lct.create(0);
   for(int i=0;i<n;i++){
     int k;
     cin>>k;
     for(int j=0;j<k;j++){
       int c;
       cin>>c;
-      lct.link(vs[i],vs[c]);
+      lct.link(lct[i],lct[c]);
     }
   }
 
@@ -40,13 +39,13 @@ signed main(){
     if(t==0){
       int a,b;
       cin>>a>>b;
-      lct.expose(vs[a]);
-      vs[a]->val=f(vs[a]->val,b);
+      lct.expose(lct[a]);
+      lct[a]->val=f(lct[a]->val,b);
     }
     if(t==1){
       int a;
       cin>>a;
-      cout<<lct.query(vs[a])<<"\n";
+      cout<<lct.query(lct[a])<<"\n";
     }
   }
   cout<<flush;

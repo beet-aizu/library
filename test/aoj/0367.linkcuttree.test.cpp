@@ -56,8 +56,7 @@ signed main(){
   constexpr size_t LIM = 1e6;
   using LCT = Path<Node, LIM>;
   LCT lct(f,g,h,s,T(-1,-1,0),0);
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,T(i,i,0));
+  for(int i=0;i<n;i++) lct.create(T(i,i,0));
 
   {
     using P = pair<ll, ll>;
@@ -66,7 +65,7 @@ signed main(){
     while(!q.empty()){
       int v,p;
       tie(v,p)=q.front();q.pop();
-      if(~p) lct.link(vs[p],vs[v]);
+      if(~p) lct.link(lct[p],lct[v]);
       ps[v]=p;
       for(int u:G[v]){
         if(u==p) continue;
@@ -83,15 +82,15 @@ signed main(){
     if(op=="add"){
       int x,d;
       cin>>x>>d;
-      lct.expose(vs[x]);
+      lct.expose(lct[x]);
       ws[x]+=d;
-      lct.pushup(vs[x]);
+      lct.pushup(lct[x]);
     }
     if(op=="send"){
       int s,t;
       cin>>s>>t;
-      lct.evert(vs[s]);
-      cout<<get<2>(lct.query(vs[t]))<<"\n";
+      lct.evert(lct[s]);
+      cout<<get<2>(lct.query(lct[t]))<<"\n";
     }
   }
   cout<<flush;

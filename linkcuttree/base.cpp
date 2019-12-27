@@ -18,6 +18,14 @@ struct LinkCutTreeBase{
     return &(pool[ptr++]=v);
   }
 
+  inline size_t idx(Node *t){
+    return t-&pool.begin();
+  }
+
+  Node* operator[](size_t k){
+    return &(pool[k]);
+  }
+
   virtual void toggle(Node *t) = 0;
   virtual void eval(Node *t) = 0;
   virtual void pushup(Node *t) = 0;
