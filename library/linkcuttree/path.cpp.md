@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/path.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:09:50+09:00
+    - Last commit date: 2019-12-27 09:26:10+09:00
 
 
 
@@ -72,13 +72,12 @@ struct NodeBase{
   using T = Tp;
   using E = Ep;
   NodeBase *l,*r,*p;
-  int idx;
   bool rev;
   T val,dat;
   E laz;
   NodeBase(){}
-  NodeBase(int idx,T val,E laz):
-    idx(idx),rev(0),val(val),dat(val),laz(laz){
+  NodeBase(T val,E laz):
+    rev(0),val(val),dat(val),laz(laz){
     l=r=p=nullptr;}
 };
 
@@ -108,8 +107,8 @@ struct Path : LinkCutTreeBase<Np, LIM>{
   Path(F f,G g,H h,S flip,T ti,E ei):
     super(),f(f),g(g),h(h),flip(flip),ti(ti),ei(ei){}
 
-  Node* create(int idx,T val){
-    return super::create(Node(idx,val,ei));
+  Node* create(T val){
+    return super::create(Node(val,ei));
   }
 
   inline void propagate(Node *t,E v){
@@ -165,8 +164,7 @@ struct Path : LinkCutTreeBase<Np, LIM>{
 #include "../linearalgebra/squarematrix.cpp"
 #undef call_from_test
 
-//INSERT ABOVE HERE
-
+// test edge folding
 signed YUKI_650(){
   using M = Mint<int>;
   using SM = SquareMatrix<M, 2>;
@@ -197,9 +195,7 @@ signed YUKI_650(){
     G[b].emplace_back(a);
   }
 
-  vector<LCT::Node*> vs(n*2-1);
-  for(int i=0;i<(int)vs.size();i++)
-    vs[i]=lct.create(i,ti2);
+  for(int i=0;i<n*2-1;i++) lct.create(ti2);
 
   vector< map<int, int> > rev(n);
   int idx=n;
@@ -211,8 +207,8 @@ signed YUKI_650(){
       int v,p;
       tie(v,p)=q.front();q.pop();
       if(~p){
-        lct.link(vs[p],vs[idx]);
-        lct.link(vs[idx],vs[v]);
+        lct.link(lct[p],lct[idx]);
+        lct.link(lct[idx],lct[v]);
         rev[p][v]=rev[v][p]=idx++;
       }
       for(int u:G[v])
@@ -229,18 +225,18 @@ signed YUKI_650(){
       int v,a,b,c,d;
       cin>>v>>a>>b>>c>>d;
       int z=rev[X[v]][Y[v]];
-      lct.expose(vs[z]);
+      lct.expose(lct[z]);
       SM sm;
       sm[0][0]=a;sm[0][1]=b;
       sm[1][0]=c;sm[1][1]=d;
-      vs[z]->val=SM2(sm,sm);
-      lct.pushup(vs[z]);
+      lct[z]->val=SM2(sm,sm);
+      lct.pushup(lct[z]);
     }
     if(c=='g'){
       int x,y;
       cin>>x>>y;
-      lct.evert(vs[x]);
-      SM ans=lct.query(vs[y]).first;
+      lct.evert(lct[x]);
+      SM ans=lct.query(lct[y]).first;
       cout<<ans[0][0]<<" "<<ans[0][1]<<" ";
       cout<<ans[1][0]<<" "<<ans[1][1]<<"\n";
     }
@@ -249,10 +245,11 @@ signed YUKI_650(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/12/27
   https://yukicoder.me/problems/no/650
 */
 
+// test dynamic tree
 signed SPOJ_DYNACON1(){
   int n,m;
   cin>>n>>m;
@@ -262,8 +259,7 @@ signed SPOJ_DYNACON1(){
 
   auto f=[](int a,int b){return a+b;};
   LCT lct(f,f,f,0,0);
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,0);
+  for(int i=0;i<n;i++) lct.create(0);
 
   for(int i=0;i<m;i++){
     string s;
@@ -271,21 +267,21 @@ signed SPOJ_DYNACON1(){
     cin>>s>>a>>b;
     a--;b--;
     if(s=="add"s){
-      lct.evert(vs[b]);
-      lct.link(vs[a],vs[b]);
+      lct.evert(lct[b]);
+      lct.link(lct[a],lct[b]);
     }
     if(s=="rem"s){
-      auto v=lct.lca(vs[a],vs[b])==vs[a]?vs[b]:vs[a];
+      auto v=lct.lca(lct[a],lct[b])==lct[a]?lct[b]:lct[a];
       lct.cut(v);
     }
     if(s=="conn"s)
-      cout<<(lct.is_connected(vs[a],vs[b])?"YES\n":"NO\n");
+      cout<<(lct.is_connected(lct[a],lct[b])?"YES\n":"NO\n");
   }
   cout<<flush;
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2019/12/27
   https://www.spoj.com/problems/DYNACON1/
 */
 

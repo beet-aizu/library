@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_E.linkcuttree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:51:01+09:00
+    - Last commit date: 2019-12-27 09:26:10+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E</a>
@@ -75,15 +75,14 @@ signed main(){
   auto h=[](ll a,ll b){return a+b;};
   LCT lct(f,g,h,P(0,0),0);
 
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=lct.create(i,P(0,1));
+  for(int i=0;i<n;i++) lct.create(P(0,1));
   for(int i=0;i<n;i++){
     int k;
     cin>>k;
     for(int j=0;j<k;j++){
       int c;
       cin>>c;
-      lct.link(vs[i],vs[c]);
+      lct.link(lct[i],lct[c]);
     }
   }
 
@@ -96,13 +95,13 @@ signed main(){
     if(t==0){
       int a,b;
       cin>>a>>b;
-      lct.update(vs[a],b);
+      lct.update(lct[a],b);
       sum+=b;
     }
     if(t==1){
       int a;
       cin>>a;
-      cout<<lct.query(vs[a]).first-sum<<"\n";
+      cout<<lct.query(lct[a]).first-sum<<"\n";
     }
   }
   cout<<flush;

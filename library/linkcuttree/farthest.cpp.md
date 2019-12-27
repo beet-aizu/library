@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/farthest.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-11 22:28:12+09:00
+    - Last commit date: 2019-12-27 09:26:10+09:00
 
 
 
