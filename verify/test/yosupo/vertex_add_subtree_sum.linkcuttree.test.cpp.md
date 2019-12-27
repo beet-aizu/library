@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 09:26:10+09:00
+    - Last commit date: 2019-12-27 09:39:50+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/vertex_add_subtree_sum">https://judge.yosupo.jp/problem/vertex_add_subtree_sum</a>
@@ -72,14 +72,12 @@ signed main(){
   using LCT = SubTree<Node, LIM>;
   LCT lct;
 
-  vector<LCT::Node*> vs(n);
-  for(int i=0;i<n;i++)
-    vs[i]=lct.create(i,as[i]);
+  for(int i=0;i<n;i++) lct.create(as[i]);
 
   for(int i=1;i<n;i++){
     int p;
     cin>>p;
-    lct.link(vs[p],vs[i]);
+    lct.link(lct[p],lct[i]);
   }
 
   for(int i=0;i<q;i++){
@@ -89,15 +87,15 @@ signed main(){
       int u,x;
       cin>>u>>x;
       as[u]+=x;
-      lct.set_val(vs[u],as[u]);
+      lct.set_val(lct[u],as[u]);
     }
     if(t==1){
       int u;
       cin>>u;
-      Node* p=lct.parent(vs[u]);
-      if(p) lct.cut(vs[u]);
-      cout<<lct.query(vs[u])<<"\n";
-      if(p) lct.link(p,vs[u]);
+      Node* p=lct.parent(lct[u]);
+      if(p) lct.cut(lct[u]);
+      cout<<lct.query(lct[u])<<"\n";
+      if(p) lct.link(p,lct[u]);
     }
   }
   cout<<flush;

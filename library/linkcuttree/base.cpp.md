@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/base.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 09:26:10+09:00
+    - Last commit date: 2019-12-27 09:39:50+09:00
 
 
 
@@ -52,6 +52,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_D.linkcuttree.test.cpp.html">test/aoj/GRL_5_D.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html">test/aoj/GRL_5_E.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/lca.linkcuttree.test.cpp.html">test/yosupo/lca.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 
 
@@ -81,7 +82,7 @@ struct LinkCutTreeBase{
   }
 
   inline size_t idx(Node *t){
-    return t-&pool.begin();
+    return t-&pool[0];
   }
 
   Node* operator[](size_t k){

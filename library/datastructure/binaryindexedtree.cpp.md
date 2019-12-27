@@ -43,7 +43,6 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>
 * :heavy_check_mark: <a href="../tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 

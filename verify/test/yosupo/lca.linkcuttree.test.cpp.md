@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_A.linkcuttree.test.cpp
+# :heavy_check_mark: test/yosupo/lca.linkcuttree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_A.linkcuttree.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/lca.linkcuttree.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-27 09:39:50+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A</a>
+* see: <a href="https://judge.yosupo.jp/problem/lca">https://judge.yosupo.jp/problem/lca</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
-* :heavy_check_mark: <a href="../../../library/linkcuttree/farthest.cpp.html">linkcuttree/farthest.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -49,51 +48,41 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A"
+#define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../tools/chminmax.cpp"
 #include "../../linkcuttree/base.cpp"
-#include "../../linkcuttree/farthest.cpp"
+#include "../../linkcuttree/path.cpp"
 #undef call_from_test
 
 signed main(){
-  using Node = NodeBase<int>;
+  int n,q;
+  cin>>n>>q;
+
+  using Node = NodeBase<int, int>;
   constexpr size_t LIM = 1e6;
-  using LCT = Farthest<Node, LIM>;
-  LCT lct;
+  using LCT = Path<Node, LIM>;
 
-  vector<LCT::Node*> vs;
-  vector<LCT::Node*> es;
-  vs.reserve(1e5+100);
-  es.reserve(1e5+100);
-
-  int n;
-  cin>>n;
-  for(int i=0;i<n;i++)
-    vs[i]=lct.create(i,0);
+  auto f=[](int a,int b){return a+b;};
+  LCT lct(f,f,f,0,0);
+  for(int i=0;i<n;i++) lct.create(0);
 
   for(int i=1;i<n;i++){
-    int s,t,w;
-    cin>>s>>t>>w;
-    es[i]=lct.create(n+i,w);
-    lct.evert(vs[s]);
-    lct.evert(vs[t]);
-    lct.link(es[i],vs[s]);
-    lct.link(es[i],vs[t]);
+    int p;
+    cin>>p;
+    lct.link(lct[p],lct[i]);
   }
 
-  int ans=0;
-  for(int i=0;i<n;i++){
-    lct.evert(vs[i]);
-    chmax(ans,vs[i]->ld);
+  for(int i=0;i<q;i++){
+    int u,v;
+    cin>>u>>v;
+    cout<<lct.idx(lct.lca(lct[u],lct[v]))<<"\n";
   }
-
-  cout<<ans<<endl;
+  cout<<flush;
   return 0;
 }
 
