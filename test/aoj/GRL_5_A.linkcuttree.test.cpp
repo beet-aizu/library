@@ -12,7 +12,7 @@ using namespace std;
 
 signed main(){
   using Node = NodeBase<int>;
-  constexpr size_t LIM = 1e6;
+  constexpr size_t LIM = 1e6 + 200;
   using LCT = Farthest<Node, LIM>;
   LCT lct;
 
@@ -23,13 +23,12 @@ signed main(){
 
   int n;
   cin>>n;
-  for(int i=0;i<n;i++)
-    vs[i]=lct.create(i,0);
+  for(int i=0;i<n;i++) vs[i]=lct.create(0);
 
   for(int i=1;i<n;i++){
     int s,t,w;
     cin>>s>>t>>w;
-    es[i]=lct.create(n+i,w);
+    es[i]=lct.create(w);
     lct.evert(vs[s]);
     lct.evert(vs[t]);
     lct.link(es[i],vs[s]);
