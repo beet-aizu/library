@@ -54,7 +54,7 @@ struct DiameterForEdge{
 #include "../tools/fastio.cpp"
 #undef call_from_test
 
-//INSERT ABOVE HERE
+// test farthest
 signed YAHOO2019_FINAL_B(){
   int n;
   cin>>n;
