@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/farthest.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 09:39:50+09:00
+    - Last commit date: 2019-12-27 09:47:22+09:00
 
 
 
@@ -66,13 +66,11 @@ template<typename Tp>
 struct NodeBase{
   using T = Tp;
   NodeBase *l,*r,*p;
-  int idx;
   bool rev;
   T val,ld,rd,smd;
   multiset<T> td;
   NodeBase(){}
-  NodeBase(int idx,T val):
-    idx(idx),rev(0),val(val){
+  NodeBase(T val):rev(0),val(val){
     l=r=p=nullptr;
     ld=rd=smd=val;
     td.emplace(0);
@@ -86,8 +84,8 @@ struct Farthest : LinkCutTreeBase<Np, LIM>{
 
   Farthest():super(){}
 
-  Node* create(int idx,T val){
-    return super::create(Node(idx,val));
+  Node* create(T val){
+    return super::create(Node(val));
   }
 
   inline void toggle(Node *t){
@@ -157,8 +155,8 @@ signed TKPPC2015_J(){
   es.reserve(5e5+100);
 
   int num=0;
-  vs.emplace_back(lct.create(num,0));
-  es.emplace_back(lct.create(num,0));
+  vs.emplace_back(lct.create(0));
+  es.emplace_back(lct.create(0));
   num++;
 
   int q;
@@ -167,8 +165,8 @@ signed TKPPC2015_J(){
     int t,a,c;
     cin>>t>>a>>c;
     if(t==1){
-      vs.emplace_back(lct.create(num,0));
-      es.emplace_back(lct.create(num,c));
+      vs.emplace_back(lct.create(0));
+      es.emplace_back(lct.create(c));
       lct.link(vs[a],es[num]);
       lct.link(es[num],vs[num]);
       num++;
@@ -187,7 +185,7 @@ signed TKPPC2015_J(){
   return 0;
 }
 /*
-  verified on 2019/10/30
+  verified on 2019/12/27
   https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
 */
 
