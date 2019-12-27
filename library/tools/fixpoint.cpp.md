@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :heavy_check_mark: <a href="../tree/centroid.cpp.html">tree/centroid.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0367.test.cpp.html">test/aoj/0367.test.cpp</a>

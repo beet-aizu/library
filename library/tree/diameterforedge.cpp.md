@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/diameterforedge.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:09:31+09:00
+    - Last commit date: 2019-12-27 09:03:53+09:00
 
 
 
@@ -107,7 +107,7 @@ struct DiameterForEdge{
 #include "../tools/fastio.cpp"
 #undef call_from_test
 
-//INSERT ABOVE HERE
+// test farthest
 signed YAHOO2019_FINAL_B(){
   int n;
   cin>>n;

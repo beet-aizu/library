@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/diameterforvertex.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-12 19:01:48+09:00
+    - Last commit date: 2019-12-27 09:03:53+09:00
 
 
 
@@ -91,35 +91,7 @@ struct DiameterForVertex{
 //END CUT HERE
 #ifndef call_from_test
 
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-
-//INSERT ABOVE HERE
-
-signed AGC033_C(){
-  int n;
-  cin>>n;
-  vector<int> vs(n,1);
-  DiameterForVertex<int> G(vs);
-  for(int i=1;i<n;i++){
-    int x,y;
-    cin>>x>>y;
-    x--;y--;
-    G.add_edge(x,y);
-  }
-  int ans=G.build();
-  cout<<((ans%3!=2)?"First":"Second")<<endl;
-  return 0;
-}
-/*
-  verified on 2019/11/12
-  https://atcoder.jp/contests/agc033/tasks/agc033_c
-*/
-
+// test build with argument vector<T>
 signed ARC097_F(){
   int n;
   cin>>n;
@@ -178,12 +150,11 @@ signed ARC097_F(){
   return 0;
 }
 /*
-  verified on 2019/11/12
+  verified on 2019/12/27
   https://atcoder.jp/contests/arc097/tasks/arc097_d
 */
 
 signed main(){
-  //AGC033_C();
   //ARC097_F();
   return 0;
 }

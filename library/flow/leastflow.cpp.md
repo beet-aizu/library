@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#cff5497121104c2b8e0cb41ed2083a9b">flow</a>
 * <a href="{{ site.github.repository_url }}/blob/master/flow/leastflow.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:42:32+09:00
+    - Last commit date: 2019-12-27 09:03:53+09:00
 
 
 
@@ -86,23 +86,9 @@ struct LeastFlow{
 };
 //END CUT HERE
 #ifndef call_from_test
-//INSERT ABOVE HERE
-
-class SRMDiv0Easy {
-public:
-  int get(int N, vector <int> L, vector <int> R, vector <int> X, vector <int> Y) {
-    int M=L.size();
-    LeastFlow<int> G(N+1);
-    int S=0,T=N;
-    for(int i=0;i<M;i++)
-      G.add_edge(L[i],R[i]+1,X[i],Y[i]);
-    return G.flow(S,T);
-  }
-};
-/*
-  verified on 2019/06/10
-  https://vjudge.net/problem/TopCoder-14319
-*/
+signed main(){
+  return 0;
+}
 #endif
 
 ```
