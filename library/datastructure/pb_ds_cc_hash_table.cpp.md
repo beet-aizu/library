@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/pb_ds_cc_hash_table.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:31:47+09:00
+    - Last commit date: 2019-12-27 08:56:10+09:00
 
 
 
@@ -58,32 +58,7 @@ using gmap = cc_hash_table<T, U, H>;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed AGC023_A(){
-  using ll = long long;
-  int n;
-  scanf("%d",&n);
-  vector<ll> as(n);
-  for(int i=0;i<n;i++) scanf("%lld",&as[i]);
-
-  gmap<ll, ll> mp;
-  ll ans=0,sum=0;
-  mp[sum]++;
-  for(int i=0;i<n;i++){
-    sum+=as[i];
-    ans+=mp[sum];
-    mp[sum]++;
-  }
-
-  printf("%lld\n",ans);
-  return 0;
-}
-/*
-  verified on 2019/12/09
-  https://atcoder.jp/contests/agc023/tasks/agc023_a
-*/
-
 signed main(){
-  AGC023_A();
   return 0;
 }
 #endif

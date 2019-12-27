@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/array.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:56:59+09:00
+    - Last commit date: 2019-12-27 08:56:10+09:00
 
 
 
@@ -73,7 +73,7 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   T val;
-  NodeBase():cnt(0),rev(0){l=r=p=nullptr;}
+  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val):
     cnt(1),rev(0),val(val){l=r=p=nullptr;}
 };

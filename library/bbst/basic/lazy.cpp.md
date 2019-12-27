@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/lazy.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:56:59+09:00
+    - Last commit date: 2019-12-27 08:56:10+09:00
 
 
 
@@ -78,7 +78,7 @@ struct NodeBase{
   bool rev;
   T val,dat;
   E laz;
-  NodeBase():cnt(0),rev(0){l=r=p=nullptr;}
+  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val,E laz):
     cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
 };
@@ -231,11 +231,11 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
   constexpr size_t LIM = 1e6;
   Lazy<Node, LIM> G(f,g,h,T(INF,INF,0),P(0,0));
 
-  vector<T> v(S.size()+2,T(0,0,0));
+  vector<Node> vs(S.size()+2);
   for(int i=0;i<(int)S.size();i++)
-    get<2>(v[i+1])=(S[i]=='('?1:-1);
+    vs[i+1].val=T(0,0,S[i]=='('?1:-1);
 
-  auto rt=G.build(v);
+  auto rt=G.build(vs);
   for(int i=1;i<=(int)S.size();i++){
     int z=get<2>(G.get_val(rt,i));
     rt=G.update(rt,i,G.count(rt),P(z,0));
@@ -249,10 +249,10 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
     z++;
     if(x=='('||x==')'){
       z=(x=='('?1:-1);
-      T prev=G.get_val(rt,y-1);
-      T next=G.get_val(rt,y);
-      T curr(get<0>(prev),get<1>(next),z);
-      rt=G.insert(rt,y,Node(curr,P(0,0)));
+      T prv=G.get_val(rt,y-1);
+      T nxt=G.get_val(rt,y);
+      T cur(get<0>(prv),get<1>(nxt),z);
+      rt=G.insert(rt,y,Node(cur,P(0,0)));
       rt=G.update(rt,y,G.count(rt),P(z,0));
       rt=G.update(rt,0,y+1,P(0,-z));
     }
@@ -265,12 +265,12 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
     }
 
     if(x=='Q'){
-      T prev=G.get_val(rt,y-1);
-      T curr=G.query(rt,y,z);
-      T next=G.get_val(rt,z);
+      T prv=G.get_val(rt,y-1);
+      T cur=G.query(rt,y,z);
+      T nxt=G.get_val(rt,z);
       int ans=0;
-      if(get<0>(prev)>get<0>(curr)) ans+=get<0>(prev)-get<0>(curr);
-      if(get<1>(next)>get<1>(curr)) ans+=get<1>(next)-get<1>(curr);
+      if(get<0>(prv)>get<0>(cur)) ans+=get<0>(prv)-get<0>(cur);
+      if(get<1>(nxt)>get<1>(cur)) ans+=get<1>(nxt)-get<1>(cur);
       printf("%d\n",ans);
     }
   }
@@ -278,7 +278,7 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
   return 0;
 }
 /*
-  verified on 2019/10/22
+  verified on 2019/12/27
   https://atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
 */
 

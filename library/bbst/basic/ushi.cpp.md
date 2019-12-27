@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/ushi.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:56:59+09:00
+    - Last commit date: 2019-12-27 08:56:10+09:00
 
 
 
@@ -74,7 +74,7 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   T val,dat;
-  NodeBase():cnt(0),rev(0){l=r=p=nullptr;}
+  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val):
     cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}
 };
@@ -177,6 +177,8 @@ struct Ushi : BBSTBase<Node, LIM>{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
+
+// test toggle
 signed HAPPYQUERY_C(){
   cin.tie(0);
   ios::sync_with_stdio(0);

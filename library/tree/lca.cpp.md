@@ -39,7 +39,6 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
-* :heavy_check_mark: <a href="eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
 ## Verified with

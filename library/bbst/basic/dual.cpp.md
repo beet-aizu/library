@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/dual.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-24 23:20:46+09:00
+    - Last commit date: 2019-12-27 08:56:10+09:00
 
 
 
@@ -70,7 +70,7 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   E dat,laz;
-  NodeBase(){}
+  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(E dat,E laz):
     cnt(1),rev(0),dat(dat),laz(laz){l=r=p=nullptr;}
 };

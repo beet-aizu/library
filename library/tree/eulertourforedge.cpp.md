@@ -31,16 +31,9 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/eulertourforedge.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:09:31+09:00
+    - Last commit date: 2019-12-27 08:56:10+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :heavy_check_mark: <a href="lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Required by
@@ -122,106 +115,7 @@ public:
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#include "../datastructure/binaryindexedtree.cpp"
-#include "lca.cpp"
-#undef call_from_test
-
-//INSERT ABOVE HERE
-signed ABC133_F(){
-
-  int n,q;
-  cin>>n>>q;
-  vector<int> as(n),bs(n),cs(n),ds(n);
-  vector<int> xs(q),ys(q),us(q),vs(q);
-
-  vector< vector<int> > C(n),D(n);
-  EulerTourForEdge et(n);
-  LCA lca(n);
-  for(int i=1;i<n;i++){
-    cin>>as[i]>>bs[i]>>cs[i]>>ds[i];
-    as[i]--;bs[i]--;
-    et.add_edge(as[i],bs[i]);
-    lca.add_edge(as[i],bs[i]);
-    C[cs[i]].emplace_back(i);
-  }
-  et.build();
-  lca.build();
-
-  for(int i=0;i<q;i++){
-    cin>>xs[i]>>ys[i]>>us[i]>>vs[i];
-    us[i]--;vs[i]--;
-    D[xs[i]].emplace_back(i);
-  }
-
-  int ti=0;
-  BIT<int> cnt(n*2,ti);
-  BIT<int> sum(n*2,ti);
-
-  for(int i=1;i<n;i++){
-    int ch=et.child(as[i],bs[i]);
-    auto g=[&](int v,int d){sum.add0(v,d);};
-    et.update(ch,+ds[i],g);
-  }
-
-  vector<int> ans(q,0);
-  for(int i=0;i<q;i++){
-    int r=lca.lca(us[i],vs[i]);
-    auto f=[&](int l,int r){ans[i]+=sum.query0(l,r);};
-    et.query(r,us[i],f);
-    et.query(r,vs[i],f);
-  }
-
-  for(int i=1;i<n;i++){
-    int ch=et.child(as[i],bs[i]);
-    auto g=[&](int v,int d){sum.add0(v,d);};
-    et.update(ch,-ds[i],g);
-  }
-
-  for(int t=1;t<n;t++){
-    auto g1=[&](int v,int d){cnt.add0(v,d);};
-    auto g2=[&](int v,int d){sum.add0(v,d);};
-
-    for(int i:C[t]){
-      int ch=et.child(as[i],bs[i]);
-      et.update(ch,+1,g1);
-      et.update(ch,+ds[i],g2);
-    }
-
-    for(int i:D[t]){
-      int res=0,num=0;
-      auto f=[&](int l,int r){
-               assert(l<=r);
-               num+=cnt.query0(l,r);
-               res+=sum.query0(l,r);
-             };
-      int r=lca.lca(us[i],vs[i]);
-      et.query(r,us[i],f);
-      et.query(r,vs[i],f);
-      ans[i]+=num*ys[i];
-      ans[i]-=res;
-    }
-
-    for(int i:C[t]){
-      int ch=et.child(as[i],bs[i]);
-      et.update(ch,-1,g1);
-      et.update(ch,-ds[i],g2);
-    }
-  }
-
-  for(int i=0;i<q;i++) cout<<ans[i]<<"\n";
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://atcoder.jp/contests/abc133/tasks/abc133_f
-*/
-
 signed main(){
-  ABC133_F();
   return 0;
 }
 #endif
