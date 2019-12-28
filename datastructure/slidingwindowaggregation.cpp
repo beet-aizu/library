@@ -5,16 +5,22 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename T,typename S>
 struct SWAG{
-  using F = function<S(S,T)>;
-  F f;
+  using F1 = function<S(S,T)>;
+  using F2 = function<S(T,S)>;
+  const F1 f1;
+  const F2 f2;
   S id;
   vector<T> lt,rt;
   vector<S> ls,rs;
-  SWAG(F f,S id):f(f),id(id),ls(1,id),rs(1,id){}
+  SWAG(F1 f1,F2 f2,S id):f1(f1),f2(f2),id(id),ls(1,id),rs(1,id){}
+
+  // S, T identical / commutative is not required
+  SWAG(F1 f1,S id):f1(f1),f2([&](T y,S x){return f1(y,x);}),
+                   id(id),ls(1,id),rs(1,id){}
 
   void push(T x){
     rt.emplace_back(x);
-    rs.emplace_back(f(rs.back(),x));
+    rs.emplace_back(f1(rs.back(),x));
   }
 
   void pop(){
@@ -22,7 +28,7 @@ struct SWAG{
       reverse(rt.begin(),rt.end());
       for(auto x:rt){
         lt.emplace_back(x);
-        ls.emplace_back(f(ls.back(),x));
+        ls.emplace_back(f2(x,ls.back()));
       }
       rt.resize(0);
       rs.resize(1);
@@ -119,7 +125,7 @@ signed JAG2018_DAY2_D(){
   const ll INF = 1e18;
   using T = pair<ll, ll>;
   using S = array<ll, 512>;
-  auto f=
+  auto f1=
     [&](S x,T y){
       S z(x);
       for(int i=0;i<MOD;i++){
@@ -128,12 +134,16 @@ signed JAG2018_DAY2_D(){
       }
       return z;
     };
+  auto f2=
+    [&](T y,S x){
+      return f1(x,y);
+    };
 
   S id;
   fill(id.begin(),id.end(),-INF);
   id[0]=0;
 
-  SWAG<T, S> swag(f,id);
+  SWAG<T, S> swag(f1,f2,id);
 
   for(int i=0;i<q;i++){
     int t,w,v,l,r;
@@ -167,7 +177,7 @@ signed JAG2018_DAY2_D(){
   return 0;
 }
 /*
-  verified on 2019/11/29
+  verified on 2019/12/28
   https://atcoder.jp/contests/jag2018summer-day2/tasks/jag2018summer_day2_d
 */
 
