@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp
+# :heavy_check_mark: test/yosupo/queue_operate_all_composite.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/queue_operate_all_composite.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-28 12:36:04+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D</a>
+* see: <a href="https://judge.yosupo.jp/problem/queue_operate_all_composite">https://judge.yosupo.jp/problem/queue_operate_all_composite</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -47,35 +48,49 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D"
+#define PROBLEM "https://judge.yosupo.jp/problem/queue_operate_all_composite"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../mod/mint.cpp"
 #include "../../datastructure/slidingwindowaggregation.cpp"
 #undef call_from_test
 
 signed main(){
-  int n,l;
-  cin>>n>>l;
-  vector<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
+  using M = Mint<int, 998244353>;
+  using P = pair<M, M>;
+  auto f=[](P a,P b){return P(a.first*b.first,a.second*b.first+b.second);};
+  SWAG<P, P> swag(f,P(M(1),M(0)));
 
-  auto f=[](int a,int b){return min(a,b);};
-  SWAG<int, int> swag(f,INT_MAX);
-
-  for(int i=0;i<l;i++) swag.push(as[i]);
-  for(int i=0;i+l<=n;i++){
-    if(i) cout<<" ";
-    swag.fold([](int a,int b){cout<<min(a,b);});
-    if(i+l<n){
+  int q;
+  cin>>q;
+  for(int i=0;i<q;i++){
+    int t;
+    cin>>t;
+    if(t==0){
+      int a,b;
+      cin>>a>>b;
+      swag.push(P(M(a),M(b)));
+    }
+    if(t==1){
       swag.pop();
-      swag.push(as[i+l]);
+    }
+    if(t==2){
+      int x;
+      cin>>x;
+      auto q=
+        [&](P a,P b){
+          P res=f(a,b);
+          cout<<res.first*M(x)+res.second<<"\n";
+        };
+      swag.fold(q);
     }
   }
-  cout<<endl;
+
+  cout<<flush;
   return 0;
 }
 
