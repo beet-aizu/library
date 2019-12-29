@@ -9,7 +9,7 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
-struct ArbitraryModConvolution{
+struct Garner{
   using ll = long long;
   static NTT<0> ntt0;
   static NTT<1> ntt1;
@@ -65,22 +65,21 @@ struct ArbitraryModConvolution{
     return cs[0];
   }
 
-  template<typename T,T MOD>
-  decltype(auto) multiply(vector< Mint<T, MOD> > am,
-                          vector< Mint<T, MOD> > bm){
-    using M = Mint<T, MOD>;
+  template<typename T>
+  decltype(auto) multiply(vector<T> am,
+                          vector<T> bm){
     vector<int> as(am.size()),bs(bm.size());
     for(int i=0;i<(int)as.size();i++) as[i]=am[i].v;
     for(int i=0;i<(int)bs.size();i++) bs[i]=bm[i].v;
-    vector<int> cs=multiply(as,bs,MOD);
-    vector<M> cm(cs.size());
-    for(int i=0;i<(int)cm.size();i++) cm[i]=M(cs[i]);
+    vector<int> cs=multiply(as,bs,T::mod);
+    vector<T> cm(cs.size());
+    for(int i=0;i<(int)cm.size();i++) cm[i]=T(cs[i]);
     return cm;
   }
 };
-NTT<0> ArbitraryModConvolution::ntt0;
-NTT<1> ArbitraryModConvolution::ntt1;
-NTT<2> ArbitraryModConvolution::ntt2;
+NTT<0> Garner::ntt0;
+NTT<1> Garner::ntt1;
+NTT<2> Garner::ntt2;
 //END CUT HERE
 #ifndef call_from_test
 signed main(){

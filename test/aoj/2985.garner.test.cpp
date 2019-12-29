@@ -7,7 +7,7 @@ using namespace std;
 #include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
-#include "../../convolution/arbitrarymodconvolution_with_garner.cpp"
+#include "../../convolution/garner.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
@@ -16,7 +16,7 @@ signed main(){
   cin>>n;
 
   using M = Mint<int>;
-  ArbitraryModConvolution arb;
+  Garner arb;
   auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
   FormalPowerSeries<M> FPS(conv);
 
