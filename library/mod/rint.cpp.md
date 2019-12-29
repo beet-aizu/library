@@ -25,21 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/partition_function.cpp
+# :heavy_check_mark: mod/rint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
-* <a href="{{ site.github.repository_url }}/blob/master/mod/partition_function.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:44:32+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/mod/rint.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-29 18:22:28+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/0422.test.cpp.html">test/aoj/0422.test.cpp</a>
 
 
 ## Code
@@ -50,29 +49,53 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-
 #endif
 //BEGIN CUT HERE
-template<typename M>
-struct Partition{
-  vector< vector<M> > dp;
-  Partition(int h,int w):dp(h+1,vector<M>(w+1,0)){
-    dp[0][0]=M(1);
-    for(int i=0;i<=h;i++){
-      for(int j=1;j<=w;j++){
-        dp[i][j]=dp[i][j-1];
-        if(i-j>=0) dp[i][j]+=dp[i-j][j];
-      }
+template<typename T>
+struct Rint{
+  static T mod;
+  static void set_mod(T nmod){mod=nmod;}
+
+  T v;
+  Rint():v(0){}
+  Rint(signed v):v(v){}
+  Rint(long long t){v=t%mod;if(v<0) v+=mod;}
+
+  Rint pow(long long k){
+    Rint res(1),tmp(v);
+    while(k){
+      if(k&1) res*=tmp;
+      tmp*=tmp;
+      k>>=1;
     }
+    return res;
   }
-  // put n identical balls into k identical boxes
-  M operator()(int n,int k){return dp[n][k];}
 
-  // put n identical balls into some boxes
-  M operator()(int n){return dp[n][n];}
+  static Rint add_identity(){return Rint(0);}
+  static Rint mul_identity(){return Rint(1);}
+
+  Rint inv(){return pow(mod-2);}
+
+  Rint& operator+=(Rint a){v+=a.v;if(v>=mod)v-=mod;return *this;}
+  Rint& operator-=(Rint a){v+=mod-a.v;if(v>=mod)v-=mod;return *this;}
+  Rint& operator*=(Rint a){v=1LL*v*a.v%mod;return *this;}
+  Rint& operator/=(Rint a){return (*this)*=a.inv();}
+
+  Rint operator+(Rint a) const{return Rint(v)+=a;}
+  Rint operator-(Rint a) const{return Rint(v)-=a;}
+  Rint operator*(Rint a) const{return Rint(v)*=a;}
+  Rint operator/(Rint a) const{return Rint(v)/=a;}
+
+  Rint operator-() const{return v?Rint(mod-v):Rint(v);}
+
+  bool operator==(const Rint a)const{return v==a.v;}
+  bool operator!=(const Rint a)const{return v!=a.v;}
+  bool operator <(const Rint a)const{return v <a.v;}
 };
+template<typename T> T Rint<T>::mod;
+template<typename T>
+ostream& operator<<(ostream &os,Rint<T> m){os<<m.v;return os;}
 //END CUT HERE
-
 #ifndef call_from_test
 signed main(){
   return 0;
@@ -90,7 +113,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: mod/partition_function.cpp: line 6: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: mod/rint.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

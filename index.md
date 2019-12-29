@@ -218,6 +218,7 @@ layout: default
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
 * :heavy_check_mark: <a href="library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
+* :heavy_check_mark: <a href="library/mod/rint.cpp.html">mod/rint.cpp</a>
 * :heavy_check_mark: <a href="library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
 * :heavy_check_mark: <a href="library/mod/stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 * :heavy_check_mark: <a href="library/mod/tetration.cpp.html">mod/tetration.cpp</a>
@@ -337,6 +338,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/0422.test.cpp.html">test/aoj/0422.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0423.test.cpp.html">test/aoj/0423.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0424.test.cpp.html">test/aoj/0424.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0425.test.cpp.html">test/aoj/0425.test.cpp</a>

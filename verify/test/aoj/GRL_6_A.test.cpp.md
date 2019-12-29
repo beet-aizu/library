@@ -77,7 +77,7 @@ int main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 328, in write_contents
+  File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 154, in update
     self.update(self._resolve(included, included_from=path))
