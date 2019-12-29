@@ -228,6 +228,7 @@
 "test/yosupo/discrete_logarithm_mod.test.cpp": "2019-12-26 23:42:22 +0900",
 "test/yosupo/dominatortree.test.cpp": "2019-12-21 20:40:33 +0900",
 "test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp": "2019-12-28 20:53:01 +0900",
+"test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp": "2019-12-29 21:34:10 +0900",
 "test/yosupo/exp_of_formal_power_series.test.cpp": "2019-12-26 23:10:12 +0900",
 "test/yosupo/inv_of_formal_power_series.test.cpp": "2019-12-26 23:10:12 +0900",
 "test/yosupo/kth_root_integer.test.cpp": "2019-12-21 17:52:42 +0900",
