@@ -5,60 +5,56 @@ using namespace std;
 
 #define call_from_test
 #include "mint.cpp"
+#include "rint.cpp"
 #include "../convolution/numbertheoretictransform.cpp"
-#include "../convolution/arbitrarymodconvolution_with_garner.cpp"
-#undef call_from_test
+#include "../convolution/garner.cpp"
 
+#undef call_from_test
 //BEGIN CUT HERE
 int factorial(long long n,int MOD){
   if(n>=MOD) return 0;
-  ArbitraryModConvolution arb;
-  auto inv=[&](int a){return ArbitraryModConvolution::inv(a,MOD);};
-
-  using ll = long long;
-  auto add=[&](int a,int b){return a+b>=MOD?a+b-MOD:a+b;};
-  auto sub=[&](int a,int b){return a-b<0?a-b+MOD:a-b;};
-  auto mul=[&](int a,int b){return (ll)a*b%MOD;};
-  auto div=[&](int a,int b){return mul(a,inv(b));};
+  Garner arb;
+  using R = Rint<int>;
+  R::set_mod(MOD);
 
   int d=1<<15;
-  vector<int> fact(d*2+1,1),finv(d*2+1,1);
-  for(int i=1;i<=d*2;i++) fact[i]=mul(fact[i-1],i);
-  finv[d*2]=inv(fact[d*2]);
-  for(int i=d*2-1;i>=0;i--) finv[i]=mul(finv[i+1],i+1);
+  vector<R> fact(d*2+1,1),finv(d*2+1,1);
+  for(int i=1;i<=d*2;i++) fact[i]=fact[i-1]*R(i);
+  finv[d*2]=fact[d*2].inv();
+  for(int i=d*2-1;i>=0;i--) finv[i]=finv[i+1]*R(i+1);
 
-  vector<int> seq({1,d+1});
+  vector<R> seq({1,d+1});
   seq.reserve(d+1);
 
   int sz=1;
   while(sz<d){
-    vector<int> aux(sz,1);
-    vector<int> f(sz*4,0),g(sz*4,0);
+    vector<R> aux(sz,1);
+    vector<R> f(sz*4,0),g(sz*4,0);
     for(int i=0;i<=sz;i++){
-      f[i]=mul(mul(finv[i],finv[sz-i]),seq[i]);
-      if(((sz+i)&1)&&(f[i]!=0)) f[i]=MOD-f[i];
+      f[i]=finv[i]*finv[sz-i]*seq[i];
+      if(((sz+i)&1)&&(f[i].v!=0)) f[i]=-f[i];
     }
 
-    vector<int> pf(f);
-    vector<int> as;
-    as.emplace_back(sz+1);
-    as.emplace_back(div(sz,d));
-    as.emplace_back(add(div(sz,d),sz+1));
+    vector<R> pf(f);
+    vector<R> as;
+    as.emplace_back(R(sz+1));
+    as.emplace_back(R(sz)/R(d));
+    as.emplace_back(R(sz)/R(d)+R(sz+1));
 
     for(int idx=0;idx<3;idx++){
       for(int i=0;i<sz*4;i++) f[i]=pf[i];
       for(int i=1;i<sz*2+2;i++)
-        g[i]=inv(as[idx]+MOD-sz+i-1);
-      f=arb.multiply(f,g,MOD);
+        g[i]=(as[idx]-R(sz-i+1)).inv();
+      f=arb.multiply(f,g);
       f.resize(sz*4);
 
-      int prod=1;
-      for(int i=0;i<=sz;i++) prod=mul(prod,sub(as[idx],i));
+      R prod=1;
+      for(int i=0;i<=sz;i++) prod*=as[idx]-R(i);
 
       for(int i=0;i<=sz;i++){
-        f[sz+i+1]=mul(f[sz+i+1],prod);
-        prod=mul(prod,add(as[idx],i+1));
-        prod=div(prod,sub(as[idx],sz-i));
+        f[sz+i+1]*=prod;
+        prod*=as[idx]+R(i+1);
+        prod/=as[idx]-R(sz-i);
       }
       if(idx==0){
         for(int i=0;i<sz;i++)
@@ -66,22 +62,23 @@ int factorial(long long n,int MOD){
       }
       if(idx==1){
         for(int i=0;i<=sz;i++)
-          seq[i]=mul(seq[i],f[sz+i+1]);
+          seq[i]*=f[sz+i+1];
       }
       if(idx==2){
         for(int i=0;i<sz;i++)
-          aux[i]=mul(aux[i],f[sz+i+1]);
+          aux[i]*=f[sz+i+1];
       }
     }
-    for(int x:aux) seq.emplace_back(x);
+    for(R x:aux) seq.emplace_back(x);
     sz<<=1;
   }
 
-  int res=1;
+  using ll = long long;
+  R res=1;
   int l=min((ll)d,(n+1)/d);
-  for(int i=0;i<l;i++) res=mul(res,seq[i]);
-  for(int i=l*d+1;i<=n;i++) res=mul(res,i);
-  return res;
+  for(ll i=0;i<l;i++) res*=seq[i];
+  for(ll i=l*d+1;i<=n;i++) res*=R(i);
+  return res.v;
 }
 //END CUT HERE
 #ifndef call_from_test
@@ -94,7 +91,7 @@ signed YUKI_502(){
   return 0;
 }
 /*
-  verified on 2019/12/17
+  verified on 2019/12/29
   https://yukicoder.me/problems/no/502
 */
 
