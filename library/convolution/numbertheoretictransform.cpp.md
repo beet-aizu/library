@@ -43,7 +43,7 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="arbitrarymodconvolution_with_garner.cpp.html">convolution/arbitrarymodconvolution_with_garner.cpp</a>
+* :heavy_check_mark: <a href="garner.cpp.html">convolution/garner.cpp</a>
 * :warning: <a href="../mod/factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
