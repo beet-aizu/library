@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/path.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-06 23:02:22+09:00
+    - Last commit date: 2020-01-06 23:24:29+09:00
 
 
 
@@ -247,7 +247,7 @@ signed YUKI_650(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://yukicoder.me/problems/no/650
 */
 
@@ -283,7 +283,7 @@ signed SPOJ_DYNACON1(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://www.spoj.com/problems/DYNACON1/
 */
 
