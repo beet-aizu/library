@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/subtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 09:39:50+09:00
+    - Last commit date: 2020-01-06 23:02:22+09:00
 
 
 

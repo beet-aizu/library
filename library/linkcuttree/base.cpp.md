@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/base.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 09:39:50+09:00
+    - Last commit date: 2020-01-06 23:02:22+09:00
 
 
 
@@ -119,6 +119,7 @@ struct LinkCutTreeBase{
     }
   }
 
+  // for splay tree (not original tree)
   bool is_root(Node *t){
     return !t->p||(t->p->l!=t&&t->p->r!=t);
   }
@@ -182,14 +183,20 @@ struct LinkCutTreeBase{
   Node *parent(Node *t){
     expose(t);
     t=t->l;
-    while(t&&t->r) t=t->r;
+    while(t&&t->r){
+      eval(t);
+      t=t->r;
+    }
     if(t) splay(t);
     return t;
   }
 
   Node *root(Node *t){
     expose(t);
-    while(t->l) t=t->l;
+    while(t->l){
+      eval(t);
+      t=t->l;
+    }
     splay(t);
     return t;
   }
