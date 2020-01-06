@@ -54,6 +54,7 @@ struct LinkCutTreeBase{
     }
   }
 
+  // for splay tree (not original tree)
   bool is_root(Node *t){
     return !t->p||(t->p->l!=t&&t->p->r!=t);
   }
@@ -117,14 +118,20 @@ struct LinkCutTreeBase{
   Node *parent(Node *t){
     expose(t);
     t=t->l;
-    while(t&&t->r) t=t->r;
+    while(t&&t->r){
+      eval(t);
+      t=t->r;
+    }
     if(t) splay(t);
     return t;
   }
 
   Node *root(Node *t){
     expose(t);
-    while(t->l) t=t->l;
+    while(t->l){
+      eval(t);
+      t=t->l;
+    }
     splay(t);
     return t;
   }

@@ -5,50 +5,50 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../tree/levelancestor.cpp"
 #include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/subtree.cpp"
 #undef call_from_test
 
 signed main(){
   using Node = NodeBase<int>;
-  constexpr size_t LIM = 1e6;
+  constexpr size_t LIM = 1e5+100;
   using LCT = SubTree<Node, LIM>;
   LCT lct;
 
   int n,q;
   cin>>n>>q;
 
-  LevelAncestor G(n+1);
+  for(int i=0;i<=n;i++) lct.create(1);
   for(int i=1;i<n;i++){
     int a,b;
     cin>>a>>b;
-    G.add_edge(a,b);
+    lct.evert(lct[b]);
+    lct.link(lct[a],lct[b]);
   }
-  G.add_edge(0,1);
-  G.build(0);
+  lct.evert(lct[1]);
+  lct.link(lct[0],lct[1]);
 
-  for(int i=0;i<=n;i++) lct.create(1);
-
-  for(int i=1;i<=n;i++)
-    lct.link(lct[G.par[0][i]],lct[i]);
+  vector<int> par(n+1);
+  for(int i=1;i<=n;i++) par[i]=lct.idx(lct.parent(lct[i]));
 
   for(int i=0;i<q;i++){
     int t,v;
     cin>>t>>v;
     if(t==1){
       if(lct.root(lct[v])==lct[v]){
-        lct.link(lct[G.par[0][v]],lct[v]);
+        lct.link(lct[par[v]],lct[v]);
       }else{
         lct.cut(lct[v]);
       }
     }
     if(t==2){
-      int k=lct.idx(lct.root(lct[v]));
-      int t=G.up(v,G.dep[v]-G.dep[k]-1);
-      lct.cut(lct[t]);
-      cout<<lct.query(lct[t])<<"\n";
-      lct.link(lct[k],lct[t]);
+      auto r=lct.root(lct[v]);
+      lct.evert(lct[v]);
+      auto u=lct.parent(r);
+      lct.evert(r);
+      lct.cut(u);
+      cout<<lct.query(u)<<"\n";
+      lct.link(r,u);
     }
   }
   cout<<flush;
