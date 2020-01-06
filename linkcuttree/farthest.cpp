@@ -131,7 +131,7 @@ signed TKPPC2015_J(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
 */
 

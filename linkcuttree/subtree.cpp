@@ -214,7 +214,7 @@ signed CFR564_E(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://codeforces.com/contest/1172/problem/E
 */
 
@@ -272,7 +272,7 @@ signed NIKKEI2019_QUAL_E(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_e
 */
 

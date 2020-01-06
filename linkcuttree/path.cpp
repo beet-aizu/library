@@ -186,7 +186,7 @@ signed YUKI_650(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://yukicoder.me/problems/no/650
 */
 
@@ -222,7 +222,7 @@ signed SPOJ_DYNACON1(){
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/01/06
   https://www.spoj.com/problems/DYNACON1/
 */
 
