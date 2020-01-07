@@ -27,7 +27,7 @@ struct LinkCutTreeBase{
   }
 
   virtual void toggle(Node *t) = 0;
-  virtual void eval(Node *t) = 0;
+  virtual Node* eval(Node *t) = 0;
   virtual void pushup(Node *t) = 0;
 
   void rotR(Node *t){

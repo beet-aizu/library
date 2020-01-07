@@ -40,12 +40,13 @@ struct Farthest : LinkCutTreeBase<Np, LIM>{
     t->rev^=1;
   }
 
-  inline void eval(Node *t){
+  inline Node* eval(Node *t){
     if(t->rev){
       if(t->l) toggle(t->l);
       if(t->r) toggle(t->r);
       t->rev=false;
     }
+    return t;
   }
 
   inline void pushup(Node *t){

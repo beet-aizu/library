@@ -64,7 +64,7 @@ struct Path : LinkCutTreeBase<Np, LIM>{
     t->rev^=1;
   }
 
-  inline void eval(Node *t){
+  inline Node* eval(Node *t){
     if(t->laz!=ei){
       if(t->l) propagate(t->l,t->laz);
       if(t->r) propagate(t->r,t->laz);
@@ -75,6 +75,7 @@ struct Path : LinkCutTreeBase<Np, LIM>{
       if(t->r) toggle(t->r);
       t->rev=false;
     }
+    return t;
   }
 
   inline void pushup(Node *t){
