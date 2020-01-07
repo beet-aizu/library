@@ -117,16 +117,16 @@ struct LinkCutTreeBase{
 
   Node *parent(Node *t){
     expose(t);
-    t=t->l;
-    if(!t) return t;
-    while(t->r) eval(t),t=t->r;
+    if(!(t->l)) return nullptr;
+    t=eval(t->l);
+    while(t->r) t=eval(t->r);
     splay(t);
     return t;
   }
 
   Node *root(Node *t){
     expose(t);
-    while(t->l) eval(t),t=t->l;
+    while(t->l) t=eval(t->l);
     splay(t);
     return t;
   }
