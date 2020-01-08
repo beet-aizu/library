@@ -99,99 +99,11 @@ struct Path : LinkCutTreeBase<Np, LIM>{
 //END CUT HERE
 #ifndef call_from_test
 
-#define call_from_test
-#include "../tools/fastio.cpp"
-#include "../mod/mint.cpp"
-#include "../linearalgebra/squarematrix.cpp"
-#undef call_from_test
-
-// test edge folding
-signed YUKI_650(){
-  using M = Mint<int>;
-  using SM = SquareMatrix<M, 2>;
-  using SM2 = pair<SM, SM>;
-  using Node = NodeBase<SM2, SM2>;
-  constexpr size_t LIM = 1e6;
-  using LCT = Path<Node, LIM>;
-
-  auto f=[](SM2 x,SM2 y){return SM2(x.first*y.first,y.second*x.second);};
-  auto g=[](SM2 x,SM2 y){(void)x;return y;};
-  auto flip=[](SM2 x){swap(x.first,x.second);return x;};
-
-  SM ti=SM::mul_identity();
-  SM ei=SM::mul_identity();
-  SM2 ti2(ti,ti),ei2(ei,ei);
-  LCT lct(f,g,g,flip,ei2);
-
-  int n;
-  cin>>n;
-  vector< vector<int> > G(n);
-  vector<int> X,Y;
-  for(int i=1;i<n;i++){
-    int a,b;
-    cin>>a>>b;
-    X.emplace_back(a);
-    Y.emplace_back(b);
-    G[a].emplace_back(b);
-    G[b].emplace_back(a);
-  }
-
-  for(int i=0;i<n*2-1;i++) lct.create(ti2);
-
-  vector< map<int, int> > rev(n);
-  int idx=n;
-  {
-    using P = pair<int, int>;
-    queue<P> q;
-    q.emplace(0,-1);
-    while(!q.empty()){
-      int v,p;
-      tie(v,p)=q.front();q.pop();
-      if(~p){
-        lct.link(lct[p],lct[idx]);
-        lct.link(lct[idx],lct[v]);
-        rev[p][v]=rev[v][p]=idx++;
-      }
-      for(int u:G[v])
-        if(u!=p) q.emplace(u,v);
-    }
-  }
-
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    char c;
-    cin>>c;
-    if(c=='x'){
-      int v,a,b,c,d;
-      cin>>v>>a>>b>>c>>d;
-      int z=rev[X[v]][Y[v]];
-      lct.expose(lct[z]);
-      SM sm;
-      sm[0][0]=a;sm[0][1]=b;
-      sm[1][0]=c;sm[1][1]=d;
-      lct[z]->val=SM2(sm,sm);
-      lct.pushup(lct[z]);
-    }
-    if(c=='g'){
-      int x,y;
-      cin>>x>>y;
-      lct.evert(lct[x]);
-      SM ans=lct.query(lct[y]).first;
-      cout<<ans[0][0]<<" "<<ans[0][1]<<" ";
-      cout<<ans[1][0]<<" "<<ans[1][1]<<"\n";
-    }
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2020/01/08
-  https://yukicoder.me/problems/no/650
-*/
-
 // test dynamic tree
 signed SPOJ_DYNACON1(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,m;
   cin>>n>>m;
   using Node = NodeBase<int, int>;
@@ -227,7 +139,6 @@ signed SPOJ_DYNACON1(){
 */
 
 signed main(){
-  //YUKI_650();
   //SPOJ_DYNACON1();
   return 0;
 }
