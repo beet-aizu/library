@@ -15,21 +15,12 @@ signed main(){
   int n,k;
   cin>>n>>k;
 
-  vector< vector<int> > G(n);
-  vector< unordered_map<ll, ll> > m(n);
-  for(int i=0;i<n-1;i++){
-    int a,b,c;
-    cin>>a>>b>>c;
-    G[a].emplace_back(b);
-    G[b].emplace_back(a);
-    m[a][b]=m[b][a]=c;
-  }
-
-  vector<ll> ws(n,0);
-  vector<int> ps(n,-1);
   using T = tuple<ll, ll, ll>;
+  vector<ll> ws(n,0);
+  vector< unordered_map<ll, ll> > m(n);
+
   auto mget=[&](ll a,ll b){
-              if(ps[a]!=b&&ps[b]!=a) return 0LL;
+              if(!m[a].count(b)) return 0LL;
               ll res=ws[a]+ws[b]+m[a][b];
               if(res%k) return res;
               return 0LL;
@@ -43,14 +34,15 @@ signed main(){
            return T(al,br,av+bv+mget(ar,bl));
          };
 
-  auto g=[&](T a,ll b){b++;return a;};
-  auto h=[&](ll a,ll b){b++;return a;};
+  auto g=[&](T a,ll){return a;};
+
+  auto h=[&](ll a,ll){return a;};
+
   auto s=[&](T a){
            ll al,ar,av;
            tie(al,ar,av)=a;
            return T(ar,al,av);
          };
-
 
   using Node = NodeBase<T, ll>;
   constexpr size_t LIM = 1e6;
@@ -58,25 +50,17 @@ signed main(){
   LCT lct(f,g,h,s,T(-1,-1,0),0);
   for(int i=0;i<n;i++) lct.create(T(i,i,0));
 
-  {
-    using P = pair<ll, ll>;
-    queue<P> q;
-    q.emplace(0,-1);
-    while(!q.empty()){
-      int v,p;
-      tie(v,p)=q.front();q.pop();
-      if(~p) lct.link(lct[p],lct[v]);
-      ps[v]=p;
-      for(int u:G[v]){
-        if(u==p) continue;
-        q.emplace(u,v);
-      }
-    }
+  for(int i=0;i<n-1;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    lct.evert(lct[b]);
+    lct.link(lct[a],lct[b]);
+    m[a][b]=m[b][a]=c;
   }
 
   int q;
   cin>>q;
-  while(q--){
+  for(int i=0;i<q;i++){
     string op;
     cin>>op;
     if(op=="add"){

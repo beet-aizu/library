@@ -13,96 +13,68 @@ signed main(){
   int n,q;
   cin>>n>>q;
 
-  using T = tuple<int, int, int, int, int>;
-  using P = pair<int, int>;
-
-  T ti(-1,-1,-1,-1,-1);
-  P ei(-1,-114514);
+  struct T{
+    int sm,va,vi,vl,vr;
+    T(int sm,int va,int vi,int vl,int vr):
+      sm(sm),va(va),vi(vi),vl(vl),vr(vr){}
+    T(){}
+  };
+  const int INF = 1e9;
+  int ei=-INF;
+  T ti(0,-INF,-INF,-INF,-INF);
 
   auto f=[&](T a,T b){
-           int as,ava,avi,avl,avr;
-           tie(as,ava,avi,avl,avr)=a;
-           int bs,bva,bvi,bvl,bvr;
-           tie(bs,bva,bvi,bvl,bvr)=b;
-           int cs=as+bs;
-           int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
-           cvi=max(cvi,avr+bvl);
-           cvl=max(cvl,ava+bvl);
-           cvr=max(cvr,avr+bva);
-           return T(cs,cva,cvi,cvl,cvr);
+           T c;
+           c.sm=a.sm+b.sm;
+           c.va=a.va+b.va;
+           c.vi=max({a.vi,b.vi,a.vr+b.vl});
+           c.vl=max({a.vl,a.va+b.vl});
+           c.vr=max({b.vr,a.vr+b.va});
+           return c;
          };
 
-  auto g=[&](T a,P p){
-           if(p==ei) return a;
-           int as,ava,avi,avl,avr;
-           tie(as,ava,avi,avl,avr)=a;
-           int v=p.first,b=p.second;
-           if(~v) as=1;
-           if(b>=0) return T(as,b*as,b*as,b*as,b*as);
-           return T(as,b*as,b,b,b);
+  auto g=[&](T a,int b){
+           if(b>=0) return T(a.sm,b*a.sm,b*a.sm,b*a.sm,b*a.sm);
+           return T(a.sm,b*a.sm,b,b,b);
          };
 
-  auto h=[&](P a,P b){a.first++;return b;};
+  auto h=[&](int,int b){return b;};
   auto s=
     [&](T a){
-      int as,ava,avi,avl,avr;
-      tie(as,ava,avi,avl,avr)=a;
-      swap(avl,avr);
-      return T(as,ava,avi,avl,avr);
+      swap(a.vl,a.vr);
+      return a;
     };
 
-
-  using Node = NodeBase<T, P>;
-  constexpr size_t LIM = 1e6;
+  using Node = NodeBase<T, int>;
+  constexpr size_t LIM = 2e5+100;
   using LCT = Path<Node, LIM>;
-  vector<int> ps(n,-1);
 
   LCT lct(f,g,h,s,ti,ei);
 
   vector<int> ws(n);
   for(int i=0;i<n;i++) cin>>ws[i];
-  for(int i=0;i<n;i++) lct.create(g(ti,P(i,ws[i])));
+  for(int i=0;i<n;i++) lct.create(g(T(1,0,0,0,0),ws[i]));
 
-  vector<vector<int> > G(n);
   for(int i=0;i<n-1;i++){
     int a,b;
     cin>>a>>b;
     a--;b--;
-    G[a].emplace_back(b);
-    G[b].emplace_back(a);
+    lct.evert(lct[b]);
+    lct.link(lct[a],lct[b]);
   }
 
-  for(int i=0;i<n;i++)
-    sort(G[i].begin(),G[i].end());
-
-  {
-    queue<P> q;
-    q.emplace(0,-1);
-    while(!q.empty()){
-      int v,p;
-      tie(v,p)=q.front();q.pop();
-      if(~p) lct.link(lct[p],lct[v]);
-      ps[v]=p;
-      for(int u:G[v]){
-        if(u==p) continue;
-        q.emplace(u,v);
-      }
-    }
-  }
-
-  while(q--){
+  for(int i=0;i<q;i++){
     int t,a,b,c;
     cin>>t>>a>>b>>c;
     a--;b--;
     if(t==1){
       lct.evert(lct[a]);
-      lct.update(lct[b],P(-1,c));
+      lct.update(lct[b],c);
     }
     if(t==2){
       lct.evert(lct[a]);
-      int vva,vvi,vvl,vvr;
-      tie(ignore,vva,vvi,vvl,vvr)=lct.query(lct[b]);
-      cout<<max({vva,vvi,vvl,vvr})<<"\n";
+      auto res=lct.query(lct[b]);
+      cout<<max({res.va,res.vi,res.vl,res.vr})<<"\n";
     }
   }
   cout<<flush;
