@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-07 13:27:51+09:00
+    - Last commit date: 2020-01-08 13:29:25+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum</a>
@@ -70,7 +70,7 @@ signed main(){
   auto f=[&](ll a,ll b){return a+b;};
   constexpr size_t LIM = 2e5+100;
   using LCT = Path<Node, LIM>;
-  LCT lct(f,f,f,0,0);
+  LCT lct(f,f,f,0);
 
   for(int i=0;i<n;i++) lct.create(as[i]);
 
