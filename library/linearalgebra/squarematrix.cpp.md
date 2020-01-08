@@ -46,7 +46,6 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="../tools/bigint.cpp.html">tools/bigint.cpp</a>
 
 
