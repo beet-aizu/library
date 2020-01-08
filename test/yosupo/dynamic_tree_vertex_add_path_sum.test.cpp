@@ -20,7 +20,7 @@ signed main(){
   auto f=[&](ll a,ll b){return a+b;};
   constexpr size_t LIM = 2e5+100;
   using LCT = Path<Node, LIM>;
-  LCT lct(f,f,f,0,0);
+  LCT lct(f,f,f,0);
 
   for(int i=0;i<n;i++) lct.create(as[i]);
 

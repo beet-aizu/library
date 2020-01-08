@@ -37,16 +37,15 @@ struct Path : LinkCutTreeBase<Np, LIM>{
   G g;
   H h;
   S flip;
-  T ti;
   E ei;
 
-  Path(F f,G g,H h,T ti,E ei):
-    super(),f(f),g(g),h(h),ti(ti),ei(ei){
+  Path(F f,G g,H h,E ei):
+    super(),f(f),g(g),h(h),ei(ei){
     flip=[](T a){return a;};
   }
 
-  Path(F f,G g,H h,S flip,T ti,E ei):
-    super(),f(f),g(g),h(h),flip(flip),ti(ti),ei(ei){}
+  Path(F f,G g,H h,S flip,E ei):
+    super(),f(f),g(g),h(h),flip(flip),ei(ei){}
 
   Node* create(T val){
     return super::create(Node(val,ei));
@@ -122,7 +121,7 @@ signed YUKI_650(){
   SM ti=SM::mul_identity();
   SM ei=SM::mul_identity();
   SM2 ti2(ti,ti),ei2(ei,ei);
-  LCT lct(f,g,g,flip,ti2,ei2);
+  LCT lct(f,g,g,flip,ei2);
 
   int n;
   cin>>n;
@@ -187,7 +186,7 @@ signed YUKI_650(){
   return 0;
 }
 /*
-  verified on 2020/01/06
+  verified on 2020/01/08
   https://yukicoder.me/problems/no/650
 */
 
@@ -200,7 +199,7 @@ signed SPOJ_DYNACON1(){
   using LCT = Path<Node, LIM>;
 
   auto f=[](int a,int b){return a+b;};
-  LCT lct(f,f,f,0,0);
+  LCT lct(f,f,f,0);
   for(int i=0;i<n;i++) lct.create(0);
 
   for(int i=0;i<m;i++){
@@ -223,7 +222,7 @@ signed SPOJ_DYNACON1(){
   return 0;
 }
 /*
-  verified on 2020/01/06
+  verified on 2020/01/08
   https://www.spoj.com/problems/DYNACON1/
 */
 

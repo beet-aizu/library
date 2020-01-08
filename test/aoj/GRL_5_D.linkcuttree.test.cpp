@@ -14,11 +14,11 @@ signed main(){
   cin>>n;
 
   using Node = NodeBase<int, int>;
-  constexpr size_t LIM = 1e6;
+  constexpr size_t LIM = 1e5+100;
   using LCT = Path<Node, LIM>;
 
   auto f=[](int a,int b){return a+b;};
-  LCT lct(f,f,f,0,0);
+  LCT lct(f,f,f,0);
 
   for(int i=0;i<n;i++) lct.create(0);
   for(int i=0;i<n;i++){
@@ -40,7 +40,8 @@ signed main(){
       int a,b;
       cin>>a>>b;
       lct.expose(lct[a]);
-      lct[a]->val=f(lct[a]->val,b);
+      lct[a]->val+=b;
+      lct.pushup(lct[a]);
     }
     if(t==1){
       int a;

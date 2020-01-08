@@ -17,13 +17,13 @@ signed main(){
 
   using P = pair<ll, ll>;
   using Node = NodeBase<P, ll>;
-  constexpr size_t LIM = 1e6;
+  constexpr size_t LIM = 1e5+100;
   using LCT = Path<Node, LIM>;
 
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,int b){return P(a.first+b*a.second,a.second);};
   auto h=[](ll a,ll b){return a+b;};
-  LCT lct(f,g,h,P(0,0),0);
+  LCT lct(f,g,h,0);
 
   for(int i=0;i<n;i++) lct.create(P(0,1));
   for(int i=0;i<n;i++){

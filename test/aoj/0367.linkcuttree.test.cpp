@@ -47,7 +47,7 @@ signed main(){
   using Node = NodeBase<T, ll>;
   constexpr size_t LIM = 1e6;
   using LCT = Path<Node, LIM>;
-  LCT lct(f,g,h,s,T(-1,-1,0),0);
+  LCT lct(f,g,h,s,0);
   for(int i=0;i<n;i++) lct.create(T(i,i,0));
 
   for(int i=0;i<n-1;i++){

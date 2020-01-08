@@ -21,7 +21,6 @@ signed main(){
   };
   const int INF = 1e9;
   int ei=-INF;
-  T ti(0,-INF,-INF,-INF,-INF);
 
   auto f=[&](T a,T b){
            T c;
@@ -49,7 +48,7 @@ signed main(){
   constexpr size_t LIM = 2e5+100;
   using LCT = Path<Node, LIM>;
 
-  LCT lct(f,g,h,s,ti,ei);
+  LCT lct(f,g,h,s,ei);
 
   vector<int> ws(n);
   for(int i=0;i<n;i++) cin>>ws[i];

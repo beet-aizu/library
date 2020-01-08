@@ -18,7 +18,7 @@ signed main(){
   using LCT = Path<Node, LIM>;
 
   auto f=[](int a,int b){return a+b;};
-  LCT lct(f,f,f,0,0);
+  LCT lct(f,f,f,0);
   for(int i=0;i<n;i++) lct.create(0);
 
   for(int i=1;i<n;i++){
