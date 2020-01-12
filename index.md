@@ -131,6 +131,7 @@ layout: default
 ### geometry
 
 * :heavy_check_mark: <a href="library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
+* :heavy_check_mark: <a href="library/geometry/projectilemotion.cpp.html">geometry/projectilemotion.cpp</a>
 
 
 <div id="a739ede2a6d479067a4ee19dfc8519a0"></div>
@@ -373,6 +374,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2286.test.cpp.html">test/aoj/2286.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2292.test.cpp.html">test/aoj/2292.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2308.test.cpp.html">test/aoj/2308.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2313.test.cpp.html">test/aoj/2313.test.cpp</a>

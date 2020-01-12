@@ -25,28 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/precision.cpp
+# :heavy_check_mark: geometry/projectilemotion.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tools/precision.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:46:59+09:00
+* category: <a href="../../index.html#ed7daeb157cd9b31e53896ad3c771a26">geometry</a>
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/projectilemotion.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-12 16:26:41+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/2294.test.cpp.html">test/aoj/2294.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2308.test.cpp.html">test/aoj/2308.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2309.tarjan.test.cpp.html">test/aoj/2309.tarjan.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2309.test.cpp.html">test/aoj/2309.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/2975.test.cpp.html">test/aoj/2975.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_15_B.test.cpp.html">test/aoj/ALDS1_15_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_H.test.cpp.html">test/aoj/geometry/CGL_7_H.test.cpp</a>
 
 
 ## Code
@@ -59,13 +51,28 @@ layout: default
 using namespace std;
 #endif
 //BEGIN CUT HERE
-struct Precision{
-  Precision(){
-    cout<<fixed<<setprecision(12);
+// throw from origin to (x,y) with verocity v (x>0)
+// g: gravity
+template<typename D>
+vector< pair<D, D> > projectile_motion(D v,D g,D x,D y){
+  D a=x*x+y*y;
+  D b=g*x*x*y-v*v*x*x;
+  D c=g*g*x*x*x*x/4;
+  if(b*b<4*a*c) return {};
+  vector< pair<D, D> > res;
+  {
+    D p=(-b+sqrt(b*b-4*a*c))/(2*a);
+    if(0<p&&p<v*v) res.emplace_back(sqrt(p),sqrt(v*v-p));
   }
-}precision_beet;
+  {
+    D p=(-b-sqrt(b*b-4*a*c))/(2*a);
+    if(0<p&&p<v*v) res.emplace_back(sqrt(p),sqrt(v*v-p));
+  }
+  return res;
+}
 //END CUT HERE
 #ifndef call_from_test
+//INSERT ABOVE HERE
 signed main(){
   return 0;
 }
@@ -82,7 +89,7 @@ Traceback (most recent call last):
     bundler.update(self.file_class.file_path)
   File "/opt/hostedtoolcache/Python/3.8.0/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.bundle.BundleError: tools/precision.cpp: line 5: found codes out of include guard
+onlinejudge_verify.bundle.BundleError: geometry/projectilemotion.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
