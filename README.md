@@ -5,3 +5,5 @@
 [Verification Status](https://beet-aizu.github.io/library/)
 
 うぃーんﾋﾞｰﾄﾋﾞｰﾄひるどwwwwwwうっくっくwwwwwwえいえいえt(←いずらいt)いえいwwwwらて。
+
+[Online Judge Verify Helper のススメ - beet&#39;s soil](http://beet-aizu.hatenablog.com/entry/online-judge-verify-helper)
