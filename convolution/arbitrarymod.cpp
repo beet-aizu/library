@@ -9,7 +9,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-struct ArbitraryModConvolution{
+struct ArbitraryMod{
   using dbl=FFT::dbl;
   using num=FFT::num;
 

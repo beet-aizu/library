@@ -42,6 +42,7 @@ struct Garner{
     c2=(ll)(c2-c1)*r12%ntt2.md;
     if(c2<0) c2+=ntt2.md;
 
+    c0%=MOD;
     c0+=(ll)c1*ntt0.md%MOD;
     if(c0>=MOD) c0-=MOD;
     c0+=(ll)c2*m01%MOD;

@@ -139,7 +139,7 @@ struct FormalPowerSeries{
 #include "../mod/mint.cpp"
 #include "../convolution/numbertheoretictransform.cpp"
 #include "../convolution/fastfouriertransform.cpp"
-#include "../convolution/arbitrarymodconvolution.cpp"
+#include "../convolution/arbitrarymod.cpp"
 #include "../mod/sqrt.cpp"
 #include "../tools/fastio.cpp"
 #undef call_from_test
@@ -228,7 +228,7 @@ signed YUKI_3046(){
   for(int i=0;i<n;i++) cin>>xs[i];
 
   using M = Mint<int>;
-  ArbitraryModConvolution<M> arb;
+  ArbitraryMod<M> arb;
   auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
   FormalPowerSeries<M> FPS(conv);
 
