@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/arbitrarymodconvolution.cpp
+# :heavy_check_mark: convolution/arbitrarymod.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
-* <a href="{{ site.github.repository_url }}/blob/master/convolution/arbitrarymodconvolution.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:35:29+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/convolution/arbitrarymod.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-23 19:42:36+09:00
 
 
 
@@ -49,6 +49,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/convolution_mod_1000000007.test.cpp.html">test/yosupo/convolution_mod_1000000007.test.cpp</a>
 
 
 ## Code
@@ -67,7 +68,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-struct ArbitraryModConvolution{
+struct ArbitraryMod{
   using dbl=FFT::dbl;
   using num=FFT::num;
 

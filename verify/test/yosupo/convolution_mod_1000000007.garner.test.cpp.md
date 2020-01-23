@@ -25,23 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/multipoint_evaluation.test.cpp
+# :heavy_check_mark: test/yosupo/convolution_mod_1000000007.garner.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/multipoint_evaluation.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/convolution_mod_1000000007.garner.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-01-23 19:42:36+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/multipoint_evaluation">https://judge.yosupo.jp/problem/multipoint_evaluation</a>
+* see: <a href="https://judge.yosupo.jp/problem/convolution_mod_1000000007">https://judge.yosupo.jp/problem/convolution_mod_1000000007</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/convolution/garner.cpp.html">convolution/garner.cpp</a>
 * :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
-* :heavy_check_mark: <a href="../../../library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -50,7 +49,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/multipoint_evaluation"
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -59,27 +58,23 @@ using namespace std;
 #include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
-#include "../../polynomial/multieval.cpp"
+#include "../../convolution/garner.cpp"
 #undef call_from_test
 
 signed main(){
   int n,m;
   cin>>n>>m;
 
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  MultiEval<M> me(conv);
+  vector<int> as(n),bs(m);
+  for(int i=0;i<n;i++) cin>>as[i];
+  for(int i=0;i<m;i++) cin>>bs[i];
 
-  vector<M> cs(n),ps(m);
-  for(int i=0;i<n;i++) cin>>cs[i].v;
-  for(int i=0;i<m;i++) cin>>ps[i].v;
-
-  auto ans=me.build(cs,ps);
-  for(int i=0;i<m;i++){
+  const int MOD = 1e9+7;
+  Garner arb;
+  auto cs=arb.multiply(as,bs,MOD);
+  for(int i=0;i<(int)cs.size();i++){
     if(i) cout<<" ";
-    cout<<ans[i];
+    cout<<cs[i];
   }
   cout<<endl;
   return 0;

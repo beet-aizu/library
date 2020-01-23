@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/garner.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-29 18:30:03+09:00
+    - Last commit date: 2020-01-23 19:42:36+09:00
 
 
 
@@ -50,6 +50,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/convolution_mod_1000000007.garner.test.cpp.html">test/yosupo/convolution_mod_1000000007.garner.test.cpp</a>
 
 
 ## Code
@@ -101,6 +102,7 @@ struct Garner{
     c2=(ll)(c2-c1)*r12%ntt2.md;
     if(c2<0) c2+=ntt2.md;
 
+    c0%=MOD;
     c0+=(ll)c1*ntt0.md%MOD;
     if(c0>=MOD) c0-=MOD;
     c0+=(ll)c2*m01%MOD;

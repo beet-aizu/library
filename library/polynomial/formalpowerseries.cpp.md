@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:35:29+09:00
+    - Last commit date: 2020-01-23 19:42:36+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../convolution/arbitrarymodconvolution.cpp.html">convolution/arbitrarymodconvolution.cpp</a>
+* :heavy_check_mark: <a href="../convolution/arbitrarymod.cpp.html">convolution/arbitrarymod.cpp</a>
 * :heavy_check_mark: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 * :heavy_check_mark: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
@@ -213,7 +213,7 @@ struct FormalPowerSeries{
 #include "../mod/mint.cpp"
 #include "../convolution/numbertheoretictransform.cpp"
 #include "../convolution/fastfouriertransform.cpp"
-#include "../convolution/arbitrarymodconvolution.cpp"
+#include "../convolution/arbitrarymod.cpp"
 #include "../mod/sqrt.cpp"
 #include "../tools/fastio.cpp"
 #undef call_from_test
@@ -302,7 +302,7 @@ signed YUKI_3046(){
   for(int i=0;i<n;i++) cin>>xs[i];
 
   using M = Mint<int>;
-  ArbitraryModConvolution<M> arb;
+  ArbitraryMod<M> arb;
   auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
   FormalPowerSeries<M> FPS(conv);
 
