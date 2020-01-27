@@ -36,6 +36,7 @@ namespace OnlineOffline{
   }
 
   // dp[i] = min_{i<j} dist(i,j-1) + dp[j]
+  // assume dist(a, b) = dist(b, a)
   template<typename T,typename F>
   T solve(int n,F dist){
     vector<T> dp(n+1,0);
