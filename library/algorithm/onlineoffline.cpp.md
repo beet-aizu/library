@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/onlineoffline.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 15:56:23+09:00
+    - Last commit date: 2020-01-27 17:28:38+09:00
 
 
 
@@ -84,6 +84,7 @@ namespace OnlineOffline{
   }
 
   // dp[i] = min_{i<j} dist(i,j-1) + dp[j]
+  // assume dist(a, b) = dist(b, a)
   template<typename T,typename F>
   T solve(int n,F dist){
     vector<T> dp(n+1,0);
@@ -187,9 +188,9 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 342, in write_contents
     bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 123, in update
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 148, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
 onlinejudge_verify.bundle.BundleError: algorithm/onlineoffline.cpp: line 5: found codes out of include guard
 
