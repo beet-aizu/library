@@ -8,7 +8,8 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
-  long long p;
+  vector<int> vs({1});
+  long long p=vs[2];
   while(cin>>p,p){
     auto ans=convert_base(p,-10LL);
     for(auto x:ans) cout<<x;
