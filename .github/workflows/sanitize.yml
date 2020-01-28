@@ -18,4 +18,4 @@ jobs:
     - name: Run tests
       env:
         CXXFLAGS: "-fsanitize=undefined -D_GLIBCXX_DEBUG"
-      run: env -u GITHUB_ACTION oj-verify run -j 2
+      run: env -u GITHUB_REF oj-verify run -j 2
