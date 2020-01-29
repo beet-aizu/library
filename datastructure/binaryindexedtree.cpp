@@ -8,7 +8,7 @@ struct BIT{
   int n;
   vector<T> bit;
   //1-indexed
-  BIT(int n_):n(n_+1),bit(n+1,0){}
+  BIT(int n_):n(n_+1),bit(n,0){}
 
   T sum(int i){
     T s(0);
