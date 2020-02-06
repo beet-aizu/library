@@ -77,9 +77,9 @@ signed main(){
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 342, in write_contents
     bundler.update(self.file_class.file_path)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 179, in update
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 182, in update
     self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 148, in update
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
 onlinejudge_verify.bundle.BundleError: string/knuth_morris_pratt.cpp: line 5: found codes out of include guard
 
