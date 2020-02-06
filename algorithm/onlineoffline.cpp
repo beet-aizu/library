@@ -6,29 +6,33 @@ using namespace std;
 namespace OnlineOffline{
   vector<int> used;
 
+  template<typename T>
+  void update(vector<T> &dp,int k,T val){
+    if(!used[k]) dp[k]=val;
+    dp[k]=min(dp[k],val);
+    used[k]=1;
+  }
+
+  // [l, r), [a, b]
   template<typename T,typename F>
   void induce(int l,int r,int a,int b,vector<T> &dp,F dist){
     if(l==r) return;
     int m=(l+r)>>1;
+    assert(m<a);
     int idx=a;
-    T res=dp[idx+1]+dist(idx,m);
-    for(int i=a;i<b;i++){
-      T tmp=dp[i+1]+dist(i,m);
+    T res=dist(m,idx-1)+dp[idx];
+    for(int i=a;i<=b;i++){
+      T tmp=dist(m,i-1)+dp[i];
       if(tmp<res) res=tmp,idx=i;
     }
-    if(!used[m]) dp[m]=res,used[m]=1;
-    else dp[m]=min(dp[m],res);
-    induce(l,m,a,idx+1,dp,dist);
+    update(dp,m,res);
+    induce(l,m+0,a,idx,dp,dist);
     induce(m+1,r,idx,b,dp,dist);
   }
 
   template<typename T,typename F>
   void solve(int l,int r,vector<T> &dp,F dist){
-    if(l+1==r){
-      if(!used[l]) dp[l]=dp[r]+dist(l,l),used[l]=1;
-      else dp[l]=min(dp[l],dp[r]+dist(l,l));
-      return;
-    }
+    if(l+1==r) return update(dp,l,dist(l,l)+dp[r]);
     int m=(l+r)>>1;
     solve(m,r,dp,dist);
     induce(l,m,m,r,dp,dist);
@@ -36,7 +40,6 @@ namespace OnlineOffline{
   }
 
   // dp[i] = min_{i<j} dist(i,j-1) + dp[j]
-  // assume dist(a, b) = dist(b, a)
   template<typename T,typename F>
   T solve(int n,F dist){
     vector<T> dp(n+1,0);
@@ -65,8 +68,8 @@ signed YUKI_703(){
 
   auto dist=
     [&](int i,int j)->ll{
-      ll s=abs(as[i]-xs[j]);
-      ll t=abs(ys[j]);
+      ll s=abs(xs[i]-as[j]);
+      ll t=abs(ys[i]);
       return s*s+t*t;
     };
 
@@ -74,7 +77,7 @@ signed YUKI_703(){
   return 0;
 }
 /*
-  verified on 2019/12/17
+  verified on 2020/02/06
   https://yukicoder.me/problems/no/703
 */
 
@@ -88,8 +91,8 @@ signed YUKI_704(){
 
   auto dist=
     [&](int i,int j)->ll{
-      ll s=abs(as[i]-xs[j]);
-      ll t=abs(ys[j]);
+      ll s=abs(xs[i]-as[j]);
+      ll t=abs(ys[i]);
       return s+t;
     };
 
@@ -97,7 +100,7 @@ signed YUKI_704(){
   return 0;
 }
 /*
-  verified on 2019/12/17
+  verified on 2020/02/06
   https://yukicoder.me/problems/no/704
 */
 
@@ -111,8 +114,8 @@ signed YUKI_705(){
 
   auto dist=
     [&](int i,int j)->ll{
-      ll s=abs(as[i]-xs[j]);
-      ll t=abs(ys[j]);
+      ll s=abs(xs[i]-as[j]);
+      ll t=abs(ys[i]);
       return s*s*s+t*t*t;
     };
 
@@ -120,10 +123,9 @@ signed YUKI_705(){
   return 0;
 }
 /*
-  verified on 2019/12/17
+  verified on 2020/02/06
   https://yukicoder.me/problems/no/705
 */
-
 
 signed main(){
   //YUKI_703();
