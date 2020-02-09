@@ -49,6 +49,7 @@ layout: default
 * :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
 * :warning: <a href="factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
+* :warning: <a href="../polynomial/berlekamp_massey.cpp.html">polynomial/berlekamp_massey.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 

@@ -229,6 +229,7 @@ layout: default
 
 ### polynomial
 
+* :warning: <a href="library/polynomial/berlekamp_massey.cpp.html">polynomial/berlekamp_massey.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>

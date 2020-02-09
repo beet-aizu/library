@@ -51,6 +51,7 @@ layout: default
 * :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="../linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>
 * :heavy_check_mark: <a href="../mod/order.cpp.html">mod/order.cpp</a>
+* :warning: <a href="../polynomial/berlekamp_massey.cpp.html">polynomial/berlekamp_massey.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="../segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
 * :heavy_check_mark: <a href="../string/palindromictree.cpp.html">string/palindromictree.cpp</a>
