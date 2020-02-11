@@ -3,9 +3,10 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-int isprime(int x){
+template<typename T>
+int isprime(T x){
   if(x<=1) return 0;
-  for(int i=2;i*i<=x;i++)
+  for(T i=2;i*i<=x;i++)
     if(x%i==0) return 0;
   return 1;
 }
