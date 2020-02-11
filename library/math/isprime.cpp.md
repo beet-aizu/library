@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/isprime.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:37:46+09:00
+    - Last commit date: 2020-02-11 11:14:25+09:00
 
 
 
@@ -51,9 +51,10 @@ layout: default
 using namespace std;
 #endif
 //BEGIN CUT HERE
-int isprime(int x){
+template<typename T>
+int isprime(T x){
   if(x<=1) return 0;
-  for(int i=2;i*i<=x;i++)
+  for(T i=2;i*i<=x;i++)
     if(x%i==0) return 0;
   return 1;
 }
