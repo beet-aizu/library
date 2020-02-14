@@ -18,4 +18,5 @@ jobs:
     - name: Run tests
       env:
         CXXFLAGS: "-fsanitize=undefined -D_GLIBCXX_DEBUG"
+        YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
       run: oj-verify run -j 2
