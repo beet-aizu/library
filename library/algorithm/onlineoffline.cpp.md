@@ -25,20 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: algorithm/onlineoffline.cpp
+# :x: algorithm/onlineoffline.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/onlineoffline.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-06 16:03:16+09:00
+    - Last commit date: 2020-02-15 01:15:34+09:00
 
 
 
 
-## Depends on
+## Verified with
 
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
 
 
 ## Code
@@ -99,86 +101,8 @@ namespace OnlineOffline{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-using ll = long long;
-signed YUKI_703(){
-  int n;
-  cin>>n;
-  vector<ll> as(n),xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-  for(int i=0;i<n;i++) cin>>xs[i];
-  for(int i=0;i<n;i++) cin>>ys[i];
-
-  auto dist=
-    [&](int i,int j)->ll{
-      ll s=abs(xs[i]-as[j]);
-      ll t=abs(ys[i]);
-      return s*s+t*t;
-    };
-
-  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
-  return 0;
-}
-/*
-  verified on 2020/02/06
-  https://yukicoder.me/problems/no/703
-*/
-
-signed YUKI_704(){
-  int n;
-  cin>>n;
-  vector<ll> as(n),xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-  for(int i=0;i<n;i++) cin>>xs[i];
-  for(int i=0;i<n;i++) cin>>ys[i];
-
-  auto dist=
-    [&](int i,int j)->ll{
-      ll s=abs(xs[i]-as[j]);
-      ll t=abs(ys[i]);
-      return s+t;
-    };
-
-  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
-  return 0;
-}
-/*
-  verified on 2020/02/06
-  https://yukicoder.me/problems/no/704
-*/
-
-signed YUKI_705(){
-  int n;
-  cin>>n;
-  vector<ll> as(n),xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-  for(int i=0;i<n;i++) cin>>xs[i];
-  for(int i=0;i<n;i++) cin>>ys[i];
-
-  auto dist=
-    [&](int i,int j)->ll{
-      ll s=abs(xs[i]-as[j]);
-      ll t=abs(ys[i]);
-      return s*s*s+t*t*t;
-    };
-
-  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
-  return 0;
-}
-/*
-  verified on 2020/02/06
-  https://yukicoder.me/problems/no/705
-*/
-
 signed main(){
-  //YUKI_703();
-  //YUKI_704();
-  //YUKI_705();
   return 0;
 }
 #endif
@@ -189,6 +113,23 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
+    subcommand_run(paths=[], jobs=parsed.jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
+    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 116, in main
+    verified = verify_file(path, compilers=compilers, jobs=jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 70, in verify_file
+    exec_command(command)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 28, in exec_command
+    subprocess.check_call(command)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['oj', 'download', '--system', '-d', '.verify-helper/cache/ad454c14bfdd77526dd7c6bc932b431e/test', 'https://yukicoder.me/problems/1948']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 343, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
