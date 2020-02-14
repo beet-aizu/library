@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/monotoneminima.cpp.html">algorithm/monotoneminima.cpp</a>
-* :x: <a href="library/algorithm/onlineoffline.cpp.html">algorithm/onlineoffline.cpp</a>
+* :heavy_check_mark: <a href="library/algorithm/onlineoffline.cpp.html">algorithm/onlineoffline.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/optimalbinarytree.cpp.html">algorithm/optimalbinarytree.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/parallelbinarysearch.cpp.html">algorithm/parallelbinarysearch.cpp</a>
 
@@ -593,8 +593,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
 
 
