@@ -31,15 +31,13 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-23 19:42:36+09:00
+    - Last commit date: 2020-02-15 01:24:41+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../convolution/arbitrarymod.cpp.html">convolution/arbitrarymod.cpp</a>
-* :heavy_check_mark: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 * :heavy_check_mark: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../mod/sqrt.cpp.html">mod/sqrt.cpp</a>
@@ -65,6 +63,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 
 
 ## Code
@@ -212,8 +211,6 @@ struct FormalPowerSeries{
 #define call_from_test
 #include "../mod/mint.cpp"
 #include "../convolution/numbertheoretictransform.cpp"
-#include "../convolution/fastfouriertransform.cpp"
-#include "../convolution/arbitrarymod.cpp"
 #include "../mod/sqrt.cpp"
 #include "../tools/fastio.cpp"
 #undef call_from_test
@@ -295,29 +292,6 @@ signed CFR250_E(){
   https://codeforces.com/contest/438/problem/E
 */
 
-signed YUKI_3046(){
-  int k,n;
-  cin>>k>>n;
-  vector<int> xs(n);
-  for(int i=0;i<n;i++) cin>>xs[i];
-
-  using M = Mint<int>;
-  ArbitraryMod<M> arb;
-  auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  const int sz=1<<17;
-  vector<M> bs(sz,M(0));
-  bs[0]=1;
-  for(int x:xs) bs[x]-=M(1);
-  cout<<FPS.inv(bs,k+1)[k]<<endl;
-  return 0;
-}
-/*
-  verified on 2019/09/17
-  https://yukicoder.me/problems/no/3046
-*/
-
 signed LOJ_150(){
   NTT<2> ntt;
   using M = NTT<2>::M;
@@ -397,7 +371,6 @@ signed CODECHEF_PSUM(){
 signed main(){
   //HAPPYQUERY_E();
   //CFR250_E();
-  //YUKI_3046();
   //LOJ_150();
   //CODECHEF_PSUM();
   return 0;

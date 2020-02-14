@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/multieval.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-23 19:42:36+09:00
+    - Last commit date: 2020-02-15 01:24:41+09:00
 
 
 
