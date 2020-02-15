@@ -211,7 +211,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/mod/bell.cpp.html">mod/bell.cpp</a>
 * :heavy_check_mark: <a href="library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
-* :warning: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
+* :heavy_check_mark: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
 * :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
@@ -593,6 +593,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1580.test.cpp.html">test/yukicoder/1580.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>

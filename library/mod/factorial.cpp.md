@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: mod/factorial.cpp
+# :heavy_check_mark: mod/factorial.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/factorial.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-23 19:42:36+09:00
+    - Last commit date: 2020-02-15 15:55:31+09:00
 
 
 
@@ -44,6 +44,11 @@ layout: default
 * :heavy_check_mark: <a href="rint.cpp.html">mod/rint.cpp</a>
 
 
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
+
+
 ## Code
 
 <a id="unbundled"></a>
@@ -52,15 +57,15 @@ layout: default
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-#endif
 
 #define call_from_test
-#include "mint.cpp"
-#include "rint.cpp"
+#include "../mod/mint.cpp"
 #include "../convolution/numbertheoretictransform.cpp"
 #include "../convolution/garner.cpp"
-
+#include "../mod/rint.cpp"
 #undef call_from_test
+
+#endif
 //BEGIN CUT HERE
 int factorial(long long n,int MOD){
   if(n>=MOD) return 0;
@@ -134,20 +139,7 @@ int factorial(long long n,int MOD){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed YUKI_502(){
-  const int MOD = 1e9+7;
-  long long n;
-  cin>>n;
-  cout<<factorial(n,MOD)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/29
-  https://yukicoder.me/problems/no/502
-*/
-
 signed main(){
-  YUKI_502();
   return 0;
 }
 #endif
@@ -163,9 +155,11 @@ Traceback (most recent call last):
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 63, in bundle
     bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
+    self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/factorial.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/mint.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
