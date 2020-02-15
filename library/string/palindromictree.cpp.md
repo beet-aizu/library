@@ -31,20 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/palindromictree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:42:22+09:00
+    - Last commit date: 2020-02-15 16:03:38+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="rollinghash.cpp.html">string/rollinghash.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2292.test.cpp.html">test/aoj/2292.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/399.test.cpp.html">test/yukicoder/399.test.cpp</a>
 
 
 ## Code
@@ -131,56 +126,8 @@ struct PalindromicTree{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#include "rollinghash.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-
-// larger constraints than AOJ 2292
-signed YUKI_263(){
-  using ll = long long;
-  string s,t;
-  cin>>s>>t;
-
-  PalindromicTree p1(s),p2(t);
-  const int MOD = 1e9+7;
-  const int BASE1 = 1777771;
-  const int BASE2 = 1e6+3;
-  RollingHash<int, MOD, BASE1> rs1(s),rt1(t);
-  RollingHash<int, MOD, BASE2> rs2(s),rt2(t);
-
-  const int MAX = 5e5+100;
-  map<pair<int, int>, int> m1[MAX];
-  for(int i=0;i<(int)p1.n;i++){
-    auto& u=p1.vs[i];
-    if(u.app<0) continue;
-    auto p=make_pair(rs1.find(u.app,u.app+u.len),
-                     rs2.find(u.app,u.app+u.len));
-    m1[u.len][p]=u.cnt;
-  }
-
-  ll ans=0;
-  for(int i=0;i<(int)p2.n;i++){
-    auto& u=p2.vs[i];
-    auto p=make_pair(rt1.find(u.app,u.app+u.len),
-                     rt2.find(u.app,u.app+u.len));
-    if(u.app<0||!m1[u.len].count(p)) continue;
-    ans+=(ll)m1[u.len][p]*u.cnt;
-  }
-
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://yukicoder.me/problems/no/263
-*/
-
 signed main(){
-  YUKI_263();
   return 0;
 }
 #endif
