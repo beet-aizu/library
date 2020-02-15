@@ -1,15 +1,15 @@
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
-#endif
 
 #define call_from_test
-#include "mint.cpp"
-#include "rint.cpp"
+#include "../mod/mint.cpp"
 #include "../convolution/numbertheoretictransform.cpp"
 #include "../convolution/garner.cpp"
-
+#include "../mod/rint.cpp"
 #undef call_from_test
+
+#endif
 //BEGIN CUT HERE
 int factorial(long long n,int MOD){
   if(n>=MOD) return 0;
@@ -83,20 +83,7 @@ int factorial(long long n,int MOD){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed YUKI_502(){
-  const int MOD = 1e9+7;
-  long long n;
-  cin>>n;
-  cout<<factorial(n,MOD)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/29
-  https://yukicoder.me/problems/no/502
-*/
-
 signed main(){
-  YUKI_502();
   return 0;
 }
 #endif
