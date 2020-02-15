@@ -27,40 +27,7 @@ M lagrange_interpolation(vector<M> &y,M t){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#undef call_from_test
-
-// polynomial if divided by mod 500
-signed YUKI_042(){
-  using M = Mint<int, int(1e9+9)>;
-  const int MAX = 666 * 6 + 10;
-  vector<M> dp(MAX,0);
-  dp[0]=M(1);
-
-  for(int x:{1,5,10,50,100,500})
-    for(int j=x;j<MAX;j++) dp[j]+=dp[j-x];
-
-  int T;
-  scanf("%d",&T);
-  while(T--){
-    using ll = long long;
-    ll m;
-    scanf("%lld",&m);
-    vector<M> ys(6);
-    for(int i=0;i<6;i++) ys[i]=dp[(m%500)+(i*500)];
-    printf("%d\n",lagrange_interpolation(ys,M(m/500)).v);
-  }
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/42
-*/
-
 signed main(){
-  //YUKI_042();
   return 0;
 }
 #endif
