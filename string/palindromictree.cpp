@@ -74,6 +74,8 @@ struct PalindromicTree{
     for(int i=(int)ord.size()-1;i>=0;i--)
       vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;
   }
+
+  size_t size()const{return n;}
 };
 //END CUT HERE
 #ifndef call_from_test
