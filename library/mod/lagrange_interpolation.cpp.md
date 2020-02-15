@@ -31,19 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/lagrange_interpolation.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:51:15+09:00
+    - Last commit date: 2020-02-15 16:00:30+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2951.test.cpp.html">test/aoj/2951.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/22.test.cpp.html">test/yukicoder/22.test.cpp</a>
 
 
 ## Code
@@ -80,40 +76,7 @@ M lagrange_interpolation(vector<M> &y,M t){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#undef call_from_test
-
-// polynomial if divided by mod 500
-signed YUKI_042(){
-  using M = Mint<int, int(1e9+9)>;
-  const int MAX = 666 * 6 + 10;
-  vector<M> dp(MAX,0);
-  dp[0]=M(1);
-
-  for(int x:{1,5,10,50,100,500})
-    for(int j=x;j<MAX;j++) dp[j]+=dp[j-x];
-
-  int T;
-  scanf("%d",&T);
-  while(T--){
-    using ll = long long;
-    ll m;
-    scanf("%lld",&m);
-    vector<M> ys(6);
-    for(int i=0;i<6;i++) ys[i]=dp[(m%500)+(i*500)];
-    printf("%d\n",lagrange_interpolation(ys,M(m/500)).v);
-  }
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/42
-*/
-
 signed main(){
-  //YUKI_042();
   return 0;
 }
 #endif
