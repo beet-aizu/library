@@ -25,19 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/zalgorithm.test.cpp
+# :heavy_check_mark: test/yosupo/runenumerate.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/zalgorithm.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/runenumerate.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-15 17:46:50+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/zalgorithm">https://judge.yosupo.jp/problem/zalgorithm</a>
+* see: <a href="https://judge.yosupo.jp/problem/runenumerate">https://judge.yosupo.jp/problem/runenumerate</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/string/run.cpp.html">string/run.cpp</a>
 * :heavy_check_mark: <a href="../../../library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
@@ -47,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
+#define PROBLEM "https://judge.yosupo.jp/problem/runenumerate"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -55,18 +56,31 @@ using namespace std;
 #define call_from_test
 #include "../../tools/fastio.cpp"
 #include "../../string/zalgorithm.cpp"
+#include "../../string/run.cpp"
 #undef call_from_test
 
 signed main(){
-  string s;
-  cin>>s;
+  string ss;
+  cin>>ss;
+  auto run=Run::enumerate(ss);
 
-  auto zs=zalgorithm(s);
-  for(int i=0;i<(int)s.size();i++){
-    if(i) cout<<" ";
-    cout<<zs[i];
+  set<Run::P> vis;
+  vector<Run::T> ans;
+  for(int t=1;t<=(int)ss.size();t++){
+    for(auto lr:run[t]){
+      if(vis.count(lr)) continue;
+      vis.emplace(lr);
+      ans.emplace_back(t,lr.first,lr.second);
+    }
   }
-  cout<<endl;
+
+  cout<<ans.size()<<endl;
+  for(auto tlr:ans){
+    int t,l,r;
+    tie(t,l,r)=tlr;
+    cout<<t<<" "<<l<<" "<<r<<"\n";
+  }
+  cout<<flush;
   return 0;
 }
 
