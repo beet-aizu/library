@@ -1,5 +1,7 @@
+#ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
+#endif
 //BEGIN CUT HERE
 template<typename T>
 struct AbsoluteSum{
@@ -62,7 +64,10 @@ struct AbsoluteSum{
   T value(){return sum;}
 };
 //END CUT HERE
+#ifndef call_from_test
 //INSERT ABOVE HERE
+
+// test interval()
 signed ABC127_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -92,42 +97,8 @@ signed ABC127_F(){
   https://atcoder.jp/contests/abc127/tasks/abc127_f
 */
 
-signed YUKI_837(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  using ll = long long;
-
-  int n;
-  cin>>n;
-  vector<ll> ys(n);
-  for(int i=0;i<n;i++) cin>>ys[i];
-  sort(ys.begin(),ys.end());
-  if(ys.front()==ys.back()){
-    cout<<1<<endl;
-    return 0;
-  }
-
-  AbsoluteSum<ll> as;
-  vector<ll> dp(n,0);
-  for(int i=0;i<n;i++){
-    as.insert(ys[i]);
-    dp[i]+=as.value();
-  }
-  for(int i=0;i<n;i++){
-    as.erase(ys[i]);
-    dp[i]+=as.value();
-  }
-
-  cout<<*min_element(dp.begin(),dp.end())<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/19
-  https://yukicoder.me/problems/no/837
-*/
-
 signed main(){
   //ABC127_F();
-  //YUKI_837();
   return 0;
 }
+#endif
