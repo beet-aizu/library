@@ -47,6 +47,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_2_D.test.cpp.html">test/aoj/geometry/CGL_2_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/CGL_7_H.test.cpp.html">test/aoj/geometry/CGL_7_H.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1923.test.cpp.html">test/yukicoder/1923.test.cpp</a>
 
 
 ## Code

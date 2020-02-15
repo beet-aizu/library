@@ -595,6 +595,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1580.test.cpp.html">test/yukicoder/1580.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1923.test.cpp.html">test/yukicoder/1923.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
