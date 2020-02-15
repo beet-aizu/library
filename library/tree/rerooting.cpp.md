@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/rerooting.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:51:15+09:00
+    - Last commit date: 2020-02-15 16:13:43+09:00
 
 
 
@@ -39,6 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.test.cpp.html">test/aoj/1595.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
 
 
 ## Code
@@ -110,42 +111,12 @@ struct ReRooting{
 };
 //END CUT HERE
 #ifndef call_from_test
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-
 //INSERT ABOVE HERE
-signed YUKI_768(){
-  int n;
-  cin>>n;
-  auto f1=[](int a,int b){return max(a,0)+max(b,0);};
-  auto f2=[](int a,int d){return d-a;};
-  ReRooting<int, int> G(n,f1,f2,0);
-  for(int i=1;i<n;i++){
-    int a,b;
-    cin>>a>>b;
-    a--;b--;
-    G.add_edge(a,b,1);
-  }
-  auto res=G.build();
-  vector<int> ans;
-  for(int i=0;i<n;i++)
-    if(1-res[i]>0) ans.emplace_back(i);
-  cout<<ans.size()<<"\n";
-  for(int x:ans) cout<<x+1<<"\n";
-  cout<<flush;
-  return 0;
-};
-/*
-  verified on 2019/10/30
-  https://yukicoder.me/problems/no/768
-*/
 
 // verify non-invertible
 signed DP_V(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
   int n,m;
   cin>>n>>m;
   auto f1=[m](int a,int b)->int{return (long long)a*b%m;};
@@ -168,7 +139,6 @@ signed DP_V(){
 */
 
 signed main(){
-  //YUKI_768();
   //DP_V();
   return 0;
 }

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/palindromictree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-15 16:03:38+09:00
+    - Last commit date: 2020-02-15 16:13:43+09:00
 
 
 
@@ -123,6 +123,8 @@ struct PalindromicTree{
     for(int i=(int)ord.size()-1;i>=0;i--)
       vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;
   }
+
+  size_t size()const{return n;}
 };
 //END CUT HERE
 #ifndef call_from_test
