@@ -44,15 +44,11 @@ layout: default
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
-## Required by
-
-* :heavy_check_mark: <a href="../tools/bigint.cpp.html">tools/bigint.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/831.test.cpp.html">test/yukicoder/831.test.cpp</a>
 
 
 ## Code

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tools/bigint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-29 13:00:50+09:00
+    - Last commit date: 2020-02-15 16:27:15+09:00
 
 
 
@@ -39,8 +39,6 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
-* :heavy_check_mark: <a href="../datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
-* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 
 
 ## Verified with
@@ -51,6 +49,9 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_2_D.test.cpp.html">test/aoj/NTL_2_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_2_E.test.cpp.html">test/aoj/NTL_2_E.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/NTL_2_F.test.cpp.html">test/aoj/NTL_2_F.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/143.test.cpp.html">test/yukicoder/143.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2125.test.cpp.html">test/yukicoder/2125.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/831.test.cpp.html">test/yukicoder/831.test.cpp</a>
 
 
 ## Code
@@ -396,99 +397,8 @@ struct bigint {
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../datastructure/binaryindexedtree.cpp"
-#include "../linearalgebra/squarematrix.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-using ll = long long;
-
-signed YUKI_129(){
-  bigint MOD = 1000000000;
-  ll n,m;
-  cin>>n>>m;
-  n/=1000;
-  n%=m;
-  bigint res(1);
-  for(int i=0;i<n;i++){
-    res*=m-i;
-    res/=i+1;
-  }
-  cout<<res%MOD<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/129
-*/
-
-signed YUKI_303(){
-  ll l;
-  cin>>l;
-
-  if(l==2){
-    cout<<3<<endl;
-    cout<<"INF"<<endl;
-    return 0;
-  }
-  cout<<l<<endl;
-
-  using M = SquareMatrix<bigint, 2>;
-  M A;
-  A[0][0]=1;A[0][1]=1;
-  A[1][0]=1;A[1][1]=0;
-  if(l&1) cout<<A.pow(l)[1][0]<<endl;
-  else{
-    auto B=A.pow(l/2);
-    auto X=(B*B)[1][0];
-    auto Y=B[1][0];
-    cout<<X-Y*Y<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/303
-*/
-
-const int MAX = 1e5+100;
-ll dp[MAX];
-pair<bigint, bigint> dfs(int l,int r){
-  if(l+1>=r) return make_pair(bigint(dp[l]),bigint(l+1));
-  int m=(l+r)>>1;
-  auto v=dfs(l,m);
-  auto t=dfs(m,r);
-  t.first*=v.second;
-  t.first+=v.first;
-  t.second*=v.second;
-  return t;
-}
-
-signed YUKI_696(){
-  int n;
-  cin>>n;
-  vector<int> p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  BIT<ll> bit(n+1);
-  for(int i=0;i<n;i++) bit.add(p[i],1);
-  for(int i=0;i<n;i++){
-    dp[n-(i+1)]=bit.sum(p[i]-1);
-    bit.add(p[i],-1);
-  }
-  cout<<bigint(dfs(0,n).first+1)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/696
-*/
-
 signed main(){
-  //YUKI_129();
-  //YUKI_303();
-  //YUKI_696();
   return 0;
 }
 #endif
