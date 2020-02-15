@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/tetration.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2020-02-15 15:47:07+09:00
 
 
 
@@ -44,6 +44,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
 
 
 ## Code
@@ -101,17 +102,6 @@ T tetration(T a,T n,T m){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-signed YUKI_181(){
-  int a,n,m;
-  cin>>a>>n>>m;
-  cout<<tetration(a,n,m)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/181
-*/
 
 signed SUMMERFES2018_F(){
   using ll = long long;
@@ -182,7 +172,6 @@ signed SPOJ_MTETRA(){
 */
 
 signed main(){
-  //YUKI_181();
   //SUMMERFES2018_F();
   //SPOJ_POWTOW();
   //SPOJ_MTETRA();

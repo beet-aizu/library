@@ -302,7 +302,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fusion.cpp.html">tools/fusion.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
-* :warning: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
+* :heavy_check_mark: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :heavy_check_mark: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
@@ -593,9 +593,12 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1580.test.cpp.html">test/yukicoder/1580.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/222.test.cpp.html">test/yukicoder/222.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
 
 
