@@ -23,7 +23,7 @@ signed main(){
 
   const int MAX = 5e5+100;
   map<pair<int, int>, int> m1[MAX];
-  for(int i=0;i<(int)p1.n;i++){
+  for(int i=2;i<(int)p1.size();i++){
     PalindromicTree::node& u=p1.vs[i];
     if(u.app<0) continue;
     auto p=make_pair(rs1.find(u.app,u.app+u.len),
@@ -32,7 +32,7 @@ signed main(){
   }
 
   ll ans=0;
-  for(int i=0;i<(int)p2.n;i++){
+  for(int i=2;i<(int)p2.size();i++){
     PalindromicTree::node& u=p2.vs[i];
     auto p=make_pair(rt1.find(u.app,u.app+u.len),
                      rt2.find(u.app,u.app+u.len));
