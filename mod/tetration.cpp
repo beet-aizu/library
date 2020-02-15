@@ -49,17 +49,6 @@ T tetration(T a,T n,T m){
 #ifndef call_from_test
 //INSERT ABOVE HERE
 
-signed YUKI_181(){
-  int a,n,m;
-  cin>>a>>n>>m;
-  cout<<tetration(a,n,m)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://yukicoder.me/problems/no/181
-*/
-
 signed SUMMERFES2018_F(){
   using ll = long long;
 
@@ -129,7 +118,6 @@ signed SPOJ_MTETRA(){
 */
 
 signed main(){
-  //YUKI_181();
   //SUMMERFES2018_F();
   //SPOJ_POWTOW();
   //SPOJ_MTETRA();

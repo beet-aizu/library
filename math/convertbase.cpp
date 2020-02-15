@@ -21,23 +21,7 @@ vector<T> convert_base(T x,T b){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-// verify positive base
-signed YUKI_499(){
-  long long p;
-  cin>>p;
-  auto ans=convert_base(p,7LL);
-  for(auto x:ans) cout<<x;
-  cout<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/26
-  https://yukicoder.me/problems/no/499
-*/
-
 signed main(){
-  //YUKI_499();
   return 0;
 }
 #endif
