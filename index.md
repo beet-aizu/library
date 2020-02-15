@@ -91,7 +91,7 @@ layout: default
 ### datastructure
 
 * :heavy_check_mark: <a href="library/datastructure/BIT2D.cpp.html">datastructure/BIT2D.cpp</a>
-* :warning: <a href="library/datastructure/absolutesum.cpp.html">datastructure/absolutesum.cpp</a>
+* :heavy_check_mark: <a href="library/datastructure/absolutesum.cpp.html">datastructure/absolutesum.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
@@ -601,6 +601,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/22.test.cpp.html">test/yukicoder/22.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/222.test.cpp.html">test/yukicoder/222.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/2600.test.cpp.html">test/yukicoder/2600.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/399.test.cpp.html">test/yukicoder/399.test.cpp</a>
