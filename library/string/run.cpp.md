@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/run.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-15 17:46:50+09:00
+    - Last commit date: 2020-02-16 18:24:01+09:00
 
 
 
@@ -114,6 +114,7 @@ namespace Run{
     dfs(m,r,cs);
   }
 
+  // return all t (not only minimal)
   template<typename C>
   vector<vector<P>> enumerate(const vector<C> &cs){
     int n=cs.size();
@@ -156,7 +157,7 @@ signed main(){
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 343, in write_contents
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 63, in bundle
     bundler.update(path)
