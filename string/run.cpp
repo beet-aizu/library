@@ -61,6 +61,7 @@ namespace Run{
     dfs(m,r,cs);
   }
 
+  // return all t (not only minimal)
   template<typename C>
   vector<vector<P>> enumerate(const vector<C> &cs){
     int n=cs.size();
