@@ -148,6 +148,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/arborescence_edmond.cpp.html">graph/arborescence_edmond.cpp</a>
 * :heavy_check_mark: <a href="library/graph/arborescence_tarjan.cpp.html">graph/arborescence_tarjan.cpp</a>
 * :heavy_check_mark: <a href="library/graph/bellmanford.cpp.html">graph/bellmanford.cpp</a>
+* :heavy_check_mark: <a href="library/graph/bfs.cpp.html">graph/bfs.cpp</a>
 * :heavy_check_mark: <a href="library/graph/chebyshevneighbors.cpp.html">graph/chebyshevneighbors.cpp</a>
 * :heavy_check_mark: <a href="library/graph/chromatic.cpp.html">graph/chromatic.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
@@ -293,7 +294,6 @@ layout: default
 ### tools
 
 * :heavy_check_mark: <a href="library/tools/all_permutations.cpp.html">tools/all_permutations.cpp</a>
-* :heavy_check_mark: <a href="library/tools/bfs.cpp.html">tools/bfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bigint.cpp.html">tools/bigint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
@@ -302,6 +302,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fusion.cpp.html">tools/fusion.cpp</a>
+* :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :heavy_check_mark: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
@@ -348,6 +349,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0502.test.cpp.html">test/aoj/0502.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0563.test.cpp.html">test/aoj/0563.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/0596.test.cpp.html">test/aoj/0596.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1069.test.cpp.html">test/aoj/1069.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1197.test.cpp.html">test/aoj/1197.test.cpp</a>

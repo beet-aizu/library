@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/bfs.cpp
+# :heavy_check_mark: tools/gridbfs.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tools/bfs.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:42:22+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tools/gridbfs.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-18 14:43:35+09:00
 
 
 
@@ -52,7 +52,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 vector< vector<int> >
-bfs(vector<string> &st,int sy,int sx,char wall,int dir){
+gridbfs(vector<string> &st,int sy,int sx,char wall,int dir){
   int h=st.size(),w=st.front().size();
   vector<vector<int> > dp(h,vector<int>(w,-1));
   using P = pair<int, int>;
@@ -100,7 +100,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/bfs.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/gridbfs.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
