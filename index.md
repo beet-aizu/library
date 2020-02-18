@@ -336,7 +336,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0233.test.cpp.html">test/aoj/0233.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0294.test.cpp.html">test/aoj/0294.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
-* :x: <a href="verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0367.test.cpp.html">test/aoj/0367.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0377.test.cpp.html">test/aoj/0377.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
