@@ -4,7 +4,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 vector< vector<int> >
-bfs(vector<string> &st,int sy,int sx,char wall,int dir){
+gridbfs(vector<string> &st,int sy,int sx,char wall,int dir){
   int h=st.size(),w=st.front().size();
   vector<vector<int> > dp(h,vector<int>(w,-1));
   using P = pair<int, int>;

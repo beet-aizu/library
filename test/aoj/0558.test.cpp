@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../tools/bfs.cpp"
+#include "../../tools/gridbfs.cpp"
 #undef call_from_test
 
 signed main(){
@@ -30,7 +30,7 @@ signed main(){
 
   int ans=0;
   for(int k=0;k<n;k++)
-    ans+=bfs(st,ys[k],xs[k],'X',4)[ys[k+1]][xs[k+1]];
+    ans+=gridbfs(st,ys[k],xs[k],'X',4)[ys[k+1]][xs[k+1]];
 
   cout<<ans<<endl;
   return 0;
