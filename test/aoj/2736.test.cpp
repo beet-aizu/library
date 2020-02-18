@@ -10,6 +10,8 @@ using namespace std;
 #include "../../flow/primaldual.cpp"
 #undef call_from_test
 
+#define ERROR "1e-6"
+
 signed main(){
   int n,m,p,s,t;
   cin>>n>>m>>p>>s>>t;
