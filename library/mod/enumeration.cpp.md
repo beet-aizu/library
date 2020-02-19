@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/enumeration.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:51:15+09:00
+    - Last commit date: 2020-02-19 22:42:36+09:00
 
 
 
@@ -129,8 +129,8 @@ public:
   static M H(int n,int k){
     if(n<0||k<0) return M(0);
     if(!n&&!k) return M(1);
-    init(n+k-1);
-    return C(n+k-1,k);
+    init(n+k);
+    return C(n+k-1,n);
   }
 };
 template<typename M>

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/lowlink.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:51:15+09:00
+    - Last commit date: 2020-02-19 22:42:36+09:00
 
 
 
@@ -287,13 +287,13 @@ signed ARC062_F(){
     if(uf.find(i)!=i) continue;
     if(uf.size(i)< (int)cnt[i].size()) ans*=M(k).pow(uf.size(i));
     if(uf.size(i)==(int)cnt[i].size()) ans*=calc1(uf.size(i));
-    if(uf.size(i)> (int)cnt[i].size()) ans*=E::H(k,uf.size(i));
+    if(uf.size(i)> (int)cnt[i].size()) ans*=E::H(uf.size(i),k);
   }
   cout<<ans.v<<endl;
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2020/02/19
   https://atcoder.jp/contests/arc062/tasks/arc062_d
 */
 

@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:51:15+09:00
+    - Last commit date: 2020-02-19 22:42:36+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D</a>
@@ -60,7 +60,7 @@ using namespace std;
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",Enumeration<Mint<int>>::H(k,n).v);
+  printf("%d\n",Enumeration<Mint<int>>::H(n,k).v);
   return 0;
 }
 
