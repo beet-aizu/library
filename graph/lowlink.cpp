@@ -228,13 +228,13 @@ signed ARC062_F(){
     if(uf.find(i)!=i) continue;
     if(uf.size(i)< (int)cnt[i].size()) ans*=M(k).pow(uf.size(i));
     if(uf.size(i)==(int)cnt[i].size()) ans*=calc1(uf.size(i));
-    if(uf.size(i)> (int)cnt[i].size()) ans*=E::H(k,uf.size(i));
+    if(uf.size(i)> (int)cnt[i].size()) ans*=E::H(uf.size(i),k);
   }
   cout<<ans.v<<endl;
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2020/02/19
   https://atcoder.jp/contests/arc062/tasks/arc062_d
 */
 

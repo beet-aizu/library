@@ -11,6 +11,6 @@ using namespace std;
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",Enumeration<Mint<int>>::H(k,n).v);
+  printf("%d\n",Enumeration<Mint<int>>::H(n,k).v);
   return 0;
 }

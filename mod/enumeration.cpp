@@ -59,8 +59,8 @@ public:
   static M H(int n,int k){
     if(n<0||k<0) return M(0);
     if(!n&&!k) return M(1);
-    init(n+k-1);
-    return C(n+k-1,k);
+    init(n+k);
+    return C(n+k-1,n);
   }
 };
 template<typename M>
