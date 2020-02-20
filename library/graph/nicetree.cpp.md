@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/nicetree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-21 00:56:36+09:00
+    - Last commit date: 2020-02-21 01:02:30+09:00
 
 
 
@@ -169,7 +169,7 @@ struct NiceTree{
       for(int c:vs.child) T[c].is_root=0;
   }
 
-  // root = 0
+  // root = 0 (if connected)
   void build(){
     int n=G.size();
     if(n<=3){
