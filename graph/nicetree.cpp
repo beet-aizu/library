@@ -3,7 +3,6 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// Assume Connected
 struct NiceTree{
   vector< vector<int> > G;
   vector< set<int> > ex;
@@ -20,7 +19,8 @@ struct NiceTree{
 
   enum Type{LEAF, JOIN, INTRODUCE, FORGET};
   struct Node{
-    int type;
+    int type,is_root;
+    Node():type(-1),is_root(1){}
 
     // index for G
     vector<int> bag;
@@ -33,11 +33,14 @@ struct NiceTree{
 
   vector<Node> T;
   void to_nice(){
-    for(auto &v:T)
-      sort(v.bag.begin(),v.bag.end());
+    for(auto &vs:T){
+      sort(vs.bag.begin(),vs.bag.end());
+      for(int c:vs.child) T[c].is_root=0;
+    }
 
     stack<int> st;
-    st.emplace(0);
+    for(int i=0;i<(int)T.size();i++)
+      if(T[i].is_root) st.emplace(i);
 
     while(!st.empty()){
       int v=st.top();st.pop();
@@ -107,6 +110,9 @@ struct NiceTree{
       for(auto &u:T[v].child)
         st.emplace(u);
     }
+
+    for(auto &vs:T)
+      for(int c:vs.child) T[c].is_root=0;
   }
 
   // root = 0
@@ -308,9 +314,13 @@ signed CSA_SPECIAL_MVC(){
       }
     };
 
-  G.dfs(0,leaf,join,introduce,forget);
-  auto &dp=dps[0];
-  cout<<n-*max_element(dp.begin(),dp.end())<<endl;
+  int ans=n;
+  for(int i=0;i<(int)T.size();i++){
+    if(!T[i].is_root) continue;
+    G.dfs(i,leaf,join,introduce,forget);
+    ans-=*max_element(dps[i].begin(),dps[i].end());
+  }
+  cout<<ans<<endl;
   return 0;
 }
 /*
