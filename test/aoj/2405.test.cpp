@@ -92,7 +92,6 @@ signed main(){
         const auto &pr=dps[chd[0]];
 
         auto &dp=dps[v];
-
         for(int i=0;i<(int)pr.size();i++){
           int bit=0,used=0;
           for(int j=0;j<(int)chd_bag.size();j++){
@@ -113,10 +112,7 @@ signed main(){
 
     G.dfs(0,leaf,join,introduce,forget);
 
-    auto &dp=dps[0];
-    if(es.count(P(T[0].bag[0],T[0].bag[1])))
-      dp.back()+=dp[0];
-    cout<<dp.back()<<endl;
+    cout<<dps[0][1]<<endl;
   }
   return 0;
 }
