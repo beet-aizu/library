@@ -160,6 +160,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="library/graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
 * :heavy_check_mark: <a href="library/graph/multipleeuleriantrail.cpp.html">graph/multipleeuleriantrail.cpp</a>
+* :heavy_check_mark: <a href="library/graph/nicetree.cpp.html">graph/nicetree.cpp</a>
 * :warning: <a href="library/graph/semikernel.cpp.html">graph/semikernel.cpp</a>
 * :heavy_check_mark: <a href="library/graph/stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
 * :warning: <a href="library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
@@ -387,6 +388,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2328.test.cpp.html">test/aoj/2328.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2405.test.cpp.html">test/aoj/2405.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.knuthyao.test.cpp.html">test/aoj/2415.knuthyao.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2444.test.cpp.html">test/aoj/2444.test.cpp</a>
