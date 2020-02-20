@@ -115,7 +115,7 @@ struct NiceTree{
       for(int c:vs.child) T[c].is_root=0;
   }
 
-  // root = 0
+  // root = 0 (if connected)
   void build(){
     int n=G.size();
     if(n<=3){
