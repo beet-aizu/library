@@ -12,8 +12,6 @@ using namespace std;
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
-#define IGNORE
-
 signed main(){
   long long n;
   int p,c;
@@ -62,7 +60,7 @@ signed main(){
   auto cs=berlekamp_massey(as);
   int m=cs.size();
 
-  Poly rs({1}),ts({0,1});
+  Poly rs({M(1)}),ts({M(0),M(1)});
   n--;
   while(n){
     if(n&1) rs=FPS.mod(FPS.mul(rs,ts),cs);
