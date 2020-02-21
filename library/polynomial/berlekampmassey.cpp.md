@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/berlekamp_massey.cpp
+# :heavy_check_mark: polynomial/berlekampmassey.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
-* <a href="{{ site.github.repository_url }}/blob/master/polynomial/berlekamp_massey.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-15 15:50:27+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/polynomial/berlekampmassey.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-21 18:49:40+09:00
 
 
 
@@ -44,6 +44,7 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
 
 
@@ -177,7 +178,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: polynomial/berlekamp_massey.cpp: line 6: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: polynomial/berlekampmassey.cpp: line 6: found codes out of include guard
 
 ```
 {% endraw %}

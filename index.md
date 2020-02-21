@@ -231,7 +231,7 @@ layout: default
 
 ### polynomial
 
-* :heavy_check_mark: <a href="library/polynomial/berlekamp_massey.cpp.html">polynomial/berlekamp_massey.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
@@ -600,6 +600,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/143.test.cpp.html">test/yukicoder/143.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1580.test.cpp.html">test/yukicoder/1580.test.cpp</a>
@@ -608,6 +609,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/1937.test.cpp.html">test/yukicoder/1937.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2125.test.cpp.html">test/yukicoder/2125.test.cpp</a>

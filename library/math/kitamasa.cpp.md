@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/kitamasa.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:09:50+09:00
+    - Last commit date: 2020-02-21 18:49:40+09:00
 
 
 
@@ -44,6 +44,8 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0168.test.cpp.html">test/aoj/0168.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
 
 
 ## Code
@@ -103,24 +105,6 @@ struct Kitamasa{
 #undef call_from_test
 
 //INSERT ABOVE HERE
-signed TDPC_F(){
-  using ll = long long;
-  int n;
-  ll k;
-  scanf("%d %lld",&n,&k);
-
-  using M = Mint<int>;
-  vector<M> as(n,1),cs(n,1);
-  Kitamasa<M> fib(cs);
-
-  printf("%d\n",fib.calc(as,--k).v);
-  return 0;
-}
-/*
-  verified on 2019/12/10
-  https://atcoder.jp/contests/tdpc/tasks/tdpc_fibonacci
-*/
-
 signed ABC009_D(){
   int k,m;
   scanf("%d %d",&k,&m);
