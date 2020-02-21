@@ -50,24 +50,6 @@ struct Kitamasa{
 #undef call_from_test
 
 //INSERT ABOVE HERE
-signed TDPC_F(){
-  using ll = long long;
-  int n;
-  ll k;
-  scanf("%d %lld",&n,&k);
-
-  using M = Mint<int>;
-  vector<M> as(n,1),cs(n,1);
-  Kitamasa<M> fib(cs);
-
-  printf("%d\n",fib.calc(as,--k).v);
-  return 0;
-}
-/*
-  verified on 2019/12/10
-  https://atcoder.jp/contests/tdpc/tasks/tdpc_fibonacci
-*/
-
 signed ABC009_D(){
   int k,m;
   scanf("%d %d",&k,&m);

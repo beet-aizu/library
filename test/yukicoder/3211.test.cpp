@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
-#include "../../polynomial/berlekamp_massey.cpp"
+#include "../../polynomial/berlekampmassey.cpp"
 #undef call_from_test
 
 signed main(){
