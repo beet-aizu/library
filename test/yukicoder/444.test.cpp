@@ -12,6 +12,8 @@ using namespace std;
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 signed main(){
   long long n;
   int p,c;
