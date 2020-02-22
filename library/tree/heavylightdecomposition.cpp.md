@@ -35,6 +35,7 @@ layout: default
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2017/12/12/235950">http://beet-aizu.hatenablog.com/entry/2017/12/12/235950</a>
+
 ## できること
 
 HL分解では、木（あるいは森 ）上のパスを $O(\log N)$ 個に分割することができます。
