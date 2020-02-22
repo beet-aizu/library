@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/farthest.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-07 13:27:51+09:00
+    - Last commit date: 2020-02-23 02:25:32+09:00
 
 
+* see: <a href="https://ei1333.hateblo.jp/entry/2019/06/13/133736">https://ei1333.hateblo.jp/entry/2019/06/13/133736</a>
 
 
 ## Depends on
@@ -61,6 +62,9 @@ using namespace std;
 #undef call_from_test
 
 #endif
+/**
+ * @see https://ei1333.hateblo.jp/entry/2019/06/13/133736
+ */
 //BEGIN CUT HERE
 template<typename Tp>
 struct NodeBase{
@@ -76,6 +80,7 @@ struct NodeBase{
     td.emplace(0);
   }
 };
+
 template<typename Np, size_t LIM>
 struct Farthest : LinkCutTreeBase<Np, LIM>{
   using super = LinkCutTreeBase<Np, LIM>;

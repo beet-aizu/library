@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-07 13:27:51+09:00
+    - Last commit date: 2020-02-23 02:25:32+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/vertex_add_subtree_sum">https://judge.yosupo.jp/problem/vertex_add_subtree_sum</a>

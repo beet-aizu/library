@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/path.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-08 13:40:23+09:00
+    - Last commit date: 2020-02-23 02:25:32+09:00
 
 
+* see: <a href="https://ei1333.hateblo.jp/entry/2018/05/29/011140">https://ei1333.hateblo.jp/entry/2018/05/29/011140</a>
 
 
 ## Depends on
@@ -65,6 +66,9 @@ using namespace std;
 #undef call_from_test
 
 #endif
+/**
+ * @see https://ei1333.hateblo.jp/entry/2018/05/29/011140
+ */
 //BEGIN CUT HERE
 template<typename Tp,typename Ep>
 struct NodeBase{
