@@ -3,6 +3,12 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+
+/**
+ * @brief 重軽分解
+ * @docs docs/heavylightdecomposition.md
+ * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950
+ */
 class HLD {
 private:
   void dfs_sz(int v) {
