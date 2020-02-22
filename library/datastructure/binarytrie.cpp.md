@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/binarytrie.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:35:29+09:00
+    - Last commit date: 2020-02-23 02:05:07+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
+* :heavy_check_mark: <a href="../tree/heavylightdecomposition.cpp.html">重軽分解 <small>(tree/heavylightdecomposition.cpp)</small></a>
 * :heavy_check_mark: <a href="../tree/levelancestor.cpp.html">tree/levelancestor.cpp</a>
 
 

@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/vertex_add_path_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-29 13:00:50+09:00
+    - Last commit date: 2020-02-23 02:05:07+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/vertex_add_path_sum">https://judge.yosupo.jp/problem/vertex_add_path_sum</a>
@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/heavylightdecomposition.cpp.html">重軽分解 <small>(tree/heavylightdecomposition.cpp)</small></a>
 
 
 ## Code

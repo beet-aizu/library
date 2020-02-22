@@ -25,15 +25,33 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/heavylightdecomposition.cpp
+# :heavy_check_mark: 重軽分解 <small>(tree/heavylightdecomposition.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/heavylightdecomposition.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:35:29+09:00
+    - Last commit date: 2020-02-23 02:05:07+09:00
 
 
+* see: <a href="http://beet-aizu.hatenablog.com/entry/2017/12/12/235950">http://beet-aizu.hatenablog.com/entry/2017/12/12/235950</a>
+## できること
+
+HL分解では、木（あるいは森 ）上のパスを $O(\log N)$ 個に分割することができます。
+分割後のパスに対して操作を行った後にマージし直すことで、操作を高速に行うことができます。
+
+HL分解を使えるかどうかの条件は、載せるデータ構造（セグ木、BIT）等のみに依存します。
+つまり、ある単純な（一直線に並んでいるような）要素列に対しての問題が $O(X)$ で解けるなら、
+それが木の上のパスになった場合でも $O(X \log N)$ で解くことができます。
+
+## 使い方
+
+-   コンストラクタにグラフのサイズを渡します。
+-   `add_edge(u,v)` で `u` と `v` の間に辺を貼ります。
+-   `build()` で構築します。
+
+頂点属性のクエリの場合は `for_each()` 、
+辺属性のクエリの場合は `for_each_edge()` で処理します。
 
 
 ## Required by
@@ -59,6 +77,11 @@ layout: default
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+/**
+ * @brief 重軽分解
+ * @docs docs/heavylightdecomposition.md
+ * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950
+ */
 //BEGIN CUT HERE
 class HLD {
 private:
