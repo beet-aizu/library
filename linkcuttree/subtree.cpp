@@ -7,6 +7,9 @@ using namespace std;
 #undef call_from_test
 
 #endif
+/**
+ * @see http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
+ */
 //BEGIN CUT HERE
 template<typename Ap>
 struct NodeBase{

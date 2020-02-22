@@ -7,6 +7,9 @@ using namespace std;
 #undef call_from_test
 
 #endif
+/**
+ * @see https://ei1333.hateblo.jp/entry/2019/06/13/133736
+ */
 //BEGIN CUT HERE
 template<typename Tp>
 struct NodeBase{
@@ -22,6 +25,7 @@ struct NodeBase{
     td.emplace(0);
   }
 };
+
 template<typename Np, size_t LIM>
 struct Farthest : LinkCutTreeBase<Np, LIM>{
   using super = LinkCutTreeBase<Np, LIM>;
