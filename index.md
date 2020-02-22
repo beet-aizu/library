@@ -322,7 +322,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tree/diameterforvertex.cpp.html">tree/diameterforvertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
-* :heavy_check_mark: <a href="library/tree/heavylightdecomposition.cpp.html">重軽分解 <small>(tree/heavylightdecomposition.cpp)</small></a>
+* :heavy_check_mark: <a href="library/tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 * :heavy_check_mark: <a href="library/tree/lca.cpp.html">tree/lca.cpp</a>
 * :heavy_check_mark: <a href="library/tree/levelancestor.cpp.html">tree/levelancestor.cpp</a>
 * :heavy_check_mark: <a href="library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
