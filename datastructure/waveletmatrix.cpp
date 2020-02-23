@@ -2,6 +2,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+/**
+ * @docs docs/waveletmatrix.md
+ */
 //BEGIN CUT HERE
 struct FullyIndexableDictionary{
   int len,blk;
@@ -56,18 +59,6 @@ struct WaveletMatrix{
   FullyIndexableDictionary mat[MAXLOG];
   int zs[MAXLOG],buff1[MAXLOG],buff2[MAXLOG];
   static const T npos=-1;
-
-  int freq_dfs(int d,int l,int r,T val,T a,T b){
-    if(l==r) return 0;
-    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
-    T nv=T(1)<<(MAXLOG-d-1)|val;
-    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;
-    if(nnv<a||b<=val) return 0;
-    if(a<=val&&nnv<b) return r-l;
-    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
-    return freq_dfs(d+1,l-lc,r-rc,val,a,b)
-      +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);
-  }
 
   WaveletMatrix(vector<T> data){
     len=data.size();
@@ -149,6 +140,18 @@ struct WaveletMatrix{
     return quantile(l,r,r-l-k-1);
   }
 
+  int freq_dfs(int d,int l,int r,T val,T a,T b){
+    if(l==r) return 0;
+    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
+    T nv=T(1)<<(MAXLOG-d-1)|val;
+    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;
+    if(nnv<a||b<=val) return 0;
+    if(a<=val&&nnv<b) return r-l;
+    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
+    return freq_dfs(d+1,l-lc,r-rc,val,a,b)
+      +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);
+  }
+
   // return number of points in [left, right) * [lower, upper)
   int rangefreq(int left,int right,T lower,T upper){
     return freq_dfs(0,left,right,0,lower,upper);
@@ -189,31 +192,7 @@ struct WaveletMatrix{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-// test rquantile
-signed SPOJ_MKTHNUM(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  vector<int> vs(n);
-  for(int i=0;i<n;i++) scanf("%d",&vs[i]);
-  const int OFS = 1e9+1;
-  for(int i=0;i<n;i++) vs[i]+=OFS;
-  WaveletMatrix<int,32> wm(vs);
-  for(int i=0;i<q;i++){
-    int l,r,k;
-    scanf("%d %d %d",&l,&r,&k);
-    l--;k--;
-    printf("%d\n",wm.rquantile(l,r,k)-OFS);
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://www.spoj.com/problems/MKTHNUM/
-*/
-
 signed main(){
-  //SPOJ_MKTHNUM();
   return 0;
 }
 #endif
