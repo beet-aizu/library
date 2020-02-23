@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_A.linkcuttree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-23 02:25:32+09:00
+    - Last commit date: 2020-02-23 17:37:16+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A</a>
@@ -63,14 +63,12 @@ using namespace std;
 
 signed main(){
   using Node = NodeBase<int>;
-  constexpr size_t LIM = 1e6 + 200;
+  constexpr size_t LIM = 2e6 + 200;
   using LCT = Farthest<Node, LIM>;
   LCT lct;
 
-  vector<LCT::Node*> vs;
-  vector<LCT::Node*> es;
-  vs.reserve(1e5+100);
-  es.reserve(1e5+100);
+  vector<LCT::Node*> vs(1e5+100);
+  vector<LCT::Node*> es(1e5+100);
 
   int n;
   cin>>n;
