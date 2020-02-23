@@ -12,14 +12,12 @@ using namespace std;
 
 signed main(){
   using Node = NodeBase<int>;
-  constexpr size_t LIM = 1e6 + 200;
+  constexpr size_t LIM = 2e6 + 200;
   using LCT = Farthest<Node, LIM>;
   LCT lct;
 
-  vector<LCT::Node*> vs;
-  vector<LCT::Node*> es;
-  vs.reserve(1e5+100);
-  es.reserve(1e5+100);
+  vector<LCT::Node*> vs(1e5+100);
+  vector<LCT::Node*> es(1e5+100);
 
   int n;
   cin>>n;
