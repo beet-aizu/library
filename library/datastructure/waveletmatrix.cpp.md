@@ -31,9 +31,44 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/waveletmatrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:42:22+09:00
+    - Last commit date: 2020-02-23 20:10:59+09:00
 
 
+
+
+
+## できること
+- rank
+$[0, k)$ に含まれる $v$ の個数を求める
+- select
+$k$ 番目の $v$ の位置を求める
+- quantile
+$[l, r)$ に含まれる要素の中で $k$ 番目に大きいものを求める
+- rquantile
+$[l, r)$ に含まれる要素の中で $k$ 番目に小さいものを求める
+- rangefreq
+$|\{i \mid i \in [l, r), x_i \in [d, u) \}|$ を求める
+- succ
+$[l, r)$ に含まれる要素の中で $v$ の次に大きいものを求める
+- pred
+$[l, r)$ に含まれる要素の中で $v$ の次に小さいものを求める
+
+## verify 用問題一覧
+- rank
+募集中
+- select
+募集中
+- quantile
+https://yukicoder.me/problems/1732
+- rquantile
+https://yukicoder.me/problems/3227
+- rangefreq
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2674
+https://yukicoder.me/problems/1937
+https://yukicoder.me/problems/2147
+- succ, pred
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549
+http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3063
 
 
 ## Verified with
@@ -56,6 +91,9 @@ layout: default
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+/**
+ * @docs docs/waveletmatrix.md
+ */
 //BEGIN CUT HERE
 struct FullyIndexableDictionary{
   int len,blk;
@@ -110,18 +148,6 @@ struct WaveletMatrix{
   FullyIndexableDictionary mat[MAXLOG];
   int zs[MAXLOG],buff1[MAXLOG],buff2[MAXLOG];
   static const T npos=-1;
-
-  int freq_dfs(int d,int l,int r,T val,T a,T b){
-    if(l==r) return 0;
-    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
-    T nv=T(1)<<(MAXLOG-d-1)|val;
-    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;
-    if(nnv<a||b<=val) return 0;
-    if(a<=val&&nnv<b) return r-l;
-    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
-    return freq_dfs(d+1,l-lc,r-rc,val,a,b)
-      +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);
-  }
 
   WaveletMatrix(vector<T> data){
     len=data.size();
@@ -203,6 +229,18 @@ struct WaveletMatrix{
     return quantile(l,r,r-l-k-1);
   }
 
+  int freq_dfs(int d,int l,int r,T val,T a,T b){
+    if(l==r) return 0;
+    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
+    T nv=T(1)<<(MAXLOG-d-1)|val;
+    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;
+    if(nnv<a||b<=val) return 0;
+    if(a<=val&&nnv<b) return r-l;
+    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
+    return freq_dfs(d+1,l-lc,r-rc,val,a,b)
+      +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);
+  }
+
   // return number of points in [left, right) * [lower, upper)
   int rangefreq(int left,int right,T lower,T upper){
     return freq_dfs(0,left,right,0,lower,upper);
@@ -243,31 +281,7 @@ struct WaveletMatrix{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-// test rquantile
-signed SPOJ_MKTHNUM(){
-  int n,q;
-  scanf("%d %d",&n,&q);
-  vector<int> vs(n);
-  for(int i=0;i<n;i++) scanf("%d",&vs[i]);
-  const int OFS = 1e9+1;
-  for(int i=0;i<n;i++) vs[i]+=OFS;
-  WaveletMatrix<int,32> wm(vs);
-  for(int i=0;i<q;i++){
-    int l,r,k;
-    scanf("%d %d %d",&l,&r,&k);
-    l--;k--;
-    printf("%d\n",wm.rquantile(l,r,k)-OFS);
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  https://www.spoj.com/problems/MKTHNUM/
-*/
-
 signed main(){
-  //SPOJ_MKTHNUM();
   return 0;
 }
 #endif
