@@ -25,21 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_E.linkcuttree.test.cpp
+# :heavy_check_mark: test/yosupo/vertex_set_path_composite.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_E.linkcuttree.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/vertex_set_path_composite.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-26 23:31:28+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E</a>
+* see: <a href="https://judge.yosupo.jp/problem/vertex_set_path_composite">https://judge.yosupo.jp/problem/vertex_set_path_composite</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
 * :heavy_check_mark: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
@@ -48,60 +49,70 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E"
+#define PROBLEM "https://judge.yosupo.jp/problem/vertex_set_path_composite"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
+#include "../../mod/mint.cpp"
 #include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/path.cpp"
 #undef call_from_test
 
 signed main(){
-  using ll = long long;
+  int n,q;
+  cin>>n>>q;
+  vector<int> as(n),bs(n);
+  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];
 
-  int n;
-  cin>>n;
+  using M = Mint<int, 998244353>;
 
-  using P = pair<ll, ll>;
-  using Node = NodeBase<P, ll>;
-  constexpr size_t LIM = 1e5+100;
+  struct T{
+    M a,b;
+    T(int a=0,int b=0):a(a),b(b){}
+    T(M a,M b):a(a),b(b){}
+  };
+
+  auto f=[&](T x,T y){return T(x.a*y.a,x.b*y.a+y.b);};
+
+  using P = pair<T, T>;
+  using Node = NodeBase<P, int>;
+  auto ff=[&](P a,P b){return P(f(a.first,b.first),f(b.second,a.second));};
+  auto gg=[&](P a,int){return a;};
+  auto hh=[&](int a,int){return a;};
+  auto flip=[&](P a){return P(a.second,a.first);};
+
+  constexpr size_t LIM = 2e5+100;
   using LCT = Path<Node, LIM>;
+  LCT lct(ff,gg,hh,flip,0);
 
-  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
-  auto g=[](P a,int b){return P(a.first+b*a.second,a.second);};
-  auto h=[](ll a,ll b){return a+b;};
-  LCT lct(f,g,h,0);
+  for(int i=0;i<n;i++) lct.create(P(T(as[i],bs[i]),T(as[i],bs[i])));
 
-  for(int i=0;i<n;i++) lct.create(P(0,1));
-  for(int i=0;i<n;i++){
-    int k;
-    cin>>k;
-    for(int j=0;j<k;j++){
-      int c;
-      cin>>c;
-      lct.link(lct[i],lct[c]);
-    }
+  for(int i=1;i<n;i++){
+    int u,v;
+    cin>>u>>v;
+    lct.evert(lct[v]);
+    lct.link(lct[u],lct[v]);
   }
 
-  int q;
-  cin>>q;
-  ll sum=0;
   for(int i=0;i<q;i++){
     int t;
     cin>>t;
+
     if(t==0){
-      int a,b;
-      cin>>a>>b;
-      lct.update(lct[a],b);
-      sum+=b;
+      int p,c,d;
+      cin>>p>>c>>d;
+      lct.set_val(lct[p],P(T(c,d),T(c,d)));
     }
+
     if(t==1){
-      int a;
-      cin>>a;
-      cout<<lct.query(lct[a]).first-sum<<"\n";
+      int u,v,x;
+      cin>>u>>v>>x;
+      lct.evert(lct[u]);
+      auto res=lct.query(lct[v]).first;
+      cout<<(res.a*M(x)+res.b).v<<"\n";
     }
   }
   cout<<flush;

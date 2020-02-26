@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/lca.linkcuttree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-23 02:25:32+09:00
+    - Last commit date: 2020-02-26 23:31:28+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/lca">https://judge.yosupo.jp/problem/lca</a>
