@@ -566,6 +566,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/dominatortree.test.cpp.html">test/yosupo/dominatortree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/kth_root_integer.test.cpp.html">test/yosupo/kth_root_integer.test.cpp</a>
@@ -599,7 +600,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_path_sum.test.cpp.html">test/yosupo/vertex_add_path_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/vertex_set_path_composite.test.cpp.html">test/yosupo/vertex_set_path_composite.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/143.test.cpp.html">test/yukicoder/143.test.cpp</a>

@@ -25,15 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/vertex_set_path_composite.test.cpp
+# :heavy_check_mark: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/vertex_set_path_composite.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-26 23:31:28+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-26 23:46:00+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/vertex_set_path_composite">https://judge.yosupo.jp/problem/vertex_set_path_composite</a>
+* see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite">https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite</a>
 
 
 ## Depends on
@@ -49,7 +49,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/vertex_set_path_composite"
+#define PROBLEM "https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -102,12 +102,23 @@ signed main(){
     cin>>t;
 
     if(t==0){
+      int u,v,w,x;
+      cin>>u>>v>>w>>x;
+
+      lct.evert(lct[u]);
+      lct.cut(lct[v]);
+
+      lct.evert(lct[x]);
+      lct.link(lct[w],lct[x]);
+    }
+
+    if(t==1){
       int p,c,d;
       cin>>p>>c>>d;
       lct.set_val(lct[p],P(T(c,d),T(c,d)));
     }
 
-    if(t==1){
+    if(t==2){
       int u,v,x;
       cin>>u>>v>>x;
       lct.evert(lct[u]);
