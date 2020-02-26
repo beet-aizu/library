@@ -98,6 +98,12 @@ struct Path : LinkCutTreeBase<Np, LIM>{
     propagate(t,v);
     eval(t);
   }
+
+  void set_val(Node *t,T v){
+    expose(t);
+    t->val=v;
+    eval(t);
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
