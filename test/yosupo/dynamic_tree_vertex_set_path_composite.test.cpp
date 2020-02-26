@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/vertex_set_path_composite"
+#define PROBLEM "https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -51,12 +51,23 @@ signed main(){
     cin>>t;
 
     if(t==0){
+      int u,v,w,x;
+      cin>>u>>v>>w>>x;
+
+      lct.evert(lct[u]);
+      lct.cut(lct[v]);
+
+      lct.evert(lct[x]);
+      lct.link(lct[w],lct[x]);
+    }
+
+    if(t==1){
       int p,c,d;
       cin>>p>>c>>d;
       lct.set_val(lct[p],P(T(c,d),T(c,d)));
     }
 
-    if(t==1){
+    if(t==2){
       int u,v,x;
       cin>>u>>v>>x;
       lct.evert(lct[u]);
