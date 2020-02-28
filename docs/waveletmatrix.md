@@ -23,7 +23,7 @@
 - quantile
 -- [yukicoder 1732](https://yukicoder.me/problems/1732)
 - rquantile
--- [yukicoder 3227](https://yukicoder.me/problems/3227)
+-- [Library-Checker Range Kth Smallest](https://judge.yosupo.jp/problem/range_kth_smallest)
 - rangefreq
 -- [yukicoder 1937](https://yukicoder.me/problems/1937)
 - succ, pred
