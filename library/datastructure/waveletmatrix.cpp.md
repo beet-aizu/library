@@ -61,7 +61,7 @@ layout: default
 - quantile
 -- [yukicoder 1732](https://yukicoder.me/problems/1732)
 - rquantile
--- [yukicoder 3227](https://yukicoder.me/problems/3227)
+-- [Library-Checker Range Kth Smallest](https://judge.yosupo.jp/problem/range_kth_smallest)
 - rangefreq
 -- [yukicoder 1937](https://yukicoder.me/problems/1937)
 - succ, pred
@@ -73,6 +73,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/1549.test.cpp.html">test/aoj/1549.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2674.test.cpp.html">test/aoj/2674.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3063.test.cpp.html">test/aoj/3063.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/range_kth_smallest.test.cpp.html">test/yosupo/range_kth_smallest.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1732.test.cpp.html">test/yukicoder/1732.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1937.test.cpp.html">test/yukicoder/1937.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2147.test.cpp.html">test/yukicoder/2147.test.cpp</a>
