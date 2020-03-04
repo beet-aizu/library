@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/auxiliarytree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-04 20:25:38+09:00
+    - Last commit date: 2020-03-04 20:28:11+09:00
 
 
 * see: <a href="https://smijake3.hatenablog.com/entry/2019/09/15/200200">https://smijake3.hatenablog.com/entry/2019/09/15/200200</a>
@@ -119,52 +119,7 @@ struct AuxiliaryTree : EulerTourForVertex{
 };
 //END CUT HERE
 #ifndef call_from_test
-
 signed main(){
-  int n;
-  cin>>n;
-
-  AuxiliaryTree G(n);
-  vector<map<int, int>> ws(n);
-  for(int i=1;i<n;i++){
-    int u,v,w;
-    cin>>u>>v>>w;
-    G.add_edge(u,v);
-    ws[u][v]=ws[v][u]=w;
-  }
-  G.build();
-
-  using ll = long long;
-  vector<ll> dep(n,-1);
-  queue<int> que;
-  dep[0]=0;
-  que.emplace(0);
-  while(!que.empty()){
-    int v=que.front();que.pop();
-    for(int u:G.G[v]){
-      if(~dep[u]) continue;
-      dep[u]=dep[v]+ws[v][u];
-      que.emplace(u);
-    }
-  }
-
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    int k;
-    cin>>k;
-    vector<int> vs(k);
-    for(int j=0;j<k;j++) cin>>vs[j];
-
-    auto H=G.query(vs).second;
-    ll ans=0;
-    for(int v:vs)
-      for(int u:H[v])
-        ans+=dep[u]-dep[v];
-
-    cout<<ans<<"\n";
-  }
-  cout<<flush;
   return 0;
 }
 #endif
