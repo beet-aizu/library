@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/auxiliarytree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-04 20:21:28+09:00
+    - Last commit date: 2020-03-04 20:25:38+09:00
 
 
+* see: <a href="https://smijake3.hatenablog.com/entry/2019/09/15/200200">https://smijake3.hatenablog.com/entry/2019/09/15/200200</a>
 
 
 ## Depends on
@@ -62,6 +63,9 @@ using namespace std;
 #undef call_from_test
 
 #endif
+/**
+ * @see https://smijake3.hatenablog.com/entry/2019/09/15/200200
+ */
 //BEGIN CUT HERE
 struct AuxiliaryTree : EulerTourForVertex{
   using super = EulerTourForVertex;
