@@ -14,6 +14,7 @@ private:
       if(u!=p) dfs(u,v);
     rs[v]=pos;
   }
+
 public:
   vector< vector<int> > G;
 

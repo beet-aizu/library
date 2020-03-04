@@ -29,7 +29,7 @@ struct Centroid{
       ok&=(sz[u]<=tmp/2);
     }
     ok&=(tmp-sz[v]<=tmp/2);
-    if(ok) cs.push_back(v);
+    if(ok) cs.emplace_back(v);
   }
 
   vector<int> build(int r) {
@@ -39,17 +39,9 @@ struct Centroid{
     return cs;
   }
 
-  void disable(int v){
-    dead[v]=1;
-  }
-
-  void enable(int v){
-    dead[v]=0;
-  }
-
-  int alive(int v){
-    return !dead[v];
-  }
+  void disable(int v){dead[v]=1;}
+  void  enable(int v){dead[v]=0;}
+  int alive(int v){return !dead[v];}
 };
 //END CUT HERE
 #ifndef call_from_test
