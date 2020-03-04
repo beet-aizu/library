@@ -8,6 +8,9 @@ using namespace std;
 #undef call_from_test
 
 #endif
+/**
+ * @see https://smijake3.hatenablog.com/entry/2019/09/15/200200
+ */
 //BEGIN CUT HERE
 struct AuxiliaryTree : EulerTourForVertex{
   using super = EulerTourForVertex;
