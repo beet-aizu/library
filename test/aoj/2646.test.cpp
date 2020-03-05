@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/fixpoint.cpp"
 #include "../../datastructure/pb_ds_cc_hash_table.cpp"
 #undef call_from_test
@@ -21,6 +20,9 @@ struct chash{
 };
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
 
   int n,m;

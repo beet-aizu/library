@@ -3,7 +3,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../tools/fastio.cpp"
 #include "../math/factorize.cpp"
 #include "pow.cpp"
 #undef call_from_test
