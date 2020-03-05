@@ -31,19 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/berlekampmassey.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-21 18:49:40+09:00
+    - Last commit date: 2020-03-05 23:05:20+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/yosupo/find_linear_recurrence.test.cpp.html">test/yosupo/find_linear_recurrence.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
@@ -92,76 +87,7 @@ vector<T> berlekamp_massey(vector<T> &as){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#include "../tools/fastio.cpp"
-#undef call_from_test
-
-signed SPOJ_FIBPWSUM(){
-  int T;
-  cin>>T;
-
-  using M = Mint<long long, 1000000007>;
-  const int MAX = 10000;
-  vector<M> fib(MAX);
-  fib[0]=M(0);
-  fib[1]=M(1);
-  for(int i=2;i<MAX;i++) fib[i]=fib[i-1]+fib[i-2];
-
-  for(int t=1;t<=T;t++){
-    long long n;
-    int c,k;
-    cin>>n>>c>>k;
-
-    vector<M> seq;
-    for(int i=0;i*c<MAX;i++)
-      seq.emplace_back(fib[i*c].pow(k));
-
-    for(int i=1;i<(int)seq.size();i++)
-      seq[i]+=seq[i-1];
-
-    auto cs=berlekamp_massey(seq);
-    cs.pop_back();
-    reverse(cs.begin(),cs.end());
-    int m=cs.size();
-
-    auto mul=
-      [&](auto xs,auto ys){
-        vector<M> zs(xs.size()+ys.size()-1,M(0));
-        for(int i=0;i<(int)xs.size();i++)
-          for(int j=0;j<(int)ys.size();j++)
-            zs[i+j]+=xs[i]*ys[j];
-
-        for(int i=(int)zs.size()-1;i>=m;i--)
-          for(int j=0;j<m;j++)
-            zs[i-(j+1)]-=zs[i]*cs[j];
-
-        zs.resize(m,M(0));
-        return zs;
-      };
-
-    vector<M> ps({M(0),M(1)}),qs({M(1)});
-    while(n){
-      if(n&1) qs=mul(ps,qs);
-      ps=mul(ps,ps);
-      n>>=1;
-    }
-
-    M ans{0};
-    qs.resize(m,M(0));
-    for(int i=0;i<m;i++) ans+=seq[i]*qs[i];
-    cout<<"Case "<<t<<": "<<ans<<endl;
-  }
-  return 0;
-}
-/*
-  verified on 2020/02/09
-  https://www.spoj.com/problems/FIBPWSUM/
-*/
-
 signed main(){
-  //SPOJ_FIBPWSUM();
   return 0;
 }
 #endif

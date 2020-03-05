@@ -25,20 +25,19 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yukicoder/104.test.cpp
+# :heavy_check_mark: test/yosupo/find_linear_recurrence.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/yukicoder/104.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/find_linear_recurrence.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 23:05:20+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/104">https://yukicoder.me/problems/104</a>
+* see: <a href="https://judge.yosupo.jp/problem/find_linear_recurrence">https://judge.yosupo.jp/problem/find_linear_recurrence</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
 
@@ -48,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/104"
+#define PROBLEM "https://judge.yosupo.jp/problem/find_linear_recurrence"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -56,60 +55,28 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../polynomial/berlekampmassey.cpp"
-#include "../../math/kitamasa.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  long long n;
-  int p,c;
-  cin>>n>>p>>c;
+  int n;
+  cin>>n;
 
-  using M = Mint<int>;
-
-  const int d = 1500;
-  const int MAX = p+c+1;
-  vector<vector<M>> cf(MAX,vector<M>(d,0));
-  cf[0][0]=M(1);
-
-  for(int v:{2,3,5,7,11,13}){
-    vector<vector<M>> nx(MAX,vector<M>(d,0));
-    for(int t=0;t<=p;t++)
-      for(int i=0;i<d;i++)
-        for(int j=0;t+j<=p&&i+v*j<d;j++)
-          nx[t+j][i+v*j]+=cf[t][i];
-    swap(cf,nx);
-  }
-
-  for(int v:{4,6,8,9,10,12}){
-    vector<vector<M>> nx(MAX,vector<M>(d,0));
-    for(int t=p;t<=p+c;t++)
-      for(int i=0;i<d;i++)
-        for(int j=0;t+j<=p+c&&i+v*j<d;j++)
-          nx[t+j][i+v*j]+=cf[t][i];
-    swap(cf,nx);
-  }
-
-  vector<M> dp(d*3,0),as(d*3,0);
-  dp[0]=M(1);
-  for(int i=0;i<(int)dp.size();i++){
-    for(int j=0;j<d&&i+j<(int)dp.size();j++)
-      dp[i+j]+=dp[i]*cf[p+c][j];
-
-    for(int j=1;i+j<(int)dp.size();j++)
-      as[i]+=dp[i+j];
-  }
-  as.resize(d*2);
+  using M = Mint<int, 998244353>;
+  vector<M> as(n);
+  for(int i=0;i<n;i++) cin>>as[i].v;
 
   auto cs=berlekamp_massey(as);
   cs.pop_back();
-  for(auto &c:cs) c*=-M(1);
-
-  Kitamasa<M> kt(cs);
-  as.resize(cs.size());
-  cout<<kt.calc(as,n-1)<<endl;
+  reverse(cs.begin(),cs.end());
+  cout<<cs.size()<<endl;
+  for(int i=0;i<(int)cs.size();i++){
+    if(i) cout<<" ";
+    cout<<-cs[i];
+  }
+  cout<<endl;
   return 0;
 }
 
