@@ -46,13 +46,15 @@ signed main(){
     vector<int> vs(k);
     for(int j=0;j<k;j++) cin>>vs[j];
 
-    auto H=G.query(vs).second;
+    G.query(vs);
+
     ll ans=0;
     for(int v:vs)
-      for(int u:H[v])
-        ans+=dep[u]-dep[v];
-
+      for(int u:G.T[v])
+        ans+=max(dep[u]-dep[v],0LL);
     cout<<ans<<"\n";
+
+    G.clear(vs);
   }
   cout<<flush;
   return 0;
