@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../string/suffixarray.cpp"
 #include "../../string/longestcommonprefix.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   string s;
   cin>>s;
   LongestCommonPrefix lcp(s);

@@ -4,13 +4,15 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
 

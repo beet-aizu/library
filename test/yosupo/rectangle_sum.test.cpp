@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/compress.cpp"
 #include "../../segtree/count/dynamic_offline.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,q;
   cin>>n>>q;
 

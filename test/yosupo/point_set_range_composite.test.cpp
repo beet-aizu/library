@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
 #include "../../segtree/basic/ushi.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using M = Mint<int, 998244353>;
   int n,q;
   cin>>n>>q;

@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../mod/mint.cpp"
 #include "../../datastructure/slidingwindowaggregation.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using M = Mint<int, 998244353>;
   using P = pair<M, M>;
   auto f=[](P a,P b){return P(a.first*b.first,a.second*b.first+b.second);};

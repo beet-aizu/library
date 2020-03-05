@@ -4,11 +4,13 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../flow/hopcroft_karp.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int L,R,M;
   cin>>L>>R>>M;
   BiMatch G(L,R);
