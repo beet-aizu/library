@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/parse.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:01:05+09:00
+    - Last commit date: 2020-03-05 23:18:28+09:00
 
 
 
@@ -46,6 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
@@ -137,7 +138,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/parse.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/parse.cpp: line 6: found codes out of include guard
 
 ```
 {% endraw %}
