@@ -9,6 +9,9 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
   ll l;
   cin>>l;

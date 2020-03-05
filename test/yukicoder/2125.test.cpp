@@ -23,6 +23,9 @@ pair<bigint, bigint> dfs(int l,int r){
 }
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   vector<int> p(n);

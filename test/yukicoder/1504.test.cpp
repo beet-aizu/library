@@ -12,6 +12,9 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   const int MOD = 1e9+7;
   long long n;
   cin>>n;

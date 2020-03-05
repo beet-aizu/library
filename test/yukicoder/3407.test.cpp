@@ -4,13 +4,15 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tree/eulertourforvertex.cpp"
 #include "../../tree/lowestcommonancestor.cpp"
 #include "../../tree/auxiliarytree.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
 

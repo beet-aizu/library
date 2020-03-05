@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/precision.cpp"
 #include "../../datastructure/rangeslide.cpp"
 #undef call_from_test
@@ -12,6 +11,9 @@ using namespace std;
 #define ERROR "1e-6"
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,k;
   cin>>n>>k;
   string s;
