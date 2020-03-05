@@ -14,9 +14,8 @@ for i in range(int(args[2])):
                                                     chr(ord("A") + i),
                                                     chr(ord("a") + i)))
     os.system(
-        "oj d https://atcoder.jp/contests/{}/tasks/{}_{} -d ./{}/{}/test".
-        format(args[1], args[1], chr(ord("a") + i), args[1],
-               chr(ord("A") + i)))
+        "cd  ./{}/{} && oj d https://atcoder.jp/contests/{}/tasks/{}_{}".
+        format(args[1], chr(ord("A") + i), args[1], args[1], chr(ord("a") + i)))
 '''
 usage: write this in your .bashrc
 function atcoder () { python ~/git-library/tools/atcoder.py $1 $2 && cd $1;}
