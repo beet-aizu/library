@@ -5,7 +5,7 @@
 - add
 -- $i$ 番目の要素に $a$ を加算する
 - lower_bound
--- 非負要素からなる列に対し、$\min \{ i \mid \rm{sum}(i) \ge w \}$ を求める
+-- 非負要素からなる列に対し、$\min \\{ i \mid \rm{sum}(i) \ge w \\}$ を求める
 
 ## verify 用問題一覧
 - lower_bound
