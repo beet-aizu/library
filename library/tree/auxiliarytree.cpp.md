@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/auxiliarytree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-04 20:28:11+09:00
+    - Last commit date: 2020-03-05 18:15:30+09:00
 
 
 * see: <a href="https://smijake3.hatenablog.com/entry/2019/09/15/200200">https://smijake3.hatenablog.com/entry/2019/09/15/200200</a>
@@ -70,8 +70,10 @@ using namespace std;
 struct AuxiliaryTree : EulerTourForVertex{
   using super = EulerTourForVertex;
   LowestCommonAncestor lca;
+
+  vector<vector<int>> T;
   AuxiliaryTree(){}
-  AuxiliaryTree(int n):super(n),lca(n){}
+  AuxiliaryTree(int n):super(n),lca(n),T(n){}
 
   void build(int r=0){
     super::build(r);
@@ -79,8 +81,13 @@ struct AuxiliaryTree : EulerTourForVertex{
     lca.build(r);
   }
 
+  void add_aux_edge(int u,int v){
+    T[u].emplace_back(v);
+    T[v].emplace_back(u);
+  }
+
   using super::idx;
-  decltype(auto) query(vector<int> &vs){
+  void query(vector<int> &vs){
     assert(!vs.empty());
     sort(vs.begin(),vs.end(),
          [&](int a,int b){return idx(a)<idx(b);});
@@ -90,31 +97,31 @@ struct AuxiliaryTree : EulerTourForVertex{
     int k=vs.size();
     stack<int> st;
     st.emplace(vs[0]);
-    H[vs[0]];
     for(int i=0;i+1<k;i++){
       int w=lca.lca(vs[i],vs[i+1]);
       if(w!=vs[i]){
         int l=st.top();st.pop();
         while(!st.empty()&&lca.dep[w]<lca.dep[st.top()]){
-          H[st.top()].emplace_back(l);
+          add_aux_edge(st.top(),l);
           l=st.top();st.pop();
         }
         if(st.empty()||st.top()!=w){
           st.emplace(w);
           vs.emplace_back(w);
         }
-        H[w].emplace_back(l);
+        add_aux_edge(w,l);
       }
       st.emplace(vs[i+1]);
-      H[vs[i+1]];
     }
 
     while(st.size()>1){
       int c=st.top();st.pop();
-      H[st.top()].emplace_back(c);
+      add_aux_edge(st.top(),c);
     }
+  }
 
-    return make_pair(st.top(),H);
+  void clear(const vector<int> &ws){
+    for(int w:ws) T[w].clear();
   }
 };
 //END CUT HERE
