@@ -43,13 +43,13 @@ layout: default
 
 ## Required by
 
-* :x: <a href="interpolate.cpp.html">polynomial/interpolate.cpp</a>
+* :heavy_check_mark: <a href="interpolate.cpp.html">polynomial/interpolate.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 
 
 ## Code

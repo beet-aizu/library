@@ -39,7 +39,6 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
-* :heavy_check_mark: <a href="../segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
 
 
 ## Verified with

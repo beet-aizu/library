@@ -31,16 +31,9 @@ layout: default
 
 * category: <a href="../../../index.html#10d9c4a68fc97fbc913ae15313e9b2f4">segtree/cht</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segtree/cht/lichao.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:42:22+09:00
+    - Last commit date: 2020-03-05 21:15:32+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../../tools/compress.cpp.html">tools/compress.cpp</a>
-* :heavy_check_mark: <a href="../../tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :heavy_check_mark: <a href="../../tools/vec.cpp.html">tools/vec.cpp</a>
 
 
 ## Verified with
@@ -128,56 +121,8 @@ template <typename T, bool isMin>
 constexpr T LiChao<T, isMin>::INF;
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../../tools/fastio.cpp"
-#include "../../tools/vec.cpp"
-#include "../../tools/compress.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-
-signed CSA070_SQUAREDEND(){
-  using ll = long long;
-
-  int n,k;
-  cin>>n>>k;
-  vector<ll> as(n+1,0);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  if(n==1){
-    puts("0");
-    return 0;
-  }
-
-  vector<ll> pos=compress(as);
-  vector<LiChao<ll, true> > vs;
-  for(int i=0;i<k+1;i++) vs.emplace_back(pos);
-  vs[0].addLine(-2*as[0],as[0]*as[0]);
-
-  const ll INF = 1e15;
-  auto dp=make_v<ll>(k+1,n+1);
-  fill_v<ll>(dp,INF);
-  dp[0][0]=0;
-
-  for(int i=0;i<n;i++){
-    for(int j=0;j<k;j++){
-      dp[j+1][i+1]=vs[j].query(as[i])+as[i]*as[i];
-      vs[j+1].addLine(-2*as[i+1],dp[j+1][i+1]+as[i+1]*as[i+1]);
-    }
-  }
-
-  cout<<dp[k][n]<<endl;
-  return 0;
-}
-
-/*
-  verified on 2019/12/17
-  https://csacademy.com/contest/archive/task/squared-ends
-*/
-
 signed main(){
-  //CSA070_SQUAREDEND();
   return 0;
 }
 #endif

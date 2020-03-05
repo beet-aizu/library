@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/order.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:22:59+09:00
+    - Last commit date: 2020-03-05 21:15:32+09:00
 
 
 
@@ -40,7 +40,6 @@ layout: default
 
 * :heavy_check_mark: <a href="../math/factorize.cpp.html">math/factorize.cpp</a>
 * :heavy_check_mark: <a href="pow.cpp.html">mod/pow.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
@@ -58,7 +57,6 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../tools/fastio.cpp"
 #include "../math/factorize.cpp"
 #include "pow.cpp"
 #undef call_from_test
@@ -105,7 +103,7 @@ Traceback (most recent call last):
     self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/factorize.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

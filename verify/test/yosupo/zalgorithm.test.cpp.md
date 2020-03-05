@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
+* :heavy_check_mark: <a href="../../../library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
 
 
 ## Code
