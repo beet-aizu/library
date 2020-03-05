@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/sum_of_floor_of_linear.test.cpp
+# :heavy_check_mark: test/yosupo/sum_of_floor_of_linear.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
+* :heavy_check_mark: <a href="../../../library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
 
 
 ## Code

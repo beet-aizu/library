@@ -47,7 +47,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/3120.test.cpp.html">test/aoj/3120.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 
 
 ## Code
