@@ -214,25 +214,6 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/zalgorithm.test.cpp.html">test/yosupo/zalgorithm.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1732.test.cpp.html">test/yukicoder/1732.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1923.test.cpp.html">test/yukicoder/1923.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1937.test.cpp.html">test/yukicoder/1937.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2147.test.cpp.html">test/yukicoder/2147.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/22.test.cpp.html">test/yukicoder/22.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/222.test.cpp.html">test/yukicoder/222.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2600.test.cpp.html">test/yukicoder/2600.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/3227.test.cpp.html">test/yukicoder/3227.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/3407.test.cpp.html">test/yukicoder/3407.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/399.test.cpp.html">test/yukicoder/399.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
 
 
 ## Code
