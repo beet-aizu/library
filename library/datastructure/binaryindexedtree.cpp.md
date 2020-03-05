@@ -31,9 +31,23 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/binaryindexedtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 21:38:44+09:00
+    - Last commit date: 2020-03-05 21:59:12+09:00
 
 
+
+
+
+## できること
+- sum
+-- $i$ 番目までの要素の和 (inclusive) を求める
+- add
+-- $i$ 番目の要素に $a$ を加算する
+- lower_bound
+-- 非負要素からなる列に対し、$\min \{ i \mid \rm{sum}(i) \ge w \}$ を求める
+
+## verify 用問題一覧
+- lower_bound
+-- [AOJ 0343](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0343)
 
 
 ## Verified with
@@ -57,6 +71,9 @@ layout: default
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+/*
+ * @docs docs/binaryindexedtree.md
+ */
 //BEGIN CUT HERE
 template<typename T>
 struct BIT{
