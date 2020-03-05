@@ -2,6 +2,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 #endif
+/*
+ * @docs docs/binaryindexedtree.md
+ */
 //BEGIN CUT HERE
 template<typename T>
 struct BIT{
