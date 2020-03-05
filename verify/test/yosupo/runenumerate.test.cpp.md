@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/runenumerate.test.cpp
+# :x: test/yosupo/runenumerate.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/runenumerate.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 18:24:01+09:00
+    - Last commit date: 2020-03-05 21:02:53+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/runenumerate">https://judge.yosupo.jp/problem/runenumerate</a>
@@ -38,9 +38,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/string/run.cpp.html">string/run.cpp</a>
-* :heavy_check_mark: <a href="../../../library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :x: <a href="../../../library/string/run.cpp.html">string/run.cpp</a>
+* :x: <a href="../../../library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
 
 
 ## Code
@@ -54,12 +53,14 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../string/zalgorithm.cpp"
 #include "../../string/run.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   string ss;
   cin>>ss;
   auto run=Run::enumerate(ss);
@@ -99,7 +100,7 @@ Traceback (most recent call last):
     self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/zalgorithm.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}

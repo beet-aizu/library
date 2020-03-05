@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/sum_of_floor_of_linear.test.cpp
+# :x: test/yosupo/sum_of_floor_of_linear.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/sum_of_floor_of_linear.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-21 18:07:05+09:00
+    - Last commit date: 2020-03-05 21:02:53+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">https://judge.yosupo.jp/problem/sum_of_floor_of_linear</a>
@@ -38,8 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :x: <a href="../../../library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
 
 
 ## Code
@@ -53,11 +52,13 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../math/sum_of_floor.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int T;
   cin>>T;
   for(int t=0;t<T;t++){
@@ -84,7 +85,7 @@ Traceback (most recent call last):
     self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/sum_of_floor.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
