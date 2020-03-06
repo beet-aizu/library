@@ -47,7 +47,6 @@ layout: default
 * :heavy_check_mark: <a href="../graph/nicetree.cpp.html">graph/nicetree.cpp</a>
 * :warning: <a href="../graph/voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
-* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="../linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>
 * :heavy_check_mark: <a href="../tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 

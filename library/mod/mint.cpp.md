@@ -43,7 +43,6 @@ layout: default
 * :heavy_check_mark: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="../graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
-* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 * :heavy_check_mark: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>

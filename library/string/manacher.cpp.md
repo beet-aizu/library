@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/manacher.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 22:42:32+09:00
+    - Last commit date: 2020-03-06 20:39:01+09:00
 
 
+* see: <a href="https://snuke.hatenablog.com/entry/2014/12/02/235837">https://snuke.hatenablog.com/entry/2014/12/02/235837</a>
 
 
 ## Verified with
@@ -46,10 +47,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+/*
+ * @see https://snuke.hatenablog.com/entry/2014/12/02/235837
+ */
 //BEGIN CUT HERE
 vector<int> manacher(string s){
   int n=s.size();
@@ -65,29 +72,8 @@ vector<int> manacher(string s){
 }
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-// verify even palindrome
-signed SPOJ_LPS(){
-  int n;
-  string s;
-  cin>>n>>s;
-  string t="$";
-  for(int i=0;i<n;i++){
-    t.push_back(s[i]);
-    t.push_back('$');
-  }
-  auto vs=manacher(t);
-  cout<<*max_element(vs.begin(),vs.end())-1<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  http://www.spoj.com/problems/LPS/
-*/
-
 signed main(){
-  //SPOJ_LPS();
   return 0;
 }
 #endif
@@ -98,14 +84,36 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/manacher.cpp: line 5: found codes out of include guard
+#line 2 "string/manacher.cpp"
+#include <iostream>
+
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+/*
+ * @see https://snuke.hatenablog.com/entry/2014/12/02/235837
+ */
+//BEGIN CUT HERE
+vector<int> manacher(string s){
+  int n=s.size();
+  vector<int> vs(n);
+  for(int i=0,j=0;i<n;){
+    while(i-j>=0&&i+j<n&&s[i-j]==s[i+j]) j++;
+    vs[i]=j;
+    int k=1;
+    while(i-k>=0&&i+k<n&&k+vs[i-k]<j) vs[i+k]=vs[i-k],k++;
+    i+=k;j-=k;
+  }
+  return vs;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

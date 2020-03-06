@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :heavy_check_mark: <a href="../linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0343.test.cpp.html">test/aoj/0343.test.cpp</a>

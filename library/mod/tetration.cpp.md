@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/tetration.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:54:22+09:00
+    - Last commit date: 2020-03-06 20:39:01+09:00
 
 
 
@@ -52,6 +52,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
@@ -102,79 +105,8 @@ T tetration(T a,T n,T m){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-signed SUMMERFES2018_F(){
-  using ll = long long;
-
-  ll a,m,k;
-  cin>>a>>m>>k;
-  ll ans=0;
-
-  k--;
-  for(ll i=0,p=-1;i<k;i++){
-    ll x=tetration(a,i,m);
-    if(p==x){
-      ans+=(k-i)%m*x%m;
-      ans%=m;
-      break;
-    }
-    ans+=x;
-    ans%=m;
-    p=x;
-  }
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/summerfes2018-div1/tasks/summerfes2018_f
-*/
-
-signed SPOJ_POWTOW(){
-  using ll = long long;
-
-  int T;
-  cin>>T;
-  while(T--){
-    ll a,n,f=0;
-    cin>>a>>n;
-    stringstream ss;
-    ss<<tetration(a,n,ll(1e9),f)%ll(1e9);
-    auto s=ss.str();
-    if(f){
-      while(s.size()<9u) s='0'+s;
-      cout<<"..."<<s<<endl;
-    }else{
-      cout<<s<<endl;
-    }
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/08
-  https://www.spoj.com/problems/POWTOW/
-*/
-
-signed SPOJ_MTETRA(){
-  using ll = long long;
-  int T;
-  cin>>T;
-  while(T--){
-    ll a,n,m;
-    cin>>a>>n>>m;
-    cout<<tetration(a,n,m)<<endl;;
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/08
-  https://www.spoj.com/problems/MTETRA/
-*/
-
 signed main(){
-  //SUMMERFES2018_F();
-  //SPOJ_POWTOW();
-  //SPOJ_MTETRA();
+  return 0;
 }
 #endif
 
@@ -189,9 +121,9 @@ Traceback (most recent call last):
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
     bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/tetration.cpp: line 10: found codes out of include guard
+  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 181, in update
+    raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/tetration.cpp: line 9: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
