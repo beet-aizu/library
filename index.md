@@ -557,7 +557,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_7_F.test.cpp.html">test/aoj/geometry/CGL_7_F.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_7_G.test.cpp.html">test/aoj/geometry/CGL_7_G.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_7_H.test.cpp.html">test/aoj/geometry/CGL_7_H.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :x: <a href="verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/bipartitematching.test.cpp.html">test/yosupo/bipartitematching.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/convolution_mod.test.cpp.html">test/yosupo/convolution_mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/convolution_mod_1000000007.garner.test.cpp.html">test/yosupo/convolution_mod_1000000007.garner.test.cpp</a>
@@ -594,6 +594,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/sum_of_floor_of_linear.test.cpp.html">test/yosupo/sum_of_floor_of_linear.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>

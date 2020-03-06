@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 20:01:48+09:00
+    - Last commit date: 2020-03-06 21:19:55+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/09/27/224701">http://beet-aizu.hatenablog.com/entry/2019/09/27/224701</a>
@@ -48,7 +48,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3072.test.cpp.html">test/aoj/3072.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
@@ -56,6 +56,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
 
@@ -194,16 +195,29 @@ struct FormalPowerSeries{
     return inv(rs,n+1);
   }
 
+  template<typename E>
   Poly bernoulli(int n){
+    E::init(n+1);
     Poly rs(n+1,1);
-    for(int i=1;i<=n;i++) rs[i]=rs[i-1]/T(i+1);
+    for(int i=1;i<=n;i++) rs[i]=E::Finv(i);
     rs=inv(rs,n+1);
-    T tmp(1);
-    for(int i=1;i<=n;i++){
-      tmp*=T(i);
-      rs[i]*=tmp;
-    }
+    for(int i=1;i<=n;i++) rs[i]*=E::Fact(i);
     return rs;
+  }
+
+  Poly stirling_1st(int n){
+    // TODO:
+  }
+
+  template<typename E>
+  Poly stirling_2nd(int n){
+    E::init(n+1);
+    Poly as(n+1),bs(n+1);
+    for(int i=0;i<=n;i++){
+      as[i]=T(i).pow(n)*E::Finv(i);
+      bs[i]=(i&1?-T(1):T(1))*E::Finv(i);
+    }
+    return pre(mul(as,bs),n+1);
   }
 };
 //END CUT HERE
@@ -349,16 +363,29 @@ struct FormalPowerSeries{
     return inv(rs,n+1);
   }
 
+  template<typename E>
   Poly bernoulli(int n){
+    E::init(n+1);
     Poly rs(n+1,1);
-    for(int i=1;i<=n;i++) rs[i]=rs[i-1]/T(i+1);
+    for(int i=1;i<=n;i++) rs[i]=E::Finv(i);
     rs=inv(rs,n+1);
-    T tmp(1);
-    for(int i=1;i<=n;i++){
-      tmp*=T(i);
-      rs[i]*=tmp;
-    }
+    for(int i=1;i<=n;i++) rs[i]*=E::Fact(i);
     return rs;
+  }
+
+  Poly stirling_1st(int n){
+    // TODO:
+  }
+
+  template<typename E>
+  Poly stirling_2nd(int n){
+    E::init(n+1);
+    Poly as(n+1),bs(n+1);
+    for(int i=0;i<=n;i++){
+      as[i]=T(i).pow(n)*E::Finv(i);
+      bs[i]=(i&1?-T(1):T(1))*E::Finv(i);
+    }
+    return pre(mul(as,bs),n+1);
   }
 };
 //END CUT HERE
