@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:42:16+09:00
+    - Last commit date: 2020-03-06 18:48:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B</a>

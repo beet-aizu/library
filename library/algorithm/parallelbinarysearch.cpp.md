@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/parallelbinarysearch.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:56:10+09:00
+    - Last commit date: 2020-03-06 18:48:30+09:00
 
 
 
@@ -46,8 +46,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -89,14 +92,45 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: algorithm/parallelbinarysearch.cpp: line 5: found codes out of include guard
+#line 2 "algorithm/parallelbinarysearch.cpp"
+#include <iostream>
+
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// n questions, q operations
+vector<int> parallel_binary_search(int n,int q,
+                                   function<void(void)> init,
+                                   function<void(int)> apply,
+                                   function<bool(int)> check){
+  vector< vector<int> > C(q);
+  vector<int> L(n,-1),R(n,q);
+  bool flg=1;
+  while(flg){
+    flg=0;
+    init();
+    for(int i=0;i<n;i++)
+      if(L[i]+1<R[i]) C[(L[i]+R[i])>>1].emplace_back(i);
+    for(int i=0;i<q;i++){
+      flg|=!C[i].empty();
+      apply(i);
+      for(int j:C[i]){
+        if(check(j)) R[j]=i;
+        else L[j]=i;
+      }
+      C[i].clear();
+    }
+  }
+  return R;
+}
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

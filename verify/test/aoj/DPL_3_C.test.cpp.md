@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-29 14:49:03+09:00
+    - Last commit date: 2020-03-06 18:48:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C</a>
@@ -71,16 +71,62 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: algorithm/largestrectangle.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/DPL_3_C.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 2 "test/aoj/../../algorithm/largestrectangle.cpp"
+#include <iostream>
+
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+T largestrectangle(vector<T> &v){
+  int n=v.size();
+  T res=0;
+  using P = pair<int, T>;
+  stack<P> sp;
+  sp.emplace(-1,T(0));
+  for(int i=0;i<n;i++){
+    int j=i;
+    while(sp.top().second>v[i]){
+      j=sp.top().first;
+      res=max(res,(i-j)*sp.top().second);
+      sp.pop();
+    }
+    if(sp.top().second<v[i]) sp.emplace(j,v[i]);
+  }
+  while(!sp.empty()){
+    res=max(res,(n-sp.top().first)*sp.top().second);
+    sp.pop();
+  }
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/DPL_3_C.test.cpp"
+#undef call_from_test
+
+signed main(){
+  using ll = long long;
+  ll n;
+  cin>>n;
+  vector<ll> v(n);
+  for(int i=0;i<n;i++) cin>>v[i];
+  cout<<largestrectangle(v)<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}
