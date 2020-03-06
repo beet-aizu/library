@@ -45,7 +45,6 @@ layout: default
 
 * :heavy_check_mark: <a href="garner.cpp.html">convolution/garner.cpp</a>
 * :heavy_check_mark: <a href="../mod/factorial.cpp.html">mod/factorial.cpp</a>
-* :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Verified with
