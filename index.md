@@ -353,7 +353,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0563.test.cpp.html">test/aoj/0563.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/0596.test.cpp.html">test/aoj/0596.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1069.test.cpp.html">test/aoj/1069.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1197.test.cpp.html">test/aoj/1197.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1254.test.cpp.html">test/aoj/1254.test.cpp</a>
@@ -369,7 +368,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/1595.linkcuttree.test.cpp.html">test/aoj/1595.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1595.test.cpp.html">test/aoj/1595.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1599.test.cpp.html">test/aoj/1599.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1615.test.cpp.html">test/aoj/1615.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/1630.test.cpp.html">test/aoj/1630.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2060.test.cpp.html">test/aoj/2060.test.cpp</a>
