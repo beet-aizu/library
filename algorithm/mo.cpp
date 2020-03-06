@@ -33,6 +33,7 @@ struct Mo{
     sort(ord.begin(),ord.end(),
          [&](int a,int b){
            if(ls[a]/width!=ls[b]/width) return ls[a]<ls[b];
+           if(rs[a]==rs[b]) return ls[a]<ls[b];
            return bool((rs[a]<rs[b])^((ls[a]/width)&1));
          });
   }
