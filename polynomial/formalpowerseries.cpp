@@ -5,6 +5,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
+/*
+ * @see http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
+ */
 //BEGIN CUT HERE
 template<typename T>
 struct FormalPowerSeries{
@@ -137,172 +141,8 @@ struct FormalPowerSeries{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#include "../convolution/numbertheoretictransform.cpp"
-#include "../mod/sqrt.cpp"
-#include "../tools/fastio.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-
-signed HAPPYQUERY_E(){
-  int n,m,q;
-  cin>>n>>m>>q;
-  vector<int> ls(q),rs(q);
-  for(int i=0;i<q;i++) cin>>ls[i]>>rs[i],ls[i]--;
-
-  vector<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  if(as==vector<int>(n,0)){
-    for(int i=0;i<m;i++){
-      if(i) cout<<" ";
-      cout<<0;
-    }
-    cout<<endl;
-    return 0;
-  }
-
-  vector<int> cs(n-m+1,0);
-  for(int l:ls) cs[l]++;
-
-  NTT<0> ntt;
-  using M = NTT<0>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  vector<M> ps(as.size()),qs(cs.size());
-  for(int i=0;i<(int)ps.size();i++) ps[i]=M(as[i]);
-  for(int i=0;i<(int)qs.size();i++) qs[i]=M(cs[i]);
-
-  auto bs=FPS.div(ps,qs);
-  for(int i=0;i<m;i++){
-    if(i) cout<<" ";
-    cout<<bs[i];
-  }
-  cout<<endl;
-  return 0;
-}
-/*
-  verified on 2019/09/17
-  https://www.hackerrank.com/contests/happy-query-contest/challenges/array-restoring
-*/
-
-signed CFR250_E(){
-  int n,m;
-  cin>>n>>m;
-  vector<int> cs(n);
-  for(int i=0;i<n;i++) cin>>cs[i];
-
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  const int deg=1<<18;
-  vector<M> as(deg,0);
-  as[0]=M(1);
-  for(int c:cs) as[c]-=M(4);
-
-  auto bs=FPS.sqrt(as,deg);
-  bs[0]+=M(1);
-
-  vector<M> vs({2});
-
-  auto ans=FPS.mul(vs,FPS.inv(bs,deg));
-  for(int i=1;i<=m;i++) cout<<ans[i]<<"\n";
-  cout<<flush;
-
-  return 0;
-}
-/*
-  verified on 2019/09/17
-  https://codeforces.com/contest/438/problem/E
-*/
-
-signed LOJ_150(){
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  int n,k;
-  cin>>n>>k;
-
-  vector<M> F(n+1);
-  for(int i=0;i<=n;i++) cin>>F[i].v;
-
-  const int deg = 1<<17;
-  auto as=FPS.log(FPS.mul(F,F[0].inv()),deg);
-  auto bs=FPS.exp(FPS.mul(as,M((ntt.md-1)/2)),deg);
-  M s(mod_sqrt(F[0].v,ntt.md)[0]);
-  auto cs=FPS.integral(FPS.mul(bs,s.inv()));
-  auto ds=FPS.exp(cs,deg);
-  auto es=FPS.sub(F,ds);
-  es[0]+=M(2);
-  es[0]-=F[0];
-  auto fs=FPS.log(es,deg);
-  fs[0]+=M(1);
-  auto gs=FPS.log(fs,deg);
-  auto hs=FPS.mul(gs,M(k));
-  auto is=FPS.exp(hs,deg);
-  auto G=FPS.diff(is);
-
-  for(int i=0;i<n;i++){
-    if(i) cout<<" ";
-    cout<<G[i];
-  }
-  cout<<endl;
-  return 0;
-}
-/*
-  verified on 2019/09/17
-  https://loj.ac/problem/150
-*/
-
-signed CODECHEF_PSUM(){
-  NTT<2> ntt;
-  using M = NTT<2>::M;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
-  int n,s,k;
-  cin>>n>>s>>k;
-  vector<int> cs(n),vs(n);
-  for(int i=0;i<n;i++) cin>>cs[i]>>vs[i];
-
-  const int deg = 1<<11;
-  vector< vector<M> > dp(s+1,vector<M>(deg,0));
-  dp[0][0]=M(1);
-
-  auto nx=dp;
-  for(int i=0;i<n;i++){
-    auto ps=FPS.exp(vector<M>({M(0),M(vs[i])}),deg);
-    for(int j=0;j+cs[i]<=s;j++){
-      auto rs=FPS.mul(ps,dp[j]);
-      for(int l=0;l<deg;l++) nx[j+cs[i]][l]+=rs[l];
-    }
-    dp=nx;
-  }
-
-  M ans{0};
-  for(int i=1;i<=s;i++) ans+=dp[i][k];
-  for(int i=1;i<=k;i++) ans*=M(i);
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/09/24
-  https://www.codechef.com/problems/PSUM
-*/
-
 signed main(){
-  //HAPPYQUERY_E();
-  //CFR250_E();
-  //LOJ_150();
-  //CODECHEF_PSUM();
   return 0;
 }
 #endif
