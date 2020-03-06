@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 21:19:55+09:00
+    - Last commit date: 2020-03-06 22:42:19+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/09/27/224701">http://beet-aizu.hatenablog.com/entry/2019/09/27/224701</a>
@@ -48,7 +48,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3072.test.cpp.html">test/aoj/3072.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/bernoulli_number.test.cpp.html">test/yosupo/bernoulli_number.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/log_of_formal_power_series.test.cpp.html">test/yosupo/log_of_formal_power_series.test.cpp</a>
@@ -197,9 +197,9 @@ struct FormalPowerSeries{
 
   template<typename E>
   Poly bernoulli(int n){
-    E::init(n+1);
+    E::init(n+2);
     Poly rs(n+1,1);
-    for(int i=1;i<=n;i++) rs[i]=E::Finv(i);
+    for(int i=1;i<=n;i++) rs[i]=E::Finv(i+1);
     rs=inv(rs,n+1);
     for(int i=1;i<=n;i++) rs[i]*=E::Fact(i);
     return rs;
@@ -365,9 +365,9 @@ struct FormalPowerSeries{
 
   template<typename E>
   Poly bernoulli(int n){
-    E::init(n+1);
+    E::init(n+2);
     Poly rs(n+1,1);
-    for(int i=1;i<=n;i++) rs[i]=E::Finv(i);
+    for(int i=1;i<=n;i++) rs[i]=E::Finv(i+1);
     rs=inv(rs,n+1);
     for(int i=1;i<=n;i++) rs[i]*=E::Fact(i);
     return rs;

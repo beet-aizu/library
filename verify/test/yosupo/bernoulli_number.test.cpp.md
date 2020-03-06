@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/bernoulli_number.test.cpp
+# :heavy_check_mark: test/yosupo/bernoulli_number.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/bernoulli_number.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 21:19:55+09:00
+    - Last commit date: 2020-03-06 22:42:19+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/bernoulli_number">https://judge.yosupo.jp/problem/bernoulli_number</a>
