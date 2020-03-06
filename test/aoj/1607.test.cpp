@@ -9,6 +9,10 @@ using namespace std;
 #include "../../datastructure/radixheap.cpp"
 #undef call_from_test
 
+#ifdef SANITIZE
+#define IGNORE
+#endif
+
 const int BS = 8, BS2 = BS * 2;
 const int msk = (1<<BS)-1;
 const int MAX = 12 * (1<<BS) * (1<<BS);

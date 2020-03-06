@@ -1,7 +1,13 @@
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+/*
+ * @see https://ei1333.hateblo.jp/entry/2018/12/21/004022
+ */
 //BEGIN CUT HERE
 template<typename Data, typename T>
 struct ReRooting{
@@ -63,34 +69,7 @@ struct ReRooting{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-// verify non-invertible
-signed DP_V(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  int n,m;
-  cin>>n>>m;
-  auto f1=[m](int a,int b)->int{return (long long)a*b%m;};
-  auto f2=[m](int a,int d)->int{return (a+d)%m;};
-  ReRooting<int, int> G(n,f1,f2,1);
-  for(int i=1;i<n;i++){
-    int x,y;
-    cin>>x>>y;
-    x--;y--;
-    G.add_edge(x,y,1);
-  }
-  auto ans=G.build();
-  for(int x:ans) cout<<x<<"\n";
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/10/30
-  https://atcoder.jp/contests/dp/tasks/dp_v
-*/
-
 signed main(){
-  //DP_V();
   return 0;
 }
 #endif
