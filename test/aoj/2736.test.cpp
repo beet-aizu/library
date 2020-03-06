@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../tools/precision.cpp"
 #include "../../flow/primaldual.cpp"
@@ -13,6 +12,9 @@ using namespace std;
 #define ERROR "1e-6"
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,m,p,s,t;
   cin>>n>>m>>p>>s>>t;
   s--;t--;

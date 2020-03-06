@@ -11,6 +11,9 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   string s,t;
   cin>>s>>t;
 

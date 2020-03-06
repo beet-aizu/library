@@ -4,13 +4,15 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../tree/lca.cpp"
 #include "../../tree/levelancestor.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,q;
   cin>>n>>q;
   using P = pair<int, int>;

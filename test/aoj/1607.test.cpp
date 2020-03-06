@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../tools/compress.cpp"
 #include "../../datastructure/radixheap.cpp"
@@ -19,6 +18,9 @@ long long add[(1<<BS) * (1<<BS)];
 long long dp[(1<<BS)][(1<<BS)];
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   while(cin>>n,n){
     int m,k,r;

@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../tools/all_permutations.cpp"
 #undef call_from_test
@@ -12,6 +11,9 @@ using namespace std;
 #define ERROR "1e-5"
 
 signed solve(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   const int n=9;
   vector<int> as(n),bs(n);
   for(int i=0;i<n;i++) cin>>as[i];
