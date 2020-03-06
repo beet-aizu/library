@@ -21,24 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: string/knuth_morris_pratt.cpp
+# :heavy_check_mark: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
-* <a href="{{ site.github.repository_url }}/blob/master/string/knuth_morris_pratt.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:01:05+09:00
-
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-06 20:20:24+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
-## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp.html">test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp</a>
+## Depends on
+
+* :heavy_check_mark: <a href="../../../library/string/knuthmorrispratt.cpp.html">string/knuthmorrispratt.cpp</a>
 
 
 ## Code
@@ -46,10 +46,51 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef call_from_test
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+
 #include<bits/stdc++.h>
 using namespace std;
+
+#define call_from_test
+#include "../../string/knuthmorrispratt.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  string t,p;
+  cin>>t>>p;
+
+  vector<int> res=pattern_match(p,t);
+  for(int x:res) cout<<x<<"\n";
+  cout<<flush;
+  return 0;
+}
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 2 "test/aoj/../../string/knuthmorrispratt.cpp"
+#include <iostream>
+
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
 #endif
+/*
+ * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
+ */
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
@@ -92,7 +133,9 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //INSERT ABOVE HERE
-signed ABC135_D(){
+
+// test knuth_morris_pratt
+signed ABC135_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   string s,t;
@@ -145,6 +188,7 @@ signed ABC135_D(){
   https://atcoder.jp/contests/abc135/tasks/abc135_f
 */
 
+// test minimum_period
 signed ARC060_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -188,24 +232,24 @@ signed main(){
   return 0;
 }
 #endif
+#line 8 "test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  string t,p;
+  cin>>t>>p;
+
+  vector<int> res=pattern_match(p,t);
+  for(int x:res) cout<<x<<"\n";
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}
 
-<a id="bundled"></a>
-{% raw %}
-```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/knuth_morris_pratt.cpp: line 5: found codes out of include guard
-
-```
-{% endraw %}
-
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

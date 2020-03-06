@@ -275,7 +275,7 @@ layout: default
 ### string
 
 * :heavy_check_mark: <a href="library/string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
-* :heavy_check_mark: <a href="library/string/knuth_morris_pratt.cpp.html">string/knuth_morris_pratt.cpp</a>
+* :heavy_check_mark: <a href="library/string/knuthmorrispratt.cpp.html">string/knuthmorrispratt.cpp</a>
 * :heavy_check_mark: <a href="library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 * :heavy_check_mark: <a href="library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
 * :heavy_check_mark: <a href="library/string/manacher.cpp.html">string/manacher.cpp</a>
@@ -451,7 +451,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/3117.test.cpp.html">test/aoj/3117.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/3120.test.cpp.html">test/aoj/3120.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_10_C.test.cpp.html">test/aoj/ALDS1_10_C.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp.html">test/aoj/ALDS1_14_B.knuth_morris_pratt.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp.html">test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.test.cpp.html">test/aoj/ALDS1_14_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_C.test.cpp.html">test/aoj/ALDS1_14_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_D.test.cpp.html">test/aoj/ALDS1_14_D.test.cpp</a>
