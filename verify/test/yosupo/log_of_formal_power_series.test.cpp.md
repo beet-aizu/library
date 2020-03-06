@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/log_of_formal_power_series.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 21:02:53+09:00
+    - Last commit date: 2020-03-06 18:54:39+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/log_of_formal_power_series">https://judge.yosupo.jp/problem/log_of_formal_power_series</a>

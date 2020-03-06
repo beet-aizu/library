@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/find_linear_recurrence.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 23:05:20+09:00
+    - Last commit date: 2020-03-06 18:54:39+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/find_linear_recurrence">https://judge.yosupo.jp/problem/find_linear_recurrence</a>
