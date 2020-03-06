@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/longestcommonsubstring.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:01:05+09:00
+    - Last commit date: 2020-03-06 19:09:15+09:00
 
 
 
@@ -94,11 +94,9 @@ Traceback (most recent call last):
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
     bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/chminmax.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/longestcommonsubstring.cpp: line 10: found codes out of include guard
 
 ```
 {% endraw %}

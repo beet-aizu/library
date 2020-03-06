@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 18:48:30+09:00
+    - Last commit date: 2020-03-06 19:09:15+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B</a>
@@ -40,7 +40,6 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -54,12 +53,14 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../algorithm/largestrectangle.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int h,w;
   cin>>h>>w;
 
@@ -86,16 +87,92 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/DPL_3_B.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 2 "test/aoj/../../tools/chminmax.cpp"
+#include <iostream>
+
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
+template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 2 "test/aoj/../../algorithm/largestrectangle.cpp"
+#include <iostream>
+
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+T largestrectangle(vector<T> &v){
+  int n=v.size();
+  T res=0;
+  using P = pair<int, T>;
+  stack<P> sp;
+  sp.emplace(-1,T(0));
+  for(int i=0;i<n;i++){
+    int j=i;
+    while(sp.top().second>v[i]){
+      j=sp.top().first;
+      res=max(res,(i-j)*sp.top().second);
+      sp.pop();
+    }
+    if(sp.top().second<v[i]) sp.emplace(j,v[i]);
+  }
+  while(!sp.empty()){
+    res=max(res,(n-sp.top().first)*sp.top().second);
+    sp.pop();
+  }
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/DPL_3_B.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int h,w;
+  cin>>h>>w;
+
+  vector< vector<int> > cs(h,vector<int>(w));
+  for(int i=0;i<h;i++)
+    for(int j=0;j<w;j++)
+      cin>>cs[i][j];
+
+  int res=0;
+  vector<int> dp(w,0);
+  for(int i=0;i<h;i++){
+    for(int j=0;j<w;j++)
+      dp[j]=cs[i][j]==0?dp[j]+1:0;
+    chmax(res,largestrectangle(dp));
+  }
+
+  cout<<res<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

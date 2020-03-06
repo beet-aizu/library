@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_A.linkcuttree.test.cpp
+# :x: test/aoj/GRL_5_A.linkcuttree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_A.linkcuttree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-23 17:37:16+09:00
+    - Last commit date: 2020-03-06 19:09:15+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A</a>
@@ -41,7 +41,6 @@ layout: default
 * :heavy_check_mark: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
 * :heavy_check_mark: <a href="../../../library/linkcuttree/farthest.cpp.html">linkcuttree/farthest.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -55,13 +54,15 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/farthest.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using Node = NodeBase<int>;
   constexpr size_t LIM = 2e6 + 200;
   using LCT = Farthest<Node, LIM>;
@@ -109,7 +110,7 @@ Traceback (most recent call last):
     self.update(self._resolve(included, included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
     raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: linkcuttree/base.cpp: line 5: found codes out of include guard
 
 ```
 {% endraw %}
