@@ -129,9 +129,9 @@ struct FormalPowerSeries{
 
   template<typename E>
   Poly bernoulli(int n){
-    E::init(n+1);
+    E::init(n+2);
     Poly rs(n+1,1);
-    for(int i=1;i<=n;i++) rs[i]=E::Finv(i);
+    for(int i=1;i<=n;i++) rs[i]=E::Finv(i+1);
     rs=inv(rs,n+1);
     for(int i=1;i<=n;i++) rs[i]*=E::Fact(i);
     return rs;
