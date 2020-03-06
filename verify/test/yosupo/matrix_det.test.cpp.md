@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/matrix_det.test.cpp
+# :heavy_check_mark: test/yosupo/matrix_det.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 

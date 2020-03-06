@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/find_linear_recurrence.test.cpp
+# :heavy_check_mark: test/yosupo/find_linear_recurrence.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :x: <a href="../../../library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
 
 
 ## Code

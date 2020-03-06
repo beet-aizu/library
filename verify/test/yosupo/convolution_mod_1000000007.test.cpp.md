@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/convolution_mod_1000000007.test.cpp
+# :heavy_check_mark: test/yosupo/convolution_mod_1000000007.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
