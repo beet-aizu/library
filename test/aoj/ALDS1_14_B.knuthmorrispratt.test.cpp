@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../string/knuth_morris_pratt.cpp"
+#include "../../string/knuthmorrispratt.cpp"
 #undef call_from_test
 
 signed main(){

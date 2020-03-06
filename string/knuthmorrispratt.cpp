@@ -1,7 +1,13 @@
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+/*
+ * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
+ */
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
@@ -44,7 +50,9 @@ template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
 template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
 
 //INSERT ABOVE HERE
-signed ABC135_D(){
+
+// test knuth_morris_pratt
+signed ABC135_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   string s,t;
@@ -97,6 +105,7 @@ signed ABC135_D(){
   https://atcoder.jp/contests/abc135/tasks/abc135_f
 */
 
+// test minimum_period
 signed ARC060_F(){
   cin.tie(0);
   ios::sync_with_stdio(0);
