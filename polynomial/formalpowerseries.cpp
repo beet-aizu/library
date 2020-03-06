@@ -127,16 +127,29 @@ struct FormalPowerSeries{
     return inv(rs,n+1);
   }
 
+  template<typename E>
   Poly bernoulli(int n){
+    E::init(n+1);
     Poly rs(n+1,1);
-    for(int i=1;i<=n;i++) rs[i]=rs[i-1]/T(i+1);
+    for(int i=1;i<=n;i++) rs[i]=E::Finv(i);
     rs=inv(rs,n+1);
-    T tmp(1);
-    for(int i=1;i<=n;i++){
-      tmp*=T(i);
-      rs[i]*=tmp;
-    }
+    for(int i=1;i<=n;i++) rs[i]*=E::Fact(i);
     return rs;
+  }
+
+  Poly stirling_1st(int n){
+    // TODO:
+  }
+
+  template<typename E>
+  Poly stirling_2nd(int n){
+    E::init(n+1);
+    Poly as(n+1),bs(n+1);
+    for(int i=0;i<=n;i++){
+      as[i]=T(i).pow(n)*E::Finv(i);
+      bs[i]=(i&1?-T(1):T(1))*E::Finv(i);
+    }
+    return pre(mul(as,bs),n+1);
   }
 };
 //END CUT HERE

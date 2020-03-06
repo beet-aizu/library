@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/bernoulli_number"
+#define PROBLEM "https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -23,7 +23,7 @@ signed main(){
   FormalPowerSeries<M> FPS(conv);
 
   using E = Enumeration<M>;
-  auto ps=FPS.bernoulli<E>(n);
+  auto ps=FPS.stirling_2nd<E>(n);
   for(int i=0;i<=n;i++){
     if(i) cout<<" ";
     cout<<ps[i];
