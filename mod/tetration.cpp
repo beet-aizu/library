@@ -1,3 +1,6 @@
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
 #include<bits/stdc++.h>
 using namespace std;
@@ -48,78 +51,7 @@ T tetration(T a,T n,T m){
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-
-signed SUMMERFES2018_F(){
-  using ll = long long;
-
-  ll a,m,k;
-  cin>>a>>m>>k;
-  ll ans=0;
-
-  k--;
-  for(ll i=0,p=-1;i<k;i++){
-    ll x=tetration(a,i,m);
-    if(p==x){
-      ans+=(k-i)%m*x%m;
-      ans%=m;
-      break;
-    }
-    ans+=x;
-    ans%=m;
-    p=x;
-  }
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/summerfes2018-div1/tasks/summerfes2018_f
-*/
-
-signed SPOJ_POWTOW(){
-  using ll = long long;
-
-  int T;
-  cin>>T;
-  while(T--){
-    ll a,n,f=0;
-    cin>>a>>n;
-    stringstream ss;
-    ss<<tetration(a,n,ll(1e9),f)%ll(1e9);
-    auto s=ss.str();
-    if(f){
-      while(s.size()<9u) s='0'+s;
-      cout<<"..."<<s<<endl;
-    }else{
-      cout<<s<<endl;
-    }
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/08
-  https://www.spoj.com/problems/POWTOW/
-*/
-
-signed SPOJ_MTETRA(){
-  using ll = long long;
-  int T;
-  cin>>T;
-  while(T--){
-    ll a,n,m;
-    cin>>a>>n>>m;
-    cout<<tetration(a,n,m)<<endl;;
-  }
-  return 0;
-}
-/*
-  verified on 2019/10/08
-  https://www.spoj.com/problems/MTETRA/
-*/
-
 signed main(){
-  //SUMMERFES2018_F();
-  //SPOJ_POWTOW();
-  //SPOJ_MTETRA();
+  return 0;
 }
 #endif

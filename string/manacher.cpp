@@ -1,7 +1,13 @@
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+/*
+ * @see https://snuke.hatenablog.com/entry/2014/12/02/235837
+ */
 //BEGIN CUT HERE
 vector<int> manacher(string s){
   int n=s.size();
@@ -17,29 +23,8 @@ vector<int> manacher(string s){
 }
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-// verify even palindrome
-signed SPOJ_LPS(){
-  int n;
-  string s;
-  cin>>n>>s;
-  string t="$";
-  for(int i=0;i<n;i++){
-    t.push_back(s[i]);
-    t.push_back('$');
-  }
-  auto vs=manacher(t);
-  cout<<*max_element(vs.begin(),vs.end())-1<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/29
-  http://www.spoj.com/problems/LPS/
-*/
-
 signed main(){
-  //SPOJ_LPS();
   return 0;
 }
 #endif
