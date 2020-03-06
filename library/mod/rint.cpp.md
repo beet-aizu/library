@@ -38,13 +38,13 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="factorial.cpp.html">mod/factorial.cpp</a>
+* :x: <a href="factorial.cpp.html">mod/factorial.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0422.test.cpp.html">test/aoj/0422.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 
 
 ## Code
