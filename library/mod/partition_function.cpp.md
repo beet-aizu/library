@@ -85,14 +85,38 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/partition_function.cpp: line 6: found codes out of include guard
+#line 1 "mod/partition_function.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#endif
+//BEGIN CUT HERE
+template<typename M>
+struct Partition{
+  vector< vector<M> > dp;
+  Partition(int h,int w):dp(h+1,vector<M>(w+1,0)){
+    dp[0][0]=M(1);
+    for(int i=0;i<=h;i++){
+      for(int j=1;j<=w;j++){
+        dp[i][j]=dp[i][j-1];
+        if(i-j>=0) dp[i][j]+=dp[i-j][j];
+      }
+    }
+  }
+  // put n identical balls into k identical boxes
+  M operator()(int n,int k){return dp[n][k];}
+
+  // put n identical balls into some boxes
+  M operator()(int n){return dp[n][n];}
+};
+//END CUT HERE
+
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

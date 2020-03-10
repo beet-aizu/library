@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_2_A.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-21 16:50:01+09:00
 
@@ -79,16 +80,99 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/kruskal.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_2_A.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../graph/kruskal.cpp"
+
+#line 3 "test/aoj/../../graph/kruskal.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct Kruskal{
+
+  struct edge{
+    int from,to;
+    T cost;
+    int used;
+    edge(int from,int to,T cost):
+      from(from),to(to),cost(cost),used(0){}
+    bool operator<(const edge& e) const{
+      return cost<e.cost;
+    }
+  };
+  vector<int> r,p;
+  vector<edge> es;
+
+  Kruskal(){}
+  Kruskal(int n):r(n,1),p(n){
+    iota(p.begin(),p.end(),0);
+  }
+
+  int find(int x){
+    return (x==p[x]?x:p[x]=find(p[x]));
+  }
+
+  bool same(int x,int y){
+    return find(x)==find(y);
+  }
+
+  void unite(int x,int y){
+    x=find(x);y=find(y);
+    if(x==y) return;
+    if(r[x]<r[y]) swap(x,y);
+    r[x]+=r[y];
+    p[y]=x;
+  }
+
+  void add_edge(int u,int v,T c){
+    es.emplace_back(u,v,c);
+  }
+
+  T build(){
+    sort(es.begin(),es.end());
+    T res=0;
+    for(auto &e:es){
+      if(!same(e.from,e.to)){
+        res+=e.cost;
+        unite(e.from,e.to);
+        e.used=1;
+      }
+    }
+    return res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+int main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/GRL_2_A.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int V,E;
+  cin>>V>>E;
+
+  Kruskal<int> G(V);
+  for(int i=0;i<E;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    G.add_edge(a,b,c);
+  }
+
+  cout<<G.build()<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

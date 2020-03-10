@@ -38,6 +38,7 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj/0613.test.cpp.html">test/aoj/0613.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_3_D.test.cpp.html">test/aoj/DSL_3_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1923.test.cpp.html">test/yukicoder/1923.test.cpp</a>
 
@@ -99,14 +100,52 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/rangeslide.cpp: line 5: found codes out of include guard
+#line 1 "datastructure/rangeslide.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T, typename F>
+struct RangeSlide{
+  vector<size_t> ls,rs;
+  vector<T> vs;
+  F cmp;
+  RangeSlide(vector<T> vs,F cmp):vs(vs),cmp(cmp){}
+
+  void add_range(size_t l,size_t r){
+    ls.emplace_back(l);
+    rs.emplace_back(r);
+  }
+
+  vector<size_t> build(){
+    deque<size_t> deq;
+    vector<size_t> res;
+    for(size_t i=0,l=0,r=0;i<ls.size();i++){
+      if(r<=ls[i]){
+        deq.clear();
+        l=r=ls[i];
+      }
+      while(r<rs[i]){
+        while(!deq.empty()&&
+              !cmp(vs[deq.back()],vs[r])) deq.pop_back();
+        deq.emplace_back(r++);
+      }
+      while(l<ls[i]){
+        if(deq.front()==l++) deq.pop_front();
+      }
+      res.emplace_back(deq.front());
+    }
+    return res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/kth_root_integer.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -93,16 +94,95 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/int128.cpp: line 10: found codes out of include guard
+#line 1 "test/yosupo/kth_root_integer.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/kth_root_integer"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../tools/int128.cpp"
+
+#line 3 "test/yosupo/../../tools/int128.cpp"
+using namespace std;
+/*
+  multiprecision:
+  #include <boost/multiprecision/cpp_int.hpp>
+  using ll = boost::multiprecision::cpp_int;
+*/
+#endif
+//BEGIN CUT HERE
+__int128_t abs128(__int128_t val){return val<0?-val:val;}
+
+ostream &operator<<(ostream &os,__int128_t val){
+  if(ostream::sentry(os)){
+    __uint128_t tmp=abs128(val);
+    char buf[64];
+    char *d=end(buf);
+    do{
+      --d;
+      *d=char(tmp%10+'0');
+      tmp/=10;
+    }while(tmp);
+    if(val<0) *--d='-';
+    int len=end(buf)-d;
+    if(os.rdbuf()->sputn(d,len)!=len){
+      os.setstate(ios_base::badbit);
+    }
+  }
+  return os;
+}
+
+istream &operator>>(istream &is,__int128_t &val){
+  string s;
+  is>>s;
+  val=0;
+  for(int i=0;i<(int)s.size();i++)
+    if(isdigit(s[i])) val=val*10+s[i]-'0';
+  if(s[0]=='-') val*=-1;
+  return is;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/kth_root_integer.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int T;
+  cin>>T;
+
+  using ll = __int128_t;
+  for(int t=0;t<T;t++){
+    ll A,K;
+    cin>>A>>K;
+
+    ll L=0,R=A+1;
+    while(L+1<R){
+      ll M=(L+R)>>1;
+
+      ll res=1;
+      for(int i=0;i<K;i++){
+        res*=M;
+        if(res>A) break;
+      }
+
+      if(res<=A) L=M;
+      else R=M;
+    }
+
+    cout<<L<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/staticrmq.sparsetable.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -84,16 +85,78 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/sparsetable.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/staticrmq.sparsetable.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../datastructure/sparsetable.cpp"
+
+#line 3 "test/yosupo/../../datastructure/sparsetable.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct SparseTable{
+  using F = function<T(T, T)>;
+  vector< vector<T> > dat;
+  vector<int> ht;
+  const F f;
+
+  SparseTable(){}
+  SparseTable(F f):f(f){}
+
+  void build(const vector<T> &v){
+    int n=v.size(),h=1;
+    while((1<<h)<=n) h++;
+    dat.assign(h,vector<T>(n));
+    ht.assign(n+1,0);
+    for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;
+
+    for(int j=0;j<n;j++) dat[0][j]=v[j];
+    for(int i=1,p=1;i<h;i++,p<<=1)
+      for(int j=0;j<n;j++)
+        dat[i][j]=f(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
+  };
+
+  T query(int a,int b){
+    int l=b-a;
+    return f(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/staticrmq.sparsetable.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,q;
+  cin>>n>>q;
+
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  auto f=[](int a,int b){return min(a,b);};
+  SparseTable<int> rmq(f);
+  rmq.build(as);
+
+  for(int i=0;i<q;i++){
+    int l,r;
+    cin>>l>>r;
+    cout<<rmq.query(l,r)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

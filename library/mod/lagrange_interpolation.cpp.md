@@ -87,14 +87,40 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/lagrange_interpolation.cpp: line 5: found codes out of include guard
+#line 1 "mod/lagrange_interpolation.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename M>
+M lagrange_interpolation(vector<M> &y,M t){
+  int n=y.size()-1;
+  if(t.v<=n) return y[t.v];
+
+  vector<M> dp(n+1,1),pd(n+1,1);
+  for(int i=0;i<n;i++) dp[i+1]=dp[i]*(t-M(i));
+  for(int i=n;i>0;i--) pd[i-1]=pd[i]*(t-M(i));
+
+  vector<M> fact(n+1,1),finv(n+1,1);
+  for(int i=1;i<=n;i++) fact[i]=fact[i-1]*M(i);
+  finv[n]=M(1)/fact[n];
+  for(int i=n;i>=1;i--) finv[i-1]=finv[i]*M(i);
+
+  M res(0);
+  for(int i=0;i<=n;i++){
+    M tmp=y[i]*dp[i]*pd[i]*finv[i]*finv[n-i];
+    if((n-i)&1) res-=tmp;
+    else res+=tmp;
+  }
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

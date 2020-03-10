@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_L.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-06 19:27:33+09:00
 
@@ -71,16 +72,146 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/partition_function.cpp: line 6: found codes out of include guard
+#line 1 "test/aoj/DPL_5_L.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_L"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 3 "test/aoj/../../mod/mint.cpp"
+
+#ifndef call_from_test
+#line 6 "test/aoj/../../mod/mint.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T,T MOD = 1000000007>
+struct Mint{
+  static constexpr T mod = MOD;
+  T v;
+  Mint():v(0){}
+  Mint(signed v):v(v){}
+  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
+
+  Mint pow(long long k){
+    Mint res(1),tmp(v);
+    while(k){
+      if(k&1) res*=tmp;
+      tmp*=tmp;
+      k>>=1;
+    }
+    return res;
+  }
+
+  static Mint add_identity(){return Mint(0);}
+  static Mint mul_identity(){return Mint(1);}
+
+  Mint inv(){return pow(MOD-2);}
+
+  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
+  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
+  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
+  Mint& operator/=(Mint a){return (*this)*=a.inv();}
+
+  Mint operator+(Mint a) const{return Mint(v)+=a;}
+  Mint operator-(Mint a) const{return Mint(v)-=a;}
+  Mint operator*(Mint a) const{return Mint(v)*=a;}
+  Mint operator/(Mint a) const{return Mint(v)/=a;}
+
+  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
+
+  bool operator==(const Mint a)const{return v==a.v;}
+  bool operator!=(const Mint a)const{return v!=a.v;}
+  bool operator <(const Mint a)const{return v <a.v;}
+
+  static Mint comb(long long n,int k){
+    Mint num(1),dom(1);
+    for(int i=0;i<k;i++){
+      num*=Mint(n-i);
+      dom*=Mint(i+1);
+    }
+    return num/dom;
+  }
+};
+template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
+template<typename T,T MOD>
+ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
+//END CUT HERE
+#ifndef call_from_test
+
+//INSERT ABOVE HERE
+signed ABC127_E(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int h,w,k;
+  cin>>h>>w>>k;
+  using M = Mint<int>;
+
+  M ans{0};
+  for(int d=1;d<h;d++)
+    ans+=M(d)*M(h-d)*M(w)*M(w);
+
+  for(int d=1;d<w;d++)
+    ans+=M(d)*M(w-d)*M(h)*M(h);
+
+  ans*=M::comb(h*w-2,k-2);
+  cout<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2019/06/12
+  https://atcoder.jp/contests/abc127/tasks/abc127_e
+*/
+
+signed main(){
+  //ABC127_E();
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../mod/partition_function.cpp"
+
+#line 3 "test/aoj/../../mod/partition_function.cpp"
+using namespace std;
+
+#endif
+//BEGIN CUT HERE
+template<typename M>
+struct Partition{
+  vector< vector<M> > dp;
+  Partition(int h,int w):dp(h+1,vector<M>(w+1,0)){
+    dp[0][0]=M(1);
+    for(int i=0;i<=h;i++){
+      for(int j=1;j<=w;j++){
+        dp[i][j]=dp[i][j-1];
+        if(i-j>=0) dp[i][j]+=dp[i-j][j];
+      }
+    }
+  }
+  // put n identical balls into k identical boxes
+  M operator()(int n,int k){return dp[n][k];}
+
+  // put n identical balls into some boxes
+  M operator()(int n){return dp[n][n];}
+};
+//END CUT HERE
+
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/DPL_5_L.test.cpp"
+#undef call_from_test
+
+signed main(){
+  int n,k;
+  scanf("%d %d",&n,&k);
+  Partition<Mint<int>> P(n,k);
+  printf("%d\n",k<=n?P(n-k,k).v:0);
+  return 0;
+}
 
 ```
 {% endraw %}

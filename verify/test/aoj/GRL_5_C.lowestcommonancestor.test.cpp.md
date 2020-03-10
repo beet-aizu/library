@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-17 21:09:31+09:00
 
@@ -90,16 +91,106 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tree/lowestcommonancestor.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_5_C.lowestcommonancestor.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tree/lowestcommonancestor.cpp"
+
+#line 3 "test/aoj/../../tree/lowestcommonancestor.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct LowestCommonAncestor{
+  int n,h;
+  vector< vector<int> > G,par;
+  vector<int> dep;
+  LowestCommonAncestor(){}
+  LowestCommonAncestor(int n):n(n),G(n),dep(n){
+    h=1;
+    while((1<<h)<=n) h++;
+    par.assign(h,vector<int>(n,-1));
+  }
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    G[v].emplace_back(u);
+  }
+
+  void dfs(int v,int p,int d){
+    par[0][v]=p;
+    dep[v]=d;
+    for(int u:G[v])
+      if(u!=p) dfs(u,v,d+1);
+  }
+
+  void build(int r=0){
+    dfs(r,-1,0);
+    for(int k=0;k+1<h;k++)
+      for(int v=0;v<n;v++)
+        if(~par[k][v])
+          par[k+1][v]=par[k][par[k][v]];
+  }
+
+  int lca(int u,int v){
+    if(dep[u]>dep[v]) swap(u,v);
+    for(int k=0;k<h;k++)
+      if((dep[v]-dep[u])>>k&1)
+        v=par[k][v];
+
+    if(u==v) return u;
+
+    for(int k=h-1;k>=0;k--)
+      if(par[k][u]!=par[k][v])
+        u=par[k][u],v=par[k][v];
+
+    return par[0][u];
+  }
+
+  int distance(int u,int v){
+    return dep[u]+dep[v]-dep[lca(u,v)]*2;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/GRL_5_C.lowestcommonancestor.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
+  cin>>n;
+  LowestCommonAncestor lca(n);
+  for(int i=0;i<n;i++){
+    int k;
+    cin>>k;
+    for(int j=0;j<k;j++){
+      int c;
+      cin>>c;
+      lca.add_edge(i,c);
+    }
+  }
+  lca.build();
+
+  int q;
+  cin>>q;
+  while(q--){
+    int u,v;
+    cin>>u>>v;
+    cout<<lca.lca(u,v)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

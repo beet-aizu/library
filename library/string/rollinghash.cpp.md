@@ -101,14 +101,45 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/rollinghash.cpp: line 5: found codes out of include guard
+#line 1 "string/rollinghash.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T,T MOD,T B>
+struct RollingHash{
+  using ll = long long;
+  vector<T> hash,po;
+  RollingHash(){}
+  RollingHash(vector<T> vs){init(vs);}
+  RollingHash(string &s){
+    vector<T> vs;
+    for(char c:s) vs.emplace_back(c);
+    init(vs);
+  }
+  void init(vector<T> vs){
+    int n=vs.size();
+    hash.assign(n+1,0);
+    po.assign(n+1,1);
+    for(int i=0;i<n;i++){
+      hash[i+1]=((ll)hash[i]*B+vs[i])%MOD;
+      po[i+1]=(ll)po[i]*B%MOD;
+    }
+  }
+  //S[l, r)
+  T find(int l,int r){
+    T res=(ll)hash[r]+MOD-(ll)hash[l]*po[r-l]%MOD;
+    return res>=MOD?res-MOD:res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/zalgorithm.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -77,16 +78,67 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/zalgorithm.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/zalgorithm.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../string/zalgorithm.cpp"
+
+#line 3 "test/yosupo/../../string/zalgorithm.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// longest common prefix of s and s[i:n]
+template<typename T>
+vector<int> zalgorithm(vector<T> vs){
+  int n=vs.size();
+  vector<int> as(n+1,0);
+  as[0]=n;
+  int i=1,j=0;
+  while(i<n){
+    while(i+j<n&&vs[j]==vs[i+j]) j++;
+    as[i]=j;
+    if(j==0){
+      i++;
+      continue;
+    }
+    int k=1;
+    while(i+k<n&&k+as[k]<j) as[i+k]=as[k],k++;
+    i+=k;
+    j-=k;
+  }
+  return as;
+}
+vector<int> zalgorithm(string s){
+  return zalgorithm(vector<char>(s.begin(),s.end()));
+}
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/zalgorithm.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  string s;
+  cin>>s;
+
+  auto zs=zalgorithm(s);
+  for(int i=0;i<(int)s.size();i++){
+    if(i) cout<<" ";
+    cout<<zs[i];
+  }
+  cout<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

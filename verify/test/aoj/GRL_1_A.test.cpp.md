@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_1_A.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01+09:00
 
@@ -101,16 +102,124 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_1_A.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/fastio.cpp"
+
+#line 3 "test/aoj/../../tools/fastio.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../datastructure/radixheap.cpp"
+
+#line 3 "test/aoj/../../datastructure/radixheap.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// prohibited to push an element less than popped one
+// Key: int or long long
+template<typename K,typename V>
+struct RadixHeap{
+  static constexpr int bit = sizeof(K) * 8;
+  array<vector< pair<K, V> >, bit> vs;
+
+  int size;
+  K last;
+  RadixHeap():size(0),last(0){}
+
+  bool empty() const{return size==0;}
+
+  inline int getbit(int a){
+    return a?bit-__builtin_clz(a):0;
+  }
+
+  inline int getbit(long long a){
+    return a?bit-__builtin_clzll(a):0;
+  }
+
+  void emplace(K key,V val){
+    size++;
+    vs[getbit(key^last)].emplace_back(key,val);
+  }
+
+  pair<K, V> pop(){
+    if(vs[0].empty()){
+      int idx=1;
+      while(vs[idx].empty()) idx++;
+      last=min_element(vs[idx].begin(),vs[idx].end())->first;
+      for(auto &p:vs[idx]) vs[getbit(p.first^last)].emplace_back(p);
+      vs[idx].clear();
+    }
+    --size;
+    auto res=vs[0].back();
+    vs[0].pop_back();
+    return res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/GRL_1_A.test.cpp"
+#undef call_from_test
+
+signed main(){
+  int n,m,r;
+  cin>>n>>m>>r;
+
+  using P = pair<int, int>;
+  vector< vector<P> > G(n);
+  for(int i=0;i<m;i++){
+    int s,t,d;
+    cin>>s>>t>>d;
+    G[s].emplace_back(t,d);
+  }
+
+  const int INF = numeric_limits<int>::max();
+  RadixHeap<int, int> pq;
+  vector<int> dist(n,INF);
+  dist[r]=0;
+  pq.emplace(dist[r],r);
+  while(!pq.empty()){
+    P p=pq.pop();
+    int v=p.second;
+    if(dist[v]<p.first) continue;
+    for(auto& e:G[v]){
+      int u=e.first,c=e.second;
+      if(dist[u]>dist[v]+c){
+        dist[u]=dist[v]+c;
+        pq.emplace(dist[u],u);
+      }
+    }
+  }
+
+  for(int i=0;i<n;i++){
+    if(dist[i]==INF) cout<<"INF\n";
+    else cout<<dist[i]<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

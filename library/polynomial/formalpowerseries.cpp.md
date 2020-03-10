@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 22:42:19+09:00
+    - Last commit date: 2020-03-10 18:37:32+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/09/27/224701">http://beet-aizu.hatenablog.com/entry/2019/09/27/224701</a>
@@ -56,6 +56,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
@@ -205,8 +206,35 @@ struct FormalPowerSeries{
     return rs;
   }
 
+  template<typename E>
   Poly stirling_1st(int n){
-    // TODO:
+    E::init(n+1);
+    if(n==0) return {T(1)};
+    int m=1;
+    Poly ss({T(0),T(1)});
+    for(int e=31-__builtin_clz(n)-1;e>=0;e--){
+      Poly as(m+1),bs(m+1);
+      for(int i=0;i<=m;i++) as[i]=E::Fact(i)*ss[i];
+      bs[m-0]=T(1);
+      for(int i=1;i<=m;i++) bs[m-i]=bs[m-(i-1)]*-T(m);
+      for(int i=0;i<=m;i++) bs[m-i]*=E::Finv(i);
+      Poly cs=mul(as,bs);
+      Poly ds(m+1);
+      for(int i=0;i<=m;i++) ds[i]=E::Finv(i)*cs[m+i];
+      ss=mul(ss,ds);
+      m<<=1;
+      if((n>>e)&1){
+        Poly ts(m+1+1,T(0));
+        for(int i=0;i<=m;i++){
+          ts[i+0]+=ss[i]*-T(m);
+          ts[i+1]+=ss[i];
+        }
+        ss=ts;
+        m|=1;
+      }
+    }
+    assert(m==n);
+    return ss;
   }
 
   template<typename E>
@@ -373,8 +401,35 @@ struct FormalPowerSeries{
     return rs;
   }
 
+  template<typename E>
   Poly stirling_1st(int n){
-    // TODO:
+    E::init(n+1);
+    if(n==0) return {T(1)};
+    int m=1;
+    Poly ss({T(0),T(1)});
+    for(int e=31-__builtin_clz(n)-1;e>=0;e--){
+      Poly as(m+1),bs(m+1);
+      for(int i=0;i<=m;i++) as[i]=E::Fact(i)*ss[i];
+      bs[m-0]=T(1);
+      for(int i=1;i<=m;i++) bs[m-i]=bs[m-(i-1)]*-T(m);
+      for(int i=0;i<=m;i++) bs[m-i]*=E::Finv(i);
+      Poly cs=mul(as,bs);
+      Poly ds(m+1);
+      for(int i=0;i<=m;i++) ds[i]=E::Finv(i)*cs[m+i];
+      ss=mul(ss,ds);
+      m<<=1;
+      if((n>>e)&1){
+        Poly ts(m+1+1,T(0));
+        for(int i=0;i<=m;i++){
+          ts[i+0]+=ss[i]*-T(m);
+          ts[i+1]+=ss[i];
+        }
+        ss=ts;
+        m|=1;
+      }
+    }
+    assert(m==n);
+    return ss;
   }
 
   template<typename E>

@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-10-28 14:24:34+09:00
 
@@ -80,16 +81,73 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/rollinghash.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/ALDS1_14_B.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../string/rollinghash.cpp"
+
+#line 3 "test/aoj/../../string/rollinghash.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T,T MOD,T B>
+struct RollingHash{
+  using ll = long long;
+  vector<T> hash,po;
+  RollingHash(){}
+  RollingHash(vector<T> vs){init(vs);}
+  RollingHash(string &s){
+    vector<T> vs;
+    for(char c:s) vs.emplace_back(c);
+    init(vs);
+  }
+  void init(vector<T> vs){
+    int n=vs.size();
+    hash.assign(n+1,0);
+    po.assign(n+1,1);
+    for(int i=0;i<n;i++){
+      hash[i+1]=((ll)hash[i]*B+vs[i])%MOD;
+      po[i+1]=(ll)po[i]*B%MOD;
+    }
+  }
+  //S[l, r)
+  T find(int l,int r){
+    T res=(ll)hash[r]+MOD-(ll)hash[l]*po[r-l]%MOD;
+    return res>=MOD?res-MOD:res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/ALDS1_14_B.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  string t,p;
+  cin>>t>>p;
+  using ll = long long;
+  const ll MOD = 1e9+7;
+  const ll B = 1777771;
+  using RH = RollingHash<ll, MOD, B>;
+
+  RH rt(t),rp(p);
+  for(int i=0;i<(int)t.size()-(int)p.size()+1;i++)
+    if(rt.find(i,i+p.size())==rp.find(0,p.size())) cout<<i<<"\n";
+
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

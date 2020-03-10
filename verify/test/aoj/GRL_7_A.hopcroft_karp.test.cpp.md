@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_7_A.hopcroft_karp.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-26 22:36:29+09:00
 
@@ -76,16 +77,125 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/fastio.cpp"
+
+#line 3 "test/aoj/../../tools/fastio.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../flow/hopcroft_karp.cpp"
+
+#line 3 "test/aoj/../../flow/hopcroft_karp.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct BiMatch{
+  int L,R;
+  vector<vector<int> > G;
+  vector<int> match,level;
+
+  BiMatch(){}
+  BiMatch(int L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v+L);
+    G[v+L].emplace_back(u);
+  }
+
+  bool bfs(){
+    fill(level.begin(),level.end(),-1);
+    queue<int> que;
+    for(int i=0;i<L;i++){
+      if(~match[i]) continue;
+      level[i]=0;
+      que.emplace(i);
+    }
+    bool found=false;
+    while(!que.empty()){
+      int v=que.front();que.pop();
+      for(int u:G[v]){
+        if(~level[u]) continue;
+        level[u]=level[v]+1;
+        int w=match[u];
+        if(w==-1){
+          found=true;
+          continue;
+        }
+        if(~level[w]) continue;
+        level[w]=level[u]+1;
+        que.emplace(w);
+      }
+    }
+    return found;
+  }
+
+  bool dfs(int v){
+    for(int u:G[v]){
+      if(level[v]+1!=level[u]) continue;
+      level[u]=-1;
+      int w=match[u];
+      if(w<0||dfs(w)){
+        match[v]=u;
+        match[u]=v;
+        level[v]=-1;
+        return true;
+      }
+    }
+    level[v]=-1;
+    return false;
+  }
+
+  int build(){
+    int res=0;
+    while(bfs())
+      for(int i=0;i<L;i++)
+        if(match[i]<0&&dfs(i))
+          res++;
+    return res;
+  }
+
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/GRL_7_A.hopcroft_karp.test.cpp"
+#undef call_from_test
+
+signed main(){
+  int X,Y,E;
+  cin>>X>>Y>>E;
+  BiMatch bm(X,Y);
+  for(int i=0;i<E;i++){
+    int x,y;
+    cin>>x>>y;
+    bm.add_edge(x,y);
+  }
+  cout<<bm.build()<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

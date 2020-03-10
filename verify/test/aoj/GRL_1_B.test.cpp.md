@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_1_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-27 08:35:29+09:00
 
@@ -88,16 +89,143 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_1_B.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/fastio.cpp"
+
+#line 3 "test/aoj/../../tools/fastio.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../tools/drop.cpp"
+
+#line 3 "test/aoj/../../tools/drop.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../graph/bellmanford.cpp"
+
+#line 3 "test/aoj/../../graph/bellmanford.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct BellmanFord{
+  static constexpr T INF = numeric_limits<T>::max();
+
+  struct edge{
+    int u,v;
+    T w;
+    edge(){}
+    edge(int u,int v,T w):u(u),v(v),w(w){}
+  };
+
+  int n;
+  vector< vector<int> > G;
+  vector<int> used,reach;
+  BellmanFord(int n):n(n),G(n),used(n,0),reach(n,1){}
+
+  vector<edge> es;
+  void add_edge(int u,int v,T c){
+    es.emplace_back(u,v,c);
+    G[u].emplace_back(v);
+  }
+
+  vector<T> build(int from,int &neg_loop){
+    vector<T> ds(n,INF);
+    ds[from]=0;
+    for(int j=0;j<n;j++){
+      bool update=0;
+      for(auto e:es){
+        if(!reach[e.u]||!reach[e.v]||ds[e.u]==INF) continue;
+        if(ds[e.v]>ds[e.u]+e.w){
+          ds[e.v]=ds[e.u]+e.w;
+          update=1;
+        }
+      }
+      if(!update) break;
+      if(j==n-1){
+        neg_loop=1;
+        return ds;
+      }
+    }
+    neg_loop=0;
+    return ds;
+  }
+
+  void dfs(int v){
+    if(used[v]) return;
+    used[v]=1;
+    for(int u:G[v]) dfs(u);
+  }
+
+  T shortest_path(int from,int to,int &neg_loop){
+    for(int i=0;i<n;i++){
+      fill(used.begin(),used.end(),0);
+      dfs(i);
+      reach[i]=used[to];
+    }
+    return build(from,neg_loop)[to];
+  }
+};
+template<typename T>
+constexpr T BellmanFord<T>::INF;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 10 "test/aoj/GRL_1_B.test.cpp"
+#undef call_from_test
+
+signed main(){
+  int n,m,r;
+  cin>>n>>m>>r;
+
+  BellmanFord<int> G(n);
+  for(int i=0;i<m;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    G.add_edge(a,b,c);
+  }
+
+  int neg_loop;
+  auto res=G.build(r,neg_loop);
+  if(neg_loop) drop("NEGATIVE CYCLE");
+
+  for(int x:res){
+    if(x==BellmanFord<int>::INF) cout<<"INF\n";
+    else cout<<x<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

@@ -112,14 +112,66 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/log.cpp: line 5: found codes out of include guard
+#line 1 "mod/log.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// find x s.t. a^x = b (x >= 0)
+template<typename T>
+T mod_log(T a,T b,T mod){
+  using ll = long long;
+  ll g=1;
+  {
+    ll m=mod;
+    while(m){
+      g=(ll)g*a%mod;
+      m>>=1;
+    }
+  }
+  g=__gcd(g,(ll)mod);
+  ll c=0,t=1;
+  while(t%g){
+    if(t==b) return c;
+    t=t*a%mod;
+    c++;
+  }
+  // not found
+  if(b%g) return mod;
+  t/=g;b/=g;
+  const ll n=mod/g;
+  ll h=0,gs=1;
+  while(h*h<n){
+    gs=gs*a%n;
+    ++h;
+  }
+  unordered_map<ll, ll> bs;
+  {
+    ll s=0,e=b;
+    while(s<h){
+      e=e*a%n;
+      bs[e]=++s;
+    }
+  }
+  {
+    ll s=0,e=t;
+    while(s<n){
+      e=e*gs%n;
+      s+=h;
+      if(bs.count(e))
+        return c+s-bs[e];
+    }
+  }
+  // not found
+  return mod;
+}
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

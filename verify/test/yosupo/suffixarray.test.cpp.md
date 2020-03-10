@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/suffixarray.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -77,16 +78,115 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: string/suffixarray.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/suffixarray.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../string/suffixarray.cpp"
+
+#line 3 "test/yosupo/../../string/suffixarray.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct SuffixArray{
+  string s;
+  vector<int> sa,rev;
+
+  SuffixArray(){}
+  SuffixArray(const string &S):s(S){
+    int n=s.size();
+    s.push_back('$');
+    sa.resize(n+1);
+    iota(sa.begin(),sa.end(),0);
+    sort(sa.begin(),sa.end(),
+         [&](int a,int b){
+           if(s[a]==s[b]) return a>b;
+           return s[a]<s[b];
+         });
+    vector<int> cs(n+1,0),rs(n+1),cnt(n+1);
+    for(int i=0;i<=n;i++) rs[i]=s[i];
+    for(int len=1;len<=n;len*=2){
+      for(int i=0;i<=n;i++){
+        cs[sa[i]]=i;
+        if(i>0 &&
+           rs[sa[i-1]]==rs[sa[i]] &&
+           sa[i-1]+len<=n &&
+           rs[sa[i-1]+len/2]==rs[sa[i]+len/2]) cs[sa[i]]=cs[sa[i-1]];
+      }
+      iota(cnt.begin(),cnt.end(),0);
+      copy(sa.begin(),sa.end(),rs.begin());
+      for(int i=0;i<=n;i++){
+        int s1=rs[i]-len;
+        if(s1>=0) sa[cnt[cs[s1]]++]=s1;
+      }
+      cs.swap(rs);
+    }
+    rev.resize(n+1);
+    for(int i=0;i<=n;i++) rev[sa[i]]=i;
+  }
+  int operator[](int i) const{return sa[i];}
+
+  bool lt_substr(string &t,int si,int ti){
+    int sn=s.size(),tn=t.size();
+    while(si<sn&&ti<tn){
+      if(s[si]<t[ti]) return 1;
+      if(s[si]>t[ti]) return 0;
+      si++;ti++;
+    }
+    return si==sn&&ti<tn;
+  }
+
+  int lower_bound(string& t){
+    int l=0,r=s.size();
+    while(l+1<r){
+      int m=(l+r)>>1;
+      if(lt_substr(t,sa[m],0)) l=m;
+      else r=m;
+    }
+    return r;
+  }
+
+  int upper_bound(string& t){
+    t.back()++;
+    int res=lower_bound(t);
+    t.back()--;
+    return res;
+  }
+
+  // O(|T|*log|S|)
+  int count(string& T){
+    return upper_bound(T)-lower_bound(T);
+  }
+};
+//END CUT HERE
+
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+};
+#endif
+#line 8 "test/yosupo/suffixarray.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  string s;
+  cin>>s;
+
+  SuffixArray sa(s);
+  for(int i=0;i<(int)s.size();i++){
+    if(i) cout<<" ";
+    cout<<sa[i+1];
+  }
+  cout<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

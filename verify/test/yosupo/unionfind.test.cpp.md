@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/unionfind.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -79,16 +80,72 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/unionfindtree.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/unionfind.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../datastructure/unionfindtree.cpp"
+
+#line 3 "test/yosupo/../../datastructure/unionfindtree.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct UnionFind{
+  int num;
+  vector<int> rs,ps;
+  UnionFind(){}
+  UnionFind(int n):num(n),rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}
+  int find(int x){
+    return (x==ps[x]?x:ps[x]=find(ps[x]));
+  }
+  bool same(int x,int y){
+    return find(x)==find(y);
+  }
+  void unite(int x,int y){
+    x=find(x);y=find(y);
+    if(x==y) return;
+    if(rs[x]<rs[y]) swap(x,y);
+    rs[x]+=rs[y];
+    ps[y]=x;
+    num--;
+  }
+  int size(int x){
+    return rs[find(x)];
+  }
+  int count() const{
+    return num;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/unionfind.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,q;
+  cin>>n>>q;
+
+  UnionFind uf(n);
+  for(int i=0;i<q;i++){
+    int t,u,v;
+    cin>>t>>u>>v;
+    if(t==0) uf.unite(u,v);
+    if(t==1) cout<<uf.same(u,v)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

@@ -106,14 +106,53 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tree/eulertourforvertex.cpp: line 5: found codes out of include guard
+#line 1 "tree/eulertourforvertex.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+class EulerTourForVertex{
+private:
+  vector<int> ls,rs;
+  int pos;
+
+  void dfs(int v,int p){
+    ls[v]=pos++;
+    for(int u:G[v])
+      if(u!=p) dfs(u,v);
+    rs[v]=pos;
+  }
+
+public:
+  vector< vector<int> > G;
+
+  EulerTourForVertex(){}
+  EulerTourForVertex(int n):ls(n),rs(n),G(n){}
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    G[v].emplace_back(u);
+  }
+
+  void build(int r=0){
+    pos=0;
+    dfs(r,-1);
+  }
+
+  int idx(int v){return ls[v];}
+
+  template<typename F>
+  void exec(int v,F f){
+    f(ls[v],rs[v]);
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

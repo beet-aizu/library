@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-06 19:09:15+09:00
 
@@ -94,11 +95,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/aoj/../../tools/chminmax.cpp"
-#include <iostream>
+#line 3 "test/aoj/../../tools/chminmax.cpp"
 
 #ifndef call_from_test
-#include <bits/stdc++.h>
+#line 6 "test/aoj/../../tools/chminmax.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -110,11 +110,10 @@ signed main(){
   return 0;
 }
 #endif
-#line 2 "test/aoj/../../algorithm/largestrectangle.cpp"
-#include <iostream>
+#line 3 "test/aoj/../../algorithm/largestrectangle.cpp"
 
 #ifndef call_from_test
-#include <bits/stdc++.h>
+#line 6 "test/aoj/../../algorithm/largestrectangle.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

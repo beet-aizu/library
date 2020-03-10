@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/rectangle_sum.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -97,16 +98,203 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/compress.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/rectangle_sum.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/rectangle_sum"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../tools/compress.cpp"
+
+#line 3 "test/yosupo/../../tools/compress.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename V>
+V compress(V v){
+  sort(v.begin(),v.end());
+  v.erase(unique(v.begin(),v.end()),v.end());
+  return v;
+}
+template<typename T>
+map<T, int> dict(const vector<T> &v){
+  map<T, int> res;
+  for(int i=0;i<(int)v.size();i++)
+    res[v[i]]=i;
+  return res;
+}
+map<char, int> dict(const string &v){
+  return dict(vector<char>(v.begin(),v.end()));
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/yosupo/../../segtree/count/dynamic_offline.cpp"
+
+#line 3 "test/yosupo/../../segtree/count/dynamic_offline.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct RangeCount{
+  struct BIT{
+    vector<T> dat;
+    BIT(){}
+    BIT(int n){dat.assign(++n,0);}
+    T sum(int k){
+      T res=0;
+      for(;k;k-=k&-k) res+=dat[k];
+      return res;
+    }
+    void add(int k,T v){
+      for(++k;k<(int)dat.size();k+=k&-k) dat[k]+=v;
+    }
+  };
+  int n;
+  vector< vector<int> > val;
+  vector<BIT> dat;
+  RangeCount(){}
+  RangeCount(int n_){
+    n=1;
+    while(n<n_) n<<=1;
+    val.assign(n<<1,vector<int>());
+    dat.reserve(n<<1);
+  }
+  void preupdate(int a,int x){
+    a+=n;
+    while(a){
+      val[a].emplace_back(x);
+      a>>=1;
+    }
+  }
+  void build(){
+    for(int i=0;i<n*2;i++){
+      auto &v=val[i];
+      sort(v.begin(),v.end());
+      v.erase(unique(v.begin(),v.end()),v.end());
+      dat.emplace_back(v.size());
+    }
+  }
+  void update(int a,int x,T z){
+    a+=n;
+    while(a){
+      auto &v=val[a];
+      int k=lower_bound(v.begin(),v.end(),x)-v.begin();
+      dat[a].add(k,z);
+      a>>=1;
+    }
+  }
+  T calc(int k,int x,int y){
+    auto &v=val[k];
+    int p=lower_bound(v.begin(),v.end(),x)-v.begin();
+    int q=lower_bound(v.begin(),v.end(),y)-v.begin();
+    return dat[k].sum(q)-dat[k].sum(p);
+  }
+  // [a, b) * [x, y)
+  T query(int a,int b,int x,int y){
+    T res=0;
+    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
+      if(l&1) res+=calc(l++,x,y);
+      if(r&1) res+=calc(--r,x,y);
+    }
+    return res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed YUKI_743(){
+  int n,m;
+  scanf("%d %d",&n,&m);
+  vector<int> a(n),b(n);
+  for(int i=0;i<n;i++) scanf("%d %d",&a[i],&b[i]);
+
+  RangeCount<int> seg(m);
+
+  for(int i=0;i<n;i++){
+    if(a[i]>b[i]) swap(a[i],b[i]);
+    seg.preupdate(a[i],b[i]);
+  }
+
+  seg.build();
+
+  long long ans=0;
+  for(int i=0;i<n;i++){
+    ans+=seg.query(0,a[i],a[i],b[i]);
+    ans+=seg.query(a[i],b[i],b[i],m);
+    seg.update(a[i],b[i],1);
+  }
+
+  printf("%lld\n",ans);
+  return 0;
+}
+
+signed ABC106_D(){
+  int n,m,q;
+  scanf("%d %d %d",&n,&m,&q);
+  vector<int> x(m),y(m);
+  for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
+
+  RangeCount<int> seg(n+1);
+  for(int i=0;i<m;i++) seg.preupdate(x[i],y[i]);
+  seg.build();
+  for(int i=0;i<m;i++) seg.update(x[i],y[i],1);
+
+  for(int i=0;i<q;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    printf("%d\n",seg.query(a,b+1,a,b+1));
+  }
+  return 0;
+}
+
+//END CUT HERE
+signed main(){
+  ABC106_D();
+  return 0;
+}
+#endif
+#line 9 "test/yosupo/rectangle_sum.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,q;
+  cin>>n>>q;
+
+  vector<int> xs(n),ys(n),ws(n);
+  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i]>>ws[i];
+
+  auto vs=compress(xs);
+  auto idx=
+    [&](int x){return lower_bound(vs.begin(),vs.end(),x)-vs.begin();};
+
+  using ll = long long;
+  RangeCount<ll> seg(vs.size());
+
+  for(int i=0;i<n;i++)
+    seg.preupdate(idx(xs[i]),ys[i]);
+
+  seg.build();
+
+  for(int i=0;i<n;i++)
+    seg.update(idx(xs[i]),ys[i],ws[i]);
+
+  for(int i=0;i<q;i++){
+    int l,d,r,u;
+    cin>>l>>d>>r>>u;
+    cout<<seg.query(idx(l),idx(r),d,u)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

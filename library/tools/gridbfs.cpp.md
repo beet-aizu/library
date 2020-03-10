@@ -93,14 +93,47 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/gridbfs.cpp: line 5: found codes out of include guard
+#line 1 "tools/gridbfs.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+vector< vector<int> >
+gridbfs(vector<string> &st,int sy,int sx,char wall,int dir){
+  int h=st.size(),w=st.front().size();
+  vector<vector<int> > dp(h,vector<int>(w,-1));
+  using P = pair<int, int>;
+  queue<P> qu;
+
+  dp[sy][sx]=0;
+  qu.emplace(sy,sx);
+
+  int dy[]={1,-1,0,0,1,1,-1,-1};
+  int dx[]={0,0,1,-1,1,-1,1,-1};
+  auto in=[&](int y,int x){return 0<=y&&y<h&&0<=x&&x<w;};
+
+  while(!qu.empty()){
+    int y,x;
+    tie(y,x)=qu.front();qu.pop();
+    for(int k=0;k<dir;k++){
+      int ny=y+dy[k],nx=x+dx[k];
+      if(!in(ny,nx)||st[ny][nx]==wall) continue;
+      if(~dp[ny][nx]) continue;
+      dp[ny][nx]=dp[y][x]+1;
+      qu.emplace(ny,nx);
+    }
+  }
+
+  return dp;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

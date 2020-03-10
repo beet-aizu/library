@@ -76,14 +76,27 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/pb_ds_tree.cpp: line 5: found codes out of include guard
+#line 1 "bbst/pb_ds_tree.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+#line 9 "bbst/pb_ds_tree.cpp"
+using namespace __gnu_pbds;
+template <typename T>
+using gtree = tree<T, null_type, less<T>, rb_tree_tag,
+                   tree_order_statistics_node_update>;
+// usage:
+// find_by_order(int k):
+// return the iterator of k-th smallest element (0-indexed)
+// order_of_key(T key):  return the index of key in tree
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

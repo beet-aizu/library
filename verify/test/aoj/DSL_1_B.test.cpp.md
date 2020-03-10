@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_1_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 23:51:01+09:00
 
@@ -83,16 +84,105 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/DSL_1_B.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/fastio.cpp"
+
+#line 3 "test/aoj/../../tools/fastio.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../datastructure/weightedunionfindtree.cpp"
+
+#line 3 "test/aoj/../../datastructure/weightedunionfindtree.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template <typename T>
+struct WeightedUnionFind{
+  vector<int> rs,ps;
+  vector<T> ws;
+
+  WeightedUnionFind(){}
+  WeightedUnionFind(int n):
+    rs(n,1),ps(n),ws(n,T(0)){iota(ps.begin(),ps.end(),0);}
+
+  int find(int x){
+    if(x==ps[x]) return x;
+    int t=find(ps[x]);
+    ws[x]+=ws[ps[x]];
+    return ps[x]=t;
+  }
+
+  T weight(int x){
+    find(x);
+    return ws[x];
+  }
+
+  bool same(int x,int y){
+    return find(x)==find(y);
+  }
+
+  void unite(int x,int y,T w){
+    w+=weight(x);
+    w-=weight(y);
+    x=find(x);y=find(y);
+    if(x==y) return;
+    if(rs[x]<rs[y]) swap(x,y),w=-w;
+    rs[x]+=rs[y];
+    ps[y]=x;
+    ws[y]=w;
+  }
+
+  T diff(int x,int y){
+    return weight(y)-weight(x);
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/DSL_1_B.test.cpp"
+#undef call_from_test
+
+int main(){
+  int n,q;
+  cin>>n>>q;
+  WeightedUnionFind<int> wuf(n);
+
+  for(int i=0;i<q;i++){
+    int t,x,y,z;
+    cin>>t>>x>>y;
+    if(t){
+      if(wuf.same(x,y)) cout<<wuf.diff(x,y)<<"\n";
+      else cout<<"?\n";
+    }else{
+      cin>>z;
+      wuf.unite(x,y,z);
+    }
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

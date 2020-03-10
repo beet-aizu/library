@@ -85,14 +85,39 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/sum_of_floor.cpp: line 5: found codes out of include guard
+#line 1 "math/sum_of_floor.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// sum_{i=0}^{n-1} (ai + b) // m
+// 0 <= a, b
+template<typename T>
+T sum_of_floor(T n,T m,T a,T b){
+  T res=0;
+  if(a>=m){
+    res+=(n-1)*n*(a/m)/2;
+    a%=m;
+  }
+  if(b>=m){
+    res+=n*(b/m);
+    b%=m;
+  }
+  T y=(a*n+b)/m;
+  T x=y*m-b;
+  if(y==0) return res;
+  res+=(n-(x+a-1)/a)*y;
+  res+=sum_of_floor(y,a,m,(a-x%a)%a);
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

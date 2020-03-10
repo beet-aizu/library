@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_1_A.quickfind.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-17 22:20:47+09:00
 
@@ -77,16 +78,86 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/DSL_1_A.quickfind.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/fastio.cpp"
+
+#line 3 "test/aoj/../../tools/fastio.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../datastructure/quickfind.cpp"
+
+#line 3 "test/aoj/../../datastructure/quickfind.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct QuickFind{
+  int n;
+  vector<int> rs,ps;
+  vector<vector<int> > vs;
+  QuickFind(){}
+  QuickFind(int sz):n(sz),rs(sz,1),ps(sz),vs(sz){
+    iota(ps.begin(),ps.end(),0);
+    for(int i=0;i<n;i++) vs[i].assign(1,i);
+  }
+  int find(int x) const{return ps[x];}
+  bool same(int x,int y) const{
+    return find(x)==find(y);
+  }
+  void unite(int x,int y){
+    x=ps[x];y=ps[y];
+    if(x==y) return;
+    if(rs[x]<rs[y]) swap(x,y);
+    rs[x]+=rs[y];
+    for(int e:vs[y]){
+      ps[e]=x;
+      vs[x].push_back(e);
+    }
+    vs[y].clear();
+    vs[y].shrink_to_fit();
+  }
+  const vector<int>& elements(int x) const{return vs[x];}
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/DSL_1_A.quickfind.test.cpp"
+#undef call_from_test
+
+signed main(){
+  int n,q;
+  cin>>n>>q;
+  QuickFind qf(n);
+  for(int i=0;i<q;i++){
+    int c,x,y;
+    cin>>c>>x>>y;
+    if(c==0) qf.unite(x,y);
+    if(c==1) cout<<qf.same(x,y)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

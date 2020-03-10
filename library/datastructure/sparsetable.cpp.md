@@ -93,14 +93,46 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/sparsetable.cpp: line 5: found codes out of include guard
+#line 1 "datastructure/sparsetable.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct SparseTable{
+  using F = function<T(T, T)>;
+  vector< vector<T> > dat;
+  vector<int> ht;
+  const F f;
+
+  SparseTable(){}
+  SparseTable(F f):f(f){}
+
+  void build(const vector<T> &v){
+    int n=v.size(),h=1;
+    while((1<<h)<=n) h++;
+    dat.assign(h,vector<T>(n));
+    ht.assign(n+1,0);
+    for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;
+
+    for(int j=0;j<n;j++) dat[0][j]=v[j];
+    for(int i=1,p=1;i<h;i++,p<<=1)
+      for(int j=0;j<n;j++)
+        dat[i][j]=f(dat[i-1][j],dat[i-1][min(j+p,n-1)]);
+  };
+
+  T query(int a,int b){
+    int l=b-a;
+    return f(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

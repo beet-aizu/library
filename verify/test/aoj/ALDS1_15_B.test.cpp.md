@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_15_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-17 16:46:59+09:00
 
@@ -89,16 +90,60 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/precision.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/ALDS1_15_B.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/precision.cpp"
+
+#line 3 "test/aoj/../../tools/precision.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct Precision{
+  Precision(){
+    cout<<fixed<<setprecision(12);
+  }
+}precision_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/ALDS1_15_B.test.cpp"
+#undef call_from_test
+
+#define ERROR "1e-6"
+
+signed main(){
+  using D = double;
+
+  int n,w;
+  cin>>n>>w;
+  vector<D> vs(n),ws(n);
+  for(int i=0;i<n;i++) cin>>vs[i]>>ws[i];
+
+  using P = pair<D, int>;
+  vector<P> vp;
+  for(int i=0;i<n;i++)
+    vp.emplace_back(vs[i]/ws[i],i);
+
+  sort(vp.rbegin(),vp.rend());
+
+  D ans=0,res=w;
+  for(auto p:vp){
+    D amount=min(ws[p.second],res);
+    res-=amount;
+    ans+=amount*p.first;
+  }
+
+  cout<<ans<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

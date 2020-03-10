@@ -81,14 +81,35 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/montmort.cpp: line 5: found codes out of include guard
+#line 1 "mod/montmort.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// number of permutations with p_i != i
+template<typename T>
+struct Montmort{
+  using ll = long long;
+  vector<T> dp;
+
+  Montmort(int n,int mod):dp(n+1,0){
+    for(int k=2;k<=n;k++){
+      dp[k]=(ll)dp[k-1]*k%mod;
+      if(~k&1) dp[k]+=1;
+      else dp[k]+=mod-1;
+      if(dp[k]>=mod) dp[k]-=mod;
+    }
+  }
+
+  T operator[](int n){return dp[n];}
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

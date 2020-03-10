@@ -129,14 +129,83 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: segtree/count/static.cpp: line 5: found codes out of include guard
+#line 1 "segtree/count/static.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct SegmentTree{
+  using P = pair<int, T>;
+  int n;
+  vector<P> v;
+  vector< vector<T> > dat;
+  SegmentTree(){};
+  SegmentTree(int n,vector<P> v):v(v){init(n);build();};
+
+  void init(int n_){
+    n=1;
+    while(n<n_) n<<=1;
+    dat.assign(n<<1,vector<int>());
+  }
+
+  void build(){
+    for(auto p:v)
+      dat[p.first+n].emplace_back(p.second);
+
+    for(int i=0;i<n;i++)
+      sort(dat[i+n].begin(),dat[i+n].end());
+
+    for(int i=n-1;i;i--){
+      merge(dat[(i<<1)|0].begin(),dat[(i<<1)|0].end(),
+            dat[(i<<1)|1].begin(),dat[(i<<1)|1].end(),
+            back_inserter(dat[i]));
+    }
+  }
+
+  // [a,b) * [c,d)
+  inline int query(int a,int b,T c,T d){
+    int res=0;
+    auto calc=[a,b,c,d](vector<T> &x){
+                auto latte=lower_bound(x.begin(),x.end(),d);
+                auto malta=lower_bound(x.begin(),x.end(),c);
+                return int(latte-malta);
+              };
+    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1) {
+      if(l&1) res+=calc(dat[l++]);
+      if(r&1) res+=calc(dat[--r]);
+    }
+    return res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed ABC106_D(){
+  int n,m,q;
+  scanf("%d %d %d",&n,&m,&q);
+  vector<int> x(m),y(m);
+  for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
+
+  using P = pair<int, int>;
+  vector<P> vp;
+  for(int i=0;i<m;i++) vp.emplace_back(x[i],y[i]);
+
+  SegmentTree<int> seg(n+1,vp);
+
+  for(int i=0;i<q;i++){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    printf("%d\n",seg.query(a,b+1,a,b+1));
+  }
+  return 0;
+}
+
+signed main(){
+  ABC106_D();
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

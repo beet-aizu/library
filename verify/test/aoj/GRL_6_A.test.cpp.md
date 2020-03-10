@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_6_A.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-26 22:42:32+09:00
 
@@ -76,16 +77,137 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: flow/dinic.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_6_A.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../flow/dinic.cpp"
+
+#line 3 "test/aoj/../../flow/dinic.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T,bool directed>
+struct Dinic{
+  struct edge {
+    int to;
+    T cap;
+    int rev;
+    edge(){}
+    edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}
+  };
+
+  vector< vector<edge> > G;
+  vector<int> level,iter;
+
+  Dinic(){}
+  Dinic(int n):G(n),level(n),iter(n){}
+
+  int add_edge(int from,int to,T cap){
+    G[from].emplace_back(to,cap,G[to].size());
+    G[to].emplace_back(from,directed?0:cap,G[from].size()-1);
+    return G[to].back().rev;
+  }
+
+  void bfs(int s){
+    fill(level.begin(),level.end(),-1);
+    queue<int> que;
+    level[s]=0;
+    que.emplace(s);
+    while(!que.empty()){
+      int v=que.front();que.pop();
+      for(int i=0;i<(int)G[v].size();i++){
+        edge &e=G[v][i];
+        if(e.cap>0&&level[e.to]<0){
+          level[e.to]=level[v]+1;
+          que.emplace(e.to);
+        }
+      }
+    }
+  }
+
+  T dfs(int v,int t,T f){
+    if(v==t) return f;
+    for(int &i=iter[v];i<(int)G[v].size();i++){
+      edge &e=G[v][i];
+      if(e.cap>0&&level[v]<level[e.to]){
+        T d=dfs(e.to,t,min(f,e.cap));
+        if(d==0) continue;
+        e.cap-=d;
+        G[e.to][e.rev].cap+=d;
+        return d;
+      }
+    }
+    return 0;
+  }
+
+  T flow(int s,int t,T lim){
+    T fl=0;
+    while(1){
+      bfs(s);
+      if(level[t]<0||lim==0) break;
+      fill(iter.begin(),iter.end(),0);
+
+      while(1){
+        T f=dfs(s,t,lim);
+        if(f==0) break;
+        fl+=f;
+        lim-=f;
+      }
+    }
+    return fl;
+  }
+
+  T flow(int s,int t){
+    return flow(s,t,numeric_limits<T>::max()/2);
+  }
+
+  T cut(int s,int t,int x,int a){
+    static_assert(directed, "must be directed");
+    auto &e=G[x][a];
+    int y=e.to;
+    T cr=G[y][e.rev].cap;
+    if(cr==0) return e.cap=0;
+    e.cap=G[y][e.rev].cap=0;
+    T cap=cr-flow(x,y,cr);
+    if(x!=s&&cap!=0) flow(x,s,cap);
+    if(t!=y&&cap!=0) flow(t,y,cap);
+    return cap;
+  }
+
+  T link(int s,int t,int x,int a,T f){
+    auto &e=G[x][a];
+    e.cap+=f;
+    return flow(s,t,f);
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/GRL_6_A.test.cpp"
+#undef call_from_test
+
+int main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  int V,E;
+  cin>>V>>E;
+  Dinic<int, true> G(V);
+  for(int i=0;i<E;i++){
+    int u,v,c;
+    cin>>u>>v>>c;
+    G.add_edge(u,v,c);
+  }
+  cout<<G.flow(0,V-1)<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

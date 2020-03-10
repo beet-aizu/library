@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/sum_of_floor_of_linear.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -76,16 +77,63 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/sum_of_floor.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/sum_of_floor_of_linear.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sum_of_floor_of_linear"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../math/sum_of_floor.cpp"
+
+#line 3 "test/yosupo/../../math/sum_of_floor.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// sum_{i=0}^{n-1} (ai + b) // m
+// 0 <= a, b
+template<typename T>
+T sum_of_floor(T n,T m,T a,T b){
+  T res=0;
+  if(a>=m){
+    res+=(n-1)*n*(a/m)/2;
+    a%=m;
+  }
+  if(b>=m){
+    res+=n*(b/m);
+    b%=m;
+  }
+  T y=(a*n+b)/m;
+  T x=y*m-b;
+  if(y==0) return res;
+  res+=(n-(x+a-1)/a)*y;
+  res+=sum_of_floor(y,a,m,(a-x%a)%a);
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/sum_of_floor_of_linear.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int T;
+  cin>>T;
+  for(int t=0;t<T;t++){
+    long long n,m,a,b;
+    cin>>n>>m>>a>>b;
+    cout<<sum_of_floor(n,m,a,b)<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

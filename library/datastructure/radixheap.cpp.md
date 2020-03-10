@@ -38,6 +38,7 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj/1607.test.cpp.html">test/aoj/1607.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_1_A.test.cpp.html">test/aoj/GRL_1_A.test.cpp</a>
 
 
@@ -105,14 +106,59 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/radixheap.cpp: line 5: found codes out of include guard
+#line 1 "datastructure/radixheap.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// prohibited to push an element less than popped one
+// Key: int or long long
+template<typename K,typename V>
+struct RadixHeap{
+  static constexpr int bit = sizeof(K) * 8;
+  array<vector< pair<K, V> >, bit> vs;
+
+  int size;
+  K last;
+  RadixHeap():size(0),last(0){}
+
+  bool empty() const{return size==0;}
+
+  inline int getbit(int a){
+    return a?bit-__builtin_clz(a):0;
+  }
+
+  inline int getbit(long long a){
+    return a?bit-__builtin_clzll(a):0;
+  }
+
+  void emplace(K key,V val){
+    size++;
+    vs[getbit(key^last)].emplace_back(key,val);
+  }
+
+  pair<K, V> pop(){
+    if(vs[0].empty()){
+      int idx=1;
+      while(vs[idx].empty()) idx++;
+      last=min_element(vs[idx].begin(),vs[idx].end())->first;
+      for(auto &p:vs[idx]) vs[getbit(p.first^last)].emplace_back(p);
+      vs[idx].clear();
+    }
+    --size;
+    auto res=vs[0].back();
+    vs[0].pop_back();
+    return res;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

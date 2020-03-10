@@ -87,14 +87,36 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/vec.cpp: line 5: found codes out of include guard
+#line 1 "tools/vec.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+vector<T> make_v(size_t a){return vector<T>(a);}
+
+template<typename T,typename... Ts>
+auto make_v(size_t a,Ts... ts){
+  return vector<decltype(make_v<T>(ts...))>(a,make_v<T>(ts...));
+}
+
+template<typename T,typename U,typename... V>
+typename enable_if<is_same<T, U>::value!=0>::type
+fill_v(U &u,const V... v){u=U(v...);}
+
+template<typename T,typename U,typename... V>
+typename enable_if<is_same<T, U>::value==0>::type
+fill_v(U &u,const V... v){
+  for(auto &e:u) fill_v<T>(e,v...);
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

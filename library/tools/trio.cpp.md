@@ -88,14 +88,42 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/trio.cpp: line 5: found codes out of include guard
+#line 1 "tools/trio.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T, typename U, typename V>
+struct trio{
+  T first;
+  U second;
+  V third;
+  trio(){}
+  trio(T first,U second,V third):
+    first(first),second(second),third(third){}
+  operator tuple<T&, U&, V&>(){
+    return forward_as_tuple(first,second,third);
+  }
+  using X = tuple<T, U, V>;
+  operator X() const{return make_tuple(first,second,third);}
+  bool operator==(const trio&a) const{return (X)(*this)==(X)a;}
+  bool operator!=(const trio&a) const{return (X)(*this)!=(X)a;}
+  bool operator< (const trio&a) const{return (X)(*this)< (X)a;}
+  bool operator<=(const trio&a) const{return (X)(*this)<=(X)a;}
+  bool operator> (const trio&a) const{return (X)(*this)> (X)a;}
+  bool operator>=(const trio&a) const{return (X)(*this)>=(X)a;}
+};
+template<typename T, typename U, typename V>
+trio<T, U, V> make_trio(T first,U second,V third){
+  return trio<T, U, V>(first,second,third);
+}
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}

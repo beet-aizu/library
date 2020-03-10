@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/topologicalsort.cpp
+# :heavy_check_mark: graph/topologicalsort.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2019-12-17 21:51:08+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj/GRL_4_B.test.cpp.html">test/aoj/GRL_4_B.test.cpp</a>
 
 
 ## Code
@@ -92,14 +97,51 @@ struct TopologicalSort{
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/topologicalsort.cpp: line 5: found codes out of include guard
+#line 1 "graph/topologicalsort.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct TopologicalSort{
+  vector< set<int> > G;
+  vector<int> used,indeg,ps;
+
+  TopologicalSort(){}
+  TopologicalSort(int n):G(n),used(n,0),indeg(n,0){}
+
+  void add_edge(int s,int t){
+    G[s].emplace(t);
+    indeg[t]++;
+  }
+
+  void bfs(int s){
+    queue<int> que;
+    que.emplace(s);
+    used[s]=1;
+    while(!que.empty()){
+      int v=que.front();que.pop();
+      ps.emplace_back(v);
+      for(int u:G[v]){
+        indeg[u]--;
+        if(indeg[u]==0&&!used[u]){
+          used[u]=1;
+          que.emplace(u);
+        }
+      }
+    }
+  }
+
+  vector<int> build(){
+    int n=G.size();
+    for(int i=0;i<n;i++)
+      if(indeg[i]==0&&!used[i]) bfs(i);
+    return ps;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+#endif
 
 ```
 {% endraw %}

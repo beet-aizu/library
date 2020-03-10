@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_3_C.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-17 22:09:22+09:00
 
@@ -87,16 +88,108 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/stronglyconnectedcomponent.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/GRL_3_C.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../graph/stronglyconnectedcomponent.cpp"
+
+#line 3 "test/aoj/../../graph/stronglyconnectedcomponent.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct SCC{
+  vector< vector<int> > G,R,T,C;
+  vector<int> vs,used,blg;
+  SCC(){}
+  SCC(int n):G(n),R(n),used(n),blg(n){}
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    R[v].emplace_back(u);
+  }
+
+  void dfs(int v){
+    used[v]=1;
+    for(int u:G[v])
+      if(!used[u]) dfs(u);
+    vs.emplace_back(v);
+  }
+
+  void rdfs(int v,int k){
+    used[v]=1;
+    blg[v]=k;
+    C[k].emplace_back(v);
+    for(int u:R[v])
+      if(!used[u]) rdfs(u,k);
+  }
+
+  int build(){
+    int n=G.size();
+    for(int v=0;v<n;v++)
+      if(!used[v]) dfs(v);
+
+    fill(used.begin(),used.end(),0);
+    int k=0;
+    for(int i=n-1;i>=0;i--){
+      if(!used[vs[i]]){
+        T.emplace_back();
+        C.emplace_back();
+        rdfs(vs[i],k++);
+      }
+    }
+
+    for(int v=0;v<n;v++)
+      for(int u:G[v])
+        if(blg[v]!=blg[u])
+          T[blg[v]].push_back(blg[u]);
+
+    for(int i=0;i<k;i++){
+      sort(T[i].begin(),T[i].end());
+      T[i].erase(unique(T[i].begin(),T[i].end()),T[i].end());
+    }
+    return k;
+  }
+
+  int operator[](int k) const{return blg[k];}
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/aoj/GRL_3_C.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m;
+  cin>>n>>m;
+
+  SCC G(n);
+  for(int i=0;i<m;i++){
+    int s,t;
+    cin>>s>>t;
+    G.add_edge(s,t);
+  }
+  G.build();
+
+  int q;
+  cin>>q;
+  for(int i=0;i<q;i++){
+    int u,v;
+    cin>>u>>v;
+    cout<<(G.blg[u]==G.blg[v])<<"\n";
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

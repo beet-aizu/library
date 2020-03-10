@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dominatortree.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:02:53+09:00
 
@@ -82,16 +83,128 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/dominatortree.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/dominatortree.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/dominatortree"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../graph/dominatortree.cpp"
+
+#line 3 "test/yosupo/../../graph/dominatortree.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct DominatorTree{
+  struct UnionFind{
+    vector<int> &semi;
+    vector<int> ps,ms;
+    UnionFind(vector<int> &semi):
+      semi(semi),ps(semi.size()),ms(semi.size()){
+      iota(ps.begin(),ps.end(),0);
+      iota(ms.begin(),ms.end(),0);
+    }
+    int find(int v){
+      if(ps[v]==v) return v;
+      int r=find(ps[v]);
+      if(semi[ms[v]]>semi[ms[ps[v]]]) ms[v]=ms[ps[v]];
+      return ps[v]=r;
+    }
+    int eval(int v){
+      find(v);
+      return ms[v];
+    }
+    void link(int p,int v){ps[v]=p;}
+  };
+
+  vector< vector<int> > G,R;
+  vector<int> ord,par,idom,semi;
+  DominatorTree(int n):
+    G(n),R(n),par(n),idom(n,-1),semi(n,-1){
+    ord.reserve(n);
+  }
+
+  void add_edge(int u,int v){
+    G[u].emplace_back(v);
+    R[v].emplace_back(u);
+  }
+
+  void dfs(int v){
+    semi[v]=ord.size();
+    ord.emplace_back(v);
+    for(int u:G[v]){
+      if(~semi[u]) continue;
+      par[u]=v;
+      dfs(u);
+    }
+  }
+
+  void build(int rt){
+    int n=G.size();
+    dfs(rt);
+
+    vector< vector<int> > bkt(n);
+    UnionFind uf(semi);
+    vector<int> us(n);
+
+    for(int i=(int)ord.size()-1;i>=0;i--){
+      int v=ord[i];
+      for(int u:R[v]){
+        if(semi[u]<0) continue;
+        u=uf.eval(u);
+        if(semi[v]>semi[u]) semi[v]=semi[u];
+      }
+      bkt[ord[semi[v]]].emplace_back(v);
+      for(int u:bkt[par[v]]) us[u]=uf.eval(u);
+      bkt[par[v]].clear();
+      uf.link(par[v],v);
+    }
+
+    for(int i=1;i<(int)ord.size();i++){
+      int v=ord[i],u=us[v];
+      idom[v]=(semi[v]==semi[u]?semi[v]:idom[u]);
+    }
+
+    for(int i=1;i<(int)ord.size();i++){
+      int v=ord[i];
+      idom[v]=ord[idom[v]];
+    }
+
+    idom[rt]=rt;
+  }
+
+  int operator[](int k){return idom[k];}
+};
+//END CUT HERE
+#ifndef call_from_test
+int main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/dominatortree.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m,s;
+  cin>>n>>m>>s;
+  DominatorTree G(n);
+  for(int i=0;i<m;i++){
+    int a,b;
+    cin>>a>>b;
+    G.add_edge(a,b);
+  }
+  G.build(s);
+  for(int i=0;i<n;i++){
+    if(i) cout<<" ";
+    cout<<G[i];
+  }
+  cout<<endl;
+  return 0;
+}
 
 ```
 {% endraw %}

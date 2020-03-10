@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_D.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-17 13:36:48+09:00
 
@@ -90,16 +91,120 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tools/fastio.cpp: line 5: found codes out of include guard
+#line 1 "test/aoj/DSL_2_D.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/aoj/../../tools/fastio.cpp"
+
+#line 3 "test/aoj/../../tools/fastio.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+struct FastIO{
+  FastIO(){
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+  }
+}fastio_beet;
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 1 "test/aoj/../../segtree/basic/dual.cpp"
+
+#line 3 "test/aoj/../../segtree/basic/dual.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template <typename E>
+struct SegmentTree{
+  using H = function<E(E,E)>;
+  int n,height;
+  H h;
+  E ei;
+  vector<E> laz;
+
+  SegmentTree(H h,E ei):h(h),ei(ei){}
+
+  void init(int n_){
+    n=1;height=0;
+    while(n<n_) n<<=1,height++;
+    laz.assign(2*n,ei);
+  }
+
+  inline void propagate(int k){
+    if(laz[k]==ei) return;
+    laz[(k<<1)|0]=h(laz[(k<<1)|0],laz[k]);
+    laz[(k<<1)|1]=h(laz[(k<<1)|1],laz[k]);
+    laz[k]=ei;
+  }
+
+  inline void thrust(int k){
+    for(int i=height;i;i--) propagate(k>>i);
+  }
+
+  void update(int a,int b,E x){
+    if(a>=b) return;
+    thrust(a+=n);
+    thrust(b+=n-1);
+    for(int l=a,r=b+1;l<r;l>>=1,r>>=1){
+      if(l&1) laz[l]=h(laz[l],x),l++;
+      if(r&1) --r,laz[r]=h(laz[r],x);
+    }
+  }
+
+  E get_val(int a){
+    thrust(a+=n);
+    return laz[a];
+  }
+
+  void set_val(int a,E x){
+    thrust(a+=n);
+    laz[a]=x;
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
+#line 9 "test/aoj/DSL_2_D.test.cpp"
+#undef call_from_test
+
+signed main(){
+  int n,q;
+  cin>>n>>q;
+
+  auto h=[](int a,int b){(void)a;return b;};
+  int ei=INT_MAX;
+  SegmentTree<int> seg(h,ei);
+  seg.init(n);
+
+  for(int i=0;i<q;i++){
+    int tp;
+    cin>>tp;
+    if(tp==0){
+      int s,t,x;
+      cin>>s>>t>>x;
+      seg.update(s,t+1,x);
+    }
+    if(tp==1){
+      int s;
+      cin>>s;
+      cout<<seg.get_val(s)<<"\n";
+    }
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

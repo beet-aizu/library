@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/point_add_range_sum.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-05 21:59:12+09:00
 
@@ -92,16 +93,104 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 182, in update
-    self.update(self._resolve(included, included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/binaryindexedtree.cpp: line 5: found codes out of include guard
+#line 1 "test/yosupo/point_add_range_sum.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define call_from_test
+#line 1 "test/yosupo/../../datastructure/binaryindexedtree.cpp"
+
+#line 3 "test/yosupo/../../datastructure/binaryindexedtree.cpp"
+using namespace std;
+#endif
+/*
+ * @docs docs/binaryindexedtree.md
+ */
+//BEGIN CUT HERE
+template<typename T>
+struct BIT{
+  int n;
+  vector<T> bit;
+  // 1-indexed
+  BIT(int n_):n(n_+1),bit(n+1,0){}
+
+  T sum(int i){
+    T s(0);
+    for(int x=i;x>0;x-=(x&-x))
+      s+=bit[x];
+    return s;
+  }
+
+  void add(int i,T a){
+    if(i==0) return;
+    for(int x=i;x<=n;x+=(x&-x))
+      bit[x]+=a;
+  }
+
+  // [l, r)
+  T query(int l,int r){
+    return sum(r-1)-sum(l-1);
+  }
+
+  int lower_bound(int w){
+    if(w<=0) return 0;
+    int x=0,r=1;
+    while(r<n) r<<=1;
+    for(int k=r;k>0;k>>=1){
+      if(x+k<=n&&bit[x+k]<w){
+        w-=bit[x+k];
+        x+=k;
+      }
+    }
+    return x+1;
+  }
+
+  // 0-indexed
+  T sum0(int i){return sum(i+1);}
+  void add0(int i,T a){add(i+1,a);}
+  T query0(int l,int r){return sum(r)-sum(l);}
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
+#line 8 "test/yosupo/point_add_range_sum.test.cpp"
+#undef call_from_test
+
+signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,q;
+  cin>>n>>q;
+
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  BIT<long long> bit(n);
+  for(int i=0;i<n;i++) bit.add0(i,as[i]);
+
+  for(int i=0;i<q;i++){
+    int t;
+    cin>>t;
+    if(t==0){
+      int p,x;
+      cin>>p>>x;
+      bit.add0(p,x);
+    }
+    if(t==1){
+      int l,r;
+      cin>>l>>r;
+      cout<<bit.query0(l,r)<<"\n";
+    }
+  }
+  cout<<flush;
+  return 0;
+}
 
 ```
 {% endraw %}

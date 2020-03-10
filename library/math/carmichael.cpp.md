@@ -81,14 +81,35 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 151, in update
-    raise BundleError(path, i + 1, "found codes out of include guard")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/carmichael.cpp: line 5: found codes out of include guard
+#line 1 "math/carmichael.cpp"
+
+#include<bits/stdc++.h>
+using namespace std;
+#endif
+//BEGIN CUT HERE
+// min m s.t. a^m = 1 mod n (a, n are coprime)
+template<typename T>
+T carmichael_lambda(T n){
+  auto lcm=[](auto a,auto b){return a/__gcd(a,b)*b;};
+  T res=1;
+  if(n%8==0) n/=2;
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0){
+      T tmp=i-1;
+      for(n/=i;n%i==0;n/=i) tmp*=i;
+      res=lcm(res,tmp);
+    }
+  }
+  if(n!=1) res=lcm(res,n-1);
+  return res;
+}
+//END CUT HERE
+#ifndef call_from_test
+//INSERT ABOVE HERE
+signed main(){
+  return 0;
+}
+#endif
 
 ```
 {% endraw %}
