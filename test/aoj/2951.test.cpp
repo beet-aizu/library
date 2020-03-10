@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/lagrange_interpolation.cpp"
+#include "../../polynomial/lagrangeinterpolation.cpp"
 #undef call_from_test
 
 using M = Mint<int>;

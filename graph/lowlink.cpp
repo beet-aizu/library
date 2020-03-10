@@ -105,7 +105,7 @@ struct LowLink{
 #include "../tools/fastio.cpp"
 #include "../datastructure/unionfindtree.cpp"
 #include "../mod/mint.cpp"
-#include "../mod/enumeration.cpp"
+#include "../combinatorics/enumeration.cpp"
 #undef call_from_test
 
 

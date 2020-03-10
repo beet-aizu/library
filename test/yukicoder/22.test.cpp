@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../mod/lagrange_interpolation.cpp"
 #include "../../mod/mint.cpp"
+#include "../../polynomial/lagrangeinterpolation.cpp"
 #undef call_from_test
 
 signed main(){
