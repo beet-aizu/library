@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
 
 
 ## Code

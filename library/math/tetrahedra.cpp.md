@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="../linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
 
 
 ## Verified with

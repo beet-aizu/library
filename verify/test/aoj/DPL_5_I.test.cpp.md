@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj/DPL_5_I.test.cpp
+# :heavy_check_mark: test/aoj/DPL_5_I.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :question: <a href="../../../library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
