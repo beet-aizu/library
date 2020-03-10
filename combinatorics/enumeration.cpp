@@ -8,9 +8,10 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
-template<typename M>
+template<typename M_>
 class Enumeration{
-private:
+  using M = M_;
+protected:
   static vector<M> fact,finv,invs;
 public:
   static void init(int n){
