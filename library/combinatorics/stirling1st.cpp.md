@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/interpolate.cpp
+# :heavy_check_mark: combinatorics/stirling1st.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
-* <a href="{{ site.github.repository_url }}/blob/master/polynomial/interpolate.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 19:12:21+09:00
+* category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
+* <a href="{{ site.github.repository_url }}/blob/master/combinatorics/stirling1st.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-10 20:00:42+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
-* :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
 
 
 ## Code
@@ -52,51 +52,64 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
-#include <iostream>
-
 #ifndef call_from_test
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "formalpowerseries.cpp"
-#include "multieval.cpp"
+#include "enumeration.cpp"
+#include "../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
-// O(N log^2 N)
-template<typename T>
-struct Interpolate : MultiEval<T>{
-  using super=MultiEval<T>;
+template<typename M_>
+struct Stirling1st : FormalPowerSeries<M_>{
+  using M = M_;
+  using super = FormalPowerSeries<M>;
   using super::super;
+  using Poly = typename super::Poly;
+  using super::fact;
+  using super::finv;
 
-  using typename super::Poly;
-  using super::FPS;
-  using super::mem;
-
-  Poly interpolate(const vector<T> &xs,const vector<T> &ws,int l,int r){
-    if(l+1==r) return Poly({ws[l]});
-    int m=(l+r)>>1;
-    return FPS.add(FPS.mul(interpolate(xs,ws,l,m),mem[{m,r}]),
-                   FPS.mul(interpolate(xs,ws,m,r),mem[{l,m}]));
+  Poly rs;
+  void build(int n){
+    super::init(n+1);
+    if(n==0){
+      rs={M(1)};
+      return;
+    }
+    int m=1;
+    rs=Poly({M(0),M(1)});
+    for(int e=31-__builtin_clz(n)-1;e>=0;e--){
+      Poly as(m+1),bs(m+1);
+      for(int i=0;i<=m;i++) as[i]=fact[i]*rs[i];
+      bs[m-0]=M(1);
+      for(int i=1;i<=m;i++) bs[m-i]=bs[m-(i-1)]*-M(m);
+      for(int i=0;i<=m;i++) bs[m-i]*=finv[i];
+      Poly cs=super::mul(as,bs);
+      Poly ds(m+1);
+      for(int i=0;i<=m;i++) ds[i]=finv[i]*cs[m+i];
+      rs=super::mul(rs,ds);
+      m<<=1;
+      if((n>>e)&1){
+        Poly ts(m+1+1,M(0));
+        for(int i=0;i<=m;i++){
+          ts[i+0]+=rs[i]*-M(m);
+          ts[i+1]+=rs[i];
+        }
+        rs=ts;
+        m|=1;
+      }
+    }
+    assert(m==n);
   }
 
-  vector<T> build(const vector<T> &xs,const vector<T> &ys){
-    int n=xs.size();
-    mem.clear();
-    super::dfs(xs,0,n);
-    auto ls=FPS.diff(mem[{0,n}]);
-    ls.resize(n,T(0));
-    vector<T> ws(n);
-    super::multi_eval(ls,ws,0,n);
-    for(int i=0;i<n;i++) ws[i]=ys[i]/ws[i];
-    return interpolate(xs,ws,0,n);
-  }
+  M operator[](int k)const{return rs[k];}
 };
 //END CUT HERE
 #ifndef call_from_test
+//INSERT ABOVE HERE
 signed main(){
   return 0;
 }
@@ -115,7 +128,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: polynomial/interpolate.cpp: line 9: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: combinatorics/stirling1st.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

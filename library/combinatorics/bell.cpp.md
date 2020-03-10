@@ -25,26 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/stirling_2nd.cpp
+# :heavy_check_mark: combinatorics/bell.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
-* <a href="{{ site.github.repository_url }}/blob/master/mod/stirling_2nd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-19 22:42:36+09:00
+* category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
+* <a href="{{ site.github.repository_url }}/blob/master/combinatorics/bell.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-10 19:33:27+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_C.test.cpp.html">test/aoj/DPL_5_C.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
 
 
 ## Code
@@ -57,26 +56,31 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../mod/enumeration.cpp"
+#include "enumeration.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
-// put n distinct balls into k identical boxes
+// put n distinct balls into at most k identical boxes
 template<typename M>
-M stirling_2nd(int n,int k){
+M bell(int n,int k){
+  if(n==0) return M(1);
+
   using E = Enumeration<M>;
+  k=min(k,n);
   E::init(k);
+
+  vector<M> dp(k+1);
+  dp[0]=M(1);
+  for(int i=1;i<=k;i++)
+    dp[i]=dp[i-1]+((i&1)?-E::Finv(i):E::Finv(i));
+
   M res(0);
-  for(int i=1;i<=k;i++){
-    M tmp=E::C(k,i)*M(i).pow(n);
-    if((k-i)&1) res-=tmp;
-    else res+=tmp;
-  }
-  return res*=E::Finv(k);
+  for(int i=1;i<=k;i++)
+    res+=M(i).pow(n)*E::Finv(i)*dp[k-i];
+  return res;
 }
 //END CUT HERE
-
 #ifndef call_from_test
 signed main(){
   return 0;
@@ -96,7 +100,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/stirling_2nd.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: combinatorics/bell.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

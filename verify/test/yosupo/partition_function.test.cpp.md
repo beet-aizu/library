@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/partition_function.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 18:37:32+09:00
+    - Last commit date: 2020-03-10 19:47:47+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/partition_function">https://judge.yosupo.jp/problem/partition_function</a>
@@ -39,6 +39,8 @@ layout: default
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
 * :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
@@ -57,7 +59,9 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
+#include "../../combinatorics/partition.cpp"
 #undef call_from_test
 
 signed main(){
@@ -70,9 +74,9 @@ signed main(){
   NTT<2> ntt;
   using M = NTT<2>::M;
   auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
+  Partition<M> ps(conv);
 
-  auto ps=FPS.partition(n);
+  ps.build(n);
   for(int i=0;i<=n;i++){
     if(i) cout<<" ";
     cout<<ps[i];

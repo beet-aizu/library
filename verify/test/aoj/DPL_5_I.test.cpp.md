@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_I.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:27:33+09:00
+    - Last commit date: 2020-03-10 19:33:27+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_I">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_I</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../../../library/mod/stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 
 
 ## Code
@@ -56,14 +56,17 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/enumeration.cpp"
-#include "../../mod/stirling_2nd.cpp"
+#include "../../combinatorics/enumeration.cpp"
+#include "../../combinatorics/surjection.cpp"
 #undef call_from_test
 
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",stirling_2nd<Mint<int>>(n,k).v);
+  using M = Mint<int>;
+  M res=surjection<M>(n,k);
+  for(int i=1;i<=k;i++) res/=M(i);
+  printf("%d\n",res.v);
   return 0;
 }
 
@@ -82,7 +85,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/enumeration.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: combinatorics/enumeration.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

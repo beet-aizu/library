@@ -74,6 +74,20 @@ layout: default
 * :warning: <a href="library/bbst/persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
 
 
+<div id="ac1ed416572b96a9f5d69740d174ef3d"></div>
+
+### combinatorics
+
+* :heavy_check_mark: <a href="library/combinatorics/bell.cpp.html">combinatorics/bell.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/bernoulli.cpp.html">combinatorics/bernoulli.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/partitiontable.cpp.html">combinatorics/partitiontable.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
+
+
 <div id="a9595c1c24c33b16056d2ad07e71682d"></div>
 
 ### convolution
@@ -235,19 +249,14 @@ layout: default
 
 ### mod
 
-* :heavy_check_mark: <a href="library/mod/bell.cpp.html">mod/bell.cpp</a>
-* :heavy_check_mark: <a href="library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :heavy_check_mark: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
-* :heavy_check_mark: <a href="library/mod/lagrange_interpolation.cpp.html">mod/lagrange_interpolation.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
 * :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
-* :heavy_check_mark: <a href="library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
 * :heavy_check_mark: <a href="library/mod/rint.cpp.html">mod/rint.cpp</a>
 * :heavy_check_mark: <a href="library/mod/sqrt.cpp.html">mod/sqrt.cpp</a>
-* :heavy_check_mark: <a href="library/mod/stirling_2nd.cpp.html">mod/stirling_2nd.cpp</a>
 * :heavy_check_mark: <a href="library/mod/tetration.cpp.html">mod/tetration.cpp</a>
 
 
@@ -259,6 +268,7 @@ layout: default
 * :heavy_check_mark: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/lagrangeinterpolation.cpp.html">polynomial/lagrangeinterpolation.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/polynomial.cpp.html">polynomial/polynomial.cpp</a>
 

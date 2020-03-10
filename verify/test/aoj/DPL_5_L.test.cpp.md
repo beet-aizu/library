@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_L.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:27:33+09:00
+    - Last commit date: 2020-03-10 19:33:27+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_L">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_L</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/combinatorics/partitiontable.cpp.html">combinatorics/partitiontable.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../../../library/mod/partition_function.cpp.html">mod/partition_function.cpp</a>
 
 
 ## Code
@@ -55,13 +55,13 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/partition_function.cpp"
+#include "../../combinatorics/partitiontable.cpp"
 #undef call_from_test
 
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  Partition<Mint<int>> P(n,k);
+  PartitionTable<Mint<int>> P(n,k);
   printf("%d\n",k<=n?P(n-k,k).v:0);
   return 0;
 }
@@ -170,17 +170,18 @@ signed main(){
   return 0;
 }
 #endif
-#line 1 "test/aoj/../../mod/partition_function.cpp"
+#line 3 "test/aoj/../../combinatorics/partitiontable.cpp"
 
-#line 3 "test/aoj/../../mod/partition_function.cpp"
+#ifndef call_from_test
+#line 6 "test/aoj/../../combinatorics/partitiontable.cpp"
 using namespace std;
-
 #endif
+
 //BEGIN CUT HERE
 template<typename M>
-struct Partition{
+struct PartitionTable{
   vector< vector<M> > dp;
-  Partition(int h,int w):dp(h+1,vector<M>(w+1,0)){
+  PartitionTable(int h,int w):dp(h+1,vector<M>(w+1,0)){
     dp[0][0]=M(1);
     for(int i=0;i<=h;i++){
       for(int j=1;j<=w;j++){
@@ -208,7 +209,7 @@ signed main(){
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  Partition<Mint<int>> P(n,k);
+  PartitionTable<Mint<int>> P(n,k);
   printf("%d\n",k<=n?P(n-k,k).v:0);
   return 0;
 }

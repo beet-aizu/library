@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/bernoulli_number.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 18:37:32+09:00
+    - Last commit date: 2020-03-10 19:42:36+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/bernoulli_number">https://judge.yosupo.jp/problem/bernoulli_number</a>
@@ -39,8 +39,9 @@ layout: default
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/combinatorics/bernoulli.cpp.html">combinatorics/bernoulli.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :heavy_check_mark: <a href="../../../library/mod/enumeration.cpp.html">mod/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
@@ -57,9 +58,10 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/enumeration.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
+#include "../../combinatorics/bernoulli.cpp"
 #undef call_from_test
 
 signed main(){
@@ -72,13 +74,12 @@ signed main(){
   NTT<2> ntt;
   using M = NTT<2>::M;
   auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
+  Bernoulli<M> bs(conv);
 
-  using E = Enumeration<M>;
-  auto ps=FPS.bernoulli<E>(n);
+  bs.build(n);
   for(int i=0;i<=n;i++){
     if(i) cout<<" ";
-    cout<<ps[i];
+    cout<<bs[i];
   }
   cout<<endl;
   return 0;
@@ -99,7 +100,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/enumeration.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: convolution/numbertheoretictransform.cpp: line 9: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

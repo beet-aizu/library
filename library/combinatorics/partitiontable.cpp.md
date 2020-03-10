@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/partition_function.cpp
+# :heavy_check_mark: combinatorics/partitiontable.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
-* <a href="{{ site.github.repository_url }}/blob/master/mod/partition_function.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-18 10:44:32+09:00
+* category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
+* <a href="{{ site.github.repository_url }}/blob/master/combinatorics/partitiontable.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-10 19:33:27+09:00
 
 
 
@@ -47,16 +47,19 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef call_from_test
-#include<bits/stdc++.h>
-using namespace std;
+#pragma once
+#include <iostream>
 
+#ifndef call_from_test
+#include <bits/stdc++.h>
+using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename M>
-struct Partition{
+struct PartitionTable{
   vector< vector<M> > dp;
-  Partition(int h,int w):dp(h+1,vector<M>(w+1,0)){
+  PartitionTable(int h,int w):dp(h+1,vector<M>(w+1,0)){
     dp[0][0]=M(1);
     for(int i=0;i<=h;i++){
       for(int j=1;j<=w;j++){
@@ -85,17 +88,19 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "mod/partition_function.cpp"
+#line 2 "combinatorics/partitiontable.cpp"
+#include <iostream>
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
-
 #endif
+
 //BEGIN CUT HERE
 template<typename M>
-struct Partition{
+struct PartitionTable{
   vector< vector<M> > dp;
-  Partition(int h,int w):dp(h+1,vector<M>(w+1,0)){
+  PartitionTable(int h,int w):dp(h+1,vector<M>(w+1,0)){
     dp[0][0]=M(1);
     for(int i=0;i<=h;i++){
       for(int j=1;j<=w;j++){

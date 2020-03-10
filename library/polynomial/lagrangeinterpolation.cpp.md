@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/lagrange_interpolation.cpp
+# :heavy_check_mark: polynomial/lagrangeinterpolation.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
-* <a href="{{ site.github.repository_url }}/blob/master/mod/lagrange_interpolation.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-15 16:00:30+09:00
+* category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
+* <a href="{{ site.github.repository_url }}/blob/master/polynomial/lagrangeinterpolation.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-10 20:00:42+09:00
 
 
 
@@ -87,7 +87,7 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "mod/lagrange_interpolation.cpp"
+#line 1 "polynomial/lagrangeinterpolation.cpp"
 
 #include<bits/stdc++.h>
 using namespace std;
