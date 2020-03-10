@@ -3,14 +3,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../mod/enumeration.cpp"
+#include "enumeration.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
-// put n distinct balls into k identical boxes
+// put n distinct balls into k distinct boxes
 template<typename M>
-M stirling_2nd(int n,int k){
+M surjection(int n,int k){
   using E = Enumeration<M>;
   E::init(k);
   M res(0);
@@ -19,7 +19,7 @@ M stirling_2nd(int n,int k){
     if((k-i)&1) res-=tmp;
     else res+=tmp;
   }
-  return res*=E::Finv(k);
+  return res;
 }
 //END CUT HERE
 

@@ -3,7 +3,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../mod/enumeration.cpp"
+#include "enumeration.cpp"
 #undef call_from_test
 
 #endif

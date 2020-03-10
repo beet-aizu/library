@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/enumeration.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #undef call_from_test
 
 signed main(){

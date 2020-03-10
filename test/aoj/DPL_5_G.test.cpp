@@ -5,8 +5,8 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/enumeration.cpp"
-#include "../../mod/bell.cpp"
+#include "../../combinatorics/enumeration.cpp"
+#include "../../combinatorics/bell.cpp"
 #undef call_from_test
 
 signed main(){

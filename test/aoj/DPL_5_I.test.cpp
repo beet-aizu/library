@@ -5,13 +5,16 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/enumeration.cpp"
-#include "../../mod/stirling_2nd.cpp"
+#include "../../combinatorics/enumeration.cpp"
+#include "../../combinatorics/surjection.cpp"
 #undef call_from_test
 
 signed main(){
   int n,k;
   scanf("%d %d",&n,&k);
-  printf("%d\n",stirling_2nd<Mint<int>>(n,k).v);
+  using M = Mint<int>;
+  M res=surjection<M>(n,k);
+  for(int i=1;i<=k;i++) res/=M(i);
+  printf("%d\n",res.v);
   return 0;
 }
