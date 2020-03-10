@@ -10,14 +10,15 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename M_>
-class Stirling2nd : FormalPowerSeries<M_>{
+struct Stirling2nd : FormalPowerSeries<M_>{
   using M = M_;
   using super = FormalPowerSeries<M>;
+  using super::super;
   using Poly = typename super::Poly;
   using super::finv;
 
   Poly rs;
-  Stirling2nd(int n){
+  void build(int n){
     super::init(n+1);
     Poly as(n+1),bs(n+1);
     for(int i=0;i<=n;i++){

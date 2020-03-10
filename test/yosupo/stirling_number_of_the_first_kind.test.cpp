@@ -5,9 +5,10 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../mod/enumeration.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
+#include "../../combinatorics/stirling1st.cpp"
 #undef call_from_test
 
 signed main(){
@@ -20,13 +21,12 @@ signed main(){
   NTT<2> ntt;
   using M = NTT<2>::M;
   auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
+  Stirling1st<M> ss(conv);
 
-  using E = Enumeration<M>;
-  auto ps=FPS.stirling_1st<E>(n);
+  ss.build(n);
   for(int i=0;i<=n;i++){
     if(i) cout<<" ";
-    cout<<ps[i];
+    cout<<ss[i];
   }
   cout<<endl;
   return 0;

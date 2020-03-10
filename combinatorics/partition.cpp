@@ -10,13 +10,14 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename M_>
-class Partition : FormalPowerSeries<M_>{
+struct Partition : FormalPowerSeries<M_>{
   using M = M_;
   using super = FormalPowerSeries<M>;
+  using super::super;
   using Poly = typename super::Poly;
 
   Poly rs;
-  Partition(int n){
+  void build(int n){
     rs.resize(n+1);
     rs[0]=M(1);
     for(int k=1;k<=n;k++){
