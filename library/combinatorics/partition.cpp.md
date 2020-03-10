@@ -38,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :question: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Verified with
