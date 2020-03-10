@@ -137,8 +137,35 @@ struct FormalPowerSeries{
     return rs;
   }
 
+  template<typename E>
   Poly stirling_1st(int n){
-    // TODO:
+    E::init(n+1);
+    if(n==0) return {T(1)};
+    int m=1;
+    Poly ss({T(0),T(1)});
+    for(int e=31-__builtin_clz(n)-1;e>=0;e--){
+      Poly as(m+1),bs(m+1);
+      for(int i=0;i<=m;i++) as[i]=E::Fact(i)*ss[i];
+      bs[m-0]=T(1);
+      for(int i=1;i<=m;i++) bs[m-i]=bs[m-(i-1)]*-T(m);
+      for(int i=0;i<=m;i++) bs[m-i]*=E::Finv(i);
+      Poly cs=mul(as,bs);
+      Poly ds(m+1);
+      for(int i=0;i<=m;i++) ds[i]=E::Finv(i)*cs[m+i];
+      ss=mul(ss,ds);
+      m<<=1;
+      if((n>>e)&1){
+        Poly ts(m+1+1,T(0));
+        for(int i=0;i<=m;i++){
+          ts[i+0]+=ss[i]*-T(m);
+          ts[i+1]+=ss[i];
+        }
+        ss=ts;
+        m|=1;
+      }
+    }
+    assert(m==n);
+    return ss;
   }
 
   template<typename E>
