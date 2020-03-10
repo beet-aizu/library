@@ -182,23 +182,6 @@ layout: default
 * :warning: <a href="library/graph/voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
 
 
-<div id="4163cf922db5cac4b933c8e333ba09ef"></div>
-
-### heuristic
-
-* :warning: <a href="library/heuristic/timer.cpp.html">heuristic/timer.cpp</a>
-* :warning: <a href="library/heuristic/xorshift.cpp.html">heuristic/xorshift.cpp</a>
-
-
-<div id="2d899f8d163502b12eb4a60069f80c1c"></div>
-
-### icpc
-
-* :warning: <a href="library/icpc/hash.cpp.html">icpc/hash.cpp</a>
-* :warning: <a href="library/icpc/hash_gen.cpp.html">icpc/hash_gen.cpp</a>
-* :warning: <a href="library/icpc/t.cpp.html">icpc/t.cpp</a>
-
-
 <div id="1bbf1d9f5340fa94bf2c5fb5ce73a5f5"></div>
 
 ### linearalgebra
