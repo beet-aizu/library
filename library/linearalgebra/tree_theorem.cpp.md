@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/tree_theorem.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:27:33+09:00
+    - Last commit date: 2020-03-10 20:15:26+09:00
 
 
 
@@ -40,8 +40,8 @@ layout: default
 
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :question: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified with

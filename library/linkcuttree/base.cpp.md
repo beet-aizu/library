@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: linkcuttree/base.cpp
+# :question: linkcuttree/base.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="farthest.cpp.html">linkcuttree/farthest.cpp</a>
-* :heavy_check_mark: <a href="path.cpp.html">linkcuttree/path.cpp</a>
+* :question: <a href="path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="subtree.cpp.html">linkcuttree/subtree.cpp</a>
 
 
@@ -54,7 +54,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html">test/aoj/GRL_5_E.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/lca.linkcuttree.test.cpp.html">test/yosupo/lca.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp.html">test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp</a>
 
