@@ -199,13 +199,6 @@ layout: default
 * :warning: <a href="library/icpc/t.cpp.html">icpc/t.cpp</a>
 
 
-<div id="c305fb1df5f5fb79acafd8b0fa25b0b8"></div>
-
-### leetcode
-
-* :warning: <a href="library/leetcode/treenode.cpp.html">leetcode/treenode.cpp</a>
-
-
 <div id="1bbf1d9f5340fa94bf2c5fb5ce73a5f5"></div>
 
 ### linearalgebra
