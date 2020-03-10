@@ -8,6 +8,7 @@ using namespace std;
 #include "../../mod/mint.cpp"
 #include "../../convolution/fastfouriertransform.cpp"
 #include "../../convolution/arbitrarymod.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 

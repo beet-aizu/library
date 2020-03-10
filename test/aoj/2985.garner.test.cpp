@@ -8,6 +8,7 @@ using namespace std;
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../convolution/garner.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 

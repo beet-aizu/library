@@ -6,6 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
+#include "../../combinatorics/enumeration.cpp"
 #include "../../polynomial/formalpowerseries.cpp"
 #include "../../polynomial/multieval.cpp"
 #undef call_from_test
