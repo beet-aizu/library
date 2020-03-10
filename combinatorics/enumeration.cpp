@@ -1,12 +1,11 @@
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#undef call_from_test
-
 #endif
+
 //BEGIN CUT HERE
 template<typename M_>
 class Enumeration{

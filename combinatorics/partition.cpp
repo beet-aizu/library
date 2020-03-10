@@ -1,5 +1,8 @@
+#pragma once
+#include <iostream>
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test

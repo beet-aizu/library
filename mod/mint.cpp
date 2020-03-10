@@ -5,6 +5,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename T,T MOD = 1000000007>
 struct Mint{
