@@ -1,4 +1,6 @@
-#define IGNORE
+/**
+ * @ignore
+ */
 //BEGIN CUT HERE
 #include<bits/stdc++.h>
 using namespace std;

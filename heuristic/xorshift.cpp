@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define IGNORE
+/**
+ * @ignore
+ */
 
 //BEGIN CUT HERE
 uint32_t xor128(){

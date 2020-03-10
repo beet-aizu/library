@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define IGNORE
-
+/**
+ * @ignore
+ */
 //BEGIN CUT HERE
 using i16 = int16_t;
 using i32 = int32_t;
