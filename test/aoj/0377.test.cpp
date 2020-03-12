@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fixpoint.cpp"
-#include "../../graph/lowlink.cpp"
+#include "../../graph/twoedgeconnectedcomponents.cpp"
 #undef call_from_test
 
 signed main(){
@@ -14,19 +14,19 @@ signed main(){
 
   int n,m;
   cin>>n>>m;
-  LowLink bg(n);
+  TwoEdgeConnectedComponents tecc(n);
   for(int i=0;i<m;i++){
     int a,b;
     cin>>a>>b;
-    bg.add_edge(a,b);
+    tecc.add_edge(a,b);
   }
-  int k=bg.build();
-  auto& G=bg.T;
+  int k=tecc.build();
+  auto G=tecc.forest();
 
   vector<int> cs(k);
-  for(int i=0;i<k;i++) cs[i]=bg.C[i].size();
+  for(int i=0;i<k;i++) cs[i]=tecc[i].size();
 
-  vector< vector<int> > dp(2,vector<int>(k,0));
+  vector<vector<int>> dp(2,vector<int>(k,0));
   vector<int> used(k,0);
   auto dfs=
     MFP([&](auto dfs,int v,int p)->void{

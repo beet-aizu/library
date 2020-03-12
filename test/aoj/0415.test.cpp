@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/chminmax.cpp"
-#include "../../graph/lowlink.cpp"
+#include "../../graph/twoedgeconnectedcomponents.cpp"
 #include "../../tree/diameterforvertex.cpp"
 #undef call_from_test
 
@@ -20,18 +20,20 @@ signed main(){
   vector<ll> vs(n);
   for(int i=0;i<n;i++) cin>>vs[i];
 
-  LowLink G(n);
+  TwoEdgeConnectedComponents C(n);
   for(int i=0;i<m;i++){
     int s,t;
     cin>>s>>t;
     s--;t--;
-    G.add_edge(s,t);
+    C.add_edge(s,t);
   }
 
-  int k=G.build();
+  int k=C.build();
   vector<ll> sm(k,0);
   for(int i=0;i<n;i++)
-    sm[G.blg[i]]+=vs[i];
+    sm[C.blg[i]]+=vs[i];
+
+  auto T=C.forest();
 
   ll ans=0;
   vector<int> used(k,-1);
@@ -48,7 +50,7 @@ signed main(){
       int v=que.front();que.pop();
       vv.emplace_back(v);
       ws.emplace_back(sm[v]);
-      for(int u:G.T[v]){
+      for(int u:T[v]){
         if(~used[u]) continue;
         used[u]=sz++;
         que.emplace(u);
@@ -57,7 +59,7 @@ signed main(){
 
     DiameterForVertex<ll> H(ws);
     for(int v:vv)
-      for(int u:G.T[v])
+      for(int u:T[v])
         if(u<v) H.add_edge(used[u],used[v]);
 
     chmax(ans,H.build());

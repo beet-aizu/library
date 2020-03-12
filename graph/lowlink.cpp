@@ -27,8 +27,13 @@ struct LowLink{
 
   void dfs(int v){
     ord[v]=low[v]=pos++;
+    int dup=0;
     for(int u:G[v]){
-      if(u==par[v]) continue;
+      if(u==par[v]){
+        if(dup) low[v]=min(low[v],ord[u]);
+        dup=1;
+        continue;
+      }
       if(ord[u]<ord[v])
         cand.emplace_back(min(u,v),max(u,v));
       if(~ord[u]){
@@ -110,6 +115,7 @@ struct LowLink{
 
 
 //INSERT ABOVE HERE
+// test num
 signed ARC045_D(){
   int n;
   cin>>n;
