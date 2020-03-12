@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
+* :question: <a href="../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
 
 
 ## Code

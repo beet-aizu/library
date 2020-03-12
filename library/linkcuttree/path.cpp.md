@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="base.cpp.html">linkcuttree/base.cpp</a>
+* :question: <a href="base.cpp.html">linkcuttree/base.cpp</a>
 
 
 ## Verified with

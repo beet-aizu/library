@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DPL_3_B.test.cpp
+# :x: test/aoj/DPL_3_B.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:09:15+09:00
+    - Last commit date: 2020-03-12 16:36:20+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :x: <a href="../../../library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
+* :question: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Code
@@ -95,10 +95,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 3 "test/aoj/../../tools/chminmax.cpp"
+#line 2 "test/aoj/../../tools/chminmax.cpp"
 
 #ifndef call_from_test
-#line 6 "test/aoj/../../tools/chminmax.cpp"
+#line 5 "test/aoj/../../tools/chminmax.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -110,10 +110,10 @@ signed main(){
   return 0;
 }
 #endif
-#line 3 "test/aoj/../../algorithm/largestrectangle.cpp"
+#line 2 "test/aoj/../../algorithm/largestrectangle.cpp"
 
 #ifndef call_from_test
-#line 6 "test/aoj/../../algorithm/largestrectangle.cpp"
+#line 5 "test/aoj/../../algorithm/largestrectangle.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

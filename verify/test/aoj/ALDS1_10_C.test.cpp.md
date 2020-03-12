@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/ALDS1_10_C.test.cpp
+# :x: test/aoj/ALDS1_10_C.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_10_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:09:15+09:00
+    - Last commit date: 2020-03-12 16:36:20+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :x: <a href="../../../library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
+* :question: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 
 ## Code

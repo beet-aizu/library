@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/parallelbinarysearch.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 18:48:30+09:00
+    - Last commit date: 2020-03-12 16:36:20+09:00
 
 
 
@@ -47,7 +47,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -93,7 +92,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "algorithm/parallelbinarysearch.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

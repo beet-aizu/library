@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: algorithm/largestrectangle.cpp
+# :x: algorithm/largestrectangle.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/largestrectangle.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 18:48:30+09:00
+    - Last commit date: 2020-03-12 16:36:20+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
+* :x: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
+* :x: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
 
 
 ## Code
@@ -48,7 +48,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -92,7 +91,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "algorithm/largestrectangle.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

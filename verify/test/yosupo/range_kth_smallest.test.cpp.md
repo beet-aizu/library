@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
+* :question: <a href="../../../library/datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
 
 
 ## Code

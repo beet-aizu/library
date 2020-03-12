@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/rerooting.cpp
+# :question: tree/rerooting.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/rerooting.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 20:26:43+09:00
+    - Last commit date: 2020-03-12 16:36:20+09:00
 
 
 * see: <a href="https://ei1333.hateblo.jp/entry/2018/12/21/004022">https://ei1333.hateblo.jp/entry/2018/12/21/004022</a>
@@ -40,7 +40,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.test.cpp.html">test/aoj/1595.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
 
 
 ## Code
@@ -49,7 +49,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -131,7 +130,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "tree/rerooting.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
