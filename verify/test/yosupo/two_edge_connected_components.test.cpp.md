@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/0377.test.cpp
+# :heavy_check_mark: test/yosupo/two_edge_connected_components.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/0377.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/two_edge_connected_components.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-12 16:29:30+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0377">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0377</a>
+* see: <a href="https://judge.yosupo.jp/problem/two_edge_connected_components">https://judge.yosupo.jp/problem/two_edge_connected_components</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/graph/twoedgeconnectedcomponents.cpp.html">graph/twoedgeconnectedcomponents.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 
 
 ## Code
@@ -48,13 +47,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0377"
+#define PROBLEM "https://judge.yosupo.jp/problem/two_edge_connected_components"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fixpoint.cpp"
 #include "../../graph/twoedgeconnectedcomponents.cpp"
 #undef call_from_test
 
@@ -64,42 +62,23 @@ signed main(){
 
   int n,m;
   cin>>n>>m;
-  TwoEdgeConnectedComponents tecc(n);
+
+  TwoEdgeConnectedComponents C(n);
   for(int i=0;i<m;i++){
     int a,b;
     cin>>a>>b;
-    tecc.add_edge(a,b);
+    C.add_edge(a,b);
   }
-  int k=tecc.build();
-  auto G=tecc.forest();
 
-  vector<int> cs(k);
-  for(int i=0;i<k;i++) cs[i]=tecc[i].size();
-
-  vector<vector<int>> dp(2,vector<int>(k,0));
-  vector<int> used(k,0);
-  auto dfs=
-    MFP([&](auto dfs,int v,int p)->void{
-          if(used[v]) return;
-          used[v]=1;
-          dp[0][v]=0;
-          dp[1][v]=cs[v];
-          for(int u:G[v]){
-            if(u==p) continue;
-            dfs(u,v);
-            dp[0][v]+=max(dp[0][u],dp[1][u]);
-            dp[1][v]+=dp[0][u];
-          }
-          return;
-        });
-
-  int ans=0;
+  int k=C.build();
+  cout<<k<<endl;
   for(int i=0;i<k;i++){
-    if(used[i]) continue;
-    dfs(i,-1);
-    ans+=max(dp[0][i],dp[1][i]);
+    cout<<C[i].size();
+    for(int j=0;j<(int)C[i].size();j++) cout<<" "<<C[i][j];
+    cout<<"\n";
   }
-  cout<<ans<<endl;
+
+  cout<<flush;
   return 0;
 }
 
@@ -109,42 +88,17 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj/0377.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0377"
+#line 1 "test/yosupo/two_edge_connected_components.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/two_edge_connected_components"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/../../tools/fixpoint.cpp"
-
-#line 3 "test/aoj/../../tools/fixpoint.cpp"
-using namespace std;
-#endif
-//BEGIN CUT HERE
-template<typename F>
-struct FixPoint : F{
-  FixPoint(F&& f):F(forward<F>(f)){}
-  template<typename... Args>
-  decltype(auto) operator()(Args&&... args) const{
-    return F::operator()(*this,forward<Args>(args)...);
-  }
-};
-template<typename F>
-inline decltype(auto) MFP(F&& f){
-  return FixPoint<F>{forward<F>(f)};
-}
-//END CUT HERE
-#ifndef call_from_test
-//INSERT ABOVE HERE
-signed main(){
-  return 0;
-}
-#endif
-#line 2 "test/aoj/../../graph/twoedgeconnectedcomponents.cpp"
+#line 2 "test/yosupo/../../graph/twoedgeconnectedcomponents.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../graph/twoedgeconnectedcomponents.cpp"
+#line 5 "test/yosupo/../../graph/twoedgeconnectedcomponents.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -232,7 +186,7 @@ signed main(){
   return 0;
 }
 #endif
-#line 9 "test/aoj/0377.test.cpp"
+#line 8 "test/yosupo/two_edge_connected_components.test.cpp"
 #undef call_from_test
 
 signed main(){
@@ -241,42 +195,23 @@ signed main(){
 
   int n,m;
   cin>>n>>m;
-  TwoEdgeConnectedComponents tecc(n);
+
+  TwoEdgeConnectedComponents C(n);
   for(int i=0;i<m;i++){
     int a,b;
     cin>>a>>b;
-    tecc.add_edge(a,b);
+    C.add_edge(a,b);
   }
-  int k=tecc.build();
-  auto G=tecc.forest();
 
-  vector<int> cs(k);
-  for(int i=0;i<k;i++) cs[i]=tecc[i].size();
-
-  vector<vector<int>> dp(2,vector<int>(k,0));
-  vector<int> used(k,0);
-  auto dfs=
-    MFP([&](auto dfs,int v,int p)->void{
-          if(used[v]) return;
-          used[v]=1;
-          dp[0][v]=0;
-          dp[1][v]=cs[v];
-          for(int u:G[v]){
-            if(u==p) continue;
-            dfs(u,v);
-            dp[0][v]+=max(dp[0][u],dp[1][u]);
-            dp[1][v]+=dp[0][u];
-          }
-          return;
-        });
-
-  int ans=0;
+  int k=C.build();
+  cout<<k<<endl;
   for(int i=0;i<k;i++){
-    if(used[i]) continue;
-    dfs(i,-1);
-    ans+=max(dp[0][i],dp[1][i]);
+    cout<<C[i].size();
+    for(int j=0;j<(int)C[i].size();j++) cout<<" "<<C[i][j];
+    cout<<"\n";
   }
-  cout<<ans<<endl;
+
+  cout<<flush;
   return 0;
 }
 
