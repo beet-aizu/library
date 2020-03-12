@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/lowlink.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 20:15:26+09:00
+    - Last commit date: 2020-03-12 16:24:45+09:00
 
 
 
@@ -46,8 +46,6 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/0377.test.cpp.html">test/aoj/0377.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0415.test.cpp.html">test/aoj/0415.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_3_A.test.cpp.html">test/aoj/GRL_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_3_B.test.cpp.html">test/aoj/GRL_3_B.test.cpp</a>
 
@@ -86,8 +84,13 @@ struct LowLink{
 
   void dfs(int v){
     ord[v]=low[v]=pos++;
+    int dup=0;
     for(int u:G[v]){
-      if(u==par[v]) continue;
+      if(u==par[v]){
+        if(dup) low[v]=min(low[v],ord[u]);
+        dup=1;
+        continue;
+      }
       if(ord[u]<ord[v])
         cand.emplace_back(min(u,v),max(u,v));
       if(~ord[u]){
@@ -169,6 +172,7 @@ struct LowLink{
 
 
 //INSERT ABOVE HERE
+// test num
 signed ARC045_D(){
   int n;
   cin>>n;
@@ -318,7 +322,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/lowlink.cpp: line 105: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/lowlink.cpp: line 110: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
