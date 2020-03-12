@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/tetration_mod.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:02:32+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/tetration_mod">https://judge.yosupo.jp/problem/tetration_mod</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/totient.cpp.html">math/totient.cpp</a>
+* :question: <a href="../../../library/math/totient.cpp.html">math/totient.cpp</a>
 * :x: <a href="../../../library/mod/tetration.cpp.html">mod/tetration.cpp</a>
 
 
@@ -88,7 +88,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/tetration.cpp: line 9: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: mod/tetration.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

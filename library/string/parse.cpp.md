@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/parse.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 23:38:50+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 
@@ -47,7 +47,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -134,7 +133,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "string/parse.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

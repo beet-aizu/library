@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/sqrt_of_formal_power_series.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:02:32+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sqrt_of_formal_power_series">https://judge.yosupo.jp/problem/sqrt_of_formal_power_series</a>

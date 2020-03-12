@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/polynomial.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 18:54:39+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 
@@ -47,7 +47,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -183,7 +182,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "polynomial/polynomial.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

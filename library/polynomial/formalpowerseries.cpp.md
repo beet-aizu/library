@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:02:32+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/09/27/224701">http://beet-aizu.hatenablog.com/entry/2019/09/27/224701</a>
@@ -77,7 +77,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -228,7 +227,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: polynomial/formalpowerseries.cpp: line 9: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: polynomial/formalpowerseries.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

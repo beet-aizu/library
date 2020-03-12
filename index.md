@@ -39,7 +39,7 @@ layout: default
 ### algorithm
 
 * :heavy_check_mark: <a href="library/algorithm/knuthyao.cpp.html">algorithm/knuthyao.cpp</a>
-* :x: <a href="library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
+* :heavy_check_mark: <a href="library/algorithm/largestrectangle.cpp.html">algorithm/largestrectangle.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/monotoneminima.cpp.html">algorithm/monotoneminima.cpp</a>
 * :x: <a href="library/algorithm/onlineoffline.cpp.html">algorithm/onlineoffline.cpp</a>
@@ -78,14 +78,14 @@ layout: default
 
 ### combinatorics
 
-* :x: <a href="library/combinatorics/bell.cpp.html">combinatorics/bell.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/bell.cpp.html">combinatorics/bell.cpp</a>
 * :x: <a href="library/combinatorics/bernoulli.cpp.html">combinatorics/bernoulli.cpp</a>
 * :question: <a href="library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 * :x: <a href="library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
-* :x: <a href="library/combinatorics/partitiontable.cpp.html">combinatorics/partitiontable.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/partitiontable.cpp.html">combinatorics/partitiontable.cpp</a>
 * :x: <a href="library/combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
 * :x: <a href="library/combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
-* :x: <a href="library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
 
 
 <div id="a9595c1c24c33b16056d2ad07e71682d"></div>
@@ -144,7 +144,7 @@ layout: default
 
 ### geometry
 
-* :question: <a href="library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
+* :heavy_check_mark: <a href="library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
 * :heavy_check_mark: <a href="library/geometry/projectilemotion.cpp.html">geometry/projectilemotion.cpp</a>
 
 
@@ -165,7 +165,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/bfs.cpp.html">graph/bfs.cpp</a>
 * :heavy_check_mark: <a href="library/graph/chebyshevneighbors.cpp.html">graph/chebyshevneighbors.cpp</a>
 * :heavy_check_mark: <a href="library/graph/chromatic.cpp.html">graph/chromatic.cpp</a>
-* :question: <a href="library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
+* :heavy_check_mark: <a href="library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dominatortree.cpp.html">graph/dominatortree.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dynamicconnectivity.cpp.html">graph/dynamicconnectivity.cpp</a>
 * :warning: <a href="library/graph/girth.cpp.html">graph/girth.cpp</a>
@@ -198,7 +198,7 @@ layout: default
 ### linkcuttree
 
 * :question: <a href="library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
-* :question: <a href="library/linkcuttree/farthest.cpp.html">linkcuttree/farthest.cpp</a>
+* :heavy_check_mark: <a href="library/linkcuttree/farthest.cpp.html">linkcuttree/farthest.cpp</a>
 * :question: <a href="library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :heavy_check_mark: <a href="library/linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>
 
@@ -218,7 +218,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/linearcongruence.cpp.html">math/linearcongruence.cpp</a>
 * :heavy_check_mark: <a href="library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
 * :heavy_check_mark: <a href="library/math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
-* :x: <a href="library/math/totient.cpp.html">math/totient.cpp</a>
+* :question: <a href="library/math/totient.cpp.html">math/totient.cpp</a>
 * :question: <a href="library/math/totient_table.cpp.html">math/totient_table.cpp</a>
 
 
@@ -326,7 +326,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :heavy_check_mark: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
-* :question: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
+* :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :heavy_check_mark: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
 * :heavy_check_mark: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
@@ -479,20 +479,20 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_15_B.test.cpp.html">test/aoj/ALDS1_15_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_1_C.test.cpp.html">test/aoj/ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_A.test.cpp.html">test/aoj/DPL_5_A.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_B.test.cpp.html">test/aoj/DPL_5_B.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_C.test.cpp.html">test/aoj/DPL_5_C.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_D.test.cpp.html">test/aoj/DPL_5_D.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_E.test.cpp.html">test/aoj/DPL_5_E.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_F.test.cpp.html">test/aoj/DPL_5_F.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_H.test.cpp.html">test/aoj/DPL_5_H.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_K.test.cpp.html">test/aoj/DPL_5_K.test.cpp</a>
-* :x: <a href="verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_A.test.cpp.html">test/aoj/DPL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_B.test.cpp.html">test/aoj/DPL_5_B.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_C.test.cpp.html">test/aoj/DPL_5_C.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_D.test.cpp.html">test/aoj/DPL_5_D.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_E.test.cpp.html">test/aoj/DPL_5_E.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_F.test.cpp.html">test/aoj/DPL_5_F.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_G.test.cpp.html">test/aoj/DPL_5_G.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_H.test.cpp.html">test/aoj/DPL_5_H.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_I.test.cpp.html">test/aoj/DPL_5_I.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_K.test.cpp.html">test/aoj/DPL_5_K.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_1_A.quickfind.test.cpp.html">test/aoj/DSL_1_A.quickfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_1_B.test.cpp.html">test/aoj/DSL_1_B.test.cpp</a>
@@ -528,7 +528,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_3_C.test.cpp.html">test/aoj/GRL_3_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_4_A.test.cpp.html">test/aoj/GRL_4_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_4_B.test.cpp.html">test/aoj/GRL_4_B.test.cpp</a>
-* :x: <a href="verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_A.test.cpp.html">test/aoj/GRL_5_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp.html">test/aoj/GRL_5_C.lowestcommonancestor.test.cpp</a>
@@ -547,7 +547,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/ITP1_11_D.test.cpp.html">test/aoj/ITP1_11_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_1_A.test.cpp.html">test/aoj/NTL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
-* :x: <a href="verify/test/aoj/NTL_1_D.test.cpp.html">test/aoj/NTL_1_D.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/NTL_1_D.test.cpp.html">test/aoj/NTL_1_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_1_E.test.cpp.html">test/aoj/NTL_1_E.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_2_A.test.cpp.html">test/aoj/NTL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_2_B.test.cpp.html">test/aoj/NTL_2_B.test.cpp</a>
@@ -555,12 +555,12 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_2_D.test.cpp.html">test/aoj/NTL_2_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_2_E.test.cpp.html">test/aoj/NTL_2_E.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_2_F.test.cpp.html">test/aoj/NTL_2_F.test.cpp</a>
-* :x: <a href="verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/2454.test.cpp.html">test/aoj/geometry/2454.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/2572.test.cpp.html">test/aoj/geometry/2572.test.cpp</a>
-* :x: <a href="verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
-* :x: <a href="verify/test/aoj/geometry/3056.test.cpp.html">test/aoj/geometry/3056.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/geometry/3049.test.cpp.html">test/aoj/geometry/3049.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/geometry/3056.test.cpp.html">test/aoj/geometry/3056.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_1_A.test.cpp.html">test/aoj/geometry/CGL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_1_B.test.cpp.html">test/aoj/geometry/CGL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/geometry/CGL_1_C.test.cpp.html">test/aoj/geometry/CGL_1_C.test.cpp</a>

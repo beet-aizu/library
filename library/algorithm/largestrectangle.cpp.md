@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: algorithm/largestrectangle.cpp
+# :heavy_check_mark: algorithm/largestrectangle.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,8 +38,8 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
-* :x: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
 
 
 ## Code

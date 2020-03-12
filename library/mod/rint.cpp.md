@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/rint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:54:22+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 
@@ -53,7 +53,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -118,7 +117,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "mod/rint.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

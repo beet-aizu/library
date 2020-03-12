@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj/GRL_5_A.linkcuttree.test.cpp
+# :heavy_check_mark: test/aoj/GRL_5_A.linkcuttree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
-* :question: <a href="../../../library/linkcuttree/farthest.cpp.html">linkcuttree/farthest.cpp</a>
+* :heavy_check_mark: <a href="../../../library/linkcuttree/farthest.cpp.html">linkcuttree/farthest.cpp</a>
 * :question: <a href="../../../library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 
 

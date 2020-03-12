@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/stirling2nd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:02:32+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 

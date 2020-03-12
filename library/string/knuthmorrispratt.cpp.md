@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/knuthmorrispratt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 20:20:24+09:00
+    - Last commit date: 2020-03-12 17:15:27+09:00
 
 
 * see: <a href="https://snuke.hatenablog.com/entry/2017/07/18/101026">https://snuke.hatenablog.com/entry/2017/07/18/101026</a>
@@ -48,7 +48,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -206,7 +205,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "string/knuthmorrispratt.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
