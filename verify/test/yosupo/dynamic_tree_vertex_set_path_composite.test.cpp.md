@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+# :heavy_check_mark: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
-* :question: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
+* :heavy_check_mark: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
+* :heavy_check_mark: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 

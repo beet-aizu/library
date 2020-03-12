@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_3_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 16:36:20+09:00
+    - Last commit date: 2020-03-12 17:40:23+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C</a>
@@ -57,12 +57,17 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
-  using ll = long long;
-  ll n;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
   cin>>n;
-  vector<ll> v(n);
-  for(int i=0;i<n;i++) cin>>v[i];
-  cout<<largestrectangle(v)<<endl;
+
+  using ll = long long;
+  vector<ll> vs(n);
+  for(int i=0;i<n;i++) cin>>vs[i];
+
+  cout<<largestrectangle(vs)<<endl;
   return 0;
 }
 
@@ -119,12 +124,17 @@ signed main(){
 #undef call_from_test
 
 signed main(){
-  using ll = long long;
-  ll n;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
   cin>>n;
-  vector<ll> v(n);
-  for(int i=0;i<n;i++) cin>>v[i];
-  cout<<largestrectangle(v)<<endl;
+
+  using ll = long long;
+  vector<ll> vs(n);
+  for(int i=0;i<n;i++) cin>>vs[i];
+
+  cout<<largestrectangle(vs)<<endl;
   return 0;
 }
 

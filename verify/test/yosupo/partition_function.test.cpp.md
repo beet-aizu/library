@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/partition_function.test.cpp
+# :heavy_check_mark: test/yosupo/partition_function.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :x: <a href="../../../library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
-* :question: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
+* :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :question: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 

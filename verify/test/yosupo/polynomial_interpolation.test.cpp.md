@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/polynomial_interpolation.test.cpp
+# :heavy_check_mark: test/yosupo/polynomial_interpolation.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,11 +40,11 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :question: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :question: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
-* :x: <a href="../../../library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
-* :x: <a href="../../../library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
 
 
 ## Code

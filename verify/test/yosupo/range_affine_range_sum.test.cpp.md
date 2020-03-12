@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/range_affine_range_sum.test.cpp
+# :heavy_check_mark: test/yosupo/range_affine_range_sum.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :question: <a href="../../../library/segtree/basic/chien.cpp.html">segtree/basic/chien.cpp</a>
+* :heavy_check_mark: <a href="../../../library/segtree/basic/chien.cpp.html">segtree/basic/chien.cpp</a>
 
 
 ## Code

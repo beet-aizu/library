@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: mod/factorial.cpp
+# :heavy_check_mark: mod/factorial.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,15 +38,15 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../convolution/garner.cpp.html">convolution/garner.cpp</a>
-* :question: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="../convolution/garner.cpp.html">convolution/garner.cpp</a>
+* :heavy_check_mark: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :question: <a href="mint.cpp.html">mod/mint.cpp</a>
-* :question: <a href="rint.cpp.html">mod/rint.cpp</a>
+* :heavy_check_mark: <a href="rint.cpp.html">mod/rint.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 
 
 ## Code

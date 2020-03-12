@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/matrix_det.test.cpp
+# :heavy_check_mark: test/yosupo/matrix_det.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
+* :heavy_check_mark: <a href="../../../library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
