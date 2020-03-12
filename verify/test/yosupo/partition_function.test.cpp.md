@@ -39,11 +39,11 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../../../library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
 * :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :question: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Code

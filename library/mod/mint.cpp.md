@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: mod/mint.cpp
+# :heavy_check_mark: mod/mint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="../graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
-* :question: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
+* :heavy_check_mark: <a href="../math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="../polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 
@@ -101,11 +101,11 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/104.test.cpp.html">test/yukicoder/104.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1665.test.cpp.html">test/yukicoder/1665.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/22.test.cpp.html">test/yukicoder/22.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/22.test.cpp.html">test/yukicoder/22.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
 
 
 ## Code

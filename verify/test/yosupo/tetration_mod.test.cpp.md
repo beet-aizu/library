@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/math/totient.cpp.html">math/totient.cpp</a>
-* :question: <a href="../../../library/mod/tetration.cpp.html">mod/tetration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/math/totient.cpp.html">math/totient.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/tetration.cpp.html">mod/tetration.cpp</a>
 
 
 ## Code

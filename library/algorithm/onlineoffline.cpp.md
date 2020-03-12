@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: algorithm/onlineoffline.cpp
+# :heavy_check_mark: algorithm/onlineoffline.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,9 +38,9 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1948.test.cpp.html">test/yukicoder/1948.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/1950.test.cpp.html">test/yukicoder/1950.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2113.test.cpp.html">test/yukicoder/2113.test.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: mod/tetration.cpp
+# :heavy_check_mark: mod/tetration.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,13 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../math/totient.cpp.html">math/totient.cpp</a>
+* :heavy_check_mark: <a href="../math/totient.cpp.html">math/totient.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
 
 
 ## Code

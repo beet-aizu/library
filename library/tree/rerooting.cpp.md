@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: tree/rerooting.cpp
+# :heavy_check_mark: tree/rerooting.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.test.cpp.html">test/aoj/1595.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2085.test.cpp.html">test/yukicoder/2085.test.cpp</a>
 
 
 ## Code

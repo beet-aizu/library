@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :question: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required by
