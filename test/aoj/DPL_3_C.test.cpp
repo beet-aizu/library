@@ -8,11 +8,16 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
-  using ll = long long;
-  ll n;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
   cin>>n;
-  vector<ll> v(n);
-  for(int i=0;i<n;i++) cin>>v[i];
-  cout<<largestrectangle(v)<<endl;
+
+  using ll = long long;
+  vector<ll> vs(n);
+  for(int i=0;i<n;i++) cin>>vs[i];
+
+  cout<<largestrectangle(vs)<<endl;
   return 0;
 }
