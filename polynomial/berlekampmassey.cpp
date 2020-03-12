@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
