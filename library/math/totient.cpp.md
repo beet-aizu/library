@@ -25,27 +25,27 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/totient.cpp
+# :x: math/totient.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/totient.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:54:22+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="../mod/tetration.cpp.html">mod/tetration.cpp</a>
+* :x: <a href="../mod/tetration.cpp.html">mod/tetration.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_D.test.cpp.html">test/aoj/NTL_1_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
+* :x: <a href="../../verify/test/aoj/NTL_1_D.test.cpp.html">test/aoj/NTL_1_D.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
 
 
 ## Code
@@ -54,7 +54,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -87,7 +86,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "math/totient.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

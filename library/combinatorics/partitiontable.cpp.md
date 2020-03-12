@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: combinatorics/partitiontable.cpp
+# :x: combinatorics/partitiontable.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/partitiontable.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 19:33:27+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
+* :x: <a href="../../verify/test/aoj/DPL_5_J.test.cpp.html">test/aoj/DPL_5_J.test.cpp</a>
+* :x: <a href="../../verify/test/aoj/DPL_5_L.test.cpp.html">test/aoj/DPL_5_L.test.cpp</a>
 
 
 ## Code
@@ -48,7 +48,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -89,7 +88,6 @@ signed main(){
 {% raw %}
 ```cpp
 #line 2 "combinatorics/partitiontable.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

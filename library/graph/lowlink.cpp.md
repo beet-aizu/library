@@ -31,16 +31,16 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/lowlink.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 16:24:45+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :question: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 

@@ -25,33 +25,33 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/garner.cpp
+# :question: convolution/garner.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/garner.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 20:15:26+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :question: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="../mod/factorial.cpp.html">mod/factorial.cpp</a>
+* :x: <a href="../mod/factorial.cpp.html">mod/factorial.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.garner.test.cpp.html">test/aoj/2985.garner.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/convolution_mod_1000000007.garner.test.cpp.html">test/yosupo/convolution_mod_1000000007.garner.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/convolution_mod_1000000007.garner.test.cpp.html">test/yosupo/convolution_mod_1000000007.garner.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 
 
 ## Code
@@ -60,7 +60,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -165,7 +164,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: convolution/garner.cpp: line 9: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: convolution/garner.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

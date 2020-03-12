@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/point_set_range_composite.test.cpp
+# :x: test/yosupo/point_set_range_composite.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/point_set_range_composite.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 20:15:26+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../../../library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
+* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../../../library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 
 
 ## Code
@@ -113,10 +113,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 3 "test/yosupo/../../mod/mint.cpp"
+#line 2 "test/yosupo/../../mod/mint.cpp"
 
 #ifndef call_from_test
-#line 6 "test/yosupo/../../mod/mint.cpp"
+#line 5 "test/yosupo/../../mod/mint.cpp"
 using namespace std;
 #endif
 

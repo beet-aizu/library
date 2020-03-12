@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/convolution2D.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 19:27:33+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 
@@ -49,7 +49,6 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -109,7 +108,6 @@ struct Convolution2D{
 {% raw %}
 ```cpp
 #line 2 "convolution/convolution2D.cpp"
-#include <iostream>
 
 #ifndef call_from_test
 #include <bits/stdc++.h>

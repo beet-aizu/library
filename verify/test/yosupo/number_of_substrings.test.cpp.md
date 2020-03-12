@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
-* :question: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
+* :heavy_check_mark: <a href="../../../library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
+* :heavy_check_mark: <a href="../../../library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 
 
 ## Code

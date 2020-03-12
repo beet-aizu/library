@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/DPL_5_A.test.cpp
+# :x: test/aoj/DPL_5_A.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DPL_5_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-10 20:15:26+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_A</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Code
@@ -79,10 +79,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 3 "test/aoj/../../mod/mint.cpp"
+#line 2 "test/aoj/../../mod/mint.cpp"
 
 #ifndef call_from_test
-#line 6 "test/aoj/../../mod/mint.cpp"
+#line 5 "test/aoj/../../mod/mint.cpp"
 using namespace std;
 #endif
 
@@ -171,10 +171,10 @@ signed main(){
   return 0;
 }
 #endif
-#line 3 "test/aoj/../../combinatorics/enumeration.cpp"
+#line 2 "test/aoj/../../combinatorics/enumeration.cpp"
 
 #ifndef call_from_test
-#line 6 "test/aoj/../../combinatorics/enumeration.cpp"
+#line 5 "test/aoj/../../combinatorics/enumeration.cpp"
 using namespace std;
 #endif
 

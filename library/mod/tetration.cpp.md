@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/tetration.cpp
+# :x: mod/tetration.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/tetration.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-06 20:39:01+09:00
+    - Last commit date: 2020-03-12 17:02:32+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../math/totient.cpp.html">math/totient.cpp</a>
+* :x: <a href="../math/totient.cpp.html">math/totient.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/472.test.cpp.html">test/yukicoder/472.test.cpp</a>
 
 
 ## Code
