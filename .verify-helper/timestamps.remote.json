@@ -261,6 +261,7 @@
 "test/yosupo/rectangle_sum.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/runenumerate.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/scc.test.cpp": "2020-03-05 21:02:53 +0900",
+"test/yosupo/sort_points_by_argument.test.cpp": "2020-03-14 17:16:27 +0900",
 "test/yosupo/sqrt_mod.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/sqrt_of_formal_power_series.test.cpp": "2020-03-12 17:15:27 +0900",
 "test/yosupo/staticrmq.disjointsparsetable.test.cpp": "2020-03-05 21:02:53 +0900",
