@@ -34,7 +34,6 @@ layout: default
     - Last commit date: 2019-12-17 21:51:08+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B</a>
 
 
 ## Depends on

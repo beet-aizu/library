@@ -25,24 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/2872.test.cpp
+# :heavy_check_mark: test/yosupo/persistent_queue.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/2872.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:35:29+09:00
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/persistent_queue.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-18 19:28:08+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2872">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2872</a>
+* see: <a href="https://judge.yosupo.jp/problem/persistent_queue">https://judge.yosupo.jp/problem/persistent_queue</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/flow/negativeedge.cpp.html">flow/negativeedge.cpp</a>
-* :heavy_check_mark: <a href="../../../library/flow/primaldual.cpp.html">flow/primaldual.cpp</a>
-* :heavy_check_mark: <a href="../../../library/graph/bellmanford.cpp.html">graph/bellmanford.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/basic/array.cpp.html">bbst/basic/array.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/persistent/array.cpp.html">bbst/persistent/array.cpp</a>
 
 
 ## Code
@@ -50,40 +49,50 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2872"
+#define PROBLEM "https://judge.yosupo.jp/problem/persistent_queue"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
-#include "../../flow/primaldual.cpp"
-#include "../../flow/negativeedge.cpp"
-#include "../../graph/bellmanford.cpp"
+#include "../../bbst/basic/base.cpp"
+#include "../../bbst/basic/array.cpp"
+#include "../../bbst/persistent/array.cpp"
 #undef call_from_test
 
+#ifdef SANITIZE
+#define IGNORE
+#endif
+
 signed main(){
-  using ll = long long;
-  const ll INF = 1e9;
-  int n,m,s,t;
-  cin>>n>>m>>s>>t;
-  s--;t--;
-  NegativeEdge<ll, ll> G(n);
-  BellmanFord<int> H(n);
-  for(int i=0;i<m;i++){
-    int u,v,d,c;
-    cin>>u>>v>>d>>c;
-    u--;v--;
-    G.add_edge(u,v,c,d);
-    H.add_edge(u,v,d);
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  using Node = NodeBase<int>;
+  const int LIM = 2e7;
+  PersistentArray<Node, LIM> pa;
+  Node* rt=pa.create(0);
+
+  int q;
+  cin>>q;
+  vector<Node*> ss(q,nullptr);
+  for(int i=0;i<q;i++){
+    int a;
+    cin>>a;
+    if(a==0){
+      int t,x;
+      cin>>t>>x;
+      Node* p=~t?ss[t]:rt;
+      ss[i]=pa.insert(p,p->cnt,Node(x));
+    }
+    if(a==1){
+      int t;
+      cin>>t;
+      cout<<pa.get_val(ss[t],1)<<"\n";
+      ss[i]=pa.erase(ss[t],1);
+    }
   }
-  int neg_loop;
-  int len=H.shortest_path(s,t,neg_loop);
-  assert(!neg_loop);
-  G.add_edge(t,s,INF,-(len+1));
-  int ok;
-  cout<<-G.flow(ok)<<endl;
-  assert(ok);
+
   return 0;
 }
 
@@ -102,7 +111,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: flow/negativeedge.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/basic/array.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

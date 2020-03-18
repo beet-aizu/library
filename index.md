@@ -69,7 +69,7 @@ layout: default
 
 ### bbst/persistent
 
-* :warning: <a href="library/bbst/persistent/array.cpp.html">bbst/persistent/array.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/persistent/array.cpp.html">bbst/persistent/array.cpp</a>
 * :warning: <a href="library/bbst/persistent/lazy.cpp.html">bbst/persistent/lazy.cpp</a>
 * :warning: <a href="library/bbst/persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
 
@@ -607,6 +607,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/number_of_substrings.test.cpp.html">test/yosupo/number_of_substrings.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/persistent_queue.test.cpp.html">test/yosupo/persistent_queue.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>

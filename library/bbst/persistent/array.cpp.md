@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/persistent/array.cpp
+# :heavy_check_mark: bbst/persistent/array.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,6 +40,11 @@ layout: default
 
 * :heavy_check_mark: <a href="../basic/array.cpp.html">bbst/basic/array.cpp</a>
 * :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/yosupo/persistent_queue.test.cpp.html">test/yosupo/persistent_queue.test.cpp</a>
 
 
 ## Code
@@ -148,7 +153,7 @@ signed main(){
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 68, in bundle
+  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 168, in bundle
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")

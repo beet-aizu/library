@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
 * :heavy_check_mark: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
 * :heavy_check_mark: <a href="ushi.cpp.html">bbst/basic/ushi.cpp</a>
-* :warning: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
+* :heavy_check_mark: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
 * :warning: <a href="../persistent/lazy.cpp.html">bbst/persistent/lazy.cpp</a>
 * :warning: <a href="../persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
 
@@ -59,6 +59,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html">test/aoj/DSL_2_H.bbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html">test/aoj/DSL_2_I.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/yosupo/persistent_queue.test.cpp.html">test/yosupo/persistent_queue.test.cpp</a>
 
 
 ## Code
