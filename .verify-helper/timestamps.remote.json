@@ -252,7 +252,6 @@
 "test/yosupo/multipoint_evaluation.test.cpp": "2020-03-12 17:15:27 +0900",
 "test/yosupo/number_of_substrings.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/partition_function.test.cpp": "2020-03-12 17:15:27 +0900",
-"test/yosupo/persistent_queue.test.cpp": "2020-03-18 19:28:08 +0900",
 "test/yosupo/point_add_range_sum.test.cpp": "2020-03-05 21:59:12 +0900",
 "test/yosupo/point_set_range_composite.test.cpp": "2020-03-12 17:02:32 +0900",
 "test/yosupo/polynomial_interpolation.test.cpp": "2020-03-12 17:15:27 +0900",

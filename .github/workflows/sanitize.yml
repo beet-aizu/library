@@ -17,6 +17,5 @@ jobs:
 
     - name: Run tests
       env:
-        CXXFLAGS: "-DSANITIZE -fsanitize=undefined -D_GLIBCXX_DEBUG"
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
-      run: oj-verify run -j 2 --timeout 3600 --tle 600
+      run: oj-verify run -j 2 --timeout 3600 --tle 600 --config-file .verify-helper/sanitize.toml

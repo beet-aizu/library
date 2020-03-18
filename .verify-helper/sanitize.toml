@@ -1,0 +1,7 @@
+[[languages.cpp.environments]]
+CXX = "g++"
+CXXFLAGS = ["-std=c++17", "-Wall", "-g", "-DSANITIZE", "-fsanitize=undefined", "-D_GLIBCXX_DEBUG"]
+
+[[languages.cpp.environments]]
+CXX = "clang++"
+CXXFLAGS = ["-std=c++17", "-Wall", "-g", "-DSANITIZE", "-fsanitize=undefined", "-D_GLIBCXX_DEBUG"]
