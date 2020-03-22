@@ -116,9 +116,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../tree/heavylightdecomposition.cpp"
+#line 1 "tree/heavylightdecomposition.cpp"
 
-#line 3 "test/yosupo/../../tree/heavylightdecomposition.cpp"
+#line 3 "tree/heavylightdecomposition.cpp"
 using namespace std;
 #endif
 /**
@@ -236,9 +236,9 @@ signed main(){
   return 0;
 };
 #endif
-#line 1 "test/yosupo/../../datastructure/binaryindexedtree.cpp"
+#line 1 "datastructure/binaryindexedtree.cpp"
 
-#line 3 "test/yosupo/../../datastructure/binaryindexedtree.cpp"
+#line 3 "datastructure/binaryindexedtree.cpp"
 using namespace std;
 #endif
 /*

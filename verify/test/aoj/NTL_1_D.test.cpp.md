@@ -77,10 +77,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/aoj/../../math/totient.cpp"
+#line 2 "math/totient.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../math/totient.cpp"
+#line 5 "math/totient.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

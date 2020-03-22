@@ -91,9 +91,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../graph/independentset.cpp"
+#line 1 "graph/independentset.cpp"
 
-#line 3 "test/yosupo/../../graph/independentset.cpp"
+#line 3 "graph/independentset.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

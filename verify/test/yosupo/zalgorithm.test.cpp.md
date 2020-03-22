@@ -85,9 +85,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../string/zalgorithm.cpp"
+#line 1 "string/zalgorithm.cpp"
 
-#line 3 "test/yosupo/../../string/zalgorithm.cpp"
+#line 3 "string/zalgorithm.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

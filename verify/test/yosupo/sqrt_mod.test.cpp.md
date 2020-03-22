@@ -86,9 +86,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../mod/sqrt.cpp"
+#line 1 "mod/sqrt.cpp"
 
-#line 3 "test/yosupo/../../mod/sqrt.cpp"
+#line 3 "mod/sqrt.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

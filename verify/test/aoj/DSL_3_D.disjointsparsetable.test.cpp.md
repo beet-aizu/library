@@ -89,9 +89,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/../../tools/fastio.cpp"
+#line 1 "tools/fastio.cpp"
 
-#line 3 "test/aoj/../../tools/fastio.cpp"
+#line 3 "tools/fastio.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -107,9 +107,9 @@ signed main(){
   return 0;
 }
 #endif
-#line 1 "test/aoj/../../datastructure/disjointsparsetable.cpp"
+#line 1 "datastructure/disjointsparsetable.cpp"
 
-#line 3 "test/aoj/../../datastructure/disjointsparsetable.cpp"
+#line 3 "datastructure/disjointsparsetable.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

@@ -79,10 +79,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/aoj/../../mod/mint.cpp"
+#line 2 "mod/mint.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../mod/mint.cpp"
+#line 5 "mod/mint.cpp"
 using namespace std;
 #endif
 
@@ -171,10 +171,10 @@ signed main(){
   return 0;
 }
 #endif
-#line 2 "test/aoj/../../combinatorics/partitiontable.cpp"
+#line 2 "combinatorics/partitiontable.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../combinatorics/partitiontable.cpp"
+#line 5 "combinatorics/partitiontable.cpp"
 using namespace std;
 #endif
 

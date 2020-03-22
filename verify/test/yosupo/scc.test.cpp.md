@@ -92,9 +92,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../graph/stronglyconnectedcomponent.cpp"
+#line 1 "graph/stronglyconnectedcomponent.cpp"
 
-#line 3 "test/yosupo/../../graph/stronglyconnectedcomponent.cpp"
+#line 3 "graph/stronglyconnectedcomponent.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

@@ -82,10 +82,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/aoj/../../string/knuthmorrispratt.cpp"
+#line 2 "string/knuthmorrispratt.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../string/knuthmorrispratt.cpp"
+#line 5 "string/knuthmorrispratt.cpp"
 using namespace std;
 #endif
 /*

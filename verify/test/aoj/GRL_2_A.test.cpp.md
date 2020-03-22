@@ -87,9 +87,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/../../graph/kruskal.cpp"
+#line 1 "graph/kruskal.cpp"
 
-#line 3 "test/aoj/../../graph/kruskal.cpp"
+#line 3 "graph/kruskal.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

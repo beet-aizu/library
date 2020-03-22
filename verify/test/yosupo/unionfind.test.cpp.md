@@ -87,9 +87,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../datastructure/unionfindtree.cpp"
+#line 1 "datastructure/unionfindtree.cpp"
 
-#line 3 "test/yosupo/../../datastructure/unionfindtree.cpp"
+#line 3 "datastructure/unionfindtree.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

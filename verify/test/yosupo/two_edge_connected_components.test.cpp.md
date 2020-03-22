@@ -95,10 +95,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/yosupo/../../graph/twoedgeconnectedcomponents.cpp"
+#line 2 "graph/twoedgeconnectedcomponents.cpp"
 
 #ifndef call_from_test
-#line 5 "test/yosupo/../../graph/twoedgeconnectedcomponents.cpp"
+#line 5 "graph/twoedgeconnectedcomponents.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

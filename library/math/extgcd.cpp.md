@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/extgcd.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:19:27+09:00
+    - Last commit date: 2020-03-22 10:35:50+09:00
 
 
 
@@ -54,8 +54,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -91,9 +93,10 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/extgcd.cpp"
+#line 2 "math/extgcd.cpp"
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE

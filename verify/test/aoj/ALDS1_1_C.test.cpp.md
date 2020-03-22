@@ -82,9 +82,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/../../math/isprime.cpp"
+#line 1 "math/isprime.cpp"
 
-#line 3 "test/aoj/../../math/isprime.cpp"
+#line 3 "math/isprime.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

@@ -94,10 +94,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/yosupo/../../mod/mint.cpp"
+#line 2 "mod/mint.cpp"
 
 #ifndef call_from_test
-#line 5 "test/yosupo/../../mod/mint.cpp"
+#line 5 "mod/mint.cpp"
 using namespace std;
 #endif
 
@@ -186,10 +186,10 @@ signed main(){
   return 0;
 }
 #endif
-#line 2 "test/yosupo/../../polynomial/berlekampmassey.cpp"
+#line 2 "polynomial/berlekampmassey.cpp"
 
 #ifndef call_from_test
-#line 5 "test/yosupo/../../polynomial/berlekampmassey.cpp"
+#line 5 "polynomial/berlekampmassey.cpp"
 using namespace std;
 
 #endif

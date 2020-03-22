@@ -84,9 +84,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../math/sum_of_floor.cpp"
+#line 1 "math/sum_of_floor.cpp"
 
-#line 3 "test/yosupo/../../math/sum_of_floor.cpp"
+#line 3 "math/sum_of_floor.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

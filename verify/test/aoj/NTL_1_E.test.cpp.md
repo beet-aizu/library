@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_1_E.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:19:27+09:00
+    - Last commit date: 2020-03-22 10:35:50+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E</a>
@@ -78,9 +78,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/../../math/extgcd.cpp"
+#line 2 "math/extgcd.cpp"
 
-#line 3 "test/aoj/../../math/extgcd.cpp"
+#ifndef call_from_test
+#line 5 "math/extgcd.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

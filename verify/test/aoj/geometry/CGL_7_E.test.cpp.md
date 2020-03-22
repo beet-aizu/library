@@ -80,9 +80,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/geometry/../../../geometry/geometry.cpp"
+#line 1 "geometry/geometry.cpp"
 
-#line 3 "test/aoj/geometry/../../../geometry/geometry.cpp"
+#line 3 "geometry/geometry.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

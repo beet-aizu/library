@@ -105,9 +105,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../tools/compress.cpp"
+#line 1 "tools/compress.cpp"
 
-#line 3 "test/yosupo/../../tools/compress.cpp"
+#line 3 "tools/compress.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -134,9 +134,9 @@ signed main(){
   return 0;
 }
 #endif
-#line 1 "test/yosupo/../../segtree/count/dynamic_offline.cpp"
+#line 1 "segtree/count/dynamic_offline.cpp"
 
-#line 3 "test/yosupo/../../segtree/count/dynamic_offline.cpp"
+#line 3 "segtree/count/dynamic_offline.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

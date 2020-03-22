@@ -98,9 +98,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/aoj/../../tree/heavylightdecomposition.cpp"
+#line 1 "tree/heavylightdecomposition.cpp"
 
-#line 3 "test/aoj/../../tree/heavylightdecomposition.cpp"
+#line 3 "tree/heavylightdecomposition.cpp"
 using namespace std;
 #endif
 /**

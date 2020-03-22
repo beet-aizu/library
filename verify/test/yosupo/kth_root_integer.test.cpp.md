@@ -101,9 +101,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../tools/int128.cpp"
+#line 1 "tools/int128.cpp"
 
-#line 3 "test/yosupo/../../tools/int128.cpp"
+#line 3 "tools/int128.cpp"
 using namespace std;
 /*
   multiprecision:

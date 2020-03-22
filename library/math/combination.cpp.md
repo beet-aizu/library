@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/combination.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:51:08+09:00
+    - Last commit date: 2020-03-22 10:35:50+09:00
 
 
 
@@ -46,8 +46,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -66,7 +68,7 @@ struct Combination{
 
   void init(){
     fact[0]=1;
-    for(int i=1;i<sz;i++)
+    for(int i=1;i<(int)sz;i++)
       fact[i]=(ll)fact[i-1]*i%mod;
   }
 
@@ -84,16 +86,55 @@ struct Combination{
     T e1,e2,e3;
     T a1=mod_fact(n,e1),a2=mod_fact(k,e2),a3=mod_fact(n-k,e3);
     if(e1>e2+e3) return 0;
-    return (ll)a1*mod_inverse((ll)a2*a3%mod,mod)%mod;
+    return a1*mod_inverse<ll>((ll)a2*a3%mod,mod)%mod;
   }
 };
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
-  // !! not verified !!
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n;
+  cin>>n;
+  string s;
+  cin>>s;
+
+  vector<int> as(n);
+  for(int i=0;i<n;i++) as[i]=s[i]-'1';
+
+  const int sz = 1e6+10;
+  Combination<int, sz> C(2);
+
+  int is_one=0;
+  for(int i=0;i<n;i++)
+    if(as[i]&1) is_one^=C.mod_comb(n-1,i);
+
+  if(is_one){
+    cout<<1<<endl;
+    return 0;
+  }
+
+  for(int i=0;i<n;i++){
+    if(as[i]==1){
+      cout<<0<<endl;
+      return 0;
+    }
+    as[i]/=2;
+  }
+
+  int is_two=0;
+  for(int i=0;i<n;i++)
+    if(as[i]&1) is_two^=C.mod_comb(n-1,i);
+
+  cout<<is_two*2<<endl;
   return 0;
 }
+/*
+  verified on 2020/03/22
+  https://atcoder.jp/contests/agc043/tasks/agc043_b
+*/
 #endif
 
 ```
@@ -109,7 +150,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/combination.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: math/combination.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

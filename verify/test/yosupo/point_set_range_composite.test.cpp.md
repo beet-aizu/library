@@ -113,10 +113,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/yosupo/../../mod/mint.cpp"
+#line 2 "mod/mint.cpp"
 
 #ifndef call_from_test
-#line 5 "test/yosupo/../../mod/mint.cpp"
+#line 5 "mod/mint.cpp"
 using namespace std;
 #endif
 
@@ -205,9 +205,9 @@ signed main(){
   return 0;
 }
 #endif
-#line 1 "test/yosupo/../../segtree/basic/ushi.cpp"
+#line 1 "segtree/basic/ushi.cpp"
 
-#line 3 "test/yosupo/../../segtree/basic/ushi.cpp"
+#line 3 "segtree/basic/ushi.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

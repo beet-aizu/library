@@ -90,9 +90,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../graph/dominatortree.cpp"
+#line 1 "graph/dominatortree.cpp"
 
-#line 3 "test/yosupo/../../graph/dominatortree.cpp"
+#line 3 "graph/dominatortree.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

@@ -88,10 +88,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/yosupo/../../geometry/argsort.cpp"
+#line 2 "geometry/argsort.cpp"
 
 #ifndef call_from_test
-#line 5 "test/yosupo/../../geometry/argsort.cpp"
+#line 5 "geometry/argsort.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

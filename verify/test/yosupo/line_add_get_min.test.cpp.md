@@ -102,9 +102,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../tools/compress.cpp"
+#line 1 "tools/compress.cpp"
 
-#line 3 "test/yosupo/../../tools/compress.cpp"
+#line 3 "tools/compress.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -131,9 +131,9 @@ signed main(){
   return 0;
 }
 #endif
-#line 1 "test/yosupo/../../segtree/cht/lichao.cpp"
+#line 1 "segtree/cht/lichao.cpp"
 
-#line 3 "test/yosupo/../../segtree/cht/lichao.cpp"
+#line 3 "segtree/cht/lichao.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

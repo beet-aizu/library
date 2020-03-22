@@ -93,9 +93,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../tree/lowestcommonancestor.cpp"
+#line 1 "tree/lowestcommonancestor.cpp"
 
-#line 3 "test/yosupo/../../tree/lowestcommonancestor.cpp"
+#line 3 "tree/lowestcommonancestor.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

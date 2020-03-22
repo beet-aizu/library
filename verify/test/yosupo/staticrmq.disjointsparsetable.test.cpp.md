@@ -92,9 +92,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "test/yosupo/../../datastructure/disjointsparsetable.cpp"
+#line 1 "datastructure/disjointsparsetable.cpp"
 
-#line 3 "test/yosupo/../../datastructure/disjointsparsetable.cpp"
+#line 3 "datastructure/disjointsparsetable.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

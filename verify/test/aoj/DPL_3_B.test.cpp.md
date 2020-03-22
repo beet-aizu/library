@@ -95,10 +95,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 2 "test/aoj/../../tools/chminmax.cpp"
+#line 2 "tools/chminmax.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../tools/chminmax.cpp"
+#line 5 "tools/chminmax.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -110,10 +110,10 @@ signed main(){
   return 0;
 }
 #endif
-#line 2 "test/aoj/../../algorithm/largestrectangle.cpp"
+#line 2 "algorithm/largestrectangle.cpp"
 
 #ifndef call_from_test
-#line 5 "test/aoj/../../algorithm/largestrectangle.cpp"
+#line 5 "algorithm/largestrectangle.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
