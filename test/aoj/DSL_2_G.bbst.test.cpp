@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
-#include "../../bbst/basic/base.cpp"
-#include "../../bbst/basic/lazy.cpp"
+#include "../../bbst/rbst/basic/base.cpp"
+#include "../../bbst/rbst/basic/lazy.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
   int n,q;
   cin>>n>>q;

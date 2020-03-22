@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
-#include "../../bbst/basic/base.cpp"
-#include "../../bbst/basic/ushi.cpp"
+#include "../../bbst/rbst/basic/base.cpp"
+#include "../../bbst/rbst/basic/ushi.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,q;
   cin>>n>>q;
   vector<int> vs(n);

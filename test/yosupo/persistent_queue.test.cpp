@@ -4,9 +4,9 @@
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/basic/base.cpp"
-#include "../../bbst/basic/array.cpp"
-#include "../../bbst/persistent/array.cpp"
+#include "../../bbst/rbst/basic/base.cpp"
+#include "../../bbst/rbst/basic/array.cpp"
+#include "../../bbst/rbst/persistent/array.cpp"
 #undef call_from_test
 
 #ifdef SANITIZE
