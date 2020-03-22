@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/persistent_queue.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-18 19:28:08+09:00
+    - Last commit date: 2020-03-22 15:37:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/persistent_queue">https://judge.yosupo.jp/problem/persistent_queue</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/bbst/basic/array.cpp.html">bbst/basic/array.cpp</a>
-* :heavy_check_mark: <a href="../../../library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :heavy_check_mark: <a href="../../../library/bbst/persistent/array.cpp.html">bbst/persistent/array.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/rbst/basic/array.cpp.html">bbst/rbst/basic/array.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/rbst/basic/base.cpp.html">bbst/rbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="../../../library/bbst/rbst/persistent/array.cpp.html">bbst/rbst/persistent/array.cpp</a>
 
 
 ## Code
@@ -55,9 +55,9 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/basic/base.cpp"
-#include "../../bbst/basic/array.cpp"
-#include "../../bbst/persistent/array.cpp"
+#include "../../bbst/rbst/basic/base.cpp"
+#include "../../bbst/rbst/basic/array.cpp"
+#include "../../bbst/rbst/persistent/array.cpp"
 #undef call_from_test
 
 #ifdef SANITIZE
@@ -111,7 +111,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/basic/array.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/rbst/basic/array.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

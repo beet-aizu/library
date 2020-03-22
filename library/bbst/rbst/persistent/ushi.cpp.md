@@ -21,25 +21,25 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/persistent/lazy.cpp
+# :warning: bbst/rbst/persistent/ushi.cpp
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#9c18e90622c99f987841c06d60e235e9">bbst/persistent</a>
-* <a href="{{ site.github.repository_url }}/blob/master/bbst/persistent/lazy.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:56:10+09:00
+* category: <a href="../../../../index.html#b6fd322919b1d6679fc1d8023177c526">bbst/rbst/persistent</a>
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/rbst/persistent/ushi.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-22 15:37:31+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :heavy_check_mark: <a href="../basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
+* :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/rbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="../basic/ushi.cpp.html">bbst/rbst/basic/ushi.cpp</a>
 
 
 ## Code
@@ -53,14 +53,14 @@ using namespace std;
 
 #define call_from_test
 #include "../basic/base.cpp"
-#include "../basic/lazy.cpp"
+#include "../basic/ushi.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
 template<typename Node, size_t LIM>
-struct PersistentLazy : Lazy<Node, LIM>{
-  using super = Lazy<Node, LIM>;
+struct PersistentUshi : Ushi<Node, LIM>{
+  using super = Ushi<Node, LIM>;
   using super::super;
   using T = typename Node::T;
 
@@ -71,8 +71,10 @@ struct PersistentLazy : Lazy<Node, LIM>{
 
   Node* eval(Node* a){
     a=clone(a);
-    a->l=clone(a->l);
-    a->r=clone(a->r);
+    if(a->rev){
+      a->l=clone(a->l);
+      a->r=clone(a->r);
+    }
     return super::eval(a);
   }
 
@@ -83,9 +85,9 @@ struct PersistentLazy : Lazy<Node, LIM>{
   }
 
   Node* rebuild(Node* a){
-    auto vs=super::dump(a);
+    auto v=super::dump(a);
     super::ptr=0;
-    return super::build(vs);
+    return super::build(v);
   }
 
   bool almost_full() const{
@@ -94,64 +96,65 @@ struct PersistentLazy : Lazy<Node, LIM>{
 };
 //END CUT HERE
 //INSERT ABOVE HERE
-signed ARC030_D(){
-  int n,q;
-  scanf("%d %d",&n,&q);
+#ifndef call_from_test
+signed HAPPYQUERY_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
 
-  using ll = long long;
-  using P = pair<ll, ll>;
-  vector<P> v(n,P(0,1));
-  for(int i=0;i<n;i++) scanf("%lld",&v[i].first);
+  int n;
+  cin>>n;
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
 
-  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
-  auto g=[](P a,ll b){return P(a.first+b*a.second,a.second);};
-  auto h=[](ll a,ll b){return a+b;};
+  auto f=[](int a,int b){return min(a,b);};
+  int ti=INT_MAX;
 
-  using Node = NodeBase<P, ll>;
-  constexpr size_t LIM = 6e6;
-  PersistentLazy<Node, LIM> G(f,g,h,P(0,0),0);
-  auto rt=G.build(v);
+  using Node = NodeBase<int>;
+  constexpr size_t LIM = 7e6;
+  PersistentUshi<Node, LIM> G(f,ti);
+  auto rt=G.build(vector<Node>(as.begin(),as.end()));
 
-  for(int i=0;i<q;i++){
-    int t;
-    scanf("%d",&t);
-    if(t==1){
-      int a,b,v;
-      scanf("%d %d %d",&a,&b,&v);
-      a--;
-      rt=G.update(rt,a,b,v);
-    }
-    if(t==2){
-      int a,b,c,d;
-      scanf("%d %d %d %d",&a,&b,&c,&d);
-      a--;c--;
-      auto s=G.split(rt,a);
-      auto t=G.split(s.second,b-a);
-      auto u=G.split(rt,c);
-      auto v=G.split(u.second,d-c);
+  vector<decltype(rt)> rts;
+  rts.emplace_back(rt);
 
-      rt=G.merge(G.merge(s.first,v.first),t.second);
-    }
-    if(t==3){
-      int a,b;
-      scanf("%d %d",&a,&b);
-      a--;
-      printf("%lld\n",G.query(rt,a,b).first);
-    }
+  int q1;
+  cin>>q1;
+  rts.reserve(q1+1);
 
-    if(G.almost_full()) rt=G.rebuild(rt);
+  for(int i=0;i<q1;i++){
+    int p,x;
+    cin>>p>>x;
+    p--;
+    rt=G.set_val(rt,p,x);
+    rts.emplace_back(rt);
   }
+
+  int q2;
+  cin>>q2;
+  int x=0;
+  for(int i=0;i<q2;i++){
+    int a,b,c;
+    cin>>a>>b>>c;
+    int k=a^x;
+    int l=(b^x)-1;
+    int r=(c^x);
+    assert(l<r);
+    x=G.query(rts[k],l,r);
+    cout<<x<<"\n";
+  }
+  cout<<flush;
   return 0;
 }
 /*
   verified on 2019/10/22
-  https://atcoder.jp/contests/arc030/tasks/arc030_4
+  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query/problem
 */
 
 signed main(){
-  ARC030_D();
+  HAPPYQUERY_B();
   return 0;
 }
+#endif
 
 ```
 {% endraw %}
@@ -166,10 +169,10 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/persistent/lazy.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/rbst/persistent/ushi.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../../../index.html">Back to top page</a>
 

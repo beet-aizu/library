@@ -21,25 +21,30 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: bbst/persistent/ushi.cpp
+# :heavy_check_mark: bbst/rbst/persistent/array.cpp
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#9c18e90622c99f987841c06d60e235e9">bbst/persistent</a>
-* <a href="{{ site.github.repository_url }}/blob/master/bbst/persistent/ushi.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:56:10+09:00
+* category: <a href="../../../../index.html#b6fd322919b1d6679fc1d8023177c526">bbst/rbst/persistent</a>
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/rbst/persistent/array.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-22 15:37:31+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :heavy_check_mark: <a href="../basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../basic/array.cpp.html">bbst/rbst/basic/array.cpp</a>
+* :heavy_check_mark: <a href="../basic/base.cpp.html">bbst/rbst/basic/base.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../../verify/test/yosupo/persistent_queue.test.cpp.html">test/yosupo/persistent_queue.test.cpp</a>
 
 
 ## Code
@@ -53,20 +58,21 @@ using namespace std;
 
 #define call_from_test
 #include "../basic/base.cpp"
-#include "../basic/ushi.cpp"
+#include "../basic/array.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
 template<typename Node, size_t LIM>
-struct PersistentUshi : Ushi<Node, LIM>{
-  using super = Ushi<Node, LIM>;
+struct PersistentArray : Array<Node, LIM>{
+  using super = Array<Node, LIM>;
   using super::super;
-  using T = typename Node::T;
 
   inline Node* clone(Node* a){
     if(a==nullptr) return a;
-    return super::create(*a);
+    Node* b=super::create();
+    *b=*a;
+    return b;
   }
 
   Node* eval(Node* a){
@@ -76,12 +82,6 @@ struct PersistentUshi : Ushi<Node, LIM>{
       a->r=clone(a->r);
     }
     return super::eval(a);
-  }
-
-  T query(Node *a,size_t l,size_t r){
-    auto s=super::split(a,l);
-    auto t=super::split(s.second,r-l);
-    return super::query(t.first);
   }
 
   Node* rebuild(Node* a){
@@ -95,63 +95,51 @@ struct PersistentUshi : Ushi<Node, LIM>{
   }
 };
 //END CUT HERE
-//INSERT ABOVE HERE
 #ifndef call_from_test
-signed HAPPYQUERY_B(){
+//INSERT ABOVE HERE
+signed JOISC2012_COPYPASTE(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  int m;
+  string buf;
+  cin>>m>>buf;
+
+  using Node = NodeBase<char>;
+  const size_t LIM = 1e7;
+  PersistentArray<Node, LIM> pa;
+
+  vector<char> v(buf.begin(),buf.end());
+  auto rt=pa.build(v);
 
   int n;
   cin>>n;
-  vector<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  auto f=[](int a,int b){return min(a,b);};
-  int ti=INT_MAX;
-
-  using Node = NodeBase<int>;
-  constexpr size_t LIM = 7e6;
-  PersistentUshi<Node, LIM> G(f,ti);
-  auto rt=G.build(vector<Node>(as.begin(),as.end()));
-
-  vector<decltype(rt)> rts;
-  rts.emplace_back(rt);
-
-  int q1;
-  cin>>q1;
-  rts.reserve(q1+1);
-
-  for(int i=0;i<q1;i++){
-    int p,x;
-    cin>>p>>x;
-    p--;
-    rt=G.set_val(rt,p,x);
-    rts.emplace_back(rt);
-  }
-
-  int q2;
-  cin>>q2;
-  int x=0;
-  for(int i=0;i<q2;i++){
+  for(int i=0;i<n;i++){
     int a,b,c;
     cin>>a>>b>>c;
-    int k=a^x;
-    int l=(b^x)-1;
-    int r=(c^x);
-    assert(l<r);
-    x=G.query(rts[k],l,r);
-    cout<<x<<"\n";
+    auto s=pa.split(rt,a);
+    auto t=pa.split(s.second,b-a);
+    auto u=pa.split(rt,c);
+    rt=pa.merge(pa.merge(u.first,t.first),u.second);
+
+    if((int)pa.count(rt)>m)
+      rt=pa.split(rt,m).first;
+
+    if(pa.almost_full()) rt=pa.rebuild(rt);
   }
-  cout<<flush;
+
+  auto ds=pa.dump(rt);
+  buf.resize(ds.size());
+  for(int i=0;i<(int)ds.size();i++) buf[i]=ds[i];
+  cout<<buf<<endl;
   return 0;
 }
 /*
   verified on 2019/10/22
-  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query/problem
+  https://atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
 */
 
 signed main(){
-  HAPPYQUERY_B();
+  JOISC2012_COPYPASTE();
   return 0;
 }
 #endif
@@ -169,10 +157,10 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/persistent/ushi.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: bbst/rbst/persistent/array.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../../../index.html">Back to top page</a>
 

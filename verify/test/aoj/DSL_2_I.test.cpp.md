@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_I.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 13:36:48+09:00
+    - Last commit date: 2020-03-22 15:37:31+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I</a>
@@ -40,7 +40,6 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/segtree/basic/chien.cpp.html">segtree/basic/chien.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -54,11 +53,13 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../segtree/basic/chien.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,q;
   cin>>n>>q;
 
@@ -101,24 +102,6 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/fastio.cpp"
-
-#line 3 "tools/fastio.cpp"
-using namespace std;
-#endif
-//BEGIN CUT HERE
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-//END CUT HERE
-#ifndef call_from_test
-signed main(){
-  return 0;
-}
-#endif
 #line 1 "segtree/basic/chien.cpp"
 
 #line 3 "segtree/basic/chien.cpp"
@@ -288,10 +271,13 @@ signed main(){
   return 0;
 }
 #endif
-#line 9 "test/aoj/DSL_2_I.test.cpp"
+#line 8 "test/aoj/DSL_2_I.test.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,q;
   cin>>n>>q;
 

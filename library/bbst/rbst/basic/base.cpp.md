@@ -21,45 +21,45 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: bbst/basic/base.cpp
+# :heavy_check_mark: bbst/rbst/basic/base.cpp
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#fdd417a23ea00086418babb4ed5c9a26">bbst/basic</a>
-* <a href="{{ site.github.repository_url }}/blob/master/bbst/basic/base.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-10-24 23:20:46+09:00
+* category: <a href="../../../../index.html#cbaab0a3f046937153edaefe862abb9d">bbst/rbst/basic</a>
+* <a href="{{ site.github.repository_url }}/blob/master/bbst/rbst/basic/base.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-22 15:37:31+09:00
 
 
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="array.cpp.html">bbst/basic/array.cpp</a>
-* :heavy_check_mark: <a href="dual.cpp.html">bbst/basic/dual.cpp</a>
-* :heavy_check_mark: <a href="lazy.cpp.html">bbst/basic/lazy.cpp</a>
-* :heavy_check_mark: <a href="ushi.cpp.html">bbst/basic/ushi.cpp</a>
-* :heavy_check_mark: <a href="../persistent/array.cpp.html">bbst/persistent/array.cpp</a>
-* :warning: <a href="../persistent/lazy.cpp.html">bbst/persistent/lazy.cpp</a>
-* :warning: <a href="../persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
+* :heavy_check_mark: <a href="array.cpp.html">bbst/rbst/basic/array.cpp</a>
+* :heavy_check_mark: <a href="dual.cpp.html">bbst/rbst/basic/dual.cpp</a>
+* :heavy_check_mark: <a href="lazy.cpp.html">bbst/rbst/basic/lazy.cpp</a>
+* :heavy_check_mark: <a href="ushi.cpp.html">bbst/rbst/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="../persistent/array.cpp.html">bbst/rbst/persistent/array.cpp</a>
+* :warning: <a href="../persistent/lazy.cpp.html">bbst/rbst/persistent/lazy.cpp</a>
+* :warning: <a href="../persistent/ushi.cpp.html">bbst/rbst/persistent/ushi.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html">test/aoj/DSL_2_A.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html">test/aoj/DSL_2_H.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html">test/aoj/DSL_2_I.bbst.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/yosupo/persistent_queue.test.cpp.html">test/yosupo/persistent_queue.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/1508.test.cpp.html">test/aoj/1508.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/1579.test.cpp.html">test/aoj/1579.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/2890.test.cpp.html">test/aoj/2890.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_A.bbst.test.cpp.html">test/aoj/DSL_2_A.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_D.bbst.test.cpp.html">test/aoj/DSL_2_D.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_E.bbst.test.cpp.html">test/aoj/DSL_2_E.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_F.bbst.test.cpp.html">test/aoj/DSL_2_F.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_G.bbst.test.cpp.html">test/aoj/DSL_2_G.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_H.bbst.test.cpp.html">test/aoj/DSL_2_H.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/aoj/DSL_2_I.bbst.test.cpp.html">test/aoj/DSL_2_I.bbst.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/yosupo/persistent_queue.test.cpp.html">test/yosupo/persistent_queue.test.cpp</a>
 
 
 ## Code
@@ -206,7 +206,7 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "bbst/basic/base.cpp"
+#line 1 "bbst/rbst/basic/base.cpp"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -343,5 +343,5 @@ signed main(){
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../../../index.html">Back to top page</a>
 

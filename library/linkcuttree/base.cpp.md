@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/base.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-07 13:27:51+09:00
+    - Last commit date: 2020-03-22 15:37:31+09:00
 
 
 
@@ -65,7 +65,7 @@ layout: default
 {% raw %}
 ```cpp
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -224,7 +224,7 @@ signed main(){
 ```cpp
 #line 1 "linkcuttree/base.cpp"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE

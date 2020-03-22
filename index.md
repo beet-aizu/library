@@ -54,24 +54,24 @@ layout: default
 * :heavy_check_mark: <a href="library/bbst/pb_ds_tree.cpp.html">bbst/pb_ds_tree.cpp</a>
 
 
-<div id="fdd417a23ea00086418babb4ed5c9a26"></div>
+<div id="cbaab0a3f046937153edaefe862abb9d"></div>
 
-### bbst/basic
+### bbst/rbst/basic
 
-* :heavy_check_mark: <a href="library/bbst/basic/array.cpp.html">bbst/basic/array.cpp</a>
-* :heavy_check_mark: <a href="library/bbst/basic/base.cpp.html">bbst/basic/base.cpp</a>
-* :heavy_check_mark: <a href="library/bbst/basic/dual.cpp.html">bbst/basic/dual.cpp</a>
-* :heavy_check_mark: <a href="library/bbst/basic/lazy.cpp.html">bbst/basic/lazy.cpp</a>
-* :heavy_check_mark: <a href="library/bbst/basic/ushi.cpp.html">bbst/basic/ushi.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/rbst/basic/array.cpp.html">bbst/rbst/basic/array.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/rbst/basic/base.cpp.html">bbst/rbst/basic/base.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/rbst/basic/dual.cpp.html">bbst/rbst/basic/dual.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/rbst/basic/lazy.cpp.html">bbst/rbst/basic/lazy.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/rbst/basic/ushi.cpp.html">bbst/rbst/basic/ushi.cpp</a>
 
 
-<div id="9c18e90622c99f987841c06d60e235e9"></div>
+<div id="b6fd322919b1d6679fc1d8023177c526"></div>
 
-### bbst/persistent
+### bbst/rbst/persistent
 
-* :heavy_check_mark: <a href="library/bbst/persistent/array.cpp.html">bbst/persistent/array.cpp</a>
-* :warning: <a href="library/bbst/persistent/lazy.cpp.html">bbst/persistent/lazy.cpp</a>
-* :warning: <a href="library/bbst/persistent/ushi.cpp.html">bbst/persistent/ushi.cpp</a>
+* :heavy_check_mark: <a href="library/bbst/rbst/persistent/array.cpp.html">bbst/rbst/persistent/array.cpp</a>
+* :warning: <a href="library/bbst/rbst/persistent/lazy.cpp.html">bbst/rbst/persistent/lazy.cpp</a>
+* :warning: <a href="library/bbst/rbst/persistent/ushi.cpp.html">bbst/rbst/persistent/ushi.cpp</a>
 
 
 <div id="ac1ed416572b96a9f5d69740d174ef3d"></div>
