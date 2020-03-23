@@ -342,6 +342,7 @@ layout: default
 * :warning: <a href="library/tree/construct_from_distances_to_farthest_vertex.cpp.html">tree/construct_from_distances_to_farthest_vertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 * :heavy_check_mark: <a href="library/tree/diameterforvertex.cpp.html">tree/diameterforvertex.cpp</a>
+* :heavy_check_mark: <a href="library/tree/eulertourforbfs.cpp.html">tree/eulertourforbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
@@ -655,6 +656,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3227.test.cpp.html">test/yukicoder/3227.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/3405.test.cpp.html">test/yukicoder/3405.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3407.test.cpp.html">test/yukicoder/3407.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/399.test.cpp.html">test/yukicoder/399.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>

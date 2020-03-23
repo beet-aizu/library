@@ -50,6 +50,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_H.test.cpp.html">test/aoj/DSL_2_H.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/aoj/DSL_2_I.test.cpp.html">test/aoj/DSL_2_I.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/yosupo/range_affine_range_sum.test.cpp.html">test/yosupo/range_affine_range_sum.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/yukicoder/3405.test.cpp.html">test/yukicoder/3405.test.cpp</a>
 
 
 ## Code

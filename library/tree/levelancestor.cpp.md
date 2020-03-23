@@ -39,11 +39,13 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
+* :heavy_check_mark: <a href="eulertourforbfs.cpp.html">tree/eulertourforbfs.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0391.test.cpp.html">test/aoj/0391.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3405.test.cpp.html">test/yukicoder/3405.test.cpp</a>
 
 
 ## Code
