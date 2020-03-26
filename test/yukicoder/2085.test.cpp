@@ -7,6 +7,10 @@ using namespace std;
 #include "../../tree/rerooting.cpp"
 #undef call_from_test
 
+#ifdef SANITIZE
+#define IGNORE
+#endif
+
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -23,9 +27,11 @@ signed main(){
     G.add_edge(a,b,1);
   }
   auto res=G.build();
+
   vector<int> ans;
   for(int i=0;i<n;i++)
     if(1-res[i]>0) ans.emplace_back(i);
+
   cout<<ans.size()<<"\n";
   for(int x:ans) cout<<x+1<<"\n";
   cout<<flush;
