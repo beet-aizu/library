@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/carmichael.cpp
+# :heavy_check_mark: math/twoway.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/carmichael.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/twoway.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-29 20:43:58+09:00
 
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/2720.test.cpp.html">test/aoj/2720.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
 
 
 ## Code
@@ -53,22 +53,14 @@ layout: default
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// min m s.t. a^m = 1 mod n (a, n are coprime)
 template<typename T>
-T carmichael_lambda(T n){
-  auto lcm=[](auto a,auto b){return a/__gcd(a,b)*b;};
-  T res=1;
-  if(n%8==0) n/=2;
-  for(int i=2;i*i<=n;i++){
-    if(n%i==0){
-      T tmp=i-1;
-      for(n/=i;n%i==0;n/=i) tmp*=i;
-      res=lcm(res,tmp);
-    }
-  }
-  if(n!=1) res=lcm(res,n-1);
-  return res;
-}
+struct TwoWay{
+  T x,y;
+  TwoWay(T z=T()):x(z),y(z){}
+  TwoWay(T x,T y):x(x),y(y){}
+  TwoWay operator+(const TwoWay &o)const{return TwoWay(x+o.x,o.y+y);}
+  TwoWay operator*(const TwoWay &o)const{return TwoWay(x*o.x,o.y*y);}
+};
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
@@ -83,29 +75,21 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "math/carmichael.cpp"
+#line 2 "math/twoway.cpp"
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// min m s.t. a^m = 1 mod n (a, n are coprime)
 template<typename T>
-T carmichael_lambda(T n){
-  auto lcm=[](auto a,auto b){return a/__gcd(a,b)*b;};
-  T res=1;
-  if(n%8==0) n/=2;
-  for(int i=2;i*i<=n;i++){
-    if(n%i==0){
-      T tmp=i-1;
-      for(n/=i;n%i==0;n/=i) tmp*=i;
-      res=lcm(res,tmp);
-    }
-  }
-  if(n!=1) res=lcm(res,n-1);
-  return res;
-}
+struct TwoWay{
+  T x,y;
+  TwoWay(T z=T()):x(z),y(z){}
+  TwoWay(T x,T y):x(x),y(y){}
+  TwoWay operator+(const TwoWay &o)const{return TwoWay(x+o.x,o.y+y);}
+  TwoWay operator*(const TwoWay &o)const{return TwoWay(x*o.x,o.y*y);}
+};
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

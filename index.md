@@ -211,16 +211,19 @@ layout: default
 * :heavy_check_mark: <a href="library/math/carmichael.cpp.html">math/carmichael.cpp</a>
 * :warning: <a href="library/math/combination.cpp.html">math/combination.cpp</a>
 * :heavy_check_mark: <a href="library/math/convertbase.cpp.html">math/convertbase.cpp</a>
+* :warning: <a href="library/math/dual.cpp.html">math/dual.cpp</a>
 * :heavy_check_mark: <a href="library/math/extgcd.cpp.html">math/extgcd.cpp</a>
 * :heavy_check_mark: <a href="library/math/factorize.cpp.html">math/factorize.cpp</a>
 * :heavy_check_mark: <a href="library/math/fraction.cpp.html">math/fraction.cpp</a>
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">math/isprime.cpp</a>
 * :heavy_check_mark: <a href="library/math/kitamasa.cpp.html">math/kitamasa.cpp</a>
 * :heavy_check_mark: <a href="library/math/linearcongruence.cpp.html">math/linearcongruence.cpp</a>
+* :heavy_check_mark: <a href="library/math/linearfunction.cpp.html">math/linearfunction.cpp</a>
 * :heavy_check_mark: <a href="library/math/sum_of_floor.cpp.html">math/sum_of_floor.cpp</a>
 * :heavy_check_mark: <a href="library/math/tetrahedra.cpp.html">math/tetrahedra.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient.cpp.html">math/totient.cpp</a>
 * :heavy_check_mark: <a href="library/math/totient_table.cpp.html">math/totient_table.cpp</a>
+* :heavy_check_mark: <a href="library/math/twoway.cpp.html">math/twoway.cpp</a>
 
 
 <div id="ad148a3ca8bd0ef3b48c52454c493ec5"></div>
