@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/1595.toptree.test.cpp
+# :heavy_check_mark: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/1595.toptree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-29 13:32:31+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1595">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1595</a>
+* see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum</a>
 
 
 ## Depends on
@@ -47,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1595"
+#define PROBLEM "https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -56,55 +56,75 @@ using namespace std;
 #include "../../toptree/toptree.cpp"
 #undef call_from_test
 
+using ll = long long;
 struct Vertex{
   void* handle;
-  int idx;
-  Vertex(int idx=-1):handle(nullptr),idx(idx){}
+  ll val;
+  Vertex(ll val=0):handle(nullptr),val(val){}
 };
 
 struct Cluster{
-  int ans,lf,rg,len;
+  ll res;
   Cluster(){}
-  Cluster(int l):ans(l),lf(l),rg(l),len(l){}
-  Cluster(int ans,int lf,int rg,int len):
-    ans(ans),lf(lf),rg(rg),len(len){}
-  void toggle(){swap(lf,rg);}
-  static Cluster compress(Cluster x,Vertex*,Cluster y){
-    return Cluster(
-      max(x.rg,y.lf),
-      max(x.lf,x.len+y.lf),
-      max(y.rg,y.len+x.rg),
-      x.len+y.len);
+  Cluster(ll res):res(res){}
+  void toggle(){}
+  static Cluster compress(Cluster x,Vertex* v,Cluster y){
+    return Cluster(x.res+v->val+y.res);
   }
-  static Cluster rake(Cluster x,Cluster y,Vertex*){
-    return Cluster(0,max(x.lf,x.len+y.rg),max(x.rg,y.rg),x.len);
+  static Cluster rake(Cluster x,Cluster y,Vertex* v){
+    return Cluster(x.res+y.res+v->val);
   }
 };
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
-  const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> T(Cluster(0));
+  const size_t LIM = 2e6;
+  TopTree<Vertex, Cluster, LIM> G(Cluster(0));
 
-  int n;
-  cin>>n;
+  int n,q;
+  cin>>n>>q;
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
 
   vector<Vertex*> vs(n);
   for(int i=0;i<n;i++)
-    vs[i]=T.create(Vertex(i));
+    vs[i]=G.create(Vertex(as[i]));
 
   for(int i=1;i<n;i++){
     int u,v;
     cin>>u>>v;
-    u--;v--;
-    T.link(vs[u],Cluster(1),vs[v]);
+    G.link(vs[u],Cluster(0),vs[v]);
   }
 
-  for(int i=0;i<n;i++)
-    cout<<(n-1)*2-T.expose(vs[i])->dat.ans<<"\n";
+  for(int i=0;i<q;i++){
+    int t;
+    cin>>t;
 
+    if(t==0){
+      int u,v,w,x;
+      cin>>u>>v>>w>>x;
+
+      G.cut(vs[u],vs[v]);
+      G.link(vs[w],Cluster(0),vs[x]);
+    }
+
+    if(t==1){
+      int p,x;
+      cin>>p>>x;
+      as[p]+=x;
+      G.set_val(vs[p],Vertex(as[p]));
+    }
+
+    if(t==2){
+      int v,p;
+      cin>>v>>p;
+      cout<<G.subtree(vs[p],vs[v]).res<<newl;
+    }
+  }
+  cout<<flush;
   return 0;
 }
 
@@ -114,8 +134,8 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj/1595.toptree.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1595"
+#line 1 "test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -579,58 +599,78 @@ signed main(){
   return 0;
 }
 #endif
-#line 8 "test/aoj/1595.toptree.test.cpp"
+#line 8 "test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp"
 #undef call_from_test
 
+using ll = long long;
 struct Vertex{
   void* handle;
-  int idx;
-  Vertex(int idx=-1):handle(nullptr),idx(idx){}
+  ll val;
+  Vertex(ll val=0):handle(nullptr),val(val){}
 };
 
 struct Cluster{
-  int ans,lf,rg,len;
+  ll res;
   Cluster(){}
-  Cluster(int l):ans(l),lf(l),rg(l),len(l){}
-  Cluster(int ans,int lf,int rg,int len):
-    ans(ans),lf(lf),rg(rg),len(len){}
-  void toggle(){swap(lf,rg);}
-  static Cluster compress(Cluster x,Vertex*,Cluster y){
-    return Cluster(
-      max(x.rg,y.lf),
-      max(x.lf,x.len+y.lf),
-      max(y.rg,y.len+x.rg),
-      x.len+y.len);
+  Cluster(ll res):res(res){}
+  void toggle(){}
+  static Cluster compress(Cluster x,Vertex* v,Cluster y){
+    return Cluster(x.res+v->val+y.res);
   }
-  static Cluster rake(Cluster x,Cluster y,Vertex*){
-    return Cluster(0,max(x.lf,x.len+y.rg),max(x.rg,y.rg),x.len);
+  static Cluster rake(Cluster x,Cluster y,Vertex* v){
+    return Cluster(x.res+y.res+v->val);
   }
 };
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
-  const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> T(Cluster(0));
+  const size_t LIM = 2e6;
+  TopTree<Vertex, Cluster, LIM> G(Cluster(0));
 
-  int n;
-  cin>>n;
+  int n,q;
+  cin>>n>>q;
+  vector<ll> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
 
   vector<Vertex*> vs(n);
   for(int i=0;i<n;i++)
-    vs[i]=T.create(Vertex(i));
+    vs[i]=G.create(Vertex(as[i]));
 
   for(int i=1;i<n;i++){
     int u,v;
     cin>>u>>v;
-    u--;v--;
-    T.link(vs[u],Cluster(1),vs[v]);
+    G.link(vs[u],Cluster(0),vs[v]);
   }
 
-  for(int i=0;i<n;i++)
-    cout<<(n-1)*2-T.expose(vs[i])->dat.ans<<"\n";
+  for(int i=0;i<q;i++){
+    int t;
+    cin>>t;
 
+    if(t==0){
+      int u,v,w,x;
+      cin>>u>>v>>w>>x;
+
+      G.cut(vs[u],vs[v]);
+      G.link(vs[w],Cluster(0),vs[x]);
+    }
+
+    if(t==1){
+      int p,x;
+      cin>>p>>x;
+      as[p]+=x;
+      G.set_val(vs[p],Vertex(as[p]));
+    }
+
+    if(t==2){
+      int v,p;
+      cin>>v>>p;
+      cout<<G.subtree(vs[p],vs[v]).res<<newl;
+    }
+  }
+  cout<<flush;
   return 0;
 }
 

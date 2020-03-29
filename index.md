@@ -602,6 +602,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/dominatortree.test.cpp.html">test/yosupo/dominatortree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>

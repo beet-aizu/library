@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 11:23:38+09:00
+    - Last commit date: 2020-03-29 13:32:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite">https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite</a>
@@ -684,6 +684,18 @@ struct TopTree{
     rr->p=nullptr;
     set_toggle(rr);
     bring(rr);bring(rt);
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Cluster e=query(p,v);
+    cut(p,v);
+    expose(v);
+    Node* t=(Node*)v->handle;
+    Cluster res=t->dat;
+    if(t->type==Type::Edge)
+      res=Cluster::rake(res,id,v);
+    link(p,e,v);
+    return res;
   }
 };
 template<typename Vertex, typename Cluster, size_t LIM>

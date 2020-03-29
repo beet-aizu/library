@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 11:23:38+09:00
+    - Last commit date: 2020-03-29 13:32:31+09:00
 
 
 
@@ -44,6 +44,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.toptree.test.cpp.html">test/aoj/1595.toptree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
 
 
@@ -483,6 +484,18 @@ struct TopTree{
     rr->p=nullptr;
     set_toggle(rr);
     bring(rr);bring(rt);
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Cluster e=query(p,v);
+    cut(p,v);
+    expose(v);
+    Node* t=(Node*)v->handle;
+    Cluster res=t->dat;
+    if(t->type==Type::Edge)
+      res=Cluster::rake(res,id,v);
+    link(p,e,v);
+    return res;
   }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
@@ -936,6 +949,18 @@ struct TopTree{
     rr->p=nullptr;
     set_toggle(rr);
     bring(rr);bring(rt);
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Cluster e=query(p,v);
+    cut(p,v);
+    expose(v);
+    Node* t=(Node*)v->handle;
+    Cluster res=t->dat;
+    if(t->type==Type::Edge)
+      res=Cluster::rake(res,id,v);
+    link(p,e,v);
+    return res;
   }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
