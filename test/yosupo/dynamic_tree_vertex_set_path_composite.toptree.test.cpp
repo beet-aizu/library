@@ -77,7 +77,7 @@ signed main(){
     if(t==1){
       int p,c,d;
       cin>>p>>c>>d;
-      G.set_val(vs[p],Vertex(T(c,d)));
+      G.set_vertex(vs[p],Vertex(T(c,d)));
     }
 
     if(t==2){

@@ -66,7 +66,7 @@ signed main(){
       int p,x;
       cin>>p>>x;
       as[p]+=x;
-      G.set_val(vs[p],Vertex(as[p]));
+      G.set_vertex(vs[p],Vertex(as[p]));
     }
 
     if(t==2){
