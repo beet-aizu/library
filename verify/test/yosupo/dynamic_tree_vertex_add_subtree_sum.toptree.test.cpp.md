@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 13:32:31+09:00
+    - Last commit date: 2020-03-29 16:10:57+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum</a>
@@ -115,7 +115,7 @@ signed main(){
       int p,x;
       cin>>p>>x;
       as[p]+=x;
-      G.set_val(vs[p],Vertex(as[p]));
+      G.set_vertex(vs[p],Vertex(as[p]));
     }
 
     if(t==2){
@@ -249,7 +249,6 @@ struct TopTree{
     }else abort();
     return t;
   }
-
 
   int parent_dir_ignore_guard(Node* t){
     Node* p=t->p;
@@ -504,22 +503,33 @@ struct TopTree{
     if(parent_dir(soft)==0) set_toggle(rt);
   }
 
-  void set_val(Vertex* u,Vertex v){
+  void set_vertex(Vertex* u,Vertex v){
     auto t=expose(u);
     *u=v;
     pushup(t);
   }
 
-  Cluster query(Vertex* u,Vertex* v){
+  Node* query_helper(Vertex* u,Vertex* v){
     soft_expose(u,v);
     Node* rt=(Node*)u->handle;
     propagate(rt);
 
-    if(rt->vs[0]==u and rt->vs[1]==v) return rt->dat;
-    if(rt->vs[0]==u) return rt->ch[0]->dat;
-    if(rt->vs[1]==v) return rt->ch[1]->dat;
+    if(rt->vs[0]==u and rt->vs[1]==v) return rt;
+    if(rt->vs[0]==u) return rt->ch[0];
+    if(rt->vs[1]==v) return rt->ch[1];
     propagate(rt->ch[1]);
-    return rt->ch[1]->ch[0]->dat;
+    return rt->ch[1]->ch[0];
+  }
+
+  void set_edge(Vertex* u,Vertex* v,const Cluster &w){
+    auto t=query_helper(u,v);
+    assert(t->type==Type::Edge);
+    t->dat=w;
+    while(t) pushup(t),t=t->p;
+  }
+
+  Cluster query(Vertex* u,Vertex* v){
+    return query_helper(u,v)->dat;
   }
 
   void bring(Node* rt){
@@ -661,7 +671,7 @@ signed main(){
       int p,x;
       cin>>p>>x;
       as[p]+=x;
-      G.set_val(vs[p],Vertex(as[p]));
+      G.set_vertex(vs[p],Vertex(as[p]));
     }
 
     if(t==2){
