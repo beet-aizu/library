@@ -6,8 +6,7 @@ using namespace std;
 //BEGIN CUT HERE
 struct Vertex{
   void* handle;
-  int idx;
-  Vertex(int idx=-1):handle(nullptr),idx(idx){}
+  Vertex():handle(nullptr){}
 };
 
 template<typename T>
@@ -27,6 +26,7 @@ struct Farthest{
   Farthest(pi md,pi lf,pi rg,T len):
     md(md),lf(lf),rg(rg),len(len){}
   void toggle(){swap(lf,rg);}
+
   static Farthest compress(Farthest &x,Vertex*,Farthest &y){
     return Farthest(
       max(x.rg,y.lf),
@@ -46,11 +46,7 @@ struct Farthest{
 #undef call_from_test
 
 //INSERT ABOVE HERE
-const int MAX = 2e5 + 100;
-Vertex* vs[MAX];
-int as[MAX],bs[MAX],ds[MAX],ans[MAX],idx[MAX]={};
-
-signed KUPC2020_G(){
+signed TKPPC2015_J(){
   cin.tie(0);
   ios::sync_with_stdio(0);
   const char newl = '\n';
@@ -59,77 +55,32 @@ signed KUPC2020_G(){
   using Cluster = Farthest<long long>;
   TopTree<Vertex, Cluster, LIM> G(Cluster(0,-1,-1));
 
-  int n;
-  cin>>n;
+  const int MAX = 5e5 + 100;
+  vector<Vertex*> vs(MAX);
+  int num=0;
+  vs[num]=G.create(Vertex());
+  num++;
 
-  for(int i=0;i<n;i++)
-    vs[i]=G.create(Vertex(i));
-
-  for(int i=1;i<n;i++){
-    cin>>as[i]>>bs[i]>>ds[i];
-    as[i]--;bs[i]--;
-    idx[as[i]]+=i;
-    idx[bs[i]]+=i;
-    G.link(vs[as[i]],Cluster(ds[i],as[i],bs[i]),vs[bs[i]]);
-  }
-
-  const long long INF = 1e12;
-  auto cut=[&](int k)->void{
-    G.set_edge(vs[as[k]],vs[bs[k]],Cluster(-INF,as[k],bs[k]));
-  };
-  auto link=[&](int k)->void{
-    G.set_edge(vs[as[k]],vs[bs[k]],Cluster(ds[k],as[k],bs[k]));
-  };
+  vector<int> ps(MAX);
 
   int q;
   cin>>q;
-
-  int cur=0;
   for(int i=0;i<q;i++){
-    int t;
-    cin>>t;
+    int t,a,c;
+    cin>>t>>a>>c;
 
     if(t==1){
-      int x;
-      cin>>x;
-      x--;
-      cur=x;
-    }
-    if(t==2){
-      int y;
-      cin>>y;
-      idx[as[y]]-=y;
-      idx[bs[y]]-=y;
-      cut(y);
-    }
-    if(t==3){
-      int z;
-      cin>>z;
-      idx[as[z]]+=z;
-      idx[bs[z]]+=z;
-      link(z);
+      vs[num]=G.create(Vertex());
+      ps[num]=a;
+      G.link(vs[num],Cluster(c,num,ps[num]),vs[ps[num]]);
+      num++;
     }
 
-    auto dist=G.expose(vs[cur])->dat.md.dist;
-    if(dist==0){
-      cout<<1<<" "<<cur+1<<newl;
-      continue;
-    }
+    if(t==2)
+      G.set_edge(vs[a],vs[ps[a]],Cluster(c,a,ps[a]));
 
-    int num=0;
-    while(1){
-      auto res=G.expose(vs[cur])->dat.md;
-      if(dist!=res.dist) break;
-      ans[num++]=res.idx;
-      cut(idx[res.idx]);
-    }
-
-    sort(ans,ans+num);
-    cout<<num;
-    for(int i=0;i<num;i++) cout<<" "<<ans[i]+1;
-    cout<<newl;
-
-    for(int i=0;i<num;i++) link(idx[ans[i]]);
+    if(t==3)
+      cout<<G.expose(vs[a])->dat.md.dist<<newl;
   }
 
   return 0;
@@ -137,6 +88,7 @@ signed KUPC2020_G(){
 
 signed main(){
   KUPC2020_G();
+  //TKPPC2015_J();
   return 0;
 }
 #endif
