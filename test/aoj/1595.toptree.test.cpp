@@ -35,6 +35,7 @@ struct Cluster{
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   const size_t LIM = 1e6;
   TopTree<Vertex, Cluster, LIM> T(Cluster(0));
@@ -43,8 +44,7 @@ signed main(){
   cin>>n;
 
   vector<Vertex*> vs(n);
-  for(int i=0;i<n;i++)
-    vs[i]=T.create(Vertex(i));
+  for(int i=0;i<n;i++) vs[i]=T.create(Vertex(i));
 
   for(int i=1;i<n;i++){
     int u,v;
@@ -54,7 +54,7 @@ signed main(){
   }
 
   for(int i=0;i<n;i++)
-    cout<<(n-1)*2-T.expose(vs[i])->dat.ans<<"\n";
+    cout<<(n-1)*2-T.get_subtree(vs[i]).ans<<newl;
 
   return 0;
 }

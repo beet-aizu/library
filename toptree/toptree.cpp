@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -24,7 +26,7 @@ struct TopTree{
   Cluster id;
   TopTree(Cluster id=Cluster()):ptr_v(0),ptr_c(0),id(id){}
 
-  inline Vertex* create(Vertex v){
+  inline Vertex* create(Vertex v=Vertex()){
     auto t=&pool_v[ptr_v++];
     auto dummy=&pool_v[ptr_v++];
     *t=v;
@@ -54,6 +56,14 @@ struct TopTree{
     Node* p=t->p;
     if(!p) return -1;
     if(p->guard) return -1;
+    if(p->ch[0]==t) return 0;
+    if(p->ch[1]==t) return 1;
+    return -1;
+  }
+
+  int parent_dir_ignore_guard(Node* t){
+    Node* p=t->p;
+    if(!p) return -1;
     if(p->ch[0]==t) return 0;
     if(p->ch[1]==t) return 1;
     return -1;
@@ -98,12 +108,38 @@ struct TopTree{
     return t;
   }
 
-  int parent_dir_ignore_guard(Node* t){
-    Node* p=t->p;
-    if(!p) return -1;
-    if(p->ch[0]==t) return 0;
-    if(p->ch[1]==t) return 1;
-    return -1;
+  inline void toggle(Node* t){
+    if(t->type==Type::Edge){
+      swap(t->vs[0],t->vs[1]);
+      t->dat.toggle();
+    }else if(t->type==Type::Compress){
+      swap(t->vs[0],t->vs[1]);
+      t->dat.toggle();
+      t->rev^=true;
+    }else if(t->type==Type::Rake){
+    }else abort();
+  }
+
+  inline void propagate(Node* t){
+    if(t->type==Type::Compress){
+      if(t->rev){
+        assert(t->ch[0] and t->ch[1]);
+        swap(t->ch[0],t->ch[1]);
+        toggle(t->ch[0]);
+        toggle(t->ch[1]);
+        t->rev=false;
+      }
+    }
+  }
+
+  void set_toggle(Node* v){
+    toggle(v);propagate(v);
+  }
+
+  void pushdown(Node* t){
+    if(!t) return;
+    pushdown(t->p);
+    propagate(t);
   }
 
   void rotate(Node* t,Node* x,size_t dir){
@@ -119,30 +155,6 @@ struct TopTree{
     else if(y and y->type==Type::Compress) y->q=t;
     pushup(x);pushup(t);
     if(y and !y->guard) pushup(y);
-  }
-
-  inline void propagate(Node* t){
-    if(t->type==Type::Compress){
-      if(t->rev){
-        assert(t->ch[0] and t->ch[1]);
-        swap(t->ch[0],t->ch[1]);
-        toggle(t->ch[0]);
-        toggle(t->ch[1]);
-        t->rev=false;
-      }
-    }
-  }
-
-  inline void toggle(Node* t){
-    if(t->type==Type::Edge){
-      swap(t->vs[0],t->vs[1]);
-      t->dat.toggle();
-    }else if(t->type==Type::Compress){
-      swap(t->vs[0],t->vs[1]);
-      t->dat.toggle();
-      t->rev^=true;
-    }else if(t->type==Type::Rake){
-    }else abort();
   }
 
   void splay(Node* t){
@@ -172,12 +184,6 @@ struct TopTree{
         rotate(t,q,qt_dir^1);
       }
     }
-  }
-
-  void pushdown(Node* t){
-    if(!t) return;
-    pushdown(t->p);
-    propagate(t);
   }
 
   Node* expose(Node* t){
@@ -235,6 +241,68 @@ struct TopTree{
 
   Node* expose(Vertex* v){
     return expose((Node*)(v->handle));
+  }
+
+  void soft_expose(Vertex* u,Vertex* v){
+    pushdown((Node*)u->handle);
+    pushdown((Node*)v->handle);
+    Node* rt=expose((Node*)u->handle);
+
+    if(u->handle==v->handle){
+      if(rt->vs[1]==u or rt->vs[0]==v)
+        set_toggle(rt);
+      return;
+    }
+
+    rt->guard=true;
+    Node* soft=expose((Node*)v->handle);
+    rt->guard=false;
+
+    pushup(rt);
+    if(parent_dir(soft)==0) set_toggle(rt);
+  }
+
+  void bring(Node* rt){
+    Node* rk=rt->q;
+    if(!rk){
+      Node* ll=rt->ch[0];
+      ll->p=nullptr;
+      pushup(ll);
+    }else if(rk->type==Type::Compress or rk->type==Type::Edge){
+      propagate(rk);
+
+      Node* nr=rk;
+      set_toggle(nr);
+      rt->ch[1]=nr;
+      nr->p=rt;
+      rt->q=nullptr;
+
+      pushup(nr);pushup(rt);
+    }else if(rk->type==Type::Rake){
+      propagate(rk);
+      while(rk->ch[1]->type==Type::Rake){
+        propagate(rk->ch[1]);
+        rk=rk->ch[1];
+      }
+      pushdown(rk);
+
+      rt->guard=true;
+      splay(rk);
+      rt->guard=false;
+
+      Node* ll=rk->ch[0];
+      Node* rr=rk->ch[1];
+      propagate(ll);
+      set_toggle(rr);
+
+      rt->ch[1]=rr;
+      rr->p=rt;
+
+      rt->q=ll;
+      ll->p=rt;
+
+      pushup(ll);pushup(rr);pushup(rt);
+    }
   }
 
   Node* link(Vertex* u,Cluster w,Vertex* v){
@@ -321,110 +389,6 @@ struct TopTree{
     return ee;
   }
 
-  void set_toggle(Node* v){
-    toggle(v);propagate(v);
-  }
-
-  void soft_expose(Vertex* u,Vertex* v){
-    pushdown((Node*)u->handle);
-    pushdown((Node*)v->handle);
-    Node* rt=expose((Node*)u->handle);
-
-    if(u->handle==v->handle){
-      if(rt->vs[1]==u or rt->vs[0]==v)
-        set_toggle(rt);
-      return;
-    }
-
-    rt->guard=true;
-    Node* soft=expose((Node*)v->handle);
-    rt->guard=false;
-
-    pushup(rt);
-    if(parent_dir(soft)==0) set_toggle(rt);
-  }
-
-  void set_vertex(Vertex* u,Vertex v){
-    auto t=expose(u);
-    *u=v;
-    pushup(t);
-  }
-
-  Node* query_helper(Vertex* u,Vertex* v){
-    assert(u!=v);
-    soft_expose(u,v);
-    Node* rt=(Node*)u->handle;
-    propagate(rt);
-    propagate(rt->ch[1]);
-    return rt->ch[1]->ch[0];
-  }
-
-  void set_edge(Vertex* u,Vertex* v,const Cluster &w){
-    auto t=query_helper(u,v);
-    assert(t->type==Type::Edge);
-    t->dat=w;
-    while(t) pushup(t),t=t->p;
-  }
-
-  Cluster query(Vertex* u,Vertex* v){
-    return query_helper(u,v)->dat;
-  }
-
-  Cluster subtree(Vertex* p,Vertex* v){
-    Node* t=query_helper(p,v);
-    Cluster res=t->p->ch[1]->dat;
-    res.toggle();
-    Node* rk=t->p->q;
-    if(t->p->q){
-      assert(rk->vs[1]==t->p->ch[1]->vs[0]);
-      res=Cluster::rake(res,rk->dat,rk->vs[0]);
-    }
-    return res;
-  }
-
-  void bring(Node* rt){
-    Node* rk=rt->q;
-    if(!rk){
-      Node* ll=rt->ch[0];
-      ll->p=nullptr;
-      pushup(ll);
-    }else if(rk->type==Type::Compress or rk->type==Type::Edge){
-      propagate(rk);
-
-      Node* nr=rk;
-      set_toggle(nr);
-      rt->ch[1]=nr;
-      nr->p=rt;
-      rt->q=nullptr;
-
-      pushup(nr);pushup(rt);
-    }else if(rk->type==Type::Rake){
-      propagate(rk);
-      while(rk->ch[1]->type==Type::Rake){
-        propagate(rk->ch[1]);
-        rk=rk->ch[1];
-      }
-      pushdown(rk);
-
-      rt->guard=true;
-      splay(rk);
-      rt->guard=false;
-
-      Node* ll=rk->ch[0];
-      Node* rr=rk->ch[1];
-      propagate(ll);
-      set_toggle(rr);
-
-      rt->ch[1]=rr;
-      rr->p=rt;
-
-      rt->q=ll;
-      ll->p=rt;
-
-      pushup(ll);pushup(rr);pushup(rt);
-    }
-  }
-
   void cut(Vertex* u,Vertex *v){
     soft_expose(u,v);
     Node* rt=(Node*)u->handle;
@@ -435,6 +399,48 @@ struct TopTree{
     bring(rr);bring(rt);
   }
 
+  Node* path(Vertex* u,Vertex* v){
+    assert(u!=v);
+    soft_expose(u,v);
+    Node* rt=(Node*)u->handle;
+    propagate(rt);
+    propagate(rt->ch[1]);
+    return rt->ch[1]->ch[0];
+  }
+
+  void set_vertex(Vertex* u,Vertex v){
+    auto t=expose(u);
+    *u=v;
+    pushup(t);
+  }
+
+  void set_edge(Vertex* u,Vertex* v,const Cluster &w){
+    auto t=path(u,v);
+    assert(t->type==Type::Edge);
+    t->dat=w;
+    while(t) pushup(t),t=t->p;
+  }
+
+  Cluster get_path(Vertex* u,Vertex* v){
+    return path(u,v)->dat;
+  }
+
+  Cluster get_subtree(Vertex* v){
+    return expose(v)->dat;
+  }
+
+  // subtree of v when p is root
+  Cluster get_subtree(Vertex* p,Vertex* v){
+    Node* t=path(p,v);
+    Cluster res=t->p->ch[1]->dat;
+    res.toggle();
+    Node* rk=t->p->q;
+    if(t->p->q){
+      assert(rk->vs[1]==t->p->ch[1]->vs[0]);
+      res=Cluster::rake(res,rk->dat,rk->vs[0]);
+    }
+    return res;
+  }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
 array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;

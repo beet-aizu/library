@@ -72,7 +72,7 @@ signed main(){
     if(t==2){
       int v,p;
       cin>>v>>p;
-      cout<<as[v]+G.subtree(vs[p],vs[v]).res<<newl;
+      cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;
     }
   }
   cout<<flush;

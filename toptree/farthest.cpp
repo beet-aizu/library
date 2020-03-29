@@ -1,7 +1,8 @@
+#pragma once
+
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
-
 #endif
 //BEGIN CUT HERE
 struct Vertex{
@@ -40,55 +41,8 @@ struct Farthest{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "toptree.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-signed TKPPC2015_J(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-  const char newl = '\n';
-
-  const size_t LIM = 1.8e6;
-  using Cluster = Farthest<long long>;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(0,-1,-1));
-
-  const int MAX = 5e5 + 100;
-  vector<Vertex*> vs(MAX);
-  int num=0;
-  vs[num]=G.create(Vertex());
-  num++;
-
-  vector<int> ps(MAX);
-
-  int q;
-  cin>>q;
-  for(int i=0;i<q;i++){
-    int t,a,c;
-    cin>>t>>a>>c;
-
-    if(t==1){
-      vs[num]=G.create(Vertex());
-      ps[num]=a;
-      G.link(vs[num],Cluster(c,num,ps[num]),vs[ps[num]]);
-      num++;
-    }
-
-    if(t==2)
-      G.set_edge(vs[a],vs[ps[a]],Cluster(c,a,ps[a]));
-
-    if(t==3)
-      cout<<G.expose(vs[a])->dat.md.dist<<newl;
-  }
-
-  return 0;
-}
-
 signed main(){
-  KUPC2020_G();
-  //TKPPC2015_J();
   return 0;
 }
 #endif

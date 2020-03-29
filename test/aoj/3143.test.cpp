@@ -24,7 +24,7 @@ signed main(){
   int n;
   cin>>n;
 
-  for(int i=0;i<n;i++) vs[i]=G.create(Vertex());
+  for(int i=0;i<n;i++) vs[i]=G.create();
 
   for(int i=1;i<n;i++){
     cin>>as[i]>>bs[i]>>ds[i];
@@ -71,7 +71,7 @@ signed main(){
       link(z);
     }
 
-    auto dist=G.expose(vs[cur])->dat.md.dist;
+    auto dist=G.get_subtree(vs[cur]).md.dist;
     if(dist==0){
       cout<<1<<" "<<cur+1<<newl;
       continue;
@@ -79,7 +79,7 @@ signed main(){
 
     int num=0;
     while(1){
-      auto res=G.expose(vs[cur])->dat.md;
+      auto res=G.get_subtree(vs[cur]).md;
       if(dist!=res.dist) break;
       ans[num++]=res.idx;
       cut(idx[res.idx]);
