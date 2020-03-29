@@ -337,7 +337,7 @@ layout: default
 
 ### toptree
 
-* :warning: <a href="library/toptree/farthest.cpp.html">toptree/farthest.cpp</a>
+* :heavy_check_mark: <a href="library/toptree/farthest.cpp.html">toptree/farthest.cpp</a>
 * :heavy_check_mark: <a href="library/toptree/toptree.cpp.html">toptree/toptree.cpp</a>
 
 
@@ -482,6 +482,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/3117.test.cpp.html">test/aoj/3117.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/3120.test.cpp.html">test/aoj/3120.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/3143.test.cpp.html">test/aoj/3143.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_10_C.test.cpp.html">test/aoj/ALDS1_10_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp.html">test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_14_B.test.cpp.html">test/aoj/ALDS1_14_B.test.cpp</a>

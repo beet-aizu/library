@@ -31,19 +31,20 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:10:57+09:00
+    - Last commit date: 2020-03-29 17:35:42+09:00
 
 
 
 
 ## Required by
 
-* :warning: <a href="farthest.cpp.html">toptree/farthest.cpp</a>
+* :heavy_check_mark: <a href="farthest.cpp.html">toptree/farthest.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/1595.toptree.test.cpp.html">test/aoj/1595.toptree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/3143.test.cpp.html">test/aoj/3143.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
 
@@ -60,7 +61,7 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename Vertex, typename Cluster, size_t LIM>
 struct TopTree{
-  enum Type { Compress, Rake, Edge, None };
+  enum Type { Compress, Rake, Edge };
   struct Node{
     Vertex* vs[2];
     Cluster dat;
@@ -69,7 +70,7 @@ struct TopTree{
     Node* ch[2];
     bool rev,guard;
     Type type;
-    Node():p(nullptr),q(nullptr),rev(false),guard(false),type(Type::None){}
+    Node():p(nullptr),q(nullptr),rev(false),guard(false){}
   };
 
   static array<Vertex, LIM> pool_v;
@@ -118,30 +119,28 @@ struct TopTree{
     Node* const l=t->ch[0];
     Node* const r=t->ch[1];
 
-    if(t->type==Type::Edge){
-      if(!t->p){
-        t->vs[0]->handle=t;
-        t->vs[1]->handle=t;
-      }else if(t->p->type==Type::Compress){
-        if(parent_dir(t)==-1)
-          t->vs[0]->handle=t;
-      }else if(t->p->type==Type::Rake){
-        t->vs[0]->handle=t;
-      }
-    }else if(t->type==Type::Compress){
+    if(t->type==Type::Compress){
       assert(l->vs[1]==r->vs[0]);
       t->vs[0]=l->vs[0];
       t->vs[1]=r->vs[1];
 
       Cluster lf=l->dat;
       if(t->q){
-        Node* q=t->q;
-        assert(l->vs[1]==q->vs[1]);
-        lf=Cluster::rake(l->dat,q->dat,q->vs[0]);
+        assert(l->vs[1]==t->q->vs[1]);
+        lf=Cluster::rake(l->dat,t->q->dat,t->q->vs[0]);
       }
       t->dat=Cluster::compress(lf,r->vs[0],r->dat);
 
       l->vs[1]->handle=t;
+    }
+
+    if(t->type==Type::Rake){
+      propagate(t);
+      assert(l->vs[1]==r->vs[1]);
+      t->vs[0]=l->vs[0];
+      t->vs[1]=l->vs[1];
+      t->dat=Cluster::rake(l->dat,r->dat,r->vs[0]);
+    }else{
       if(!t->p){
         t->vs[0]->handle=t;
         t->vs[1]->handle=t;
@@ -151,13 +150,7 @@ struct TopTree{
       }else if(t->p->type==Type::Rake){
         t->vs[0]->handle=t;
       }
-    }else if(t->type==Type::Rake){
-      propagate(t);
-      assert(l->vs[1]==r->vs[1]);
-      t->vs[0]=l->vs[0];
-      t->vs[1]=l->vs[1];
-      t->dat=Cluster::rake(l->dat,r->dat,r->vs[0]);
-    }else abort();
+    }
     return t;
   }
 
@@ -256,11 +249,12 @@ struct TopTree{
           propagate(p);
           splay(p);
           n=p->p;
-        }else if(p->type==Type::Compress){
+        }
+        if(p->type==Type::Compress){
           propagate(p);
           if(p->guard and ~parent_dir_ignore_guard(t)) break;
           n=p;
-        }else abort();
+        }
       }
       splay(n);
       int dir=parent_dir_ignore_guard(n);
@@ -268,15 +262,13 @@ struct TopTree{
 
       Node* const c=n->ch[dir];
       if(dir==1){
-        toggle(c);
-        propagate(c);
-        toggle(t);
-        propagate(t);
+        set_toggle(c);
+        set_toggle(t);
       }
       int n_dir=parent_dir(t);
       if(~n_dir){
-        propagate(c);
         Node* const r=t->p;
+        propagate(c);
         propagate(r);
         r->ch[n_dir]=c;
         c->p=r;
@@ -313,10 +305,7 @@ struct TopTree{
     else{
       Node* vv=expose(nnv);
       propagate(vv);
-      if(vv->vs[1]==v){
-        toggle(vv);
-        propagate(vv);
-      }
+      if(vv->vs[1]==v) set_toggle(vv);
       if(vv->vs[0]==v){
         Node* nv=compress(ee,vv);
         ee->p=nv;
@@ -353,10 +342,7 @@ struct TopTree{
     if(nnu){
       Node* uu=expose(nnu);
       propagate(uu);
-      if(uu->vs[0]==u){
-        toggle(uu);
-        propagate(uu);
-      }
+      if(uu->vs[0]==u) set_toggle(uu);
       if(uu->vs[1]==u){
         Node* tp=compress(uu,ll);
         uu->p=tp;
@@ -535,7 +521,7 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename Vertex, typename Cluster, size_t LIM>
 struct TopTree{
-  enum Type { Compress, Rake, Edge, None };
+  enum Type { Compress, Rake, Edge };
   struct Node{
     Vertex* vs[2];
     Cluster dat;
@@ -544,7 +530,7 @@ struct TopTree{
     Node* ch[2];
     bool rev,guard;
     Type type;
-    Node():p(nullptr),q(nullptr),rev(false),guard(false),type(Type::None){}
+    Node():p(nullptr),q(nullptr),rev(false),guard(false){}
   };
 
   static array<Vertex, LIM> pool_v;
@@ -593,30 +579,28 @@ struct TopTree{
     Node* const l=t->ch[0];
     Node* const r=t->ch[1];
 
-    if(t->type==Type::Edge){
-      if(!t->p){
-        t->vs[0]->handle=t;
-        t->vs[1]->handle=t;
-      }else if(t->p->type==Type::Compress){
-        if(parent_dir(t)==-1)
-          t->vs[0]->handle=t;
-      }else if(t->p->type==Type::Rake){
-        t->vs[0]->handle=t;
-      }
-    }else if(t->type==Type::Compress){
+    if(t->type==Type::Compress){
       assert(l->vs[1]==r->vs[0]);
       t->vs[0]=l->vs[0];
       t->vs[1]=r->vs[1];
 
       Cluster lf=l->dat;
       if(t->q){
-        Node* q=t->q;
-        assert(l->vs[1]==q->vs[1]);
-        lf=Cluster::rake(l->dat,q->dat,q->vs[0]);
+        assert(l->vs[1]==t->q->vs[1]);
+        lf=Cluster::rake(l->dat,t->q->dat,t->q->vs[0]);
       }
       t->dat=Cluster::compress(lf,r->vs[0],r->dat);
 
       l->vs[1]->handle=t;
+    }
+
+    if(t->type==Type::Rake){
+      propagate(t);
+      assert(l->vs[1]==r->vs[1]);
+      t->vs[0]=l->vs[0];
+      t->vs[1]=l->vs[1];
+      t->dat=Cluster::rake(l->dat,r->dat,r->vs[0]);
+    }else{
       if(!t->p){
         t->vs[0]->handle=t;
         t->vs[1]->handle=t;
@@ -626,13 +610,7 @@ struct TopTree{
       }else if(t->p->type==Type::Rake){
         t->vs[0]->handle=t;
       }
-    }else if(t->type==Type::Rake){
-      propagate(t);
-      assert(l->vs[1]==r->vs[1]);
-      t->vs[0]=l->vs[0];
-      t->vs[1]=l->vs[1];
-      t->dat=Cluster::rake(l->dat,r->dat,r->vs[0]);
-    }else abort();
+    }
     return t;
   }
 
@@ -731,11 +709,12 @@ struct TopTree{
           propagate(p);
           splay(p);
           n=p->p;
-        }else if(p->type==Type::Compress){
+        }
+        if(p->type==Type::Compress){
           propagate(p);
           if(p->guard and ~parent_dir_ignore_guard(t)) break;
           n=p;
-        }else abort();
+        }
       }
       splay(n);
       int dir=parent_dir_ignore_guard(n);
@@ -743,15 +722,13 @@ struct TopTree{
 
       Node* const c=n->ch[dir];
       if(dir==1){
-        toggle(c);
-        propagate(c);
-        toggle(t);
-        propagate(t);
+        set_toggle(c);
+        set_toggle(t);
       }
       int n_dir=parent_dir(t);
       if(~n_dir){
-        propagate(c);
         Node* const r=t->p;
+        propagate(c);
         propagate(r);
         r->ch[n_dir]=c;
         c->p=r;
@@ -788,10 +765,7 @@ struct TopTree{
     else{
       Node* vv=expose(nnv);
       propagate(vv);
-      if(vv->vs[1]==v){
-        toggle(vv);
-        propagate(vv);
-      }
+      if(vv->vs[1]==v) set_toggle(vv);
       if(vv->vs[0]==v){
         Node* nv=compress(ee,vv);
         ee->p=nv;
@@ -828,10 +802,7 @@ struct TopTree{
     if(nnu){
       Node* uu=expose(nnu);
       propagate(uu);
-      if(uu->vs[0]==u){
-        toggle(uu);
-        propagate(uu);
-      }
+      if(uu->vs[0]==u) set_toggle(uu);
       if(uu->vs[1]==u){
         Node* tp=compress(uu,ll);
         uu->p=tp;
