@@ -430,6 +430,18 @@ struct TopTree{
     set_toggle(rr);
     bring(rr);bring(rt);
   }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Cluster e=query(p,v);
+    cut(p,v);
+    expose(v);
+    Node* t=(Node*)v->handle;
+    Cluster res=t->dat;
+    if(t->type==Type::Edge)
+      res=Cluster::rake(res,id,v);
+    link(p,e,v);
+    return res;
+  }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
 array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
