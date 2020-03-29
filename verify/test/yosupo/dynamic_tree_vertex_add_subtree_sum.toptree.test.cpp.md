@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 17:35:42+09:00
+    - Last commit date: 2020-03-29 18:09:13+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum</a>
@@ -121,7 +121,7 @@ signed main(){
     if(t==2){
       int v,p;
       cin>>v>>p;
-      cout<<G.subtree(vs[p],vs[v]).res<<newl;
+      cout<<as[v]+G.subtree(vs[p],vs[v]).res<<newl;
     }
   }
   cout<<flush;
@@ -495,13 +495,10 @@ struct TopTree{
   }
 
   Node* query_helper(Vertex* u,Vertex* v){
+    assert(u!=v);
     soft_expose(u,v);
     Node* rt=(Node*)u->handle;
     propagate(rt);
-
-    if(rt->vs[0]==u and rt->vs[1]==v) return rt;
-    if(rt->vs[0]==u) return rt->ch[0];
-    if(rt->vs[1]==v) return rt->ch[1];
     propagate(rt->ch[1]);
     return rt->ch[1]->ch[0];
   }
@@ -515,6 +512,18 @@ struct TopTree{
 
   Cluster query(Vertex* u,Vertex* v){
     return query_helper(u,v)->dat;
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Node* t=query_helper(p,v);
+    Cluster res=t->p->ch[1]->dat;
+    res.toggle();
+    Node* rk=t->p->q;
+    if(t->p->q){
+      assert(rk->vs[1]==t->p->ch[1]->vs[0]);
+      res=Cluster::rake(res,rk->dat,rk->vs[0]);
+    }
+    return res;
   }
 
   void bring(Node* rt){
@@ -570,17 +579,6 @@ struct TopTree{
     bring(rr);bring(rt);
   }
 
-  Cluster subtree(Vertex* p,Vertex* v){
-    Cluster e=query(p,v);
-    cut(p,v);
-    expose(v);
-    Node* t=(Node*)v->handle;
-    Cluster res=t->dat;
-    if(t->type==Type::Edge)
-      res=Cluster::rake(res,id,v);
-    link(p,e,v);
-    return res;
-  }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
 array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
@@ -662,7 +660,7 @@ signed main(){
     if(t==2){
       int v,p;
       cin>>v>>p;
-      cout<<G.subtree(vs[p],vs[v]).res<<newl;
+      cout<<as[v]+G.subtree(vs[p],vs[v]).res<<newl;
     }
   }
   cout<<flush;

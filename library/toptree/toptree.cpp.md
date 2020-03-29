@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 17:35:42+09:00
+    - Last commit date: 2020-03-29 18:09:13+09:00
 
 
 
@@ -407,13 +407,10 @@ struct TopTree{
   }
 
   Node* query_helper(Vertex* u,Vertex* v){
+    assert(u!=v);
     soft_expose(u,v);
     Node* rt=(Node*)u->handle;
     propagate(rt);
-
-    if(rt->vs[0]==u and rt->vs[1]==v) return rt;
-    if(rt->vs[0]==u) return rt->ch[0];
-    if(rt->vs[1]==v) return rt->ch[1];
     propagate(rt->ch[1]);
     return rt->ch[1]->ch[0];
   }
@@ -427,6 +424,18 @@ struct TopTree{
 
   Cluster query(Vertex* u,Vertex* v){
     return query_helper(u,v)->dat;
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Node* t=query_helper(p,v);
+    Cluster res=t->p->ch[1]->dat;
+    res.toggle();
+    Node* rk=t->p->q;
+    if(t->p->q){
+      assert(rk->vs[1]==t->p->ch[1]->vs[0]);
+      res=Cluster::rake(res,rk->dat,rk->vs[0]);
+    }
+    return res;
   }
 
   void bring(Node* rt){
@@ -482,17 +491,6 @@ struct TopTree{
     bring(rr);bring(rt);
   }
 
-  Cluster subtree(Vertex* p,Vertex* v){
-    Cluster e=query(p,v);
-    cut(p,v);
-    expose(v);
-    Node* t=(Node*)v->handle;
-    Cluster res=t->dat;
-    if(t->type==Type::Edge)
-      res=Cluster::rake(res,id,v);
-    link(p,e,v);
-    return res;
-  }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
 array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
@@ -867,13 +865,10 @@ struct TopTree{
   }
 
   Node* query_helper(Vertex* u,Vertex* v){
+    assert(u!=v);
     soft_expose(u,v);
     Node* rt=(Node*)u->handle;
     propagate(rt);
-
-    if(rt->vs[0]==u and rt->vs[1]==v) return rt;
-    if(rt->vs[0]==u) return rt->ch[0];
-    if(rt->vs[1]==v) return rt->ch[1];
     propagate(rt->ch[1]);
     return rt->ch[1]->ch[0];
   }
@@ -887,6 +882,18 @@ struct TopTree{
 
   Cluster query(Vertex* u,Vertex* v){
     return query_helper(u,v)->dat;
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Node* t=query_helper(p,v);
+    Cluster res=t->p->ch[1]->dat;
+    res.toggle();
+    Node* rk=t->p->q;
+    if(t->p->q){
+      assert(rk->vs[1]==t->p->ch[1]->vs[0]);
+      res=Cluster::rake(res,rk->dat,rk->vs[0]);
+    }
+    return res;
   }
 
   void bring(Node* rt){
@@ -942,17 +949,6 @@ struct TopTree{
     bring(rr);bring(rt);
   }
 
-  Cluster subtree(Vertex* p,Vertex* v){
-    Cluster e=query(p,v);
-    cut(p,v);
-    expose(v);
-    Node* t=(Node*)v->handle;
-    Cluster res=t->dat;
-    if(t->type==Type::Edge)
-      res=Cluster::rake(res,id,v);
-    link(p,e,v);
-    return res;
-  }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
 array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
