@@ -351,13 +351,10 @@ struct TopTree{
   }
 
   Node* query_helper(Vertex* u,Vertex* v){
+    assert(u!=v);
     soft_expose(u,v);
     Node* rt=(Node*)u->handle;
     propagate(rt);
-
-    if(rt->vs[0]==u and rt->vs[1]==v) return rt;
-    if(rt->vs[0]==u) return rt->ch[0];
-    if(rt->vs[1]==v) return rt->ch[1];
     propagate(rt->ch[1]);
     return rt->ch[1]->ch[0];
   }
@@ -371,6 +368,18 @@ struct TopTree{
 
   Cluster query(Vertex* u,Vertex* v){
     return query_helper(u,v)->dat;
+  }
+
+  Cluster subtree(Vertex* p,Vertex* v){
+    Node* t=query_helper(p,v);
+    Cluster res=t->p->ch[1]->dat;
+    res.toggle();
+    Node* rk=t->p->q;
+    if(t->p->q){
+      assert(rk->vs[1]==t->p->ch[1]->vs[0]);
+      res=Cluster::rake(res,rk->dat,rk->vs[0]);
+    }
+    return res;
   }
 
   void bring(Node* rt){
@@ -426,17 +435,6 @@ struct TopTree{
     bring(rr);bring(rt);
   }
 
-  Cluster subtree(Vertex* p,Vertex* v){
-    Cluster e=query(p,v);
-    cut(p,v);
-    expose(v);
-    Node* t=(Node*)v->handle;
-    Cluster res=t->dat;
-    if(t->type==Type::Edge)
-      res=Cluster::rake(res,id,v);
-    link(p,e,v);
-    return res;
-  }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
 array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
