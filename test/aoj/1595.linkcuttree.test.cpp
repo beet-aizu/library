@@ -4,12 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../linkcuttree/base.cpp"
 #include "../../linkcuttree/farthest.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using Node = NodeBase<int>;
   constexpr size_t LIM = 1e6;
   using LCT = Farthest<Node, LIM>;
