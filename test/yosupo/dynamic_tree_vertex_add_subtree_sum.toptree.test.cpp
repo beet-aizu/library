@@ -16,8 +16,7 @@ struct Vertex{
 
 struct Cluster{
   ll res;
-  Cluster(){}
-  Cluster(ll res):res(res){}
+  Cluster(ll res=0):res(res){}
   void toggle(){}
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res+v->val+y.res);
@@ -33,7 +32,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 2e6;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(0));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n,q;
   cin>>n>>q;
