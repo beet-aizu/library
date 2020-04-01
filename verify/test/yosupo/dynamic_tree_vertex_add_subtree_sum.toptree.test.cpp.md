@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 20:43:58+09:00
+    - Last commit date: 2020-04-01 11:30:11+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/toptree/toptree.cpp.html">toptree/toptree.cpp</a>
+* :question: <a href="../../../library/toptree/toptree.cpp.html">toptree/toptree.cpp</a>
 
 
 ## Code
@@ -65,8 +65,7 @@ struct Vertex{
 
 struct Cluster{
   ll res;
-  Cluster(){}
-  Cluster(ll res):res(res){}
+  Cluster(ll res=0):res(res){}
   void toggle(){}
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res+v->val+y.res);
@@ -82,7 +81,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 2e6;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(0));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n,q;
   cin>>n>>q;
@@ -590,6 +589,19 @@ array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
 template<typename Vertex, typename Cluster, size_t LIM>
 array<typename TopTree<Vertex, Cluster, LIM>::Node, LIM>
 TopTree<Vertex, Cluster, LIM>::pool_c;
+
+namespace tmp{
+  struct Vertex{
+    void* handle;
+    Vertex():handle(nullptr){}
+  };
+  struct Cluster{
+    Cluster(){}
+    void toggle(){}
+    static Cluster compress(Cluster x,Vertex *v,Cluster *y){}
+    static Cluster rake(Cluster x,Cluster *y,Vertex *v){}
+  };
+}
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
@@ -609,8 +621,7 @@ struct Vertex{
 
 struct Cluster{
   ll res;
-  Cluster(){}
-  Cluster(ll res):res(res){}
+  Cluster(ll res=0):res(res){}
   void toggle(){}
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res+v->val+y.res);
@@ -626,7 +637,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 2e6;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(0));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n,q;
   cin>>n>>q;

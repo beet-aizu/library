@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: toptree/toptree.cpp
+# :question: toptree/toptree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 20:43:58+09:00
+    - Last commit date: 2020-04-01 11:30:11+09:00
 
 
 
@@ -42,6 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/3143.test.cpp.html">test/aoj/3143.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
 
 
 ## Code
@@ -498,6 +499,19 @@ array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
 template<typename Vertex, typename Cluster, size_t LIM>
 array<typename TopTree<Vertex, Cluster, LIM>::Node, LIM>
 TopTree<Vertex, Cluster, LIM>::pool_c;
+
+namespace tmp{
+  struct Vertex{
+    void* handle;
+    Vertex():handle(nullptr){}
+  };
+  struct Cluster{
+    Cluster(){}
+    void toggle(){}
+    static Cluster compress(Cluster x,Vertex *v,Cluster *y){}
+    static Cluster rake(Cluster x,Cluster *y,Vertex *v){}
+  };
+}
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
@@ -961,6 +975,19 @@ array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
 template<typename Vertex, typename Cluster, size_t LIM>
 array<typename TopTree<Vertex, Cluster, LIM>::Node, LIM>
 TopTree<Vertex, Cluster, LIM>::pool_c;
+
+namespace tmp{
+  struct Vertex{
+    void* handle;
+    Vertex():handle(nullptr){}
+  };
+  struct Cluster{
+    Cluster(){}
+    void toggle(){}
+    static Cluster compress(Cluster x,Vertex *v,Cluster *y){}
+    static Cluster rake(Cluster x,Cluster *y,Vertex *v){}
+  };
+}
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
