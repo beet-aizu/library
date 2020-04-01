@@ -447,19 +447,6 @@ array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
 template<typename Vertex, typename Cluster, size_t LIM>
 array<typename TopTree<Vertex, Cluster, LIM>::Node, LIM>
 TopTree<Vertex, Cluster, LIM>::pool_c;
-
-namespace tmp{
-  struct Vertex{
-    void* handle;
-    Vertex():handle(nullptr){}
-  };
-  struct Cluster{
-    Cluster(){}
-    void toggle(){}
-    static Cluster compress(Cluster x,Vertex *v,Cluster y){}
-    static Cluster rake(Cluster x,Cluster y,Vertex *v){}
-  };
-}
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
