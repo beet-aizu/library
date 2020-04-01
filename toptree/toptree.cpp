@@ -456,8 +456,8 @@ namespace tmp{
   struct Cluster{
     Cluster(){}
     void toggle(){}
-    static Cluster compress(Cluster x,Vertex *v,Cluster *y){}
-    static Cluster rake(Cluster x,Cluster *y,Vertex *v){}
+    static Cluster compress(Cluster x,Vertex *v,Cluster y){}
+    static Cluster rake(Cluster x,Cluster y,Vertex *v){}
   };
 }
 //END CUT HERE
