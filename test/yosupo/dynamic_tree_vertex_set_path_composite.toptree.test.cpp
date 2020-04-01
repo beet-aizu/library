@@ -29,7 +29,7 @@ struct Cluster{
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res*P(v->val)*y.res);
   }
-  static Cluster rake(Cluster x,Cluster,Vertex*){
+  static Cluster rake(Cluster x,Cluster){
     return x;
   }
 };

@@ -27,7 +27,7 @@ struct Cluster{
       max(y.rg,y.len+x.rg),
       x.len+y.len);
   }
-  static Cluster rake(Cluster x,Cluster y,Vertex*){
+  static Cluster rake(Cluster x,Cluster y){
     return Cluster(0,max(x.lf,x.len+y.rg),max(x.rg,y.rg),x.len);
   }
 };

@@ -58,8 +58,7 @@ struct DistanceSum{
       return nxt;
     }
 
-    static Cluster rake(Cluster x,Cluster y,Vertex *v){
-      assert((v->color)==0);
+    static Cluster rake(Cluster x,Cluster y){
       Cluster nxt;
       nxt.len=x.len;
       nxt.cnt=x.cnt;

@@ -35,7 +35,7 @@ struct Farthest{
       max(y.rg,x.rg+y.len),
       x.len+y.len);
   }
-  static Farthest rake(Farthest &x,Farthest &y,Vertex*){
+  static Farthest rake(Farthest &x,Farthest &y){
     return Farthest(pi(),max(x.lf,y.rg+x.len),max(x.rg,y.rg),x.len);
   }
 };

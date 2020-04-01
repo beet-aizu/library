@@ -21,8 +21,8 @@ struct Cluster{
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res+v->val+y.res);
   }
-  static Cluster rake(Cluster x,Cluster y,Vertex* v){
-    return Cluster(x.res+y.res+v->val);
+  static Cluster rake(Cluster x,Cluster y){
+    return Cluster(x.res+y.res);
   }
 };
 
