@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 11:30:11+09:00
+    - Last commit date: 2020-04-01 11:39:27+09:00
 
 
 
@@ -508,8 +508,8 @@ namespace tmp{
   struct Cluster{
     Cluster(){}
     void toggle(){}
-    static Cluster compress(Cluster x,Vertex *v,Cluster *y){}
-    static Cluster rake(Cluster x,Cluster *y,Vertex *v){}
+    static Cluster compress(Cluster x,Vertex *v,Cluster y){}
+    static Cluster rake(Cluster x,Cluster y,Vertex *v){}
   };
 }
 //END CUT HERE
@@ -984,8 +984,8 @@ namespace tmp{
   struct Cluster{
     Cluster(){}
     void toggle(){}
-    static Cluster compress(Cluster x,Vertex *v,Cluster *y){}
-    static Cluster rake(Cluster x,Cluster *y,Vertex *v){}
+    static Cluster compress(Cluster x,Vertex *v,Cluster y){}
+    static Cluster rake(Cluster x,Cluster y,Vertex *v){}
   };
 }
 //END CUT HERE
