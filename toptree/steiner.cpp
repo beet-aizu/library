@@ -30,7 +30,7 @@ struct SteinerTree{
     }
 
     if(!x.con and !(v->color) and !y.con)
-      return Cluster(x.len+y.len);
+      return SteinerTree(x.len+y.len);
 
     SteinerTree nxt;
     nxt.con=1;

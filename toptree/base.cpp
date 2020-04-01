@@ -13,7 +13,7 @@ struct Cluster{
   Cluster(){}
   void toggle(){}
   static Cluster compress(Cluster x,Vertex *v,Cluster y){}
-  static Cluster rake(Cluster x,Cluster y,Vertex *v){}
+  static Cluster rake(Cluster x,Cluster y){}
 };
 //END CUT HERE
 #ifndef call_from_test
