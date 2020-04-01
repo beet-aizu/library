@@ -7,6 +7,8 @@ using namespace std;
 #include "../../toptree/toptree.cpp"
 #undef call_from_test
 
+#define IGNORE
+
 struct Vertex{
   void* handle;
   int color;

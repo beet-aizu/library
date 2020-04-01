@@ -246,7 +246,7 @@ struct TopTree{
   void soft_expose(Vertex* u,Vertex* v){
     pushdown((Node*)u->handle);
     pushdown((Node*)v->handle);
-    Node* rt=expose((Node*)u->handle);
+    Node* rt=expose(u);
 
     if(u->handle==v->handle){
       if(rt->vs[1]==u or rt->vs[0]==v)
@@ -255,7 +255,7 @@ struct TopTree{
     }
 
     rt->guard=true;
-    Node* soft=expose((Node*)v->handle);
+    Node* soft=expose(v);
     rt->guard=false;
 
     pushup(rt);
