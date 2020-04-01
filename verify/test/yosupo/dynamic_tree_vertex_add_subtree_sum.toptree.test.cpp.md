@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 15:51:05+09:00
+    - Last commit date: 2020-04-01 17:45:41+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum</a>
@@ -70,8 +70,8 @@ struct Cluster{
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res+v->val+y.res);
   }
-  static Cluster rake(Cluster x,Cluster y,Vertex* v){
-    return Cluster(x.res+y.res+v->val);
+  static Cluster rake(Cluster x,Cluster y){
+    return Cluster(x.res+y.res);
   }
 };
 
@@ -223,7 +223,7 @@ struct TopTree{
       Cluster lf=l->dat;
       if(t->q){
         assert(l->vs[1]==t->q->vs[1]);
-        lf=Cluster::rake(l->dat,t->q->dat,t->q->vs[0]);
+        lf=Cluster::rake(l->dat,t->q->dat);
       }
       t->dat=Cluster::compress(lf,r->vs[0],r->dat);
 
@@ -235,7 +235,7 @@ struct TopTree{
       assert(l->vs[1]==r->vs[1]);
       t->vs[0]=l->vs[0];
       t->vs[1]=l->vs[1];
-      t->dat=Cluster::rake(l->dat,r->dat,r->vs[0]);
+      t->dat=Cluster::rake(l->dat,r->dat);
     }else{
       if(!t->p){
         t->vs[0]->handle=t;
@@ -579,7 +579,7 @@ struct TopTree{
     Node* rk=t->p->q;
     if(t->p->q){
       assert(rk->vs[1]==t->p->ch[1]->vs[0]);
-      res=Cluster::rake(res,rk->dat,rk->vs[0]);
+      res=Cluster::rake(res,rk->dat);
     }
     return res;
   }
@@ -613,8 +613,8 @@ struct Cluster{
   static Cluster compress(Cluster x,Vertex* v,Cluster y){
     return Cluster(x.res+v->val+y.res);
   }
-  static Cluster rake(Cluster x,Cluster y,Vertex* v){
-    return Cluster(x.res+y.res+v->val);
+  static Cluster rake(Cluster x,Cluster y){
+    return Cluster(x.res+y.res);
   }
 };
 

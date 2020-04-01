@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/farthest.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 20:43:58+09:00
+    - Last commit date: 2020-04-01 17:45:41+09:00
 
 
 
@@ -83,7 +83,7 @@ struct Farthest{
       max(y.rg,x.rg+y.len),
       x.len+y.len);
   }
-  static Farthest rake(Farthest &x,Farthest &y,Vertex*){
+  static Farthest rake(Farthest &x,Farthest &y){
     return Farthest(pi(),max(x.lf,y.rg+x.len),max(x.rg,y.rg),x.len);
   }
 };
@@ -138,7 +138,7 @@ struct Farthest{
       max(y.rg,x.rg+y.len),
       x.len+y.len);
   }
-  static Farthest rake(Farthest &x,Farthest &y,Vertex*){
+  static Farthest rake(Farthest &x,Farthest &y){
     return Farthest(pi(),max(x.lf,y.rg+x.len),max(x.rg,y.rg),x.len);
   }
 };
