@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 11:39:27+09:00
+    - Last commit date: 2020-04-01 11:59:45+09:00
 
 
 
@@ -298,7 +298,7 @@ struct TopTree{
   void soft_expose(Vertex* u,Vertex* v){
     pushdown((Node*)u->handle);
     pushdown((Node*)v->handle);
-    Node* rt=expose((Node*)u->handle);
+    Node* rt=expose(u);
 
     if(u->handle==v->handle){
       if(rt->vs[1]==u or rt->vs[0]==v)
@@ -307,7 +307,7 @@ struct TopTree{
     }
 
     rt->guard=true;
-    Node* soft=expose((Node*)v->handle);
+    Node* soft=expose(v);
     rt->guard=false;
 
     pushup(rt);
@@ -774,7 +774,7 @@ struct TopTree{
   void soft_expose(Vertex* u,Vertex* v){
     pushdown((Node*)u->handle);
     pushdown((Node*)v->handle);
-    Node* rt=expose((Node*)u->handle);
+    Node* rt=expose(u);
 
     if(u->handle==v->handle){
       if(rt->vs[1]==u or rt->vs[0]==v)
@@ -783,7 +783,7 @@ struct TopTree{
     }
 
     rt->guard=true;
-    Node* soft=expose((Node*)v->handle);
+    Node* soft=expose(v);
     rt->guard=false;
 
     pushup(rt);
