@@ -440,6 +440,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2603.test.cpp.html">test/aoj/2603.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2624.test.cpp.html">test/aoj/2624.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2627.test.cpp.html">test/aoj/2627.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2636.test.cpp.html">test/aoj/2636.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2644.test.cpp.html">test/aoj/2644.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2646.test.cpp.html">test/aoj/2646.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2647.test.cpp.html">test/aoj/2647.test.cpp</a>
