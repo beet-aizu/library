@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: toptree/toptree.cpp
+# :heavy_check_mark: toptree/toptree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -49,7 +49,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2587.test.cpp.html">test/yukicoder/2587.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
 
 
 ## Code

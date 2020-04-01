@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/toptree/toptree.cpp.html">toptree/toptree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/toptree/toptree.cpp.html">toptree/toptree.cpp</a>
 
 
 ## Code

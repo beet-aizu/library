@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: toptree/steiner.cpp
+# :heavy_check_mark: toptree/steiner.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/steiner.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 17:45:41+09:00
+    - Last commit date: 2020-04-01 20:29:06+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
 
 
 ## Code
@@ -78,7 +78,7 @@ struct SteinerTree{
     }
 
     if(!x.con and !(v->color) and !y.con)
-      return Cluster(x.len+y.len);
+      return SteinerTree(x.len+y.len);
 
     SteinerTree nxt;
     nxt.con=1;
@@ -149,7 +149,7 @@ struct SteinerTree{
     }
 
     if(!x.con and !(v->color) and !y.con)
-      return Cluster(x.len+y.len);
+      return SteinerTree(x.len+y.len);
 
     SteinerTree nxt;
     nxt.con=1;
