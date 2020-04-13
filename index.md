@@ -111,6 +111,7 @@ layout: default
 * :heavy_check_mark: <a href="library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/convexhulltrick.cpp.html">datastructure/convexhulltrick.cpp</a>
 * :warning: <a href="library/datastructure/convexhulltrickwithindex.cpp.html">datastructure/convexhulltrickwithindex.cpp</a>
+* :heavy_check_mark: <a href="library/datastructure/cumulativesum.cpp.html">datastructure/cumulativesum.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/disjointsparsetable.cpp.html">datastructure/disjointsparsetable.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/kdtree.cpp.html">datastructure/kdtree.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/nonmonotonicconvexhulltrick.cpp.html">datastructure/nonmonotonicconvexhulltrick.cpp</a>
@@ -641,6 +642,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/sort_points_by_argument.test.cpp.html">test/yosupo/sort_points_by_argument.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/sqrt_mod.test.cpp.html">test/yosupo/sqrt_mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/static_range_sum.test.cpp.html">test/yosupo/static_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
