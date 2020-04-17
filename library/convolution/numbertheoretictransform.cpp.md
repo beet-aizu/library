@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Required by
@@ -64,6 +64,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/pow_of_formal_power_series.test.cpp.html">test/yosupo/pow_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>

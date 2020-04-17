@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/formalpowerseries.cpp
+# :question: polynomial/formalpowerseries.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:15:27+09:00
+    - Last commit date: 2020-04-17 15:59:21+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/09/27/224701">http://beet-aizu.hatenablog.com/entry/2019/09/27/224701</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :question: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 
 
 ## Required by
@@ -64,11 +64,12 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/pow_of_formal_power_series.test.cpp.html">test/yosupo/pow_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
 
 
 ## Code
@@ -199,11 +200,28 @@ struct FormalPowerSeries : Enumeration<M_> {
 
   // F(0) must be 0
   Poly exp(Poly as,int deg){
-    Poly f({M(1)});
+    Poly fs({M(1)});
     as[0]+=M(1);
     for(int i=1;i<deg;i<<=1)
-      f=pre(mul(f,sub(pre(as,i<<1),log(f,i<<1))),i<<1);
-    return f;
+      fs=pre(mul(fs,sub(pre(as,i<<1),log(fs,i<<1))),i<<1);
+    return fs;
+  }
+
+  // not zero
+  Poly pow(Poly as,long long k,int deg){
+    if(as==Poly(as.size(),M(0))) return Poly(deg,M(0));
+
+    int cnt=0;
+    while(as[cnt]==M(0)) cnt++;
+    if(cnt*k>=deg) return Poly(deg,M(0));
+    as.erase(as.begin(),as.begin()+cnt);
+    deg-=cnt*k;
+
+    M c=as[0];
+    Poly zs(cnt*k,M(0));
+    Poly rs=mul(exp(mul(log(mul(as,c.inv()),deg),M(k)),deg),c.pow(k));
+    zs.insert(zs.end(),rs.begin(),rs.end());
+    return zs;
   }
 };
 //END CUT HERE

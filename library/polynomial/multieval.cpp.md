@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/multieval.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:15:27+09:00
+    - Last commit date: 2020-04-17 15:59:21+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :question: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Required by

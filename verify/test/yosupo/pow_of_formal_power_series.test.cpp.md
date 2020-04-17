@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/inv_of_formal_power_series.test.cpp
+# :heavy_check_mark: test/yosupo/pow_of_formal_power_series.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/inv_of_formal_power_series.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/pow_of_formal_power_series.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-17 15:59:21+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/inv_of_formal_power_series">https://judge.yosupo.jp/problem/inv_of_formal_power_series</a>
+* see: <a href="https://judge.yosupo.jp/problem/pow_of_formal_power_series">https://judge.yosupo.jp/problem/pow_of_formal_power_series</a>
 
 
 ## Depends on
@@ -50,7 +50,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/inv_of_formal_power_series"
+#define PROBLEM "https://judge.yosupo.jp/problem/pow_of_formal_power_series"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -66,8 +66,8 @@ signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  int n;
-  cin>>n;
+  int n,m;
+  cin>>n>>m;
 
   NTT<2> ntt;
   using M = NTT<2>::M;
@@ -77,7 +77,7 @@ signed main(){
   vector<M> as(n);
   for(int i=0;i<n;i++) cin>>as[i].v;
 
-  auto bs=FPS.inv(as,n);
+  auto bs=FPS.pow(as,m,n);
   for(int i=0;i<n;i++){
     if(i) cout<<" ";
     cout<<bs[i];

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: mod/mint.cpp
+# :question: mod/mint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -94,6 +94,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/point_set_range_composite.test.cpp.html">test/yosupo/point_set_range_composite.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/pow_of_formal_power_series.test.cpp.html">test/yosupo/pow_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/queue_operate_all_composite.test.cpp.html">test/yosupo/queue_operate_all_composite.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/range_affine_range_sum.test.cpp.html">test/yosupo/range_affine_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
@@ -104,9 +105,9 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1665.test.cpp.html">test/yukicoder/1665.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/22.test.cpp.html">test/yukicoder/22.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/444.test.cpp.html">test/yukicoder/444.test.cpp</a>
 
 
 ## Code

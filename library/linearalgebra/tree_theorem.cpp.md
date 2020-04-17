@@ -41,7 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
-* :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Verified with

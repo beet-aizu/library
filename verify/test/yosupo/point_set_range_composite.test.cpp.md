@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/segtree/basic/ushi.cpp.html">segtree/basic/ushi.cpp</a>
 
 
