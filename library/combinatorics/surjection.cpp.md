@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 
 
 ## Verified with

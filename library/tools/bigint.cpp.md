@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
+* :heavy_check_mark: <a href="../convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 
 
 ## Verified with
