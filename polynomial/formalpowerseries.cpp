@@ -121,11 +121,28 @@ struct FormalPowerSeries : Enumeration<M_> {
 
   // F(0) must be 0
   Poly exp(Poly as,int deg){
-    Poly f({M(1)});
+    Poly fs({M(1)});
     as[0]+=M(1);
     for(int i=1;i<deg;i<<=1)
-      f=pre(mul(f,sub(pre(as,i<<1),log(f,i<<1))),i<<1);
-    return f;
+      fs=pre(mul(fs,sub(pre(as,i<<1),log(fs,i<<1))),i<<1);
+    return fs;
+  }
+
+  // not zero
+  Poly pow(Poly as,long long k,int deg){
+    if(as==Poly(as.size(),M(0))) return Poly(deg,M(0));
+
+    int cnt=0;
+    while(as[cnt]==M(0)) cnt++;
+    if(cnt*k>=deg) return Poly(deg,M(0));
+    as.erase(as.begin(),as.begin()+cnt);
+    deg-=cnt*k;
+
+    M c=as[0];
+    Poly zs(cnt*k,M(0));
+    Poly rs=mul(exp(mul(log(mul(as,c.inv()),deg),M(k)),deg),c.pow(k));
+    zs.insert(zs.end(),rs.begin(),rs.end());
+    return zs;
   }
 };
 //END CUT HERE
