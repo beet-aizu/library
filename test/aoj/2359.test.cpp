@@ -6,6 +6,8 @@ using namespace std;
 #define call_from_test
 #include "../../tools/drop.cpp"
 #include "../../vector/compress.cpp"
+#include "../../vector/fusion.cpp"
+#include "../../vector/shift.cpp"
 #include "../../segtree/basic/dual.cpp"
 #define SegmentTree SegmentTree2
 #include "../../segtree/basic/chien.cpp"
@@ -21,15 +23,7 @@ signed main(){
   vector<int> ts(q),as(q),bs(q),ys(q);
   for(int i=0;i<q;i++) cin>>ts[i]>>as[i]>>bs[i]>>ys[i];
 
-  vector<int> vs;
-  for(int i=0;i<q;i++){
-    vs.emplace_back(as[i]-1);
-    vs.emplace_back(as[i]);
-    vs.emplace_back(as[i]+1);
-    vs.emplace_back(bs[i]-1);
-    vs.emplace_back(bs[i]);
-    vs.emplace_back(bs[i]+1);
-  }
+  vector<int> vs=fusion(near(as,-1,0,1),near(bs,-1,0,1));
   vs.emplace_back(0);
   vs.emplace_back(1e9+10);
   vs=compress(vs);
@@ -38,9 +32,9 @@ signed main(){
 
   using P = pair<int, int>;
   auto h=[&](P a,P b){
-           if(a.first) return a;
-           return P(b.first,max(a.second,b.second));
-         };
+    if(a.first) return a;
+    return P(b.first,max(a.second,b.second));
+  };
   P ei(0,0);
   SegmentTree<P> seg(h,ei);
   seg.init(m);
@@ -57,7 +51,7 @@ signed main(){
   for(int i=0;i<m;i++) zs[i]=seg.get_val(i).second;
 
   auto ff=[&](int a,int b){return min(a,b);};
-  auto gg=[&](int a,int b){(void)a;return b;};
+  auto gg=[&](int  ,int b){return b;};
   SegmentTree2<int, int> seg2(ff,gg,gg,INT_MAX,-1);
   seg2.build(zs);
 
