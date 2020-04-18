@@ -1,23 +1,26 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename V>
-V compress(V v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
+V compress(V vs){
+  sort(vs.begin(),vs.end());
+  vs.erase(unique(vs.begin(),vs.end()),vs.end());
+  return vs;
 }
 template<typename T>
-map<T, int> dict(const vector<T> &v){
+map<T, int> dict(const vector<T> &vs){
   map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
+  for(int i=0;i<(int)vs.size();i++)
+    res[vs[i]]=i;
   return res;
 }
-map<char, int> dict(const string &v){
-  return dict(vector<char>(v.begin(),v.end()));
+map<char, int> dict(const string &s){
+  return dict(vector<char>(s.begin(),s.end()));
 }
 //END CUT HERE
 #ifndef call_from_test

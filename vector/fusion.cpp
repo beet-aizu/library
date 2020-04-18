@@ -1,7 +1,10 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename T, typename ...Ts>
 vector<T> fusion(vector<T> bs,Ts... ts){
