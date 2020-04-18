@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/compress.cpp"
+#include "../../vector/compress.cpp"
 #include "../../datastructure/binaryindexedtree.cpp"
 #undef call_from_test
 

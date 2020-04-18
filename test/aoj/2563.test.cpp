@@ -4,15 +4,17 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
-#include "../../tools/zip.cpp"
-#include "../../tools/fusion.cpp"
-#include "../../tools/compress.cpp"
+#include "../../vector/zip.cpp"
+#include "../../vector/fusion.cpp"
+#include "../../vector/compress.cpp"
 #include "../../algorithm/parallelbinarysearch.cpp"
 #include "../../segtree/basic/chien.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
 
   int n,m,q;
@@ -50,18 +52,15 @@ signed main(){
   for(int &x:xs) x=dc[x];
   for(int &y:ys) y=dc[y];
 
-  auto init=
-    [&](){
-      seg.build(vp);
-    };
-  auto apply=
-    [&](int i){
-      seg.update(as[i],bs[i],1);
-    };
-  auto check=
-    [&](int i){
-      return seg.query(xs[i],ys[i]).first>=js[i];
-    };
+  auto init=[&](){
+    seg.build(vp);
+  };
+  auto apply=[&](int i){
+    seg.update(as[i],bs[i],1);
+  };
+  auto check=[&](int i){
+    return seg.query(xs[i],ys[i]).first>=js[i];
+  };
 
   auto ans=parallel_binary_search(q,m,init,apply,check);
   for(int i=0;i<q;i++) cout<<vs[ans[i]]<<"\n";

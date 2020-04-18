@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/compress.cpp"
 #include "../../tools/chminmax.cpp"
+#include "../../vector/compress.cpp"
 #include "../../datastructure/waveletmatrix.cpp"
 #include "../../datastructure/binaryindexedtree.cpp"
 #undef call_from_test

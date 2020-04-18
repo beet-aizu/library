@@ -5,8 +5,8 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fixpoint.cpp"
-#include "../../tools/compress.cpp"
 #include "../../tools/chminmax.cpp"
+#include "../../vector/compress.cpp"
 #include "../../datastructure/rangeslide.cpp"
 #undef call_from_test
 

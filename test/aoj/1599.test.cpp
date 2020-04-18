@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fastio.cpp"
-#include "../../tools/compress.cpp"
+#include "../../vector/compress.cpp"
 #include "../../flow/dinic.cpp"
 #undef call_from_test
 

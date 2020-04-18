@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../string/split.cpp"
-#include "../../tools/compress.cpp"
+#include "../../vector/compress.cpp"
 #include "../../mod/mint.cpp"
 #undef call_from_test
 

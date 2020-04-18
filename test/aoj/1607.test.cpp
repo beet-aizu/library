@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/chminmax.cpp"
-#include "../../tools/compress.cpp"
+#include "../../vector/compress.cpp"
 #include "../../datastructure/radixheap.cpp"
 #undef call_from_test
 

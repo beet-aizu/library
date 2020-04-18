@@ -4,9 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/drop.cpp"
-#include "../../tools/compress.cpp"
+#include "../../vector/compress.cpp"
 #include "../../segtree/basic/dual.cpp"
 #define SegmentTree SegmentTree2
 #include "../../segtree/basic/chien.cpp"
@@ -14,6 +13,9 @@ using namespace std;
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int q;
   cin>>q;
   vector<int> ts(q),as(q),bs(q),ys(q);

@@ -4,14 +4,16 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/precision.cpp"
-#include "../../tools/vec.cpp"
+#include "../../vector/multi.cpp"
 #undef call_from_test
 
 #define ERROR "1e-6"
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using D = long double;
   int h,n,p,m,k;
   cin>>h>>n>>p>>m>>k;
