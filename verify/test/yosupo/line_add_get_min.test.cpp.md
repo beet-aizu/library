@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/line_add_get_min.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 21:15:32+09:00
+    - Last commit date: 2020-04-18 17:56:15+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/compress.cpp.html">tools/compress.cpp</a>
+* :heavy_check_mark: <a href="../../../library/vector/compress.cpp.html">vector/compress.cpp</a>
 
 
 ## Code
@@ -54,7 +54,7 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/compress.cpp"
+#include "../../vector/compress.cpp"
 #include "../../segtree/cht/lichao.cpp"
 #undef call_from_test
 
@@ -102,27 +102,29 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/compress.cpp"
+#line 2 "vector/compress.cpp"
 
-#line 3 "tools/compress.cpp"
+#ifndef call_from_test
+#line 5 "vector/compress.cpp"
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename V>
-V compress(V v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
+V compress(V vs){
+  sort(vs.begin(),vs.end());
+  vs.erase(unique(vs.begin(),vs.end()),vs.end());
+  return vs;
 }
 template<typename T>
-map<T, int> dict(const vector<T> &v){
+map<T, int> dict(const vector<T> &vs){
   map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
+  for(int i=0;i<(int)vs.size();i++)
+    res[vs[i]]=i;
   return res;
 }
-map<char, int> dict(const string &v){
-  return dict(vector<char>(v.begin(),v.end()));
+map<char, int> dict(const string &s){
+  return dict(vector<char>(s.begin(),s.end()));
 }
 //END CUT HERE
 #ifndef call_from_test

@@ -321,20 +321,16 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/all_permutations.cpp.html">tools/all_permutations.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bigint.cpp.html">tools/bigint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
-* :heavy_check_mark: <a href="library/tools/compress.cpp.html">tools/compress.cpp</a>
 * :warning: <a href="library/tools/debug.cpp.html">tools/debug.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
-* :heavy_check_mark: <a href="library/tools/fusion.cpp.html">tools/fusion.cpp</a>
 * :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :heavy_check_mark: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
 * :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :heavy_check_mark: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
-* :heavy_check_mark: <a href="library/tools/vec.cpp.html">tools/vec.cpp</a>
-* :heavy_check_mark: <a href="library/tools/zip.cpp.html">tools/zip.cpp</a>
 
 
 <div id="5c8bf2a6852b9bc7e4261d66e9a6b762"></div>
@@ -366,6 +362,17 @@ layout: default
 * :heavy_check_mark: <a href="library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 * :heavy_check_mark: <a href="library/tree/rerooting.cpp.html">tree/rerooting.cpp</a>
 * :warning: <a href="library/tree/sack.cpp.html">tree/sack.cpp</a>
+
+
+<div id="6ba8844da718b4a65f60dbfd0d92d6ef"></div>
+
+### vector
+
+* :heavy_check_mark: <a href="library/vector/compress.cpp.html">vector/compress.cpp</a>
+* :heavy_check_mark: <a href="library/vector/fusion.cpp.html">vector/fusion.cpp</a>
+* :heavy_check_mark: <a href="library/vector/multi.cpp.html">vector/multi.cpp</a>
+* :heavy_check_mark: <a href="library/vector/shift.cpp.html">vector/shift.cpp</a>
+* :heavy_check_mark: <a href="library/vector/zip.cpp.html">vector/zip.cpp</a>
 
 
 ## Verify Files

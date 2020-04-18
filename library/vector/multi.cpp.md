@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/vec.cpp
+# :heavy_check_mark: vector/multi.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tools/vec.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 23:10:40+09:00
+* category: <a href="../../index.html#6ba8844da718b4a65f60dbfd0d92d6ef">vector</a>
+* <a href="{{ site.github.repository_url }}/blob/master/vector/multi.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-18 17:56:15+09:00
 
 
-
-
-## Required by
-
-* :heavy_check_mark: <a href="../algorithm/mo.cpp.html">algorithm/mo.cpp</a>
 
 
 ## Verified with
@@ -51,8 +46,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -87,9 +84,10 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tools/vec.cpp"
+#line 2 "vector/multi.cpp"
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE

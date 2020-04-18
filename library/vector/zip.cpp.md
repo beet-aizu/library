@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/zip.cpp
+# :heavy_check_mark: vector/zip.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tools/zip.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-24 09:53:16+09:00
+* category: <a href="../../index.html#6ba8844da718b4a65f60dbfd0d92d6ef">vector</a>
+* <a href="{{ site.github.repository_url }}/blob/master/vector/zip.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-18 17:56:15+09:00
 
 
 
@@ -46,10 +46,13 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename ...Ts>
 decltype(auto) zip(vector<Ts>... args){
@@ -76,11 +79,13 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tools/zip.cpp"
+#line 2 "vector/zip.cpp"
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename ...Ts>
 decltype(auto) zip(vector<Ts>... args){

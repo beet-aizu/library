@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tools/compress.cpp
+# :heavy_check_mark: vector/compress.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tools/compress.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:42:22+09:00
+* category: <a href="../../index.html#6ba8844da718b4a65f60dbfd0d92d6ef">vector</a>
+* <a href="{{ site.github.repository_url }}/blob/master/vector/compress.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-18 17:56:15+09:00
 
 
 
@@ -55,26 +55,29 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename V>
-V compress(V v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
+V compress(V vs){
+  sort(vs.begin(),vs.end());
+  vs.erase(unique(vs.begin(),vs.end()),vs.end());
+  return vs;
 }
 template<typename T>
-map<T, int> dict(const vector<T> &v){
+map<T, int> dict(const vector<T> &vs){
   map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
+  for(int i=0;i<(int)vs.size();i++)
+    res[vs[i]]=i;
   return res;
 }
-map<char, int> dict(const string &v){
-  return dict(vector<char>(v.begin(),v.end()));
+map<char, int> dict(const string &s){
+  return dict(vector<char>(s.begin(),s.end()));
 }
 //END CUT HERE
 #ifndef call_from_test
@@ -90,27 +93,29 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tools/compress.cpp"
+#line 2 "vector/compress.cpp"
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
 template<typename V>
-V compress(V v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-  return v;
+V compress(V vs){
+  sort(vs.begin(),vs.end());
+  vs.erase(unique(vs.begin(),vs.end()),vs.end());
+  return vs;
 }
 template<typename T>
-map<T, int> dict(const vector<T> &v){
+map<T, int> dict(const vector<T> &vs){
   map<T, int> res;
-  for(int i=0;i<(int)v.size();i++)
-    res[v[i]]=i;
+  for(int i=0;i<(int)vs.size();i++)
+    res[vs[i]]=i;
   return res;
 }
-map<char, int> dict(const string &v){
-  return dict(vector<char>(v.begin(),v.end()));
+map<char, int> dict(const string &s){
+  return dict(vector<char>(s.begin(),s.end()));
 }
 //END CUT HERE
 #ifndef call_from_test
