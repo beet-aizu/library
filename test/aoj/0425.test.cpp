@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../algorithm/mo.cpp"
+#include "../../vector/identity.cpp"
 #undef call_from_test
 
 signed main(){
@@ -16,9 +17,8 @@ signed main(){
   vector<int> as(k),bs(k);
   for(int i=0;i<k;i++) cin>>as[i]>>bs[i],as[i]--,bs[i]--;
 
-  vector<int> ord(n),pos(n);
-  iota(ord.begin(),ord.end(),0);
-  iota(pos.begin(),pos.end(),0);
+  vector<int> ord=identity(n);
+  vector<int> pos=identity(n);
   auto moveL=
     [&](int i){
       int x=pos[as[i]],y=pos[bs[i]];
