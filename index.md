@@ -370,6 +370,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/vector/compress.cpp.html">vector/compress.cpp</a>
 * :heavy_check_mark: <a href="library/vector/fusion.cpp.html">vector/fusion.cpp</a>
+* :warning: <a href="library/vector/identity.cpp.html">vector/identity.cpp</a>
 * :heavy_check_mark: <a href="library/vector/multi.cpp.html">vector/multi.cpp</a>
 * :heavy_check_mark: <a href="library/vector/shift.cpp.html">vector/shift.cpp</a>
 * :heavy_check_mark: <a href="library/vector/zip.cpp.html">vector/zip.cpp</a>
