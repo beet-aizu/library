@@ -22,20 +22,14 @@ signed main(){
   dst.build(as);
 
   ll ans=0;
-  for(int i=0;i<n;i++){
-    int l=i;
-    ll pre=as[i],lst=dst.query(i,n);
-    while(lst!=pre){
-      int r=n,pl=l;
-      while(l+1<r){
-        int m=(l+r)>>1;
-        if(dst.query(i,m)!=pre) r=m;
-        else l=m;
-      }
-      if(pre==1) ans+=l-pl;
-      pre=dst.query(i,r);
+  for(int l=0,r=0;l<n;l++){
+    if(as[l]==1){
+      ans+=n-l;
+      continue;
     }
-    if(lst==1) ans+=n-l;
+    if(r<=l) r=l+1;
+    while(r<=n and dst.query(l,r)>1) r++;
+    ans+=n-r+1;
   }
 
   cout<<ans<<endl;
