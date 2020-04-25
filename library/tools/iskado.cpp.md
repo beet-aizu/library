@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/222.test.cpp.html">test/yukicoder/222.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/0222.test.cpp.html">test/yukicoder/0222.test.cpp</a>
 
 
 ## Code
