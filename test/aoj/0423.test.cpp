@@ -8,6 +8,10 @@ using namespace std;
 #include "../../graph/dijkstra.cpp"
 #undef call_from_test
 
+#ifdef SANITIZE
+#define IGNORE
+#endif
+
 signed main(){
   int n,m;
   cin>>n>>m;
