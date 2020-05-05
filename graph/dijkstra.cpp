@@ -48,8 +48,8 @@ struct Dijkstra{
 
   vector<int> restore(int to){
     vector<int> res;
-    while(~bs[to]) res.emplace_back(to),to=bs[to];
-    res.emplace_back(bs[to]);
+    if(bs[to]<0) return res;
+    while(~to) res.emplace_back(to),to=bs[to];
     reverse(res.begin(),res.end());
     return res;
   }
