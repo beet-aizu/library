@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:22:59+09:00
+    - Last commit date: 2020-05-05 14:24:23+09:00
 
 
 
@@ -48,36 +48,61 @@ layout: default
 {% raw %}
 ```cpp
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template <typename T>
-vector<T> dijkstra(int s,vector< vector< pair<int, T> > > & G){
-  const T INF = numeric_limits<T>::max();
-  using P = pair<T, int>;
-  int n=G.size();
-  vector<T> ds(n,INF);
-  vector<int> bs(n,-1);
-  priority_queue<P, vector<P>, greater<P> > pq;
-  ds[s]=0;
-  pq.emplace(ds[s],s);
-  while(!pq.empty()){
-    P p=pq.top();pq.pop();
-    int v=p.second;
-    if(ds[v]<p.first) continue;
-    for(auto& e:G[v]){
-      int u=e.first;
-      T c=e.second;
-      if(ds[u]>ds[v]+c){
-        ds[u]=ds[v]+c;
-        bs[u]=v;
-        pq.emplace(ds[u],u);
+template<typename T>
+struct Dijkstra{
+  struct Edge{
+    int to;
+    T cost;
+    Edge(int to,T cost):to(to),cost(cost){}
+    bool operator<(const Edge &o)const{return cost>o.cost;}
+  };
+
+  vector< vector<Edge> > G;
+  vector<T> ds;
+  vector<int> bs;
+  Dijkstra(int n):G(n){}
+
+  void add_edge(int u,int v,T c){
+    G[u].emplace_back(v,c);
+  }
+
+  void build(int s){
+    int n=G.size();
+    ds.assign(n,numeric_limits<T>::max());
+    bs.assign(n,-1);
+
+    priority_queue<Edge> pq;
+    ds[s]=0;
+    pq.emplace(s,ds[s]);
+
+    while(!pq.empty()){
+      auto p=pq.top();pq.pop();
+      int v=p.to;
+      if(ds[v]<p.cost) continue;
+      for(auto e:G[v]){
+        if(ds[e.to]>ds[v]+e.cost){
+          ds[e.to]=ds[v]+e.cost;
+          bs[e.to]=v;
+          pq.emplace(e.to,ds[e.to]);
+        }
       }
     }
   }
-  return ds;
-}
+
+  T operator[](int k){return ds[k];}
+
+  vector<int> restore(int to){
+    vector<int> res;
+    while(~bs[to]) res.emplace_back(to),to=bs[to];
+    res.emplace_back(bs[to]);
+    reverse(res.begin(),res.end());
+    return res;
+  }
+};
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
@@ -93,36 +118,61 @@ signed main(){
 ```cpp
 #line 1 "graph/dijkstra.cpp"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template <typename T>
-vector<T> dijkstra(int s,vector< vector< pair<int, T> > > & G){
-  const T INF = numeric_limits<T>::max();
-  using P = pair<T, int>;
-  int n=G.size();
-  vector<T> ds(n,INF);
-  vector<int> bs(n,-1);
-  priority_queue<P, vector<P>, greater<P> > pq;
-  ds[s]=0;
-  pq.emplace(ds[s],s);
-  while(!pq.empty()){
-    P p=pq.top();pq.pop();
-    int v=p.second;
-    if(ds[v]<p.first) continue;
-    for(auto& e:G[v]){
-      int u=e.first;
-      T c=e.second;
-      if(ds[u]>ds[v]+c){
-        ds[u]=ds[v]+c;
-        bs[u]=v;
-        pq.emplace(ds[u],u);
+template<typename T>
+struct Dijkstra{
+  struct Edge{
+    int to;
+    T cost;
+    Edge(int to,T cost):to(to),cost(cost){}
+    bool operator<(const Edge &o)const{return cost>o.cost;}
+  };
+
+  vector< vector<Edge> > G;
+  vector<T> ds;
+  vector<int> bs;
+  Dijkstra(int n):G(n){}
+
+  void add_edge(int u,int v,T c){
+    G[u].emplace_back(v,c);
+  }
+
+  void build(int s){
+    int n=G.size();
+    ds.assign(n,numeric_limits<T>::max());
+    bs.assign(n,-1);
+
+    priority_queue<Edge> pq;
+    ds[s]=0;
+    pq.emplace(s,ds[s]);
+
+    while(!pq.empty()){
+      auto p=pq.top();pq.pop();
+      int v=p.to;
+      if(ds[v]<p.cost) continue;
+      for(auto e:G[v]){
+        if(ds[e.to]>ds[v]+e.cost){
+          ds[e.to]=ds[v]+e.cost;
+          bs[e.to]=v;
+          pq.emplace(e.to,ds[e.to]);
+        }
       }
     }
   }
-  return ds;
-}
+
+  T operator[](int k){return ds[k];}
+
+  vector<int> restore(int to){
+    vector<int> res;
+    while(~bs[to]) res.emplace_back(to),to=bs[to];
+    res.emplace_back(bs[to]);
+    reverse(res.begin(),res.end());
+    return res;
+  }
+};
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
