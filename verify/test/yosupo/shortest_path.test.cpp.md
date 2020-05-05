@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/0423.test.cpp
+# :heavy_check_mark: test/yosupo/shortest_path.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/0423.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/shortest_path.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-05-05 14:35:59+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0423">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0423</a>
+* see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/drop.cpp.html">tools/drop.cpp</a>
 
 
 ## Code
@@ -48,37 +48,39 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0423"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
+#include "../../tools/drop.cpp"
 #include "../../graph/dijkstra.cpp"
 #undef call_from_test
 
 signed main(){
-  int n,m;
-  cin>>n>>m;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  const char newl = '\n';
 
-  vector<int> ts(n),es(n);
-  for(int i=0;i<n;i++) cin>>ts[i]>>es[i];
+  int n,m,s,t;
+  cin>>n>>m>>s>>t;
 
-  Dijkstra<int> G(n+1);
+  using ll = long long;
+  Dijkstra<ll> G(n);
   for(int i=0;i<m;i++){
     int a,b,c;
     cin>>a>>b>>c;
-    a--;b--;c--;
-    G.add_edge(b,a,c);
+    G.add_edge(a,b,c);
   }
 
-  for(int i=0;i<n;i++) G.add_edge(n,i,ts[i]);
-  G.build(n);
+  G.build(s);
+  auto ps=G.restore(t);
+  if(ps.empty()) drop(-1);
 
-  long long ans=0;
-  for(int i=0;i<n;i++) ans+=(long long)G[i]*es[i];
-  cout<<ans<<endl;
+  int y=ps.size()-1;
+  cout<<G[t]<<' '<<y<<newl;
+  for(int i=0;i<y;i++) cout<<ps[i]<<' '<<ps[i+1]<<newl;
   return 0;
 }
 
@@ -88,27 +90,23 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj/0423.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0423"
+#line 1 "test/yosupo/shortest_path.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/fastio.cpp"
+#line 1 "tools/drop.cpp"
 
-#line 3 "tools/fastio.cpp"
+#line 3 "tools/drop.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
+template<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}
 //END CUT HERE
 #ifndef call_from_test
+//INSERT ABOVE HERE
 signed main(){
   return 0;
 }
@@ -176,30 +174,32 @@ signed main(){
   return 0;
 }
 #endif
-#line 9 "test/aoj/0423.test.cpp"
+#line 9 "test/yosupo/shortest_path.test.cpp"
 #undef call_from_test
 
 signed main(){
-  int n,m;
-  cin>>n>>m;
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  const char newl = '\n';
 
-  vector<int> ts(n),es(n);
-  for(int i=0;i<n;i++) cin>>ts[i]>>es[i];
+  int n,m,s,t;
+  cin>>n>>m>>s>>t;
 
-  Dijkstra<int> G(n+1);
+  using ll = long long;
+  Dijkstra<ll> G(n);
   for(int i=0;i<m;i++){
     int a,b,c;
     cin>>a>>b>>c;
-    a--;b--;c--;
-    G.add_edge(b,a,c);
+    G.add_edge(a,b,c);
   }
 
-  for(int i=0;i<n;i++) G.add_edge(n,i,ts[i]);
-  G.build(n);
+  G.build(s);
+  auto ps=G.restore(t);
+  if(ps.empty()) drop(-1);
 
-  long long ans=0;
-  for(int i=0;i<n;i++) ans+=(long long)G[i]*es[i];
-  cout<<ans<<endl;
+  int y=ps.size()-1;
+  cout<<G[t]<<' '<<y<<newl;
+  for(int i=0;i<y;i++) cout<<ps[i]<<' '<<ps[i+1]<<newl;
   return 0;
 }
 

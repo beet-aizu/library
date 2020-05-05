@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-05 14:24:23+09:00
+    - Last commit date: 2020-05-05 14:35:59+09:00
 
 
 
@@ -40,6 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0423.test.cpp.html">test/aoj/0423.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/shortest_path.test.cpp.html">test/yosupo/shortest_path.test.cpp</a>
 
 
 ## Code
@@ -97,8 +98,8 @@ struct Dijkstra{
 
   vector<int> restore(int to){
     vector<int> res;
-    while(~bs[to]) res.emplace_back(to),to=bs[to];
-    res.emplace_back(bs[to]);
+    if(bs[to]<0) return res;
+    while(~to) res.emplace_back(to),to=bs[to];
     reverse(res.begin(),res.end());
     return res;
   }
@@ -167,8 +168,8 @@ struct Dijkstra{
 
   vector<int> restore(int to){
     vector<int> res;
-    while(~bs[to]) res.emplace_back(to),to=bs[to];
-    res.emplace_back(bs[to]);
+    if(bs[to]<0) return res;
+    while(~to) res.emplace_back(to),to=bs[to];
     reverse(res.begin(),res.end());
     return res;
   }
