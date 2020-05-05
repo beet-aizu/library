@@ -20,17 +20,15 @@ signed main(){
 
   using D = double;
   const D INF = 1e18;
-  D ans=INF;
 
-  using P = pair<int, D>;
-  vector< vector<P> > G(n),H(m);
+  Dijkstra<D> G(n),H(m);
   for(int i=0;i<n;i++){
     for(int j=0;j<n;j++){
       if(i==j) continue;
       Segment s(ps[i],ps[j]);
       Segment t(qs[0],qs[1]);
       if(getDistanceSS(s,t)<EPS) continue;
-      G[i].emplace_back(j,abs(ps[i]-ps[j]));
+      G.add_edge(i,j,abs(ps[i]-ps[j]));
     }
   }
 
@@ -40,12 +38,15 @@ signed main(){
       Segment s(qs[i],qs[j]);
       Segment t(ps[0],ps[1]);
       if(getDistanceSS(s,t)<EPS) continue;
-      H[i].emplace_back(j,abs(qs[i]-qs[j]));
+      H.add_edge(i,j,abs(qs[i]-qs[j]));
     }
   }
+  G.build(0);
+  H.build(0);
 
-  chmin(ans,dijkstra(0,G)[1]+abs(qs[0]-qs[1]));
-  chmin(ans,dijkstra(0,H)[1]+abs(ps[0]-ps[1]));
+  D ans=INF;
+  chmin(ans,G[1]+abs(qs[0]-qs[1]));
+  chmin(ans,H[1]+abs(ps[0]-ps[1]));
 
   if(ans==INF) cout<<-1<<endl;
   else cout<<fixed<<setprecision(12)<<ans<<endl;
