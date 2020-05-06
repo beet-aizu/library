@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../graph/dijkstra.cpp"
 #undef call_from_test
 
@@ -13,6 +12,9 @@ using namespace std;
 #endif
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,m;
   cin>>n>>m;
 
