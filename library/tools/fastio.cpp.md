@@ -53,15 +53,6 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj/0294.test.cpp.html">test/aoj/0294.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0314.test.cpp.html">test/aoj/0314.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0367.linkcuttree.test.cpp.html">test/aoj/0367.linkcuttree.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0367.test.cpp.html">test/aoj/0367.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0403.test.cpp.html">test/aoj/0403.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0423.test.cpp.html">test/aoj/0423.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0424.test.cpp.html">test/aoj/0424.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0558.test.cpp.html">test/aoj/0558.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/0563.test.cpp.html">test/aoj/0563.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1069.test.cpp.html">test/aoj/1069.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1312.test.cpp.html">test/aoj/1312.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/1328.test.cpp.html">test/aoj/1328.test.cpp</a>
@@ -130,8 +121,6 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_E.linkcuttree.test.cpp.html">test/aoj/GRL_5_E.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_6_A.fordfulkerson.test.cpp.html">test/aoj/GRL_6_A.fordfulkerson.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_7_A.hopcroft_karp.test.cpp.html">test/aoj/GRL_7_A.hopcroft_karp.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_A.test.cpp.html">test/aoj/NTL_1_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/many_aplusb.test.cpp.html">test/yosupo/many_aplusb.test.cpp</a>
 
 
