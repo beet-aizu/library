@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:01:05+09:00
+    - Last commit date: 2020-05-06 18:13:20+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C</a>
@@ -41,7 +41,6 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/string/rectanglehash.cpp.html">string/rectanglehash.cpp</a>
 * :heavy_check_mark: <a href="../../../library/string/rollinghash.cpp.html">string/rollinghash.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -55,12 +54,14 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../string/rollinghash.cpp"
 #include "../../string/rectanglehash.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int h,w;
   cin>>h>>w;
   vector<string> ss(h);
