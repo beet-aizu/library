@@ -179,7 +179,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/nicetree.cpp.html">graph/nicetree.cpp</a>
 * :warning: <a href="library/graph/semikernel.cpp.html">graph/semikernel.cpp</a>
 * :heavy_check_mark: <a href="library/graph/stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
-* :x: <a href="library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
+* :warning: <a href="library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
 * :heavy_check_mark: <a href="library/graph/triangle.cpp.html">graph/triangle.cpp</a>
 * :heavy_check_mark: <a href="library/graph/twoedgeconnectedcomponents.cpp.html">graph/twoedgeconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="library/graph/twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
@@ -192,7 +192,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
-* :question: <a href="library/linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
+* :heavy_check_mark: <a href="library/linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
@@ -321,7 +321,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/tools/all_permutations.cpp.html">tools/all_permutations.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bigint.cpp.html">tools/bigint.cpp</a>
-* :question: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :warning: <a href="library/tools/debug.cpp.html">tools/debug.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
@@ -440,7 +440,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2405.test.cpp.html">test/aoj/2405.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.knuthyao.test.cpp.html">test/aoj/2415.knuthyao.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
-* :x: <a href="verify/test/aoj/2432.test.cpp.html">test/aoj/2432.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2444.test.cpp.html">test/aoj/2444.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
@@ -557,7 +556,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_3_B.test.cpp.html">test/aoj/GRL_3_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_3_C.test.cpp.html">test/aoj/GRL_3_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_4_A.test.cpp.html">test/aoj/GRL_4_A.test.cpp</a>
-* :x: <a href="verify/test/aoj/GRL_4_B.test.cpp.html">test/aoj/GRL_4_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_A.test.cpp.html">test/aoj/GRL_5_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>

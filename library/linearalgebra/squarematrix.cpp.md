@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: linearalgebra/squarematrix.cpp
+# :heavy_check_mark: linearalgebra/squarematrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,7 +39,6 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2397.test.cpp.html">test/aoj/2397.test.cpp</a>
-* :x: <a href="../../verify/test/aoj/2432.test.cpp.html">test/aoj/2432.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3074.test.cpp.html">test/aoj/3074.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/0831.test.cpp.html">test/yukicoder/0831.test.cpp</a>
 

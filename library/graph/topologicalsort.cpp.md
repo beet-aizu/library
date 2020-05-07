@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graph/topologicalsort.cpp
+# :warning: graph/topologicalsort.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,11 +34,6 @@ layout: default
     - Last commit date: 2019-12-17 21:51:08+09:00
 
 
-
-
-## Verified with
-
-* :x: <a href="../../verify/test/aoj/GRL_4_B.test.cpp.html">test/aoj/GRL_4_B.test.cpp</a>
 
 
 ## Code
