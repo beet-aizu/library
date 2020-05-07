@@ -325,7 +325,7 @@ layout: default
 * :warning: <a href="library/tools/debug.cpp.html">tools/debug.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :question: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>

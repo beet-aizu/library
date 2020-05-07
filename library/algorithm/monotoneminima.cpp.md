@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with

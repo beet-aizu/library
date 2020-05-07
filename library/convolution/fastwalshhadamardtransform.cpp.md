@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#a9595c1c24c33b16056d2ad07e71682d">convolution</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/fastwalshhadamardtransform.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-07 20:09:06+09:00
+    - Last commit date: 2020-05-07 20:21:09+09:00
 
 
 
@@ -39,7 +39,6 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :question: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -47,40 +46,43 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-void FWT(vector<T> &a){
-  int n=a.size();
+void FWT(vector<T> &as){
+  int n=as.size();
   for(int d=1;d<n;d<<=1){
     for(int m=d<<1,i=0;i<n;i+=m){
       for(int j=0;j<d;j++){
-        T x=a[i+j],y=a[i+j+d];
-        a[i+j]=x+y;
-        a[i+j+d]=x-y;
+        T x=as[i+j],y=as[i+j+d];
+        as[i+j+0]=x+y;
+        as[i+j+d]=x-y;
       }
     }
   }
 }
 
 template<typename T>
-void multiply(vector<T> &a,const vector<T> &b){
-  for(int i=0;i<(int)a.size();i++)
-    a[i]=a[i]*b[i];
+void multiply(vector<T> &as,const vector<T> &bs){
+  for(int i=0;i<(int)as.size();i++)
+    as[i]=as[i]*bs[i];
 }
 
 template<typename T>
-void UFWT(vector<T> &a,T rev2){
-  int n=a.size();
+void UFWT(vector<T> &as){
+  T inv2=T(2).inv();
+  int n=as.size();
   for(int d=1;d<n;d<<=1){
     for(int m=d<<1,i=0;i<n;i+=m){
       for(int j=0;j<d;j++){
-        T x=a[i+j],y=a[i+j+d];
-        a[i+j]=(x+y)*rev2;
-        a[i+j+d]=(x-y)*rev2;
+        T x=as[i+j],y=as[i+j+d];
+        as[i+j+0]=(x+y)*inv2;
+        as[i+j+d]=(x-y)*inv2;
       }
     }
   }
@@ -89,12 +91,14 @@ void UFWT(vector<T> &a,T rev2){
 #ifndef call_from_test
 
 #define call_from_test
-#include "../tools/fastio.cpp"
 #include "../mod/mint.cpp"
 #undef call_from_test
 
 //INSERT ABOVE HERE
 signed CGR002_H(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
   const int MOD = 998244353;
   using M = Mint<int, MOD>;
@@ -141,8 +145,7 @@ signed CGR002_H(){
     vs[i]*=M(p-q-r).pow(w);
   }
 
-  M rev2=M(2).inv();
-  UFWT(vs,rev2);
+  UFWT(vs);
   for(int i=0;i<(1<<k);i++){
     if(i) cout<<" ";
     cout<<vs[ofs^i].v;
@@ -151,7 +154,7 @@ signed CGR002_H(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2020/05/07
   https://codeforces.com/contest/1119/problem/H
 */
 
@@ -174,7 +177,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: convolution/fastwalshhadamardtransform.cpp: line 43: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: convolution/fastwalshhadamardtransform.cpp: line 46: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

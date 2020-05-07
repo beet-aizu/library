@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-07 20:09:06+09:00
+    - Last commit date: 2020-05-07 20:21:09+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D</a>
@@ -40,7 +40,6 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
-* :question: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
 
 
@@ -51,16 +50,18 @@ layout: default
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tree/eulertourforedge.cpp"
 #include "../../datastructure/binaryindexedtree.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   EulerTourForEdge et(n);
@@ -108,29 +109,10 @@ signed main(){
 #line 1 "test/aoj/GRL_5_D.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#line 2 "tools/fastio.cpp"
-
-#ifndef call_from_test
-#line 5 "tools/fastio.cpp"
-using namespace std;
-#endif
-//BEGIN CUT HERE
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-//END CUT HERE
-#ifndef call_from_test
-signed main(){
-  return 0;
-}
-#endif
 #line 1 "tree/eulertourforedge.cpp"
 
 #line 3 "tree/eulertourforedge.cpp"
@@ -258,10 +240,13 @@ signed main(){
   return 0;
 }
 #endif
-#line 10 "test/aoj/GRL_5_D.test.cpp"
+#line 9 "test/aoj/GRL_5_D.test.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   EulerTourForEdge et(n);

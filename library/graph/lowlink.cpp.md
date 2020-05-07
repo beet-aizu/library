@@ -41,7 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :question: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with

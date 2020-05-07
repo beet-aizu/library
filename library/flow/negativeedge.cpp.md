@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="primaldual.cpp.html">flow/primaldual.cpp</a>
-* :question: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
