@@ -7,6 +7,10 @@ using namespace std;
 #include "../../tools/int128.cpp"
 #undef call_from_test
 
+#ifdef SANITIZE
+#define IGNORE
+#endif
+
 using ll = __int128_t;
 
 ll sqrt(ll x){
