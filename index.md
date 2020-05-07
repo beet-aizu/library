@@ -192,7 +192,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/matrix.cpp.html">linearalgebra/matrix.cpp</a>
-* :heavy_check_mark: <a href="library/linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
+* :question: <a href="library/linearalgebra/squarematrix.cpp.html">linearalgebra/squarematrix.cpp</a>
 * :heavy_check_mark: <a href="library/linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
 
 
@@ -321,7 +321,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/tools/all_permutations.cpp.html">tools/all_permutations.cpp</a>
 * :heavy_check_mark: <a href="library/tools/bigint.cpp.html">tools/bigint.cpp</a>
-* :heavy_check_mark: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
+* :question: <a href="library/tools/chminmax.cpp.html">tools/chminmax.cpp</a>
 * :warning: <a href="library/tools/debug.cpp.html">tools/debug.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
@@ -440,7 +440,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2405.test.cpp.html">test/aoj/2405.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.knuthyao.test.cpp.html">test/aoj/2415.knuthyao.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2415.test.cpp.html">test/aoj/2415.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/2432.test.cpp.html">test/aoj/2432.test.cpp</a>
+* :x: <a href="verify/test/aoj/2432.test.cpp.html">test/aoj/2432.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2444.test.cpp.html">test/aoj/2444.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2450.linkcuttree.test.cpp.html">test/aoj/2450.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2450.test.cpp.html">test/aoj/2450.test.cpp</a>
@@ -466,7 +466,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/2725.test.cpp.html">test/aoj/2725.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2736.test.cpp.html">test/aoj/2736.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/2842.2D_BIT.test.cpp.html">test/aoj/2842.2D_BIT.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/2842.BIT2D.test.cpp.html">test/aoj/2842.BIT2D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2842.test.cpp.html">test/aoj/2842.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2871.test.cpp.html">test/aoj/2871.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/2872.test.cpp.html">test/aoj/2872.test.cpp</a>
