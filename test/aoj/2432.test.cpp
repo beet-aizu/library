@@ -1,10 +1,9 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2432"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../linearalgebra/squarematrix.cpp"
 #undef call_from_test
@@ -12,6 +11,9 @@ using namespace std;
 #define IGNORE
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   const int MAX = 160;
   const int INF = 1e8;
 

@@ -1,14 +1,16 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2842"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../datastructure/BIT2D.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int h,w,t,q;
   cin>>h>>w>>t>>q;
   BIT2D<int> beet(h+100,w+100);
