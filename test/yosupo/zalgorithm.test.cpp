@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
