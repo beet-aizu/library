@@ -1,10 +1,9 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3047"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../flow/dinic.cpp"
 #undef call_from_test
 
@@ -12,6 +11,9 @@ const int K = 28;
 int cap[K][K];
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   vector<string> s(n);
