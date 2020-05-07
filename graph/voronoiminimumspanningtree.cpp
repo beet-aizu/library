@@ -1,5 +1,7 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -60,12 +62,14 @@ struct VoronoiMST{
 #ifndef call_from_test
 
 #define call_from_test
-#include "../tools/fastio.cpp"
 #include "kruskal.cpp"
 #undef call_from_test
 
 //INSERT ABOVE HERE
 signed CF17FINAL_J(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using ll = long long;
   int n;
   cin>>n;
@@ -91,41 +95,11 @@ signed CF17FINAL_J(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2020/05/07
   https://atcoder.jp/contests/cf17-final/tasks/cf17_final_j
 */
-
-signed KEYENCE2019_E(){
-  using ll = long long;
-
-  int n,d;
-  cin>>n>>d;
-  vector<ll> a(n);
-  for(int i=0;i<n;i++) cin>>a[i];
-  VoronoiMST<ll> vo(a);
-  for(int i=1;i<n;i++){
-    vo.add_edge(i-1,i,d);
-  }
-  auto G=vo.build();
-  Kruskal<ll> ks(n);
-  for(int v=0;v<n;v++){
-    for(auto e:G[v]){
-      int u=e.first;
-      ll c=e.second;
-      if(v<u) ks.add_edge(v,u,c);
-    }
-  }
-  cout<<ks.build()<<endl;
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://atcoder.jp/contests/keyence2019/tasks/keyence2019_e
-*/
-
 signed main(){
-  //CF17FINAL_J();
-  //KEYENCE2019_E();
+  CF17FINAL_J();
   return 0;
 }
 #endif
