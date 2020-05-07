@@ -179,7 +179,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/nicetree.cpp.html">graph/nicetree.cpp</a>
 * :warning: <a href="library/graph/semikernel.cpp.html">graph/semikernel.cpp</a>
 * :heavy_check_mark: <a href="library/graph/stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
-* :heavy_check_mark: <a href="library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
+* :x: <a href="library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
 * :heavy_check_mark: <a href="library/graph/triangle.cpp.html">graph/triangle.cpp</a>
 * :heavy_check_mark: <a href="library/graph/twoedgeconnectedcomponents.cpp.html">graph/twoedgeconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="library/graph/twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
@@ -325,7 +325,7 @@ layout: default
 * :warning: <a href="library/tools/debug.cpp.html">tools/debug.cpp</a>
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
-* :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :question: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
@@ -557,7 +557,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_3_B.test.cpp.html">test/aoj/GRL_3_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_3_C.test.cpp.html">test/aoj/GRL_3_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_4_A.test.cpp.html">test/aoj/GRL_4_A.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/GRL_4_B.test.cpp.html">test/aoj/GRL_4_B.test.cpp</a>
+* :x: <a href="verify/test/aoj/GRL_4_B.test.cpp.html">test/aoj/GRL_4_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_A.test.cpp.html">test/aoj/GRL_5_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_C.lca.test.cpp.html">test/aoj/GRL_5_C.lca.test.cpp</a>

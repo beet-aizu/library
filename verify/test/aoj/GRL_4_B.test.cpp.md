@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_4_B.test.cpp
+# :x: test/aoj/GRL_4_B.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_4_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:51:08+09:00
+    - Last commit date: 2020-05-07 20:09:06+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :x: <a href="../../../library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
+* :question: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -87,9 +87,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/fastio.cpp"
+#line 2 "tools/fastio.cpp"
 
-#line 3 "tools/fastio.cpp"
+#ifndef call_from_test
+#line 5 "tools/fastio.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

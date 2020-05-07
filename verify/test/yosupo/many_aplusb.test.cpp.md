@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/many_aplusb.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 17:55:32+09:00
+    - Last commit date: 2020-05-07 20:09:06+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/many_aplusb">https://judge.yosupo.jp/problem/many_aplusb</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :question: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -81,9 +81,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/fastio.cpp"
+#line 2 "tools/fastio.cpp"
 
-#line 3 "tools/fastio.cpp"
+#ifndef call_from_test
+#line 5 "tools/fastio.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

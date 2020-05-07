@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_C.lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 21:09:31+09:00
+    - Last commit date: 2020-05-07 20:09:06+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :question: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 
@@ -97,9 +97,10 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/fastio.cpp"
+#line 2 "tools/fastio.cpp"
 
-#line 3 "tools/fastio.cpp"
+#ifndef call_from_test
+#line 5 "tools/fastio.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

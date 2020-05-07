@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_3_D.sparsetable.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-26 23:22:59+09:00
+    - Last commit date: 2020-05-07 20:09:06+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D</a>
@@ -40,7 +40,6 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
-* :heavy_check_mark: <a href="../../../library/tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Code
@@ -50,15 +49,17 @@ layout: default
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../datastructure/sparsetable.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,l;
   cin>>n>>l;
   vector<int> as(n);
@@ -85,28 +86,10 @@ signed main(){
 #line 1 "test/aoj/DSL_3_D.sparsetable.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/fastio.cpp"
-
-#line 3 "tools/fastio.cpp"
-using namespace std;
-#endif
-//BEGIN CUT HERE
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-//END CUT HERE
-#ifndef call_from_test
-signed main(){
-  return 0;
-}
-#endif
 #line 1 "datastructure/sparsetable.cpp"
 
 #line 3 "datastructure/sparsetable.cpp"
@@ -147,10 +130,13 @@ signed main(){
   return 0;
 }
 #endif
-#line 9 "test/aoj/DSL_3_D.sparsetable.test.cpp"
+#line 8 "test/aoj/DSL_3_D.sparsetable.test.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,l;
   cin>>n>>l;
   vector<int> as(n);

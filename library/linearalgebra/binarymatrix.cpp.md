@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/binarymatrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:09:50+09:00
+    - Last commit date: 2020-05-07 20:09:06+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
+* :question: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
