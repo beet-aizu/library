@@ -1,15 +1,17 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1599"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../vector/compress.cpp"
 #include "../../flow/dinic.cpp"
 #undef call_from_test
 
 int main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   vector<string> es(n);

@@ -1,16 +1,18 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2212"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../string/trie.cpp"
 #include "../../string/ahocorasick.cpp"
 #undef call_from_test
 
 int dp[111][55][55];
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int h,w;
   while(cin>>h>>w,h){
     vector<string> ss(h);

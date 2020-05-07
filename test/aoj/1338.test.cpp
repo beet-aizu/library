@@ -1,10 +1,9 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1338"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../math/fraction.cpp"
 #undef call_from_test
 
@@ -28,6 +27,9 @@ frac norm2(frac a){
 }
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   while(cin>>H>>h>>m>>s,H){
     frac base(h*3600+m*60+s,1),t(max(h*3600+m*60+s-100,0),1);
     frac x,y,z;

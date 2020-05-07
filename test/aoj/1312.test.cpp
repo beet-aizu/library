@@ -1,10 +1,9 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1312"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../string/rollinghash.cpp"
 #include "../../string/rectanglehash.cpp"
 #undef call_from_test
@@ -28,6 +27,9 @@ vector<string> decode(vector<string> vs,int h,int w){
 }
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int w,h,p;
   while(cin>>w>>h>>p,w){
     vector<string> ss(h);

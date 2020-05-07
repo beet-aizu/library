@@ -1,10 +1,9 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2309"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../tools/fastio.cpp"
 #include "../../tools/precision.cpp"
 #include "../../graph/stronglyconnectedcomponent.cpp"
 #include "../../graph/arborescence_edmond.cpp"
@@ -17,6 +16,9 @@ double v[MAX][MAX];
 double c[MAX][MAX];
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,m;
   cin>>n>>m;
   for(int i=0;i<m;i++)
