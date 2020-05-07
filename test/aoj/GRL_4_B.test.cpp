@@ -8,6 +8,9 @@ using namespace std;
 #undef call_from_test
 
 #define IGNORE
+/**
+ * @ignore
+ */
 
 signed main(){
   cin.tie(0);
