@@ -180,6 +180,7 @@ layout: default
 * :warning: <a href="library/graph/semikernel.cpp.html">graph/semikernel.cpp</a>
 * :heavy_check_mark: <a href="library/graph/stronglyconnectedcomponent.cpp.html">graph/stronglyconnectedcomponent.cpp</a>
 * :heavy_check_mark: <a href="library/graph/topologicalsort.cpp.html">graph/topologicalsort.cpp</a>
+* :heavy_check_mark: <a href="library/graph/triangle.cpp.html">graph/triangle.cpp</a>
 * :heavy_check_mark: <a href="library/graph/twoedgeconnectedcomponents.cpp.html">graph/twoedgeconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="library/graph/twosatisfiability.cpp.html">graph/twosatisfiability.cpp</a>
 * :warning: <a href="library/graph/voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
@@ -623,6 +624,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/enumerate_triangles.test.cpp.html">test/yosupo/enumerate_triangles.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/find_linear_recurrence.test.cpp.html">test/yosupo/find_linear_recurrence.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>

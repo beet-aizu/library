@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/bfs.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-18 14:43:35+09:00
+    - Last commit date: 2020-05-07 17:24:05+09:00
 
 
 
@@ -46,8 +46,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -81,9 +83,10 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/bfs.cpp"
+#line 2 "graph/bfs.cpp"
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE

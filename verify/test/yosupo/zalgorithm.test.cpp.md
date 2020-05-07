@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/zalgorithm.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 21:02:53+09:00
+    - Last commit date: 2020-05-07 17:24:05+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/zalgorithm">https://judge.yosupo.jp/problem/zalgorithm</a>
@@ -49,7 +49,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -81,7 +81,7 @@ signed main(){
 #line 1 "test/yosupo/zalgorithm.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
