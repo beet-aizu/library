@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#cbaab0a3f046937153edaefe862abb9d">bbst/rbst/basic</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/rbst/basic/ushi.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-22 15:37:31+09:00
+    - Last commit date: 2020-05-09 16:23:34+09:00
 
 
 
@@ -115,6 +115,7 @@ struct Ushi : BBSTBase<Node, LIM>{
   using super::toggle;
   void toggle(Node *a){
     swap(a->l,a->r);
+    a->val=flip(a->val);
     a->dat=flip(a->dat);
     a->rev^=1;
   }

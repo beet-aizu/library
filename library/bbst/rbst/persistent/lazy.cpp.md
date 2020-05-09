@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#b6fd322919b1d6679fc1d8023177c526">bbst/rbst/persistent</a>
 * <a href="{{ site.github.repository_url }}/blob/master/bbst/rbst/persistent/lazy.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-22 15:37:31+09:00
+    - Last commit date: 2020-05-09 16:23:34+09:00
 
 
 
