@@ -56,6 +56,7 @@ struct Ushi : BBSTBase<Node, LIM>{
   using super::toggle;
   void toggle(Node *a){
     swap(a->l,a->r);
+    a->val=flip(a->val);
     a->dat=flip(a->dat);
     a->rev^=1;
   }
