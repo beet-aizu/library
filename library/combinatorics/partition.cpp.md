@@ -31,15 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/partition.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-17 15:59:21+09:00
+    - Last commit date: 2020-05-12 17:47:27+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :heavy_check_mark: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :question: <a href="enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :question: <a href="../polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Verified with
