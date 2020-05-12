@@ -142,7 +142,7 @@ struct FormalPowerSeries : Enumeration<M_> {
     Poly zs(cnt*k,M(0));
     Poly rs=mul(exp(mul(log(mul(as,c.inv()),deg),M(k)),deg),c.pow(k));
     zs.insert(zs.end(),rs.begin(),rs.end());
-    return zs;
+    return pre(zs,deg+cnt*k);
   }
 };
 //END CUT HERE
