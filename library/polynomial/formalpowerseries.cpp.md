@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: polynomial/formalpowerseries.cpp
+# :question: polynomial/formalpowerseries.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/formalpowerseries.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-12 17:47:27+09:00
+    - Last commit date: 2020-05-16 18:51:14+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/09/27/224701">http://beet-aizu.hatenablog.com/entry/2019/09/27/224701</a>
@@ -39,15 +39,15 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :question: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 
 
 ## Required by
 
 * :heavy_check_mark: <a href="../combinatorics/bernoulli.cpp.html">combinatorics/bernoulli.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
+* :x: <a href="../combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
+* :x: <a href="../combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
 * :heavy_check_mark: <a href="interpolate.cpp.html">polynomial/interpolate.cpp</a>
 * :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
 
@@ -64,12 +64,13 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/multipoint_evaluation.test.cpp.html">test/yosupo/multipoint_evaluation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/partition_function.test.cpp.html">test/yosupo/partition_function.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_taylor_shift.test.cpp.html">test/yosupo/polynomial_taylor_shift.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/pow_of_formal_power_series.test.cpp.html">test/yosupo/pow_of_formal_power_series.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 
 
 ## Code
@@ -222,6 +223,21 @@ struct FormalPowerSeries : Enumeration<M_> {
     Poly rs=mul(exp(mul(log(mul(as,c.inv()),deg),M(k)),deg),c.pow(k));
     zs.insert(zs.end(),rs.begin(),rs.end());
     return pre(zs,deg+cnt*k);
+  }
+
+  // x -> x + c
+  Poly shift(Poly as,M c){
+    super::init(as.size()+1);
+    int n=as.size();
+    for(int i=0;i<n;i++) as[i]*=fact[i];
+    reverse(as.begin(),as.end());
+    Poly bs(n,M(1));
+    for(int i=1;i<n;i++)
+      bs[i]=bs[i-1]*c*invs[i];
+    as=pre(mul(as,bs),n);
+    reverse(as.begin(),as.end());
+    for(int i=0;i<n;i++) as[i]*=finv[i];
+    return as;
   }
 };
 //END CUT HERE

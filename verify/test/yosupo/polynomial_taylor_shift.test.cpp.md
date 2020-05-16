@@ -25,22 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/2983.test.cpp
+# :heavy_check_mark: test/yosupo/polynomial_taylor_shift.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/2983.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-07 19:58:00+09:00
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/polynomial_taylor_shift.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-16 18:51:14+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2983">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2983</a>
+* see: <a href="https://judge.yosupo.jp/problem/polynomial_taylor_shift">https://judge.yosupo.jp/problem/polynomial_taylor_shift</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
+* :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :question: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Code
@@ -48,58 +50,39 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2983"
+#define PROBLEM "https://judge.yosupo.jp/problem/polynomial_taylor_shift"
 
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
-#include "../../graph/maximalmatching.cpp"
+#include "../../convolution/numbertheoretictransform.cpp"
+#include "../../combinatorics/enumeration.cpp"
+#include "../../polynomial/formalpowerseries.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  int n,m;
-  cin>>n>>m;
-  vector< vector<int> > L(m);
-  for(int i=0;i<m;i++){
-    int k;
-    cin>>k;
-    L[i].resize(k);
-    for(int j=0;j<k;j++) cin>>L[i][j],L[i][j]--;
-  }
+  int n,c;
+  cin>>n>>c;
 
-  vector< vector<int> > G(n);
-  for(int i=0;i<m;i++)
-    for(int v:L[i]) G[v].emplace_back(i);
+  NTT<2> ntt;
+  using M = NTT<2>::M;
+  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
+  FormalPowerSeries<M> FPS(conv);
 
-  int taken=0;
-  vector<int> dead(m,0);
+  vector<M> as(n);
+  for(int i=0;i<n;i++) cin>>as[i].v;
+
+  auto bs=FPS.shift(as,M(c));
   for(int i=0;i<n;i++){
-    if(G[i].size()<=1u){
-      int flg=0;
-      for(int g:G[i]) if(dead[g]) flg=1;
-      if(flg) continue;
-      taken++;
-      for(int g:G[i]) dead[g]=1;
-    }
+    if(i) cout<<" ";
+    cout<<bs[i];
   }
-
-  vector< vector<int> > H(m);
-  for(int i=0;i<n;i++){
-    if(G[i].size()<=1u) continue;
-    int x=G[i][0];
-    int y=G[i][1];
-    if(dead[x]||dead[y]) continue;
-    H[x].emplace_back(y);
-    H[y].emplace_back(x);
-  }
-
-  int ans=taken+maximal_matching(H);
-  cout<<ans<<endl;
+  cout<<endl;
   return 0;
 }
 
@@ -118,7 +101,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/maximalmatching.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: convolution/numbertheoretictransform.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

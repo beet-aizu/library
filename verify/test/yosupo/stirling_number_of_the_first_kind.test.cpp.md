@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+# :x: test/yosupo/stirling_number_of_the_first_kind.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/stirling_number_of_the_first_kind.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-12 17:47:27+09:00
+    - Last commit date: 2020-05-16 18:51:14+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/stirling_number_of_the_first_kind">https://judge.yosupo.jp/problem/stirling_number_of_the_first_kind</a>
@@ -39,11 +39,11 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :heavy_check_mark: <a href="../../../library/combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
-* :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :question: <a href="../../../library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :x: <a href="../../../library/combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
+* :question: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../../../library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 
 
 ## Code

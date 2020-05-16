@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#89693d3333328e76f4fdeed379e8f9ea">polynomial</a>
 * <a href="{{ site.github.repository_url }}/blob/master/polynomial/interpolate.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-12 17:47:27+09:00
+    - Last commit date: 2020-05-16 18:51:14+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :question: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
 
 

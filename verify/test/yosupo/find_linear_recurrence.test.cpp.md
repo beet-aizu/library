@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../../../library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
+* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :question: <a href="../../../library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
 
 
 ## Code
