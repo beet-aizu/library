@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
 
 

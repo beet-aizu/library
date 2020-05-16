@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/linkcuttree/base.cpp.html">linkcuttree/base.cpp</a>
 * :heavy_check_mark: <a href="../../../library/linkcuttree/path.cpp.html">linkcuttree/path.cpp</a>
-* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: polynomial/formalpowerseries.cpp
+# :heavy_check_mark: polynomial/formalpowerseries.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,15 +39,15 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 
 
 ## Required by
 
 * :heavy_check_mark: <a href="../combinatorics/bernoulli.cpp.html">combinatorics/bernoulli.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
-* :x: <a href="../combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
-* :x: <a href="../combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
 * :heavy_check_mark: <a href="interpolate.cpp.html">polynomial/interpolate.cpp</a>
 * :heavy_check_mark: <a href="multieval.cpp.html">polynomial/multieval.cpp</a>
 
@@ -66,10 +66,10 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/polynomial_interpolation.test.cpp.html">test/yosupo/polynomial_interpolation.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/pow_of_formal_power_series.test.cpp.html">test/yosupo/pow_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 
 
 ## Code

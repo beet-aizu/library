@@ -80,11 +80,11 @@ layout: default
 
 * :heavy_check_mark: <a href="library/combinatorics/bell.cpp.html">combinatorics/bell.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/bernoulli.cpp.html">combinatorics/bernoulli.cpp</a>
-* :question: <a href="library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/partition.cpp.html">combinatorics/partition.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/partitiontable.cpp.html">combinatorics/partitiontable.cpp</a>
-* :x: <a href="library/combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
-* :x: <a href="library/combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/stirling1st.cpp.html">combinatorics/stirling1st.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/stirling2nd.cpp.html">combinatorics/stirling2nd.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/surjection.cpp.html">combinatorics/surjection.cpp</a>
 
 
@@ -92,12 +92,12 @@ layout: default
 
 ### convolution
 
-* :question: <a href="library/convolution/arbitrarymod.cpp.html">convolution/arbitrarymod.cpp</a>
+* :heavy_check_mark: <a href="library/convolution/arbitrarymod.cpp.html">convolution/arbitrarymod.cpp</a>
 * :heavy_check_mark: <a href="library/convolution/convolution2D.cpp.html">convolution/convolution2D.cpp</a>
-* :question: <a href="library/convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
+* :heavy_check_mark: <a href="library/convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
 * :warning: <a href="library/convolution/fastwalshhadamardtransform.cpp.html">convolution/fastwalshhadamardtransform.cpp</a>
 * :heavy_check_mark: <a href="library/convolution/garner.cpp.html">convolution/garner.cpp</a>
-* :question: <a href="library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 
 
 <div id="8dc87745f885a4cc532acd7b15b8b5fe"></div>
@@ -234,7 +234,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/mod/factorial.cpp.html">mod/factorial.cpp</a>
 * :heavy_check_mark: <a href="library/mod/log.cpp.html">mod/log.cpp</a>
-* :question: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="library/mod/mint.cpp.html">mod/mint.cpp</a>
 * :heavy_check_mark: <a href="library/mod/montmort.cpp.html">mod/montmort.cpp</a>
 * :heavy_check_mark: <a href="library/mod/order.cpp.html">mod/order.cpp</a>
 * :heavy_check_mark: <a href="library/mod/pow.cpp.html">mod/pow.cpp</a>
@@ -247,8 +247,8 @@ layout: default
 
 ### polynomial
 
-* :question: <a href="library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
-* :question: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/berlekampmassey.cpp.html">polynomial/berlekampmassey.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/formalpowerseries.cpp.html">polynomial/formalpowerseries.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/hash.cpp.html">polynomial/hash.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/interpolate.cpp.html">polynomial/interpolate.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/lagrangeinterpolation.cpp.html">polynomial/lagrangeinterpolation.cpp</a>
@@ -656,8 +656,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/static_range_sum.test.cpp.html">test/yosupo/static_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.disjointsparsetable.test.cpp.html">test/yosupo/staticrmq.disjointsparsetable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/staticrmq.sparsetable.test.cpp.html">test/yosupo/staticrmq.sparsetable.test.cpp</a>
-* :x: <a href="verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
-* :x: <a href="verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/suffixarray.test.cpp.html">test/yosupo/suffixarray.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/sum_of_floor_of_linear.test.cpp.html">test/yosupo/sum_of_floor_of_linear.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/tetration_mod.test.cpp.html">test/yosupo/tetration_mod.test.cpp</a>
@@ -673,7 +673,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/0143.test.cpp.html">test/yukicoder/0143.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/0222.test.cpp.html">test/yukicoder/0222.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/0399.test.cpp.html">test/yukicoder/0399.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/0472.test.cpp.html">test/yukicoder/0472.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/0831.test.cpp.html">test/yukicoder/0831.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
@@ -691,7 +691,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/2147.test.cpp.html">test/yukicoder/2147.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2587.test.cpp.html">test/yukicoder/2587.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/2600.test.cpp.html">test/yukicoder/2600.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3227.test.cpp.html">test/yukicoder/3227.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3405.test.cpp.html">test/yukicoder/3405.test.cpp</a>
