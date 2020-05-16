@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: mod/mint.cpp
+# :heavy_check_mark: mod/mint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 
 * :warning: <a href="../convolution/fastwalshhadamardtransform.cpp.html">convolution/fastwalshhadamardtransform.cpp</a>
 * :heavy_check_mark: <a href="../convolution/garner.cpp.html">convolution/garner.cpp</a>
-* :question: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="../convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
 * :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="../graph/maximalmatching.cpp.html">graph/maximalmatching.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/tree_theorem.cpp.html">linearalgebra/tree_theorem.cpp</a>
@@ -98,16 +98,16 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/pow_of_formal_power_series.test.cpp.html">test/yosupo/pow_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/queue_operate_all_composite.test.cpp.html">test/yosupo/queue_operate_all_composite.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/range_affine_range_sum.test.cpp.html">test/yosupo/range_affine_range_sum.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
-* :x: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_first_kind.test.cpp.html">test/yosupo/stirling_number_of_the_first_kind.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/stirling_number_of_the_second_kind.test.cpp.html">test/yosupo/stirling_number_of_the_second_kind.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/0022.test.cpp.html">test/yukicoder/0022.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/0104.test.cpp.html">test/yukicoder/0104.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1504.test.cpp.html">test/yukicoder/1504.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1665.test.cpp.html">test/yukicoder/1665.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1973.test.cpp.html">test/yukicoder/1973.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
 
 

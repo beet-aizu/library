@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/graph/bellmanford.cpp.html">graph/bellmanford.cpp</a>
-* :question: <a href="../../../library/tools/drop.cpp.html">tools/drop.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/drop.cpp.html">tools/drop.cpp</a>
 
 
 ## Code

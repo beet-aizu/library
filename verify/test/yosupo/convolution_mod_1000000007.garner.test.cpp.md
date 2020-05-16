@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/convolution/garner.cpp.html">convolution/garner.cpp</a>
-* :question: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
-* :question: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/convolution/numbertheoretictransform.cpp.html">convolution/numbertheoretictransform.cpp</a>
+* :heavy_check_mark: <a href="../../../library/mod/mint.cpp.html">mod/mint.cpp</a>
 
 
 ## Code
