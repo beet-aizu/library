@@ -144,6 +144,21 @@ struct FormalPowerSeries : Enumeration<M_> {
     zs.insert(zs.end(),rs.begin(),rs.end());
     return pre(zs,deg+cnt*k);
   }
+
+  // x -> x + c
+  Poly shift(Poly as,M c){
+    super::init(as.size()+1);
+    int n=as.size();
+    for(int i=0;i<n;i++) as[i]*=fact[i];
+    reverse(as.begin(),as.end());
+    Poly bs(n,M(1));
+    for(int i=1;i<n;i++)
+      bs[i]=bs[i-1]*c*invs[i];
+    as=pre(mul(as,bs),n);
+    reverse(as.begin(),as.end());
+    for(int i=0;i<n;i++) as[i]*=finv[i];
+    return as;
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
