@@ -125,7 +125,7 @@ layout: default
 * :heavy_check_mark: <a href="library/datastructure/sparsetable.cpp.html">datastructure/sparsetable.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/unionfind.cpp.html">datastructure/unionfind.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/waveletmatrix.cpp.html">datastructure/waveletmatrix.cpp</a>
-* :question: <a href="library/datastructure/weightedunionfind.cpp.html">datastructure/weightedunionfind.cpp</a>
+* :heavy_check_mark: <a href="library/datastructure/weightedunionfind.cpp.html">datastructure/weightedunionfind.cpp</a>
 
 
 <div id="cff5497121104c2b8e0cb41ed2083a9b"></div>
@@ -698,7 +698,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/3405.test.cpp.html">test/yukicoder/3405.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3407.test.cpp.html">test/yukicoder/3407.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/3592.test.cpp.html">test/yukicoder/3592.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/3592.test.cpp.html">test/yukicoder/3592.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4072.test.cpp.html">test/yukicoder/4072.test.cpp</a>
 
 
