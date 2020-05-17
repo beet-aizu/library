@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/unionfindtree.cpp"
+#include "../../datastructure/unionfind.cpp"
 #undef call_from_test
 
 signed main(){

@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../linearalgebra/matrix.cpp"
-#include "../../datastructure/unionfindtree.cpp"
+#include "../../datastructure/unionfind.cpp"
 #include "../../linearalgebra/tree_theorem.cpp"
 #undef call_from_test
 

@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/weightedunionfindtree.cpp"
+#include "../../datastructure/weightedunionfind.cpp"
 #undef call_from_test
 
 int main(){

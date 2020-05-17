@@ -1,10 +1,12 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "matrix.cpp"
-#include "../datastructure/unionfindtree.cpp"
+#include "../datastructure/unionfind.cpp"
 #undef call_from_test
 
 #endif

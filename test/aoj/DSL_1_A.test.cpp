@@ -1,10 +1,10 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/unionfindtree.cpp"
+#include "../../datastructure/unionfind.cpp"
 #undef call_from_test
 
 signed main(){

@@ -1,5 +1,7 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -70,7 +72,7 @@ struct SkewHeap{
 #ifndef call_from_test
 
 #define call_from_test
-#include "unionfindtree.cpp"
+#include "unionfind.cpp"
 #undef call_from_test
 
 signed APC001_D(){
