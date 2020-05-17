@@ -10,6 +10,7 @@ using namespace std;
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   int n,q;
   cin>>n>>q;
