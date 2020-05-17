@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/unionfindtree.cpp
+# :heavy_check_mark: datastructure/unionfind.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/datastructure/unionfindtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:20:47+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/unionfind.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 
@@ -100,7 +100,7 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "datastructure/unionfindtree.cpp"
+#line 1 "datastructure/unionfind.cpp"
 
 #include<bits/stdc++.h>
 using namespace std;

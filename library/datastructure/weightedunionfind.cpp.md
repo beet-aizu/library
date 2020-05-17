@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/weightedunionfindtree.cpp
+# :question: datastructure/weightedunionfind.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/datastructure/weightedunionfindtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 21:56:26+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/datastructure/weightedunionfind.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 
@@ -39,6 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/DSL_1_B.test.cpp.html">test/aoj/DSL_1_B.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/3592.test.cpp.html">test/yukicoder/3592.test.cpp</a>
 
 
 ## Code
@@ -104,7 +105,7 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "datastructure/weightedunionfindtree.cpp"
+#line 1 "datastructure/weightedunionfind.cpp"
 
 #include<bits/stdc++.h>
 using namespace std;

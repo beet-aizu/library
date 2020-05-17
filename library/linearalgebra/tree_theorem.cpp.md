@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#1bbf1d9f5340fa94bf2c5fb5ce73a5f5">linearalgebra</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linearalgebra/tree_theorem.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 17:02:32+09:00
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/unionfind.cpp.html">datastructure/unionfind.cpp</a>
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="matrix.cpp.html">linearalgebra/matrix.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
@@ -54,13 +54,15 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "matrix.cpp"
-#include "../datastructure/unionfindtree.cpp"
+#include "../datastructure/unionfind.cpp"
 #undef call_from_test
 
 #endif
@@ -205,7 +207,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: linearalgebra/tree_theorem.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: linearalgebra/tree_theorem.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

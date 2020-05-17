@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/lowlink.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-07 20:09:06+09:00
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 
@@ -39,9 +39,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../combinatorics/enumeration.cpp.html">combinatorics/enumeration.cpp</a>
-* :heavy_check_mark: <a href="../datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../datastructure/unionfind.cpp.html">datastructure/unionfind.cpp</a>
 * :heavy_check_mark: <a href="../mod/mint.cpp.html">mod/mint.cpp</a>
-* :heavy_check_mark: <a href="../tools/fastio.cpp.html">tools/fastio.cpp</a>
 
 
 ## Verified with
@@ -55,8 +54,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -164,8 +165,7 @@ struct LowLink{
 #ifndef call_from_test
 
 #define call_from_test
-#include "../tools/fastio.cpp"
-#include "../datastructure/unionfindtree.cpp"
+#include "../datastructure/unionfind.cpp"
 #include "../mod/mint.cpp"
 #include "../combinatorics/enumeration.cpp"
 #undef call_from_test
@@ -174,6 +174,9 @@ struct LowLink{
 //INSERT ABOVE HERE
 // test num
 signed ARC045_D(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n;
   cin>>n;
   vector<int> xs(2*n+1),ys(2*n+1);
@@ -242,6 +245,9 @@ signed ARC045_D(){
 
 
 signed ARC062_F(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int n,m,k;
   cin>>n>>m>>k;
 
@@ -322,7 +328,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/lowlink.cpp: line 110: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: graph/lowlink.cpp: line 112: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

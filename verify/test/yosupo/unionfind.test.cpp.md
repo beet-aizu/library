@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/unionfind.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 21:02:53+09:00
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/unionfind.cpp.html">datastructure/unionfind.cpp</a>
 
 
 ## Code
@@ -53,7 +53,7 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/unionfindtree.cpp"
+#include "../../datastructure/unionfind.cpp"
 #undef call_from_test
 
 signed main(){
@@ -87,9 +87,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "datastructure/unionfindtree.cpp"
+#line 1 "datastructure/unionfind.cpp"
 
-#line 3 "datastructure/unionfindtree.cpp"
+#line 3 "datastructure/unionfind.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

@@ -42,7 +42,6 @@ layout: default
 * :heavy_check_mark: <a href="../algorithm/monotoneminima.cpp.html">algorithm/monotoneminima.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
 * :heavy_check_mark: <a href="../flow/negativeedge.cpp.html">flow/negativeedge.cpp</a>
-* :heavy_check_mark: <a href="../graph/lowlink.cpp.html">graph/lowlink.cpp</a>
 * :heavy_check_mark: <a href="../graph/nicetree.cpp.html">graph/nicetree.cpp</a>
 * :heavy_check_mark: <a href="../linearalgebra/binarymatrix.cpp.html">linearalgebra/binarymatrix.cpp</a>
 * :heavy_check_mark: <a href="../linkcuttree/subtree.cpp.html">linkcuttree/subtree.cpp</a>

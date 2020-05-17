@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:20:47+09:00
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/datastructure/unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/unionfind.cpp.html">datastructure/unionfind.cpp</a>
 
 
 ## Code
@@ -49,11 +49,11 @@ layout: default
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/unionfindtree.cpp"
+#include "../../datastructure/unionfind.cpp"
 #undef call_from_test
 
 signed main(){
@@ -82,13 +82,13 @@ signed main(){
 #line 1 "test/aoj/DSL_1_A.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#line 1 "datastructure/unionfindtree.cpp"
+#line 1 "datastructure/unionfind.cpp"
 
-#line 3 "datastructure/unionfindtree.cpp"
+#line 3 "datastructure/unionfind.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

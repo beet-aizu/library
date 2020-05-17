@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/optimalbinarytree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-12 16:36:20+09:00
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 

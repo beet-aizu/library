@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/skewheap.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 22:20:47+09:00
+    - Last commit date: 2020-05-17 19:42:37+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="unionfindtree.cpp.html">datastructure/unionfindtree.cpp</a>
+* :heavy_check_mark: <a href="unionfind.cpp.html">datastructure/unionfind.cpp</a>
 
 
 ## Required by
@@ -57,8 +57,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -129,7 +131,7 @@ struct SkewHeap{
 #ifndef call_from_test
 
 #define call_from_test
-#include "unionfindtree.cpp"
+#include "unionfind.cpp"
 #undef call_from_test
 
 signed APC001_D(){
@@ -213,7 +215,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/skewheap.cpp: line 73: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: datastructure/skewheap.cpp: line 75: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
