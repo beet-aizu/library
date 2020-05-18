@@ -6,14 +6,15 @@ using namespace std;
 template<typename T>
 struct DiameterForEdge{
   using Edge = pair<int, T>;
-  vector<T> dp;
+  vector<T> dp,ps;
   vector<vector<Edge> > G;
-  DiameterForEdge(int n):dp(n),G(n){}
+  DiameterForEdge(int n):dp(n),ps(n),G(n){}
   void add_edge(int u,int v,T c){
     G[u].emplace_back(v,c);
     G[v].emplace_back(u,c);
   }
   void dfs(int v,int p,int &s){
+    ps[v]=p;
     if(p<0) dp[v]=T(0);
     if(dp[s]<dp[v]) s=v;
     for(Edge e:G[v]){
@@ -33,6 +34,15 @@ struct DiameterForEdge{
   T build(){
     int t=endPoints().second;
     return dp[t];
+  }
+  vector<int> restore(){
+    int t=endPoints().second;
+    vector<int> seq;
+    while(~t){
+      seq.emplace_back(t);
+      t=ps[t];
+    }
+    return seq;
   }
   vector<T> distance(int v){
     dfs(v,-1,v);
