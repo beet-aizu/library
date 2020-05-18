@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/diameterforedge.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-07 20:09:06+09:00
+    - Last commit date: 2020-05-18 20:55:43+09:00
 
 
 
@@ -44,6 +44,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_A.test.cpp.html">test/aoj/GRL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/tree_diameter.test.cpp.html">test/yosupo/tree_diameter.test.cpp</a>
 
 
 ## Code
@@ -59,14 +60,15 @@ using namespace std;
 template<typename T>
 struct DiameterForEdge{
   using Edge = pair<int, T>;
-  vector<T> dp;
+  vector<T> dp,ps;
   vector<vector<Edge> > G;
-  DiameterForEdge(int n):dp(n),G(n){}
+  DiameterForEdge(int n):dp(n),ps(n),G(n){}
   void add_edge(int u,int v,T c){
     G[u].emplace_back(v,c);
     G[v].emplace_back(u,c);
   }
   void dfs(int v,int p,int &s){
+    ps[v]=p;
     if(p<0) dp[v]=T(0);
     if(dp[s]<dp[v]) s=v;
     for(Edge e:G[v]){
@@ -86,6 +88,15 @@ struct DiameterForEdge{
   T build(){
     int t=endPoints().second;
     return dp[t];
+  }
+  vector<int> restore(){
+    int t=endPoints().second;
+    vector<int> seq;
+    while(~t){
+      seq.emplace_back(t);
+      t=ps[t];
+    }
+    return seq;
   }
   vector<T> distance(int v){
     dfs(v,-1,v);
@@ -174,7 +185,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 281, in update
     raise BundleError(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: tree/diameterforedge.cpp: line 54: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: tree/diameterforedge.cpp: line 64: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

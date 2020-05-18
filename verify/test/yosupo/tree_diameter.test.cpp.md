@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/GRL_5_A.test.cpp
+# :heavy_check_mark: test/yosupo/tree_diameter.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/GRL_5_A.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/tree_diameter.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-05-18 20:55:43+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A</a>
+* see: <a href="https://judge.yosupo.jp/problem/tree_diameter">https://judge.yosupo.jp/problem/tree_diameter</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 
 
@@ -47,28 +48,38 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A"
+#define PROBLEM "https://judge.yosupo.jp/problem/tree_diameter"
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
+#include "../../tools/fixpoint.cpp"
 #include "../../tree/diameterforedge.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
+  using ll = long long;
   int n;
   cin>>n;
-  DiameterForEdge<int> G(n);
+  DiameterForEdge<ll> G(n);
   for(int i=1;i<n;i++){
-    int s,t,w;
-    cin>>s>>t>>w;
-    G.add_edge(s,t,w);
+    int a,b,c;
+    cin>>a>>b>>c;
+    G.add_edge(a,b,c);
   }
-  cout<<G.build()<<endl;
+
+  auto seq=G.restore();
+  cout<<G.build()<<' '<<seq.size()<<newl;
+  for(int i=0;i<(int)seq.size();i++){
+    if(i) cout<<' ';
+    cout<<seq[i];
+  }
+  cout<<newl;
   return 0;
 }
 
