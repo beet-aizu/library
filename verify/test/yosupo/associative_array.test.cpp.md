@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/associative_array.test.cpp
+# :heavy_check_mark: test/yosupo/associative_array.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/associative_array.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-24 17:33:44+09:00
+    - Last commit date: 2020-05-24 17:44:55+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/associative_array">https://judge.yosupo.jp/problem/associative_array</a>
@@ -39,7 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/datastructure/pb_ds_cc_hash_table.cpp.html">datastructure/pb_ds_cc_hash_table.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/pb_ds_cc_hash_table.cpp.html">datastructure/pb_ds_cc_hash_table.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/cc_hash.cpp.html">tools/cc_hash.cpp</a>
 
 
 ## Code
@@ -53,6 +54,7 @@ layout: default
 using namespace std;
 
 #define call_from_test
+#include "../../tools/cc_hash.cpp"
 #include "../../datastructure/pb_ds_cc_hash_table.cpp"
 #undef call_from_test
 
@@ -62,7 +64,7 @@ signed main(){
   const char newl = '\n';
 
   using ll = long long;
-  gmap<ll, ll> mp;
+  gmap<ll, ll, cc_hash<ll>> mp;
 
   int q;
   cin>>q;
@@ -96,6 +98,29 @@ signed main(){
 using namespace std;
 
 #define call_from_test
+#line 2 "tools/cc_hash.cpp"
+
+#ifndef call_from_test
+#line 5 "tools/cc_hash.cpp"
+using namespace std;
+#endif
+//BEGIN CUT HERE
+template<typename T>
+struct cc_hash{
+  uint64_t operator()(T x) const{
+    uint64_t y(x);
+    y += 0x9e3779b97f4a7c15;
+    y = (y ^ (y >> 30)) * 0xbf58476d1ce4e5b9;
+    y = (y ^ (y >> 27)) * 0x94d049bb133111eb;
+    return y ^ (y >> 31);
+  }
+};
+//END CUT HERE
+#ifndef call_from_test
+signed main(){
+  return 0;
+}
+#endif
 #line 1 "datastructure/pb_ds_cc_hash_table.cpp"
 
 #line 3 "datastructure/pb_ds_cc_hash_table.cpp"
@@ -113,7 +138,7 @@ signed main(){
   return 0;
 }
 #endif
-#line 8 "test/yosupo/associative_array.test.cpp"
+#line 9 "test/yosupo/associative_array.test.cpp"
 #undef call_from_test
 
 signed main(){
@@ -122,7 +147,7 @@ signed main(){
   const char newl = '\n';
 
   using ll = long long;
-  gmap<ll, ll> mp;
+  gmap<ll, ll, cc_hash<ll>> mp;
 
   int q;
   cin>>q;

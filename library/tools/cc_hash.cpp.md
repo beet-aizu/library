@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/pb_ds_cc_hash_table.cpp
+# :heavy_check_mark: tools/cc_hash.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/datastructure/pb_ds_cc_hash_table.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-27 08:56:10+09:00
+* category: <a href="../../index.html#4a931512ce65bdc9ca6808adf92d8783">tools</a>
+* <a href="{{ site.github.repository_url }}/blob/master/tools/cc_hash.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-24 17:44:55+09:00
 
 
 
@@ -47,18 +47,25 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
-template<typename T,typename U, typename H=hash<T> >
-using gmap = cc_hash_table<T, U, H>;
+template<typename T>
+struct cc_hash{
+  uint64_t operator()(T x) const{
+    uint64_t y(x);
+    y += 0x9e3779b97f4a7c15;
+    y = (y ^ (y >> 30)) * 0xbf58476d1ce4e5b9;
+    y = (y ^ (y >> 27)) * 0x94d049bb133111eb;
+    return y ^ (y >> 31);
+  }
+};
 //END CUT HERE
 #ifndef call_from_test
-//INSERT ABOVE HERE
 signed main(){
   return 0;
 }
@@ -70,19 +77,25 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "datastructure/pb_ds_cc_hash_table.cpp"
+#line 2 "tools/cc_hash.cpp"
 
-#include<bits/stdc++.h>
+#ifndef call_from_test
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
-#line 7 "datastructure/pb_ds_cc_hash_table.cpp"
-using namespace __gnu_pbds;
-template<typename T,typename U, typename H=hash<T> >
-using gmap = cc_hash_table<T, U, H>;
+template<typename T>
+struct cc_hash{
+  uint64_t operator()(T x) const{
+    uint64_t y(x);
+    y += 0x9e3779b97f4a7c15;
+    y = (y ^ (y >> 30)) * 0xbf58476d1ce4e5b9;
+    y = (y ^ (y >> 27)) * 0x94d049bb133111eb;
+    return y ^ (y >> 31);
+  }
+};
 //END CUT HERE
 #ifndef call_from_test
-//INSERT ABOVE HERE
 signed main(){
   return 0;
 }
