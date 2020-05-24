@@ -5,19 +5,9 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/fixpoint.cpp"
+#include "../../tools/cc_hash.cpp"
 #include "../../datastructure/pb_ds_cc_hash_table.cpp"
 #undef call_from_test
-
-template<typename T>
-struct chash{
-  uint64_t operator()(T x) const{
-    uint64_t y(x);
-    y += 0x9e3779b97f4a7c15;
-    y = (y ^ (y >> 30)) * 0xbf58476d1ce4e5b9;
-    y = (y ^ (y >> 27)) * 0x94d049bb133111eb;
-    return y ^ (y >> 31);
-  }
-};
 
 signed main(){
   cin.tie(0);
@@ -46,7 +36,7 @@ signed main(){
   sort(hs.begin(),hs.end());
   hs.erase(unique(hs.begin(),hs.end()),hs.end());
 
-  gmap<ll, int, chash<ll> > idx;
+  gmap<ll, int, cc_hash<ll> > idx;
   for(int i=0;i<(int)hs.size();i++) idx[hs[i]]=i;
 
   vector< vector<int> > dp(n+1,vector<int>(hs.size(),-1));

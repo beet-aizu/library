@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../tools/cc_hash.cpp"
 #include "../../datastructure/pb_ds_cc_hash_table.cpp"
 #undef call_from_test
 
@@ -13,7 +14,7 @@ signed main(){
   const char newl = '\n';
 
   using ll = long long;
-  gmap<ll, ll> mp;
+  gmap<ll, ll, cc_hash<ll>> mp;
 
   int q;
   cin>>q;
