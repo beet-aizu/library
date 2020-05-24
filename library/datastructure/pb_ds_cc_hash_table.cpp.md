@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: datastructure/pb_ds_cc_hash_table.cpp
+# :question: datastructure/pb_ds_cc_hash_table.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,6 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2646.test.cpp.html">test/aoj/2646.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo/associative_array.test.cpp.html">test/yosupo/associative_array.test.cpp</a>
 
 
 ## Code
