@@ -283,6 +283,7 @@
 "test/yosupo/suffixarray.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/sum_of_floor_of_linear.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/tetration_mod.test.cpp": "2020-03-12 17:15:27 +0900",
+"test/yosupo/tree_decomposition_width_2.test.cpp": "2020-05-26 17:13:08 +0900",
 "test/yosupo/tree_diameter.test.cpp": "2020-05-18 20:55:43 +0900",
 "test/yosupo/two_edge_connected_components.test.cpp": "2020-03-12 16:29:30 +0900",
 "test/yosupo/two_sat.test.cpp": "2020-03-05 21:02:53 +0900",
