@@ -45,6 +45,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2405.test.cpp.html">test/aoj/2405.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/tree_decomposition_width_2.test.cpp.html">test/yosupo/tree_decomposition_width_2.test.cpp</a>
 
 
 ## Code

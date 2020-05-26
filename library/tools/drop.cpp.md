@@ -47,6 +47,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_1_B.test.cpp.html">test/aoj/GRL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/shortest_path.test.cpp.html">test/yosupo/shortest_path.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/sqrt_of_formal_power_series.test.cpp.html">test/yosupo/sqrt_of_formal_power_series.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/tree_decomposition_width_2.test.cpp.html">test/yosupo/tree_decomposition_width_2.test.cpp</a>
 
 
 ## Code
