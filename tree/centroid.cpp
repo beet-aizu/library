@@ -39,6 +39,7 @@ struct Centroid{
     return cs;
   }
 
+  const vector<int>& operator[](int k)const{return G[k];}
   void disable(int v){dead[v]=1;}
   void  enable(int v){dead[v]=0;}
   int alive(int v){return !dead[v];}
