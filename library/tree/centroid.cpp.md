@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/centroid.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-04 20:21:28+09:00
+    - Last commit date: 2020-05-28 14:30:55+09:00
 
 
 
@@ -39,6 +39,9 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/frequency_table_of_tree_distance.test.cpp.html">test/yosupo/frequency_table_of_tree_distance.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
 
 
 ## Code
@@ -87,6 +90,7 @@ struct Centroid{
     return cs;
   }
 
+  const vector<int>& operator[](int k)const{return G[k];}
   void disable(int v){dead[v]=1;}
   void  enable(int v){dead[v]=0;}
   int alive(int v){return !dead[v];}
@@ -146,6 +150,7 @@ struct Centroid{
     return cs;
   }
 
+  const vector<int>& operator[](int k)const{return G[k];}
   void disable(int v){dead[v]=1;}
   void  enable(int v){dead[v]=0;}
   int alive(int v){return !dead[v];}

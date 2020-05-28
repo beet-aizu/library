@@ -71,6 +71,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/3056.test.cpp.html">test/aoj/geometry/3056.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1732.test.cpp.html">test/yukicoder/1732.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3227.test.cpp.html">test/yukicoder/3227.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
 
 
 ## Code

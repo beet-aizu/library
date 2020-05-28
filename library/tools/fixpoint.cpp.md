@@ -44,7 +44,10 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/2646.test.cpp.html">test/aoj/2646.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/2790.test.cpp.html">test/aoj/2790.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2448.test.cpp.html">test/aoj/geometry/2448.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/frequency_table_of_tree_distance.test.cpp.html">test/yosupo/frequency_table_of_tree_distance.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/tree_diameter.test.cpp.html">test/yosupo/tree_diameter.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
 
 
 ## Code

@@ -46,6 +46,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2985.test.cpp.html">test/aoj/2985.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/convolution_mod_1000000007.test.cpp.html">test/yosupo/convolution_mod_1000000007.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo/frequency_table_of_tree_distance.test.cpp.html">test/yosupo/frequency_table_of_tree_distance.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/0444.test.cpp.html">test/yukicoder/0444.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 

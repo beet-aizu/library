@@ -627,6 +627,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/enumerate_triangles.test.cpp.html">test/yosupo/enumerate_triangles.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/exp_of_formal_power_series.test.cpp.html">test/yosupo/exp_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/find_linear_recurrence.test.cpp.html">test/yosupo/find_linear_recurrence.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/frequency_table_of_tree_distance.test.cpp.html">test/yosupo/frequency_table_of_tree_distance.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/inv_of_formal_power_series.test.cpp.html">test/yosupo/inv_of_formal_power_series.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/kth_root_integer.test.cpp.html">test/yosupo/kth_root_integer.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/lca.linkcuttree.test.cpp.html">test/yosupo/lca.linkcuttree.test.cpp</a>
@@ -703,6 +704,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/3407.test.cpp.html">test/yukicoder/3407.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3592.test.cpp.html">test/yukicoder/3592.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4072.test.cpp.html">test/yukicoder/4072.test.cpp</a>
 
 
