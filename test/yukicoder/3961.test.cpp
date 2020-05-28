@@ -53,13 +53,13 @@ signed main(){
       };
 
     vp.clear();
-    for(int t:G.G[r]){
+    for(int t:G[r]){
       if(!G.alive(t)) continue;
 
       MFP([&](auto dfs,int v,int p,P st)->void{
         ps[v]=st;
         if(st.first<0) return;
-        for(int u:G.G[v]){
+        for(int u:G[v]){
           if(u==p) continue;
           if(!G.alive(u)) continue;
           dfs(u,v,calc(st,col[u][v]));
@@ -73,14 +73,14 @@ signed main(){
 
     vector<int> num(vp.size());
     int all=0;
-    for(int t:G.G[r]){
+    for(int t:G[r]){
       if(!G.alive(t)) continue;
 
       // count
       MFP([&](auto dfs,int v,int p)->void{
         P st=ps[v];
         if(st.first<0) return;
-        for(int u:G.G[v]){
+        for(int u:G[v]){
           if(u==p) continue;
           if(!G.alive(u)) continue;
           dfs(u,v);
@@ -100,7 +100,7 @@ signed main(){
       MFP([&](auto dfs,int v,int p)->void{
         P st=ps[v];
         if(st.first<0) return;
-        for(int u:G.G[v]){
+        for(int u:G[v]){
           if(u==p) continue;
           if(!G.alive(u)) continue;
           dfs(u,v);
@@ -116,14 +116,14 @@ signed main(){
       })(t,r);
     }
 
-    for(int t:G.G[r]){
+    for(int t:G[r]){
       if(!G.alive(t)) continue;
 
       // clear
       MFP([&](auto dfs,int v,int p)->void{
         P st=ps[v];
         if(st.first<0) return;
-        for(int u:G.G[v]){
+        for(int u:G[v]){
           if(u==p) continue;
           if(!G.alive(u)) continue;
           dfs(u,v);
@@ -138,7 +138,7 @@ signed main(){
     }
 
     G.disable(r);
-    for(int u:G.G[r])
+    for(int u:G[r])
       if(G.alive(u))
         que.emplace(G.build(u)[0]);
   }
