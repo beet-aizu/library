@@ -41,6 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
 * :heavy_check_mark: <a href="../graph/nicetree.cpp.html">graph/nicetree.cpp</a>
+* :heavy_check_mark: <a href="../string/editdistance.cpp.html">string/editdistance.cpp</a>
 * :heavy_check_mark: <a href="../string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
 
 
@@ -64,6 +65,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/3069.test.cpp.html">test/aoj/3069.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/3112.test.cpp.html">test/aoj/3112.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/ALDS1_10_C.test.cpp.html">test/aoj/ALDS1_10_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DPL_1_E.test.cpp.html">test/aoj/DPL_1_E.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_A.linkcuttree.test.cpp.html">test/aoj/GRL_5_A.linkcuttree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj/geometry/2334.test.cpp.html">test/aoj/geometry/2334.test.cpp</a>

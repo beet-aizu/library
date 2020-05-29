@@ -300,6 +300,7 @@ layout: default
 ### string
 
 * :heavy_check_mark: <a href="library/string/ahocorasick.cpp.html">string/ahocorasick.cpp</a>
+* :heavy_check_mark: <a href="library/string/editdistance.cpp.html">string/editdistance.cpp</a>
 * :heavy_check_mark: <a href="library/string/knuthmorrispratt.cpp.html">string/knuthmorrispratt.cpp</a>
 * :heavy_check_mark: <a href="library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 * :heavy_check_mark: <a href="library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
@@ -509,6 +510,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_15_B.test.cpp.html">test/aoj/ALDS1_15_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_1_C.test.cpp.html">test/aoj/ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/ALDS1_9_C.test.cpp.html">test/aoj/ALDS1_9_C.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DPL_1_E.test.cpp.html">test/aoj/DPL_1_E.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DPL_3_B.test.cpp.html">test/aoj/DPL_3_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DPL_3_C.test.cpp.html">test/aoj/DPL_3_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DPL_5_A.test.cpp.html">test/aoj/DPL_5_A.test.cpp</a>
