@@ -1,5 +1,7 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -15,9 +17,9 @@ struct BinaryTrie{
   Node *root;
   BinaryTrie():acc(0){root=emplace(nullptr);}
 
-  void dfs(Node *a){
+  void clear(Node *a){
     if(!a) return;
-    dfs(a->l);dfs(a->r);
+    clear(a->l);clear(a->r);
     delete(a);
   }
 
@@ -161,39 +163,8 @@ struct BinaryTrie{
 };
 //END CUT HERE
 #ifndef call_from_test
-signed JAG2013SUMMERWARMINGUP_F(){
-  int n;
-  scanf("%d",&n);
-  vector<int> a(n);
-  for(int i=0;i<n;i++) scanf("%d",&a[i]);
-  vector<int> s(n+1,0);
-  for(int i=0;i<n;i++) s[i+1]=s[i]^a[i];
-  BinaryTrie<int, 30> bt;
-  using ull = unsigned long long;
-  map<ull, int> r;
-  bt.add(0);
-  r[(ull)bt.find(0)]=0;
-  int ans=-1,idx=-1,idy=-1;
-  for(int i=0;i<n;i++){
-    int k=r[(ull)bt.xmax(a[i])];
-    int res=s[i+1]^s[k];
-    if(ans<res||(ans==res&&idx>k)){
-      ans=res;
-      idx=k;
-      idy=i;
-    }
-    bt.update(a[i]);
-    bt.add(0);
-    if(!r.count((ull)bt.find(0))) r[(ull)bt.find(0)]=i+1;
-  }
-  printf("%d %d %d\n",ans,idx+1,idy+1);
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://atcoder.jp/contests/jag2013summer-warmingup/tasks/icpc2013summer_warmingUp_f
-*/
 
+// find_by_order (weak)
 signed ARC033_C(){
   int q;
   scanf("%d",&q);
@@ -210,36 +181,12 @@ signed ARC033_C(){
   }
   return 0;
 }
-
 /*
-  verified on 2019/10/25
+  verified on 2020/06/06
   https://atcoder.jp/contests/arc033/tasks/arc033_3
 */
 
-signed CFR470_C(){
-  int n;
-  scanf("%d",&n);
-  vector<int> a(n),p(n);
-  for(int i=0;i<n;i++) scanf("%d",&a[i]);
-  for(int i=0;i<n;i++) scanf("%d",&p[i]);
-
-  BinaryTrie<int, 30> bt;
-  for(int i=0;i<n;i++) bt.add(p[i]);
-
-  for(int i=0;i<n;i++){
-    if(i) printf(" ");
-    auto k=bt.xmin(a[i]);
-    printf("%d",a[i]^bt.val(k));
-    bt.sub(k);
-  }
-  puts("");
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  http://codeforces.com/contest/947/problem/C
-*/
-
+// upper_bound
 signed CFR477_C(){
   using ll = long long;
 
@@ -253,9 +200,9 @@ signed CFR477_C(){
 
   ll z=0;
   auto apply=[&](ll a){
-               z^=a;
-               bt.update(a);
-             };
+    z^=a;
+    bt.update(a);
+  };
 
   vector<ll> ans;
   ll x=bt.val(bt.xmin(0));
@@ -287,124 +234,13 @@ signed CFR477_C(){
   return 0;
 }
 /*
-  verified on 2019/10/25
+  verified on 2020/06/06
   http://codeforces.com/contest/966/problem/C
 */
 
-#define call_from_test
-#include "../tree/heavylightdecomposition.cpp"
-#include "../tree/levelancestor.cpp"
-#undef call_from_test
-
-//INSERT ABOVE HERE
-signed KUPC2018_M(){
-  using ll = long long;
-  int n;
-  scanf("%d",&n);
-  HLD hld(n);
-  LevelAncestor la(n);
-  for(int i=1;i<n;i++){
-    int a,b;
-    scanf("%d %d",&a,&b);
-    a--;b--;
-    hld.add_edge(a,b);
-    la.add_edge(a,b);
-  }
-  hld.build();
-  la.build();
-
-  using T = BinaryTrie<int, 31>;
-  using E = pair<int, ll>;
-
-  struct SegmentTree{
-    int n;
-    vector<T> dat;
-    SegmentTree(int n_){
-      n=1;
-      while(n<n_) n<<=1;
-      dat=vector<T>(n*2);
-      for(int i=0;i<n*2;i++) dat[i]=T();
-    }
-    void reset(){
-      for(int i=0;i<n*2;i++) dat[i].dfs(dat[i].root);
-    }
-    void update(int a,int b,E x){
-      for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
-        if(l&1) dat[l++].add(x.first,x.second);
-        if(r&1) dat[--r].add(x.first,x.second);
-      }
-    }
-    ll query(int k,E x){
-      ll res=0;
-      k+=n;
-      while(k){
-        dat[k].update(x.first);
-        res+=dat[k].order_of_key(x.second+1);
-        dat[k].update(x.first);
-        k>>=1;
-      }
-      return res;
-    }
-  };
-
-  int q;
-  scanf("%d",&q);
-
-  vector<int> type(q),vs(q),xs(q),ks(q),ys(q),zs(q);
-  vector<ll> ans(q);
-  for(int i=0;i<q;i++){
-    scanf("%d",&type[i]);
-    if(type[i]==1) scanf("%d %d %d",&vs[i],&xs[i],&ks[i]);
-    if(type[i]==2) scanf("%d %d %d",&vs[i],&ys[i],&zs[i]);
-    if(type[i]==3) scanf("%d",&vs[i]);
-    vs[i]--;
-  }
-
-  const int UKU = 8;
-  for(int uku=0;uku<UKU;uku++){
-    SegmentTree seg(n);
-    int rt=0;
-    for(int i=0;i<q;i++){
-      if(type[i]==1&&(i%UKU)==uku){
-        int v=vs[i],x=xs[i],k=ks[i];
-        if(rt==v){
-          seg.update(0,n,E(x,k));
-        }else if(hld.lca(rt,v)==v){
-          int u=la.up(rt,hld.distance(rt,v)-1);
-          int l=hld.vid[u],r=hld.vid[u]+hld.sub[u];
-          seg.update(0,l,E(x,k));
-          seg.update(r,n,E(x,k));
-        }else{
-          int l=hld.vid[v],r=hld.vid[v]+hld.sub[v];
-          seg.update(l,r,E(x,k));
-        }
-      }
-      if(type[i]==2){
-        int v=vs[i],y=ys[i],z=zs[i];
-        ans[i]+=seg.query(hld.vid[v],E(y,z));
-      }
-      if(type[i]==3){
-        rt=vs[i];
-      }
-    }
-    seg.reset();
-  }
-
-  for(int i=0;i<q;i++)
-    if(type[i]==2) printf("%lld\n",ans[i]);
-  return 0;
-}
-/*
-  verified on 2019/10/25
-  https://atcoder.jp/contests/kupc2018/tasks/kupc2018_m
-*/
-
 signed main(){
-  //JAG2013SUMMERWARMINGUP_F();
   //ARC033_C();
-  //CFR470_C();
   //CFR477_C();
-  //KUPC2018_M();
   return 0;
 }
 #endif
