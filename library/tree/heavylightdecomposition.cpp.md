@@ -57,11 +57,6 @@ HL分解を使えるかどうかの条件は、載せるデータ構造（セグ
 辺属性のクエリの場合は `for_each_edge()` で処理します。
 
 
-## Required by
-
-* :heavy_check_mark: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
-
-
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/0367.test.cpp.html">test/aoj/0367.test.cpp</a>

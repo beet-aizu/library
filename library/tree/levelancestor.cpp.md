@@ -38,7 +38,6 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 * :heavy_check_mark: <a href="eulertourforbfs.cpp.html">tree/eulertourforbfs.cpp</a>
 
 
