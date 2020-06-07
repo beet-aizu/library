@@ -283,6 +283,7 @@
 "test/yosupo/staticrmq.sparsetable.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/stirling_number_of_the_first_kind.test.cpp": "2020-05-16 18:51:14 +0900",
 "test/yosupo/stirling_number_of_the_second_kind.test.cpp": "2020-05-16 18:51:14 +0900",
+"test/yosupo/suffixarray.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/sum_of_floor_of_linear.test.cpp": "2020-03-05 21:02:53 +0900",
 "test/yosupo/tetration_mod.test.cpp": "2020-03-12 17:15:27 +0900",
 "test/yosupo/tree_decomposition_width_2.test.cpp": "2020-05-26 17:13:08 +0900",
