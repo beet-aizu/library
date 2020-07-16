@@ -93,6 +93,7 @@ struct LinkCutTreeBase{
     return rp;
   }
 
+  // c must be root on LCT
   void link(Node *par,Node *c){
     expose(c);
     expose(par);
