@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/subtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-07 20:09:06+09:00
+    - Last commit date: 2020-07-16 18:11:07+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2019/06/08/221833">http://beet-aizu.hatenablog.com/entry/2019/06/08/221833</a>

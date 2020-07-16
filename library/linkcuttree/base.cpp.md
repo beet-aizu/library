@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e406bcf916b254ab0f908ae657d2d754">linkcuttree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/linkcuttree/base.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-22 15:37:31+09:00
+    - Last commit date: 2020-07-16 18:11:07+09:00
 
 
 
@@ -159,6 +159,7 @@ struct LinkCutTreeBase{
     return rp;
   }
 
+  // c must be root on LCT
   void link(Node *par,Node *c){
     expose(c);
     expose(par);
@@ -318,6 +319,7 @@ struct LinkCutTreeBase{
     return rp;
   }
 
+  // c must be root on LCT
   void link(Node *par,Node *c){
     expose(c);
     expose(par);
