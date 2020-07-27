@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj/DSL_3_D.cartesiantree.test.cpp
+# :heavy_check_mark: test/aoj/DSL_3_D.cartesiantree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_3_D.cartesiantree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 11:09:34+09:00
+    - Last commit date: 2020-07-27 11:21:26+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
-* :question: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Code
@@ -68,13 +68,15 @@ signed main(){
   vector<int> vs(n);
   for(int i=0;i<n;i++) cin>>vs[i];
 
-  CartesianTree ct;
-  int r=ct.build(vs);
+  auto ps=cartesian_tree(vs);
 
   LCA lca(n);
-  for(int i=0;i<n;i++)
-    if(~ct.P[i]) lca.add_edge(i,ct.P[i]);
-  lca.build(r);
+  int rt;
+  for(int i=0;i<n;i++){
+    if(~ps[i]) lca.add_edge(i,ps[i]);
+    else rt=i;
+  }
+  lca.build(rt);
 
   for(int i=0;i+l<=n;i++){
     if(i) cout<<" ";
@@ -275,13 +277,15 @@ signed main(){
   vector<int> vs(n);
   for(int i=0;i<n;i++) cin>>vs[i];
 
-  CartesianTree ct;
-  int r=ct.build(vs);
+  auto ps=cartesian_tree(vs);
 
   LCA lca(n);
-  for(int i=0;i<n;i++)
-    if(~ct.P[i]) lca.add_edge(i,ct.P[i]);
-  lca.build(r);
+  int rt;
+  for(int i=0;i<n;i++){
+    if(~ps[i]) lca.add_edge(i,ps[i]);
+    else rt=i;
+  }
+  lca.build(rt);
 
   for(int i=0;i+l<=n;i++){
     if(i) cout<<" ";
