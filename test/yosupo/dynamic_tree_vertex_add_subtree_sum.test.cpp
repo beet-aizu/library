@@ -11,6 +11,7 @@ using namespace std;
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   using ll = long long;
 
@@ -59,10 +60,9 @@ signed main(){
       cin>>v>>p;
       lct.evert(lct[p]);
       lct.cut(lct[v]);
-      cout<<lct.query(lct[v])<<"\n";
+      cout<<lct.query(lct[v])<<newl;
       lct.link(lct[p],lct[v]);
     }
   }
-  cout<<flush;
   return 0;
 }

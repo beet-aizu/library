@@ -12,6 +12,7 @@ using namespace std;
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   int n,q;
   cin>>n>>q;
@@ -74,9 +75,8 @@ signed main(){
       cin>>u>>v>>x;
       lct.evert(lct[u]);
       auto res=lct.query(lct[v]).first;
-      cout<<(res.a*M(x)+res.b).v<<"\n";
+      cout<<(res.a*M(x)+res.b).v<<newl;
     }
   }
-  cout<<flush;
   return 0;
 }
