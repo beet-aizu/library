@@ -18,13 +18,15 @@ signed main(){
   vector<int> vs(n);
   for(int i=0;i<n;i++) cin>>vs[i];
 
-  CartesianTree ct;
-  int r=ct.build(vs);
+  auto ps=cartesian_tree(vs);
 
   LCA lca(n);
-  for(int i=0;i<n;i++)
-    if(~ct.P[i]) lca.add_edge(i,ct.P[i]);
-  lca.build(r);
+  int rt;
+  for(int i=0;i<n;i++){
+    if(~ps[i]) lca.add_edge(i,ps[i]);
+    else rt=i;
+  }
+  lca.build(rt);
 
   for(int i=0;i+l<=n;i++){
     if(i) cout<<" ";
