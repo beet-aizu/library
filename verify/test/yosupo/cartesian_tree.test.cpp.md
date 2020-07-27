@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/unionfind.test.cpp
+# :heavy_check_mark: test/yosupo/cartesian_tree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/unionfind.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/cartesian_tree.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-07-27 11:09:34+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
+* see: <a href="https://judge.yosupo.jp/problem/cartesian_tree">https://judge.yosupo.jp/problem/cartesian_tree</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/datastructure/unionfind.cpp.html">datastructure/unionfind.cpp</a>
+* :question: <a href="../../../library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 
 
 ## Code
@@ -47,13 +47,13 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#define PROBLEM "https://judge.yosupo.jp/problem/cartesian_tree"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/unionfind.cpp"
+#include "../../datastructure/cartesiantree.cpp"
 #undef call_from_test
 
 signed main(){
@@ -61,16 +61,18 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  int n,q;
-  cin>>n>>q;
+  int n;
+  cin>>n;
 
-  UnionFind uf(n);
-  for(int i=0;i<q;i++){
-    int t,u,v;
-    cin>>t>>u>>v;
-    if(t==0) uf.unite(u,v);
-    if(t==1) cout<<uf.same(u,v)<<newl;
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  auto ps=cartesian_tree(as);
+  for(int i=0;i<n;i++){
+    if(i) cout<<' ';
+    cout<<(ps[i]<0?i:ps[i]);
   }
+  cout<<newl;
   return 0;
 }
 
@@ -80,53 +82,50 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/yosupo/unionfind.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#line 1 "test/yosupo/cartesian_tree.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/cartesian_tree"
 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#line 1 "datastructure/unionfind.cpp"
+#line 2 "datastructure/cartesiantree.cpp"
 
-#line 3 "datastructure/unionfind.cpp"
+#ifndef call_from_test
+#line 5 "datastructure/cartesiantree.cpp"
 using namespace std;
 #endif
+
 //BEGIN CUT HERE
-struct UnionFind{
-  int num;
-  vector<int> rs,ps;
-  UnionFind(){}
-  UnionFind(int n):num(n),rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}
-  int find(int x){
-    return (x==ps[x]?x:ps[x]=find(ps[x]));
+template<typename T>
+vector<int> cartesian_tree(const vector<T> &vs){
+  int n=vs.size();
+  vector<int> ps(n,-1),ls(n,-1),rs(n,-1);
+  int cur=0;
+  for(int i=1;i<n;i++){
+    if(vs[cur]<=vs[i]){
+      rs[cur]=i;
+      ps[i]=cur;
+      cur=i;
+      continue;
+    }
+    while(~ps[cur] and vs[i]<vs[ps[cur]]) cur=ps[cur];
+    ps[i]=ps[cur];
+    if(~ps[i]) rs[ps[i]]=i;
+    ls[i]=cur;
+    ps[cur]=i;
+    cur=i;
   }
-  bool same(int x,int y){
-    return find(x)==find(y);
-  }
-  void unite(int x,int y){
-    x=find(x);y=find(y);
-    if(x==y) return;
-    if(rs[x]<rs[y]) swap(x,y);
-    rs[x]+=rs[y];
-    ps[y]=x;
-    num--;
-  }
-  int size(int x){
-    return rs[find(x)];
-  }
-  int count() const{
-    return num;
-  }
-};
+  return ps;
+}
 //END CUT HERE
+
 #ifndef call_from_test
-//INSERT ABOVE HERE
 signed main(){
   return 0;
 }
 #endif
-#line 8 "test/yosupo/unionfind.test.cpp"
+#line 8 "test/yosupo/cartesian_tree.test.cpp"
 #undef call_from_test
 
 signed main(){
@@ -134,16 +133,18 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  int n,q;
-  cin>>n>>q;
+  int n;
+  cin>>n;
 
-  UnionFind uf(n);
-  for(int i=0;i<q;i++){
-    int t,u,v;
-    cin>>t>>u>>v;
-    if(t==0) uf.unite(u,v);
-    if(t==1) cout<<uf.same(u,v)<<newl;
+  vector<int> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  auto ps=cartesian_tree(as);
+  for(int i=0;i<n;i++){
+    if(i) cout<<' ';
+    cout<<(ps[i]<0?i:ps[i]);
   }
+  cout<<newl;
   return 0;
 }
 

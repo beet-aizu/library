@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-16 18:11:07+09:00
+    - Last commit date: 2020-07-27 11:09:34+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite">https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite</a>
@@ -63,6 +63,7 @@ using namespace std;
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   int n,q;
   cin>>n>>q;
@@ -125,10 +126,9 @@ signed main(){
       cin>>u>>v>>x;
       lct.evert(lct[u]);
       auto res=lct.query(lct[v]).first;
-      cout<<(res.a*M(x)+res.b).v<<"\n";
+      cout<<(res.a*M(x)+res.b).v<<newl;
     }
   }
-  cout<<flush;
   return 0;
 }
 

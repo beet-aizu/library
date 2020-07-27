@@ -38,7 +38,6 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="../datastructure/slidingwindowaggregation.cpp.html">datastructure/slidingwindowaggregation.cpp</a>
 * :heavy_check_mark: <a href="../graph/nicetree.cpp.html">graph/nicetree.cpp</a>
 * :heavy_check_mark: <a href="../string/editdistance.cpp.html">string/editdistance.cpp</a>

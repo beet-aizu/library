@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
+* :question: <a href="../../../library/tree/lca.cpp.html">tree/lca.cpp</a>
 
 
 ## Code

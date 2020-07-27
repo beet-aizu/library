@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-16 18:11:07+09:00
+    - Last commit date: 2020-07-27 11:09:34+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum">https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum</a>
@@ -61,6 +61,7 @@ using namespace std;
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   using ll = long long;
 
@@ -109,11 +110,10 @@ signed main(){
       cin>>v>>p;
       lct.evert(lct[p]);
       lct.cut(lct[v]);
-      cout<<lct.query(lct[v])<<"\n";
+      cout<<lct.query(lct[v])<<newl;
       lct.link(lct[p],lct[v]);
     }
   }
-  cout<<flush;
   return 0;
 }
 
