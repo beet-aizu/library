@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: vector/shift.cpp
+# :heavy_check_mark: vector/near.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#6ba8844da718b4a65f60dbfd0d92d6ef">vector</a>
-* <a href="{{ site.github.repository_url }}/blob/master/vector/shift.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-18 17:56:15+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/vector/near.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-30 16:42:28+09:00
 
 
 
@@ -39,6 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2359.test.cpp.html">test/aoj/2359.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4778.test.cpp.html">test/yukicoder/4778.test.cpp</a>
 
 
 ## Code
@@ -55,22 +56,31 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-vector<T> shift(vector<T> vs,vector<T> as){
+vector<T> add(vector<T> vs,vector<T> as){
   assert(vs.size()==as.size());
   for(int i=0;i<(int)vs.size();i++) vs[i]+=as[i];
   return vs;
 }
 template<typename T>
-vector<T> shift(vector<T> vs,T a){
-  return shift(vs,vector<T>(vs.size(),a));
+vector<T> add(vector<T> vs,T a){
+  return add(vs,vector<T>(vs.size(),a));
 }
-
+template<typename T>
+vector<T> mul(vector<T> vs,vector<T> as){
+  assert(vs.size()==as.size());
+  for(int i=0;i<(int)vs.size();i++) vs[i]*=as[i];
+  return vs;
+}
+template<typename T>
+vector<T> mul(vector<T> vs,T a){
+  return mul(vs,vector<T>(vs.size(),a));
+}
 template<typename T, typename ...Ts>
 vector<T> near(vector<T> vs,Ts... ts){
   vector<T> rs;
   rs.reserve(vs.size()*sizeof...(ts));
   auto append=[&](auto a){
-    auto ws=shift(vs,a);
+    auto ws=add(vs,a);
     for(auto w:ws) rs.emplace_back(w);
   };
   initializer_list<int>{(void(append(ts)),0)...};
@@ -89,7 +99,7 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "vector/shift.cpp"
+#line 2 "vector/near.cpp"
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
@@ -98,22 +108,31 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-vector<T> shift(vector<T> vs,vector<T> as){
+vector<T> add(vector<T> vs,vector<T> as){
   assert(vs.size()==as.size());
   for(int i=0;i<(int)vs.size();i++) vs[i]+=as[i];
   return vs;
 }
 template<typename T>
-vector<T> shift(vector<T> vs,T a){
-  return shift(vs,vector<T>(vs.size(),a));
+vector<T> add(vector<T> vs,T a){
+  return add(vs,vector<T>(vs.size(),a));
 }
-
+template<typename T>
+vector<T> mul(vector<T> vs,vector<T> as){
+  assert(vs.size()==as.size());
+  for(int i=0;i<(int)vs.size();i++) vs[i]*=as[i];
+  return vs;
+}
+template<typename T>
+vector<T> mul(vector<T> vs,T a){
+  return mul(vs,vector<T>(vs.size(),a));
+}
 template<typename T, typename ...Ts>
 vector<T> near(vector<T> vs,Ts... ts){
   vector<T> rs;
   rs.reserve(vs.size()*sizeof...(ts));
   auto append=[&](auto a){
-    auto ws=shift(vs,a);
+    auto ws=add(vs,a);
     for(auto w:ws) rs.emplace_back(w);
   };
   initializer_list<int>{(void(append(ts)),0)...};

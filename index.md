@@ -375,8 +375,8 @@ layout: default
 * :heavy_check_mark: <a href="library/vector/fusion.cpp.html">vector/fusion.cpp</a>
 * :heavy_check_mark: <a href="library/vector/identity.cpp.html">vector/identity.cpp</a>
 * :heavy_check_mark: <a href="library/vector/multi.cpp.html">vector/multi.cpp</a>
+* :heavy_check_mark: <a href="library/vector/near.cpp.html">vector/near.cpp</a>
 * :warning: <a href="library/vector/read.cpp.html">vector/read.cpp</a>
-* :heavy_check_mark: <a href="library/vector/shift.cpp.html">vector/shift.cpp</a>
 * :heavy_check_mark: <a href="library/vector/zip.cpp.html">vector/zip.cpp</a>
 
 
@@ -713,5 +713,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4072.test.cpp.html">test/yukicoder/4072.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/4778.test.cpp.html">test/yukicoder/4778.test.cpp</a>
 
 

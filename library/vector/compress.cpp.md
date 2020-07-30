@@ -49,6 +49,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/point_add_rectangle_sum.test.cpp.html">test/yosupo/point_add_rectangle_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/rectangle_sum.test.cpp.html">test/yosupo/rectangle_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1732.test.cpp.html">test/yukicoder/1732.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4778.test.cpp.html">test/yukicoder/4778.test.cpp</a>
 
 
 ## Code
