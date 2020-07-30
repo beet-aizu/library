@@ -7,7 +7,7 @@ using namespace std;
 #include "../../tools/drop.cpp"
 #include "../../vector/compress.cpp"
 #include "../../vector/fusion.cpp"
-#include "../../vector/shift.cpp"
+#include "../../vector/near.cpp"
 #include "../../segtree/basic/dual.cpp"
 #define SegmentTree SegmentTree2
 #include "../../segtree/basic/chien.cpp"
@@ -23,7 +23,7 @@ signed main(){
   vector<int> ts(q),as(q),bs(q),ys(q);
   for(int i=0;i<q;i++) cin>>ts[i]>>as[i]>>bs[i]>>ys[i];
 
-  vector<int> vs=fusion(near(as,-1,0,1),near(bs,-1,0,1));
+  vector<int> vs=near(fusion(as,bs),-1,0,1);
   vs.emplace_back(0);
   vs.emplace_back(1e9+10);
   vs=compress(vs);
