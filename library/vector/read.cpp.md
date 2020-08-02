@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#6ba8844da718b4a65f60dbfd0d92d6ef">vector</a>
 * <a href="{{ site.github.repository_url }}/blob/master/vector/read.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-30 16:21:01+09:00
+    - Last commit date: 2020-08-02 11:23:26+09:00
 
 
 
@@ -49,7 +49,7 @@ using namespace std;
 #endif
 
 //BEGIN CUT HERE
-template<typename T>
+template<typename T=int>
 vector<T> read(size_t n){
   vector<T> ts(n);
   for(size_t i=0;i<n;i++) cin>>ts[i];
@@ -76,7 +76,7 @@ using namespace std;
 #endif
 
 //BEGIN CUT HERE
-template<typename T>
+template<typename T=int>
 vector<T> read(size_t n){
   vector<T> ts(n);
   for(size_t i=0;i<n;i++) cin>>ts[i];
