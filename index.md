@@ -192,7 +192,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/io/precision.cpp.html">io/precision.cpp</a>
 * :warning: <a href="library/io/single.cpp.html">io/single.cpp</a>
-* :warning: <a href="library/io/tuple.cpp.html">io/tuple.cpp</a>
+* :heavy_check_mark: <a href="library/io/tuple.cpp.html">io/tuple.cpp</a>
 
 
 <div id="1bbf1d9f5340fa94bf2c5fb5ce73a5f5"></div>
@@ -323,13 +323,6 @@ layout: default
 * :heavy_check_mark: <a href="library/string/suffixarray.cpp.html">string/suffixarray.cpp</a>
 * :heavy_check_mark: <a href="library/string/trie.cpp.html">string/trie.cpp</a>
 * :heavy_check_mark: <a href="library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
-
-
-<div id="de60e5ba474ac43bf7562c10f5977e2d"></div>
-
-### test/yukicoder
-
-* :warning: <a href="library/test/yukicoder/4918.cpp.html">test/yukicoder/4918.cpp</a>
 
 
 <div id="4a931512ce65bdc9ca6808adf92d8783"></div>
@@ -728,5 +721,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4072.test.cpp.html">test/yukicoder/4072.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4778.test.cpp.html">test/yukicoder/4778.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/4918.test.cpp.html">test/yukicoder/4918.test.cpp</a>
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: io/tuple.cpp
+# :heavy_check_mark: io/tuple.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/yukicoder/4918.cpp.html">test/yukicoder/4918.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4918.test.cpp.html">test/yukicoder/4918.test.cpp</a>
 
 
 ## Code
