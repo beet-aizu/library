@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #include "../../graph/stronglyconnectedcomponent.cpp"
 #include "../../graph/arborescence_edmond.cpp"
 #undef call_from_test

@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #undef call_from_test
 
 #define ERROR "1e-6"

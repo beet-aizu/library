@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #include "../../datastructure/rangeslide.cpp"
 #undef call_from_test
 

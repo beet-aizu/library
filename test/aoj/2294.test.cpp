@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #include "../../vector/multi.cpp"
 #undef call_from_test
 

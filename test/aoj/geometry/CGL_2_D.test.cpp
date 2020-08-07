@@ -4,7 +4,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../../geometry/geometry.cpp"
-#include "../../../tools/precision.cpp"
+#include "../../../io/precision.cpp"
 #undef call_from_test
 
 #define ERROR "0.00000001"

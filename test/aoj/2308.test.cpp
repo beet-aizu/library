@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../tools/chminmax.cpp"
 #include "../../tools/drop.cpp"
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #include "../../geometry/projectilemotion.cpp"
 #undef call_from_test
 

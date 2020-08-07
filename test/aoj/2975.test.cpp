@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #include "../../tools/chminmax.cpp"
 #include "../../datastructure/convexhulltrick.cpp"
 #undef call_from_test
