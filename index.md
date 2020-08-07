@@ -186,6 +186,15 @@ layout: default
 * :warning: <a href="library/graph/voronoiminimumspanningtree.cpp.html">graph/voronoiminimumspanningtree.cpp</a>
 
 
+<div id="f98ed07a4d5f50f7de1410d905f1477f"></div>
+
+### io
+
+* :heavy_check_mark: <a href="library/io/precision.cpp.html">io/precision.cpp</a>
+* :warning: <a href="library/io/single.cpp.html">io/single.cpp</a>
+* :warning: <a href="library/io/tuple.cpp.html">io/tuple.cpp</a>
+
+
 <div id="1bbf1d9f5340fa94bf2c5fb5ce73a5f5"></div>
 
 ### linearalgebra
@@ -316,6 +325,13 @@ layout: default
 * :heavy_check_mark: <a href="library/string/zalgorithm.cpp.html">string/zalgorithm.cpp</a>
 
 
+<div id="de60e5ba474ac43bf7562c10f5977e2d"></div>
+
+### test/yukicoder
+
+* :warning: <a href="library/test/yukicoder/4918.cpp.html">test/yukicoder/4918.cpp</a>
+
+
 <div id="4a931512ce65bdc9ca6808adf92d8783"></div>
 
 ### tools
@@ -332,7 +348,6 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :heavy_check_mark: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
-* :heavy_check_mark: <a href="library/tools/precision.cpp.html">tools/precision.cpp</a>
 * :heavy_check_mark: <a href="library/tools/trio.cpp.html">tools/trio.cpp</a>
 
 
@@ -376,7 +391,6 @@ layout: default
 * :heavy_check_mark: <a href="library/vector/identity.cpp.html">vector/identity.cpp</a>
 * :heavy_check_mark: <a href="library/vector/multi.cpp.html">vector/multi.cpp</a>
 * :heavy_check_mark: <a href="library/vector/near.cpp.html">vector/near.cpp</a>
-* :warning: <a href="library/vector/read.cpp.html">vector/read.cpp</a>
 * :heavy_check_mark: <a href="library/vector/zip.cpp.html">vector/zip.cpp</a>
 
 

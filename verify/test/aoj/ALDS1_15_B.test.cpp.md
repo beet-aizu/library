@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_15_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 16:46:59+09:00
+    - Last commit date: 2020-08-07 15:47:54+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
+* :heavy_check_mark: <a href="../../../library/io/precision.cpp.html">io/precision.cpp</a>
 
 
 ## Code
@@ -53,7 +53,7 @@ layout: default
 using namespace std;
 
 #define call_from_test
-#include "../../tools/precision.cpp"
+#include "../../io/precision.cpp"
 #undef call_from_test
 
 #define ERROR "1e-6"
@@ -97,9 +97,9 @@ signed main(){
 using namespace std;
 
 #define call_from_test
-#line 1 "tools/precision.cpp"
+#line 1 "io/precision.cpp"
 
-#line 3 "tools/precision.cpp"
+#line 3 "io/precision.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

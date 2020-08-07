@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#75fdf46b9beceeb9dd144b90a6a791c2">test/aoj/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/geometry/CGL_2_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-17 20:13:07+09:00
+    - Last commit date: 2020-08-07 15:47:54+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../../library/geometry/geometry.cpp.html">geometry/geometry.cpp</a>
-* :heavy_check_mark: <a href="../../../../library/tools/precision.cpp.html">tools/precision.cpp</a>
+* :heavy_check_mark: <a href="../../../../library/io/precision.cpp.html">io/precision.cpp</a>
 
 
 ## Code
@@ -54,7 +54,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../../geometry/geometry.cpp"
-#include "../../../tools/precision.cpp"
+#include "../../../io/precision.cpp"
 #undef call_from_test
 
 #define ERROR "0.00000001"
@@ -731,9 +731,9 @@ signed main(){
   return 0;
 }
 #endif
-#line 1 "tools/precision.cpp"
+#line 1 "io/precision.cpp"
 
-#line 3 "tools/precision.cpp"
+#line 3 "io/precision.cpp"
 using namespace std;
 #endif
 //BEGIN CUT HERE

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: vector/read.cpp
+# :warning: io/single.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#6ba8844da718b4a65f60dbfd0d92d6ef">vector</a>
-* <a href="{{ site.github.repository_url }}/blob/master/vector/read.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 11:23:26+09:00
+* category: <a href="../../index.html#f98ed07a4d5f50f7de1410d905f1477f">io</a>
+* <a href="{{ site.github.repository_url }}/blob/master/io/single.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-07 15:47:54+09:00
 
 
 
@@ -68,7 +68,7 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "vector/read.cpp"
+#line 2 "io/single.cpp"
 
 #ifndef call_from_test
 #include <bits/stdc++.h>
