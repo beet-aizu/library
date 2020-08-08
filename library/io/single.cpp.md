@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: io/single.cpp
+# :heavy_check_mark: io/single.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-08-07 15:47:54+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4569.test.cpp.html">test/yukicoder/4569.test.cpp</a>
 
 
 ## Code
