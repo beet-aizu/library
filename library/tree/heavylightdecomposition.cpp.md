@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/heavylightdecomposition.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-23 02:20:25+09:00
+    - Last commit date: 2020-08-20 15:14:35+09:00
 
 
 * see: <a href="http://beet-aizu.hatenablog.com/entry/2017/12/12/235950">http://beet-aizu.hatenablog.com/entry/2017/12/12/235950</a>
@@ -75,7 +75,7 @@ HL分解を使えるかどうかの条件は、載せるデータ構造（セグ
 #include<bits/stdc++.h>
 using namespace std;
 #endif
-/**
+/*
  * @docs docs/heavylightdecomposition.md
  * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950
  */
@@ -202,7 +202,7 @@ signed main(){
 #include<bits/stdc++.h>
 using namespace std;
 #endif
-/**
+/*
  * @docs docs/heavylightdecomposition.md
  * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950
  */

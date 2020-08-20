@@ -315,6 +315,7 @@ layout: default
 * :heavy_check_mark: <a href="library/string/longestcommonprefix.cpp.html">string/longestcommonprefix.cpp</a>
 * :heavy_check_mark: <a href="library/string/longestcommonsubstring.cpp.html">string/longestcommonsubstring.cpp</a>
 * :heavy_check_mark: <a href="library/string/manacher.cpp.html">string/manacher.cpp</a>
+* :warning: <a href="library/string/morrispratt.cpp.html">string/morrispratt.cpp</a>
 * :heavy_check_mark: <a href="library/string/palindromictree.cpp.html">string/palindromictree.cpp</a>
 * :heavy_check_mark: <a href="library/string/parse.cpp.html">string/parse.cpp</a>
 * :heavy_check_mark: <a href="library/string/rectanglehash.cpp.html">string/rectanglehash.cpp</a>

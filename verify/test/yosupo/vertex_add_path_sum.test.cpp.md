@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/vertex_add_path_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 21:59:12+09:00
+    - Last commit date: 2020-08-20 15:14:35+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/vertex_add_path_sum">https://judge.yosupo.jp/problem/vertex_add_path_sum</a>
@@ -121,7 +121,7 @@ using namespace std;
 #line 3 "tree/heavylightdecomposition.cpp"
 using namespace std;
 #endif
-/**
+/*
  * @docs docs/heavylightdecomposition.md
  * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950
  */
