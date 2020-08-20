@@ -8,7 +8,6 @@ using namespace std;
  * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
  */
 //BEGIN CUT HERE
-// longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
   int n=s.size();
   vector<int> kmp(n+1,-1);

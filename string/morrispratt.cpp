@@ -6,6 +6,7 @@ using namespace std;
 #endif
 /*
  * @see https://snuke.hatenablog.com/entry/2014/12/01/235807
+ * @see https://kopricky.github.io/code/String/kmp.html
  */
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
@@ -26,10 +27,6 @@ vector<int> minimum_period(const string &s){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 //INSERT ABOVE HERE
 // test minimum_period
 signed ARC060_F(){
