@@ -19,27 +19,27 @@ signed main(){
 
   auto xs=read(n);
 
-  RangeToRange<int> G(n);
+  RangeToRange G(n);
+  SCC scc(G.size()+n+n);
+  auto f=[&](int u,int v){scc.add_edge(u,v);};
+  G.init(f);
+
   for(int i=0;i<n;i++){
     // [x - B, x - A]
     {
       int l=lower_bound(xs.begin(),xs.end(),xs[i]-b)-xs.begin();
       int r=upper_bound(xs.begin(),xs.end(),xs[i]-a)-xs.begin();
-      G.add_edge(i,i+1,l,r,0);
+      G.add_edge(i,i+1,l,r,f,f);
     }
     // [x + A, x + B]
     {
       int l=lower_bound(xs.begin(),xs.end(),xs[i]+a)-xs.begin();
       int r=upper_bound(xs.begin(),xs.end(),xs[i]+b)-xs.begin();
-      G.add_edge(i,i+1,l,r,0);
+      G.add_edge(i,i+1,l,r,f,f);
     }
   }
 
-  SCC scc(G.size());
-  for(int v=0;v<(int)G.size();v++)
-    for(auto [u,c]:G[v]) scc.add_edge(v,u);
   scc.build();
-
   map<int, int> cnt;
   for(int i=0;i<n;i++) cnt[scc[G.idx(i)]]++;
   for(int i=0;i<n;i++) cout<<cnt[scc[G.idx(i)]]<<newl;
