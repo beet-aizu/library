@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/rangetorange.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-20 13:52:10+09:00
+    - Last commit date: 2020-08-20 14:36:28+09:00
 
 
+* see: <a href="https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656">https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656</a>
 
 
 ## Verified with
@@ -52,6 +53,11 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
+/**
+ * @see https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
+ */
+
 //BEGIN CUT HERE
 struct RangeToRange{
   const int n;
@@ -116,6 +122,11 @@ signed main(){
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
+/**
+ * @see https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
+ */
+
 //BEGIN CUT HERE
 struct RangeToRange{
   const int n;
