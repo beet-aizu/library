@@ -31,10 +31,11 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/morrispratt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-20 15:14:35+09:00
+    - Last commit date: 2020-08-20 15:23:52+09:00
 
 
 * see: <a href="https://snuke.hatenablog.com/entry/2014/12/01/235807">https://snuke.hatenablog.com/entry/2014/12/01/235807</a>
+* see: <a href="https://kopricky.github.io/code/String/kmp.html">https://kopricky.github.io/code/String/kmp.html</a>
 
 
 ## Code
@@ -50,6 +51,7 @@ using namespace std;
 #endif
 /*
  * @see https://snuke.hatenablog.com/entry/2014/12/01/235807
+ * @see https://kopricky.github.io/code/String/kmp.html
  */
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
@@ -70,10 +72,6 @@ vector<int> minimum_period(const string &s){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 //INSERT ABOVE HERE
 // test minimum_period
 signed ARC060_F(){
@@ -133,6 +131,7 @@ using namespace std;
 #endif
 /*
  * @see https://snuke.hatenablog.com/entry/2014/12/01/235807
+ * @see https://kopricky.github.io/code/String/kmp.html
  */
 //BEGIN CUT HERE
 // longest prefix suffix matching of [0, i)
@@ -153,10 +152,6 @@ vector<int> minimum_period(const string &s){
 }
 //END CUT HERE
 #ifndef call_from_test
-
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 //INSERT ABOVE HERE
 // test minimum_period
 signed ARC060_F(){

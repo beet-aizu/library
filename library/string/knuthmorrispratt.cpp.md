@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/knuthmorrispratt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-20 15:14:35+09:00
+    - Last commit date: 2020-08-20 15:23:52+09:00
 
 
 * see: <a href="https://snuke.hatenablog.com/entry/2017/07/18/101026">https://snuke.hatenablog.com/entry/2017/07/18/101026</a>
@@ -57,7 +57,6 @@ using namespace std;
  * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
  */
 //BEGIN CUT HERE
-// longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
   int n=s.size();
   vector<int> kmp(n+1,-1);
@@ -169,7 +168,6 @@ using namespace std;
  * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
  */
 //BEGIN CUT HERE
-// longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
   int n=s.size();
   vector<int> kmp(n+1,-1);

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-20 15:14:35+09:00
+    - Last commit date: 2020-08-20 15:23:52+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
@@ -92,7 +92,6 @@ using namespace std;
  * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
  */
 //BEGIN CUT HERE
-// longest prefix suffix matching of [0, i)
 vector<int> knuth_morris_pratt(const string &s){
   int n=s.size();
   vector<int> kmp(n+1,-1);
