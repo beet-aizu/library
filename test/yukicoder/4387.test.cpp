@@ -9,7 +9,7 @@ using namespace std;
 #include "../../graph/stronglyconnectedcomponent.cpp"
 #undef call_from_test
 
-#ifdef SANITISE
+#ifdef SANITIZE
 #define IGNORE
 #endif
 
