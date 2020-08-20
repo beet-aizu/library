@@ -25,21 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: io/single.cpp
+# :warning: test/resolve.py
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f98ed07a4d5f50f7de1410d905f1477f">io</a>
-* <a href="{{ site.github.repository_url }}/blob/master/io/single.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-07 15:47:54+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/resolve.py">View this file on GitHub</a>
+    - Last commit date: 1970-01-01 00:00:00+00:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/4387.test.cpp.html">test/yukicoder/4387.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yukicoder/4569.test.cpp.html">test/yukicoder/4569.test.cpp</a>
 
 
 ## Code
@@ -47,26 +41,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
+#!/usr/bin/env python3
+import sys
+import re
+from pathlib import Path
 
-#ifndef call_from_test
-#include <bits/stdc++.h>
-using namespace std;
-#endif
+args=sys.argv
 
-//BEGIN CUT HERE
-template<typename T=int>
-vector<T> read(size_t n){
-  vector<T> ts(n);
-  for(size_t i=0;i<n;i++) cin>>ts[i];
-  return ts;
-}
-//END CUT HERE
-#ifndef call_from_test
-signed main(){
-  return 0;
-}
-#endif
+p = Path(args[1])
+assert(p.exists())
+
+d = p.parent.resolve()
+
+def resolve(s):
+    r = d.joinpath(s).resolve()
+    assert(r.exists())
+    with open(r) as f:
+        print(f.read())
+
+with open(p) as f:
+    ss = f.readlines()
+    regex = re.compile(r'^#include\s*"(.*)"')
+    for s in ss:
+        res = regex.search(s)
+        if res:
+            resolve(res[1])
+        else:
+            print(s, end='')
 
 ```
 {% endraw %}
@@ -74,26 +75,12 @@ signed main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "io/single.cpp"
-
-#ifndef call_from_test
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-//BEGIN CUT HERE
-template<typename T=int>
-vector<T> read(size_t n){
-  vector<T> ts(n);
-  for(size_t i=0;i<n;i++) cin>>ts[i];
-  return ts;
-}
-//END CUT HERE
-#ifndef call_from_test
-signed main(){
-  return 0;
-}
-#endif
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py", line 84, in bundle
+    raise NotImplementedError
+NotImplementedError
 
 ```
 {% endraw %}
