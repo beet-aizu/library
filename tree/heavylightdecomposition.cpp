@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #endif
-/**
+/*
  * @docs docs/heavylightdecomposition.md
  * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950
  */
