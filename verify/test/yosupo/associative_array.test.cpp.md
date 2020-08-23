@@ -127,7 +127,7 @@ signed main(){
 using namespace std;
 #endif
 //BEGIN CUT HERE
-#line 7 "datastructure/pb_ds_cc_hash_table.cpp"
+#include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
 template<typename T,typename U, typename H=hash<T> >
 using gmap = cc_hash_table<T, U, H>;

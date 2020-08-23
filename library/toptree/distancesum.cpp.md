@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/distancesum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 17:45:41+09:00
+    - Last commit date: 2020-08-23 14:37:27+09:00
 
 
 
@@ -45,6 +45,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj/2636.test.cpp.html">test/aoj/2636.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2587.test.cpp.html">test/yukicoder/2587.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4862.test.cpp.html">test/yukicoder/4862.test.cpp</a>
 
 
 ## Code
@@ -176,7 +177,10 @@ struct DistanceSum{
     }
     return ctr;
   }
-
+  Vertex* create(T color){return G.create(Vertex(color));}
+  void link(Vertex* u,Cluster w,Vertex* v){G.link(u,Cluster(w),v);}
+  void cut(Vertex* u,Vertex* v){G.cut(u,v);}
+  void set_vertex(Vertex* u,T color){G.set_vertex(u,Vertex(color));}
   T query(Vertex* v){return G.get_subtree(v).ans;}
 };
 //END CUT HERE
@@ -198,7 +202,7 @@ Traceback (most recent call last):
     bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
   File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
     bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 309, in update
+  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 398, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
 onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: toptree/distancesum.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef other than include guards
 

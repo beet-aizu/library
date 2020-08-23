@@ -342,7 +342,9 @@ using namespace std;
 
 #define IGNORE
 
-#line 9 "segtree/types/online.cpp"
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+#include<ext/pb_ds/tag_and_trait.hpp>
 using namespace __gnu_pbds;
 
 struct RangeTypes{
