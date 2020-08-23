@@ -19,12 +19,10 @@ signed main(){
   using ll = long long;
   const size_t LIM = 3e6;
   DistanceSum<ll, LIM> G;
-  using Vertex = decltype(G)::Vertex;
-  using Cluster = decltype(G)::Cluster;
 
   vector<int> xs(n,1);
-  vector<Vertex*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=G.G.create(Vertex(xs[i]));
+  vector<decltype(G)::Vertex*> vs(n);
+  for(int i=0;i<n;i++) vs[i]=G.create(xs[i]);
 
   ll pre=0;
   for(int i=0;i<q;i++){
@@ -37,7 +35,7 @@ signed main(){
       a--;b--;
       a+=pre;a%=n;
       b+=pre;b%=n;
-      G.G.link(vs[a],Cluster(c),vs[b]);
+      G.link(vs[a],c,vs[b]);
     }
 
     if(t==2){
@@ -46,7 +44,7 @@ signed main(){
       a--;b--;
       a+=pre;a%=n;
       b+=pre;b%=n;
-      G.G.cut(vs[a],vs[b]);
+      G.cut(vs[a],vs[b]);
     }
 
     if(t==3){
@@ -55,7 +53,7 @@ signed main(){
       a--;
       a+=pre;a%=n;
       xs[a]^=1;
-      G.G.set_vertex(vs[a],Vertex(xs[a]));
+      G.set_vertex(vs[a],xs[a]);
 
       auto cc=G.centroid(vs[a]);
       ll res=G.query(cc);

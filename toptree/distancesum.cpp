@@ -122,7 +122,10 @@ struct DistanceSum{
     }
     return ctr;
   }
-
+  Vertex* create(T color){return G.create(Vertex(color));}
+  void link(Vertex* u,Cluster w,Vertex* v){G.link(u,Cluster(w),v);}
+  void cut(Vertex* u,Vertex* v){G.cut(u,v);}
+  void set_vertex(Vertex* u,T color){G.set_vertex(u,Vertex(color));}
   T query(Vertex* v){return G.get_subtree(v).ans;}
 };
 //END CUT HERE

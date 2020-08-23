@@ -19,21 +19,19 @@ signed main(){
   using ll = long long;
   const size_t LIM = 1e6;
   DistanceSum<ll, LIM> G;
-  using Vertex = decltype(G)::Vertex;
-  using Cluster = decltype(G)::Cluster;
 
-  vector<Vertex*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=G.G.create(Vertex(0));
+  vector<decltype(G)::Vertex*> vs(n);
+  for(int i=0;i<n;i++) vs[i]=G.create(0);
 
   for(int i=1;i<n;i++){
     int p,d;
     cin>>p>>d;
     p--;
-    G.G.link(vs[p],Cluster(d),vs[i]);
+    G.link(vs[p],d,vs[i]);
   }
 
   for(int i=0;i<n;i++){
-    G.G.set_vertex(vs[i],Vertex(1));
+    G.set_vertex(vs[i],1);
     cout<<G.query(G.centroid(vs[i]))<<newl;
   }
   return 0;
