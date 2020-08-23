@@ -31,7 +31,7 @@ signed main(){
     int a,b;
     cin>>a>>b;
     a--;b--;
-    G.G.link(vs[a],1,vs[b]);
+    G.link(vs[a],1,vs[b]);
   }
 
   for(int i=0;i<q;i++){
