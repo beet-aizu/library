@@ -110,6 +110,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2744.test.cpp.html">test/yukicoder/2744.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2772.test.cpp.html">test/yukicoder/2772.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3211.test.cpp.html">test/yukicoder/3211.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4271.test.cpp.html">test/yukicoder/4271.test.cpp</a>
 
 
 ## Code

@@ -264,6 +264,7 @@ layout: default
 * :heavy_check_mark: <a href="library/polynomial/lagrangeinterpolation.cpp.html">polynomial/lagrangeinterpolation.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/multieval.cpp.html">polynomial/multieval.cpp</a>
 * :heavy_check_mark: <a href="library/polynomial/polynomial.cpp.html">polynomial/polynomial.cpp</a>
+* :heavy_check_mark: <a href="library/polynomial/recursivesequence.cpp.html">polynomial/recursivesequence.cpp</a>
 
 
 <div id="d554a8ac704505de7b361b88fc36eeb2"></div>
@@ -730,6 +731,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4072.test.cpp.html">test/yukicoder/4072.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/4271.test.cpp.html">test/yukicoder/4271.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4387.test.cpp.html">test/yukicoder/4387.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4569.test.cpp.html">test/yukicoder/4569.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4778.test.cpp.html">test/yukicoder/4778.test.cpp</a>
