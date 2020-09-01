@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/sack.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-01 21:19:20+09:00
+    - Last commit date: 2020-09-01 22:32:20+09:00
 
 
 * see: <a href="https://codeforces.com/blog/entry/44351">https://codeforces.com/blog/entry/44351</a>
@@ -39,6 +39,7 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj/2995.test.cpp.html">test/aoj/2995.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 
 
@@ -112,54 +113,8 @@ struct Sack{
 };
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-
-// test with reset
-signed ECR002_E(){
-  using ll = long long;
-  int n;
-  scanf("%d",&n);
-  vector<int> c(n);
-  for(int i=0;i<n;i++) scanf("%d",&c[i]);
-  vector<int> cnt(n+1,0);
-  vector<ll> ans(n,0);
-  int mx=0;
-  ll res=0;
-  auto expand=[&](int v){
-    cnt[c[v]]++;
-    if(mx<cnt[c[v]]){
-      mx=cnt[c[v]];
-      res=0;
-    }
-    if(mx==cnt[c[v]]) res+=c[v];
-  };
-  auto shrink=[&](int v){cnt[c[v]]--;};
-  auto query =[&](int v){ans[v]=res;};
-  auto reset =[&](int){mx=res=0;};
-  Sack sc(n,expand,shrink,query,reset);
-  for(int i=1;i<n;i++){
-    int x,y;
-    scanf("%d %d",&x,&y);
-    x--;y--;
-    sc.add_edge(x,y);
-  }
-  for(int i=0;i<n;i++) sc.add_query(i,i);
-  sc.build();
-  for(int i=0;i<n;i++){
-    if(i) printf(" ");
-    printf("%lld",ans[i]);
-  }
-  puts("");
-  return 0;
-}
-/*
-  verified on 2020/09/01
-  http://codeforces.com/contest/600/problem/E
-*/
-
 signed main(){
-  ECR002_E();
   return 0;
 }
 #endif
@@ -235,54 +190,8 @@ struct Sack{
 };
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-
-// test with reset
-signed ECR002_E(){
-  using ll = long long;
-  int n;
-  scanf("%d",&n);
-  vector<int> c(n);
-  for(int i=0;i<n;i++) scanf("%d",&c[i]);
-  vector<int> cnt(n+1,0);
-  vector<ll> ans(n,0);
-  int mx=0;
-  ll res=0;
-  auto expand=[&](int v){
-    cnt[c[v]]++;
-    if(mx<cnt[c[v]]){
-      mx=cnt[c[v]];
-      res=0;
-    }
-    if(mx==cnt[c[v]]) res+=c[v];
-  };
-  auto shrink=[&](int v){cnt[c[v]]--;};
-  auto query =[&](int v){ans[v]=res;};
-  auto reset =[&](int){mx=res=0;};
-  Sack sc(n,expand,shrink,query,reset);
-  for(int i=1;i<n;i++){
-    int x,y;
-    scanf("%d %d",&x,&y);
-    x--;y--;
-    sc.add_edge(x,y);
-  }
-  for(int i=0;i<n;i++) sc.add_query(i,i);
-  sc.build();
-  for(int i=0;i<n;i++){
-    if(i) printf(" ");
-    printf("%lld",ans[i]);
-  }
-  puts("");
-  return 0;
-}
-/*
-  verified on 2020/09/01
-  http://codeforces.com/contest/600/problem/E
-*/
-
 signed main(){
-  ECR002_E();
   return 0;
 }
 #endif
