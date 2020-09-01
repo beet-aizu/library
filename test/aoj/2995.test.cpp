@@ -4,42 +4,9 @@
 using namespace std;
 
 #define call_from_test
+#include "../../datastructure/unionfind.cpp"
 #include "../../tree/sack.cpp"
 #undef call_from_test
-
-struct UnionFind{
-  vector<int> rs,ps;
-  UnionFind(){}
-  UnionFind(int n):rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}
-  int find(int x) const{
-    return (x==ps[x]?x:find(ps[x]));
-  }
-  bool same(int x,int y) const{
-    return find(x)==find(y);
-  }
-  using P = pair<int, int>;
-  stack<P> st;
-  void rollback(){
-    int x,y;
-    tie(x,y)=st.top();st.pop();
-    if(x!=y){
-      rs[x]-=rs[y];
-      ps[y]=y;
-    }
-  }
-  void unite(int x,int y){
-    x=find(x);y=find(y);
-    if(rs[x]<rs[y]) swap(x,y);
-    if(x!=y){
-      rs[x]+=rs[y];
-      ps[y]=x;
-    }
-    st.emplace(x,y);
-  }
-  int size(int x) const{
-    return rs[find(x)];
-  }
-};
 
 signed main(){
   cin.tie(0);
@@ -59,8 +26,8 @@ signed main(){
 
   auto calc=[&](int c){return min(cnt[c],uf.size(c));};
   auto expand=[&](int v){
-    int c=(cs[v]=uf.find(cs[v]));
-    int d=(ds[v]=uf.find(ds[v]));
+    int c=uf.find(cs[v]);
+    int d=uf.find(ds[v]);
     int flg=uf.same(c,d);
     if(flg){
       num-=calc(c);
@@ -82,7 +49,9 @@ signed main(){
 
   auto shrink=[&](int v){
     cnt[cs[v]]=cnt[ds[v]]=0;
-    uf.rollback();
+    uf.ps[cs[v]]=cs[v];
+    uf.ps[ds[v]]=ds[v];
+    uf.rs[cs[v]]=uf.rs[ds[v]]=1;
   };
 
   vector<int> ans(n);
