@@ -51,6 +51,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp.html">test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2587.test.cpp.html">test/yukicoder/2587.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3453.test.cpp.html">test/yukicoder/3453.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4706.test.cpp.html">test/yukicoder/4706.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/4862.test.cpp.html">test/yukicoder/4862.test.cpp</a>
 
 

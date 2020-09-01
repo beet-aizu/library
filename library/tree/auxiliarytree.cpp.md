@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/auxiliarytree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-05 18:15:30+09:00
+    - Last commit date: 2020-09-01 16:54:28+09:00
 
 
 * see: <a href="https://smijake3.hatenablog.com/entry/2019/09/15/200200">https://smijake3.hatenablog.com/entry/2019/09/15/200200</a>
@@ -91,8 +91,7 @@ struct AuxiliaryTree : EulerTourForVertex{
     assert(!vs.empty());
     sort(vs.begin(),vs.end(),
          [&](int a,int b){return idx(a)<idx(b);});
-
-    map<int, vector<int>> H;
+    vs.erase(unique(vs.begin(),vs.end()),vs.end());
 
     int k=vs.size();
     stack<int> st;
