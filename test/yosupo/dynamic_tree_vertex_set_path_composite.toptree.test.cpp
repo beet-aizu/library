@@ -22,7 +22,7 @@ struct Vertex{
 
 struct Cluster{
   P res;
-  Cluster(){}
+  Cluster():res(L(1,0)){}
   Cluster(L val):res(val){}
   Cluster(P res):res(res){}
   void toggle(){swap(res.x,res.y);}
@@ -40,7 +40,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(L(1,0)));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n,q;
   cin>>n>>q;

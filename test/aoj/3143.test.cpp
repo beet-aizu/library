@@ -19,7 +19,7 @@ signed main(){
 
   const size_t LIM = 1e6;
   using Cluster = Farthest<long long>;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(0,-1,-1));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n;
   cin>>n;

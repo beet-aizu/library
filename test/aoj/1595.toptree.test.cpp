@@ -15,8 +15,7 @@ struct Vertex{
 
 struct Cluster{
   int ans,lf,rg,len;
-  Cluster(){}
-  Cluster(int l):ans(l),lf(l),rg(l),len(l){}
+  Cluster(int l=0):ans(l),lf(l),rg(l),len(l){}
   Cluster(int ans,int lf,int rg,int len):
     ans(ans),lf(lf),rg(rg),len(len){}
   void toggle(){swap(lf,rg);}
@@ -38,7 +37,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> T(Cluster(0));
+  TopTree<Vertex, Cluster, LIM> T;
 
   int n;
   cin>>n;

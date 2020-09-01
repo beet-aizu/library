@@ -24,7 +24,7 @@ struct TopTree{
   size_t ptr_v,ptr_c;
 
   Cluster id;
-  TopTree(Cluster id=Cluster()):ptr_v(0),ptr_c(0),id(id){}
+  TopTree():ptr_v(0),ptr_c(0),id(){}
 
   inline Vertex* create(Vertex v=Vertex()){
     auto t=&pool_v[ptr_v++];
