@@ -63,54 +63,8 @@ struct Sack{
 };
 //END CUT HERE
 #ifndef call_from_test
-
 //INSERT ABOVE HERE
-
-// test with reset
-signed ECR002_E(){
-  using ll = long long;
-  int n;
-  scanf("%d",&n);
-  vector<int> c(n);
-  for(int i=0;i<n;i++) scanf("%d",&c[i]);
-  vector<int> cnt(n+1,0);
-  vector<ll> ans(n,0);
-  int mx=0;
-  ll res=0;
-  auto expand=[&](int v){
-    cnt[c[v]]++;
-    if(mx<cnt[c[v]]){
-      mx=cnt[c[v]];
-      res=0;
-    }
-    if(mx==cnt[c[v]]) res+=c[v];
-  };
-  auto shrink=[&](int v){cnt[c[v]]--;};
-  auto query =[&](int v){ans[v]=res;};
-  auto reset =[&](int){mx=res=0;};
-  Sack sc(n,expand,shrink,query,reset);
-  for(int i=1;i<n;i++){
-    int x,y;
-    scanf("%d %d",&x,&y);
-    x--;y--;
-    sc.add_edge(x,y);
-  }
-  for(int i=0;i<n;i++) sc.add_query(i,i);
-  sc.build();
-  for(int i=0;i<n;i++){
-    if(i) printf(" ");
-    printf("%lld",ans[i]);
-  }
-  puts("");
-  return 0;
-}
-/*
-  verified on 2020/09/01
-  http://codeforces.com/contest/600/problem/E
-*/
-
 signed main(){
-  ECR002_E();
   return 0;
 }
 #endif
