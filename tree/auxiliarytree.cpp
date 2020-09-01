@@ -36,8 +36,7 @@ struct AuxiliaryTree : EulerTourForVertex{
     assert(!vs.empty());
     sort(vs.begin(),vs.end(),
          [&](int a,int b){return idx(a)<idx(b);});
-
-    map<int, vector<int>> H;
+    vs.erase(unique(vs.begin(),vs.end()),vs.end());
 
     int k=vs.size();
     stack<int> st;
