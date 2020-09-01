@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/sack.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-01 20:55:08+09:00
+    - Last commit date: 2020-09-01 21:19:20+09:00
 
 
+* see: <a href="https://codeforces.com/blog/entry/44351">https://codeforces.com/blog/entry/44351</a>
 
 
 ## Verified with
@@ -52,6 +53,10 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
+/**
+ * @see https://codeforces.com/blog/entry/44351
+ */
 //BEGIN CUT HERE
 struct Sack{
   using F = function<void(int)>;
@@ -171,6 +176,10 @@ signed main(){
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
+/**
+ * @see https://codeforces.com/blog/entry/44351
+ */
 //BEGIN CUT HERE
 struct Sack{
   using F = function<void(int)>;
