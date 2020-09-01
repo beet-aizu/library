@@ -14,6 +14,10 @@ using namespace std;
 #include "../../vector/compress.cpp"
 #undef call_from_test
 
+#ifdef SANITIZE
+#define IGNORE
+#endif
+
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
