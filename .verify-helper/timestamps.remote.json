@@ -101,6 +101,7 @@
 "test/aoj/2983.test.cpp": "2020-05-07 19:58:00 +0900",
 "test/aoj/2985.garner.test.cpp": "2020-05-16 18:51:14 +0900",
 "test/aoj/2985.test.cpp": "2020-05-16 18:51:14 +0900",
+"test/aoj/2995.test.cpp": "2020-09-01 22:32:20 +0900",
 "test/aoj/3024.test.cpp": "2019-12-17 21:51:08 +0900",
 "test/aoj/3033.test.cpp": "2020-05-07 19:58:00 +0900",
 "test/aoj/3035.test.cpp": "2020-05-07 19:58:00 +0900",
@@ -336,7 +337,7 @@
 "test/yukicoder/4569.test.cpp": "2020-08-08 17:13:17 +0900",
 "test/yukicoder/4706.test.cpp": "2020-09-01 16:51:55 +0900",
 "test/yukicoder/4778.test.cpp": "2020-07-30 16:42:28 +0900",
-"test/yukicoder/4852.test.cpp": "2020-09-01 21:19:20 +0900",
+"test/yukicoder/4852.test.cpp": "2020-09-01 22:32:20 +0900",
 "test/yukicoder/4862.test.cpp": "2020-09-01 16:43:17 +0900",
 "test/yukicoder/4918.test.cpp": "2020-08-07 16:37:33 +0900"
 }
