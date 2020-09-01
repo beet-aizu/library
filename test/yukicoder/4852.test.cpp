@@ -125,8 +125,7 @@ signed main(){
       for(int i:sub[v]) bit.add0(cs[i],+1);
     };
     auto query=[&](int i){
-      if(type[i]==1)
-        ans[i]+=bit.sum0(cs[i]);
+      ans[i]+=bit.sum0(cs[i]);
     };
     auto reset=[&](int){};
 
