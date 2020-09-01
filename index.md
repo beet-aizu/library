@@ -106,7 +106,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/datastructure/BIT2D.cpp.html">datastructure/BIT2D.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/absolutesum.cpp.html">datastructure/absolutesum.cpp</a>
-* :question: <a href="library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :heavy_check_mark: <a href="library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/binarytrie.cpp.html">datastructure/binarytrie.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/cartesiantree.cpp.html">datastructure/cartesiantree.cpp</a>
 * :heavy_check_mark: <a href="library/datastructure/convexhulltrick.cpp.html">datastructure/convexhulltrick.cpp</a>
@@ -193,7 +193,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/io/precision.cpp.html">io/precision.cpp</a>
 * :heavy_check_mark: <a href="library/io/single.cpp.html">io/single.cpp</a>
-* :question: <a href="library/io/tuple.cpp.html">io/tuple.cpp</a>
+* :heavy_check_mark: <a href="library/io/tuple.cpp.html">io/tuple.cpp</a>
 
 
 <div id="1bbf1d9f5340fa94bf2c5fb5ce73a5f5"></div>
@@ -347,7 +347,7 @@ layout: default
 * :heavy_check_mark: <a href="library/tools/dice.cpp.html">tools/dice.cpp</a>
 * :heavy_check_mark: <a href="library/tools/drop.cpp.html">tools/drop.cpp</a>
 * :heavy_check_mark: <a href="library/tools/fastio.cpp.html">tools/fastio.cpp</a>
-* :question: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :heavy_check_mark: <a href="library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="library/tools/gridbfs.cpp.html">tools/gridbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tools/int128.cpp.html">tools/int128.cpp</a>
 * :heavy_check_mark: <a href="library/tools/iskado.cpp.html">tools/iskado.cpp</a>
@@ -369,27 +369,27 @@ layout: default
 
 ### tree
 
-* :question: <a href="library/tree/auxiliarytree.cpp.html">tree/auxiliarytree.cpp</a>
+* :heavy_check_mark: <a href="library/tree/auxiliarytree.cpp.html">tree/auxiliarytree.cpp</a>
 * :heavy_check_mark: <a href="library/tree/centroid.cpp.html">tree/centroid.cpp</a>
 * :warning: <a href="library/tree/construct_from_distances_to_farthest_vertex.cpp.html">tree/construct_from_distances_to_farthest_vertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 * :heavy_check_mark: <a href="library/tree/diameterforvertex.cpp.html">tree/diameterforvertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforbfs.cpp.html">tree/eulertourforbfs.cpp</a>
 * :heavy_check_mark: <a href="library/tree/eulertourforedge.cpp.html">tree/eulertourforedge.cpp</a>
-* :question: <a href="library/tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
+* :heavy_check_mark: <a href="library/tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 * :heavy_check_mark: <a href="library/tree/heavylightdecomposition.cpp.html">tree/heavylightdecomposition.cpp</a>
 * :heavy_check_mark: <a href="library/tree/lca.cpp.html">tree/lca.cpp</a>
 * :heavy_check_mark: <a href="library/tree/levelancestor.cpp.html">tree/levelancestor.cpp</a>
-* :question: <a href="library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
+* :heavy_check_mark: <a href="library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 * :heavy_check_mark: <a href="library/tree/rerooting.cpp.html">tree/rerooting.cpp</a>
-* :x: <a href="library/tree/sack.cpp.html">tree/sack.cpp</a>
+* :heavy_check_mark: <a href="library/tree/sack.cpp.html">tree/sack.cpp</a>
 
 
 <div id="6ba8844da718b4a65f60dbfd0d92d6ef"></div>
 
 ### vector
 
-* :question: <a href="library/vector/compress.cpp.html">vector/compress.cpp</a>
+* :heavy_check_mark: <a href="library/vector/compress.cpp.html">vector/compress.cpp</a>
 * :heavy_check_mark: <a href="library/vector/fusion.cpp.html">vector/fusion.cpp</a>
 * :heavy_check_mark: <a href="library/vector/identity.cpp.html">vector/identity.cpp</a>
 * :heavy_check_mark: <a href="library/vector/multi.cpp.html">vector/multi.cpp</a>
@@ -736,7 +736,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yukicoder/4569.test.cpp.html">test/yukicoder/4569.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4706.test.cpp.html">test/yukicoder/4706.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4778.test.cpp.html">test/yukicoder/4778.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4862.test.cpp.html">test/yukicoder/4862.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/4918.test.cpp.html">test/yukicoder/4918.test.cpp</a>
 

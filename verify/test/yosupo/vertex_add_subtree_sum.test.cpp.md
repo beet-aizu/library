@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
-* :question: <a href="../../../library/tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
+* :heavy_check_mark: <a href="../../../library/datastructure/binaryindexedtree.cpp.html">datastructure/binaryindexedtree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
 
 
 ## Code

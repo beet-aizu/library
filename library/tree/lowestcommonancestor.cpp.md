@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: tree/lowestcommonancestor.cpp
+# :heavy_check_mark: tree/lowestcommonancestor.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Required by
 
-* :question: <a href="auxiliarytree.cpp.html">tree/auxiliarytree.cpp</a>
+* :heavy_check_mark: <a href="auxiliarytree.cpp.html">tree/auxiliarytree.cpp</a>
 
 
 ## Verified with
@@ -46,7 +46,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj/GRL_5_C.lowestcommonancestor.test.cpp.html">test/aoj/GRL_5_C.lowestcommonancestor.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3407.test.cpp.html">test/yukicoder/3407.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 
 
 ## Code

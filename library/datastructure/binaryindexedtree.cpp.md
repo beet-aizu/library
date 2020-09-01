@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: datastructure/binaryindexedtree.cpp
+# :heavy_check_mark: datastructure/binaryindexedtree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -60,7 +60,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/vertex_add_subtree_sum.test.cpp.html">test/yosupo/vertex_add_subtree_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/1732.test.cpp.html">test/yukicoder/1732.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/2125.test.cpp.html">test/yukicoder/2125.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 
 
 ## Code

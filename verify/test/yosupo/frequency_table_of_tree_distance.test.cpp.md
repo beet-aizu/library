@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/convolution/fastfouriertransform.cpp.html">convolution/fastfouriertransform.cpp</a>
-* :question: <a href="../../../library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/centroid.cpp.html">tree/centroid.cpp</a>
 
 

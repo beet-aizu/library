@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: tools/fixpoint.cpp
+# :heavy_check_mark: tools/fixpoint.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -48,7 +48,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/yosupo/tree_diameter.test.cpp.html">test/yosupo/tree_diameter.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3912.test.cpp.html">test/yukicoder/3912.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3961.test.cpp.html">test/yukicoder/3961.test.cpp</a>
-* :x: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 
 
 ## Code

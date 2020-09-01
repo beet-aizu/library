@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
+* :heavy_check_mark: <a href="../../../library/tree/lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 
 
 ## Code
