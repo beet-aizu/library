@@ -7,7 +7,6 @@ using namespace std;
 #include "../../datastructure/binaryindexedtree.cpp"
 #include "../../io/tuple.cpp"
 #include "../../tools/fixpoint.cpp"
-#include "../../tree/sack.cpp"
 #include "../../tree/eulertourforvertex.cpp"
 #include "../../tree/lowestcommonancestor.cpp"
 #include "../../tree/auxiliarytree.cpp"
@@ -76,13 +75,11 @@ signed main(){
   for(int i=0;i<q;i++)
     cs[i]=lower_bound(pos.begin(),pos.end(),ts[i]+dep[vs[i]])-pos.begin();
 
-  // inverse of ss
-  vector<int> rev(n+1);
-
   queue<P> que;
   que.emplace(0,q);
 
   vector<int> ans(q);
+  vector<vector<int>> add(n+1),sub(n+1),query(n+1);
   while(!que.empty()){
     auto [L,R]=que.front();que.pop();
     if(L+1==R) continue;
@@ -93,65 +90,52 @@ signed main(){
       if(type[i]==0){
         ss.emplace_back(vs[i]);
         ss.emplace_back(rs[i]);
+        add[vs[i]].emplace_back(i);
+        sub[rs[i]].emplace_back(i);
       }
     }
 
-    for(int i=M;i<R;i++)
-      if(type[i]==1) ss.emplace_back(vs[i]);
-
-    if(ss.empty()){
-      que.emplace(L,M);
-      que.emplace(M,R);
-      continue;
+    for(int i=M;i<R;i++){
+      if(type[i]==1){
+        ss.emplace_back(vs[i]);
+        query[vs[i]].emplace_back(i);
+      }
     }
 
     ss.emplace_back(0);
-
     H.query(ss);
-
-    int m=ss.size();
-    for(int i=0;i<m;i++) rev[ss[i]]=i;
-
-    vector<vector<int>> add(m),sub(m);
-    for(int i=L;i<M;i++){
-      if(type[i]==0){
-        add[rev[vs[i]]].emplace_back(i);
-        sub[rev[rs[i]]].emplace_back(i);
-      }
-    }
 
     auto expand=[&](int v){
       for(int i:add[v]) bit.add0(cs[i],+1);
       for(int i:sub[v]) bit.add0(cs[i],-1);
     };
-    auto shrink=[&](int v){
-      for(int i:add[v]) bit.add0(cs[i],-1);
-      for(int i:sub[v]) bit.add0(cs[i],+1);
-    };
-    auto query=[&](int i){
-      ans[i]+=bit.sum0(cs[i]);
-    };
-    auto reset=[&](int){};
 
-    Sack S(m,expand,shrink,query,reset);
+    MFP([&](auto dfs,int v,int p)->void{
+      for(int i:query[v])
+        ans[i]-=bit.sum0(cs[i]);
 
-    for(int v:ss)
       for(int u:H.T[v])
-        if(v<u) S.add_edge(rev[u],rev[v]);
+        if(u!=p) dfs(u,v);
+      expand(v);
+
+      for(int i:query[v])
+        ans[i]+=bit.sum0(cs[i]);
+    })(0,-1);
+
+    H.clear(ss);
 
     for(int i=L;i<M;i++){
       if(type[i]==0){
-        S.add_query(rev[vs[i]],i);
-        S.add_query(rev[rs[i]],i);
+        add[vs[i]].clear();
+        sub[rs[i]].clear();
       }
     }
 
-    for(int i=M;i<R;i++)
-      if(type[i]==1) S.add_query(rev[vs[i]],i);
-
-    S.build(rev[0]);
-
-    H.clear(ss);
+    for(int i=M;i<R;i++){
+      if(type[i]==1){
+        query[vs[i]].clear();
+      }
+    }
 
     que.emplace(L,M);
     que.emplace(M,R);
