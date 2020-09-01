@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/toptree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 17:45:41+09:00
+    - Last commit date: 2020-09-01 16:43:17+09:00
 
 
 
@@ -85,7 +85,7 @@ struct TopTree{
   size_t ptr_v,ptr_c;
 
   Cluster id;
-  TopTree(Cluster id=Cluster()):ptr_v(0),ptr_c(0),id(id){}
+  TopTree():ptr_v(0),ptr_c(0),id(){}
 
   inline Vertex* create(Vertex v=Vertex()){
     auto t=&pool_v[ptr_v++];
@@ -548,7 +548,7 @@ struct TopTree{
   size_t ptr_v,ptr_c;
 
   Cluster id;
-  TopTree(Cluster id=Cluster()):ptr_v(0),ptr_c(0),id(id){}
+  TopTree():ptr_v(0),ptr_c(0),id(){}
 
   inline Vertex* create(Vertex v=Vertex()){
     auto t=&pool_v[ptr_v++];

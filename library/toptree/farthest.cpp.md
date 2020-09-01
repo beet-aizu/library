@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/farthest.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 17:45:41+09:00
+    - Last commit date: 2020-09-01 16:43:17+09:00
 
 
 
@@ -70,7 +70,7 @@ struct Farthest{
   };
   pi md,lf,rg;
   T len;
-  Farthest(){}
+  Farthest():lf(0,-1),rg(0,-1),len(0){}
   Farthest(T d,int f,int t):lf(d,t),rg(d,f),len(d){}
   Farthest(pi md,pi lf,pi rg,T len):
     md(md),lf(lf),rg(rg),len(len){}
@@ -125,7 +125,7 @@ struct Farthest{
   };
   pi md,lf,rg;
   T len;
-  Farthest(){}
+  Farthest():lf(0,-1),rg(0,-1),len(0){}
   Farthest(T d,int f,int t):lf(d,t),rg(d,f),len(d){}
   Farthest(pi md,pi lf,pi rg,T len):
     md(md),lf(lf),rg(rg),len(len){}

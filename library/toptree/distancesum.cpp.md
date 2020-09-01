@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5c8bf2a6852b9bc7e4261d66e9a6b762">toptree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/toptree/distancesum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-23 14:37:27+09:00
+    - Last commit date: 2020-09-01 16:43:17+09:00
 
 
 

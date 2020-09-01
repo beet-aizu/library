@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-01 17:45:41+09:00
+    - Last commit date: 2020-09-01 16:43:17+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite">https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite</a>
@@ -74,7 +74,7 @@ struct Vertex{
 
 struct Cluster{
   P res;
-  Cluster(){}
+  Cluster():res(L(1,0)){}
   Cluster(L val):res(val){}
   Cluster(P res):res(res){}
   void toggle(){swap(res.x,res.y);}
@@ -92,7 +92,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(L(1,0)));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n,q;
   cin>>n>>q;
@@ -334,7 +334,7 @@ struct TopTree{
   size_t ptr_v,ptr_c;
 
   Cluster id;
-  TopTree(Cluster id=Cluster()):ptr_v(0),ptr_c(0),id(id){}
+  TopTree():ptr_v(0),ptr_c(0),id(){}
 
   inline Vertex* create(Vertex v=Vertex()){
     auto t=&pool_v[ptr_v++];
@@ -779,7 +779,7 @@ struct Vertex{
 
 struct Cluster{
   P res;
-  Cluster(){}
+  Cluster():res(L(1,0)){}
   Cluster(L val):res(val){}
   Cluster(P res):res(res){}
   void toggle(){swap(res.x,res.y);}
@@ -797,7 +797,7 @@ signed main(){
   const char newl = '\n';
 
   const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> G(Cluster(L(1,0)));
+  TopTree<Vertex, Cluster, LIM> G;
 
   int n,q;
   cin>>n>>q;
