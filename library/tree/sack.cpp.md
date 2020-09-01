@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: tree/sack.cpp
+# :x: tree/sack.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/sack.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-23 16:53:18+09:00
+    - Last commit date: 2020-09-01 17:30:17+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 
 
 ## Code
@@ -67,16 +72,6 @@ struct Sack{
     Q[v].emplace_back(k);
     sz[v]++;
   }
-
-  void build(int v=0,int p=-1){
-    for(int u:G[v]){
-      if(u==p) continue;
-      build(u,v);
-      if(hvy[v]<0||sz[hvy[v]]<sz[u]) hvy[v]=u;
-      sz[v]+=sz[u];
-    }
-  }
-
   void add(int v,int p,int x){
     if(x==1) expand(v);
     else shrink(v);
@@ -97,6 +92,15 @@ struct Sack{
     if(!k) add(v,p,0),reset(v);
   }
 
+  void build(int v=0,int p=-1){
+    for(int u:G[v]){
+      if(u==p) continue;
+      build(u,v);
+      if(hvy[v]<0||sz[hvy[v]]<sz[u]) hvy[v]=u;
+      sz[v]+=sz[u];
+    }
+    if(p==-1) dfs(v,p);
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
@@ -130,9 +134,9 @@ signed ECR002_E(){
     x--;y--;
     sc.add_edge(x,y);
   }
-  sc.build();
   for(int i=0;i<n;i++) sc.add_query(i,i);
-  sc.dfs();
+  sc.build();
+  // sc.dfs();
   for(int i=0;i<n;i++){
     if(i) printf(" ");
     printf("%lld",ans[i]);
@@ -170,7 +174,6 @@ signed CFR316_D(){
     p--;
     sc.add_edge(p,i);
   }
-  sc.build();
 
   {
     auto &G=sc.G;
@@ -195,7 +198,8 @@ signed CFR316_D(){
     sc.add_query(vs[i],i);
   }
 
-  sc.dfs();
+  sc.build();
+  // sc.dfs();
   for(int i=0;i<q;i++)
     puts(ans[i]?"Yes":"No");
   return 0;
@@ -320,16 +324,6 @@ struct Sack{
     Q[v].emplace_back(k);
     sz[v]++;
   }
-
-  void build(int v=0,int p=-1){
-    for(int u:G[v]){
-      if(u==p) continue;
-      build(u,v);
-      if(hvy[v]<0||sz[hvy[v]]<sz[u]) hvy[v]=u;
-      sz[v]+=sz[u];
-    }
-  }
-
   void add(int v,int p,int x){
     if(x==1) expand(v);
     else shrink(v);
@@ -350,6 +344,15 @@ struct Sack{
     if(!k) add(v,p,0),reset(v);
   }
 
+  void build(int v=0,int p=-1){
+    for(int u:G[v]){
+      if(u==p) continue;
+      build(u,v);
+      if(hvy[v]<0||sz[hvy[v]]<sz[u]) hvy[v]=u;
+      sz[v]+=sz[u];
+    }
+    if(p==-1) dfs(v,p);
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
@@ -383,9 +386,9 @@ signed ECR002_E(){
     x--;y--;
     sc.add_edge(x,y);
   }
-  sc.build();
   for(int i=0;i<n;i++) sc.add_query(i,i);
-  sc.dfs();
+  sc.build();
+  // sc.dfs();
   for(int i=0;i<n;i++){
     if(i) printf(" ");
     printf("%lld",ans[i]);
@@ -423,7 +426,6 @@ signed CFR316_D(){
     p--;
     sc.add_edge(p,i);
   }
-  sc.build();
 
   {
     auto &G=sc.G;
@@ -448,7 +450,8 @@ signed CFR316_D(){
     sc.add_query(vs[i],i);
   }
 
-  sc.dfs();
+  sc.build();
+  // sc.dfs();
   for(int i=0;i<q;i++)
     puts(ans[i]?"Yes":"No");
   return 0;

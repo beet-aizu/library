@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tree/auxiliarytree.cpp
+# :question: tree/auxiliarytree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,13 +39,14 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
-* :heavy_check_mark: <a href="lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
+* :question: <a href="eulertourforvertex.cpp.html">tree/eulertourforvertex.cpp</a>
+* :question: <a href="lowestcommonancestor.cpp.html">tree/lowestcommonancestor.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/yukicoder/3407.test.cpp.html">test/yukicoder/3407.test.cpp</a>
+* :x: <a href="../../verify/test/yukicoder/4852.test.cpp.html">test/yukicoder/4852.test.cpp</a>
 
 
 ## Code

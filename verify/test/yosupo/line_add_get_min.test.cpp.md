@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/segtree/cht/lichao.cpp.html">segtree/cht/lichao.cpp</a>
-* :heavy_check_mark: <a href="../../../library/vector/compress.cpp.html">vector/compress.cpp</a>
+* :question: <a href="../../../library/vector/compress.cpp.html">vector/compress.cpp</a>
 
 
 ## Code

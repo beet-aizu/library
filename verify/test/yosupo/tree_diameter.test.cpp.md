@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
+* :question: <a href="../../../library/tools/fixpoint.cpp.html">tools/fixpoint.cpp</a>
 * :heavy_check_mark: <a href="../../../library/tree/diameterforedge.cpp.html">tree/diameterforedge.cpp</a>
 
 
