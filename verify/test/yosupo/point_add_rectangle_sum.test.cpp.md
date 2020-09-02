@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/point_add_rectangle_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-16 19:52:07+09:00
+    - Last commit date: 2020-09-02 21:26:21+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_add_rectangle_sum">https://judge.yosupo.jp/problem/point_add_rectangle_sum</a>
@@ -86,7 +86,7 @@ signed main(){
     [&](int x){return lower_bound(vs.begin(),vs.end(),x)-vs.begin();};
 
   using ll = long long;
-  RangeCount<ll> seg(vs.size());
+  RangeCount<int, ll> seg(vs.size());
 
   for(int i=0;i<n;i++)
     seg.preupdate(idx(xs[i]),ys[i]);
@@ -157,7 +157,7 @@ signed main(){
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename T>
+template<typename Key,typename T>
 struct RangeCount{
   struct BIT{
     vector<T> dat;
@@ -173,16 +173,14 @@ struct RangeCount{
     }
   };
   int n;
-  vector< vector<int> > val;
+  vector< vector<Key> > val;
   vector<BIT> dat;
   RangeCount(){}
-  RangeCount(int n_){
-    n=1;
-    while(n<n_) n<<=1;
-    val.assign(n<<1,vector<int>());
+  RangeCount(int n):n(n){
+    val.assign(n<<1,vector<Key>());
     dat.reserve(n<<1);
   }
-  void preupdate(int a,int x){
+  void preupdate(int a,Key x){
     a+=n;
     while(a){
       val[a].emplace_back(x);
@@ -191,29 +189,29 @@ struct RangeCount{
   }
   void build(){
     for(int i=0;i<n*2;i++){
-      auto &v=val[i];
-      sort(v.begin(),v.end());
-      v.erase(unique(v.begin(),v.end()),v.end());
-      dat.emplace_back(v.size());
+      auto &vs=val[i];
+      sort(vs.begin(),vs.end());
+      vs.erase(unique(vs.begin(),vs.end()),vs.end());
+      dat.emplace_back(vs.size());
     }
   }
-  void update(int a,int x,T z){
+  void update(int a,Key x,T z){
     a+=n;
     while(a){
-      auto &v=val[a];
-      int k=lower_bound(v.begin(),v.end(),x)-v.begin();
+      auto &vs=val[a];
+      int k=lower_bound(vs.begin(),vs.end(),x)-vs.begin();
       dat[a].add(k,z);
       a>>=1;
     }
   }
-  T calc(int k,int x,int y){
-    auto &v=val[k];
-    int p=lower_bound(v.begin(),v.end(),x)-v.begin();
-    int q=lower_bound(v.begin(),v.end(),y)-v.begin();
+  T calc(int k,Key x,Key y){
+    auto &vs=val[k];
+    int p=lower_bound(vs.begin(),vs.end(),x)-vs.begin();
+    int q=lower_bound(vs.begin(),vs.end(),y)-vs.begin();
     return dat[k].sum(q)-dat[k].sum(p);
   }
   // [a, b) * [x, y)
-  T query(int a,int b,int x,int y){
+  T query(int a,int b,Key x,Key y){
     T res=0;
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
       if(l&1) res+=calc(l++,x,y);
@@ -225,54 +223,8 @@ struct RangeCount{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed YUKI_743(){
-  int n,m;
-  scanf("%d %d",&n,&m);
-  vector<int> a(n),b(n);
-  for(int i=0;i<n;i++) scanf("%d %d",&a[i],&b[i]);
-
-  RangeCount<int> seg(m);
-
-  for(int i=0;i<n;i++){
-    if(a[i]>b[i]) swap(a[i],b[i]);
-    seg.preupdate(a[i],b[i]);
-  }
-
-  seg.build();
-
-  long long ans=0;
-  for(int i=0;i<n;i++){
-    ans+=seg.query(0,a[i],a[i],b[i]);
-    ans+=seg.query(a[i],b[i],b[i],m);
-    seg.update(a[i],b[i],1);
-  }
-
-  printf("%lld\n",ans);
-  return 0;
-}
-
-signed ABC106_D(){
-  int n,m,q;
-  scanf("%d %d %d",&n,&m,&q);
-  vector<int> x(m),y(m);
-  for(int i=0;i<m;i++) scanf("%d %d",&x[i],&y[i]);
-
-  RangeCount<int> seg(n+1);
-  for(int i=0;i<m;i++) seg.preupdate(x[i],y[i]);
-  seg.build();
-  for(int i=0;i<m;i++) seg.update(x[i],y[i],1);
-
-  for(int i=0;i<q;i++){
-    int a,b;
-    scanf("%d %d",&a,&b);
-    printf("%d\n",seg.query(a,b+1,a,b+1));
-  }
-  return 0;
-}
-
 //END CUT HERE
 signed main(){
-  ABC106_D();
   return 0;
 }
 #endif
@@ -307,7 +259,7 @@ signed main(){
     [&](int x){return lower_bound(vs.begin(),vs.end(),x)-vs.begin();};
 
   using ll = long long;
-  RangeCount<ll> seg(vs.size());
+  RangeCount<int, ll> seg(vs.size());
 
   for(int i=0;i<n;i++)
     seg.preupdate(idx(xs[i]),ys[i]);
