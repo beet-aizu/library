@@ -23,7 +23,7 @@ signed main(){
     [&](int x){return lower_bound(vs.begin(),vs.end(),x)-vs.begin();};
 
   using ll = long long;
-  RangeCount<ll> seg(vs.size());
+  RangeCount<int, ll> seg(vs.size());
 
   for(int i=0;i<n;i++)
     seg.preupdate(idx(xs[i]),ys[i]);

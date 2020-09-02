@@ -13,8 +13,7 @@ signed main(){
   int h,w,t,q;
   cin>>h>>w>>t>>q;
 
-  RangeCount<int> beet(h),ushi(h);
-
+  RangeCount<int, int> beet(h),ushi(h);
 
   vector<int> ts(q),cs(q);
   vector<int> y1(q),x1(q),y2(q),x2(q);
