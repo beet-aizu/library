@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/sack.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-01 22:32:20+09:00
+    - Last commit date: 2020-09-02 13:08:34+09:00
 
 
 * see: <a href="https://codeforces.com/blog/entry/44351">https://codeforces.com/blog/entry/44351</a>
@@ -63,12 +63,11 @@ struct Sack{
 
   vector<int> sub,hvy,big;
   vector< vector<int> > G,Q;
-  F expand,shrink,query,reset;
+  F expand,shrink,query;
 
-  Sack(int n,F expand,F shrink,F query,F reset):
+  Sack(int n,F expand,F shrink,F query):
     sub(n,1),hvy(n,-1),big(n,0),G(n),Q(n),
-    expand(expand),shrink(shrink),
-    query(query),reset(reset){}
+    expand(expand),shrink(shrink),query(query){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);
@@ -77,7 +76,6 @@ struct Sack{
 
   void add_query(int v,int k){
     Q[v].emplace_back(k);
-    sub[v]++;
   }
 
   void add(int v,int p,int x){
@@ -97,7 +95,7 @@ struct Sack{
     add(v,p,1);
     for(int k:Q[v]) query(k);
     if(~hvy[v]) big[hvy[v]]=0;
-    if(!k) add(v,p,0),reset(v);
+    if(!k) add(v,p,0);
   }
 
   void build(int v=0,int p=-1){
@@ -140,12 +138,11 @@ struct Sack{
 
   vector<int> sub,hvy,big;
   vector< vector<int> > G,Q;
-  F expand,shrink,query,reset;
+  F expand,shrink,query;
 
-  Sack(int n,F expand,F shrink,F query,F reset):
+  Sack(int n,F expand,F shrink,F query):
     sub(n,1),hvy(n,-1),big(n,0),G(n),Q(n),
-    expand(expand),shrink(shrink),
-    query(query),reset(reset){}
+    expand(expand),shrink(shrink),query(query){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);
@@ -154,7 +151,6 @@ struct Sack{
 
   void add_query(int v,int k){
     Q[v].emplace_back(k);
-    sub[v]++;
   }
 
   void add(int v,int p,int x){
@@ -174,7 +170,7 @@ struct Sack{
     add(v,p,1);
     for(int k:Q[v]) query(k);
     if(~hvy[v]) big[hvy[v]]=0;
-    if(!k) add(v,p,0),reset(v);
+    if(!k) add(v,p,0);
   }
 
   void build(int v=0,int p=-1){
