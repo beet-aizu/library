@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/rectangle_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-02 21:26:21+09:00
+    - Last commit date: 2020-09-03 00:55:21+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/rectangle_sum">https://judge.yosupo.jp/problem/rectangle_sum</a>
@@ -57,6 +57,10 @@ using namespace std;
 #include "../../vector/compress.cpp"
 #include "../../segtree/count/dynamic_offline.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
@@ -215,6 +219,10 @@ signed main(){
 #endif
 #line 9 "test/yosupo/rectangle_sum.test.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
