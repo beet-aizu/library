@@ -48,6 +48,7 @@ signed main(){
   };
 
   auto shrink=[&](int v){
+    num=0;
     cnt[cs[v]]=cnt[ds[v]]=0;
     uf.ps[cs[v]]=cs[v];
     uf.ps[ds[v]]=ds[v];
@@ -56,8 +57,7 @@ signed main(){
 
   vector<int> ans(n);
   auto query=[&](int v){ans[v]=num;};
-  auto reset=[&](int){num=0;};
-  Sack S(n,expand,shrink,query,reset);
+  Sack S(n,expand,shrink,query);
 
   for(int i=1;i<n;i++){
     us[i]--;vs[i]--;
