@@ -69,7 +69,7 @@ data:
   dependsOn:
   - segtree/basic/chien.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/basic/chien.cpp
     title: segtree/basic/chien.cpp
   extendedRequiredBy: []

@@ -38,19 +38,19 @@ data:
     #endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/rangetorange.cpp
-  requiredBy:
-  - test/yukicoder/4387.test.cpp
+  requiredBy: []
   timestamp: '2020-08-20 15:14:35+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yukicoder/4387.test.cpp
 documentation_of: graph/rangetorange.cpp
 layout: document
 redirect_from:

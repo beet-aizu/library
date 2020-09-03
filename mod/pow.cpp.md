@@ -15,26 +15,26 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/order.cpp
     title: mod/order.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B.test.cpp
     title: test/aoj/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3062.test.cpp
     title: test/aoj/3062.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: mod/pow.cpp
   requiredBy:
   - mod/order.cpp
+  timestamp: '2019-12-17 20:56:59+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/NTL_1_B.test.cpp
   - test/aoj/3062.test.cpp
-  timestamp: '2019-12-17 20:56:59+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: mod/pow.cpp
 layout: document
 redirect_from:

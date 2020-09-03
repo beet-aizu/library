@@ -18,19 +18,19 @@ data:
     #endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_sum.test.cpp
     title: test/yosupo/static_range_sum.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/cumulativesum.cpp
-  requiredBy:
-  - test/yosupo/static_range_sum.test.cpp
+  requiredBy: []
   timestamp: '2020-04-13 16:26:16+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/static_range_sum.test.cpp
 documentation_of: datastructure/cumulativesum.cpp
 layout: document
 redirect_from:

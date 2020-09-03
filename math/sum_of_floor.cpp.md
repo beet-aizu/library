@@ -18,19 +18,19 @@ data:
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sum_of_floor_of_linear.test.cpp
     title: test/yosupo/sum_of_floor_of_linear.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/sum_of_floor.cpp
-  requiredBy:
-  - test/yosupo/sum_of_floor_of_linear.test.cpp
+  requiredBy: []
   timestamp: '2019-12-21 18:07:05+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/sum_of_floor_of_linear.test.cpp
 documentation_of: math/sum_of_floor.cpp
 layout: document
 redirect_from:

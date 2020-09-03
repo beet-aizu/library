@@ -251,6 +251,10 @@ data:
   extendedDependsOn: []
   extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: toptree/distancesum.cpp
+    title: toptree/distancesum.cpp
+  extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1595.toptree.test.cpp
     title: test/aoj/1595.toptree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -280,13 +284,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3453.test.cpp
     title: test/yukicoder/3453.test.cpp
-  - icon: ':warning:'
-    path: toptree/distancesum.cpp
-    title: toptree/distancesum.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: toptree/toptree.cpp
   requiredBy:
+  - toptree/distancesum.cpp
+  timestamp: '2020-09-01 16:43:17+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/1595.toptree.test.cpp
   - test/aoj/2636.test.cpp
   - test/aoj/3037.test.cpp
@@ -297,11 +302,6 @@ data:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/2587.test.cpp
   - test/yukicoder/3453.test.cpp
-  - toptree/distancesum.cpp
-  timestamp: '2020-09-01 16:43:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: toptree/toptree.cpp
 layout: document
 redirect_from:

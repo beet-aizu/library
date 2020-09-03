@@ -33,7 +33,7 @@ data:
   dependsOn:
   - datastructure/weightedunionfind.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/weightedunionfind.cpp
     title: datastructure/weightedunionfind.cpp
   extendedRequiredBy: []

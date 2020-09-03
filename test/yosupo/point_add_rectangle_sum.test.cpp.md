@@ -67,10 +67,10 @@ data:
   - vector/compress.cpp
   - segtree/count/dynamic_offline.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: vector/compress.cpp
     title: vector/compress.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
   extendedRequiredBy: []

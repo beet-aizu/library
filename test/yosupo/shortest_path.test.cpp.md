@@ -43,10 +43,10 @@ data:
   - tools/drop.cpp
   - graph/dijkstra.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
   extendedRequiredBy: []

@@ -40,7 +40,7 @@ data:
   dependsOn:
   - tree/lowestcommonancestor.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/lowestcommonancestor.cpp
     title: tree/lowestcommonancestor.cpp
   extendedRequiredBy: []

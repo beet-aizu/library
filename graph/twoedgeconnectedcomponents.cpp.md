@@ -49,7 +49,8 @@ data:
     \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0415.test.cpp
     title: test/aoj/0415.test.cpp
@@ -59,17 +60,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/two_edge_connected_components.test.cpp
     title: test/yosupo/two_edge_connected_components.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/twoedgeconnectedcomponents.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-12 16:29:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0415.test.cpp
   - test/aoj/0377.test.cpp
   - test/yosupo/two_edge_connected_components.test.cpp
-  timestamp: '2020-03-12 16:29:30+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: graph/twoedgeconnectedcomponents.cpp
 layout: document
 redirect_from:

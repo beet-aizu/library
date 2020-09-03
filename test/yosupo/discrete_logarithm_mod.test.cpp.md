@@ -31,7 +31,7 @@ data:
   dependsOn:
   - mod/log.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/log.cpp
     title: mod/log.cpp
   extendedRequiredBy: []

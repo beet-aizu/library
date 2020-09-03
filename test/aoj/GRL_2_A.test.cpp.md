@@ -32,7 +32,7 @@ data:
   dependsOn:
   - graph/kruskal.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
   extendedRequiredBy: []

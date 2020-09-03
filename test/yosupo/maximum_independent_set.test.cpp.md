@@ -39,7 +39,7 @@ data:
   dependsOn:
   - graph/independentset.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/independentset.cpp
     title: graph/independentset.cpp
   extendedRequiredBy: []

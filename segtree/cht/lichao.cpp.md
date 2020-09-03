@@ -50,23 +50,23 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.lichao.test.cpp
     title: test/aoj/3069.lichao.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/line_add_get_min.test.cpp
     title: test/yosupo/line_add_get_min.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/cht/lichao.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-05 21:15:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/3069.lichao.test.cpp
   - test/yosupo/line_add_get_min.test.cpp
-  timestamp: '2020-03-05 21:15:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: segtree/cht/lichao.cpp
 layout: document
 redirect_from:

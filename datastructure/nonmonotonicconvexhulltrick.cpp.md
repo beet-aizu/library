@@ -56,23 +56,23 @@ data:
     \ 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
     title: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/nonmonotonicconvexhulltrick.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-27 08:27:21+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/3069.test.cpp
   - test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
-  timestamp: '2019-12-27 08:27:21+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/nonmonotonicconvexhulltrick.cpp
 layout: document
 redirect_from:

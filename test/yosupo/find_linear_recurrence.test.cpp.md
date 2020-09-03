@@ -63,10 +63,10 @@ data:
   - mod/mint.cpp
   - polynomial/berlekampmassey.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/berlekampmassey.cpp
     title: polynomial/berlekampmassey.cpp
   extendedRequiredBy: []

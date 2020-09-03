@@ -3,7 +3,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 58, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -31,10 +31,11 @@ data:
   dependsOn:
   - graph/stronglyconnectedcomponent.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/stronglyconnectedcomponent.cpp
     title: graph/stronglyconnectedcomponent.cpp
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_B.test.cpp
     title: test/aoj/GRL_2_B.test.cpp
@@ -47,18 +48,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2309.tarjan.test.cpp
     title: test/aoj/2309.tarjan.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/arborescence_edmond.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-17 22:09:22+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/GRL_2_B.test.cpp
   - test/aoj/2647.test.cpp
   - test/aoj/2309.test.cpp
   - test/aoj/2309.tarjan.test.cpp
-  timestamp: '2019-12-17 22:09:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: graph/arborescence_edmond.cpp
 layout: document
 redirect_from:

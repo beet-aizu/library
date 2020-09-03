@@ -24,7 +24,7 @@ data:
   dependsOn:
   - math/factorize.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/factorize.cpp
     title: math/factorize.cpp
   extendedRequiredBy: []

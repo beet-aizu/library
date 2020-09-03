@@ -22,23 +22,23 @@ data:
     \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_B.test.cpp
     title: test/aoj/DPL_3_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_C.test.cpp
     title: test/aoj/DPL_3_C.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: algorithm/largestrectangle.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-12 16:36:20+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DPL_3_B.test.cpp
   - test/aoj/DPL_3_C.test.cpp
-  timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: algorithm/largestrectangle.cpp
 layout: document
 redirect_from:

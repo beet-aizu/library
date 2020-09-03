@@ -13,34 +13,34 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: flow/negativeedge.cpp
     title: flow/negativeedge.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/diameterforedge.cpp
     title: tree/diameterforedge.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linearalgebra/binarymatrix.cpp
     title: linearalgebra/binarymatrix.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/monotoneminima.cpp
     title: algorithm/monotoneminima.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/many_aplusb.test.cpp
     title: test/yosupo/many_aplusb.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
@@ -52,11 +52,11 @@ data:
   - linearalgebra/binarymatrix.cpp
   - algorithm/monotoneminima.cpp
   - algorithm/mo.cpp
-  - test/yosupo/many_aplusb.test.cpp
   timestamp: '2020-05-07 20:09:06+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/many_aplusb.test.cpp
 documentation_of: tools/fastio.cpp
 layout: document
 redirect_from:

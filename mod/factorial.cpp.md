@@ -3,7 +3,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 58, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -41,31 +41,31 @@ data:
   - convolution/garner.cpp
   - mod/rint.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/rint.cpp
     title: mod/rint.cpp
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: mod/factorial.cpp
-  requiredBy:
-  - test/yukicoder/1504.test.cpp
+  requiredBy: []
   timestamp: '2020-03-12 17:15:27+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yukicoder/1504.test.cpp
 documentation_of: mod/factorial.cpp
 layout: document
 redirect_from:

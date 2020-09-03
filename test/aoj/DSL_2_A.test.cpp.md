@@ -49,7 +49,7 @@ data:
   dependsOn:
   - segtree/basic/ushi.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/basic/ushi.cpp
     title: segtree/basic/ushi.cpp
   extendedRequiredBy: []

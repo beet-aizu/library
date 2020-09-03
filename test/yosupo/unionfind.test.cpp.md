@@ -28,7 +28,7 @@ data:
   dependsOn:
   - datastructure/unionfind.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
   extendedRequiredBy: []

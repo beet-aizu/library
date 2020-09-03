@@ -28,7 +28,7 @@ data:
   dependsOn:
   - algorithm/largestrectangle.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/largestrectangle.cpp
     title: algorithm/largestrectangle.cpp
   extendedRequiredBy: []

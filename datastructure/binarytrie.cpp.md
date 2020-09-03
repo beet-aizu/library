@@ -120,23 +120,23 @@ data:
     \nsigned main(){\n  //ARC033_C();\n  //CFR477_C();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.binarytrie.test.cpp
     title: test/aoj/DSL_2_B.binarytrie.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/set_xor_min.test.cpp
     title: test/yosupo/set_xor_min.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/binarytrie.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-06-06 14:04:57+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_2_B.binarytrie.test.cpp
   - test/yosupo/set_xor_min.test.cpp
-  timestamp: '2020-06-06 14:04:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/binarytrie.cpp
 layout: document
 redirect_from:

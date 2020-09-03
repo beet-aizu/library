@@ -20,7 +20,7 @@ data:
   dependsOn:
   - tools/fastio.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
   extendedRequiredBy: []

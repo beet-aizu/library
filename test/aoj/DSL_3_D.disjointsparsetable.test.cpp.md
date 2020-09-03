@@ -48,7 +48,7 @@ data:
   dependsOn:
   - datastructure/disjointsparsetable.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/disjointsparsetable.cpp
     title: datastructure/disjointsparsetable.cpp
   extendedRequiredBy: []

@@ -124,10 +124,10 @@ data:
   - mod/mint.cpp
   - linearalgebra/matrix.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linearalgebra/matrix.cpp
     title: linearalgebra/matrix.cpp
   extendedRequiredBy: []

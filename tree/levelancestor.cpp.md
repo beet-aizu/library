@@ -66,26 +66,26 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/eulertourforbfs.cpp
     title: tree/eulertourforbfs.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0391.test.cpp
     title: test/aoj/0391.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/levelancestor.cpp
   requiredBy:
   - tree/eulertourforbfs.cpp
+  timestamp: '2019-12-26 22:42:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0391.test.cpp
   - test/yukicoder/3405.test.cpp
-  timestamp: '2019-12-26 22:42:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tree/levelancestor.cpp
 layout: document
 redirect_from:

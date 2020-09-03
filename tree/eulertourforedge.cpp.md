@@ -36,22 +36,22 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/eulertourforedge.cpp
   requiredBy:
   - algorithm/mo.cpp
-  - test/aoj/GRL_5_D.test.cpp
   timestamp: '2019-12-27 08:56:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/GRL_5_D.test.cpp
 documentation_of: tree/eulertourforedge.cpp
 layout: document
 redirect_from:

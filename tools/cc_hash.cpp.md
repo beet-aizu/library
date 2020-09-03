@@ -16,23 +16,23 @@ data:
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2646.test.cpp
     title: test/aoj/2646.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/associative_array.test.cpp
     title: test/yosupo/associative_array.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/cc_hash.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-05-24 17:44:55+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2646.test.cpp
   - test/yosupo/associative_array.test.cpp
-  timestamp: '2020-05-24 17:44:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tools/cc_hash.cpp
 layout: document
 redirect_from:

@@ -41,7 +41,7 @@ data:
   dependsOn:
   - string/suffixarray.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/suffixarray.cpp
     title: string/suffixarray.cpp
   extendedRequiredBy: []

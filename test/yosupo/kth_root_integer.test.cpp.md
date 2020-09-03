@@ -36,7 +36,7 @@ data:
   dependsOn:
   - tools/int128.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/int128.cpp
     title: tools/int128.cpp
   extendedRequiredBy: []

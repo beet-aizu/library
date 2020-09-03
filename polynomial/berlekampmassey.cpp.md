@@ -29,7 +29,8 @@ data:
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/find_linear_recurrence.test.cpp
     title: test/yosupo/find_linear_recurrence.test.cpp
@@ -42,18 +43,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: polynomial/berlekampmassey.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-12 17:15:27+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/yosupo/find_linear_recurrence.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/3211.test.cpp
   - test/yukicoder/0104.test.cpp
-  timestamp: '2020-03-12 17:15:27+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: polynomial/berlekampmassey.cpp
 layout: document
 redirect_from:

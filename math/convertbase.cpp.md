@@ -18,23 +18,23 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0233.test.cpp
     title: test/aoj/0233.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1580.test.cpp
     title: test/yukicoder/1580.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/convertbase.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-02-15 15:47:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0233.test.cpp
   - test/yukicoder/1580.test.cpp
-  timestamp: '2020-02-15 15:47:07+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: math/convertbase.cpp
 layout: document
 redirect_from:

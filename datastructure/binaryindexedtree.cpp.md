@@ -30,7 +30,8 @@ data:
     };\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
@@ -58,10 +59,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/binaryindexedtree.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-05 21:59:12+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/GRL_5_D.test.cpp
   - test/aoj/DSL_2_B.test.cpp
   - test/aoj/0343.test.cpp
@@ -71,10 +75,6 @@ data:
   - test/yukicoder/2125.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
-  timestamp: '2020-03-05 21:59:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/binaryindexedtree.cpp
 layout: document
 redirect_from:

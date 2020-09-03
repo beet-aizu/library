@@ -32,7 +32,7 @@ data:
   dependsOn:
   - mod/sqrt.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
   extendedRequiredBy: []

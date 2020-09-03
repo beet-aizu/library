@@ -26,7 +26,7 @@ data:
   dependsOn:
   - math/sum_of_floor.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/sum_of_floor.cpp
     title: math/sum_of_floor.cpp
   extendedRequiredBy: []

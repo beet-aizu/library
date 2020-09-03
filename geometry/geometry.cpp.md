@@ -383,7 +383,8 @@ data:
     \ main(){\n  ECR002_D();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_4_B.test.cpp
     title: test/aoj/geometry/CGL_4_B.test.cpp
@@ -465,10 +466,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_7_D.test.cpp
     title: test/aoj/geometry/CGL_7_D.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: geometry/geometry.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-17 20:13:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/geometry/CGL_4_B.test.cpp
   - test/aoj/geometry/CGL_3_B.test.cpp
   - test/aoj/geometry/CGL_5_A.test.cpp
@@ -496,10 +500,6 @@ data:
   - test/aoj/geometry/CGL_6_A.test.cpp
   - test/aoj/geometry/CGL_7_H.test.cpp
   - test/aoj/geometry/CGL_7_D.test.cpp
-  timestamp: '2019-12-17 20:13:07+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: geometry/geometry.cpp
 layout: document
 redirect_from:

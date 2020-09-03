@@ -32,7 +32,7 @@ data:
   dependsOn:
   - string/rollinghash.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/rollinghash.cpp
     title: string/rollinghash.cpp
   extendedRequiredBy: []

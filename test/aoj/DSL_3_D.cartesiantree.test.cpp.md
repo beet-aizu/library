@@ -67,10 +67,10 @@ data:
   - datastructure/cartesiantree.cpp
   - tree/lca.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/cartesiantree.cpp
     title: datastructure/cartesiantree.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/lca.cpp
     title: tree/lca.cpp
   extendedRequiredBy: []

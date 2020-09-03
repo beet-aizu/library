@@ -54,7 +54,7 @@ data:
   dependsOn:
   - tree/heavylightdecomposition.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/heavylightdecomposition.cpp
     title: tree/heavylightdecomposition.cpp
   extendedRequiredBy: []

@@ -166,7 +166,7 @@ data:
   dependsOn:
   - toptree/toptree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   extendedRequiredBy: []

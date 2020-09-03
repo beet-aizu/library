@@ -32,19 +32,19 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2674.count.test.cpp
     title: test/aoj/2674.count.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/count/static.cpp
-  requiredBy:
-  - test/aoj/2674.count.test.cpp
+  requiredBy: []
   timestamp: '2020-09-03 00:55:21+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/2674.count.test.cpp
 documentation_of: segtree/count/static.cpp
 layout: document
 redirect_from:

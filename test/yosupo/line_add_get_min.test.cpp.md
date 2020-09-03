@@ -58,10 +58,10 @@ data:
   - vector/compress.cpp
   - segtree/cht/lichao.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: vector/compress.cpp
     title: vector/compress.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/cht/lichao.cpp
     title: segtree/cht/lichao.cpp
   extendedRequiredBy: []

@@ -22,7 +22,7 @@ data:
   dependsOn:
   - math/extgcd.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/extgcd.cpp
     title: math/extgcd.cpp
   extendedRequiredBy: []

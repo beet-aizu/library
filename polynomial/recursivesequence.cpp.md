@@ -34,19 +34,19 @@ data:
     }\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4271.test.cpp
     title: test/yukicoder/4271.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: polynomial/recursivesequence.cpp
-  requiredBy:
-  - test/yukicoder/4271.test.cpp
+  requiredBy: []
   timestamp: '2020-08-28 13:36:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yukicoder/4271.test.cpp
 documentation_of: polynomial/recursivesequence.cpp
 layout: document
 redirect_from:

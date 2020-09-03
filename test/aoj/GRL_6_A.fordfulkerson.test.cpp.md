@@ -35,7 +35,7 @@ data:
   dependsOn:
   - flow/fordfulkerson.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: flow/fordfulkerson.cpp
     title: flow/fordfulkerson.cpp
   extendedRequiredBy: []

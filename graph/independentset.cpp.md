@@ -41,23 +41,23 @@ data:
     #endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2948.test.cpp
     title: test/aoj/2948.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/maximum_independent_set.test.cpp
     title: test/yosupo/maximum_independent_set.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/independentset.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-26 22:59:22+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2948.test.cpp
   - test/yosupo/maximum_independent_set.test.cpp
-  timestamp: '2019-12-26 22:59:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: graph/independentset.cpp
 layout: document
 redirect_from:

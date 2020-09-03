@@ -3,7 +3,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 58, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -61,16 +61,29 @@ data:
   dependsOn:
   - combinatorics/enumeration.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling1st.cpp
+    title: combinatorics/stirling1st.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/partition.cpp
+    title: combinatorics/partition.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling2nd.cpp
+    title: combinatorics/stirling2nd.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/bernoulli.cpp
+    title: combinatorics/bernoulli.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3072.test.cpp
     title: test/aoj/3072.test.cpp
@@ -122,24 +135,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
-  - icon: ':warning:'
-    path: combinatorics/stirling1st.cpp
-    title: combinatorics/stirling1st.cpp
-  - icon: ':warning:'
-    path: combinatorics/partition.cpp
-    title: combinatorics/partition.cpp
-  - icon: ':warning:'
-    path: combinatorics/stirling2nd.cpp
-    title: combinatorics/stirling2nd.cpp
-  - icon: ':warning:'
-    path: combinatorics/bernoulli.cpp
-    title: combinatorics/bernoulli.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: polynomial/formalpowerseries.cpp
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - combinatorics/stirling1st.cpp
+  - combinatorics/partition.cpp
+  - combinatorics/stirling2nd.cpp
+  - combinatorics/bernoulli.cpp
+  timestamp: '2020-05-16 18:51:14+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/3072.test.cpp
   - test/aoj/2985.test.cpp
   - test/aoj/2985.garner.test.cpp
@@ -157,14 +165,6 @@ data:
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
-  - combinatorics/stirling1st.cpp
-  - combinatorics/partition.cpp
-  - combinatorics/stirling2nd.cpp
-  - combinatorics/bernoulli.cpp
-  timestamp: '2020-05-16 18:51:14+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: polynomial/formalpowerseries.cpp
 layout: document
 redirect_from:

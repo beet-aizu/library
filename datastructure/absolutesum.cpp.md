@@ -55,19 +55,19 @@ data:
     */\n\nsigned main(){\n  //ABC127_F();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2600.test.cpp
     title: test/yukicoder/2600.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/absolutesum.cpp
-  requiredBy:
-  - test/yukicoder/2600.test.cpp
+  requiredBy: []
   timestamp: '2020-02-15 16:16:42+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yukicoder/2600.test.cpp
 documentation_of: datastructure/absolutesum.cpp
 layout: document
 redirect_from:

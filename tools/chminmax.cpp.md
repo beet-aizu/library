@@ -15,18 +15,19 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonsubstring.cpp
     title: string/longestcommonsubstring.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_1_E.test.cpp
     title: test/aoj/DPL_1_E.test.cpp
@@ -117,7 +118,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/chminmax.cpp
   requiredBy:
@@ -125,6 +125,10 @@ data:
   - string/editdistance.cpp
   - graph/nicetree.cpp
   - datastructure/slidingwindowaggregation.cpp
+  timestamp: '2020-03-12 16:36:20+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verificationStatusIcon: ':question:'
+  verifiedWith:
   - test/aoj/DPL_1_E.test.cpp
   - test/aoj/0415.test.cpp
   - test/aoj/GRL_5_A.linkcuttree.test.cpp
@@ -155,10 +159,6 @@ data:
   - test/yukicoder/4706.test.cpp
   - test/yukicoder/3912.test.cpp
   - test/yukicoder/4918.test.cpp
-  timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tools/chminmax.cpp
 layout: document
 redirect_from:

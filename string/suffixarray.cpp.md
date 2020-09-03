@@ -51,9 +51,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: string/longestcommonprefix.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_14_D.test.cpp
     title: test/aoj/ALDS1_14_D.test.cpp
@@ -78,11 +79,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/suffixarray.test.cpp
     title: test/yosupo/suffixarray.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: string/suffixarray.cpp
   requiredBy:
   - string/longestcommonprefix.cpp
+  timestamp: '2019-12-26 23:10:12+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/ALDS1_14_D.test.cpp
   - test/aoj/2711.test.cpp
   - test/aoj/2644.test.cpp
@@ -91,10 +95,6 @@ data:
   - test/aoj/3063.test.cpp
   - test/yosupo/number_of_substrings.test.cpp
   - test/yosupo/suffixarray.test.cpp
-  timestamp: '2019-12-26 23:10:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: string/suffixarray.cpp
 layout: document
 redirect_from:

@@ -3,52 +3,52 @@ data:
   libraryCategories:
   - name: algorithm
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/knuthyao.cpp
       title: algorithm/knuthyao.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/largestrectangle.cpp
       title: algorithm/largestrectangle.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/mo.cpp
       title: algorithm/mo.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/monotoneminima.cpp
       title: algorithm/monotoneminima.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/onlineoffline.cpp
       title: algorithm/onlineoffline.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/optimalbinarytree.cpp
       title: algorithm/optimalbinarytree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/parallelbinarysearch.cpp
       title: algorithm/parallelbinarysearch.cpp
   - name: bbst
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/pb_ds_tree.cpp
       title: bbst/pb_ds_tree.cpp
   - name: bbst/rbst/basic
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/array.cpp
       title: bbst/rbst/basic/array.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/base.cpp
       title: bbst/rbst/basic/base.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/dual.cpp
       title: bbst/rbst/basic/dual.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/lazy.cpp
       title: bbst/rbst/basic/lazy.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/ushi.cpp
       title: bbst/rbst/basic/ushi.cpp
   - name: bbst/rbst/persistent
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/persistent/array.cpp
       title: bbst/rbst/persistent/array.cpp
     - icon: ':warning:'
@@ -59,139 +59,139 @@ data:
       title: bbst/rbst/persistent/ushi.cpp
   - name: combinatorics
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/bell.cpp
       title: combinatorics/bell.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/bernoulli.cpp
       title: combinatorics/bernoulli.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/enumeration.cpp
       title: combinatorics/enumeration.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/partition.cpp
       title: combinatorics/partition.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/partitiontable.cpp
       title: combinatorics/partitiontable.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/stirling1st.cpp
       title: combinatorics/stirling1st.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/stirling2nd.cpp
       title: combinatorics/stirling2nd.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/surjection.cpp
       title: combinatorics/surjection.cpp
   - name: convolution
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/arbitrarymod.cpp
       title: convolution/arbitrarymod.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/convolution2D.cpp
       title: convolution/convolution2D.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/fastfouriertransform.cpp
       title: convolution/fastfouriertransform.cpp
     - icon: ':warning:'
       path: convolution/fastwalshhadamardtransform.cpp
       title: convolution/fastwalshhadamardtransform.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/garner.cpp
       title: convolution/garner.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: convolution/numbertheoretictransform.cpp
       title: convolution/numbertheoretictransform.cpp
   - name: datastructure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/BIT2D.cpp
       title: datastructure/BIT2D.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/absolutesum.cpp
       title: datastructure/absolutesum.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/binaryindexedtree.cpp
       title: datastructure/binaryindexedtree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/binarytrie.cpp
       title: datastructure/binarytrie.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/cartesiantree.cpp
       title: datastructure/cartesiantree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/convexhulltrick.cpp
       title: datastructure/convexhulltrick.cpp
     - icon: ':warning:'
       path: datastructure/convexhulltrickwithindex.cpp
       title: datastructure/convexhulltrickwithindex.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/cumulativesum.cpp
       title: datastructure/cumulativesum.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/disjointsparsetable.cpp
       title: datastructure/disjointsparsetable.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/kdtree.cpp
       title: datastructure/kdtree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/nonmonotonicconvexhulltrick.cpp
       title: datastructure/nonmonotonicconvexhulltrick.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/pb_ds_cc_hash_table.cpp
       title: datastructure/pb_ds_cc_hash_table.cpp
     - icon: ':warning:'
       path: datastructure/prioritysum.cpp
       title: datastructure/prioritysum.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/quickfind.cpp
       title: datastructure/quickfind.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/radixheap.cpp
       title: datastructure/radixheap.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/rangeslide.cpp
       title: datastructure/rangeslide.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/skewheap.cpp
       title: datastructure/skewheap.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/unionfind.cpp
       title: datastructure/unionfind.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/waveletmatrix.cpp
       title: datastructure/waveletmatrix.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/weightedunionfind.cpp
       title: datastructure/weightedunionfind.cpp
   - name: flow
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/bimatch.cpp
       title: flow/bimatch.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/dinic.cpp
       title: flow/dinic.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/fordfulkerson.cpp
       title: flow/fordfulkerson.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/hopcroft_karp.cpp
       title: flow/hopcroft_karp.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/leastflow.cpp
       title: flow/leastflow.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/negativeedge.cpp
       title: flow/negativeedge.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/primaldual.cpp
       title: flow/primaldual.cpp
   - name: geometry/3D
@@ -201,84 +201,84 @@ data:
       title: geometry/3D/geometry3D.cpp
   - name: geometry
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/argsort.cpp
       title: geometry/argsort.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/geometry.cpp
       title: geometry/geometry.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/projectilemotion.cpp
       title: geometry/projectilemotion.cpp
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/arborescence_edmond.cpp
       title: graph/arborescence_edmond.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/arborescence_tarjan.cpp
       title: graph/arborescence_tarjan.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/bellmanford.cpp
       title: graph/bellmanford.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/bfs.cpp
       title: graph/bfs.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/chebyshevneighbors.cpp
       title: graph/chebyshevneighbors.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/chromatic.cpp
       title: graph/chromatic.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.cpp
       title: graph/dijkstra.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/dominatortree.cpp
       title: graph/dominatortree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/dynamicconnectivity.cpp
       title: graph/dynamicconnectivity.cpp
     - icon: ':warning:'
       path: graph/girth.cpp
       title: graph/girth.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/independentset.cpp
       title: graph/independentset.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.cpp
       title: graph/kruskal.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/lowlink.cpp
       title: graph/lowlink.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/maximalmatching.cpp
       title: graph/maximalmatching.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/multipleeuleriantrail.cpp
       title: graph/multipleeuleriantrail.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/nicetree.cpp
       title: graph/nicetree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/rangetorange.cpp
       title: graph/rangetorange.cpp
     - icon: ':warning:'
       path: graph/semikernel.cpp
       title: graph/semikernel.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/stronglyconnectedcomponent.cpp
       title: graph/stronglyconnectedcomponent.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/topologicalsort.cpp
       title: graph/topologicalsort.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/triangle.cpp
       title: graph/triangle.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/twoedgeconnectedcomponents.cpp
       title: graph/twoedgeconnectedcomponents.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/twosatisfiability.cpp
       title: graph/twosatisfiability.cpp
     - icon: ':warning:'
@@ -305,13 +305,13 @@ data:
       title: icpc/t.cpp
   - name: io
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: io/tuple.cpp
       title: io/tuple.cpp
   - name: leetcode
@@ -321,164 +321,164 @@ data:
       title: leetcode/treenode.cpp
   - name: linearalgebra
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linearalgebra/binarymatrix.cpp
       title: linearalgebra/binarymatrix.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linearalgebra/matrix.cpp
       title: linearalgebra/matrix.cpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: linearalgebra/squarematrix.cpp
       title: linearalgebra/squarematrix.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linearalgebra/tree_theorem.cpp
       title: linearalgebra/tree_theorem.cpp
   - name: linkcuttree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/base.cpp
       title: linkcuttree/base.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/farthest.cpp
       title: linkcuttree/farthest.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/path.cpp
       title: linkcuttree/path.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/subtree.cpp
       title: linkcuttree/subtree.cpp
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/carmichael.cpp
       title: math/carmichael.cpp
     - icon: ':warning:'
       path: math/combination.cpp
       title: math/combination.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/convertbase.cpp
       title: math/convertbase.cpp
     - icon: ':warning:'
       path: math/dual.cpp
       title: math/dual.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/extgcd.cpp
       title: math/extgcd.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/factorize.cpp
       title: math/factorize.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/fraction.cpp
       title: math/fraction.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/isprime.cpp
       title: math/isprime.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/kitamasa.cpp
       title: math/kitamasa.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/linearcongruence.cpp
       title: math/linearcongruence.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/linearfunction.cpp
       title: math/linearfunction.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/sum_of_floor.cpp
       title: math/sum_of_floor.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/tetrahedra.cpp
       title: math/tetrahedra.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/totient.cpp
       title: math/totient.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/totient_table.cpp
       title: math/totient_table.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/twoway.cpp
       title: math/twoway.cpp
   - name: mod
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/factorial.cpp
       title: mod/factorial.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/log.cpp
       title: mod/log.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/mint.cpp
       title: mod/mint.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/montmort.cpp
       title: mod/montmort.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/order.cpp
       title: mod/order.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/pow.cpp
       title: mod/pow.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/rint.cpp
       title: mod/rint.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/sqrt.cpp
       title: mod/sqrt.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: mod/tetration.cpp
       title: mod/tetration.cpp
   - name: polynomial
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/berlekampmassey.cpp
       title: polynomial/berlekampmassey.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/formalpowerseries.cpp
       title: polynomial/formalpowerseries.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/hash.cpp
       title: polynomial/hash.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/interpolate.cpp
       title: polynomial/interpolate.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/lagrangeinterpolation.cpp
       title: polynomial/lagrangeinterpolation.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/multieval.cpp
       title: polynomial/multieval.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/polynomial.cpp
       title: polynomial/polynomial.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/recursivesequence.cpp
       title: polynomial/recursivesequence.cpp
   - name: segtree/basic
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/chien.cpp
       title: segtree/basic/chien.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/dual.cpp
       title: segtree/basic/dual.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/ushi.cpp
       title: segtree/basic/ushi.cpp
   - name: segtree/cht
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/cht/lichao.cpp
       title: segtree/cht/lichao.cpp
   - name: segtree/count
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/count/dynamic_offline.cpp
       title: segtree/count/dynamic_offline.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/count/static.cpp
       title: segtree/count/static.cpp
   - name: segtree/persistent
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/persistent/ushi.cpp
       title: segtree/persistent/ushi.cpp
   - name: segtree/types
@@ -491,52 +491,52 @@ data:
       title: segtree/types/online.cpp
   - name: string
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/ahocorasick.cpp
       title: string/ahocorasick.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/editdistance.cpp
       title: string/editdistance.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/knuthmorrispratt.cpp
       title: string/knuthmorrispratt.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/longestcommonprefix.cpp
       title: string/longestcommonprefix.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/longestcommonsubstring.cpp
       title: string/longestcommonsubstring.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/manacher.cpp
       title: string/manacher.cpp
     - icon: ':warning:'
       path: string/morrispratt.cpp
       title: string/morrispratt.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/palindromictree.cpp
       title: string/palindromictree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/parse.cpp
       title: string/parse.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/rectanglehash.cpp
       title: string/rectanglehash.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/run.cpp
       title: string/run.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/split.cpp
       title: string/split.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/suffixarray.cpp
       title: string/suffixarray.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/trie.cpp
       title: string/trie.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
   - name: test
@@ -546,43 +546,43 @@ data:
       title: test/resolve.py
   - name: tools
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/all_permutations.cpp
       title: tools/all_permutations.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/bigint.cpp
       title: tools/bigint.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
       path: tools/debug.cpp
       title: tools/debug.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/drop.cpp
       title: tools/drop.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/fastio.cpp
       title: tools/fastio.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/fixpoint.cpp
       title: tools/fixpoint.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/gridbfs.cpp
       title: tools/gridbfs.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/int128.cpp
       title: tools/int128.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/iskado.cpp
       title: tools/iskado.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tools/trio.cpp
       title: tools/trio.cpp
   - name: toptree
@@ -590,80 +590,80 @@ data:
     - icon: ':warning:'
       path: toptree/base.cpp
       title: toptree/base.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: toptree/distancesum.cpp
       title: toptree/distancesum.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: toptree/farthest.cpp
       title: toptree/farthest.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: toptree/steiner.cpp
       title: toptree/steiner.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: toptree/toptree.cpp
       title: toptree/toptree.cpp
   - name: tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/auxiliarytree.cpp
       title: tree/auxiliarytree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/centroid.cpp
       title: tree/centroid.cpp
     - icon: ':warning:'
       path: tree/construct_from_distances_to_farthest_vertex.cpp
       title: tree/construct_from_distances_to_farthest_vertex.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/diameterforedge.cpp
       title: tree/diameterforedge.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/diameterforvertex.cpp
       title: tree/diameterforvertex.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforbfs.cpp
       title: tree/eulertourforbfs.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforedge.cpp
       title: tree/eulertourforedge.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforvertex.cpp
       title: tree/eulertourforvertex.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/heavylightdecomposition.cpp
       title: tree/heavylightdecomposition.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/lca.cpp
       title: tree/lca.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/levelancestor.cpp
       title: tree/levelancestor.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/lowestcommonancestor.cpp
       title: tree/lowestcommonancestor.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/rerooting.cpp
       title: tree/rerooting.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/sack.cpp
       title: tree/sack.cpp
   - name: vector
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: vector/compress.cpp
       title: vector/compress.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: vector/fusion.cpp
       title: vector/fusion.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: vector/identity.cpp
       title: vector/identity.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: vector/multi.cpp
       title: vector/multi.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: vector/near.cpp
       title: vector/near.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: vector/zip.cpp
       title: vector/zip.cpp
   verificationCategories:

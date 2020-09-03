@@ -28,19 +28,19 @@ data:
     \ 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/discrete_logarithm_mod.test.cpp
     title: test/yosupo/discrete_logarithm_mod.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: mod/log.cpp
-  requiredBy:
-  - test/yosupo/discrete_logarithm_mod.test.cpp
+  requiredBy: []
   timestamp: '2019-12-26 23:42:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/discrete_logarithm_mod.test.cpp
 documentation_of: mod/log.cpp
 layout: document
 redirect_from:

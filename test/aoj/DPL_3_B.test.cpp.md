@@ -38,10 +38,10 @@ data:
   - tools/chminmax.cpp
   - algorithm/largestrectangle.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':question:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/largestrectangle.cpp
     title: algorithm/largestrectangle.cpp
   extendedRequiredBy: []

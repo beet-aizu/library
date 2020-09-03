@@ -83,7 +83,7 @@ data:
   dependsOn:
   - datastructure/binarytrie.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/binarytrie.cpp
     title: datastructure/binarytrie.cpp
   extendedRequiredBy: []

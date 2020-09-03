@@ -25,7 +25,7 @@ data:
   dependsOn:
   - mod/montmort.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/montmort.cpp
     title: mod/montmort.cpp
   extendedRequiredBy: []

@@ -60,30 +60,31 @@ data:
   - icon: ':warning:'
     path: convolution/fastwalshhadamardtransform.cpp
     title: convolution/fastwalshhadamardtransform.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/maximalmatching.cpp
     title: graph/maximalmatching.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/hash.cpp
     title: polynomial/hash.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/kitamasa.cpp
     title: math/kitamasa.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linearalgebra/tree_theorem.cpp
     title: linearalgebra/tree_theorem.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_G.test.cpp
     title: test/aoj/DPL_5_G.test.cpp
@@ -264,7 +265,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: mod/mint.cpp
   requiredBy:
@@ -277,6 +277,10 @@ data:
   - mod/factorial.cpp
   - math/kitamasa.cpp
   - linearalgebra/tree_theorem.cpp
+  timestamp: '2020-03-12 17:02:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DPL_5_G.test.cpp
   - test/aoj/3074.test.cpp
   - test/aoj/DPL_5_L.test.cpp
@@ -337,10 +341,6 @@ data:
   - test/yukicoder/0104.test.cpp
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/2772.test.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: mod/mint.cpp
 layout: document
 redirect_from:

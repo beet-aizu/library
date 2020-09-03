@@ -33,7 +33,7 @@ data:
   dependsOn:
   - graph/stronglyconnectedcomponent.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/stronglyconnectedcomponent.cpp
     title: graph/stronglyconnectedcomponent.cpp
   extendedRequiredBy: []

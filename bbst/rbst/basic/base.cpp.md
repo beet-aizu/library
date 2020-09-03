@@ -84,21 +84,22 @@ data:
   - icon: ':warning:'
     path: bbst/rbst/persistent/lazy.cpp
     title: bbst/rbst/persistent/lazy.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/dual.cpp
     title: bbst/rbst/basic/dual.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/lazy.cpp
     title: bbst/rbst/basic/lazy.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
@@ -132,7 +133,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: bbst/rbst/basic/base.cpp
   requiredBy:
@@ -143,6 +143,10 @@ data:
   - bbst/rbst/basic/dual.cpp
   - bbst/rbst/basic/lazy.cpp
   - bbst/rbst/basic/array.cpp
+  timestamp: '2020-03-22 15:37:31+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_2_D.bbst.test.cpp
   - test/aoj/2890.test.cpp
   - test/aoj/DSL_2_E.bbst.test.cpp
@@ -154,10 +158,6 @@ data:
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp
   - test/yosupo/persistent_queue.test.cpp
-  timestamp: '2020-03-22 15:37:31+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: bbst/rbst/basic/base.cpp
 layout: document
 redirect_from:

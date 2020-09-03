@@ -31,7 +31,7 @@ data:
   dependsOn:
   - datastructure/quickfind.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/quickfind.cpp
     title: datastructure/quickfind.cpp
   extendedRequiredBy: []

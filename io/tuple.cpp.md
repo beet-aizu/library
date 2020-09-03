@@ -20,23 +20,23 @@ data:
     \n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: io/tuple.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-08-07 15:47:54+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/4918.test.cpp
-  timestamp: '2020-08-07 15:47:54+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: io/tuple.cpp
 layout: document
 redirect_from:

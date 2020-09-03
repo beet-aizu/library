@@ -33,23 +33,23 @@ data:
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
     title: test/aoj/GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/radixheap.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-09 23:10:40+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/GRL_1_A.test.cpp
   - test/aoj/1607.test.cpp
-  timestamp: '2019-12-09 23:10:40+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/radixheap.cpp
 layout: document
 redirect_from:

@@ -59,10 +59,10 @@ data:
   - tree/eulertourforedge.cpp
   - datastructure/binaryindexedtree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/eulertourforedge.cpp
     title: tree/eulertourforedge.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
     title: datastructure/binaryindexedtree.cpp
   extendedRequiredBy: []

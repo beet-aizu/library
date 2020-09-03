@@ -53,10 +53,10 @@ data:
   - tree/eulertourforvertex.cpp
   - datastructure/binaryindexedtree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/eulertourforvertex.cpp
     title: tree/eulertourforvertex.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
     title: datastructure/binaryindexedtree.cpp
   extendedRequiredBy: []

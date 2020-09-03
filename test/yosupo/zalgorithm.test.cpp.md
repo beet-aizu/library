@@ -26,7 +26,7 @@ data:
   dependsOn:
   - string/zalgorithm.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
   extendedRequiredBy: []

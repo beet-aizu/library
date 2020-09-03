@@ -21,23 +21,23 @@ data:
     \n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.cartesiantree.test.cpp
     title: test/aoj/DSL_3_D.cartesiantree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/cartesian_tree.test.cpp
     title: test/yosupo/cartesian_tree.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/cartesiantree.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-07-27 11:09:34+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_3_D.cartesiantree.test.cpp
   - test/yosupo/cartesian_tree.test.cpp
-  timestamp: '2020-07-27 11:09:34+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/cartesiantree.cpp
 layout: document
 redirect_from:

@@ -36,9 +36,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/auxiliarytree.cpp
     title: tree/auxiliarytree.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
     title: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
@@ -51,19 +52,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/lowestcommonancestor.cpp
   requiredBy:
   - tree/auxiliarytree.cpp
+  timestamp: '2019-12-17 21:09:31+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
   - test/yosupo/lca.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
-  timestamp: '2019-12-17 21:09:31+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tree/lowestcommonancestor.cpp
 layout: document
 redirect_from:

@@ -35,7 +35,7 @@ data:
   dependsOn:
   - datastructure/rangeslide.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/rangeslide.cpp
     title: datastructure/rangeslide.cpp
   extendedRequiredBy: []

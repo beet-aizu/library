@@ -41,7 +41,7 @@ data:
   dependsOn:
   - flow/hopcroft_karp.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: flow/hopcroft_karp.cpp
     title: flow/hopcroft_karp.cpp
   extendedRequiredBy: []

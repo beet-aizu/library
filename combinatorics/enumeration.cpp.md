@@ -44,12 +44,31 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling1st.cpp
+    title: combinatorics/stirling1st.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/partition.cpp
+    title: combinatorics/partition.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/surjection.cpp
+    title: combinatorics/surjection.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling2nd.cpp
+    title: combinatorics/stirling2nd.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/bernoulli.cpp
+    title: combinatorics/bernoulli.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/bell.cpp
+    title: combinatorics/bell.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_G.test.cpp
     title: test/aoj/DPL_5_G.test.cpp
@@ -137,30 +156,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
-  - icon: ':warning:'
-    path: combinatorics/stirling1st.cpp
-    title: combinatorics/stirling1st.cpp
-  - icon: ':warning:'
-    path: combinatorics/partition.cpp
-    title: combinatorics/partition.cpp
-  - icon: ':warning:'
-    path: combinatorics/surjection.cpp
-    title: combinatorics/surjection.cpp
-  - icon: ':warning:'
-    path: combinatorics/stirling2nd.cpp
-    title: combinatorics/stirling2nd.cpp
-  - icon: ':warning:'
-    path: combinatorics/bernoulli.cpp
-    title: combinatorics/bernoulli.cpp
-  - icon: ':warning:'
-    path: combinatorics/bell.cpp
-    title: combinatorics/bell.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: combinatorics/enumeration.cpp
   requiredBy:
   - graph/lowlink.cpp
   - polynomial/formalpowerseries.cpp
+  - combinatorics/stirling1st.cpp
+  - combinatorics/partition.cpp
+  - combinatorics/surjection.cpp
+  - combinatorics/stirling2nd.cpp
+  - combinatorics/bernoulli.cpp
+  - combinatorics/bell.cpp
+  timestamp: '2020-03-12 17:02:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DPL_5_G.test.cpp
   - test/aoj/DPL_5_I.test.cpp
   - test/aoj/DPL_5_B.test.cpp
@@ -190,16 +200,6 @@ data:
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/2772.test.cpp
-  - combinatorics/stirling1st.cpp
-  - combinatorics/partition.cpp
-  - combinatorics/surjection.cpp
-  - combinatorics/stirling2nd.cpp
-  - combinatorics/bernoulli.cpp
-  - combinatorics/bell.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: combinatorics/enumeration.cpp
 layout: document
 redirect_from:

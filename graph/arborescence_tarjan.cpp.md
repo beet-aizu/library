@@ -96,19 +96,19 @@ data:
     */\n\n\nsigned main(){\n  //UVA_11183();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_B.tarjan.test.cpp
     title: test/aoj/GRL_2_B.tarjan.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/arborescence_tarjan.cpp
-  requiredBy:
-  - test/aoj/GRL_2_B.tarjan.test.cpp
+  requiredBy: []
   timestamp: '2019-12-17 22:09:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/GRL_2_B.tarjan.test.cpp
 documentation_of: graph/arborescence_tarjan.cpp
 layout: document
 redirect_from:

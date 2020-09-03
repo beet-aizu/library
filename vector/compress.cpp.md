@@ -20,7 +20,8 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1300.test.cpp
     title: test/aoj/1300.test.cpp
@@ -60,10 +61,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: vector/compress.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-04-18 17:56:15+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/1300.test.cpp
   - test/aoj/2563.test.cpp
   - test/aoj/2359.test.cpp
@@ -77,10 +81,6 @@ data:
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4778.test.cpp
   - test/yukicoder/4852.test.cpp
-  timestamp: '2020-04-18 17:56:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: vector/compress.cpp
 layout: document
 redirect_from:

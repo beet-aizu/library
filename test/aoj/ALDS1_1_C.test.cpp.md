@@ -20,7 +20,7 @@ data:
   dependsOn:
   - math/isprime.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/isprime.cpp
     title: math/isprime.cpp
   extendedRequiredBy: []

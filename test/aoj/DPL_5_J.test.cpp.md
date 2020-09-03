@@ -72,13 +72,13 @@ data:
   - combinatorics/enumeration.cpp
   - combinatorics/partitiontable.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/partitiontable.cpp
     title: combinatorics/partitiontable.cpp
   extendedRequiredBy: []

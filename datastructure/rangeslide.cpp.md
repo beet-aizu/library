@@ -28,7 +28,8 @@ data:
     \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.test.cpp
     title: test/aoj/DSL_3_D.test.cpp
@@ -38,17 +39,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1923.test.cpp
     title: test/yukicoder/1923.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/rangeslide.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-02-15 16:18:53+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_3_D.test.cpp
   - test/aoj/0613.test.cpp
   - test/yukicoder/1923.test.cpp
-  timestamp: '2020-02-15 16:18:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/rangeslide.cpp
 layout: document
 redirect_from:

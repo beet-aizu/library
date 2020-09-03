@@ -12,19 +12,19 @@ data:
     \ HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_1_C.test.cpp
     title: test/aoj/ALDS1_1_C.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/isprime.cpp
-  requiredBy:
-  - test/aoj/ALDS1_1_C.test.cpp
+  requiredBy: []
   timestamp: '2020-02-11 11:14:25+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/ALDS1_1_C.test.cpp
 documentation_of: math/isprime.cpp
 layout: document
 redirect_from:

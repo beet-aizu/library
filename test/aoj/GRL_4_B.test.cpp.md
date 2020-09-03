@@ -32,7 +32,7 @@ data:
   dependsOn:
   - graph/topologicalsort.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph/topologicalsort.cpp
     title: graph/topologicalsort.cpp
   extendedRequiredBy: []

@@ -66,7 +66,8 @@ data:
     signed main(){\n  return 0;\n};\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0367.test.cpp
     title: test/aoj/0367.test.cpp
@@ -82,19 +83,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/heavylightdecomposition.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-08-20 15:14:35+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0367.test.cpp
   - test/aoj/2450.test.cpp
   - test/aoj/2667.test.cpp
   - test/aoj/GRL_5_C.test.cpp
   - test/yosupo/vertex_add_path_sum.test.cpp
-  timestamp: '2020-08-20 15:14:35+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tree/heavylightdecomposition.cpp
 layout: document
 redirect_from:

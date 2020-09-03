@@ -32,7 +32,8 @@ data:
     \ 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_E.test.cpp
     title: test/aoj/DSL_2_E.test.cpp
@@ -48,19 +49,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/basic/dual.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-17 13:36:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_2_E.test.cpp
   - test/aoj/2359.test.cpp
   - test/aoj/3112.test.cpp
   - test/aoj/DSL_2_D.test.cpp
   - test/yukicoder/3912.test.cpp
-  timestamp: '2019-12-17 13:36:48+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: segtree/basic/dual.cpp
 layout: document
 redirect_from:

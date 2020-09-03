@@ -18,7 +18,8 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0367.test.cpp
     title: test/aoj/0367.test.cpp
@@ -52,10 +53,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/fixpoint.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-26 23:42:22+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0367.test.cpp
   - test/aoj/2790.test.cpp
   - test/aoj/geometry/2448.test.cpp
@@ -67,10 +71,6 @@ data:
   - test/yukicoder/3961.test.cpp
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/3912.test.cpp
-  timestamp: '2019-12-26 23:42:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tools/fixpoint.cpp
 layout: document
 redirect_from:

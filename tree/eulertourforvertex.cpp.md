@@ -25,9 +25,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/auxiliarytree.cpp
     title: tree/auxiliarytree.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2871.test.cpp
     title: test/aoj/2871.test.cpp
@@ -40,19 +41,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/eulertourforvertex.cpp
   requiredBy:
   - tree/auxiliarytree.cpp
+  timestamp: '2020-03-04 20:21:28+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2871.test.cpp
   - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
-  timestamp: '2020-03-04 20:21:28+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tree/eulertourforvertex.cpp
 layout: document
 redirect_from:

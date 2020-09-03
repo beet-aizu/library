@@ -36,7 +36,7 @@ data:
   dependsOn:
   - graph/triangle.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/triangle.cpp
     title: graph/triangle.cpp
   extendedRequiredBy: []

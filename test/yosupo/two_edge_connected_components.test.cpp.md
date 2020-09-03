@@ -47,7 +47,7 @@ data:
   dependsOn:
   - graph/twoedgeconnectedcomponents.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/twoedgeconnectedcomponents.cpp
     title: graph/twoedgeconnectedcomponents.cpp
   extendedRequiredBy: []

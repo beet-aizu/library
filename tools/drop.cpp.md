@@ -12,7 +12,8 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0422.test.cpp
     title: test/aoj/0422.test.cpp
@@ -43,10 +44,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/drop.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-26 23:42:22+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0422.test.cpp
   - test/aoj/2970.test.cpp
   - test/aoj/2359.test.cpp
@@ -57,10 +61,6 @@ data:
   - test/yosupo/shortest_path.test.cpp
   - test/yosupo/tree_decomposition_width_2.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
-  timestamp: '2019-12-26 23:42:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tools/drop.cpp
 layout: document
 redirect_from:

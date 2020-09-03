@@ -56,7 +56,7 @@ data:
   dependsOn:
   - tree/lca.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/lca.cpp
     title: tree/lca.cpp
   extendedRequiredBy: []

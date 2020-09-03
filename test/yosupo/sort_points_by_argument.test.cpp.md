@@ -31,7 +31,7 @@ data:
   dependsOn:
   - geometry/argsort.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: geometry/argsort.cpp
     title: geometry/argsort.cpp
   extendedRequiredBy: []

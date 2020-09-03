@@ -38,7 +38,7 @@ data:
   dependsOn:
   - segtree/basic/dual.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/basic/dual.cpp
     title: segtree/basic/dual.cpp
   extendedRequiredBy: []

@@ -41,23 +41,23 @@ data:
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2872.test.cpp
     title: test/aoj/2872.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_B.test.cpp
     title: test/aoj/GRL_1_B.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/bellmanford.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-27 08:35:29+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2872.test.cpp
   - test/aoj/GRL_1_B.test.cpp
-  timestamp: '2019-12-27 08:35:29+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: graph/bellmanford.cpp
 layout: document
 redirect_from:

@@ -19,12 +19,13 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/linearcongruence.cpp
     title: math/linearcongruence.cpp
   - icon: ':warning:'
     path: math/combination.cpp
     title: math/combination.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2970.test.cpp
     title: test/aoj/2970.test.cpp
@@ -34,19 +35,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_E.test.cpp
     title: test/aoj/NTL_1_E.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/extgcd.cpp
   requiredBy:
   - math/linearcongruence.cpp
   - math/combination.cpp
+  timestamp: '2020-03-22 10:35:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2970.test.cpp
   - test/aoj/2659.test.cpp
   - test/aoj/NTL_1_E.test.cpp
-  timestamp: '2020-03-22 10:35:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: math/extgcd.cpp
 layout: document
 redirect_from:

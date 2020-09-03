@@ -25,15 +25,16 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/skewheap.cpp
     title: datastructure/skewheap.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linearalgebra/tree_theorem.cpp
     title: linearalgebra/tree_theorem.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_A.test.cpp
     title: test/aoj/DSL_1_A.test.cpp
@@ -46,21 +47,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/unionfind.test.cpp
     title: test/yosupo/unionfind.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/unionfind.cpp
   requiredBy:
   - graph/lowlink.cpp
   - datastructure/skewheap.cpp
   - linearalgebra/tree_theorem.cpp
+  timestamp: '2020-05-17 19:42:37+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_1_A.test.cpp
   - test/aoj/2995.test.cpp
   - test/aoj/0314.test.cpp
   - test/yosupo/unionfind.test.cpp
-  timestamp: '2020-05-17 19:42:37+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/unionfind.cpp
 layout: document
 redirect_from:

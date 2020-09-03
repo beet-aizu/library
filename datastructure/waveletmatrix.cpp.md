@@ -116,7 +116,8 @@ data:
     \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2674.test.cpp
     title: test/aoj/2674.test.cpp
@@ -141,10 +142,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1937.test.cpp
     title: test/yukicoder/1937.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/waveletmatrix.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-02-23 20:10:59+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2674.test.cpp
   - test/aoj/1549.test.cpp
   - test/aoj/3063.test.cpp
@@ -153,10 +157,6 @@ data:
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/2147.test.cpp
   - test/yukicoder/1937.test.cpp
-  timestamp: '2020-02-23 20:10:59+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/waveletmatrix.cpp
 layout: document
 redirect_from:

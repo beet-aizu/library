@@ -97,13 +97,13 @@ data:
   - tools/fixpoint.cpp
   - convolution/fastfouriertransform.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/centroid.cpp
     title: tree/centroid.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/fixpoint.cpp
     title: tools/fixpoint.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
   extendedRequiredBy: []

@@ -77,15 +77,16 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2450.linkcuttree.test.cpp
     title: test/aoj/2450.linkcuttree.test.cpp
@@ -122,13 +123,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: linkcuttree/base.cpp
   requiredBy:
   - linkcuttree/farthest.cpp
   - linkcuttree/subtree.cpp
   - linkcuttree/path.cpp
+  timestamp: '2020-07-16 18:11:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2450.linkcuttree.test.cpp
   - test/aoj/1595.linkcuttree.test.cpp
   - test/aoj/3120.test.cpp
@@ -141,10 +145,6 @@ data:
   - test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  timestamp: '2020-07-16 18:11:07+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: linkcuttree/base.cpp
 layout: document
 redirect_from:

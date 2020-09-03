@@ -49,7 +49,7 @@ data:
   dependsOn:
   - datastructure/kdtree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/kdtree.cpp
     title: datastructure/kdtree.cpp
   extendedRequiredBy: []

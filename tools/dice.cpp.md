@@ -41,7 +41,8 @@ data:
     \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ITP1_11_D.test.cpp
     title: test/aoj/ITP1_11_D.test.cpp
@@ -60,20 +61,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0502.test.cpp
     title: test/aoj/0502.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/dice.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-17 20:42:16+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/ITP1_11_D.test.cpp
   - test/aoj/1197.test.cpp
   - test/aoj/ITP1_11_A.test.cpp
   - test/aoj/ITP1_11_B.test.cpp
   - test/aoj/ITP1_11_C.test.cpp
   - test/aoj/0502.test.cpp
-  timestamp: '2019-12-17 20:42:16+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tools/dice.cpp
 layout: document
 redirect_from:

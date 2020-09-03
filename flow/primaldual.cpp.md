@@ -83,9 +83,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: flow/negativeedge.cpp
     title: flow/negativeedge.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2679.test.cpp
     title: test/aoj/2679.test.cpp
@@ -104,21 +105,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2230.test.cpp
     title: test/aoj/2230.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: flow/primaldual.cpp
   requiredBy:
   - flow/negativeedge.cpp
+  timestamp: '2019-12-26 22:36:29+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2679.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2872.test.cpp
   - test/aoj/GRL_6_B.test.cpp
   - test/aoj/2736.test.cpp
   - test/aoj/2230.test.cpp
-  timestamp: '2019-12-26 22:36:29+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: flow/primaldual.cpp
 layout: document
 redirect_from:

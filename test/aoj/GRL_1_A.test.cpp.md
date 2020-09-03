@@ -46,7 +46,7 @@ data:
   dependsOn:
   - datastructure/radixheap.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/radixheap.cpp
     title: datastructure/radixheap.cpp
   extendedRequiredBy: []

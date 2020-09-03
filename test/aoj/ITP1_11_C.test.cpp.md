@@ -38,7 +38,7 @@ data:
   dependsOn:
   - tools/dice.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/dice.cpp
     title: tools/dice.cpp
   extendedRequiredBy: []

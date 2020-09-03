@@ -34,23 +34,23 @@ data:
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2513.test.cpp
     title: test/aoj/2513.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_7_A.test.cpp
     title: test/aoj/GRL_7_A.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: flow/bimatch.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-10 15:04:21+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2513.test.cpp
   - test/aoj/GRL_7_A.test.cpp
-  timestamp: '2019-12-10 15:04:21+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: flow/bimatch.cpp
 layout: document
 redirect_from:

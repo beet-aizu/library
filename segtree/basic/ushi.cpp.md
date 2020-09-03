@@ -59,7 +59,8 @@ data:
     */\n\nsigned main(){\n  //KUPC2013_D();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.test.cpp
     title: test/aoj/DSL_2_A.test.cpp
@@ -72,18 +73,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/basic/ushi.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-26 23:04:57+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_2_A.test.cpp
   - test/aoj/2644.test.cpp
   - test/aoj/0367.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp
-  timestamp: '2019-12-26 23:04:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: segtree/basic/ushi.cpp
 layout: document
 redirect_from:

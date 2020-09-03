@@ -46,7 +46,8 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2842.test.cpp
     title: test/aoj/2842.test.cpp
@@ -59,18 +60,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2063.test.cpp
     title: test/yukicoder/2063.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/count/dynamic_offline.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-09-02 21:26:21+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/2842.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
   - test/yosupo/point_add_rectangle_sum.test.cpp
   - test/yukicoder/2063.test.cpp
-  timestamp: '2020-09-02 21:26:21+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: segtree/count/dynamic_offline.cpp
 layout: document
 redirect_from:

@@ -213,7 +213,7 @@ data:
   dependsOn:
   - geometry/geometry.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: geometry/geometry.cpp
     title: geometry/geometry.cpp
   extendedRequiredBy: []

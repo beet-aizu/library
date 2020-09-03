@@ -59,9 +59,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: flow/leastflow.cpp
     title: flow/leastflow.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3058.test.cpp
     title: test/aoj/3058.test.cpp
@@ -83,11 +84,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_6_A.test.cpp
     title: test/aoj/GRL_6_A.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: flow/dinic.cpp
   requiredBy:
   - flow/leastflow.cpp
+  timestamp: '2019-12-26 22:42:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/3058.test.cpp
   - test/aoj/2313.test.cpp
   - test/aoj/2328.test.cpp
@@ -95,10 +99,6 @@ data:
   - test/aoj/1615.test.cpp
   - test/aoj/1599.test.cpp
   - test/aoj/GRL_6_A.test.cpp
-  timestamp: '2019-12-26 22:42:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: flow/dinic.cpp
 layout: document
 redirect_from:

@@ -60,19 +60,19 @@ data:
     #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2235.test.cpp
     title: test/aoj/2235.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/dynamicconnectivity.cpp
-  requiredBy:
-  - test/aoj/2235.test.cpp
+  requiredBy: []
   timestamp: '2019-12-17 22:09:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/2235.test.cpp
 documentation_of: graph/dynamicconnectivity.cpp
 layout: document
 redirect_from:

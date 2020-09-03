@@ -20,19 +20,19 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2720.test.cpp
     title: test/aoj/2720.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/carmichael.cpp
-  requiredBy:
-  - test/aoj/2720.test.cpp
+  requiredBy: []
   timestamp: '2020-03-29 20:43:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/2720.test.cpp
 documentation_of: math/carmichael.cpp
 layout: document
 redirect_from:

@@ -28,23 +28,23 @@ data:
     }\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_B.test.cpp
     title: test/aoj/DSL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3592.test.cpp
     title: test/yukicoder/3592.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/weightedunionfind.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-05-17 19:42:37+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_1_B.test.cpp
   - test/yukicoder/3592.test.cpp
-  timestamp: '2020-05-17 19:42:37+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: datastructure/weightedunionfind.cpp
 layout: document
 redirect_from:

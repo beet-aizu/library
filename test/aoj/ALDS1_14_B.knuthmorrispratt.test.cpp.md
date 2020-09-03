@@ -43,7 +43,7 @@ data:
   dependsOn:
   - string/knuthmorrispratt.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/knuthmorrispratt.cpp
     title: string/knuthmorrispratt.cpp
   extendedRequiredBy: []

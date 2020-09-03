@@ -46,10 +46,10 @@ data:
   - tools/drop.cpp
   - graph/bellmanford.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/bellmanford.cpp
     title: graph/bellmanford.cpp
   extendedRequiredBy: []

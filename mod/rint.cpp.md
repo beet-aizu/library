@@ -43,9 +43,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0422.test.cpp
     title: test/aoj/0422.test.cpp
@@ -55,18 +56,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4569.test.cpp
     title: test/yukicoder/4569.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: mod/rint.cpp
   requiredBy:
   - mod/factorial.cpp
+  timestamp: '2020-03-12 17:15:27+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0422.test.cpp
   - test/yukicoder/1504.test.cpp
   - test/yukicoder/4569.test.cpp
-  timestamp: '2020-03-12 17:15:27+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: mod/rint.cpp
 layout: document
 redirect_from:

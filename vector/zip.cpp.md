@@ -18,19 +18,19 @@ data:
     \  for(auto [x,y]:zs) cout<<x<<\" \"<<y<<endl;\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: vector/zip.cpp
-  requiredBy:
-  - test/aoj/2563.test.cpp
+  requiredBy: []
   timestamp: '2020-04-18 17:56:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/2563.test.cpp
 documentation_of: vector/zip.cpp
 layout: document
 redirect_from:

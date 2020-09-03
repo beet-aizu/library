@@ -34,19 +34,19 @@ data:
     #ifndef call_from_test\n//INSERT ABOVE HERE\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1254.test.cpp
     title: test/aoj/1254.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/chromatic.cpp
-  requiredBy:
-  - test/aoj/1254.test.cpp
+  requiredBy: []
   timestamp: '2019-12-17 22:09:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/1254.test.cpp
 documentation_of: graph/chromatic.cpp
 layout: document
 redirect_from:

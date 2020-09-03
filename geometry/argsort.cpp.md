@@ -24,19 +24,19 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sort_points_by_argument.test.cpp
     title: test/yosupo/sort_points_by_argument.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: geometry/argsort.cpp
-  requiredBy:
-  - test/yosupo/sort_points_by_argument.test.cpp
+  requiredBy: []
   timestamp: '2020-03-14 17:16:27+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/sort_points_by_argument.test.cpp
 documentation_of: geometry/argsort.cpp
 layout: document
 redirect_from:

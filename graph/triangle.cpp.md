@@ -28,19 +28,19 @@ data:
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_triangles.test.cpp
     title: test/yosupo/enumerate_triangles.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/triangle.cpp
-  requiredBy:
-  - test/yosupo/enumerate_triangles.test.cpp
+  requiredBy: []
   timestamp: '2020-05-07 17:33:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/enumerate_triangles.test.cpp
 documentation_of: graph/triangle.cpp
 layout: document
 redirect_from:

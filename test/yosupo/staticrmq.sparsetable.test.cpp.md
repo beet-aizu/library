@@ -31,7 +31,7 @@ data:
   dependsOn:
   - datastructure/sparsetable.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/sparsetable.cpp
     title: datastructure/sparsetable.cpp
   extendedRequiredBy: []

@@ -36,10 +36,10 @@ data:
   - tools/cc_hash.cpp
   - datastructure/pb_ds_cc_hash_table.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tools/cc_hash.cpp
     title: tools/cc_hash.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/pb_ds_cc_hash_table.cpp
     title: datastructure/pb_ds_cc_hash_table.cpp
   extendedRequiredBy: []

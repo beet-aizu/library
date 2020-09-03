@@ -45,7 +45,7 @@ data:
   dependsOn:
   - graph/dominatortree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/dominatortree.cpp
     title: graph/dominatortree.cpp
   extendedRequiredBy: []

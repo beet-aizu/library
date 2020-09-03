@@ -33,7 +33,7 @@ data:
   dependsOn:
   - flow/bimatch.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: flow/bimatch.cpp
     title: flow/bimatch.cpp
   extendedRequiredBy: []

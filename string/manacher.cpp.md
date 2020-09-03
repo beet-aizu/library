@@ -18,19 +18,19 @@ data:
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2934.test.cpp
     title: test/aoj/2934.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: string/manacher.cpp
-  requiredBy:
-  - test/aoj/2934.test.cpp
+  requiredBy: []
   timestamp: '2020-03-12 17:15:27+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/2934.test.cpp
 documentation_of: string/manacher.cpp
 layout: document
 redirect_from:

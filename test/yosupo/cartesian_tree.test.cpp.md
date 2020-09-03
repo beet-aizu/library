@@ -29,7 +29,7 @@ data:
   dependsOn:
   - datastructure/cartesiantree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/cartesiantree.cpp
     title: datastructure/cartesiantree.cpp
   extendedRequiredBy: []

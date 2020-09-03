@@ -161,12 +161,13 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/tetrahedra.cpp
     title: math/tetrahedra.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: linearalgebra/tree_theorem.cpp
     title: linearalgebra/tree_theorem.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0314.test.cpp
     title: test/aoj/0314.test.cpp
@@ -179,20 +180,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix_det.test.cpp
     title: test/yosupo/matrix_det.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: linearalgebra/matrix.cpp
   requiredBy:
   - math/tetrahedra.cpp
   - linearalgebra/tree_theorem.cpp
+  timestamp: '2019-10-29 12:01:20+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0314.test.cpp
   - test/aoj/2060.test.cpp
   - test/aoj/1328.test.cpp
   - test/yosupo/matrix_det.test.cpp
-  timestamp: '2019-10-29 12:01:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: linearalgebra/matrix.cpp
 layout: document
 redirect_from:

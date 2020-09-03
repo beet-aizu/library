@@ -29,7 +29,7 @@ data:
   dependsOn:
   - datastructure/cumulativesum.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/cumulativesum.cpp
     title: datastructure/cumulativesum.cpp
   extendedRequiredBy: []

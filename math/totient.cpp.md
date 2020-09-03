@@ -15,9 +15,10 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/tetration.cpp
     title: mod/tetration.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_D.test.cpp
     title: test/aoj/NTL_1_D.test.cpp
@@ -27,18 +28,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0472.test.cpp
     title: test/yukicoder/0472.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/totient.cpp
   requiredBy:
   - mod/tetration.cpp
+  timestamp: '2020-03-12 17:02:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/NTL_1_D.test.cpp
   - test/yosupo/tetration_mod.test.cpp
   - test/yukicoder/0472.test.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: math/totient.cpp
 layout: document
 redirect_from:

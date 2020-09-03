@@ -21,26 +21,26 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/run.cpp
     title: string/run.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: string/zalgorithm.cpp
   requiredBy:
   - string/run.cpp
+  timestamp: '2020-02-15 17:46:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/yosupo/runenumerate.test.cpp
   - test/yosupo/zalgorithm.test.cpp
-  timestamp: '2020-02-15 17:46:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: string/zalgorithm.cpp
 layout: document
 redirect_from:

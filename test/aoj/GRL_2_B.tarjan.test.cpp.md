@@ -65,7 +65,7 @@ data:
   dependsOn:
   - graph/arborescence_tarjan.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/arborescence_tarjan.cpp
     title: graph/arborescence_tarjan.cpp
   extendedRequiredBy: []

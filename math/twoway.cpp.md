@@ -16,19 +16,19 @@ data:
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: math/twoway.cpp
-  requiredBy:
-  - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+  requiredBy: []
   timestamp: '2020-03-29 20:43:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
 documentation_of: math/twoway.cpp
 layout: document
 redirect_from:

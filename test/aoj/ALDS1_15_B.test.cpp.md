@@ -28,7 +28,7 @@ data:
   dependsOn:
   - io/precision.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: io/precision.cpp
     title: io/precision.cpp
   extendedRequiredBy: []

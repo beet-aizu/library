@@ -36,19 +36,19 @@ data:
     }\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_6_A.fordfulkerson.test.cpp
     title: test/aoj/GRL_6_A.fordfulkerson.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: flow/fordfulkerson.cpp
-  requiredBy:
-  - test/aoj/GRL_6_A.fordfulkerson.test.cpp
+  requiredBy: []
   timestamp: '2019-12-10 15:04:21+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/GRL_6_A.fordfulkerson.test.cpp
 documentation_of: flow/fordfulkerson.cpp
 layout: document
 redirect_from:

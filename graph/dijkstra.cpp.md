@@ -36,7 +36,8 @@ data:
     \ 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
@@ -46,17 +47,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/shortest_path.test.cpp
     title: test/yosupo/shortest_path.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/dijkstra.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-05-05 14:35:59+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/geometry/2334.test.cpp
   - test/aoj/0423.test.cpp
   - test/yosupo/shortest_path.test.cpp
-  timestamp: '2020-05-05 14:35:59+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: graph/dijkstra.cpp
 layout: document
 redirect_from:

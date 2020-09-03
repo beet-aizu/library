@@ -23,23 +23,23 @@ data:
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_L.test.cpp
     title: test/aoj/DPL_5_L.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_J.test.cpp
     title: test/aoj/DPL_5_J.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: combinatorics/partitiontable.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-12 17:02:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DPL_5_L.test.cpp
   - test/aoj/DPL_5_J.test.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: combinatorics/partitiontable.cpp
 layout: document
 redirect_from:

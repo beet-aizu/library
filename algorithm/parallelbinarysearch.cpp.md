@@ -27,19 +27,19 @@ data:
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: algorithm/parallelbinarysearch.cpp
-  requiredBy:
-  - test/aoj/2563.test.cpp
+  requiredBy: []
   timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/2563.test.cpp
 documentation_of: algorithm/parallelbinarysearch.cpp
 layout: document
 redirect_from:

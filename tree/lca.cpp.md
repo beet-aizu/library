@@ -72,7 +72,8 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.cartesiantree.test.cpp
     title: test/aoj/DSL_3_D.cartesiantree.test.cpp
@@ -82,17 +83,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_C.lca.test.cpp
     title: test/aoj/GRL_5_C.lca.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/lca.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-17 21:09:31+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/DSL_3_D.cartesiantree.test.cpp
   - test/aoj/0391.test.cpp
   - test/aoj/GRL_5_C.lca.test.cpp
-  timestamp: '2019-12-17 21:09:31+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tree/lca.cpp
 layout: document
 redirect_from:

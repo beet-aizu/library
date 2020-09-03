@@ -3,7 +3,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 58, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -112,10 +112,11 @@ data:
   dependsOn:
   - convolution/fastfouriertransform.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_2_A.test.cpp
     title: test/aoj/NTL_2_A.test.cpp
@@ -143,10 +144,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0143.test.cpp
     title: test/yukicoder/0143.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/bigint.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-02-15 16:27:15+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/NTL_2_A.test.cpp
   - test/aoj/NTL_2_F.test.cpp
   - test/aoj/NTL_2_D.test.cpp
@@ -156,10 +160,6 @@ data:
   - test/yukicoder/0831.test.cpp
   - test/yukicoder/2125.test.cpp
   - test/yukicoder/0143.test.cpp
-  timestamp: '2020-02-15 16:27:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: tools/bigint.cpp
 layout: document
 redirect_from:

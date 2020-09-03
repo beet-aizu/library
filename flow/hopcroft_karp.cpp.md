@@ -42,7 +42,8 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0424.test.cpp
     title: test/aoj/0424.test.cpp
@@ -52,17 +53,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/bipartitematching.test.cpp
     title: test/yosupo/bipartitematching.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: flow/hopcroft_karp.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2019-12-26 22:36:29+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/0424.test.cpp
   - test/aoj/GRL_7_A.hopcroft_karp.test.cpp
   - test/yosupo/bipartitematching.test.cpp
-  timestamp: '2019-12-26 22:36:29+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: flow/hopcroft_karp.cpp
 layout: document
 redirect_from:

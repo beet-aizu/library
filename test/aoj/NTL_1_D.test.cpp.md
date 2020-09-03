@@ -21,7 +21,7 @@ data:
   dependsOn:
   - math/totient.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/totient.cpp
     title: math/totient.cpp
   extendedRequiredBy: []

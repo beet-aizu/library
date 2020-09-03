@@ -38,7 +38,8 @@ data:
     \ 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1950.test.cpp
     title: test/yukicoder/1950.test.cpp
@@ -48,17 +49,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2113.test.cpp
     title: test/yukicoder/2113.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: algorithm/onlineoffline.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-12 16:36:20+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/yukicoder/1950.test.cpp
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/2113.test.cpp
-  timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: algorithm/onlineoffline.cpp
 layout: document
 redirect_from:

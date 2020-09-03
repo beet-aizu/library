@@ -35,12 +35,13 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/twosatisfiability.cpp
     title: graph/twosatisfiability.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_4_A.test.cpp
     title: test/aoj/GRL_4_A.test.cpp
@@ -74,12 +75,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/stronglyconnectedcomponent.cpp
   requiredBy:
   - graph/twosatisfiability.cpp
   - graph/arborescence_edmond.cpp
+  timestamp: '2019-12-17 22:09:22+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/GRL_4_A.test.cpp
   - test/aoj/GRL_2_B.test.cpp
   - test/aoj/2647.test.cpp
@@ -91,10 +95,6 @@ data:
   - test/yosupo/scc.test.cpp
   - test/yosupo/two_sat.test.cpp
   - test/yukicoder/4387.test.cpp
-  timestamp: '2019-12-17 22:09:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: graph/stronglyconnectedcomponent.cpp
 layout: document
 redirect_from:

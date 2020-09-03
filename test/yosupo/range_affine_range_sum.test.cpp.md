@@ -105,10 +105,10 @@ data:
   - mod/mint.cpp
   - segtree/basic/chien.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/basic/chien.cpp
     title: segtree/basic/chien.cpp
   extendedRequiredBy: []

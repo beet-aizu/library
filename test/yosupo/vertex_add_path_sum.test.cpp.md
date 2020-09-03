@@ -74,10 +74,10 @@ data:
   - tree/heavylightdecomposition.cpp
   - datastructure/binaryindexedtree.cpp
   extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/heavylightdecomposition.cpp
     title: tree/heavylightdecomposition.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
     title: datastructure/binaryindexedtree.cpp
   extendedRequiredBy: []

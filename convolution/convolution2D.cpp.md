@@ -34,7 +34,8 @@ data:
     \ HERE\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3074.test.cpp
     title: test/aoj/3074.test.cpp
@@ -44,17 +45,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2977.test.cpp
     title: test/aoj/2977.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: convolution/convolution2D.cpp
-  requiredBy:
+  requiredBy: []
+  timestamp: '2020-03-12 17:02:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
   - test/aoj/3074.test.cpp
   - test/aoj/2560.test.cpp
   - test/aoj/2977.test.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
 documentation_of: convolution/convolution2D.cpp
 layout: document
 redirect_from:

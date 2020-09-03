@@ -54,19 +54,19 @@ data:
     */\n\nsigned main(){\n  ABC135_F();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy:
+  extendedRequiredBy: []
+  extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
     title: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: string/knuthmorrispratt.cpp
-  requiredBy:
-  - test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
+  requiredBy: []
   timestamp: '2020-08-20 15:23:52+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith:
+  - test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
 documentation_of: string/knuthmorrispratt.cpp
 layout: document
 redirect_from:
