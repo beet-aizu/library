@@ -287,22 +287,22 @@ data:
   - name: heuristic
     pages:
     - icon: ':warning:'
-      path: heuristic/timer.cpp
-      title: heuristic/timer.cpp
+      path: heuristic/timer.ignore.cpp
+      title: heuristic/timer.ignore.cpp
     - icon: ':warning:'
-      path: heuristic/xorshift.cpp
-      title: heuristic/xorshift.cpp
+      path: heuristic/xorshift.ignore.cpp
+      title: heuristic/xorshift.ignore.cpp
   - name: icpc
     pages:
     - icon: ':warning:'
-      path: icpc/hash.cpp
-      title: icpc/hash.cpp
+      path: icpc/hash.ignore.cpp
+      title: icpc/hash.ignore.cpp
     - icon: ':warning:'
-      path: icpc/hash_gen.cpp
-      title: icpc/hash_gen.cpp
+      path: icpc/hash_gen.ignore.cpp
+      title: icpc/hash_gen.ignore.cpp
     - icon: ':warning:'
-      path: icpc/t.cpp
-      title: icpc/t.cpp
+      path: icpc/t.ignore.cpp
+      title: icpc/t.ignore.cpp
   - name: io
     pages:
     - icon: ':heavy_check_mark:'
@@ -317,8 +317,8 @@ data:
   - name: leetcode
     pages:
     - icon: ':warning:'
-      path: leetcode/treenode.cpp
-      title: leetcode/treenode.cpp
+      path: leetcode/treenode.ignore.cpp
+      title: leetcode/treenode.ignore.cpp
   - name: linearalgebra
     pages:
     - icon: ':heavy_check_mark:'
