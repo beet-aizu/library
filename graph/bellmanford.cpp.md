@@ -1,0 +1,67 @@
+---
+data:
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+  bundledCode: "#line 1 \"graph/bellmanford.cpp\"\n\n#include<bits/stdc++.h>\nusing\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct BellmanFord{\n\
+    \  static constexpr T INF = numeric_limits<T>::max();\n\n  struct edge{\n    int\
+    \ u,v;\n    T w;\n    edge(){}\n    edge(int u,int v,T w):u(u),v(v),w(w){}\n \
+    \ };\n\n  int n;\n  vector< vector<int> > G;\n  vector<int> used,reach;\n  BellmanFord(int\
+    \ n):n(n),G(n),used(n,0),reach(n,1){}\n\n  vector<edge> es;\n  void add_edge(int\
+    \ u,int v,T c){\n    es.emplace_back(u,v,c);\n    G[u].emplace_back(v);\n  }\n\
+    \n  vector<T> build(int from,int &neg_loop){\n    vector<T> ds(n,INF);\n    ds[from]=0;\n\
+    \    for(int j=0;j<n;j++){\n      bool update=0;\n      for(auto e:es){\n    \
+    \    if(!reach[e.u]||!reach[e.v]||ds[e.u]==INF) continue;\n        if(ds[e.v]>ds[e.u]+e.w){\n\
+    \          ds[e.v]=ds[e.u]+e.w;\n          update=1;\n        }\n      }\n   \
+    \   if(!update) break;\n      if(j==n-1){\n        neg_loop=1;\n        return\
+    \ ds;\n      }\n    }\n    neg_loop=0;\n    return ds;\n  }\n\n  void dfs(int\
+    \ v){\n    if(used[v]) return;\n    used[v]=1;\n    for(int u:G[v]) dfs(u);\n\
+    \  }\n\n  T shortest_path(int from,int to,int &neg_loop){\n    for(int i=0;i<n;i++){\n\
+    \      fill(used.begin(),used.end(),0);\n      dfs(i);\n      reach[i]=used[to];\n\
+    \    }\n    return build(from,neg_loop)[to];\n  }\n};\ntemplate<typename T>\n\
+    constexpr T BellmanFord<T>::INF;\n//END CUT HERE\n#ifndef call_from_test\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
+    //BEGIN CUT HERE\ntemplate<typename T>\nstruct BellmanFord{\n  static constexpr\
+    \ T INF = numeric_limits<T>::max();\n\n  struct edge{\n    int u,v;\n    T w;\n\
+    \    edge(){}\n    edge(int u,int v,T w):u(u),v(v),w(w){}\n  };\n\n  int n;\n\
+    \  vector< vector<int> > G;\n  vector<int> used,reach;\n  BellmanFord(int n):n(n),G(n),used(n,0),reach(n,1){}\n\
+    \n  vector<edge> es;\n  void add_edge(int u,int v,T c){\n    es.emplace_back(u,v,c);\n\
+    \    G[u].emplace_back(v);\n  }\n\n  vector<T> build(int from,int &neg_loop){\n\
+    \    vector<T> ds(n,INF);\n    ds[from]=0;\n    for(int j=0;j<n;j++){\n      bool\
+    \ update=0;\n      for(auto e:es){\n        if(!reach[e.u]||!reach[e.v]||ds[e.u]==INF)\
+    \ continue;\n        if(ds[e.v]>ds[e.u]+e.w){\n          ds[e.v]=ds[e.u]+e.w;\n\
+    \          update=1;\n        }\n      }\n      if(!update) break;\n      if(j==n-1){\n\
+    \        neg_loop=1;\n        return ds;\n      }\n    }\n    neg_loop=0;\n  \
+    \  return ds;\n  }\n\n  void dfs(int v){\n    if(used[v]) return;\n    used[v]=1;\n\
+    \    for(int u:G[v]) dfs(u);\n  }\n\n  T shortest_path(int from,int to,int &neg_loop){\n\
+    \    for(int i=0;i<n;i++){\n      fill(used.begin(),used.end(),0);\n      dfs(i);\n\
+    \      reach[i]=used[to];\n    }\n    return build(from,neg_loop)[to];\n  }\n\
+    };\ntemplate<typename T>\nconstexpr T BellmanFord<T>::INF;\n//END CUT HERE\n#ifndef\
+    \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+  dependsOn: []
+  extendedDependsOn: []
+  extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2872.test.cpp
+    title: test/aoj/2872.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_B.test.cpp
+    title: test/aoj/GRL_1_B.test.cpp
+  extendedVerifiedWith: []
+  isVerificationFile: false
+  path: graph/bellmanford.cpp
+  requiredBy:
+  - test/aoj/2872.test.cpp
+  - test/aoj/GRL_1_B.test.cpp
+  timestamp: '2019-12-27 08:35:29+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verificationStatusIcon: ':warning:'
+  verifiedWith: []
+documentation_of: graph/bellmanford.cpp
+layout: document
+redirect_from:
+- /library/graph/bellmanford.cpp
+- /library/graph/bellmanford.cpp.html
+title: graph/bellmanford.cpp
+---

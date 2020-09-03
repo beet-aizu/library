@@ -1,0 +1,50 @@
+---
+data:
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 58, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 399, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ tree/diameterforedge.cpp: line 64: unable to process #include in #if / #ifdef\
+    \ / #ifndef other than include guards\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
+    ../../tools/fixpoint.cpp\"\n#include \"../../tree/diameterforedge.cpp\"\n#undef\
+    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \  const char newl = '\\n';\n\n  using ll = long long;\n  int n;\n  cin>>n;\n\
+    \  DiameterForEdge<ll> G(n);\n  for(int i=1;i<n;i++){\n    int a,b,c;\n    cin>>a>>b>>c;\n\
+    \    G.add_edge(a,b,c);\n  }\n\n  auto seq=G.restore();\n  cout<<G.build()<<'\
+    \ '<<seq.size()<<newl;\n  for(int i=0;i<(int)seq.size();i++){\n    if(i) cout<<'\
+    \ ';\n    cout<<seq[i];\n  }\n  cout<<newl;\n  return 0;\n}\n"
+  dependsOn:
+  - tools/fixpoint.cpp
+  - tree/diameterforedge.cpp
+  extendedDependsOn:
+  - icon: ':warning:'
+    path: tools/fixpoint.cpp
+    title: tools/fixpoint.cpp
+  - icon: ':warning:'
+    path: tree/diameterforedge.cpp
+    title: tree/diameterforedge.cpp
+  extendedRequiredBy: []
+  extendedVerifiedWith: []
+  isVerificationFile: true
+  path: test/yosupo/tree_diameter.test.cpp
+  requiredBy: []
+  timestamp: '2020-05-18 20:55:43+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith: []
+documentation_of: test/yosupo/tree_diameter.test.cpp
+layout: document
+redirect_from:
+- /verify/test/yosupo/tree_diameter.test.cpp
+- /verify/test/yosupo/tree_diameter.test.cpp.html
+title: test/yosupo/tree_diameter.test.cpp
+---

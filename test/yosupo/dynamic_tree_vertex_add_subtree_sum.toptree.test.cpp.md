@@ -1,0 +1,187 @@
+---
+data:
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
+  bundledCode: "#line 1 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
+    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
+    #line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#line 5 \"toptree/toptree.cpp\"\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename\
+    \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
+    \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
+    \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+    \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
+    \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\
+    \n  inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n\
+    \    auto dummy=&pool_v[ptr_v++];\n    *t=v;\n    link(t,id,dummy);\n    return\
+    \ t;\n  }\n\n  inline Node* edge(Vertex* u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n\
+    \    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n    return pushup(t);\n\
+    \  }\n\n  inline Node* compress(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n\
+    \    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n    return pushup(t);\n  }\n\
+    \n  inline Node* rake(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n\
+    \    return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n\
+    \    if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
+    \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
+    \ t){\n    Node* p=t->p;\n    if(!p) return -1;\n    if(p->ch[0]==t) return 0;\n\
+    \    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  inline Node* pushup(Node*\
+    \ const t){\n    Node* const l=t->ch[0];\n    Node* const r=t->ch[1];\n\n    if(t->type==Type::Compress){\n\
+    \      assert(l->vs[1]==r->vs[0]);\n      t->vs[0]=l->vs[0];\n      t->vs[1]=r->vs[1];\n\
+    \n      Cluster lf=l->dat;\n      if(t->q){\n        assert(l->vs[1]==t->q->vs[1]);\n\
+    \        lf=Cluster::rake(l->dat,t->q->dat);\n      }\n      t->dat=Cluster::compress(lf,r->vs[0],r->dat);\n\
+    \n      l->vs[1]->handle=t;\n    }\n\n    if(t->type==Type::Rake){\n      propagate(t);\n\
+    \      assert(l->vs[1]==r->vs[1]);\n      t->vs[0]=l->vs[0];\n      t->vs[1]=l->vs[1];\n\
+    \      t->dat=Cluster::rake(l->dat,r->dat);\n    }else{\n      if(!t->p){\n  \
+    \      t->vs[0]->handle=t;\n        t->vs[1]->handle=t;\n      }else if(t->p->type==Type::Compress){\n\
+    \        if(parent_dir(t)==-1)\n          t->vs[0]->handle=t;\n      }else if(t->p->type==Type::Rake){\n\
+    \        t->vs[0]->handle=t;\n      }\n    }\n    return t;\n  }\n\n  inline void\
+    \ toggle(Node* t){\n    if(t->type==Type::Edge){\n      swap(t->vs[0],t->vs[1]);\n\
+    \      t->dat.toggle();\n    }else if(t->type==Type::Compress){\n      swap(t->vs[0],t->vs[1]);\n\
+    \      t->dat.toggle();\n      t->rev^=true;\n    }else if(t->type==Type::Rake){\n\
+    \    }else abort();\n  }\n\n  inline void propagate(Node* t){\n    if(t->type==Type::Compress){\n\
+    \      if(t->rev){\n        assert(t->ch[0] and t->ch[1]);\n        swap(t->ch[0],t->ch[1]);\n\
+    \        toggle(t->ch[0]);\n        toggle(t->ch[1]);\n        t->rev=false;\n\
+    \      }\n    }\n  }\n\n  void set_toggle(Node* v){\n    toggle(v);propagate(v);\n\
+    \  }\n\n  void pushdown(Node* t){\n    if(!t) return;\n    pushdown(t->p);\n \
+    \   propagate(t);\n  }\n\n  void rotate(Node* t,Node* x,size_t dir){\n    Node*\
+    \ y=x->p;\n    int par=parent_dir_ignore_guard(x);\n    propagate(t->ch[dir]);\n\
+    \    x->ch[dir^1]=t->ch[dir];\n    t->ch[dir]->p=x;\n    t->ch[dir]=x;\n    x->p=t;\n\
+    \    t->p=y;\n    if(~par) y->ch[par]=t;\n    else if(y and y->type==Type::Compress)\
+    \ y->q=t;\n    pushup(x);pushup(t);\n    if(y and !y->guard) pushup(y);\n  }\n\
+    \n  void splay(Node* t){\n    assert(t->type!=Type::Edge);\n    propagate(t);\n\
+    \n    while(~parent_dir(t)){\n      Node* q=t->p;\n      if(q->type!=t->type)\
+    \ break;\n      if(~parent_dir(q) and q->p and q->p->type==q->type){\n       \
+    \ Node* r=q->p;\n        if(r->p) propagate(r->p);\n        propagate(r);propagate(q);propagate(t);\n\
+    \        int qt_dir=parent_dir(t);\n        int rq_dir=parent_dir(q);\n      \
+    \  if(rq_dir==qt_dir){\n          rotate(q,r,rq_dir^1);\n          rotate(t,q,qt_dir^1);\n\
+    \        }else{\n          rotate(t,q,qt_dir^1);\n          rotate(t,r,rq_dir^1);\n\
+    \        }\n      }else{\n        if(q->p) propagate(q->p);\n        propagate(q);propagate(t);\n\
+    \        int qt_dir=parent_dir(t);\n        rotate(t,q,qt_dir^1);\n      }\n \
+    \   }\n  }\n\n  Node* expose(Node* t){\n    pushdown(t);\n    while(true){\n \
+    \     assert(t->type!=Type::Rake);\n      if(t->type==Type::Compress) splay(t);\n\
+    \      Node* n=nullptr;\n      {\n        Node* p=t->p;\n        if(!p) break;\n\
+    \        if(p->type==Type::Rake){\n          propagate(p);\n          splay(p);\n\
+    \          n=p->p;\n        }\n        if(p->type==Type::Compress){\n        \
+    \  propagate(p);\n          if(p->guard and ~parent_dir_ignore_guard(t)) break;\n\
+    \          n=p;\n        }\n      }\n      splay(n);\n      int dir=parent_dir_ignore_guard(n);\n\
+    \      if(dir==-1 or n->p->type==Type::Rake) dir=0;\n\n      Node* const c=n->ch[dir];\n\
+    \      if(dir==1){\n        set_toggle(c);\n        set_toggle(t);\n      }\n\
+    \      int n_dir=parent_dir(t);\n      if(~n_dir){\n        Node* const r=t->p;\n\
+    \        propagate(c);\n        propagate(r);\n        r->ch[n_dir]=c;\n     \
+    \   c->p=r;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(r);pushup(t);pushup(n);\n\
+    \        splay(r);\n      }else{\n        propagate(c);\n        n->q=c;\n   \
+    \     c->p=n;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(t);pushup(n);\n\
+    \      }\n      if(t->type==Type::Edge) t=n;\n    }\n    return t;\n  }\n\n  Node*\
+    \ expose(Vertex* v){\n    return expose((Node*)(v->handle));\n  }\n\n  void soft_expose(Vertex*\
+    \ u,Vertex* v){\n    pushdown((Node*)u->handle);\n    pushdown((Node*)v->handle);\n\
+    \    Node* rt=expose(u);\n\n    if(u->handle==v->handle){\n      if(rt->vs[1]==u\
+    \ or rt->vs[0]==v)\n        set_toggle(rt);\n      return;\n    }\n\n    rt->guard=true;\n\
+    \    Node* soft=expose(v);\n    rt->guard=false;\n\n    pushup(rt);\n    if(parent_dir(soft)==0)\
+    \ set_toggle(rt);\n  }\n\n  void bring(Node* rt){\n    Node* rk=rt->q;\n    if(!rk){\n\
+    \      Node* ll=rt->ch[0];\n      ll->p=nullptr;\n      pushup(ll);\n    }else\
+    \ if(rk->type==Type::Compress or rk->type==Type::Edge){\n      propagate(rk);\n\
+    \n      Node* nr=rk;\n      set_toggle(nr);\n      rt->ch[1]=nr;\n      nr->p=rt;\n\
+    \      rt->q=nullptr;\n\n      pushup(nr);pushup(rt);\n    }else if(rk->type==Type::Rake){\n\
+    \      propagate(rk);\n      while(rk->ch[1]->type==Type::Rake){\n        propagate(rk->ch[1]);\n\
+    \        rk=rk->ch[1];\n      }\n      pushdown(rk);\n\n      rt->guard=true;\n\
+    \      splay(rk);\n      rt->guard=false;\n\n      Node* ll=rk->ch[0];\n     \
+    \ Node* rr=rk->ch[1];\n      propagate(ll);\n      set_toggle(rr);\n\n      rt->ch[1]=rr;\n\
+    \      rr->p=rt;\n\n      rt->q=ll;\n      ll->p=rt;\n\n      pushup(ll);pushup(rr);pushup(rt);\n\
+    \    }\n  }\n\n  Node* link(Vertex* u,Cluster w,Vertex* v){\n    if(!u->handle\
+    \ and !v->handle) return edge(u,w,v);\n\n    Node* nnu=(Node*)u->handle;\n   \
+    \ Node* nnv=(Node*)v->handle;\n    Node* ee=edge(u,w,v);\n    Node* ll=nullptr;\n\
+    \n    if(!nnv) ll=ee;\n    else{\n      Node* vv=expose(nnv);\n      propagate(vv);\n\
+    \      if(vv->vs[1]==v) set_toggle(vv);\n      if(vv->vs[0]==v){\n        Node*\
+    \ nv=compress(ee,vv);\n        ee->p=nv;\n        pushup(ee);\n        vv->p=nv;\n\
+    \        pushup(vv);pushup(nv);\n        ll=nv;\n      }else{\n        Node* nv=vv;\n\
+    \        Node* ch=nv->ch[0];\n        propagate(ch);\n        nv->ch[0]=ee;\n\
+    \        ee->p=nv;\n        pushup(ee);\n\n        Node* bt=nv->q;\n        Node*\
+    \ rk=nullptr;\n        if(bt){\n          propagate(bt);\n          rk=rake(bt,ch);\n\
+    \          bt->p=rk;\n          ch->p=rk;\n          pushup(bt);pushup(ch);\n\
+    \        }else{\n          rk=ch;\n        }\n        nv->q=rk;\n        rk->p=nv;\n\
+    \        pushup(rk);pushup(nv);\n        ll=nv;\n      }\n    }\n\n    if(nnu){\n\
+    \      Node* uu=expose(nnu);\n      propagate(uu);\n      if(uu->vs[0]==u) set_toggle(uu);\n\
+    \      if(uu->vs[1]==u){\n        Node* tp=compress(uu,ll);\n        uu->p=tp;\n\
+    \        ll->p=tp;\n        pushup(uu);pushup(ll);pushup(tp);\n      }else{\n\
+    \        Node* nu=uu;\n        Node* ch=nu->ch[1];\n        toggle(ch);\n    \
+    \    propagate(ch);\n\n        nu->ch[1]=ll;\n        ll->p=nu;\n        pushup(ll);\n\
+    \n        Node* al=nu->q;\n        Node* rk=nullptr;\n        if(al){\n      \
+    \    propagate(al);\n          rk=rake(al,ch);\n          al->p=rk;\n        \
+    \  ch->p=rk;\n          pushup(al);pushup(ch);\n        }else{\n          rk=ch;\n\
+    \        }\n        nu->q=rk;\n        rk->p=nu;\n        pushup(rk);pushup(nu);\n\
+    \      }\n    }\n    return ee;\n  }\n\n  void cut(Vertex* u,Vertex *v){\n   \
+    \ soft_expose(u,v);\n    Node* rt=(Node*)u->handle;\n    propagate(rt);\n    Node*\
+    \ rr=rt->ch[1];\n    rr->p=nullptr;\n    set_toggle(rr);\n    bring(rr);bring(rt);\n\
+    \  }\n\n  Node* path(Vertex* u,Vertex* v){\n    assert(u!=v);\n    soft_expose(u,v);\n\
+    \    Node* rt=(Node*)u->handle;\n    propagate(rt);\n    propagate(rt->ch[1]);\n\
+    \    return rt->ch[1]->ch[0];\n  }\n\n  void set_vertex(Vertex* u,Vertex v){\n\
+    \    auto t=expose(u);\n    *u=v;\n    pushup(t);\n  }\n\n  void set_edge(Vertex*\
+    \ u,Vertex* v,const Cluster &w){\n    auto t=path(u,v);\n    assert(t->type==Type::Edge);\n\
+    \    t->dat=w;\n    while(t) pushup(t),t=t->p;\n  }\n\n  Cluster get_path(Vertex*\
+    \ u,Vertex* v){\n    return path(u,v)->dat;\n  }\n\n  Cluster get_subtree(Vertex*\
+    \ v){\n    return expose(v)->dat;\n  }\n\n  // subtree of v when p is root\n \
+    \ Cluster get_subtree(Vertex* p,Vertex* v){\n    Node* t=path(p,v);\n    Cluster\
+    \ res=t->p->ch[1]->dat;\n    res.toggle();\n    Node* rk=t->p->q;\n    if(t->p->q){\n\
+    \      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n      res=Cluster::rake(res,rk->dat);\n\
+    \    }\n    return res;\n  }\n};\ntemplate<typename Vertex, typename Cluster,\
+    \ size_t LIM>\narray<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;\ntemplate<typename\
+    \ Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex, Cluster,\
+    \ LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_c;\n//END CUT HERE\n#ifndef\
+    \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n\
+    #line 8 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\n\
+    #undef call_from_test\n\nusing ll = long long;\nstruct Vertex{\n  void* handle;\n\
+    \  ll val;\n  Vertex(ll val=0):handle(nullptr),val(val){}\n};\n\nstruct Cluster{\n\
+    \  ll res;\n  Cluster(ll res=0):res(res){}\n  void toggle(){}\n  static Cluster\
+    \ compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res+v->val+y.res);\n\
+    \  }\n  static Cluster rake(Cluster x,Cluster y){\n    return Cluster(x.res+y.res);\n\
+    \  }\n};\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const\
+    \ char newl = '\\n';\n\n  const size_t LIM = 2e6;\n  TopTree<Vertex, Cluster,\
+    \ LIM> G;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n  for(int i=0;i<n;i++)\
+    \ cin>>as[i];\n\n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(Vertex(as[i]));\n\
+    \n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.link(vs[u],Cluster(0),vs[v]);\n\
+    \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n  \
+    \    int u,v,w,x;\n      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n     \
+    \ G.link(vs[w],Cluster(0),vs[x]);\n    }\n\n    if(t==1){\n      int p,x;\n  \
+    \    cin>>p>>x;\n      as[p]+=x;\n      G.set_vertex(vs[p],Vertex(as[p]));\n \
+    \   }\n\n    if(t==2){\n      int v,p;\n      cin>>v>>p;\n      cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;\n\
+    \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
+    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
+    #include \"../../toptree/toptree.cpp\"\n#undef call_from_test\n\nusing ll = long\
+    \ long;\nstruct Vertex{\n  void* handle;\n  ll val;\n  Vertex(ll val=0):handle(nullptr),val(val){}\n\
+    };\n\nstruct Cluster{\n  ll res;\n  Cluster(ll res=0):res(res){}\n  void toggle(){}\n\
+    \  static Cluster compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res+v->val+y.res);\n\
+    \  }\n  static Cluster rake(Cluster x,Cluster y){\n    return Cluster(x.res+y.res);\n\
+    \  }\n};\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const\
+    \ char newl = '\\n';\n\n  const size_t LIM = 2e6;\n  TopTree<Vertex, Cluster,\
+    \ LIM> G;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n  for(int i=0;i<n;i++)\
+    \ cin>>as[i];\n\n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(Vertex(as[i]));\n\
+    \n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.link(vs[u],Cluster(0),vs[v]);\n\
+    \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n  \
+    \    int u,v,w,x;\n      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n     \
+    \ G.link(vs[w],Cluster(0),vs[x]);\n    }\n\n    if(t==1){\n      int p,x;\n  \
+    \    cin>>p>>x;\n      as[p]+=x;\n      G.set_vertex(vs[p],Vertex(as[p]));\n \
+    \   }\n\n    if(t==2){\n      int v,p;\n      cin>>v>>p;\n      cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;\n\
+    \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+  dependsOn:
+  - toptree/toptree.cpp
+  extendedDependsOn:
+  - icon: ':warning:'
+    path: toptree/toptree.cpp
+    title: toptree/toptree.cpp
+  extendedRequiredBy: []
+  extendedVerifiedWith: []
+  isVerificationFile: true
+  path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+  requiredBy: []
+  timestamp: '2020-09-01 16:43:17+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith: []
+documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+layout: document
+redirect_from:
+- /verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+- /verify/test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp.html
+title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+---

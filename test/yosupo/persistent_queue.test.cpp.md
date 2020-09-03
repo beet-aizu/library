@@ -1,0 +1,56 @@
+---
+data:
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/persistent_queue
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 58, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 399, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ bbst/rbst/basic/array.cpp: line 6: unable to process #include in #if / #ifdef\
+    \ / #ifndef other than include guards\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_queue\"\n\n\
+    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../bbst/rbst/basic/base.cpp\"\n#include \"../../bbst/rbst/basic/array.cpp\"\
+    \n#include \"../../bbst/rbst/persistent/array.cpp\"\n#undef call_from_test\n\n\
+    #ifdef SANITIZE\n#define IGNORE\n#endif\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  using Node = NodeBase<int>;\n  const int LIM = 2e7;\n  PersistentArray<Node,\
+    \ LIM> pa;\n  Node* rt=pa.create(0);\n\n  int q;\n  cin>>q;\n  vector<Node*> ss(q,nullptr);\n\
+    \  for(int i=0;i<q;i++){\n    int a;\n    cin>>a;\n    if(a==0){\n      int t,x;\n\
+    \      cin>>t>>x;\n      Node* p=~t?ss[t]:rt;\n      ss[i]=pa.insert(p,p->cnt,Node(x));\n\
+    \    }\n    if(a==1){\n      int t;\n      cin>>t;\n      cout<<pa.get_val(ss[t],1)<<\"\
+    \\n\";\n      ss[i]=pa.erase(ss[t],1);\n    }\n  }\n\n  return 0;\n}\n"
+  dependsOn:
+  - bbst/rbst/basic/base.cpp
+  - bbst/rbst/basic/array.cpp
+  - bbst/rbst/persistent/array.cpp
+  extendedDependsOn:
+  - icon: ':warning:'
+    path: bbst/rbst/basic/base.cpp
+    title: bbst/rbst/basic/base.cpp
+  - icon: ':warning:'
+    path: bbst/rbst/basic/array.cpp
+    title: bbst/rbst/basic/array.cpp
+  - icon: ':warning:'
+    path: bbst/rbst/persistent/array.cpp
+    title: bbst/rbst/persistent/array.cpp
+  extendedRequiredBy: []
+  extendedVerifiedWith: []
+  isVerificationFile: true
+  path: test/yosupo/persistent_queue.test.cpp
+  requiredBy: []
+  timestamp: '2020-03-22 15:37:31+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
+  verifiedWith: []
+documentation_of: test/yosupo/persistent_queue.test.cpp
+layout: document
+redirect_from:
+- /verify/test/yosupo/persistent_queue.test.cpp
+- /verify/test/yosupo/persistent_queue.test.cpp.html
+title: test/yosupo/persistent_queue.test.cpp
+---
