@@ -42,7 +42,10 @@ data:
     \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy: []
+  extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/aoj/2432.ignore.cpp
+    title: test/aoj/2432.ignore.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3074.test.cpp
@@ -50,22 +53,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2397.test.cpp
     title: test/aoj/2397.test.cpp
-  - icon: ':x:'
-    path: test/aoj/2432.test.cpp
-    title: test/aoj/2432.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0831.test.cpp
     title: test/yukicoder/0831.test.cpp
   isVerificationFile: false
   path: linearalgebra/squarematrix.cpp
-  requiredBy: []
+  requiredBy:
+  - test/aoj/2432.ignore.cpp
   timestamp: '2020-03-06 20:39:01+09:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verificationStatusIcon: ':question:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3074.test.cpp
   - test/aoj/2397.test.cpp
-  - test/aoj/2432.test.cpp
   - test/yukicoder/0831.test.cpp
 documentation_of: linearalgebra/squarematrix.cpp
 layout: document

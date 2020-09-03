@@ -62,7 +62,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
   extendedRequiredBy: []

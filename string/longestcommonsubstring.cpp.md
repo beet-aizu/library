@@ -21,7 +21,7 @@ data:
   dependsOn:
   - tools/chminmax.cpp
   extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
   extendedRequiredBy: []

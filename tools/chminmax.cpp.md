@@ -27,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
+  - icon: ':warning:'
+    path: test/aoj/2432.ignore.cpp
+    title: test/aoj/2432.ignore.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_1_E.test.cpp
@@ -94,9 +97,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1549.test.cpp
     title: test/aoj/1549.test.cpp
-  - icon: ':x:'
-    path: test/aoj/2432.test.cpp
-    title: test/aoj/2432.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
@@ -125,9 +125,10 @@ data:
   - string/editdistance.cpp
   - graph/nicetree.cpp
   - datastructure/slidingwindowaggregation.cpp
+  - test/aoj/2432.ignore.cpp
   timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verificationStatusIcon: ':question:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DPL_1_E.test.cpp
   - test/aoj/0415.test.cpp
@@ -151,7 +152,6 @@ data:
   - test/aoj/3112.test.cpp
   - test/aoj/2308.test.cpp
   - test/aoj/1549.test.cpp
-  - test/aoj/2432.test.cpp
   - test/aoj/0613.test.cpp
   - test/aoj/1607.test.cpp
   - test/yukicoder/3227.test.cpp

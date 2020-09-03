@@ -30,7 +30,7 @@ data:
   - linkcuttree/base.cpp
   - linkcuttree/farthest.cpp
   extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
   - icon: ':heavy_check_mark:'

@@ -26,19 +26,19 @@ data:
     #ifndef call_from_test\n#endif\n"
   dependsOn: []
   extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/aoj/GRL_4_B.test.cpp
-    title: test/aoj/GRL_4_B.test.cpp
+  extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/aoj/GRL_4_B.ignore.cpp
+    title: test/aoj/GRL_4_B.ignore.cpp
+  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/topologicalsort.cpp
-  requiredBy: []
+  requiredBy:
+  - test/aoj/GRL_4_B.ignore.cpp
   timestamp: '2019-12-17 21:51:08+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
-  verifiedWith:
-  - test/aoj/GRL_4_B.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verificationStatusIcon: ':warning:'
+  verifiedWith: []
 documentation_of: graph/topologicalsort.cpp
 layout: document
 redirect_from:
