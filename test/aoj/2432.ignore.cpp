@@ -8,11 +8,6 @@ using namespace std;
 #include "../../linearalgebra/squarematrix.cpp"
 #undef call_from_test
 
-#define IGNORE
-/**
- * @ignore
- */
-
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
