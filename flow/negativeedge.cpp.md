@@ -63,10 +63,10 @@ data:
   - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2872.test.cpp
-documentation_of: flow/negativeedge.cpp
+documentation_of: ./flow/negativeedge.cpp
 layout: document
-redirect_from:
-- /library/flow/negativeedge.cpp
-- /library/flow/negativeedge.cpp.html
-title: flow/negativeedge.cpp
+title: "\u8CA0\u8FBA\u9664\u53BB"
 ---
+
+## 解説記事
+https://snuke.hatenablog.com/entry/2017/06/07/115821

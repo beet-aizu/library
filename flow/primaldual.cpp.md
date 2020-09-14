@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: flow/negativeedge.cpp
-    title: flow/negativeedge.cpp
+    title: "\u8CA0\u8FBA\u9664\u53BB"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2679.test.cpp

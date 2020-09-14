@@ -19,7 +19,7 @@ data:
     title: linearalgebra/binarymatrix.cpp
   - icon: ':heavy_check_mark:'
     path: flow/negativeedge.cpp
-    title: flow/negativeedge.cpp
+    title: "\u8CA0\u8FBA\u9664\u53BB"
   - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp

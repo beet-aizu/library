@@ -39,10 +39,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp
-documentation_of: flow/leastflow.cpp
+documentation_of: ./flow/leastflow.cpp
 layout: document
-redirect_from:
-- /library/flow/leastflow.cpp
-- /library/flow/leastflow.cpp.html
-title: flow/leastflow.cpp
+title: "\u6700\u5C0F\u6D41\u91CF\u5236\u7D04\u4ED8\u304D\u6700\u5927\u6D41"
 ---
+
+## 解説記事
+https://snuke.hatenablog.com/entry/2016/07/10/043918

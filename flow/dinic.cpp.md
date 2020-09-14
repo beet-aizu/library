@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: flow/leastflow.cpp
-    title: flow/leastflow.cpp
+    title: "\u6700\u5C0F\u6D41\u91CF\u5236\u7D04\u4ED8\u304D\u6700\u5927\u6D41"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2313.test.cpp
