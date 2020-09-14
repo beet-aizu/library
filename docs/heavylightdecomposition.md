@@ -1,3 +1,7 @@
+---
+title: Heavy Light Decomposition
+documentation_of: ./tree/heavylightdecomposition.cpp
+---
 
 ## できること
 
@@ -16,3 +20,7 @@ HL分解を使えるかどうかの条件は、載せるデータ構造（セグ
 
 頂点属性のクエリの場合は `for_each()` 、
 辺属性のクエリの場合は `for_each_edge()` で処理します。
+
+### 解説記事
+https://codeforces.com/blog/entry/53170
+https://beet-aizu.hatenablog.com/entry/2017/12/12/235950

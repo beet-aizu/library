@@ -20,4 +20,4 @@ jobs:
         GH_PAT: ${{ secrets.GH_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
-      run: oj-verify --config-file .verify-helper/verify.toml all -j 2
+      run: oj-verify all -j 2
