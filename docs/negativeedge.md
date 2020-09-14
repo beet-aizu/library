@@ -1,5 +1,4 @@
 ---
-title: 負辺除去
 documentation_of: ./flow/negativeedge.cpp
 ---
 

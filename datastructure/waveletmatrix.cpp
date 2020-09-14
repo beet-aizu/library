@@ -1,10 +1,10 @@
+#pragma once
+
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
-/**
- * @docs docs/waveletmatrix.md
- */
+
 //BEGIN CUT HERE
 struct FullyIndexableDictionary{
   int len,blk;

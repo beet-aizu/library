@@ -1,3 +1,6 @@
+---
+documentation_of: ./datastructure/binaryindexedtree.cpp
+---
 
 ## できること
 - sum

@@ -1,3 +1,6 @@
+---
+documentation_of: ./datastructure/waveletmatrix.cpp
+---
 
 ## できること
 - rank
