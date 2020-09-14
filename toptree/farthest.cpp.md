@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3143.test.cpp
+    title: test/aoj/3143.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"toptree/farthest.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -32,18 +40,11 @@ data:
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3143.test.cpp
-    title: test/aoj/3143.test.cpp
   isVerificationFile: false
   path: toptree/farthest.cpp
   requiredBy: []
   timestamp: '2020-09-01 16:43:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3143.test.cpp
 documentation_of: toptree/farthest.cpp

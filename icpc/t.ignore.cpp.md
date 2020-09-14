@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"icpc/t.ignore.cpp\"\n/**\n * @ignore\n */\n//BEGIN CUT HERE\n\
@@ -19,15 +24,11 @@ data:
     \    cout<<\"Case #\"<<t<<\": \";\n    solve();\n  }\n  return 0;\n}\n//END CUT\
     \ HERE\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: icpc/t.ignore.cpp
   requiredBy: []
   timestamp: '2020-09-04 08:31:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: icpc/t.ignore.cpp
 layout: document

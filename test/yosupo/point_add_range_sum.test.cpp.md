@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/binaryindexedtree.cpp
+    title: datastructure/binaryindexedtree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -38,18 +46,11 @@ data:
     }\n"
   dependsOn:
   - datastructure/binaryindexedtree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/binaryindexedtree.cpp
-    title: datastructure/binaryindexedtree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:59:12+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum.test.cpp
 layout: document

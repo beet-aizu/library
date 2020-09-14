@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/unionfind.cpp
+    title: datastructure/unionfind.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
@@ -27,18 +35,11 @@ data:
     \    if(t==1) cout<<uf.same(u,v)<<newl;\n  }\n  return 0;\n}\n"
   dependsOn:
   - datastructure/unionfind.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/unionfind.cpp
-    title: datastructure/unionfind.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/unionfind.test.cpp
   requiredBy: []
   timestamp: '2020-07-27 11:09:34+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/unionfind.test.cpp
 layout: document

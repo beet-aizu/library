@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph/stronglyconnectedcomponent.cpp
+    title: graph/stronglyconnectedcomponent.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
@@ -36,18 +44,11 @@ data:
     \  return 0;\n}\n"
   dependsOn:
   - graph/stronglyconnectedcomponent.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graph/stronglyconnectedcomponent.cpp
-    title: graph/stronglyconnectedcomponent.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_3_C.test.cpp
   requiredBy: []
   timestamp: '2019-12-17 22:09:22+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_3_C.test.cpp
 layout: document

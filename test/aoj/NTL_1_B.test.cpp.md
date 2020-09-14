@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/pow.cpp
+    title: mod/pow.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
@@ -20,18 +28,11 @@ data:
     \  cout<<mod_pow(n,m,MOD)<<endl;\n  return 0;\n}\n"
   dependsOn:
   - mod/pow.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/pow.cpp
-    title: mod/pow.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/NTL_1_B.test.cpp
   requiredBy: []
   timestamp: '2020-05-06 18:02:33+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_B.test.cpp
 layout: document

@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/semikernel.cpp\"\n#include<bits/stdc++.h>\nusing namespace\
@@ -34,15 +39,11 @@ data:
     \  }\n  puts(\"\");\n  return 0;\n}\n/*\n  verified on 2018/08/12\n  http://codeforces.com/contest/1019/problem/C\n\
     */\n\nsigned main(){\n  CFR503_C();\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/semikernel.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: graph/semikernel.cpp
 layout: document

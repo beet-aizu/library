@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: vector/compress.cpp
+    title: vector/compress.cpp
+  - icon: ':heavy_check_mark:'
+    path: segtree/cht/lichao.cpp
+    title: segtree/cht/lichao.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
@@ -57,21 +68,11 @@ data:
   dependsOn:
   - vector/compress.cpp
   - segtree/cht/lichao.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: vector/compress.cpp
-    title: vector/compress.cpp
-  - icon: ':heavy_check_mark:'
-    path: segtree/cht/lichao.cpp
-    title: segtree/cht/lichao.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/line_add_get_min.test.cpp
   requiredBy: []
   timestamp: '2020-04-18 17:56:15+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/line_add_get_min.test.cpp
 layout: document

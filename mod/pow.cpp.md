@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: mod/order.cpp
+    title: mod/order.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3062.test.cpp
+    title: test/aoj/3062.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_1_B.test.cpp
+    title: test/aoj/NTL_1_B.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"mod/pow.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -13,25 +27,12 @@ data:
     \    a=(ll)a*a%mod;\n    n>>=1;\n  }\n  return res;\n}\n//END CUT HERE\n#ifndef\
     \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: mod/order.cpp
-    title: mod/order.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3062.test.cpp
-    title: test/aoj/3062.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_B.test.cpp
-    title: test/aoj/NTL_1_B.test.cpp
   isVerificationFile: false
   path: mod/pow.cpp
   requiredBy:
   - mod/order.cpp
   timestamp: '2019-12-17 20:56:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3062.test.cpp
   - test/aoj/NTL_1_B.test.cpp

@@ -1,9 +1,32 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/base.cpp
+    title: bbst/rbst/basic/base.cpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: bbst/rbst/persistent/lazy.cpp
+    title: bbst/rbst/persistent/lazy.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_I.bbst.test.cpp
+    title: test/aoj/DSL_2_I.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_G.bbst.test.cpp
+    title: test/aoj/DSL_2_G.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_H.bbst.test.cpp
+    title: test/aoj/DSL_2_H.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.bbst.test.cpp
+    title: test/aoj/DSL_2_F.bbst.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 67, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -74,34 +97,12 @@ data:
     */\n\nsigned main(){\n  CODEFESTIVAL2014EXHIBITION_B();\n  return 0;\n}\n#endif\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/base.cpp
-    title: bbst/rbst/basic/base.cpp
-  extendedRequiredBy:
-  - icon: ':warning:'
-    path: bbst/rbst/persistent/lazy.cpp
-    title: bbst/rbst/persistent/lazy.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_I.bbst.test.cpp
-    title: test/aoj/DSL_2_I.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_G.bbst.test.cpp
-    title: test/aoj/DSL_2_G.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_H.bbst.test.cpp
-    title: test/aoj/DSL_2_H.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_F.bbst.test.cpp
-    title: test/aoj/DSL_2_F.bbst.test.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/lazy.cpp
   requiredBy:
   - bbst/rbst/persistent/lazy.cpp
   timestamp: '2020-05-09 16:23:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DSL_2_I.bbst.test.cpp
   - test/aoj/DSL_2_G.bbst.test.cpp

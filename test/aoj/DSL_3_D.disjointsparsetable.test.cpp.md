@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/disjointsparsetable.cpp
+    title: datastructure/disjointsparsetable.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D
@@ -47,18 +55,11 @@ data:
     \  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - datastructure/disjointsparsetable.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/disjointsparsetable.cpp
-    title: datastructure/disjointsparsetable.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
 layout: document

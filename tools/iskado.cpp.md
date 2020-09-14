@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0222.test.cpp
+    title: test/yukicoder/0222.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tools/iskado.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -13,18 +21,11 @@ data:
     }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0222.test.cpp
-    title: test/yukicoder/0222.test.cpp
   isVerificationFile: false
   path: tools/iskado.cpp
   requiredBy: []
   timestamp: '2020-02-15 15:47:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yukicoder/0222.test.cpp
 documentation_of: tools/iskado.cpp

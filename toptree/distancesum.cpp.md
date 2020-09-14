@@ -1,9 +1,26 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: toptree/toptree.cpp
+    title: toptree/toptree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2636.test.cpp
+    title: test/aoj/2636.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4862.test.cpp
+    title: test/yukicoder/4862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2587.test.cpp
+    title: test/yukicoder/2587.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 67, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -48,27 +65,11 @@ data:
     \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - toptree/toptree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: toptree/toptree.cpp
-    title: toptree/toptree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2636.test.cpp
-    title: test/aoj/2636.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4862.test.cpp
-    title: test/yukicoder/4862.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2587.test.cpp
-    title: test/yukicoder/2587.test.cpp
   isVerificationFile: false
   path: toptree/distancesum.cpp
   requiredBy: []
   timestamp: '2020-09-01 16:43:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2636.test.cpp
   - test/yukicoder/4862.test.cpp

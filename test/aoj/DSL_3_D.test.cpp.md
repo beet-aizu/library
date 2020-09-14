@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/rangeslide.cpp
+    title: datastructure/rangeslide.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D
@@ -34,18 +42,11 @@ data:
     }\n"
   dependsOn:
   - datastructure/rangeslide.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/rangeslide.cpp
-    title: datastructure/rangeslide.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DSL_3_D.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DSL_3_D.test.cpp
 layout: document

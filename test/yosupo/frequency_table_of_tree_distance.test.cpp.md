@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tree/centroid.cpp
+    title: tree/centroid.cpp
+  - icon: ':heavy_check_mark:'
+    path: tools/fixpoint.cpp
+    title: tools/fixpoint.cpp
+  - icon: ':heavy_check_mark:'
+    path: convolution/fastfouriertransform.cpp
+    title: convolution/fastfouriertransform.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -96,24 +110,11 @@ data:
   - tree/centroid.cpp
   - tools/fixpoint.cpp
   - convolution/fastfouriertransform.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tree/centroid.cpp
-    title: tree/centroid.cpp
-  - icon: ':heavy_check_mark:'
-    path: tools/fixpoint.cpp
-    title: tools/fixpoint.cpp
-  - icon: ':heavy_check_mark:'
-    path: convolution/fastfouriertransform.cpp
-    title: convolution/fastfouriertransform.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/frequency_table_of_tree_distance.test.cpp
   requiredBy: []
   timestamp: '2020-05-28 14:30:55+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/frequency_table_of_tree_distance.test.cpp
 layout: document

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/kdtree.cpp
+    title: datastructure/kdtree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
@@ -48,18 +56,11 @@ data:
     \ 0;\n}\n"
   dependsOn:
   - datastructure/kdtree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/kdtree.cpp
-    title: datastructure/kdtree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DSL_2_C.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_C.test.cpp
 layout: document

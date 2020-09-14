@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: string/zalgorithm.cpp
+    title: string/zalgorithm.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -25,18 +33,11 @@ data:
     \  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - string/zalgorithm.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: string/zalgorithm.cpp
-    title: string/zalgorithm.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/zalgorithm.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 17:24:05+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/zalgorithm.test.cpp
 layout: document

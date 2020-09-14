@@ -638,7 +638,7 @@ data:
       title: tree/eulertourforvertex.cpp
     - icon: ':heavy_check_mark:'
       path: tree/heavylightdecomposition.cpp
-      title: tree/heavylightdecomposition.cpp
+      title: Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
       path: tree/lca.cpp
       title: tree/lca.cpp

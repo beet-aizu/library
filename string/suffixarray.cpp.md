@@ -1,5 +1,37 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: string/longestcommonprefix.cpp
+    title: string/longestcommonprefix.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3033.test.cpp
+    title: test/aoj/3033.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2644.test.cpp
+    title: test/aoj/2644.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3063.test.cpp
+    title: test/aoj/3063.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2711.test.cpp
+    title: test/aoj/2711.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_14_D.test.cpp
+    title: test/aoj/ALDS1_14_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3112.test.cpp
+    title: test/aoj/3112.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/suffixarray.test.cpp
+    title: test/yosupo/suffixarray.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/number_of_substrings.test.cpp
+    title: test/yosupo/number_of_substrings.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"string/suffixarray.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -49,43 +81,12 @@ data:
     \  }\n};\n//END CUT HERE\n\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n};\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: string/longestcommonprefix.cpp
-    title: string/longestcommonprefix.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3033.test.cpp
-    title: test/aoj/3033.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2644.test.cpp
-    title: test/aoj/2644.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3063.test.cpp
-    title: test/aoj/3063.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2711.test.cpp
-    title: test/aoj/2711.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_D.test.cpp
-    title: test/aoj/ALDS1_14_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3112.test.cpp
-    title: test/aoj/3112.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/suffixarray.test.cpp
-    title: test/yosupo/suffixarray.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/number_of_substrings.test.cpp
-    title: test/yosupo/number_of_substrings.test.cpp
   isVerificationFile: false
   path: string/suffixarray.cpp
   requiredBy:
   - string/longestcommonprefix.cpp
   timestamp: '2019-12-26 23:10:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3033.test.cpp
   - test/aoj/2644.test.cpp

@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"datastructure/convexhulltrickwithindex.cpp\"\n#include<bits/stdc++.h>\n\
@@ -74,15 +79,11 @@ data:
     \ \"<<bs+p.first<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified\
     \ on 2019/05/14\n  https://codeforces.com/contest/1137/problem/E\n*/\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/convexhulltrickwithindex.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: datastructure/convexhulltrickwithindex.cpp
 layout: document

@@ -1,5 +1,28 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP1_11_D.test.cpp
+    title: test/aoj/ITP1_11_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP1_11_A.test.cpp
+    title: test/aoj/ITP1_11_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP1_11_C.test.cpp
+    title: test/aoj/ITP1_11_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1197.test.cpp
+    title: test/aoj/1197.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0502.test.cpp
+    title: test/aoj/0502.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP1_11_B.test.cpp
+    title: test/aoj/ITP1_11_B.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tools/dice.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -40,33 +63,11 @@ data:
     \      res.push_back(t);\n      t.roll('E');\n    }\n  }\n  return res;\n}\n//END\
     \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ITP1_11_D.test.cpp
-    title: test/aoj/ITP1_11_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ITP1_11_A.test.cpp
-    title: test/aoj/ITP1_11_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ITP1_11_C.test.cpp
-    title: test/aoj/ITP1_11_C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1197.test.cpp
-    title: test/aoj/1197.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0502.test.cpp
-    title: test/aoj/0502.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ITP1_11_B.test.cpp
-    title: test/aoj/ITP1_11_B.test.cpp
   isVerificationFile: false
   path: tools/dice.cpp
   requiredBy: []
   timestamp: '2019-12-17 20:42:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/ITP1_11_D.test.cpp
   - test/aoj/ITP1_11_A.test.cpp

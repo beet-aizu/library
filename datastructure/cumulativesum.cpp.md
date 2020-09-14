@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/static_range_sum.test.cpp
+    title: test/yosupo/static_range_sum.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"datastructure/cumulativesum.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -17,18 +25,11 @@ data:
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/static_range_sum.test.cpp
-    title: test/yosupo/static_range_sum.test.cpp
   isVerificationFile: false
   path: datastructure/cumulativesum.cpp
   requiredBy: []
   timestamp: '2020-04-13 16:26:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/static_range_sum.test.cpp
 documentation_of: datastructure/cumulativesum.cpp

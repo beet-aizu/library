@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/enumerate_triangles.test.cpp
+    title: test/yosupo/enumerate_triangles.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"graph/triangle.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -27,18 +35,11 @@ data:
     \      for(int z:H[x]) used[z]=0;\n    }\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/enumerate_triangles.test.cpp
-    title: test/yosupo/enumerate_triangles.test.cpp
   isVerificationFile: false
   path: graph/triangle.cpp
   requiredBy: []
   timestamp: '2020-05-07 17:33:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/enumerate_triangles.test.cpp
 documentation_of: graph/triangle.cpp

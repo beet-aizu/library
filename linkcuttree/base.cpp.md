@@ -1,5 +1,55 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: linkcuttree/path.cpp
+    title: linkcuttree/path.cpp
+  - icon: ':heavy_check_mark:'
+    path: linkcuttree/farthest.cpp
+    title: linkcuttree/farthest.cpp
+  - icon: ':heavy_check_mark:'
+    path: linkcuttree/subtree.cpp
+    title: linkcuttree/subtree.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1595.linkcuttree.test.cpp
+    title: test/aoj/1595.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_D.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_D.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_A.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_A.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_E.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_E.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2450.linkcuttree.test.cpp
+    title: test/aoj/2450.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3120.test.cpp
+    title: test/aoj/3120.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0367.linkcuttree.test.cpp
+    title: test/aoj/0367.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/lca.linkcuttree.test.cpp
+    title: test/yosupo/lca.linkcuttree.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"linkcuttree/base.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -75,54 +125,6 @@ data:
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: linkcuttree/path.cpp
-    title: linkcuttree/path.cpp
-  - icon: ':heavy_check_mark:'
-    path: linkcuttree/farthest.cpp
-    title: linkcuttree/farthest.cpp
-  - icon: ':heavy_check_mark:'
-    path: linkcuttree/subtree.cpp
-    title: linkcuttree/subtree.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1595.linkcuttree.test.cpp
-    title: test/aoj/1595.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_D.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_D.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_A.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_E.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_E.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2450.linkcuttree.test.cpp
-    title: test/aoj/2450.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3120.test.cpp
-    title: test/aoj/3120.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0367.linkcuttree.test.cpp
-    title: test/aoj/0367.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/lca.linkcuttree.test.cpp
-    title: test/yosupo/lca.linkcuttree.test.cpp
   isVerificationFile: false
   path: linkcuttree/base.cpp
   requiredBy:
@@ -131,7 +133,6 @@ data:
   - linkcuttree/subtree.cpp
   timestamp: '2020-07-16 18:11:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp
   - test/aoj/GRL_5_D.linkcuttree.test.cpp

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: flow/fordfulkerson.cpp
+    title: flow/fordfulkerson.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
@@ -34,18 +42,11 @@ data:
     \  G.add_edge(u,v,c);\n  }\n  cout<<G.flow(0,V-1)<<endl;\n  return 0;\n}\n"
   dependsOn:
   - flow/fordfulkerson.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: flow/fordfulkerson.cpp
-    title: flow/fordfulkerson.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_6_A.fordfulkerson.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:21:09+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_6_A.fordfulkerson.test.cpp
 layout: document

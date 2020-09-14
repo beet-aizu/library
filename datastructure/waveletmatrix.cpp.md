@@ -1,5 +1,34 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2674.test.cpp
+    title: test/aoj/2674.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3063.test.cpp
+    title: test/aoj/3063.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1549.test.cpp
+    title: test/aoj/1549.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1937.test.cpp
+    title: test/yukicoder/1937.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1732.test.cpp
+    title: test/yukicoder/1732.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2147.test.cpp
+    title: test/yukicoder/2147.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3227.test.cpp
+    title: test/yukicoder/3227.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/range_kth_smallest.test.cpp
+    title: test/yosupo/range_kth_smallest.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: docs/waveletmatrix.md
@@ -115,39 +144,11 @@ data:
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2674.test.cpp
-    title: test/aoj/2674.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3063.test.cpp
-    title: test/aoj/3063.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1549.test.cpp
-    title: test/aoj/1549.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1937.test.cpp
-    title: test/yukicoder/1937.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1732.test.cpp
-    title: test/yukicoder/1732.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2147.test.cpp
-    title: test/yukicoder/2147.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3227.test.cpp
-    title: test/yukicoder/3227.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/range_kth_smallest.test.cpp
-    title: test/yosupo/range_kth_smallest.test.cpp
   isVerificationFile: false
   path: datastructure/waveletmatrix.cpp
   requiredBy: []
   timestamp: '2020-02-23 20:10:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2674.test.cpp
   - test/aoj/3063.test.cpp

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: geometry/geometry.cpp
+    title: geometry/geometry.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B
@@ -206,18 +214,11 @@ data:
     \  }\n  return 0;\n}\n"
   dependsOn:
   - geometry/geometry.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geometry/geometry.cpp
-    title: geometry/geometry.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/geometry/CGL_2_B.test.cpp
   requiredBy: []
   timestamp: '2019-12-17 20:13:07+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_2_B.test.cpp
 layout: document

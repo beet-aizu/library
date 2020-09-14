@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2646.test.cpp
+    title: test/aoj/2646.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/associative_array.test.cpp
+    title: test/yosupo/associative_array.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"datastructure/pb_ds_cc_hash_table.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -13,21 +24,11 @@ data:
     \ U, H>;\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2646.test.cpp
-    title: test/aoj/2646.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/associative_array.test.cpp
-    title: test/yosupo/associative_array.test.cpp
   isVerificationFile: false
   path: datastructure/pb_ds_cc_hash_table.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:56:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2646.test.cpp
   - test/yosupo/associative_array.test.cpp

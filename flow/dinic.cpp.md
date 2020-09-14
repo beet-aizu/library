@@ -1,5 +1,34 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: flow/leastflow.cpp
+    title: flow/leastflow.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2313.test.cpp
+    title: test/aoj/2313.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3047.test.cpp
+    title: test/aoj/3047.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2328.test.cpp
+    title: test/aoj/2328.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1599.test.cpp
+    title: test/aoj/1599.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1615.test.cpp
+    title: test/aoj/1615.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3058.test.cpp
+    title: test/aoj/3058.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_6_A.test.cpp
+    title: test/aoj/GRL_6_A.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"flow/dinic.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -57,40 +86,12 @@ data:
     \    e.cap+=f;\n    return flow(s,t,f);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: flow/leastflow.cpp
-    title: flow/leastflow.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2313.test.cpp
-    title: test/aoj/2313.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3047.test.cpp
-    title: test/aoj/3047.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2328.test.cpp
-    title: test/aoj/2328.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1599.test.cpp
-    title: test/aoj/1599.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1615.test.cpp
-    title: test/aoj/1615.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3058.test.cpp
-    title: test/aoj/3058.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_6_A.test.cpp
-    title: test/aoj/GRL_6_A.test.cpp
   isVerificationFile: false
   path: flow/dinic.cpp
   requiredBy:
   - flow/leastflow.cpp
   timestamp: '2019-12-26 22:42:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2313.test.cpp
   - test/aoj/3047.test.cpp

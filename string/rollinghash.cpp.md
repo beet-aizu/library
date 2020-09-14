@@ -1,5 +1,31 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: string/rectanglehash.cpp
+    title: string/rectanglehash.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1312.test.cpp
+    title: test/aoj/1312.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2444.test.cpp
+    title: test/aoj/2444.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_14_C.test.cpp
+    title: test/aoj/ALDS1_14_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_14_B.test.cpp
+    title: test/aoj/ALDS1_14_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2292.test.cpp
+    title: test/aoj/2292.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0399.test.cpp
+    title: test/yukicoder/0399.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"string/rollinghash.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -24,37 +50,12 @@ data:
     \    return res>=MOD?res-MOD:res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: string/rectanglehash.cpp
-    title: string/rectanglehash.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1312.test.cpp
-    title: test/aoj/1312.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2444.test.cpp
-    title: test/aoj/2444.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_C.test.cpp
-    title: test/aoj/ALDS1_14_C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_B.test.cpp
-    title: test/aoj/ALDS1_14_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2292.test.cpp
-    title: test/aoj/2292.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0399.test.cpp
-    title: test/yukicoder/0399.test.cpp
   isVerificationFile: false
   path: string/rollinghash.cpp
   requiredBy:
   - string/rectanglehash.cpp
   timestamp: '2019-10-28 14:24:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/1312.test.cpp
   - test/aoj/2444.test.cpp

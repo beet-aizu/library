@@ -1,5 +1,49 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_I.test.cpp
+    title: test/aoj/DSL_2_I.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_H.test.cpp
+    title: test/aoj/DSL_2_H.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_G.test.cpp
+    title: test/aoj/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2450.test.cpp
+    title: test/aoj/2450.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2871.test.cpp
+    title: test/aoj/2871.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3073.test.cpp
+    title: test/aoj/3073.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2563.test.cpp
+    title: test/aoj/2563.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2667.test.cpp
+    title: test/aoj/2667.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.test.cpp
+    title: test/aoj/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2359.test.cpp
+    title: test/aoj/2359.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3035.test.cpp
+    title: test/aoj/3035.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3405.test.cpp
+    title: test/yukicoder/3405.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/range_affine_range_sum.test.cpp
+    title: test/yosupo/range_affine_range_sum.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"segtree/basic/chien.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -87,54 +131,11 @@ data:
     ;\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2019/10/28\n  https://codeforces.com/contest/1179/problem/C\n\
     */\n\nsigned main(){\n  CFR569_C();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_I.test.cpp
-    title: test/aoj/DSL_2_I.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_H.test.cpp
-    title: test/aoj/DSL_2_H.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_G.test.cpp
-    title: test/aoj/DSL_2_G.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2450.test.cpp
-    title: test/aoj/2450.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2871.test.cpp
-    title: test/aoj/2871.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3073.test.cpp
-    title: test/aoj/3073.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2563.test.cpp
-    title: test/aoj/2563.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2667.test.cpp
-    title: test/aoj/2667.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_F.test.cpp
-    title: test/aoj/DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2359.test.cpp
-    title: test/aoj/2359.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3035.test.cpp
-    title: test/aoj/3035.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3405.test.cpp
-    title: test/yukicoder/3405.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/range_affine_range_sum.test.cpp
-    title: test/yosupo/range_affine_range_sum.test.cpp
   isVerificationFile: false
   path: segtree/basic/chien.cpp
   requiredBy: []
   timestamp: '2019-12-17 13:36:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DSL_2_I.test.cpp
   - test/aoj/DSL_2_H.test.cpp

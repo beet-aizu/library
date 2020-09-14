@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
+    title: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"string/knuthmorrispratt.cpp\"\n\n#ifndef call_from_test\n\
@@ -53,18 +61,11 @@ data:
     \  return 0;\n}\n/*\n  verified on 2020/08/20\n  https://atcoder.jp/contests/abc135/tasks/abc135_f\n\
     */\n\nsigned main(){\n  ABC135_F();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
-    title: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
   isVerificationFile: false
   path: string/knuthmorrispratt.cpp
   requiredBy: []
   timestamp: '2020-08-20 15:23:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
 documentation_of: string/knuthmorrispratt.cpp

@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"geometry/3D/geometry3D.cpp\"\n#include<bits/stdc++.h>\n\
@@ -151,15 +156,11 @@ data:
     \  return 0;\n}\n\n/*\n  verified on 2019/10/22\n  https://vjudge.net/problem/HDU-3662\n\
     */\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: geometry/3D/geometry3D.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:37:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: geometry/3D/geometry3D.cpp
 layout: document

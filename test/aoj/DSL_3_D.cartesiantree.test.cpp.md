@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/cartesiantree.cpp
+    title: datastructure/cartesiantree.cpp
+  - icon: ':heavy_check_mark:'
+    path: tree/lca.cpp
+    title: tree/lca.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D
@@ -66,21 +77,11 @@ data:
   dependsOn:
   - datastructure/cartesiantree.cpp
   - tree/lca.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/cartesiantree.cpp
-    title: datastructure/cartesiantree.cpp
-  - icon: ':heavy_check_mark:'
-    path: tree/lca.cpp
-    title: tree/lca.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DSL_3_D.cartesiantree.test.cpp
   requiredBy: []
   timestamp: '2020-07-27 11:21:26+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DSL_3_D.cartesiantree.test.cpp
 layout: document

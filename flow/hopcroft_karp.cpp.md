@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
+    title: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0424.test.cpp
+    title: test/aoj/0424.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bipartitematching.test.cpp
+    title: test/yosupo/bipartitematching.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"flow/hopcroft_karp.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -41,24 +55,11 @@ data:
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
-    title: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0424.test.cpp
-    title: test/aoj/0424.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/bipartitematching.test.cpp
-    title: test/yosupo/bipartitematching.test.cpp
   isVerificationFile: false
   path: flow/hopcroft_karp.cpp
   requiredBy: []
   timestamp: '2019-12-26 22:36:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_7_A.hopcroft_karp.test.cpp
   - test/aoj/0424.test.cpp

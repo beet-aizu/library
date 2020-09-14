@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
@@ -181,15 +186,11 @@ data:
     \      }\n    }\n    auto vx=rt.build();\n    for(int x:vx) printf(\"%d\\n\",x);\n\
     \  }\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/types/offline.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: segtree/types/offline.cpp
 layout: document

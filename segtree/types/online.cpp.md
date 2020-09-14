@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
@@ -159,15 +164,11 @@ data:
     \    u--;\n        printf(\"%d\\n\",rt.count(et.ls[u],et.rs[u]));\n      }\n \
     \   }\n  }\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: segtree/types/online.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: segtree/types/online.cpp
 layout: document

@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: algorithm/mo.cpp
+    title: algorithm/mo.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_D.test.cpp
+    title: test/aoj/GRL_5_D.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tree/eulertourforedge.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -34,22 +45,12 @@ data:
     \  void update(int v,T x,G g){\n    g(ds[v], x);\n    g(us[v],-x);\n  }\n};\n\
     //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: algorithm/mo.cpp
-    title: algorithm/mo.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_D.test.cpp
-    title: test/aoj/GRL_5_D.test.cpp
   isVerificationFile: false
   path: tree/eulertourforedge.cpp
   requiredBy:
   - algorithm/mo.cpp
   timestamp: '2019-12-27 08:56:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_5_D.test.cpp
 documentation_of: tree/eulertourforedge.cpp

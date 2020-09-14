@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: io/precision.cpp
+    title: io/precision.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-6
@@ -27,18 +35,11 @@ data:
     \  }\n\n  cout<<ans<<endl;\n  return 0;\n}\n"
   dependsOn:
   - io/precision.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: io/precision.cpp
-    title: io/precision.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/ALDS1_15_B.test.cpp
   requiredBy: []
   timestamp: '2020-08-07 15:47:54+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_15_B.test.cpp
 layout: document

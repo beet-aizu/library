@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2324.test.cpp
+    title: test/aoj/2324.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/multipleeuleriantrail.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -36,18 +44,11 @@ data:
     \ us[u]=1;\n      que.emplace(u);\n    }\n  }\n  return false;\n}\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2324.test.cpp
-    title: test/aoj/2324.test.cpp
   isVerificationFile: false
   path: graph/multipleeuleriantrail.cpp
   requiredBy: []
   timestamp: '2019-09-22 14:49:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2324.test.cpp
 documentation_of: graph/multipleeuleriantrail.cpp

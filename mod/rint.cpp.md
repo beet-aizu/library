@@ -1,5 +1,22 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: mod/factorial.cpp
+    title: mod/factorial.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0422.test.cpp
+    title: test/aoj/0422.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4569.test.cpp
+    title: test/yukicoder/4569.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1504.test.cpp
+    title: test/yukicoder/1504.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"mod/rint.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
@@ -41,28 +58,12 @@ data:
     \ os;}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n\
     }\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: mod/factorial.cpp
-    title: mod/factorial.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0422.test.cpp
-    title: test/aoj/0422.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4569.test.cpp
-    title: test/yukicoder/4569.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1504.test.cpp
-    title: test/yukicoder/1504.test.cpp
   isVerificationFile: false
   path: mod/rint.cpp
   requiredBy:
   - mod/factorial.cpp
   timestamp: '2020-03-12 17:15:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0422.test.cpp
   - test/yukicoder/4569.test.cpp

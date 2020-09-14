@@ -1,5 +1,64 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/persistent/array.cpp
+    title: bbst/rbst/persistent/array.cpp
+  - icon: ':warning:'
+    path: bbst/rbst/persistent/lazy.cpp
+    title: bbst/rbst/persistent/lazy.cpp
+  - icon: ':warning:'
+    path: bbst/rbst/persistent/ushi.cpp
+    title: bbst/rbst/persistent/ushi.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/dual.cpp
+    title: bbst/rbst/basic/dual.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/array.cpp
+    title: bbst/rbst/basic/array.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/lazy.cpp
+    title: bbst/rbst/basic/lazy.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/ushi.cpp
+    title: bbst/rbst/basic/ushi.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2890.test.cpp
+    title: test/aoj/2890.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_E.bbst.test.cpp
+    title: test/aoj/DSL_2_E.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_I.bbst.test.cpp
+    title: test/aoj/DSL_2_I.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_D.bbst.test.cpp
+    title: test/aoj/DSL_2_D.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_A.bbst.test.cpp
+    title: test/aoj/DSL_2_A.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_G.bbst.test.cpp
+    title: test/aoj/DSL_2_G.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_H.bbst.test.cpp
+    title: test/aoj/DSL_2_H.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.bbst.test.cpp
+    title: test/aoj/DSL_2_F.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1579.test.cpp
+    title: test/aoj/1579.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1508.test.cpp
+    title: test/aoj/1508.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/persistent_queue.test.cpp
+    title: test/yosupo/persistent_queue.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"bbst/rbst/basic/base.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -76,63 +135,6 @@ data:
     \ LIM>::pool;\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/persistent/array.cpp
-    title: bbst/rbst/persistent/array.cpp
-  - icon: ':warning:'
-    path: bbst/rbst/persistent/lazy.cpp
-    title: bbst/rbst/persistent/lazy.cpp
-  - icon: ':warning:'
-    path: bbst/rbst/persistent/ushi.cpp
-    title: bbst/rbst/persistent/ushi.cpp
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/dual.cpp
-    title: bbst/rbst/basic/dual.cpp
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/array.cpp
-    title: bbst/rbst/basic/array.cpp
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/lazy.cpp
-    title: bbst/rbst/basic/lazy.cpp
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/ushi.cpp
-    title: bbst/rbst/basic/ushi.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2890.test.cpp
-    title: test/aoj/2890.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_E.bbst.test.cpp
-    title: test/aoj/DSL_2_E.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_I.bbst.test.cpp
-    title: test/aoj/DSL_2_I.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_D.bbst.test.cpp
-    title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_A.bbst.test.cpp
-    title: test/aoj/DSL_2_A.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_G.bbst.test.cpp
-    title: test/aoj/DSL_2_G.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_H.bbst.test.cpp
-    title: test/aoj/DSL_2_H.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_F.bbst.test.cpp
-    title: test/aoj/DSL_2_F.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1579.test.cpp
-    title: test/aoj/1579.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1508.test.cpp
-    title: test/aoj/1508.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/persistent_queue.test.cpp
-    title: test/yosupo/persistent_queue.test.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/base.cpp
   requiredBy:
@@ -145,7 +147,6 @@ data:
   - bbst/rbst/basic/ushi.cpp
   timestamp: '2020-03-22 15:37:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2890.test.cpp
   - test/aoj/DSL_2_E.bbst.test.cpp

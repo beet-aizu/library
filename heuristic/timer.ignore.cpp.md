@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"heuristic/timer.ignore.cpp\"\n#include<bits/stdc++.h>\n\
@@ -30,15 +35,11 @@ data:
     \  for(int i=0;i<1000000;i++) d+=timer.get();\n  auto stop2=clock();\n\n  cout<<(double)(stop1-start1)/CLOCKS_PER_SEC<<endl;\n\
     \  cout<<(double)(stop2-start2)/CLOCKS_PER_SEC<<endl;\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: heuristic/timer.ignore.cpp
   requiredBy: []
   timestamp: '2020-09-04 08:31:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: heuristic/timer.ignore.cpp
 layout: document

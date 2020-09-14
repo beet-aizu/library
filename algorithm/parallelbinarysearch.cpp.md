@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2563.test.cpp
+    title: test/aoj/2563.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"algorithm/parallelbinarysearch.cpp\"\n\n#ifndef call_from_test\n\
@@ -26,18 +34,11 @@ data:
     \ }\n      C[i].clear();\n    }\n  }\n  return R;\n}\n//END CUT HERE\n#ifndef\
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2563.test.cpp
-    title: test/aoj/2563.test.cpp
   isVerificationFile: false
   path: algorithm/parallelbinarysearch.cpp
   requiredBy: []
   timestamp: '2020-03-12 16:36:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2563.test.cpp
 documentation_of: algorithm/parallelbinarysearch.cpp

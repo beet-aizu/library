@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0233.test.cpp
+    title: test/aoj/0233.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1580.test.cpp
+    title: test/yukicoder/1580.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"math/convertbase.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -17,21 +28,11 @@ data:
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0233.test.cpp
-    title: test/aoj/0233.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1580.test.cpp
-    title: test/yukicoder/1580.test.cpp
   isVerificationFile: false
   path: math/convertbase.cpp
   requiredBy: []
   timestamp: '2020-02-15 15:47:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0233.test.cpp
   - test/yukicoder/1580.test.cpp

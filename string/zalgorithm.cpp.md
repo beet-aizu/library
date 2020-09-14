@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: string/run.cpp
+    title: string/run.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/runenumerate.test.cpp
+    title: test/yosupo/runenumerate.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/zalgorithm.test.cpp
+    title: test/yosupo/zalgorithm.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"string/zalgorithm.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -19,25 +33,12 @@ data:
     \  }\n  return as;\n}\nvector<int> zalgorithm(string s){\n  return zalgorithm(vector<char>(s.begin(),s.end()));\n\
     }\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: string/run.cpp
-    title: string/run.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/runenumerate.test.cpp
-    title: test/yosupo/runenumerate.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/zalgorithm.test.cpp
-    title: test/yosupo/zalgorithm.test.cpp
   isVerificationFile: false
   path: string/zalgorithm.cpp
   requiredBy:
   - string/run.cpp
   timestamp: '2020-02-15 17:46:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/runenumerate.test.cpp
   - test/yosupo/zalgorithm.test.cpp

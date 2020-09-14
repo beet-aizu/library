@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2334.test.cpp
+    title: test/aoj/geometry/2334.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0423.test.cpp
+    title: test/aoj/0423.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/shortest_path.test.cpp
+    title: test/yosupo/shortest_path.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/dijkstra.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -35,24 +49,11 @@ data:
     \ res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return\
     \ 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2334.test.cpp
-    title: test/aoj/geometry/2334.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0423.test.cpp
-    title: test/aoj/0423.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/shortest_path.test.cpp
-    title: test/yosupo/shortest_path.test.cpp
   isVerificationFile: false
   path: graph/dijkstra.cpp
   requiredBy: []
   timestamp: '2020-05-05 14:35:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/geometry/2334.test.cpp
   - test/aoj/0423.test.cpp

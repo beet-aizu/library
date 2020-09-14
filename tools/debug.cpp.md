@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
@@ -19,15 +24,11 @@ data:
     \ CUT HERE\n//INSERT ABOVE HERE\nsigned main(){\n  int a=42;\n  string s=\"UKU\"\
     ;\n  char c='$';\n  debug(a,100,s,c);\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tools/debug.cpp
   requiredBy: []
   timestamp: '2019-12-10 14:46:35+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: tools/debug.cpp
 layout: document

@@ -1,5 +1,43 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: toptree/distancesum.cpp
+    title: toptree/distancesum.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1595.toptree.test.cpp
+    title: test/aoj/1595.toptree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3037.test.cpp
+    title: test/aoj/3037.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3143.test.cpp
+    title: test/aoj/3143.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2636.test.cpp
+    title: test/aoj/2636.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4862.test.cpp
+    title: test/yukicoder/4862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2587.test.cpp
+    title: test/yukicoder/2587.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3453.test.cpp
+    title: test/yukicoder/3453.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4706.test.cpp
+    title: test/yukicoder/4706.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -248,49 +286,12 @@ data:
     \ LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_c;\n//END CUT HERE\n#ifndef\
     \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: toptree/distancesum.cpp
-    title: toptree/distancesum.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1595.toptree.test.cpp
-    title: test/aoj/1595.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3037.test.cpp
-    title: test/aoj/3037.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3143.test.cpp
-    title: test/aoj/3143.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2636.test.cpp
-    title: test/aoj/2636.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4862.test.cpp
-    title: test/yukicoder/4862.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2587.test.cpp
-    title: test/yukicoder/2587.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3453.test.cpp
-    title: test/yukicoder/3453.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4706.test.cpp
-    title: test/yukicoder/4706.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   isVerificationFile: false
   path: toptree/toptree.cpp
   requiredBy:
   - toptree/distancesum.cpp
   timestamp: '2020-09-01 16:43:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/1595.toptree.test.cpp
   - test/aoj/3037.test.cpp

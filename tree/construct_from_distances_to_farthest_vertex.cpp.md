@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tree/construct_from_distances_to_farthest_vertex.cpp\"\n\
@@ -44,15 +49,11 @@ data:
     \    return bs;\n  }\n};\n/*\n  verified on 2019/12/10\n  https://vjudge.net/problem/TopCoder-14468\n\
     */\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: tree/construct_from_distances_to_farthest_vertex.cpp
   requiredBy: []
   timestamp: '2019-12-10 15:04:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: tree/construct_from_distances_to_farthest_vertex.cpp
 layout: document

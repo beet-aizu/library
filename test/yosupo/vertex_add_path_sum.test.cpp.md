@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tree/heavylightdecomposition.cpp
+    title: Heavy Light Decomposition
+  - icon: ':heavy_check_mark:'
+    path: datastructure/binaryindexedtree.cpp
+    title: datastructure/binaryindexedtree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
@@ -7,10 +18,9 @@ data:
     \ \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"tree/heavylightdecomposition.cpp\"\
     \n\n#line 3 \"tree/heavylightdecomposition.cpp\"\nusing namespace std;\n#endif\n\
-    /*\n * @docs docs/heavylightdecomposition.md\n * @see http://beet-aizu.hatenablog.com/entry/2017/12/12/235950\n\
-    \ */\n//BEGIN CUT HERE\nclass HLD {\nprivate:\n  void dfs_sz(int v) {\n    for(int\
-    \ &u:G[v])\n      if(u==par[v]) swap(u,G[v].back());\n    if(~par[v]) G[v].pop_back();\n\
-    \n    for(int &u:G[v]){\n      par[u]=v;\n      dep[u]=dep[v]+1;\n      dfs_sz(u);\n\
+    //BEGIN CUT HERE\nclass HLD {\nprivate:\n  void dfs_sz(int v) {\n    for(int &u:G[v])\n\
+    \      if(u==par[v]) swap(u,G[v].back());\n    if(~par[v]) G[v].pop_back();\n\n\
+    \    for(int &u:G[v]){\n      par[u]=v;\n      dep[u]=dep[v]+1;\n      dfs_sz(u);\n\
     \      sub[v]+=sub[u];\n      if(sub[u]>sub[G[v][0]]) swap(u,G[v][0]);\n    }\n\
     \  }\n\n  void dfs_hld(int v,int c,int &pos) {\n    vid[v]=pos++;\n    inv[vid[v]]=v;\n\
     \    type[v]=c;\n    for(int u:G[v]){\n      if(u==par[v]) continue;\n      head[u]=(u==G[v][0]?head[v]:u);\n\
@@ -73,21 +83,11 @@ data:
   dependsOn:
   - tree/heavylightdecomposition.cpp
   - datastructure/binaryindexedtree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tree/heavylightdecomposition.cpp
-    title: tree/heavylightdecomposition.cpp
-  - icon: ':heavy_check_mark:'
-    path: datastructure/binaryindexedtree.cpp
-    title: datastructure/binaryindexedtree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-08-20 15:14:35+09:00'
+  timestamp: '2020-09-14 21:32:49+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_path_sum.test.cpp
 layout: document

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tools/fastio.cpp
+    title: tools/fastio.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/many_aplusb
@@ -19,18 +27,11 @@ data:
     \  }\n  return 0;\n}\n"
   dependsOn:
   - tools/fastio.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tools/fastio.cpp
-    title: tools/fastio.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/many_aplusb.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/many_aplusb.test.cpp
 layout: document

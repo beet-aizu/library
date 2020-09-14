@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2286.test.cpp
+    title: test/aoj/2286.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1665.test.cpp
+    title: test/yukicoder/1665.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"math/totient_table.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -15,21 +26,11 @@ data:
     }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2286.test.cpp
-    title: test/aoj/2286.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1665.test.cpp
-    title: test/yukicoder/1665.test.cpp
   isVerificationFile: false
   path: math/totient_table.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2286.test.cpp
   - test/yukicoder/1665.test.cpp

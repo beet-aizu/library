@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: math/factorize.cpp
+    title: math/factorize.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
@@ -23,18 +31,11 @@ data:
     \ cout<<\" \"<<p.first;\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - math/factorize.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/factorize.cpp
-    title: math/factorize.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
   timestamp: '2020-05-06 18:02:33+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_A.test.cpp
 layout: document

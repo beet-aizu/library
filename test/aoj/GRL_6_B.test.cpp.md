@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: flow/primaldual.cpp
+    title: flow/primaldual.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
@@ -58,18 +66,11 @@ data:
     \  cout<<(ok?res:-1)<<endl;\n  return 0;\n}\n"
   dependsOn:
   - flow/primaldual.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: flow/primaldual.cpp
-    title: flow/primaldual.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_6_B.test.cpp
   requiredBy: []
   timestamp: '2020-09-14 19:56:22+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_6_B.test.cpp
 layout: document

@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3069.lichao.test.cpp
+    title: test/aoj/3069.lichao.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/line_add_get_min.test.cpp
+    title: test/yosupo/line_add_get_min.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"segtree/cht/lichao.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -49,21 +60,11 @@ data:
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3069.lichao.test.cpp
-    title: test/aoj/3069.lichao.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/line_add_get_min.test.cpp
-    title: test/yosupo/line_add_get_min.test.cpp
   isVerificationFile: false
   path: segtree/cht/lichao.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:15:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3069.lichao.test.cpp
   - test/yosupo/line_add_get_min.test.cpp

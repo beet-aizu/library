@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph/arborescence_tarjan.cpp
+    title: graph/arborescence_tarjan.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B
@@ -64,18 +72,11 @@ data:
     \    G.add_edge(s,t,w);\n  }\n\n  cout<<G.build(r)<<endl;\n  return 0;\n}\n"
   dependsOn:
   - graph/arborescence_tarjan.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graph/arborescence_tarjan.cpp
-    title: graph/arborescence_tarjan.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_2_B.tarjan.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:21:09+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_2_B.tarjan.test.cpp
 layout: document

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: string/rollinghash.cpp
+    title: string/rollinghash.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
@@ -31,18 +39,11 @@ data:
     \  return 0;\n}\n"
   dependsOn:
   - string/rollinghash.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: string/rollinghash.cpp
-    title: string/rollinghash.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/ALDS1_14_B.test.cpp
   requiredBy: []
   timestamp: '2019-10-28 14:24:34+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_B.test.cpp
 layout: document

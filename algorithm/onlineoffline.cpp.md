@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1950.test.cpp
+    title: test/yukicoder/1950.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1948.test.cpp
+    title: test/yukicoder/1948.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2113.test.cpp
+    title: test/yukicoder/2113.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"algorithm/onlineoffline.cpp\"\n\n#ifndef call_from_test\n\
@@ -37,24 +51,11 @@ data:
     \ HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
     \ 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1950.test.cpp
-    title: test/yukicoder/1950.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1948.test.cpp
-    title: test/yukicoder/1948.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2113.test.cpp
-    title: test/yukicoder/2113.test.cpp
   isVerificationFile: false
   path: algorithm/onlineoffline.cpp
   requiredBy: []
   timestamp: '2020-03-12 16:36:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yukicoder/1950.test.cpp
   - test/yukicoder/1948.test.cpp

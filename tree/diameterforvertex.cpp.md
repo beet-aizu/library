@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0415.test.cpp
+    title: test/aoj/0415.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tree/diameterforvertex.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -53,18 +61,11 @@ data:
     \ 0;\n}\n/*\n  verified on 2019/12/27\n  https://atcoder.jp/contests/arc097/tasks/arc097_d\n\
     */\n\nsigned main(){\n  //ARC097_F();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0415.test.cpp
-    title: test/aoj/0415.test.cpp
   isVerificationFile: false
   path: tree/diameterforvertex.cpp
   requiredBy: []
   timestamp: '2019-12-27 09:03:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0415.test.cpp
 documentation_of: tree/diameterforvertex.cpp

@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
+  - icon: ':heavy_check_mark:'
+    path: segtree/basic/ushi.cpp
+    title: segtree/basic/ushi.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -85,21 +96,11 @@ data:
   dependsOn:
   - mod/mint.cpp
   - segtree/basic/ushi.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: segtree/basic/ushi.cpp
-    title: segtree/basic/ushi.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/point_set_range_composite.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/point_set_range_composite.test.cpp
 layout: document

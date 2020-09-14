@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_6_A.fordfulkerson.test.cpp
+    title: test/aoj/GRL_6_A.fordfulkerson.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"flow/fordfulkerson.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -35,18 +43,11 @@ data:
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n\
     }\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_6_A.fordfulkerson.test.cpp
-    title: test/aoj/GRL_6_A.fordfulkerson.test.cpp
   isVerificationFile: false
   path: flow/fordfulkerson.cpp
   requiredBy: []
   timestamp: '2019-12-10 15:04:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_6_A.fordfulkerson.test.cpp
 documentation_of: flow/fordfulkerson.cpp

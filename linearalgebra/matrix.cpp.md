@@ -1,5 +1,28 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: linearalgebra/tree_theorem.cpp
+    title: linearalgebra/tree_theorem.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/tetrahedra.cpp
+    title: math/tetrahedra.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2060.test.cpp
+    title: test/aoj/2060.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0314.test.cpp
+    title: test/aoj/0314.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1328.test.cpp
+    title: test/aoj/1328.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/matrix_det.test.cpp
+    title: test/yosupo/matrix_det.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"linearalgebra/matrix.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -159,27 +182,6 @@ data:
     */\n\nsigned main(){\n  //ARC050_C();\n  //SPOJ_MIFF();\n  //SPOJ_MPOW();\n  return\
     \ 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: linearalgebra/tree_theorem.cpp
-    title: linearalgebra/tree_theorem.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/tetrahedra.cpp
-    title: math/tetrahedra.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2060.test.cpp
-    title: test/aoj/2060.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0314.test.cpp
-    title: test/aoj/0314.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1328.test.cpp
-    title: test/aoj/1328.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/matrix_det.test.cpp
-    title: test/yosupo/matrix_det.test.cpp
   isVerificationFile: false
   path: linearalgebra/matrix.cpp
   requiredBy:
@@ -187,7 +189,6 @@ data:
   - math/tetrahedra.cpp
   timestamp: '2019-10-29 12:01:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2060.test.cpp
   - test/aoj/0314.test.cpp

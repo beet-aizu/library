@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2294.test.cpp
+    title: test/aoj/2294.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"vector/multi.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
@@ -23,18 +31,11 @@ data:
     \ HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
     \ 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2294.test.cpp
-    title: test/aoj/2294.test.cpp
   isVerificationFile: false
   path: vector/multi.cpp
   requiredBy: []
   timestamp: '2020-04-18 17:56:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2294.test.cpp
 documentation_of: vector/multi.cpp

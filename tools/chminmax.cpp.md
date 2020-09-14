@@ -1,20 +1,7 @@
 ---
 data:
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-  bundledCode: "#line 2 \"tools/chminmax.cpp\"\n\n#ifndef call_from_test\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename\
-    \ T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T1,typename T2> inline void\
-    \ chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline void\
-    \ chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n#ifndef call_from_test\nsigned\
-    \ main(){\n  return 0;\n}\n#endif\n"
-  dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
   - icon: ':warning:'
     path: test/aoj/2432.ignore.cpp
     title: test/aoj/2432.ignore.cpp
@@ -30,7 +17,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
-  extendedVerifiedWith:
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
@@ -118,6 +105,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+  bundledCode: "#line 2 \"tools/chminmax.cpp\"\n\n#ifndef call_from_test\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
+    \ T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename\
+    \ T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n\
+    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T1,typename T2> inline void\
+    \ chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline void\
+    \ chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n#ifndef call_from_test\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
+  dependsOn: []
   isVerificationFile: false
   path: tools/chminmax.cpp
   requiredBy:
@@ -128,7 +130,6 @@ data:
   - graph/nicetree.cpp
   timestamp: '2020-03-12 16:36:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/0596.test.cpp

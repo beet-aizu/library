@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3117.test.cpp
+    title: test/aoj/3117.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0563.test.cpp
+    title: test/aoj/0563.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"bbst/pb_ds_tree.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -19,21 +30,11 @@ data:
     \ key):  return the index of key in tree\n//END CUT HERE\n#ifndef call_from_test\n\
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3117.test.cpp
-    title: test/aoj/3117.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0563.test.cpp
-    title: test/aoj/0563.test.cpp
   isVerificationFile: false
   path: bbst/pb_ds_tree.cpp
   requiredBy: []
   timestamp: '2019-12-26 22:03:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3117.test.cpp
   - test/aoj/0563.test.cpp

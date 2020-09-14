@@ -1,5 +1,31 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: flow/negativeedge.cpp
+    title: flow/negativeedge.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2679.test.cpp
+    title: test/aoj/2679.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_6_B.test.cpp
+    title: test/aoj/GRL_6_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2736.test.cpp
+    title: test/aoj/2736.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2230.test.cpp
+    title: test/aoj/2230.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2627.test.cpp
+    title: test/aoj/2627.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2872.test.cpp
+    title: test/aoj/2872.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"flow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -82,37 +108,12 @@ data:
     \  return 0;\n}\n/*\n  verified on 2019/12/17\n  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b\n\
     */\n\nsigned main(){\n  //geocon2013_B();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: flow/negativeedge.cpp
-    title: flow/negativeedge.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2679.test.cpp
-    title: test/aoj/2679.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_6_B.test.cpp
-    title: test/aoj/GRL_6_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2736.test.cpp
-    title: test/aoj/2736.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2230.test.cpp
-    title: test/aoj/2230.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2627.test.cpp
-    title: test/aoj/2627.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2872.test.cpp
-    title: test/aoj/2872.test.cpp
   isVerificationFile: false
   path: flow/primaldual.cpp
   requiredBy:
   - flow/negativeedge.cpp
   timestamp: '2020-09-14 19:56:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2679.test.cpp
   - test/aoj/GRL_6_B.test.cpp

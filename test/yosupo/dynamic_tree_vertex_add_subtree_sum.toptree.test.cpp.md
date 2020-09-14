@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: toptree/toptree.cpp
+    title: toptree/toptree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
@@ -165,18 +173,11 @@ data:
     \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - toptree/toptree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: toptree/toptree.cpp
-    title: toptree/toptree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   requiredBy: []
   timestamp: '2020-09-01 16:43:17+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
 layout: document

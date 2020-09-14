@@ -1,5 +1,22 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: linearalgebra/tree_theorem.cpp
+    title: linearalgebra/tree_theorem.cpp
+  - icon: ':warning:'
+    path: graph/voronoiminimumspanningtree.cpp
+    title: graph/voronoiminimumspanningtree.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_2_A.test.cpp
+    title: test/aoj/GRL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0403.test.cpp
+    title: test/aoj/0403.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/kruskal.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -33,21 +50,6 @@ data:
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\nint main(){\n  return 0;\n}\n\
     #endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: linearalgebra/tree_theorem.cpp
-    title: linearalgebra/tree_theorem.cpp
-  - icon: ':warning:'
-    path: graph/voronoiminimumspanningtree.cpp
-    title: graph/voronoiminimumspanningtree.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_2_A.test.cpp
-    title: test/aoj/GRL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0403.test.cpp
-    title: test/aoj/0403.test.cpp
   isVerificationFile: false
   path: graph/kruskal.cpp
   requiredBy:
@@ -55,7 +57,6 @@ data:
   - graph/voronoiminimumspanningtree.cpp
   timestamp: '2019-11-21 16:50:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_2_A.test.cpp
   - test/aoj/0403.test.cpp

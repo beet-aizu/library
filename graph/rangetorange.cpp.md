@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4387.test.cpp
+    title: test/yukicoder/4387.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"graph/rangetorange.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -37,18 +45,11 @@ data:
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4387.test.cpp
-    title: test/yukicoder/4387.test.cpp
   isVerificationFile: false
   path: graph/rangetorange.cpp
   requiredBy: []
   timestamp: '2020-08-20 15:14:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yukicoder/4387.test.cpp
 documentation_of: graph/rangetorange.cpp

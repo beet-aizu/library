@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/montmort.cpp
+    title: mod/montmort.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/montmort_number_mod
@@ -24,18 +32,11 @@ data:
     \  return 0;\n}\n"
   dependsOn:
   - mod/montmort.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/montmort.cpp
-    title: mod/montmort.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/montmort_number_mod.test.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:02:53+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/montmort_number_mod.test.cpp
 layout: document

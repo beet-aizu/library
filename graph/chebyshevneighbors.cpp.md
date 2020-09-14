@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0403.test.cpp
+    title: test/aoj/0403.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/chebyshevneighbors.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -52,18 +60,11 @@ data:
     \    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\n//INSERT\
     \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0403.test.cpp
-    title: test/aoj/0403.test.cpp
   isVerificationFile: false
   path: graph/chebyshevneighbors.cpp
   requiredBy: []
   timestamp: '2019-11-21 16:50:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0403.test.cpp
 documentation_of: graph/chebyshevneighbors.cpp

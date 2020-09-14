@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"string/morrispratt.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -39,15 +44,11 @@ data:
     \  verified on 2020/08/20\n  https://atcoder.jp/contests/arc060/tasks/arc060_d\n\
     */\n\nsigned main(){\n  ARC060_F();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: string/morrispratt.cpp
   requiredBy: []
   timestamp: '2020-08-20 15:23:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: string/morrispratt.cpp
 layout: document

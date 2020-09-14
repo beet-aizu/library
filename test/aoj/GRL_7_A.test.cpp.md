@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: flow/bimatch.cpp
+    title: flow/bimatch.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A
@@ -32,18 +40,11 @@ data:
     \   bm.add_edge(x,X+y);\n  }\n  cout<<bm.build()<<endl;\n  return 0;\n}\n"
   dependsOn:
   - flow/bimatch.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: flow/bimatch.cpp
-    title: flow/bimatch.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_7_A.test.cpp
   requiredBy: []
   timestamp: '2019-12-10 15:04:21+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_7_A.test.cpp
 layout: document

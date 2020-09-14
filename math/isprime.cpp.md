@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_1_C.test.cpp
+    title: test/aoj/ALDS1_1_C.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"math/isprime.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -11,18 +19,11 @@ data:
     \  for(T i=2;i*i<=x;i++)\n    if(x%i==0) return 0;\n  return 1;\n}\n//END CUT\
     \ HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_1_C.test.cpp
-    title: test/aoj/ALDS1_1_C.test.cpp
   isVerificationFile: false
   path: math/isprime.cpp
   requiredBy: []
   timestamp: '2020-02-11 11:14:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/ALDS1_1_C.test.cpp
 documentation_of: math/isprime.cpp

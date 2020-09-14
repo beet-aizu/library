@@ -1,5 +1,91 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/3056.test.cpp
+    title: test/aoj/geometry/3056.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_6_A.test.cpp
+    title: test/aoj/geometry/CGL_6_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_7_H.test.cpp
+    title: test/aoj/geometry/CGL_7_H.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_7_E.test.cpp
+    title: test/aoj/geometry/CGL_7_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_1_A.test.cpp
+    title: test/aoj/geometry/CGL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_3_B.test.cpp
+    title: test/aoj/geometry/CGL_3_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_4_C.test.cpp
+    title: test/aoj/geometry/CGL_4_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_2_A.test.cpp
+    title: test/aoj/geometry/CGL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_2_C.test.cpp
+    title: test/aoj/geometry/CGL_2_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/3049.test.cpp
+    title: test/aoj/geometry/3049.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_2_D.test.cpp
+    title: test/aoj/geometry/CGL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_2_B.test.cpp
+    title: test/aoj/geometry/CGL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_7_A.test.cpp
+    title: test/aoj/geometry/CGL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_4_A.test.cpp
+    title: test/aoj/geometry/CGL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_3_A.test.cpp
+    title: test/aoj/geometry/CGL_3_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_7_F.test.cpp
+    title: test/aoj/geometry/CGL_7_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2572.test.cpp
+    title: test/aoj/geometry/2572.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_3_C.test.cpp
+    title: test/aoj/geometry/CGL_3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2448.test.cpp
+    title: test/aoj/geometry/2448.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_7_D.test.cpp
+    title: test/aoj/geometry/CGL_7_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_1_B.test.cpp
+    title: test/aoj/geometry/CGL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_7_G.test.cpp
+    title: test/aoj/geometry/CGL_7_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2334.test.cpp
+    title: test/aoj/geometry/2334.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2454.test.cpp
+    title: test/aoj/geometry/2454.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_4_B.test.cpp
+    title: test/aoj/geometry/CGL_4_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_5_A.test.cpp
+    title: test/aoj/geometry/CGL_5_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/CGL_1_C.test.cpp
+    title: test/aoj/geometry/CGL_1_C.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"geometry/geometry.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -382,96 +468,11 @@ data:
     \ on 2019/11/13\n  https://codeforces.com/contest/600/problem/D\n*/\n\nsigned\
     \ main(){\n  ECR002_D();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/3056.test.cpp
-    title: test/aoj/geometry/3056.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_6_A.test.cpp
-    title: test/aoj/geometry/CGL_6_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_7_H.test.cpp
-    title: test/aoj/geometry/CGL_7_H.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_7_E.test.cpp
-    title: test/aoj/geometry/CGL_7_E.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_1_A.test.cpp
-    title: test/aoj/geometry/CGL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_3_B.test.cpp
-    title: test/aoj/geometry/CGL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_4_C.test.cpp
-    title: test/aoj/geometry/CGL_4_C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_2_A.test.cpp
-    title: test/aoj/geometry/CGL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_2_C.test.cpp
-    title: test/aoj/geometry/CGL_2_C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/3049.test.cpp
-    title: test/aoj/geometry/3049.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_2_D.test.cpp
-    title: test/aoj/geometry/CGL_2_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_2_B.test.cpp
-    title: test/aoj/geometry/CGL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_7_A.test.cpp
-    title: test/aoj/geometry/CGL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_4_A.test.cpp
-    title: test/aoj/geometry/CGL_4_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_3_A.test.cpp
-    title: test/aoj/geometry/CGL_3_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_7_F.test.cpp
-    title: test/aoj/geometry/CGL_7_F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2572.test.cpp
-    title: test/aoj/geometry/2572.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_3_C.test.cpp
-    title: test/aoj/geometry/CGL_3_C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2448.test.cpp
-    title: test/aoj/geometry/2448.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_7_D.test.cpp
-    title: test/aoj/geometry/CGL_7_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_1_B.test.cpp
-    title: test/aoj/geometry/CGL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_7_G.test.cpp
-    title: test/aoj/geometry/CGL_7_G.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2334.test.cpp
-    title: test/aoj/geometry/2334.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2454.test.cpp
-    title: test/aoj/geometry/2454.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_4_B.test.cpp
-    title: test/aoj/geometry/CGL_4_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_5_A.test.cpp
-    title: test/aoj/geometry/CGL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/CGL_1_C.test.cpp
-    title: test/aoj/geometry/CGL_1_C.test.cpp
   isVerificationFile: false
   path: geometry/geometry.cpp
   requiredBy: []
   timestamp: '2019-12-17 20:13:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/geometry/3056.test.cpp
   - test/aoj/geometry/CGL_6_A.test.cpp

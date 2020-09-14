@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/enumeration.cpp
+    title: combinatorics/enumeration.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_F
@@ -60,21 +71,11 @@ data:
   dependsOn:
   - mod/mint.cpp
   - combinatorics/enumeration.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/enumeration.cpp
-    title: combinatorics/enumeration.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DPL_5_F.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_F.test.cpp
 layout: document

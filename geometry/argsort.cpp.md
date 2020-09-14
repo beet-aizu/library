@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/sort_points_by_argument.test.cpp
+    title: test/yosupo/sort_points_by_argument.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"geometry/argsort.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -23,18 +31,11 @@ data:
     }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/sort_points_by_argument.test.cpp
-    title: test/yosupo/sort_points_by_argument.test.cpp
   isVerificationFile: false
   path: geometry/argsort.cpp
   requiredBy: []
   timestamp: '2020-03-14 17:16:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/sort_points_by_argument.test.cpp
 documentation_of: geometry/argsort.cpp

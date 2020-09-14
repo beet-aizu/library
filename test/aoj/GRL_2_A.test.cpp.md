@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph/kruskal.cpp
+    title: graph/kruskal.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -31,18 +39,11 @@ data:
     \  }\n\n  cout<<G.build()<<endl;\n  return 0;\n}\n"
   dependsOn:
   - graph/kruskal.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graph/kruskal.cpp
-    title: graph/kruskal.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_2_A.test.cpp
   requiredBy: []
   timestamp: '2019-11-21 16:50:01+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_2_A.test.cpp
 layout: document

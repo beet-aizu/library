@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_2_B.tarjan.test.cpp
+    title: test/aoj/GRL_2_B.tarjan.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/arborescence_tarjan.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -95,18 +103,11 @@ data:
     \  return 0;\n}\n/*\n  verified on 2019/12/17\n  https://vjudge.net/problem/UVA-11183\n\
     */\n\n\nsigned main(){\n  //UVA_11183();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_2_B.tarjan.test.cpp
-    title: test/aoj/GRL_2_B.tarjan.test.cpp
   isVerificationFile: false
   path: graph/arborescence_tarjan.cpp
   requiredBy: []
   timestamp: '2019-12-17 22:09:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_2_B.tarjan.test.cpp
 documentation_of: graph/arborescence_tarjan.cpp

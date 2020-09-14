@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_B.test.cpp
+    title: test/aoj/GRL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2872.test.cpp
+    title: test/aoj/2872.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/bellmanford.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -40,21 +51,11 @@ data:
     };\ntemplate<typename T>\nconstexpr T BellmanFord<T>::INF;\n//END CUT HERE\n#ifndef\
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_1_B.test.cpp
-    title: test/aoj/GRL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2872.test.cpp
-    title: test/aoj/2872.test.cpp
   isVerificationFile: false
   path: graph/bellmanford.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:35:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp
   - test/aoj/2872.test.cpp

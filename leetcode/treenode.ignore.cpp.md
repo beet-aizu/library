@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"leetcode/treenode.ignore.cpp\"\n#include<bits/stdc++.h>\n\
@@ -24,15 +29,11 @@ data:
     \  assert(G.empty());\n  int k=0;\n  dfs(v,k,G,x);\n}\n\n//END CUT HERE\n\n//INSERT\
     \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: leetcode/treenode.ignore.cpp
   requiredBy: []
   timestamp: '2020-09-04 08:31:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: leetcode/treenode.ignore.cpp
 layout: document

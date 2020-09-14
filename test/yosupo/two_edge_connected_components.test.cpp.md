@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph/twoedgeconnectedcomponents.cpp
+    title: graph/twoedgeconnectedcomponents.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_edge_connected_components
@@ -46,18 +54,11 @@ data:
     }\n"
   dependsOn:
   - graph/twoedgeconnectedcomponents.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graph/twoedgeconnectedcomponents.cpp
-    title: graph/twoedgeconnectedcomponents.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/two_edge_connected_components.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 16:29:30+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/two_edge_connected_components.test.cpp
 layout: document

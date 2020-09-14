@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1338.test.cpp
+    title: test/aoj/1338.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"math/fraction.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -60,18 +68,11 @@ data:
     \\n\";\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2019/12/17\n  https://atcoder.jp/contests/cpsco2019-s3/tasks/cpsco2019_s3_g\n\
     */\n\nsigned main(){\n  //CPSCO2019_Session3_G();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1338.test.cpp
-    title: test/aoj/1338.test.cpp
   isVerificationFile: false
   path: math/fraction.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:37:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/1338.test.cpp
 documentation_of: math/fraction.cpp

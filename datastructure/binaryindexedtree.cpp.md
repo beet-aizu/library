@@ -1,5 +1,37 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_D.test.cpp
+    title: test/aoj/GRL_5_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_B.test.cpp
+    title: test/aoj/DSL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0343.test.cpp
+    title: test/aoj/0343.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1732.test.cpp
+    title: test/yukicoder/1732.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4852.test.cpp
+    title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2125.test.cpp
+    title: test/yukicoder/2125.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_path_sum.test.cpp
+    title: test/yosupo/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/point_add_range_sum.test.cpp
+    title: test/yosupo/point_add_range_sum.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: docs/binaryindexedtree.md
@@ -29,42 +61,11 @@ data:
     \  void add0(int i,T a){add(i+1,a);}\n  T query0(int l,int r){return sum(r)-sum(l);}\n\
     };\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_D.test.cpp
-    title: test/aoj/GRL_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_B.test.cpp
-    title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0343.test.cpp
-    title: test/aoj/0343.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1732.test.cpp
-    title: test/yukicoder/1732.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4852.test.cpp
-    title: test/yukicoder/4852.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2125.test.cpp
-    title: test/yukicoder/2125.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_path_sum.test.cpp
-    title: test/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/point_add_range_sum.test.cpp
-    title: test/yosupo/point_add_range_sum.test.cpp
   isVerificationFile: false
   path: datastructure/binaryindexedtree.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:59:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_5_D.test.cpp
   - test/aoj/DSL_2_B.test.cpp

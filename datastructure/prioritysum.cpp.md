@@ -1,5 +1,10 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"datastructure/prioritysum.cpp\"\n#include<bits/stdc++.h>\n\
@@ -120,15 +125,11 @@ data:
     /*\n  verified on 2019/04/10\n  https://codeforces.com/contest/1119/problem/F\n\
     */\n\nsigned main(){\n  //ARC074_D();\n  //CGR002_F();\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: datastructure/prioritysum.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: datastructure/prioritysum.cpp
 layout: document

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/disjointsparsetable.cpp
+    title: datastructure/disjointsparsetable.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -46,18 +54,11 @@ data:
     \   cout<<rmq.query(l,r)<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - datastructure/disjointsparsetable.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/disjointsparsetable.cpp
-    title: datastructure/disjointsparsetable.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:02:53+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/staticrmq.disjointsparsetable.test.cpp
 layout: document

@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/berlekampmassey.cpp
+    title: polynomial/berlekampmassey.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/find_linear_recurrence
@@ -62,21 +73,11 @@ data:
   dependsOn:
   - mod/mint.cpp
   - polynomial/berlekampmassey.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: polynomial/berlekampmassey.cpp
-    title: polynomial/berlekampmassey.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/find_linear_recurrence.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:15:27+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/find_linear_recurrence.test.cpp
 layout: document

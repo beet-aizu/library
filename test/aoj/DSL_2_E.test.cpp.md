@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: segtree/basic/dual.cpp
+    title: segtree/basic/dual.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
@@ -37,18 +45,11 @@ data:
     \\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - segtree/basic/dual.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: segtree/basic/dual.cpp
-    title: segtree/basic/dual.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DSL_2_E.test.cpp
   requiredBy: []
   timestamp: '2020-03-22 15:37:31+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_E.test.cpp
 layout: document

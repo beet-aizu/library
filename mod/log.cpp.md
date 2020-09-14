@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/discrete_logarithm_mod.test.cpp
+    title: test/yosupo/discrete_logarithm_mod.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"mod/log.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -27,18 +35,11 @@ data:
     \  return mod;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return\
     \ 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/discrete_logarithm_mod.test.cpp
-    title: test/yosupo/discrete_logarithm_mod.test.cpp
   isVerificationFile: false
   path: mod/log.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:42:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/discrete_logarithm_mod.test.cpp
 documentation_of: mod/log.cpp

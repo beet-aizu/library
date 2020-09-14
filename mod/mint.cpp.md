@@ -1,62 +1,7 @@
 ---
 data:
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-  bundledCode: "#line 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
-    using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD =\
-    \ 1000000007>\nstruct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n\
-    \  Mint(signed v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint\
-    \ pow(long long k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n\
-    \      tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
-    \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
-    \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
-    \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
-    \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
-    \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
-    \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
-    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator-()\
-    \ const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const Mint a)const{return\
-    \ v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n  bool operator\
-    \ <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long long n,int k){\n\
-    \    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n \
-    \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
-    \ T,T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T,T MOD>\nostream&\
-    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\n\n//INSERT ABOVE HERE\nsigned ABC127_E(){\n  cin.tie(0);\n\
-    \  ios::sync_with_stdio(0);\n\n  int h,w,k;\n  cin>>h>>w>>k;\n  using M = Mint<int>;\n\
-    \n  M ans{0};\n  for(int d=1;d<h;d++)\n    ans+=M(d)*M(h-d)*M(w)*M(w);\n\n  for(int\
-    \ d=1;d<w;d++)\n    ans+=M(d)*M(w-d)*M(h)*M(h);\n\n  ans*=M::comb(h*w-2,k-2);\n\
-    \  cout<<ans<<endl;\n  return 0;\n}\n/*\n  verified on 2019/06/12\n  https://atcoder.jp/contests/abc127/tasks/abc127_e\n\
-    */\n\nsigned main(){\n  //ABC127_E();\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD = 1000000007>\n\
-    struct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed\
-    \ v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long\
-    \ k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n     \
-    \ tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
-    \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
-    \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
-    \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
-    \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
-    \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
-    \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
-    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator-()\
-    \ const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const Mint a)const{return\
-    \ v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n  bool operator\
-    \ <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long long n,int k){\n\
-    \    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n \
-    \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
-    \ T,T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T,T MOD>\nostream&\
-    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\n\n//INSERT ABOVE HERE\nsigned ABC127_E(){\n  cin.tie(0);\n\
-    \  ios::sync_with_stdio(0);\n\n  int h,w,k;\n  cin>>h>>w>>k;\n  using M = Mint<int>;\n\
-    \n  M ans{0};\n  for(int d=1;d<h;d++)\n    ans+=M(d)*M(h-d)*M(w)*M(w);\n\n  for(int\
-    \ d=1;d<w;d++)\n    ans+=M(d)*M(w-d)*M(h)*M(h);\n\n  ans*=M::comb(h*w-2,k-2);\n\
-    \  cout<<ans<<endl;\n  return 0;\n}\n/*\n  verified on 2019/06/12\n  https://atcoder.jp/contests/abc127/tasks/abc127_e\n\
-    */\n\nsigned main(){\n  //ABC127_E();\n  return 0;\n}\n#endif\n"
-  dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: polynomial/hash.cpp
     title: polynomial/hash.cpp
@@ -84,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
-  extendedVerifiedWith:
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_C.test.cpp
     title: test/aoj/DPL_5_C.test.cpp
@@ -265,6 +210,63 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+  bundledCode: "#line 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
+    using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD =\
+    \ 1000000007>\nstruct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n\
+    \  Mint(signed v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint\
+    \ pow(long long k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n\
+    \      tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
+    \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
+    \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
+    \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
+    \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
+    \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
+    \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
+    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator-()\
+    \ const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const Mint a)const{return\
+    \ v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n  bool operator\
+    \ <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long long n,int k){\n\
+    \    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n \
+    \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
+    \ T,T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T,T MOD>\nostream&\
+    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
+    #ifndef call_from_test\n\n//INSERT ABOVE HERE\nsigned ABC127_E(){\n  cin.tie(0);\n\
+    \  ios::sync_with_stdio(0);\n\n  int h,w,k;\n  cin>>h>>w>>k;\n  using M = Mint<int>;\n\
+    \n  M ans{0};\n  for(int d=1;d<h;d++)\n    ans+=M(d)*M(h-d)*M(w)*M(w);\n\n  for(int\
+    \ d=1;d<w;d++)\n    ans+=M(d)*M(w-d)*M(h)*M(h);\n\n  ans*=M::comb(h*w-2,k-2);\n\
+    \  cout<<ans<<endl;\n  return 0;\n}\n/*\n  verified on 2019/06/12\n  https://atcoder.jp/contests/abc127/tasks/abc127_e\n\
+    */\n\nsigned main(){\n  //ABC127_E();\n  return 0;\n}\n#endif\n"
+  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD = 1000000007>\n\
+    struct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed\
+    \ v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long\
+    \ k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n     \
+    \ tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
+    \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
+    \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
+    \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
+    \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
+    \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
+    \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
+    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator-()\
+    \ const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const Mint a)const{return\
+    \ v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n  bool operator\
+    \ <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long long n,int k){\n\
+    \    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n \
+    \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
+    \ T,T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T,T MOD>\nostream&\
+    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
+    #ifndef call_from_test\n\n//INSERT ABOVE HERE\nsigned ABC127_E(){\n  cin.tie(0);\n\
+    \  ios::sync_with_stdio(0);\n\n  int h,w,k;\n  cin>>h>>w>>k;\n  using M = Mint<int>;\n\
+    \n  M ans{0};\n  for(int d=1;d<h;d++)\n    ans+=M(d)*M(h-d)*M(w)*M(w);\n\n  for(int\
+    \ d=1;d<w;d++)\n    ans+=M(d)*M(w-d)*M(h)*M(h);\n\n  ans*=M::comb(h*w-2,k-2);\n\
+    \  cout<<ans<<endl;\n  return 0;\n}\n/*\n  verified on 2019/06/12\n  https://atcoder.jp/contests/abc127/tasks/abc127_e\n\
+    */\n\nsigned main(){\n  //ABC127_E();\n  return 0;\n}\n#endif\n"
+  dependsOn: []
   isVerificationFile: false
   path: mod/mint.cpp
   requiredBy:
@@ -279,7 +281,6 @@ data:
   - graph/lowlink.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DPL_5_C.test.cpp
   - test/aoj/2985.garner.test.cpp

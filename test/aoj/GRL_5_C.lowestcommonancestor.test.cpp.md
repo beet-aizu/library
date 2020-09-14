@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tree/lowestcommonancestor.cpp
+    title: tree/lowestcommonancestor.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
@@ -39,18 +47,11 @@ data:
     \ 0;\n}\n"
   dependsOn:
   - tree/lowestcommonancestor.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tree/lowestcommonancestor.cpp
-    title: tree/lowestcommonancestor.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:09:31+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
 layout: document

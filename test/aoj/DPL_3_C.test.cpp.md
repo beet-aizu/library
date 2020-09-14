@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: algorithm/largestrectangle.cpp
+    title: algorithm/largestrectangle.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C
@@ -27,18 +35,11 @@ data:
     \n  cout<<largestrectangle(vs)<<endl;\n  return 0;\n}\n"
   dependsOn:
   - algorithm/largestrectangle.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: algorithm/largestrectangle.cpp
-    title: algorithm/largestrectangle.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/DPL_3_C.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:40:23+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/DPL_3_C.test.cpp
 layout: document

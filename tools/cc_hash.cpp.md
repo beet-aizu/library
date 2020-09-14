@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2646.test.cpp
+    title: test/aoj/2646.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/associative_array.test.cpp
+    title: test/yosupo/associative_array.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"tools/cc_hash.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -15,21 +26,11 @@ data:
     \    return y ^ (y >> 31);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2646.test.cpp
-    title: test/aoj/2646.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/associative_array.test.cpp
-    title: test/yosupo/associative_array.test.cpp
   isVerificationFile: false
   path: tools/cc_hash.cpp
   requiredBy: []
   timestamp: '2020-05-24 17:44:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2646.test.cpp
   - test/yosupo/associative_array.test.cpp

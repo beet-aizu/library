@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: geometry/geometry.cpp
+    title: geometry/geometry.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00001'
@@ -209,18 +217,11 @@ data:
     }\n"
   dependsOn:
   - geometry/geometry.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geometry/geometry.cpp
-    title: geometry/geometry.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/geometry/CGL_7_G.test.cpp
   requiredBy: []
   timestamp: '2019-12-17 20:13:07+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_7_G.test.cpp
 layout: document

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0425.test.cpp
+    title: test/aoj/0425.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"vector/identity.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -12,18 +20,11 @@ data:
     \ ord(n);\n  iota(ord.begin(),ord.end(),0);\n  return ord;\n}\n//END CUT HERE\n\
     #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0425.test.cpp
-    title: test/aoj/0425.test.cpp
   isVerificationFile: false
   path: vector/identity.cpp
   requiredBy: []
   timestamp: '2020-04-22 14:12:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0425.test.cpp
 documentation_of: vector/identity.cpp

@@ -1,5 +1,22 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0367.test.cpp
+    title: test/aoj/0367.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2644.test.cpp
+    title: test/aoj/2644.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_A.test.cpp
+    title: test/aoj/DSL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/point_set_range_composite.test.cpp
+    title: test/yosupo/point_set_range_composite.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"segtree/basic/ushi.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -58,27 +75,11 @@ data:
     %d\\n\",(int)sp.size()/2);\n  return 0;\n}\n/*\n  verified on 2019/12/26\n  https://atcoder.jp/contests/kupc2013/tasks/kupc2013_d\n\
     */\n\nsigned main(){\n  //KUPC2013_D();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0367.test.cpp
-    title: test/aoj/0367.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2644.test.cpp
-    title: test/aoj/2644.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_A.test.cpp
-    title: test/aoj/DSL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/point_set_range_composite.test.cpp
-    title: test/yosupo/point_set_range_composite.test.cpp
   isVerificationFile: false
   path: segtree/basic/ushi.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:04:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0367.test.cpp
   - test/aoj/2644.test.cpp

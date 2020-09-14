@@ -1,18 +1,7 @@
 ---
 data:
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-  bundledCode: "#line 2 \"tools/fastio.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
-    using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct FastIO{\n  FastIO(){\n\
-    \    cin.tie(0);\n    ios::sync_with_stdio(0);\n  }\n}fastio_beet;\n//END CUT\
-    \ HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\nstruct FastIO{\n  FastIO(){\n    cin.tie(0);\n\
-    \    ios::sync_with_stdio(0);\n  }\n}fastio_beet;\n//END CUT HERE\n#ifndef call_from_test\n\
-    signed main(){\n  return 0;\n}\n#endif\n"
-  dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: tree/diameterforedge.cpp
     title: tree/diameterforedge.cpp
@@ -37,10 +26,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
-  extendedVerifiedWith:
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/many_aplusb.test.cpp
     title: test/yosupo/many_aplusb.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+  bundledCode: "#line 2 \"tools/fastio.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct FastIO{\n  FastIO(){\n\
+    \    cin.tie(0);\n    ios::sync_with_stdio(0);\n  }\n}fastio_beet;\n//END CUT\
+    \ HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\nstruct FastIO{\n  FastIO(){\n    cin.tie(0);\n\
+    \    ios::sync_with_stdio(0);\n  }\n}fastio_beet;\n//END CUT HERE\n#ifndef call_from_test\n\
+    signed main(){\n  return 0;\n}\n#endif\n"
+  dependsOn: []
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
@@ -54,7 +56,6 @@ data:
   - graph/nicetree.cpp
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/many_aplusb.test.cpp
 documentation_of: tools/fastio.cpp

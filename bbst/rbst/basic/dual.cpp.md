@@ -1,9 +1,26 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/base.cpp
+    title: bbst/rbst/basic/base.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_E.bbst.test.cpp
+    title: test/aoj/DSL_2_E.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_D.bbst.test.cpp
+    title: test/aoj/DSL_2_D.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1579.test.cpp
+    title: test/aoj/1579.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 67, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -45,27 +62,11 @@ data:
     #endif\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/base.cpp
-    title: bbst/rbst/basic/base.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_E.bbst.test.cpp
-    title: test/aoj/DSL_2_E.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_D.bbst.test.cpp
-    title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1579.test.cpp
-    title: test/aoj/1579.test.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/dual.cpp
   requiredBy: []
   timestamp: '2020-03-22 15:37:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DSL_2_E.bbst.test.cpp
   - test/aoj/DSL_2_D.bbst.test.cpp

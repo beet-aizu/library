@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/aoj/GRL_4_B.ignore.cpp
+    title: test/aoj/GRL_4_B.ignore.cpp
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/topologicalsort.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -25,19 +33,12 @@ data:
     \      if(indeg[i]==0&&!used[i]) bfs(i);\n    return ps;\n  }\n};\n//END CUT HERE\n\
     #ifndef call_from_test\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/aoj/GRL_4_B.ignore.cpp
-    title: test/aoj/GRL_4_B.ignore.cpp
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: graph/topologicalsort.cpp
   requiredBy:
   - test/aoj/GRL_4_B.ignore.cpp
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: graph/topologicalsort.cpp
 layout: document

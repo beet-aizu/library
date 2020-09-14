@@ -1,19 +1,8 @@
 ---
 data:
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-  bundledCode: "#line 1 \"tools/drop.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
-  dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_B.test.cpp
     title: test/aoj/GRL_1_B.test.cpp
@@ -44,12 +33,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/tree_decomposition_width_2.test.cpp
     title: test/yosupo/tree_decomposition_width_2.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+  bundledCode: "#line 1 \"tools/drop.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}\n\
+    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
+    //BEGIN CUT HERE\ntemplate<typename T> void drop(const T &x){cout<<x<<endl;exit(0);}\n\
+    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
+  dependsOn: []
   isVerificationFile: false
   path: tools/drop.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:42:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp
   - test/aoj/2934.test.cpp

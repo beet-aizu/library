@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/montmort_number_mod.test.cpp
+    title: test/yosupo/montmort_number_mod.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"mod/montmort.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -17,18 +25,11 @@ data:
     \    }\n  }\n\n  T operator[](int n){return dp[n];}\n};\n//END CUT HERE\n#ifndef\
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/montmort_number_mod.test.cpp
-    title: test/yosupo/montmort_number_mod.test.cpp
   isVerificationFile: false
   path: mod/montmort.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:22:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yosupo/montmort_number_mod.test.cpp
 documentation_of: mod/montmort.cpp

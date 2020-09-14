@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tools/cc_hash.cpp
+    title: tools/cc_hash.cpp
+  - icon: ':heavy_check_mark:'
+    path: datastructure/pb_ds_cc_hash_table.cpp
+    title: datastructure/pb_ds_cc_hash_table.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/associative_array
@@ -35,21 +46,11 @@ data:
   dependsOn:
   - tools/cc_hash.cpp
   - datastructure/pb_ds_cc_hash_table.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tools/cc_hash.cpp
-    title: tools/cc_hash.cpp
-  - icon: ':heavy_check_mark:'
-    path: datastructure/pb_ds_cc_hash_table.cpp
-    title: datastructure/pb_ds_cc_hash_table.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/associative_array.test.cpp
   requiredBy: []
   timestamp: '2020-05-24 17:44:55+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/associative_array.test.cpp
 layout: document

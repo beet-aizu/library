@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3453.test.cpp
+    title: test/yukicoder/3453.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"toptree/steiner.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -38,18 +46,11 @@ data:
     \    return x;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
     \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3453.test.cpp
-    title: test/yukicoder/3453.test.cpp
   isVerificationFile: false
   path: toptree/steiner.cpp
   requiredBy: []
   timestamp: '2020-04-01 20:29:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yukicoder/3453.test.cpp
 documentation_of: toptree/steiner.cpp

@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3024.test.cpp
+    title: test/aoj/3024.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"segtree/persistent/ushi.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -64,18 +72,11 @@ data:
     \ 2019/06/22\n  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query\n\
     */\nsigned main(){\n  HAPPYQUERY_B();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3024.test.cpp
-    title: test/aoj/3024.test.cpp
   isVerificationFile: false
   path: segtree/persistent/ushi.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3024.test.cpp
 documentation_of: segtree/persistent/ushi.cpp

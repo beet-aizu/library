@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
+  - icon: ':heavy_check_mark:'
+    path: linearalgebra/matrix.cpp
+    title: linearalgebra/matrix.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/matrix_det
@@ -123,21 +134,11 @@ data:
   dependsOn:
   - mod/mint.cpp
   - linearalgebra/matrix.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: linearalgebra/matrix.cpp
-    title: linearalgebra/matrix.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/matrix_det.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/matrix_det.test.cpp
 layout: document

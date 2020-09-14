@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0294.test.cpp
+    title: test/aoj/0294.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dominatortree.test.cpp
+    title: test/yosupo/dominatortree.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"graph/dominatortree.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -51,21 +62,11 @@ data:
     \ k){return idom[k];}\n};\n//END CUT HERE\n#ifndef call_from_test\nint main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0294.test.cpp
-    title: test/aoj/0294.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dominatortree.test.cpp
-    title: test/yosupo/dominatortree.test.cpp
   isVerificationFile: false
   path: graph/dominatortree.cpp
   requiredBy: []
   timestamp: '2019-12-21 20:40:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0294.test.cpp
   - test/yosupo/dominatortree.test.cpp

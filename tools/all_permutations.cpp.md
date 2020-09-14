@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3053.test.cpp
+    title: test/aoj/3053.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2187.test.cpp
+    title: test/aoj/2187.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tools/all_permutations.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -11,21 +22,11 @@ data:
     \ vs(n);\n  iota(vs.begin(),vs.end(),0);\n  do f(vs); while(next_permutation(vs.begin(),vs.end()));\n\
     }\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3053.test.cpp
-    title: test/aoj/3053.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2187.test.cpp
-    title: test/aoj/2187.test.cpp
   isVerificationFile: false
   path: tools/all_permutations.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:35:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3053.test.cpp
   - test/aoj/2187.test.cpp

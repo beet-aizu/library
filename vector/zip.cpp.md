@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2563.test.cpp
+    title: test/aoj/2563.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"vector/zip.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
@@ -17,18 +25,11 @@ data:
     \ as({1,2,3});\n  vector<string> bs({\"a\",\"b\",\"c\"});\n  auto zs=zip(as,bs);\n\
     \  for(auto [x,y]:zs) cout<<x<<\" \"<<y<<endl;\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2563.test.cpp
-    title: test/aoj/2563.test.cpp
   isVerificationFile: false
   path: vector/zip.cpp
   requiredBy: []
   timestamp: '2020-04-18 17:56:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2563.test.cpp
 documentation_of: vector/zip.cpp

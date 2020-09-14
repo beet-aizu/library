@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0415.test.cpp
+    title: test/aoj/0415.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0377.test.cpp
+    title: test/aoj/0377.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/two_edge_connected_components.test.cpp
+    title: test/yosupo/two_edge_connected_components.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"graph/twoedgeconnectedcomponents.cpp\"\n\n#ifndef call_from_test\n\
@@ -48,24 +62,11 @@ data:
     \    return T;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
     \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0415.test.cpp
-    title: test/aoj/0415.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0377.test.cpp
-    title: test/aoj/0377.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/two_edge_connected_components.test.cpp
-    title: test/yosupo/two_edge_connected_components.test.cpp
   isVerificationFile: false
   path: graph/twoedgeconnectedcomponents.cpp
   requiredBy: []
   timestamp: '2020-03-12 16:29:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0415.test.cpp
   - test/aoj/0377.test.cpp

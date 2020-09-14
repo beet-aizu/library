@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4271.test.cpp
+    title: test/yukicoder/4271.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 2 \"polynomial/recursivesequence.cpp\"\n\n#ifndef call_from_test\n\
@@ -33,18 +41,11 @@ data:
     \ }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n\
     }\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4271.test.cpp
-    title: test/yukicoder/4271.test.cpp
   isVerificationFile: false
   path: polynomial/recursivesequence.cpp
   requiredBy: []
   timestamp: '2020-08-28 13:36:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/yukicoder/4271.test.cpp
 documentation_of: polynomial/recursivesequence.cpp

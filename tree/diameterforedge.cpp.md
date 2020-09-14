@@ -1,9 +1,23 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tools/fastio.cpp
+    title: tools/fastio.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_A.test.cpp
+    title: test/aoj/GRL_5_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/tree_diameter.test.cpp
+    title: test/yosupo/tree_diameter.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 67, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -40,24 +54,11 @@ data:
     */\n\nsigned main(){\n  //YAHOO2019_FINAL_B();\n  return 0;\n}\n#endif\n"
   dependsOn:
   - tools/fastio.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tools/fastio.cpp
-    title: tools/fastio.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_A.test.cpp
-    title: test/aoj/GRL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/tree_diameter.test.cpp
-    title: test/yosupo/tree_diameter.test.cpp
   isVerificationFile: false
   path: tree/diameterforedge.cpp
   requiredBy: []
   timestamp: '2020-05-18 20:55:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_5_A.test.cpp
   - test/yosupo/tree_diameter.test.cpp

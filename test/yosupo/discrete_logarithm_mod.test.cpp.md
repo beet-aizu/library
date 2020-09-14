@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/log.cpp
+    title: mod/log.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/discrete_logarithm_mod
@@ -30,18 +38,11 @@ data:
     \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - mod/log.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/log.cpp
-    title: mod/log.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/discrete_logarithm_mod.test.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:02:53+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/discrete_logarithm_mod.test.cpp
 layout: document

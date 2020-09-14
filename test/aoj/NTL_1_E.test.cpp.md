@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: math/extgcd.cpp
+    title: math/extgcd.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E
@@ -21,18 +29,11 @@ data:
     \  return 0;\n}\n"
   dependsOn:
   - math/extgcd.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/extgcd.cpp
-    title: math/extgcd.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/NTL_1_E.test.cpp
   requiredBy: []
   timestamp: '2020-03-22 10:35:50+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_E.test.cpp
 layout: document

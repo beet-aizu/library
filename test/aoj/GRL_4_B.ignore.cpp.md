@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: graph/topologicalsort.cpp
+    title: graph/topologicalsort.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
@@ -29,18 +37,11 @@ data:
     \  return 0;\n}\n"
   dependsOn:
   - graph/topologicalsort.cpp
-  extendedDependsOn:
-  - icon: ':warning:'
-    path: graph/topologicalsort.cpp
-    title: graph/topologicalsort.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: test/aoj/GRL_4_B.ignore.cpp
   requiredBy: []
   timestamp: '2020-09-04 08:24:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_4_B.ignore.cpp
 layout: document

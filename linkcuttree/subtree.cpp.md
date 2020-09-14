@@ -1,9 +1,29 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: linkcuttree/base.cpp
+    title: linkcuttree/base.cpp
+  - icon: ':heavy_check_mark:'
+    path: tools/fastio.cpp
+    title: tools/fastio.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3120.test.cpp
+    title: test/aoj/3120.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 67, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -83,30 +103,11 @@ data:
   dependsOn:
   - linkcuttree/base.cpp
   - tools/fastio.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: linkcuttree/base.cpp
-    title: linkcuttree/base.cpp
-  - icon: ':heavy_check_mark:'
-    path: tools/fastio.cpp
-    title: tools/fastio.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3120.test.cpp
-    title: test/aoj/3120.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   isVerificationFile: false
   path: linkcuttree/subtree.cpp
   requiredBy: []
   timestamp: '2020-07-16 18:11:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3120.test.cpp
   - test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp

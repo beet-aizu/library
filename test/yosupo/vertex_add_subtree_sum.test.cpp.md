@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tree/eulertourforvertex.cpp
+    title: tree/eulertourforvertex.cpp
+  - icon: ':heavy_check_mark:'
+    path: datastructure/binaryindexedtree.cpp
+    title: datastructure/binaryindexedtree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_subtree_sum
@@ -52,21 +63,11 @@ data:
   dependsOn:
   - tree/eulertourforvertex.cpp
   - datastructure/binaryindexedtree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tree/eulertourforvertex.cpp
-    title: tree/eulertourforvertex.cpp
-  - icon: ':heavy_check_mark:'
-    path: datastructure/binaryindexedtree.cpp
-    title: datastructure/binaryindexedtree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/vertex_add_subtree_sum.test.cpp
   requiredBy: []
   timestamp: '2020-03-05 21:59:12+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_subtree_sum.test.cpp
 layout: document

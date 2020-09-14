@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: string/knuthmorrispratt.cpp
+    title: string/knuthmorrispratt.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
@@ -42,18 +50,11 @@ data:
     \  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - string/knuthmorrispratt.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: string/knuthmorrispratt.cpp
-    title: string/knuthmorrispratt.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
   requiredBy: []
   timestamp: '2020-08-20 15:23:52+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
 layout: document

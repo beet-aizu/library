@@ -1,5 +1,25 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: tree/auxiliarytree.cpp
+    title: tree/auxiliarytree.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
+    title: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3407.test.cpp
+    title: test/yukicoder/3407.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4852.test.cpp
+    title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/lca.test.cpp
+    title: test/yosupo/lca.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"tree/lowestcommonancestor.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -34,31 +54,12 @@ data:
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n\
     }\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: tree/auxiliarytree.cpp
-    title: tree/auxiliarytree.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
-    title: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3407.test.cpp
-    title: test/yukicoder/3407.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4852.test.cpp
-    title: test/yukicoder/4852.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/lca.test.cpp
-    title: test/yosupo/lca.test.cpp
   isVerificationFile: false
   path: tree/lowestcommonancestor.cpp
   requiredBy:
   - tree/auxiliarytree.cpp
   timestamp: '2019-12-17 21:09:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
   - test/yukicoder/3407.test.cpp

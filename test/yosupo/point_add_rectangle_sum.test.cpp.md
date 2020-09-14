@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: vector/compress.cpp
+    title: vector/compress.cpp
+  - icon: ':heavy_check_mark:'
+    path: segtree/count/dynamic_offline.cpp
+    title: segtree/count/dynamic_offline.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
@@ -66,21 +77,11 @@ data:
   dependsOn:
   - vector/compress.cpp
   - segtree/count/dynamic_offline.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: vector/compress.cpp
-    title: vector/compress.cpp
-  - icon: ':heavy_check_mark:'
-    path: segtree/count/dynamic_offline.cpp
-    title: segtree/count/dynamic_offline.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/point_add_rectangle_sum.test.cpp
   requiredBy: []
   timestamp: '2020-09-02 21:26:21+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/point_add_rectangle_sum.test.cpp
 layout: document

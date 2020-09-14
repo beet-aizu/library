@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2842.BIT2D.test.cpp
+    title: test/aoj/2842.BIT2D.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"datastructure/BIT2D.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -23,18 +31,11 @@ data:
     \ sum(x1,y1)-sum(x1,y2)-sum(x2,y1)+sum(x2,y2);\n  }\n};\n//END CUT HERE\n#ifndef\
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2842.BIT2D.test.cpp
-    title: test/aoj/2842.BIT2D.test.cpp
   isVerificationFile: false
   path: datastructure/BIT2D.cpp
   requiredBy: []
   timestamp: '2019-11-11 16:56:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2842.BIT2D.test.cpp
 documentation_of: datastructure/BIT2D.cpp

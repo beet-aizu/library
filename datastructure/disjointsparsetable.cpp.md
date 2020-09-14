@@ -1,5 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
+    title: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4072.test.cpp
+    title: test/yukicoder/4072.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
+    title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"datastructure/disjointsparsetable.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -53,24 +67,11 @@ data:
     \ on 2019/10/29\n  https://www.codechef.com/problems/SEGPROD\n*/\n\n//INSERT ABOVE\
     \ HERE\nsigned main(){\n  //CODECHEF_SEGPROD();\n  return 0;\n}\n#endif\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
-    title: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4072.test.cpp
-    title: test/yukicoder/4072.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
-    title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
   isVerificationFile: false
   path: datastructure/disjointsparsetable.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:22:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   - test/yukicoder/4072.test.cpp

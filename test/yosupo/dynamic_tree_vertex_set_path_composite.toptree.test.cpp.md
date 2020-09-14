@@ -1,5 +1,22 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/linearfunction.cpp
+    title: math/linearfunction.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/twoway.cpp
+    title: math/twoway.cpp
+  - icon: ':heavy_check_mark:'
+    path: toptree/toptree.cpp
+    title: toptree/toptree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
@@ -218,27 +235,11 @@ data:
   - math/linearfunction.cpp
   - math/twoway.cpp
   - toptree/toptree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/linearfunction.cpp
-    title: math/linearfunction.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/twoway.cpp
-    title: math/twoway.cpp
-  - icon: ':heavy_check_mark:'
-    path: toptree/toptree.cpp
-    title: toptree/toptree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
   timestamp: '2020-09-01 16:43:17+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
 layout: document

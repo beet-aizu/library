@@ -1,5 +1,16 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tree/eulertourforedge.cpp
+    title: tree/eulertourforedge.cpp
+  - icon: ':heavy_check_mark:'
+    path: datastructure/binaryindexedtree.cpp
+    title: datastructure/binaryindexedtree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D
@@ -58,21 +69,11 @@ data:
   dependsOn:
   - tree/eulertourforedge.cpp
   - datastructure/binaryindexedtree.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: tree/eulertourforedge.cpp
-    title: tree/eulertourforedge.cpp
-  - icon: ':heavy_check_mark:'
-    path: datastructure/binaryindexedtree.cpp
-    title: datastructure/binaryindexedtree.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/GRL_5_D.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 20:21:09+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_D.test.cpp
 layout: document

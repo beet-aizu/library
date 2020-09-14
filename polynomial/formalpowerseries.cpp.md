@@ -1,9 +1,86 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/enumeration.cpp
+    title: combinatorics/enumeration.cpp
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: polynomial/interpolate.cpp
+    title: polynomial/interpolate.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/multieval.cpp
+    title: polynomial/multieval.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/partition.cpp
+    title: combinatorics/partition.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/bernoulli.cpp
+    title: combinatorics/bernoulli.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling1st.cpp
+    title: combinatorics/stirling1st.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling2nd.cpp
+    title: combinatorics/stirling2nd.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2985.garner.test.cpp
+    title: test/aoj/2985.garner.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3072.test.cpp
+    title: test/aoj/3072.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2985.test.cpp
+    title: test/aoj/2985.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0444.test.cpp
+    title: test/yukicoder/0444.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2744.test.cpp
+    title: test/yukicoder/2744.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/exp_of_formal_power_series.test.cpp
+    title: test/yosupo/exp_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/sqrt_of_formal_power_series.test.cpp
+    title: test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_interpolation.test.cpp
+    title: test/yosupo/polynomial_interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/log_of_formal_power_series.test.cpp
+    title: test/yosupo/log_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/multipoint_evaluation.test.cpp
+    title: test/yosupo/multipoint_evaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/pow_of_formal_power_series.test.cpp
+    title: test/yosupo/pow_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+    title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bernoulli_number.test.cpp
+    title: test/yosupo/bernoulli_number.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/partition_function.test.cpp
+    title: test/yosupo/partition_function.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/inv_of_formal_power_series.test.cpp
+    title: test/yosupo/inv_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_taylor_shift.test.cpp
+    title: test/yosupo/polynomial_taylor_shift.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+    title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    , line 67, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
@@ -60,81 +137,6 @@ data:
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - combinatorics/enumeration.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/enumeration.cpp
-    title: combinatorics/enumeration.cpp
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: polynomial/interpolate.cpp
-    title: polynomial/interpolate.cpp
-  - icon: ':heavy_check_mark:'
-    path: polynomial/multieval.cpp
-    title: polynomial/multieval.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/partition.cpp
-    title: combinatorics/partition.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/bernoulli.cpp
-    title: combinatorics/bernoulli.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/stirling1st.cpp
-    title: combinatorics/stirling1st.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/stirling2nd.cpp
-    title: combinatorics/stirling2nd.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2985.garner.test.cpp
-    title: test/aoj/2985.garner.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3072.test.cpp
-    title: test/aoj/3072.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2985.test.cpp
-    title: test/aoj/2985.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0444.test.cpp
-    title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2744.test.cpp
-    title: test/yukicoder/2744.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/exp_of_formal_power_series.test.cpp
-    title: test/yosupo/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/sqrt_of_formal_power_series.test.cpp
-    title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/polynomial_interpolation.test.cpp
-    title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/log_of_formal_power_series.test.cpp
-    title: test/yosupo/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/multipoint_evaluation.test.cpp
-    title: test/yosupo/multipoint_evaluation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/pow_of_formal_power_series.test.cpp
-    title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-    title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/bernoulli_number.test.cpp
-    title: test/yosupo/bernoulli_number.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/partition_function.test.cpp
-    title: test/yosupo/partition_function.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/inv_of_formal_power_series.test.cpp
-    title: test/yosupo/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/polynomial_taylor_shift.test.cpp
-    title: test/yosupo/polynomial_taylor_shift.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-    title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
   isVerificationFile: false
   path: polynomial/formalpowerseries.cpp
   requiredBy:
@@ -146,7 +148,6 @@ data:
   - combinatorics/stirling2nd.cpp
   timestamp: '2020-05-16 18:51:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2985.garner.test.cpp
   - test/aoj/3072.test.cpp

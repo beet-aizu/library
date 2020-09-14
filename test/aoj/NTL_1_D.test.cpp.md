@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: math/totient.cpp
+    title: math/totient.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D
@@ -20,18 +28,11 @@ data:
     \ 0;\n}\n"
   dependsOn:
   - math/totient.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/totient.cpp
-    title: math/totient.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/aoj/NTL_1_D.test.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_D.test.cpp
 layout: document

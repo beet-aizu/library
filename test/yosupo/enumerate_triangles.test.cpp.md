@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph/triangle.cpp
+    title: graph/triangle.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_triangles
@@ -35,18 +43,11 @@ data:
     \n  cout<<ans<<endl;\n  return 0;\n}\n"
   dependsOn:
   - graph/triangle.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graph/triangle.cpp
-    title: graph/triangle.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/enumerate_triangles.test.cpp
   requiredBy: []
   timestamp: '2020-05-07 17:33:53+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_triangles.test.cpp
 layout: document

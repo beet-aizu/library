@@ -1,5 +1,13 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: geometry/argsort.cpp
+    title: geometry/argsort.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sort_points_by_argument
@@ -30,18 +38,11 @@ data:
     \ \"<<ps[i].y<<\"\\n\";\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - geometry/argsort.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geometry/argsort.cpp
-    title: geometry/argsort.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: test/yosupo/sort_points_by_argument.test.cpp
   requiredBy: []
   timestamp: '2020-03-14 17:16:27+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: test/yosupo/sort_points_by_argument.test.cpp
 layout: document

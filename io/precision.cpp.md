@@ -1,19 +1,8 @@
 ---
 data:
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-  bundledCode: "#line 1 \"io/precision.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\nstruct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n\
-    \  }\n}precision_beet;\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\nstruct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n\
-    \  }\n}precision_beet;\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
-  dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2309.tarjan.test.cpp
     title: test/aoj/2309.tarjan.test.cpp
@@ -47,12 +36,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1923.test.cpp
     title: test/yukicoder/1923.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+  bundledCode: "#line 1 \"io/precision.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\nstruct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n\
+    \  }\n}precision_beet;\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
+    //BEGIN CUT HERE\nstruct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n\
+    \  }\n}precision_beet;\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
+  dependsOn: []
   isVerificationFile: false
   path: io/precision.cpp
   requiredBy: []
   timestamp: '2020-08-07 15:47:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2309.tarjan.test.cpp
   - test/aoj/2736.test.cpp
