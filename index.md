@@ -515,11 +515,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
-  - name: test
-    pages:
-    - icon: ':warning:'
-      path: test/resolve.py
-      title: test/resolve.py
   - name: tools
     pages:
     - icon: ':heavy_check_mark:'

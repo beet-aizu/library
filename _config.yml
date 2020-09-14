@@ -5,6 +5,7 @@ exclude:
 - ./leetcode/
 - ./test/aoj/2432.ignore.cpp
 - test/aoj/GRL_4_B.ignore.cpp
+- ./test/resolve.py
 plugins:
 - jemoji
 - jekyll-redirect-from
