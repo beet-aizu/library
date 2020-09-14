@@ -8,6 +8,7 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+// O((F+F') E log V), F': sum of caps with negative cost
 template<typename TF,typename TC>
 struct NegativeEdge{
   PrimalDual<TF, TC> G;
@@ -54,42 +55,8 @@ struct NegativeEdge{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
-signed KUPC2019_H(){
-  int n,m;
-  cin>>n>>m;
-  NegativeEdge<int, int> G(n+2);
-
-  int cap=1;
-  for(int i=0;i<m;i++){
-    int u,v,l;
-    cin>>u>>v>>l;
-    u--;v--;
-    G.add_edge(v,u,1,l-1);
-    if(l==0) cap++;
-  }
-
-  for(int i=0;i<n;i++){
-    G.add_edge(n,i,cap,2);
-    G.add_edge(i,n,cap,0);
-  }
-
-  int ok=0;
-  cout<<-G.flow(n,n,0,ok)<<endl;
-  return 0;
-}
-/*
-  verified on 2019/12/26
-  https://atcoder.jp/contests/kupc2019/tasks/kupc2019_h
-*/
-
 signed main(){
-  //KUPC2019_H();
   return 0;
 }
 #endif
