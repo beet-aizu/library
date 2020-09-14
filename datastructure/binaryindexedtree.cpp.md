@@ -76,6 +76,7 @@ data:
   - test/yosupo/point_add_range_sum.test.cpp
 documentation_of: ./datastructure/binaryindexedtree.cpp
 layout: document
+title: Binary Indexed Tree
 ---
 
 ## できること

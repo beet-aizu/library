@@ -68,4 +68,4 @@ layout: document
 ---
 
 ## 解説記事
-https://snuke.hatenablog.com/entry/2017/06/07/115821
+[最小費用流の負辺除去](https://snuke.hatenablog.com/entry/2017/06/07/115821)

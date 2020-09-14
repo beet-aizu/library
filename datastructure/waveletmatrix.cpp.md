@@ -159,6 +159,7 @@ data:
   - test/yosupo/range_kth_smallest.test.cpp
 documentation_of: ./datastructure/waveletmatrix.cpp
 layout: document
+title: Wavelet Matrix
 ---
 
 ## できること

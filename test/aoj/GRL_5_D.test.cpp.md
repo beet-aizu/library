@@ -6,7 +6,7 @@ data:
     title: tree/eulertourforedge.cpp
   - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
-    title: datastructure/binaryindexedtree.cpp
+    title: Binary Indexed Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

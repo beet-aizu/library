@@ -113,7 +113,7 @@ data:
       title: datastructure/absolutesum.cpp
     - icon: ':heavy_check_mark:'
       path: datastructure/binaryindexedtree.cpp
-      title: datastructure/binaryindexedtree.cpp
+      title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
       path: datastructure/binarytrie.cpp
       title: datastructure/binarytrie.cpp
@@ -167,7 +167,7 @@ data:
       title: datastructure/unionfind.cpp
     - icon: ':heavy_check_mark:'
       path: datastructure/waveletmatrix.cpp
-      title: datastructure/waveletmatrix.cpp
+      title: Wavelet Matrix
     - icon: ':heavy_check_mark:'
       path: datastructure/weightedunionfind.cpp
       title: datastructure/weightedunionfind.cpp
@@ -187,7 +187,7 @@ data:
       title: flow/hopcroft_karp.cpp
     - icon: ':heavy_check_mark:'
       path: flow/leastflow.cpp
-      title: "\u6700\u5C0F\u6D41\u91CF\u5236\u7D04\u4ED8\u304D\u6700\u5927\u6D41"
+      title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
     - icon: ':heavy_check_mark:'
       path: flow/negativeedge.cpp
       title: flow/negativeedge.cpp
