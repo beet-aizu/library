@@ -47,20 +47,20 @@ data:
     path: test/aoj/ITP1_11_D.test.cpp
     title: test/aoj/ITP1_11_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1197.test.cpp
-    title: test/aoj/1197.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/ITP1_11_A.test.cpp
     title: test/aoj/ITP1_11_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ITP1_11_B.test.cpp
-    title: test/aoj/ITP1_11_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/ITP1_11_C.test.cpp
     title: test/aoj/ITP1_11_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1197.test.cpp
+    title: test/aoj/1197.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0502.test.cpp
     title: test/aoj/0502.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP1_11_B.test.cpp
+    title: test/aoj/ITP1_11_B.test.cpp
   isVerificationFile: false
   path: tools/dice.cpp
   requiredBy: []
@@ -69,11 +69,11 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/ITP1_11_D.test.cpp
-  - test/aoj/1197.test.cpp
   - test/aoj/ITP1_11_A.test.cpp
-  - test/aoj/ITP1_11_B.test.cpp
   - test/aoj/ITP1_11_C.test.cpp
+  - test/aoj/1197.test.cpp
   - test/aoj/0502.test.cpp
+  - test/aoj/ITP1_11_B.test.cpp
 documentation_of: tools/dice.cpp
 layout: document
 redirect_from:

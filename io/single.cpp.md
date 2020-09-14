@@ -16,11 +16,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4569.test.cpp
-    title: test/yukicoder/4569.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4569.test.cpp
+    title: test/yukicoder/4569.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
@@ -31,8 +31,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/yukicoder/4569.test.cpp
   - test/yukicoder/4862.test.cpp
+  - test/yukicoder/4569.test.cpp
   - test/yukicoder/4387.test.cpp
 documentation_of: io/single.cpp
 layout: document

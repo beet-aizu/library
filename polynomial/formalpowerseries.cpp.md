@@ -72,18 +72,21 @@ data:
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   - icon: ':heavy_check_mark:'
-    path: combinatorics/stirling1st.cpp
-    title: combinatorics/stirling1st.cpp
-  - icon: ':heavy_check_mark:'
     path: combinatorics/partition.cpp
     title: combinatorics/partition.cpp
   - icon: ':heavy_check_mark:'
-    path: combinatorics/stirling2nd.cpp
-    title: combinatorics/stirling2nd.cpp
-  - icon: ':heavy_check_mark:'
     path: combinatorics/bernoulli.cpp
     title: combinatorics/bernoulli.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling1st.cpp
+    title: combinatorics/stirling1st.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling2nd.cpp
+    title: combinatorics/stirling2nd.cpp
   extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2985.garner.test.cpp
+    title: test/aoj/2985.garner.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3072.test.cpp
     title: test/aoj/3072.test.cpp
@@ -91,80 +94,77 @@ data:
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2985.garner.test.cpp
-    title: test/aoj/2985.garner.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-    title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/polynomial_interpolation.test.cpp
-    title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/pow_of_formal_power_series.test.cpp
-    title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/log_of_formal_power_series.test.cpp
-    title: test/yosupo/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/inv_of_formal_power_series.test.cpp
-    title: test/yosupo/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/bernoulli_number.test.cpp
-    title: test/yosupo/bernoulli_number.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/polynomial_taylor_shift.test.cpp
-    title: test/yosupo/polynomial_taylor_shift.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/partition_function.test.cpp
-    title: test/yosupo/partition_function.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/multipoint_evaluation.test.cpp
-    title: test/yosupo/multipoint_evaluation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/sqrt_of_formal_power_series.test.cpp
-    title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-    title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/exp_of_formal_power_series.test.cpp
-    title: test/yosupo/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/exp_of_formal_power_series.test.cpp
+    title: test/yosupo/exp_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/sqrt_of_formal_power_series.test.cpp
+    title: test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_interpolation.test.cpp
+    title: test/yosupo/polynomial_interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/log_of_formal_power_series.test.cpp
+    title: test/yosupo/log_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/multipoint_evaluation.test.cpp
+    title: test/yosupo/multipoint_evaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/pow_of_formal_power_series.test.cpp
+    title: test/yosupo/pow_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+    title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bernoulli_number.test.cpp
+    title: test/yosupo/bernoulli_number.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/partition_function.test.cpp
+    title: test/yosupo/partition_function.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/inv_of_formal_power_series.test.cpp
+    title: test/yosupo/inv_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_taylor_shift.test.cpp
+    title: test/yosupo/polynomial_taylor_shift.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+    title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
   isVerificationFile: false
   path: polynomial/formalpowerseries.cpp
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
-  - combinatorics/stirling1st.cpp
   - combinatorics/partition.cpp
-  - combinatorics/stirling2nd.cpp
   - combinatorics/bernoulli.cpp
+  - combinatorics/stirling1st.cpp
+  - combinatorics/stirling2nd.cpp
   timestamp: '2020-05-16 18:51:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
+  - test/aoj/2985.garner.test.cpp
   - test/aoj/3072.test.cpp
   - test/aoj/2985.test.cpp
-  - test/aoj/2985.garner.test.cpp
-  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/yosupo/inv_of_formal_power_series.test.cpp
-  - test/yosupo/bernoulli_number.test.cpp
-  - test/yosupo/polynomial_taylor_shift.test.cpp
-  - test/yosupo/partition_function.test.cpp
-  - test/yosupo/multipoint_evaluation.test.cpp
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
+  - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/polynomial_taylor_shift.test.cpp
+  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
 documentation_of: polynomial/formalpowerseries.cpp
 layout: document
 redirect_from:

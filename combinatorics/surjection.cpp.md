@@ -26,11 +26,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DPL_5_I.test.cpp
-    title: test/aoj/DPL_5_I.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_C.test.cpp
     title: test/aoj/DPL_5_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DPL_5_I.test.cpp
+    title: test/aoj/DPL_5_I.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
@@ -41,8 +41,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/DPL_5_I.test.cpp
   - test/aoj/DPL_5_C.test.cpp
+  - test/aoj/DPL_5_I.test.cpp
   - test/yukicoder/2772.test.cpp
 documentation_of: combinatorics/surjection.cpp
 layout: document

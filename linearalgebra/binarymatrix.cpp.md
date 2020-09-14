@@ -48,11 +48,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1308.test.cpp
-    title: test/aoj/1308.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2624.test.cpp
     title: test/aoj/2624.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1308.test.cpp
+    title: test/aoj/1308.test.cpp
   isVerificationFile: false
   path: linearalgebra/binarymatrix.cpp
   requiredBy: []
@@ -60,8 +60,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/1308.test.cpp
   - test/aoj/2624.test.cpp
+  - test/aoj/1308.test.cpp
 documentation_of: linearalgebra/binarymatrix.cpp
 layout: document
 redirect_from:

@@ -51,11 +51,11 @@ data:
     path: test/aoj/0422.test.cpp
     title: test/aoj/0422.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1504.test.cpp
-    title: test/yukicoder/1504.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4569.test.cpp
     title: test/yukicoder/4569.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1504.test.cpp
+    title: test/yukicoder/1504.test.cpp
   isVerificationFile: false
   path: mod/rint.cpp
   requiredBy:
@@ -65,8 +65,8 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/0422.test.cpp
-  - test/yukicoder/1504.test.cpp
   - test/yukicoder/4569.test.cpp
+  - test/yukicoder/1504.test.cpp
 documentation_of: mod/rint.cpp
 layout: document
 redirect_from:

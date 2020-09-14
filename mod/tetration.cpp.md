@@ -31,11 +31,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/tetration_mod.test.cpp
-    title: test/yosupo/tetration_mod.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0472.test.cpp
     title: test/yukicoder/0472.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/tetration_mod.test.cpp
+    title: test/yosupo/tetration_mod.test.cpp
   isVerificationFile: false
   path: mod/tetration.cpp
   requiredBy: []
@@ -43,8 +43,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/yosupo/tetration_mod.test.cpp
   - test/yukicoder/0472.test.cpp
+  - test/yosupo/tetration_mod.test.cpp
 documentation_of: mod/tetration.cpp
 layout: document
 redirect_from:

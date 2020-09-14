@@ -20,11 +20,11 @@ data:
     title: mod/order.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_B.test.cpp
-    title: test/aoj/NTL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/3062.test.cpp
     title: test/aoj/3062.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_1_B.test.cpp
+    title: test/aoj/NTL_1_B.test.cpp
   isVerificationFile: false
   path: mod/pow.cpp
   requiredBy:
@@ -33,8 +33,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/NTL_1_B.test.cpp
   - test/aoj/3062.test.cpp
+  - test/aoj/NTL_1_B.test.cpp
 documentation_of: mod/pow.cpp
 layout: document
 redirect_from:

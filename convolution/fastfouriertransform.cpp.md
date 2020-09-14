@@ -76,17 +76,17 @@ data:
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/convolution_mod_1000000007.test.cpp
-    title: test/yosupo/convolution_mod_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/frequency_table_of_tree_distance.test.cpp
-    title: test/yosupo/frequency_table_of_tree_distance.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/convolution_mod_1000000007.test.cpp
+    title: test/yosupo/convolution_mod_1000000007.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/frequency_table_of_tree_distance.test.cpp
+    title: test/yosupo/frequency_table_of_tree_distance.test.cpp
   isVerificationFile: false
   path: convolution/fastfouriertransform.cpp
   requiredBy:
@@ -97,10 +97,10 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2985.test.cpp
-  - test/yosupo/convolution_mod_1000000007.test.cpp
-  - test/yosupo/frequency_table_of_tree_distance.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
+  - test/yosupo/convolution_mod_1000000007.test.cpp
+  - test/yosupo/frequency_table_of_tree_distance.test.cpp
 documentation_of: convolution/fastfouriertransform.cpp
 layout: document
 redirect_from:

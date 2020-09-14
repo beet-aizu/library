@@ -44,14 +44,14 @@ data:
     path: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
     title: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/lca.test.cpp
-    title: test/yosupo/lca.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/lca.test.cpp
+    title: test/yosupo/lca.test.cpp
   isVerificationFile: false
   path: tree/lowestcommonancestor.cpp
   requiredBy:
@@ -61,9 +61,9 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
-  - test/yosupo/lca.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
+  - test/yosupo/lca.test.cpp
 documentation_of: tree/lowestcommonancestor.cpp
 layout: document
 redirect_from:

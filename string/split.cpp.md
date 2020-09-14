@@ -19,11 +19,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1300.test.cpp
-    title: test/aoj/1300.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2328.test.cpp
     title: test/aoj/2328.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1300.test.cpp
+    title: test/aoj/1300.test.cpp
   isVerificationFile: false
   path: string/split.cpp
   requiredBy: []
@@ -31,8 +31,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/1300.test.cpp
   - test/aoj/2328.test.cpp
+  - test/aoj/1300.test.cpp
 documentation_of: string/split.cpp
 layout: document
 redirect_from:

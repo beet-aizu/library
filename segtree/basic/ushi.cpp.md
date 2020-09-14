@@ -62,14 +62,14 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_A.test.cpp
-    title: test/aoj/DSL_2_A.test.cpp
+    path: test/aoj/0367.test.cpp
+    title: test/aoj/0367.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2644.test.cpp
     title: test/aoj/2644.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0367.test.cpp
-    title: test/aoj/0367.test.cpp
+    path: test/aoj/DSL_2_A.test.cpp
+    title: test/aoj/DSL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
@@ -80,9 +80,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/DSL_2_A.test.cpp
-  - test/aoj/2644.test.cpp
   - test/aoj/0367.test.cpp
+  - test/aoj/2644.test.cpp
+  - test/aoj/DSL_2_A.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp
 documentation_of: segtree/basic/ushi.cpp
 layout: document

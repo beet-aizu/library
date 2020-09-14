@@ -25,11 +25,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DPL_3_B.test.cpp
-    title: test/aoj/DPL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_C.test.cpp
     title: test/aoj/DPL_3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DPL_3_B.test.cpp
+    title: test/aoj/DPL_3_B.test.cpp
   isVerificationFile: false
   path: algorithm/largestrectangle.cpp
   requiredBy: []
@@ -37,8 +37,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/DPL_3_B.test.cpp
   - test/aoj/DPL_3_C.test.cpp
+  - test/aoj/DPL_3_B.test.cpp
 documentation_of: algorithm/largestrectangle.cpp
 layout: document
 redirect_from:

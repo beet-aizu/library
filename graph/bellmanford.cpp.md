@@ -44,11 +44,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2872.test.cpp
-    title: test/aoj/2872.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_B.test.cpp
     title: test/aoj/GRL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2872.test.cpp
+    title: test/aoj/2872.test.cpp
   isVerificationFile: false
   path: graph/bellmanford.cpp
   requiredBy: []
@@ -56,8 +56,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/2872.test.cpp
   - test/aoj/GRL_1_B.test.cpp
+  - test/aoj/2872.test.cpp
 documentation_of: graph/bellmanford.cpp
 layout: document
 redirect_from:

@@ -69,11 +69,11 @@ data:
     title: bbst/rbst/persistent/ushi.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1508.test.cpp
-    title: test/aoj/1508.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1508.test.cpp
+    title: test/aoj/1508.test.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/ushi.cpp
   requiredBy:
@@ -82,8 +82,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/1508.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp
+  - test/aoj/1508.test.cpp
 documentation_of: bbst/rbst/basic/ushi.cpp
 layout: document
 redirect_from:

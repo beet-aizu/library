@@ -44,24 +44,24 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2230.test.cpp
+    title: test/aoj/2230.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2872.test.cpp
     title: test/aoj/2872.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2230.test.cpp
-    title: test/aoj/2230.test.cpp
   isVerificationFile: false
   path: flow/negativeedge.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:09:06+09:00'
+  timestamp: '2020-09-14 19:56:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
+  - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2872.test.cpp
-  - test/aoj/2230.test.cpp
 documentation_of: flow/negativeedge.cpp
 layout: document
 redirect_from:

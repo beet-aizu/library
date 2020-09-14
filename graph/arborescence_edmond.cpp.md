@@ -37,6 +37,9 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2309.tarjan.test.cpp
+    title: test/aoj/2309.tarjan.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_B.test.cpp
     title: test/aoj/GRL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +48,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2309.test.cpp
     title: test/aoj/2309.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2309.tarjan.test.cpp
-    title: test/aoj/2309.tarjan.test.cpp
   isVerificationFile: false
   path: graph/arborescence_edmond.cpp
   requiredBy: []
@@ -55,10 +55,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
+  - test/aoj/2309.tarjan.test.cpp
   - test/aoj/GRL_2_B.test.cpp
   - test/aoj/2647.test.cpp
   - test/aoj/2309.test.cpp
-  - test/aoj/2309.tarjan.test.cpp
 documentation_of: graph/arborescence_edmond.cpp
 layout: document
 redirect_from:

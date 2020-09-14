@@ -45,11 +45,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0424.test.cpp
-    title: test/aoj/0424.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
     title: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0424.test.cpp
+    title: test/aoj/0424.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/bipartitematching.test.cpp
     title: test/yosupo/bipartitematching.test.cpp
@@ -60,8 +60,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/0424.test.cpp
   - test/aoj/GRL_7_A.hopcroft_karp.test.cpp
+  - test/aoj/0424.test.cpp
   - test/yosupo/bipartitematching.test.cpp
 documentation_of: flow/hopcroft_karp.cpp
 layout: document

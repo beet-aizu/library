@@ -14,29 +14,29 @@ data:
   extendedDependsOn: []
   extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: linkcuttree/subtree.cpp
-    title: linkcuttree/subtree.cpp
-  - icon: ':heavy_check_mark:'
-    path: graph/nicetree.cpp
-    title: graph/nicetree.cpp
-  - icon: ':heavy_check_mark:'
-    path: datastructure/slidingwindowaggregation.cpp
-    title: datastructure/slidingwindowaggregation.cpp
-  - icon: ':heavy_check_mark:'
-    path: flow/negativeedge.cpp
-    title: flow/negativeedge.cpp
-  - icon: ':heavy_check_mark:'
     path: tree/diameterforedge.cpp
     title: tree/diameterforedge.cpp
-  - icon: ':heavy_check_mark:'
-    path: linearalgebra/binarymatrix.cpp
-    title: linearalgebra/binarymatrix.cpp
   - icon: ':heavy_check_mark:'
     path: algorithm/monotoneminima.cpp
     title: algorithm/monotoneminima.cpp
   - icon: ':heavy_check_mark:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
+  - icon: ':heavy_check_mark:'
+    path: datastructure/slidingwindowaggregation.cpp
+    title: datastructure/slidingwindowaggregation.cpp
+  - icon: ':heavy_check_mark:'
+    path: linearalgebra/binarymatrix.cpp
+    title: linearalgebra/binarymatrix.cpp
+  - icon: ':heavy_check_mark:'
+    path: flow/negativeedge.cpp
+    title: flow/negativeedge.cpp
+  - icon: ':heavy_check_mark:'
+    path: linkcuttree/subtree.cpp
+    title: linkcuttree/subtree.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph/nicetree.cpp
+    title: graph/nicetree.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/many_aplusb.test.cpp
@@ -44,14 +44,14 @@ data:
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
-  - linkcuttree/subtree.cpp
-  - graph/nicetree.cpp
-  - datastructure/slidingwindowaggregation.cpp
-  - flow/negativeedge.cpp
   - tree/diameterforedge.cpp
-  - linearalgebra/binarymatrix.cpp
   - algorithm/monotoneminima.cpp
   - algorithm/mo.cpp
+  - datastructure/slidingwindowaggregation.cpp
+  - linearalgebra/binarymatrix.cpp
+  - flow/negativeedge.cpp
+  - linkcuttree/subtree.cpp
+  - graph/nicetree.cpp
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'

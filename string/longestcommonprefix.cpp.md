@@ -35,14 +35,14 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3063.test.cpp
+    title: test/aoj/3063.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2711.test.cpp
     title: test/aoj/2711.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test/aoj/3112.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3063.test.cpp
-    title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
@@ -53,9 +53,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
+  - test/aoj/3063.test.cpp
   - test/aoj/2711.test.cpp
   - test/aoj/3112.test.cpp
-  - test/aoj/3063.test.cpp
   - test/yosupo/number_of_substrings.test.cpp
 documentation_of: string/longestcommonprefix.cpp
 layout: document

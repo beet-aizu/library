@@ -60,11 +60,11 @@ data:
     path: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
     title: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
-    title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4072.test.cpp
     title: test/yukicoder/4072.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
+    title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
   isVerificationFile: false
   path: datastructure/disjointsparsetable.cpp
   requiredBy: []
@@ -73,8 +73,8 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
-  - test/yosupo/staticrmq.disjointsparsetable.test.cpp
   - test/yukicoder/4072.test.cpp
+  - test/yosupo/staticrmq.disjointsparsetable.test.cpp
 documentation_of: datastructure/disjointsparsetable.cpp
 layout: document
 redirect_from:

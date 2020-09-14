@@ -23,11 +23,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0563.test.cpp
-    title: test/aoj/0563.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/3117.test.cpp
     title: test/aoj/3117.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0563.test.cpp
+    title: test/aoj/0563.test.cpp
   isVerificationFile: false
   path: bbst/pb_ds_tree.cpp
   requiredBy: []
@@ -35,8 +35,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/0563.test.cpp
   - test/aoj/3117.test.cpp
+  - test/aoj/0563.test.cpp
 documentation_of: bbst/pb_ds_tree.cpp
 layout: document
 redirect_from:

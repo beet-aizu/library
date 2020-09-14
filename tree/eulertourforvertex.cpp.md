@@ -33,14 +33,14 @@ data:
     path: test/aoj/2871.test.cpp
     title: test/aoj/2871.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.test.cpp
   isVerificationFile: false
   path: tree/eulertourforvertex.cpp
   requiredBy:
@@ -50,9 +50,9 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2871.test.cpp
-  - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
+  - test/yosupo/vertex_add_subtree_sum.test.cpp
 documentation_of: tree/eulertourforvertex.cpp
 layout: document
 redirect_from:

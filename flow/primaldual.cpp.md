@@ -3,11 +3,12 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
   bundledCode: "#line 1 \"flow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename TF,typename TC>\n\
-    struct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n    TC cost;\n \
-    \   int rev;\n    edge(){}\n    edge(int to,TF cap,TC cost,int rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n\
-    \  };\n\n  static const TC INF;\n  vector<vector<edge>> G;\n  vector<TC> h,dist;\n\
-    \  vector<int> prevv,preve;\n\n  PrimalDual(){}\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
+    \ TF,typename TC>\nstruct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n\
+    \    TC cost;\n    int rev;\n    edge(){}\n    edge(int to,TF cap,TC cost,int\
+    \ rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n  };\n\n  static const TC\
+    \ INF;\n  vector<vector<edge>> G;\n  vector<TC> h,dist;\n  vector<int> prevv,preve;\n\
+    \n  PrimalDual(){}\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
     \n  void add_edge(int u,int v,TF cap,TC cost){\n    G[u].emplace_back(v,cap,cost,G[v].size());\n\
     \    G[v].emplace_back(u,0,-cost,G[u].size()-1);\n  }\n\n  void dijkstra(int s){\n\
     \    struct P{\n      TC first;\n      int second;\n      P(TC first,int second):first(first),second(second){}\n\
@@ -42,8 +43,8 @@ data:
     \  return 0;\n}\n/*\n  verified on 2019/12/17\n  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b\n\
     */\n\nsigned main(){\n  //geocon2013_B();\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate<typename TF,typename TC>\nstruct PrimalDual{\n  struct\
-    \ edge{\n    int to;\n    TF cap;\n    TC cost;\n    int rev;\n    edge(){}\n\
+    //BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename TF,typename TC>\nstruct PrimalDual{\n\
+    \  struct edge{\n    int to;\n    TF cap;\n    TC cost;\n    int rev;\n    edge(){}\n\
     \    edge(int to,TF cap,TC cost,int rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n\
     \  };\n\n  static const TC INF;\n  vector<vector<edge>> G;\n  vector<TC> h,dist;\n\
     \  vector<int> prevv,preve;\n\n  PrimalDual(){}\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
@@ -91,12 +92,6 @@ data:
     path: test/aoj/2679.test.cpp
     title: test/aoj/2679.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2627.test.cpp
-    title: test/aoj/2627.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2872.test.cpp
-    title: test/aoj/2872.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_6_B.test.cpp
     title: test/aoj/GRL_6_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,20 +100,26 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2230.test.cpp
     title: test/aoj/2230.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2627.test.cpp
+    title: test/aoj/2627.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2872.test.cpp
+    title: test/aoj/2872.test.cpp
   isVerificationFile: false
   path: flow/primaldual.cpp
   requiredBy:
   - flow/negativeedge.cpp
-  timestamp: '2019-12-26 22:36:29+09:00'
+  timestamp: '2020-09-14 19:56:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2679.test.cpp
-  - test/aoj/2627.test.cpp
-  - test/aoj/2872.test.cpp
   - test/aoj/GRL_6_B.test.cpp
   - test/aoj/2736.test.cpp
   - test/aoj/2230.test.cpp
+  - test/aoj/2627.test.cpp
+  - test/aoj/2872.test.cpp
 documentation_of: flow/primaldual.cpp
 layout: document
 redirect_from:

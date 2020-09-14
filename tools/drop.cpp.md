@@ -15,20 +15,8 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0422.test.cpp
-    title: test/aoj/0422.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2970.test.cpp
-    title: test/aoj/2970.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2359.test.cpp
-    title: test/aoj/2359.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_B.test.cpp
     title: test/aoj/GRL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2308.test.cpp
-    title: test/aoj/2308.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2934.test.cpp
     title: test/aoj/2934.test.cpp
@@ -36,14 +24,26 @@ data:
     path: test/aoj/2971.test.cpp
     title: test/aoj/2971.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2970.test.cpp
+    title: test/aoj/2970.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0422.test.cpp
+    title: test/aoj/0422.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2308.test.cpp
+    title: test/aoj/2308.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2359.test.cpp
+    title: test/aoj/2359.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/sqrt_of_formal_power_series.test.cpp
+    title: test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/shortest_path.test.cpp
     title: test/yosupo/shortest_path.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/tree_decomposition_width_2.test.cpp
     title: test/yosupo/tree_decomposition_width_2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/sqrt_of_formal_power_series.test.cpp
-    title: test/yosupo/sqrt_of_formal_power_series.test.cpp
   isVerificationFile: false
   path: tools/drop.cpp
   requiredBy: []
@@ -51,16 +51,16 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/0422.test.cpp
-  - test/aoj/2970.test.cpp
-  - test/aoj/2359.test.cpp
   - test/aoj/GRL_1_B.test.cpp
-  - test/aoj/2308.test.cpp
   - test/aoj/2934.test.cpp
   - test/aoj/2971.test.cpp
+  - test/aoj/2970.test.cpp
+  - test/aoj/0422.test.cpp
+  - test/aoj/2308.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
   - test/yosupo/shortest_path.test.cpp
   - test/yosupo/tree_decomposition_width_2.test.cpp
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
 documentation_of: tools/drop.cpp
 layout: document
 redirect_from:

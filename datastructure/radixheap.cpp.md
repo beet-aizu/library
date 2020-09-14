@@ -36,11 +36,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_1_A.test.cpp
-    title: test/aoj/GRL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_A.test.cpp
+    title: test/aoj/GRL_1_A.test.cpp
   isVerificationFile: false
   path: datastructure/radixheap.cpp
   requiredBy: []
@@ -48,8 +48,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/GRL_1_A.test.cpp
   - test/aoj/1607.test.cpp
+  - test/aoj/GRL_1_A.test.cpp
 documentation_of: datastructure/radixheap.cpp
 layout: document
 redirect_from:

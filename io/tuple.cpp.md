@@ -23,11 +23,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4852.test.cpp
-    title: test/yukicoder/4852.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4852.test.cpp
+    title: test/yukicoder/4852.test.cpp
   isVerificationFile: false
   path: io/tuple.cpp
   requiredBy: []
@@ -35,8 +35,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/yukicoder/4852.test.cpp
   - test/yukicoder/4918.test.cpp
+  - test/yukicoder/4852.test.cpp
 documentation_of: io/tuple.cpp
 layout: document
 redirect_from:

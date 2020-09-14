@@ -36,65 +36,65 @@ data:
   extendedDependsOn: []
   extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: graph/twosatisfiability.cpp
-    title: graph/twosatisfiability.cpp
-  - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph/twosatisfiability.cpp
+    title: graph/twosatisfiability.cpp
   extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2309.tarjan.test.cpp
+    title: test/aoj/2309.tarjan.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_4_A.test.cpp
     title: test/aoj/GRL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_2_B.test.cpp
-    title: test/aoj/GRL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2647.test.cpp
-    title: test/aoj/2647.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2309.test.cpp
-    title: test/aoj/2309.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_3_C.test.cpp
     title: test/aoj/GRL_3_C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2222.test.cpp
-    title: test/aoj/2222.test.cpp
+    path: test/aoj/GRL_2_B.test.cpp
+    title: test/aoj/GRL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3102.test.cpp
     title: test/aoj/3102.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2309.tarjan.test.cpp
-    title: test/aoj/2309.tarjan.test.cpp
+    path: test/aoj/2647.test.cpp
+    title: test/aoj/2647.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2222.test.cpp
+    title: test/aoj/2222.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2309.test.cpp
+    title: test/aoj/2309.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4387.test.cpp
+    title: test/yukicoder/4387.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/two_sat.test.cpp
     title: test/yosupo/two_sat.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4387.test.cpp
-    title: test/yukicoder/4387.test.cpp
   isVerificationFile: false
   path: graph/stronglyconnectedcomponent.cpp
   requiredBy:
-  - graph/twosatisfiability.cpp
   - graph/arborescence_edmond.cpp
+  - graph/twosatisfiability.cpp
   timestamp: '2019-12-17 22:09:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/GRL_4_A.test.cpp
-  - test/aoj/GRL_2_B.test.cpp
-  - test/aoj/2647.test.cpp
-  - test/aoj/2309.test.cpp
-  - test/aoj/GRL_3_C.test.cpp
-  - test/aoj/2222.test.cpp
-  - test/aoj/3102.test.cpp
   - test/aoj/2309.tarjan.test.cpp
+  - test/aoj/GRL_4_A.test.cpp
+  - test/aoj/GRL_3_C.test.cpp
+  - test/aoj/GRL_2_B.test.cpp
+  - test/aoj/3102.test.cpp
+  - test/aoj/2647.test.cpp
+  - test/aoj/2222.test.cpp
+  - test/aoj/2309.test.cpp
+  - test/yukicoder/4387.test.cpp
   - test/yosupo/scc.test.cpp
   - test/yosupo/two_sat.test.cpp
-  - test/yukicoder/4387.test.cpp
 documentation_of: graph/stronglyconnectedcomponent.cpp
 layout: document
 redirect_from:

@@ -40,11 +40,11 @@ data:
     path: test/aoj/3074.test.cpp
     title: test/aoj/3074.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2560.test.cpp
-    title: test/aoj/2560.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2977.test.cpp
     title: test/aoj/2977.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2560.test.cpp
+    title: test/aoj/2560.test.cpp
   isVerificationFile: false
   path: convolution/convolution2D.cpp
   requiredBy: []
@@ -53,8 +53,8 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/3074.test.cpp
-  - test/aoj/2560.test.cpp
   - test/aoj/2977.test.cpp
+  - test/aoj/2560.test.cpp
 documentation_of: convolution/convolution2D.cpp
 layout: document
 redirect_from:

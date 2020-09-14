@@ -23,11 +23,11 @@ data:
     path: test/aoj/NTL_1_D.test.cpp
     title: test/aoj/NTL_1_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/tetration_mod.test.cpp
-    title: test/yosupo/tetration_mod.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0472.test.cpp
     title: test/yukicoder/0472.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/tetration_mod.test.cpp
+    title: test/yosupo/tetration_mod.test.cpp
   isVerificationFile: false
   path: math/totient.cpp
   requiredBy:
@@ -37,8 +37,8 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/NTL_1_D.test.cpp
-  - test/yosupo/tetration_mod.test.cpp
   - test/yukicoder/0472.test.cpp
+  - test/yosupo/tetration_mod.test.cpp
 documentation_of: math/totient.cpp
 layout: document
 redirect_from:

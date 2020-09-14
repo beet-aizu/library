@@ -29,11 +29,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_C.test.cpp
-    title: test/aoj/ALDS1_14_C.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/1312.test.cpp
     title: test/aoj/1312.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_14_C.test.cpp
+    title: test/aoj/ALDS1_14_C.test.cpp
   isVerificationFile: false
   path: string/rectanglehash.cpp
   requiredBy: []
@@ -41,8 +41,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/ALDS1_14_C.test.cpp
   - test/aoj/1312.test.cpp
+  - test/aoj/ALDS1_14_C.test.cpp
 documentation_of: string/rectanglehash.cpp
 layout: document
 redirect_from:

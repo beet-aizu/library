@@ -87,14 +87,14 @@ data:
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_F.bbst.test.cpp
-    title: test/aoj/DSL_2_F.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_G.bbst.test.cpp
     title: test/aoj/DSL_2_G.bbst.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_H.bbst.test.cpp
     title: test/aoj/DSL_2_H.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.bbst.test.cpp
+    title: test/aoj/DSL_2_F.bbst.test.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/lazy.cpp
   requiredBy:
@@ -104,9 +104,9 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/DSL_2_I.bbst.test.cpp
-  - test/aoj/DSL_2_F.bbst.test.cpp
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp
+  - test/aoj/DSL_2_F.bbst.test.cpp
 documentation_of: bbst/rbst/basic/lazy.cpp
 layout: document
 redirect_from:

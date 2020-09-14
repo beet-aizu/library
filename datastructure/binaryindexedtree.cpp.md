@@ -42,23 +42,23 @@ data:
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_path_sum.test.cpp
-    title: test/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/point_add_range_sum.test.cpp
-    title: test/yosupo/point_add_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2125.test.cpp
-    title: test/yukicoder/2125.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test/yukicoder/1732.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2125.test.cpp
+    title: test/yukicoder/2125.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_path_sum.test.cpp
+    title: test/yosupo/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/point_add_range_sum.test.cpp
+    title: test/yosupo/point_add_range_sum.test.cpp
   isVerificationFile: false
   path: datastructure/binaryindexedtree.cpp
   requiredBy: []
@@ -69,12 +69,12 @@ data:
   - test/aoj/GRL_5_D.test.cpp
   - test/aoj/DSL_2_B.test.cpp
   - test/aoj/0343.test.cpp
-  - test/yosupo/vertex_add_subtree_sum.test.cpp
-  - test/yosupo/vertex_add_path_sum.test.cpp
-  - test/yosupo/point_add_range_sum.test.cpp
-  - test/yukicoder/2125.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
+  - test/yukicoder/2125.test.cpp
+  - test/yosupo/vertex_add_path_sum.test.cpp
+  - test/yosupo/vertex_add_subtree_sum.test.cpp
+  - test/yosupo/point_add_range_sum.test.cpp
 documentation_of: datastructure/binaryindexedtree.cpp
 layout: document
 redirect_from:

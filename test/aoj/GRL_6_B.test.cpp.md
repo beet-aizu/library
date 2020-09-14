@@ -6,9 +6,9 @@ data:
   bundledCode: "#line 1 \"test/aoj/GRL_6_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 1 \"flow/primaldual.cpp\"\n\n#line 3 \"flow/primaldual.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename TF,typename TC>\nstruct PrimalDual{\n\
-    \  struct edge{\n    int to;\n    TF cap;\n    TC cost;\n    int rev;\n    edge(){}\n\
-    \    edge(int to,TF cap,TC cost,int rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n\
+    \ std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename TF,typename\
+    \ TC>\nstruct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n    TC cost;\n\
+    \    int rev;\n    edge(){}\n    edge(int to,TF cap,TC cost,int rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n\
     \  };\n\n  static const TC INF;\n  vector<vector<edge>> G;\n  vector<TC> h,dist;\n\
     \  vector<int> prevv,preve;\n\n  PrimalDual(){}\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
     \n  void add_edge(int u,int v,TF cap,TC cost){\n    G[u].emplace_back(v,cap,cost,G[v].size());\n\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2019-12-26 22:36:29+09:00'
+  timestamp: '2020-09-14 19:56:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []

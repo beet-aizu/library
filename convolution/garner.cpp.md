@@ -56,11 +56,11 @@ data:
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
-    title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
+    title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
   isVerificationFile: false
   path: convolution/garner.cpp
   requiredBy:
@@ -70,8 +70,8 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/2985.garner.test.cpp
-  - test/yosupo/convolution_mod_1000000007.garner.test.cpp
   - test/yukicoder/1504.test.cpp
+  - test/yosupo/convolution_mod_1000000007.garner.test.cpp
 documentation_of: convolution/garner.cpp
 layout: document
 redirect_from:

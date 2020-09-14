@@ -52,11 +52,11 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_D.bbst.test.cpp
-    title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_E.bbst.test.cpp
     title: test/aoj/DSL_2_E.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_D.bbst.test.cpp
+    title: test/aoj/DSL_2_D.bbst.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1579.test.cpp
     title: test/aoj/1579.test.cpp
@@ -67,8 +67,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/DSL_2_D.bbst.test.cpp
   - test/aoj/DSL_2_E.bbst.test.cpp
+  - test/aoj/DSL_2_D.bbst.test.cpp
   - test/aoj/1579.test.cpp
 documentation_of: bbst/rbst/basic/dual.cpp
 layout: document

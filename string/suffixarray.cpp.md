@@ -56,29 +56,29 @@ data:
     title: string/longestcommonprefix.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_D.test.cpp
-    title: test/aoj/ALDS1_14_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2711.test.cpp
-    title: test/aoj/2711.test.cpp
+    path: test/aoj/3033.test.cpp
+    title: test/aoj/3033.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2644.test.cpp
     title: test/aoj/2644.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/3033.test.cpp
-    title: test/aoj/3033.test.cpp
+    path: test/aoj/3063.test.cpp
+    title: test/aoj/3063.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2711.test.cpp
+    title: test/aoj/2711.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_14_D.test.cpp
+    title: test/aoj/ALDS1_14_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test/aoj/3112.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/3063.test.cpp
-    title: test/aoj/3063.test.cpp
+    path: test/yosupo/suffixarray.test.cpp
+    title: test/yosupo/suffixarray.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/suffixarray.test.cpp
-    title: test/yosupo/suffixarray.test.cpp
   isVerificationFile: false
   path: string/suffixarray.cpp
   requiredBy:
@@ -87,14 +87,14 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/ALDS1_14_D.test.cpp
-  - test/aoj/2711.test.cpp
-  - test/aoj/2644.test.cpp
   - test/aoj/3033.test.cpp
-  - test/aoj/3112.test.cpp
+  - test/aoj/2644.test.cpp
   - test/aoj/3063.test.cpp
-  - test/yosupo/number_of_substrings.test.cpp
+  - test/aoj/2711.test.cpp
+  - test/aoj/ALDS1_14_D.test.cpp
+  - test/aoj/3112.test.cpp
   - test/yosupo/suffixarray.test.cpp
+  - test/yosupo/number_of_substrings.test.cpp
 documentation_of: string/suffixarray.cpp
 layout: document
 redirect_from:

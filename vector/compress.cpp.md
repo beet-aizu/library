@@ -23,44 +23,44 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1300.test.cpp
-    title: test/aoj/1300.test.cpp
+    path: test/aoj/1607.test.cpp
+    title: test/aoj/1607.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2359.test.cpp
-    title: test/aoj/2359.test.cpp
+    path: test/aoj/1599.test.cpp
+    title: test/aoj/1599.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1300.test.cpp
+    title: test/aoj/1300.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1599.test.cpp
-    title: test/aoj/1599.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1607.test.cpp
-    title: test/aoj/1607.test.cpp
+    path: test/aoj/2359.test.cpp
+    title: test/aoj/2359.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4778.test.cpp
+    title: test/yukicoder/4778.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1732.test.cpp
+    title: test/yukicoder/1732.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4852.test.cpp
+    title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/line_add_get_min.test.cpp
+    title: test/yosupo/line_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/line_add_get_min.test.cpp
-    title: test/yosupo/line_add_get_min.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1732.test.cpp
-    title: test/yukicoder/1732.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4778.test.cpp
-    title: test/yukicoder/4778.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4852.test.cpp
-    title: test/yukicoder/4852.test.cpp
   isVerificationFile: false
   path: vector/compress.cpp
   requiredBy: []
@@ -68,19 +68,19 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/1300.test.cpp
-  - test/aoj/2563.test.cpp
-  - test/aoj/2359.test.cpp
-  - test/aoj/0343.test.cpp
-  - test/aoj/1599.test.cpp
-  - test/aoj/0613.test.cpp
   - test/aoj/1607.test.cpp
+  - test/aoj/2563.test.cpp
+  - test/aoj/1599.test.cpp
+  - test/aoj/1300.test.cpp
+  - test/aoj/0343.test.cpp
+  - test/aoj/0613.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/yukicoder/4778.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/4852.test.cpp
+  - test/yosupo/line_add_get_min.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
   - test/yosupo/point_add_rectangle_sum.test.cpp
-  - test/yosupo/line_add_get_min.test.cpp
-  - test/yukicoder/1732.test.cpp
-  - test/yukicoder/4778.test.cpp
-  - test/yukicoder/4852.test.cpp
 documentation_of: vector/compress.cpp
 layout: document
 redirect_from:

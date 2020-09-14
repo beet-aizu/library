@@ -258,23 +258,14 @@ data:
     path: test/aoj/1595.toptree.test.cpp
     title: test/aoj/1595.toptree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2636.test.cpp
-    title: test/aoj/2636.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/3037.test.cpp
     title: test/aoj/3037.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3143.test.cpp
     title: test/aoj/3143.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4706.test.cpp
-    title: test/yukicoder/4706.test.cpp
+    path: test/aoj/2636.test.cpp
+    title: test/aoj/2636.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
@@ -284,6 +275,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3453.test.cpp
     title: test/yukicoder/3453.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4706.test.cpp
+    title: test/yukicoder/4706.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   isVerificationFile: false
   path: toptree/toptree.cpp
   requiredBy:
@@ -293,15 +293,15 @@ data:
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - test/aoj/1595.toptree.test.cpp
-  - test/aoj/2636.test.cpp
   - test/aoj/3037.test.cpp
   - test/aoj/3143.test.cpp
-  - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-  - test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-  - test/yukicoder/4706.test.cpp
+  - test/aoj/2636.test.cpp
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/2587.test.cpp
   - test/yukicoder/3453.test.cpp
+  - test/yukicoder/4706.test.cpp
+  - test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+  - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
 documentation_of: toptree/toptree.cpp
 layout: document
 redirect_from:

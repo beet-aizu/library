@@ -118,23 +118,23 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_2_A.test.cpp
-    title: test/aoj/NTL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_2_F.test.cpp
     title: test/aoj/NTL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_2_D.test.cpp
-    title: test/aoj/NTL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_2_E.test.cpp
     title: test/aoj/NTL_2_E.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_2_C.test.cpp
-    title: test/aoj/NTL_2_C.test.cpp
+    path: test/aoj/NTL_2_A.test.cpp
+    title: test/aoj/NTL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_2_D.test.cpp
+    title: test/aoj/NTL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_2_B.test.cpp
     title: test/aoj/NTL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_2_C.test.cpp
+    title: test/aoj/NTL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0831.test.cpp
     title: test/yukicoder/0831.test.cpp
@@ -151,12 +151,12 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/aoj/NTL_2_A.test.cpp
   - test/aoj/NTL_2_F.test.cpp
-  - test/aoj/NTL_2_D.test.cpp
   - test/aoj/NTL_2_E.test.cpp
-  - test/aoj/NTL_2_C.test.cpp
+  - test/aoj/NTL_2_A.test.cpp
+  - test/aoj/NTL_2_D.test.cpp
   - test/aoj/NTL_2_B.test.cpp
+  - test/aoj/NTL_2_C.test.cpp
   - test/yukicoder/0831.test.cpp
   - test/yukicoder/2125.test.cpp
   - test/yukicoder/0143.test.cpp

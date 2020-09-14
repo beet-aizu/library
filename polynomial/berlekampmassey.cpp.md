@@ -32,9 +32,6 @@ data:
   extendedRequiredBy: []
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/find_linear_recurrence.test.cpp
-    title: test/yosupo/find_linear_recurrence.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':heavy_check_mark:'
@@ -43,6 +40,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/find_linear_recurrence.test.cpp
+    title: test/yosupo/find_linear_recurrence.test.cpp
   isVerificationFile: false
   path: polynomial/berlekampmassey.cpp
   requiredBy: []
@@ -50,10 +50,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - test/yosupo/find_linear_recurrence.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/3211.test.cpp
   - test/yukicoder/0104.test.cpp
+  - test/yosupo/find_linear_recurrence.test.cpp
 documentation_of: polynomial/berlekampmassey.cpp
 layout: document
 redirect_from:

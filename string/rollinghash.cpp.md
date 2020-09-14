@@ -31,17 +31,17 @@ data:
     title: string/rectanglehash.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1312.test.cpp
+    title: test/aoj/1312.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2444.test.cpp
+    title: test/aoj/2444.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_14_C.test.cpp
     title: test/aoj/ALDS1_14_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_14_B.test.cpp
     title: test/aoj/ALDS1_14_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2444.test.cpp
-    title: test/aoj/2444.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1312.test.cpp
-    title: test/aoj/1312.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2292.test.cpp
     title: test/aoj/2292.test.cpp
@@ -56,10 +56,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
+  - test/aoj/1312.test.cpp
+  - test/aoj/2444.test.cpp
   - test/aoj/ALDS1_14_C.test.cpp
   - test/aoj/ALDS1_14_B.test.cpp
-  - test/aoj/2444.test.cpp
-  - test/aoj/1312.test.cpp
   - test/aoj/2292.test.cpp
   - test/yukicoder/0399.test.cpp
 documentation_of: string/rollinghash.cpp

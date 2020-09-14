@@ -35,12 +35,12 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':warning:'
-    path: graph/voronoiminimumspanningtree.cpp
-    title: graph/voronoiminimumspanningtree.cpp
   - icon: ':heavy_check_mark:'
     path: linearalgebra/tree_theorem.cpp
     title: linearalgebra/tree_theorem.cpp
+  - icon: ':warning:'
+    path: graph/voronoiminimumspanningtree.cpp
+    title: graph/voronoiminimumspanningtree.cpp
   extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_A.test.cpp
@@ -51,8 +51,8 @@ data:
   isVerificationFile: false
   path: graph/kruskal.cpp
   requiredBy:
-  - graph/voronoiminimumspanningtree.cpp
   - linearalgebra/tree_theorem.cpp
+  - graph/voronoiminimumspanningtree.cpp
   timestamp: '2019-11-21 16:50:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verificationStatusIcon: ':heavy_check_mark:'
