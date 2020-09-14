@@ -13,8 +13,8 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
   bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"datastructure/binaryindexedtree.cpp\"\n\n#line 3 \"datastructure/binaryindexedtree.cpp\"\
-    \nusing namespace std;\n#endif\n/*\n * @docs docs/binaryindexedtree.md\n */\n\
+    #line 2 \"datastructure/binaryindexedtree.cpp\"\n\n#ifndef call_from_test\n#line\
+    \ 5 \"datastructure/binaryindexedtree.cpp\"\nusing namespace std;\n#endif\n\n\
     //BEGIN CUT HERE\ntemplate<typename T>\nstruct BIT{\n  int n;\n  vector<T> bit;\n\
     \  // 1-indexed\n  BIT(int n_):n(n_+1),bit(n+1,0){}\n\n  T sum(int i){\n    T\
     \ s(0);\n    for(int x=i;x>0;x-=(x&-x))\n      s+=bit[x];\n    return s;\n  }\n\
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:09:06+09:00'
+  timestamp: '2020-09-14 22:28:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp

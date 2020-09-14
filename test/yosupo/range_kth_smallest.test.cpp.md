@@ -13,9 +13,9 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
   bundledCode: "#line 1 \"test/yosupo/range_kth_smallest.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/waveletmatrix.cpp\"\
-    \n\n#line 3 \"datastructure/waveletmatrix.cpp\"\nusing namespace std;\n#endif\n\
-    /**\n * @docs docs/waveletmatrix.md\n */\n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n\
+    using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/waveletmatrix.cpp\"\
+    \n\n#ifndef call_from_test\n#line 5 \"datastructure/waveletmatrix.cpp\"\nusing\
+    \ namespace std;\n#endif\n\n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n\
     \  int len,blk;\n  vector<unsigned> bit;\n  vector<int> sum;\n\n  FullyIndexableDictionary(){}\n\
     \  FullyIndexableDictionary(int len)\n    :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}\n\
     \n  void set(int k){\n    bit[k>>5]|=1u<<(k&31);\n  }\n\n  void build(){\n   \
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-14 22:28:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/range_kth_smallest.test.cpp

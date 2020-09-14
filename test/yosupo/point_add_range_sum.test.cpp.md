@@ -13,10 +13,10 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "#line 1 \"test/yosupo/point_add_range_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/binaryindexedtree.cpp\"\
-    \n\n#line 3 \"datastructure/binaryindexedtree.cpp\"\nusing namespace std;\n#endif\n\
-    /*\n * @docs docs/binaryindexedtree.md\n */\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T>\nstruct BIT{\n  int n;\n  vector<T> bit;\n  // 1-indexed\n  BIT(int n_):n(n_+1),bit(n+1,0){}\n\
+    using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/binaryindexedtree.cpp\"\
+    \n\n#ifndef call_from_test\n#line 5 \"datastructure/binaryindexedtree.cpp\"\n\
+    using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct\
+    \ BIT{\n  int n;\n  vector<T> bit;\n  // 1-indexed\n  BIT(int n_):n(n_+1),bit(n+1,0){}\n\
     \n  T sum(int i){\n    T s(0);\n    for(int x=i;x>0;x-=(x&-x))\n      s+=bit[x];\n\
     \    return s;\n  }\n\n  void add(int i,T a){\n    if(i==0) return;\n    for(int\
     \ x=i;x<=n;x+=(x&-x))\n      bit[x]+=a;\n  }\n\n  // [l, r)\n  T query(int l,int\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:59:12+09:00'
+  timestamp: '2020-09-14 22:28:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum.test.cpp

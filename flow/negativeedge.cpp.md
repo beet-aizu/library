@@ -65,7 +65,6 @@ data:
   - test/aoj/2872.test.cpp
 documentation_of: ./flow/negativeedge.cpp
 layout: document
-title: "\u8CA0\u8FBA\u9664\u53BB"
 ---
 
 ## 解説記事

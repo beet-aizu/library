@@ -190,7 +190,7 @@ data:
       title: "\u6700\u5C0F\u6D41\u91CF\u5236\u7D04\u4ED8\u304D\u6700\u5927\u6D41"
     - icon: ':heavy_check_mark:'
       path: flow/negativeedge.cpp
-      title: "\u8CA0\u8FBA\u9664\u53BB"
+      title: flow/negativeedge.cpp
     - icon: ':heavy_check_mark:'
       path: flow/primaldual.cpp
       title: flow/primaldual.cpp

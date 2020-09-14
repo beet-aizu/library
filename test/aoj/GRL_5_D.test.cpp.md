@@ -31,10 +31,10 @@ data:
     \ F>\n  void query(int u,int v,F f){\n    if(dep[u]>dep[v]) swap(u,v);\n    f(ds[u]+1,ds[v]+1);\n\
     \  }\n\n  template<typename T,typename G>\n  void update(int v,T x,G g){\n   \
     \ g(ds[v], x);\n    g(us[v],-x);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    signed main(){\n  return 0;\n}\n#endif\n#line 1 \"datastructure/binaryindexedtree.cpp\"\
-    \n\n#line 3 \"datastructure/binaryindexedtree.cpp\"\nusing namespace std;\n#endif\n\
-    /*\n * @docs docs/binaryindexedtree.md\n */\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T>\nstruct BIT{\n  int n;\n  vector<T> bit;\n  // 1-indexed\n  BIT(int n_):n(n_+1),bit(n+1,0){}\n\
+    signed main(){\n  return 0;\n}\n#endif\n#line 2 \"datastructure/binaryindexedtree.cpp\"\
+    \n\n#ifndef call_from_test\n#line 5 \"datastructure/binaryindexedtree.cpp\"\n\
+    using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct\
+    \ BIT{\n  int n;\n  vector<T> bit;\n  // 1-indexed\n  BIT(int n_):n(n_+1),bit(n+1,0){}\n\
     \n  T sum(int i){\n    T s(0);\n    for(int x=i;x>0;x-=(x&-x))\n      s+=bit[x];\n\
     \    return s;\n  }\n\n  void add(int i,T a){\n    if(i==0) return;\n    for(int\
     \ x=i;x<=n;x+=(x&-x))\n      bit[x]+=a;\n  }\n\n  // [l, r)\n  T query(int l,int\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_D.test.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:21:09+09:00'
+  timestamp: '2020-09-14 22:28:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_D.test.cpp

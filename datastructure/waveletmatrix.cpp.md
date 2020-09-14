@@ -31,16 +31,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    _deprecated_at_docs: docs/waveletmatrix.md
-  bundledCode: "#line 1 \"datastructure/waveletmatrix.cpp\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n#endif\n/**\n * @docs docs/waveletmatrix.md\n */\n//BEGIN\
-    \ CUT HERE\nstruct FullyIndexableDictionary{\n  int len,blk;\n  vector<unsigned>\
-    \ bit;\n  vector<int> sum;\n\n  FullyIndexableDictionary(){}\n  FullyIndexableDictionary(int\
-    \ len)\n    :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}\n\n  void set(int\
-    \ k){\n    bit[k>>5]|=1u<<(k&31);\n  }\n\n  void build(){\n    sum[0]=0;\n   \
-    \ for(int i=1;i<blk;i++)\n      sum[i]=sum[i-1]+__builtin_popcount(bit[i-1]);\n\
-    \  }\n\n  bool operator[](int k) const{\n    return bool((bit[k>>5]>>(k&31))&1);\n\
-    \  }\n\n  int rank(int k){\n    return sum[k>>5]+__builtin_popcount(bit[k>>5]&((1u<<(k&31))-1));\n\
+  bundledCode: "#line 2 \"datastructure/waveletmatrix.cpp\"\n\n#ifndef call_from_test\n\
+    #include <bits/stdc++.h>\nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\nstruct\
+    \ FullyIndexableDictionary{\n  int len,blk;\n  vector<unsigned> bit;\n  vector<int>\
+    \ sum;\n\n  FullyIndexableDictionary(){}\n  FullyIndexableDictionary(int len)\n\
+    \    :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}\n\n  void set(int k){\n\
+    \    bit[k>>5]|=1u<<(k&31);\n  }\n\n  void build(){\n    sum[0]=0;\n    for(int\
+    \ i=1;i<blk;i++)\n      sum[i]=sum[i-1]+__builtin_popcount(bit[i-1]);\n  }\n\n\
+    \  bool operator[](int k) const{\n    return bool((bit[k>>5]>>(k&31))&1);\n  }\n\
+    \n  int rank(int k){\n    return sum[k>>5]+__builtin_popcount(bit[k>>5]&((1u<<(k&31))-1));\n\
     \  }\n\n  int rank(bool v,int k){\n    return (v?rank(k):k-rank(k));\n  }\n\n\
     \  int select(bool v,int k){\n    if(k<0||rank(v,len)<=k) return -1;\n    int\
     \ l=0,r=len;\n    while(l+1<r){\n      int m=(l+r)>>1;\n      if(rank(v,m)>=k+1)\
@@ -88,9 +87,9 @@ data:
     \  }\n\n  T pred(int l,int r,T v){\n    int k=lt(l,r,v);\n    return k?rquantile(l,r,k-1):npos;\n\
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    /**\n * @docs docs/waveletmatrix.md\n */\n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n\
-    \  int len,blk;\n  vector<unsigned> bit;\n  vector<int> sum;\n\n  FullyIndexableDictionary(){}\n\
+  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n\n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n  int len,blk;\n\
+    \  vector<unsigned> bit;\n  vector<int> sum;\n\n  FullyIndexableDictionary(){}\n\
     \  FullyIndexableDictionary(int len)\n    :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}\n\
     \n  void set(int k){\n    bit[k>>5]|=1u<<(k&31);\n  }\n\n  void build(){\n   \
     \ sum[0]=0;\n    for(int i=1;i<blk;i++)\n      sum[i]=sum[i-1]+__builtin_popcount(bit[i-1]);\n\
@@ -147,7 +146,7 @@ data:
   isVerificationFile: false
   path: datastructure/waveletmatrix.cpp
   requiredBy: []
-  timestamp: '2020-02-23 20:10:59+09:00'
+  timestamp: '2020-09-14 22:28:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2674.test.cpp
@@ -158,12 +157,8 @@ data:
   - test/yukicoder/2147.test.cpp
   - test/yukicoder/3227.test.cpp
   - test/yosupo/range_kth_smallest.test.cpp
-documentation_of: datastructure/waveletmatrix.cpp
+documentation_of: ./datastructure/waveletmatrix.cpp
 layout: document
-redirect_from:
-- /library/datastructure/waveletmatrix.cpp
-- /library/datastructure/waveletmatrix.cpp.html
-title: datastructure/waveletmatrix.cpp
 ---
 
 ## できること
