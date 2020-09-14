@@ -1,4 +1,5 @@
 ---
+title: Binary Indexed Tree
 documentation_of: ./datastructure/binaryindexedtree.cpp
 ---
 

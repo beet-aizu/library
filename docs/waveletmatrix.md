@@ -1,4 +1,5 @@
 ---
+title: Wavelet Matrix
 documentation_of: ./datastructure/waveletmatrix.cpp
 ---
 
