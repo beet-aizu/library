@@ -18,9 +18,6 @@ data:
     path: linearalgebra/binarymatrix.cpp
     title: linearalgebra/binarymatrix.cpp
   - icon: ':heavy_check_mark:'
-    path: flow/negativeedge.cpp
-    title: flow/negativeedge.cpp
-  - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   - icon: ':heavy_check_mark:'
@@ -51,7 +48,6 @@ data:
   - algorithm/mo.cpp
   - datastructure/slidingwindowaggregation.cpp
   - linearalgebra/binarymatrix.cpp
-  - flow/negativeedge.cpp
   - linkcuttree/subtree.cpp
   - graph/nicetree.cpp
   timestamp: '2020-05-07 20:09:06+09:00'
