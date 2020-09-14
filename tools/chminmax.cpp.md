@@ -84,6 +84,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_10_C.test.cpp
     title: test/aoj/ALDS1_10_C.test.cpp
+  - icon: ':x:'
+    path: test/aoj/2432.test.cpp
+    title: test/aoj/2432.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test/aoj/3112.test.cpp
@@ -103,7 +106,7 @@ data:
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -126,7 +129,7 @@ data:
   - string/longestcommonsubstring.cpp
   - graph/nicetree.cpp
   timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/0596.test.cpp
@@ -151,6 +154,7 @@ data:
   - test/aoj/0613.test.cpp
   - test/aoj/3069.lichao.test.cpp
   - test/aoj/ALDS1_10_C.test.cpp
+  - test/aoj/2432.test.cpp
   - test/aoj/3112.test.cpp
   - test/yukicoder/4918.test.cpp
   - test/yukicoder/3912.test.cpp

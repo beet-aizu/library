@@ -269,7 +269,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/stronglyconnectedcomponent.cpp
       title: graph/stronglyconnectedcomponent.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/topologicalsort.cpp
       title: graph/topologicalsort.cpp
     - icon: ':heavy_check_mark:'
@@ -303,7 +303,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: linearalgebra/matrix.cpp
       title: linearalgebra/matrix.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linearalgebra/squarematrix.cpp
       title: linearalgebra/squarematrix.cpp
     - icon: ':heavy_check_mark:'
@@ -531,7 +531,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
@@ -828,6 +828,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2415.test.cpp
       title: test/aoj/2415.test.cpp
+    - icon: ':x:'
+      path: test/aoj/2432.test.cpp
+      title: test/aoj/2432.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2444.test.cpp
       title: test/aoj/2444.test.cpp
@@ -1182,6 +1185,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_4_A.test.cpp
       title: test/aoj/GRL_4_A.test.cpp
+    - icon: ':x:'
+      path: test/aoj/GRL_4_B.test.cpp
+      title: test/aoj/GRL_4_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_A.linkcuttree.test.cpp
       title: test/aoj/GRL_5_A.linkcuttree.test.cpp

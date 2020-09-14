@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/GRL_4_B.test.cpp
+    title: test/aoj/GRL_4_B.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -35,8 +38,9 @@ data:
   path: graph/topologicalsort.cpp
   requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/aoj/GRL_4_B.test.cpp
 documentation_of: graph/topologicalsort.cpp
 layout: document
 redirect_from:
