@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: flow/primaldual.cpp
-    title: flow/primaldual.cpp
+    title: Primal Dual
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

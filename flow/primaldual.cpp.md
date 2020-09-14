@@ -121,10 +121,10 @@ data:
   - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2872.test.cpp
-documentation_of: flow/primaldual.cpp
+documentation_of: ./flow/primaldual.cpp
 layout: document
-redirect_from:
-- /library/flow/primaldual.cpp
-- /library/flow/primaldual.cpp.html
-title: flow/primaldual.cpp
+title: Primal Dual
 ---
+
+## 解説記事
+[最小費用流の双対について](https://beet-aizu.hatenablog.com/entry/2019/10/20/150649)

@@ -193,7 +193,7 @@ data:
       title: flow/negativeedge.cpp
     - icon: ':heavy_check_mark:'
       path: flow/primaldual.cpp
-      title: flow/primaldual.cpp
+      title: Primal Dual
   - name: geometry/3D
     pages:
     - icon: ':warning:'
