@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"tree/levelancestor.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct LevelAncestor{\n  int n,h;\n\
     \  vector<vector<int> > G,par,lad;\n  vector<int> dep,nxt,len,pth,ord,hs;\n  LevelAncestor(){}\n\

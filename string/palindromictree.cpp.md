@@ -13,6 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"string/palindromictree.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct PalindromicTree{\n  struct\
     \ node{\n    map<char, int> nxt;\n    int len,suf,app,cnt;\n    node(){}\n   \

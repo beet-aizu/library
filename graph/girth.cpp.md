@@ -7,6 +7,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://codeforces.com/contest/1205/problem/B
   bundledCode: "#line 1 \"graph/girth.cpp\"\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n//BEGIN CUT HERE\n// size of minimum cycle\nint girth(vector< vector<int>\
     \ > G){\n  int n=G.size();\n  int res=n+1;\n  vector<int> dp(n),pr(n);\n  for(int\

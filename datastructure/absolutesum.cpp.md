@@ -10,6 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/abc127/tasks/abc127_f
   bundledCode: "#line 1 \"datastructure/absolutesum.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct AbsoluteSum{\n\
     \  multiset<T> lp,rp;\n  T sum;\n  AbsoluteSum():sum(0){}\n  T insert(T x){\n\

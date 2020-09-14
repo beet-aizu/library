@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/montmort_number_mod
+    links:
+    - https://judge.yosupo.jp/problem/montmort_number_mod
   bundledCode: "#line 1 \"test/yosupo/montmort_number_mod.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/montmort_number_mod\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"mod/montmort.cpp\"\n\

@@ -13,6 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"polynomial/lagrangeinterpolation.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename M>\nM lagrange_interpolation(vector<M>\
     \ &y,M t){\n  int n=y.size()-1;\n  if(t.v<=n) return y[t.v];\n\n  vector<M> dp(n+1,1),pd(n+1,1);\n\

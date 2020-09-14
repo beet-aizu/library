@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
+    links:
+    - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/yosupo/staticrmq.disjointsparsetable.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/disjointsparsetable.cpp\"\

@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/aoj/2432.ignore.cpp
-    title: test/aoj/2432.ignore.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3074.test.cpp
@@ -19,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"linearalgebra/squarematrix.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename R, size_t N>\n\
     struct SquareMatrix{\n  typedef array<R, N> arr;\n  typedef array<arr, N> mat;\n\
@@ -60,8 +58,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: linearalgebra/squarematrix.cpp
-  requiredBy:
-  - test/aoj/2432.ignore.cpp
+  requiredBy: []
   timestamp: '2020-03-06 20:39:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

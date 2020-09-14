@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sort_points_by_argument
+    links:
+    - https://judge.yosupo.jp/problem/sort_points_by_argument
   bundledCode: "#line 1 \"test/yosupo/sort_points_by_argument.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/sort_points_by_argument\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"geometry/argsort.cpp\"\

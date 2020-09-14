@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
+    links:
+    - https://judge.yosupo.jp/problem/rectangle_sum
   bundledCode: "#line 1 \"test/yosupo/rectangle_sum.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n\n#define call_from_test\n#line 2 \"vector/compress.cpp\"\n\n\

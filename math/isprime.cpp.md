@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"math/isprime.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nint isprime(T x){\n  if(x<=1)\
     \ return 0;\n  for(T i=2;i*i<=x;i++)\n    if(x%i==0) return 0;\n  return 1;\n\

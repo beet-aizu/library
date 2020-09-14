@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_mod
+    links:
+    - https://judge.yosupo.jp/problem/sqrt_mod
   bundledCode: "#line 1 \"test/yosupo/sqrt_mod.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/sqrt_mod\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 1 \"mod/sqrt.cpp\"\n\n#line 3 \"mod/sqrt.cpp\"\nusing namespace std;\n#endif\n\

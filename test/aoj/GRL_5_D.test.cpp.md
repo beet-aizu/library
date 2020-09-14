@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D
   bundledCode: "#line 1 \"test/aoj/GRL_5_D.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 1 \"tree/eulertourforedge.cpp\"\n\n#line 3 \"tree/eulertourforedge.cpp\"\

@@ -10,6 +10,7 @@ data:
     IGNORE: ''
     IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
+    links: []
   bundledCode: "#line 1 \"tools/debug.cpp\"\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n\n#define IGNORE\n\n//BEGIN CUT HERE\nconst int DEBUG = 1;\ntemplate<typename\
     \ ...Ts>\nvoid debug(Ts... ts){\n  if(!DEBUG) return;\n  cout<<\"#:\";\n  auto\

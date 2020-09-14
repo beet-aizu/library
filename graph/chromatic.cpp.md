@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"graph/chromatic.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\nint chromatic(vector< vector<int>\
     \ > G){\n  int n=G.size();\n  if(n==0) return 0;\n  assert(n<=30);\n\n  vector<int>\

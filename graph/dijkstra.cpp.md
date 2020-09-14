@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"graph/dijkstra.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Dijkstra{\n\
     \  struct Edge{\n    int to;\n    T cost;\n    Edge(int to,T cost):to(to),cost(cost){}\n\

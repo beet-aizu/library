@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/maximum_independent_set
+    links:
+    - https://judge.yosupo.jp/problem/maximum_independent_set
   bundledCode: "#line 1 \"test/yosupo/maximum_independent_set.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"graph/independentset.cpp\"\

@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_floor_of_linear
+    links:
+    - https://judge.yosupo.jp/problem/sum_of_floor_of_linear
   bundledCode: "#line 1 \"test/yosupo/sum_of_floor_of_linear.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"math/sum_of_floor.cpp\"\

@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"mod/pow.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT mod_pow(T a,long long\
     \ n,T mod){\n  using ll = long long;\n  T res(1);\n  while(n){\n    if(n&1) res=(ll)res*a%mod;\n\

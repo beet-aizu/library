@@ -25,6 +25,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/arc050/tasks/arc050_c
+    - https://www.spoj.com/problems/MIFF/
+    - https://www.spoj.com/problems/MPOW/
   bundledCode: "#line 1 \"linearalgebra/matrix.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename K>\nstruct Matrix{\n\
     \  typedef vector<K> arr;\n  typedef vector<arr> mat;\n  mat dat;\n\n  Matrix(size_t\

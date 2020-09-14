@@ -10,6 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
   bundledCode: "#line 2 \"graph/rangetorange.cpp\"\n\n#ifndef call_from_test\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#endif\n\n/*\n * @see https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656\n\
     \ */\n\n//BEGIN CUT HERE\nstruct RangeToRange{\n  const int n;\n  int ptr;\n \

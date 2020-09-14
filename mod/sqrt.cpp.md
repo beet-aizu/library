@@ -13,6 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"mod/sqrt.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nint jacobi(T a,T mod){\n\
     \  int s=1;\n  if(a<0) a=a%mod+mod;\n  while(mod>1){\n    a%=mod;\n    if(a==0)\

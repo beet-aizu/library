@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/matrix_det
+    links:
+    - https://judge.yosupo.jp/problem/matrix_det
   bundledCode: "#line 1 \"test/yosupo/matrix_det.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_det\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#line 5 \"mod/mint.cpp\"\n\

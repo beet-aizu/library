@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
+    links:
+    - https://judge.yosupo.jp/problem/shortest_path
   bundledCode: "#line 1 \"test/yosupo/shortest_path.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/shortest_path\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"tools/drop.cpp\"\n\n\

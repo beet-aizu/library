@@ -10,6 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query
   bundledCode: "#line 1 \"segtree/persistent/ushi.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename T>\nstruct\
     \ SegmentTree{\n  using F = function<T(T,T)>;\n  F f;\n  T ti;\n  SegmentTree(F\

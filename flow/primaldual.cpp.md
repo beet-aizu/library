@@ -28,6 +28,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
   bundledCode: "#line 1 \"flow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
     \ TF,typename TC>\nstruct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n\

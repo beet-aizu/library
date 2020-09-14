@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/associative_array
+    links:
+    - https://judge.yosupo.jp/problem/associative_array
   bundledCode: "#line 1 \"test/yosupo/associative_array.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"tools/cc_hash.cpp\"\n\

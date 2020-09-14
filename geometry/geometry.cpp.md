@@ -88,6 +88,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://codeforces.com/contest/600/problem/D
   bundledCode: "#line 1 \"geometry/geometry.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n#define EPS (1e-10)\n#define equals(a,b)\
     \ (fabs((a)-(b)) < EPS)\nconst double PI = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\n\

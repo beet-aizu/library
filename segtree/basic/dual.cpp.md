@@ -22,6 +22,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"segtree/basic/dual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename E>\nstruct SegmentTree{\n\
     \  using H = function<E(E,E)>;\n  int n,height;\n  H h;\n  E ei;\n  vector<E>\

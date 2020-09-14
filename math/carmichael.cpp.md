@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"math/carmichael.cpp\"\n\n#ifndef call_from_test\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// min m s.t.\
     \ a^m = 1 mod n (a, n are coprime)\ntemplate<typename T>\nT carmichael_lambda(T\

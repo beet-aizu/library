@@ -46,6 +46,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://codeforces.com/contest/1179/problem/C
   bundledCode: "#line 1 \"segtree/basic/chien.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename T,typename E>\n\
     struct SegmentTree{\n  using F = function<T(T,T)>;\n  using G = function<T(T,E)>;\n\

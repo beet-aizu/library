@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_triangles
+    links:
+    - https://judge.yosupo.jp/problem/enumerate_triangles
   bundledCode: "#line 1 \"test/yosupo/enumerate_triangles.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/enumerate_triangles\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"graph/triangle.cpp\"\

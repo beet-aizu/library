@@ -52,6 +52,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"linkcuttree/base.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t LIM>\n\
     struct LinkCutTreeBase{\n  static array<Node, LIM> pool;\n  size_t ptr;\n\n  LinkCutTreeBase():ptr(0){}\n\

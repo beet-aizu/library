@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"datastructure/quickfind.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct QuickFind{\n  int n;\n\
     \  vector<int> rs,ps;\n  vector<vector<int> > vs;\n  QuickFind(){}\n  QuickFind(int\

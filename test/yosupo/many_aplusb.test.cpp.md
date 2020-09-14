@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/many_aplusb
+    links:
+    - https://judge.yosupo.jp/problem/many_aplusb
   bundledCode: "#line 1 \"test/yosupo/many_aplusb.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 2 \"tools/fastio.cpp\"\n\n#ifndef call_from_test\n#line 5 \"tools/fastio.cpp\"\

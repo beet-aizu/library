@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"datastructure/cumulativesum.cpp\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct CumulativeSum{\n\
     \  vector<T> sm;\n  CumulativeSum(const vector<T> &as){\n    int n=as.size();\n\

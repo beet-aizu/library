@@ -1,15 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/aoj/GRL_4_B.ignore.cpp
-    title: test/aoj/GRL_4_B.ignore.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"graph/topologicalsort.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct TopologicalSort{\n  vector<\
     \ set<int> > G;\n  vector<int> used,indeg,ps;\n\n  TopologicalSort(){}\n  TopologicalSort(int\
@@ -35,8 +33,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/topologicalsort.cpp
-  requiredBy:
-  - test/aoj/GRL_4_B.ignore.cpp
+  requiredBy: []
   timestamp: '2019-12-17 21:51:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

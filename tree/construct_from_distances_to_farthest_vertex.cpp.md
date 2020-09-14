@@ -7,6 +7,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://vjudge.net/problem/TopCoder-14468
   bundledCode: "#line 1 \"tree/construct_from_distances_to_farthest_vertex.cpp\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\nvector<\
     \ vector<int> >\nconstruct_from_distances_to_farthest_vertex(vector<int> ds){\n\

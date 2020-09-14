@@ -16,6 +16,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://www.codechef.com/problems/SEGPROD
   bundledCode: "#line 1 \"datastructure/disjointsparsetable.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct DisjointSparseTable{\n\
     \  using F = function<T(T, T)>;\n  vector< vector<T> > dat;\n  vector<int> ht;\n\

@@ -19,6 +19,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"segtree/count/dynamic_offline.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Key,typename\
     \ T>\nstruct RangeCount{\n  struct BIT{\n    vector<T> dat;\n    BIT(){}\n   \

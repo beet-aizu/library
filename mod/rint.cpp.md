@@ -19,6 +19,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"mod/rint.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Rint{\n\
     \  static T mod;\n  static void set_mod(T nmod){mod=nmod;}\n\n  T v;\n  Rint():v(0){}\n\

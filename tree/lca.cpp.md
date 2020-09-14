@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"tree/lca.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\nstruct LCA{\n  const int lg = 12;\n  const int\
     \ sz = 1<<lg;\n  const int ms = sz-1;\n  int n;\n  vector<int> P,D,E,A,B,T,ht;\n\

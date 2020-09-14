@@ -13,6 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"tree/eulertourforedge.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nclass EulerTourForEdge{\nprivate:\n\
     \  vector<int> ds,us,dep,btm;\n\n  void dfs(int v,int p,int d){\n    dep[v]=d;\n\

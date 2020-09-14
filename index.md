@@ -284,25 +284,6 @@ data:
     - icon: ':warning:'
       path: graph/voronoiminimumspanningtree.cpp
       title: graph/voronoiminimumspanningtree.cpp
-  - name: heuristic
-    pages:
-    - icon: ':warning:'
-      path: heuristic/timer.ignore.cpp
-      title: heuristic/timer.ignore.cpp
-    - icon: ':warning:'
-      path: heuristic/xorshift.ignore.cpp
-      title: heuristic/xorshift.ignore.cpp
-  - name: icpc
-    pages:
-    - icon: ':warning:'
-      path: icpc/hash.ignore.cpp
-      title: icpc/hash.ignore.cpp
-    - icon: ':warning:'
-      path: icpc/hash_gen.ignore.cpp
-      title: icpc/hash_gen.ignore.cpp
-    - icon: ':warning:'
-      path: icpc/t.ignore.cpp
-      title: icpc/t.ignore.cpp
   - name: io
     pages:
     - icon: ':heavy_check_mark:'
@@ -314,11 +295,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/tuple.cpp
       title: io/tuple.cpp
-  - name: leetcode
-    pages:
-    - icon: ':warning:'
-      path: leetcode/treenode.ignore.cpp
-      title: leetcode/treenode.ignore.cpp
   - name: linearalgebra
     pages:
     - icon: ':heavy_check_mark:'
@@ -539,14 +515,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
-  - name: test/aoj
-    pages:
-    - icon: ':warning:'
-      path: test/aoj/2432.ignore.cpp
-      title: test/aoj/2432.ignore.cpp
-    - icon: ':warning:'
-      path: test/aoj/GRL_4_B.ignore.cpp
-      title: test/aoj/GRL_4_B.ignore.cpp
   - name: test
     pages:
     - icon: ':warning:'

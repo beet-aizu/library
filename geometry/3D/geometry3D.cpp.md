@@ -7,6 +7,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://vjudge.net/problem/HDU-3662
   bundledCode: "#line 1 \"geometry/3D/geometry3D.cpp\"\n#include<bits/stdc++.h>\n\
     using namespace std;\n//BEGIN CUT HERE\n\n#define EPS (1e-10)\n#define equals(a,b)\
     \ (fabs((a)-(b)) < EPS)\n#define PI 3.141592653589793238\nstruct Point3D{\n  double\

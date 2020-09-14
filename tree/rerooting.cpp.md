@@ -13,6 +13,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://ei1333.hateblo.jp/entry/2018/12/21/004022
   bundledCode: "#line 2 \"tree/rerooting.cpp\"\n\n#ifndef call_from_test\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#endif\n/*\n * @see https://ei1333.hateblo.jp/entry/2018/12/21/004022\n\
     \ */\n//BEGIN CUT HERE\ntemplate<typename T, typename Edge>\nstruct ReRooting{\n\

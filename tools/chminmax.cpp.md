@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/aoj/2432.ignore.cpp
-    title: test/aoj/2432.ignore.cpp
   - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
@@ -109,6 +106,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"tools/chminmax.cpp\"\n\n#ifndef call_from_test\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
     \ T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename\
@@ -123,7 +121,6 @@ data:
   isVerificationFile: false
   path: tools/chminmax.cpp
   requiredBy:
-  - test/aoj/2432.ignore.cpp
   - datastructure/slidingwindowaggregation.cpp
   - string/editdistance.cpp
   - string/longestcommonsubstring.cpp

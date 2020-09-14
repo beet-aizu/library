@@ -22,6 +22,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"tree/eulertourforvertex.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nclass EulerTourForVertex{\nprivate:\n\
     \  vector<int> ls,rs;\n  int pos;\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n\

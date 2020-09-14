@@ -10,6 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/cpsco2019-s3/tasks/cpsco2019_s3_g
   bundledCode: "#line 1 \"math/fraction.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct fraction{\n  T\
     \ num,dom;\n  fraction(){}\n  fraction(T n,T d):num(n),dom(d){\n    assert(dom!=0);\n\

@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C
   bundledCode: "#line 1 \"test/aoj/DPL_3_C.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 2 \"algorithm/largestrectangle.cpp\"\n\n#ifndef call_from_test\n#line 5\

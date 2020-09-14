@@ -13,6 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"tools/all_permutations.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename F>\nvoid all_permutations(int\
     \ n,F f){\n  vector<int> vs(n);\n  iota(vs.begin(),vs.end(),0);\n  do f(vs); while(next_permutation(vs.begin(),vs.end()));\n\

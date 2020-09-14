@@ -31,6 +31,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"tools/fastio.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct FastIO{\n  FastIO(){\n\
     \    cin.tie(0);\n    ios::sync_with_stdio(0);\n  }\n}fastio_beet;\n//END CUT\

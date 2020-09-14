@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"graph/twoedgeconnectedcomponents.cpp\"\n\n#ifndef call_from_test\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// work\
     \ with multigraph\nstruct TwoEdgeConnectedComponents{\n  vector<int> ord,low,par,blg,sz;\n\

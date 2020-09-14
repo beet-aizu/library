@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
+    links:
+    - https://judge.yosupo.jp/problem/point_set_range_composite
   bundledCode: "#line 1 \"test/yosupo/point_set_range_composite.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"mod/mint.cpp\"\n\n#ifndef\

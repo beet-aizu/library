@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"graph/multipleeuleriantrail.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\n// no muliple edge\ntemplate<typename\
     \ Graph>\nbool hasMultipleEulerianTrail(Graph &G){\n  int n=G.size();\n  vector<int>\

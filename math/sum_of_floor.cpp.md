@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"math/sum_of_floor.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n// sum_{i=0}^{n-1} (ai + b) // m\n\
     // 0 <= a, b\ntemplate<typename T>\nT sum_of_floor(T n,T m,T a,T b){\n  T res=0;\n\

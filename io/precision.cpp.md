@@ -40,6 +40,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"io/precision.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\nstruct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n\
     \  }\n}precision_beet;\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\

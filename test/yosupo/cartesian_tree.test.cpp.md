@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/cartesian_tree
+    links:
+    - https://judge.yosupo.jp/problem/cartesian_tree
   bundledCode: "#line 1 \"test/yosupo/cartesian_tree.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/cartesian_tree\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/cartesiantree.cpp\"\

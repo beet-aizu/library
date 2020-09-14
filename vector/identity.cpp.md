@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"vector/identity.cpp\"\n\n#ifndef call_from_test\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\nvector<int>\
     \ identity(int n){\n  vector<int> ord(n);\n  iota(ord.begin(),ord.end(),0);\n\

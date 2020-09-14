@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"graph/dynamicconnectivity.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct PersistentUnionFind{\n\
     \  using T = pair<int, int>;\n  vector<int> rs,ps;\n  stack<T> st;\n  PersistentUnionFind(){}\n\

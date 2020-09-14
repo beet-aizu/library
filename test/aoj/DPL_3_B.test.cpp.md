@@ -14,6 +14,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B
   bundledCode: "#line 1 \"test/aoj/DPL_3_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 2 \"tools/chminmax.cpp\"\n\n#ifndef call_from_test\n#line 5 \"tools/chminmax.cpp\"\

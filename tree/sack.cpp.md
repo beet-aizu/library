@@ -10,6 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://codeforces.com/blog/entry/44351
   bundledCode: "#line 2 \"tree/sack.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n\n/**\n * @see https://codeforces.com/blog/entry/44351\n\
     \ */\n//BEGIN CUT HERE\nstruct Sack{\n  using F = function<void(int)>;\n\n  vector<int>\

@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"mod/montmort.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\n// number of permutations with p_i != i\ntemplate<typename\
     \ T>\nstruct Montmort{\n  using ll = long long;\n  vector<T> dp;\n\n  Montmort(int\

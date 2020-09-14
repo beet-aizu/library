@@ -7,6 +7,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/arc074/tasks/arc074_b
+    - https://codeforces.com/contest/1119/problem/F
   bundledCode: "#line 1 \"datastructure/prioritysum.cpp\"\n#include<bits/stdc++.h>\n\
     using namespace std;\n//BEGIN CUT HERE\n// return sum of top K element (default:\
     \ maximum)\ntemplate<typename T, T identity, typename V=vector<T>,\n         typename\

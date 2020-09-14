@@ -118,6 +118,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"combinatorics/enumeration.cpp\"\n\n#ifndef call_from_test\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename\
     \ M_>\nclass Enumeration{\n  using M = M_;\nprotected:\n  static vector<M> fact,finv,invs;\n\

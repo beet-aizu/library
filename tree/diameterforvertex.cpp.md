@@ -10,6 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/arc097/tasks/arc097_d
   bundledCode: "#line 1 \"tree/diameterforvertex.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct DiameterForVertex{\n\
     \  vector<T> vs,dp;\n  vector<vector<int> > G;\n  DiameterForVertex(int n):dp(n),G(n){}\n\

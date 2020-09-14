@@ -7,6 +7,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/arc060/tasks/arc060_d
+    - https://kopricky.github.io/code/String/kmp.html
+    - https://snuke.hatenablog.com/entry/2014/12/01/235807
   bundledCode: "#line 2 \"string/morrispratt.cpp\"\n\n#ifndef call_from_test\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#endif\n/*\n * @see https://snuke.hatenablog.com/entry/2014/12/01/235807\n\
     \ * @see https://kopricky.github.io/code/String/kmp.html\n */\n//BEGIN CUT HERE\n\

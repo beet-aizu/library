@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"mod/log.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\n// find x s.t. a^x = b (x >= 0)\ntemplate<typename\
     \ T>\nT mod_log(T a,T b,T mod){\n  using ll = long long;\n  ll g=1;\n  {\n   \

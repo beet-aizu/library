@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"datastructure/BIT2D.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct BIT2D{\n\
     \  int n,m;\n  T d;\n  vector< vector<T> > bit;\n  //1-indexed\n  BIT2D():n(-1),m(-1){}\n\

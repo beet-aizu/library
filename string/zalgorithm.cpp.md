@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"string/zalgorithm.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n// longest common prefix of s and\
     \ s[i:n]\ntemplate<typename T>\nvector<int> zalgorithm(vector<T> vs){\n  int n=vs.size();\n\

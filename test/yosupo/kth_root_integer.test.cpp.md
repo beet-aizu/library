@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/kth_root_integer
+    links:
+    - https://judge.yosupo.jp/problem/kth_root_integer
   bundledCode: "#line 1 \"test/yosupo/kth_root_integer.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/kth_root_integer\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"tools/int128.cpp\"\n\

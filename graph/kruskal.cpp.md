@@ -19,6 +19,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"graph/kruskal.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Kruskal{\n\n  struct\
     \ edge{\n    int from,to;\n    T cost;\n    int used;\n    edge(int from,int to,T\

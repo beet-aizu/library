@@ -10,6 +10,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/abc135/tasks/abc135_f
+    - https://snuke.hatenablog.com/entry/2017/07/18/101026
   bundledCode: "#line 2 \"string/knuthmorrispratt.cpp\"\n\n#ifndef call_from_test\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#endif\n/*\n * @see https://snuke.hatenablog.com/entry/2017/07/18/101026\n\
     \ */\n//BEGIN CUT HERE\nvector<int> knuth_morris_pratt(const string &s){\n  int\

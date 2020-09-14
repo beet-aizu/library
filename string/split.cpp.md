@@ -13,6 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"string/split.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\nvector<string> split(string& s,char c){\n  int\
     \ n=s.size();\n  vector<string> res;\n  for(int i=0;i<n;i++){\n    if(s[i]==c)\

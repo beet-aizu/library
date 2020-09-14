@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_edge_connected_components
+    links:
+    - https://judge.yosupo.jp/problem/two_edge_connected_components
   bundledCode: "#line 1 \"test/yosupo/two_edge_connected_components.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\n\n\
     #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\

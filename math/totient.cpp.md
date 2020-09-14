@@ -19,6 +19,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"math/totient.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT totient(T\
     \ n){\n  T res=n;\n  for(T i=2;i*i<=n;i++){\n    if(n%i==0){\n      res=res/i*(i-1);\n\

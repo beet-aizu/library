@@ -17,6 +17,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J
   bundledCode: "#line 1 \"test/aoj/DPL_5_J.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#line 5 \"mod/mint.cpp\"\n\

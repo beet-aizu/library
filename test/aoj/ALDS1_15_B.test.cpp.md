@@ -12,6 +12,8 @@ data:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-6
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B
   bundledCode: "#line 1 \"test/aoj/ALDS1_15_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #line 1 \"io/precision.cpp\"\n\n#line 3 \"io/precision.cpp\"\nusing namespace\

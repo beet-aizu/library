@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"geometry/projectilemotion.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\n// throw from origin to (x,y)\
     \ with verocity v (x>0)\n// g: gravity\ntemplate<typename D>\nvector< pair<D,\

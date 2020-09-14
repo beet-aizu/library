@@ -19,6 +19,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
   bundledCode: "#line 1 \"string/trie.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<size_t X>\nstruct Trie{\n  struct Node{\n\
     \    char c;\n    array<int, X> nxt;\n    vector<int> idxs;\n    int idx;\n  \

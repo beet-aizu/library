@@ -16,6 +16,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"io/single.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T=int>\nvector<T>\
     \ read(size_t n){\n  vector<T> ts(n);\n  for(size_t i=0;i<n;i++) cin>>ts[i];\n\

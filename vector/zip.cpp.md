@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 2 \"vector/zip.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename ...Ts>\ndecltype(auto)\
     \ zip(vector<Ts>... args){\n  vector<decltype(make_tuple(args[0]...))> res;\n\

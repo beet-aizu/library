@@ -10,6 +10,7 @@ data:
     IGNORE: ''
     IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
+    links: []
   bundledCode: "#line 1 \"segtree/types/online.cpp\"\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n\n#define IGNORE\n\n#include<ext/pb_ds/assoc_container.hpp>\n\
     #include<ext/pb_ds/tree_policy.hpp>\n#include<ext/pb_ds/tag_and_trait.hpp>\nusing\

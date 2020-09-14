@@ -10,6 +10,7 @@ data:
     IGNORE: ''
     IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
+    links: []
   bundledCode: "#line 1 \"segtree/types/offline.cpp\"\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n\n#define IGNORE\n\ntemplate<typename T>\nstruct RangeCount{\n\
     \  struct BIT{\n    vector<T> dat;\n    BIT(){}\n    BIT(int n){dat.assign(++n,0);}\n\

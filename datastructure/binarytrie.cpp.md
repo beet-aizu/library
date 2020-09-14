@@ -13,6 +13,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - http://codeforces.com/contest/966/problem/C
+    - https://atcoder.jp/contests/arc033/tasks/arc033_3
   bundledCode: "#line 2 \"datastructure/binarytrie.cpp\"\n\n#ifndef call_from_test\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
     \ T,size_t X>\nstruct BinaryTrie{\n  struct Node{\n    size_t cnt;\n    Node *p,*l,*r;\n\

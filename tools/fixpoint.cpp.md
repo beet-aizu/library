@@ -40,6 +40,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"tools/fixpoint.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename F>\nstruct FixPoint : F{\n\
     \  FixPoint(F&& f):F(forward<F>(f)){}\n  template<typename... Args>\n  decltype(auto)\

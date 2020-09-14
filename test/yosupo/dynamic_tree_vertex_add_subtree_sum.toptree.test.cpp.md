@@ -11,6 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
+    links:
+    - https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
   bundledCode: "#line 1 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\

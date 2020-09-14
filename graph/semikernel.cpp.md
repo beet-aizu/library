@@ -7,6 +7,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - http://codeforces.com/contest/1019/problem/C
+    - https://link.springer.com/content/pdf/10.1007%2FBFb0066192.pdf
   bundledCode: "#line 1 \"graph/semikernel.cpp\"\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n//BEGIN CUT HERE\n// https://link.springer.com/content/pdf/10.1007%2FBFb0066192.pdf\n\
     struct SemiKernel{\n  int n;\n  vector<vector<int> > G,R;\n  vector<int> used,dp,S;\n\

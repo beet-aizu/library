@@ -214,6 +214,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/abc127/tasks/abc127_e
   bundledCode: "#line 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD =\
     \ 1000000007>\nstruct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n\

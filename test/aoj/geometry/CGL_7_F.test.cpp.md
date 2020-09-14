@@ -12,6 +12,8 @@ data:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00001'
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F
   bundledCode: "#line 1 \"test/aoj/geometry/CGL_7_F.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F\"\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\
