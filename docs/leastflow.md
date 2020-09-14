@@ -1,6 +1,6 @@
 ---
 title: 最小流量制約付き最大流
-documentation_of: ./flow/leastflow.hpp
+documentation_of: ./flow/leastflow.cpp
 ---
 
 ## 解説記事
