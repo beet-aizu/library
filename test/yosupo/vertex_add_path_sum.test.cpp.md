@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/heavylightdecomposition.cpp
     title: Heavy Light Decomposition
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
@@ -56,12 +56,12 @@ data:
     signed main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
     \n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  HLD G(n);\n  for(int\
     \ i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.add_edge(u,v);\n  }\n  G.build();\n\
-    \n  using ll = long long;\n  BIT<ll> bit(n);\n  for(int i=0;i<n;i++)\n    bit.add0(G.vid[i],as[i]);\n\
+    \n  using ll = long long;\n  BIT<ll> bit(n);\n  for(int i=0;i<n;i++)\n    bit.add(G.vid[i],as[i]);\n\
     \n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n      int p,x;\n\
-    \      cin>>p>>x;\n      bit.add0(G.vid[p],x);\n    }\n    if(t==1){\n      int\
-    \ u,v;\n      cin>>u>>v;\n      ll res=0;\n      auto f=[&](int l,int r){res+=bit.query0(l,r);};\n\
-    \      G.for_each(u,v,f);\n      cout<<res<<\"\\n\";\n    }\n  }\n  cout<<flush;\n\
-    \n  return 0;\n}\n"
+    \      cin>>p>>x;\n      bit.add(G.vid[p],x);\n    }\n    if(t==1){\n      int\
+    \ u,v;\n      cin>>u>>v;\n      ll res=0;\n      auto f=[&](int l,int r){res+=bit.query(l,r);};\n\
+    \      G.for_each(u,v,f);\n      cout<<res<<'\\n';\n    }\n  }\n  return 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../tree/heavylightdecomposition.cpp\"\n#include \"../../datastructure/binaryindexedtree.cpp\"\
@@ -69,19 +69,19 @@ data:
     \n  int n,q;\n  cin>>n>>q;\n\n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\
     \n  HLD G(n);\n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.add_edge(u,v);\n\
     \  }\n  G.build();\n\n  using ll = long long;\n  BIT<ll> bit(n);\n  for(int i=0;i<n;i++)\n\
-    \    bit.add0(G.vid[i],as[i]);\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\
-    \    if(t==0){\n      int p,x;\n      cin>>p>>x;\n      bit.add0(G.vid[p],x);\n\
+    \    bit.add(G.vid[i],as[i]);\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\
+    \    if(t==0){\n      int p,x;\n      cin>>p>>x;\n      bit.add(G.vid[p],x);\n\
     \    }\n    if(t==1){\n      int u,v;\n      cin>>u>>v;\n      ll res=0;\n   \
-    \   auto f=[&](int l,int r){res+=bit.query0(l,r);};\n      G.for_each(u,v,f);\n\
-    \      cout<<res<<\"\\n\";\n    }\n  }\n  cout<<flush;\n\n  return 0;\n}\n"
+    \   auto f=[&](int l,int r){res+=bit.query(l,r);};\n      G.for_each(u,v,f);\n\
+    \      cout<<res<<'\\n';\n    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - tree/heavylightdecomposition.cpp
   - datastructure/binaryindexedtree.cpp
   isVerificationFile: true
   path: test/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-15 23:17:07+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-15 23:48:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_path_sum.test.cpp
 layout: document

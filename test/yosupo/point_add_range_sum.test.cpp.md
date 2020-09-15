@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -31,28 +31,26 @@ data:
     #line 8 \"test/yosupo/point_add_range_sum.test.cpp\"\n#undef call_from_test\n\n\
     signed main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
     \n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  BIT<long long>\
-    \ bit(n);\n  for(int i=0;i<n;i++) bit.add0(i,as[i]);\n\n  for(int i=0;i<q;i++){\n\
+    \ bit(n);\n  for(int i=0;i<n;i++) bit.add(i,as[i]);\n\n  for(int i=0;i<q;i++){\n\
     \    int t;\n    cin>>t;\n    if(t==0){\n      int p,x;\n      cin>>p>>x;\n  \
-    \    bit.add0(p,x);\n    }\n    if(t==1){\n      int l,r;\n      cin>>l>>r;\n\
-    \      cout<<bit.query0(l,r)<<\"\\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n\
-    }\n"
+    \    bit.add(p,x);\n    }\n    if(t==1){\n      int l,r;\n      cin>>l>>r;\n \
+    \     cout<<bit.query(l,r)<<'\\n';\n    }\n  }\n  return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../datastructure/binaryindexedtree.cpp\"\n#undef call_from_test\n\nsigned\
     \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
     \n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  BIT<long long>\
-    \ bit(n);\n  for(int i=0;i<n;i++) bit.add0(i,as[i]);\n\n  for(int i=0;i<q;i++){\n\
+    \ bit(n);\n  for(int i=0;i<n;i++) bit.add(i,as[i]);\n\n  for(int i=0;i<q;i++){\n\
     \    int t;\n    cin>>t;\n    if(t==0){\n      int p,x;\n      cin>>p>>x;\n  \
-    \    bit.add0(p,x);\n    }\n    if(t==1){\n      int l,r;\n      cin>>l>>r;\n\
-    \      cout<<bit.query0(l,r)<<\"\\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n\
-    }\n"
+    \    bit.add(p,x);\n    }\n    if(t==1){\n      int l,r;\n      cin>>l>>r;\n \
+    \     cout<<bit.query(l,r)<<'\\n';\n    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - datastructure/binaryindexedtree.cpp
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-15 23:17:07+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-15 23:48:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum.test.cpp
 layout: document
