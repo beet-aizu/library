@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: tree/auxiliarytree.cpp
-    title: tree/auxiliarytree.cpp
+    title: Aux Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2871.test.cpp
