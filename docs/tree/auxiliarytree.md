@@ -1,5 +1,5 @@
 ---
-title: Aux Tree
+title: Auxiliary Tree
 documentation_of: ./tree/auxiliarytree.cpp
 ---
 
