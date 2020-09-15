@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: tree/eulertourforvertex.cpp
-    title: tree/eulertourforvertex.cpp
-  - icon: ':question:'
     path: tree/lowestcommonancestor.cpp
     title: tree/lowestcommonancestor.cpp
   _extendedRequiredBy: []
@@ -29,18 +26,19 @@ data:
     \ tree/auxiliarytree.cpp: line 8: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
   code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"eulertourforvertex.cpp\"\n#include\
-    \ \"lowestcommonancestor.cpp\"\n#undef call_from_test\n\n#endif\n\n//BEGIN CUT\
-    \ HERE\nstruct AuxiliaryTree : EulerTourForVertex{\n  using super = EulerTourForVertex;\n\
-    \  LowestCommonAncestor lca;\n\n  vector<vector<int>> T;\n  AuxiliaryTree(){}\n\
-    \  AuxiliaryTree(int n):super(n),lca(n),T(n){}\n\n  void build(int r=0){\n   \
-    \ super::build(r);\n    lca.G=super::G;\n    lca.build(r);\n  }\n\n  void add_aux_edge(int\
-    \ u,int v){\n    T[u].emplace_back(v);\n    T[v].emplace_back(u);\n  }\n\n  using\
-    \ super::idx;\n  void query(vector<int> &vs){\n    assert(!vs.empty());\n    sort(vs.begin(),vs.end(),\n\
-    \         [&](int a,int b){return idx(a)<idx(b);});\n    vs.erase(unique(vs.begin(),vs.end()),vs.end());\n\
+    \ std;\n\n#define call_from_test\n#include \"lowestcommonancestor.cpp\"\n#undef\
+    \ call_from_test\n\n#endif\n\n//BEGIN CUT HERE\nstruct AuxiliaryTree : LowestCommonAncestor{\n\
+    \  using super = LowestCommonAncestor;\n\n  vector<int> idx;\n  vector<vector<int>>\
+    \ T;\n  AuxiliaryTree(){}\n  AuxiliaryTree(int n):super(n),idx(n),T(n){}\n\n \
+    \ void dfs(int v,int p,int &pos){\n    idx[v]=pos++;\n    for(int u:G[v])\n  \
+    \    if(u!=p) dfs(u,v,pos);\n  }\n\n  void build(int r=0){\n    super::build(r);\n\
+    \    int pos=0;\n    dfs(r,-1,pos);\n  }\n\n  void add_aux_edge(int u,int v){\n\
+    \    T[u].emplace_back(v);\n    T[v].emplace_back(u);\n  }\n\n  using super::lca,\
+    \ super::dep;\n  void query(vector<int> &vs){\n    assert(!vs.empty());\n    sort(vs.begin(),vs.end(),\n\
+    \         [&](int a,int b){return idx[a]<idx[b];});\n    vs.erase(unique(vs.begin(),vs.end()),vs.end());\n\
     \n    int k=vs.size();\n    stack<int> st;\n    st.emplace(vs[0]);\n    for(int\
-    \ i=0;i+1<k;i++){\n      int w=lca.lca(vs[i],vs[i+1]);\n      if(w!=vs[i]){\n\
-    \        int l=st.top();st.pop();\n        while(!st.empty()&&lca.dep[w]<lca.dep[st.top()]){\n\
+    \ i=0;i+1<k;i++){\n      int w=lca(vs[i],vs[i+1]);\n      if(w!=vs[i]){\n    \
+    \    int l=st.top();st.pop();\n        while(!st.empty()&&dep[w]<dep[st.top()]){\n\
     \          add_aux_edge(st.top(),l);\n          l=st.top();st.pop();\n       \
     \ }\n        if(st.empty()||st.top()!=w){\n          st.emplace(w);\n        \
     \  vs.emplace_back(w);\n        }\n        add_aux_edge(w,l);\n      }\n     \
@@ -49,12 +47,11 @@ data:
     \ &ws){\n    for(int w:ws) T[w].clear();\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
-  - tree/eulertourforvertex.cpp
   - tree/lowestcommonancestor.cpp
   isVerificationFile: false
   path: tree/auxiliarytree.cpp
   requiredBy: []
-  timestamp: '2020-09-15 18:05:06+09:00'
+  timestamp: '2020-09-15 23:17:07+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3407.test.cpp

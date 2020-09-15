@@ -1,20 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':question:'
-    path: tree/auxiliarytree.cpp
-    title: Aux Tree
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2871.test.cpp
     title: test/aoj/2871.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3407.test.cpp
-    title: test/yukicoder/3407.test.cpp
-  - icon: ':x:'
-    path: test/yukicoder/4852.test.cpp
-    title: test/yukicoder/4852.test.cpp
   - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.test.cpp
@@ -46,14 +37,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: tree/eulertourforvertex.cpp
-  requiredBy:
-  - tree/auxiliarytree.cpp
+  requiredBy: []
   timestamp: '2020-03-04 20:21:28+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2871.test.cpp
-  - test/yukicoder/3407.test.cpp
-  - test/yukicoder/4852.test.cpp
   - test/yosupo/vertex_add_subtree_sum.test.cpp
 documentation_of: tree/eulertourforvertex.cpp
 layout: document

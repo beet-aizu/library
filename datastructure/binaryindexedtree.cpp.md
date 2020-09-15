@@ -6,13 +6,13 @@ data:
   - icon: ':x:'
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test/yukicoder/1732.test.cpp
   - icon: ':x:'
@@ -45,7 +45,7 @@ data:
     \ 0;\n    int x=0,r=1;\n    while(r<n) r<<=1;\n    for(int k=r;k>0;k>>=1){\n \
     \     if(x+k<=n&&bit[x+k]<w){\n        w-=bit[x+k];\n        x+=k;\n      }\n\
     \    }\n    return x;\n  }\n\n  T sum(int i){return sum_impl(i+1);}\n  void add(int\
-    \ i,T a){add_impl(i+1,a);}\n  T query(int l,int r){return sum_impl(r+1)-sum_impl(l+1);}\n\
+    \ i,T a){add_impl(i+1,a);}\n  T query(int l,int r){return sum_impl(r)-sum_impl(l);}\n\
     };\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nclass BIT{\nprivate:\
@@ -57,13 +57,13 @@ data:
     \    int x=0,r=1;\n    while(r<n) r<<=1;\n    for(int k=r;k>0;k>>=1){\n      if(x+k<=n&&bit[x+k]<w){\n\
     \        w-=bit[x+k];\n        x+=k;\n      }\n    }\n    return x;\n  }\n\n \
     \ T sum(int i){return sum_impl(i+1);}\n  void add(int i,T a){add_impl(i+1,a);}\n\
-    \  T query(int l,int r){return sum_impl(r+1)-sum_impl(l+1);}\n};\n//END CUT HERE\n\
+    \  T query(int l,int r){return sum_impl(r)-sum_impl(l);}\n};\n//END CUT HERE\n\
     #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: datastructure/binaryindexedtree.cpp
   requiredBy: []
-  timestamp: '2020-09-15 23:04:42+09:00'
+  timestamp: '2020-09-15 23:17:07+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.test.cpp

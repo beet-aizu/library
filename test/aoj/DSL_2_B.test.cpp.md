@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -26,26 +26,27 @@ data:
     \    while(r<n) r<<=1;\n    for(int k=r;k>0;k>>=1){\n      if(x+k<=n&&bit[x+k]<w){\n\
     \        w-=bit[x+k];\n        x+=k;\n      }\n    }\n    return x;\n  }\n\n \
     \ T sum(int i){return sum_impl(i+1);}\n  void add(int i,T a){add_impl(i+1,a);}\n\
-    \  T query(int l,int r){return sum_impl(r+1)-sum_impl(l+1);}\n};\n//END CUT HERE\n\
+    \  T query(int l,int r){return sum_impl(r)-sum_impl(l);}\n};\n//END CUT HERE\n\
     #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 8 \"test/aoj/DSL_2_B.test.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n,q;\n  cin>>n>>q;\n  BIT<long long> bit(n+100);\n  for(int i=0;i<q;i++){\n\
-    \    int c,x,y;\n    cin>>c>>x>>y;\n    if(c==0) bit.add(x,y);\n    if(c==1) cout<<bit.query(x,y+1)<<\"\
-    \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \    int c,x,y;\n    cin>>c>>x>>y;\n    x--;\n    if(c==0) bit.add(x,y);\n   \
+    \ if(c==1) cout<<bit.query(x,y)<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n\
+    }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
     #include \"../../datastructure/binaryindexedtree.cpp\"\n#undef call_from_test\n\
     \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
     \  BIT<long long> bit(n+100);\n  for(int i=0;i<q;i++){\n    int c,x,y;\n    cin>>c>>x>>y;\n\
-    \    if(c==0) bit.add(x,y);\n    if(c==1) cout<<bit.query(x,y+1)<<\"\\n\";\n \
-    \ }\n  cout<<flush;\n  return 0;\n}\n"
+    \    x--;\n    if(c==0) bit.add(x,y);\n    if(c==1) cout<<bit.query(x,y)<<\"\\\
+    n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - datastructure/binaryindexedtree.cpp
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-15 23:04:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-15 23:17:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp
 layout: document

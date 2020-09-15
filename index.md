@@ -165,7 +165,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/unionfind.cpp
       title: datastructure/unionfind.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/waveletmatrix.cpp
       title: Wavelet Matrix
     - icon: ':heavy_check_mark:'
@@ -526,7 +526,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
@@ -1093,7 +1093,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.binarytrie.test.cpp
       title: test/aoj/DSL_2_B.binarytrie.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1573,7 +1573,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1665.test.cpp
       title: test/yukicoder/1665.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1732.test.cpp
       title: test/yukicoder/1732.test.cpp
     - icon: ':heavy_check_mark:'

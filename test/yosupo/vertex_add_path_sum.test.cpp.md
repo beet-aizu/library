@@ -50,7 +50,7 @@ data:
     \ 0;\n    int x=0,r=1;\n    while(r<n) r<<=1;\n    for(int k=r;k>0;k>>=1){\n \
     \     if(x+k<=n&&bit[x+k]<w){\n        w-=bit[x+k];\n        x+=k;\n      }\n\
     \    }\n    return x;\n  }\n\n  T sum(int i){return sum_impl(i+1);}\n  void add(int\
-    \ i,T a){add_impl(i+1,a);}\n  T query(int l,int r){return sum_impl(r+1)-sum_impl(l+1);}\n\
+    \ i,T a){add_impl(i+1,a);}\n  T query(int l,int r){return sum_impl(r)-sum_impl(l);}\n\
     };\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n\
     #line 9 \"test/yosupo/vertex_add_path_sum.test.cpp\"\n#undef call_from_test\n\n\
     signed main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-15 23:04:42+09:00'
+  timestamp: '2020-09-15 23:17:07+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_path_sum.test.cpp

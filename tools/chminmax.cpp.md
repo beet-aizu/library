@@ -93,7 +93,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test/yukicoder/1732.test.cpp
   - icon: ':heavy_check_mark:'
@@ -103,7 +103,7 @@ data:
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -126,7 +126,7 @@ data:
   - string/longestcommonsubstring.cpp
   - graph/nicetree.cpp
   timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/0596.test.cpp
