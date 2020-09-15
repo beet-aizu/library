@@ -1,36 +1,31 @@
 #pragma once
 
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 
 //BEGIN CUT HERE
 template<typename T>
-struct BIT{
-  int n;
-  vector<T> bit;
-  // 1-indexed
-  BIT(int n_):n(n_+1),bit(n+1,0){}
-
-  T sum(int i){
+class BIT{
+private: // 1-indexed
+  T sum_impl(int i){
     T s(0);
     for(int x=i;x>0;x-=(x&-x))
       s+=bit[x];
     return s;
   }
-
-  void add(int i,T a){
+  void add_impl(int i,T a){
     if(i==0) return;
     for(int x=i;x<=n;x+=(x&-x))
       bit[x]+=a;
   }
+public: // 0-indexed
+  int n;
+  vector<T> bit;
+  BIT(int n_):n(n_+1),bit(n+1,0){}
 
-  // [l, r)
-  T query(int l,int r){
-    return sum(r-1)-sum(l-1);
-  }
-
+  // min({i | sum(i) >= w})
   int lower_bound(int w){
     if(w<=0) return 0;
     int x=0,r=1;
@@ -41,13 +36,12 @@ struct BIT{
         x+=k;
       }
     }
-    return x+1;
+    return x;
   }
 
-  // 0-indexed
-  T sum0(int i){return sum(i+1);}
-  void add0(int i,T a){add(i+1,a);}
-  T query0(int l,int r){return sum(r)-sum(l);}
+  T sum(int i){return sum_impl(i+1);}
+  void add(int i,T a){add_impl(i+1,a);}
+  T query(int l,int r){return sum_impl(r+1)-sum_impl(l+1);}
 };
 //END CUT HERE
 #ifndef call_from_test

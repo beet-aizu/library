@@ -51,7 +51,7 @@ signed main(){
     }
     if(ts[i]==1){
       int k=bit.lower_bound(is[i]);
-      cout<<vp[k].second+1<<" "<<-vp[k].first<<"\n";
+      cout<<vp[k].second+1<<' '<<-vp[k].first<<'\n';
     }
   }
   return 0;

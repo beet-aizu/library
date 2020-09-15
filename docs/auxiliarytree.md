@@ -7,8 +7,8 @@ documentation_of: ./tree/auxiliarytree.cpp
 与えられた木の頂点の部分集合に関して、その頂点を全て含むような最小の木を構築する
 
 ## つかいかた
-- query($S$): 部分集合 $S$ の Aux Tree を破壊的に構築する（必要な頂点が $S$ に追加される）
-- clear($S$): Aux Tree を初期化する
+- `query(ws)`: 部分集合 `ws` の Aux Tree を破壊的に構築する（必要な頂点が `ws` に追加される）
+- `clear(ws)`: `ws` から伸びている辺を削除する
 
 ## 計算量
 部分集合のサイズを$k$として、$O(k \log k)$
