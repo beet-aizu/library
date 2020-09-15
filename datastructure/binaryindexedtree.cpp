@@ -7,41 +7,43 @@ using namespace std;
 
 //BEGIN CUT HERE
 template<typename T>
-class BIT{
-private: // 1-indexed
-  T sum_impl(int i){
+struct BIT{
+  int n;
+  vector<T> bit;
+  BIT(int n_):n(n_+1),bit(n+1,0){}
+
+  // v[i] += a
+  void add(int i,T a){
+    for(int x=++i;x<=n;x+=(x&-x))
+      bit[x]+=a;
+  }
+  // \sum_{j < i}  v[j]
+  T sum(int i){
     T s(0);
     for(int x=i;x>0;x-=(x&-x))
       s+=bit[x];
     return s;
   }
-  void add_impl(int i,T a){
-    if(i==0) return;
-    for(int x=i;x<=n;x+=(x&-x))
-      bit[x]+=a;
-  }
-public: // 0-indexed
-  int n;
-  vector<T> bit;
-  BIT(int n_):n(n_+1),bit(n+1,0){}
+  T query(int l,int r){return sum(r)-sum(l);}
 
-  // min({i | sum(i) >= w})
-  int lower_bound(int w){
+  // min({x | sum(x) >= w})
+  int lower_bound(const T w){
     if(w<=0) return 0;
-    int x=0,r=1;
-    while(r<n) r<<=1;
-    for(int k=r;k>0;k>>=1){
-      if(x+k<=n&&bit[x+k]<w){
-        w-=bit[x+k];
+    T r=w;
+    int x=0,p=1;
+    while(p<n) p<<=1;
+    for(int k=p;k>0;k>>=1){
+      if(x+k<=n&&bit[x+k]<r){
+        r-=bit[x+k];
         x+=k;
       }
     }
+    x++;
+    assert(sum(x-1)<w and sum(x)>=w);
     return x;
   }
-
-  T sum(int i){return sum_impl(i+1);}
-  void add(int i,T a){add_impl(i+1,a);}
-  T query(int l,int r){return sum_impl(r)-sum_impl(l);}
+  // min({x | sum(x) > w})
+  int upper_bound(T w){return lower_bound(w+1);}
 };
 //END CUT HERE
 #ifndef call_from_test

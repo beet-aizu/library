@@ -26,7 +26,7 @@ signed main(){
   }
   et.build();
 
-  BIT<int> bit(n*2+100);
+  BIT<int> bit(2*n);
   int q;
   cin>>q;
   for(int i=0;i<q;i++){
@@ -35,17 +35,16 @@ signed main(){
     if(t==0){
       int v,w;
       cin>>v>>w;
-      auto g=[&](int k,int d){bit.add0(k,d);};
+      auto g=[&](int k,int d){bit.add(k,d);};
       et.update(v,w,g);
     }
     if(t==1){
       int u;
       cin>>u;
       int res=0;
-      et.query(0,u,[&](int l,int r){res+=bit.query0(l,r);});
+      et.query(0,u,[&](int l,int r){res+=bit.query(l,r);});
       cout<<res<<"\n";
     }
   }
-  cout<<flush;
   return 0;
 }

@@ -57,11 +57,11 @@ signed main(){
     if(type[i]!=0) continue;
     int r=vs[i];
     ll d=dep[vs[i]]-ls[i];
-    for(int k=H.lca.h-1;k>=0;k--){
-      int p=H.lca.par[k][r];
+    for(int k=H.h-1;k>=0;k--){
+      int p=H.par[k][r];
       if(~p and d<=dep[p]) r=p;
     }
-    rs[i]=H.lca.par[0][r];
+    rs[i]=H.par[0][r];
   }
 
   vector<ll> pos;
