@@ -1091,9 +1091,6 @@ data:
       path: test/aoj/DSL_2_A.test.cpp
       title: test/aoj/DSL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/DSL_2_B.binarytrie.test.cpp
-      title: test/aoj/DSL_2_B.binarytrie.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
     - icon: ':heavy_check_mark:'

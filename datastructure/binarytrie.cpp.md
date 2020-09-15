@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_B.binarytrie.test.cpp
-    title: test/aoj/DSL_2_B.binarytrie.test.cpp
+    path: test/aoj/DSL_2_B.test.cpp
+    title: test/aoj/DSL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/set_xor_min.test.cpp
     title: test/yosupo/set_xor_min.test.cpp
@@ -139,7 +139,7 @@ data:
   timestamp: '2020-06-06 14:04:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_2_B.binarytrie.test.cpp
+  - test/aoj/DSL_2_B.test.cpp
   - test/yosupo/set_xor_min.test.cpp
 documentation_of: datastructure/binarytrie.cpp
 layout: document

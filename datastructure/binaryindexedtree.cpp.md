@@ -7,9 +7,6 @@ data:
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_B.test.cpp
-    title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
@@ -69,7 +66,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_D.test.cpp
-  - test/aoj/DSL_2_B.test.cpp
   - test/aoj/0343.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
