@@ -16,38 +16,39 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    links: []
+    links:
+    - https://qiita.com/tmaehara/items/0687af2cfb807cde7860
   bundledCode: "#line 2 \"algorithm/onlineoffline.cpp\"\n\n#ifndef call_from_test\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\nnamespace\
-    \ OnlineOffline{\n  vector<int> used;\n\n  template<typename T>\n  void update(vector<T>\
-    \ &dp,int k,T val){\n    if(!used[k]) dp[k]=val;\n    dp[k]=min(dp[k],val);\n\
-    \    used[k]=1;\n  }\n\n  // [l, r), [a, b]\n  template<typename T,typename F>\n\
-    \  void induce(int l,int r,int a,int b,vector<T> &dp,F dist){\n    if(l==r) return;\n\
-    \    int m=(l+r)>>1;\n    assert(m<a);\n    int idx=a;\n    T res=dist(m,idx-1)+dp[idx];\n\
-    \    for(int i=a;i<=b;i++){\n      T tmp=dist(m,i-1)+dp[i];\n      if(tmp<res)\
-    \ res=tmp,idx=i;\n    }\n    update(dp,m,res);\n    induce(l,m+0,a,idx,dp,dist);\n\
+    #include <bits/stdc++.h>\nusing namespace std;\n#endif\n\n// https://qiita.com/tmaehara/items/0687af2cfb807cde7860\n\
+    //BEGIN CUT HERE\nnamespace OfflineOnline{\n  vector<int> used;\n\n  template<typename\
+    \ T>\n  void update(vector<T> &dp,int k,T val){\n    if(!used[k]) dp[k]=val;\n\
+    \    dp[k]=min(dp[k],val);\n    used[k]=1;\n  }\n\n  // [l, r), [a, b]\n  template<typename\
+    \ T,typename F>\n  void induce(int l,int r,int a,int b,vector<T> &dp,F dist){\n\
+    \    if(l==r) return;\n    int m=(l+r)>>1;\n    assert(m<a);\n    int idx=a;\n\
+    \    T res=dist(m,idx)+dp[idx];\n    for(int i=a;i<=b;i++){\n      T tmp=dist(m,i)+dp[i];\n\
+    \      if(tmp<res) res=tmp,idx=i;\n    }\n    update(dp,m,res);\n    induce(l,m+0,a,idx,dp,dist);\n\
     \    induce(m+1,r,idx,b,dp,dist);\n  }\n\n  template<typename T,typename F>\n\
-    \  void solve(int l,int r,vector<T> &dp,F dist){\n    if(l+1==r) return update(dp,l,dist(l,l)+dp[r]);\n\
+    \  void solve(int l,int r,vector<T> &dp,F dist){\n    if(l+1==r) return update(dp,l,dist(l,r)+dp[r]);\n\
     \    int m=(l+r)>>1;\n    solve(m,r,dp,dist);\n    induce(l,m,m,r,dp,dist);\n\
-    \    solve(l,m,dp,dist);\n  }\n\n  // dp[i] = min_{i<j} dist(i,j-1) + dp[j]\n\
-    \  template<typename T,typename F>\n  T solve(int n,F dist){\n    vector<T> dp(n+1,0);\n\
-    \    used.assign(n+1,0);\n    used[n]=1;\n    solve(0,n,dp,dist);\n    return\
-    \ dp[0];\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
-    signed main(){\n  return 0;\n}\n#endif\n"
+    \    solve(l,m,dp,dist);\n  }\n\n  // dp[i] = min_{i<j} dist(i,j) + dp[j]\n  template<typename\
+    \ T,typename F>\n  T solve(int n,F dist){\n    vector<T> dp(n+1,0);\n    used.assign(n+1,0);\n\
+    \    used[n]=1;\n    solve(0,n,dp,dist);\n    return dp[0];\n  }\n};\n//END CUT\
+    \ HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
+    \ 0;\n}\n#endif\n"
   code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\nnamespace OnlineOffline{\n  vector<int> used;\n\
-    \n  template<typename T>\n  void update(vector<T> &dp,int k,T val){\n    if(!used[k])\
-    \ dp[k]=val;\n    dp[k]=min(dp[k],val);\n    used[k]=1;\n  }\n\n  // [l, r), [a,\
-    \ b]\n  template<typename T,typename F>\n  void induce(int l,int r,int a,int b,vector<T>\
-    \ &dp,F dist){\n    if(l==r) return;\n    int m=(l+r)>>1;\n    assert(m<a);\n\
-    \    int idx=a;\n    T res=dist(m,idx-1)+dp[idx];\n    for(int i=a;i<=b;i++){\n\
-    \      T tmp=dist(m,i-1)+dp[i];\n      if(tmp<res) res=tmp,idx=i;\n    }\n   \
-    \ update(dp,m,res);\n    induce(l,m+0,a,idx,dp,dist);\n    induce(m+1,r,idx,b,dp,dist);\n\
-    \  }\n\n  template<typename T,typename F>\n  void solve(int l,int r,vector<T>\
-    \ &dp,F dist){\n    if(l+1==r) return update(dp,l,dist(l,l)+dp[r]);\n    int m=(l+r)>>1;\n\
-    \    solve(m,r,dp,dist);\n    induce(l,m,m,r,dp,dist);\n    solve(l,m,dp,dist);\n\
-    \  }\n\n  // dp[i] = min_{i<j} dist(i,j-1) + dp[j]\n  template<typename T,typename\
-    \ F>\n  T solve(int n,F dist){\n    vector<T> dp(n+1,0);\n    used.assign(n+1,0);\n\
+    \ std;\n#endif\n\n// https://qiita.com/tmaehara/items/0687af2cfb807cde7860\n//BEGIN\
+    \ CUT HERE\nnamespace OfflineOnline{\n  vector<int> used;\n\n  template<typename\
+    \ T>\n  void update(vector<T> &dp,int k,T val){\n    if(!used[k]) dp[k]=val;\n\
+    \    dp[k]=min(dp[k],val);\n    used[k]=1;\n  }\n\n  // [l, r), [a, b]\n  template<typename\
+    \ T,typename F>\n  void induce(int l,int r,int a,int b,vector<T> &dp,F dist){\n\
+    \    if(l==r) return;\n    int m=(l+r)>>1;\n    assert(m<a);\n    int idx=a;\n\
+    \    T res=dist(m,idx)+dp[idx];\n    for(int i=a;i<=b;i++){\n      T tmp=dist(m,i)+dp[i];\n\
+    \      if(tmp<res) res=tmp,idx=i;\n    }\n    update(dp,m,res);\n    induce(l,m+0,a,idx,dp,dist);\n\
+    \    induce(m+1,r,idx,b,dp,dist);\n  }\n\n  template<typename T,typename F>\n\
+    \  void solve(int l,int r,vector<T> &dp,F dist){\n    if(l+1==r) return update(dp,l,dist(l,r)+dp[r]);\n\
+    \    int m=(l+r)>>1;\n    solve(m,r,dp,dist);\n    induce(l,m,m,r,dp,dist);\n\
+    \    solve(l,m,dp,dist);\n  }\n\n  // dp[i] = min_{i<j} dist(i,j) + dp[j]\n  template<typename\
+    \ T,typename F>\n  T solve(int n,F dist){\n    vector<T> dp(n+1,0);\n    used.assign(n+1,0);\n\
     \    used[n]=1;\n    solve(0,n,dp,dist);\n    return dp[0];\n  }\n};\n//END CUT\
     \ HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
     \ 0;\n}\n#endif\n"
@@ -55,7 +56,7 @@ data:
   isVerificationFile: false
   path: algorithm/onlineoffline.cpp
   requiredBy: []
-  timestamp: '2020-03-12 16:36:20+09:00'
+  timestamp: '2020-09-15 22:09:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1950.test.cpp
