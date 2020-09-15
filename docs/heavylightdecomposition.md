@@ -23,4 +23,5 @@ HL分解を使えるかどうかの条件は、載せるデータ構造（セグ
 
 ### 解説記事
 [Easiest HLD with subtree queries](https://codeforces.com/blog/entry/53170)
-[Heavy-Light Decomposition](https://beet-aizu.hatenablog.com/entry/2017/12/12/235950)
+
+古い [Heavy-Light Decomposition](https://beet-aizu.hatenablog.com/entry/2017/12/12/235950)
