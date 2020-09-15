@@ -1,12 +1,12 @@
 ---
 title: ReRooting
-documentation_of: ./tree/rerooting.cpp
+documentation_of: ../tree/rerooting.cpp
 ---
 
 ## できること
 全ての頂点について、その頂点を根としたときの木DPの結果を求める
 
-ある頂点を根としたときの部分木の結果を求めることもできる
+ある頂点を根としたときの部分木の結果を求めることもできる [問題](https://atcoder.jp/contests/tenka1-2015-quala/tasks/tenka1_2015_qualA_d) [提出例](https://atcoder.jp/contests/tenka1-2015-quala/submissions/11218391)
 
 ## データの持ち方
 - `T`: 結果
