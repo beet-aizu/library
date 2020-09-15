@@ -2,24 +2,24 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/auxiliarytree.cpp
     title: Aux Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
-    title: test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
+    path: test/aoj/GRL_5_C.test.cpp
+    title: test/aoj/GRL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -60,9 +60,9 @@ data:
   requiredBy:
   - tree/auxiliarytree.cpp
   timestamp: '2019-12-17 21:09:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/aoj/GRL_5_C.lowestcommonancestor.test.cpp
+  - test/aoj/GRL_5_C.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
   - test/yosupo/lca.test.cpp

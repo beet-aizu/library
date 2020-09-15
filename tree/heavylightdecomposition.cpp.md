@@ -12,14 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2667.test.cpp
     title: test/aoj/2667.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_C.test.cpp
-    title: test/aoj/GRL_5_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -70,12 +67,11 @@ data:
   path: tree/heavylightdecomposition.cpp
   requiredBy: []
   timestamp: '2020-09-15 22:29:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/0367.test.cpp
   - test/aoj/2450.test.cpp
   - test/aoj/2667.test.cpp
-  - test/aoj/GRL_5_C.test.cpp
   - test/yosupo/vertex_add_path_sum.test.cpp
 documentation_of: ./tree/heavylightdecomposition.cpp
 layout: document
@@ -91,14 +87,11 @@ HL分解を使えるかどうかの条件は、載せるデータ構造（セグ
 つまり、ある単純な（一直線に並んでいるような）要素列に対しての問題が $O(X)$ で解けるなら、
 それが木の上のパスになった場合でも $O(X \log N)$ で解くことができます。
 
-## 使い方
+## つかいかた
+頂点属性のクエリの場合は `for_each()` 、辺属性のクエリの場合は `for_each_edge()` で処理します
 
--   コンストラクタにグラフのサイズを渡します。
--   `add_edge(u,v)` で `u` と `v` の間に辺を貼ります。
--   `build()` で構築します。
+演算が可換でない場合は `w = lca(u, v)` として、`for_each(w, u)` と `for_each_edge(w, v)` の結果を合成すればよいです
 
-頂点属性のクエリの場合は `for_each()` 、
-辺属性のクエリの場合は `for_each_edge()` で処理します。
 
 ### 解説記事
 [Easiest HLD with subtree queries](https://codeforces.com/blog/entry/53170)

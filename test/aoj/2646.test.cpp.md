@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/fixpoint.cpp
     title: tools/fixpoint.cpp
   - icon: ':heavy_check_mark:'

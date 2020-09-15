@@ -6,11 +6,11 @@ data:
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -51,7 +51,7 @@ data:
   requiredBy:
   - algorithm/mo.cpp
   timestamp: '2019-12-27 08:56:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/GRL_5_D.test.cpp
 documentation_of: tree/eulertourforedge.cpp

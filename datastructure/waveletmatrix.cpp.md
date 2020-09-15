@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1937.test.cpp
     title: test/yukicoder/1937.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1732.test.cpp
     title: test/yukicoder/1732.test.cpp
   - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     path: test/yosupo/range_kth_smallest.test.cpp
     title: test/yosupo/range_kth_smallest.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -148,7 +148,7 @@ data:
   path: datastructure/waveletmatrix.cpp
   requiredBy: []
   timestamp: '2020-09-14 22:28:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2674.test.cpp
   - test/aoj/3063.test.cpp

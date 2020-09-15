@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/eulertourforedge.cpp
     title: tree/eulertourforedge.cpp
   _extendedRequiredBy: []

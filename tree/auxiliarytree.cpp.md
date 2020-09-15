@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/eulertourforvertex.cpp
     title: tree/eulertourforvertex.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/lowestcommonancestor.cpp
     title: tree/lowestcommonancestor.cpp
   _extendedRequiredBy: []
@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -55,7 +55,7 @@ data:
   path: tree/auxiliarytree.cpp
   requiredBy: []
   timestamp: '2020-09-15 18:05:06+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
@@ -68,8 +68,8 @@ title: Aux Tree
 与えられた木の頂点の部分集合に関して、その頂点を全て含むような最小の木を構築する
 
 ## つかいかた
-- query($S$): 部分集合 $S$ の Aux Tree を破壊的に構築する（必要な頂点が $S$ に追加される）
-- clear($S$): Aux Tree を初期化する
+- `query(ws)`: 部分集合 `ws` の Aux Tree を破壊的に構築する（必要な頂点が `ws` に追加される）
+- `clear(ws)`: `ws` から伸びている辺を削除する
 
 ## 計算量
 部分集合のサイズを$k$として、$O(k \log k)$
