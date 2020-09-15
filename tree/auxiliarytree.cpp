@@ -5,25 +5,30 @@
 using namespace std;
 
 #define call_from_test
-#include "eulertourforvertex.cpp"
 #include "lowestcommonancestor.cpp"
 #undef call_from_test
 
 #endif
 
 //BEGIN CUT HERE
-struct AuxiliaryTree : EulerTourForVertex{
-  using super = EulerTourForVertex;
-  LowestCommonAncestor lca;
+struct AuxiliaryTree : LowestCommonAncestor{
+  using super = LowestCommonAncestor;
 
+  vector<int> idx;
   vector<vector<int>> T;
   AuxiliaryTree(){}
-  AuxiliaryTree(int n):super(n),lca(n),T(n){}
+  AuxiliaryTree(int n):super(n),idx(n),T(n){}
+
+  void dfs(int v,int p,int &pos){
+    idx[v]=pos++;
+    for(int u:G[v])
+      if(u!=p) dfs(u,v,pos);
+  }
 
   void build(int r=0){
     super::build(r);
-    lca.G=super::G;
-    lca.build(r);
+    int pos=0;
+    dfs(r,-1,pos);
   }
 
   void add_aux_edge(int u,int v){
@@ -31,21 +36,21 @@ struct AuxiliaryTree : EulerTourForVertex{
     T[v].emplace_back(u);
   }
 
-  using super::idx;
+  using super::lca, super::dep;
   void query(vector<int> &vs){
     assert(!vs.empty());
     sort(vs.begin(),vs.end(),
-         [&](int a,int b){return idx(a)<idx(b);});
+         [&](int a,int b){return idx[a]<idx[b];});
     vs.erase(unique(vs.begin(),vs.end()),vs.end());
 
     int k=vs.size();
     stack<int> st;
     st.emplace(vs[0]);
     for(int i=0;i+1<k;i++){
-      int w=lca.lca(vs[i],vs[i+1]);
+      int w=lca(vs[i],vs[i+1]);
       if(w!=vs[i]){
         int l=st.top();st.pop();
-        while(!st.empty()&&lca.dep[w]<lca.dep[st.top()]){
+        while(!st.empty()&&dep[w]<dep[st.top()]){
           add_aux_edge(st.top(),l);
           l=st.top();st.pop();
         }

@@ -4,7 +4,6 @@
 using namespace std;
 
 #define call_from_test
-#include "../../tree/eulertourforvertex.cpp"
 #include "../../tree/lowestcommonancestor.cpp"
 #include "../../tree/auxiliarytree.cpp"
 #undef call_from_test

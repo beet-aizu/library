@@ -7,7 +7,6 @@ using namespace std;
 #include "../../datastructure/binaryindexedtree.cpp"
 #include "../../io/tuple.cpp"
 #include "../../tools/fixpoint.cpp"
-#include "../../tree/eulertourforvertex.cpp"
 #include "../../tree/lowestcommonancestor.cpp"
 #include "../../tree/auxiliarytree.cpp"
 #include "../../vector/compress.cpp"
@@ -106,20 +105,20 @@ signed main(){
     H.query(ss);
 
     auto expand=[&](int v){
-      for(int i:add[v]) bit.add0(cs[i],+1);
-      for(int i:sub[v]) bit.add0(cs[i],-1);
+      for(int i:add[v]) bit.add(cs[i],+1);
+      for(int i:sub[v]) bit.add(cs[i],-1);
     };
 
     MFP([&](auto dfs,int v,int p)->void{
       for(int i:query[v])
-        ans[i]-=bit.sum0(cs[i]);
+        ans[i]-=bit.sum(cs[i]);
 
       for(int u:H.T[v])
         if(u!=p) dfs(u,v);
       expand(v);
 
       for(int i:query[v])
-        ans[i]+=bit.sum0(cs[i]);
+        ans[i]+=bit.sum(cs[i]);
     })(0,-1);
 
     H.clear(ss);

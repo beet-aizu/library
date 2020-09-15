@@ -41,7 +41,7 @@ public: // 0-indexed
 
   T sum(int i){return sum_impl(i+1);}
   void add(int i,T a){add_impl(i+1,a);}
-  T query(int l,int r){return sum_impl(r+1)-sum_impl(l+1);}
+  T query(int l,int r){return sum_impl(r)-sum_impl(l);}
 };
 //END CUT HERE
 #ifndef call_from_test

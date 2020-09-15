@@ -27,8 +27,8 @@ signed main(){
 
   ll ans=1e18,sum=0;
   for(int i=0;i<k;i++){
-    bit1.add0(mx[as[i]],1);
-    bit2.add0(mx[as[i]],as[i]);
+    bit1.add(mx[as[i]],1);
+    bit2.add(mx[as[i]],as[i]);
     sum+=as[i];
   }
 
@@ -37,17 +37,17 @@ signed main(){
     int j=i+k;
     int x=wm.quantile(i,j,k>>1);
 
-    ll p=bit1.sum0(mx[x]),q=k-p;
-    ll s=bit2.sum0(mx[x]);
+    ll p=bit1.sum(mx[x]),q=k-p;
+    ll s=bit2.sum(mx[x]);
     chmin(ans,p*x-s+(sum-s)-q*x);
 
-    bit1.add0(mx[as[i]],-1);
-    bit2.add0(mx[as[i]],-as[i]);
+    bit1.add(mx[as[i]],-1);
+    bit2.add(mx[as[i]],-as[i]);
     sum-=as[i];
 
     if(j==n) continue;
-    bit1.add0(mx[as[j]],1);
-    bit2.add0(mx[as[j]],as[j]);
+    bit1.add(mx[as[j]],1);
+    bit2.add(mx[as[j]],as[j]);
     sum+=as[j];
   }
 

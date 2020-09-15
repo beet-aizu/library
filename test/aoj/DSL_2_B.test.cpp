@@ -17,8 +17,9 @@ signed main(){
   for(int i=0;i<q;i++){
     int c,x,y;
     cin>>c>>x>>y;
+    x--;
     if(c==0) bit.add(x,y);
-    if(c==1) cout<<bit.query(x,y+1)<<"\n";
+    if(c==1) cout<<bit.query(x,y)<<"\n";
   }
   cout<<flush;
   return 0;
