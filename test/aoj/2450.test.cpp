@@ -17,7 +17,6 @@ signed main(){
   HLD hld(n);
   vector<int> ws(n);
   for(int i=0;i<n;i++) cin>>ws[i];
-  using P = pair<int, int>;
   for(int i=0;i+1<n;i++){
     int a,b;
     cin>>a>>b;
@@ -26,65 +25,41 @@ signed main(){
   }
   hld.build();
 
-  using T = tuple<int, int, int, int, int, int, int>;
+  using T = tuple<int, int, int, int, int>;
+  using E = pair<int, int>;
 
-  T ti(-1,-1,-1,-1,-1,-1,-1);
-  P ei(-1,-114514);
-
-  auto &par=hld.par;
-  auto &vid=hld.vid;;
-  auto con=[&](int a,int b){
-             return par[a]==b||par[b]==a;
-           };
+  T ti(-1,-1,-1,-1,-1);
+  E ei(-1,-(1e4+10));
 
   auto f=[&](T a,T b){
-           if(a>b) swap(a,b);
+    if(a==ti) return b;
+    if(b==ti) return a;
 
-           if(get<0>(a)<0) return b;
-           if(con(get<0>(a),get<1>(b))) swap(a,b);
+    auto[asz,ava,avi,avl,avr]=a;
+    auto[bsz,bva,bvi,bvl,bvr]=b;
 
-           int al,ar,as,ava,avi,avl,avr;
-           tie(al,ar,as,ava,avi,avl,avr)=a;
-           int bl,br,bs,bva,bvi,bvl,bvr;
-           tie(bl,br,bs,bva,bvi,bvl,bvr)=b;
+    int csz=asz+bsz;
+    int cva=ava+bva;
+    int cvi=max({avi,bvi,avr+bvl});
+    int cvl=max(avl,ava+bvl);
+    int cvr=max(bvr,avr+bva);
+    return T(csz,cva,cvi,cvl,cvr);
+  };
 
-           if(!con(ar,bl)){
-             if(con(ar,br)){
-               swap(bl,br);
-               swap(bvl,bvr);
-             }else if(con(al,bl)){
-               swap(al,ar);
-               swap(avl,avr);
-             }else{
-               return ti;
-             }
-           }
-           int cl=al,cr=br,cs=as+bs;
-           int cva=ava+bva,cvi=max(avi,bvi),cvl=avl,cvr=bvr;
-           cvi=max(cvi,avr+bvl);
-           cvl=max(cvl,ava+bvl);
-           cvr=max(cvr,avr+bva);
+  auto g=[&](T a,E p){
+    if(p==ei) return a;
+    auto[asz,ava,avi,avl,avr]=a;
+    auto[v,b]=p;
+    if(~v) asz=1;
+    if(b>=0) return T(asz,b*asz,b*asz,b*asz,b*asz);
+    return T(asz,b*asz,b,b,b);
+  };
 
-           return T(cl,cr,cs,cva,cvi,cvl,cvr);
-         };
-
-  auto g=[&](T a,P p){
-           if(p==ei) return a;
-           int al,ar,as,ava,avi,avl,avr;
-           tie(al,ar,as,ava,avi,avl,avr)=a;
-           int v=p.first,b=p.second;
-           if(~v) al=ar=v,as=1;
-           if(b>=0) return T(al,ar,as,b*as,b*as,b*as,b*as);
-           return T(al,ar,as,b*as,b,b,b);
-         };
-
-  auto h=[&](P a,P b){(void)a;return b;};
-
-
-  SegmentTree<T, P> seg(f,g,h,ti,ei);
+  auto h=[&](E,E b){return b;};
+  SegmentTree<T, E> seg(f,g,h,ti,ei);
 
   vector<T> vt(n);
-  for(int i=0;i<n;i++) vt[vid[i]]=g(ti,P(i,ws[i]));
+  for(int i=0;i<n;i++) vt[hld.vid[i]]=g(ti,E(i,ws[i]));
   seg.build(vt);
 
   for(int i=0;i<q;i++){
@@ -92,16 +67,18 @@ signed main(){
     cin>>t>>a>>b>>c;
     a--;b--;
     if(t==1){
-      hld.for_each(a,b,[&](int l,int r){seg.update(l,r,P(-1,c));});
+      hld.for_each(a,b,[&](int l,int r){seg.update(l,r,E(-1,c));});
     }
     if(t==2){
-      auto ask=[&](int l,int r){return seg.query(l,r);};
-      T v=hld.for_each(a,b,seg.ti,ask,f);
-      int vl,vr,vs,vva,vvi,vvl,vvr;
-      tie(vl,vr,vs,vva,vvi,vvl,vvr)=v;
-      cout<<max({vva,vvi,vvl,vvr})<<"\n";
+      int c=hld.lca(a,b);
+      T x=ti,y=ti;
+      hld.for_each(c,a,[&](int l,int r){x=f(seg.query(l,r),x);});
+      hld.for_each_edge(c,b,[&](int l,int r){y=f(seg.query(l,r),y);});
+      auto&[xsz,xva,xvi,xvl,xvr]=x;
+      swap(xvl,xvr);
+      auto[vsz,vva,vvi,vvl,vvr]=f(x,y);
+      cout<<max({vva,vvi,vvl,vvr})<<'\n';
     }
   }
-  cout<<flush;
   return 0;
 }
