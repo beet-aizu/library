@@ -34,7 +34,6 @@ signed main(){
       vp.emplace_back(-ss[is[i]],is[i]);
     }
   }
-  vp.emplace_back(-ll(1e18),0);
   vp=compress(vp);
   auto dc=dict(vp);
 
@@ -50,7 +49,7 @@ signed main(){
       bit.add(dc[P(-ss[is[i]],is[i])],+1);
     }
     if(ts[i]==1){
-      int k=bit.lower_bound(is[i]);
+      int k=bit.lower_bound(is[i])-1;
       cout<<vp[k].second+1<<' '<<-vp[k].first<<'\n';
     }
   }
