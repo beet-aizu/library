@@ -430,7 +430,7 @@ data:
       title: polynomial/recursivesequence.cpp
   - name: segtree/basic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/chien.cpp
       title: segtree/basic/chien.cpp
     - icon: ':heavy_check_mark:'
@@ -599,7 +599,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/eulertourforvertex.cpp
       title: tree/eulertourforvertex.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/heavylightdecomposition.cpp
       title: Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
@@ -829,7 +829,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2450.linkcuttree.test.cpp
       title: test/aoj/2450.linkcuttree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2450.test.cpp
       title: test/aoj/2450.test.cpp
     - icon: ':heavy_check_mark:'

@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_G.test.cpp
     title: test/aoj/DSL_2_G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2450.test.cpp
     title: test/aoj/2450.test.cpp
   - icon: ':heavy_check_mark:'
@@ -43,7 +43,7 @@ data:
     path: test/yosupo/range_affine_range_sum.test.cpp
     title: test/yosupo/range_affine_range_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -137,7 +137,7 @@ data:
   path: segtree/basic/chien.cpp
   requiredBy: []
   timestamp: '2019-12-17 13:36:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_I.test.cpp
   - test/aoj/DSL_2_H.test.cpp
