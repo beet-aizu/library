@@ -37,8 +37,8 @@ signed main(){
     int j=i+k;
     int x=wm.quantile(i,j,k>>1);
 
-    ll p=bit1.sum(mx[x]),q=k-p;
-    ll s=bit2.sum(mx[x]);
+    ll p=bit1.query(0,mx[x]+1),q=k-p;
+    ll s=bit2.query(0,mx[x]+1);
     chmin(ans,p*x-s+(sum-s)-q*x);
 
     bit1.add(mx[as[i]],-1);
