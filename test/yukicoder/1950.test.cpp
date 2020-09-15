@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../io/single.cpp"
 #include "../../algorithm/onlineoffline.cpp"
 #undef call_from_test
 
@@ -15,18 +16,17 @@ signed main(){
 
   int n;
   cin>>n;
-  vector<ll> as(n),xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-  for(int i=0;i<n;i++) cin>>xs[i];
-  for(int i=0;i<n;i++) cin>>ys[i];
+  auto as=read<ll>(n);
+  auto xs=read<ll>(n);
+  auto ys=read<ll>(n);
 
   auto dist=
     [&](int i,int j)->ll{
-      ll s=abs(xs[i]-as[j]);
+      ll s=abs(xs[i]-as[j-1]);
       ll t=abs(ys[i]);
       return s+t;
     };
 
-  cout<<OnlineOffline::solve<ll>(n,dist)<<endl;
+  cout<<OfflineOnline::solve<ll>(n,dist)<<endl;
   return 0;
 }

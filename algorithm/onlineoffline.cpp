@@ -4,8 +4,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
+// https://qiita.com/tmaehara/items/0687af2cfb807cde7860
 //BEGIN CUT HERE
-namespace OnlineOffline{
+namespace OfflineOnline{
   vector<int> used;
 
   template<typename T>
@@ -22,9 +24,9 @@ namespace OnlineOffline{
     int m=(l+r)>>1;
     assert(m<a);
     int idx=a;
-    T res=dist(m,idx-1)+dp[idx];
+    T res=dist(m,idx)+dp[idx];
     for(int i=a;i<=b;i++){
-      T tmp=dist(m,i-1)+dp[i];
+      T tmp=dist(m,i)+dp[i];
       if(tmp<res) res=tmp,idx=i;
     }
     update(dp,m,res);
@@ -34,14 +36,14 @@ namespace OnlineOffline{
 
   template<typename T,typename F>
   void solve(int l,int r,vector<T> &dp,F dist){
-    if(l+1==r) return update(dp,l,dist(l,l)+dp[r]);
+    if(l+1==r) return update(dp,l,dist(l,r)+dp[r]);
     int m=(l+r)>>1;
     solve(m,r,dp,dist);
     induce(l,m,m,r,dp,dist);
     solve(l,m,dp,dist);
   }
 
-  // dp[i] = min_{i<j} dist(i,j-1) + dp[j]
+  // dp[i] = min_{i<j} dist(i,j) + dp[j]
   template<typename T,typename F>
   T solve(int n,F dist){
     vector<T> dp(n+1,0);
