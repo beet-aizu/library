@@ -33,7 +33,7 @@ signed main(){
   BIT<ll> bit(n);
   for(int i=0;i<n;i++) bit.add(ps[i],1);
   for(int i=0;i<n;i++){
-    dp[n-(i+1)]=bit.sum(ps[i]);
+    dp[n-(i+1)]=bit.query(0,ps[i]);
     bit.add(ps[i],-1);
   }
   cout<<bigint(dfs(0,n).first+1)<<endl;
