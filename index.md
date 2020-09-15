@@ -613,10 +613,10 @@ data:
       title: tree/lowestcommonancestor.cpp
     - icon: ':heavy_check_mark:'
       path: tree/rerooting.cpp
-      title: ReRooting
+      title: tree/rerooting.cpp
     - icon: ':heavy_check_mark:'
       path: tree/sack.cpp
-      title: Sack (dsu on tree)
+      title: tree/sack.cpp
   - name: vector
     pages:
     - icon: ':heavy_check_mark:'
