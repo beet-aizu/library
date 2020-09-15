@@ -577,7 +577,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/auxiliarytree.cpp
-      title: Aux Tree
+      title: Auxiliary Tree
     - icon: ':heavy_check_mark:'
       path: tree/centroid.cpp
       title: tree/centroid.cpp
@@ -613,10 +613,10 @@ data:
       title: tree/lowestcommonancestor.cpp
     - icon: ':heavy_check_mark:'
       path: tree/rerooting.cpp
-      title: tree/rerooting.cpp
+      title: ReRooting
     - icon: ':heavy_check_mark:'
       path: tree/sack.cpp
-      title: tree/sack.cpp
+      title: Sack (dsu on tree)
   - name: vector
     pages:
     - icon: ':heavy_check_mark:'

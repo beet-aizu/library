@@ -58,7 +58,7 @@ data:
   - test/yukicoder/4852.test.cpp
 documentation_of: ./tree/auxiliarytree.cpp
 layout: document
-title: Aux Tree
+title: Auxiliary Tree
 ---
 
 ## できること
