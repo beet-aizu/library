@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/centroid.cpp
     title: tree/centroid.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/fixpoint.cpp
     title: tools/fixpoint.cpp
   - icon: ':heavy_check_mark:'

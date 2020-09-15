@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/auxiliarytree.cpp
     title: Aux Tree
   _extendedVerifiedWith:
@@ -12,14 +12,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -60,7 +60,7 @@ data:
   requiredBy:
   - tree/auxiliarytree.cpp
   timestamp: '2019-12-17 21:09:31+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_C.test.cpp
   - test/yukicoder/3407.test.cpp

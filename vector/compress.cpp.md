@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1300.test.cpp
     title: test/aoj/1300.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test/yukicoder/1732.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   - icon: ':heavy_check_mark:'
@@ -43,7 +43,7 @@ data:
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -68,7 +68,7 @@ data:
   path: vector/compress.cpp
   requiredBy: []
   timestamp: '2020-04-18 17:56:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/2563.test.cpp

@@ -111,7 +111,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/absolutesum.cpp
       title: datastructure/absolutesum.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/binaryindexedtree.cpp
       title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
@@ -292,7 +292,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: io/tuple.cpp
       title: io/tuple.cpp
   - name: linearalgebra
@@ -541,7 +541,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/fastio.cpp
       title: tools/fastio.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/fixpoint.cpp
       title: tools/fixpoint.cpp
     - icon: ':heavy_check_mark:'
@@ -575,7 +575,7 @@ data:
       title: toptree/toptree.cpp
   - name: tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/auxiliarytree.cpp
       title: Aux Tree
     - icon: ':heavy_check_mark:'
@@ -593,10 +593,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/eulertourforbfs.cpp
       title: tree/eulertourforbfs.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforedge.cpp
       title: tree/eulertourforedge.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforvertex.cpp
       title: tree/eulertourforvertex.cpp
     - icon: ':heavy_check_mark:'
@@ -608,7 +608,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/levelancestor.cpp
       title: tree/levelancestor.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/lowestcommonancestor.cpp
       title: tree/lowestcommonancestor.cpp
     - icon: ':heavy_check_mark:'
@@ -619,7 +619,7 @@ data:
       title: Sack (dsu on tree)
   - name: vector
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: vector/compress.cpp
       title: vector/compress.cpp
     - icon: ':heavy_check_mark:'
@@ -655,7 +655,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0314.test.cpp
       title: test/aoj/0314.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/0343.test.cpp
       title: test/aoj/0343.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1192,7 +1192,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_D.linkcuttree.test.cpp
       title: test/aoj/GRL_5_D.linkcuttree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_D.test.cpp
       title: test/aoj/GRL_5_D.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1532,7 +1532,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_subtree_sum.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1660,7 +1660,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4778.test.cpp
       title: test/yukicoder/4778.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/4852.test.cpp
       title: test/yukicoder/4852.test.cpp
     - icon: ':heavy_check_mark:'

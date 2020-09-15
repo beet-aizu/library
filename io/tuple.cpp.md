@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -35,7 +35,7 @@ data:
   path: io/tuple.cpp
   requiredBy: []
   timestamp: '2020-08-07 15:47:54+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4918.test.cpp
   - test/yukicoder/4852.test.cpp
