@@ -23,7 +23,7 @@ signed main(){
   auto vx=compress(as);
   auto mx=dict(vx);
 
-  BIT<ll> bit1(n+10),bit2(n+10);
+  BIT<ll> bit1(n),bit2(n);
 
   ll ans=1e18,sum=0;
   for(int i=0;i<k;i++){

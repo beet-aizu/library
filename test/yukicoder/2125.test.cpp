@@ -28,13 +28,13 @@ signed main(){
 
   int n;
   cin>>n;
-  vector<int> p(n);
-  for(int i=0;i<n;i++) cin>>p[i];
-  BIT<ll> bit(n+1);
-  for(int i=0;i<n;i++) bit.add(p[i],1);
+  vector<int> ps(n);
+  for(int i=0;i<n;i++) cin>>ps[i];
+  BIT<ll> bit(n);
+  for(int i=0;i<n;i++) bit.add(ps[i],1);
   for(int i=0;i<n;i++){
-    dp[n-(i+1)]=bit.sum(p[i]-1);
-    bit.add(p[i],-1);
+    dp[n-(i+1)]=bit.sum(ps[i]);
+    bit.add(ps[i],-1);
   }
   cout<<bigint(dfs(0,n).first+1)<<endl;
   return 0;

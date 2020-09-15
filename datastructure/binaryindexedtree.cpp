@@ -7,7 +7,16 @@ using namespace std;
 
 //BEGIN CUT HERE
 template<typename T>
-struct BIT{
+class BIT{
+private:
+  // \sum_{j < i}  v[j]
+  T sum(int i){
+    T s(0);
+    for(int x=i;x>0;x-=(x&-x))
+      s+=bit[x];
+    return s;
+  }
+public:
   int n;
   vector<T> bit;
   BIT(int n_):n(n_+1),bit(n+1,0){}
@@ -17,13 +26,7 @@ struct BIT{
     for(int x=++i;x<=n;x+=(x&-x))
       bit[x]+=a;
   }
-  // \sum_{j < i}  v[j]
-  T sum(int i){
-    T s(0);
-    for(int x=i;x>0;x-=(x&-x))
-      s+=bit[x];
-    return s;
-  }
+  // \sum_{l <= i < r} v[i]
   T query(int l,int r){return sum(r)-sum(l);}
 
   // min({x | sum(x) >= w})
@@ -42,6 +45,7 @@ struct BIT{
     assert(sum(x-1)<w and sum(x)>=w);
     return x;
   }
+
   // min({x | sum(x) > w})
   int upper_bound(T w){return lower_bound(w+1);}
 };

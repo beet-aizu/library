@@ -27,7 +27,7 @@ signed main(){
 
   BIT<long long> bit(n);
   for(int i=0;i<n;i++)
-    bit.add0(G.idx(i),as[i]);
+    bit.add(G.idx(i),as[i]);
 
   for(int i=0;i<q;i++){
     int t;
@@ -35,12 +35,12 @@ signed main(){
     if(t==0){
       int u,x;
       cin>>u>>x;
-      bit.add0(G.idx(u),x);
+      bit.add(G.idx(u),x);
     }
     if(t==1){
       int u;
       cin>>u;
-      G.exec(u,[&](int l,int r){cout<<bit.query0(l,r)<<"\n";});
+      G.exec(u,[&](int l,int r){cout<<bit.query(l,r)<<"\n";});
     }
   }
   cout<<flush;

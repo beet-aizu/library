@@ -7,7 +7,7 @@ documentation_of: ./datastructure/binaryindexedtree.cpp
 - `sum(i)`
 -- $\sum_{j<i} v_j$ を求める
 - `add(i,a)`
--- $v_i := v_i + w$ とする
+-- $v_i := v_i + a$ とする
 - `lower_bound(w)`
 -- $v_i \geq 0$ の仮定のもと、$\min \lbrace i \mid \rm{sum}(i) \ge w \rbrace$ を求める
 

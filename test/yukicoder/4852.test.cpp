@@ -111,14 +111,14 @@ signed main(){
 
     MFP([&](auto dfs,int v,int p)->void{
       for(int i:query[v])
-        ans[i]-=bit.sum(cs[i]);
+        ans[i]-=bit.query(0,cs[i]+1);
 
       for(int u:H.T[v])
         if(u!=p) dfs(u,v);
       expand(v);
 
       for(int i:query[v])
-        ans[i]+=bit.sum(cs[i]);
+        ans[i]+=bit.query(0,cs[i]+1);
     })(0,-1);
 
     H.clear(ss);
