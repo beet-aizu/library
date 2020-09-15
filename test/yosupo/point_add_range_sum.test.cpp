@@ -18,7 +18,7 @@ signed main(){
   for(int i=0;i<n;i++) cin>>as[i];
 
   BIT<long long> bit(n);
-  for(int i=0;i<n;i++) bit.add0(i,as[i]);
+  for(int i=0;i<n;i++) bit.add(i,as[i]);
 
   for(int i=0;i<q;i++){
     int t;
@@ -26,14 +26,13 @@ signed main(){
     if(t==0){
       int p,x;
       cin>>p>>x;
-      bit.add0(p,x);
+      bit.add(p,x);
     }
     if(t==1){
       int l,r;
       cin>>l>>r;
-      cout<<bit.query0(l,r)<<"\n";
+      cout<<bit.query(l,r)<<'\n';
     }
   }
-  cout<<flush;
   return 0;
 }
