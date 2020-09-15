@@ -83,12 +83,14 @@ title: Binary Indexed Tree
 ---
 
 ## できること
-- `sum(i)`
--- $\sum_{j<i} v_j$ を求める
 - `add(i,a)`
 -- $v_i := v_i + a$ とする
+- `query(l,r)`
+-- $\sum_{l \leq i \lt r} v_i$ を求める
 - `lower_bound(w)`
--- $v_i \geq 0$ の仮定のもと、$\min \lbrace i \mid \rm{sum}(i) \ge w \rbrace$ を求める
+-- $v_i \geq 0$ の仮定のもと、$\min (\lbrace i \mid \rm{sum}(i) \ge w \rbrace)$ を求める
+- `upper_bound(w)`
+-- $v_i \geq 0$ の仮定のもと、$\min (\lbrace i \mid \rm{sum}(i) \gt w \rbrace)$ を求める
 
 ## verify 用問題一覧
 - lower_bound
