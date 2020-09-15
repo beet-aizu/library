@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/basic/chien.cpp
     title: segtree/basic/chien.cpp
   _extendedRequiredBy: []

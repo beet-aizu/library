@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/basic/chien.cpp
     title: segtree/basic/chien.cpp
   _extendedRequiredBy: []
