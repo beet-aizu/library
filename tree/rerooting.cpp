@@ -4,9 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-/*
- * @see https://ei1333.hateblo.jp/entry/2018/12/21/004022
- */
+
 //BEGIN CUT HERE
 template<typename T, typename Edge>
 struct ReRooting{
@@ -17,19 +15,19 @@ struct ReRooting{
     bool operator<(const Node &v)const{return to<v.to;};
   };
 
-  using F1 = function<T(T, T)>;
-  using F2 = function<T(T, Edge)>;
+  using Fold = function<T(T, T)>;
+  using Lift = function<T(T, Edge)>;
 
   vector< vector<Node> > G;
   vector< vector<T> > ld,rd;
   vector<int> lp,rp;
 
-  const F1 f1;
-  const F2 f2;
+  const Fold fold;
+  const Lift lift;
   const T id;
 
-  ReRooting(int n,const F1 f1,const F2 f2,const T id):
-    G(n),ld(n),rd(n),lp(n),rp(n),f1(f1),f2(f2),id(id){}
+  ReRooting(int n,const Fold fold,const Lift lift,const T id):
+    G(n),ld(n),rd(n),lp(n),rp(n),fold(fold),lift(lift),id(id){}
 
   void add_edge(int u,int v,Edge d,Edge e){
     G[u].emplace_back(v,d);
@@ -42,16 +40,16 @@ struct ReRooting{
   T dfs(int v,int k){
     while(lp[v]!=k and lp[v]<(int)G[v].size()){
       auto &e=G[v][lp[v]];
-      ld[v][lp[v]+1]=f1(ld[v][lp[v]],f2(dfs(e.to,e.rev),e.data));
+      ld[v][lp[v]+1]=fold(ld[v][lp[v]],lift(dfs(e.to,e.rev),e.data));
       lp[v]++;
     }
     while(rp[v]!=k and rp[v]>=0){
       auto &e=G[v][rp[v]];
-      rd[v][rp[v]]=f1(rd[v][rp[v]+1],f2(dfs(e.to,e.rev),e.data));
+      rd[v][rp[v]]=fold(rd[v][rp[v]+1],lift(dfs(e.to,e.rev),e.data));
       rp[v]--;
     }
     if(k<0) return rd[v][0];
-    return f1(ld[v][k],rd[v][k+1]);
+    return fold(ld[v][k],rd[v][k+1]);
   }
 
   int search(vector<Node> &vs,int idx){
@@ -83,7 +81,7 @@ struct ReRooting{
   T subtree(int v,int p){
     int k=search(G[p],v);
     assert(k<(int)G[p].size() and G[p][k].to==v);
-    return f2(dfs(v,G[p][k].rev),G[p][k].data);
+    return lift(dfs(v,G[p][k].rev),G[p][k].data);
   }
 };
 //END CUT HERE

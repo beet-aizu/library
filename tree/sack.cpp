@@ -5,9 +5,6 @@
 using namespace std;
 #endif
 
-/**
- * @see https://codeforces.com/blog/entry/44351
- */
 //BEGIN CUT HERE
 struct Sack{
   using F = function<void(int)>;
