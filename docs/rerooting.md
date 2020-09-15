@@ -25,4 +25,5 @@ documentation_of: ./tree/rerooting.cpp
 
 ## 参考リンク
 [†全方位木DP†について](https://ei1333.hateblo.jp/entry/2017/04/10/224413)
+
 [もうひとつの全方位木DP](https://ei1333.hateblo.jp/entry/2018/12/21/004022)

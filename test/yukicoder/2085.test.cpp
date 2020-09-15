@@ -17,9 +17,9 @@ signed main(){
 
   int n;
   cin>>n;
-  auto f1=[](int a,int b){return max(a,0)+max(b,0);};
-  auto f2=[](int a,int d){return d-a;};
-  ReRooting<int, int> G(n,f1,f2,0);
+  auto fold=[](int a,int b){return max(a,0)+max(b,0);};
+  auto lift=[](int a,int d){return d-a;};
+  ReRooting<int, int> G(n,fold,lift,0);
   for(int i=1;i<n;i++){
     int a,b;
     cin>>a>>b;
