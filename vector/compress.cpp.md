@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1300.test.cpp
     title: test/aoj/1300.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
