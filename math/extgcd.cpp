@@ -5,6 +5,9 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+// find (x, y) s.t. ax + by = gcd(a, b)
+// |x| <= b, |y| <= a
+// return gcd(a, b)
 template<typename T>
 T extgcd(T a,T b,T& x,T& y){
   T d=a;
@@ -15,13 +18,6 @@ T extgcd(T a,T b,T& x,T& y){
     x=1;y=0;
   }
   return d;
-}
-
-template<typename T>
-T mod_inverse(T a,T mod){
-  T x,y;
-  extgcd(a,mod,x,y);
-  return (x%mod+mod)%mod;
 }
 //END CUT HERE
 #ifndef call_from_test

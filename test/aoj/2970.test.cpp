@@ -6,6 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../tools/drop.cpp"
 #include "../../math/extgcd.cpp"
+#include "../../mod/inverse.cpp"
 #include "../../math/linearcongruence.cpp"
 #undef call_from_test
 

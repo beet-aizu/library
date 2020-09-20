@@ -4,6 +4,7 @@ using namespace std;
 
 #define call_from_test
 #include "extgcd.cpp"
+#include "../mod/inverse.cpp"
 #undef call_from_test
 
 #endif
