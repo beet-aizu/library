@@ -665,6 +665,9 @@ data:
       path: test/aoj/0367.test.cpp
       title: test/aoj/0367.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/0367.toptree.test.cpp
+      title: test/aoj/0367.toptree.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/0377.test.cpp
       title: test/aoj/0377.test.cpp
     - icon: ':heavy_check_mark:'
