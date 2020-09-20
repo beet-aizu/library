@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/extgcd.cpp
     title: math/extgcd.cpp
+  _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: mod/inverse.cpp
-    title: mod/inverse.cpp
-  _extendedRequiredBy: []
+    path: math/linearcongruence.cpp
+    title: math/linearcongruence.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2970.test.cpp
@@ -26,33 +26,29 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ math/linearcongruence.cpp: line 6: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ mod/inverse.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
+    \ other than include guards\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
-    #define call_from_test\n#include \"extgcd.cpp\"\n#include \"../mod/inverse.cpp\"\
-    \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\npair<T,\
-    \ T> linear_congruence(const vector<T> &A,\n                             const\
-    \ vector<T> &B,\n                             const vector<T> &M){\n  T x=0,m=1;\n\
-    \  for(int i=0;i<(int)A.size();i++){\n    T a=A[i]*m,b=B[i]-A[i]*x,d=__gcd(M[i],a);\n\
-    \    if(b%d!=0) return make_pair(0,-1);\n    T t=b/d*mod_inverse(a/d,M[i]/d)%(M[i]/d);\n\
-    \    x=x+m*t;\n    m*=M[i]/d;\n  }\n  return make_pair((x%m+m)%m,m);\n}\n//END\
-    \ CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
-    \ 0;\n}\n#endif\n"
+    #define call_from_test\n#include \"../math/extgcd.cpp\"\n#undef call_from_test\n\
+    \n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT mod_inverse(T a,T mod){\n\
+    \  T x,y;\n  extgcd(a,mod,x,y);\n  return (x%mod+mod)%mod;\n}\n//END CUT HERE\n\
+    #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
+    #endif\n"
   dependsOn:
   - math/extgcd.cpp
-  - mod/inverse.cpp
   isVerificationFile: false
-  path: math/linearcongruence.cpp
-  requiredBy: []
+  path: mod/inverse.cpp
+  requiredBy:
+  - math/linearcongruence.cpp
   timestamp: '2020-09-21 00:38:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2970.test.cpp
   - test/aoj/2659.test.cpp
-documentation_of: math/linearcongruence.cpp
+documentation_of: mod/inverse.cpp
 layout: document
 redirect_from:
-- /library/math/linearcongruence.cpp
-- /library/math/linearcongruence.cpp.html
-title: math/linearcongruence.cpp
+- /library/mod/inverse.cpp
+- /library/mod/inverse.cpp.html
+title: mod/inverse.cpp
 ---

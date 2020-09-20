@@ -379,6 +379,9 @@ data:
       path: mod/factorial.cpp
       title: mod/factorial.cpp
     - icon: ':heavy_check_mark:'
+      path: mod/inverse.cpp
+      title: mod/inverse.cpp
+    - icon: ':heavy_check_mark:'
       path: mod/log.cpp
       title: mod/log.cpp
     - icon: ':heavy_check_mark:'
