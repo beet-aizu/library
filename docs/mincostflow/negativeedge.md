@@ -1,5 +1,5 @@
 ---
-documentation_of: ./flow/negativeedge.cpp
+documentation_of: ./mincostflow/negativeedge.cpp
 ---
 
 ## 解説記事

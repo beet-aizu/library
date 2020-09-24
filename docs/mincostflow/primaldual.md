@@ -1,6 +1,6 @@
 ---
 title: Primal Dual
-documentation_of: ./flow/primaldual.cpp
+documentation_of: ./mincostflow/primaldual.cpp
 ---
 
 ## 解説記事
