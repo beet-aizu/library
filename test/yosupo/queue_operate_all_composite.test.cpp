@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
+#include "../../math/linearfunction.cpp"
 #include "../../datastructure/slidingwindowaggregation.cpp"
 #undef call_from_test
 
@@ -13,9 +14,9 @@ signed main(){
   ios::sync_with_stdio(0);
 
   using M = Mint<int, 998244353>;
-  using P = pair<M, M>;
-  auto f=[](P a,P b){return P(a.first*b.first,a.second*b.first+b.second);};
-  SWAG<P, P> swag(f,P(M(1),M(0)));
+  using T = LinearFunction<M>;
+  auto f=[](T a,T b){return a*b;};
+  SWAG<T, T> swag(f,T::mul_identity());
 
   int q;
   cin>>q;
@@ -25,7 +26,7 @@ signed main(){
     if(t==0){
       int a,b;
       cin>>a>>b;
-      swag.push(P(M(a),M(b)));
+      swag.push(T(M(a),M(b)));
     }
     if(t==1){
       swag.pop();
@@ -33,15 +34,8 @@ signed main(){
     if(t==2){
       int x;
       cin>>x;
-      auto q=
-        [&](P a,P b){
-          P res=f(a,b);
-          cout<<res.first*M(x)+res.second<<"\n";
-        };
-      swag.fold(q);
+      swag.fold([&](T a,T b){cout<<f(a,b)(x)<<"\n";});
     }
   }
-
-  cout<<flush;
   return 0;
 }

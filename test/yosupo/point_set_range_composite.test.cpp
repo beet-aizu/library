@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
+#include "../../math/linearfunction.cpp"
 #include "../../segtree/basic/ushi.cpp"
 #undef call_from_test
 
@@ -12,21 +13,18 @@ signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  using M = Mint<int, 998244353>;
   int n,q;
   cin>>n>>q;
 
   vector<int> as(n),bs(n);
   for(int i=0;i<n;i++) cin>>as[i]>>bs[i];
 
-  struct T{
-    M a,b;
-    T(M a,M b):a(a),b(b){}
-  };
-
-  auto f=[&](T x,T y){return T(x.a*y.a,x.b*y.a+y.b);};
-  T ti(M(1),M(0));
+  using M = Mint<int, 998244353>;
+  using T = LinearFunction<M>;
+  auto f=[&](T x,T y){return x*y;};
+  T ti=T::mul_identity();
   SegmentTree<T> seg(f,ti);
+
   vector<T> vt;
   for(int i=0;i<n;i++) vt.emplace_back(as[i],bs[i]);
   seg.build(vt);
@@ -42,8 +40,7 @@ signed main(){
     if(t==1){
       int l,r,x;
       cin>>l>>r>>x;
-      T res=seg.query(l,r);
-      cout<<res.a*M(x)+res.b<<"\n";
+      cout<<seg.query(l,r)(x)<<"\n";
     }
   }
   cout<<flush;
