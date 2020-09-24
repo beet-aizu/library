@@ -34,6 +34,7 @@ signed main(){
     G.link(vs[a],1,vs[b]);
   }
 
+  int flg=0;
   for(int i=0;i<q;i++){
     int t;
     cin>>t;
@@ -50,7 +51,9 @@ signed main(){
       cin>>e;
       e--;
       cout<<G.query(vs[e])<<newl;
+      flg=1;
     }
   }
+  if(!flg) cout<<newl;
   return 0;
 }
