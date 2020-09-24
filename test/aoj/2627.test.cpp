@@ -5,8 +5,8 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/chminmax.cpp"
-#include "../../flow/primaldual.cpp"
-#include "../../flow/negativeedge.cpp"
+#include "../../mincostflow/primaldual.cpp"
+#include "../../mincostflow/negativeedge.cpp"
 #undef call_from_test
 
 #ifdef SANITIZE

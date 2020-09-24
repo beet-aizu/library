@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../flow/bimatch.cpp"
+#include "../../maxflow/bimatch.cpp"
 #undef call_from_test
 
 signed main(){

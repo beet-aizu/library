@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../vector/compress.cpp"
-#include "../../flow/dinic.cpp"
+#include "../../maxflow/dinic.cpp"
 #undef call_from_test
 
 int main(){

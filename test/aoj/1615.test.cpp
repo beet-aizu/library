@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../flow/dinic.cpp"
-#include "../../flow/leastflow.cpp"
+#include "../../maxflow/dinic.cpp"
+#include "../../maxflow/leastflow.cpp"
 #undef call_from_test
 
 signed main(){

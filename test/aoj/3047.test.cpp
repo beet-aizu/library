@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../flow/dinic.cpp"
+#include "../../maxflow/dinic.cpp"
 #undef call_from_test
 
 const int K = 28;

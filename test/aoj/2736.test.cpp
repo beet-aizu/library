@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../tools/chminmax.cpp"
 #include "../../io/precision.cpp"
-#include "../../flow/primaldual.cpp"
+#include "../../mincostflow/primaldual.cpp"
 #undef call_from_test
 
 #define ERROR "1e-6"

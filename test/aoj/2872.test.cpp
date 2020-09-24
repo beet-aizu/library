@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../flow/primaldual.cpp"
-#include "../../flow/negativeedge.cpp"
+#include "../../mincostflow/primaldual.cpp"
+#include "../../mincostflow/negativeedge.cpp"
 #include "../../graph/bellmanford.cpp"
 #undef call_from_test
 

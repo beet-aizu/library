@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../flow/primaldual.cpp"
+#include "../../mincostflow/primaldual.cpp"
 #undef call_from_test
 
 int main(){
