@@ -50,7 +50,7 @@ struct NegativeEdge{
   bool build(int ts,int tt,Flow tf){
     fs[ts]+=tf;
     fs[tt]-=tf;
-    return flow();
+    return build();
   }
 
   Cost get_cost(){
