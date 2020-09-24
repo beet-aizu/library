@@ -374,10 +374,10 @@ data:
       title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
   - name: mincostflow
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: mincostflow/negativeedge.cpp
       title: mincostflow/negativeedge.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mincostflow/primaldual.cpp
       title: Primal Dual
   - name: mod
@@ -536,7 +536,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
@@ -863,7 +863,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2624.test.cpp
       title: test/aoj/2624.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2627.test.cpp
       title: test/aoj/2627.test.cpp
     - icon: ':heavy_check_mark:'

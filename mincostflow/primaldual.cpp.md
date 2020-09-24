@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: mincostflow/negativeedge.cpp
     title: mincostflow/negativeedge.cpp
   _extendedVerifiedWith:
@@ -15,11 +15,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -110,7 +110,7 @@ data:
   requiredBy:
   - mincostflow/negativeedge.cpp
   timestamp: '2020-09-24 17:19:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2679.test.cpp
   - test/aoj/GRL_6_B.test.cpp
