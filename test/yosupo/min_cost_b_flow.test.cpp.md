@@ -10,6 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    IGNORE_IF_CLANG: ''
     PROBLEM: https://judge.yosupo.jp/problem/min_cost_b_flow
     links:
     - https://judge.yosupo.jp/problem/min_cost_b_flow
@@ -78,22 +79,8 @@ data:
     \ Flow, typename Cost>\nusing MaxGainFlow = MinCostFlow<Flow, Cost, Objective::MAXIMIZE>;\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n#line 8 \"test/yosupo/min_cost_b_flow.test.cpp\"\n#undef\
-    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  int n,m;\n  cin>>n>>m;\n\n  using ll = long long;\n  MinCostFlow<ll, ll> G(n);\n\
-    \  for(int i=0;i<n;i++){\n    int b;\n    cin>>b;\n    if(b>0) G.add_supply(i,+b);\n\
-    \    if(b<0) G.add_demand(i,-b);\n  }\n\n  vector<decltype(G)::EdgePtr> es;\n\
-    \  for(int i=0;i<m;i++){\n    int s,t,l,u,c;\n    cin>>s>>t>>l>>u>>c;\n    auto\
-    \ e=G.add_edge(s,t,l,u,c);\n    es.emplace_back(e);\n  }\n\n  if(!G.build()){\n\
-    \    cout<<\"infeasible\\n\";\n    return 0;\n  }\n\n  auto print=[&](auto res){\n\
-    \    if(res==0){\n      cout<<0<<'\\n';\n      return;\n    }\n    if(res<0) cout<<'-',res*=-1;\n\
-    \    string ans;\n    while(res){\n      ans+=char('0'+res%10);\n      res/=10;\n\
-    \    }\n    reverse(ans.begin(),ans.end());\n    cout<<ans<<'\\n';\n  };\n  print(G.get_cost<__int128_t>());\n\
-    \n  auto p=G.get_potential();\n  for(int i=0;i<n;i++) cout<<p[i]<<'\\n';\n  for(auto\
-    \ e:es) cout<<G.get_edge(e).flow<<'\\n';\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/min_cost_b_flow\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
-    ../../bflow/capacityscaling.cpp\"\n#undef call_from_test\n\nsigned main(){\n \
-    \ cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n\n  using\
+    \ call_from_test\n\n#ifdef __clang__\n#define IGNORE\n#endif\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n\n  using\
     \ ll = long long;\n  MinCostFlow<ll, ll> G(n);\n  for(int i=0;i<n;i++){\n    int\
     \ b;\n    cin>>b;\n    if(b>0) G.add_supply(i,+b);\n    if(b<0) G.add_demand(i,-b);\n\
     \  }\n\n  vector<decltype(G)::EdgePtr> es;\n  for(int i=0;i<m;i++){\n    int s,t,l,u,c;\n\
@@ -105,12 +92,27 @@ data:
     \    cout<<ans<<'\\n';\n  };\n  print(G.get_cost<__int128_t>());\n\n  auto p=G.get_potential();\n\
     \  for(int i=0;i<n;i++) cout<<p[i]<<'\\n';\n  for(auto e:es) cout<<G.get_edge(e).flow<<'\\\
     n';\n  return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/min_cost_b_flow\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
+    ../../bflow/capacityscaling.cpp\"\n#undef call_from_test\n\n#ifdef __clang__\n\
+    #define IGNORE\n#endif\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n,m;\n  cin>>n>>m;\n\n  using ll = long long;\n  MinCostFlow<ll, ll> G(n);\n\
+    \  for(int i=0;i<n;i++){\n    int b;\n    cin>>b;\n    if(b>0) G.add_supply(i,+b);\n\
+    \    if(b<0) G.add_demand(i,-b);\n  }\n\n  vector<decltype(G)::EdgePtr> es;\n\
+    \  for(int i=0;i<m;i++){\n    int s,t,l,u,c;\n    cin>>s>>t>>l>>u>>c;\n    auto\
+    \ e=G.add_edge(s,t,l,u,c);\n    es.emplace_back(e);\n  }\n\n  if(!G.build()){\n\
+    \    cout<<\"infeasible\\n\";\n    return 0;\n  }\n\n  auto print=[&](auto res){\n\
+    \    if(res==0){\n      cout<<0<<'\\n';\n      return;\n    }\n    if(res<0) cout<<'-',res*=-1;\n\
+    \    string ans;\n    while(res){\n      ans+=char('0'+res%10);\n      res/=10;\n\
+    \    }\n    reverse(ans.begin(),ans.end());\n    cout<<ans<<'\\n';\n  };\n  print(G.get_cost<__int128_t>());\n\
+    \n  auto p=G.get_potential();\n  for(int i=0;i<n;i++) cout<<p[i]<<'\\n';\n  for(auto\
+    \ e:es) cout<<G.get_edge(e).flow<<'\\n';\n  return 0;\n}\n"
   dependsOn:
   - bflow/capacityscaling.cpp
   isVerificationFile: true
   path: test/yosupo/min_cost_b_flow.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 14:41:27+09:00'
+  timestamp: '2020-09-24 15:11:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/min_cost_b_flow.test.cpp
