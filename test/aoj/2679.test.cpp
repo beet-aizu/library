@@ -47,6 +47,9 @@ struct ARR{
   bool operator< (const ARR &oth) const{
     return val< oth.val;
   }
+  bool operator> (const ARR &oth) const{
+    return val< oth.val;
+  }
   bool operator==(const ARR &oth) const{
     return val==oth.val;
   }
@@ -65,16 +68,14 @@ int main(){
   vector<string> vs(n);
   for(int i=0;i<n;i++) cin>>vs[i];
 
-  auto enc=
-    [&](char c){
-      if(isupper(c)) return c-'A';
-      return 26+c-'a';
-    };
-  auto dec=
-    [&](int d){
-      if(d<26) return 'A'+d;
-      return 'a'+d-26;
-    };
+  auto enc=[&](char c){
+    if(isupper(c)) return c-'A';
+    return 26+c-'a';
+  };
+  auto dec=[&](int d){
+    if(d<26) return 'A'+d;
+    return 'a'+d-26;
+  };
 
   int S=n*2,T=n*2+1;
   PrimalDual<int, ARR> G(n*2+2);
@@ -92,15 +93,14 @@ int main(){
     }
   }
 
-  int ok;
-  auto res=G.flow(S,T,n,ok);
-  assert(ok);
+  assert(G.build(S,T,n));
+  auto res=G.get_cost();
 
   string ans;
   for(int i=0;i<MAX;i++)
     for(int j=0;j<n*INF-res[i];j++)
       ans+=dec(i);
-  cout<<ans<<endl;
 
+  cout<<ans<<endl;
   return 0;
 }

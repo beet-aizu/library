@@ -10,6 +10,7 @@ using namespace std;
 int main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+
   int v,e,f;
   cin>>v>>e>>f;
 
@@ -19,8 +20,10 @@ int main(){
     cin>>u>>v>>c>>d;
     G.add_edge(u,v,c,d);
   }
-  int ok=0;
-  int res=G.flow(0,v-1,f,ok);
-  cout<<(ok?res:-1)<<endl;
+
+  if(!G.build(0,v-1,f))
+    cout<<-1<<endl;
+  else
+    cout<<G.get_cost()<<endl;
   return 0;
 }

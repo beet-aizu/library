@@ -4,95 +4,96 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 // O(F E log V)
-template<typename TF,typename TC>
+template<typename Flow, typename Cost>
 struct PrimalDual{
-  struct edge{
+  struct Edge{
     int to;
-    TF cap;
-    TC cost;
+    Flow cap;
+    Cost cost;
     int rev;
-    edge(){}
-    edge(int to,TF cap,TC cost,int rev):
+    Edge(int to,Flow cap,Cost cost,int rev):
       to(to),cap(cap),cost(cost),rev(rev){}
   };
 
-  static const TC INF;
-  vector<vector<edge>> G;
-  vector<TC> h,dist;
+  vector<vector<Edge>> G;
+  vector<Cost> h,dist;
   vector<int> prevv,preve;
 
-  PrimalDual(){}
   PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}
 
-  void add_edge(int u,int v,TF cap,TC cost){
-    G[u].emplace_back(v,cap,cost,G[v].size());
-    G[v].emplace_back(u,0,-cost,G[u].size()-1);
+  void add_edge(int u,int v,Flow cap,Cost cost){
+    int e=G[u].size();
+    int r=(u==v?e+1:G[v].size());
+    G[u].emplace_back(v,cap,cost,r);
+    G[v].emplace_back(u,0,-cost,e);
   }
 
   void dijkstra(int s){
     struct P{
-      TC first;
+      Cost first;
       int second;
-      P(TC first,int second):first(first),second(second){}
-      bool operator<(const P&a) const{return a.first<first;}
+      P(Cost first,int second):first(first),second(second){}
+      bool operator<(const P&a) const{return first>a.first;}
     };
-    priority_queue<P> que;
-    fill(dist.begin(),dist.end(),INF);
+    priority_queue<P> pq;
 
     dist[s]=0;
-    que.emplace(dist[s],s);
-    while(!que.empty()){
-      P p=que.top();que.pop();
+    pq.emplace(dist[s],s);
+    while(!pq.empty()){
+      P p=pq.top();pq.pop();
       int v=p.second;
       if(dist[v]<p.first) continue;
       for(int i=0;i<(int)G[v].size();i++){
-        edge &e=G[v][i];
+        Edge &e=G[v][i];
         if(e.cap==0) continue;
         if(dist[v]+e.cost+h[v]-h[e.to]<dist[e.to]){
           dist[e.to]=dist[v]+e.cost+h[v]-h[e.to];
           prevv[e.to]=v;
           preve[e.to]=i;
-          que.emplace(dist[e.to],e.to);
+          pq.emplace(dist[e.to],e.to);
         }
       }
     }
   }
 
-  TC flow(int s,int t,TF f,int &ok){
-    TC res=0;
+  Cost res;
+
+  bool build(int s,int t,Flow f){
+    res=0;
     fill(h.begin(),h.end(),0);
+    const Cost INF = numeric_limits<Cost>::max();
     while(f>0){
+      fill(dist.begin(),dist.end(),INF);
       dijkstra(s);
-      if(dist[t]==INF){
-        ok=0;
-        return res;
-      }
+      if(dist[t]==INF) return false;
 
       for(int v=0;v<(int)h.size();v++)
         if(dist[v]<INF) h[v]=h[v]+dist[v];
 
-      TF d=f;
+      Flow d=f;
       for(int v=t;v!=s;v=prevv[v])
         d=min(d,G[prevv[v]][preve[v]].cap);
 
       f-=d;
       res=res+h[t]*d;
       for(int v=t;v!=s;v=prevv[v]){
-        edge &e=G[prevv[v]][preve[v]];
+        Edge &e=G[prevv[v]][preve[v]];
         e.cap-=d;
         G[v][e.rev].cap+=d;
       }
     }
-    ok=1;
-    return res;
+    return true;
   }
+
+  Cost get_cost(){return res;}
 };
-template<typename TF, typename TC>
-const TC PrimalDual<TF, TC>::INF = numeric_limits<TC>::max()/2;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed geocon2013_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   using D = double;
 
   int n;
@@ -134,19 +135,17 @@ signed geocon2013_B(){
       G.add_edge(p,q,1,
                  min(hypot(xs[p]+xs[q],ys[p]-ys[q]),abs(xs[p])+abs(xs[q])));
 
-  int ok=0;
-  D ans=G.flow(S,T,f,ok);
-  assert(ok);
-  cout<<fixed<<setprecision(12)<<ans<<endl;
+  assert(G.build(S,T,f));
+  cout<<fixed<<setprecision(12)<<G.get_cost()<<endl;
   return 0;
 }
 /*
-  verified on 2019/12/17
+  verified on 2020/09/24
   https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
 */
 
 signed main(){
-  //geocon2013_B();
+  geocon2013_B();
   return 0;
 }
 #endif

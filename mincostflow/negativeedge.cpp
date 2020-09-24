@@ -8,24 +8,24 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
-// O((F+F') E log V), F': sum of caps with negative cost
-template<typename TF,typename TC>
+// O((F+F') E \log V), F': sum of caps with negative cost
+template<typename Flow, typename Cost>
 struct NegativeEdge{
-  PrimalDual<TF, TC> G;
-  vector<TF> fs;
-  TC sum;
+  PrimalDual<Flow, Cost> G;
+  vector<Flow> fs;
+  Cost sum;
   int S,T;
   NegativeEdge(){}
   NegativeEdge(int n):G(n+2),fs(n+2,0),sum(0),S(n),T(n+1){}
 
-  void use_edge(int u,int v,TF cap,TC cost){
+  void use_edge(int u,int v,Flow cap,Cost cost){
     fs[u]-=cap;
     fs[v]+=cap;
     sum=sum+cost*cap;
   }
 
-  void add_edge(int u,int v,TF cap,TC cost){
-    if(cost<TC(0)){
+  void add_edge(int u,int v,Flow cap,Cost cost){
+    if(cost<Cost(0)){
       use_edge(u,v,cap,cost);
       swap(u,v);
       cost=-cost;
@@ -33,24 +33,28 @@ struct NegativeEdge{
     G.add_edge(u,v,cap,cost);
   }
 
-  TC flow(int &ok){
-    TF f=0;
+  bool flow(){
+    Flow f=0;
     for(int i=0;i<S;i++){
       if(fs[i]>0){
         f+=fs[i];
-        G.add_edge(S,i,+fs[i],TC(0));
+        G.add_edge(S,i,+fs[i],Cost(0));
       }
       if(fs[i]<0){
-        G.add_edge(i,T,-fs[i],TC(0));
+        G.add_edge(i,T,-fs[i],Cost(0));
       }
     }
-    return sum+G.flow(S,T,f,ok);
+    return G.flow(S,T,f);
   }
 
-  TC flow(int ts,int tt,TF tf,int &ok){
+  bool flow(int ts,int tt,Flow tf){
     fs[ts]+=tf;
     fs[tt]-=tf;
-    return flow(ok);
+    return flow();
+  }
+
+  Cost get_cost(){
+    return sum+G.get_cost();
   }
 };
 //END CUT HERE

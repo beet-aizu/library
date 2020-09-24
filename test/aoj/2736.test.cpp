@@ -25,14 +25,13 @@ signed main(){
     v--;u--;
     G.add_edge(v,u,c,d);
   }
+
   using D = double;
   D ans=1e18;
   D sum=0,cnt=0;
-  int ok=1;
-  while(1){
-    sum+=G.flow(s,t,1,ok);
+  while(G.build(s,t,1)){
+    sum+=G.get_cost();
     cnt+=1;
-    if(!ok) break;
     chmin(ans,(sum+p)/cnt);
   }
   cout<<ans<<endl;

@@ -43,9 +43,7 @@ signed main(){
     G.add_edge(i,n,INF,0);
   }
 
-  int ok;
-  ll ans=G.flow(0,n,INF,ok);
-  assert(ok);
-  cout<<ans<<endl;
+  assert(G.build(0,n,INF));
+  cout<<G.get_cost()<<endl;
   return 0;
 }
