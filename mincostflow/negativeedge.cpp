@@ -33,7 +33,7 @@ struct NegativeEdge{
     G.add_edge(u,v,cap,cost);
   }
 
-  bool flow(){
+  bool build(){
     Flow f=0;
     for(int i=0;i<S;i++){
       if(fs[i]>0){
@@ -47,7 +47,7 @@ struct NegativeEdge{
     return G.flow(S,T,f);
   }
 
-  bool flow(int ts,int tt,Flow tf){
+  bool build(int ts,int tt,Flow tf){
     fs[ts]+=tf;
     fs[tt]-=tf;
     return flow();
