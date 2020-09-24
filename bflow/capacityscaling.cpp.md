@@ -157,6 +157,15 @@ layout: document
 title: Minimum Cost Flow with Capacity Scaling
 ---
 
+## `INF` の決め方
+### 上限
+`m * INF` がオーバーフローすると死ぬことがある
+### 下限
+`max - INF < min` を満たしていないと区別できない
+### 結論
+`max - min < INF < 2^w / m`
+`w` はビット幅
+
 ## 解説記事
 [Are there any learning materials of polynomial minimum cost flow algorithms?](https://codeforces.com/blog/entry/70740)
 
