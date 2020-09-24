@@ -44,7 +44,7 @@ struct NegativeEdge{
         G.add_edge(i,T,-fs[i],Cost(0));
       }
     }
-    return G.flow(S,T,f);
+    return G.build(S,T,f);
   }
 
   bool build(int ts,int tt,Flow tf){
