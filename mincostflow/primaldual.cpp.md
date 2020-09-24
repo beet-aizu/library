@@ -16,14 +16,8 @@ data:
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2230.test.cpp
-    title: test/aoj/2230.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2872.test.cpp
-    title: test/aoj/2872.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -120,13 +114,11 @@ data:
   - test/aoj/2679.test.cpp
   - test/aoj/GRL_6_B.test.cpp
   - test/aoj/2736.test.cpp
-  - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
-  - test/aoj/2872.test.cpp
-documentation_of: mincostflow/primaldual.cpp
+documentation_of: ./mincostflow/primaldual.cpp
 layout: document
-redirect_from:
-- /library/mincostflow/primaldual.cpp
-- /library/mincostflow/primaldual.cpp.html
-title: mincostflow/primaldual.cpp
+title: Primal Dual
 ---
+
+## 解説記事
+[最小費用流の双対について](https://beet-aizu.hatenablog.com/entry/2019/10/20/150649)

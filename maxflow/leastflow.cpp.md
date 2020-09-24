@@ -40,10 +40,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp
-documentation_of: maxflow/leastflow.cpp
+documentation_of: ./maxflow/leastflow.cpp
 layout: document
-redirect_from:
-- /library/maxflow/leastflow.cpp
-- /library/maxflow/leastflow.cpp.html
-title: maxflow/leastflow.cpp
+title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
 ---
+
+## 解説記事
+[最小流量制限付き最大流](https://snuke.hatenablog.com/entry/2016/07/10/043918)

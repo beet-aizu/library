@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2230.test.cpp
+    title: test/aoj/2230.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2872.test.cpp
+    title: test/aoj/2872.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/min_cost_b_flow.test.cpp
     title: test/yosupo/min_cost_b_flow.test.cpp
   _pathExtension: cpp
@@ -143,11 +149,14 @@ data:
   timestamp: '2020-09-24 14:41:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2230.test.cpp
+  - test/aoj/2872.test.cpp
   - test/yosupo/min_cost_b_flow.test.cpp
-documentation_of: bflow/capacityscaling.cpp
+documentation_of: ./bflow/capacityscaling.cpp
 layout: document
-redirect_from:
-- /library/bflow/capacityscaling.cpp
-- /library/bflow/capacityscaling.cpp.html
-title: bflow/capacityscaling.cpp
 ---
+
+## 解説記事
+[Are there any learning materials of polynomial minimum cost flow algorithms?](https://codeforces.com/blog/entry/70740)
+[ぼくの考えたさいきょうのフローライブラリ](http://misawa.github.io/others/flow/library_design.html)
+[最小費用流の双対について](https://beet-aizu.hatenablog.com/entry/2019/10/20/150649)

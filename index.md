@@ -371,7 +371,7 @@ data:
       title: maxflow/hopcroft_karp.cpp
     - icon: ':heavy_check_mark:'
       path: maxflow/leastflow.cpp
-      title: maxflow/leastflow.cpp
+      title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
   - name: mincostflow
     pages:
     - icon: ':heavy_check_mark:'
@@ -379,7 +379,7 @@ data:
       title: mincostflow/negativeedge.cpp
     - icon: ':heavy_check_mark:'
       path: mincostflow/primaldual.cpp
-      title: mincostflow/primaldual.cpp
+      title: Primal Dual
   - name: mod
     pages:
     - icon: ':heavy_check_mark:'

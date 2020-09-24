@@ -3,18 +3,12 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: mincostflow/primaldual.cpp
-    title: mincostflow/primaldual.cpp
+    title: Primal Dual
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2230.test.cpp
-    title: test/aoj/2230.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2872.test.cpp
-    title: test/aoj/2872.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -51,13 +45,10 @@ data:
   timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
-  - test/aoj/2872.test.cpp
-documentation_of: mincostflow/negativeedge.cpp
+documentation_of: ./mincostflow/negativeedge.cpp
 layout: document
-redirect_from:
-- /library/mincostflow/negativeedge.cpp
-- /library/mincostflow/negativeedge.cpp.html
-title: mincostflow/negativeedge.cpp
 ---
+
+## 解説記事
+[最小費用流の負辺除去](https://snuke.hatenablog.com/entry/2017/06/07/115821)

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: mincostflow/primaldual.cpp
-    title: mincostflow/primaldual.cpp
+    title: Primal Dual
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
