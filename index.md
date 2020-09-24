@@ -57,6 +57,11 @@ data:
     - icon: ':warning:'
       path: bbst/rbst/persistent/ushi.cpp
       title: bbst/rbst/persistent/ushi.cpp
+  - name: bflow
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: bflow/capacityscaling.cpp
+      title: bflow/capacityscaling.cpp
   - name: combinatorics
     pages:
     - icon: ':heavy_check_mark:'
@@ -1420,6 +1425,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/maximum_independent_set.test.cpp
       title: test/yosupo/maximum_independent_set.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/min_cost_b_flow.test.cpp
+      title: test/yosupo/min_cost_b_flow.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/montmort_number_mod.test.cpp
       title: test/yosupo/montmort_number_mod.test.cpp
