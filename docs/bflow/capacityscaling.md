@@ -10,6 +10,7 @@ documentation_of: ./bflow/capacityscaling.cpp
 `max - INF < min` を満たしていないと区別できない
 ### 結論
 `max - min < INF < 2^w / m`
+
 `w` はビット幅
 
 ## 解説記事
