@@ -61,7 +61,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: bflow/capacityscaling.cpp
-      title: bflow/capacityscaling.cpp
+      title: Minimum Cost Flow with Capacity Scaling
   - name: combinatorics
     pages:
     - icon: ':heavy_check_mark:'

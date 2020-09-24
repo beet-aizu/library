@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: bflow/capacityscaling.cpp
-    title: bflow/capacityscaling.cpp
+    title: Minimum Cost Flow with Capacity Scaling
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
