@@ -7,6 +7,10 @@ using namespace std;
 #include "../../bflow/capacityscaling.cpp"
 #undef call_from_test
 
+#ifdef __clang__
+#define IGNORE
+#endif
+
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
