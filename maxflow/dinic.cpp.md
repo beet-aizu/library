@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: flow/leastflow.cpp
-    title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
+    path: maxflow/leastflow.cpp
+    title: maxflow/leastflow.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2313.test.cpp
@@ -24,15 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3058.test.cpp
     title: test/aoj/3058.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_6_A.test.cpp
-    title: test/aoj/GRL_6_A.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
-  bundledCode: "#line 1 \"flow/dinic.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
+  bundledCode: "#line 1 \"maxflow/dinic.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,bool directed>\nstruct Dinic{\n\
     \  struct edge {\n    int to;\n    T cap;\n    int rev;\n    edge(){}\n    edge(int\
     \ to,T cap,int rev):to(to),cap(cap),rev(rev){}\n  };\n\n  vector< vector<edge>\
@@ -88,10 +85,10 @@ data:
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: flow/dinic.cpp
+  path: maxflow/dinic.cpp
   requiredBy:
-  - flow/leastflow.cpp
-  timestamp: '2019-12-26 22:42:32+09:00'
+  - maxflow/leastflow.cpp
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2313.test.cpp
@@ -100,11 +97,10 @@ data:
   - test/aoj/1599.test.cpp
   - test/aoj/1615.test.cpp
   - test/aoj/3058.test.cpp
-  - test/aoj/GRL_6_A.test.cpp
-documentation_of: flow/dinic.cpp
+documentation_of: maxflow/dinic.cpp
 layout: document
 redirect_from:
-- /library/flow/dinic.cpp
-- /library/flow/dinic.cpp.html
-title: flow/dinic.cpp
+- /library/maxflow/dinic.cpp
+- /library/maxflow/dinic.cpp.html
+title: maxflow/dinic.cpp
 ---

@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: flow/dinic.cpp
-    title: flow/dinic.cpp
+    path: maxflow/dinic.cpp
+    title: maxflow/dinic.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -20,8 +20,8 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ flow/leastflow.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
-    \ other than include guards\n"
+    \ maxflow/leastflow.cpp: line 6: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"dinic.cpp\"\n#undef call_from_test\n\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename T>\nstruct LeastFlow{\n  Dinic<T, true> G;\n\
@@ -32,18 +32,18 @@ data:
     \    T d=G.flow(s,t);\n    return (b==c&&a+b==sum)?b+d:T(-1);\n  }\n};\n//END\
     \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
-  - flow/dinic.cpp
+  - maxflow/dinic.cpp
   isVerificationFile: false
-  path: flow/leastflow.cpp
+  path: maxflow/leastflow.cpp
   requiredBy: []
-  timestamp: '2019-12-27 09:03:53+09:00'
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp
-documentation_of: ./flow/leastflow.cpp
+documentation_of: maxflow/leastflow.cpp
 layout: document
-title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
+redirect_from:
+- /library/maxflow/leastflow.cpp
+- /library/maxflow/leastflow.cpp.html
+title: maxflow/leastflow.cpp
 ---
-
-## 解説記事
-[最小流量制限付き最大流](https://snuke.hatenablog.com/entry/2016/07/10/043918)

@@ -4,15 +4,15 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_6_A.fordfulkerson.test.cpp
-    title: test/aoj/GRL_6_A.fordfulkerson.test.cpp
+    path: test/aoj/GRL_6_A.test.cpp
+    title: test/aoj/GRL_6_A.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
-  bundledCode: "#line 1 \"flow/fordfulkerson.cpp\"\n\n#include<bits/stdc++.h>\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,bool directed>\n\
+  bundledCode: "#line 1 \"maxflow/fordfulkerson.cpp\"\n\n#include<bits/stdc++.h>\n\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,bool directed>\n\
     struct FordFulkerson{\n  struct edge{\n    int to;\n    T cap;\n    int rev;\n\
     \    edge(){}\n    edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}\n  };\n\
     \n  vector< vector<edge> > G;\n  vector<int> used;\n\n  FordFulkerson(){}\n  FordFulkerson(int\
@@ -45,16 +45,16 @@ data:
     }\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: flow/fordfulkerson.cpp
+  path: maxflow/fordfulkerson.cpp
   requiredBy: []
-  timestamp: '2019-12-10 15:04:21+09:00'
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_6_A.fordfulkerson.test.cpp
-documentation_of: flow/fordfulkerson.cpp
+  - test/aoj/GRL_6_A.test.cpp
+documentation_of: maxflow/fordfulkerson.cpp
 layout: document
 redirect_from:
-- /library/flow/fordfulkerson.cpp
-- /library/flow/fordfulkerson.cpp.html
-title: flow/fordfulkerson.cpp
+- /library/maxflow/fordfulkerson.cpp
+- /library/maxflow/fordfulkerson.cpp.html
+title: maxflow/fordfulkerson.cpp
 ---

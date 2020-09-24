@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: flow/primaldual.cpp
-    title: Primal Dual
+    path: mincostflow/primaldual.cpp
+    title: mincostflow/primaldual.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,12 +15,13 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
   bundledCode: "#line 1 \"test/aoj/GRL_6_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"flow/primaldual.cpp\"\n\n#line 3 \"flow/primaldual.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename TF,typename\
-    \ TC>\nstruct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n    TC cost;\n\
-    \    int rev;\n    edge(){}\n    edge(int to,TF cap,TC cost,int rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n\
-    \  };\n\n  static const TC INF;\n  vector<vector<edge>> G;\n  vector<TC> h,dist;\n\
-    \  vector<int> prevv,preve;\n\n  PrimalDual(){}\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
+    #line 1 \"mincostflow/primaldual.cpp\"\n\n#line 3 \"mincostflow/primaldual.cpp\"\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
+    \ TF,typename TC>\nstruct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n\
+    \    TC cost;\n    int rev;\n    edge(){}\n    edge(int to,TF cap,TC cost,int\
+    \ rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n  };\n\n  static const TC\
+    \ INF;\n  vector<vector<edge>> G;\n  vector<TC> h,dist;\n  vector<int> prevv,preve;\n\
+    \n  PrimalDual(){}\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
     \n  void add_edge(int u,int v,TF cap,TC cost){\n    G[u].emplace_back(v,cap,cost,G[v].size());\n\
     \    G[v].emplace_back(u,0,-cost,G[u].size()-1);\n  }\n\n  void dijkstra(int s){\n\
     \    struct P{\n      TC first;\n      int second;\n      P(TC first,int second):first(first),second(second){}\n\
@@ -61,17 +62,17 @@ data:
     \ cout<<(ok?res:-1)<<endl;\n  return 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../flow/primaldual.cpp\"\n#undef call_from_test\n\nint main(){\n\
+    #include \"../../mincostflow/primaldual.cpp\"\n#undef call_from_test\n\nint main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  int v,e,f;\n  cin>>v>>e>>f;\n\n\
     \  PrimalDual<int, int> G(v);\n  for(int i=0;i<e;i++){\n    int u,v,c,d;\n   \
     \ cin>>u>>v>>c>>d;\n    G.add_edge(u,v,c,d);\n  }\n  int ok=0;\n  int res=G.flow(0,v-1,f,ok);\n\
     \  cout<<(ok?res:-1)<<endl;\n  return 0;\n}\n"
   dependsOn:
-  - flow/primaldual.cpp
+  - mincostflow/primaldual.cpp
   isVerificationFile: true
   path: test/aoj/GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-14 19:56:22+09:00'
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_6_B.test.cpp

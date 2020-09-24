@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: flow/bimatch.cpp
-    title: flow/bimatch.cpp
+    path: maxflow/bimatch.cpp
+    title: maxflow/bimatch.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,7 +15,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A
   bundledCode: "#line 1 \"test/aoj/GRL_7_A.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"flow/bimatch.cpp\"\n\n#line 3 \"flow/bimatch.cpp\"\nusing namespace\
+    #line 1 \"maxflow/bimatch.cpp\"\n\n#line 3 \"maxflow/bimatch.cpp\"\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\nstruct BiMatch{\n  int n,time;\n  vector<vector<int>>\
     \ G;\n  vector<int> match,used,dead;\n\n  BiMatch(){}\n  BiMatch(int n):n(n),time(0),G(n),\n\
     \                 match(n,-1),used(n,-1),dead(n,0){}\n\n  void add_edge(int u,int\
@@ -36,16 +36,16 @@ data:
     \  return 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../flow/bimatch.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    #include \"../../maxflow/bimatch.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int X,Y,E;\n  cin>>X>>Y>>E;\n\
     \  BiMatch bm(X+Y);\n  for(int i=0;i<E;i++){\n    int x,y;\n    cin>>x>>y;\n \
     \   bm.add_edge(x,X+y);\n  }\n  cout<<bm.build()<<endl;\n  return 0;\n}\n"
   dependsOn:
-  - flow/bimatch.cpp
+  - maxflow/bimatch.cpp
   isVerificationFile: true
   path: test/aoj/GRL_7_A.test.cpp
   requiredBy: []
-  timestamp: '2019-12-10 15:04:21+09:00'
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_7_A.test.cpp

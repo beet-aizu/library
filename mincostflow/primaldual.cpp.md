@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: flow/negativeedge.cpp
-    title: flow/negativeedge.cpp
+    path: mincostflow/negativeedge.cpp
+    title: mincostflow/negativeedge.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2679.test.cpp
@@ -30,8 +30,8 @@ data:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
-  bundledCode: "#line 1 \"flow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
+  bundledCode: "#line 1 \"mincostflow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\n\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
     \ TF,typename TC>\nstruct PrimalDual{\n  struct edge{\n    int to;\n    TF cap;\n\
     \    TC cost;\n    int rev;\n    edge(){}\n    edge(int to,TF cap,TC cost,int\
     \ rev):\n      to(to),cap(cap),cost(cost),rev(rev){}\n  };\n\n  static const TC\
@@ -111,10 +111,10 @@ data:
     */\n\nsigned main(){\n  //geocon2013_B();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: flow/primaldual.cpp
+  path: mincostflow/primaldual.cpp
   requiredBy:
-  - flow/negativeedge.cpp
-  timestamp: '2020-09-14 19:56:22+09:00'
+  - mincostflow/negativeedge.cpp
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2679.test.cpp
@@ -123,10 +123,10 @@ data:
   - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2872.test.cpp
-documentation_of: ./flow/primaldual.cpp
+documentation_of: mincostflow/primaldual.cpp
 layout: document
-title: Primal Dual
+redirect_from:
+- /library/mincostflow/primaldual.cpp
+- /library/mincostflow/primaldual.cpp.html
+title: mincostflow/primaldual.cpp
 ---
-
-## 解説記事
-[最小費用流の双対について](https://beet-aizu.hatenablog.com/entry/2019/10/20/150649)

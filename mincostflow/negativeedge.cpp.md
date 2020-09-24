@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: flow/primaldual.cpp
-    title: Primal Dual
+    path: mincostflow/primaldual.cpp
+    title: mincostflow/primaldual.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -26,8 +26,8 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ flow/negativeedge.cpp: line 6: unable to process #include in #if / #ifdef /\
-    \ #ifndef other than include guards\n"
+    \ mincostflow/negativeedge.cpp: line 6: unable to process #include in #if / #ifdef\
+    \ / #ifndef other than include guards\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"primaldual.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\n// O((F+F') E log V), F': sum of caps with negative\
@@ -44,19 +44,20 @@ data:
     \    return flow(ok);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
     \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
-  - flow/primaldual.cpp
+  - mincostflow/primaldual.cpp
   isVerificationFile: false
-  path: flow/negativeedge.cpp
+  path: mincostflow/negativeedge.cpp
   requiredBy: []
-  timestamp: '2020-09-14 23:26:01+09:00'
+  timestamp: '2020-09-24 12:58:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2230.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2872.test.cpp
-documentation_of: ./flow/negativeedge.cpp
+documentation_of: mincostflow/negativeedge.cpp
 layout: document
+redirect_from:
+- /library/mincostflow/negativeedge.cpp
+- /library/mincostflow/negativeedge.cpp.html
+title: mincostflow/negativeedge.cpp
 ---
-
-## 解説記事
-[最小費用流の負辺除去](https://snuke.hatenablog.com/entry/2017/06/07/115821)

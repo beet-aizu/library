@@ -171,29 +171,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/weightedunionfind.cpp
       title: datastructure/weightedunionfind.cpp
-  - name: flow
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: flow/bimatch.cpp
-      title: flow/bimatch.cpp
-    - icon: ':heavy_check_mark:'
-      path: flow/dinic.cpp
-      title: flow/dinic.cpp
-    - icon: ':heavy_check_mark:'
-      path: flow/fordfulkerson.cpp
-      title: flow/fordfulkerson.cpp
-    - icon: ':heavy_check_mark:'
-      path: flow/hopcroft_karp.cpp
-      title: flow/hopcroft_karp.cpp
-    - icon: ':heavy_check_mark:'
-      path: flow/leastflow.cpp
-      title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
-    - icon: ':heavy_check_mark:'
-      path: flow/negativeedge.cpp
-      title: flow/negativeedge.cpp
-    - icon: ':heavy_check_mark:'
-      path: flow/primaldual.cpp
-      title: Primal Dual
   - name: geometry/3D
     pages:
     - icon: ':warning:'
@@ -373,6 +350,31 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/twoway.cpp
       title: math/twoway.cpp
+  - name: maxflow
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: maxflow/bimatch.cpp
+      title: maxflow/bimatch.cpp
+    - icon: ':heavy_check_mark:'
+      path: maxflow/dinic.cpp
+      title: maxflow/dinic.cpp
+    - icon: ':heavy_check_mark:'
+      path: maxflow/fordfulkerson.cpp
+      title: maxflow/fordfulkerson.cpp
+    - icon: ':heavy_check_mark:'
+      path: maxflow/hopcroft_karp.cpp
+      title: maxflow/hopcroft_karp.cpp
+    - icon: ':heavy_check_mark:'
+      path: maxflow/leastflow.cpp
+      title: maxflow/leastflow.cpp
+  - name: mincostflow
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: mincostflow/negativeedge.cpp
+      title: mincostflow/negativeedge.cpp
+    - icon: ':heavy_check_mark:'
+      path: mincostflow/primaldual.cpp
+      title: mincostflow/primaldual.cpp
   - name: mod
     pages:
     - icon: ':heavy_check_mark:'
@@ -1202,17 +1204,11 @@ data:
       path: test/aoj/GRL_5_E.linkcuttree.test.cpp
       title: test/aoj/GRL_5_E.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/GRL_6_A.fordfulkerson.test.cpp
-      title: test/aoj/GRL_6_A.fordfulkerson.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_6_A.test.cpp
       title: test/aoj/GRL_6_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_6_B.test.cpp
       title: test/aoj/GRL_6_B.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
-      title: test/aoj/GRL_7_A.hopcroft_karp.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_7_A.test.cpp
       title: test/aoj/GRL_7_A.test.cpp
