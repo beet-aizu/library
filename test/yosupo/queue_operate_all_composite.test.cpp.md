@@ -5,6 +5,9 @@ data:
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
+    path: math/linearfunction.cpp
+    title: math/linearfunction.cpp
+  - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
   _extendedRequiredBy: []
@@ -28,23 +31,23 @@ data:
     \ in #if / #ifdef / #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/queue_operate_all_composite\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../datastructure/slidingwindowaggregation.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using M = Mint<int, 998244353>;\n  using P = pair<M, M>;\n  auto f=[](P a,P\
-    \ b){return P(a.first*b.first,a.second*b.first+b.second);};\n  SWAG<P, P> swag(f,P(M(1),M(0)));\n\
-    \n  int q;\n  cin>>q;\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n\
-    \      int a,b;\n      cin>>a>>b;\n      swag.push(P(M(a),M(b)));\n    }\n   \
-    \ if(t==1){\n      swag.pop();\n    }\n    if(t==2){\n      int x;\n      cin>>x;\n\
-    \      auto q=\n        [&](P a,P b){\n          P res=f(a,b);\n          cout<<res.first*M(x)+res.second<<\"\
-    \\n\";\n        };\n      swag.fold(q);\n    }\n  }\n\n  cout<<flush;\n  return\
-    \ 0;\n}\n"
+    #include \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n\
+    #include \"../../datastructure/slidingwindowaggregation.cpp\"\n#undef call_from_test\n\
+    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using M = Mint<int,\
+    \ 998244353>;\n  using T = LinearFunction<M>;\n  auto f=[](T a,T b){return a*b;};\n\
+    \  SWAG<T, T> swag(f,T::mul_identity());\n\n  int q;\n  cin>>q;\n  for(int i=0;i<q;i++){\n\
+    \    int t;\n    cin>>t;\n    if(t==0){\n      int a,b;\n      cin>>a>>b;\n  \
+    \    swag.push(T(M(a),M(b)));\n    }\n    if(t==1){\n      swag.pop();\n    }\n\
+    \    if(t==2){\n      int x;\n      cin>>x;\n      swag.fold([&](T a,T b){cout<<f(a,b)(x)<<\"\
+    \\n\";});\n    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
+  - math/linearfunction.cpp
   - datastructure/slidingwindowaggregation.cpp
   isVerificationFile: true
   path: test/yosupo/queue_operate_all_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-09-24 23:16:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/queue_operate_all_composite.test.cpp

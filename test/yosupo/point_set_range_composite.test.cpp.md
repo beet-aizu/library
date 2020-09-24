@@ -5,6 +5,9 @@ data:
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
+    path: math/linearfunction.cpp
+    title: math/linearfunction.cpp
+  - icon: ':heavy_check_mark:'
     path: segtree/basic/ushi.cpp
     title: segtree/basic/ushi.cpp
   _extendedRequiredBy: []
@@ -44,7 +47,17 @@ data:
     \ d=1;d<h;d++)\n    ans+=M(d)*M(h-d)*M(w)*M(w);\n\n  for(int d=1;d<w;d++)\n  \
     \  ans+=M(d)*M(w-d)*M(h)*M(h);\n\n  ans*=M::comb(h*w-2,k-2);\n  cout<<ans<<endl;\n\
     \  return 0;\n}\n/*\n  verified on 2019/06/12\n  https://atcoder.jp/contests/abc127/tasks/abc127_e\n\
-    */\n\nsigned main(){\n  //ABC127_E();\n  return 0;\n}\n#endif\n#line 1 \"segtree/basic/ushi.cpp\"\
+    */\n\nsigned main(){\n  //ABC127_E();\n  return 0;\n}\n#endif\n#line 2 \"math/linearfunction.cpp\"\
+    \n\n#ifndef call_from_test\n#line 5 \"math/linearfunction.cpp\"\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\n// a * x + b\ntemplate<typename T>\nstruct LinearFunction{\n\
+    \  T a,b;\n  LinearFunction():a(0),b(0){}\n  LinearFunction(T a,T b):a(a),b(b){}\n\
+    \n  using LF = LinearFunction;\n  static LF add_identity(){return LF(T(0),T(0));}\n\
+    \  static LF mul_identity(){return LF(T(1),T(0));}\n  LF& operator+=(const LF\
+    \ &o){\n    a+=o.a;b+=o.b;\n    return *this;\n  }\n  LF& operator*=(const LF\
+    \ &o){\n    a=a*o.a;\n    b=b*o.a+o.b;\n    return *this;\n  }\n  LF operator+(const\
+    \ LF &o)const{return LF(*this)+=o;}\n  LF operator*(const LF &o)const{return LF(*this)*=o;}\n\
+    \n  T operator()(T x) const{return a*x+b;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"segtree/basic/ushi.cpp\"\
     \n\n#line 3 \"segtree/basic/ushi.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\ntemplate <typename T>\nstruct SegmentTree{\n  using F = function<T(T,T)>;\n\
     \  int n;\n  F f;\n  T ti;\n  vector<T> dat;\n\n  SegmentTree(){}\n  SegmentTree(F\
@@ -71,37 +84,37 @@ data:
     \ x){return x<as[i];};\n      int l=seg.find(i,check);\n      sp.emplace(k?n+2-l:l,as[i]);\n\
     \    }\n    reverse(as.begin(),as.end());\n    seg.build(as);\n  }\n\n  printf(\"\
     %d\\n\",(int)sp.size()/2);\n  return 0;\n}\n/*\n  verified on 2019/12/26\n  https://atcoder.jp/contests/kupc2013/tasks/kupc2013_d\n\
-    */\n\nsigned main(){\n  //KUPC2013_D();\n  return 0;\n}\n#endif\n#line 9 \"test/yosupo/point_set_range_composite.test.cpp\"\
+    */\n\nsigned main(){\n  //KUPC2013_D();\n  return 0;\n}\n#endif\n#line 10 \"test/yosupo/point_set_range_composite.test.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using M = Mint<int, 998244353>;\n  int n,q;\n  cin>>n>>q;\n\n  vector<int>\
-    \ as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\n  struct T{\n   \
-    \ M a,b;\n    T(M a,M b):a(a),b(b){}\n  };\n\n  auto f=[&](T x,T y){return T(x.a*y.a,x.b*y.a+y.b);};\n\
-    \  T ti(M(1),M(0));\n  SegmentTree<T> seg(f,ti);\n  vector<T> vt;\n  for(int i=0;i<n;i++)\
-    \ vt.emplace_back(as[i],bs[i]);\n  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n\
-    \    int t;\n    cin>>t;\n    if(t==0){\n      int p,c,d;\n      cin>>p>>c>>d;\n\
-    \      seg.set_val(p,T(M(c),M(d)));\n    }\n    if(t==1){\n      int l,r,x;\n\
-    \      cin>>l>>r>>x;\n      T res=seg.query(l,r);\n      cout<<res.a*M(x)+res.b<<\"\
+    \n  int n,q;\n  cin>>n>>q;\n\n  vector<int> as(n),bs(n);\n  for(int i=0;i<n;i++)\
+    \ cin>>as[i]>>bs[i];\n\n  using M = Mint<int, 998244353>;\n  using T = LinearFunction<M>;\n\
+    \  auto f=[&](T x,T y){return x*y;};\n  T ti=T::mul_identity();\n  SegmentTree<T>\
+    \ seg(f,ti);\n\n  vector<T> vt;\n  for(int i=0;i<n;i++) vt.emplace_back(as[i],bs[i]);\n\
+    \  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n\
+    \      int p,c,d;\n      cin>>p>>c>>d;\n      seg.set_val(p,T(M(c),M(d)));\n \
+    \   }\n    if(t==1){\n      int l,r,x;\n      cin>>l>>r>>x;\n      cout<<seg.query(l,r)(x)<<\"\
     \\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../segtree/basic/ushi.cpp\"\n#undef\
-    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using M = Mint<int, 998244353>;\n  int n,q;\n  cin>>n>>q;\n\n  vector<int>\
-    \ as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\n  struct T{\n   \
-    \ M a,b;\n    T(M a,M b):a(a),b(b){}\n  };\n\n  auto f=[&](T x,T y){return T(x.a*y.a,x.b*y.a+y.b);};\n\
-    \  T ti(M(1),M(0));\n  SegmentTree<T> seg(f,ti);\n  vector<T> vt;\n  for(int i=0;i<n;i++)\
-    \ vt.emplace_back(as[i],bs[i]);\n  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n\
-    \    int t;\n    cin>>t;\n    if(t==0){\n      int p,c,d;\n      cin>>p>>c>>d;\n\
-    \      seg.set_val(p,T(M(c),M(d)));\n    }\n    if(t==1){\n      int l,r,x;\n\
-    \      cin>>l>>r>>x;\n      T res=seg.query(l,r);\n      cout<<res.a*M(x)+res.b<<\"\
-    \\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    #include \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n\
+    #include \"../../segtree/basic/ushi.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  vector<int>\
+    \ as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\n  using M = Mint<int,\
+    \ 998244353>;\n  using T = LinearFunction<M>;\n  auto f=[&](T x,T y){return x*y;};\n\
+    \  T ti=T::mul_identity();\n  SegmentTree<T> seg(f,ti);\n\n  vector<T> vt;\n \
+    \ for(int i=0;i<n;i++) vt.emplace_back(as[i],bs[i]);\n  seg.build(vt);\n\n  for(int\
+    \ i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n      int p,c,d;\n  \
+    \    cin>>p>>c>>d;\n      seg.set_val(p,T(M(c),M(d)));\n    }\n    if(t==1){\n\
+    \      int l,r,x;\n      cin>>l>>r>>x;\n      cout<<seg.query(l,r)(x)<<\"\\n\"\
+    ;\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
+  - math/linearfunction.cpp
   - segtree/basic/ushi.cpp
   isVerificationFile: true
   path: test/yosupo/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-09-24 23:16:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_set_range_composite.test.cpp

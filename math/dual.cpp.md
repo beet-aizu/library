@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -25,8 +28,9 @@ data:
   path: math/dual.cpp
   requiredBy: []
   timestamp: '2020-03-29 20:43:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
 documentation_of: math/dual.cpp
 layout: document
 redirect_from:
