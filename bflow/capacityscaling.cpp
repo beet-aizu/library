@@ -5,7 +5,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// O(m^2 \log n \log U)
+// O(m^2 \log m \log U)
 // U: maximum capacity
 enum Objective{
   MINIMIZE = +1,
