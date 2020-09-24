@@ -18,7 +18,7 @@ data:
     \ \"https://judge.yosupo.jp/problem/min_cost_b_flow\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"bflow/capacityscaling.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"bflow/capacityscaling.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\n// O(m^2 \\log n \\log U)\n// U: maximum capacity\n\
+    \ std;\n#endif\n//BEGIN CUT HERE\n// O(m^2 \\log m \\log U)\n// U: maximum capacity\n\
     enum Objective{\n  MINIMIZE = +1,\n  MAXIMIZE = -1,\n};\ntemplate<typename Flow,\
     \ typename Cost,\n         Objective objective = Objective::MINIMIZE>\nstruct\
     \ MinCostFlow{\n  template<typename T> inline void chmin(T &x,T y){x=min(x,y);}\n\
@@ -112,7 +112,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/min_cost_b_flow.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 15:11:33+09:00'
+  timestamp: '2020-09-24 16:25:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/min_cost_b_flow.test.cpp
