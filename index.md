@@ -155,7 +155,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/radixheap.cpp
       title: datastructure/radixheap.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/rangeslide.cpp
       title: datastructure/rangeslide.cpp
     - icon: ':heavy_check_mark:'
@@ -186,7 +186,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/argsort.cpp
       title: geometry/argsort.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/geometry.cpp
       title: geometry/geometry.cpp
     - icon: ':heavy_check_mark:'
@@ -268,7 +268,7 @@ data:
       title: graph/voronoiminimumspanningtree.cpp
   - name: io
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
     - icon: ':heavy_check_mark:'
@@ -1333,16 +1333,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_D.test.cpp
       title: test/aoj/geometry/CGL_7_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_E.test.cpp
       title: test/aoj/geometry/CGL_7_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_F.test.cpp
       title: test/aoj/geometry/CGL_7_F.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_G.test.cpp
       title: test/aoj/geometry/CGL_7_G.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_H.test.cpp
       title: test/aoj/geometry/CGL_7_H.test.cpp
   - name: test/yosupo
@@ -1589,7 +1589,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1732.test.cpp
       title: test/yukicoder/1732.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1923.test.cpp
       title: test/yukicoder/1923.test.cpp
     - icon: ':heavy_check_mark:'
