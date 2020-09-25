@@ -1,4 +1,6 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B
+// verification-helper: ERROR 0.000001
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -6,7 +8,6 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
 
-#define ERROR "0.000001"
 
 //diameter of Polygon
 signed main(){

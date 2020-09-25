@@ -1,4 +1,5 @@
-#define PROBLEM "https://yukicoder.me/problems/1923"
+// verification-helper: PROBLEM https://yukicoder.me/problems/1923
+// verification-helper: ERROR 1e-6
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -7,8 +8,6 @@ using namespace std;
 #include "../../io/precision.cpp"
 #include "../../datastructure/rangeslide.cpp"
 #undef call_from_test
-
-#define ERROR "1e-6"
 
 signed main(){
   cin.tie(0);

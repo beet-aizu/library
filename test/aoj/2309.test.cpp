@@ -1,4 +1,5 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2309"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2309
+// verification-helper: ERROR 1e-6
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,8 +9,6 @@ using namespace std;
 #include "../../graph/stronglyconnectedcomponent.cpp"
 #include "../../graph/arborescence_edmond.cpp"
 #undef call_from_test
-
-#define ERROR "1e-6"
 
 const int MAX = 111;
 double v[MAX][MAX];

@@ -1,4 +1,5 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2975"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2975
+// verification-helper: ERROR 1e-9
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -8,8 +9,6 @@ using namespace std;
 #include "../../tools/chminmax.cpp"
 #include "../../datastructure/convexhulltrick.cpp"
 #undef call_from_test
-
-#define ERROR "1e-9"
 
 signed main(){
   cin.tie(0);

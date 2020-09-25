@@ -1,4 +1,6 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_H"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_H
+// verification-helper: ERROR 0.00001
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -7,7 +9,6 @@ using namespace std;
 #include "../../../io/precision.cpp"
 #undef call_from_test
 
-#define ERROR "0.00001"
 
 // intersection of a circle and a polygon
 signed main(){

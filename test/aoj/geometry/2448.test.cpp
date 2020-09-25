@@ -1,4 +1,6 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2448"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2448
+// verification-helper: ERROR 1e-6
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -6,8 +8,6 @@ using namespace std;
 #include "../../../geometry/geometry.cpp"
 #include "../../../tools/fixpoint.cpp"
 #undef call_from_test
-
-#define ERROR "1e-6"
 
 signed main(){
   int n;

@@ -1,4 +1,5 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B
+// verification-helper: ERROR 1e-6
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -6,8 +7,6 @@ using namespace std;
 #define call_from_test
 #include "../../io/precision.cpp"
 #undef call_from_test
-
-#define ERROR "1e-6"
 
 signed main(){
   using D = double;

@@ -1,12 +1,12 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E
+// verification-helper: ERROR 0.000001
+
 #include<bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../../geometry/geometry.cpp"
 #undef call_from_test
-
-#define ERROR "0.000001"
 
 //intersectCC
 signed main(){

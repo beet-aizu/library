@@ -1,4 +1,5 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2187"
+// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2187
+// verification-helper: ERROR 1e-5
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -7,8 +8,6 @@ using namespace std;
 #include "../../tools/chminmax.cpp"
 #include "../../tools/all_permutations.cpp"
 #undef call_from_test
-
-#define ERROR "1e-5"
 
 signed solve(){
   cin.tie(0);
