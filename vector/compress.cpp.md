@@ -25,6 +25,9 @@ data:
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3961.test.cpp
+    title: test/yukicoder/3961.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4778.test.cpp
     title: test/yukicoder/4778.test.cpp
   - icon: ':heavy_check_mark:'
@@ -77,6 +80,7 @@ data:
   - test/aoj/0343.test.cpp
   - test/aoj/0613.test.cpp
   - test/aoj/2359.test.cpp
+  - test/yukicoder/3961.test.cpp
   - test/yukicoder/4778.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
