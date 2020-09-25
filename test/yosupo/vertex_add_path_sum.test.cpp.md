@@ -1,23 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/heavylightdecomposition.cpp
     title: Heavy Light Decomposition
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
     links:
     - https://judge.yosupo.jp/problem/vertex_add_path_sum
-  bundledCode: "#line 1 \"test/yosupo/vertex_add_path_sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/vertex_add_path_sum.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/vertex_add_path_sum\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"tree/heavylightdecomposition.cpp\"\
     \n\n#line 3 \"tree/heavylightdecomposition.cpp\"\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\nclass HLD{\nprivate:\n  void dfs_sz(int v) {\n    auto &es=G[v];\n\
@@ -63,7 +62,7 @@ data:
     \ u,v;\n      cin>>u>>v;\n      ll res=0;\n      auto f=[&](int l,int r){res+=bit.query(l,r);};\n\
     \      G.for_each(u,v,f);\n      cout<<res<<'\\n';\n    }\n  }\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/vertex_add_path_sum\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../tree/heavylightdecomposition.cpp\"\n#include \"../../datastructure/binaryindexedtree.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
@@ -81,8 +80,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-16 00:05:24+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 16:01:41+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_path_sum.test.cpp
 layout: document

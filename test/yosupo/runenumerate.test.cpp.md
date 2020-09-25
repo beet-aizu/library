@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/run.cpp
     title: string/run.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/runenumerate
     links:
@@ -42,7 +42,7 @@ data:
   path: test/yosupo/runenumerate.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 15:47:34+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/runenumerate.test.cpp
 layout: document

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   - icon: ':heavy_check_mark:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
@@ -24,7 +24,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
     links:
     - https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
@@ -38,22 +37,22 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ convolution/numbertheoretictransform.cpp: line 8: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sqrt_of_formal_power_series\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tools/drop.cpp\"\n#include \"../../mod/sqrt.cpp\"\n#include \"\
-    ../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
-    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  int n;\n  cin>>n;\n\n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto\
-    \ as,auto bs){return ntt.multiply(as,bs);};\n  FormalPowerSeries<M> FPS(conv);\n\
-    \n  deque<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  while(!as.empty()&&as.front()==0)\
-    \ as.pop_front();\n\n  if(as.empty()){\n    for(int i=0;i<n;i++){\n      if(i)\
-    \ cout<<\" \";\n      cout<<0;\n    }\n    cout<<endl;\n    return 0;\n  }\n\n\
-    \  int m=as.size();\n  if((n-m)&1) drop(-1);\n\n  auto ss=mod_sqrt(as[0],ntt.md);\n\
-    \  if(ss.empty()) drop(-1);\n\n  vector<M> ps(n,M(0));\n  for(int i=0;i<m;i++)\
-    \ ps[i]=M(as[i])/M(as[0]);\n\n  auto bs=FPS.sqrt(ps,n);\n  bs.insert(bs.begin(),(n-m)/2,M(0));\n\
-    \  for(int i=0;i<n;i++){\n    if(i) cout<<\" \";\n    cout<<bs[i]*ss[0];\n  }\n\
-    \  cout<<endl;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sqrt_of_formal_power_series\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/drop.cpp\"\n#include \"../../mod/sqrt.cpp\"\n#include \"../../mod/mint.cpp\"\
+    \n#include \"../../convolution/numbertheoretictransform.cpp\"\n#include \"../../combinatorics/enumeration.cpp\"\
+    \n#include \"../../polynomial/formalpowerseries.cpp\"\n#undef call_from_test\n\
+    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
+    \n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
+    \ ntt.multiply(as,bs);};\n  FormalPowerSeries<M> FPS(conv);\n\n  deque<int> as(n);\n\
+    \  for(int i=0;i<n;i++) cin>>as[i];\n\n  while(!as.empty()&&as.front()==0) as.pop_front();\n\
+    \n  if(as.empty()){\n    for(int i=0;i<n;i++){\n      if(i) cout<<\" \";\n   \
+    \   cout<<0;\n    }\n    cout<<endl;\n    return 0;\n  }\n\n  int m=as.size();\n\
+    \  if((n-m)&1) drop(-1);\n\n  auto ss=mod_sqrt(as[0],ntt.md);\n  if(ss.empty())\
+    \ drop(-1);\n\n  vector<M> ps(n,M(0));\n  for(int i=0;i<m;i++) ps[i]=M(as[i])/M(as[0]);\n\
+    \n  auto bs=FPS.sqrt(ps,n);\n  bs.insert(bs.begin(),(n-m)/2,M(0));\n  for(int\
+    \ i=0;i<n;i++){\n    if(i) cout<<\" \";\n    cout<<bs[i]*ss[0];\n  }\n  cout<<endl;\n\
+    \  return 0;\n}\n"
   dependsOn:
   - tools/drop.cpp
   - mod/sqrt.cpp
@@ -64,7 +63,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/sqrt_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-05-16 18:51:14+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/sqrt_of_formal_power_series.test.cpp

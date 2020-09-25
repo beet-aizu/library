@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
     links:
@@ -58,7 +58,7 @@ data:
   path: test/yosupo/shortest_path.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 15:47:34+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/shortest_path.test.cpp
 layout: document

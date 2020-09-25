@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2667.test.cpp
     title: test/aoj/2667.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -67,7 +67,7 @@ data:
   path: tree/heavylightdecomposition.cpp
   requiredBy: []
   timestamp: '2020-09-15 22:29:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/0367.test.cpp
   - test/aoj/2450.test.cpp

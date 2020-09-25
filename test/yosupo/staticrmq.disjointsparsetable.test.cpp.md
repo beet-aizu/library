@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
-  bundledCode: "#line 1 \"test/yosupo/staticrmq.disjointsparsetable.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/staticrmq.disjointsparsetable.test.cpp\"\n//\
+    \ verification-helper: PROBLEM https://judge.yosupo.jp/problem/staticrmq\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/disjointsparsetable.cpp\"\
     \n\n#line 3 \"datastructure/disjointsparsetable.cpp\"\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct DisjointSparseTable{\n\
@@ -47,19 +46,20 @@ data:
     \ a,int b){return min(a,b);};\n  DisjointSparseTable<int> rmq(f);\n  rmq.build(as);\n\
     \n  for(int i=0;i<q;i++){\n    int l,r;\n    cin>>l>>r;\n    cout<<rmq.query(l,r)<<\"\
     \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../datastructure/disjointsparsetable.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  int n,q;\n  cin>>n>>q;\n\n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\
-    \n  auto f=[](int a,int b){return min(a,b);};\n  DisjointSparseTable<int> rmq(f);\n\
-    \  rmq.build(as);\n\n  for(int i=0;i<q;i++){\n    int l,r;\n    cin>>l>>r;\n \
-    \   cout<<rmq.query(l,r)<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/staticrmq\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../datastructure/disjointsparsetable.cpp\"\n#undef call_from_test\n\nsigned\
+    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
+    \n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  auto f=[](int\
+    \ a,int b){return min(a,b);};\n  DisjointSparseTable<int> rmq(f);\n  rmq.build(as);\n\
+    \n  for(int i=0;i<q;i++){\n    int l,r;\n    cin>>l>>r;\n    cout<<rmq.query(l,r)<<\"\
+    \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - datastructure/disjointsparsetable.cpp
   isVerificationFile: true
   path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/staticrmq.disjointsparsetable.test.cpp

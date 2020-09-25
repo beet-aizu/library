@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sort_points_by_argument.test.cpp
     title: test/yosupo/sort_points_by_argument.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -36,7 +36,7 @@ data:
   path: geometry/argsort.cpp
   requiredBy: []
   timestamp: '2020-03-14 17:16:27+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/sort_points_by_argument.test.cpp
 documentation_of: geometry/argsort.cpp

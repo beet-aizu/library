@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
     links:
     - https://judge.yosupo.jp/problem/tree_diameter
@@ -26,10 +25,10 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ tree/diameterforedge.cpp: line 64: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
-    ../../tools/fixpoint.cpp\"\n#include \"../../tree/diameterforedge.cpp\"\n#undef\
-    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/tree_diameter\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/fixpoint.cpp\"\n#include \"../../tree/diameterforedge.cpp\"\n\
+    #undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \  const char newl = '\\n';\n\n  using ll = long long;\n  int n;\n  cin>>n;\n\
     \  DiameterForEdge<ll> G(n);\n  for(int i=1;i<n;i++){\n    int a,b,c;\n    cin>>a>>b>>c;\n\
     \    G.add_edge(a,b,c);\n  }\n\n  auto seq=G.restore();\n  cout<<G.build()<<'\
@@ -41,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/tree_diameter.test.cpp
   requiredBy: []
-  timestamp: '2020-05-18 20:55:43+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/tree_diameter.test.cpp

@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/run.cpp
     title: string/run.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
   _pathExtension: cpp

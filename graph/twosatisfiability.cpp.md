@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3102.test.cpp
     title: test/aoj/3102.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/two_sat.test.cpp
     title: test/yosupo/two_sat.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -74,7 +74,7 @@ data:
   path: graph/twosatisfiability.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:35:29+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3102.test.cpp
   - test/yosupo/two_sat.test.cpp

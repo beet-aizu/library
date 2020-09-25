@@ -9,18 +9,18 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
     links:
     - https://judge.yosupo.jp/problem/suffixarray
-  bundledCode: "#line 1 \"test/yosupo/suffixarray.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"string/suffixarray.cpp\"\n\n#line 3 \"string/suffixarray.cpp\"\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct SuffixArray{\n  string s;\n\
-    \  vector<int> sa,rev;\n\n  SuffixArray(){}\n  SuffixArray(const string &S):s(S){\n\
-    \    int n=s.size();\n    s.push_back('$');\n    sa.resize(n+1);\n    iota(sa.begin(),sa.end(),0);\n\
-    \    sort(sa.begin(),sa.end(),\n         [&](int a,int b){\n           if(s[a]==s[b])\
-    \ return a>b;\n           return s[a]<s[b];\n         });\n    vector<int> cs(n+1,0),rs(n+1),cnt(n+1);\n\
+  bundledCode: "#line 1 \"test/yosupo/suffixarray.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/suffixarray\n\n#include<bits/stdc++.h>\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"string/suffixarray.cpp\"\
+    \n\n#line 3 \"string/suffixarray.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
+    \ CUT HERE\nstruct SuffixArray{\n  string s;\n  vector<int> sa,rev;\n\n  SuffixArray(){}\n\
+    \  SuffixArray(const string &S):s(S){\n    int n=s.size();\n    s.push_back('$');\n\
+    \    sa.resize(n+1);\n    iota(sa.begin(),sa.end(),0);\n    sort(sa.begin(),sa.end(),\n\
+    \         [&](int a,int b){\n           if(s[a]==s[b]) return a>b;\n         \
+    \  return s[a]<s[b];\n         });\n    vector<int> cs(n+1,0),rs(n+1),cnt(n+1);\n\
     \    for(int i=0;i<=n;i++) rs[i]=s[i];\n    for(int len=1;len<=n;len*=2){\n  \
     \    for(int i=0;i<=n;i++){\n        cs[sa[i]]=i;\n        if(i>0 &&\n       \
     \    rs[sa[i-1]]==rs[sa[i]] &&\n           sa[i-1]+len<=n &&\n           rs[sa[i-1]+len/2]==rs[sa[i]+len/2])\
@@ -42,18 +42,18 @@ data:
     \n  string s;\n  cin>>s;\n\n  SuffixArray sa(s);\n  for(int i=0;i<(int)s.size();i++){\n\
     \    if(i) cout<<\" \";\n    cout<<sa[i+1];\n  }\n  cout<<endl;\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../string/suffixarray.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  string s;\n  cin>>s;\n\n  SuffixArray sa(s);\n  for(int i=0;i<(int)s.size();i++){\n\
-    \    if(i) cout<<\" \";\n    cout<<sa[i+1];\n  }\n  cout<<endl;\n  return 0;\n\
-    }\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/suffixarray\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../string/suffixarray.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  string s;\n  cin>>s;\n\n  SuffixArray\
+    \ sa(s);\n  for(int i=0;i<(int)s.size();i++){\n    if(i) cout<<\" \";\n    cout<<sa[i+1];\n\
+    \  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - string/suffixarray.cpp
   isVerificationFile: true
   path: test/yosupo/suffixarray.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/suffixarray.test.cpp

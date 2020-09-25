@@ -1,18 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_subtree_sum
     links:
     - https://judge.yosupo.jp/problem/vertex_add_subtree_sum
@@ -26,10 +25,10 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linkcuttree/subtree.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../linkcuttree/base.cpp\"\n#include \"../../linkcuttree/subtree.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/vertex_add_subtree_sum\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../linkcuttree/base.cpp\"\n#include \"../../linkcuttree/subtree.cpp\"\n\
+    #undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  using ll = long long;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n \
     \ for(int i=0;i<n;i++) cin>>as[i];\n\n  using Node = NodeBase<ll>;\n  constexpr\
     \ size_t LIM = 1e6;\n  using LCT = SubTree<Node, LIM>;\n  LCT lct;\n\n  for(int\
@@ -46,8 +45,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-07-16 18:11:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 16:01:41+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
 layout: document

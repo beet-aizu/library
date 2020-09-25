@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/argsort.cpp
     title: geometry/argsort.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/sort_points_by_argument
     links:
@@ -43,7 +43,7 @@ data:
   path: test/yosupo/sort_points_by_argument.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 15:47:34+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/sort_points_by_argument.test.cpp
 layout: document

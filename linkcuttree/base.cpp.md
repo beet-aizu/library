@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedVerifiedWith:
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -49,7 +49,7 @@ data:
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -133,7 +133,7 @@ data:
   - linkcuttree/farthest.cpp
   - linkcuttree/subtree.cpp
   timestamp: '2020-07-16 18:11:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp
   - test/aoj/GRL_5_D.linkcuttree.test.cpp

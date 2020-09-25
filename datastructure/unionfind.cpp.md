@@ -21,11 +21,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_A.test.cpp
     title: test/aoj/DSL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/unionfind.test.cpp
     title: test/yosupo/unionfind.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -57,7 +57,7 @@ data:
   - linearalgebra/tree_theorem.cpp
   - graph/lowlink.cpp
   timestamp: '2020-05-17 19:42:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2995.test.cpp
   - test/aoj/0314.test.cpp

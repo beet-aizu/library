@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tetration_mod
     links:
     - https://judge.yosupo.jp/problem/tetration_mod
@@ -26,19 +25,19 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ mod/tetration.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tetration_mod\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../math/totient.cpp\"\
-    \n#include \"../../mod/tetration.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
-    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int T;\n  cin>>T;\n  for(int t=0;t<T;t++){\n\
-    \    int a,b,m;\n    cin>>a>>b>>m;\n    cout<<tetration(a,b,m)<<\"\\n\";\n  }\n\
-    \  cout<<flush;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/tetration_mod\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../math/totient.cpp\"\n#include \"../../mod/tetration.cpp\"\n#undef call_from_test\n\
+    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int T;\n  cin>>T;\n\
+    \  for(int t=0;t<T;t++){\n    int a,b,m;\n    cin>>a>>b>>m;\n    cout<<tetration(a,b,m)<<\"\
+    \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - math/totient.cpp
   - mod/tetration.cpp
   isVerificationFile: true
   path: test/yosupo/tetration_mod.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:15:27+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/tetration_mod.test.cpp

@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/set_xor_min.test.cpp
     title: test/yosupo/set_xor_min.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -137,7 +137,7 @@ data:
   path: datastructure/binarytrie.cpp
   requiredBy: []
   timestamp: '2020-06-06 14:04:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_B.test.cpp
   - test/yosupo/set_xor_min.test.cpp

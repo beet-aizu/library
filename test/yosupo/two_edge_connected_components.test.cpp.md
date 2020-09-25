@@ -9,13 +9,12 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_edge_connected_components
     links:
     - https://judge.yosupo.jp/problem/two_edge_connected_components
-  bundledCode: "#line 1 \"test/yosupo/two_edge_connected_components.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\n\n\
-    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+  bundledCode: "#line 1 \"test/yosupo/two_edge_connected_components.test.cpp\"\n//\
+    \ verification-helper: PROBLEM https://judge.yosupo.jp/problem/two_edge_connected_components\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
     \ 2 \"graph/twoedgeconnectedcomponents.cpp\"\n\n#ifndef call_from_test\n#line\
     \ 5 \"graph/twoedgeconnectedcomponents.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\n// work with multigraph\nstruct TwoEdgeConnectedComponents{\n  vector<int>\
@@ -45,10 +44,10 @@ data:
     \  cout<<k<<endl;\n  for(int i=0;i<k;i++){\n    cout<<C[i].size();\n    for(int\
     \ j=0;j<(int)C[i].size();j++) cout<<\" \"<<C[i][j];\n    cout<<\"\\n\";\n  }\n\
     \n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../graph/twoedgeconnectedcomponents.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/two_edge_connected_components\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../graph/twoedgeconnectedcomponents.cpp\"\n#undef call_from_test\n\nsigned\
+    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n\
     \n  TwoEdgeConnectedComponents C(n);\n  for(int i=0;i<m;i++){\n    int a,b;\n\
     \    cin>>a>>b;\n    C.add_edge(a,b);\n  }\n\n  int k=C.build();\n  cout<<k<<endl;\n\
     \  for(int i=0;i<k;i++){\n    cout<<C[i].size();\n    for(int j=0;j<(int)C[i].size();j++)\
@@ -59,7 +58,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/two_edge_connected_components.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 16:29:30+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/two_edge_connected_components.test.cpp

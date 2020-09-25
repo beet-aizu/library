@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   - icon: ':heavy_check_mark:'

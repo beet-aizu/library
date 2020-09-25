@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_floor_of_linear
     links:
     - https://judge.yosupo.jp/problem/sum_of_floor_of_linear
-  bundledCode: "#line 1 \"test/yosupo/sum_of_floor_of_linear.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/sum_of_floor_of_linear.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/sum_of_floor_of_linear\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"math/sum_of_floor.cpp\"\
     \n\n#line 3 \"math/sum_of_floor.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
     \ HERE\n// sum_{i=0}^{n-1} (ai + b) // m\n// 0 <= a, b\ntemplate<typename T>\n\
@@ -27,10 +26,10 @@ data:
     \n  int T;\n  cin>>T;\n  for(int t=0;t<T;t++){\n    long long n,m,a,b;\n    cin>>n>>m>>a>>b;\n\
     \    cout<<sum_of_floor(n,m,a,b)<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../math/sum_of_floor.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
-    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int T;\n  cin>>T;\n  for(int t=0;t<T;t++){\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sum_of_floor_of_linear\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../math/sum_of_floor.cpp\"\n#undef call_from_test\n\nsigned main(){\n \
+    \ cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int T;\n  cin>>T;\n  for(int t=0;t<T;t++){\n\
     \    long long n,m,a,b;\n    cin>>n>>m>>a>>b;\n    cout<<sum_of_floor(n,m,a,b)<<\"\
     \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
@@ -38,7 +37,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/sum_of_floor_of_linear.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/sum_of_floor_of_linear.test.cpp

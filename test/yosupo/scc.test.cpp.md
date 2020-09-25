@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
@@ -49,7 +49,7 @@ data:
   path: test/yosupo/scc.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 15:47:34+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/scc.test.cpp
 layout: document

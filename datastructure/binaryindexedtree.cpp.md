@@ -18,17 +18,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2125.test.cpp
     title: test/yukicoder/2125.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_range_sum.test.cpp
     title: test/yosupo/point_add_range_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -63,7 +63,7 @@ data:
   path: datastructure/binaryindexedtree.cpp
   requiredBy: []
   timestamp: '2020-09-16 00:05:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.test.cpp
   - test/aoj/0343.test.cpp

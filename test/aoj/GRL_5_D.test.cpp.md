@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/eulertourforedge.cpp
     title: tree/eulertourforedge.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
   _extendedRequiredBy: []

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
@@ -21,7 +21,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind
     links:
     - https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind
@@ -35,9 +34,9 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ convolution/numbertheoretictransform.cpp: line 8: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
     \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
     \n#include \"../../combinatorics/stirling2nd.cpp\"\n#undef call_from_test\n\n\
     signed main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
@@ -54,7 +53,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
   requiredBy: []
-  timestamp: '2020-05-16 18:51:14+09:00'
+  timestamp: '2020-09-25 16:01:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/stirling_number_of_the_second_kind.test.cpp

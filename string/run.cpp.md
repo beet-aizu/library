@@ -6,11 +6,11 @@ data:
     title: string/zalgorithm.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -56,7 +56,7 @@ data:
   path: string/run.cpp
   requiredBy: []
   timestamp: '2020-02-16 18:24:01+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/runenumerate.test.cpp
 documentation_of: string/run.cpp

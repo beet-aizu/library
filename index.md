@@ -116,10 +116,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/absolutesum.cpp
       title: datastructure/absolutesum.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/binaryindexedtree.cpp
       title: Binary Indexed Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/binarytrie.cpp
       title: datastructure/binarytrie.cpp
     - icon: ':heavy_check_mark:'
@@ -167,7 +167,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/unionfind.cpp
       title: datastructure/unionfind.cpp
     - icon: ':heavy_check_mark:'
@@ -183,7 +183,7 @@ data:
       title: geometry/3D/geometry3D.cpp
   - name: geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/argsort.cpp
       title: geometry/argsort.cpp
     - icon: ':heavy_check_mark:'
@@ -212,7 +212,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/chromatic.cpp
       title: graph/chromatic.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.cpp
       title: graph/dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -260,7 +260,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/twoedgeconnectedcomponents.cpp
       title: graph/twoedgeconnectedcomponents.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/twosatisfiability.cpp
       title: graph/twosatisfiability.cpp
     - icon: ':warning:'
@@ -293,7 +293,7 @@ data:
       title: linearalgebra/tree_theorem.cpp
   - name: linkcuttree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/base.cpp
       title: linkcuttree/base.cpp
     - icon: ':heavy_check_mark:'
@@ -302,7 +302,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: linkcuttree/path.cpp
       title: linkcuttree/path.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/subtree.cpp
       title: linkcuttree/subtree.cpp
   - name: math
@@ -391,7 +391,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/log.cpp
       title: mod/log.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: mod/mint.cpp
       title: mod/mint.cpp
     - icon: ':heavy_check_mark:'
@@ -426,7 +426,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: polynomial/interpolate.cpp
       title: polynomial/interpolate.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: polynomial/lagrangeinterpolation.cpp
       title: polynomial/lagrangeinterpolation.cpp
     - icon: ':heavy_check_mark:'
@@ -510,7 +510,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/run.cpp
       title: string/run.cpp
     - icon: ':heavy_check_mark:'
@@ -545,7 +545,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/drop.cpp
       title: tools/drop.cpp
     - icon: ':heavy_check_mark:'
@@ -606,10 +606,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/eulertourforedge.cpp
       title: tree/eulertourforedge.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tree/eulertourforvertex.cpp
       title: tree/eulertourforvertex.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tree/heavylightdecomposition.cpp
       title: Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
@@ -1479,19 +1479,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/runenumerate.test.cpp
       title: test/yosupo/runenumerate.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/set_xor_min.test.cpp
       title: test/yosupo/set_xor_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/shortest_path.test.cpp
       title: test/yosupo/shortest_path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/sort_points_by_argument.test.cpp
       title: test/yosupo/sort_points_by_argument.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1533,27 +1533,27 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/two_edge_connected_components.test.cpp
       title: test/yosupo/two_edge_connected_components.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/two_sat.test.cpp
       title: test/yosupo/two_sat.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/unionfind.test.cpp
       title: test/yosupo/unionfind.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/vertex_add_path_sum.test.cpp
       title: test/yosupo/vertex_add_path_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/vertex_add_subtree_sum.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/0022.test.cpp
       title: test/yukicoder/0022.test.cpp
     - icon: ':heavy_check_mark:'
