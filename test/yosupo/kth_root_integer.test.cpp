@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/kth_root_integer
+#define PROBLEM "https://judge.yosupo.jp/problem/kth_root_integer"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -6,6 +6,10 @@ using namespace std;
 #define call_from_test
 #include "../../tools/int128.cpp"
 #undef call_from_test
+
+#ifdef __clang__
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);

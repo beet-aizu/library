@@ -1,12 +1,16 @@
-// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3069
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3069"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/chminmax.cpp"
 #include "../../segtree/cht/lichao.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);

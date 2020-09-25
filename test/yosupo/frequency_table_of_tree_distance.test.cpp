@@ -48,10 +48,10 @@ signed main(){
         }
       })(c,r,1);
       auto ns=FFT::multiply(num,num);
-      for(int i=0;i<(int)ns.size();i++) ans[i]-=ns[i];
+      for(int i=0;i<(int)min(ans.size(),ns.size());i++) ans[i]-=ns[i];
     }
     auto cs=FFT::multiply(cnt,cnt);
-    for(int i=0;i<(int)cs.size();i++) ans[i]+=cs[i];
+    for(int i=0;i<(int)min(ans.size(),cs.size());i++) ans[i]+=cs[i];
 
     G.disable(r);
     for(int c:G[r])

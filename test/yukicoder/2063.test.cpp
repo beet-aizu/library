@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://yukicoder.me/problems/2063
+#define PROBLEM "https://yukicoder.me/problems/2063"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -6,6 +6,10 @@ using namespace std;
 #define call_from_test
 #include "../../segtree/count/dynamic_offline.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);

@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/associative_array
+#define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,6 +7,10 @@ using namespace std;
 #include "../../tools/cc_hash.cpp"
 #include "../../datastructure/pb_ds_cc_hash_table.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);

@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/shortest_path
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,6 +7,10 @@ using namespace std;
 #include "../../tools/drop.cpp"
 #include "../../graph/dijkstra.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
