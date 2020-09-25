@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1923.test.cpp
     title: test/yukicoder/1923.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -46,7 +46,7 @@ data:
   path: datastructure/rangeslide.cpp
   requiredBy: []
   timestamp: '2020-02-15 16:18:53+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_3_D.test.cpp
   - test/aoj/0613.test.cpp

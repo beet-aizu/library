@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/geometry.cpp
     title: geometry/geometry.cpp
   _extendedRequiredBy: []
@@ -9,17 +9,17 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.000001'
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B
-  bundledCode: "#line 1 \"test/aoj/geometry/CGL_4_B.test.cpp\"\n#define PROBLEM \"\
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B\"\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\
-    \n\n#line 3 \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
-    \ HERE\n#define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst\
-    \ double PI = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\nstatic const int CCW_COUNTER_CLOCKWISE\
+  bundledCode: "#line 1 \"test/aoj/geometry/CGL_4_B.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B\n//\
+    \ verification-helper: ERROR 0.000001\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\n\n#line 3\
+    \ \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    #define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst double PI\
+    \ = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\nstatic const int CCW_COUNTER_CLOCKWISE\
     \ = 1;\nstatic const int CCW_CLOCKWISE = -1;\nstatic const int CCW_ONLINE_BACK\
     \ = 2;\nstatic const int CCW_ONLINE_FRONT = -2;\nstatic const int CCW_ON_SEGMENT\
     \ = 0;\n\n// intercsect of circles\nstatic const int ICC_SEPERATE = 4;\nstatic\
@@ -205,22 +205,22 @@ data:
     #ifndef call_from_test\n\nsigned ECR002_D(){\n  Circle c1,c2;\n  cin>>c1>>c2;\n\
     \  cout<<fixed<<setprecision(12)<<area(c1,c2)<<endl;\n  return 0;\n}\n/*\n  verified\
     \ on 2019/11/13\n  https://codeforces.com/contest/600/problem/D\n*/\n\nsigned\
-    \ main(){\n  ECR002_D();\n  return 0;\n}\n#endif\n#line 7 \"test/aoj/geometry/CGL_4_B.test.cpp\"\
-    \n#undef call_from_test\n\n#define ERROR \"0.000001\"\n\n//diameter of Polygon\n\
-    signed main(){\n  int n;\n  cin>>n;\n  Polygon ps(n);\n  cin>>ps;\n  cout<<fixed<<setprecision(12)<<diameter(ps)<<endl;\n\
+    \ main(){\n  ECR002_D();\n  return 0;\n}\n#endif\n#line 9 \"test/aoj/geometry/CGL_4_B.test.cpp\"\
+    \n#undef call_from_test\n\n\n//diameter of Polygon\nsigned main(){\n  int n;\n\
+    \  cin>>n;\n  Polygon ps(n);\n  cin>>ps;\n  cout<<fixed<<setprecision(12)<<diameter(ps)<<endl;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../../geometry/geometry.cpp\"\n#undef call_from_test\n\n#define ERROR \"\
-    0.000001\"\n\n//diameter of Polygon\nsigned main(){\n  int n;\n  cin>>n;\n  Polygon\
-    \ ps(n);\n  cin>>ps;\n  cout<<fixed<<setprecision(12)<<diameter(ps)<<endl;\n \
-    \ return 0;\n}\n"
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B\n\
+    // verification-helper: ERROR 0.000001\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define call_from_test\n#include \"../../../geometry/geometry.cpp\"\n\
+    #undef call_from_test\n\n\n//diameter of Polygon\nsigned main(){\n  int n;\n \
+    \ cin>>n;\n  Polygon ps(n);\n  cin>>ps;\n  cout<<fixed<<setprecision(12)<<diameter(ps)<<endl;\n\
+    \  return 0;\n}\n"
   dependsOn:
   - geometry/geometry.cpp
   isVerificationFile: true
   path: test/aoj/geometry/CGL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2019-12-17 20:13:07+09:00'
+  timestamp: '2020-09-25 12:16:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_4_B.test.cpp

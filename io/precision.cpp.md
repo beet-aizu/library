@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/CGL_7_H.test.cpp
     title: test/aoj/geometry/CGL_7_H.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,11 +33,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2309.test.cpp
     title: test/aoj/2309.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1923.test.cpp
     title: test/yukicoder/1923.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -54,7 +54,7 @@ data:
   path: io/precision.cpp
   requiredBy: []
   timestamp: '2020-08-07 15:47:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2309.tarjan.test.cpp
   - test/aoj/2736.test.cpp

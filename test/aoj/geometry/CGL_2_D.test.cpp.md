@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/geometry.cpp
     title: geometry/geometry.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: io/precision.cpp
     title: io/precision.cpp
   _extendedRequiredBy: []
@@ -12,17 +12,17 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00000001'
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D
-  bundledCode: "#line 1 \"test/aoj/geometry/CGL_2_D.test.cpp\"\n#define PROBLEM \"\
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\"\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\
-    \n\n#line 3 \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
-    \ HERE\n#define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst\
-    \ double PI = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\nstatic const int CCW_COUNTER_CLOCKWISE\
+  bundledCode: "#line 1 \"test/aoj/geometry/CGL_2_D.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\n//\
+    \ verification-helper: ERROR 0.00000001\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\n\n#line 3\
+    \ \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    #define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst double PI\
+    \ = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\nstatic const int CCW_COUNTER_CLOCKWISE\
     \ = 1;\nstatic const int CCW_CLOCKWISE = -1;\nstatic const int CCW_ONLINE_BACK\
     \ = 2;\nstatic const int CCW_ONLINE_FRONT = -2;\nstatic const int CCW_ON_SEGMENT\
     \ = 0;\n\n// intercsect of circles\nstatic const int ICC_SEPERATE = 4;\nstatic\
@@ -212,16 +212,15 @@ data:
     \n\n#line 3 \"io/precision.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
     struct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n  }\n}precision_beet;\n\
     //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n\
-    #line 8 \"test/aoj/geometry/CGL_2_D.test.cpp\"\n#undef call_from_test\n\n#define\
-    \ ERROR \"0.00000001\"\n\n//distanceSS\nsigned main(){\n  int q;\n  cin>>q;\n\
-    \  for(int i=0;i<q;i++){\n    Point p0,p1,p2,p3;\n    cin>>p0>>p1>>p2>>p3;\n \
-    \   cout<<getDistanceSS(Segment(p0,p1),Segment(p2,p3))<<endl;\n  }\n  return 0;\n\
-    }\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../../geometry/geometry.cpp\"\n#include \"../../../io/precision.cpp\"\n\
-    #undef call_from_test\n\n#define ERROR \"0.00000001\"\n\n//distanceSS\nsigned\
-    \ main(){\n  int q;\n  cin>>q;\n  for(int i=0;i<q;i++){\n    Point p0,p1,p2,p3;\n\
+    #line 10 \"test/aoj/geometry/CGL_2_D.test.cpp\"\n#undef call_from_test\n\n//distanceSS\n\
+    signed main(){\n  int q;\n  cin>>q;\n  for(int i=0;i<q;i++){\n    Point p0,p1,p2,p3;\n\
+    \    cin>>p0>>p1>>p2>>p3;\n    cout<<getDistanceSS(Segment(p0,p1),Segment(p2,p3))<<endl;\n\
+    \  }\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D\n\
+    // verification-helper: ERROR 0.00000001\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define call_from_test\n#include \"../../../geometry/geometry.cpp\"\n\
+    #include \"../../../io/precision.cpp\"\n#undef call_from_test\n\n//distanceSS\n\
+    signed main(){\n  int q;\n  cin>>q;\n  for(int i=0;i<q;i++){\n    Point p0,p1,p2,p3;\n\
     \    cin>>p0>>p1>>p2>>p3;\n    cout<<getDistanceSS(Segment(p0,p1),Segment(p2,p3))<<endl;\n\
     \  }\n  return 0;\n}\n"
   dependsOn:
@@ -230,7 +229,7 @@ data:
   isVerificationFile: true
   path: test/aoj/geometry/CGL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2020-08-07 15:47:54+09:00'
+  timestamp: '2020-09-25 12:16:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_2_D.test.cpp
