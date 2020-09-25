@@ -7,12 +7,12 @@ using namespace std;
 template<typename Flow, typename Cost>
 struct PrimalDual{
   struct Edge{
-    int to;
+    int dst;
     Flow cap;
     Cost cost;
     int rev;
-    Edge(int to,Flow cap,Cost cost,int rev):
-      to(to),cap(cap),cost(cost),rev(rev){}
+    Edge(int dst,Flow cap,Cost cost,int rev):
+      dst(dst),cap(cap),cost(cost),rev(rev){}
   };
 
   vector<vector<Edge>> G;
@@ -26,6 +26,10 @@ struct PrimalDual{
     int r=(u==v?e+1:G[v].size());
     G[u].emplace_back(v,cap,cost,r);
     G[v].emplace_back(u,0,-cost,e);
+  }
+
+  Cost residual_cost(int src,Edge &e){
+    return e.cost+h[src]-h[e.dst];
   }
 
   void dijkstra(int s){
@@ -46,11 +50,11 @@ struct PrimalDual{
       for(int i=0;i<(int)G[v].size();i++){
         Edge &e=G[v][i];
         if(e.cap==0) continue;
-        if(dist[v]+e.cost+h[v]-h[e.to]<dist[e.to]){
-          dist[e.to]=dist[v]+e.cost+h[v]-h[e.to];
-          prevv[e.to]=v;
-          preve[e.to]=i;
-          pq.emplace(dist[e.to],e.to);
+        if(dist[v]+residual_cost(v,e)<dist[e.dst]){
+          dist[e.dst]=dist[v]+e.cost+h[v]-h[e.dst];
+          prevv[e.dst]=v;
+          preve[e.dst]=i;
+          pq.emplace(dist[e.dst],e.dst);
         }
       }
     }
@@ -58,9 +62,12 @@ struct PrimalDual{
 
   Cost res;
 
-  bool build(int s,int t,Flow f){
+  bool build(int s,int t,Flow f,
+             function<void(decltype(h)&)> init=[](decltype(h) &p){
+               fill(p.begin(),p.end(),0);
+             }){
     res=0;
-    fill(h.begin(),h.end(),0);
+    init(h);
     const Cost INF = numeric_limits<Cost>::max();
     while(f>0){
       fill(dist.begin(),dist.end(),INF);
@@ -140,7 +147,7 @@ signed geocon2013_B(){
   return 0;
 }
 /*
-  verified on 2020/09/24
+  verified on 2020/09/25
   https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
 */
 
