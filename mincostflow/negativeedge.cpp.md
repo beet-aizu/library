@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: mincostflow/negativeedge.cpp
   requiredBy: []
-  timestamp: '2020-09-24 17:38:24+09:00'
+  timestamp: '2020-09-25 09:54:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2627.test.cpp

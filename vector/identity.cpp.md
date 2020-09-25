@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0425.test.cpp
     title: test/aoj/0425.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2290.test.cpp
+    title: test/aoj/2290.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -28,6 +31,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0425.test.cpp
+  - test/aoj/2290.test.cpp
 documentation_of: vector/identity.cpp
 layout: document
 redirect_from:
