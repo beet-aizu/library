@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/cartesian_tree"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/cartesian_tree
 
 #include<bits/stdc++.h>
 using namespace std;

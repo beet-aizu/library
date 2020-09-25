@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/bernoulli_number"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bernoulli_number
 
 #include<bits/stdc++.h>
 using namespace std;

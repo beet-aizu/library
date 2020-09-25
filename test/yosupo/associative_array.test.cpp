@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/associative_array
 
 #include <bits/stdc++.h>
 using namespace std;
