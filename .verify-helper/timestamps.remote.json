@@ -229,6 +229,7 @@
 "test/aoj/geometry/CGL_7_F.test.cpp": "2019-12-17 20:13:07 +0900",
 "test/aoj/geometry/CGL_7_G.test.cpp": "2019-12-17 20:13:07 +0900",
 "test/aoj/geometry/CGL_7_H.test.cpp": "2020-08-07 15:47:54 +0900",
+"test/yosupo/assignment.test.cpp": "2020-09-25 09:23:44 +0900",
 "test/yosupo/associative_array.test.cpp": "2020-05-24 17:44:55 +0900",
 "test/yosupo/bernoulli_number.test.cpp": "2020-05-16 18:51:14 +0900",
 "test/yosupo/bipartitematching.test.cpp": "2020-09-24 12:58:32 +0900",
