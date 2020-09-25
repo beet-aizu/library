@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0423
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0423"
 
 #include <bits/stdc++.h>
 using namespace std;
