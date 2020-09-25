@@ -82,9 +82,9 @@ data:
     \ num.emplace_back(0);\n        cnt[d]++;\n        num[d]++;\n        for(int\
     \ u:G[v]){\n          if(u==p or !G.alive(u)) continue;\n          dfs(u,v,d+1);\n\
     \        }\n      })(c,r,1);\n      auto ns=FFT::multiply(num,num);\n      for(int\
-    \ i=0;i<(int)ns.size();i++) ans[i]-=ns[i];\n    }\n    auto cs=FFT::multiply(cnt,cnt);\n\
-    \    for(int i=0;i<(int)cs.size();i++) ans[i]+=cs[i];\n\n    G.disable(r);\n \
-    \   for(int c:G[r])\n      if(G.alive(c))\n        que.emplace(G.build(c)[0]);\n\
+    \ i=0;i<(int)min(ans.size(),ns.size());i++) ans[i]-=ns[i];\n    }\n    auto cs=FFT::multiply(cnt,cnt);\n\
+    \    for(int i=0;i<(int)min(ans.size(),cs.size());i++) ans[i]+=cs[i];\n\n    G.disable(r);\n\
+    \    for(int c:G[r])\n      if(G.alive(c))\n        que.emplace(G.build(c)[0]);\n\
     \  }\n\n  for(int i=1;i<n;i++){\n    if(i!=1) cout<<' ';\n    cout<<ans[i]/2;\n\
     \  }\n  cout<<endl;\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\n\
@@ -102,9 +102,9 @@ data:
     \ num.emplace_back(0);\n        cnt[d]++;\n        num[d]++;\n        for(int\
     \ u:G[v]){\n          if(u==p or !G.alive(u)) continue;\n          dfs(u,v,d+1);\n\
     \        }\n      })(c,r,1);\n      auto ns=FFT::multiply(num,num);\n      for(int\
-    \ i=0;i<(int)ns.size();i++) ans[i]-=ns[i];\n    }\n    auto cs=FFT::multiply(cnt,cnt);\n\
-    \    for(int i=0;i<(int)cs.size();i++) ans[i]+=cs[i];\n\n    G.disable(r);\n \
-    \   for(int c:G[r])\n      if(G.alive(c))\n        que.emplace(G.build(c)[0]);\n\
+    \ i=0;i<(int)min(ans.size(),ns.size());i++) ans[i]-=ns[i];\n    }\n    auto cs=FFT::multiply(cnt,cnt);\n\
+    \    for(int i=0;i<(int)min(ans.size(),cs.size());i++) ans[i]+=cs[i];\n\n    G.disable(r);\n\
+    \    for(int c:G[r])\n      if(G.alive(c))\n        que.emplace(G.build(c)[0]);\n\
     \  }\n\n  for(int i=1;i<n;i++){\n    if(i!=1) cout<<' ';\n    cout<<ans[i]/2;\n\
     \  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
@@ -114,7 +114,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:33:26+09:00'
+  timestamp: '2020-09-25 18:28:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/frequency_table_of_tree_distance.test.cpp
