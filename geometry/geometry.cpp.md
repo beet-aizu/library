@@ -52,9 +52,6 @@ data:
     path: test/aoj/geometry/CGL_7_F.test.cpp
     title: test/aoj/geometry/CGL_7_F.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2572.test.cpp
-    title: test/aoj/geometry/2572.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_3_C.test.cpp
     title: test/aoj/geometry/CGL_3_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -72,6 +69,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
+  - icon: ':x:'
+    path: test/aoj/geometry/CGL_7_I.test.cpp
+    title: test/aoj/geometry/CGL_7_I.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2454.test.cpp
     title: test/aoj/geometry/2454.test.cpp
@@ -85,7 +85,7 @@ data:
     path: test/aoj/geometry/CGL_1_C.test.cpp
     title: test/aoj/geometry/CGL_1_C.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -474,7 +474,7 @@ data:
   path: geometry/geometry.cpp
   requiredBy: []
   timestamp: '2019-12-17 20:13:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/geometry/3056.test.cpp
   - test/aoj/geometry/CGL_6_A.test.cpp
@@ -492,13 +492,13 @@ data:
   - test/aoj/geometry/CGL_4_A.test.cpp
   - test/aoj/geometry/CGL_3_A.test.cpp
   - test/aoj/geometry/CGL_7_F.test.cpp
-  - test/aoj/geometry/2572.test.cpp
   - test/aoj/geometry/CGL_3_C.test.cpp
   - test/aoj/geometry/2448.test.cpp
   - test/aoj/geometry/CGL_7_D.test.cpp
   - test/aoj/geometry/CGL_1_B.test.cpp
   - test/aoj/geometry/CGL_7_G.test.cpp
   - test/aoj/geometry/2334.test.cpp
+  - test/aoj/geometry/CGL_7_I.test.cpp
   - test/aoj/geometry/2454.test.cpp
   - test/aoj/geometry/CGL_4_B.test.cpp
   - test/aoj/geometry/CGL_5_A.test.cpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/longestcommonprefix.cpp
     title: string/longestcommonprefix.cpp
   _extendedVerifiedWith:
@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2644.test.cpp
     title: test/aoj/2644.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
@@ -31,7 +31,7 @@ data:
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -87,7 +87,7 @@ data:
   requiredBy:
   - string/longestcommonprefix.cpp
   timestamp: '2019-12-26 23:10:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3033.test.cpp
   - test/aoj/2644.test.cpp

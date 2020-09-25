@@ -1,63 +1,65 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/geometry.cpp
     title: geometry/geometry.cpp
+  - icon: ':question:'
+    path: io/precision.cpp
+    title: io/precision.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
+    ERROR: '0.000001'
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_I
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572
-  bundledCode: "#line 1 \"test/aoj/geometry/2572.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
-    \ 1 \"geometry/geometry.cpp\"\n\n#line 3 \"geometry/geometry.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\n#define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b))\
-    \ < EPS)\nconst double PI = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\nstatic const\
-    \ int CCW_COUNTER_CLOCKWISE = 1;\nstatic const int CCW_CLOCKWISE = -1;\nstatic\
-    \ const int CCW_ONLINE_BACK = 2;\nstatic const int CCW_ONLINE_FRONT = -2;\nstatic\
-    \ const int CCW_ON_SEGMENT = 0;\n\n// intercsect of circles\nstatic const int\
-    \ ICC_SEPERATE = 4;\nstatic const int ICC_CIRCUMSCRIBE = 3;\nstatic const int\
-    \ ICC_INTERSECT = 2;\nstatic const int ICC_INSCRIBE = 1;\nstatic const int ICC_CONTAIN\
-    \ = 0;\n\nstruct Point{\n  double x,y;\n  Point(){}\n  Point(double x,double y)\
-    \ :x(x),y(y){}\n  Point operator+(Point p) {return Point(x+p.x,y+p.y);}\n  Point\
-    \ operator-(Point p) {return Point(x-p.x,y-p.y);}\n  Point operator*(double k){return\
-    \ Point(x*k,y*k);}\n  Point operator/(double k){return Point(x/k,y/k);}\n  double\
-    \ norm(){return x*x+y*y;}\n  double abs(){return sqrt(norm());}\n\n  bool operator\
-    \ < (const Point &p) const{\n    return x!=p.x?x<p.x:y<p.y;\n    //grid-point\
-    \ only\n    //return !equals(x,p.x)?x<p.x:!equals(y,p.y)?y<p.y:0;\n  }\n\n  bool\
-    \ operator == (const Point &p) const{\n    return fabs(x-p.x)<EPS && fabs(y-p.y)<EPS;\n\
-    \  }\n};\n\nstruct EndPoint{\n  Point p;\n  int seg,st;\n  EndPoint(){}\n  EndPoint(Point\
-    \ p,int seg,int st):p(p),seg(seg),st(st){}\n  bool operator<(const EndPoint &ep)const{\n\
-    \    if(p.y==ep.p.y) return st<ep.st;\n    return p.y<ep.p.y;\n  }\n};\n\nistream\
-    \ &operator >> (istream &is,Point &p){\n  is>>p.x>>p.y;\n  return is;\n}\n\nostream\
-    \ &operator << (ostream &os,Point p){\n  os<<fixed<<setprecision(12)<<p.x<<\"\
-    \ \"<<p.y;\n  return os;\n}\n\nbool sort_x(Point a,Point b){\n  return a.x!=b.x?a.x<b.x:a.y<b.y;\n\
-    }\n\nbool sort_y(Point a,Point b){\n  return a.y!=b.y?a.y<b.y:a.x<b.x;\n}\n\n\
-    typedef Point Vector;\ntypedef vector<Point> Polygon;\n\nistream &operator >>\
-    \ (istream &is,Polygon &p){\n  for(int i=0;i<(int)p.size();i++) is>>p[i];\n  return\
-    \ is;\n}\n\nstruct Segment{\n  Point p1,p2;\n  Segment(){}\n  Segment(Point p1,\
-    \ Point p2):p1(p1),p2(p2){}\n};\ntypedef Segment Line;\n\nistream &operator >>\
-    \ (istream &is,Segment &s){\n  is>>s.p1>>s.p2;\n  return is;\n}\n\nstruct Circle{\n\
-    \  Point c;\n  double r;\n  Circle(){}\n  Circle(Point c,double r):c(c),r(r){}\n\
-    };\n\nistream &operator >> (istream &is,Circle &c){\n  is>>c.c>>c.r;\n  return\
-    \ is;\n}\n\ndouble norm(Vector a){\n  return a.x*a.x+a.y*a.y;\n}\ndouble abs(Vector\
-    \ a){\n  return sqrt(norm(a));\n}\ndouble dot(Vector a,Vector b){\n  return a.x*b.x+a.y*b.y;\n\
-    }\ndouble cross(Vector a,Vector b){\n  return a.x*b.y-a.y*b.x;\n}\n\nPoint orth(Point\
-    \ p){return Point(-p.y,p.x);}\n\nbool isOrthogonal(Vector a,Vector b){\n  return\
-    \ equals(dot(a,b),0.0);\n}\n\nbool isOrthogonal(Point a1,Point a2,Point b1,Point\
-    \ b2){\n  return isOrthogonal(a1-a2,b1-b2);\n}\n\nbool isOrthogonal(Segment s1,Segment\
-    \ s2){\n  return equals(dot(s1.p2-s1.p1,s2.p2-s2.p1),0.0);\n}\n\nbool isParallel(Vector\
-    \ a,Vector b){\n  return equals(cross(a,b),0.0);\n}\n\nbool isParallel(Point a1,Point\
-    \ a2,Point b1,Point b2){\n  return isParallel(a1-a2,b1-b2);\n}\n\nbool isParallel(Segment\
-    \ s1,Segment s2){\n  return equals(cross(s1.p2-s1.p1,s2.p2-s2.p1),0.0);\n}\n\n\
-    Point project(Segment s,Point p){\n  Vector base=s.p2-s.p1;\n  double r=dot(p-s.p1,base)/norm(base);\n\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_I
+  bundledCode: "#line 1 \"test/aoj/geometry/CGL_7_I.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_I\n//\
+    \ verification-helper: ERROR 0.000001\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\n\n#line 3\
+    \ \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    #define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst double PI\
+    \ = asinl(1) * 2;\n\n// COUNTER CLOCKWISE\nstatic const int CCW_COUNTER_CLOCKWISE\
+    \ = 1;\nstatic const int CCW_CLOCKWISE = -1;\nstatic const int CCW_ONLINE_BACK\
+    \ = 2;\nstatic const int CCW_ONLINE_FRONT = -2;\nstatic const int CCW_ON_SEGMENT\
+    \ = 0;\n\n// intercsect of circles\nstatic const int ICC_SEPERATE = 4;\nstatic\
+    \ const int ICC_CIRCUMSCRIBE = 3;\nstatic const int ICC_INTERSECT = 2;\nstatic\
+    \ const int ICC_INSCRIBE = 1;\nstatic const int ICC_CONTAIN = 0;\n\nstruct Point{\n\
+    \  double x,y;\n  Point(){}\n  Point(double x,double y) :x(x),y(y){}\n  Point\
+    \ operator+(Point p) {return Point(x+p.x,y+p.y);}\n  Point operator-(Point p)\
+    \ {return Point(x-p.x,y-p.y);}\n  Point operator*(double k){return Point(x*k,y*k);}\n\
+    \  Point operator/(double k){return Point(x/k,y/k);}\n  double norm(){return x*x+y*y;}\n\
+    \  double abs(){return sqrt(norm());}\n\n  bool operator < (const Point &p) const{\n\
+    \    return x!=p.x?x<p.x:y<p.y;\n    //grid-point only\n    //return !equals(x,p.x)?x<p.x:!equals(y,p.y)?y<p.y:0;\n\
+    \  }\n\n  bool operator == (const Point &p) const{\n    return fabs(x-p.x)<EPS\
+    \ && fabs(y-p.y)<EPS;\n  }\n};\n\nstruct EndPoint{\n  Point p;\n  int seg,st;\n\
+    \  EndPoint(){}\n  EndPoint(Point p,int seg,int st):p(p),seg(seg),st(st){}\n \
+    \ bool operator<(const EndPoint &ep)const{\n    if(p.y==ep.p.y) return st<ep.st;\n\
+    \    return p.y<ep.p.y;\n  }\n};\n\nistream &operator >> (istream &is,Point &p){\n\
+    \  is>>p.x>>p.y;\n  return is;\n}\n\nostream &operator << (ostream &os,Point p){\n\
+    \  os<<fixed<<setprecision(12)<<p.x<<\" \"<<p.y;\n  return os;\n}\n\nbool sort_x(Point\
+    \ a,Point b){\n  return a.x!=b.x?a.x<b.x:a.y<b.y;\n}\n\nbool sort_y(Point a,Point\
+    \ b){\n  return a.y!=b.y?a.y<b.y:a.x<b.x;\n}\n\ntypedef Point Vector;\ntypedef\
+    \ vector<Point> Polygon;\n\nistream &operator >> (istream &is,Polygon &p){\n \
+    \ for(int i=0;i<(int)p.size();i++) is>>p[i];\n  return is;\n}\n\nstruct Segment{\n\
+    \  Point p1,p2;\n  Segment(){}\n  Segment(Point p1, Point p2):p1(p1),p2(p2){}\n\
+    };\ntypedef Segment Line;\n\nistream &operator >> (istream &is,Segment &s){\n\
+    \  is>>s.p1>>s.p2;\n  return is;\n}\n\nstruct Circle{\n  Point c;\n  double r;\n\
+    \  Circle(){}\n  Circle(Point c,double r):c(c),r(r){}\n};\n\nistream &operator\
+    \ >> (istream &is,Circle &c){\n  is>>c.c>>c.r;\n  return is;\n}\n\ndouble norm(Vector\
+    \ a){\n  return a.x*a.x+a.y*a.y;\n}\ndouble abs(Vector a){\n  return sqrt(norm(a));\n\
+    }\ndouble dot(Vector a,Vector b){\n  return a.x*b.x+a.y*b.y;\n}\ndouble cross(Vector\
+    \ a,Vector b){\n  return a.x*b.y-a.y*b.x;\n}\n\nPoint orth(Point p){return Point(-p.y,p.x);}\n\
+    \nbool isOrthogonal(Vector a,Vector b){\n  return equals(dot(a,b),0.0);\n}\n\n\
+    bool isOrthogonal(Point a1,Point a2,Point b1,Point b2){\n  return isOrthogonal(a1-a2,b1-b2);\n\
+    }\n\nbool isOrthogonal(Segment s1,Segment s2){\n  return equals(dot(s1.p2-s1.p1,s2.p2-s2.p1),0.0);\n\
+    }\n\nbool isParallel(Vector a,Vector b){\n  return equals(cross(a,b),0.0);\n}\n\
+    \nbool isParallel(Point a1,Point a2,Point b1,Point b2){\n  return isParallel(a1-a2,b1-b2);\n\
+    }\n\nbool isParallel(Segment s1,Segment s2){\n  return equals(cross(s1.p2-s1.p1,s2.p2-s2.p1),0.0);\n\
+    }\n\nPoint project(Segment s,Point p){\n  Vector base=s.p2-s.p1;\n  double r=dot(p-s.p1,base)/norm(base);\n\
     \  return s.p1+base*r;\n}\n\nPoint reflect(Segment s,Point p){\n  return p+(project(s,p)-p)*2.0;\n\
     }\n\ndouble arg(Vector p){\n  return atan2(p.y,p.x);\n}\n\nVector polar(double\
     \ a,double r){\n  return Point(cos(r)*a,sin(r)*a);\n}\n\nint ccw(Point p0,Point\
@@ -206,51 +208,32 @@ data:
     #ifndef call_from_test\n\nsigned ECR002_D(){\n  Circle c1,c2;\n  cin>>c1>>c2;\n\
     \  cout<<fixed<<setprecision(12)<<area(c1,c2)<<endl;\n  return 0;\n}\n/*\n  verified\
     \ on 2019/11/13\n  https://codeforces.com/contest/600/problem/D\n*/\n\nsigned\
-    \ main(){\n  ECR002_D();\n  return 0;\n}\n#endif\n#line 7 \"test/aoj/geometry/2572.test.cpp\"\
-    \n#undef call_from_test\n\n#define IGNORE\n\n// area of 2 circles' intersection\n\
-    signed main(){\n  double uw,uh,a,b,ab;\n  while(cin>>uw>>uh>>a>>b>>ab,uw!=0){\n\
-    \    Circle c1(Point(0,0),sqrt(a/PI));\n    Circle c2(Point(0,0),sqrt(b/PI));\n\
-    \    bool f=0;\n    if(c1.r<=c2.r) swap(c1,c2),f=1;\n    double l=max(0.0,c1.r-c2.r),r=c1.r+c2.r+EPS;\n\
-    \    for(int k=0;k<100;k++){\n      double m=(l+r)/2;\n      c2.c.x=m;\n     \
-    \ if(area(c1,c2)<=ab) r=m;\n      else l=m;\n    }\n    c2.c.x=l;\n\n    double\
-    \ EPS3=1e-4;\n    assert(abs(area(c1,c2)-ab)<=EPS3);\n\n    l=0,r=PI/2;\n    for(int\
-    \ k=0;k<200;k++){\n      double m=(l+r)/2;\n      Circle t=c2;\n      t.c=translate(c2.c,m);\n\
-    \      if(c1.r+max(c1.r,t.c.x+t.r)<=uw) r=m;\n      else l=m;\n    }\n    c2.c=translate(c2.c,r);\n\
-    \n    Vector v(c1.r,c1.r);\n    c1.c=c1.c+v;\n    c2.c=c2.c+v;\n\n    if(f) swap(c1,c2);\n\
-    \    f=1;\n    f&=(c1.c.x-c1.r>=-EPS3);\n    f&=(c1.c.x+c1.r<=uw+EPS3);\n    f&=(c1.c.y-c1.r>=-EPS3);\n\
-    \    f&=(c1.c.y+c1.r<=uh+EPS3);\n    f&=(c2.c.x-c2.r>=-EPS3);\n    f&=(c2.c.x+c2.r<=uw+EPS3);\n\
-    \    f&=(c2.c.y-c2.r>=-EPS3);\n    f&=(c2.c.y+c2.r<=uh+EPS3);\n    if(f) cout<<c1.c<<\"\
-    \ \"<<c1.r<<\" \"<<c2.c<<\" \"<<c2.r<<endl;\n    else cout<<\"impossible\"<<endl;\n\
-    \  }\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2572\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../../geometry/geometry.cpp\"\n#undef call_from_test\n\n#define IGNORE\n\
-    \n// area of 2 circles' intersection\nsigned main(){\n  double uw,uh,a,b,ab;\n\
-    \  while(cin>>uw>>uh>>a>>b>>ab,uw!=0){\n    Circle c1(Point(0,0),sqrt(a/PI));\n\
-    \    Circle c2(Point(0,0),sqrt(b/PI));\n    bool f=0;\n    if(c1.r<=c2.r) swap(c1,c2),f=1;\n\
-    \    double l=max(0.0,c1.r-c2.r),r=c1.r+c2.r+EPS;\n    for(int k=0;k<100;k++){\n\
-    \      double m=(l+r)/2;\n      c2.c.x=m;\n      if(area(c1,c2)<=ab) r=m;\n  \
-    \    else l=m;\n    }\n    c2.c.x=l;\n\n    double EPS3=1e-4;\n    assert(abs(area(c1,c2)-ab)<=EPS3);\n\
-    \n    l=0,r=PI/2;\n    for(int k=0;k<200;k++){\n      double m=(l+r)/2;\n    \
-    \  Circle t=c2;\n      t.c=translate(c2.c,m);\n      if(c1.r+max(c1.r,t.c.x+t.r)<=uw)\
-    \ r=m;\n      else l=m;\n    }\n    c2.c=translate(c2.c,r);\n\n    Vector v(c1.r,c1.r);\n\
-    \    c1.c=c1.c+v;\n    c2.c=c2.c+v;\n\n    if(f) swap(c1,c2);\n    f=1;\n    f&=(c1.c.x-c1.r>=-EPS3);\n\
-    \    f&=(c1.c.x+c1.r<=uw+EPS3);\n    f&=(c1.c.y-c1.r>=-EPS3);\n    f&=(c1.c.y+c1.r<=uh+EPS3);\n\
-    \    f&=(c2.c.x-c2.r>=-EPS3);\n    f&=(c2.c.x+c2.r<=uw+EPS3);\n    f&=(c2.c.y-c2.r>=-EPS3);\n\
-    \    f&=(c2.c.y+c2.r<=uh+EPS3);\n    if(f) cout<<c1.c<<\" \"<<c1.r<<\" \"<<c2.c<<\"\
-    \ \"<<c2.r<<endl;\n    else cout<<\"impossible\"<<endl;\n  }\n  return 0;\n}\n"
+    \ main(){\n  ECR002_D();\n  return 0;\n}\n#endif\n#line 1 \"io/precision.cpp\"\
+    \n\n#line 3 \"io/precision.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    struct Precision{\n  Precision(){\n    cout<<fixed<<setprecision(12);\n  }\n}precision_beet;\n\
+    //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n\
+    #line 10 \"test/aoj/geometry/CGL_7_I.test.cpp\"\n#undef call_from_test\n\n// area\
+    \ of 2 circles' intersection\nsigned main(){\n  Circle c1,c2;\n  cin>>c1>>c2;\n\
+    \  cout<<area(c1,c2)<<endl;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_I\n\
+    // verification-helper: ERROR 0.000001\n\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define call_from_test\n#include \"../../../geometry/geometry.cpp\"\n\
+    #include \"../../../io/precision.cpp\"\n#undef call_from_test\n\n// area of 2\
+    \ circles' intersection\nsigned main(){\n  Circle c1,c2;\n  cin>>c1>>c2;\n  cout<<area(c1,c2)<<endl;\n\
+    \  return 0;\n}\n"
   dependsOn:
   - geometry/geometry.cpp
+  - io/precision.cpp
   isVerificationFile: true
-  path: test/aoj/geometry/2572.test.cpp
+  path: test/aoj/geometry/CGL_7_I.test.cpp
   requiredBy: []
-  timestamp: '2019-12-17 20:13:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 14:17:09+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/geometry/2572.test.cpp
+documentation_of: test/aoj/geometry/CGL_7_I.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/geometry/2572.test.cpp
-- /verify/test/aoj/geometry/2572.test.cpp.html
-title: test/aoj/geometry/2572.test.cpp
+- /verify/test/aoj/geometry/CGL_7_I.test.cpp
+- /verify/test/aoj/geometry/CGL_7_I.test.cpp.html
+title: test/aoj/geometry/CGL_7_I.test.cpp
 ---

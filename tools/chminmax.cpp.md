@@ -33,7 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0415.test.cpp
     title: test/aoj/0415.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,7 +81,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3069.lichao.test.cpp
     title: test/aoj/3069.lichao.test.cpp
   - icon: ':heavy_check_mark:'
@@ -106,7 +106,7 @@ data:
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -129,7 +129,7 @@ data:
   - string/longestcommonsubstring.cpp
   - graph/nicetree.cpp
   timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/0596.test.cpp

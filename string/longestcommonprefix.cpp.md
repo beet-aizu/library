@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/suffixarray.cpp
     title: string/suffixarray.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
@@ -19,7 +19,7 @@ data:
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -53,7 +53,7 @@ data:
   path: string/longestcommonprefix.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:22:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3063.test.cpp
   - test/aoj/2711.test.cpp

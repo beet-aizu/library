@@ -140,7 +140,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/kdtree.cpp
       title: datastructure/kdtree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/nonmonotonicconvexhulltrick.cpp
       title: datastructure/nonmonotonicconvexhulltrick.cpp
     - icon: ':heavy_check_mark:'
@@ -170,7 +170,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/unionfind.cpp
       title: datastructure/unionfind.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/waveletmatrix.cpp
       title: Wavelet Matrix
     - icon: ':heavy_check_mark:'
@@ -186,7 +186,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/argsort.cpp
       title: geometry/argsort.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/geometry.cpp
       title: geometry/geometry.cpp
     - icon: ':heavy_check_mark:'
@@ -268,7 +268,7 @@ data:
       title: graph/voronoiminimumspanningtree.cpp
   - name: io
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: io/precision.cpp
       title: io/precision.cpp
     - icon: ':heavy_check_mark:'
@@ -451,7 +451,7 @@ data:
       title: segtree/basic/ushi.cpp
   - name: segtree/cht
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: segtree/cht/lichao.cpp
       title: segtree/cht/lichao.cpp
   - name: segtree/count
@@ -486,7 +486,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/knuthmorrispratt.cpp
       title: string/knuthmorrispratt.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/longestcommonprefix.cpp
       title: string/longestcommonprefix.cpp
     - icon: ':heavy_check_mark:'
@@ -516,7 +516,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/split.cpp
       title: string/split.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/suffixarray.cpp
       title: string/suffixarray.cpp
     - icon: ':heavy_check_mark:'
@@ -536,7 +536,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
@@ -989,13 +989,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3062.test.cpp
       title: test/aoj/3062.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3063.test.cpp
       title: test/aoj/3063.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3069.lichao.test.cpp
       title: test/aoj/3069.lichao.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3069.test.cpp
       title: test/aoj/3069.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1274,9 +1274,6 @@ data:
       path: test/aoj/geometry/2454.test.cpp
       title: test/aoj/geometry/2454.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/geometry/2572.test.cpp
-      title: test/aoj/geometry/2572.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/3049.test.cpp
       title: test/aoj/geometry/3049.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1345,6 +1342,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_H.test.cpp
       title: test/aoj/geometry/CGL_7_H.test.cpp
+    - icon: ':x:'
+      path: test/aoj/geometry/CGL_7_I.test.cpp
+      title: test/aoj/geometry/CGL_7_I.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

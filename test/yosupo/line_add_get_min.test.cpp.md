@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: vector/compress.cpp
     title: vector/compress.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/cht/lichao.cpp
     title: segtree/cht/lichao.cpp
   _extendedRequiredBy: []

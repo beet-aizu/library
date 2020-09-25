@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_2_D.test.cpp
     title: test/aoj/geometry/CGL_2_D.test.cpp
+  - icon: ':x:'
+    path: test/aoj/geometry/CGL_7_I.test.cpp
+    title: test/aoj/geometry/CGL_7_I.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2294.test.cpp
     title: test/aoj/2294.test.cpp
@@ -37,7 +40,7 @@ data:
     path: test/yukicoder/1923.test.cpp
     title: test/yukicoder/1923.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -54,13 +57,14 @@ data:
   path: io/precision.cpp
   requiredBy: []
   timestamp: '2020-08-07 15:47:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2309.tarjan.test.cpp
   - test/aoj/2736.test.cpp
   - test/aoj/geometry/CGL_7_H.test.cpp
   - test/aoj/geometry/3049.test.cpp
   - test/aoj/geometry/CGL_2_D.test.cpp
+  - test/aoj/geometry/CGL_7_I.test.cpp
   - test/aoj/2294.test.cpp
   - test/aoj/2975.test.cpp
   - test/aoj/2308.test.cpp
