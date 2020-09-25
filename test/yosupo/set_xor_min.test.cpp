@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/set_xor_min"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/set_xor_min
 
 #include <bits/stdc++.h>
 using namespace std;

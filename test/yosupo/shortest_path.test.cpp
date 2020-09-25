@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/shortest_path
 
 #include <bits/stdc++.h>
 using namespace std;

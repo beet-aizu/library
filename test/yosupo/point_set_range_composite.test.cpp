@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_set_range_composite
 
 #include<bits/stdc++.h>
 using namespace std;

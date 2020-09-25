@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/multipoint_evaluation"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/multipoint_evaluation
 
 #include<bits/stdc++.h>
 using namespace std;

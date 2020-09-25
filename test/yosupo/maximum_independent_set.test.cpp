@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/maximum_independent_set"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/maximum_independent_set
 
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/number_of_substrings"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/number_of_substrings
 
 #include<bits/stdc++.h>
 using namespace std;

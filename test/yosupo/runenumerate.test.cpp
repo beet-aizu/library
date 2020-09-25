@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/runenumerate"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/runenumerate
 
 #include<bits/stdc++.h>
 using namespace std;

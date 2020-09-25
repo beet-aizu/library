@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/polynomial_taylor_shift"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/polynomial_taylor_shift
 
 #include<bits/stdc++.h>
 using namespace std;

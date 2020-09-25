@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/partition_function"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/partition_function
 
 #include<bits/stdc++.h>
 using namespace std;

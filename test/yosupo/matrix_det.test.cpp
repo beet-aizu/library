@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/matrix_det"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/matrix_det
 
 #include<bits/stdc++.h>
 using namespace std;

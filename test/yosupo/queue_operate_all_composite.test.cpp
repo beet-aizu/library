@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/queue_operate_all_composite"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/queue_operate_all_composite
 
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/scc"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/scc
 
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/sort_points_by_argument"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sort_points_by_argument
 
 #include<bits/stdc++.h>
 using namespace std;

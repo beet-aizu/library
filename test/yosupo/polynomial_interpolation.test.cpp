@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/polynomial_interpolation"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/polynomial_interpolation
 
 #include<bits/stdc++.h>
 using namespace std;
