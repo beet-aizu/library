@@ -25,8 +25,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    links:
-    - https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
+    links: []
   bundledCode: "#line 1 \"mincostflow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
     \ Flow, typename Cost>\nstruct PrimalDual{\n  struct Edge{\n    int dst;\n   \
@@ -54,21 +53,7 @@ data:
     \      res=res+h[t]*d;\n      for(int v=t;v!=s;v=prevv[v]){\n        Edge &e=G[prevv[v]][preve[v]];\n\
     \        e.cap-=d;\n        G[v][e.rev].cap+=d;\n      }\n    }\n    return true;\n\
     \  }\n\n  Cost get_cost(){return res;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned geocon2013_B(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using D = double;\n\n  int n;\n  cin>>n;\n  vector<D> xs(n),ys(n);\n  for(int\
-    \ i=0;i<n;i++) cin>>xs[i]>>ys[i];\n\n  vector<int> pos,neg;\n  for(int i=0;i<n;i++){\n\
-    \    if(xs[i]>0) pos.emplace_back(i);\n    if(xs[i]<0) neg.emplace_back(i);\n\
-    \  }\n\n  int f=max(pos.size(),neg.size());\n  if(f==0){\n    cout<<0<<endl;\n\
-    \    return 0;\n  }\n\n  PrimalDual<int, D> G(n+3);\n  int S=n,T=n+1,U=n+2;\n\
-    \  for(int z:pos) G.add_edge(S,z,1,0);\n  for(int z:neg) G.add_edge(z,T,1,0);\n\
-    \n  int dif=pos.size()-neg.size();\n  if(dif>0){\n    G.add_edge(U,T,dif,0);\n\
-    \    for(int p:pos)\n      G.add_edge(p,U,1,abs(xs[p]));\n  }\n  if(dif<0){\n\
-    \    G.add_edge(S,U,-dif,0);\n    for(int q:neg)\n      G.add_edge(U,q,1,abs(xs[q]));\n\
-    \  }\n\n  for(int p:pos)\n    for(int q:neg)\n      G.add_edge(p,q,1,\n      \
-    \           min(hypot(xs[p]+xs[q],ys[p]-ys[q]),abs(xs[p])+abs(xs[q])));\n\n  assert(G.build(S,T,f));\n\
-    \  cout<<fixed<<setprecision(12)<<G.get_cost()<<endl;\n  return 0;\n}\n/*\n  verified\
-    \ on 2020/09/25\n  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b\n\
-    */\n\nsigned main(){\n  geocon2013_B();\n  return 0;\n}\n#endif\n"
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename Flow, typename Cost>\nstruct\
     \ PrimalDual{\n  struct Edge{\n    int dst;\n    Flow cap;\n    Cost cost;\n \
@@ -96,27 +81,13 @@ data:
     \      res=res+h[t]*d;\n      for(int v=t;v!=s;v=prevv[v]){\n        Edge &e=G[prevv[v]][preve[v]];\n\
     \        e.cap-=d;\n        G[v][e.rev].cap+=d;\n      }\n    }\n    return true;\n\
     \  }\n\n  Cost get_cost(){return res;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned geocon2013_B(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using D = double;\n\n  int n;\n  cin>>n;\n  vector<D> xs(n),ys(n);\n  for(int\
-    \ i=0;i<n;i++) cin>>xs[i]>>ys[i];\n\n  vector<int> pos,neg;\n  for(int i=0;i<n;i++){\n\
-    \    if(xs[i]>0) pos.emplace_back(i);\n    if(xs[i]<0) neg.emplace_back(i);\n\
-    \  }\n\n  int f=max(pos.size(),neg.size());\n  if(f==0){\n    cout<<0<<endl;\n\
-    \    return 0;\n  }\n\n  PrimalDual<int, D> G(n+3);\n  int S=n,T=n+1,U=n+2;\n\
-    \  for(int z:pos) G.add_edge(S,z,1,0);\n  for(int z:neg) G.add_edge(z,T,1,0);\n\
-    \n  int dif=pos.size()-neg.size();\n  if(dif>0){\n    G.add_edge(U,T,dif,0);\n\
-    \    for(int p:pos)\n      G.add_edge(p,U,1,abs(xs[p]));\n  }\n  if(dif<0){\n\
-    \    G.add_edge(S,U,-dif,0);\n    for(int q:neg)\n      G.add_edge(U,q,1,abs(xs[q]));\n\
-    \  }\n\n  for(int p:pos)\n    for(int q:neg)\n      G.add_edge(p,q,1,\n      \
-    \           min(hypot(xs[p]+xs[q],ys[p]-ys[q]),abs(xs[p])+abs(xs[q])));\n\n  assert(G.build(S,T,f));\n\
-    \  cout<<fixed<<setprecision(12)<<G.get_cost()<<endl;\n  return 0;\n}\n/*\n  verified\
-    \ on 2020/09/25\n  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b\n\
-    */\n\nsigned main(){\n  geocon2013_B();\n  return 0;\n}\n#endif\n"
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: mincostflow/primaldual.cpp
   requiredBy:
   - mincostflow/negativeedge.cpp
-  timestamp: '2020-09-25 09:54:28+09:00'
+  timestamp: '2020-09-25 11:08:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2679.test.cpp
