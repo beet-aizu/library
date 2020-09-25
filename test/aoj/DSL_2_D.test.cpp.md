@@ -9,14 +9,14 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
-  bundledCode: "#line 1 \"test/aoj/DSL_2_D.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"segtree/basic/dual.cpp\"\n\n#line 3 \"segtree/basic/dual.cpp\"\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename E>\nstruct SegmentTree{\n\
+  bundledCode: "#line 1 \"test/aoj/DSL_2_D.test.cpp\"\n// verification-helper: PROBLEM\
+    \ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line 1 \"\
+    segtree/basic/dual.cpp\"\n\n#line 3 \"segtree/basic/dual.cpp\"\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename E>\nstruct SegmentTree{\n\
     \  using H = function<E(E,E)>;\n  int n,height;\n  H h;\n  E ei;\n  vector<E>\
     \ laz;\n\n  SegmentTree(H h,E ei):h(h),ei(ei){}\n\n  void init(int n_){\n    n=1;height=0;\n\
     \    while(n<n_) n<<=1,height++;\n    laz.assign(2*n,ei);\n  }\n\n  inline void\
@@ -36,9 +36,9 @@ data:
     \      cin>>s>>t>>x;\n      seg.update(s,t+1,x);\n    }\n    if(tp==1){\n    \
     \  int s;\n      cin>>s;\n      cout<<seg.get_val(s)<<\"\\n\";\n    }\n  }\n \
     \ cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../segtree/basic/dual.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../segtree/basic/dual.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  auto\
     \ h=[](int a,int b){(void)a;return b;};\n  int ei=INT_MAX;\n  SegmentTree<int>\
     \ seg(h,ei);\n  seg.init(n);\n\n  for(int i=0;i<q;i++){\n    int tp;\n    cin>>tp;\n\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:09:06+09:00'
+  timestamp: '2020-09-25 14:47:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_D.test.cpp

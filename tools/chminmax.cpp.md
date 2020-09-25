@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
   - icon: ':heavy_check_mark:'
@@ -45,7 +45,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2230.test.cpp
     title: test/aoj/2230.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_B.test.cpp
     title: test/aoj/DPL_3_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,7 +66,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_1_E.test.cpp
     title: test/aoj/DPL_1_E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -106,7 +106,7 @@ data:
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -129,7 +129,7 @@ data:
   - string/longestcommonsubstring.cpp
   - graph/nicetree.cpp
   timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/0596.test.cpp

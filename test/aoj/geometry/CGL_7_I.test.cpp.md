@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/geometry.cpp
     title: geometry/geometry.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: io/precision.cpp
     title: io/precision.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     ERROR: '0.000001'
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_I
@@ -228,7 +228,7 @@ data:
   path: test/aoj/geometry/CGL_7_I.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 14:17:09+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_7_I.test.cpp
 layout: document

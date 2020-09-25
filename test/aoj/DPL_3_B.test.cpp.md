@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/largestrectangle.cpp
     title: algorithm/largestrectangle.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B
     links:
@@ -54,7 +54,7 @@ data:
   path: test/aoj/DPL_3_B.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 14:33:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_3_B.test.cpp
 layout: document

@@ -9,19 +9,18 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
-  bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 2 \"datastructure/binarytrie.cpp\"\n\n#ifndef call_from_test\n#line 5 \"\
-    datastructure/binarytrie.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
-    template<typename T,size_t X>\nstruct BinaryTrie{\n  struct Node{\n    size_t\
-    \ cnt;\n    Node *p,*l,*r;\n    Node(Node* p):cnt(0),p(p){l=r=nullptr;}\n  };\n\
-    \n  T acc;\n  Node *root;\n  BinaryTrie():acc(0){root=emplace(nullptr);}\n\n \
-    \ void clear(Node *a){\n    if(!a) return;\n    clear(a->l);clear(a->r);\n   \
-    \ delete(a);\n  }\n\n  inline Node* emplace(Node* p){\n    return new Node(p);\n\
+  bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n// verification-helper: PROBLEM\
+    \ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line 2 \"\
+    datastructure/binarytrie.cpp\"\n\n#ifndef call_from_test\n#line 5 \"datastructure/binarytrie.cpp\"\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,size_t X>\n\
+    struct BinaryTrie{\n  struct Node{\n    size_t cnt;\n    Node *p,*l,*r;\n    Node(Node*\
+    \ p):cnt(0),p(p){l=r=nullptr;}\n  };\n\n  T acc;\n  Node *root;\n  BinaryTrie():acc(0){root=emplace(nullptr);}\n\
+    \n  void clear(Node *a){\n    if(!a) return;\n    clear(a->l);clear(a->r);\n \
+    \   delete(a);\n  }\n\n  inline Node* emplace(Node* p){\n    return new Node(p);\n\
     \  }\n\n  inline size_t count(Node* a){\n    return a?a->cnt:0;\n  }\n\n  void\
     \ add(const T b,size_t k=1){\n    const T nb=b^acc;\n    Node* a=root;\n    for(int\
     \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!f&&!a->l) a->l=emplace(a);\n\
@@ -79,19 +78,19 @@ data:
     \ 30> bt;\n  for(int i=0;i<q;i++){\n    int c,x,y;\n    cin>>c>>x>>y;\n    if(c==0){\n\
     \      bt.add(x,y);\n    }\n    if(c==1){\n      int res=bt.order_of_key(y+1)-bt.order_of_key(x);\n\
     \      cout<<res<<\"\\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../datastructure/binarytrie.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
-    \n  BinaryTrie<int, 30> bt;\n  for(int i=0;i<q;i++){\n    int c,x,y;\n    cin>>c>>x>>y;\n\
-    \    if(c==0){\n      bt.add(x,y);\n    }\n    if(c==1){\n      int res=bt.order_of_key(y+1)-bt.order_of_key(x);\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../datastructure/binarytrie.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  BinaryTrie<int,\
+    \ 30> bt;\n  for(int i=0;i<q;i++){\n    int c,x,y;\n    cin>>c>>x>>y;\n    if(c==0){\n\
+    \      bt.add(x,y);\n    }\n    if(c==1){\n      int res=bt.order_of_key(y+1)-bt.order_of_key(x);\n\
     \      cout<<res<<\"\\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - datastructure/binarytrie.cpp
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-16 00:27:54+09:00'
+  timestamp: '2020-09-25 14:47:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp

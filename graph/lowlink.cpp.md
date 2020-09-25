@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy: []

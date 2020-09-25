@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_B
     links:
@@ -77,7 +77,7 @@ data:
   path: test/aoj/DPL_5_B.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 14:33:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_B.test.cpp
 layout: document

@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/knuthyao.cpp
       title: algorithm/knuthyao.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/largestrectangle.cpp
       title: algorithm/largestrectangle.cpp
     - icon: ':heavy_check_mark:'
@@ -70,7 +70,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/bernoulli.cpp
       title: combinatorics/bernoulli.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/enumeration.cpp
       title: combinatorics/enumeration.cpp
     - icon: ':heavy_check_mark:'
@@ -85,7 +85,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/stirling2nd.cpp
       title: combinatorics/stirling2nd.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/surjection.cpp
       title: combinatorics/surjection.cpp
   - name: convolution
@@ -158,7 +158,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/rangeslide.cpp
       title: datastructure/rangeslide.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/skewheap.cpp
       title: datastructure/skewheap.cpp
     - icon: ':heavy_check_mark:'
@@ -186,7 +186,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/argsort.cpp
       title: geometry/argsort.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/geometry.cpp
       title: geometry/geometry.cpp
     - icon: ':heavy_check_mark:'
@@ -268,7 +268,7 @@ data:
       title: graph/voronoiminimumspanningtree.cpp
   - name: io
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
     - icon: ':heavy_check_mark:'
@@ -328,7 +328,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fraction.cpp
       title: math/fraction.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/isprime.cpp
       title: math/isprime.cpp
     - icon: ':heavy_check_mark:'
@@ -391,7 +391,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/log.cpp
       title: mod/log.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/mint.cpp
       title: mod/mint.cpp
     - icon: ':heavy_check_mark:'
@@ -480,7 +480,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/ahocorasick.cpp
       title: string/ahocorasick.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/editdistance.cpp
       title: string/editdistance.cpp
     - icon: ':heavy_check_mark:'
@@ -504,10 +504,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/parse.cpp
       title: string/parse.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/rectanglehash.cpp
       title: string/rectanglehash.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
     - icon: ':heavy_check_mark:'
@@ -516,7 +516,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/split.cpp
       title: string/split.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/suffixarray.cpp
       title: string/suffixarray.cpp
     - icon: ':heavy_check_mark:'
@@ -536,7 +536,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
@@ -1028,40 +1028,40 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
       title: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_14_B.test.cpp
       title: test/aoj/ALDS1_14_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_14_C.test.cpp
       title: test/aoj/ALDS1_14_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_14_D.test.cpp
       title: test/aoj/ALDS1_14_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_15_B.test.cpp
       title: test/aoj/ALDS1_15_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_1_C.test.cpp
       title: test/aoj/ALDS1_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_9_C.test.cpp
       title: test/aoj/ALDS1_9_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_1_E.test.cpp
       title: test/aoj/DPL_1_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_3_B.test.cpp
       title: test/aoj/DPL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_3_C.test.cpp
       title: test/aoj/DPL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_A.test.cpp
       title: test/aoj/DPL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_B.test.cpp
       title: test/aoj/DPL_5_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_C.test.cpp
       title: test/aoj/DPL_5_C.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1342,7 +1342,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_H.test.cpp
       title: test/aoj/geometry/CGL_7_H.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/geometry/CGL_7_I.test.cpp
       title: test/aoj/geometry/CGL_7_I.test.cpp
   - name: test/yosupo

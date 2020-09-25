@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   _extendedRequiredBy: []
@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_I
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_I
@@ -29,13 +28,13 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ combinatorics/surjection.cpp: line 8: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_I\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../combinatorics/enumeration.cpp\"\
-    \n#include \"../../combinatorics/surjection.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  int n,k;\n  scanf(\"%d %d\",&n,&k);\n  using M = Mint<int>;\n  M\
-    \ res=surjection<M>(n,k);\n  for(int i=1;i<=k;i++) res/=M(i);\n  printf(\"%d\\\
-    n\",res.v);\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_I\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../combinatorics/enumeration.cpp\"\n#include\
+    \ \"../../combinatorics/surjection.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  int n,k;\n  scanf(\"%d %d\",&n,&k);\n  using M = Mint<int>;\n  M res=surjection<M>(n,k);\n\
+    \  for(int i=1;i<=k;i++) res/=M(i);\n  printf(\"%d\\n\",res.v);\n  return 0;\n\
+    }\n"
   dependsOn:
   - mod/mint.cpp
   - combinatorics/enumeration.cpp
@@ -43,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_I.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-09-25 14:47:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_I.test.cpp

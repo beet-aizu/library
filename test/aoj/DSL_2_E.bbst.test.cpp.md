@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
@@ -26,9 +25,9 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ bbst/rbst/basic/dual.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../bbst/rbst/basic/base.cpp\"\n#include \"../../bbst/rbst/basic/dual.cpp\"\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../bbst/rbst/basic/base.cpp\"\n#include \"../../bbst/rbst/basic/dual.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n,q;\n  cin>>n>>q;\n\n  auto h=[](int a,int b){return a+b;};\n  int ei=0;\n\
     \n  using Node = NodeBase<int>;\n  constexpr size_t LIM = 1e6;\n  Dual<Node, LIM>\
@@ -43,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_E.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-03-22 15:37:31+09:00'
+  timestamp: '2020-09-25 14:47:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_E.bbst.test.cpp

@@ -9,14 +9,14 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
-  bundledCode: "#line 1 \"test/aoj/DSL_2_A.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"segtree/basic/ushi.cpp\"\n\n#line 3 \"segtree/basic/ushi.cpp\"\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename T>\nstruct SegmentTree{\n\
+  bundledCode: "#line 1 \"test/aoj/DSL_2_A.test.cpp\"\n// verification-helper: PROBLEM\
+    \ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line 1 \"\
+    segtree/basic/ushi.cpp\"\n\n#line 3 \"segtree/basic/ushi.cpp\"\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename T>\nstruct SegmentTree{\n\
     \  using F = function<T(T,T)>;\n  int n;\n  F f;\n  T ti;\n  vector<T> dat;\n\n\
     \  SegmentTree(){}\n  SegmentTree(F f,T ti):f(f),ti(ti){}\n\n  void init(int n_){\n\
     \    n=1;\n    while(n<n_) n<<=1;\n    dat.assign(n<<1,ti);\n  }\n\n  void build(const\
@@ -48,9 +48,9 @@ data:
     \ rmq(f,INT_MAX);\n  rmq.init(n);\n\n  for(int i=0;i<q;i++){\n    int c,x,y;\n\
     \    cin>>c>>x>>y;\n    if(c) cout<<rmq.query(x,y+1)<<\"\\n\";\n    else rmq.set_val(x,y);\n\
     \  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../segtree/basic/ushi.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../segtree/basic/ushi.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n  auto\
     \ f=[](int a,int b){return min(a,b);};\n  SegmentTree<int> rmq(f,INT_MAX);\n \
     \ rmq.init(n);\n\n  for(int i=0;i<q;i++){\n    int c,x,y;\n    cin>>c>>x>>y;\n\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:09:06+09:00'
+  timestamp: '2020-09-25 14:47:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_A.test.cpp
