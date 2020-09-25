@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/suffixarray
 
 #include<bits/stdc++.h>
 using namespace std;

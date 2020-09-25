@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/tree_diameter"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/tree_diameter
 
 #include <bits/stdc++.h>
 using namespace std;

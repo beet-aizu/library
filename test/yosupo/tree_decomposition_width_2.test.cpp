@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/tree_decomposition_width_2"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/tree_decomposition_width_2
 
 #include <bits/stdc++.h>
 using namespace std;

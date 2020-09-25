@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/sum_of_floor_of_linear"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sum_of_floor_of_linear
 
 #include<bits/stdc++.h>
 using namespace std;

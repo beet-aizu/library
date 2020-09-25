@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/staticrmq
 
 #include<bits/stdc++.h>
 using namespace std;
