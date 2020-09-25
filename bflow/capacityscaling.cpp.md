@@ -10,6 +10,9 @@ data:
     path: test/aoj/2872.test.cpp
     title: test/aoj/2872.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/assignment.test.cpp
+    title: test/yosupo/assignment.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/min_cost_b_flow.test.cpp
     title: test/yosupo/min_cost_b_flow.test.cpp
   _pathExtension: cpp
@@ -151,6 +154,7 @@ data:
   verifiedWith:
   - test/aoj/2230.test.cpp
   - test/aoj/2872.test.cpp
+  - test/yosupo/assignment.test.cpp
   - test/yosupo/min_cost_b_flow.test.cpp
 documentation_of: ./bflow/capacityscaling.cpp
 layout: document

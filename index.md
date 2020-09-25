@@ -1345,6 +1345,9 @@ data:
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/yosupo/assignment.test.cpp
+      title: test/yosupo/assignment.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/associative_array.test.cpp
       title: test/yosupo/associative_array.test.cpp
     - icon: ':heavy_check_mark:'
