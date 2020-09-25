@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'

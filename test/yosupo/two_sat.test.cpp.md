@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/stronglyconnectedcomponent.cpp
     title: graph/stronglyconnectedcomponent.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/twosatisfiability.cpp
     title: graph/twosatisfiability.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/two_sat
     links:
@@ -42,7 +42,7 @@ data:
   path: test/yosupo/two_sat.test.cpp
   requiredBy: []
   timestamp: '2020-09-25 16:01:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/two_sat.test.cpp
 layout: document

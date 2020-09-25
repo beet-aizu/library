@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/twosatisfiability.cpp
     title: graph/twosatisfiability.cpp
   _extendedVerifiedWith:
@@ -39,11 +39,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/two_sat.test.cpp
     title: test/yosupo/two_sat.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -84,7 +84,7 @@ data:
   - graph/arborescence_edmond.cpp
   - graph/twosatisfiability.cpp
   timestamp: '2019-12-17 22:09:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2309.tarjan.test.cpp
   - test/aoj/GRL_4_A.test.cpp

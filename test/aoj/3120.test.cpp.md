@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedRequiredBy: []
