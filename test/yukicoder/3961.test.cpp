@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://yukicoder.me/problems/3961
+#define PROBLEM "https://yukicoder.me/problems/3961"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -6,13 +6,12 @@ using namespace std;
 #define call_from_test
 #include "../../tree/centroid.cpp"
 #include "../../tools/fixpoint.cpp"
+#include "../../vector/compress.cpp"
 #undef call_from_test
 
-template<typename V>
-void compress(V& v){
-  sort(v.begin(),v.end());
-  v.erase(unique(v.begin(),v.end()),v.end());
-}
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
@@ -68,7 +67,7 @@ signed main(){
           vp.emplace_back(st);
       })(t,r,P(col[r][t],-1));
     }
-    compress(vp);
+    vp=compress(vp);
     auto idx=[&](P p){return lower_bound(vp.begin(),vp.end(),p)-vp.begin();};
 
     vector<int> num(vp.size());
