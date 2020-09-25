@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_triangles"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/enumerate_triangles
 
 #include <bits/stdc++.h>
 using namespace std;

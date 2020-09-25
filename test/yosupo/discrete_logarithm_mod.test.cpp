@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/discrete_logarithm_mod"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/discrete_logarithm_mod
 
 #include<bits/stdc++.h>
 using namespace std;

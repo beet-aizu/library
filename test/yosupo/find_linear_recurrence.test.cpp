@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/find_linear_recurrence"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/find_linear_recurrence
 
 #include<bits/stdc++.h>
 using namespace std;

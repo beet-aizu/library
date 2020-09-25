@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/frequency_table_of_tree_distance"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
 
 #include <bits/stdc++.h>
 using namespace std;

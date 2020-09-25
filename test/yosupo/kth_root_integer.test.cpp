@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/kth_root_integer"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/kth_root_integer
 
 #include<bits/stdc++.h>
 using namespace std;

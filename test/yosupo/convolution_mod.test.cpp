@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/convolution_mod
 
 #include<bits/stdc++.h>
 using namespace std;

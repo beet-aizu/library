@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/inv_of_formal_power_series"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/inv_of_formal_power_series
 
 #include<bits/stdc++.h>
 using namespace std;
