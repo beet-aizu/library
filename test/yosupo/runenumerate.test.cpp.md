@@ -1,18 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/run.cpp
     title: string/run.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/runenumerate
     links:
     - https://judge.yosupo.jp/problem/runenumerate
@@ -26,13 +25,13 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ string/run.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/runenumerate\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../string/zalgorithm.cpp\"\
-    \n#include \"../../string/run.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
-    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  string ss;\n  cin>>ss;\n  auto\
-    \ run=Run::enumerate(ss);\n\n  set<Run::P> vis;\n  vector<Run::T> ans;\n  for(int\
-    \ t=1;t<=(int)ss.size();t++){\n    for(auto lr:run[t]){\n      if(vis.count(lr))\
-    \ continue;\n      vis.emplace(lr);\n      ans.emplace_back(t,lr.first,lr.second);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/runenumerate\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../string/zalgorithm.cpp\"\n#include \"../../string/run.cpp\"\n#undef call_from_test\n\
+    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  string ss;\n\
+    \  cin>>ss;\n  auto run=Run::enumerate(ss);\n\n  set<Run::P> vis;\n  vector<Run::T>\
+    \ ans;\n  for(int t=1;t<=(int)ss.size();t++){\n    for(auto lr:run[t]){\n    \
+    \  if(vis.count(lr)) continue;\n      vis.emplace(lr);\n      ans.emplace_back(t,lr.first,lr.second);\n\
     \    }\n  }\n\n  cout<<ans.size()<<endl;\n  for(auto tlr:ans){\n    int t,l,r;\n\
     \    tie(t,l,r)=tlr;\n    cout<<t<<\" \"<<l<<\" \"<<r<<\"\\n\";\n  }\n  cout<<flush;\n\
     \  return 0;\n}\n"
@@ -42,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/runenumerate.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 15:47:34+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/runenumerate.test.cpp
 layout: document

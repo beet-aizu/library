@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
     - https://judge.yosupo.jp/problem/range_kth_smallest
-  bundledCode: "#line 1 \"test/yosupo/range_kth_smallest.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/range_kth_smallest.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/range_kth_smallest\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/waveletmatrix.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"datastructure/waveletmatrix.cpp\"\nusing\
     \ namespace std;\n#endif\n\n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n\
@@ -76,8 +75,8 @@ data:
     \n  WaveletMatrix<int, 30> wm(as);\n\n  for(int i=0;i<q;i++){\n    int l,r,k;\n\
     \    cin>>l>>r>>k;\n    cout<<wm.rquantile(l,r,k)<<\"\\n\";\n  }\n  cout<<flush;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n\
-    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/range_kth_smallest\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../datastructure/waveletmatrix.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  vector<int>\
     \ as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  WaveletMatrix<int, 30> wm(as);\n\
@@ -88,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2020-09-14 22:28:07+09:00'
+  timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/range_kth_smallest.test.cpp

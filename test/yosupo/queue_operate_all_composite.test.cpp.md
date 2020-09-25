@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/queue_operate_all_composite
     links:
     - https://judge.yosupo.jp/problem/queue_operate_all_composite
@@ -29,10 +28,10 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ datastructure/slidingwindowaggregation.cpp: line 47: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/queue_operate_all_composite\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n\
-    #include \"../../datastructure/slidingwindowaggregation.cpp\"\n#undef call_from_test\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/queue_operate_all_composite\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n#include\
+    \ \"../../datastructure/slidingwindowaggregation.cpp\"\n#undef call_from_test\n\
     \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using M = Mint<int,\
     \ 998244353>;\n  using T = LinearFunction<M>;\n  auto f=[](T a,T b){return a*b;};\n\
     \  SWAG<T, T> swag(f,T::mul_identity());\n\n  int q;\n  cin>>q;\n  for(int i=0;i<q;i++){\n\
@@ -47,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/queue_operate_all_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 23:16:49+09:00'
+  timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/queue_operate_all_composite.test.cpp

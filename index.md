@@ -119,7 +119,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/binaryindexedtree.cpp
       title: Binary Indexed Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/binarytrie.cpp
       title: datastructure/binarytrie.cpp
     - icon: ':heavy_check_mark:'
@@ -183,7 +183,7 @@ data:
       title: geometry/3D/geometry3D.cpp
   - name: geometry
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: geometry/argsort.cpp
       title: geometry/argsort.cpp
     - icon: ':heavy_check_mark:'
@@ -212,7 +212,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/chromatic.cpp
       title: graph/chromatic.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/dijkstra.cpp
       title: graph/dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -248,7 +248,7 @@ data:
     - icon: ':warning:'
       path: graph/semikernel.cpp
       title: graph/semikernel.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/stronglyconnectedcomponent.cpp
       title: graph/stronglyconnectedcomponent.cpp
     - icon: ':warning:'
@@ -510,7 +510,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/run.cpp
       title: string/run.cpp
     - icon: ':heavy_check_mark:'
@@ -522,7 +522,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/trie.cpp
       title: string/trie.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
   - name: tools
@@ -545,7 +545,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/drop.cpp
       title: tools/drop.cpp
     - icon: ':heavy_check_mark:'
@@ -1479,19 +1479,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/runenumerate.test.cpp
       title: test/yosupo/runenumerate.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/set_xor_min.test.cpp
       title: test/yosupo/set_xor_min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/shortest_path.test.cpp
       title: test/yosupo/shortest_path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/sort_points_by_argument.test.cpp
       title: test/yosupo/sort_points_by_argument.test.cpp
     - icon: ':heavy_check_mark:'

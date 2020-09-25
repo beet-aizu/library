@@ -12,12 +12,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
     links:
     - https://judge.yosupo.jp/problem/range_affine_range_sum
-  bundledCode: "#line 1 \"test/yosupo/range_affine_range_sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/range_affine_range_sum.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/range_affine_range_sum\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"mod/mint.cpp\"\n\n#ifndef\
     \ call_from_test\n#line 5 \"mod/mint.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN\
     \ CUT HERE\ntemplate<typename T,T MOD = 1000000007>\nstruct Mint{\n  static constexpr\
@@ -99,28 +98,28 @@ data:
     \      cin>>l>>r>>b>>c;\n      seg.update(l,r,T(M(b),M(c)));\n    }\n    if(t==1){\n\
     \      int l,r;\n      cin>>l>>r;\n      cout<<seg.query(l,r).first<<\"\\n\";\n\
     \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../segtree/basic/chien.cpp\"\n\
-    #undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using M = Mint<int, 998244353>;\n  using T = pair<M, M>;\n  using E = pair<M,\
-    \ M>;\n  auto f=[](T a,T b){return T(a.first+b.first,a.second+b.second);};\n \
-    \ auto g=[](T a,E b){return T(a.first*b.first+a.second*b.second,a.second);};\n\
-    \  auto h=[](E a,E b){return E(a.first*b.first,a.second*b.first+b.second);};\n\
-    \  T ti(0,0);\n  E ei(1,0);\n  SegmentTree<T, E> seg(f,g,h,ti,ei);\n\n  int n,q;\n\
-    \  cin>>n>>q;\n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n  vector<T>\
-    \ vt;\n  for(int i=0;i<n;i++) vt.emplace_back(as[i],1);\n  seg.build(vt);\n\n\
-    \  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n      int l,r,b,c;\n\
-    \      cin>>l>>r>>b>>c;\n      seg.update(l,r,T(M(b),M(c)));\n    }\n    if(t==1){\n\
-    \      int l,r;\n      cin>>l>>r;\n      cout<<seg.query(l,r).first<<\"\\n\";\n\
-    \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/range_affine_range_sum\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../segtree/basic/chien.cpp\"\n#undef call_from_test\n\
+    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using M = Mint<int,\
+    \ 998244353>;\n  using T = pair<M, M>;\n  using E = pair<M, M>;\n  auto f=[](T\
+    \ a,T b){return T(a.first+b.first,a.second+b.second);};\n  auto g=[](T a,E b){return\
+    \ T(a.first*b.first+a.second*b.second,a.second);};\n  auto h=[](E a,E b){return\
+    \ E(a.first*b.first,a.second*b.first+b.second);};\n  T ti(0,0);\n  E ei(1,0);\n\
+    \  SegmentTree<T, E> seg(f,g,h,ti,ei);\n\n  int n,q;\n  cin>>n>>q;\n  vector<int>\
+    \ as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n  vector<T> vt;\n  for(int i=0;i<n;i++)\
+    \ vt.emplace_back(as[i],1);\n  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n   \
+    \ int t;\n    cin>>t;\n    if(t==0){\n      int l,r,b,c;\n      cin>>l>>r>>b>>c;\n\
+    \      seg.update(l,r,T(M(b),M(c)));\n    }\n    if(t==1){\n      int l,r;\n \
+    \     cin>>l>>r;\n      cout<<seg.query(l,r).first<<\"\\n\";\n    }\n  }\n  cout<<flush;\n\
+    \  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
   - segtree/basic/chien.cpp
   isVerificationFile: true
   path: test/yosupo/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/range_affine_range_sum.test.cpp

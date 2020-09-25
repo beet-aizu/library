@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/maximum_independent_set
     links:
     - https://judge.yosupo.jp/problem/maximum_independent_set
-  bundledCode: "#line 1 \"test/yosupo/maximum_independent_set.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/maximum_independent_set.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/maximum_independent_set\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"graph/independentset.cpp\"\
     \n\n#line 3 \"graph/independentset.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\nstruct IndependentSet{\n  int n;\n  vector<int> deg,used,dead,pre,ans;\n\
@@ -39,9 +38,9 @@ data:
     \    G.add_edge(u,v);\n  }\n  int X=G.build();\n  cout<<X<<endl;\n  for(int i=0;i<X;i++){\n\
     \    if(i) cout<<\" \";\n    cout<<G.ans[i];\n  }\n  cout<<endl;\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../graph/independentset.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/maximum_independent_set\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../graph/independentset.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n  IndependentSet\
     \ G(n);\n  for(int i=0;i<m;i++){\n    int u,v;\n    cin>>u>>v;\n    G.add_edge(u,v);\n\
     \  }\n  int X=G.build();\n  cout<<X<<endl;\n  for(int i=0;i<X;i++){\n    if(i)\
@@ -51,7 +50,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/maximum_independent_set.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/maximum_independent_set.test.cpp

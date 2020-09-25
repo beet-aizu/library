@@ -1,23 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/drop.cpp
     title: tools/drop.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
     links:
     - https://judge.yosupo.jp/problem/shortest_path
-  bundledCode: "#line 1 \"test/yosupo/shortest_path.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/shortest_path\"\n\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/shortest_path.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/shortest_path\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"tools/drop.cpp\"\n\n\
     #line 3 \"tools/drop.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
     \ T> void drop(const T &x){cout<<x<<endl;exit(0);}\n//END CUT HERE\n#ifndef call_from_test\n\
@@ -43,9 +42,9 @@ data:
     \    cin>>a>>b>>c;\n    G.add_edge(a,b,c);\n  }\n\n  G.build(s);\n  auto ps=G.restore(t);\n\
     \  if(ps.empty()) drop(-1);\n\n  int y=ps.size()-1;\n  cout<<G[t]<<' '<<y<<newl;\n\
     \  for(int i=0;i<y;i++) cout<<ps[i]<<' '<<ps[i+1]<<newl;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
-    ../../tools/drop.cpp\"\n#include \"../../graph/dijkstra.cpp\"\n#undef call_from_test\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/shortest_path\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/drop.cpp\"\n#include \"../../graph/dijkstra.cpp\"\n#undef call_from_test\n\
     \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl\
     \ = '\\n';\n\n  int n,m,s,t;\n  cin>>n>>m>>s>>t;\n\n  using ll = long long;\n\
     \  Dijkstra<ll> G(n);\n  for(int i=0;i<m;i++){\n    int a,b,c;\n    cin>>a>>b>>c;\n\
@@ -58,8 +57,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2020-05-05 14:35:59+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 15:47:34+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/shortest_path.test.cpp
 layout: document

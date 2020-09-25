@@ -15,12 +15,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
     links:
     - https://judge.yosupo.jp/problem/point_set_range_composite
-  bundledCode: "#line 1 \"test/yosupo/point_set_range_composite.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/point_set_range_composite.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/point_set_range_composite\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"mod/mint.cpp\"\n\n#ifndef\
     \ call_from_test\n#line 5 \"mod/mint.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN\
     \ CUT HERE\ntemplate<typename T,T MOD = 1000000007>\nstruct Mint{\n  static constexpr\
@@ -94,10 +93,10 @@ data:
     \      int p,c,d;\n      cin>>p>>c>>d;\n      seg.set_val(p,T(M(c),M(d)));\n \
     \   }\n    if(t==1){\n      int l,r,x;\n      cin>>l>>r>>x;\n      cout<<seg.query(l,r)(x)<<\"\
     \\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n\
-    #include \"../../segtree/basic/ushi.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_set_range_composite\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n#include\
+    \ \"../../segtree/basic/ushi.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  vector<int>\
     \ as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\n  using M = Mint<int,\
     \ 998244353>;\n  using T = LinearFunction<M>;\n  auto f=[&](T x,T y){return x*y;};\n\
@@ -114,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 23:16:49+09:00'
+  timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_set_range_composite.test.cpp

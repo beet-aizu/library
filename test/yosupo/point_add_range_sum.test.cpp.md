@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"test/yosupo/point_add_range_sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/point_add_range_sum.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/binaryindexedtree.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"datastructure/binaryindexedtree.cpp\"\n\
     using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nclass\
@@ -36,7 +35,7 @@ data:
     \    int t;\n    cin>>t;\n    if(t==0){\n      int p,x;\n      cin>>p>>x;\n  \
     \    bit.add(p,x);\n    }\n    if(t==1){\n      int l,r;\n      cin>>l>>r;\n \
     \     cout<<bit.query(l,r)<<'\\n';\n    }\n  }\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../datastructure/binaryindexedtree.cpp\"\n#undef call_from_test\n\nsigned\
     \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
@@ -50,7 +49,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-16 00:05:24+09:00'
+  timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum.test.cpp

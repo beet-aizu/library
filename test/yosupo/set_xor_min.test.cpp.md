@@ -1,27 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/binarytrie.cpp
     title: datastructure/binarytrie.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
     links:
     - https://judge.yosupo.jp/problem/set_xor_min
-  bundledCode: "#line 1 \"test/yosupo/set_xor_min.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 2 \"datastructure/binarytrie.cpp\"\n\n#ifndef call_from_test\n#line 5 \"\
-    datastructure/binarytrie.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
-    template<typename T,size_t X>\nstruct BinaryTrie{\n  struct Node{\n    size_t\
-    \ cnt;\n    Node *p,*l,*r;\n    Node(Node* p):cnt(0),p(p){l=r=nullptr;}\n  };\n\
-    \n  T acc;\n  Node *root;\n  BinaryTrie():acc(0){root=emplace(nullptr);}\n\n \
-    \ void clear(Node *a){\n    if(!a) return;\n    clear(a->l);clear(a->r);\n   \
-    \ delete(a);\n  }\n\n  inline Node* emplace(Node* p){\n    return new Node(p);\n\
+  bundledCode: "#line 1 \"test/yosupo/set_xor_min.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/set_xor_min\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/binarytrie.cpp\"\
+    \n\n#ifndef call_from_test\n#line 5 \"datastructure/binarytrie.cpp\"\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,size_t X>\nstruct BinaryTrie{\n\
+    \  struct Node{\n    size_t cnt;\n    Node *p,*l,*r;\n    Node(Node* p):cnt(0),p(p){l=r=nullptr;}\n\
+    \  };\n\n  T acc;\n  Node *root;\n  BinaryTrie():acc(0){root=emplace(nullptr);}\n\
+    \n  void clear(Node *a){\n    if(!a) return;\n    clear(a->l);clear(a->r);\n \
+    \   delete(a);\n  }\n\n  inline Node* emplace(Node* p){\n    return new Node(p);\n\
     \  }\n\n  inline size_t count(Node* a){\n    return a?a->cnt:0;\n  }\n\n  void\
     \ add(const T b,size_t k=1){\n    const T nb=b^acc;\n    Node* a=root;\n    for(int\
     \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!f&&!a->l) a->l=emplace(a);\n\
@@ -81,9 +80,9 @@ data:
     \    }\n    if(t==1){\n      if(!bt.find(x)) continue;\n      bt.sub(bt.find(x),1);\n\
     \    }\n    if(t==2){\n      cout<<(x^bt.val(bt.xmin(x)))<<newl;\n    }\n  }\n\
     \n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
-    ../../datastructure/binarytrie.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/set_xor_min\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../datastructure/binarytrie.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\n';\n\n  BinaryTrie<int,\
     \ 30> bt;\n\n  int q;\n  cin>>q;\n\n  for(int i=0;i<q;i++){\n    int t,x;\n  \
     \  cin>>t>>x;\n    if(t==0){\n      if(bt.find(x)) continue;\n      bt.add(x,1);\n\
@@ -95,8 +94,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2020-06-06 14:04:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 15:47:34+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/set_xor_min.test.cpp
 layout: document

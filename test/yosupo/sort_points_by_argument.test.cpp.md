@@ -1,20 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: geometry/argsort.cpp
     title: geometry/argsort.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sort_points_by_argument
     links:
     - https://judge.yosupo.jp/problem/sort_points_by_argument
-  bundledCode: "#line 1 \"test/yosupo/sort_points_by_argument.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/sort_points_by_argument\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/sort_points_by_argument.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/sort_points_by_argument\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"geometry/argsort.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"geometry/argsort.cpp\"\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\n// (-pi, pi], atan2(0, 0) = 0\ntemplate<typename\
@@ -31,20 +30,20 @@ data:
     \ vector<Point> ps(n);\n  for(int i=0;i<n;i++) cin>>ps[i].x>>ps[i].y;\n\n  argsort(ps);\n\
     \n  for(int i=0;i<n;i++) cout<<ps[i].x<<\" \"<<ps[i].y<<\"\\n\";\n  cout<<flush;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sort_points_by_argument\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../geometry/argsort.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
-    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n  using ll\
-    \ = long long;\n  struct Point{ll x,y;};\n  vector<Point> ps(n);\n  for(int i=0;i<n;i++)\
-    \ cin>>ps[i].x>>ps[i].y;\n\n  argsort(ps);\n\n  for(int i=0;i<n;i++) cout<<ps[i].x<<\"\
-    \ \"<<ps[i].y<<\"\\n\";\n  cout<<flush;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sort_points_by_argument\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../geometry/argsort.cpp\"\n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n\
+    \  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n  using ll = long long;\n\
+    \  struct Point{ll x,y;};\n  vector<Point> ps(n);\n  for(int i=0;i<n;i++) cin>>ps[i].x>>ps[i].y;\n\
+    \n  argsort(ps);\n\n  for(int i=0;i<n;i++) cout<<ps[i].x<<\" \"<<ps[i].y<<\"\\\
+    n\";\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - geometry/argsort.cpp
   isVerificationFile: true
   path: test/yosupo/sort_points_by_argument.test.cpp
   requiredBy: []
-  timestamp: '2020-03-14 17:16:27+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 15:47:34+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/sort_points_by_argument.test.cpp
 layout: document
