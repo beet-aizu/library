@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_triangles
     links:
     - https://judge.yosupo.jp/problem/enumerate_triangles
-  bundledCode: "#line 1 \"test/yosupo/enumerate_triangles.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/enumerate_triangles\"\n\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/enumerate_triangles.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/enumerate_triangles\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"graph/triangle.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"graph/triangle.cpp\"\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\nstruct Triangle{\n  // if not simple, use vector<set<int>>\n\
@@ -34,7 +33,7 @@ data:
     \ u,v;\n    cin>>u>>v;\n    G.add_edge(u,v);\n  }\n\n  const ll mod = 998244353;\n\
     \  ll ans=0;\n  auto f=[&](int x,int y,int z){\n    ans+=xs[x]*xs[y]%mod*xs[z]%mod;\n\
     \    ans%=mod;\n  };\n  G.build(f);\n\n  cout<<ans<<endl;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_triangles\"\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/enumerate_triangles\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../graph/triangle.cpp\"\n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n\
     \  ios::sync_with_stdio(0);\n  using ll = long long;\n\n  int n,m;\n  cin>>n>>m;\n\
@@ -48,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/enumerate_triangles.test.cpp
   requiredBy: []
-  timestamp: '2020-05-07 17:33:53+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_triangles.test.cpp

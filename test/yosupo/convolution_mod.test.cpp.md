@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
     links:
     - https://judge.yosupo.jp/problem/convolution_mod
@@ -26,21 +25,21 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ convolution/numbertheoretictransform.cpp: line 8: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../mod/mint.cpp\"\
-    \n#include \"../../convolution/numbertheoretictransform.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n\
-    \  NTT<2> ntt;\n  using M = decltype(ntt)::M;\n  vector<M> as(n),bs(m);\n  for(int\
-    \ i=0;i<n;i++) cin>>as[i].v;\n  for(int i=0;i<m;i++) cin>>bs[i].v;\n  auto cs=ntt.multiply(as,bs);\n\
-    \  for(int i=0;i<(int)cs.size();i++){\n    if(i) cout<<\" \";\n    cout<<cs[i];\n\
-    \  }\n  cout<<endl;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/convolution_mod\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n,m;\n  cin>>n>>m;\n  NTT<2> ntt;\n  using M = decltype(ntt)::M;\n  vector<M>\
+    \ as(n),bs(m);\n  for(int i=0;i<n;i++) cin>>as[i].v;\n  for(int i=0;i<m;i++) cin>>bs[i].v;\n\
+    \  auto cs=ntt.multiply(as,bs);\n  for(int i=0;i<(int)cs.size();i++){\n    if(i)\
+    \ cout<<\" \";\n    cout<<cs[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   isVerificationFile: true
   path: test/yosupo/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/convolution_mod.test.cpp

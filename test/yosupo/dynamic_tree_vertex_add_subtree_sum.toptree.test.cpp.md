@@ -9,14 +9,13 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
     links:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
   bundledCode: "#line 1 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#line 5 \"toptree/toptree.cpp\"\
+    \n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+    \ 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#line 5 \"toptree/toptree.cpp\"\
     \nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename\
     \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
     \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
@@ -155,10 +154,10 @@ data:
     \    cin>>p>>x;\n      as[p]+=x;\n      G.set_vertex(vs[p],Vertex(as[p]));\n \
     \   }\n\n    if(t==2){\n      int v,p;\n      cin>>v>>p;\n      cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;\n\
     \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../toptree/toptree.cpp\"\n#undef call_from_test\n\nusing ll = long\
-    \ long;\nstruct Vertex{\n  void* handle;\n  ll val;\n  Vertex(ll val=0):handle(nullptr),val(val){}\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../toptree/toptree.cpp\"\n#undef call_from_test\n\nusing ll = long long;\n\
+    struct Vertex{\n  void* handle;\n  ll val;\n  Vertex(ll val=0):handle(nullptr),val(val){}\n\
     };\n\nstruct Cluster{\n  ll res;\n  Cluster(ll res=0):res(res){}\n  void toggle(){}\n\
     \  static Cluster compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res+v->val+y.res);\n\
     \  }\n  static Cluster rake(Cluster x,Cluster y){\n    return Cluster(x.res+y.res);\n\
@@ -178,7 +177,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-01 16:43:17+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp

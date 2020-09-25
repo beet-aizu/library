@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/discrete_logarithm_mod
     links:
     - https://judge.yosupo.jp/problem/discrete_logarithm_mod
-  bundledCode: "#line 1 \"test/yosupo/discrete_logarithm_mod.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/discrete_logarithm_mod.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/discrete_logarithm_mod\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"mod/log.cpp\"\n\n#line\
     \ 3 \"mod/log.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// find x\
     \ s.t. a^x = b (x >= 0)\ntemplate<typename T>\nT mod_log(T a,T b,T mod){\n  using\
@@ -32,9 +31,9 @@ data:
     \  while(t--){\n    int x,y,m;\n    cin>>x>>y>>m;\n    int l=mod_log(x,y,m);\n\
     \    if(l==m) l=-1;\n    cout<<l<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/log.cpp\"\n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/discrete_logarithm_mod\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/log.cpp\"\n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n\
     \  ios::sync_with_stdio(0);\n\n  int t;\n  cin>>t;\n  while(t--){\n    int x,y,m;\n\
     \    cin>>x>>y>>m;\n    int l=mod_log(x,y,m);\n    if(l==m) l=-1;\n    cout<<l<<\"\
     \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
@@ -43,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/discrete_logarithm_mod.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/discrete_logarithm_mod.test.cpp

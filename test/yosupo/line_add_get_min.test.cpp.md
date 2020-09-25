@@ -12,12 +12,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
     links:
     - https://judge.yosupo.jp/problem/line_add_get_min
-  bundledCode: "#line 1 \"test/yosupo/line_add_get_min.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/line_add_get_min.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/line_add_get_min\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"vector/compress.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"vector/compress.cpp\"\nusing namespace std;\n\
     #endif\n\n//BEGIN CUT HERE\ntemplate<typename V>\nV compress(V vs){\n  sort(vs.begin(),vs.end());\n\
@@ -56,8 +55,8 @@ data:
     \    }\n  }\n\n  LiChao<ll, true> seg(compress(ps));\n  for(int i=0;i<n;i++) seg.addLine(as[i],bs[i]);\n\
     \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.addLine(xs[i],ys[i]);\n    if(ts[i]==1)\
     \ cout<<seg.query(xs[i])<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
-    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/line_add_get_min\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../vector/compress.cpp\"\n#include \"../../segtree/cht/lichao.cpp\"\n#undef\
     \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  using ll = long long;\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n),bs(n);\n\
@@ -73,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/line_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2020-04-18 17:56:15+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/line_add_get_min.test.cpp

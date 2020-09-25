@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum
     links:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum
@@ -26,10 +25,10 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linkcuttree/path.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../linkcuttree/base.cpp\"\n#include \"../../linkcuttree/path.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../linkcuttree/base.cpp\"\n#include \"../../linkcuttree/path.cpp\"\n#undef\
+    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \  const char newl = '\\n';\n\n  int n,q;\n  cin>>n>>q;\n  vector<int> as(n);\n\
     \  for(int i=0;i<n;i++) cin>>as[i];\n\n  using ll = long long;\n  using Node =\
     \ NodeBase<ll, ll>;\n  auto f=[&](ll a,ll b){return a+b;};\n  constexpr size_t\
@@ -48,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-07-27 11:09:34+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp

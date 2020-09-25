@@ -9,13 +9,12 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dominatortree
     links:
     - https://judge.yosupo.jp/problem/dominatortree
-  bundledCode: "#line 1 \"test/yosupo/dominatortree.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/dominatortree\"\n\n#include<bits/stdc++.h>\nusing\
-    \ namespace std;\n\n#define call_from_test\n#line 1 \"graph/dominatortree.cpp\"\
+  bundledCode: "#line 1 \"test/yosupo/dominatortree.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/dominatortree\n\n#include<bits/stdc++.h>\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"graph/dominatortree.cpp\"\
     \n\n#line 3 \"graph/dominatortree.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\nstruct DominatorTree{\n  struct UnionFind{\n    vector<int> &semi;\n\
     \    vector<int> ps,ms;\n    UnionFind(vector<int> &semi):\n      semi(semi),ps(semi.size()),ms(semi.size()){\n\
@@ -45,19 +44,19 @@ data:
     \    int a,b;\n    cin>>a>>b;\n    G.add_edge(a,b);\n  }\n  G.build(s);\n  for(int\
     \ i=0;i<n;i++){\n    if(i) cout<<\" \";\n    cout<<G[i];\n  }\n  cout<<endl;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dominatortree\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../graph/dominatortree.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  int n,m,s;\n  cin>>n>>m>>s;\n  DominatorTree G(n);\n  for(int i=0;i<m;i++){\n\
-    \    int a,b;\n    cin>>a>>b;\n    G.add_edge(a,b);\n  }\n  G.build(s);\n  for(int\
-    \ i=0;i<n;i++){\n    if(i) cout<<\" \";\n    cout<<G[i];\n  }\n  cout<<endl;\n\
-    \  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dominatortree\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../graph/dominatortree.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m,s;\n  cin>>n>>m>>s;\n\
+    \  DominatorTree G(n);\n  for(int i=0;i<m;i++){\n    int a,b;\n    cin>>a>>b;\n\
+    \    G.add_edge(a,b);\n  }\n  G.build(s);\n  for(int i=0;i<n;i++){\n    if(i)\
+    \ cout<<\" \";\n    cout<<G[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - graph/dominatortree.cpp
   isVerificationFile: true
   path: test/yosupo/dominatortree.test.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:02:53+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dominatortree.test.cpp

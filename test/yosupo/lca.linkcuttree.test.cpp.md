@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
@@ -26,7 +25,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linkcuttree/path.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include<bits/stdc++.h>\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/lca\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#include \"../../linkcuttree/base.cpp\"\
     \n#include \"../../linkcuttree/path.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  using\
@@ -42,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-07-16 18:11:07+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.linkcuttree.test.cpp

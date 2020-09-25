@@ -15,16 +15,15 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
     links:
     - https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
   bundledCode: "#line 1 \"test/yosupo/frequency_table_of_tree_distance.test.cpp\"\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"tree/centroid.cpp\"\n\n#line 3 \"tree/centroid.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\nstruct Centroid{\n  vector<int> sz,dead;\n \
-    \ vector< vector<int> > G;\n  Centroid(){}\n  Centroid(int n):sz(n,1),dead(n,0),G(n){}\n\
+    // verification-helper: PROBLEM https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+    \ 1 \"tree/centroid.cpp\"\n\n#line 3 \"tree/centroid.cpp\"\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\nstruct Centroid{\n  vector<int> sz,dead;\n  vector<\
+    \ vector<int> > G;\n  Centroid(){}\n  Centroid(int n):sz(n,1),dead(n,0),G(n){}\n\
     \n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
     \  }\n\n  int dfs(int v,int p){\n    sz[v]=1;\n    for(int u:G[v])\n      if(u!=p&&!dead[u])\
     \ sz[v]+=dfs(u,v);\n    return sz[v];\n  }\n\n  void find(int v,int p,int tmp,vector<int>\
@@ -88,11 +87,11 @@ data:
     \   for(int c:G[r])\n      if(G.alive(c))\n        que.emplace(G.build(c)[0]);\n\
     \  }\n\n  for(int i=1;i<n;i++){\n    if(i!=1) cout<<' ';\n    cout<<ans[i]/2;\n\
     \  }\n  cout<<endl;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tree/centroid.cpp\"\n#include \"../../tools/fixpoint.cpp\"\n\
-    #include \"../../convolution/fastfouriertransform.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tree/centroid.cpp\"\n#include \"../../tools/fixpoint.cpp\"\n#include\
+    \ \"../../convolution/fastfouriertransform.cpp\"\n#undef call_from_test\n\nsigned\
+    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
     \  Centroid G(n);\n  for(int i=1;i<n;i++){\n    int a,b;\n    cin>>a>>b;\n   \
     \ G.add_edge(a,b);\n  }\n\n  queue<int> que;\n  que.emplace(G.build(0)[0]);\n\n\
     \  using ll = long long;\n  vector<ll> ans(n,0);\n  while(!que.empty()){\n   \
@@ -115,7 +114,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2020-05-28 14:30:55+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/frequency_table_of_tree_distance.test.cpp

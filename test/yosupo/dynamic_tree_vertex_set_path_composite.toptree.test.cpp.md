@@ -18,19 +18,18 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
     links:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
   bundledCode: "#line 1 \"test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#line 5 \"mod/mint.cpp\"\n\
-    using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD =\
-    \ 1000000007>\nstruct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n\
-    \  Mint(signed v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint\
-    \ pow(long long k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n\
-    \      tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
+    \n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+    \ 2 \"mod/mint.cpp\"\n\n#ifndef call_from_test\n#line 5 \"mod/mint.cpp\"\nusing\
+    \ namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T,T MOD = 1000000007>\n\
+    struct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed\
+    \ v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long\
+    \ k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n     \
+    \ tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
     \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
     \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
     \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
@@ -209,15 +208,15 @@ data:
     \ res=vs[u]->val;\n        cout<<res(x)<<newl;\n      }else{\n        auto res=G.get_path(vs[u],vs[v]).res.x;\n\
     \        res=vs[u]->val*res*vs[v]->val;\n        cout<<res(x)<<newl;\n      }\n\
     \    }\n  }\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n\
-    #include \"../../math/twoway.cpp\"\n#include \"../../toptree/toptree.cpp\"\n#undef\
-    \ call_from_test\n\nusing M = Mint<int, 998244353>;\nusing L = LinearFunction<M>;\n\
-    using P = TwoWay<L>;\n\nstruct Vertex{\n  void* handle;\n  L val;\n  Vertex(L\
-    \ val=L()):handle(nullptr),val(val){}\n};\n\nstruct Cluster{\n  P res;\n  Cluster():res(L(1,0)){}\n\
-    \  Cluster(L val):res(val){}\n  Cluster(P res):res(res){}\n  void toggle(){swap(res.x,res.y);}\n\
-    \  static Cluster compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res*P(v->val)*y.res);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../math/linearfunction.cpp\"\n#include\
+    \ \"../../math/twoway.cpp\"\n#include \"../../toptree/toptree.cpp\"\n#undef call_from_test\n\
+    \nusing M = Mint<int, 998244353>;\nusing L = LinearFunction<M>;\nusing P = TwoWay<L>;\n\
+    \nstruct Vertex{\n  void* handle;\n  L val;\n  Vertex(L val=L()):handle(nullptr),val(val){}\n\
+    };\n\nstruct Cluster{\n  P res;\n  Cluster():res(L(1,0)){}\n  Cluster(L val):res(val){}\n\
+    \  Cluster(P res):res(res){}\n  void toggle(){swap(res.x,res.y);}\n  static Cluster\
+    \ compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res*P(v->val)*y.res);\n\
     \  }\n  static Cluster rake(Cluster x,Cluster){\n    return x;\n  }\n};\n\nsigned\
     \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\\
     n';\n\n  const size_t LIM = 1e6;\n  TopTree<Vertex, Cluster, LIM> G;\n\n  int\
@@ -240,7 +239,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-01 16:43:17+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

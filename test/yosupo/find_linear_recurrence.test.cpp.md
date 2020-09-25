@@ -12,12 +12,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/find_linear_recurrence
     links:
     - https://judge.yosupo.jp/problem/find_linear_recurrence
-  bundledCode: "#line 1 \"test/yosupo/find_linear_recurrence.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/find_linear_recurrence\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/find_linear_recurrence.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/find_linear_recurrence\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"mod/mint.cpp\"\n\n#ifndef\
     \ call_from_test\n#line 5 \"mod/mint.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN\
     \ CUT HERE\ntemplate<typename T,T MOD = 1000000007>\nstruct Mint{\n  static constexpr\
@@ -63,10 +62,10 @@ data:
     \  reverse(cs.begin(),cs.end());\n  cout<<cs.size()<<endl;\n  for(int i=0;i<(int)cs.size();i++){\n\
     \    if(i) cout<<\" \";\n    cout<<-cs[i];\n  }\n  cout<<endl;\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/find_linear_recurrence\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../polynomial/berlekampmassey.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/find_linear_recurrence\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../polynomial/berlekampmassey.cpp\"\n\
+    #undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n;\n  cin>>n;\n\n  using M = Mint<int, 998244353>;\n  vector<M> as(n);\n\
     \  for(int i=0;i<n;i++) cin>>as[i].v;\n\n  auto cs=berlekamp_massey(as);\n  cs.pop_back();\n\
     \  reverse(cs.begin(),cs.end());\n  cout<<cs.size()<<endl;\n  for(int i=0;i<(int)cs.size();i++){\n\
@@ -78,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/find_linear_recurrence.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:15:27+09:00'
+  timestamp: '2020-09-25 15:33:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/find_linear_recurrence.test.cpp
