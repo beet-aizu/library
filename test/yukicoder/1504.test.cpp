@@ -1,4 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/1504"
+// verification-helper: PROBLEM https://yukicoder.me/problems/1504
 
 #include<bits/stdc++.h>
 using namespace std;
