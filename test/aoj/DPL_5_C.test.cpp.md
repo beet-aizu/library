@@ -1,21 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C
@@ -29,11 +28,11 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ combinatorics/surjection.cpp: line 8: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mod/mint.cpp\"\n#include \"../../combinatorics/enumeration.cpp\"\
-    \n#include \"../../combinatorics/surjection.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  int n,k;\n  scanf(\"%d %d\",&n,&k);\n  printf(\"%d\\n\",surjection<Mint<int>>(n,k).v);\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mod/mint.cpp\"\n#include \"../../combinatorics/enumeration.cpp\"\n#include\
+    \ \"../../combinatorics/surjection.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  int n,k;\n  scanf(\"%d %d\",&n,&k);\n  printf(\"%d\\n\",surjection<Mint<int>>(n,k).v);\n\
     \  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
@@ -42,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 14:33:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_C.test.cpp
 layout: document

@@ -7,18 +7,18 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
-  bundledCode: "#line 1 \"test/aoj/ALDS1_14_D.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"string/suffixarray.cpp\"\n\n#line 3 \"string/suffixarray.cpp\"\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct SuffixArray{\n  string s;\n\
-    \  vector<int> sa,rev;\n\n  SuffixArray(){}\n  SuffixArray(const string &S):s(S){\n\
-    \    int n=s.size();\n    s.push_back('$');\n    sa.resize(n+1);\n    iota(sa.begin(),sa.end(),0);\n\
+  bundledCode: "#line 1 \"test/aoj/ALDS1_14_D.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+    \ 1 \"string/suffixarray.cpp\"\n\n#line 3 \"string/suffixarray.cpp\"\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\nstruct SuffixArray{\n  string s;\n  vector<int>\
+    \ sa,rev;\n\n  SuffixArray(){}\n  SuffixArray(const string &S):s(S){\n    int\
+    \ n=s.size();\n    s.push_back('$');\n    sa.resize(n+1);\n    iota(sa.begin(),sa.end(),0);\n\
     \    sort(sa.begin(),sa.end(),\n         [&](int a,int b){\n           if(s[a]==s[b])\
     \ return a>b;\n           return s[a]<s[b];\n         });\n    vector<int> cs(n+1,0),rs(n+1),cnt(n+1);\n\
     \    for(int i=0;i<=n;i++) rs[i]=s[i];\n    for(int len=1;len<=n;len*=2){\n  \
@@ -42,9 +42,9 @@ data:
     \  string t;\n  cin>>t;\n  int q;\n  cin>>q;\n  SuffixArray sa(t);\n  while(q--){\n\
     \    string p;\n    cin>>p;\n    cout<<!!sa.count(p)<<\"\\n\";\n  }\n  cout<<flush;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../string/suffixarray.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../string/suffixarray.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  string t;\n  cin>>t;\n  int q;\n\
     \  cin>>q;\n  SuffixArray sa(t);\n  while(q--){\n    string p;\n    cin>>p;\n\
     \    cout<<!!sa.count(p)<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_14_D.test.cpp
   requiredBy: []
-  timestamp: '2019-12-26 23:10:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 14:33:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_D.test.cpp
 layout: document

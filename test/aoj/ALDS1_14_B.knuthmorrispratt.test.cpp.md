@@ -9,15 +9,14 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
-  bundledCode: "#line 1 \"test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp\"\n#define\
-    \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 2 \"string/knuthmorrispratt.cpp\"\n\n#ifndef call_from_test\n#line 5 \"\
-    string/knuthmorrispratt.cpp\"\nusing namespace std;\n#endif\n/*\n * @see https://snuke.hatenablog.com/entry/2017/07/18/101026\n\
+  bundledCode: "#line 1 \"test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+    \ 2 \"string/knuthmorrispratt.cpp\"\n\n#ifndef call_from_test\n#line 5 \"string/knuthmorrispratt.cpp\"\
+    \nusing namespace std;\n#endif\n/*\n * @see https://snuke.hatenablog.com/entry/2017/07/18/101026\n\
     \ */\n//BEGIN CUT HERE\nvector<int> knuth_morris_pratt(const string &s){\n  int\
     \ n=s.size();\n  vector<int> kmp(n+1,-1);\n  for(int i=0,j=-1;i<n;i++){\n    while(~j&&s[i]!=s[j])\
     \ j=kmp[j];\n    kmp[i+1]=++j;\n    if(i+1<n&&s[i+1]==s[j]) kmp[i+1]=kmp[j];\n\
@@ -44,18 +43,18 @@ data:
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  string t,p;\n  cin>>t>>p;\n\n  vector<int> res=pattern_match(p,t);\n  for(int\
     \ x:res) cout<<x<<\"\\n\";\n  cout<<flush;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../string/knuthmorrispratt.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  string t,p;\n  cin>>t>>p;\n\
-    \n  vector<int> res=pattern_match(p,t);\n  for(int x:res) cout<<x<<\"\\n\";\n\
-    \  cout<<flush;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../string/knuthmorrispratt.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  string t,p;\n  cin>>t>>p;\n\n\
+    \  vector<int> res=pattern_match(p,t);\n  for(int x:res) cout<<x<<\"\\n\";\n \
+    \ cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - string/knuthmorrispratt.cpp
   isVerificationFile: true
   path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
   requiredBy: []
-  timestamp: '2020-08-20 15:23:52+09:00'
+  timestamp: '2020-09-25 14:33:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp

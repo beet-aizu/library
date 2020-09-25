@@ -4,15 +4,14 @@ data:
   - icon: ':question:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
@@ -26,10 +25,10 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ string/editdistance.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tools/chminmax.cpp\"\n#include \"../../string/editdistance.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/chminmax.cpp\"\n#include \"../../string/editdistance.cpp\"\n#undef\
+    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  string s1,s2;\n  cin>>s1>>s2;\n  cout<<edit_distance(s1,s2)<<endl;\n  return\
     \ 0;\n}\n"
   dependsOn:
@@ -38,8 +37,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_1_E.test.cpp
   requiredBy: []
-  timestamp: '2020-05-29 17:38:35+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 14:33:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DPL_1_E.test.cpp
 layout: document

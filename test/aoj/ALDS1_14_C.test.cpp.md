@@ -1,18 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/rollinghash.cpp
     title: string/rollinghash.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/rectanglehash.cpp
     title: string/rectanglehash.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
@@ -26,9 +25,9 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ string/rectanglehash.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../string/rollinghash.cpp\"\n#include \"../../string/rectanglehash.cpp\"\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../string/rollinghash.cpp\"\n#include \"../../string/rectanglehash.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int h,w;\n  cin>>h>>w;\n  vector<string> ss(h);\n  for(int i=0;i<h;i++) cin>>ss[i];\n\
     \n  int r,c;\n  cin>>r>>c;\n  vector<string> ts(r);\n  for(int i=0;i<r;i++) cin>>ts[i];\n\
@@ -42,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_14_C.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 18:13:20+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-25 14:33:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_C.test.cpp
 layout: document

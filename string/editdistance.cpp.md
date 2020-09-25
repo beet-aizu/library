@@ -6,11 +6,11 @@ data:
     title: tools/chminmax.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_1_E.test.cpp
     title: test/aoj/DPL_1_E.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -36,7 +36,7 @@ data:
   path: string/editdistance.cpp
   requiredBy: []
   timestamp: '2020-05-29 17:38:35+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DPL_1_E.test.cpp
 documentation_of: string/editdistance.cpp

@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C
@@ -26,9 +25,9 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ string/longestcommonsubstring.cpp: line 6: unable to process #include in #if\
     \ / #ifdef / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tools/chminmax.cpp\"\n#include \"../../string/longestcommonsubstring.cpp\"\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/chminmax.cpp\"\n#include \"../../string/longestcommonsubstring.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int q;\n  cin>>q;\n  while(q--){\n    string s,t;\n    cin>>s>>t;\n    cout<<longest_common_substring(s,t)<<\"\
     \\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
@@ -38,7 +37,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_10_C.test.cpp
   requiredBy: []
-  timestamp: '2020-03-12 16:36:20+09:00'
+  timestamp: '2020-09-25 14:33:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_10_C.test.cpp

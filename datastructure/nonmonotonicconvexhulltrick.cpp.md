@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
     title: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -71,7 +71,7 @@ data:
   path: datastructure/nonmonotonicconvexhulltrick.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:27:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3069.test.cpp
   - test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp

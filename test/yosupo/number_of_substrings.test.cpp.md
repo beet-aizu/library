@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: string/suffixarray.cpp
     title: string/suffixarray.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: string/longestcommonprefix.cpp
   _extendedRequiredBy: []

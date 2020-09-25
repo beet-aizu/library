@@ -9,14 +9,14 @@ data:
     path: algorithm/optimalbinarytree.cpp
     title: algorithm/optimalbinarytree.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/ALDS1_9_C.test.cpp
     title: test/aoj/ALDS1_9_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2415.test.cpp
     title: test/aoj/2415.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -68,7 +68,7 @@ data:
   requiredBy:
   - algorithm/optimalbinarytree.cpp
   timestamp: '2020-05-17 19:42:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/ALDS1_9_C.test.cpp
   - test/aoj/2415.test.cpp

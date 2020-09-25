@@ -17,7 +17,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/bell.cpp
     title: combinatorics/bell.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   - icon: ':heavy_check_mark:'
@@ -27,7 +27,7 @@ data:
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_C.test.cpp
     title: test/aoj/DPL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_E.test.cpp
     title: test/aoj/DPL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_B.test.cpp
     title: test/aoj/DPL_5_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_J.test.cpp
     title: test/aoj/DPL_5_J.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_A.test.cpp
     title: test/aoj/DPL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -115,7 +115,7 @@ data:
     path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -171,7 +171,7 @@ data:
   - combinatorics/stirling2nd.cpp
   - graph/lowlink.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DPL_5_C.test.cpp
   - test/aoj/2985.garner.test.cpp
