@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
@@ -23,9 +22,9 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ tree/diameterforedge.cpp: line 64: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tree/diameterforedge.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tree/diameterforedge.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n  DiameterForEdge<int>\
     \ G(n);\n  for(int i=1;i<n;i++){\n    int s,t,w;\n    cin>>s>>t>>w;\n    G.add_edge(s,t,w);\n\
     \  }\n  cout<<G.build()<<endl;\n  return 0;\n}\n"
@@ -34,7 +33,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2020-05-18 20:55:43+09:00'
+  timestamp: '2020-09-25 15:10:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_A.test.cpp

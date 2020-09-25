@@ -9,13 +9,13 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
-  bundledCode: "#line 1 \"test/aoj/GRL_5_C.lca.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"tree/lca.cpp\"\n\n#line 3 \"tree/lca.cpp\"\nusing namespace std;\n#endif\n\
+  bundledCode: "#line 1 \"test/aoj/GRL_5_C.lca.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\n\n\
+    #include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
+    \ 1 \"tree/lca.cpp\"\n\n#line 3 \"tree/lca.cpp\"\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\nstruct LCA{\n  const int lg = 12;\n  const int sz = 1<<lg;\n\
     \  const int ms = sz-1;\n  int n;\n  vector<int> P,D,E,A,B,T,ht;\n  vector<vector<int>\
     \ > G,dat;\n  LCA(int n):\n    n(n),P(n,-1),D(n),E(n*2,0),A(n*2,-1),B(n*2/lg+1),T(sz,0),G(n){}\n\
@@ -55,9 +55,9 @@ data:
     \  }\n  lca.build();\n\n  int q;\n  cin>>q;\n  while(q--){\n    int u,v;\n   \
     \ cin>>u>>v;\n    cout<<lca.lca(u,v)<<\"\\n\";\n  }\n  cout<<flush;\n  return\
     \ 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tree/lca.cpp\"\n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tree/lca.cpp\"\n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n\
     \  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n  LCA lca(n);\n  for(int i=0;i<n;i++){\n\
     \    int k;\n    cin>>k;\n    for(int j=0;j<k;j++){\n      int c;\n      cin>>c;\n\
     \      lca.add_edge(i,c);\n    }\n  }\n  lca.build();\n\n  int q;\n  cin>>q;\n\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_C.lca.test.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:21:09+09:00'
+  timestamp: '2020-09-25 15:10:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_C.lca.test.cpp

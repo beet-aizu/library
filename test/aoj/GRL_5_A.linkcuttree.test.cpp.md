@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
@@ -29,11 +28,11 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linkcuttree/farthest.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tools/chminmax.cpp\"\n#include \"../../linkcuttree/base.cpp\"\
-    \n#include \"../../linkcuttree/farthest.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using Node = NodeBase<int>;\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/chminmax.cpp\"\n#include \"../../linkcuttree/base.cpp\"\n#include\
+    \ \"../../linkcuttree/farthest.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using Node = NodeBase<int>;\n\
     \  constexpr size_t LIM = 2e6 + 200;\n  using LCT = Farthest<Node, LIM>;\n  LCT\
     \ lct;\n\n  vector<LCT::Node*> vs(1e5+100);\n  vector<LCT::Node*> es(1e5+100);\n\
     \n  int n;\n  cin>>n;\n  for(int i=0;i<n;i++) vs[i]=lct.create(0);\n\n  for(int\
@@ -48,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_A.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-07-16 18:11:07+09:00'
+  timestamp: '2020-09-25 15:10:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_A.linkcuttree.test.cpp

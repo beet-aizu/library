@@ -9,21 +9,21 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
-  bundledCode: "#line 1 \"test/aoj/GRL_6_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 1 \"mincostflow/primaldual.cpp\"\n\n#line 3 \"mincostflow/primaldual.cpp\"\
-    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
-    \ Flow, typename Cost>\nstruct PrimalDual{\n  struct Edge{\n    int dst;\n   \
-    \ Flow cap;\n    Cost cost;\n    int rev;\n    Edge(int dst,Flow cap,Cost cost,int\
-    \ rev):\n      dst(dst),cap(cap),cost(cost),rev(rev){}\n  };\n\n  vector<vector<Edge>>\
-    \ G;\n  vector<Cost> h,dist;\n  vector<int> prevv,preve;\n\n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\
-    \n  void add_edge(int u,int v,Flow cap,Cost cost){\n    int e=G[u].size();\n \
-    \   int r=(u==v?e+1:G[v].size());\n    G[u].emplace_back(v,cap,cost,r);\n    G[v].emplace_back(u,0,-cost,e);\n\
-    \  }\n\n  Cost residual_cost(int src,Edge &e){\n    return e.cost+h[src]-h[e.dst];\n\
+  bundledCode: "#line 1 \"test/aoj/GRL_6_B.test.cpp\"\n// verification-helper: PROBLEM\
+    \ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\n\n#include<bits/stdc++.h>\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"mincostflow/primaldual.cpp\"\
+    \n\n#line 3 \"mincostflow/primaldual.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
+    \ CUT HERE\n// O(F E log V)\ntemplate<typename Flow, typename Cost>\nstruct PrimalDual{\n\
+    \  struct Edge{\n    int dst;\n    Flow cap;\n    Cost cost;\n    int rev;\n \
+    \   Edge(int dst,Flow cap,Cost cost,int rev):\n      dst(dst),cap(cap),cost(cost),rev(rev){}\n\
+    \  };\n\n  vector<vector<Edge>> G;\n  vector<Cost> h,dist;\n  vector<int> prevv,preve;\n\
+    \n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\n  void add_edge(int\
+    \ u,int v,Flow cap,Cost cost){\n    int e=G[u].size();\n    int r=(u==v?e+1:G[v].size());\n\
+    \    G[u].emplace_back(v,cap,cost,r);\n    G[v].emplace_back(u,0,-cost,e);\n \
+    \ }\n\n  Cost residual_cost(int src,Edge &e){\n    return e.cost+h[src]-h[e.dst];\n\
     \  }\n\n  void dijkstra(int s){\n    struct P{\n      Cost first;\n      int second;\n\
     \      P(Cost first,int second):first(first),second(second){}\n      bool operator<(const\
     \ P&a) const{return first>a.first;}\n    };\n    priority_queue<P> pq;\n\n   \
@@ -47,9 +47,9 @@ data:
     \n  int v,e,f;\n  cin>>v>>e>>f;\n\n  PrimalDual<int, int> G(v);\n  for(int i=0;i<e;i++){\n\
     \    int u,v,c,d;\n    cin>>u>>v>>c>>d;\n    G.add_edge(u,v,c,d);\n  }\n\n  if(!G.build(0,v-1,f))\n\
     \    cout<<-1<<endl;\n  else\n    cout<<G.get_cost()<<endl;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../mincostflow/primaldual.cpp\"\n#undef call_from_test\n\nint main(){\n\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../mincostflow/primaldual.cpp\"\n#undef call_from_test\n\nint main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int v,e,f;\n  cin>>v>>e>>f;\n\n\
     \  PrimalDual<int, int> G(v);\n  for(int i=0;i<e;i++){\n    int u,v,c,d;\n   \
     \ cin>>u>>v>>c>>d;\n    G.add_edge(u,v,c,d);\n  }\n\n  if(!G.build(0,v-1,f))\n\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 11:08:59+09:00'
+  timestamp: '2020-09-25 15:10:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_6_B.test.cpp
