@@ -21,7 +21,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bernoulli_number
     links:
     - https://judge.yosupo.jp/problem/bernoulli_number
@@ -35,8 +34,8 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ convolution/numbertheoretictransform.cpp: line 8: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bernoulli_number\"\n\n\
-    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bernoulli_number\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
     \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
     \n#include \"../../combinatorics/bernoulli.cpp\"\n#undef call_from_test\n\nsigned\
@@ -54,7 +53,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/bernoulli_number.test.cpp
   requiredBy: []
-  timestamp: '2020-05-16 18:51:14+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/bernoulli_number.test.cpp

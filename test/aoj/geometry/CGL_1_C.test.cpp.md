@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
-  bundledCode: "#line 1 \"test/aoj/geometry/CGL_1_C.test.cpp\"\n#define PROBLEM \"\
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/aoj/geometry/CGL_1_C.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\
     \n\n#line 3 \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
     \ HERE\n#define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst\
@@ -211,8 +210,8 @@ data:
     \ cout<<\"CLOCKWISE\"<<endl;\n    if(t==CCW_ONLINE_BACK) cout<<\"ONLINE_BACK\"\
     <<endl;\n    if(t==CCW_ONLINE_FRONT) cout<<\"ONLINE_FRONT\"<<endl;\n    if(t==CCW_ON_SEGMENT)\
     \ cout<<\"ON_SEGMENT\"<<endl;\n  }\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\n\
+    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../../geometry/geometry.cpp\"\n#undef call_from_test\n\n//CCW\nsigned main(){\n\
     \  Point p0,p1;\n  cin>>p0>>p1;\n  int q;\n  cin>>q;\n  while(q--){\n    Point\
     \ p2;\n    cin>>p2;\n    int t=ccw(p0,p1,p2);\n    if(t==CCW_COUNTER_CLOCKWISE)\
@@ -225,7 +224,7 @@ data:
   isVerificationFile: true
   path: test/aoj/geometry/CGL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2019-12-17 20:13:07+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_1_C.test.cpp

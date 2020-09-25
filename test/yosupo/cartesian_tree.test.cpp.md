@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/cartesian_tree
     links:
     - https://judge.yosupo.jp/problem/cartesian_tree
-  bundledCode: "#line 1 \"test/yosupo/cartesian_tree.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/cartesian_tree\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/cartesian_tree.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/cartesian_tree\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/cartesiantree.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"datastructure/cartesiantree.cpp\"\nusing\
     \ namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nvector<int>\
@@ -29,19 +28,19 @@ data:
     \ for(int i=0;i<n;i++) cin>>as[i];\n\n  auto ps=cartesian_tree(as);\n  for(int\
     \ i=0;i<n;i++){\n    if(i) cout<<' ';\n    cout<<(ps[i]<0?i:ps[i]);\n  }\n  cout<<newl;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#include \"../../datastructure/cartesiantree.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \  const char newl = '\\n';\n\n  int n;\n  cin>>n;\n\n  vector<int> as(n);\n \
-    \ for(int i=0;i<n;i++) cin>>as[i];\n\n  auto ps=cartesian_tree(as);\n  for(int\
-    \ i=0;i<n;i++){\n    if(i) cout<<' ';\n    cout<<(ps[i]<0?i:ps[i]);\n  }\n  cout<<newl;\n\
-    \  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/cartesian_tree\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../datastructure/cartesiantree.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\n';\n\n  int\
+    \ n;\n  cin>>n;\n\n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n\
+    \  auto ps=cartesian_tree(as);\n  for(int i=0;i<n;i++){\n    if(i) cout<<' ';\n\
+    \    cout<<(ps[i]<0?i:ps[i]);\n  }\n  cout<<newl;\n  return 0;\n}\n"
   dependsOn:
   - datastructure/cartesiantree.cpp
   isVerificationFile: true
   path: test/yosupo/cartesian_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-07-27 11:09:34+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/cartesian_tree.test.cpp

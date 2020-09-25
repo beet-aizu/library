@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D
@@ -23,16 +22,16 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ tools/bigint.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D\"\
-    \n\n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #include \"../../tools/bigint.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
-    \  bigint a,b;\n  cin>>a>>b;\n  cout<<a/b<<endl;\n  return 0;\n}\n"
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_2_D\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \ \"../../tools/bigint.cpp\"\n#undef call_from_test\n\nsigned main(){\n  bigint\
+    \ a,b;\n  cin>>a>>b;\n  cout<<a/b<<endl;\n  return 0;\n}\n"
   dependsOn:
   - tools/bigint.cpp
   isVerificationFile: true
   path: test/aoj/NTL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2020-02-15 16:27:15+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_2_D.test.cpp

@@ -12,12 +12,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/associative_array
     links:
     - https://judge.yosupo.jp/problem/associative_array
-  bundledCode: "#line 1 \"test/yosupo/associative_array.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/associative_array.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/associative_array\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"tools/cc_hash.cpp\"\n\
     \n#ifndef call_from_test\n#line 5 \"tools/cc_hash.cpp\"\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct cc_hash{\n  uint64_t operator()(T\
@@ -36,8 +35,8 @@ data:
     \    if(t==0){\n      ll k,v;\n      cin>>k>>v;\n      mp[k]=v;\n    }\n    if(t==1){\n\
     \      ll k;\n      cin>>k;\n      cout<<mp[k]<<newl;\n    }\n  }\n  return 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/associative_array\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../tools/cc_hash.cpp\"\n#include \"../../datastructure/pb_ds_cc_hash_table.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \  const char newl = '\\n';\n\n  using ll = long long;\n  gmap<ll, ll, cc_hash<ll>>\
@@ -51,7 +50,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2020-05-24 17:44:55+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/associative_array.test.cpp

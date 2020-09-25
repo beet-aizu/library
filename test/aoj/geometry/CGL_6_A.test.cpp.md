@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A
-  bundledCode: "#line 1 \"test/aoj/geometry/CGL_6_A.test.cpp\"\n#define PROBLEM \"\
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/aoj/geometry/CGL_6_A.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\
     \n\n#line 3 \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
     \ HERE\n#define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst\
@@ -208,8 +207,8 @@ data:
     \n#undef call_from_test\n\n// manhattan_intersection\nsigned main(){\n  int n;\n\
     \  cin>>n;\n  vector<Segment> ss(n);\n  for(int i=0;i<n;i++) cin>>ss[i];\n  cout<<manhattan_intersection(ss,1e9+10)<<endl;\n\
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A\n\
+    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../../geometry/geometry.cpp\"\n#undef call_from_test\n\n// manhattan_intersection\n\
     signed main(){\n  int n;\n  cin>>n;\n  vector<Segment> ss(n);\n  for(int i=0;i<n;i++)\
     \ cin>>ss[i];\n  cout<<manhattan_intersection(ss,1e9+10)<<endl;\n  return 0;\n\
@@ -219,7 +218,7 @@ data:
   isVerificationFile: true
   path: test/aoj/geometry/CGL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2019-12-17 20:13:07+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_6_A.test.cpp

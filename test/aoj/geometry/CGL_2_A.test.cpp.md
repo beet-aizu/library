@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A
-  bundledCode: "#line 1 \"test/aoj/geometry/CGL_2_A.test.cpp\"\n#define PROBLEM \"\
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/aoj/geometry/CGL_2_A.test.cpp\"\n// verification-helper:\
+    \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"geometry/geometry.cpp\"\
     \n\n#line 3 \"geometry/geometry.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
     \ HERE\n#define EPS (1e-10)\n#define equals(a,b) (fabs((a)-(b)) < EPS)\nconst\
@@ -209,8 +208,8 @@ data:
     \  cin>>q;\n  while(q--){\n    Point p0,p1,p2,p3;\n    cin>>p0>>p1>>p2>>p3;\n\
     \    if(isParallel(Line(p0,p1),Line(p2,p3))) cout<<2<<endl;\n    else if(isOrthogonal(Line(p0,p1),Line(p2,p3)))\
     \ cout<<1<<endl;\n    else cout<<0<<endl;\n  }\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
-    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\n\
+    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../../geometry/geometry.cpp\"\n#undef call_from_test\n\n//Parallel / Orthogonal\n\
     signed main(){\n  int q;\n  cin>>q;\n  while(q--){\n    Point p0,p1,p2,p3;\n \
     \   cin>>p0>>p1>>p2>>p3;\n    if(isParallel(Line(p0,p1),Line(p2,p3))) cout<<2<<endl;\n\
@@ -221,7 +220,7 @@ data:
   isVerificationFile: true
   path: test/aoj/geometry/CGL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2019-12-17 20:13:07+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/geometry/CGL_2_A.test.cpp

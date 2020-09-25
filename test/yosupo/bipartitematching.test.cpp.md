@@ -9,12 +9,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bipartitematching
     links:
     - https://judge.yosupo.jp/problem/bipartitematching
-  bundledCode: "#line 1 \"test/yosupo/bipartitematching.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/bipartitematching\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"test/yosupo/bipartitematching.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/bipartitematching\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"maxflow/hopcroft_karp.cpp\"\
     \n\n#line 3 \"maxflow/hopcroft_karp.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\nstruct BiMatch{\n  int L,R;\n  vector<vector<int> > G;\n  vector<int>\
@@ -40,8 +39,8 @@ data:
     \    int a,b;\n    cin>>a>>b;\n    G.add_edge(a,b);\n  }\n\n  cout<<G.build()<<endl;\n\
     \n  for(int i=0;i<L;i++)\n    if(~G.match[i])\n      cout<<i<<\" \"<<G.match[i]-L<<\"\
     \\n\";\n\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\n\n\
-    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bipartitematching\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../maxflow/hopcroft_karp.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int L,R,M;\n  cin>>L>>R>>M;\n\
     \  BiMatch G(L,R);\n  for(int i=0;i<M;i++){\n    int a,b;\n    cin>>a>>b;\n  \
@@ -53,7 +52,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/bipartitematching.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 12:58:32+09:00'
+  timestamp: '2020-09-25 15:19:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/bipartitematching.test.cpp
