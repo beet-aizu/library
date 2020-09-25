@@ -77,31 +77,32 @@ data:
     \ Flow, typename Cost>\nusing MaxGainFlow = MinCostFlow<Flow, Cost, Objective::MAXIMIZE>;\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n#line 8 \"test/yosupo/assignment.test.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  using ll = long\
-    \ long;\n\n  int n;\n  cin>>n;\n  MinCostFlow<ll, ll> G(n+n);\n\n  for(int i=0;i<n;i++){\n\
-    \    G.add_supply(0+i,1);\n    G.add_demand(n+i,1);\n  }\n\n  vector<vector<decltype(G)::EdgePtr>>\
-    \ E(n);\n  for(int i=0;i<n;i++){\n    for(int j=0;j<n;j++){\n      int a;\n  \
-    \    cin>>a;\n      E[i].emplace_back(G.add_edge(i,n+j,0,1,a));\n    }\n  }\n\n\
-    \  assert(G.build());\n  cout<<G.get_cost()<<endl;\n  for(int i=0;i<n;i++){\n\
-    \    if(i) cout<<' ';\n    for(auto e:E[i])\n      if(G.get_edge(e).flow)\n  \
-    \      cout<<G.get_edge(e).dst-n;\n  }\n  cout<<endl;\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
-    ../../bflow/capacityscaling.cpp\"\n#undef call_from_test\n\nsigned main(){\n \
-    \ cin.tie(0);\n  ios::sync_with_stdio(0);\n  using ll = long long;\n\n  int n;\n\
-    \  cin>>n;\n  MinCostFlow<ll, ll> G(n+n);\n\n  for(int i=0;i<n;i++){\n    G.add_supply(0+i,1);\n\
+    \n#ifdef SANITIZE\n#define IGNORE\n#endif\n\nsigned main(){\n  cin.tie(0);\n \
+    \ ios::sync_with_stdio(0);\n  using ll = long long;\n\n  int n;\n  cin>>n;\n \
+    \ MinCostFlow<ll, ll> G(n+n);\n\n  for(int i=0;i<n;i++){\n    G.add_supply(0+i,1);\n\
     \    G.add_demand(n+i,1);\n  }\n\n  vector<vector<decltype(G)::EdgePtr>> E(n);\n\
     \  for(int i=0;i<n;i++){\n    for(int j=0;j<n;j++){\n      int a;\n      cin>>a;\n\
     \      E[i].emplace_back(G.add_edge(i,n+j,0,1,a));\n    }\n  }\n\n  assert(G.build());\n\
     \  cout<<G.get_cost()<<endl;\n  for(int i=0;i<n;i++){\n    if(i) cout<<' ';\n\
     \    for(auto e:E[i])\n      if(G.get_edge(e).flow)\n        cout<<G.get_edge(e).dst-n;\n\
     \  }\n  cout<<endl;\n  return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
+    ../../bflow/capacityscaling.cpp\"\n#undef call_from_test\n\n#ifdef SANITIZE\n\
+    #define IGNORE\n#endif\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \  using ll = long long;\n\n  int n;\n  cin>>n;\n  MinCostFlow<ll, ll> G(n+n);\n\
+    \n  for(int i=0;i<n;i++){\n    G.add_supply(0+i,1);\n    G.add_demand(n+i,1);\n\
+    \  }\n\n  vector<vector<decltype(G)::EdgePtr>> E(n);\n  for(int i=0;i<n;i++){\n\
+    \    for(int j=0;j<n;j++){\n      int a;\n      cin>>a;\n      E[i].emplace_back(G.add_edge(i,n+j,0,1,a));\n\
+    \    }\n  }\n\n  assert(G.build());\n  cout<<G.get_cost()<<endl;\n  for(int i=0;i<n;i++){\n\
+    \    if(i) cout<<' ';\n    for(auto e:E[i])\n      if(G.get_edge(e).flow)\n  \
+    \      cout<<G.get_edge(e).dst-n;\n  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - bflow/capacityscaling.cpp
   isVerificationFile: true
   path: test/yosupo/assignment.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 09:23:44+09:00'
+  timestamp: '2020-09-25 12:06:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/assignment.test.cpp
