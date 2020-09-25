@@ -97,62 +97,7 @@ struct PrimalDual{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed geocon2013_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  using D = double;
-
-  int n;
-  cin>>n;
-  vector<D> xs(n),ys(n);
-  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];
-
-  vector<int> pos,neg;
-  for(int i=0;i<n;i++){
-    if(xs[i]>0) pos.emplace_back(i);
-    if(xs[i]<0) neg.emplace_back(i);
-  }
-
-  int f=max(pos.size(),neg.size());
-  if(f==0){
-    cout<<0<<endl;
-    return 0;
-  }
-
-  PrimalDual<int, D> G(n+3);
-  int S=n,T=n+1,U=n+2;
-  for(int z:pos) G.add_edge(S,z,1,0);
-  for(int z:neg) G.add_edge(z,T,1,0);
-
-  int dif=pos.size()-neg.size();
-  if(dif>0){
-    G.add_edge(U,T,dif,0);
-    for(int p:pos)
-      G.add_edge(p,U,1,abs(xs[p]));
-  }
-  if(dif<0){
-    G.add_edge(S,U,-dif,0);
-    for(int q:neg)
-      G.add_edge(U,q,1,abs(xs[q]));
-  }
-
-  for(int p:pos)
-    for(int q:neg)
-      G.add_edge(p,q,1,
-                 min(hypot(xs[p]+xs[q],ys[p]-ys[q]),abs(xs[p])+abs(xs[q])));
-
-  assert(G.build(S,T,f));
-  cout<<fixed<<setprecision(12)<<G.get_cost()<<endl;
-  return 0;
-}
-/*
-  verified on 2020/09/25
-  https://atcoder.jp/contests/geocon2013/tasks/geocon2013_b
-*/
-
 signed main(){
-  geocon2013_B();
   return 0;
 }
 #endif
