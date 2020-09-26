@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://www.codechef.com/problems/SEGPROD
   bundledCode: "#line 1 \"datastructure/disjointsparsetable.cpp\"\n\n#include<bits/stdc++.h>\n\

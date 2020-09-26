@@ -87,7 +87,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://codeforces.com/contest/600/problem/D
   bundledCode: "#line 1 \"geometry/geometry.cpp\"\n\n#include<bits/stdc++.h>\nusing\

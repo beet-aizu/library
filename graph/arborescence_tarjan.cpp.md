@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://vjudge.net/problem/UVA-11183
   bundledCode: "#line 1 \"graph/arborescence_tarjan.cpp\"\n\n#include<bits/stdc++.h>\n\

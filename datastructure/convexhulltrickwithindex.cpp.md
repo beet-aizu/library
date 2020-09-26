@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://codeforces.com/contest/1137/problem/E
   bundledCode: "#line 1 \"datastructure/convexhulltrickwithindex.cpp\"\n#include<bits/stdc++.h>\n\

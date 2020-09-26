@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
     - https://ei1333.hateblo.jp/entry/2019/06/13/133736

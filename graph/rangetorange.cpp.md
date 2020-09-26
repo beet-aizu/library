@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
   bundledCode: "#line 2 \"graph/rangetorange.cpp\"\n\n#ifndef call_from_test\n#include\

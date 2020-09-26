@@ -6,10 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
     links: []
   bundledCode: "#line 1 \"segtree/types/offline.cpp\"\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n\n#define IGNORE\n\ntemplate<typename T>\nstruct RangeCount{\n\

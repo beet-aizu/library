@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/arc097/tasks/arc097_d
   bundledCode: "#line 1 \"tree/diameterforvertex.cpp\"\n\n#include<bits/stdc++.h>\n\

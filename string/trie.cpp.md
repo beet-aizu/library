@@ -18,7 +18,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
   bundledCode: "#line 1 \"string/trie.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\

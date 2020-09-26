@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query
   bundledCode: "#line 1 \"segtree/persistent/ushi.cpp\"\n\n#include<bits/stdc++.h>\n\

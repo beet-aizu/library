@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - http://codeforces.com/contest/736/problem/D
     - https://atcoder.jp/contests/arc054/tasks/arc054_c

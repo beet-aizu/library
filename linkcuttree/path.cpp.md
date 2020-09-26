@@ -30,7 +30,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://ei1333.hateblo.jp/entry/2018/05/29/011140
     - https://www.spoj.com/problems/DYNACON1/

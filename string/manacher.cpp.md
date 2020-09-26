@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://snuke.hatenablog.com/entry/2014/12/02/235837
   bundledCode: "#line 2 \"string/manacher.cpp\"\n\n#ifndef call_from_test\n#include\

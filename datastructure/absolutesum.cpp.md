@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc127/tasks/abc127_f
   bundledCode: "#line 1 \"datastructure/absolutesum.cpp\"\n\n#include<bits/stdc++.h>\n\

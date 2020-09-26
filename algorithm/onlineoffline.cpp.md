@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://qiita.com/tmaehara/items/0687af2cfb807cde7860
   bundledCode: "#line 2 \"algorithm/onlineoffline.cpp\"\n\n#ifndef call_from_test\n\

@@ -21,7 +21,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
     - https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_e

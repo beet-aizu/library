@@ -18,7 +18,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/kupc2013/tasks/kupc2013_d
   bundledCode: "#line 1 \"segtree/basic/ushi.cpp\"\n\n#include<bits/stdc++.h>\nusing\

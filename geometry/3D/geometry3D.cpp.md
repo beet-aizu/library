@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://vjudge.net/problem/HDU-3662
   bundledCode: "#line 1 \"geometry/3D/geometry3D.cpp\"\n#include<bits/stdc++.h>\n\

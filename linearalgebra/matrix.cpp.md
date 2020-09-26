@@ -24,7 +24,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/arc050/tasks/arc050_c
     - https://www.spoj.com/problems/MIFF/

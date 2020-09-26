@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/cpsco2019-s3/tasks/cpsco2019_s3_g
   bundledCode: "#line 1 \"math/fraction.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\

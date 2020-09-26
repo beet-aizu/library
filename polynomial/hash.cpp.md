@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/bitflyer2018-final/tasks/bitflyer2018_final_f
     - https://atcoder.jp/contests/jag2018summer-day2/tasks/jag2018summer_day2_f
