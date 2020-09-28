@@ -820,7 +820,7 @@ data:
       title: test/aoj/2309.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2313.test.cpp
-      title: test/aoj/2313.test.cpp
+      title: Verify Link/Cut
     - icon: ':heavy_check_mark:'
       path: test/aoj/2324.test.cpp
       title: test/aoj/2324.test.cpp
