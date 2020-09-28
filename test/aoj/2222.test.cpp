@@ -32,9 +32,9 @@ signed main(){
   M ans(1);
   for(int i=0;i<k;i++){
     if(indeg[i]!=0) dp[i]-=M(1);
-    for(int j:scc.T[i])
+    for(int j:scc.H[i])
       dp[j]*=dp[i]+M(1);
-    if(scc.T[i].empty()) ans*=dp[i]+M(1);
+    if(scc.H[i].empty()) ans*=dp[i]+M(1);
   }
 
   cout<<ans<<endl;

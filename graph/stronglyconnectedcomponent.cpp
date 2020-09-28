@@ -4,7 +4,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 struct SCC{
-  vector< vector<int> > G,R,T,C;
+  vector< vector<int> > G,R,H,C;
   vector<int> vs,used,blg;
   SCC(){}
   SCC(int n):G(n),R(n),used(n),blg(n){}
@@ -29,7 +29,7 @@ struct SCC{
       if(!used[u]) rdfs(u,k);
   }
 
-  int build(){
+  int build(bool uniq=true){
     int n=G.size();
     for(int v=0;v<n;v++)
       if(!used[v]) dfs(v);
@@ -38,7 +38,7 @@ struct SCC{
     int k=0;
     for(int i=n-1;i>=0;i--){
       if(!used[vs[i]]){
-        T.emplace_back();
+        H.emplace_back();
         C.emplace_back();
         rdfs(vs[i],k++);
       }
@@ -47,11 +47,13 @@ struct SCC{
     for(int v=0;v<n;v++)
       for(int u:G[v])
         if(blg[v]!=blg[u])
-          T[blg[v]].push_back(blg[u]);
+          H[blg[v]].push_back(blg[u]);
 
-    for(int i=0;i<k;i++){
-      sort(T[i].begin(),T[i].end());
-      T[i].erase(unique(T[i].begin(),T[i].end()),T[i].end());
+    if(uniq){
+      for(int i=0;i<k;i++){
+        sort(H[i].begin(),H[i].end());
+        H[i].erase(unique(H[i].begin(),H[i].end()),H[i].end());
+      }
     }
     return k;
   }

@@ -24,7 +24,7 @@ signed main(){
   for(int i=0;i<n;i++){
     int flg=0;
     for(int j=0;j<n;j++){
-      if(G.scc.blg[i]!=G.scc.blg[j]) continue;
+      if(G.scc[i]!=G.scc[j]) continue;
       if(flg) cout<<" ";
       flg=1;
       cout<<j+1;
