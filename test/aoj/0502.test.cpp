@@ -14,7 +14,7 @@ signed main(){
   int n;
   while(cin>>n,n){
     Die d;
-    for(int i=0;i<6;i++) d.s[i]=i+1;
+    for(int i=0;i<6;i++) d.fs[i]=i+1;
 
     int ans=d.top();
     for(int i=0;i<n;i++){

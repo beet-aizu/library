@@ -12,7 +12,7 @@ signed main(){
   ios::sync_with_stdio(0);
 
   Die d;
-  for(int i=0;i<6;i++) cin>>d.s[i];
+  for(int i=0;i<6;i++) cin>>d.fs[i];
 
   string s;
   cin>>s;

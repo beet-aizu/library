@@ -3,14 +3,15 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+template<typename T=int>
 struct Die{
-  int s[6];
-  int &top()   {return s[0];}
-  int &south() {return s[1];}
-  int &east()  {return s[2];}
-  int &west()  {return s[3];}
-  int &north() {return s[4];}
-  int &bottom(){return s[5];}
+  array<T, 6> fs;
+  int &top()   {return fs[0];}
+  int &south() {return fs[1];}
+  int &east()  {return fs[2];}
+  int &west()  {return fs[3];}
+  int &north() {return fs[4];}
+  int &bottom(){return fs[5];}
   void roll(char c){
     //the view from above
     // N
@@ -25,27 +26,28 @@ struct Die{
                  {1,3,4,2}};
     for(int k=0;k<6;k++){
       if(b[k]!=c) continue;
-      int t=s[v[k][0]];
-      s[v[k][0]]=s[v[k][1]];
-      s[v[k][1]]=s[v[k][2]];
-      s[v[k][2]]=s[v[k][3]];
-      s[v[k][3]]=t;
+      int t=fs[v[k][0]];
+      fs[v[k][0]]=fs[v[k][1]];
+      fs[v[k][1]]=fs[v[k][2]];
+      fs[v[k][2]]=fs[v[k][3]];
+      fs[v[k][3]]=t;
     }
   }
   using ll = long long;
   ll hash(){
     ll res=0;
-    for(int i=0;i<6;i++) res=res*256+s[i];
+    for(int i=0;i<6;i++) res=res*256+fs[i];
     return res;
   }
   bool operator==(const Die &d) const{
-    for(int i=0;i<6;i++) if(s[i]!=d.s[i]) return 0;
+    for(int i=0;i<6;i++) if(fs[i]!=d.fs[i]) return 0;
     return 1;
   }
 };
 
-vector<Die> makeDice(Die d){
-  vector<Die> res;
+template<typename T>
+vector<Die<T>> makeDice(Die<T> d){
+  vector<Die<T>> res;
   for(int i=0;i<6;i++){
     Die t(d);
     if(i==1) t.roll('N');

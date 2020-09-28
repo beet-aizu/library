@@ -14,10 +14,10 @@ signed main(){
   int n;
   cin>>n;
 
-  vector<Die> ds(n);
+  vector<Die<int>> ds(n);
   for(int j=0;j<n;j++)
     for(int i=0;i<6;i++)
-      cin>>ds[j].s[i];
+      cin>>ds[j].fs[i];
 
   bool ff=true;
   for(int i=0;i<n;i++){

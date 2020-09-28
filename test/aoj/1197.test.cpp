@@ -19,7 +19,7 @@ signed main(){
     if(sum==0) break;
 
     auto check=
-      [&](Die d)->int{
+      [&](Die<int> d)->int{
         for(int i=0;i<6;i++)
           if(d.s[i]<0) return 0;
         int a=d.top()+d.bottom();
@@ -35,7 +35,7 @@ signed main(){
     sort(ts.begin(),ts.end());
     do{
       Die d;
-      for(int i=0;i<6;i++) d.s[i]=ts[i];
+      for(int i=0;i<6;i++) d.fs[i]=ts[i];
       if(!check(d)) continue;
 
       string res(sum,'Z');

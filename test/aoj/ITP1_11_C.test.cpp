@@ -11,10 +11,10 @@ signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  Die ds[2];
+  Die<int> ds[2];
   for(int j=0;j<2;j++)
     for(int i=0;i<6;i++)
-      cin>>ds[j].s[i];
+      cin>>ds[j].fs[i];
 
   bool f=false;
   auto vd=makeDice(ds[1]);
