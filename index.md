@@ -360,7 +360,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: maxflow/bimatch.cpp
       title: maxflow/bimatch.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: maxflow/dinic.cpp
       title: maxflow/dinic.cpp
     - icon: ':heavy_check_mark:'
@@ -516,7 +516,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/run.cpp
       title: string/run.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/split.cpp
       title: string/split.cpp
     - icon: ':heavy_check_mark:'
@@ -824,7 +824,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2324.test.cpp
       title: test/aoj/2324.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2328.test.cpp
       title: test/aoj/2328.test.cpp
     - icon: ':heavy_check_mark:'

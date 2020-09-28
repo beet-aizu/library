@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2328.test.cpp
     title: test/aoj/2328.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1300.test.cpp
     title: test/aoj/1300.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/split.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -30,7 +30,7 @@ data:
   path: string/split.cpp
   requiredBy: []
   timestamp: '2019-12-26 22:51:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2328.test.cpp
   - test/aoj/1300.test.cpp
