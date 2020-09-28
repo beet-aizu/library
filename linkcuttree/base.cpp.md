@@ -3,27 +3,21 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: linkcuttree/path.cpp
-    title: linkcuttree/path.cpp
-  - icon: ':heavy_check_mark:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
+  - icon: ':heavy_check_mark:'
+    path: linkcuttree/path.cpp
+    title: linkcuttree/path.cpp
   - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0367.linkcuttree.test.cpp
+    title: test/aoj/0367.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1595.linkcuttree.test.cpp
     title: test/aoj/1595.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_D.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_D.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_A.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_E.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_E.linkcuttree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2450.linkcuttree.test.cpp
     title: test/aoj/2450.linkcuttree.test.cpp
@@ -31,14 +25,14 @@ data:
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0367.linkcuttree.test.cpp
-    title: test/aoj/0367.linkcuttree.test.cpp
+    path: test/aoj/GRL_5_A.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_A.linkcuttree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+    path: test/aoj/GRL_5_D.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_D.linkcuttree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+    path: test/aoj/GRL_5_E.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_E.linkcuttree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
@@ -46,8 +40,14 @@ data:
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

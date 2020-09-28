@@ -7,8 +7,14 @@ data:
     title: toptree/distancesum.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0367.toptree.test.cpp
+    title: test/aoj/0367.toptree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1595.toptree.test.cpp
     title: test/aoj/1595.toptree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2636.test.cpp
+    title: Distance Sum
   - icon: ':heavy_check_mark:'
     path: test/aoj/3037.test.cpp
     title: test/aoj/3037.test.cpp
@@ -16,14 +22,11 @@ data:
     path: test/aoj/3143.test.cpp
     title: Farthest (with index)
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0367.toptree.test.cpp
-    title: test/aoj/0367.toptree.test.cpp
+    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2636.test.cpp
-    title: Distance Sum
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4862.test.cpp
-    title: test/yukicoder/4862.test.cpp
+    path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+    title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
@@ -34,11 +37,8 @@ data:
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-    title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+    path: test/yukicoder/4862.test.cpp
+    title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

@@ -10,14 +10,14 @@ data:
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/frequency_table_of_tree_distance.test.cpp
+    title: test/yosupo/frequency_table_of_tree_distance.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/frequency_table_of_tree_distance.test.cpp
-    title: test/yosupo/frequency_table_of_tree_distance.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

@@ -6,27 +6,15 @@ data:
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
   - icon: ':heavy_check_mark:'
+    path: graph/nicetree.cpp
+    title: graph/nicetree.cpp
+  - icon: ':heavy_check_mark:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
   - icon: ':heavy_check_mark:'
     path: string/longestcommonsubstring.cpp
     title: string/longestcommonsubstring.cpp
-  - icon: ':heavy_check_mark:'
-    path: graph/nicetree.cpp
-    title: graph/nicetree.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1607.test.cpp
-    title: test/aoj/1607.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/0596.test.cpp
-    title: test/aoj/0596.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3037.test.cpp
-    title: test/aoj/3037.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2790.test.cpp
-    title: test/aoj/2790.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0391.test.cpp
     title: test/aoj/0391.test.cpp
@@ -34,62 +22,50 @@ data:
     path: test/aoj/0415.test.cpp
     title: test/aoj/0415.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/3069.test.cpp
-    title: test/aoj/3069.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_A.linkcuttree.test.cpp
-    title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2736.test.cpp
-    title: test/aoj/2736.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2230.test.cpp
-    title: test/aoj/2230.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DPL_3_B.test.cpp
-    title: test/aoj/DPL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3148.test.cpp
-    title: test/aoj/3148.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2290.test.cpp
-    title: test/aoj/2290.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/3056.test.cpp
-    title: test/aoj/geometry/3056.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/3049.test.cpp
-    title: test/aoj/geometry/3049.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2334.test.cpp
-    title: test/aoj/geometry/2334.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2187.test.cpp
-    title: test/aoj/2187.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2627.test.cpp
-    title: test/aoj/2627.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DPL_1_E.test.cpp
-    title: test/aoj/DPL_1_E.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2975.test.cpp
-    title: test/aoj/2975.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2308.test.cpp
-    title: test/aoj/2308.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/1549.test.cpp
-    title: Verify succ, pred
+    path: test/aoj/0596.test.cpp
+    title: test/aoj/0596.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1549.test.cpp
+    title: Verify succ, pred
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1607.test.cpp
+    title: test/aoj/1607.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2187.test.cpp
+    title: test/aoj/2187.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2230.test.cpp
+    title: test/aoj/2230.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2290.test.cpp
+    title: test/aoj/2290.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2308.test.cpp
+    title: test/aoj/2308.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2627.test.cpp
+    title: test/aoj/2627.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2736.test.cpp
+    title: test/aoj/2736.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2790.test.cpp
+    title: test/aoj/2790.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2975.test.cpp
+    title: test/aoj/2975.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3037.test.cpp
+    title: test/aoj/3037.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3069.lichao.test.cpp
     title: test/aoj/3069.lichao.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_10_C.test.cpp
-    title: test/aoj/ALDS1_10_C.test.cpp
+    path: test/aoj/3069.test.cpp
+    title: test/aoj/3069.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test/aoj/3112.test.cpp
@@ -97,11 +73,29 @@ data:
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4918.test.cpp
-    title: test/yukicoder/4918.test.cpp
+    path: test/aoj/3148.test.cpp
+    title: test/aoj/3148.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3912.test.cpp
-    title: test/yukicoder/3912.test.cpp
+    path: test/aoj/ALDS1_10_C.test.cpp
+    title: test/aoj/ALDS1_10_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DPL_1_E.test.cpp
+    title: test/aoj/DPL_1_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DPL_3_B.test.cpp
+    title: test/aoj/DPL_3_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_A.linkcuttree.test.cpp
+    title: test/aoj/GRL_5_A.linkcuttree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2334.test.cpp
+    title: test/aoj/geometry/2334.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/3049.test.cpp
+    title: test/aoj/geometry/3049.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/3056.test.cpp
+    title: test/aoj/geometry/3056.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: Verify quantile
@@ -109,8 +103,14 @@ data:
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3912.test.cpp
+    title: test/yukicoder/3912.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4918.test.cpp
+    title: test/yukicoder/4918.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

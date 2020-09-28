@@ -4,20 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_I.test.cpp
-    title: RSQ & RUQ
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_H.test.cpp
-    title: RMQ & RAQ
+    path: test/aoj/2359.test.cpp
+    title: test/aoj/2359.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2450.test.cpp
     title: test/aoj/2450.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2871.test.cpp
-    title: test/aoj/2871.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3073.test.cpp
-    title: test/aoj/3073.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
@@ -25,20 +16,29 @@ data:
     path: test/aoj/2667.test.cpp
     title: Path & Subtree Queries
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_F.test.cpp
-    title: RMQ & RUQ
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2359.test.cpp
-    title: test/aoj/2359.test.cpp
+    path: test/aoj/2871.test.cpp
+    title: test/aoj/2871.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3035.test.cpp
     title: test/aoj/3035.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/3405.test.cpp
-    title: test/yukicoder/3405.test.cpp
+    path: test/aoj/3073.test.cpp
+    title: test/aoj/3073.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.test.cpp
+    title: RMQ & RUQ
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_H.test.cpp
+    title: RMQ & RAQ
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_I.test.cpp
+    title: RSQ & RUQ
   - icon: ':heavy_check_mark:'
     path: test/yosupo/range_affine_range_sum.test.cpp
     title: test/yosupo/range_affine_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3405.test.cpp
+    title: test/yukicoder/3405.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

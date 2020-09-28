@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tools/drop.cpp
-    title: tools/drop.cpp
-  - icon: ':heavy_check_mark:'
     path: graph/bellmanford.cpp
     title: graph/bellmanford.cpp
+  - icon: ':heavy_check_mark:'
+    path: tools/drop.cpp
+    title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

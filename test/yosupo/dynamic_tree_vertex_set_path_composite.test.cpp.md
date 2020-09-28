@@ -2,20 +2,20 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/linearfunction.cpp
-    title: math/linearfunction.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/dual.cpp
-    title: math/dual.cpp
-  - icon: ':heavy_check_mark:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   - icon: ':heavy_check_mark:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/dual.cpp
+    title: math/dual.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/linearfunction.cpp
+    title: math/linearfunction.cpp
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

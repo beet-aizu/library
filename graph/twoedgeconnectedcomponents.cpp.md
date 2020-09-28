@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/0415.test.cpp
-    title: test/aoj/0415.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0377.test.cpp
     title: test/aoj/0377.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0415.test.cpp
+    title: test/aoj/0415.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/two_edge_connected_components.test.cpp
     title: test/yosupo/two_edge_connected_components.test.cpp

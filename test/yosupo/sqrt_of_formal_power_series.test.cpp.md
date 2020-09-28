@@ -2,23 +2,23 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tools/drop.cpp
-    title: tools/drop.cpp
-  - icon: ':heavy_check_mark:'
-    path: mod/sqrt.cpp
-    title: mod/sqrt.cpp
-  - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
+    path: combinatorics/enumeration.cpp
+    title: combinatorics/enumeration.cpp
   - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':heavy_check_mark:'
-    path: combinatorics/enumeration.cpp
-    title: combinatorics/enumeration.cpp
+    path: mod/mint.cpp
+    title: mod/mint.cpp
+  - icon: ':heavy_check_mark:'
+    path: mod/sqrt.cpp
+    title: mod/sqrt.cpp
   - icon: ':heavy_check_mark:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
+  - icon: ':heavy_check_mark:'
+    path: tools/drop.cpp
+    title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

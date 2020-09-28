@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tools/chminmax.cpp
-    title: tools/chminmax.cpp
-  - icon: ':heavy_check_mark:'
     path: algorithm/largestrectangle.cpp
     title: algorithm/largestrectangle.cpp
+  - icon: ':heavy_check_mark:'
+    path: tools/chminmax.cpp
+    title: tools/chminmax.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

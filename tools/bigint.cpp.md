@@ -7,17 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_2_F.test.cpp
-    title: test/aoj/NTL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_2_E.test.cpp
-    title: test/aoj/NTL_2_E.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_2_A.test.cpp
     title: test/aoj/NTL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_2_D.test.cpp
-    title: test/aoj/NTL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_2_B.test.cpp
     title: test/aoj/NTL_2_B.test.cpp
@@ -25,14 +16,23 @@ data:
     path: test/aoj/NTL_2_C.test.cpp
     title: test/aoj/NTL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_2_D.test.cpp
+    title: test/aoj/NTL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_2_E.test.cpp
+    title: test/aoj/NTL_2_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_2_F.test.cpp
+    title: test/aoj/NTL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0143.test.cpp
+    title: test/yukicoder/0143.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0831.test.cpp
     title: test/yukicoder/0831.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2125.test.cpp
     title: test/yukicoder/2125.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0143.test.cpp
-    title: test/yukicoder/0143.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

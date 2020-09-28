@@ -10,11 +10,11 @@ data:
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_A.bbst.test.cpp
-    title: test/aoj/DSL_2_A.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_A.bbst.test.cpp
+    title: test/aoj/DSL_2_A.bbst.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

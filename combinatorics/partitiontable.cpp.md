@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DPL_5_L.test.cpp
-    title: test/aoj/DPL_5_L.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_J.test.cpp
     title: test/aoj/DPL_5_J.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DPL_5_L.test.cpp
+    title: test/aoj/DPL_5_L.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

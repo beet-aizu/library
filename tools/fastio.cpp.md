@@ -3,17 +3,17 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: tree/diameterforedge.cpp
-    title: tree/diameterforedge.cpp
+    path: algorithm/mo.cpp
+    title: algorithm/mo.cpp
   - icon: ':heavy_check_mark:'
     path: algorithm/monotoneminima.cpp
     title: algorithm/monotoneminima.cpp
   - icon: ':heavy_check_mark:'
-    path: algorithm/mo.cpp
-    title: algorithm/mo.cpp
-  - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph/nicetree.cpp
+    title: graph/nicetree.cpp
   - icon: ':heavy_check_mark:'
     path: linearalgebra/binarymatrix.cpp
     title: linearalgebra/binarymatrix.cpp
@@ -21,8 +21,8 @@ data:
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   - icon: ':heavy_check_mark:'
-    path: graph/nicetree.cpp
-    title: graph/nicetree.cpp
+    path: tree/diameterforedge.cpp
+    title: tree/diameterforedge.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/many_aplusb.test.cpp

@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
+    path: convolution/arbitrarymod.cpp
+    title: convolution/arbitrarymod.cpp
   - icon: ':heavy_check_mark:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
   - icon: ':heavy_check_mark:'
-    path: convolution/arbitrarymod.cpp
-    title: convolution/arbitrarymod.cpp
+    path: mod/mint.cpp
+    title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

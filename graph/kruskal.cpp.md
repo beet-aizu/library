@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: linearalgebra/tree_theorem.cpp
-    title: linearalgebra/tree_theorem.cpp
   - icon: ':warning:'
     path: graph/voronoiminimumspanningtree.cpp
     title: graph/voronoiminimumspanningtree.cpp
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_2_A.test.cpp
-    title: test/aoj/GRL_2_A.test.cpp
+    path: linearalgebra/tree_theorem.cpp
+    title: linearalgebra/tree_theorem.cpp
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0403.test.cpp
     title: test/aoj/0403.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_2_A.test.cpp
+    title: test/aoj/GRL_2_A.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

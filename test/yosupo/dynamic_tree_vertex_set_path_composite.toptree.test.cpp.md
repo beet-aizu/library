@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':heavy_check_mark:'
     path: math/twoway.cpp
     title: math/twoway.cpp
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp

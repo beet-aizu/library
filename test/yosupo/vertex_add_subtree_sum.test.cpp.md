@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tree/eulertourforvertex.cpp
-    title: tree/eulertourforvertex.cpp
-  - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
+  - icon: ':heavy_check_mark:'
+    path: tree/eulertourforvertex.cpp
+    title: tree/eulertourforvertex.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

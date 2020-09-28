@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: graph/stronglyconnectedcomponent.cpp
-    title: graph/stronglyconnectedcomponent.cpp
-  - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph/stronglyconnectedcomponent.cpp
+    title: graph/stronglyconnectedcomponent.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

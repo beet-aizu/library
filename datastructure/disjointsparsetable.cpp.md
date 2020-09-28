@@ -7,11 +7,11 @@ data:
     path: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
     title: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4072.test.cpp
-    title: test/yukicoder/4072.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
     title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4072.test.cpp
+    title: test/yukicoder/4072.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

@@ -13,11 +13,11 @@ data:
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

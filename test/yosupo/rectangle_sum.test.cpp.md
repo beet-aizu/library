@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: vector/compress.cpp
-    title: vector/compress.cpp
-  - icon: ':heavy_check_mark:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
+  - icon: ':heavy_check_mark:'
+    path: vector/compress.cpp
+    title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

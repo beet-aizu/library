@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tree/heavylightdecomposition.cpp
-    title: Heavy Light Decomposition
-  - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
+  - icon: ':heavy_check_mark:'
+    path: tree/heavylightdecomposition.cpp
+    title: Heavy Light Decomposition
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

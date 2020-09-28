@@ -10,8 +10,8 @@ data:
     title: bbst/rbst/persistent/lazy.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_I.bbst.test.cpp
-    title: test/aoj/DSL_2_I.bbst.test.cpp
+    path: test/aoj/DSL_2_F.bbst.test.cpp
+    title: test/aoj/DSL_2_F.bbst.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_G.bbst.test.cpp
     title: test/aoj/DSL_2_G.bbst.test.cpp
@@ -19,8 +19,8 @@ data:
     path: test/aoj/DSL_2_H.bbst.test.cpp
     title: test/aoj/DSL_2_H.bbst.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_F.bbst.test.cpp
-    title: test/aoj/DSL_2_F.bbst.test.cpp
+    path: test/aoj/DSL_2_I.bbst.test.cpp
+    title: test/aoj/DSL_2_I.bbst.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

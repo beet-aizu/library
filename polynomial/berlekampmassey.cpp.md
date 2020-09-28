@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/find_linear_recurrence.test.cpp
+    title: test/yosupo/find_linear_recurrence.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0104.test.cpp
+    title: test/yukicoder/0104.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0104.test.cpp
-    title: test/yukicoder/0104.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/find_linear_recurrence.test.cpp
-    title: test/yosupo/find_linear_recurrence.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

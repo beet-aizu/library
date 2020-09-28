@@ -4,26 +4,32 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2790.test.cpp
-    title: test/aoj/2790.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0367.test.cpp
     title: test/aoj/0367.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0377.test.cpp
     title: test/aoj/0377.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2448.test.cpp
-    title: test/aoj/geometry/2448.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2646.test.cpp
+    title: test/aoj/2646.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2790.test.cpp
+    title: test/aoj/2790.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2646.test.cpp
-    title: test/aoj/2646.test.cpp
+    path: test/aoj/geometry/2448.test.cpp
+    title: test/aoj/geometry/2448.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/frequency_table_of_tree_distance.test.cpp
+    title: test/yosupo/frequency_table_of_tree_distance.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/tree_diameter.test.cpp
+    title: test/yosupo/tree_diameter.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
@@ -33,12 +39,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/tree_diameter.test.cpp
-    title: test/yosupo/tree_diameter.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/frequency_table_of_tree_distance.test.cpp
-    title: test/yosupo/frequency_table_of_tree_distance.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

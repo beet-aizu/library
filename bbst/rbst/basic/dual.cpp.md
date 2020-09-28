@@ -7,14 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_E.bbst.test.cpp
-    title: test/aoj/DSL_2_E.bbst.test.cpp
+    path: test/aoj/1579.test.cpp
+    title: test/aoj/1579.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1579.test.cpp
-    title: test/aoj/1579.test.cpp
+    path: test/aoj/DSL_2_E.bbst.test.cpp
+    title: test/aoj/DSL_2_E.bbst.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

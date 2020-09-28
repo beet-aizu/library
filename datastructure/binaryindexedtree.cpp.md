@@ -4,20 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_D.test.cpp
-    title: test/aoj/GRL_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0343.test.cpp
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1732.test.cpp
-    title: Verify quantile
+    path: test/aoj/GRL_5_D.test.cpp
+    title: test/aoj/GRL_5_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4852.test.cpp
-    title: test/yukicoder/4852.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2125.test.cpp
-    title: test/yukicoder/2125.test.cpp
+    path: test/yosupo/point_add_range_sum.test.cpp
+    title: test/yosupo/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
@@ -25,8 +19,14 @@ data:
     path: test/yosupo/vertex_add_subtree_sum.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/point_add_range_sum.test.cpp
-    title: test/yosupo/point_add_range_sum.test.cpp
+    path: test/yukicoder/1732.test.cpp
+    title: Verify quantile
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/2125.test.cpp
+    title: test/yukicoder/2125.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4852.test.cpp
+    title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

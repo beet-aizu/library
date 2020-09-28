@@ -10,32 +10,32 @@ data:
     title: graph/twosatisfiability.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2309.tarjan.test.cpp
-    title: test/aoj/2309.tarjan.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_2_B.test.cpp
-    title: test/aoj/GRL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3102.test.cpp
-    title: test/aoj/3102.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2647.test.cpp
-    title: test/aoj/2647.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2222.test.cpp
     title: test/aoj/2222.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2309.tarjan.test.cpp
+    title: test/aoj/2309.tarjan.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2309.test.cpp
     title: test/aoj/2309.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4387.test.cpp
-    title: test/yukicoder/4387.test.cpp
+    path: test/aoj/2647.test.cpp
+    title: test/aoj/2647.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3102.test.cpp
+    title: test/aoj/3102.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_2_B.test.cpp
+    title: test/aoj/GRL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/two_sat.test.cpp
     title: test/yosupo/two_sat.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4387.test.cpp
+    title: test/yukicoder/4387.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

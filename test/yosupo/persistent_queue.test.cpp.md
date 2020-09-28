@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: bbst/rbst/basic/base.cpp
-    title: bbst/rbst/basic/base.cpp
-  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/basic/base.cpp
+    title: bbst/rbst/basic/base.cpp
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp

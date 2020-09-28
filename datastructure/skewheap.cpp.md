@@ -10,11 +10,11 @@ data:
     title: algorithm/optimalbinarytree.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_9_C.test.cpp
-    title: test/aoj/ALDS1_9_C.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/2415.test.cpp
     title: test/aoj/2415.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_9_C.test.cpp
+    title: test/aoj/ALDS1_9_C.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

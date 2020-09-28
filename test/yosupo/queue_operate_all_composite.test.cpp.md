@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
+    path: datastructure/slidingwindowaggregation.cpp
+    title: datastructure/slidingwindowaggregation.cpp
   - icon: ':heavy_check_mark:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':heavy_check_mark:'
-    path: datastructure/slidingwindowaggregation.cpp
-    title: datastructure/slidingwindowaggregation.cpp
+    path: mod/mint.cpp
+    title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

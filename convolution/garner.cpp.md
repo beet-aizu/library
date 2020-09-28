@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: mod/mint.cpp
-    title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
+  - icon: ':heavy_check_mark:'
+    path: mod/mint.cpp
+    title: mod/mint.cpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: mod/factorial.cpp
@@ -16,11 +16,11 @@ data:
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1504.test.cpp
-    title: test/yukicoder/1504.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
     title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1504.test.cpp
+    title: test/yukicoder/1504.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

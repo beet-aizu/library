@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tools/chminmax.cpp
-    title: tools/chminmax.cpp
-  - icon: ':heavy_check_mark:'
     path: string/longestcommonsubstring.cpp
     title: string/longestcommonsubstring.cpp
+  - icon: ':heavy_check_mark:'
+    path: tools/chminmax.cpp
+    title: tools/chminmax.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

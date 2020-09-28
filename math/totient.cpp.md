@@ -10,11 +10,11 @@ data:
     path: test/aoj/NTL_1_D.test.cpp
     title: test/aoj/NTL_1_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0472.test.cpp
-    title: test/yukicoder/0472.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/tetration_mod.test.cpp
     title: test/yosupo/tetration_mod.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0472.test.cpp
+    title: test/yukicoder/0472.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

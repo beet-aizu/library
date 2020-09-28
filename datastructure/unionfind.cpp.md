@@ -6,18 +6,18 @@ data:
     path: datastructure/skewheap.cpp
     title: datastructure/skewheap.cpp
   - icon: ':heavy_check_mark:'
-    path: linearalgebra/tree_theorem.cpp
-    title: linearalgebra/tree_theorem.cpp
-  - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2995.test.cpp
-    title: test/aoj/2995.test.cpp
+    path: linearalgebra/tree_theorem.cpp
+    title: linearalgebra/tree_theorem.cpp
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0314.test.cpp
     title: test/aoj/0314.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2995.test.cpp
+    title: test/aoj/2995.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_A.test.cpp
     title: test/aoj/DSL_1_A.test.cpp

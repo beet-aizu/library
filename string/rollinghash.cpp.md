@@ -10,17 +10,17 @@ data:
     path: test/aoj/1312.test.cpp
     title: test/aoj/1312.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2292.test.cpp
+    title: test/aoj/2292.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2444.test.cpp
     title: test/aoj/2444.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_C.test.cpp
-    title: test/aoj/ALDS1_14_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_14_B.test.cpp
     title: test/aoj/ALDS1_14_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2292.test.cpp
-    title: test/aoj/2292.test.cpp
+    path: test/aoj/ALDS1_14_C.test.cpp
+    title: test/aoj/ALDS1_14_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0399.test.cpp
     title: test/yukicoder/0399.test.cpp

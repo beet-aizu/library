@@ -4,29 +4,29 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1549.test.cpp
+    title: Verify succ, pred
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2674.test.cpp
     title: test/aoj/2674.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1549.test.cpp
-    title: Verify succ, pred
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1937.test.cpp
-    title: Verify rangefreq
+    path: test/yosupo/range_kth_smallest.test.cpp
+    title: Verify rquantile
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: Verify quantile
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1937.test.cpp
+    title: Verify rangefreq
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2147.test.cpp
     title: test/yukicoder/2147.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/range_kth_smallest.test.cpp
-    title: Verify rquantile
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

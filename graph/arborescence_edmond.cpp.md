@@ -10,14 +10,14 @@ data:
     path: test/aoj/2309.tarjan.test.cpp
     title: test/aoj/2309.tarjan.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_2_B.test.cpp
-    title: test/aoj/GRL_2_B.test.cpp
+    path: test/aoj/2309.test.cpp
+    title: test/aoj/2309.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2647.test.cpp
     title: test/aoj/2647.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2309.test.cpp
-    title: test/aoj/2309.test.cpp
+    path: test/aoj/GRL_2_B.test.cpp
+    title: test/aoj/GRL_2_B.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

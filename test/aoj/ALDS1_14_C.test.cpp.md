@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: string/rollinghash.cpp
-    title: string/rollinghash.cpp
-  - icon: ':heavy_check_mark:'
     path: string/rectanglehash.cpp
     title: string/rectanglehash.cpp
+  - icon: ':heavy_check_mark:'
+    path: string/rollinghash.cpp
+    title: string/rollinghash.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

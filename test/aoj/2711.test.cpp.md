@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: string/suffixarray.cpp
-    title: string/suffixarray.cpp
-  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: string/longestcommonprefix.cpp
+  - icon: ':heavy_check_mark:'
+    path: string/suffixarray.cpp
+    title: string/suffixarray.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

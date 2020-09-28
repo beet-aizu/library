@@ -7,11 +7,11 @@ data:
     path: test/aoj/0391.test.cpp
     title: test/aoj/0391.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_5_C.lca.test.cpp
-    title: test/aoj/GRL_5_C.lca.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.cartesiantree.test.cpp
     title: test/aoj/DSL_3_D.cartesiantree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_5_C.lca.test.cpp
+    title: test/aoj/GRL_5_C.lca.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

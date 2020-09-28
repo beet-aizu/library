@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/geometry/2334.test.cpp
-    title: test/aoj/geometry/2334.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0423.test.cpp
     title: test/aoj/0423.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/geometry/2334.test.cpp
+    title: test/aoj/geometry/2334.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/shortest_path.test.cpp
     title: test/yosupo/shortest_path.test.cpp

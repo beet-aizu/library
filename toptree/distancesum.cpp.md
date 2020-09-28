@@ -10,11 +10,11 @@ data:
     path: test/aoj/2636.test.cpp
     title: Distance Sum
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/4862.test.cpp
-    title: test/yukicoder/4862.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4862.test.cpp
+    title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

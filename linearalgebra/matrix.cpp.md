@@ -10,14 +10,14 @@ data:
     title: math/tetrahedra.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/2060.test.cpp
-    title: test/aoj/2060.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/0314.test.cpp
     title: test/aoj/0314.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1328.test.cpp
     title: test/aoj/1328.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2060.test.cpp
+    title: test/aoj/2060.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix_det.test.cpp
     title: test/yosupo/matrix_det.test.cpp

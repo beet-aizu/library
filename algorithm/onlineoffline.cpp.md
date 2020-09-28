@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1950.test.cpp
-    title: test/yukicoder/1950.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1948.test.cpp
     title: test/yukicoder/1948.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1950.test.cpp
+    title: test/yukicoder/1950.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2113.test.cpp
     title: test/yukicoder/2113.test.cpp

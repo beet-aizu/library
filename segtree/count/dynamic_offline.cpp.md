@@ -7,14 +7,14 @@ data:
     path: test/aoj/2842.test.cpp
     title: test/aoj/2842.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/2063.test.cpp
-    title: test/yukicoder/2063.test.cpp
+    path: test/yosupo/point_add_rectangle_sum.test.cpp
+    title: test/yosupo/point_add_rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/point_add_rectangle_sum.test.cpp
-    title: test/yosupo/point_add_rectangle_sum.test.cpp
+    path: test/yukicoder/2063.test.cpp
+    title: test/yukicoder/2063.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

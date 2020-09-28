@@ -13,14 +13,14 @@ data:
     title: mod/inverse.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2659.test.cpp
+    title: test/aoj/2659.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2970.test.cpp
     title: test/aoj/2970.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_E.test.cpp
     title: test/aoj/NTL_1_E.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2659.test.cpp
-    title: test/aoj/2659.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
