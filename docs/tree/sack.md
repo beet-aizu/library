@@ -1,6 +1,6 @@
 ---
 title: Sack (dsu on tree)
-documentation_of: ./tree/sack.cpp
+documentation_of: //tree/sack.cpp
 ---
 
 ## できること

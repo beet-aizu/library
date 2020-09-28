@@ -1,6 +1,6 @@
 ---
 title: 最大二品種流
-documentation_of: ./maxflow/twocommodity.cpp
+documentation_of: //maxflow/twocommodity.cpp
 ---
 
 ## 解説記事

@@ -1,6 +1,6 @@
 ---
 title: Auxiliary Tree
-documentation_of: ./tree/auxiliarytree.cpp
+documentation_of: //tree/auxiliarytree.cpp
 ---
 
 ## できること

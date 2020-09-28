@@ -1,6 +1,6 @@
 ---
 title: Heavy Light Decomposition
-documentation_of: ./tree/heavylightdecomposition.cpp
+documentation_of: //tree/heavylightdecomposition.cpp
 ---
 
 ## できること

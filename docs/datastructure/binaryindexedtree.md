@@ -1,6 +1,6 @@
 ---
 title: Binary Indexed Tree
-documentation_of: ./datastructure/binaryindexedtree.cpp
+documentation_of: //datastructure/binaryindexedtree.cpp
 ---
 
 ## できること

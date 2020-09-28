@@ -1,6 +1,6 @@
 ---
 title: 遅延伝播セグメント木
-documentation_of: ./segtree/basic/lazy.cpp
+documentation_of: //segtree/basic/lazy.cpp
 ---
 
 ## 解説記事

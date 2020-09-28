@@ -1,6 +1,6 @@
 ---
 title: Minimum Cost Flow with Capacity Scaling
-documentation_of: ./bflow/capacityscaling.cpp
+documentation_of: //bflow/capacityscaling.cpp
 ---
 
 ## `INF` の決め方
