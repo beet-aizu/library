@@ -28,20 +28,20 @@ signed main(){
   fill(ti.begin(),ti.end(),0);
   iota(ei.begin(),ei.end(),0);
   auto f=[&](A a,A b){
-           A c;
-           for(int i=0;i<(int)a.size();i++) c[i]=a[i]+b[i];
-           return c;
-         };
+    A c;
+    for(int i=0;i<(int)a.size();i++) c[i]=a[i]+b[i];
+    return c;
+  };
   auto g=[&](A a,A b){
-           A c(ti);
-           for(int i=0;i<(int)a.size();i++) c[b[i]]+=a[i];
-           return c;
-         };
+    A c(ti);
+    for(int i=0;i<(int)a.size();i++) c[b[i]]+=a[i];
+    return c;
+  };
   auto h=[&](A a,A b){
-           A c;
-           for(int i=0;i<(int)a.size();i++) c[i]=b[a[i]];
-           return c;
-         };
+    A c;
+    for(int i=0;i<(int)a.size();i++) c[i]=b[a[i]];
+    return c;
+  };
 
   SegmentTree<A, A> seg(f,g,h,ti,ei);
   vector<A> va(n,ti);
