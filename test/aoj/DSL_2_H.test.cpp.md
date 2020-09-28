@@ -82,10 +82,7 @@ data:
   timestamp: '2020-09-28 12:04:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/DSL_2_H.test.cpp
+documentation_of: ./test/aoj/DSL_2_H.test.cpp
 layout: document
-redirect_from:
-- /verify/test/aoj/DSL_2_H.test.cpp
-- /verify/test/aoj/DSL_2_H.test.cpp.html
-title: test/aoj/DSL_2_H.test.cpp
+title: RMQ & RAQ
 ---

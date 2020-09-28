@@ -889,7 +889,7 @@ data:
       title: test/aoj/2659.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2667.test.cpp
-      title: test/aoj/2667.test.cpp
+      title: Path & Subtree Queries
     - icon: ':heavy_check_mark:'
       path: test/aoj/2674.count.test.cpp
       title: test/aoj/2674.count.test.cpp
@@ -1135,7 +1135,7 @@ data:
       title: test/aoj/DSL_2_F.bbst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_F.test.cpp
-      title: test/aoj/DSL_2_F.test.cpp
+      title: RMQ & RUQ
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_G.bbst.test.cpp
       title: test/aoj/DSL_2_G.bbst.test.cpp
@@ -1144,13 +1144,13 @@ data:
       title: test/aoj/DSL_2_H.bbst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_H.test.cpp
-      title: test/aoj/DSL_2_H.test.cpp
+      title: RMQ & RAQ
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_I.bbst.test.cpp
       title: test/aoj/DSL_2_I.bbst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_I.test.cpp
-      title: test/aoj/DSL_2_I.test.cpp
+      title: RSQ & RUQ
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_3_D.cartesiantree.test.cpp
       title: test/aoj/DSL_3_D.cartesiantree.test.cpp

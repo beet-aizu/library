@@ -5,10 +5,10 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.test.cpp
-    title: test/aoj/DSL_2_I.test.cpp
+    title: RSQ & RUQ
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_H.test.cpp
-    title: test/aoj/DSL_2_H.test.cpp
+    title: RMQ & RAQ
   - icon: ':heavy_check_mark:'
     path: test/aoj/2450.test.cpp
     title: test/aoj/2450.test.cpp
@@ -23,10 +23,10 @@ data:
     title: test/aoj/2563.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2667.test.cpp
-    title: test/aoj/2667.test.cpp
+    title: Path & Subtree Queries
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
-    title: test/aoj/DSL_2_F.test.cpp
+    title: RMQ & RUQ
   - icon: ':heavy_check_mark:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp

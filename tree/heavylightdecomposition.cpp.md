@@ -11,7 +11,7 @@ data:
     title: test/aoj/2450.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2667.test.cpp
-    title: test/aoj/2667.test.cpp
+    title: Path & Subtree Queries
   - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
