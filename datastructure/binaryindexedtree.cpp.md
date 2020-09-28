@@ -11,7 +11,7 @@ data:
     title: test/aoj/0343.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
-    title: test/yukicoder/1732.test.cpp
+    title: Verify quantile
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp

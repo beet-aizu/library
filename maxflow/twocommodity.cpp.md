@@ -42,10 +42,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2979.test.cpp
-documentation_of: maxflow/twocommodity.cpp
+documentation_of: ./maxflow/twocommodity.cpp
 layout: document
-redirect_from:
-- /library/maxflow/twocommodity.cpp
-- /library/maxflow/twocommodity.cpp.html
-title: maxflow/twocommodity.cpp
+title: "\u6700\u5927\u4E8C\u54C1\u7A2E\u6D41"
 ---
+
+## 解説記事
+[多品種流の話](http://www.kurims.kyoto-u.ac.jp/~kenkyubu/kokai-koza/hirai.pdf)

@@ -374,7 +374,7 @@ data:
       title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
     - icon: ':heavy_check_mark:'
       path: maxflow/twocommodity.cpp
-      title: maxflow/twocommodity.cpp
+      title: "\u6700\u5927\u4E8C\u54C1\u7A2E\u6D41"
   - name: mincostflow
     pages:
     - icon: ':heavy_check_mark:'
@@ -1481,7 +1481,7 @@ data:
       title: test/yosupo/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/range_kth_smallest.test.cpp
-      title: test/yosupo/range_kth_smallest.test.cpp
+      title: Verify rquantile
     - icon: ':heavy_check_mark:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
@@ -1594,13 +1594,13 @@ data:
       title: test/yukicoder/1665.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1732.test.cpp
-      title: test/yukicoder/1732.test.cpp
+      title: Verify quantile
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1923.test.cpp
       title: test/yukicoder/1923.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1937.test.cpp
-      title: test/yukicoder/1937.test.cpp
+      title: Verify rangefreq
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1948.test.cpp
       title: test/yukicoder/1948.test.cpp

@@ -14,10 +14,10 @@ data:
     title: test/aoj/1549.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1937.test.cpp
-    title: test/yukicoder/1937.test.cpp
+    title: Verify rangefreq
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
-    title: test/yukicoder/1732.test.cpp
+    title: Verify quantile
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2147.test.cpp
     title: test/yukicoder/2147.test.cpp
@@ -26,7 +26,7 @@ data:
     title: test/yukicoder/3227.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/range_kth_smallest.test.cpp
-    title: test/yosupo/range_kth_smallest.test.cpp
+    title: Verify rquantile
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -177,17 +177,3 @@ title: Wavelet Matrix
 -- $\lbrack l, r)$ に含まれる要素の中で $v$ の次に大きいものを求める
 - `pred(l,r,v)`
 -- $\lbrack l, r)$ に含まれる要素の中で $v$ の次に小さいものを求める
-
-## verify 用問題一覧
-- `rank`
--- 募集中
-- `select`
--- 募集中
-- `quantile`
--- [yukicoder 1732](https://yukicoder.me/problems/1732)
-- `rquantile`
--- [Library-Checker Range Kth Smallest](https://judge.yosupo.jp/problem/range_kth_smallest)
-- `rangefreq`
--- [yukicoder 1937](https://yukicoder.me/problems/1937)
-- `succ`, `pred`
--- [AOJ 1549](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549)

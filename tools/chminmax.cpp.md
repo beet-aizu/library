@@ -98,7 +98,7 @@ data:
     title: test/yukicoder/3912.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
-    title: test/yukicoder/1732.test.cpp
+    title: Verify quantile
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp

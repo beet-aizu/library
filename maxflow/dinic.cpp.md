@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: maxflow/twocommodity.cpp
-    title: maxflow/twocommodity.cpp
+    title: "\u6700\u5927\u4E8C\u54C1\u7A2E\u6D41"
   - icon: ':heavy_check_mark:'
     path: maxflow/leastflow.cpp
     title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
