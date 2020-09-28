@@ -50,7 +50,7 @@ signed main(){
       for(auto& v:flow.G){
         for(auto& e:v){
           if(e.cap) e.cap=INF;
-          e.cap+=ed[i][e.to][flow.G[e.to][e.rev].to];
+          e.cap+=ed[i][e.dst][flow.G[e.dst][e.rev].dst];
         }
       }
       ans[i]=flow.flow(0,n-1);
