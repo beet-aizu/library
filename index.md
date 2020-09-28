@@ -360,7 +360,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: maxflow/bimatch.cpp
       title: maxflow/bimatch.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: maxflow/dinic.cpp
       title: maxflow/dinic.cpp
     - icon: ':heavy_check_mark:'
@@ -372,6 +372,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: maxflow/leastflow.cpp
       title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
+    - icon: ':heavy_check_mark:'
+      path: maxflow/twocommodity.cpp
+      title: maxflow/twocommodity.cpp
   - name: mincostflow
     pages:
     - icon: ':heavy_check_mark:'
@@ -513,7 +516,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/run.cpp
       title: string/run.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/split.cpp
       title: string/split.cpp
     - icon: ':heavy_check_mark:'
@@ -821,7 +824,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2324.test.cpp
       title: test/aoj/2324.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/2328.test.cpp
       title: test/aoj/2328.test.cpp
     - icon: ':heavy_check_mark:'
@@ -953,6 +956,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2977.test.cpp
       title: test/aoj/2977.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2979.test.cpp
+      title: test/aoj/2979.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2983.test.cpp
       title: test/aoj/2983.test.cpp

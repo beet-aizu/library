@@ -1,0 +1,51 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: maxflow/dinic.cpp
+    title: maxflow/dinic.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2979.test.cpp
+    title: test/aoj/2979.test.cpp
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ maxflow/twocommodity.cpp: line 6: unable to process #include in #if / #ifdef\
+    \ / #ifndef other than include guards\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"./dinic.cpp\"\n#undef call_from_test\n\n#endif\n\
+    //BEGIN CUT HERE\ntemplate<typename Flow, bool directed>\nstruct TwoCommodity{\n\
+    \  Dinic<Flow, directed> G,H;\n  int S,T;\n  TwoCommodity(int n):G(n+2),H(n+2),S(n),T(n+1){}\n\
+    \n  void add_edge(int src,int dst,Flow cap){\n    G.add_edge(src,dst,cap);\n \
+    \   H.add_edge(src,dst,cap);\n  }\n\n  // maximize sum of two flows (s -> t) and\
+    \ (u -> v)\n  Flow build(int s,int t,int u,int v){\n    const Flow INF = numeric_limits<Flow>::max()/4;\n\
+    \n    G.add_edge(S,s,INF);\n    G.add_edge(S,u,INF);\n    G.add_edge(t,T,INF);\n\
+    \    G.add_edge(v,T,INF);\n\n    H.add_edge(S,s,INF);\n    H.add_edge(S,v,INF);\n\
+    \    H.add_edge(t,T,INF);\n    H.add_edge(u,T,INF);\n\n    return min(G.flow(S,T),H.flow(S,T));\n\
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
+  dependsOn:
+  - maxflow/dinic.cpp
+  isVerificationFile: false
+  path: maxflow/twocommodity.cpp
+  requiredBy: []
+  timestamp: '2020-09-28 10:48:55+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/2979.test.cpp
+documentation_of: maxflow/twocommodity.cpp
+layout: document
+redirect_from:
+- /library/maxflow/twocommodity.cpp
+- /library/maxflow/twocommodity.cpp.html
+title: maxflow/twocommodity.cpp
+---

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: maxflow/dinic.cpp
     title: maxflow/dinic.cpp
   _extendedRequiredBy: []
@@ -35,7 +35,7 @@ data:
   isVerificationFile: false
   path: maxflow/leastflow.cpp
   requiredBy: []
-  timestamp: '2020-09-24 12:58:32+09:00'
+  timestamp: '2020-09-28 10:48:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp
