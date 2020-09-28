@@ -545,7 +545,7 @@ data:
     - icon: ':warning:'
       path: tools/debug.cpp
       title: tools/debug.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/dice.cpp
       title: tools/dice.cpp
     - icon: ':heavy_check_mark:'
@@ -722,7 +722,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/1069.test.cpp
       title: test/aoj/1069.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/1197.test.cpp
       title: test/aoj/1197.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1025,6 +1025,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3120.test.cpp
       title: test/aoj/3120.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3138.test.cpp
+      title: test/aoj/3138.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3143.test.cpp
       title: Farthest (with index)

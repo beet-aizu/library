@@ -25,6 +25,9 @@ data:
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3138.test.cpp
+    title: test/aoj/3138.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -59,6 +62,7 @@ data:
   - test/aoj/0422.test.cpp
   - test/aoj/2308.test.cpp
   - test/aoj/2359.test.cpp
+  - test/aoj/3138.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
   - test/yosupo/shortest_path.test.cpp
   - test/yosupo/tree_decomposition_width_2.test.cpp
