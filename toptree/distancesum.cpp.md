@@ -8,7 +8,7 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2636.test.cpp
-    title: test/aoj/2636.test.cpp
+    title: Distance Sum
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp

@@ -14,13 +14,13 @@ data:
     title: test/aoj/3037.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3143.test.cpp
-    title: test/aoj/3143.test.cpp
+    title: Farthest (with index)
   - icon: ':heavy_check_mark:'
     path: test/aoj/0367.toptree.test.cpp
     title: test/aoj/0367.toptree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2636.test.cpp
-    title: test/aoj/2636.test.cpp
+    title: Distance Sum
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
@@ -29,7 +29,7 @@ data:
     title: test/yukicoder/2587.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3453.test.cpp
-    title: test/yukicoder/3453.test.cpp
+    title: Minimum Steiner Tree
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
