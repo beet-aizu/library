@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3148
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3148"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -8,6 +8,10 @@ using namespace std;
 #include "../../tools/drop.cpp"
 #include "../../tree/rerooting.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
