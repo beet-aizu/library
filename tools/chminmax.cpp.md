@@ -49,6 +49,9 @@ data:
     path: test/aoj/DPL_3_B.test.cpp
     title: test/aoj/DPL_3_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3148.test.cpp
+    title: test/aoj/3148.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
     title: test/aoj/2290.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,6 +93,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test/aoj/3112.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3142.test.cpp
+    title: test/aoj/3142.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
@@ -141,6 +147,7 @@ data:
   - test/aoj/2736.test.cpp
   - test/aoj/2230.test.cpp
   - test/aoj/DPL_3_B.test.cpp
+  - test/aoj/3148.test.cpp
   - test/aoj/2290.test.cpp
   - test/aoj/geometry/3056.test.cpp
   - test/aoj/geometry/3049.test.cpp
@@ -155,6 +162,7 @@ data:
   - test/aoj/3069.lichao.test.cpp
   - test/aoj/ALDS1_10_C.test.cpp
   - test/aoj/3112.test.cpp
+  - test/aoj/3142.test.cpp
   - test/yukicoder/4918.test.cpp
   - test/yukicoder/3912.test.cpp
   - test/yukicoder/1732.test.cpp

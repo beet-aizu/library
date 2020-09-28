@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3148.test.cpp
+    title: test/aoj/3148.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1595.test.cpp
     title: test/aoj/1595.test.cpp
   - icon: ':heavy_check_mark:'
@@ -73,6 +76,7 @@ data:
   timestamp: '2020-09-15 17:50:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3148.test.cpp
   - test/aoj/1595.test.cpp
   - test/yukicoder/2085.test.cpp
 documentation_of: ./tree/rerooting.cpp

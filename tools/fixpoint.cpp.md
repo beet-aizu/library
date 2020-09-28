@@ -19,6 +19,9 @@ data:
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3142.test.cpp
+    title: test/aoj/3142.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2646.test.cpp
     title: test/aoj/2646.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,6 +69,7 @@ data:
   - test/aoj/0377.test.cpp
   - test/aoj/geometry/2448.test.cpp
   - test/aoj/0613.test.cpp
+  - test/aoj/3142.test.cpp
   - test/aoj/2646.test.cpp
   - test/yukicoder/3912.test.cpp
   - test/yukicoder/3961.test.cpp
