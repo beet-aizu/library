@@ -10,7 +10,7 @@ using namespace std;
 #include "../../vector/near.cpp"
 #include "../../segtree/basic/dual.cpp"
 #define SegmentTree SegmentTree2
-#include "../../segtree/basic/chien.cpp"
+#include "../../segtree/basic/lazy.cpp"
 #undef SegmentTree
 #undef call_from_test
 

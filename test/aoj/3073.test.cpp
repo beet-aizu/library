@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../string/trie.cpp"
 #include "../../string/ahocorasick.cpp"
-#include "../../segtree/basic/chien.cpp"
+#include "../../segtree/basic/lazy.cpp"
 #undef call_from_test
 
 signed main(){

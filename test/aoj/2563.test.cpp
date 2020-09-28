@@ -8,7 +8,7 @@ using namespace std;
 #include "../../vector/fusion.cpp"
 #include "../../vector/compress.cpp"
 #include "../../algorithm/parallelbinarysearch.cpp"
-#include "../../segtree/basic/chien.cpp"
+#include "../../segtree/basic/lazy.cpp"
 #undef call_from_test
 
 signed main(){

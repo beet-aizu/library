@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../tree/levelancestor.cpp"
 #include "../../tree/eulertourforbfs.cpp"
-#include "../../segtree/basic/chien.cpp"
+#include "../../segtree/basic/lazy.cpp"
 #undef call_from_test
 
 signed main(){
