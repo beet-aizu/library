@@ -1188,12 +1188,6 @@ data:
       path: test/aoj/GRL_3_B.test.cpp
       title: test/aoj/GRL_3_B.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/GRL_3_C.test.cpp
-      title: test/aoj/GRL_3_C.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/GRL_4_A.test.cpp
-      title: test/aoj/GRL_4_A.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_A.linkcuttree.test.cpp
       title: test/aoj/GRL_5_A.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'

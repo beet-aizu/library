@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: graph/twosatisfiability.cpp
   requiredBy: []
-  timestamp: '2019-12-27 08:35:29+09:00'
+  timestamp: '2020-09-28 13:04:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3102.test.cpp

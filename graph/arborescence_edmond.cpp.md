@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: graph/arborescence_edmond.cpp
   requiredBy: []
-  timestamp: '2019-12-17 22:09:22+09:00'
+  timestamp: '2020-09-28 13:04:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2309.tarjan.test.cpp
