@@ -21,7 +21,7 @@ signed main(){
     auto check=
       [&](Die<int> d)->int{
         for(int i=0;i<6;i++)
-          if(d.s[i]<0) return 0;
+          if(d.fs[i]<0) return 0;
         int a=d.top()+d.bottom();
         int b=d.east()+d.west();
         int c=d.south()+d.north();
