@@ -42,7 +42,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2979.test.cpp
-documentation_of: ./maxflow/twocommodity.cpp
+documentation_of: maxflow/twocommodity.cpp
 layout: document
 title: "\u6700\u5927\u4E8C\u54C1\u7A2E\u6D41"
 ---

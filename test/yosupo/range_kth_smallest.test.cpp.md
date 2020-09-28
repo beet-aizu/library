@@ -90,7 +90,7 @@ data:
   timestamp: '2020-09-25 15:47:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: ./test/yosupo/range_kth_smallest.test.cpp
+documentation_of: test/yosupo/range_kth_smallest.test.cpp
 layout: document
 title: Verify rquantile
 ---

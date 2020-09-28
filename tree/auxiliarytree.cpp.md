@@ -55,7 +55,7 @@ data:
   verifiedWith:
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
-documentation_of: ./tree/auxiliarytree.cpp
+documentation_of: tree/auxiliarytree.cpp
 layout: document
 title: Auxiliary Tree
 ---

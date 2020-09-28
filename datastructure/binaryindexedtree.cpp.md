@@ -72,7 +72,7 @@ data:
   - test/yosupo/vertex_add_path_sum.test.cpp
   - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/yosupo/point_add_range_sum.test.cpp
-documentation_of: ./datastructure/binaryindexedtree.cpp
+documentation_of: datastructure/binaryindexedtree.cpp
 layout: document
 title: Binary Indexed Tree
 ---

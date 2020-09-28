@@ -46,7 +46,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2627.test.cpp
-documentation_of: ./mincostflow/negativeedge.cpp
+documentation_of: mincostflow/negativeedge.cpp
 layout: document
 ---
 

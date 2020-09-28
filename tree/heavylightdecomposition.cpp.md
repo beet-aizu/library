@@ -72,7 +72,7 @@ data:
   - test/aoj/2450.test.cpp
   - test/aoj/2667.test.cpp
   - test/yosupo/vertex_add_path_sum.test.cpp
-documentation_of: ./tree/heavylightdecomposition.cpp
+documentation_of: tree/heavylightdecomposition.cpp
 layout: document
 title: Heavy Light Decomposition
 ---

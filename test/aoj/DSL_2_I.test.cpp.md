@@ -84,7 +84,7 @@ data:
   timestamp: '2020-09-28 12:07:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: ./test/aoj/DSL_2_I.test.cpp
+documentation_of: test/aoj/DSL_2_I.test.cpp
 layout: document
 title: RSQ & RUQ
 ---

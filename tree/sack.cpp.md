@@ -50,7 +50,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2995.test.cpp
-documentation_of: ./tree/sack.cpp
+documentation_of: tree/sack.cpp
 layout: document
 title: Sack (dsu on tree)
 ---

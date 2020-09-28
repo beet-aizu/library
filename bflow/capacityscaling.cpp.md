@@ -155,7 +155,7 @@ data:
   - test/aoj/2872.test.cpp
   - test/yosupo/assignment.test.cpp
   - test/yosupo/min_cost_b_flow.test.cpp
-documentation_of: ./bflow/capacityscaling.cpp
+documentation_of: bflow/capacityscaling.cpp
 layout: document
 title: Minimum Cost Flow with Capacity Scaling
 ---

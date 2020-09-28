@@ -157,7 +157,7 @@ data:
   - test/yukicoder/2147.test.cpp
   - test/yukicoder/3227.test.cpp
   - test/yosupo/range_kth_smallest.test.cpp
-documentation_of: ./datastructure/waveletmatrix.cpp
+documentation_of: datastructure/waveletmatrix.cpp
 layout: document
 title: Wavelet Matrix
 ---

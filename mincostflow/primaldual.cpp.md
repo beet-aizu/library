@@ -94,7 +94,7 @@ data:
   - test/aoj/2736.test.cpp
   - test/aoj/2290.test.cpp
   - test/aoj/2627.test.cpp
-documentation_of: ./mincostflow/primaldual.cpp
+documentation_of: mincostflow/primaldual.cpp
 layout: document
 title: Primal Dual
 ---

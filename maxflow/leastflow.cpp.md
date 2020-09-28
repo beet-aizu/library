@@ -39,7 +39,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp
-documentation_of: ./maxflow/leastflow.cpp
+documentation_of: maxflow/leastflow.cpp
 layout: document
 title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
 ---
