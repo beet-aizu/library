@@ -15,7 +15,7 @@ signed main(){
   cin>>n>>q;
 
   auto f=[](int a,int b){return min(a,b);};
-  auto g=[](int a,int b){(void)a;return b;};
+  auto g=[](int,int b){return b;};
   SegmentTree<int, int> seg(f,g,g,INT_MAX,-1);
   seg.build(vector<int>(n,INT_MAX));
 

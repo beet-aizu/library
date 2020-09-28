@@ -17,7 +17,7 @@ signed main(){
   using P = pair<int, int>;
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,int b){return P(a.second*b,a.second);};
-  auto h=[](int a,int b){(void)a;return b;};
+  auto h=[](int,int b){return b;};
 
   SegmentTree<P, int> seg(f,g,h,P(0,0),-1010);
   seg.build(vector<P>(n,P(0,1)));
