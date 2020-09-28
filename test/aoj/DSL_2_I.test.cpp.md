@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: segtree/basic/chien.cpp
-    title: segtree/basic/chien.cpp
+    path: segtree/basic/lazy.cpp
+    title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -14,8 +14,8 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
   bundledCode: "#line 1 \"test/aoj/DSL_2_I.test.cpp\"\n// verification-helper: PROBLEM\
     \ http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 1 \"segtree/basic/chien.cpp\"\
-    \n\n#line 3 \"segtree/basic/chien.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"segtree/basic/lazy.cpp\"\
+    \n\n#line 3 \"segtree/basic/lazy.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\ntemplate <typename T,typename E>\nstruct SegmentTree{\n  using F =\
     \ function<T(T,T)>;\n  using G = function<T(T,E)>;\n  using H = function<E(E,E)>;\n\
     \  int n,height;\n  F f;\n  G g;\n  H h;\n  T ti;\n  E ei;\n  vector<T> dat;\n\
@@ -60,28 +60,28 @@ data:
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n,q;\n  cin>>n>>q;\n\n  using P = pair<int, int>;\n  auto f=[](P a,P b){return\
     \ P(a.first+b.first,a.second+b.second);};\n  auto g=[](P a,int b){return P(a.second*b,a.second);};\n\
-    \  auto h=[](int a,int b){(void)a;return b;};\n\n  SegmentTree<P, int> seg(f,g,h,P(0,0),-1010);\n\
+    \  auto h=[](int,int b){return b;};\n\n  SegmentTree<P, int> seg(f,g,h,P(0,0),-1010);\n\
     \  seg.build(vector<P>(n,P(0,1)));\n\n  for(int i=0;i<q;i++){\n    int c;\n  \
     \  cin>>c;\n    if(c==0){\n      int s,t,x;\n      cin>>s>>t>>x;\n      seg.update(s,t+1,x);\n\
     \    }\n    if(c==1){\n      int s,t;\n      cin>>s>>t;\n      cout<<seg.query(s,t+1).first<<\"\
     \\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../segtree/basic/chien.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \ \"../../segtree/basic/lazy.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\n  using\
     \ P = pair<int, int>;\n  auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};\n\
-    \  auto g=[](P a,int b){return P(a.second*b,a.second);};\n  auto h=[](int a,int\
-    \ b){(void)a;return b;};\n\n  SegmentTree<P, int> seg(f,g,h,P(0,0),-1010);\n \
-    \ seg.build(vector<P>(n,P(0,1)));\n\n  for(int i=0;i<q;i++){\n    int c;\n   \
-    \ cin>>c;\n    if(c==0){\n      int s,t,x;\n      cin>>s>>t>>x;\n      seg.update(s,t+1,x);\n\
-    \    }\n    if(c==1){\n      int s,t;\n      cin>>s>>t;\n      cout<<seg.query(s,t+1).first<<\"\
-    \\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \  auto g=[](P a,int b){return P(a.second*b,a.second);};\n  auto h=[](int,int\
+    \ b){return b;};\n\n  SegmentTree<P, int> seg(f,g,h,P(0,0),-1010);\n  seg.build(vector<P>(n,P(0,1)));\n\
+    \n  for(int i=0;i<q;i++){\n    int c;\n    cin>>c;\n    if(c==0){\n      int s,t,x;\n\
+    \      cin>>s>>t>>x;\n      seg.update(s,t+1,x);\n    }\n    if(c==1){\n     \
+    \ int s,t;\n      cin>>s>>t;\n      cout<<seg.query(s,t+1).first<<\"\\n\";\n \
+    \   }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
-  - segtree/basic/chien.cpp
+  - segtree/basic/lazy.cpp
   isVerificationFile: true
   path: test/aoj/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:01:13+09:00'
+  timestamp: '2020-09-28 12:07:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_I.test.cpp

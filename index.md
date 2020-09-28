@@ -444,11 +444,11 @@ data:
   - name: segtree/basic
     pages:
     - icon: ':heavy_check_mark:'
-      path: segtree/basic/chien.cpp
-      title: segtree/basic/chien.cpp
-    - icon: ':heavy_check_mark:'
       path: segtree/basic/dual.cpp
       title: segtree/basic/dual.cpp
+    - icon: ':heavy_check_mark:'
+      path: segtree/basic/lazy.cpp
+      title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: segtree/basic/ushi.cpp
       title: segtree/basic/ushi.cpp
@@ -751,7 +751,7 @@ data:
       title: test/aoj/1508.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/1549.test.cpp
-      title: test/aoj/1549.test.cpp
+      title: Verify succ, pred
     - icon: ':heavy_check_mark:'
       path: test/aoj/1579.test.cpp
       title: test/aoj/1579.test.cpp
@@ -1139,9 +1139,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_G.bbst.test.cpp
       title: test/aoj/DSL_2_G.bbst.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/DSL_2_G.test.cpp
-      title: test/aoj/DSL_2_G.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_H.bbst.test.cpp
       title: test/aoj/DSL_2_H.bbst.test.cpp

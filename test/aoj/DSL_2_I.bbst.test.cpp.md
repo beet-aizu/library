@@ -31,20 +31,19 @@ data:
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n,q;\n  cin>>n>>q;\n\n  using P = pair<int, int>;\n  auto f=[](P a,P b){return\
     \ P(a.first+b.first,a.second+b.second);};\n  auto g=[](P a,int b){return P(a.second*b,a.second);};\n\
-    \  auto h=[](int a,int b){(void)a;return b;};\n\n  using Node = NodeBase<P, int>;\n\
-    \  constexpr size_t LIM = 1e6;\n  Lazy<Node, LIM> G(f,g,h,P(0,0),-1010);\n  auto\
-    \ rt=G.build(vector<Node>(n,Node(P(0,1),-1010)));\n\n  for(int i=0;i<q;i++){\n\
-    \    int c;\n    cin>>c;\n    if(c==0){\n      int s,t,x;\n      cin>>s>>t>>x;\n\
-    \      rt=G.update(rt,s,t+1,x);\n    }\n    if(c==1){\n      int s,t;\n      cin>>s>>t;\n\
-    \      cout<<G.query(rt,s,t+1).first<<\"\\n\";\n    }\n  }\n  cout<<flush;\n \
-    \ return 0;\n}\n"
+    \  auto h=[](int,int b){return b;};\n\n  using Node = NodeBase<P, int>;\n  constexpr\
+    \ size_t LIM = 1e6;\n  Lazy<Node, LIM> G(f,g,h,P(0,0),-1010);\n  auto rt=G.build(vector<Node>(n,Node(P(0,1),-1010)));\n\
+    \n  for(int i=0;i<q;i++){\n    int c;\n    cin>>c;\n    if(c==0){\n      int s,t,x;\n\
+    \      cin>>s>>t>>x;\n      rt=G.update(rt,s,t+1,x);\n    }\n    if(c==1){\n \
+    \     int s,t;\n      cin>>s>>t;\n      cout<<G.query(rt,s,t+1).first<<\"\\n\"\
+    ;\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
   - bbst/rbst/basic/lazy.cpp
   isVerificationFile: true
   path: test/aoj/DSL_2_I.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:01:13+09:00'
+  timestamp: '2020-09-28 12:07:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_I.bbst.test.cpp

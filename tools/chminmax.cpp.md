@@ -77,7 +77,7 @@ data:
     title: test/aoj/2308.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1549.test.cpp
-    title: test/aoj/1549.test.cpp
+    title: Verify succ, pred
   - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp

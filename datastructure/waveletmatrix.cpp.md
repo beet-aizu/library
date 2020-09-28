@@ -11,7 +11,7 @@ data:
     title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1549.test.cpp
-    title: test/aoj/1549.test.cpp
+    title: Verify succ, pred
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1937.test.cpp
     title: Verify rangefreq
