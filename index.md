@@ -367,7 +367,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: maxflow/dinic.cpp
-      title: maxflow/dinic.cpp
+      title: "\u6700\u5927\u6D41"
     - icon: ':heavy_check_mark:'
       path: maxflow/fordfulkerson.cpp
       title: maxflow/fordfulkerson.cpp

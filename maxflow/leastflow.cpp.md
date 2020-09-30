@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: maxflow/dinic.cpp
-    title: maxflow/dinic.cpp
+    title: "\u6700\u5927\u6D41"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -35,7 +35,7 @@ data:
   isVerificationFile: false
   path: maxflow/leastflow.cpp
   requiredBy: []
-  timestamp: '2020-09-30 12:54:00+09:00'
+  timestamp: '2020-09-30 16:06:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp
