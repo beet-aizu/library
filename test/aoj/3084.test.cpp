@@ -12,7 +12,6 @@ using namespace std;
 #include "../../tools/fixpoint.cpp"
 #undef call_from_test
 
-//INSERT ABOVE HERE
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
