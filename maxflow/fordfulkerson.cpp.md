@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3183.test.cpp
+    title: test/aoj/3183.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_6_A.test.cpp
     title: test/aoj/GRL_6_A.test.cpp
   _pathExtension: cpp
@@ -53,6 +56,7 @@ data:
   timestamp: '2020-09-30 12:41:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3183.test.cpp
   - test/aoj/GRL_6_A.test.cpp
 documentation_of: maxflow/fordfulkerson.cpp
 layout: document

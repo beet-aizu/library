@@ -7,6 +7,9 @@ data:
     path: test/aoj/2513.test.cpp
     title: test/aoj/2513.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3168.test.cpp
+    title: test/aoj/3168.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_7_A.test.cpp
     title: test/aoj/GRL_7_A.test.cpp
   _pathExtension: cpp
@@ -53,6 +56,7 @@ data:
   verifiedWith:
   - test/aoj/2513.test.cpp
   - test/aoj/GRL_7_A.test.cpp
+  - test/aoj/3168.test.cpp
 documentation_of: matching/bimatch.cpp
 layout: document
 redirect_from:

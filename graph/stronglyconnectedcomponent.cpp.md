@@ -25,6 +25,9 @@ data:
     path: test/aoj/3102.test.cpp
     title: test/aoj/3102.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3183.test.cpp
+    title: test/aoj/3183.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_B.test.cpp
     title: test/aoj/GRL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -82,6 +85,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2309.tarjan.test.cpp
+  - test/aoj/3183.test.cpp
   - test/aoj/GRL_2_B.test.cpp
   - test/aoj/3102.test.cpp
   - test/aoj/2647.test.cpp

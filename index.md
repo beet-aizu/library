@@ -1049,6 +1049,12 @@ data:
       path: test/aoj/3148.test.cpp
       title: test/aoj/3148.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/3168.test.cpp
+      title: test/aoj/3168.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3183.test.cpp
+      title: test/aoj/3183.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_10_C.test.cpp
       title: test/aoj/ALDS1_10_C.test.cpp
     - icon: ':heavy_check_mark:'

@@ -7,6 +7,9 @@ data:
     path: test/aoj/0423.test.cpp
     title: test/aoj/0423.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3183.test.cpp
+    title: test/aoj/3183.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
   - icon: ':heavy_check_mark:'
@@ -55,6 +58,7 @@ data:
   timestamp: '2020-05-05 14:35:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3183.test.cpp
   - test/aoj/geometry/2334.test.cpp
   - test/aoj/0423.test.cpp
   - test/yosupo/shortest_path.test.cpp
