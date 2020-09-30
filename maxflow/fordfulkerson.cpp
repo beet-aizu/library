@@ -3,14 +3,15 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename T,bool directed>
+// O(F E \log V)
+template<typename Flow, bool directed>
 struct FordFulkerson{
   struct edge{
-    int to;
-    T cap;
+    int dst;
+    Flow cap;
     int rev;
     edge(){}
-    edge(int to,T cap,int rev):to(to),cap(cap),rev(rev){}
+    edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}
   };
 
   vector< vector<edge> > G;
@@ -19,32 +20,35 @@ struct FordFulkerson{
   FordFulkerson(){}
   FordFulkerson(int n):G(n),used(n){}
 
-  void add_edge(int from,int to,T cap){
-    G[from].emplace_back(to,cap,G[to].size());
-    G[to].emplace_back(from,directed?0:cap,G[from].size()-1);
+  int add_edge(int src,int dst,Flow cap){
+    int e=G[src].size();
+    int r=(src==dst?e+1:G[dst].size());
+    G[src].emplace_back(dst,cap,r);
+    G[dst].emplace_back(src,directed?0:cap,e);
+    return e;
   }
 
-  T dfs(int v,int t,T f){
+  Flow dfs(int v,int t,Flow f){
     if(v==t) return f;
     used[v]=true;
     for(int i=0;i<(int)G[v].size();i++){
       edge &e=G[v][i];
-      if(!used[e.to]&&e.cap>0){
-        T d=dfs(e.to,t,min(f,e.cap));
+      if(!used[e.dst]&&e.cap>0){
+        Flow d=dfs(e.dst,t,min(f,e.cap));
         if(d==0) continue;
         e.cap-=d;
-        G[e.to][e.rev].cap+=d;
+        G[e.dst][e.rev].cap+=d;
         return d;
       }
     }
     return 0;
   }
 
-  T flow(int s,int t,T lim){
-    T fl=0;
+  Flow flow(int s,int t,Flow lim){
+    Flow fl=0;
     while(1){
       fill(used.begin(),used.end(),0);
-      T f=dfs(s,t,lim);
+      Flow f=dfs(s,t,lim);
       if(f==0) break;
       fl+=f;
       lim-=f;
@@ -52,8 +56,8 @@ struct FordFulkerson{
     return fl;
   }
 
-  T flow(int s,int t){
-    return flow(s,t,numeric_limits<T>::max()/2);
+  Flow flow(int s,int t){
+    return flow(s,t,numeric_limits<Flow>::max()/2);
   }
 };
 //END CUT HERE
