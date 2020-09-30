@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3086.test.cpp
+    title: test/aoj/3086.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1948.test.cpp
     title: test/yukicoder/1948.test.cpp
   - icon: ':heavy_check_mark:'
@@ -17,7 +20,7 @@ data:
   attributes:
     links:
     - https://qiita.com/tmaehara/items/0687af2cfb807cde7860
-  bundledCode: "#line 2 \"algorithm/onlineoffline.cpp\"\n\n#ifndef call_from_test\n\
+  bundledCode: "#line 2 \"algorithm/offlineonline.cpp\"\n\n#ifndef call_from_test\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#endif\n\n// https://qiita.com/tmaehara/items/0687af2cfb807cde7860\n\
     //BEGIN CUT HERE\nnamespace OfflineOnline{\n  vector<int> used;\n\n  template<typename\
     \ T>\n  void update(vector<T> &dp,int k,T val){\n    if(!used[k]) dp[k]=val;\n\
@@ -53,18 +56,19 @@ data:
     \ 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: algorithm/onlineoffline.cpp
+  path: algorithm/offlineonline.cpp
   requiredBy: []
-  timestamp: '2020-09-15 22:09:43+09:00'
+  timestamp: '2020-09-30 12:35:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3086.test.cpp
   - test/yukicoder/1950.test.cpp
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/2113.test.cpp
-documentation_of: algorithm/onlineoffline.cpp
+documentation_of: algorithm/offlineonline.cpp
 layout: document
 redirect_from:
-- /library/algorithm/onlineoffline.cpp
-- /library/algorithm/onlineoffline.cpp.html
-title: algorithm/onlineoffline.cpp
+- /library/algorithm/offlineonline.cpp
+- /library/algorithm/offlineonline.cpp.html
+title: algorithm/offlineonline.cpp
 ---

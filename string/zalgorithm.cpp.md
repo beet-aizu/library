@@ -7,6 +7,9 @@ data:
     title: string/run.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3081.test.cpp
+    title: test/aoj/3081.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
   - icon: ':heavy_check_mark:'
@@ -40,6 +43,7 @@ data:
   timestamp: '2020-02-15 17:46:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3081.test.cpp
   - test/yosupo/runenumerate.test.cpp
   - test/yosupo/zalgorithm.test.cpp
 documentation_of: string/zalgorithm.cpp

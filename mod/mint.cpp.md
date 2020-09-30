@@ -79,6 +79,9 @@ data:
     path: test/aoj/3074.test.cpp
     title: test/aoj/3074.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3084.test.cpp
+    title: test/aoj/3084.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_A.test.cpp
     title: test/aoj/DPL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -311,6 +314,7 @@ data:
   - test/aoj/DPL_5_G.test.cpp
   - test/aoj/2397.test.cpp
   - test/aoj/DPL_5_F.test.cpp
+  - test/aoj/3084.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/4271.test.cpp
   - test/yukicoder/3211.test.cpp

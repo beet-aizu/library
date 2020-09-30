@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3086.test.cpp
+    title: test/aoj/3086.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1948.test.cpp
     title: test/yukicoder/1948.test.cpp
   - icon: ':heavy_check_mark:'
@@ -41,6 +44,7 @@ data:
   timestamp: '2020-08-07 15:47:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3086.test.cpp
   - test/yukicoder/1950.test.cpp
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/2113.test.cpp

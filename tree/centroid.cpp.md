@@ -7,6 +7,9 @@ data:
     path: test/aoj/2790.test.cpp
     title: test/aoj/2790.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3084.test.cpp
+    title: test/aoj/3084.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
   - icon: ':heavy_check_mark:'
@@ -59,6 +62,7 @@ data:
   verifiedWith:
   - test/aoj/2790.test.cpp
   - test/aoj/3142.test.cpp
+  - test/aoj/3084.test.cpp
   - test/yukicoder/3912.test.cpp
   - test/yukicoder/3961.test.cpp
   - test/yosupo/frequency_table_of_tree_distance.test.cpp

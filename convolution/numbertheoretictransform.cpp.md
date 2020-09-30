@@ -31,6 +31,9 @@ data:
     path: test/aoj/3074.test.cpp
     title: test/aoj/3074.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3084.test.cpp
+    title: test/aoj/3084.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/bernoulli_number.test.cpp
     title: test/yosupo/bernoulli_number.test.cpp
   - icon: ':heavy_check_mark:'
@@ -131,6 +134,7 @@ data:
   - test/aoj/3072.test.cpp
   - test/aoj/2959.test.cpp
   - test/aoj/2560.test.cpp
+  - test/aoj/3084.test.cpp
   - test/yukicoder/1504.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp

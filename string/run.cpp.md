@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3081.test.cpp
+    title: test/aoj/3081.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
   _pathExtension: cpp
@@ -57,6 +60,7 @@ data:
   timestamp: '2020-02-16 18:24:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3081.test.cpp
   - test/yosupo/runenumerate.test.cpp
 documentation_of: string/run.cpp
 layout: document

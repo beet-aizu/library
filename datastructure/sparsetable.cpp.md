@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3086.test.cpp
+    title: test/aoj/3086.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.sparsetable.test.cpp
     title: test/aoj/DSL_3_D.sparsetable.test.cpp
   - icon: ':heavy_check_mark:'
@@ -41,6 +44,7 @@ data:
   timestamp: '2019-12-26 23:22:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3086.test.cpp
   - test/aoj/DSL_3_D.sparsetable.test.cpp
   - test/yosupo/staticrmq.sparsetable.test.cpp
 documentation_of: datastructure/sparsetable.cpp

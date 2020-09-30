@@ -16,8 +16,8 @@ data:
       path: algorithm/monotoneminima.cpp
       title: algorithm/monotoneminima.cpp
     - icon: ':heavy_check_mark:'
-      path: algorithm/onlineoffline.cpp
-      title: algorithm/onlineoffline.cpp
+      path: algorithm/offlineonline.cpp
+      title: algorithm/offlineonline.cpp
     - icon: ':heavy_check_mark:'
       path: algorithm/optimalbinarytree.cpp
       title: algorithm/optimalbinarytree.cpp
@@ -1013,6 +1013,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3074.test.cpp
       title: test/aoj/3074.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3081.test.cpp
+      title: test/aoj/3081.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3084.test.cpp
+      title: test/aoj/3084.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3086.test.cpp
+      title: test/aoj/3086.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3102.test.cpp
       title: test/aoj/3102.test.cpp
