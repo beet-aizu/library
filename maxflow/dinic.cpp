@@ -3,6 +3,8 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+// O(E V^2)
+// O(E \min(E^{1/2}, V^{2/3})) if caps are constant
 template<typename Flow,bool directed>
 struct Dinic{
   struct Edge {
