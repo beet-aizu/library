@@ -26,7 +26,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"mincostflow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\n// O(F E \\log V)\ntemplate<typename\
     \ Flow, typename Cost>\nstruct PrimalDual{\n  struct Edge{\n    int dst;\n   \
     \ Flow cap;\n    Cost cost;\n    int rev;\n    Edge(int dst,Flow cap,Cost cost,int\
     \ rev):\n      dst(dst),cap(cap),cost(cost),rev(rev){}\n  };\n\n  vector<vector<Edge>>\
@@ -54,9 +54,9 @@ data:
     \  }\n\n  Cost get_cost(){return res;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\n// O(F E log V)\ntemplate<typename Flow, typename Cost>\nstruct\
-    \ PrimalDual{\n  struct Edge{\n    int dst;\n    Flow cap;\n    Cost cost;\n \
-    \   int rev;\n    Edge(int dst,Flow cap,Cost cost,int rev):\n      dst(dst),cap(cap),cost(cost),rev(rev){}\n\
+    //BEGIN CUT HERE\n// O(F E \\log V)\ntemplate<typename Flow, typename Cost>\n\
+    struct PrimalDual{\n  struct Edge{\n    int dst;\n    Flow cap;\n    Cost cost;\n\
+    \    int rev;\n    Edge(int dst,Flow cap,Cost cost,int rev):\n      dst(dst),cap(cap),cost(cost),rev(rev){}\n\
     \  };\n\n  vector<vector<Edge>> G;\n  vector<Cost> h,dist;\n  vector<int> prevv,preve;\n\
     \n  PrimalDual(int n):G(n),h(n),dist(n),prevv(n),preve(n){}\n\n  void add_edge(int\
     \ u,int v,Flow cap,Cost cost){\n    int e=G[u].size();\n    int r=(u==v?e+1:G[v].size());\n\
@@ -86,7 +86,7 @@ data:
   path: mincostflow/primaldual.cpp
   requiredBy:
   - mincostflow/negativeedge.cpp
-  timestamp: '2020-09-25 11:08:59+09:00'
+  timestamp: '2020-09-30 12:54:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2679.test.cpp

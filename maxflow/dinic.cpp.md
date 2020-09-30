@@ -36,9 +36,9 @@ data:
     links: []
   bundledCode: "#line 1 \"maxflow/dinic.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Flow,bool directed>\nstruct\
-    \ Dinic{\n  struct Edge {\n    int dst;\n    Flow cap;\n    int rev;\n    Edge(){}\n\
-    \    Edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}\n  };\n\n  vector<\
-    \ vector<Edge> > G;\n  vector<int> level,iter;\n\n  Dinic(){}\n  Dinic(int n):G(n),level(n),iter(n){}\n\
+    \ Dinic{\n  struct Edge {\n    int dst;\n    Flow cap;\n    int rev;\n    Edge(int\
+    \ dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}\n  };\n\n  vector< vector<Edge>\
+    \ > G;\n  vector<int> level,iter;\n\n  Dinic(){}\n  Dinic(int n):G(n),level(n),iter(n){}\n\
     \n  int add_edge(int src,int dst,Flow cap){\n    int e=G[src].size();\n    int\
     \ r=(src==dst?e+1:G[dst].size());\n    G[src].emplace_back(dst,cap,r);\n    G[dst].emplace_back(src,directed?0:cap,e);\n\
     \    return e;\n  }\n\n  void bfs(int s){\n    fill(level.begin(),level.end(),-1);\n\
@@ -65,11 +65,11 @@ data:
     #endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename Flow,bool directed>\nstruct Dinic{\n  struct\
-    \ Edge {\n    int dst;\n    Flow cap;\n    int rev;\n    Edge(){}\n    Edge(int\
-    \ dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}\n  };\n\n  vector< vector<Edge>\
-    \ > G;\n  vector<int> level,iter;\n\n  Dinic(){}\n  Dinic(int n):G(n),level(n),iter(n){}\n\
-    \n  int add_edge(int src,int dst,Flow cap){\n    int e=G[src].size();\n    int\
-    \ r=(src==dst?e+1:G[dst].size());\n    G[src].emplace_back(dst,cap,r);\n    G[dst].emplace_back(src,directed?0:cap,e);\n\
+    \ Edge {\n    int dst;\n    Flow cap;\n    int rev;\n    Edge(int dst,Flow cap,int\
+    \ rev):dst(dst),cap(cap),rev(rev){}\n  };\n\n  vector< vector<Edge> > G;\n  vector<int>\
+    \ level,iter;\n\n  Dinic(){}\n  Dinic(int n):G(n),level(n),iter(n){}\n\n  int\
+    \ add_edge(int src,int dst,Flow cap){\n    int e=G[src].size();\n    int r=(src==dst?e+1:G[dst].size());\n\
+    \    G[src].emplace_back(dst,cap,r);\n    G[dst].emplace_back(src,directed?0:cap,e);\n\
     \    return e;\n  }\n\n  void bfs(int s){\n    fill(level.begin(),level.end(),-1);\n\
     \    queue<int> que;\n    level[s]=0;\n    que.emplace(s);\n    while(!que.empty()){\n\
     \      int v=que.front();que.pop();\n      for(int i=0;i<(int)G[v].size();i++){\n\
@@ -98,7 +98,7 @@ data:
   requiredBy:
   - maxflow/twocommodity.cpp
   - maxflow/leastflow.cpp
-  timestamp: '2020-09-28 10:48:55+09:00'
+  timestamp: '2020-09-30 12:54:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2313.test.cpp

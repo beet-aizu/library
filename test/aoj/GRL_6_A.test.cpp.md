@@ -17,14 +17,14 @@ data:
     \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line 1 \"\
     maxflow/fordfulkerson.cpp\"\n\n#line 3 \"maxflow/fordfulkerson.cpp\"\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\n// O(F E \\log V)\ntemplate<typename Flow, bool\
-    \ directed>\nstruct FordFulkerson{\n  struct edge{\n    int dst;\n    Flow cap;\n\
-    \    int rev;\n    edge(){}\n    edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}\n\
-    \  };\n\n  vector< vector<edge> > G;\n  vector<int> used;\n\n  FordFulkerson(){}\n\
+    \ directed>\nstruct FordFulkerson{\n  struct Edge{\n    int dst;\n    Flow cap;\n\
+    \    int rev;\n    Edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}\n\
+    \  };\n\n  vector< vector<Edge> > G;\n  vector<int> used;\n\n  FordFulkerson(){}\n\
     \  FordFulkerson(int n):G(n),used(n){}\n\n  int add_edge(int src,int dst,Flow\
     \ cap){\n    int e=G[src].size();\n    int r=(src==dst?e+1:G[dst].size());\n \
     \   G[src].emplace_back(dst,cap,r);\n    G[dst].emplace_back(src,directed?0:cap,e);\n\
     \    return e;\n  }\n\n  Flow dfs(int v,int t,Flow f){\n    if(v==t) return f;\n\
-    \    used[v]=true;\n    for(int i=0;i<(int)G[v].size();i++){\n      edge &e=G[v][i];\n\
+    \    used[v]=true;\n    for(int i=0;i<(int)G[v].size();i++){\n      Edge &e=G[v][i];\n\
     \      if(!used[e.dst]&&e.cap>0){\n        Flow d=dfs(e.dst,t,min(f,e.cap));\n\
     \        if(d==0) continue;\n        e.cap-=d;\n        G[e.dst][e.rev].cap+=d;\n\
     \        return d;\n      }\n    }\n    return 0;\n  }\n\n  Flow flow(int s,int\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-30 12:41:42+09:00'
+  timestamp: '2020-09-30 12:54:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_6_A.test.cpp
