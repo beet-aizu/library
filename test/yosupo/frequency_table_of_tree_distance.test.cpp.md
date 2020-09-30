@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/fixpoint.cpp
     title: tools/fixpoint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/centroid.cpp
     title: tree/centroid.cpp
   _extendedRequiredBy: []
@@ -25,20 +25,21 @@ data:
     #endif\n//BEGIN CUT HERE\nstruct Centroid{\n  vector<int> sz,dead;\n  vector<\
     \ vector<int> > G;\n  Centroid(){}\n  Centroid(int n):sz(n,1),dead(n,0),G(n){}\n\
     \n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
-    \  }\n\n  int dfs(int v,int p){\n    sz[v]=1;\n    for(int u:G[v])\n      if(u!=p&&!dead[u])\
-    \ sz[v]+=dfs(u,v);\n    return sz[v];\n  }\n\n  void find(int v,int p,int tmp,vector<int>\
-    \ &cs) {\n    int ok=1;\n    for (int u:G[v]){\n      if(u==p||dead[u]) continue;\n\
-    \      find(u,v,tmp,cs);\n      ok&=(sz[u]<=tmp/2);\n    }\n    ok&=(tmp-sz[v]<=tmp/2);\n\
-    \    if(ok) cs.emplace_back(v);\n  }\n\n  vector<int> build(int r) {\n    int\
-    \ tmp=dfs(r,-1);\n    vector<int> cs;\n    find(r,-1,tmp,cs);\n    return cs;\n\
-    \  }\n\n  const vector<int>& operator[](int k)const{return G[k];}\n  void disable(int\
-    \ v){dead[v]=1;}\n  void  enable(int v){dead[v]=0;}\n  int alive(int v){return\
-    \ !dead[v];}\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return\
-    \ 0;\n}\n#endif\n#line 1 \"tools/fixpoint.cpp\"\n\n#line 3 \"tools/fixpoint.cpp\"\
-    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename F>\nstruct\
-    \ FixPoint : F{\n  FixPoint(F&& f):F(forward<F>(f)){}\n  template<typename...\
-    \ Args>\n  decltype(auto) operator()(Args&&... args) const{\n    return F::operator()(*this,forward<Args>(args)...);\n\
-    \  }\n};\ntemplate<typename F>\ninline decltype(auto) MFP(F&& f){\n  return FixPoint<F>{forward<F>(f)};\n\
+    \  }\n\n  int dfs(int v,int p){\n    sz[v]=1;\n    for(int u:G[v])\n      if(u!=p\
+    \ and !dead[u]) sz[v]+=dfs(u,v);\n    return sz[v];\n  }\n\n  void find(int v,int\
+    \ p,int tmp,vector<int> &cs) {\n    int ok=1;\n    for (int u:G[v]){\n      if(u==p\
+    \ or dead[u]) continue;\n      find(u,v,tmp,cs);\n      ok&=(sz[u]<=tmp/2);\n\
+    \    }\n    ok&=(tmp-sz[v]<=tmp/2);\n    if(ok) cs.emplace_back(v);\n  }\n\n \
+    \ vector<int> build(int r) {\n    int tmp=dfs(r,-1);\n    vector<int> cs;\n  \
+    \  find(r,-1,tmp,cs);\n    return cs;\n  }\n\n  const vector<int>& operator[](int\
+    \ k)const{return G[k];}\n  void disable(int v){dead[v]=1;}\n  void  enable(int\
+    \ v){dead[v]=0;}\n  int alive(int v){return !dead[v];}\n};\n//END CUT HERE\n#ifndef\
+    \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"tools/fixpoint.cpp\"\
+    \n\n#line 3 \"tools/fixpoint.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT\
+    \ HERE\ntemplate<typename F>\nstruct FixPoint : F{\n  FixPoint(F&& f):F(forward<F>(f)){}\n\
+    \  template<typename... Args>\n  decltype(auto) operator()(Args&&... args) const{\n\
+    \    return F::operator()(*this,forward<Args>(args)...);\n  }\n};\ntemplate<typename\
+    \ F>\ninline decltype(auto) MFP(F&& f){\n  return FixPoint<F>{forward<F>(f)};\n\
     }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n#line 1 \"convolution/fastfouriertransform.cpp\"\n\n\
     #line 3 \"convolution/fastfouriertransform.cpp\"\nusing namespace std;\n#endif\n\
@@ -114,7 +115,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 18:28:59+09:00'
+  timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/frequency_table_of_tree_distance.test.cpp

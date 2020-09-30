@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/lowestcommonancestor.cpp
     title: tree/lowestcommonancestor.cpp
   _extendedRequiredBy: []
@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -37,11 +37,11 @@ data:
     \         [&](int a,int b){return idx[a]<idx[b];});\n    vs.erase(unique(vs.begin(),vs.end()),vs.end());\n\
     \n    int k=vs.size();\n    stack<int> st;\n    st.emplace(vs[0]);\n    for(int\
     \ i=0;i+1<k;i++){\n      int w=lca(vs[i],vs[i+1]);\n      if(w!=vs[i]){\n    \
-    \    int l=st.top();st.pop();\n        while(!st.empty()&&dep[w]<dep[st.top()]){\n\
+    \    int l=st.top();st.pop();\n        while(!st.empty() and dep[w]<dep[st.top()]){\n\
     \          add_aux_edge(st.top(),l);\n          l=st.top();st.pop();\n       \
-    \ }\n        if(st.empty()||st.top()!=w){\n          st.emplace(w);\n        \
-    \  vs.emplace_back(w);\n        }\n        add_aux_edge(w,l);\n      }\n     \
-    \ st.emplace(vs[i+1]);\n    }\n\n    while(st.size()>1){\n      int c=st.top();st.pop();\n\
+    \ }\n        if(st.empty() or st.top()!=w){\n          st.emplace(w);\n      \
+    \    vs.emplace_back(w);\n        }\n        add_aux_edge(w,l);\n      }\n   \
+    \   st.emplace(vs[i+1]);\n    }\n\n    while(st.size()>1){\n      int c=st.top();st.pop();\n\
     \      add_aux_edge(st.top(),c);\n    }\n  }\n\n  void clear(const vector<int>\
     \ &ws){\n    for(int w:ws) T[w].clear();\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     signed main(){\n  return 0;\n}\n#endif\n"
@@ -50,8 +50,8 @@ data:
   isVerificationFile: false
   path: tree/auxiliarytree.cpp
   requiredBy: []
-  timestamp: '2020-09-15 23:17:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-30 16:50:39+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp

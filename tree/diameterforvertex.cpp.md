@@ -26,14 +26,14 @@ data:
     \ G(n);\n  vector<int> deg(n,0);\n  for(int i=1;i<n;i++){\n    int x,y;\n    cin>>x>>y;\n\
     \    x--;y--;\n    G.add_edge(x,y);\n    deg[x]++;\n    deg[y]++;\n  }\n\n  string\
     \ s;\n  cin>>s;\n\n  int cnt=(n-1)*2,num=0;\n  queue<int> que;\n  vector<int>\
-    \ dead(n,0);\n  for(int i=0;i<n;i++){\n    num+=(s[i]=='W');\n    if((deg[i]==1)&&(s[i]=='B')){\n\
-    \      dead[i]=1;\n      que.emplace(i);\n    }\n  }\n\n  while(!que.empty()){\n\
-    \    int v=que.front();que.pop();\n    cnt-=2;\n    for(int u:G.G[v]){\n     \
-    \ if(dead[u]) continue;\n      deg[u]--;\n      if(deg[u]==1&&(s[u]=='B')){\n\
-    \        dead[u]=1;\n        que.emplace(u);\n      }\n    }\n  }\n\n  if(num<=1){\n\
-    \    cout<<num<<endl;\n    return 0;\n  }\n\n  vector<int> vs(n,0);\n  for(int\
-    \ i=0;i<n;i++){\n    if(dead[i]) continue;\n    vs[i]=deg[i]+(s[i]=='W');\n  \
-    \  vs[i]%=2;\n    cnt+=vs[i];\n  }\n\n  cout<<cnt-G.build(vs)*2<<endl;\n  return\
+    \ dead(n,0);\n  for(int i=0;i<n;i++){\n    num+=(s[i]=='W');\n    if((deg[i]==1)\
+    \ and (s[i]=='B')){\n      dead[i]=1;\n      que.emplace(i);\n    }\n  }\n\n \
+    \ while(!que.empty()){\n    int v=que.front();que.pop();\n    cnt-=2;\n    for(int\
+    \ u:G.G[v]){\n      if(dead[u]) continue;\n      deg[u]--;\n      if(deg[u]==1\
+    \ and (s[u]=='B')){\n        dead[u]=1;\n        que.emplace(u);\n      }\n  \
+    \  }\n  }\n\n  if(num<=1){\n    cout<<num<<endl;\n    return 0;\n  }\n\n  vector<int>\
+    \ vs(n,0);\n  for(int i=0;i<n;i++){\n    if(dead[i]) continue;\n    vs[i]=deg[i]+(s[i]=='W');\n\
+    \    vs[i]%=2;\n    cnt+=vs[i];\n  }\n\n  cout<<cnt-G.build(vs)*2<<endl;\n  return\
     \ 0;\n}\n/*\n  verified on 2019/12/27\n  https://atcoder.jp/contests/arc097/tasks/arc097_d\n\
     */\n\nsigned main(){\n  //ARC097_F();\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
@@ -51,21 +51,21 @@ data:
     \ G(n);\n  vector<int> deg(n,0);\n  for(int i=1;i<n;i++){\n    int x,y;\n    cin>>x>>y;\n\
     \    x--;y--;\n    G.add_edge(x,y);\n    deg[x]++;\n    deg[y]++;\n  }\n\n  string\
     \ s;\n  cin>>s;\n\n  int cnt=(n-1)*2,num=0;\n  queue<int> que;\n  vector<int>\
-    \ dead(n,0);\n  for(int i=0;i<n;i++){\n    num+=(s[i]=='W');\n    if((deg[i]==1)&&(s[i]=='B')){\n\
-    \      dead[i]=1;\n      que.emplace(i);\n    }\n  }\n\n  while(!que.empty()){\n\
-    \    int v=que.front();que.pop();\n    cnt-=2;\n    for(int u:G.G[v]){\n     \
-    \ if(dead[u]) continue;\n      deg[u]--;\n      if(deg[u]==1&&(s[u]=='B')){\n\
-    \        dead[u]=1;\n        que.emplace(u);\n      }\n    }\n  }\n\n  if(num<=1){\n\
-    \    cout<<num<<endl;\n    return 0;\n  }\n\n  vector<int> vs(n,0);\n  for(int\
-    \ i=0;i<n;i++){\n    if(dead[i]) continue;\n    vs[i]=deg[i]+(s[i]=='W');\n  \
-    \  vs[i]%=2;\n    cnt+=vs[i];\n  }\n\n  cout<<cnt-G.build(vs)*2<<endl;\n  return\
+    \ dead(n,0);\n  for(int i=0;i<n;i++){\n    num+=(s[i]=='W');\n    if((deg[i]==1)\
+    \ and (s[i]=='B')){\n      dead[i]=1;\n      que.emplace(i);\n    }\n  }\n\n \
+    \ while(!que.empty()){\n    int v=que.front();que.pop();\n    cnt-=2;\n    for(int\
+    \ u:G.G[v]){\n      if(dead[u]) continue;\n      deg[u]--;\n      if(deg[u]==1\
+    \ and (s[u]=='B')){\n        dead[u]=1;\n        que.emplace(u);\n      }\n  \
+    \  }\n  }\n\n  if(num<=1){\n    cout<<num<<endl;\n    return 0;\n  }\n\n  vector<int>\
+    \ vs(n,0);\n  for(int i=0;i<n;i++){\n    if(dead[i]) continue;\n    vs[i]=deg[i]+(s[i]=='W');\n\
+    \    vs[i]%=2;\n    cnt+=vs[i];\n  }\n\n  cout<<cnt-G.build(vs)*2<<endl;\n  return\
     \ 0;\n}\n/*\n  verified on 2019/12/27\n  https://atcoder.jp/contests/arc097/tasks/arc097_d\n\
     */\n\nsigned main(){\n  //ARC097_F();\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: tree/diameterforvertex.cpp
   requiredBy: []
-  timestamp: '2019-12-27 09:03:53+09:00'
+  timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0415.test.cpp

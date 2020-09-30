@@ -35,7 +35,7 @@ data:
   isVerificationFile: false
   path: maxflow/leastflow.cpp
   requiredBy: []
-  timestamp: '2020-09-30 16:06:46+09:00'
+  timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp

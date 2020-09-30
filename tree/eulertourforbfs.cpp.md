@@ -42,7 +42,7 @@ data:
   isVerificationFile: false
   path: tree/eulertourforbfs.cpp
   requiredBy: []
-  timestamp: '2020-03-23 23:46:43+09:00'
+  timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3405.test.cpp

@@ -116,7 +116,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/absolutesum.cpp
       title: datastructure/absolutesum.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/binaryindexedtree.cpp
       title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
@@ -271,7 +271,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: io/tuple.cpp
       title: io/tuple.cpp
   - name: linearalgebra
@@ -370,7 +370,8 @@ data:
       title: "\u6700\u5927\u6D41"
     - icon: ':heavy_check_mark:'
       path: maxflow/fordfulkerson.cpp
-      title: maxflow/fordfulkerson.cpp
+      title: "\u6700\u5927\u6D41 (\u8A08\u7B97\u91CF\u304C\u6D41\u91CF\u4F9D\u5B58\
+        )"
     - icon: ':heavy_check_mark:'
       path: maxflow/leastflow.cpp
       title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"
@@ -556,7 +557,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/fastio.cpp
       title: tools/fastio.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/fixpoint.cpp
       title: tools/fixpoint.cpp
     - icon: ':heavy_check_mark:'
@@ -590,10 +591,10 @@ data:
       title: toptree/toptree.cpp
   - name: tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tree/auxiliarytree.cpp
       title: Auxiliary Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tree/centroid.cpp
       title: tree/centroid.cpp
     - icon: ':warning:'
@@ -623,7 +624,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/levelancestor.cpp
       title: tree/levelancestor.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tree/lowestcommonancestor.cpp
       title: tree/lowestcommonancestor.cpp
     - icon: ':heavy_check_mark:'
@@ -634,7 +635,7 @@ data:
       title: Sack (dsu on tree)
   - name: vector
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: vector/compress.cpp
       title: vector/compress.cpp
     - icon: ':heavy_check_mark:'
@@ -1681,7 +1682,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/3912.test.cpp
       title: test/yukicoder/3912.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/3961.test.cpp
       title: test/yukicoder/3961.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1702,7 +1703,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4778.test.cpp
       title: test/yukicoder/4778.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/4852.test.cpp
       title: test/yukicoder/4852.test.cpp
     - icon: ':heavy_check_mark:'

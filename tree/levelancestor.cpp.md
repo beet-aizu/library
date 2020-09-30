@@ -28,13 +28,13 @@ data:
     \        if(len[v]<len[u]) nxt[v]=u,len[v]=len[u];\n      }\n    }\n    if(!f)\
     \ return;\n    pth[v]=lad.size();\n    lad.emplace_back();\n    for(int k=v;;k=nxt[k]){\n\
     \      lad.back().emplace_back(k);\n      pth[k]=pth[v];\n      if(k==nxt[k])\
-    \ break;\n    }\n    for(;;p=v,v=nxt[v]){\n      for(int u:G[v])\n        if(u!=p&&u!=nxt[v])\
-    \ dfs(u,v,d+1,1);\n      if(v==nxt[v]) break;\n    }\n  }\n\n  void build(int\
-    \ r=0){\n    dfs(r,-1,0,1);\n    for(int k=0;k+1<h;k++){\n      for(int v=0;v<n;v++){\n\
-    \        if(par[k][v]<0) par[k+1][v]=-1;\n        else par[k+1][v]=par[k][par[k][v]];\n\
-    \      }\n    }\n    for(int i=0;i<(int)lad.size();i++){\n      int v=lad[i][0],p=par[0][v];\n\
-    \      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n   \
-    \     lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
+    \ break;\n    }\n    for(;;p=v,v=nxt[v]){\n      for(int u:G[v])\n        if(u!=p\
+    \ and u!=nxt[v]) dfs(u,v,d+1,1);\n      if(v==nxt[v]) break;\n    }\n  }\n\n \
+    \ void build(int r=0){\n    dfs(r,-1,0,1);\n    for(int k=0;k+1<h;k++){\n    \
+    \  for(int v=0;v<n;v++){\n        if(par[k][v]<0) par[k+1][v]=-1;\n        else\
+    \ par[k+1][v]=par[k][par[k][v]];\n      }\n    }\n    for(int i=0;i<(int)lad.size();i++){\n\
+    \      int v=lad[i][0],p=par[0][v];\n      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n\
+    \        lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
     \          lad[i][m-(j+1)]=lad[i][m-(j+l+1)];\n        for(int j=0;j<l;j++)\n\
     \          lad[i][j]=lad[k][ord[p]-l+j+1];\n      }\n      for(int j=0;j<(int)lad[i].size();j++)\n\
     \        if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;\n    }\n  }\n\n  int lca(int\
@@ -59,12 +59,13 @@ data:
     \ nxt[v]=u,len[v]=len[u];\n      }\n    }\n    if(!f) return;\n    pth[v]=lad.size();\n\
     \    lad.emplace_back();\n    for(int k=v;;k=nxt[k]){\n      lad.back().emplace_back(k);\n\
     \      pth[k]=pth[v];\n      if(k==nxt[k]) break;\n    }\n    for(;;p=v,v=nxt[v]){\n\
-    \      for(int u:G[v])\n        if(u!=p&&u!=nxt[v]) dfs(u,v,d+1,1);\n      if(v==nxt[v])\
-    \ break;\n    }\n  }\n\n  void build(int r=0){\n    dfs(r,-1,0,1);\n    for(int\
-    \ k=0;k+1<h;k++){\n      for(int v=0;v<n;v++){\n        if(par[k][v]<0) par[k+1][v]=-1;\n\
-    \        else par[k+1][v]=par[k][par[k][v]];\n      }\n    }\n    for(int i=0;i<(int)lad.size();i++){\n\
-    \      int v=lad[i][0],p=par[0][v];\n      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n\
-    \        lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
+    \      for(int u:G[v])\n        if(u!=p and u!=nxt[v]) dfs(u,v,d+1,1);\n     \
+    \ if(v==nxt[v]) break;\n    }\n  }\n\n  void build(int r=0){\n    dfs(r,-1,0,1);\n\
+    \    for(int k=0;k+1<h;k++){\n      for(int v=0;v<n;v++){\n        if(par[k][v]<0)\
+    \ par[k+1][v]=-1;\n        else par[k+1][v]=par[k][par[k][v]];\n      }\n    }\n\
+    \    for(int i=0;i<(int)lad.size();i++){\n      int v=lad[i][0],p=par[0][v];\n\
+    \      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n   \
+    \     lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
     \          lad[i][m-(j+1)]=lad[i][m-(j+l+1)];\n        for(int j=0;j<l;j++)\n\
     \          lad[i][j]=lad[k][ord[p]-l+j+1];\n      }\n      for(int j=0;j<(int)lad[i].size();j++)\n\
     \        if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;\n    }\n  }\n\n  int lca(int\
@@ -82,7 +83,7 @@ data:
   path: tree/levelancestor.cpp
   requiredBy:
   - tree/eulertourforbfs.cpp
-  timestamp: '2019-12-26 22:42:32+09:00'
+  timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0391.test.cpp
