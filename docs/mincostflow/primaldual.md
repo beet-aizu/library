@@ -1,5 +1,5 @@
 ---
-title: Primal Dual
+title: 最小費用流
 documentation_of: //mincostflow/primaldual.cpp
 ---
 

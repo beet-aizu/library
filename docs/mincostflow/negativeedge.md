@@ -1,4 +1,5 @@
 ---
+title: 最小費用流の負辺除去
 documentation_of: //mincostflow/negativeedge.cpp
 ---
 

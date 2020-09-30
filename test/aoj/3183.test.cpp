@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3183
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3183"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -9,6 +9,10 @@ using namespace std;
 #include "../../graph/dijkstra.cpp"
 #include "../../maxflow/fordfulkerson.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 const int MAX = 303;
 int G[MAX][MAX]={};
