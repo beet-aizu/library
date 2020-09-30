@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: mincostflow/negativeedge.cpp
-    title: mincostflow/negativeedge.cpp
+    title: "\u6700\u5C0F\u8CBB\u7528\u6D41\u306E\u8CA0\u8FBA\u9664\u53BB"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
@@ -14,7 +14,7 @@ data:
     title: test/aoj/2627.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2679.test.cpp
-    title: test/aoj/2679.test.cpp
+    title: lexicographical cost
   - icon: ':heavy_check_mark:'
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
@@ -96,7 +96,7 @@ data:
   - test/aoj/2627.test.cpp
 documentation_of: mincostflow/primaldual.cpp
 layout: document
-title: Primal Dual
+title: "\u6700\u5C0F\u8CBB\u7528\u6D41"
 ---
 
 ## 解説記事

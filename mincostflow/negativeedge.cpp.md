@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: mincostflow/primaldual.cpp
-    title: Primal Dual
+    title: "\u6700\u5C0F\u8CBB\u7528\u6D41"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -48,6 +48,7 @@ data:
   - test/aoj/2627.test.cpp
 documentation_of: mincostflow/negativeedge.cpp
 layout: document
+title: "\u6700\u5C0F\u8CBB\u7528\u6D41\u306E\u8CA0\u8FBA\u9664\u53BB"
 ---
 
 ## 解説記事
