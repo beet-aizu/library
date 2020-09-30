@@ -9,7 +9,6 @@ struct Dinic{
     int dst;
     Flow cap;
     int rev;
-    Edge(){}
     Edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}
   };
 

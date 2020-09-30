@@ -3,7 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// O(F E log V)
+// O(F E \log V)
 template<typename Flow, typename Cost>
 struct PrimalDual{
   struct Edge{

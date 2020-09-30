@@ -6,15 +6,14 @@ using namespace std;
 // O(F E \log V)
 template<typename Flow, bool directed>
 struct FordFulkerson{
-  struct edge{
+  struct Edge{
     int dst;
     Flow cap;
     int rev;
-    edge(){}
-    edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}
+    Edge(int dst,Flow cap,int rev):dst(dst),cap(cap),rev(rev){}
   };
 
-  vector< vector<edge> > G;
+  vector< vector<Edge> > G;
   vector<int> used;
 
   FordFulkerson(){}
@@ -32,7 +31,7 @@ struct FordFulkerson{
     if(v==t) return f;
     used[v]=true;
     for(int i=0;i<(int)G[v].size();i++){
-      edge &e=G[v][i];
+      Edge &e=G[v][i];
       if(!used[e.dst]&&e.cap>0){
         Flow d=dfs(e.dst,t,min(f,e.cap));
         if(d==0) continue;
