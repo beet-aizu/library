@@ -60,6 +60,18 @@ struct Bipartite{
     time++;
     return dfs(v);
   }
+
+  int cut_edge(int u,int v){
+    assert(find(G[u].begin(),G[u].end(),v)!=G[u].end());
+    assert(find(G[v].begin(),G[v].end(),u)!=G[v].end());
+    G[u].erase(find(G[u].begin(),G[u].end(),v));
+    G[v].erase(find(G[v].begin(),G[v].end(),u));
+    if(match[u]==v){
+      match[u]=match[v]=-1;
+      return 1;
+    }
+    return 0;
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
