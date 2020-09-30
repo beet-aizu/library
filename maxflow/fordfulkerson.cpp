@@ -3,7 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// O(F E \log V)
+// O(F E)
 template<typename Flow, bool directed>
 struct FordFulkerson{
   struct Edge{
@@ -32,7 +32,7 @@ struct FordFulkerson{
     used[v]=true;
     for(int i=0;i<(int)G[v].size();i++){
       Edge &e=G[v][i];
-      if(!used[e.dst]&&e.cap>0){
+      if(!used[e.dst] and e.cap>0){
         Flow d=dfs(e.dst,t,min(f,e.cap));
         if(d==0) continue;
         e.cap-=d;

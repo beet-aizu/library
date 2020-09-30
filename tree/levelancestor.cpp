@@ -41,7 +41,7 @@ struct LevelAncestor{
     }
     for(;;p=v,v=nxt[v]){
       for(int u:G[v])
-        if(u!=p&&u!=nxt[v]) dfs(u,v,d+1,1);
+        if(u!=p and u!=nxt[v]) dfs(u,v,d+1,1);
       if(v==nxt[v]) break;
     }
   }

@@ -50,11 +50,11 @@ struct AuxiliaryTree : LowestCommonAncestor{
       int w=lca(vs[i],vs[i+1]);
       if(w!=vs[i]){
         int l=st.top();st.pop();
-        while(!st.empty()&&dep[w]<dep[st.top()]){
+        while(!st.empty() and dep[w]<dep[st.top()]){
           add_aux_edge(st.top(),l);
           l=st.top();st.pop();
         }
-        if(st.empty()||st.top()!=w){
+        if(st.empty() or st.top()!=w){
           st.emplace(w);
           vs.emplace_back(w);
         }

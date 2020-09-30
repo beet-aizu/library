@@ -66,7 +66,7 @@ signed ARC097_F(){
   vector<int> dead(n,0);
   for(int i=0;i<n;i++){
     num+=(s[i]=='W');
-    if((deg[i]==1)&&(s[i]=='B')){
+    if((deg[i]==1) and (s[i]=='B')){
       dead[i]=1;
       que.emplace(i);
     }
@@ -78,7 +78,7 @@ signed ARC097_F(){
     for(int u:G.G[v]){
       if(dead[u]) continue;
       deg[u]--;
-      if(deg[u]==1&&(s[u]=='B')){
+      if(deg[u]==1 and (s[u]=='B')){
         dead[u]=1;
         que.emplace(u);
       }

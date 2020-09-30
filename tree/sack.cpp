@@ -30,12 +30,12 @@ struct Sack{
     if(x==1) expand(v);
     else shrink(v);
     for(int u:G[v])
-      if(u!=p&&!big[u]) add(u,v,x);
+      if(u!=p and !big[u]) add(u,v,x);
   }
 
   void dfs(int v=0,int p=-1,bool k=0){
     for(int u:G[v])
-      if(u!=p&&u!=hvy[v]) dfs(u,v,0);
+      if(u!=p and u!=hvy[v]) dfs(u,v,0);
     if(~hvy[v]){
       dfs(hvy[v],v,1);
       big[hvy[v]]=1;
@@ -50,7 +50,7 @@ struct Sack{
     for(int u:G[v]){
       if(u==p) continue;
       build(u,v);
-      if(hvy[v]<0||sub[hvy[v]]<sub[u]) hvy[v]=u;
+      if(hvy[v]<0 or sub[hvy[v]]<sub[u]) hvy[v]=u;
       sub[v]+=sub[u];
     }
     if(p==-1) dfs(v,p);

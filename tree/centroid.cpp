@@ -17,14 +17,14 @@ struct Centroid{
   int dfs(int v,int p){
     sz[v]=1;
     for(int u:G[v])
-      if(u!=p&&!dead[u]) sz[v]+=dfs(u,v);
+      if(u!=p and !dead[u]) sz[v]+=dfs(u,v);
     return sz[v];
   }
 
   void find(int v,int p,int tmp,vector<int> &cs) {
     int ok=1;
     for (int u:G[v]){
-      if(u==p||dead[u]) continue;
+      if(u==p or dead[u]) continue;
       find(u,v,tmp,cs);
       ok&=(sz[u]<=tmp/2);
     }
