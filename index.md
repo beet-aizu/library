@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/monotoneminima.cpp
       title: algorithm/monotoneminima.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: algorithm/offlineonline.cpp
       title: algorithm/offlineonline.cpp
     - icon: ':heavy_check_mark:'
@@ -164,7 +164,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
     - icon: ':heavy_check_mark:'
@@ -268,7 +268,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: io/single.cpp
       title: io/single.cpp
     - icon: ':heavy_check_mark:'
@@ -305,8 +305,8 @@ data:
   - name: matching
     pages:
     - icon: ':heavy_check_mark:'
-      path: matching/bimatch.cpp
-      title: matching/bimatch.cpp
+      path: matching/bipartite.cpp
+      title: matching/bipartite.cpp
     - icon: ':heavy_check_mark:'
       path: matching/hopcroft_karp.cpp
       title: matching/hopcroft_karp.cpp
@@ -1054,6 +1054,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3183.test.cpp
       title: test/aoj/3183.test.cpp
+    - icon: ':x:'
+      path: test/aoj/3198.test.cpp
+      title: test/aoj/3198.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3506.test.cpp
+      title: test/aoj/3506.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_10_C.test.cpp
       title: test/aoj/ALDS1_10_C.test.cpp

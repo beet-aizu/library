@@ -25,6 +25,9 @@ data:
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3506.test.cpp
+    title: test/aoj/3506.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/line_add_get_min.test.cpp
     title: test/yosupo/line_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -74,6 +77,7 @@ data:
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/2563.test.cpp
+  - test/aoj/3506.test.cpp
   - test/aoj/1599.test.cpp
   - test/aoj/1300.test.cpp
   - test/aoj/0343.test.cpp

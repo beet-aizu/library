@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3506.test.cpp
+    title: test/aoj/3506.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
   _pathExtension: cpp
@@ -52,6 +55,7 @@ data:
   timestamp: '2020-08-20 15:14:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/3506.test.cpp
   - test/yukicoder/4387.test.cpp
 documentation_of: graph/rangetorange.cpp
 layout: document
