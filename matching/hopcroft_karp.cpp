@@ -3,13 +3,14 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-struct BiMatch{
+// O(E \sqrt V)
+struct HopcroftKarp{
   int L,R;
-  vector<vector<int> > G;
+  vector< vector<int> > G;
   vector<int> match,level;
 
-  BiMatch(){}
-  BiMatch(int L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}
+  HopcroftKarp(){}
+  HopcroftKarp(int L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v+L);

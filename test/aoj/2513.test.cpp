@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../matching/bimatch.cpp"
+#include "../../matching/bipartite.cpp"
 #undef call_from_test
 
 signed main(){
@@ -115,7 +115,7 @@ signed main(){
       }
     }
 
-    BiMatch bm(m);
+    Bipartite bm(m);
     for(int i=0;i<n;i++)
       for(int j:G[i])
         bm.add_edge(i,j);

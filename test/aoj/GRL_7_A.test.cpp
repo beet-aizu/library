@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../matching/bimatch.cpp"
+#include "../../matching/bipartite.cpp"
 #undef call_from_test
 
 signed main(){
@@ -13,7 +13,7 @@ signed main(){
 
   int X,Y,E;
   cin>>X>>Y>>E;
-  BiMatch bm(X+Y);
+  Bipartite bm(X+Y);
   for(int i=0;i<E;i++){
     int x,y;
     cin>>x>>y;

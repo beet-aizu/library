@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../io/single.cpp"
 #include "../../tools/chminmax.cpp"
-#include "../../matching/bimatch.cpp"
+#include "../../matching/bipartite.cpp"
 #undef call_from_test
 
 const int MAX = 303;
@@ -46,7 +46,7 @@ signed main(){
     return (((x+1)%26==y or (y+1)%26==x) and G[i][j]<=lim);
   };
 
-  BiMatch bm(n);
+  Bipartite bm(n);
   for(int i=0;i<n;i++)
     for(int j=0;j<i;j++)
       if(check(i,j)) bm.add_edge(i,j);

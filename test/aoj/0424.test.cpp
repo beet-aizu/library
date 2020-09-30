@@ -26,7 +26,7 @@ signed main(){
     }
   }
 
-  BiMatch G(L,R);
+  HopcroftKarp G(L,R);
   for(int i=0;i<n;i++){
     int m=ss[i].size();
     for(int j=0;j<m;j++){

@@ -3,14 +3,15 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-struct BiMatch{
+// O(N M)
+struct Bipartite{
   int n,time;
-  vector<vector<int>> G;
+  vector< vector<int> > G;
   vector<int> match,used,dead;
 
-  BiMatch(){}
-  BiMatch(int n):n(n),time(0),G(n),
-                 match(n,-1),used(n,-1),dead(n,0){}
+  Bipartite(){}
+  Bipartite(int n):n(n),time(0),G(n),
+                   match(n,-1),used(n,-1),dead(n,0){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);

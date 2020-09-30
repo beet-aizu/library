@@ -13,7 +13,8 @@ signed main(){
 
   int L,R,M;
   cin>>L>>R>>M;
-  BiMatch G(L,R);
+
+  HopcroftKarp G(L,R);
   for(int i=0;i<M;i++){
     int a,b;
     cin>>a>>b;
