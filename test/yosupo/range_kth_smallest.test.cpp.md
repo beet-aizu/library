@@ -92,5 +92,5 @@ data:
   verifiedWith: []
 documentation_of: test/yosupo/range_kth_smallest.test.cpp
 layout: document
-title: Verify rquantile
+title: test rquantile
 ---

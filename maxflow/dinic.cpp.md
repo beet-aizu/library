@@ -17,7 +17,7 @@ data:
     title: test/aoj/1615.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2313.test.cpp
-    title: Verify Link/Cut
+    title: test link cut
   - icon: ':heavy_check_mark:'
     path: test/aoj/2328.test.cpp
     title: test/aoj/2328.test.cpp

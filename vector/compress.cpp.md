@@ -38,7 +38,7 @@ data:
     title: test/yosupo/rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
-    title: Verify quantile
+    title: test quantile
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp

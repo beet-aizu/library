@@ -714,7 +714,7 @@ data:
       title: test/aoj/0558.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/0563.test.cpp
-      title: test/aoj/0563.test.cpp
+      title: test `find_by_order`
     - icon: ':heavy_check_mark:'
       path: test/aoj/0596.test.cpp
       title: test/aoj/0596.test.cpp
@@ -753,7 +753,7 @@ data:
       title: test/aoj/1508.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/1549.test.cpp
-      title: Verify succ, pred
+      title: test succ, pred
     - icon: ':heavy_check_mark:'
       path: test/aoj/1579.test.cpp
       title: test/aoj/1579.test.cpp
@@ -822,7 +822,7 @@ data:
       title: test/aoj/2309.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2313.test.cpp
-      title: Verify Link/Cut
+      title: test link cut
     - icon: ':heavy_check_mark:'
       path: test/aoj/2324.test.cpp
       title: test/aoj/2324.test.cpp
@@ -1032,7 +1032,7 @@ data:
       title: test/aoj/3112.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3117.test.cpp
-      title: test/aoj/3117.test.cpp
+      title: test `order_of_key`
     - icon: ':heavy_check_mark:'
       path: test/aoj/3120.test.cpp
       title: test/aoj/3120.test.cpp
@@ -1504,7 +1504,7 @@ data:
       title: test/yosupo/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/range_kth_smallest.test.cpp
-      title: Verify rquantile
+      title: test rquantile
     - icon: ':heavy_check_mark:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
@@ -1617,13 +1617,13 @@ data:
       title: test/yukicoder/1665.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1732.test.cpp
-      title: Verify quantile
+      title: test quantile
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1923.test.cpp
       title: test/yukicoder/1923.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1937.test.cpp
-      title: Verify rangefreq
+      title: test rangefreq
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1948.test.cpp
       title: test/yukicoder/1948.test.cpp

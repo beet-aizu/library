@@ -29,7 +29,7 @@ data:
     title: test/aoj/0613.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1549.test.cpp
-    title: Verify succ, pred
+    title: test succ, pred
   - icon: ':heavy_check_mark:'
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
@@ -104,7 +104,7 @@ data:
     title: test/aoj/geometry/3056.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
-    title: Verify quantile
+    title: test quantile
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
