@@ -10,6 +10,9 @@ data:
     path: test/aoj/3168.test.cpp
     title: test/aoj/3168.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3198.test.cpp
+    title: test/aoj/3198.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_7_A.test.cpp
     title: test/aoj/GRL_7_A.test.cpp
   _pathExtension: cpp
@@ -30,8 +33,11 @@ data:
     \    assert(!dead[v]);\n    int u=match[v];\n    if(~u) match[u]=-1;\n    match[v]=-1;\n\
     \    dead[v]=1;\n    time++;\n    return ~u?dfs(u)-1:0;\n  }\n\n  int enable(int\
     \ v){\n    assert(dead[v]);\n    dead[v]=0;\n    time++;\n    return dfs(v);\n\
-    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n\
-    }\n#endif\n"
+    \  }\n\n  int cut_edge(int u,int v){\n    assert(find(G[u].begin(),G[u].end(),v)!=G[u].end());\n\
+    \    assert(find(G[v].begin(),G[v].end(),u)!=G[v].end());\n    G[u].erase(find(G[u].begin(),G[u].end(),v));\n\
+    \    G[v].erase(find(G[v].begin(),G[v].end(),u));\n    if(match[u]==v){\n    \
+    \  match[u]=match[v]=-1;\n      return 1;\n    }\n    return 0;\n  }\n};\n//END\
+    \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\n// O(N M)\nstruct Bipartite{\n  int n,time;\n  vector< vector<int>\
     \ > G;\n  vector<int> match,used,dead;\n\n  Bipartite(){}\n  Bipartite(int n):n(n),time(0),G(n),\n\
@@ -45,17 +51,22 @@ data:
     \    }\n    }\n    return res;\n  }\n\n  int disable(int v){\n    assert(!dead[v]);\n\
     \    int u=match[v];\n    if(~u) match[u]=-1;\n    match[v]=-1;\n    dead[v]=1;\n\
     \    time++;\n    return ~u?dfs(u)-1:0;\n  }\n\n  int enable(int v){\n    assert(dead[v]);\n\
-    \    dead[v]=0;\n    time++;\n    return dfs(v);\n  }\n};\n//END CUT HERE\n#ifndef\
-    \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \    dead[v]=0;\n    time++;\n    return dfs(v);\n  }\n\n  int cut_edge(int u,int\
+    \ v){\n    assert(find(G[u].begin(),G[u].end(),v)!=G[u].end());\n    assert(find(G[v].begin(),G[v].end(),u)!=G[v].end());\n\
+    \    G[u].erase(find(G[u].begin(),G[u].end(),v));\n    G[v].erase(find(G[v].begin(),G[v].end(),u));\n\
+    \    if(match[u]==v){\n      match[u]=match[v]=-1;\n      return 1;\n    }\n \
+    \   return 0;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: matching/bipartite.cpp
   requiredBy: []
-  timestamp: '2020-09-30 13:30:58+09:00'
+  timestamp: '2020-09-30 13:49:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2513.test.cpp
   - test/aoj/GRL_7_A.test.cpp
+  - test/aoj/3198.test.cpp
   - test/aoj/3168.test.cpp
 documentation_of: matching/bipartite.cpp
 layout: document

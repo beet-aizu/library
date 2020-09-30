@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/monotoneminima.cpp
       title: algorithm/monotoneminima.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/offlineonline.cpp
       title: algorithm/offlineonline.cpp
     - icon: ':heavy_check_mark:'
@@ -164,7 +164,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
     - icon: ':heavy_check_mark:'
@@ -268,7 +268,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
     - icon: ':heavy_check_mark:'
@@ -1054,7 +1054,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3183.test.cpp
       title: test/aoj/3183.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3198.test.cpp
       title: test/aoj/3198.test.cpp
     - icon: ':heavy_check_mark:'
