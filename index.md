@@ -234,9 +234,6 @@ data:
       path: graph/lowlink.cpp
       title: graph/lowlink.cpp
     - icon: ':heavy_check_mark:'
-      path: graph/maximalmatching.cpp
-      title: graph/maximalmatching.cpp
-    - icon: ':heavy_check_mark:'
       path: graph/multipleeuleriantrail.cpp
       title: graph/multipleeuleriantrail.cpp
     - icon: ':heavy_check_mark:'
@@ -305,6 +302,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: linkcuttree/subtree.cpp
       title: linkcuttree/subtree.cpp
+  - name: matching
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: matching/bimatch.cpp
+      title: matching/bimatch.cpp
+    - icon: ':heavy_check_mark:'
+      path: matching/hopcroft_karp.cpp
+      title: matching/hopcroft_karp.cpp
+    - icon: ':heavy_check_mark:'
+      path: matching/tutte.cpp
+      title: matching/tutte.cpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -358,17 +366,11 @@ data:
   - name: maxflow
     pages:
     - icon: ':heavy_check_mark:'
-      path: maxflow/bimatch.cpp
-      title: maxflow/bimatch.cpp
-    - icon: ':heavy_check_mark:'
       path: maxflow/dinic.cpp
       title: maxflow/dinic.cpp
     - icon: ':heavy_check_mark:'
       path: maxflow/fordfulkerson.cpp
       title: maxflow/fordfulkerson.cpp
-    - icon: ':heavy_check_mark:'
-      path: maxflow/hopcroft_karp.cpp
-      title: maxflow/hopcroft_karp.cpp
     - icon: ':heavy_check_mark:'
       path: maxflow/leastflow.cpp
       title: "\u6700\u5C0F\u6D41\u91CF\u5236\u9650\u4ED8\u304D\u6700\u5927\u6D41"

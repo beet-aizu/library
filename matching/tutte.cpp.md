@@ -19,8 +19,8 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ graph/maximalmatching.cpp: line 6: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ matching/tutte.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
+    \ other than include guards\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../mod/mint.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\nint maximal_matching(vector< vector<int> > G){\n  int\
@@ -38,16 +38,16 @@ data:
   dependsOn:
   - mod/mint.cpp
   isVerificationFile: false
-  path: graph/maximalmatching.cpp
+  path: matching/tutte.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-09-30 12:41:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2983.test.cpp
-documentation_of: graph/maximalmatching.cpp
+documentation_of: matching/tutte.cpp
 layout: document
 redirect_from:
-- /library/graph/maximalmatching.cpp
-- /library/graph/maximalmatching.cpp.html
-title: graph/maximalmatching.cpp
+- /library/matching/tutte.cpp
+- /library/matching/tutte.cpp.html
+title: matching/tutte.cpp
 ---

@@ -13,7 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"maxflow/bimatch.cpp\"\n\n#include<bits/stdc++.h>\nusing\
+  bundledCode: "#line 1 \"matching/bimatch.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct BiMatch{\n  int n,time;\n \
     \ vector<vector<int>> G;\n  vector<int> match,used,dead;\n\n  BiMatch(){}\n  BiMatch(int\
     \ n):n(n),time(0),G(n),\n                 match(n,-1),used(n,-1),dead(n,0){}\n\
@@ -46,17 +46,17 @@ data:
     \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: maxflow/bimatch.cpp
+  path: matching/bimatch.cpp
   requiredBy: []
-  timestamp: '2020-09-24 12:58:32+09:00'
+  timestamp: '2020-09-30 12:41:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2513.test.cpp
   - test/aoj/GRL_7_A.test.cpp
-documentation_of: maxflow/bimatch.cpp
+documentation_of: matching/bimatch.cpp
 layout: document
 redirect_from:
-- /library/maxflow/bimatch.cpp
-- /library/maxflow/bimatch.cpp.html
-title: maxflow/bimatch.cpp
+- /library/matching/bimatch.cpp
+- /library/matching/bimatch.cpp.html
+title: matching/bimatch.cpp
 ---

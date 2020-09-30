@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: maxflow/hopcroft_karp.cpp
-    title: maxflow/hopcroft_karp.cpp
+    path: matching/hopcroft_karp.cpp
+    title: matching/hopcroft_karp.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -14,8 +14,8 @@ data:
     - https://judge.yosupo.jp/problem/bipartitematching
   bundledCode: "#line 1 \"test/yosupo/bipartitematching.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://judge.yosupo.jp/problem/bipartitematching\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 1 \"maxflow/hopcroft_karp.cpp\"\
-    \n\n#line 3 \"maxflow/hopcroft_karp.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"matching/hopcroft_karp.cpp\"\
+    \n\n#line 3 \"matching/hopcroft_karp.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\nstruct BiMatch{\n  int L,R;\n  vector<vector<int> > G;\n  vector<int>\
     \ match,level;\n\n  BiMatch(){}\n  BiMatch(int L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}\n\
     \n  void add_edge(int u,int v){\n    G[u].emplace_back(v+L);\n    G[v+L].emplace_back(u);\n\
@@ -41,18 +41,18 @@ data:
     \\n\";\n\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bipartitematching\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../maxflow/hopcroft_karp.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \ \"../../matching/hopcroft_karp.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int L,R,M;\n  cin>>L>>R>>M;\n\
     \  BiMatch G(L,R);\n  for(int i=0;i<M;i++){\n    int a,b;\n    cin>>a>>b;\n  \
     \  G.add_edge(a,b);\n  }\n\n  cout<<G.build()<<endl;\n\n  for(int i=0;i<L;i++)\n\
     \    if(~G.match[i])\n      cout<<i<<\" \"<<G.match[i]-L<<\"\\n\";\n\n  return\
     \ 0;\n}\n"
   dependsOn:
-  - maxflow/hopcroft_karp.cpp
+  - matching/hopcroft_karp.cpp
   isVerificationFile: true
   path: test/yosupo/bipartitematching.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:19:56+09:00'
+  timestamp: '2020-09-30 12:41:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/bipartitematching.test.cpp

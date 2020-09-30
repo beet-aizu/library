@@ -13,7 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"maxflow/hopcroft_karp.cpp\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"matching/hopcroft_karp.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct BiMatch{\n  int L,R;\n\
     \  vector<vector<int> > G;\n  vector<int> match,level;\n\n  BiMatch(){}\n  BiMatch(int\
     \ L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}\n\n  void add_edge(int\
@@ -54,17 +54,17 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: maxflow/hopcroft_karp.cpp
+  path: matching/hopcroft_karp.cpp
   requiredBy: []
-  timestamp: '2020-09-24 12:58:32+09:00'
+  timestamp: '2020-09-30 12:41:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0424.test.cpp
   - test/yosupo/bipartitematching.test.cpp
-documentation_of: maxflow/hopcroft_karp.cpp
+documentation_of: matching/hopcroft_karp.cpp
 layout: document
 redirect_from:
-- /library/maxflow/hopcroft_karp.cpp
-- /library/maxflow/hopcroft_karp.cpp.html
-title: maxflow/hopcroft_karp.cpp
+- /library/matching/hopcroft_karp.cpp
+- /library/matching/hopcroft_karp.cpp.html
+title: matching/hopcroft_karp.cpp
 ---

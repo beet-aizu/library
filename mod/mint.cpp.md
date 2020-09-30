@@ -15,11 +15,11 @@ data:
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
   - icon: ':heavy_check_mark:'
-    path: graph/maximalmatching.cpp
-    title: graph/maximalmatching.cpp
-  - icon: ':heavy_check_mark:'
     path: linearalgebra/tree_theorem.cpp
     title: linearalgebra/tree_theorem.cpp
+  - icon: ':heavy_check_mark:'
+    path: matching/tutte.cpp
+    title: matching/tutte.cpp
   - icon: ':heavy_check_mark:'
     path: math/kitamasa.cpp
     title: math/kitamasa.cpp
@@ -278,10 +278,10 @@ data:
   - convolution/fastwalshhadamardtransform.cpp
   - convolution/numbertheoretictransform.cpp
   - convolution/garner.cpp
+  - matching/tutte.cpp
   - linearalgebra/tree_theorem.cpp
   - math/kitamasa.cpp
   - mod/factorial.cpp
-  - graph/maximalmatching.cpp
   - graph/lowlink.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
