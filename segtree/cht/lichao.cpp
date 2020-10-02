@@ -1,11 +1,11 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
 template <typename T, bool isMin>
 struct LiChao{
-  const T INF = numeric_limits<T>::max();
+  static constexpr T INF = numeric_limits<T>::max() / 2;
   struct Line{
     T a,b;
     Line(T a,T b):a(isMin?a:-a),b(isMin?b:-b){}
@@ -56,6 +56,8 @@ struct LiChao{
     }
   }
 };
+template <typename T, bool isMin>
+constexpr T LiChao<T, isMin>::INF;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
