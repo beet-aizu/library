@@ -1011,9 +1011,6 @@ data:
       path: test/aoj/3063.test.cpp
       title: test/aoj/3063.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/3069.lichao.test.cpp
-      title: test/aoj/3069.lichao.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/3069.test.cpp
       title: test/aoj/3069.test.cpp
     - icon: ':heavy_check_mark:'

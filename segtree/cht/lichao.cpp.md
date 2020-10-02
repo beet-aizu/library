@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/3069.lichao.test.cpp
-    title: test/aoj/3069.lichao.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/line_add_get_min.test.cpp
     title: test/yosupo/line_add_get_min.test.cpp
   _pathExtension: cpp
@@ -15,58 +12,49 @@ data:
     links: []
   bundledCode: "#line 1 \"segtree/cht/lichao.cpp\"\n\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename T, bool isMin>\n\
-    struct LiChao{\n  static constexpr T INF = numeric_limits<T>::max();\n  struct\
-    \ Line{\n    T a,b;\n    Line(T a,T b):a(a),b(b){}\n    T get(T x){return a*x+b;}\n\
-    \  };\n\n  int n;\n  vector<T> pos;\n  vector<Line> dat;\n  LiChao(int n){\n \
-    \   pos.resize(n);\n    iota(pos.begin(),pos.end(),T(0));\n    init(n);\n  }\n\
-    \n  LiChao(const vector<T> &pos):pos(pos){init(pos.size());}\n\n  void init(int\
-    \ n_){\n    n=1;\n    while(n<n_) n<<=1;\n    while((int)pos.size()<n)\n     \
-    \ pos.emplace_back(T(pos.back()+1));\n    dat.assign(2*n,Line(0,-INF));\n  }\n\
-    \n  void addLine(T a,T b){\n    if(isMin) a=-a,b=-b;\n    Line x(a,b);\n    update(1,0,n-1,x);\n\
-    \  }\n\n  T query(T x){\n    int t=lower_bound(pos.begin(),pos.end(),x)-pos.begin();\n\
-    \    if(isMin) return -query(1,0,n-1,t);\n    return query(1,0,n-1,t);\n  }\n\n\
-    \  inline bool over(Line &a,Line &b,T lb,T ub){\n    return a.get(lb)>=b.get(lb)&&a.get(ub)>=b.get(ub);\n\
-    \  }\n\n  void update(int k,int l,int r,Line &x){\n    T lb=pos[l],ub=pos[r];\n\
-    \    if(over(dat[k],x,lb,ub)) return;\n    if(over(x,dat[k],lb,ub)){\n      dat[k]=x;\n\
-    \      return;\n    }\n    int c=(l+r)>>1;\n    if(dat[k].get(pos[c])<x.get(pos[c]))\
-    \ swap(dat[k],x);\n    if(dat[k].get(lb)<=x.get(lb)) update((k<<1)|0,l,c,x);\n\
-    \    else update((k<<1)|1,c+1,r,x);\n  }\n\n  T query(int k,int l,int r,int t){\n\
-    \    T res=dat[k].get(pos[t]);\n    if(l==r) return res;\n    int c=(l+r)>>1;\n\
-    \    if(t<=c) return max(res,query((k<<1)|0,l,c,t));\n    return max(res,query((k<<1)|1,c+1,r,t));\n\
-    \  }\n};\ntemplate <typename T, bool isMin>\nconstexpr T LiChao<T, isMin>::INF;\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
+    struct LiChao{\n  const T INF = numeric_limits<T>::max();\n  struct Line{\n  \
+    \  T a,b;\n    Line(T a,T b):a(isMin?a:-a),b(isMin?b:-b){}\n    T operator()(T\
+    \ x) const{return a*x+b;}\n  };\n\n  int n;\n  vector<T> xs;\n  vector<Line> dat;\n\
+    \  LiChao(const vector<T> &xs_):xs(xs_){\n    sort(xs.begin(),xs.end());\n   \
+    \ xs.erase(unique(xs.begin(),xs.end()),xs.end());\n    n=xs.size();\n    dat.assign(n<<1,Line(T(0),INF));\n\
+    \  }\n\n  int index(T x) const{\n    return lower_bound(xs.begin(),xs.end(),x)-xs.begin();\n\
+    \  }\n\n  T get(T x){\n    T res=INF;\n    for(int i=index(x)+n;i;i>>=1) res=min(res,dat[i](x));\n\
+    \    return isMin?res:-res;\n  }\n\n  // [xl, xr)\n  void add_segment(T a,T b,T\
+    \ xl,T xr){\n    Line g(a,b);\n    for(int l=index(xl)+n,r=index(xr)+n;l<r;l>>=1,r>>=1){\n\
+    \      if(l&1) update(g,l++);\n      if(r&1) update(g,--r);\n    }\n  }\n\n  void\
+    \ update(Line g,int i){\n    int l=i,r=i+1;\n    while(l<n) l<<=1,r<<=1;\n   \
+    \ while(l<r){\n      int m=(l+r)>>1;\n      T xl=xs[l-n],xr=xs[r-1-n],xm=xs[m-n];\n\
+    \      Line &f=dat[i];\n      if(f(xl)<=g(xl) and f(xr)<=g(xr)) return;\n    \
+    \  if(f(xl)>=g(xl) and f(xr)>=g(xr)) return (void)(f=g);\n      if(f(xm)>g(xm))\
+    \ swap(f,g);\n      if(f(xl)>g(xl)) i=(i<<1)|0,r=m;\n      else i=(i<<1)|1,l=m;\n\
+    \    }\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
+    signed main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate <typename T, bool isMin>\nstruct LiChao{\n  static\
-    \ constexpr T INF = numeric_limits<T>::max();\n  struct Line{\n    T a,b;\n  \
-    \  Line(T a,T b):a(a),b(b){}\n    T get(T x){return a*x+b;}\n  };\n\n  int n;\n\
-    \  vector<T> pos;\n  vector<Line> dat;\n  LiChao(int n){\n    pos.resize(n);\n\
-    \    iota(pos.begin(),pos.end(),T(0));\n    init(n);\n  }\n\n  LiChao(const vector<T>\
-    \ &pos):pos(pos){init(pos.size());}\n\n  void init(int n_){\n    n=1;\n    while(n<n_)\
-    \ n<<=1;\n    while((int)pos.size()<n)\n      pos.emplace_back(T(pos.back()+1));\n\
-    \    dat.assign(2*n,Line(0,-INF));\n  }\n\n  void addLine(T a,T b){\n    if(isMin)\
-    \ a=-a,b=-b;\n    Line x(a,b);\n    update(1,0,n-1,x);\n  }\n\n  T query(T x){\n\
-    \    int t=lower_bound(pos.begin(),pos.end(),x)-pos.begin();\n    if(isMin) return\
-    \ -query(1,0,n-1,t);\n    return query(1,0,n-1,t);\n  }\n\n  inline bool over(Line\
-    \ &a,Line &b,T lb,T ub){\n    return a.get(lb)>=b.get(lb)&&a.get(ub)>=b.get(ub);\n\
-    \  }\n\n  void update(int k,int l,int r,Line &x){\n    T lb=pos[l],ub=pos[r];\n\
-    \    if(over(dat[k],x,lb,ub)) return;\n    if(over(x,dat[k],lb,ub)){\n      dat[k]=x;\n\
-    \      return;\n    }\n    int c=(l+r)>>1;\n    if(dat[k].get(pos[c])<x.get(pos[c]))\
-    \ swap(dat[k],x);\n    if(dat[k].get(lb)<=x.get(lb)) update((k<<1)|0,l,c,x);\n\
-    \    else update((k<<1)|1,c+1,r,x);\n  }\n\n  T query(int k,int l,int r,int t){\n\
-    \    T res=dat[k].get(pos[t]);\n    if(l==r) return res;\n    int c=(l+r)>>1;\n\
-    \    if(t<=c) return max(res,query((k<<1)|0,l,c,t));\n    return max(res,query((k<<1)|1,c+1,r,t));\n\
-    \  }\n};\ntemplate <typename T, bool isMin>\nconstexpr T LiChao<T, isMin>::INF;\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
+    //BEGIN CUT HERE\ntemplate <typename T, bool isMin>\nstruct LiChao{\n  const T\
+    \ INF = numeric_limits<T>::max();\n  struct Line{\n    T a,b;\n    Line(T a,T\
+    \ b):a(isMin?a:-a),b(isMin?b:-b){}\n    T operator()(T x) const{return a*x+b;}\n\
+    \  };\n\n  int n;\n  vector<T> xs;\n  vector<Line> dat;\n  LiChao(const vector<T>\
+    \ &xs_):xs(xs_){\n    sort(xs.begin(),xs.end());\n    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n\
+    \    n=xs.size();\n    dat.assign(n<<1,Line(T(0),INF));\n  }\n\n  int index(T\
+    \ x) const{\n    return lower_bound(xs.begin(),xs.end(),x)-xs.begin();\n  }\n\n\
+    \  T get(T x){\n    T res=INF;\n    for(int i=index(x)+n;i;i>>=1) res=min(res,dat[i](x));\n\
+    \    return isMin?res:-res;\n  }\n\n  // [xl, xr)\n  void add_segment(T a,T b,T\
+    \ xl,T xr){\n    Line g(a,b);\n    for(int l=index(xl)+n,r=index(xr)+n;l<r;l>>=1,r>>=1){\n\
+    \      if(l&1) update(g,l++);\n      if(r&1) update(g,--r);\n    }\n  }\n\n  void\
+    \ update(Line g,int i){\n    int l=i,r=i+1;\n    while(l<n) l<<=1,r<<=1;\n   \
+    \ while(l<r){\n      int m=(l+r)>>1;\n      T xl=xs[l-n],xr=xs[r-1-n],xm=xs[m-n];\n\
+    \      Line &f=dat[i];\n      if(f(xl)<=g(xl) and f(xr)<=g(xr)) return;\n    \
+    \  if(f(xl)>=g(xl) and f(xr)>=g(xr)) return (void)(f=g);\n      if(f(xm)>g(xm))\
+    \ swap(f,g);\n      if(f(xl)>g(xl)) i=(i<<1)|0,r=m;\n      else i=(i<<1)|1,l=m;\n\
+    \    }\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
+    signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: segtree/cht/lichao.cpp
   requiredBy: []
-  timestamp: '2020-03-05 21:15:32+09:00'
+  timestamp: '2020-10-02 21:19:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3069.lichao.test.cpp
   - test/yosupo/line_add_get_min.test.cpp
 documentation_of: segtree/cht/lichao.cpp
 layout: document

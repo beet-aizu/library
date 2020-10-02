@@ -26,35 +26,32 @@ data:
     \  return dict(vector<char>(s.begin(),s.end()));\n}\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"segtree/cht/lichao.cpp\"\
     \n\n#line 3 \"segtree/cht/lichao.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
-    \ CUT HERE\ntemplate <typename T, bool isMin>\nstruct LiChao{\n  static constexpr\
-    \ T INF = numeric_limits<T>::max();\n  struct Line{\n    T a,b;\n    Line(T a,T\
-    \ b):a(a),b(b){}\n    T get(T x){return a*x+b;}\n  };\n\n  int n;\n  vector<T>\
-    \ pos;\n  vector<Line> dat;\n  LiChao(int n){\n    pos.resize(n);\n    iota(pos.begin(),pos.end(),T(0));\n\
-    \    init(n);\n  }\n\n  LiChao(const vector<T> &pos):pos(pos){init(pos.size());}\n\
-    \n  void init(int n_){\n    n=1;\n    while(n<n_) n<<=1;\n    while((int)pos.size()<n)\n\
-    \      pos.emplace_back(T(pos.back()+1));\n    dat.assign(2*n,Line(0,-INF));\n\
-    \  }\n\n  void addLine(T a,T b){\n    if(isMin) a=-a,b=-b;\n    Line x(a,b);\n\
-    \    update(1,0,n-1,x);\n  }\n\n  T query(T x){\n    int t=lower_bound(pos.begin(),pos.end(),x)-pos.begin();\n\
-    \    if(isMin) return -query(1,0,n-1,t);\n    return query(1,0,n-1,t);\n  }\n\n\
-    \  inline bool over(Line &a,Line &b,T lb,T ub){\n    return a.get(lb)>=b.get(lb)&&a.get(ub)>=b.get(ub);\n\
-    \  }\n\n  void update(int k,int l,int r,Line &x){\n    T lb=pos[l],ub=pos[r];\n\
-    \    if(over(dat[k],x,lb,ub)) return;\n    if(over(x,dat[k],lb,ub)){\n      dat[k]=x;\n\
-    \      return;\n    }\n    int c=(l+r)>>1;\n    if(dat[k].get(pos[c])<x.get(pos[c]))\
-    \ swap(dat[k],x);\n    if(dat[k].get(lb)<=x.get(lb)) update((k<<1)|0,l,c,x);\n\
-    \    else update((k<<1)|1,c+1,r,x);\n  }\n\n  T query(int k,int l,int r,int t){\n\
-    \    T res=dat[k].get(pos[t]);\n    if(l==r) return res;\n    int c=(l+r)>>1;\n\
-    \    if(t<=c) return max(res,query((k<<1)|0,l,c,t));\n    return max(res,query((k<<1)|1,c+1,r,t));\n\
-    \  }\n};\ntemplate <typename T, bool isMin>\nconstexpr T LiChao<T, isMin>::INF;\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n#line 9 \"test/yosupo/line_add_get_min.test.cpp\"\n#undef\
-    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \ CUT HERE\ntemplate <typename T, bool isMin>\nstruct LiChao{\n  const T INF =\
+    \ numeric_limits<T>::max();\n  struct Line{\n    T a,b;\n    Line(T a,T b):a(isMin?a:-a),b(isMin?b:-b){}\n\
+    \    T operator()(T x) const{return a*x+b;}\n  };\n\n  int n;\n  vector<T> xs;\n\
+    \  vector<Line> dat;\n  LiChao(const vector<T> &xs_):xs(xs_){\n    sort(xs.begin(),xs.end());\n\
+    \    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n    n=xs.size();\n    dat.assign(n<<1,Line(T(0),INF));\n\
+    \  }\n\n  int index(T x) const{\n    return lower_bound(xs.begin(),xs.end(),x)-xs.begin();\n\
+    \  }\n\n  T get(T x){\n    T res=INF;\n    for(int i=index(x)+n;i;i>>=1) res=min(res,dat[i](x));\n\
+    \    return isMin?res:-res;\n  }\n\n  // [xl, xr)\n  void add_segment(T a,T b,T\
+    \ xl,T xr){\n    Line g(a,b);\n    for(int l=index(xl)+n,r=index(xr)+n;l<r;l>>=1,r>>=1){\n\
+    \      if(l&1) update(g,l++);\n      if(r&1) update(g,--r);\n    }\n  }\n\n  void\
+    \ update(Line g,int i){\n    int l=i,r=i+1;\n    while(l<n) l<<=1,r<<=1;\n   \
+    \ while(l<r){\n      int m=(l+r)>>1;\n      T xl=xs[l-n],xr=xs[r-1-n],xm=xs[m-n];\n\
+    \      Line &f=dat[i];\n      if(f(xl)<=g(xl) and f(xr)<=g(xr)) return;\n    \
+    \  if(f(xl)>=g(xl) and f(xr)>=g(xr)) return (void)(f=g);\n      if(f(xm)>g(xm))\
+    \ swap(f,g);\n      if(f(xl)>g(xl)) i=(i<<1)|0,r=m;\n      else i=(i<<1)|1,l=m;\n\
+    \    }\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
+    signed main(){\n  return 0;\n}\n#endif\n#line 9 \"test/yosupo/line_add_get_min.test.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  using ll = long long;\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n),bs(n);\n\
     \  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\n  vector<ll> ts(q),xs(q),ys(q);\n\
     \  vector<ll> ps;\n  for(int i=0;i<q;i++){\n    cin>>ts[i];\n    if(ts[i]==0)\
-    \ cin>>xs[i]>>ys[i];\n    if(ts[i]==1){\n      cin>>xs[i];\n      ps.emplace_back(xs[i]);\n\
-    \    }\n  }\n\n  LiChao<ll, true> seg(compress(ps));\n  for(int i=0;i<n;i++) seg.addLine(as[i],bs[i]);\n\
-    \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.addLine(xs[i],ys[i]);\n    if(ts[i]==1)\
-    \ cout<<seg.query(xs[i])<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \ cin>>xs[i]>>ys[i];\n    if(ts[i]==1) cin>>xs[i];\n    ps.emplace_back(xs[i]);\n\
+    \  }\n  int lb=-1e9,ub=+1e9;\n  ps.emplace_back(lb);\n  ps.emplace_back(ub);\n\
+    \  LiChao<ll, true> seg(ps);\n\n  for(int i=0;i<n;i++) seg.add_segment(as[i],bs[i],lb,ub);\n\
+    \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.add_segment(xs[i],ys[i],lb,ub);\n\
+    \    if(ts[i]==1) cout<<seg.get(xs[i])<<\"\\n\";\n  }\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/line_add_get_min\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../vector/compress.cpp\"\n#include \"../../segtree/cht/lichao.cpp\"\n#undef\
@@ -62,17 +59,18 @@ data:
     \n  using ll = long long;\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n),bs(n);\n\
     \  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\n  vector<ll> ts(q),xs(q),ys(q);\n\
     \  vector<ll> ps;\n  for(int i=0;i<q;i++){\n    cin>>ts[i];\n    if(ts[i]==0)\
-    \ cin>>xs[i]>>ys[i];\n    if(ts[i]==1){\n      cin>>xs[i];\n      ps.emplace_back(xs[i]);\n\
-    \    }\n  }\n\n  LiChao<ll, true> seg(compress(ps));\n  for(int i=0;i<n;i++) seg.addLine(as[i],bs[i]);\n\
-    \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.addLine(xs[i],ys[i]);\n    if(ts[i]==1)\
-    \ cout<<seg.query(xs[i])<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \ cin>>xs[i]>>ys[i];\n    if(ts[i]==1) cin>>xs[i];\n    ps.emplace_back(xs[i]);\n\
+    \  }\n  int lb=-1e9,ub=+1e9;\n  ps.emplace_back(lb);\n  ps.emplace_back(ub);\n\
+    \  LiChao<ll, true> seg(ps);\n\n  for(int i=0;i<n;i++) seg.add_segment(as[i],bs[i],lb,ub);\n\
+    \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.add_segment(xs[i],ys[i],lb,ub);\n\
+    \    if(ts[i]==1) cout<<seg.get(xs[i])<<\"\\n\";\n  }\n  return 0;\n}\n"
   dependsOn:
   - vector/compress.cpp
   - segtree/cht/lichao.cpp
   isVerificationFile: true
   path: test/yosupo/line_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:33:26+09:00'
+  timestamp: '2020-10-02 21:19:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/line_add_get_min.test.cpp
