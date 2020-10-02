@@ -1519,6 +1519,9 @@ data:
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo/segment_add_get_min.test.cpp
+      title: test/yosupo/segment_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/set_xor_min.test.cpp
       title: test/yosupo/set_xor_min.test.cpp
     - icon: ':heavy_check_mark:'

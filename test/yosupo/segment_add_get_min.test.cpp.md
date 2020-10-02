@@ -13,11 +13,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
+    PROBLEM: https://judge.yosupo.jp/problem/segment_add_get_min
     links:
-    - https://judge.yosupo.jp/problem/line_add_get_min
-  bundledCode: "#line 1 \"test/yosupo/line_add_get_min.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include<bits/stdc++.h>\n\
+    - https://judge.yosupo.jp/problem/segment_add_get_min
+  bundledCode: "#line 1 \"test/yosupo/segment_add_get_min.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 2 \"vector/compress.cpp\"\
     \n\n#ifndef call_from_test\n#line 5 \"vector/compress.cpp\"\nusing namespace std;\n\
     #endif\n\n//BEGIN CUT HERE\ntemplate<typename V>\nV compress(V vs){\n  sort(vs.begin(),vs.end());\n\
@@ -45,43 +45,47 @@ data:
     \ swap(f,g);\n      if(f(xl)>g(xl)) i=(i<<1)|0,r=m;\n      else i=(i<<1)|1,l=m;\n\
     \    }\n  }\n};\ntemplate <typename T, bool isMin>\nconstexpr T LiChao<T, isMin>::INF;\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n#line 9 \"test/yosupo/line_add_get_min.test.cpp\"\n#undef\
-    \ call_from_test\n\n#ifdef SANITIZE\n#define IGNORE\n#endif\n\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n#line 9 \"test/yosupo/segment_add_get_min.test.cpp\"\n\
+    #undef call_from_test\n\n#ifdef SANITIZE\n#define IGNORE\n#endif\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using ll = long long;\n  int n,q;\n\
-    \  cin>>n>>q;\n  vector<ll> as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\
-    \n  vector<ll> ts(q),xs(q),ys(q);\n  vector<ll> ps;\n  for(int i=0;i<q;i++){\n\
-    \    cin>>ts[i];\n    if(ts[i]==0) cin>>xs[i]>>ys[i];\n    if(ts[i]==1) cin>>xs[i];\n\
-    \    ps.emplace_back(xs[i]);\n  }\n  int lb=-1e9,ub=+1e9;\n  ps.emplace_back(lb);\n\
-    \  ps.emplace_back(ub);\n  LiChao<ll, true> seg(ps);\n\n  for(int i=0;i<n;i++)\
-    \ seg.add_segment(as[i],bs[i],lb,ub);\n  for(int i=0;i<q;i++){\n    if(ts[i]==0)\
-    \ seg.add_segment(xs[i],ys[i],lb,ub);\n    if(ts[i]==1) cout<<seg.get(xs[i])<<\"\
-    \\n\";\n  }\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
-    #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
+    \  cin>>n>>q;\n  vector<ll> ls(n),rs(n),as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>ls[i]>>rs[i]>>as[i]>>bs[i];\n\
+    \n  vector<ll> ts(q);\n  vector<ll> v0(q),v1(q),v2(q),v3(q);\n  vector<ll> ps;\n\
+    \  for(int i=0;i<q;i++){\n    cin>>ts[i];\n    if(ts[i]==0) cin>>v0[i]>>v1[i]>>v2[i]>>v3[i];\n\
+    \    if(ts[i]==1) cin>>v0[i];\n    ps.emplace_back(v0[i]);\n    ps.emplace_back(v1[i]);\n\
+    \  }\n  for(int i=0;i<n;i++){\n    ps.emplace_back(ls[i]);\n    ps.emplace_back(rs[i]);\n\
+    \  }\n  LiChao<ll, true> seg(ps);\n\n  for(int i=0;i<n;i++) seg.add_segment(as[i],bs[i],ls[i],rs[i]);\n\
+    \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.add_segment(v2[i],v3[i],v0[i],v1[i]);\n\
+    \    if(ts[i]==1){\n      auto res=seg.get(v0[i]);\n      if(res==decltype(seg)::INF)\
+    \ cout<<\"INFINITY\"<<'\\n';\n      else cout<<res<<\"\\n\";\n    }\n  }\n  return\
+    \ 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n\
+    \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../vector/compress.cpp\"\n#include \"../../segtree/cht/lichao.cpp\"\n#undef\
     \ call_from_test\n\n#ifdef SANITIZE\n#define IGNORE\n#endif\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using ll = long long;\n  int n,q;\n\
-    \  cin>>n>>q;\n  vector<ll> as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\
-    \n  vector<ll> ts(q),xs(q),ys(q);\n  vector<ll> ps;\n  for(int i=0;i<q;i++){\n\
-    \    cin>>ts[i];\n    if(ts[i]==0) cin>>xs[i]>>ys[i];\n    if(ts[i]==1) cin>>xs[i];\n\
-    \    ps.emplace_back(xs[i]);\n  }\n  int lb=-1e9,ub=+1e9;\n  ps.emplace_back(lb);\n\
-    \  ps.emplace_back(ub);\n  LiChao<ll, true> seg(ps);\n\n  for(int i=0;i<n;i++)\
-    \ seg.add_segment(as[i],bs[i],lb,ub);\n  for(int i=0;i<q;i++){\n    if(ts[i]==0)\
-    \ seg.add_segment(xs[i],ys[i],lb,ub);\n    if(ts[i]==1) cout<<seg.get(xs[i])<<\"\
-    \\n\";\n  }\n  return 0;\n}\n"
+    \  cin>>n>>q;\n  vector<ll> ls(n),rs(n),as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>ls[i]>>rs[i]>>as[i]>>bs[i];\n\
+    \n  vector<ll> ts(q);\n  vector<ll> v0(q),v1(q),v2(q),v3(q);\n  vector<ll> ps;\n\
+    \  for(int i=0;i<q;i++){\n    cin>>ts[i];\n    if(ts[i]==0) cin>>v0[i]>>v1[i]>>v2[i]>>v3[i];\n\
+    \    if(ts[i]==1) cin>>v0[i];\n    ps.emplace_back(v0[i]);\n    ps.emplace_back(v1[i]);\n\
+    \  }\n  for(int i=0;i<n;i++){\n    ps.emplace_back(ls[i]);\n    ps.emplace_back(rs[i]);\n\
+    \  }\n  LiChao<ll, true> seg(ps);\n\n  for(int i=0;i<n;i++) seg.add_segment(as[i],bs[i],ls[i],rs[i]);\n\
+    \  for(int i=0;i<q;i++){\n    if(ts[i]==0) seg.add_segment(v2[i],v3[i],v0[i],v1[i]);\n\
+    \    if(ts[i]==1){\n      auto res=seg.get(v0[i]);\n      if(res==decltype(seg)::INF)\
+    \ cout<<\"INFINITY\"<<'\\n';\n      else cout<<res<<\"\\n\";\n    }\n  }\n  return\
+    \ 0;\n}\n"
   dependsOn:
   - vector/compress.cpp
   - segtree/cht/lichao.cpp
   isVerificationFile: true
-  path: test/yosupo/line_add_get_min.test.cpp
+  path: test/yosupo/segment_add_get_min.test.cpp
   requiredBy: []
   timestamp: '2020-10-03 00:06:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/yosupo/line_add_get_min.test.cpp
+documentation_of: test/yosupo/segment_add_get_min.test.cpp
 layout: document
 redirect_from:
-- /verify/test/yosupo/line_add_get_min.test.cpp
-- /verify/test/yosupo/line_add_get_min.test.cpp.html
-title: test/yosupo/line_add_get_min.test.cpp
+- /verify/test/yosupo/segment_add_get_min.test.cpp
+- /verify/test/yosupo/segment_add_get_min.test.cpp.html
+title: test/yosupo/segment_add_get_min.test.cpp
 ---
