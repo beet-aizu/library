@@ -8,36 +8,38 @@ struct SuffixArray{
   vector<int> sa,rev;
 
   SuffixArray(){}
-  SuffixArray(const string &S):s(S){
+  SuffixArray(const string &s_):s(s_+'$'){
     int n=s.size();
-    s.push_back('$');
-    sa.resize(n+1);
+    sa.resize(n);
     iota(sa.begin(),sa.end(),0);
     sort(sa.begin(),sa.end(),
          [&](int a,int b){
            if(s[a]==s[b]) return a>b;
            return s[a]<s[b];
          });
-    vector<int> cs(n+1,0),rs(n+1),cnt(n+1);
-    for(int i=0;i<=n;i++) rs[i]=s[i];
-    for(int len=1;len<=n;len*=2){
-      for(int i=0;i<=n;i++){
+
+    vector<int> cs(n,0),rs(n);
+    for(int i=0;i<n;i++) rs[i]=s[i];
+    for(int len=1;len<n;len*=2){
+      for(int i=0;i<n;i++){
         cs[sa[i]]=i;
-        if(i>0 &&
-           rs[sa[i-1]]==rs[sa[i]] &&
-           sa[i-1]+len<=n &&
-           rs[sa[i-1]+len/2]==rs[sa[i]+len/2]) cs[sa[i]]=cs[sa[i-1]];
+        if(i==0) continue;
+        if(rs[sa[i-1]]!=rs[sa[i]]) continue;
+        if(sa[i-1]+len>=n) continue;
+        if(rs[sa[i-1]+len/2]!=rs[sa[i]+len/2]) continue;
+        cs[sa[i]]=cs[sa[i-1]];
       }
+      vector<int> cnt(n);
       iota(cnt.begin(),cnt.end(),0);
       copy(sa.begin(),sa.end(),rs.begin());
-      for(int i=0;i<=n;i++){
+      for(int i=0;i<n;i++){
         int s1=rs[i]-len;
         if(s1>=0) sa[cnt[cs[s1]]++]=s1;
       }
       cs.swap(rs);
     }
-    rev.resize(n+1);
-    for(int i=0;i<=n;i++) rev[sa[i]]=i;
+    rev.resize(n);
+    for(int i=0;i<n;i++) rev[sa[i]]=i;
   }
   int operator[](int i) const{return sa[i];}
 
