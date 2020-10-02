@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/line_add_get_min
+#define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -7,6 +7,10 @@ using namespace std;
 #include "../../vector/compress.cpp"
 #include "../../segtree/cht/lichao.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
