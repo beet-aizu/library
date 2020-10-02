@@ -23,18 +23,18 @@ signed main(){
   for(int i=0;i<q;i++){
     cin>>ts[i];
     if(ts[i]==0) cin>>xs[i]>>ys[i];
-    if(ts[i]==1){
-      cin>>xs[i];
-      ps.emplace_back(xs[i]);
-    }
+    if(ts[i]==1) cin>>xs[i];
+    ps.emplace_back(xs[i]);
   }
+  int lb=-1e9,ub=+1e9;
+  ps.emplace_back(lb);
+  ps.emplace_back(ub);
+  LiChao<ll, true> seg(ps);
 
-  LiChao<ll, true> seg(compress(ps));
-  for(int i=0;i<n;i++) seg.addLine(as[i],bs[i]);
+  for(int i=0;i<n;i++) seg.add_segment(as[i],bs[i],lb,ub);
   for(int i=0;i<q;i++){
-    if(ts[i]==0) seg.addLine(xs[i],ys[i]);
-    if(ts[i]==1) cout<<seg.query(xs[i])<<"\n";
+    if(ts[i]==0) seg.add_segment(xs[i],ys[i],lb,ub);
+    if(ts[i]==1) cout<<seg.get(xs[i])<<"\n";
   }
-  cout<<flush;
   return 0;
 }
