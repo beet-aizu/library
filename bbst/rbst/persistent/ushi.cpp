@@ -1,5 +1,6 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -36,9 +37,9 @@ struct PersistentUshi : Ushi<Node, LIM>{
   }
 
   Node* rebuild(Node* a){
-    auto v=super::dump(a);
+    auto vs=super::dump(a);
     super::ptr=0;
-    return super::build(v);
+    return super::build(vector<Node>(vs.begin(),vs.end()));
   }
 
   bool almost_full() const{
@@ -48,61 +49,7 @@ struct PersistentUshi : Ushi<Node, LIM>{
 //END CUT HERE
 //INSERT ABOVE HERE
 #ifndef call_from_test
-signed HAPPYQUERY_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  vector<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  auto f=[](int a,int b){return min(a,b);};
-  int ti=INT_MAX;
-
-  using Node = NodeBase<int>;
-  constexpr size_t LIM = 7e6;
-  PersistentUshi<Node, LIM> G(f,ti);
-  auto rt=G.build(vector<Node>(as.begin(),as.end()));
-
-  vector<decltype(rt)> rts;
-  rts.emplace_back(rt);
-
-  int q1;
-  cin>>q1;
-  rts.reserve(q1+1);
-
-  for(int i=0;i<q1;i++){
-    int p,x;
-    cin>>p>>x;
-    p--;
-    rt=G.set_val(rt,p,x);
-    rts.emplace_back(rt);
-  }
-
-  int q2;
-  cin>>q2;
-  int x=0;
-  for(int i=0;i<q2;i++){
-    int a,b,c;
-    cin>>a>>b>>c;
-    int k=a^x;
-    int l=(b^x)-1;
-    int r=(c^x);
-    assert(l<r);
-    x=G.query(rts[k],l,r);
-    cout<<x<<"\n";
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/10/22
-  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query/problem
-*/
-
 signed main(){
-  HAPPYQUERY_B();
   return 0;
 }
 #endif
