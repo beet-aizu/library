@@ -35,8 +35,7 @@ struct Dinic{
     que.emplace(s);
     while(!que.empty()){
       int v=que.front();que.pop();
-      for(int i=0;i<(int)G[v].size();i++){
-        Edge &e=G[v][i];
+      for(Edge &e : G[v]) {
         if(e.cap>0 and level[e.dst]<0){
           level[e.dst]=level[v]+1;
           que.emplace(e.dst);
