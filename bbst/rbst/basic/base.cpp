@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -80,7 +80,7 @@ struct BBSTBase{
   Node* insert(Node *a,size_t pos,Node v){
     Node* b=create(v);
     auto s=split(a,pos);
-    return a=merge(merge(s.first,b),s.second);
+    return merge(merge(s.first,b),s.second);
   }
 
   Node* erase(Node *a,size_t pos){
