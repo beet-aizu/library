@@ -5,10 +5,13 @@ data:
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/ushi.cpp
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0437.test.cpp
+    title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
@@ -84,6 +87,7 @@ data:
   timestamp: '2020-05-09 16:23:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/0437.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/1508.test.cpp
 documentation_of: bbst/rbst/basic/ushi.cpp

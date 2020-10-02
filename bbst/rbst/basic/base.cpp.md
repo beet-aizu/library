@@ -20,10 +20,13 @@ data:
   - icon: ':warning:'
     path: bbst/rbst/persistent/lazy.cpp
     title: bbst/rbst/persistent/lazy.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/ushi.cpp
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0437.test.cpp
+    title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
@@ -152,6 +155,7 @@ data:
   - test/aoj/DSL_2_E.bbst.test.cpp
   - test/aoj/DSL_2_I.bbst.test.cpp
   - test/aoj/DSL_2_D.bbst.test.cpp
+  - test/aoj/0437.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp

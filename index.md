@@ -54,7 +54,7 @@ data:
     - icon: ':warning:'
       path: bbst/rbst/persistent/lazy.cpp
       title: bbst/rbst/persistent/lazy.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/persistent/ushi.cpp
       title: bbst/rbst/persistent/ushi.cpp
   - name: bflow
@@ -707,6 +707,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0425.test.cpp
       title: test/aoj/0425.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/0437.test.cpp
+      title: test/aoj/0437.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/0502.test.cpp
       title: test/aoj/0502.test.cpp
