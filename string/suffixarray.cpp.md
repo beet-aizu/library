@@ -22,9 +22,6 @@ data:
     path: test/aoj/3112.test.cpp
     title: test/aoj/3112.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_14_D.test.cpp
-    title: test/aoj/ALDS1_14_D.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
   - icon: ':heavy_check_mark:'
@@ -94,7 +91,6 @@ data:
   - test/aoj/2644.test.cpp
   - test/aoj/3063.test.cpp
   - test/aoj/2711.test.cpp
-  - test/aoj/ALDS1_14_D.test.cpp
   - test/aoj/3112.test.cpp
   - test/yosupo/suffixarray.test.cpp
   - test/yosupo/number_of_substrings.test.cpp
