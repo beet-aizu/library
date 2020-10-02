@@ -711,6 +711,9 @@ data:
       path: test/aoj/0437.test.cpp
       title: test/aoj/0437.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/0438.test.cpp
+      title: test/aoj/0438.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/0502.test.cpp
       title: test/aoj/0502.test.cpp
     - icon: ':heavy_check_mark:'
@@ -937,7 +940,7 @@ data:
       title: test/aoj/2872.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2890.test.cpp
-      title: test/aoj/2890.test.cpp
+      title: test order_of_key
     - icon: ':heavy_check_mark:'
       path: test/aoj/2934.test.cpp
       title: test/aoj/2934.test.cpp

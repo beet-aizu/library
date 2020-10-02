@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/array.cpp
   requiredBy: []
-  timestamp: '2020-03-22 15:37:31+09:00'
+  timestamp: '2020-10-02 16:55:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp

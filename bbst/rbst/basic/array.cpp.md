@@ -10,8 +10,11 @@ data:
     title: bbst/rbst/persistent/array.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0438.test.cpp
+    title: test/aoj/0438.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2890.test.cpp
-    title: test/aoj/2890.test.cpp
+    title: test order_of_key
   - icon: ':heavy_check_mark:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
@@ -54,10 +57,11 @@ data:
   path: bbst/rbst/basic/array.cpp
   requiredBy:
   - bbst/rbst/persistent/array.cpp
-  timestamp: '2020-03-22 15:37:31+09:00'
+  timestamp: '2020-10-02 16:55:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2890.test.cpp
+  - test/aoj/0438.test.cpp
   - test/yosupo/persistent_queue.test.cpp
 documentation_of: bbst/rbst/basic/array.cpp
 layout: document
