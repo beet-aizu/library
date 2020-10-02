@@ -524,7 +524,7 @@ data:
       title: string/split.cpp
     - icon: ':heavy_check_mark:'
       path: string/suffixarray.cpp
-      title: string/suffixarray.cpp
+      title: Suffix Array
     - icon: ':heavy_check_mark:'
       path: string/trie.cpp
       title: string/trie.cpp
