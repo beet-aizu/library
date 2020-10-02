@@ -30,29 +30,27 @@ struct FordFulkerson{
   Flow dfs(int v,int t,Flow f){
     if(v==t) return f;
     used[v]=true;
-    for(int i=0;i<(int)G[v].size();i++){
-      Edge &e=G[v][i];
-      if(!used[e.dst] and e.cap>0){
-        Flow d=dfs(e.dst,t,min(f,e.cap));
-        if(d==0) continue;
-        e.cap-=d;
-        G[e.dst][e.rev].cap+=d;
-        return d;
-      }
+    for(Edge &e:G[v]){
+      if(used[e.dst] or e.cap==0) continue;
+      Flow d=dfs(e.dst,t,min(f,e.cap));
+      if(d==0) continue;
+      e.cap-=d;
+      G[e.dst][e.rev].cap+=d;
+      return d;
     }
     return 0;
   }
 
   Flow flow(int s,int t,Flow lim){
-    Flow fl=0;
+    Flow res=0;
     while(1){
       fill(used.begin(),used.end(),0);
       Flow f=dfs(s,t,lim);
       if(f==0) break;
-      fl+=f;
+      res+=f;
       lim-=f;
     }
-    return fl;
+    return res;
   }
 
   Flow flow(int s,int t){
