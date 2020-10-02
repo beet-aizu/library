@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0439
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0439"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -9,6 +9,10 @@ using namespace std;
 #include "../../tree/lowestcommonancestor.cpp"
 #include "../../tree/auxiliarytree.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
 cin.tie(0);
