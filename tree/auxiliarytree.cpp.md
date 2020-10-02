@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0439.test.cpp
+    title: test/aoj/0439.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
   - icon: ':heavy_check_mark:'
@@ -53,6 +56,7 @@ data:
   timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/0439.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
 documentation_of: tree/auxiliarytree.cpp

@@ -29,7 +29,7 @@ data:
     title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0438.test.cpp
-    title: test/aoj/0438.test.cpp
+    title: test find_by_order, order_of_key
   - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp

@@ -712,7 +712,10 @@ data:
       title: test/aoj/0437.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/0438.test.cpp
-      title: test/aoj/0438.test.cpp
+      title: test find_by_order, order_of_key
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/0439.test.cpp
+      title: test/aoj/0439.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/0502.test.cpp
       title: test/aoj/0502.test.cpp

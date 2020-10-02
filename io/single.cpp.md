@@ -8,7 +8,10 @@ data:
     title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/0438.test.cpp
-    title: test/aoj/0438.test.cpp
+    title: test find_by_order, order_of_key
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/0439.test.cpp
+    title: test/aoj/0439.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3086.test.cpp
     title: test/aoj/3086.test.cpp
@@ -57,6 +60,7 @@ data:
   - test/aoj/0437.test.cpp
   - test/aoj/3086.test.cpp
   - test/aoj/3168.test.cpp
+  - test/aoj/0439.test.cpp
   - test/yukicoder/1950.test.cpp
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/2113.test.cpp

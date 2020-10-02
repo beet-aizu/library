@@ -22,6 +22,9 @@ data:
     path: test/aoj/0415.test.cpp
     title: test/aoj/0415.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0439.test.cpp
+    title: test/aoj/0439.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0596.test.cpp
     title: test/aoj/0596.test.cpp
   - icon: ':heavy_check_mark:'
@@ -169,6 +172,7 @@ data:
   - test/aoj/3069.lichao.test.cpp
   - test/aoj/ALDS1_10_C.test.cpp
   - test/aoj/3168.test.cpp
+  - test/aoj/0439.test.cpp
   - test/aoj/3112.test.cpp
   - test/aoj/3142.test.cpp
   - test/yukicoder/4918.test.cpp

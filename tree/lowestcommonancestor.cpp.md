@@ -7,6 +7,9 @@ data:
     title: Auxiliary Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0439.test.cpp
+    title: test/aoj/0439.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_C.test.cpp
     title: test/aoj/GRL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -62,6 +65,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_C.test.cpp
+  - test/aoj/0439.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
   - test/yosupo/lca.test.cpp
