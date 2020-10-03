@@ -8,7 +8,7 @@ data:
   attributes:
     links:
     - https://codeforces.com/contest/1137/problem/E
-  bundledCode: "#line 1 \"datastructure/convexhulltrickwithindex.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"convexhulltrick/withindex.cpp\"\n#include<bits/stdc++.h>\n\
     using namespace std;\n//BEGIN CUT HERE\n// index siyou kimattenai\ntemplate <typename\
     \ T,bool isMin>\nstruct ConvexHullTrickWithIndex {\n  struct P{\n    T m,b;\n\
     \    int idx;\n    P(T m,T b,int idx):m(m),b(b),idx(idx){};\n    bool operator<(const\
@@ -81,15 +81,15 @@ data:
     \ on 2019/05/14\n  https://codeforces.com/contest/1137/problem/E\n*/\n"
   dependsOn: []
   isVerificationFile: false
-  path: datastructure/convexhulltrickwithindex.cpp
+  path: convexhulltrick/withindex.cpp
   requiredBy: []
-  timestamp: '2019-12-17 21:51:08+09:00'
+  timestamp: '2020-10-03 18:22:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructure/convexhulltrickwithindex.cpp
+documentation_of: convexhulltrick/withindex.cpp
 layout: document
 redirect_from:
-- /library/datastructure/convexhulltrickwithindex.cpp
-- /library/datastructure/convexhulltrickwithindex.cpp.html
-title: datastructure/convexhulltrickwithindex.cpp
+- /library/convexhulltrick/withindex.cpp
+- /library/convexhulltrick/withindex.cpp.html
+title: convexhulltrick/withindex.cpp
 ---

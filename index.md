@@ -88,6 +88,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/surjection.cpp
       title: combinatorics/surjection.cpp
+  - name: convexhulltrick
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convexhulltrick/convexhulltrick.cpp
+      title: convexhulltrick/convexhulltrick.cpp
+    - icon: ':heavy_check_mark:'
+      path: convexhulltrick/linecontainer.cpp
+      title: convexhulltrick/linecontainer.cpp
+    - icon: ':heavy_check_mark:'
+      path: convexhulltrick/segmentcontainer.cpp
+      title: convexhulltrick/segmentcontainer.cpp
+    - icon: ':warning:'
+      path: convexhulltrick/withindex.cpp
+      title: convexhulltrick/withindex.cpp
   - name: convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -126,12 +140,6 @@ data:
       path: datastructure/cartesiantree.cpp
       title: datastructure/cartesiantree.cpp
     - icon: ':heavy_check_mark:'
-      path: datastructure/convexhulltrick.cpp
-      title: datastructure/convexhulltrick.cpp
-    - icon: ':warning:'
-      path: datastructure/convexhulltrickwithindex.cpp
-      title: datastructure/convexhulltrickwithindex.cpp
-    - icon: ':heavy_check_mark:'
       path: datastructure/cumulativesum.cpp
       title: datastructure/cumulativesum.cpp
     - icon: ':heavy_check_mark:'
@@ -140,7 +148,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/kdtree.cpp
       title: datastructure/kdtree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: datastructure/nonmonotonicconvexhulltrick.cpp
       title: datastructure/nonmonotonicconvexhulltrick.cpp
     - icon: ':heavy_check_mark:'
@@ -455,11 +463,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: segtree/basic/ushi.cpp
       title: segtree/basic/ushi.cpp
-  - name: segtree/cht
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: segtree/cht/lichao.cpp
-      title: segtree/cht/lichao.cpp
   - name: segtree/count
     pages:
     - icon: ':heavy_check_mark:'
@@ -917,9 +920,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2720.test.cpp
       title: test/aoj/2720.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
-      title: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2725.test.cpp
       title: test/aoj/2725.test.cpp

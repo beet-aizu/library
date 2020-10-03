@@ -28,17 +28,11 @@ data:
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/line_add_get_min.test.cpp
-    title: test/yosupo/line_add_get_min.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/segment_add_get_min.test.cpp
-    title: test/yosupo/segment_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
@@ -90,8 +84,6 @@ data:
   - test/yukicoder/4778.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
-  - test/yosupo/segment_add_get_min.test.cpp
-  - test/yosupo/line_add_get_min.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
   - test/yosupo/point_add_rectangle_sum.test.cpp
 documentation_of: vector/compress.cpp

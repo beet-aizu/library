@@ -2,15 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
-    title: test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/3069.test.cpp
-    title: test/aoj/3069.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/nonmonotonicconvexhulltrick.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -70,10 +64,8 @@ data:
   path: datastructure/nonmonotonicconvexhulltrick.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:27:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aoj/3069.test.cpp
-  - test/aoj/2725.nonmonotonicconvexhulltrick.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: datastructure/nonmonotonicconvexhulltrick.cpp
 layout: document
 redirect_from:
