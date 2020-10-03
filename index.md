@@ -148,9 +148,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/kdtree.cpp
       title: datastructure/kdtree.cpp
-    - icon: ':warning:'
-      path: datastructure/nonmonotonicconvexhulltrick.cpp
-      title: datastructure/nonmonotonicconvexhulltrick.cpp
     - icon: ':heavy_check_mark:'
       path: datastructure/pb_ds_cc_hash_table.cpp
       title: datastructure/pb_ds_cc_hash_table.cpp
