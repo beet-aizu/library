@@ -4,8 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../vector/compress.cpp"
-#include "../../segtree/cht/lichao.cpp"
+#include "../../convexhulltrick/segmentcontainer.cpp"
 #undef call_from_test
 
 #ifdef SANITIZE
@@ -33,12 +32,12 @@ signed main(){
   int lb=-1e9,ub=+1e9;
   ps.emplace_back(lb);
   ps.emplace_back(ub);
-  LiChao<ll, true> seg(ps);
+  MinSegmentContainer<ll> seg(ps);
 
-  for(int i=0;i<n;i++) seg.add_segment(as[i],bs[i],lb,ub);
+  for(int i=0;i<n;i++) seg.add(as[i],bs[i],lb,ub);
   for(int i=0;i<q;i++){
-    if(ts[i]==0) seg.add_segment(xs[i],ys[i],lb,ub);
-    if(ts[i]==1) cout<<seg.get(xs[i])<<"\n";
+    if(ts[i]==0) seg.add(xs[i],ys[i],lb,ub);
+    if(ts[i]==1) cout<<seg.query(xs[i])<<"\n";
   }
   return 0;
 }

@@ -7,7 +7,7 @@ using namespace std;
 #define call_from_test
 #include "../../io/precision.cpp"
 #include "../../tools/chminmax.cpp"
-#include "../../datastructure/convexhulltrick.cpp"
+#include "../../convexhulltrick/convexhulltrick.cpp"
 #undef call_from_test
 
 signed main(){
@@ -54,8 +54,8 @@ signed main(){
     if(vp.empty()) continue;
 
     sort(vp.begin(),vp.end());
-    ConvexHullTrick<D, false> cht;
-    for(auto p:vp) cht.addLine(p.first,p.second);
+    MaxConvexHullTrick<D> cht;
+    for(auto p:vp) cht.add(p.first,p.second);
 
     for(int i=0;i<n;i++){
       if(xs[i]<=0) continue;
@@ -70,11 +70,9 @@ signed main(){
     }
   }
 
-  cout<<fixed<<setprecision(12);
   for(int i=0;i<n;i++){
     if(ans[i]>=INF) cout<<-1<<"\n";
     else cout<<ans[i]<<"\n";
   }
-  cout<<flush;
   return 0;
 }

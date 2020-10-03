@@ -4,13 +4,14 @@
 using namespace std;
 
 #define call_from_test
-#include "../../datastructure/convexhulltrick.cpp"
+#include "../../tools/chminmax.cpp"
+#include "../../vector/zip.cpp"
+#include "../../convexhulltrick/convexhulltrick.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
-
   using ll = long long;
 
   int n,x;
@@ -18,24 +19,22 @@ signed main(){
   vector<ll> ts(n),ps(n),fs(n);
   for(int i=0;i<n;i++) cin>>ts[i]>>ps[i]>>fs[i];
 
-  using T = tuple<ll, ll, ll>;
-  vector<T> vt(n);
-  for(int i=0;i<n;i++) vt[i]=T(fs[i],ps[i],ts[i]);
+  auto vt=zip(fs,ps,ts);
   sort(vt.begin(),vt.end());
   for(int i=0;i<n;i++) tie(fs[i],ps[i],ts[i])=vt[i];
 
-  vector<ConvexHullTrick<ll, false> > vh(x+1);
+  vector<MaxConvexHullTrick<ll>> vh(x+1);
 
   ll ans=0;
   for(int i=0;i<n;i++){
     for(int j=x;j>ts[i];j--){
       if(vh[j-ts[i]].empty()) continue;
       ll val=vh[j-ts[i]].queryMonotoneInc(fs[i])+ps[i]-fs[i]*fs[i];
-      vh[j].addLine(2*fs[i],val-fs[i]*fs[i]);
-      ans=max(ans,val);
+      vh[j].add(2*fs[i],val-fs[i]*fs[i]);
+      chmax(ans,val);
     }
-    vh[ts[i]].addLine(2*fs[i],ps[i]-fs[i]*fs[i]);
-    ans=max(ans,ps[i]);
+    vh[ts[i]].add(2*fs[i],ps[i]-fs[i]*fs[i]);
+    chmax(ans,ps[i]);
   }
 
   cout<<ans<<endl;

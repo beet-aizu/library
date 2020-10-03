@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../tools/chminmax.cpp"
-#include "../../datastructure/nonmonotonicconvexhulltrick.cpp"
+#include "../../convexhulltrick/linecontainer.cpp"
 #undef call_from_test
 
 signed main(){
@@ -59,9 +59,9 @@ signed main(){
 
   // use R
   if(exR){
-    NonmonotonicConvexHullTrick<ll, true> cht;
+    MinLineContainer<ll> cht;
     for(int x=0;x<n*2;x++){
-      if(R[x]!=INF) cht.addLine(R[x],-R[x]*sm[x]);
+      if(R[x]!=INF) cht.add(R[x],-R[x]*sm[x]);
       for(int i:G[x]){
         int y=ys[i];
         if(x>y) y+=n;
@@ -72,9 +72,9 @@ signed main(){
 
   // use L
   if(exL){
-    NonmonotonicConvexHullTrick<ll, true> cht;
+    MinLineContainer<ll> cht;
     for(int x=n*3-1;x>=n;x--){
-      if(L[x]!=INF) cht.addLine(-L[x],L[x]*sm[x]);
+      if(L[x]!=INF) cht.add(-L[x],L[x]*sm[x]);
       for(int i:G[x]){
         int y=ys[i];
         if(x<y) y-=n;
@@ -83,7 +83,6 @@ signed main(){
     }
   }
 
-  for(int i=0;i<q;i++) cout<<ans[i]<<"\n";
-  cout<<flush;
+  for(int i=0;i<q;i++) cout<<ans[i]<<'\n';
   return 0;
 }
