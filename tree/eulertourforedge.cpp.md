@@ -2,9 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: algorithm/mo.cpp
-    title: algorithm/mo.cpp
+  - icon: ':warning:'
+    path: tree/mo_on_tree.cpp
+    title: tree/mo_on_tree.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_D.test.cpp
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: tree/eulertourforedge.cpp
   requiredBy:
-  - algorithm/mo.cpp
+  - tree/mo_on_tree.cpp
   timestamp: '2019-12-27 08:56:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

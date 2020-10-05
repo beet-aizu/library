@@ -34,6 +34,9 @@ data:
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static_range_inversions_query.test.cpp
+    title: test/yosupo/static_range_inversions_query.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
   - icon: ':heavy_check_mark:'
@@ -84,6 +87,7 @@ data:
   - test/yukicoder/4778.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
   - test/yosupo/point_add_rectangle_sum.test.cpp
 documentation_of: vector/compress.cpp

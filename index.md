@@ -627,6 +627,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/lowestcommonancestor.cpp
       title: tree/lowestcommonancestor.cpp
+    - icon: ':warning:'
+      path: tree/mo_on_tree.cpp
+      title: tree/mo_on_tree.cpp
     - icon: ':heavy_check_mark:'
       path: tree/rerooting.cpp
       title: ReRooting
@@ -1533,6 +1536,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/sqrt_of_formal_power_series.test.cpp
       title: test/yosupo/sqrt_of_formal_power_series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/static_range_inversions_query.test.cpp
+      title: test/yosupo/static_range_inversions_query.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static_range_sum.test.cpp
       title: test/yosupo/static_range_sum.test.cpp

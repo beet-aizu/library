@@ -13,6 +13,9 @@ data:
     path: test/yosupo/point_add_range_sum.test.cpp
     title: test/yosupo/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static_range_inversions_query.test.cpp
+    title: test/yosupo/static_range_inversions_query.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -70,6 +73,7 @@ data:
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/2125.test.cpp
   - test/yosupo/vertex_add_path_sum.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
   - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/yosupo/point_add_range_sum.test.cpp
 documentation_of: datastructure/binaryindexedtree.cpp

@@ -19,6 +19,9 @@ data:
     path: test/aoj/3168.test.cpp
     title: test/aoj/3168.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static_range_inversions_query.test.cpp
+    title: test/yosupo/static_range_inversions_query.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1948.test.cpp
     title: test/yukicoder/1948.test.cpp
   - icon: ':heavy_check_mark:'
@@ -67,6 +70,7 @@ data:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/4569.test.cpp
   - test/yukicoder/4387.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: io/single.cpp
 layout: document
 redirect_from:
