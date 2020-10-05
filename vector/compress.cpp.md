@@ -19,6 +19,9 @@ data:
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2270.test.cpp
+    title: test/aoj/2270.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
   - icon: ':heavy_check_mark:'
@@ -76,6 +79,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1607.test.cpp
+  - test/aoj/2270.test.cpp
   - test/aoj/2563.test.cpp
   - test/aoj/3506.test.cpp
   - test/aoj/1599.test.cpp

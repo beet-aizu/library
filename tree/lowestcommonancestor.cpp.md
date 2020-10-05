@@ -10,6 +10,9 @@ data:
     path: test/aoj/0439.test.cpp
     title: test/aoj/0439.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2270.test.cpp
+    title: test/aoj/2270.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_C.test.cpp
     title: test/aoj/GRL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -64,6 +67,7 @@ data:
   timestamp: '2019-12-17 21:09:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2270.test.cpp
   - test/aoj/GRL_5_C.test.cpp
   - test/aoj/0439.test.cpp
   - test/yukicoder/3407.test.cpp

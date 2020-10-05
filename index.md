@@ -627,7 +627,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/lowestcommonancestor.cpp
       title: tree/lowestcommonancestor.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/mo_on_tree.cpp
       title: tree/mo_on_tree.cpp
     - icon: ':heavy_check_mark:'
@@ -812,6 +812,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2257.test.cpp
       title: test/aoj/2257.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2270.test.cpp
+      title: test/aoj/2270.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2286.test.cpp
       title: test/aoj/2286.test.cpp

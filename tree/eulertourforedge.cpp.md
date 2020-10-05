@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/mo_on_tree.cpp
     title: tree/mo_on_tree.cpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2270.test.cpp
+    title: test/aoj/2270.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
@@ -52,6 +55,7 @@ data:
   timestamp: '2019-12-27 08:56:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2270.test.cpp
   - test/aoj/GRL_5_D.test.cpp
 documentation_of: tree/eulertourforedge.cpp
 layout: document

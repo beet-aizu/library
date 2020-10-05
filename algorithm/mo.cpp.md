@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/mo_on_tree.cpp
     title: tree/mo_on_tree.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0425.test.cpp
     title: test/aoj/0425.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2270.test.cpp
+    title: test/aoj/2270.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
@@ -57,6 +60,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0425.test.cpp
+  - test/aoj/2270.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: algorithm/mo.cpp
 layout: document
