@@ -45,59 +45,10 @@ struct MoOnTree{
   }
   int process(){return mo->process();}
 };
-
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-// Mo on Tree
-signed ABC133_F(){
-  int n,q;
-  cin>>n>>q;
-  vector<int> as(n),bs(n),cs(n),ds(n);
-  vector<int> xs(q),ys(q),us(q),vs(q);
-
-  int all=0;
-  vector<int> cnt(n),sum(n),app(n,0);
-  auto expand=[&](int e){
-    all+=ds[e];
-    cnt[cs[e]]++;
-    sum[cs[e]]+=ds[e];
-  };
-  auto shrink=[&](int e){
-    all-=ds[e];
-    cnt[cs[e]]--;
-    sum[cs[e]]-=ds[e];
-  };
-
-  MoOnTree mo(n+1,400,expand,shrink);
-  mo.add_edge(0,1);
-  for(int i=1;i<n;i++){
-    cin>>as[i]>>bs[i]>>cs[i]>>ds[i];
-    mo.add_edge(as[i],bs[i]);
-  }
-
-  for(int i=0;i<q;i++){
-    cin>>xs[i]>>ys[i]>>us[i]>>vs[i];
-    mo.add_query(us[i],vs[i]);
-  }
-  mo.build();
-
-  vector<int> ans(q);
-  for(int i=0;i<q;i++){
-    int k=mo.process();
-    ans[k]=all-sum[xs[k]]+cnt[xs[k]]*ys[k];
-  }
-
-  for(int i=0;i<q;i++) cout<<ans[i]<<'\n';
-  return 0;
-}
-/*
-  verified on 2020/10/05
-  https://atcoder.jp/contests/abc133/tasks/abc133_f
-*/
-
 signed main(){
-  ABC133_F();
   return 0;
 }
 #endif
