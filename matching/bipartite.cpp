@@ -35,7 +35,7 @@ struct Bipartite{
   int build(){
     int res=0;
     for(int v=0;v<n;v++){
-      if(dead[v] or match[v] != -1) continue;
+      if(dead[v] or ~match[v]) continue;
       time++;
       res+=dfs(v);
     }
