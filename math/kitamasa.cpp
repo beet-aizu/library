@@ -78,7 +78,6 @@ signed ABC009_D(){
 */
 
 signed main(){
-  //TDPC_F();
   //ABC009_D();
   return 0;
 }

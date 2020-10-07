@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -68,60 +68,8 @@ struct Trie{
 };
 //END CUT HERE
 #ifndef call_from_test
-struct FastIO{
-  FastIO(){
-    cin.tie(0);
-    ios::sync_with_stdio(0);
-  }
-}fastio_beet;
-
-template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}
-template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}
-
 //INSERT ABOVE HERE
-
-// test trie without aho-corasick
-signed tenka1_2016_final_C(){
-  string s;
-  cin>>s;
-  int m;
-  cin>>m;
-  vector<string> p(m);
-  for(int i=0;i<m;i++) cin>>p[i];
-
-  vector<int> w(m);
-  for(int i=0;i<m;i++) cin>>w[i];
-
-  Trie<26>::F f=[](char c){return c-'a';};
-  Trie<26> trie(f);
-
-  for(int i=0;i<m;i++) trie.add(p[i],i);
-
-  int n=s.size();
-  vector<int> dp(n+1,0);
-  int ans=0;
-  for(int i=0;i<n;i++){
-    chmax(ans,dp[i]);
-    int pos=0;
-    for(int j=0;j<222&&i+j<n;j++){
-      pos=trie.move(pos,s[i+j]);
-      if(pos<0) break;
-      int k=trie.idx(pos);
-      if(~k) chmax(dp[i+p[k].size()],ans+w[k]);
-    }
-  }
-  chmax(ans,dp[n]);
-  cout<<ans<<endl;
-  return 0;
-}
-
-/*
-  verified on 2019/10/28
-  https://atcoder.jp/contests/tenka1-2016-final/tasks/tenka1_2016_final_c
-*/
-
 signed main(){
-  tenka1_2016_final_C();
   return 0;
 }
 #endif
