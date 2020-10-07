@@ -254,6 +254,7 @@
 "test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp": "2020-09-25 15:33:26 +0900",
 "test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp": "2020-09-25 15:33:26 +0900",
 "test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp": "2020-09-25 15:33:26 +0900",
+"test/yosupo/enumerate_primes.test.cpp": "2020-10-07 11:59:04 +0900",
 "test/yosupo/enumerate_triangles.test.cpp": "2020-09-25 15:33:26 +0900",
 "test/yosupo/exp_of_formal_power_series.test.cpp": "2020-09-25 15:33:26 +0900",
 "test/yosupo/find_linear_recurrence.test.cpp": "2020-09-25 15:33:26 +0900",
