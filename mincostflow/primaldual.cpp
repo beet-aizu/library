@@ -50,12 +50,11 @@ struct PrimalDual{
       for(int i=0;i<(int)G[v].size();i++){
         Edge &e=G[v][i];
         if(e.cap==0) continue;
-        if(dist[v]+residual_cost(v,e)<dist[e.dst]){
-          dist[e.dst]=dist[v]+e.cost+h[v]-h[e.dst];
-          prevv[e.dst]=v;
-          preve[e.dst]=i;
-          pq.emplace(dist[e.dst],e.dst);
-        }
+        if(!(dist[v]+residual_cost(v,e)<dist[e.dst])) continue;
+        dist[e.dst]=dist[v]+e.cost+h[v]-h[e.dst];
+        prevv[e.dst]=v;
+        preve[e.dst]=i;
+        pq.emplace(dist[e.dst],e.dst);
       }
     }
   }
