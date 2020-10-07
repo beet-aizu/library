@@ -333,6 +333,9 @@ data:
       path: math/dual.cpp
       title: math/dual.cpp
     - icon: ':heavy_check_mark:'
+      path: math/enumerate_primes.cpp
+      title: math/enumerate_primes.cpp
+    - icon: ':heavy_check_mark:'
       path: math/extgcd.cpp
       title: math/extgcd.cpp
     - icon: ':heavy_check_mark:'
@@ -1428,6 +1431,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
       title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/enumerate_primes.test.cpp
+      title: test/yosupo/enumerate_primes.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/enumerate_triangles.test.cpp
       title: test/yosupo/enumerate_triangles.test.cpp
