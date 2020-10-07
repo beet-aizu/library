@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: string/ahocorasick.cpp
   requiredBy: []
-  timestamp: '2019-12-26 23:10:12+09:00'
+  timestamp: '2020-10-07 14:44:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2257.test.cpp

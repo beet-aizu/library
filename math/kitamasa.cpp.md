@@ -49,13 +49,13 @@ data:
     \  for(int i=0;i<k;i++) scanf(\"%u\",&as[i].v);\n  for(int i=0;i<k;i++) scanf(\"\
     %u\",&cs[k-(i+1)].v);\n  Kitamasa<M> v(cs);\n\n  printf(\"%u\\n\",v.calc(as,--m).v);\n\
     \  return 0;\n}\n/*\n  verified on 2019/12/10\n  https://atcoder.jp/contests/abc009/tasks/abc009_4\n\
-    */\n\nsigned main(){\n  //TDPC_F();\n  //ABC009_D();\n  return 0;\n}\n#endif\n"
+    */\n\nsigned main(){\n  //ABC009_D();\n  return 0;\n}\n#endif\n"
   dependsOn:
   - mod/mint.cpp
   isVerificationFile: false
   path: math/kitamasa.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-10-07 14:44:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0168.test.cpp
