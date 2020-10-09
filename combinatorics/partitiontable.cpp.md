@@ -39,8 +39,8 @@ data:
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DPL_5_L.test.cpp
   - test/aoj/DPL_5_J.test.cpp
+  - test/aoj/DPL_5_L.test.cpp
 documentation_of: combinatorics/partitiontable.cpp
 layout: document
 redirect_from:

@@ -232,12 +232,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/independentset.cpp
       title: graph/independentset.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/kruskal.cpp
       title: graph/kruskal.cpp
     - icon: ':heavy_check_mark:'
       path: graph/lowlink.cpp
       title: graph/lowlink.cpp
+    - icon: ':x:'
+      path: graph/manhattanmst.cpp
+      title: graph/manhattanmst.cpp
     - icon: ':heavy_check_mark:'
       path: graph/multipleeuleriantrail.cpp
       title: graph/multipleeuleriantrail.cpp
@@ -1464,6 +1467,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/log_of_formal_power_series.test.cpp
       title: test/yosupo/log_of_formal_power_series.test.cpp
+    - icon: ':x:'
+      path: test/yosupo/manhattanmst.test.cpp
+      title: test/yosupo/manhattanmst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/many_aplusb.test.cpp
       title: test/yosupo/many_aplusb.test.cpp

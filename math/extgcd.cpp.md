@@ -48,8 +48,8 @@ data:
   timestamp: '2020-09-21 00:38:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2970.test.cpp
   - test/aoj/NTL_1_E.test.cpp
+  - test/aoj/2970.test.cpp
   - test/aoj/2659.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document

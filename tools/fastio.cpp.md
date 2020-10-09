@@ -41,11 +41,11 @@ data:
   path: tools/fastio.cpp
   requiredBy:
   - tree/diameterforedge.cpp
+  - graph/nicetree.cpp
+  - linearalgebra/binarymatrix.cpp
   - algorithm/monotoneminima.cpp
   - datastructure/slidingwindowaggregation.cpp
-  - linearalgebra/binarymatrix.cpp
   - linkcuttree/subtree.cpp
-  - graph/nicetree.cpp
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

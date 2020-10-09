@@ -74,8 +74,8 @@ data:
   timestamp: '2019-12-26 23:22:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   - test/yukicoder/4072.test.cpp
+  - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   - test/yosupo/staticrmq.disjointsparsetable.test.cpp
 documentation_of: datastructure/disjointsparsetable.cpp
 layout: document

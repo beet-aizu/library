@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/unionfind.cpp
+    title: datastructure/unionfind.cpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: graph/voronoiminimumspanningtree.cpp
@@ -15,51 +18,45 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_A.test.cpp
     title: test/aoj/GRL_2_A.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/manhattanmst.test.cpp
+    title: test/yosupo/manhattanmst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/kruskal.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Kruskal{\n\n  struct\
-    \ edge{\n    int from,to;\n    T cost;\n    int used;\n    edge(int from,int to,T\
-    \ cost):\n      from(from),to(to),cost(cost),used(0){}\n    bool operator<(const\
-    \ edge& e) const{\n      return cost<e.cost;\n    }\n  };\n  vector<int> r,p;\n\
-    \  vector<edge> es;\n\n  Kruskal(){}\n  Kruskal(int n):r(n,1),p(n){\n    iota(p.begin(),p.end(),0);\n\
-    \  }\n\n  int find(int x){\n    return (x==p[x]?x:p[x]=find(p[x]));\n  }\n\n \
-    \ bool same(int x,int y){\n    return find(x)==find(y);\n  }\n\n  void unite(int\
-    \ x,int y){\n    x=find(x);y=find(y);\n    if(x==y) return;\n    if(r[x]<r[y])\
-    \ swap(x,y);\n    r[x]+=r[y];\n    p[y]=x;\n  }\n\n  void add_edge(int u,int v,T\
-    \ c){\n    es.emplace_back(u,v,c);\n  }\n\n  T build(){\n    sort(es.begin(),es.end());\n\
-    \    T res=0;\n    for(auto &e:es){\n      if(!same(e.from,e.to)){\n        res+=e.cost;\n\
-    \        unite(e.from,e.to);\n        e.used=1;\n      }\n    }\n    return res;\n\
-    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\nint main(){\n  return 0;\n}\n\
-    #endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate<typename T>\nstruct Kruskal{\n\n  struct edge{\n  \
-    \  int from,to;\n    T cost;\n    int used;\n    edge(int from,int to,T cost):\n\
-    \      from(from),to(to),cost(cost),used(0){}\n    bool operator<(const edge&\
-    \ e) const{\n      return cost<e.cost;\n    }\n  };\n  vector<int> r,p;\n  vector<edge>\
-    \ es;\n\n  Kruskal(){}\n  Kruskal(int n):r(n,1),p(n){\n    iota(p.begin(),p.end(),0);\n\
-    \  }\n\n  int find(int x){\n    return (x==p[x]?x:p[x]=find(p[x]));\n  }\n\n \
-    \ bool same(int x,int y){\n    return find(x)==find(y);\n  }\n\n  void unite(int\
-    \ x,int y){\n    x=find(x);y=find(y);\n    if(x==y) return;\n    if(r[x]<r[y])\
-    \ swap(x,y);\n    r[x]+=r[y];\n    p[y]=x;\n  }\n\n  void add_edge(int u,int v,T\
-    \ c){\n    es.emplace_back(u,v,c);\n  }\n\n  T build(){\n    sort(es.begin(),es.end());\n\
-    \    T res=0;\n    for(auto &e:es){\n      if(!same(e.from,e.to)){\n        res+=e.cost;\n\
-    \        unite(e.from,e.to);\n        e.used=1;\n      }\n    }\n    return res;\n\
-    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\nint main(){\n  return 0;\n}\n\
-    #endif\n"
-  dependsOn: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ graph/kruskal.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
+    \ other than include guards\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../datastructure/unionfind.cpp\"\n#undef call_from_test\n\
+    \n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Kruskal : UnionFind{\n\
+    \  using UnionFind::UnionFind;\n  struct Edge{\n    int src,dst;\n    T cost;\n\
+    \    int used;\n    Edge(int src,int dst,T cost):\n      src(src),dst(dst),cost(cost),used(0){}\n\
+    \    bool operator<(const Edge& o) const{\n      return cost<o.cost;\n    }\n\
+    \  };\n\n  vector<Edge> es;\n  void add_edge(int u,int v,T c){\n    es.emplace_back(u,v,c);\n\
+    \  }\n\n  T build(){\n    sort(es.begin(),es.end());\n    T res=0;\n    for(auto\
+    \ &e:es){\n      if(same(e.src,e.dst)) continue;\n      res+=e.cost;\n      unite(e.src,e.dst);\n\
+    \      e.used=1;\n    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
+    int main(){\n  return 0;\n}\n#endif\n"
+  dependsOn:
+  - datastructure/unionfind.cpp
   isVerificationFile: false
   path: graph/kruskal.cpp
   requiredBy:
-  - linearalgebra/tree_theorem.cpp
   - graph/voronoiminimumspanningtree.cpp
-  timestamp: '2019-11-21 16:50:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - linearalgebra/tree_theorem.cpp
+  timestamp: '2020-10-09 14:11:38+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_2_A.test.cpp
   - test/aoj/0403.test.cpp
+  - test/yosupo/manhattanmst.test.cpp
 documentation_of: graph/kruskal.cpp
 layout: document
 redirect_from:

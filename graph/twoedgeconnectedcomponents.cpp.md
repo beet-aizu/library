@@ -68,8 +68,8 @@ data:
   timestamp: '2020-03-12 16:29:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0415.test.cpp
   - test/aoj/0377.test.cpp
+  - test/aoj/0415.test.cpp
   - test/yosupo/two_edge_connected_components.test.cpp
 documentation_of: graph/twoedgeconnectedcomponents.cpp
 layout: document

@@ -67,11 +67,11 @@ data:
   timestamp: '2019-12-17 21:09:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2270.test.cpp
-  - test/aoj/GRL_5_C.test.cpp
-  - test/aoj/0439.test.cpp
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp
+  - test/aoj/GRL_5_C.test.cpp
+  - test/aoj/2270.test.cpp
+  - test/aoj/0439.test.cpp
   - test/yosupo/lca.test.cpp
 documentation_of: tree/lowestcommonancestor.cpp
 layout: document

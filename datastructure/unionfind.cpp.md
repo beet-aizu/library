@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/skewheap.cpp
     title: datastructure/skewheap.cpp
+  - icon: ':question:'
+    path: graph/kruskal.cpp
+    title: graph/kruskal.cpp
   - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
@@ -16,11 +19,17 @@ data:
     path: test/aoj/0314.test.cpp
     title: test/aoj/0314.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0403.test.cpp
+    title: test/aoj/0403.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2995.test.cpp
     title: test/aoj/2995.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_A.test.cpp
     title: test/aoj/DSL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_2_A.test.cpp
+    title: test/aoj/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/unionfind.test.cpp
     title: test/yosupo/unionfind.test.cpp
@@ -52,15 +61,18 @@ data:
   isVerificationFile: false
   path: datastructure/unionfind.cpp
   requiredBy:
-  - datastructure/skewheap.cpp
-  - linearalgebra/tree_theorem.cpp
   - graph/lowlink.cpp
+  - graph/kruskal.cpp
+  - linearalgebra/tree_theorem.cpp
+  - datastructure/skewheap.cpp
   timestamp: '2020-05-17 19:42:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2995.test.cpp
-  - test/aoj/0314.test.cpp
   - test/aoj/DSL_1_A.test.cpp
+  - test/aoj/2995.test.cpp
+  - test/aoj/GRL_2_A.test.cpp
+  - test/aoj/0403.test.cpp
+  - test/aoj/0314.test.cpp
   - test/yosupo/unionfind.test.cpp
 documentation_of: datastructure/unionfind.cpp
 layout: document

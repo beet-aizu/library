@@ -44,8 +44,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3081.test.cpp
-  - test/yosupo/runenumerate.test.cpp
   - test/yosupo/zalgorithm.test.cpp
+  - test/yosupo/runenumerate.test.cpp
 documentation_of: string/zalgorithm.cpp
 layout: document
 redirect_from:

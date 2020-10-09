@@ -42,8 +42,8 @@ data:
   timestamp: '2020-03-12 16:36:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2415.knuthyao.test.cpp
   - test/aoj/2488.test.cpp
+  - test/aoj/2415.knuthyao.test.cpp
 documentation_of: algorithm/knuthyao.cpp
 layout: document
 redirect_from:

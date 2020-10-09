@@ -47,9 +47,9 @@ data:
   timestamp: '2020-02-15 16:18:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/1923.test.cpp
   - test/aoj/DSL_3_D.test.cpp
   - test/aoj/0613.test.cpp
-  - test/yukicoder/1923.test.cpp
 documentation_of: datastructure/rangeslide.cpp
 layout: document
 redirect_from:

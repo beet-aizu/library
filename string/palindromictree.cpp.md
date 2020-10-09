@@ -62,8 +62,8 @@ data:
   timestamp: '2020-02-15 16:13:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2292.test.cpp
   - test/yukicoder/0399.test.cpp
+  - test/aoj/2292.test.cpp
 documentation_of: string/palindromictree.cpp
 layout: document
 redirect_from:

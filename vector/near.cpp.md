@@ -46,8 +46,8 @@ data:
   timestamp: '2020-07-30 16:42:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2359.test.cpp
   - test/yukicoder/4778.test.cpp
+  - test/aoj/2359.test.cpp
 documentation_of: vector/near.cpp
 layout: document
 redirect_from:

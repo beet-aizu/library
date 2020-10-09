@@ -86,8 +86,8 @@ data:
   timestamp: '2020-09-30 16:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0391.test.cpp
   - test/yukicoder/3405.test.cpp
+  - test/aoj/0391.test.cpp
 documentation_of: tree/levelancestor.cpp
 layout: document
 redirect_from:

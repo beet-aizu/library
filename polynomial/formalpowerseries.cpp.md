@@ -83,10 +83,10 @@ data:
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ polynomial/formalpowerseries.cpp: line 8: unable to process #include in #if\
@@ -144,33 +144,33 @@ data:
   isVerificationFile: false
   path: polynomial/formalpowerseries.cpp
   requiredBy:
-  - polynomial/interpolate.cpp
-  - polynomial/multieval.cpp
   - combinatorics/partition.cpp
+  - combinatorics/stirling2nd.cpp
   - combinatorics/bernoulli.cpp
   - combinatorics/stirling1st.cpp
-  - combinatorics/stirling2nd.cpp
+  - polynomial/multieval.cpp
+  - polynomial/interpolate.cpp
   timestamp: '2020-05-16 18:51:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2985.garner.test.cpp
-  - test/aoj/3072.test.cpp
-  - test/aoj/2985.test.cpp
-  - test/aoj/3084.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
+  - test/aoj/2985.garner.test.cpp
+  - test/aoj/3084.test.cpp
+  - test/aoj/2985.test.cpp
+  - test/aoj/3072.test.cpp
+  - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - test/yosupo/bernoulli_number.test.cpp
-  - test/yosupo/partition_function.test.cpp
-  - test/yosupo/inv_of_formal_power_series.test.cpp
-  - test/yosupo/polynomial_taylor_shift.test.cpp
   - test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  - test/yosupo/polynomial_taylor_shift.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
 documentation_of: polynomial/formalpowerseries.cpp
 layout: document
 redirect_from:
