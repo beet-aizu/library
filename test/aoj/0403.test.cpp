@@ -4,7 +4,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../graph/chebyshevneighbors.cpp"
+#include "../../graph/manhattanmst.cpp"
 #include "../../datastructure/unionfind.cpp"
 #include "../../graph/kruskal.cpp"
 #undef call_from_test
@@ -20,13 +20,14 @@ signed main(){
   for(int i=0;i<n;i++)
     cin>>xs[i]>>ys[i];
 
-  ChebyshevNeighbors<int> C(xs,ys);
-  auto es=C.build();
+  vector<long long> us(n),vs(n);
+  for(int i=0;i<n;i++){
+    us[i]=xs[i]+ys[i];
+    vs[i]=xs[i]-ys[i];
+  }
 
   Kruskal<long long> G(n);
-  for(auto e:es){
-    int u,v;
-    tie(u,v)=e;
+  for(auto [u,v]:manhattanmst(us,vs)){
     int c=max(abs(xs[u]-xs[v]),abs(ys[u]-ys[v]));
     G.add_edge(u,v,c);
   }

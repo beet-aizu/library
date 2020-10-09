@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../graph/manhattanmst.cpp"
+#include "../../datastructure/unionfind.cpp"
 #include "../../graph/kruskal.cpp"
 #undef call_from_test
 
