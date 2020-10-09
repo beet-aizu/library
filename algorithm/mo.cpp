@@ -15,9 +15,8 @@ struct Mo{
     expandL(expandL),expandR(expandR),
     shrinkL(shrinkL),shrinkR(shrinkR){}
 
-  Mo(int n,int width,F expand,F shrink){
-    *this=Mo(n,width,expand,expand,shrink,shrink);
-  }
+  Mo(int n,int width,F expand,F shrink):
+    Mo(n,width,expand,expand,shrink,shrink){}
 
   void add(int l,int r){
     ls.emplace_back(l);
