@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/manhattanmst
+#define PROBLEM "https://judge.yosupo.jp/problem/manhattanmst"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,6 +8,10 @@ using namespace std;
 #include "../../datastructure/unionfind.cpp"
 #include "../../graph/kruskal.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
