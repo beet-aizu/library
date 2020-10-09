@@ -212,9 +212,6 @@ data:
       path: graph/bfs.cpp
       title: graph/bfs.cpp
     - icon: ':heavy_check_mark:'
-      path: graph/chebyshevneighbors.cpp
-      title: graph/chebyshevneighbors.cpp
-    - icon: ':heavy_check_mark:'
       path: graph/chromatic.cpp
       title: graph/chromatic.cpp
     - icon: ':heavy_check_mark:'
@@ -232,13 +229,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/independentset.cpp
       title: graph/independentset.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.cpp
       title: graph/kruskal.cpp
     - icon: ':heavy_check_mark:'
       path: graph/lowlink.cpp
       title: graph/lowlink.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/manhattanmst.cpp
       title: graph/manhattanmst.cpp
     - icon: ':heavy_check_mark:'
@@ -1467,7 +1464,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/log_of_formal_power_series.test.cpp
       title: test/yosupo/log_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/manhattanmst.test.cpp
       title: test/yosupo/manhattanmst.test.cpp
     - icon: ':heavy_check_mark:'

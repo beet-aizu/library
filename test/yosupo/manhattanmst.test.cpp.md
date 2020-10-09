@@ -1,16 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
+    path: datastructure/unionfind.cpp
+    title: datastructure/unionfind.cpp
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/manhattanmst.cpp
     title: graph/manhattanmst.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/manhattanmst
     links:
@@ -27,21 +30,23 @@ data:
     \ other than include guards\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/manhattanmst\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../graph/manhattanmst.cpp\"\n#include \"../../graph/kruskal.cpp\"\n#undef\
-    \ call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \  const char newl = '\\n';\n\n  using ll = long long;\n\n  int n;\n  cin>>n;\n\
-    \  vector<ll> xs(n),ys(n);\n  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];\n\n  Kruskal<ll>\
-    \ mst(n);\n  for(auto[u,v]:manhattanmst(xs,ys))\n    mst.add_edge(u,v,abs(xs[u]-xs[v])+abs(ys[u]-ys[v]));\n\
-    \n  cout<<mst.build()<<newl;\n  for(auto e:mst.es)\n    if(e.used) cout<<e.src<<'\
-    \ '<<e.dst<<newl;\n  return 0;\n}\n"
+    \ \"../../graph/manhattanmst.cpp\"\n#include \"../../datastructure/unionfind.cpp\"\
+    \n#include \"../../graph/kruskal.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\n';\n\n  using\
+    \ ll = long long;\n\n  int n;\n  cin>>n;\n  vector<ll> xs(n),ys(n);\n  for(int\
+    \ i=0;i<n;i++) cin>>xs[i]>>ys[i];\n\n  Kruskal<ll> mst(n);\n  for(auto[u,v]:manhattanmst(xs,ys))\n\
+    \    mst.add_edge(u,v,abs(xs[u]-xs[v])+abs(ys[u]-ys[v]));\n\n  cout<<mst.build()<<newl;\n\
+    \  for(auto e:mst.es)\n    if(e.used) cout<<e.src<<' '<<e.dst<<newl;\n  return\
+    \ 0;\n}\n"
   dependsOn:
   - graph/manhattanmst.cpp
+  - datastructure/unionfind.cpp
   - graph/kruskal.cpp
   isVerificationFile: true
   path: test/yosupo/manhattanmst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-09 14:11:38+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-09 14:16:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/manhattanmst.test.cpp
 layout: document

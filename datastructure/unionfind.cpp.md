@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/skewheap.cpp
     title: datastructure/skewheap.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
   - icon: ':heavy_check_mark:'
@@ -30,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_A.test.cpp
     title: test/aoj/GRL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/manhattanmst.test.cpp
+    title: test/yosupo/manhattanmst.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/unionfind.test.cpp
     title: test/yosupo/unionfind.test.cpp
@@ -74,6 +77,7 @@ data:
   - test/aoj/0403.test.cpp
   - test/aoj/0314.test.cpp
   - test/yosupo/unionfind.test.cpp
+  - test/yosupo/manhattanmst.test.cpp
 documentation_of: datastructure/unionfind.cpp
 layout: document
 redirect_from:
