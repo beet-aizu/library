@@ -15,6 +15,7 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/manhattanmst
     links:
     - https://judge.yosupo.jp/problem/manhattanmst
@@ -28,16 +29,16 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ graph/kruskal.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/manhattanmst\n\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../graph/manhattanmst.cpp\"\n#include \"../../datastructure/unionfind.cpp\"\
-    \n#include \"../../graph/kruskal.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
-    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\n';\n\n  using\
-    \ ll = long long;\n\n  int n;\n  cin>>n;\n  vector<ll> xs(n),ys(n);\n  for(int\
-    \ i=0;i<n;i++) cin>>xs[i]>>ys[i];\n\n  Kruskal<ll> mst(n);\n  for(auto[u,v]:manhattanmst(xs,ys))\n\
-    \    mst.add_edge(u,v,abs(xs[u]-xs[v])+abs(ys[u]-ys[v]));\n\n  cout<<mst.build()<<newl;\n\
-    \  for(auto e:mst.es)\n    if(e.used) cout<<e.src<<' '<<e.dst<<newl;\n  return\
-    \ 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/manhattanmst\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include \"\
+    ../../graph/manhattanmst.cpp\"\n#include \"../../datastructure/unionfind.cpp\"\
+    \n#include \"../../graph/kruskal.cpp\"\n#undef call_from_test\n\n#ifdef SANITIZE\n\
+    #define IGNORE\n#endif\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \  const char newl = '\\n';\n\n  using ll = long long;\n\n  int n;\n  cin>>n;\n\
+    \  vector<ll> xs(n),ys(n);\n  for(int i=0;i<n;i++) cin>>xs[i]>>ys[i];\n\n  Kruskal<ll>\
+    \ mst(n);\n  for(auto[u,v]:manhattanmst(xs,ys))\n    mst.add_edge(u,v,abs(xs[u]-xs[v])+abs(ys[u]-ys[v]));\n\
+    \n  cout<<mst.build()<<newl;\n  for(auto e:mst.es)\n    if(e.used) cout<<e.src<<'\
+    \ '<<e.dst<<newl;\n  return 0;\n}\n"
   dependsOn:
   - graph/manhattanmst.cpp
   - datastructure/unionfind.cpp
@@ -45,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/manhattanmst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-09 14:16:07+09:00'
+  timestamp: '2020-10-09 14:51:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/manhattanmst.test.cpp
