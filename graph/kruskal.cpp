@@ -1,45 +1,28 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
+#define call_from_test
+#include "../datastructure/unionfind.cpp"
+#undef call_from_test
+
 #endif
 //BEGIN CUT HERE
 template<typename T>
-struct Kruskal{
-
-  struct edge{
-    int from,to;
+struct Kruskal : UnionFind{
+  using UnionFind::UnionFind;
+  struct Edge{
+    int src,dst;
     T cost;
     int used;
-    edge(int from,int to,T cost):
-      from(from),to(to),cost(cost),used(0){}
-    bool operator<(const edge& e) const{
-      return cost<e.cost;
+    Edge(int src,int dst,T cost):
+      src(src),dst(dst),cost(cost),used(0){}
+    bool operator<(const Edge& o) const{
+      return cost<o.cost;
     }
   };
-  vector<int> r,p;
-  vector<edge> es;
 
-  Kruskal(){}
-  Kruskal(int n):r(n,1),p(n){
-    iota(p.begin(),p.end(),0);
-  }
-
-  int find(int x){
-    return (x==p[x]?x:p[x]=find(p[x]));
-  }
-
-  bool same(int x,int y){
-    return find(x)==find(y);
-  }
-
-  void unite(int x,int y){
-    x=find(x);y=find(y);
-    if(x==y) return;
-    if(r[x]<r[y]) swap(x,y);
-    r[x]+=r[y];
-    p[y]=x;
-  }
-
+  vector<Edge> es;
   void add_edge(int u,int v,T c){
     es.emplace_back(u,v,c);
   }
@@ -48,11 +31,10 @@ struct Kruskal{
     sort(es.begin(),es.end());
     T res=0;
     for(auto &e:es){
-      if(!same(e.from,e.to)){
-        res+=e.cost;
-        unite(e.from,e.to);
-        e.used=1;
-      }
+      if(same(e.src,e.dst)) continue;
+      res+=e.cost;
+      unite(e.src,e.dst);
+      e.used=1;
     }
     return res;
   }

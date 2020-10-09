@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../datastructure/unionfind.cpp"
 #include "../../graph/kruskal.cpp"
 #undef call_from_test
 
