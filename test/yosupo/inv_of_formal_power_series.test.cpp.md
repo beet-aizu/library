@@ -8,11 +8,14 @@ data:
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':question:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':question:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -34,22 +37,23 @@ data:
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/inv_of_formal_power_series\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
-    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
-    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  int n;\n  cin>>n;\n\n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto\
-    \ as,auto bs){return ntt.multiply(as,bs);};\n  FormalPowerSeries<M> FPS(conv);\n\
-    \n  vector<M> as(n);\n  for(int i=0;i<n;i++) cin>>as[i].v;\n\n  auto bs=FPS.inv(as,n);\n\
-    \  for(int i=0;i<n;i++){\n    if(i) cout<<\" \";\n    cout<<bs[i];\n  }\n  cout<<endl;\n\
-    \  return 0;\n}\n"
+    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../formalpowerseries/base.cpp\"\
+    \n#include \"../../formalpowerseries/inv.cpp\"\n#undef call_from_test\n\nsigned\
+    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n\
+    \  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
+    \ ntt.multiply(as,bs);};\n  FormalPowerSeries<M> FPS(conv);\n\n  vector<M> as(n);\n\
+    \  for(int i=0;i<n;i++) cin>>as[i].v;\n\n  auto bs=FPS.inv(as,n);\n  for(int i=0;i<n;i++){\n\
+    \    if(i) cout<<\" \";\n    cout<<bs[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
   isVerificationFile: true
   path: test/yosupo/inv_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:26:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/inv_of_formal_power_series.test.cpp

@@ -79,10 +79,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/partitiontable.cpp
       title: combinatorics/partitiontable.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/stirling1st.cpp
       title: combinatorics/stirling1st.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/stirling2nd.cpp
       title: combinatorics/stirling2nd.cpp
     - icon: ':heavy_check_mark:'
@@ -116,7 +116,7 @@ data:
     - icon: ':warning:'
       path: convolution/fastwalshhadamardtransform.cpp
       title: convolution/fastwalshhadamardtransform.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convolution/garner.cpp
       title: convolution/garner.cpp
     - icon: ':question:'
@@ -183,37 +183,37 @@ data:
       title: datastructure/weightedunionfind.cpp
   - name: formalpowerseries
     pages:
-    - icon: ':warning:'
+    - icon: ':question:'
       path: formalpowerseries/base.cpp
       title: formalpowerseries/base.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/diff.cpp
       title: formalpowerseries/diff.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: formalpowerseries/div.cpp
       title: formalpowerseries/div.cpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: formalpowerseries/exp.cpp
       title: formalpowerseries/exp.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/integral.cpp
       title: formalpowerseries/integral.cpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: formalpowerseries/inv.cpp
       title: formalpowerseries/inv.cpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: formalpowerseries/log.cpp
       title: formalpowerseries/log.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: formalpowerseries/mod.cpp
       title: formalpowerseries/mod.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/pow.cpp
       title: formalpowerseries/pow.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/shift.cpp
       title: formalpowerseries/shift.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/sqrt.cpp
       title: formalpowerseries/sqrt.cpp
   - name: geometry/3D
@@ -455,7 +455,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/rint.cpp
       title: mod/rint.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/sqrt.cpp
       title: mod/sqrt.cpp
     - icon: ':heavy_check_mark:'
@@ -466,7 +466,7 @@ data:
     - icon: ':question:'
       path: polynomial/berlekampmassey.cpp
       title: polynomial/berlekampmassey.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/formalpowerseries.cpp
       title: polynomial/formalpowerseries.cpp
     - icon: ':heavy_check_mark:'
@@ -589,7 +589,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/drop.cpp
       title: tools/drop.cpp
     - icon: ':heavy_check_mark:'
@@ -1015,10 +1015,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2983.test.cpp
       title: test/aoj/2983.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/2985.garner.test.cpp
       title: test/aoj/2985.garner.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/2985.test.cpp
       title: test/aoj/2985.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1580,7 +1580,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/sqrt_mod.test.cpp
       title: test/yosupo/sqrt_mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/sqrt_of_formal_power_series.test.cpp
       title: test/yosupo/sqrt_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1595,10 +1595,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/staticrmq.sparsetable.test.cpp
       title: test/yosupo/staticrmq.sparsetable.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
       title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
       title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     - icon: ':heavy_check_mark:'

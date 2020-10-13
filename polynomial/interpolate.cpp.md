@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
   - icon: ':heavy_check_mark:'

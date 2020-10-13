@@ -8,21 +8,27 @@ data:
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':question:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':question:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/sqrt.cpp
+    title: formalpowerseries/sqrt.cpp
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':question:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
     links:
@@ -41,9 +47,10 @@ data:
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../tools/drop.cpp\"\n#include \"../../mod/sqrt.cpp\"\n#include \"../../mod/mint.cpp\"\
     \n#include \"../../convolution/numbertheoretictransform.cpp\"\n#include \"../../combinatorics/enumeration.cpp\"\
-    \n#include \"../../polynomial/formalpowerseries.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
-    \n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
+    \n#include \"../../formalpowerseries/base.cpp\"\n#include \"../../formalpowerseries/inv.cpp\"\
+    \n#include \"../../formalpowerseries/sqrt.cpp\"\n#undef call_from_test\n\nsigned\
+    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n\
+    \  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
     \ ntt.multiply(as,bs);};\n  FormalPowerSeries<M> FPS(conv);\n\n  deque<int> as(n);\n\
     \  for(int i=0;i<n;i++) cin>>as[i];\n\n  while(!as.empty()&&as.front()==0) as.pop_front();\n\
     \n  if(as.empty()){\n    for(int i=0;i<n;i++){\n      if(i) cout<<\" \";\n   \
@@ -59,12 +66,14 @@ data:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/sqrt.cpp
   isVerificationFile: true
   path: test/yosupo/sqrt_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-13 15:26:22+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/sqrt_of_formal_power_series.test.cpp
 layout: document

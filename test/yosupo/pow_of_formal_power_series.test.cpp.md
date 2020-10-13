@@ -8,11 +8,29 @@ data:
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':question:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/diff.cpp
+    title: formalpowerseries/diff.cpp
+  - icon: ':question:'
+    path: formalpowerseries/exp.cpp
+    title: formalpowerseries/exp.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/integral.cpp
+    title: formalpowerseries/integral.cpp
+  - icon: ':question:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':question:'
+    path: formalpowerseries/log.cpp
+    title: formalpowerseries/log.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/pow.cpp
+    title: formalpowerseries/pow.cpp
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -34,7 +52,10 @@ data:
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/pow_of_formal_power_series\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
-    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
+    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../formalpowerseries/base.cpp\"\
+    \n#include \"../../formalpowerseries/inv.cpp\"\n#include \"../../formalpowerseries/integral.cpp\"\
+    \n#include \"../../formalpowerseries/diff.cpp\"\n#include \"../../formalpowerseries/log.cpp\"\
+    \n#include \"../../formalpowerseries/exp.cpp\"\n#include \"../../formalpowerseries/pow.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n,m;\n  cin>>n>>m;\n\n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto\
     \ as,auto bs){return ntt.multiply(as,bs);};\n  FormalPowerSeries<M> FPS(conv);\n\
@@ -45,11 +66,17 @@ data:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/integral.cpp
+  - formalpowerseries/diff.cpp
+  - formalpowerseries/log.cpp
+  - formalpowerseries/exp.cpp
+  - formalpowerseries/pow.cpp
   isVerificationFile: true
   path: test/yosupo/pow_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:26:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/pow_of_formal_power_series.test.cpp
