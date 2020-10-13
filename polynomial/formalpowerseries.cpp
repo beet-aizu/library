@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -10,9 +8,7 @@ using namespace std;
 
 #endif
 
-/*
- * @see http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
- */
+// http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
 //BEGIN CUT HERE
 template<typename M_>
 struct FormalPowerSeries : Enumeration<M_> {
@@ -78,6 +74,7 @@ struct FormalPowerSeries : Enumeration<M_> {
     return ds;
   }
 
+  // not zero
   Poly mod(Poly as,Poly bs){
     if(as==Poly(as.size(),0)) return Poly({0});
     as=sub(as,mul(div(as,bs),bs));
@@ -145,7 +142,7 @@ struct FormalPowerSeries : Enumeration<M_> {
     return pre(zs,deg+cnt*k);
   }
 
-  // x -> x + c
+  // x <- x + c
   Poly shift(Poly as,M c){
     super::init(as.size()+1);
     int n=as.size();
