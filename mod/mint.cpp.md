@@ -21,9 +21,6 @@ data:
     path: matching/tutte.cpp
     title: matching/tutte.cpp
   - icon: ':heavy_check_mark:'
-    path: math/kitamasa.cpp
-    title: math/kitamasa.cpp
-  - icon: ':heavy_check_mark:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
   - icon: ':heavy_check_mark:'
@@ -278,7 +275,6 @@ data:
   - convolution/garner.cpp
   - convolution/fastwalshhadamardtransform.cpp
   - graph/lowlink.cpp
-  - math/kitamasa.cpp
   - linearalgebra/tree_theorem.cpp
   - matching/tutte.cpp
   - mod/factorial.cpp
