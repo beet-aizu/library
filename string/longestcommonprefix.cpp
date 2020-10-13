@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -58,5 +58,5 @@ struct LongestCommonPrefix{
 //INSERT ABOVE HERE
 signed main(){
   return 0;
-};
+}
 #endif
