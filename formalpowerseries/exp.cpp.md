@@ -1,13 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   - icon: ':heavy_check_mark:'
+    path: formalpowerseries/diff.cpp
+    title: formalpowerseries/diff.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/integral.cpp
+    title: formalpowerseries/integral.cpp
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
   - icon: ':heavy_check_mark:'
@@ -47,22 +53,24 @@ data:
     \ / #ifndef other than include guards\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
-    \ \"./base.cpp\"\n#include \"./inv.cpp\"\n#include \"./log.cpp\"\n#undef call_from_test\n\
-    \n#endif\n//BEGIN CUT HERE\ntemplate<typename M>\nvector<M> FormalPowerSeries<M>::exp(Poly\
-    \ as,int deg){\n  Poly fs({M(1)});\n  as[0]+=M(1);\n  for(int i=1;i<deg;i<<=1)\n\
-    \    fs=pre(mul(fs,sub(pre(as,i<<1),log(fs,i<<1))),i<<1);\n  return fs;\n}\n//END\
-    \ CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
-    \ 0;\n}\n#endif\n"
+    \ \"base.cpp\"\n#include \"inv.cpp\"\n#include \"diff.cpp\"\n#include \"integral.cpp\"\
+    \n#include \"log.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
+    \ M>\nvector<M> FormalPowerSeries<M>::exp(Poly as,int deg){\n  Poly fs({M(1)});\n\
+    \  as[0]+=M(1);\n  for(int i=1;i<deg;i<<=1)\n    fs=pre(mul(fs,sub(pre(as,i<<1),log(fs,i<<1))),i<<1);\n\
+    \  return fs;\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
+    signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - combinatorics/enumeration.cpp
   - formalpowerseries/base.cpp
   - formalpowerseries/inv.cpp
+  - formalpowerseries/diff.cpp
+  - formalpowerseries/integral.cpp
   - formalpowerseries/log.cpp
   isVerificationFile: false
   path: formalpowerseries/exp.cpp
   requiredBy:
   - formalpowerseries/pow.cpp
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:55:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2985.garner.test.cpp

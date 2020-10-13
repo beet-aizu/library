@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -29,7 +29,7 @@ data:
     \ / #ifndef other than include guards\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
-    \ \"./base.cpp\"\n#include \"./inv.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN\
+    \ \"base.cpp\"\n#include \"inv.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN\
     \ CUT HERE\ntemplate<typename M>\nvector<M> FormalPowerSeries<M>::sqrt(Poly as,int\
     \ deg){\n  assert(as[0]==M(1));\n  M inv2=M(1)/M(2);\n  Poly ss({M(1)});\n  for(int\
     \ i=1;i<deg;i<<=1){\n    ss=pre(add(ss,mul(pre(as,i<<1),inv(ss,i<<1))),i<<1);\n\
@@ -42,8 +42,8 @@ data:
   isVerificationFile: false
   path: formalpowerseries/sqrt.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-13 15:55:16+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
 documentation_of: formalpowerseries/sqrt.cpp

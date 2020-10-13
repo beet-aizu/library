@@ -1,13 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/exp.cpp
+    title: formalpowerseries/exp.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/log.cpp
+    title: formalpowerseries/log.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/pow.cpp
+    title: formalpowerseries/pow.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
@@ -41,7 +50,7 @@ data:
     \ #ifdef / #ifndef other than include guards\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
-    \ \"./base.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
+    \ \"base.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
     \ M>\nvector<M> FormalPowerSeries<M>::integral(Poly as){\n  super::init(as.size()+1);\n\
     \  int n=as.size();\n  Poly rs(n+1);\n  rs[0]=M(0);\n  for(int i=0;i<n;i++) rs[i+1]=as[i]*invs[i+1];\n\
     \  return rs;\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
@@ -51,8 +60,11 @@ data:
   - formalpowerseries/base.cpp
   isVerificationFile: false
   path: formalpowerseries/integral.cpp
-  requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  requiredBy:
+  - formalpowerseries/pow.cpp
+  - formalpowerseries/log.cpp
+  - formalpowerseries/exp.cpp
+  timestamp: '2020-10-13 15:55:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2985.garner.test.cpp
