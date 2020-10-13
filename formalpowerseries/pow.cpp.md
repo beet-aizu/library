@@ -1,0 +1,62 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: combinatorics/enumeration.cpp
+    title: combinatorics/enumeration.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/exp.cpp
+    title: formalpowerseries/exp.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/log.cpp
+    title: formalpowerseries/log.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ formalpowerseries/pow.cpp: line 6: unable to process #include in #if / #ifdef\
+    \ / #ifndef other than include guards\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
+    \ \"./base.cpp\"\n#include \"./inv.cpp\"\n#include \"./log.cpp\"\n#include \"\
+    ./exp.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
+    \ M>\nvector<M> FormalPowerSeries<M>::pow(Poly as,long long k,int deg){\n  if(as==Poly(as.size(),M(0)))\
+    \ return Poly(deg,M(0));\n\n  int cnt=0;\n  while(as[cnt]==M(0)) cnt++;\n  if(cnt*k>=deg)\
+    \ return Poly(deg,M(0));\n  as.erase(as.begin(),as.begin()+cnt);\n  deg-=cnt*k;\n\
+    \n  M c=as[0];\n  Poly zs(cnt*k,M(0));\n  Poly rs=mul(exp(mul(log(mul(as,c.inv()),deg),M(k)),deg),c.pow(k));\n\
+    \  zs.insert(zs.end(),rs.begin(),rs.end());\n  return pre(zs,deg+cnt*k);\n}\n\
+    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
+  dependsOn:
+  - combinatorics/enumeration.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/log.cpp
+  - formalpowerseries/exp.cpp
+  isVerificationFile: false
+  path: formalpowerseries/pow.cpp
+  requiredBy: []
+  timestamp: '2020-10-13 15:11:48+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: formalpowerseries/pow.cpp
+layout: document
+redirect_from:
+- /library/formalpowerseries/pow.cpp
+- /library/formalpowerseries/pow.cpp.html
+title: formalpowerseries/pow.cpp
+---

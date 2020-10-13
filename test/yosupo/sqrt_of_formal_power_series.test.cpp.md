@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
     links:
@@ -63,8 +63,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/sqrt_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 16:01:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-13 15:11:48+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/sqrt_of_formal_power_series.test.cpp
 layout: document

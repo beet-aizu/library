@@ -1,0 +1,46 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: combinatorics/enumeration.cpp
+    title: combinatorics/enumeration.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ formalpowerseries/integral.cpp: line 6: unable to process #include in #if /\
+    \ #ifdef / #ifndef other than include guards\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
+    \ \"./base.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
+    \ M>\nvector<M> FormalPowerSeries<M>::integral(Poly as){\n  super::init(as.size()+1);\n\
+    \  int n=as.size();\n  Poly rs(n+1);\n  rs[0]=M(0);\n  for(int i=0;i<n;i++) rs[i+1]=as[i]*invs[i+1];\n\
+    \  return rs;\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
+    signed main(){\n  return 0;\n}\n#endif\n"
+  dependsOn:
+  - combinatorics/enumeration.cpp
+  - formalpowerseries/base.cpp
+  isVerificationFile: false
+  path: formalpowerseries/integral.cpp
+  requiredBy: []
+  timestamp: '2020-10-13 15:11:48+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: formalpowerseries/integral.cpp
+layout: document
+redirect_from:
+- /library/formalpowerseries/integral.cpp
+- /library/formalpowerseries/integral.cpp.html
+title: formalpowerseries/integral.cpp
+---

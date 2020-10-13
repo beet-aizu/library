@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
   _extendedRequiredBy:
@@ -48,7 +48,7 @@ data:
   path: polynomial/multieval.cpp
   requiredBy:
   - polynomial/interpolate.cpp
-  timestamp: '2020-05-16 18:51:14+09:00'
+  timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/multipoint_evaluation.test.cpp

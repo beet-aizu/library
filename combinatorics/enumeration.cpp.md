@@ -11,19 +11,52 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/partition.cpp
     title: combinatorics/partition.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling1st.cpp
     title: combinatorics/stirling1st.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
   - icon: ':heavy_check_mark:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/diff.cpp
+    title: formalpowerseries/diff.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/div.cpp
+    title: formalpowerseries/div.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/exp.cpp
+    title: formalpowerseries/exp.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/integral.cpp
+    title: formalpowerseries/integral.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/log.cpp
+    title: formalpowerseries/log.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/mod.cpp
+    title: formalpowerseries/mod.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/pow.cpp
+    title: formalpowerseries/pow.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/shift.cpp
+    title: formalpowerseries/shift.cpp
+  - icon: ':warning:'
+    path: formalpowerseries/sqrt.cpp
+    title: formalpowerseries/sqrt.cpp
   - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
   _extendedVerifiedWith:
@@ -99,26 +132,26 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"combinatorics/enumeration.cpp\"\n\n#ifndef call_from_test\n\
@@ -171,9 +204,20 @@ data:
   - combinatorics/surjection.cpp
   - combinatorics/stirling1st.cpp
   - graph/lowlink.cpp
+  - formalpowerseries/pow.cpp
+  - formalpowerseries/log.cpp
+  - formalpowerseries/exp.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/div.cpp
+  - formalpowerseries/integral.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/mod.cpp
+  - formalpowerseries/sqrt.cpp
+  - formalpowerseries/shift.cpp
+  - formalpowerseries/diff.cpp
   - polynomial/formalpowerseries.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp

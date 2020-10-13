@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
   - icon: ':heavy_check_mark:'
@@ -54,7 +54,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/multipoint_evaluation.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:47:34+09:00'
+  timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/multipoint_evaluation.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
   - icon: ':heavy_check_mark:'
@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: polynomial/interpolate.cpp
   requiredBy: []
-  timestamp: '2020-05-16 18:51:14+09:00'
+  timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/polynomial_interpolation.test.cpp

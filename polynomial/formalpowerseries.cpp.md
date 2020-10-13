@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy:
@@ -11,10 +11,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/partition.cpp
     title: combinatorics/partition.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling1st.cpp
     title: combinatorics/stirling1st.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
   - icon: ':heavy_check_mark:'
@@ -63,23 +63,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
@@ -89,12 +89,12 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ polynomial/formalpowerseries.cpp: line 8: unable to process #include in #if\
+    \ polynomial/formalpowerseries.cpp: line 6: unable to process #include in #if\
     \ / #ifdef / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\
-    \n#undef call_from_test\n\n#endif\n\n/*\n * @see http://beet-aizu.hatenablog.com/entry/2019/09/27/224701\n\
-    \ */\n//BEGIN CUT HERE\ntemplate<typename M_>\nstruct FormalPowerSeries : Enumeration<M_>\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#undef\
+    \ call_from_test\n\n#endif\n\n// http://beet-aizu.hatenablog.com/entry/2019/09/27/224701\n\
+    //BEGIN CUT HERE\ntemplate<typename M_>\nstruct FormalPowerSeries : Enumeration<M_>\
     \ {\n  using M = M_;\n  using super = Enumeration<M>;\n  using super::fact;\n\
     \  using super::finv;\n  using super::invs;\n\n  using Poly = vector<M>;\n  using\
     \ Conv = function<Poly(Poly, Poly)>;\n  Conv conv;\n  FormalPowerSeries(Conv conv):conv(conv){}\n\
@@ -113,12 +113,12 @@ data:
     \ as.pop_back();\n    while(bs.back()==M(0)) bs.pop_back();\n    if(bs.size()>as.size())\
     \ return Poly();\n    reverse(as.begin(),as.end());\n    reverse(bs.begin(),bs.end());\n\
     \    int need=as.size()-bs.size()+1;\n    Poly ds=pre(mul(as,inv(bs,need)),need);\n\
-    \    reverse(ds.begin(),ds.end());\n    return ds;\n  }\n\n  Poly mod(Poly as,Poly\
-    \ bs){\n    if(as==Poly(as.size(),0)) return Poly({0});\n    as=sub(as,mul(div(as,bs),bs));\n\
-    \    if(as==Poly(as.size(),0)) return Poly({0});\n    while(as.back()==M(0)) as.pop_back();\n\
-    \    return as;\n  }\n\n  // F(0) must be 1\n  Poly sqrt(Poly as,int deg){\n \
-    \   assert(as[0]==M(1));\n    M inv2=M(1)/M(2);\n    Poly ss({M(1)});\n    for(int\
-    \ i=1;i<deg;i<<=1){\n      ss=pre(add(ss,mul(pre(as,i<<1),inv(ss,i<<1))),i<<1);\n\
+    \    reverse(ds.begin(),ds.end());\n    return ds;\n  }\n\n  // not zero\n  Poly\
+    \ mod(Poly as,Poly bs){\n    if(as==Poly(as.size(),0)) return Poly({0});\n   \
+    \ as=sub(as,mul(div(as,bs),bs));\n    if(as==Poly(as.size(),0)) return Poly({0});\n\
+    \    while(as.back()==M(0)) as.pop_back();\n    return as;\n  }\n\n  // F(0) must\
+    \ be 1\n  Poly sqrt(Poly as,int deg){\n    assert(as[0]==M(1));\n    M inv2=M(1)/M(2);\n\
+    \    Poly ss({M(1)});\n    for(int i=1;i<deg;i<<=1){\n      ss=pre(add(ss,mul(pre(as,i<<1),inv(ss,i<<1))),i<<1);\n\
     \      for(M &x:ss) x*=inv2;\n    }\n    return ss;\n  }\n\n  Poly diff(Poly as){\n\
     \    int n=as.size();\n    Poly rs(n-1);\n    for(int i=1;i<n;i++) rs[i-1]=as[i]*M(i);\n\
     \    return rs;\n  }\n\n  Poly integral(Poly as){\n    super::init(as.size()+1);\n\
@@ -133,7 +133,7 @@ data:
     \   as.erase(as.begin(),as.begin()+cnt);\n    deg-=cnt*k;\n\n    M c=as[0];\n\
     \    Poly zs(cnt*k,M(0));\n    Poly rs=mul(exp(mul(log(mul(as,c.inv()),deg),M(k)),deg),c.pow(k));\n\
     \    zs.insert(zs.end(),rs.begin(),rs.end());\n    return pre(zs,deg+cnt*k);\n\
-    \  }\n\n  // x -> x + c\n  Poly shift(Poly as,M c){\n    super::init(as.size()+1);\n\
+    \  }\n\n  // x <- x + c\n  Poly shift(Poly as,M c){\n    super::init(as.size()+1);\n\
     \    int n=as.size();\n    for(int i=0;i<n;i++) as[i]*=fact[i];\n    reverse(as.begin(),as.end());\n\
     \    Poly bs(n,M(1));\n    for(int i=1;i<n;i++)\n      bs[i]=bs[i-1]*c*invs[i];\n\
     \    as=pre(mul(as,bs),n);\n    reverse(as.begin(),as.end());\n    for(int i=0;i<n;i++)\
@@ -150,8 +150,8 @@ data:
   - combinatorics/stirling1st.cpp
   - polynomial/multieval.cpp
   - polynomial/interpolate.cpp
-  timestamp: '2020-05-16 18:51:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-13 15:11:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
