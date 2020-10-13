@@ -12,7 +12,7 @@ using namespace std;
 template<typename M>
 vector<M> FormalPowerSeries<M>::diff(Poly as){
   int n=as.size();
-  Poly rs(n-1);
+  Poly rs(n);
   for(int i=1;i<n;i++) rs[i-1]=as[i]*M(i);
   return rs;
 }
