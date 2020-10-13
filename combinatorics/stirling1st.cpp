@@ -1,12 +1,10 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "enumeration.cpp"
-#include "../polynomial/formalpowerseries.cpp"
+#include "../formalpowerseries/base.cpp"
 #undef call_from_test
 
 #endif
@@ -15,10 +13,8 @@ template<typename M_>
 struct Stirling1st : FormalPowerSeries<M_>{
   using M = M_;
   using super = FormalPowerSeries<M>;
-  using super::super;
   using Poly = typename super::Poly;
-  using super::fact;
-  using super::finv;
+  using super::super, super::fact, super::finv, super::mul;
 
   Poly rs;
   void build(int n){
@@ -35,10 +31,10 @@ struct Stirling1st : FormalPowerSeries<M_>{
       bs[m-0]=M(1);
       for(int i=1;i<=m;i++) bs[m-i]=bs[m-(i-1)]*-M(m);
       for(int i=0;i<=m;i++) bs[m-i]*=finv[i];
-      Poly cs=super::mul(as,bs);
+      Poly cs=mul(as,bs);
       Poly ds(m+1);
       for(int i=0;i<=m;i++) ds[i]=finv[i]*cs[m+i];
-      rs=super::mul(rs,ds);
+      rs=mul(rs,ds);
       m<<=1;
       if((n>>e)&1){
         Poly ts(m+1+1,M(0));

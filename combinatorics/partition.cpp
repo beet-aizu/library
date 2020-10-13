@@ -1,12 +1,11 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "enumeration.cpp"
-#include "../polynomial/formalpowerseries.cpp"
+#include "../formalpowerseries/base.cpp"
+#include "../formalpowerseries/inv.cpp"
 #undef call_from_test
 
 #endif
@@ -15,8 +14,8 @@ template<typename M_>
 struct Partition : FormalPowerSeries<M_>{
   using M = M_;
   using super = FormalPowerSeries<M>;
-  using super::super;
   using Poly = typename super::Poly;
+  using super::super;
 
   Poly rs;
   void build(int n){

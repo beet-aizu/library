@@ -10,6 +10,8 @@ using namespace std;
 #include "../../combinatorics/enumeration.cpp"
 #include "../../formalpowerseries/base.cpp"
 #include "../../formalpowerseries/inv.cpp"
+#include "../../formalpowerseries/diff.cpp"
+#include "../../formalpowerseries/integral.cpp"
 #include "../../formalpowerseries/log.cpp"
 #include "../../formalpowerseries/exp.cpp"
 #undef call_from_test

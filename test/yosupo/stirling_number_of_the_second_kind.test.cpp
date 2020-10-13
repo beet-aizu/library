@@ -7,7 +7,7 @@ using namespace std;
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../combinatorics/enumeration.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
+#include "../../formalpowerseries/base.cpp"
 #include "../../combinatorics/stirling2nd.cpp"
 #undef call_from_test
 

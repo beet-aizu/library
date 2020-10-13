@@ -6,7 +6,7 @@ using namespace std;
 
 #define call_from_test
 #include "enumeration.cpp"
-#include "../polynomial/formalpowerseries.cpp"
+#include "../formalpowerseries/base.cpp"
 #undef call_from_test
 
 #endif
@@ -15,9 +15,8 @@ template<typename M_>
 struct Stirling2nd : FormalPowerSeries<M_>{
   using M = M_;
   using super = FormalPowerSeries<M>;
-  using super::super;
   using Poly = typename super::Poly;
-  using super::finv;
+  using super::super, super::finv;
 
   Poly rs;
   void build(int n){
