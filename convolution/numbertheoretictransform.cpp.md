@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy:
@@ -66,7 +66,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -79,7 +79,7 @@ data:
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -126,7 +126,7 @@ data:
   - convolution/garner.cpp
   - mod/factorial.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1504.test.cpp
   - test/aoj/2560.test.cpp

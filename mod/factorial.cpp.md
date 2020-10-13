@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
