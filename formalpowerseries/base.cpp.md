@@ -47,6 +47,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/interpolate.cpp
+    title: polynomial/interpolate.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/multieval.cpp
+    title: polynomial/multieval.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
@@ -73,8 +79,14 @@ data:
     path: test/yosupo/log_of_formal_power_series.test.cpp
     title: test/yosupo/log_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/multipoint_evaluation.test.cpp
+    title: test/yosupo/multipoint_evaluation.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/partition_function.test.cpp
     title: test/yosupo/partition_function.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_interpolation.test.cpp
+    title: test/yosupo/polynomial_interpolation.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_taylor_shift.test.cpp
     title: test/yosupo/polynomial_taylor_shift.test.cpp
@@ -151,6 +163,8 @@ data:
   - formalpowerseries/sqrt.cpp
   - formalpowerseries/shift.cpp
   - formalpowerseries/diff.cpp
+  - polynomial/multieval.cpp
+  - polynomial/interpolate.cpp
   timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -164,9 +178,11 @@ data:
   - test/yosupo/partition_function.test.cpp
   - test/yosupo/stirling_number_of_the_second_kind.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/stirling_number_of_the_first_kind.test.cpp
   - test/yosupo/polynomial_taylor_shift.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
   - test/yosupo/bernoulli_number.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp

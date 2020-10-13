@@ -57,8 +57,11 @@ data:
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
   - icon: ':heavy_check_mark:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
+    path: polynomial/interpolate.cpp
+    title: polynomial/interpolate.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/multieval.cpp
+    title: polynomial/multieval.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
@@ -215,7 +218,8 @@ data:
   - formalpowerseries/sqrt.cpp
   - formalpowerseries/shift.cpp
   - formalpowerseries/diff.cpp
-  - polynomial/formalpowerseries.cpp
+  - polynomial/multieval.cpp
+  - polynomial/interpolate.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

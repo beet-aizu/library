@@ -14,7 +14,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/interpolate.cpp
+    title: polynomial/interpolate.cpp
+  - icon: ':heavy_check_mark:'
+    path: polynomial/multieval.cpp
+    title: polynomial/multieval.cpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/multipoint_evaluation.test.cpp
+    title: test/yosupo/multipoint_evaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_interpolation.test.cpp
+    title: test/yosupo/polynomial_interpolation.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
@@ -47,10 +59,14 @@ data:
   path: formalpowerseries/div.cpp
   requiredBy:
   - formalpowerseries/mod.cpp
+  - polynomial/multieval.cpp
+  - polynomial/interpolate.cpp
   timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0444.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
 documentation_of: formalpowerseries/div.cpp
 layout: document
 redirect_from:

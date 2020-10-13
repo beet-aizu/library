@@ -7,7 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: polynomial/interpolate.cpp
+    title: polynomial/interpolate.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
@@ -24,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/log_of_formal_power_series.test.cpp
     title: test/yosupo/log_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/polynomial_interpolation.test.cpp
+    title: test/yosupo/polynomial_interpolation.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
@@ -51,7 +57,8 @@ data:
   - formalpowerseries/base.cpp
   isVerificationFile: false
   path: formalpowerseries/diff.cpp
-  requiredBy: []
+  requiredBy:
+  - polynomial/interpolate.cpp
   timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -60,6 +67,7 @@ data:
   - test/aoj/2985.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
 documentation_of: formalpowerseries/diff.cpp
 layout: document

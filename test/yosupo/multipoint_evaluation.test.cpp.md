@@ -8,11 +8,20 @@ data:
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':heavy_check_mark:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/div.cpp
+    title: formalpowerseries/div.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/mod.cpp
+    title: formalpowerseries/mod.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
   - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
@@ -37,24 +46,28 @@ data:
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/multipoint_evaluation\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
-    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
-    \n#include \"../../polynomial/multieval.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n\
-    \n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
-    \ ntt.multiply(as,bs);};\n  MultiEval<M> me(conv);\n\n  vector<M> cs(n),ps(m);\n\
-    \  for(int i=0;i<n;i++) cin>>cs[i].v;\n  for(int i=0;i<m;i++) cin>>ps[i].v;\n\n\
-    \  auto ans=me.build(cs,ps);\n  for(int i=0;i<m;i++){\n    if(i) cout<<\" \";\n\
-    \    cout<<ans[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
+    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../formalpowerseries/base.cpp\"\
+    \n#include \"../../formalpowerseries/inv.cpp\"\n#include \"../../formalpowerseries/div.cpp\"\
+    \n#include \"../../formalpowerseries/mod.cpp\"\n#include \"../../polynomial/multieval.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n,m;\n  cin>>n>>m;\n\n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto\
+    \ as,auto bs){return ntt.multiply(as,bs);};\n  MultiEval<M> me(conv);\n\n  vector<M>\
+    \ cs(n),ps(m);\n  for(int i=0;i<n;i++) cin>>cs[i].v;\n  for(int i=0;i<m;i++) cin>>ps[i].v;\n\
+    \n  auto ans=me.build(cs,ps);\n  for(int i=0;i<m;i++){\n    if(i) cout<<\" \"\
+    ;\n    cout<<ans[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/div.cpp
+  - formalpowerseries/mod.cpp
   - polynomial/multieval.cpp
   isVerificationFile: true
   path: test/yosupo/multipoint_evaluation.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:48:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/multipoint_evaluation.test.cpp

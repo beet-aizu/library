@@ -467,9 +467,6 @@ data:
       path: polynomial/berlekampmassey.cpp
       title: polynomial/berlekampmassey.cpp
     - icon: ':heavy_check_mark:'
-      path: polynomial/formalpowerseries.cpp
-      title: polynomial/formalpowerseries.cpp
-    - icon: ':heavy_check_mark:'
       path: polynomial/hash.cpp
       title: polynomial/hash.cpp
     - icon: ':heavy_check_mark:'
