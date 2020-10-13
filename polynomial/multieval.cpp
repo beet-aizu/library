@@ -1,11 +1,13 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "formalpowerseries.cpp"
+#include "../combinatorics/enumeration.cpp"
+#include "../formalpowerseries/base.cpp"
+#include "../formalpowerseries/inv.cpp"
+#include "../formalpowerseries/div.cpp"
+#include "../formalpowerseries/mod.cpp"
 #undef call_from_test
 
 #endif

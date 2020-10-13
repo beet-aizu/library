@@ -1,11 +1,14 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "formalpowerseries.cpp"
+#include "../combinatorics/enumeration.cpp"
+#include "../formalpowerseries/base.cpp"
+#include "../formalpowerseries/inv.cpp"
+#include "../formalpowerseries/div.cpp"
+#include "../formalpowerseries/mod.cpp"
+#include "../formalpowerseries/diff.cpp"
 #include "multieval.cpp"
 #undef call_from_test
 
@@ -14,12 +17,9 @@ using namespace std;
 // O(N log^2 N)
 template<typename T>
 struct Interpolate : MultiEval<T>{
-  using super=MultiEval<T>;
-  using super::super;
-
+  using super = MultiEval<T>;
   using typename super::Poly;
-  using super::FPS;
-  using super::mem;
+  using super::super, super::FPS, super::mem;
 
   Poly interpolate(const vector<T> &xs,const vector<T> &ws,int l,int r){
     if(l+1==r) return Poly({ws[l]});

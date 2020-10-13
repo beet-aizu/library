@@ -7,7 +7,11 @@ using namespace std;
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../combinatorics/enumeration.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
+#include "../../formalpowerseries/base.cpp"
+#include "../../formalpowerseries/inv.cpp"
+#include "../../formalpowerseries/div.cpp"
+#include "../../formalpowerseries/mod.cpp"
+#include "../../formalpowerseries/diff.cpp"
 #include "../../polynomial/multieval.cpp"
 #include "../../polynomial/interpolate.cpp"
 #undef call_from_test
