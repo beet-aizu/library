@@ -1,14 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2985.garner.test.cpp
+    title: test/aoj/2985.garner.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2985.test.cpp
+    title: test/aoj/2985.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
@@ -49,7 +55,9 @@ data:
   timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2985.garner.test.cpp
   - test/aoj/3084.test.cpp
+  - test/aoj/2985.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp

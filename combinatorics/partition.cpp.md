@@ -1,12 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   - icon: ':heavy_check_mark:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -22,25 +25,27 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ combinatorics/partition.cpp: line 8: unable to process #include in #if / #ifdef\
+    \ combinatorics/partition.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"enumeration.cpp\"\n#include \"../polynomial/formalpowerseries.cpp\"\
-    \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename M_>\nstruct\
-    \ Partition : FormalPowerSeries<M_>{\n  using M = M_;\n  using super = FormalPowerSeries<M>;\n\
-    \  using super::super;\n  using Poly = typename super::Poly;\n\n  Poly rs;\n \
-    \ void build(int n){\n    rs.resize(n+1);\n    rs[0]=M(1);\n    for(int k=1;k<=n;k++){\n\
-    \      if(1LL*k*(3*k+1)/2<=n) rs[k*(3*k+1)/2]+=k%2?-M(1):M(1);\n      if(1LL*k*(3*k-1)/2<=n)\
-    \ rs[k*(3*k-1)/2]+=k%2?-M(1):M(1);\n    }\n    rs=super::inv(rs,n+1);\n  }\n\n\
-    \  M operator[](int k)const{return rs[k];}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"enumeration.cpp\"\n#include \"../formalpowerseries/base.cpp\"\
+    \n#include \"../formalpowerseries/inv.cpp\"\n#undef call_from_test\n\n#endif\n\
+    //BEGIN CUT HERE\ntemplate<typename M_>\nstruct Partition : FormalPowerSeries<M_>{\n\
+    \  using M = M_;\n  using super = FormalPowerSeries<M>;\n  using Poly = typename\
+    \ super::Poly;\n  using super::super;\n\n  Poly rs;\n  void build(int n){\n  \
+    \  rs.resize(n+1);\n    rs[0]=M(1);\n    for(int k=1;k<=n;k++){\n      if(1LL*k*(3*k+1)/2<=n)\
+    \ rs[k*(3*k+1)/2]+=k%2?-M(1):M(1);\n      if(1LL*k*(3*k-1)/2<=n) rs[k*(3*k-1)/2]+=k%2?-M(1):M(1);\n\
+    \    }\n    rs=super::inv(rs,n+1);\n  }\n\n  M operator[](int k)const{return rs[k];}\n\
+    };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn:
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
   isVerificationFile: false
   path: combinatorics/partition.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:39:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/partition_function.test.cpp

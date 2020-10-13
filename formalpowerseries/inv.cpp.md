@@ -1,23 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/bernoulli.cpp
+    title: combinatorics/bernoulli.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/partition.cpp
+    title: combinatorics/partition.cpp
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':heavy_check_mark:'
@@ -27,10 +33,10 @@ data:
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bernoulli_number.test.cpp
+    title: test/yosupo/bernoulli_number.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/exp_of_formal_power_series.test.cpp
     title: test/yosupo/exp_of_formal_power_series.test.cpp
@@ -49,19 +58,22 @@ data:
     path: test/yosupo/log_of_formal_power_series.test.cpp
     title: test/yosupo/log_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/partition_function.test.cpp
+    title: test/yosupo/partition_function.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -85,6 +97,8 @@ data:
   isVerificationFile: false
   path: formalpowerseries/inv.cpp
   requiredBy:
+  - combinatorics/partition.cpp
+  - combinatorics/bernoulli.cpp
   - formalpowerseries/pow.cpp
   - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
@@ -92,7 +106,7 @@ data:
   - formalpowerseries/mod.cpp
   - formalpowerseries/sqrt.cpp
   timestamp: '2020-10-13 15:11:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
@@ -101,9 +115,11 @@ data:
   - test/aoj/2985.test.cpp
   - test/aoj/3072.test.cpp
   - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/partition_function.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
 documentation_of: formalpowerseries/inv.cpp
 layout: document

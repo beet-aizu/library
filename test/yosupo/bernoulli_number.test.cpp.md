@@ -4,18 +4,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/bernoulli.cpp
     title: combinatorics/bernoulli.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/inv.cpp
+    title: formalpowerseries/inv.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -37,23 +40,24 @@ data:
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bernoulli_number\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
-    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
-    \n#include \"../../combinatorics/bernoulli.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n\
-    \  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
-    \ ntt.multiply(as,bs);};\n  Bernoulli<M> bs(conv);\n\n  bs.build(n);\n  for(int\
-    \ i=0;i<=n;i++){\n    if(i) cout<<\" \";\n    cout<<bs[i];\n  }\n  cout<<endl;\n\
+    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../formalpowerseries/base.cpp\"\
+    \n#include \"../../formalpowerseries/inv.cpp\"\n#include \"../../combinatorics/bernoulli.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n;\n  cin>>n;\n\n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto\
+    \ as,auto bs){return ntt.multiply(as,bs);};\n  Bernoulli<M> bs(conv);\n\n  bs.build(n);\n\
+    \  for(int i=0;i<=n;i++){\n    if(i) cout<<\" \";\n    cout<<bs[i];\n  }\n  cout<<endl;\n\
     \  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/inv.cpp
   - combinatorics/bernoulli.cpp
   isVerificationFile: true
   path: test/yosupo/bernoulli_number.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:39:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/bernoulli_number.test.cpp

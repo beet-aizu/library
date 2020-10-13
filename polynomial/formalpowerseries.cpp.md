@@ -1,22 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/bernoulli.cpp
-    title: combinatorics/bernoulli.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/partition.cpp
-    title: combinatorics/partition.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/stirling1st.cpp
-    title: combinatorics/stirling1st.cpp
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/stirling2nd.cpp
-    title: combinatorics/stirling2nd.cpp
   - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
@@ -25,23 +13,11 @@ data:
     title: polynomial/multieval.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/bernoulli_number.test.cpp
-    title: test/yosupo/bernoulli_number.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/multipoint_evaluation.test.cpp
     title: test/yosupo/multipoint_evaluation.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yosupo/partition_function.test.cpp
-    title: test/yosupo/partition_function.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-    title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-    title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -108,21 +84,13 @@ data:
   isVerificationFile: false
   path: polynomial/formalpowerseries.cpp
   requiredBy:
-  - combinatorics/partition.cpp
-  - combinatorics/stirling2nd.cpp
-  - combinatorics/bernoulli.cpp
-  - combinatorics/stirling1st.cpp
   - polynomial/multieval.cpp
   - polynomial/interpolate.cpp
   timestamp: '2020-10-13 15:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/partition_function.test.cpp
-  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp
-  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/bernoulli_number.test.cpp
 documentation_of: polynomial/formalpowerseries.cpp
 layout: document
 redirect_from:

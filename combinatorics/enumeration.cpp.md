@@ -20,28 +20,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':heavy_check_mark:'
@@ -60,10 +60,10 @@ data:
     path: polynomial/formalpowerseries.cpp
     title: polynomial/formalpowerseries.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':heavy_check_mark:'
@@ -141,17 +141,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"combinatorics/enumeration.cpp\"\n\n#ifndef call_from_test\n\
@@ -217,7 +217,7 @@ data:
   - formalpowerseries/diff.cpp
   - polynomial/formalpowerseries.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp

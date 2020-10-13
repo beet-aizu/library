@@ -1,29 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: combinatorics/bernoulli.cpp
+    title: combinatorics/bernoulli.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/partition.cpp
+    title: combinatorics/partition.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling1st.cpp
+    title: combinatorics/stirling1st.cpp
+  - icon: ':heavy_check_mark:'
+    path: combinatorics/stirling2nd.cpp
+    title: combinatorics/stirling2nd.cpp
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':heavy_check_mark:'
@@ -36,10 +48,10 @@ data:
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,6 +60,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bernoulli_number.test.cpp
+    title: test/yosupo/bernoulli_number.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/exp_of_formal_power_series.test.cpp
     title: test/yosupo/exp_of_formal_power_series.test.cpp
@@ -58,6 +73,9 @@ data:
     path: test/yosupo/log_of_formal_power_series.test.cpp
     title: test/yosupo/log_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/partition_function.test.cpp
+    title: test/yosupo/partition_function.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_taylor_shift.test.cpp
     title: test/yosupo/polynomial_taylor_shift.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,14 +84,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+    title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+    title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
@@ -113,6 +137,10 @@ data:
   isVerificationFile: false
   path: formalpowerseries/base.cpp
   requiredBy:
+  - combinatorics/partition.cpp
+  - combinatorics/stirling2nd.cpp
+  - combinatorics/bernoulli.cpp
+  - combinatorics/stirling1st.cpp
   - formalpowerseries/pow.cpp
   - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
@@ -124,7 +152,7 @@ data:
   - formalpowerseries/shift.cpp
   - formalpowerseries/diff.cpp
   timestamp: '2020-10-13 15:11:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
@@ -133,10 +161,14 @@ data:
   - test/aoj/2985.test.cpp
   - test/aoj/3072.test.cpp
   - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
   - test/yosupo/polynomial_taylor_shift.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
 documentation_of: formalpowerseries/base.cpp
 layout: document

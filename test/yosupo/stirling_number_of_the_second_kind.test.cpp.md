@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   - icon: ':heavy_check_mark:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
+    path: formalpowerseries/base.cpp
+    title: formalpowerseries/base.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
-    path: polynomial/formalpowerseries.cpp
-    title: polynomial/formalpowerseries.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -37,7 +37,7 @@ data:
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/numbertheoretictransform.cpp\"\
-    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../polynomial/formalpowerseries.cpp\"\
+    \n#include \"../../combinatorics/enumeration.cpp\"\n#include \"../../formalpowerseries/base.cpp\"\
     \n#include \"../../combinatorics/stirling2nd.cpp\"\n#undef call_from_test\n\n\
     signed main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
     \n  NTT<2> ntt;\n  using M = NTT<2>::M;\n  auto conv=[&](auto as,auto bs){return\
@@ -48,12 +48,12 @@ data:
   - mod/mint.cpp
   - convolution/numbertheoretictransform.cpp
   - combinatorics/enumeration.cpp
-  - polynomial/formalpowerseries.cpp
+  - formalpowerseries/base.cpp
   - combinatorics/stirling2nd.cpp
   isVerificationFile: true
   path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:11:48+09:00'
+  timestamp: '2020-10-13 15:39:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/stirling_number_of_the_second_kind.test.cpp
