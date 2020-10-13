@@ -44,11 +44,6 @@ struct Kitamasa{
 };
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../mod/mint.cpp"
-#undef call_from_test
-
 //INSERT ABOVE HERE
 signed ABC009_D(){
   int k,m;
@@ -73,12 +68,12 @@ signed ABC009_D(){
   return 0;
 }
 /*
-  verified on 2019/12/10
+  verified on 2020/10/13
   https://atcoder.jp/contests/abc009/tasks/abc009_4
 */
 
 signed main(){
-  //ABC009_D();
+  ABC009_D();
   return 0;
 }
 #endif
