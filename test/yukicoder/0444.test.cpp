@@ -9,7 +9,10 @@ using namespace std;
 #include "../../convolution/arbitrarymod.cpp"
 #include "../../polynomial/berlekampmassey.cpp"
 #include "../../combinatorics/enumeration.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
+#include "../../formalpowerseries/base.cpp"
+#include "../../formalpowerseries/inv.cpp"
+#include "../../formalpowerseries/div.cpp"
+#include "../../formalpowerseries/mod.cpp"
 #undef call_from_test
 
 signed main(){

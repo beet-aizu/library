@@ -8,7 +8,8 @@ using namespace std;
 #include "../../convolution/fastfouriertransform.cpp"
 #include "../../convolution/arbitrarymod.cpp"
 #include "../../combinatorics/enumeration.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
+#include "../../formalpowerseries/base.cpp"
+#include "../../formalpowerseries/inv.cpp"
 #undef call_from_test
 
 signed main(){

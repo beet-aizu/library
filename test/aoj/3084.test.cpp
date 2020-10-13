@@ -7,7 +7,13 @@ using namespace std;
 #include "../../mod/mint.cpp"
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../combinatorics/enumeration.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
+#include "../../formalpowerseries/base.cpp"
+#include "../../formalpowerseries/inv.cpp"
+#include "../../formalpowerseries/integral.cpp"
+#include "../../formalpowerseries/diff.cpp"
+#include "../../formalpowerseries/log.cpp"
+#include "../../formalpowerseries/exp.cpp"
+#include "../../formalpowerseries/pow.cpp"
 #include "../../tree/centroid.cpp"
 #include "../../tools/fixpoint.cpp"
 #undef call_from_test
@@ -59,7 +65,7 @@ signed main(){
 
   const int deg = 1<<18;
   Poly ps(n,M(1));
-  ps=FPS.exp(FPS.mul(FPS.log(ps,deg),M(m)),deg);
+  ps=FPS.pow(ps,m,deg);
 
   queue<int> que;
   que.emplace(G.build(0)[0]);

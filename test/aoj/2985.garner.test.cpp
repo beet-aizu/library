@@ -8,7 +8,10 @@ using namespace std;
 #include "../../convolution/numbertheoretictransform.cpp"
 #include "../../convolution/garner.cpp"
 #include "../../combinatorics/enumeration.cpp"
-#include "../../polynomial/formalpowerseries.cpp"
+#include "../../formalpowerseries/base.cpp"
+#include "../../formalpowerseries/inv.cpp"
+#include "../../formalpowerseries/log.cpp"
+#include "../../formalpowerseries/exp.cpp"
 #undef call_from_test
 
 signed main(){
