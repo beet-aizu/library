@@ -8,7 +8,7 @@ data:
     title: test/aoj/2359.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
-    title: test/aoj/3112.test.cpp
+    title: test query
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_D.test.cpp
     title: test/aoj/DSL_2_D.test.cpp

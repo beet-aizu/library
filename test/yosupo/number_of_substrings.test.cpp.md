@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
-    title: string/longestcommonprefix.cpp
+    title: Longest Common Prefix
   - icon: ':heavy_check_mark:'
     path: string/suffixarray.cpp
     title: Suffix Array
@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2020-10-02 12:38:13+09:00'
+  timestamp: '2020-10-13 14:00:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/number_of_substrings.test.cpp

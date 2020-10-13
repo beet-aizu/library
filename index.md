@@ -497,7 +497,7 @@ data:
       title: string/knuthmorrispratt.cpp
     - icon: ':heavy_check_mark:'
       path: string/longestcommonprefix.cpp
-      title: string/longestcommonprefix.cpp
+      title: Longest Common Prefix
     - icon: ':heavy_check_mark:'
       path: string/longestcommonsubstring.cpp
       title: string/longestcommonsubstring.cpp
@@ -922,7 +922,7 @@ data:
       title: lexicographical cost
     - icon: ':heavy_check_mark:'
       path: test/aoj/2711.test.cpp
-      title: test/aoj/2711.test.cpp
+      title: test lcp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2720.test.cpp
       title: test/aoj/2720.test.cpp
@@ -1042,7 +1042,7 @@ data:
       title: test/aoj/3102.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3112.test.cpp
-      title: test/aoj/3112.test.cpp
+      title: test query
     - icon: ':heavy_check_mark:'
       path: test/aoj/3117.test.cpp
       title: test order_of_key

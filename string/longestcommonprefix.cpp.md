@@ -8,13 +8,13 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2711.test.cpp
-    title: test/aoj/2711.test.cpp
+    title: test lcp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
-    title: test/aoj/3112.test.cpp
+    title: test query
   - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
@@ -30,7 +30,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ string/longestcommonprefix.cpp: line 6: unable to process #include in #if /\
     \ #ifdef / #ifndef other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"suffixarray.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\nstruct LongestCommonPrefix{\n  SuffixArray sa;\n\n \
     \ vector<int> ht;\n  vector< vector<int> > dat;\n  LongestCommonPrefix(string\
@@ -45,13 +45,13 @@ data:
     \  assert(a!=b);\n    if(a>b) swap(a,b);\n    int l=b-a;\n    return min(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);\n\
     \  }\n\n  // a, b are indices for string\n  int lcp(int a,int b){\n    return\
     \ query(sa.rev[a],sa.rev[b]);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n};\n#endif\n"
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - string/suffixarray.cpp
   isVerificationFile: false
   path: string/longestcommonprefix.cpp
   requiredBy: []
-  timestamp: '2020-10-02 12:38:13+09:00'
+  timestamp: '2020-10-13 14:00:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3112.test.cpp
@@ -60,8 +60,19 @@ data:
   - test/yosupo/number_of_substrings.test.cpp
 documentation_of: string/longestcommonprefix.cpp
 layout: document
-redirect_from:
-- /library/string/longestcommonprefix.cpp
-- /library/string/longestcommonprefix.cpp.html
-title: string/longestcommonprefix.cpp
+title: Longest Common Prefix
 ---
+
+## できること
+- `query(a,b)`
+-- $S$ の末尾辞の中で $a$ 番目に小さいものと $b$ 番目に小さいもののLCPを求める
+- `lcp(a,b)`
+-- $S[a:\|S\|]$ と $S[b:\|S\|]$ のLCPを求める
+
+## 計算量
+構築: $O(\|S\| \log \|S\|)$
+
+クエリ: $O(\log \|S\|)$
+
+## 注意
+- $a \neq b$ を仮定している
