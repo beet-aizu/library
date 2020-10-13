@@ -4,8 +4,10 @@ using namespace std;
 
 #define call_from_test
 #include "../combinatorics/enumeration.cpp"
-#include "./base.cpp"
-#include "./inv.cpp"
+#include "base.cpp"
+#include "inv.cpp"
+#include "diff.cpp"
+#include "integral.cpp"
 #undef call_from_test
 
 #endif
