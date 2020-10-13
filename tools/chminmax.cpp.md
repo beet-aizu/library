@@ -44,7 +44,7 @@ data:
     title: test/aoj/2230.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
-    title: test/aoj/2290.test.cpp
+    title: initialize potential
   - icon: ':heavy_check_mark:'
     path: test/aoj/2308.test.cpp
     title: test/aoj/2308.test.cpp

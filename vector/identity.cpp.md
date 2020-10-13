@@ -8,7 +8,7 @@ data:
     title: test/aoj/0425.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
-    title: test/aoj/2290.test.cpp
+    title: initialize potential
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
