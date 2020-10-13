@@ -58,8 +58,8 @@ data:
     #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
     \ \"base.cpp\"\n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
     \ M>\nvector<M> FormalPowerSeries<M>::diff(Poly as){\n  int n=as.size();\n  Poly\
-    \ rs(n-1);\n  for(int i=1;i<n;i++) rs[i-1]=as[i]*M(i);\n  return rs;\n}\n//END\
-    \ CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
+    \ rs(n);\n  for(int i=1;i<n;i++) rs[i-1]=as[i]*M(i);\n  return rs;\n}\n//END CUT\
+    \ HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
     \ 0;\n}\n#endif\n"
   dependsOn:
   - combinatorics/enumeration.cpp
@@ -71,7 +71,7 @@ data:
   - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
   - polynomial/interpolate.cpp
-  timestamp: '2020-10-13 15:55:16+09:00'
+  timestamp: '2020-10-13 16:37:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2985.garner.test.cpp

@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: polynomial/interpolate.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:55:16+09:00'
+  timestamp: '2020-10-13 16:37:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/polynomial_interpolation.test.cpp
