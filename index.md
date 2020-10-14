@@ -627,6 +627,9 @@ data:
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: tree/ahu.cpp
+      title: tree/ahu.cpp
+    - icon: ':heavy_check_mark:'
       path: tree/auxiliarytree.cpp
       title: Auxiliary Tree
     - icon: ':heavy_check_mark:'
@@ -820,6 +823,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/1607.test.cpp
       title: test/aoj/1607.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/1613.test.cpp
+      title: test/aoj/1613.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/1615.test.cpp
       title: test/aoj/1615.test.cpp

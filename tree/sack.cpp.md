@@ -10,8 +10,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"tree/sack.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
-    using namespace std;\n#endif\n\n//BEGIN CUT HERE\nstruct Sack{\n  using F = function<void(int)>;\n\
+  bundledCode: "#line 1 \"tree/sack.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n#endif\n\n//BEGIN CUT HERE\nstruct Sack{\n  using F = function<void(int)>;\n\
     \n  vector<int> sub,hvy,big;\n  vector< vector<int> > G,Q;\n  F expand,shrink,query;\n\
     \n  Sack(int n,F expand,F shrink,F query):\n    sub(n,1),hvy(n,-1),big(n,0),G(n),Q(n),\n\
     \    expand(expand),shrink(shrink),query(query){}\n\n  void add_edge(int u,int\
@@ -27,9 +27,9 @@ data:
     \      sub[v]+=sub[u];\n    }\n    if(p==-1) dfs(v,p);\n  }\n};\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n\n//BEGIN CUT HERE\nstruct Sack{\n  using F = function<void(int)>;\n\
-    \n  vector<int> sub,hvy,big;\n  vector< vector<int> > G,Q;\n  F expand,shrink,query;\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n\n//BEGIN CUT HERE\nstruct Sack{\n  using F = function<void(int)>;\n\n\
+    \  vector<int> sub,hvy,big;\n  vector< vector<int> > G,Q;\n  F expand,shrink,query;\n\
     \n  Sack(int n,F expand,F shrink,F query):\n    sub(n,1),hvy(n,-1),big(n,0),G(n),Q(n),\n\
     \    expand(expand),shrink(shrink),query(query){}\n\n  void add_edge(int u,int\
     \ v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n  }\n\n  void add_query(int\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: tree/sack.cpp
   requiredBy: []
-  timestamp: '2020-09-30 16:50:39+09:00'
+  timestamp: '2020-10-14 14:10:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2995.test.cpp

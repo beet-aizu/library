@@ -13,6 +13,9 @@ data:
     path: test/aoj/0439.test.cpp
     title: test/aoj/0439.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1613.test.cpp
+    title: test/aoj/1613.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3086.test.cpp
     title: test/aoj/3086.test.cpp
   - icon: ':heavy_check_mark:'
@@ -69,6 +72,7 @@ data:
   - test/aoj/3086.test.cpp
   - test/aoj/0439.test.cpp
   - test/aoj/3168.test.cpp
+  - test/aoj/1613.test.cpp
   - test/aoj/0437.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: io/single.cpp
