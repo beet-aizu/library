@@ -628,7 +628,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/ahu.cpp
-      title: tree/ahu.cpp
+      title: "\u6839\u4ED8\u304D\u6728\u306E\u540C\u578B\u6027\u5224\u5B9A"
     - icon: ':heavy_check_mark:'
       path: tree/auxiliarytree.cpp
       title: Auxiliary Tree

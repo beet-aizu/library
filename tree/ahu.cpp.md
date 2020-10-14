@@ -41,8 +41,13 @@ data:
   - test/aoj/1613.test.cpp
 documentation_of: tree/ahu.cpp
 layout: document
-redirect_from:
-- /library/tree/ahu.cpp
-- /library/tree/ahu.cpp.html
-title: tree/ahu.cpp
+title: "\u6839\u4ED8\u304D\u6728\u306E\u540C\u578B\u6027\u5224\u5B9A"
 ---
+
+## できること
+与えられた根付き木の決定的なハッシュ値を求める
+
+一般の木について同型性判定を行う場合は、まず木の中心や重心を求め、それらを根にすればよい
+
+## 計算量
+$O(N \log N)$
