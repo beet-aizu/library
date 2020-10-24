@@ -4,12 +4,15 @@
 using namespace std;
 
 #define call_from_test
-#include "../../math/factorize.cpp"
 #include "../../mod/pow.cpp"
 #include "../../mod/order.cpp"
 #undef call_from_test
 
 signed main(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+  const char newl = '\n';
+
   int MOD;
   cin>>MOD;
 
@@ -19,8 +22,8 @@ signed main(){
     int n;
     cin>>n;
 
-    vector<int> g(n);
-    for(int i=0;i<n;i++) cin>>g[i];
+    vector<int> gs(n);
+    for(int i=0;i<n;i++) cin>>gs[i];
 
     int a;
     cin>>a;
@@ -30,20 +33,19 @@ signed main(){
       continue;
     }
 
-    sort(g.rbegin(),g.rend());
-    if(g[0]==1){
+    sort(gs.rbegin(),gs.rend());
+    if(gs[0]==1){
       cout<<0<<"\n";
       continue;
     }
-    while(g.back()==1) g.pop_back();
+    while(gs.back()==1) gs.pop_back();
 
-    auto mlcm=[&](int a,int b){return a/__gcd(a,b)*b;};
+    auto mlcm=[&](int a,int b){return a/gcd(a,b)*b;};
 
-    int res=order(g[0],MOD);
-    for(int x:g) res=mlcm(res,order(x,MOD));
+    int res=order(gs[0],MOD);
+    for(int x:gs) res=mlcm(res,order(x,MOD));
 
-    cout<<(res%order(a,MOD)==0?1:0)<<"\n";
+    cout<<(res%order(a,MOD)==0?1:0)<<newl;
   }
-  cout<<flush;
   return 0;
 }

@@ -18,17 +18,18 @@ T order(T x,T MOD){
     T res=MOD,n=MOD;
     for(T i=2;i*i<=n;i++){
       if(n%i) continue;
-      res=res/i*(i-1);
       while(n%i==0) n/=i;
+      res=res/i*(i-1);
     }
     if(n!=1) res=res/n*(n-1);
     phi[MOD]=res;
 
     for(T i=2;i*i<=res;i++){
       if(res%i) continue;
+      while(res%i==0) res/=i;
       ps.emplace_back(i);
-      if(i*i!=res) ps.emplace_back(res/i);
     }
+    if(res!=1) ps.emplace_back(res);
   }
 
   T res=phi[MOD];
