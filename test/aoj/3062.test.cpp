@@ -29,23 +29,22 @@ signed main(){
     cin>>a;
 
     if(a==1){
-      cout<<1<<"\n";
+      cout<<1<<newl;
       continue;
     }
 
-    sort(gs.rbegin(),gs.rend());
-    if(gs[0]==1){
-      cout<<0<<"\n";
+    if(gs==vector<int>(n,1)){
+      cout<<0<<newl;
       continue;
     }
+    sort(gs.rbegin(),gs.rend());
     while(gs.back()==1) gs.pop_back();
 
-    auto mlcm=[&](int a,int b){return a/gcd(a,b)*b;};
+    using ll = long long;
+    int res=order<ll>(gs[0],MOD);
+    for(int x:gs) res=lcm(res,order<ll>(x,MOD));
 
-    int res=order(gs[0],MOD);
-    for(int x:gs) res=mlcm(res,order(x,MOD));
-
-    cout<<(res%order(a,MOD)==0?1:0)<<newl;
+    cout<<(res%order<ll>(a,MOD)==0?1:0)<<newl;
   }
   return 0;
 }
