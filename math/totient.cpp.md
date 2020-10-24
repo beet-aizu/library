@@ -19,22 +19,22 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"math/totient.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
-    using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT totient(T\
-    \ n){\n  T res=n;\n  for(T i=2;i*i<=n;i++){\n    if(n%i==0){\n      res=res/i*(i-1);\n\
-    \      for(;n%i==0;n/=i);\n    }\n  }\n  if(n!=1) res=res/n*(n-1);\n  return res;\n\
-    }\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
+  bundledCode: "#line 1 \"math/totient.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT totient(T n){\n  T res=n;\n\
-    \  for(T i=2;i*i<=n;i++){\n    if(n%i==0){\n      res=res/i*(i-1);\n      for(;n%i==0;n/=i);\n\
-    \    }\n  }\n  if(n!=1) res=res/n*(n-1);\n  return res;\n}\n//END CUT HERE\n#ifndef\
-    \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \  for(T i=2;i*i<=n;i++){\n    if(n%i) continue;\n    res=res/i*(i-1);\n    while(n%i==0)\
+    \ n/=i;\n  }\n  if(n!=1) res=res/n*(n-1);\n  return res;\n}\n//END CUT HERE\n\
+    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT totient(T n){\n  T res=n;\n\
+    \  for(T i=2;i*i<=n;i++){\n    if(n%i) continue;\n    res=res/i*(i-1);\n    while(n%i==0)\
+    \ n/=i;\n  }\n  if(n!=1) res=res/n*(n-1);\n  return res;\n}\n//END CUT HERE\n\
+    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: math/totient.cpp
   requiredBy:
   - mod/tetration.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
+  timestamp: '2020-10-24 12:57:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0472.test.cpp

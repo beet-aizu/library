@@ -1,19 +1,16 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: mod/order.cpp
-    title: mod/order.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3062.test.cpp
     title: test/aoj/3062.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_A.test.cpp
     title: test/aoj/NTL_1_A.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/factorize.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -31,13 +28,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/factorize.cpp
-  requiredBy:
-  - mod/order.cpp
+  requiredBy: []
   timestamp: '2019-12-26 23:22:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/aoj/NTL_1_A.test.cpp
   - test/aoj/3062.test.cpp
+  - test/aoj/NTL_1_A.test.cpp
 documentation_of: math/factorize.cpp
 layout: document
 redirect_from:

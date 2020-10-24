@@ -52,8 +52,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0104.test.cpp
-  - test/yukicoder/3211.test.cpp
   - test/yukicoder/0444.test.cpp
+  - test/yukicoder/3211.test.cpp
   - test/yosupo/find_linear_recurrence.test.cpp
 documentation_of: polynomial/berlekampmassey.cpp
 layout: document

@@ -144,28 +144,28 @@ data:
   isVerificationFile: false
   path: bbst/rbst/basic/base.cpp
   requiredBy:
+  - bbst/rbst/persistent/ushi.cpp
+  - bbst/rbst/persistent/array.cpp
+  - bbst/rbst/persistent/lazy.cpp
   - bbst/rbst/basic/ushi.cpp
+  - bbst/rbst/basic/array.cpp
   - bbst/rbst/basic/dual.cpp
   - bbst/rbst/basic/lazy.cpp
-  - bbst/rbst/basic/array.cpp
-  - bbst/rbst/persistent/ushi.cpp
-  - bbst/rbst/persistent/lazy.cpp
-  - bbst/rbst/persistent/array.cpp
   timestamp: '2020-10-02 16:55:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/DSL_2_G.bbst.test.cpp
+  - test/aoj/DSL_2_A.bbst.test.cpp
+  - test/aoj/DSL_2_E.bbst.test.cpp
+  - test/aoj/DSL_2_H.bbst.test.cpp
+  - test/aoj/2890.test.cpp
   - test/aoj/1579.test.cpp
-  - test/aoj/0438.test.cpp
+  - test/aoj/DSL_2_D.bbst.test.cpp
   - test/aoj/DSL_2_F.bbst.test.cpp
   - test/aoj/1508.test.cpp
-  - test/aoj/2890.test.cpp
-  - test/aoj/DSL_2_H.bbst.test.cpp
-  - test/aoj/DSL_2_I.bbst.test.cpp
-  - test/aoj/DSL_2_G.bbst.test.cpp
-  - test/aoj/DSL_2_E.bbst.test.cpp
-  - test/aoj/DSL_2_D.bbst.test.cpp
-  - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/0437.test.cpp
+  - test/aoj/DSL_2_I.bbst.test.cpp
+  - test/aoj/0438.test.cpp
   - test/yosupo/persistent_queue.test.cpp
 documentation_of: bbst/rbst/basic/base.cpp
 layout: document

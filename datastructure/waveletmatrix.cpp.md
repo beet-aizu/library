@@ -150,12 +150,12 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3227.test.cpp
-  - test/yukicoder/2147.test.cpp
   - test/yukicoder/1937.test.cpp
+  - test/yukicoder/2147.test.cpp
   - test/yukicoder/1732.test.cpp
-  - test/aoj/3063.test.cpp
-  - test/aoj/1549.test.cpp
   - test/aoj/2674.test.cpp
+  - test/aoj/1549.test.cpp
+  - test/aoj/3063.test.cpp
   - test/yosupo/range_kth_smallest.test.cpp
 documentation_of: datastructure/waveletmatrix.cpp
 layout: document

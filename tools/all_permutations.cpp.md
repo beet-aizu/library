@@ -28,8 +28,8 @@ data:
   timestamp: '2019-12-27 08:35:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2187.test.cpp
   - test/aoj/3053.test.cpp
+  - test/aoj/2187.test.cpp
 documentation_of: tools/all_permutations.cpp
 layout: document
 redirect_from:

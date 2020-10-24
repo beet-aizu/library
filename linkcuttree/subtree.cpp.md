@@ -25,10 +25,10 @@ data:
     - http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
     - https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_e
     - https://codeforces.com/contest/1172/problem/E
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linkcuttree/subtree.cpp: line 6: unable to process #include in #if / #ifdef\
@@ -113,8 +113,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3120.test.cpp
-  - test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
+  - test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
 documentation_of: linkcuttree/subtree.cpp
 layout: document
 redirect_from:

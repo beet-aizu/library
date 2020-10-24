@@ -82,8 +82,8 @@ data:
   timestamp: '2019-12-26 23:04:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0367.test.cpp
   - test/aoj/2644.test.cpp
+  - test/aoj/0367.test.cpp
   - test/aoj/DSL_2_A.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp
 documentation_of: segtree/basic/ushi.cpp

@@ -373,7 +373,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/extgcd.cpp
       title: math/extgcd.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/factorize.cpp
       title: math/factorize.cpp
     - icon: ':heavy_check_mark:'
@@ -446,10 +446,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/montmort.cpp
       title: mod/montmort.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: mod/order.cpp
       title: mod/order.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: mod/pow.cpp
       title: mod/pow.cpp
     - icon: ':heavy_check_mark:'
@@ -1048,7 +1048,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3058.test.cpp
       title: test/aoj/3058.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3062.test.cpp
       title: test/aoj/3062.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1753,6 +1753,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4387.test.cpp
       title: test/yukicoder/4387.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/4474.test.cpp
+      title: test/yukicoder/4474.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4569.test.cpp
       title: test/yukicoder/4569.test.cpp

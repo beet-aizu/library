@@ -48,8 +48,8 @@ data:
   timestamp: '2019-11-30 20:19:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
   - test/yosupo/sqrt_mod.test.cpp
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
 documentation_of: mod/sqrt.cpp
 layout: document
 redirect_from:

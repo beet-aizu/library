@@ -29,8 +29,8 @@ data:
   timestamp: '2020-04-22 14:12:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0425.test.cpp
   - test/aoj/2290.test.cpp
+  - test/aoj/0425.test.cpp
 documentation_of: vector/identity.cpp
 layout: document
 redirect_from:

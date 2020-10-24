@@ -71,13 +71,13 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4852.test.cpp
-  - test/yukicoder/1732.test.cpp
   - test/yukicoder/2125.test.cpp
-  - test/aoj/GRL_5_D.test.cpp
+  - test/yukicoder/1732.test.cpp
   - test/aoj/0343.test.cpp
   - test/aoj/2270.test.cpp
-  - test/yosupo/vertex_add_path_sum.test.cpp
+  - test/aoj/GRL_5_D.test.cpp
   - test/yosupo/point_add_range_sum.test.cpp
+  - test/yosupo/vertex_add_path_sum.test.cpp
   - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: datastructure/binaryindexedtree.cpp

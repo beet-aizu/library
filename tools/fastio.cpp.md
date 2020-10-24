@@ -40,11 +40,11 @@ data:
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
-  - tree/diameterforedge.cpp
-  - graph/nicetree.cpp
-  - linearalgebra/binarymatrix.cpp
-  - algorithm/monotoneminima.cpp
   - datastructure/slidingwindowaggregation.cpp
+  - graph/nicetree.cpp
+  - algorithm/monotoneminima.cpp
+  - tree/diameterforedge.cpp
+  - linearalgebra/binarymatrix.cpp
   - linkcuttree/subtree.cpp
   timestamp: '2020-05-07 20:09:06+09:00'
   verificationStatus: LIBRARY_ALL_AC

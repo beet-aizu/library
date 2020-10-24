@@ -2,18 +2,21 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/order.cpp
     title: mod/order.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3062.test.cpp
     title: test/aoj/3062.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B.test.cpp
     title: test/aoj/NTL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/4474.test.cpp
+    title: test/yukicoder/4474.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"mod/pow.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -32,8 +35,9 @@ data:
   requiredBy:
   - mod/order.cpp
   timestamp: '2019-12-17 20:56:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yukicoder/4474.test.cpp
   - test/aoj/3062.test.cpp
   - test/aoj/NTL_1_B.test.cpp
 documentation_of: mod/pow.cpp

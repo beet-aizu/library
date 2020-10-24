@@ -137,15 +137,15 @@ data:
   verifiedWith:
   - test/yukicoder/3405.test.cpp
   - test/aoj/DSL_2_F.test.cpp
-  - test/aoj/DSL_2_H.test.cpp
-  - test/aoj/2563.test.cpp
-  - test/aoj/DSL_2_I.test.cpp
   - test/aoj/3035.test.cpp
   - test/aoj/2450.test.cpp
   - test/aoj/2871.test.cpp
-  - test/aoj/3073.test.cpp
-  - test/aoj/2667.test.cpp
   - test/aoj/2359.test.cpp
+  - test/aoj/2667.test.cpp
+  - test/aoj/DSL_2_H.test.cpp
+  - test/aoj/DSL_2_I.test.cpp
+  - test/aoj/3073.test.cpp
+  - test/aoj/2563.test.cpp
   - test/yosupo/range_affine_range_sum.test.cpp
 documentation_of: segtree/basic/lazy.cpp
 layout: document
