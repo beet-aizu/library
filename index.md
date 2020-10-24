@@ -1783,5 +1783,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/5011.test.cpp
       title: test/yukicoder/5011.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/5223.test.cpp
+      title: test/yukicoder/5223.test.cpp
 layout: toppage
 ---

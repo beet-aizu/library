@@ -33,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5223.test.cpp
+    title: test/yukicoder/5223.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -72,6 +75,7 @@ data:
   verifiedWith:
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/2125.test.cpp
+  - test/yukicoder/5223.test.cpp
   - test/yukicoder/1732.test.cpp
   - test/aoj/0343.test.cpp
   - test/aoj/2270.test.cpp
