@@ -392,6 +392,9 @@ data:
       path: math/linearfunction.cpp
       title: math/linearfunction.cpp
     - icon: ':heavy_check_mark:'
+      path: math/quotients.cpp
+      title: math/quotients.cpp
+    - icon: ':heavy_check_mark:'
       path: math/sum_of_floor.cpp
       title: math/sum_of_floor.cpp
     - icon: ':heavy_check_mark:'
@@ -1777,5 +1780,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4941.test.cpp
       title: test/yukicoder/4941.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/5011.test.cpp
+      title: test/yukicoder/5011.test.cpp
 layout: toppage
 ---

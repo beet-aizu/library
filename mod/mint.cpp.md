@@ -210,6 +210,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4271.test.cpp
     title: test/yukicoder/4271.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5011.test.cpp
+    title: test/yukicoder/5011.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -284,6 +287,7 @@ data:
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0104.test.cpp
+  - test/yukicoder/5011.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/1665.test.cpp
   - test/yukicoder/4271.test.cpp
