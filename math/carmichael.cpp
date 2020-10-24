@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,7 +6,6 @@ using namespace std;
 // min m s.t. a^m = 1 mod n (a, n are coprime)
 template<typename T>
 T carmichael_lambda(T n){
-  auto lcm=[](auto a,auto b){return a/__gcd(a,b)*b;};
   T res=1;
   if(n%8==0) n/=2;
   for(int i=2;i*i<=n;i++){
