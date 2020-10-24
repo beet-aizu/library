@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/factorize.cpp
     title: math/factorize.cpp
   _extendedRequiredBy: []

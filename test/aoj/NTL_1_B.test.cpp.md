@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/pow.cpp
     title: mod/pow.cpp
   _extendedRequiredBy: []

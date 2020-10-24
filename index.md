@@ -373,7 +373,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/extgcd.cpp
       title: math/extgcd.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/factorize.cpp
       title: math/factorize.cpp
     - icon: ':heavy_check_mark:'
@@ -446,10 +446,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/montmort.cpp
       title: mod/montmort.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/order.cpp
       title: mod/order.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/pow.cpp
       title: mod/pow.cpp
     - icon: ':heavy_check_mark:'
@@ -1048,7 +1048,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3058.test.cpp
       title: test/aoj/3058.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3062.test.cpp
       title: test/aoj/3062.test.cpp
     - icon: ':heavy_check_mark:'
