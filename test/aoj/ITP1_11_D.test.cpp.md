@@ -31,8 +31,8 @@ data:
     vector<Die<T>> makeDice(Die<T> d){\n  vector<Die<T>> res;\n  for(int i=0;i<6;i++){\n\
     \    Die t(d);\n    if(i==1) t.roll('N');\n    if(i==2) t.roll('S');\n    if(i==3)\
     \ t.roll('S'),t.roll('S');\n    if(i==4) t.roll('L');\n    if(i==5) t.roll('R');\n\
-    \    for(int k=0;k<4;k++){\n      res.push_back(t);\n      t.roll('E');\n    }\n\
-    \  }\n  return res;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
+    \    for(int k=0;k<4;k++){\n      res.emplace_back(t);\n      t.roll('E');\n \
+    \   }\n  }\n  return res;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
     \  return 0;\n}\n#endif\n#line 8 \"test/aoj/ITP1_11_D.test.cpp\"\n#undef call_from_test\n\
     \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
     \n  vector<Die<int>> ds(n);\n  for(int j=0;j<n;j++)\n    for(int i=0;i<6;i++)\n\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ITP1_11_D.test.cpp
   requiredBy: []
-  timestamp: '2020-09-28 15:14:58+09:00'
+  timestamp: '2020-10-25 17:34:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ITP1_11_D.test.cpp

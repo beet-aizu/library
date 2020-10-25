@@ -45,8 +45,8 @@ data:
     \ d){\n  vector<Die<T>> res;\n  for(int i=0;i<6;i++){\n    Die t(d);\n    if(i==1)\
     \ t.roll('N');\n    if(i==2) t.roll('S');\n    if(i==3) t.roll('S'),t.roll('S');\n\
     \    if(i==4) t.roll('L');\n    if(i==5) t.roll('R');\n    for(int k=0;k<4;k++){\n\
-    \      res.push_back(t);\n      t.roll('E');\n    }\n  }\n  return res;\n}\n//END\
-    \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \      res.emplace_back(t);\n      t.roll('E');\n    }\n  }\n  return res;\n}\n\
+    //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename T=int>\nstruct Die{\n  array<T, 6> fs;\n \
     \ int &top()   {return fs[0];}\n  int &south() {return fs[1];}\n  int &east()\
@@ -63,14 +63,14 @@ data:
     \ 1;\n  }\n};\n\ntemplate<typename T>\nvector<Die<T>> makeDice(Die<T> d){\n  vector<Die<T>>\
     \ res;\n  for(int i=0;i<6;i++){\n    Die t(d);\n    if(i==1) t.roll('N');\n  \
     \  if(i==2) t.roll('S');\n    if(i==3) t.roll('S'),t.roll('S');\n    if(i==4)\
-    \ t.roll('L');\n    if(i==5) t.roll('R');\n    for(int k=0;k<4;k++){\n      res.push_back(t);\n\
+    \ t.roll('L');\n    if(i==5) t.roll('R');\n    for(int k=0;k<4;k++){\n      res.emplace_back(t);\n\
     \      t.roll('E');\n    }\n  }\n  return res;\n}\n//END CUT HERE\n#ifndef call_from_test\n\
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: tools/dice.cpp
   requiredBy: []
-  timestamp: '2020-09-28 15:14:58+09:00'
+  timestamp: '2020-10-25 17:34:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/ITP1_11_C.test.cpp
