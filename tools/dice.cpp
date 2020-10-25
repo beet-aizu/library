@@ -56,7 +56,7 @@ vector<Die<T>> makeDice(Die<T> d){
     if(i==4) t.roll('L');
     if(i==5) t.roll('R');
     for(int k=0;k<4;k++){
-      res.push_back(t);
+      res.emplace_back(t);
       t.roll('E');
     }
   }

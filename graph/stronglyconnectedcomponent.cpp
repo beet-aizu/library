@@ -47,7 +47,7 @@ struct SCC{
     for(int v=0;v<n;v++)
       for(int u:G[v])
         if(blg[v]!=blg[u])
-          H[blg[v]].push_back(blg[u]);
+          H[blg[v]].emplace_back(blg[u]);
 
     if(uniq){
       for(int i=0;i<k;i++){

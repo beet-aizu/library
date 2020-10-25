@@ -23,7 +23,7 @@ struct QuickFind{
     rs[x]+=rs[y];
     for(int e:vs[y]){
       ps[e]=x;
-      vs[x].push_back(e);
+      vs[x].emplace_back(e);
     }
     vs[y].clear();
     vs[y].shrink_to_fit();
