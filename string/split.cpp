@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -8,9 +8,8 @@ vector<string> split(string& s,char c){
   vector<string> res;
   for(int i=0;i<n;i++){
     if(s[i]==c) continue;
-    string t;
-    while(i<n&&s[i]!=c) t.push_back(s[i++]);
-    res.push_back(t);
+    res.emplace_back();
+    while(i<n&&s[i]!=c) res.back()+=s[i++];
   }
   return res;
 }

@@ -64,10 +64,10 @@ struct PalindromicTree{
 
   void calc_order(){
     ord.clear();
-    ord.push_back(0);
-    ord.push_back(1);
+    ord.emplace_back(0);
+    ord.emplace_back(1);
     for(int i=0;i<(int)ord.size();i++)
-      for(auto &p:vs[ord[i]].nxt) ord.push_back(p.second);
+      for(auto &p:vs[ord[i]].nxt) ord.emplace_back(p.second);
   }
 
   void calc_count(){

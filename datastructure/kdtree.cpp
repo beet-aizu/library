@@ -61,7 +61,7 @@ struct KDTree{
     T x=ps[ts[v].pos].x;
     T y=ps[ts[v].pos].y;
     if(sx<=x&&x<=tx&&sy<=y&&y<=ty)
-      ans.push_back(ps[ts[v].pos]);
+      ans.emplace_back(ps[ts[v].pos]);
 
     if(depth%2==0){
       if(ts[v].l!=NIL){

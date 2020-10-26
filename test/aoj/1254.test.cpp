@@ -63,7 +63,7 @@ signed main(){
       int x,y;
       while(cin>>x,~x){
         cin>>y;
-        p[i].push_back(Point(x,y));
+        p[i].emplace_back(x,y);
       }
     }
 

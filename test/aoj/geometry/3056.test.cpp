@@ -15,8 +15,8 @@ signed main(){
   cin>>n;
   Polygon ps(n);
   for(int i=0;i<n;i++) cin>>ps[i];
-  for(int i=0;i<n;i++) ps.push_back(Point(ps[i]));
-  for(int i=0;i<n;i++) ps.push_back(Point(ps[i]));
+  for(int i=0;i<n;i++) ps.emplace_back(Point(ps[i]));
+  for(int i=0;i<n;i++) ps.emplace_back(Point(ps[i]));
 
   double ans=1e18;
   int l=n,r=n+1;

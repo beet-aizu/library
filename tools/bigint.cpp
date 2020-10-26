@@ -30,7 +30,7 @@ struct bigint {
   void operator=(ll v){
     sign=1;
     if(v<0) sign=-1,v=-v;
-    for(;v>0;v=v/base) a.push_back(v%base);
+    for(;v>0;v=v/base) a.emplace_back(v%base);
   }
 
   bigint operator+(const bigint &v) const{
@@ -38,7 +38,7 @@ struct bigint {
       bigint res=v;
 
       for(ll i=0,carry=0;i<(ll)max(a.size(),v.a.size())||carry;++i){
-        if(i==(ll)res.a.size()) res.a.push_back(0);
+        if(i==(ll)res.a.size()) res.a.emplace_back(0);
         res.a[i]+=carry+(i<(ll)a.size()?a[i]:0);
         carry=res.a[i]>=base;
         if(carry) res.a[i]-=base;
@@ -68,7 +68,7 @@ struct bigint {
   void operator*=(ll v){
     if(v<0) sign=-sign,v=-v;
     for(ll i=0,carry=0;i<(ll)a.size()|| carry;++i){
-      if(i ==(ll)a.size()) a.push_back(0);
+      if(i ==(ll)a.size()) a.emplace_back(0);
       ll cur=a[i] *(ll)v+carry;
       carry=(ll)(cur/base);
       a[i]=(ll)(cur%base);
@@ -229,7 +229,7 @@ struct bigint {
     for(ll i=s.size()-1;i>=pos;i-=base_digits){
       ll x=0;
       for(ll j=max(pos,i-base_digits+1);j<=i;j++) x=x*10+s[j]-'0';
-      a.push_back(x);
+      a.emplace_back(x);
     }
     trim();
   }
@@ -260,17 +260,23 @@ struct bigint {
       cur+=a[i]*p[cur_digits];
       cur_digits+=old_digits;
       while(cur_digits>=new_digits){
-        res.push_back(signed(cur%p[new_digits]));
+        res.emplace_back(signed(cur%p[new_digits]));
         cur/=p[new_digits];
         cur_digits-=new_digits;
       }
     }
-    res.push_back((signed)cur);
+    res.emplace_back((signed)cur);
     while(!res.empty()&&!res.back()) res.pop_back();
     return res;
   }
 
-  static vll karatsubaMultiply(const vll &a,const vll &b){
+  static vll karatsubaMultiply(vll &a,vll &b){
+    {
+      while(a.size()<b.size()) a.emplace_back(0);
+      while(b.size()<a.size()) b.emplace_back(0);
+      while(a.size()&(a.size()-1)) a.emplace_back(0),b.emplace_back(0);
+    }
+
     ll n=a.size();
     vll res(n+n);
     if(n<=32){
@@ -309,24 +315,18 @@ struct bigint {
     vll a=convert_base(this->a,base_digits,nbase_digits);
     vll b=convert_base(v.a,base_digits,nbase_digits);
 
-    //*/
-    while(a.size()<b.size()) a.push_back(0);
-    while(b.size()<a.size()) b.push_back(0);
-    while(a.size() &(a.size()-1)) a.push_back(0),b.push_back(0);
+    if(a.empty() or b.empty()) return bigint(0);
+
     vll c=karatsubaMultiply(a,b);
-    /*/
-    if(a.empty()) a.push_back(0);
-    if(b.empty()) b.push_back(0);
-    vll c=FFT::multiply(a,b);
-    //*/
+    // vll c=FFT::multiply(a,b);
 
     bigint res;
     res.sign=sign*v.sign;
     for(ll i=0,carry=0;i<(ll)c.size();i++){
       ll cur=c[i]+carry;
-      res.a.push_back((ll)(cur%nbase));
+      res.a.emplace_back((ll)(cur%nbase));
       carry=(ll)(cur/nbase);
-      if(i+1==(int)c.size()&&carry>0) c.push_back(0);
+      if(i+1==(int)c.size()&&carry>0) c.emplace_back(0);
     }
 
     res.a=convert_base(res.a,nbase_digits,base_digits);
