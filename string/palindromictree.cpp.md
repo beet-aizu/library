@@ -29,11 +29,12 @@ data:
     \     return true;\n    }\n\n    while(1){\n      cur=vs[cur].suf;\n      int\
     \ rev=pos-1-vs[cur].len;\n      if(rev>=0&&s[rev]==ch){\n        vs[ptr].suf=vs[cur].nxt[ch];\n\
     \        break;\n      }\n    }\n    return true;\n  }\n\n  void calc_order(){\n\
-    \    ord.clear();\n    ord.push_back(0);\n    ord.push_back(1);\n    for(int i=0;i<(int)ord.size();i++)\n\
-    \      for(auto &p:vs[ord[i]].nxt) ord.push_back(p.second);\n  }\n\n  void calc_count(){\n\
-    \    for(int i=(int)ord.size()-1;i>=0;i--)\n      vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;\n\
-    \  }\n\n  size_t size()const{return n;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \    ord.clear();\n    ord.emplace_back(0);\n    ord.emplace_back(1);\n    for(int\
+    \ i=0;i<(int)ord.size();i++)\n      for(auto &p:vs[ord[i]].nxt) ord.emplace_back(p.second);\n\
+    \  }\n\n  void calc_count(){\n    for(int i=(int)ord.size()-1;i>=0;i--)\n    \
+    \  vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;\n  }\n\n  size_t size()const{return\
+    \ n;}\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\nstruct PalindromicTree{\n  struct node{\n    map<char, int>\
     \ nxt;\n    int len,suf,app,cnt;\n    node(){}\n    node(int len,int suf,int app,int\
@@ -50,16 +51,16 @@ data:
     \  return true;\n    }\n\n    while(1){\n      cur=vs[cur].suf;\n      int rev=pos-1-vs[cur].len;\n\
     \      if(rev>=0&&s[rev]==ch){\n        vs[ptr].suf=vs[cur].nxt[ch];\n       \
     \ break;\n      }\n    }\n    return true;\n  }\n\n  void calc_order(){\n    ord.clear();\n\
-    \    ord.push_back(0);\n    ord.push_back(1);\n    for(int i=0;i<(int)ord.size();i++)\n\
-    \      for(auto &p:vs[ord[i]].nxt) ord.push_back(p.second);\n  }\n\n  void calc_count(){\n\
-    \    for(int i=(int)ord.size()-1;i>=0;i--)\n      vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;\n\
+    \    ord.emplace_back(0);\n    ord.emplace_back(1);\n    for(int i=0;i<(int)ord.size();i++)\n\
+    \      for(auto &p:vs[ord[i]].nxt) ord.emplace_back(p.second);\n  }\n\n  void\
+    \ calc_count(){\n    for(int i=(int)ord.size()-1;i>=0;i--)\n      vs[vs[ord[i]].suf].cnt+=vs[ord[i]].cnt;\n\
     \  }\n\n  size_t size()const{return n;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: string/palindromictree.cpp
   requiredBy: []
-  timestamp: '2020-02-15 16:13:43+09:00'
+  timestamp: '2020-10-26 14:50:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0399.test.cpp

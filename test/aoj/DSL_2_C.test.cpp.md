@@ -31,7 +31,7 @@ data:
     \ t;\n  }\n\n  int build(){\n    np=0;\n    return dfs(0,ps.size(),0);\n  }\n\n\
     \  // [sx, tx] * [sy, ty]\n  void find(int v,T sx,T tx,T sy,T ty,int depth,vector<Point>\
     \ &ans){\n    T x=ps[ts[v].pos].x;\n    T y=ps[ts[v].pos].y;\n    if(sx<=x&&x<=tx&&sy<=y&&y<=ty)\n\
-    \      ans.push_back(ps[ts[v].pos]);\n\n    if(depth%2==0){\n      if(ts[v].l!=NIL){\n\
+    \      ans.emplace_back(ps[ts[v].pos]);\n\n    if(depth%2==0){\n      if(ts[v].l!=NIL){\n\
     \        if(sx<=x) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);\n      }\n      if(ts[v].r!=NIL){\n\
     \        if(x<=tx) find(ts[v].r,sx,tx,sy,ty,depth+1,ans);\n      }\n    }else{\n\
     \      if(ts[v].l!=NIL){\n        if(sy<=y) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);\n\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:47:24+09:00'
+  timestamp: '2020-10-26 14:50:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_C.test.cpp

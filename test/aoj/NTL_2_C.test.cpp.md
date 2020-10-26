@@ -31,7 +31,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:19:56+09:00'
+  timestamp: '2020-10-26 14:50:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_2_C.test.cpp
