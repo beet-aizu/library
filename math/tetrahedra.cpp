@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -9,7 +9,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 bool isTriangle(double a1,double a2,double a3){
-  if(a1+a2<=a3||a2+a3<=a1||a3+a1<=a2) return 0;
+  if(a1+a2<=a3 or a2+a3<=a1 or a3+a1<=a2) return 0;
   return 1;
 }
 

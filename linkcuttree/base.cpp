@@ -56,7 +56,7 @@ struct LinkCutTreeBase{
 
   // for splay tree (not original tree)
   bool is_root(Node *t){
-    return !t->p or (t->p->l!=t&&t->p->r!=t);
+    return !t->p or (t->p->l!=t and t->p->r!=t);
   }
 
   void splay(Node *t){

@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -32,7 +32,7 @@ int factorial(long long n,int MOD){
     vector<R> f(sz*4,0),g(sz*4,0);
     for(int i=0;i<=sz;i++){
       f[i]=finv[i]*finv[sz-i]*seq[i];
-      if(((sz+i)&1)&&(f[i].v!=0)) f[i]=-f[i];
+      if(((sz+i)&1) and (f[i].v!=0)) f[i]=-f[i];
     }
 
     vector<R> pf(f);

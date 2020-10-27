@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -11,7 +11,7 @@ int jacobi(T a,T mod){
     a%=mod;
     if(a==0) return 0;
     int r=__builtin_ctz(a);
-    if((r&1)&&((mod+2)&4)) s=-s;
+    if((r&1) and ((mod+2)&4)) s=-s;
     a>>=r;
     if(a&mod&2) s=-s;
     swap(a,mod);

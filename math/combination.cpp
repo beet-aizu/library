@@ -1,11 +1,10 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "extgcd.cpp"
+#include "../mod/inverse.cpp"
 #undef call_from_test
 
 #endif
@@ -34,7 +33,7 @@ struct Combination{
   }
 
   T mod_comb(T n,T k){
-    if(n==k||k==0) return 1;
+    if(n==k or k==0) return 1;
     T e1,e2,e3;
     T a1=mod_fact(n,e1),a2=mod_fact(k,e2),a3=mod_fact(n-k,e3);
     if(e1>e2+e3) return 0;
