@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0367.linkcuttree.test.cpp
     title: test/aoj/0367.linkcuttree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2450.linkcuttree.test.cpp
     title: test/aoj/2450.linkcuttree.test.cpp
   - icon: ':x:'
@@ -28,7 +28,7 @@ data:
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://ei1333.hateblo.jp/entry/2018/05/29/011140
@@ -81,8 +81,8 @@ data:
   isVerificationFile: false
   path: linkcuttree/path.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:48:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 19:04:41+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
   - test/aoj/0367.linkcuttree.test.cpp

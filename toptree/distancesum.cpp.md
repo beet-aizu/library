@@ -68,7 +68,7 @@ data:
   isVerificationFile: false
   path: toptree/distancesum.cpp
   requiredBy: []
-  timestamp: '2020-10-27 17:58:49+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4862.test.cpp

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   _extendedRequiredBy: []
@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/ushi.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:48:03+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/0437.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   - icon: ':x:'
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:48:03+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp

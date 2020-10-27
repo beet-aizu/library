@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/rectanglehash.cpp
     title: string/rectanglehash.cpp
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
     links:
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_14_C.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:33:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 19:04:41+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_C.test.cpp
 layout: document

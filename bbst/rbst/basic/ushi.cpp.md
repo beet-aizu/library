@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
@@ -12,14 +12,14 @@ data:
   - icon: ':x:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
   - icon: ':x:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query
@@ -83,8 +83,8 @@ data:
   path: bbst/rbst/basic/ushi.cpp
   requiredBy:
   - bbst/rbst/persistent/ushi.cpp
-  timestamp: '2020-10-27 18:48:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 19:04:41+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/1508.test.cpp

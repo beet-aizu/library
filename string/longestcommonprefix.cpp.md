@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/suffixarray.cpp
     title: Suffix Array
   _extendedRequiredBy: []
@@ -12,14 +12,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3112.test.cpp
     title: test query
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -51,8 +51,8 @@ data:
   isVerificationFile: false
   path: string/longestcommonprefix.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 19:04:41+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3112.test.cpp
   - test/aoj/2711.test.cpp

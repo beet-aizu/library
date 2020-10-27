@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   - icon: ':heavy_check_mark:'
@@ -62,7 +62,7 @@ data:
     \  }\n  G[n].emplace_back(0);\n\n  for(int i=1;i<=m;i++){\n    int v,x;\n    cin>>v>>x;\n\
     \    v--;x--;\n    modv[cs[v]].emplace_back(v);\n    modt[cs[v]].emplace_back(i);\n\
     \    cs[v]=x;\n    modv[cs[v]].emplace_back(v);\n    modt[cs[v]].emplace_back(i);\n\
-    \  }\n\n  using ll = long long;\n  struct A{\n    ll sz1,sz2;\n    A():sz1(0),sz2(){}\n\
+    \  }\n\n  using ll = long long;\n  struct A{\n    ll sz1,sz2;\n    A():sz1(0),sz2(0){}\n\
     \    A(ll sz1,ll sz2):sz1(sz1),sz2(sz2){}\n    A operator+(const A &a)const{\n\
     \      return A(sz1+a.sz1,sz2+a.sz2);\n    };\n    A& operator+=(const A &a){\n\
     \      sz1+=a.sz1;\n      sz2+=a.sz1*a.sz1;\n      return (*this);\n    }\n  \
@@ -109,7 +109,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/subtree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:48:03+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/3120.test.cpp

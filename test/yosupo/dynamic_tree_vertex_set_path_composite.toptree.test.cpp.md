@@ -65,15 +65,15 @@ data:
     \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
     \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
     \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
-    \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
-    \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0){}\n\n \
-    \ inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n  \
-    \  auto dummy=&pool_v[ptr_v++];\n    *t=v;\n    link(t,id,dummy);\n    return\
-    \ t;\n  }\n\n  inline Node* edge(Vertex* u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n\
-    \    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n    return pushup(t);\n\
-    \  }\n\n  inline Node* compress(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n\
-    \    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n    return pushup(t);\n  }\n\
-    \n  inline Node* rake(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n\
+    \  };\n\n  static array<Vertex, LIM> pool_vertex;\n  static array<Node, LIM> pool_node;\n\
+    \  static size_t ptr_vertex,ptr_node;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex\
+    \ v=Vertex()){\n    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
+    \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
+    \ u,Cluster w,Vertex* v){\n    auto t=&(pool_node[ptr_node++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
+    \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
+    \ auto t=&(pool_node[ptr_node++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n\
+    \    return pushup(t);\n  }\n\n  inline Node* rake(Node* l,Node* r){\n    auto\
+    \ t=&(pool_node[ptr_node++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n\
     \    return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n\
     \    if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
     \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
@@ -178,11 +178,13 @@ data:
     \ res=t->p->ch[1]->dat;\n    res.toggle();\n    Node* rk=t->p->q;\n    if(t->p->q){\n\
     \      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n      res=Cluster::rake(res,rk->dat);\n\
     \    }\n    return res;\n  }\n};\ntemplate<typename Vertex, typename Cluster,\
-    \ size_t LIM>\narray<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;\ntemplate<typename\
-    \ Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex, Cluster,\
-    \ LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_c;\n//END CUT HERE\n#ifndef\
-    \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n\
-    #line 11 \"test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp\"\
+    \ size_t LIM>\narray<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_vertex;\n\
+    template<typename Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex,\
+    \ Cluster, LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_node;\ntemplate<typename\
+    \ Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex, Cluster, LIM>::ptr_vertex;\n\
+    template<typename Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex,\
+    \ Cluster, LIM>::ptr_node;\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
+    \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 11 \"test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp\"\
     \n#undef call_from_test\n\nusing M = Mint<int, 998244353>;\nusing L = LinearFunction<M>;\n\
     using P = TwoWay<L>;\n\nstruct Vertex{\n  void* handle;\n  L val;\n  Vertex(L\
     \ val=L()):handle(nullptr),val(val){}\n};\n\nstruct Cluster{\n  P res;\n  Cluster():res(L(1,0)){}\n\
@@ -233,7 +235,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 17:58:49+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

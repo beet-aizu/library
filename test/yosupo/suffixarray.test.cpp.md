@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/suffixarray.cpp
     title: Suffix Array
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
     links:
@@ -16,7 +16,7 @@ data:
     \ PROBLEM https://judge.yosupo.jp/problem/suffixarray\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"string/suffixarray.cpp\"\
     \n\n#line 3 \"string/suffixarray.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
-    \ CUT HERE\nstruct SuffixArray{\n  string s;\n  vector<int> sa,rev;\n\n  SuffixArray(){}\n\
+    \ CUT HERE\nstruct SuffixArray{\n  const string s;\n  vector<int> sa,rev;\n\n\
     \  SuffixArray(const string &s_):s(s_+'$'){\n    int n=s.size();\n    sa.resize(n);\n\
     \    iota(sa.begin(),sa.end(),0);\n    sort(sa.begin(),sa.end(),\n         [&](int\
     \ a,int b){\n           if(s[a]==s[b]) return a>b;\n           return s[a]<s[b];\n\
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/suffixarray.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 19:04:41+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/suffixarray.test.cpp
 layout: document

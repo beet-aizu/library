@@ -69,7 +69,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3112.test.cpp
     title: test query
   - icon: ':heavy_check_mark:'

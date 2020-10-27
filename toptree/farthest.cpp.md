@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3143.test.cpp
     title: Farthest (with index)
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"toptree/farthest.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -44,7 +44,7 @@ data:
   path: toptree/farthest.cpp
   requiredBy: []
   timestamp: '2020-10-27 16:52:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/3143.test.cpp
 documentation_of: toptree/farthest.cpp

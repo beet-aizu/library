@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/dual.cpp
     title: bbst/rbst/basic/dual.cpp
   - icon: ':x:'
     path: bbst/rbst/basic/lazy.cpp
     title: bbst/rbst/basic/lazy.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   - icon: ':x:'
@@ -27,16 +27,16 @@ data:
   - icon: ':x:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0438.test.cpp
     title: test find_by_order, order_of_key
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1579.test.cpp
     title: test/aoj/1579.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2890.test.cpp
     title: test order_of_key
   - icon: ':x:'
@@ -64,7 +64,7 @@ data:
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"bbst/rbst/basic/base.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -101,8 +101,8 @@ data:
     \ res;\n  }\n\n  Node* build(size_t l,size_t r,const vector<Node> &vs){\n    if(l+1==r)\
     \ return create(vs[l]);\n    size_t m=(l+r)>>1;\n    return merge(build(l,m,vs),build(m,r,vs));\n\
     \  }\n\n  Node* build(const vector<Node> &vs){\n    return build(0,vs.size(),vs);\n\
-    \  }\n};\ntemplate<typename Node, size_t LIM>\nbyte BBSTBase<Node, LIM>::pool[];\n\
-    template<typename Node, size_t LIM>\nNode* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node,\
+    \  }\n};\ntemplate<typename Node, size_t LIM>\nalignas(Node) byte BBSTBase<Node,\
+    \ LIM>::pool[];\ntemplate<typename Node, size_t LIM>\nNode* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node,\
     \ LIM>::pool;\ntemplate<typename Node, size_t LIM>\nsize_t BBSTBase<Node, LIM>::size=0;\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
@@ -139,8 +139,8 @@ data:
     \ res;\n  }\n\n  Node* build(size_t l,size_t r,const vector<Node> &vs){\n    if(l+1==r)\
     \ return create(vs[l]);\n    size_t m=(l+r)>>1;\n    return merge(build(l,m,vs),build(m,r,vs));\n\
     \  }\n\n  Node* build(const vector<Node> &vs){\n    return build(0,vs.size(),vs);\n\
-    \  }\n};\ntemplate<typename Node, size_t LIM>\nbyte BBSTBase<Node, LIM>::pool[];\n\
-    template<typename Node, size_t LIM>\nNode* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node,\
+    \  }\n};\ntemplate<typename Node, size_t LIM>\nalignas(Node) byte BBSTBase<Node,\
+    \ LIM>::pool[];\ntemplate<typename Node, size_t LIM>\nNode* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node,\
     \ LIM>::pool;\ntemplate<typename Node, size_t LIM>\nsize_t BBSTBase<Node, LIM>::size=0;\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
@@ -155,8 +155,8 @@ data:
   - bbst/rbst/basic/array.cpp
   - bbst/rbst/basic/dual.cpp
   - bbst/rbst/basic/lazy.cpp
-  timestamp: '2020-10-27 18:48:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 19:04:41+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp

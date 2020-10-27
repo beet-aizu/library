@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
@@ -100,7 +100,7 @@ data:
   path: bbst/rbst/basic/lazy.cpp
   requiredBy:
   - bbst/rbst/persistent/lazy.cpp
-  timestamp: '2020-10-27 18:48:03+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp

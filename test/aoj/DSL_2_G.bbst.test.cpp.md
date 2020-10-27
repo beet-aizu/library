@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   - icon: ':x:'
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_G.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:48:03+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_G.bbst.test.cpp

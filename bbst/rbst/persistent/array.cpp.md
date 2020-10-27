@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy: []
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/array.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:48:03+09:00'
+  timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp
