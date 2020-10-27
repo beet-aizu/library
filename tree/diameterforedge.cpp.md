@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
   _extendedRequiredBy: []

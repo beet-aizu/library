@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
   _extendedRequiredBy: []
@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - icon: ':x:'

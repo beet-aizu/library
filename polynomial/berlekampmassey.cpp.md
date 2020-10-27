@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/find_linear_recurrence.test.cpp
     title: test/yosupo/find_linear_recurrence.test.cpp
   - icon: ':x:'
@@ -16,7 +16,7 @@ data:
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"polynomial/berlekampmassey.cpp\"\n\n#ifndef call_from_test\n\
@@ -49,7 +49,7 @@ data:
   path: polynomial/berlekampmassey.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:15:27+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0104.test.cpp
   - test/yukicoder/0444.test.cpp

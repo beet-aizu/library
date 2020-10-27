@@ -27,13 +27,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/3049.test.cpp
     title: test/aoj/geometry/3049.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_2_D.test.cpp
     title: test/aoj/geometry/CGL_2_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_7_H.test.cpp
     title: test/aoj/geometry/CGL_7_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_7_I.test.cpp
     title: test/aoj/geometry/CGL_7_I.test.cpp
   - icon: ':x:'

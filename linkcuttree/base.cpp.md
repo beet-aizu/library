@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
   - icon: ':question:'
@@ -33,16 +33,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_E.linkcuttree.test.cpp
     title: test/aoj/GRL_5_E.linkcuttree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
   - icon: ':x:'

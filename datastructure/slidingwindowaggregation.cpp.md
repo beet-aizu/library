@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
   _extendedRequiredBy: []

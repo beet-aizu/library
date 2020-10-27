@@ -11,17 +11,17 @@ data:
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':x:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/multipoint_evaluation.test.cpp
     title: test/yosupo/multipoint_evaluation.test.cpp
   - icon: ':x:'
@@ -31,7 +31,7 @@ data:
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -62,7 +62,7 @@ data:
   - polynomial/multieval.cpp
   - formalpowerseries/mod.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp

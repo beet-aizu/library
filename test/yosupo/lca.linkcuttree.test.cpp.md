@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
@@ -42,7 +42,7 @@ data:
   path: test/yosupo/lca.linkcuttree.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.linkcuttree.test.cpp
 layout: document
