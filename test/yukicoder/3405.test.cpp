@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://yukicoder.me/problems/3405
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test

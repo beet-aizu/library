@@ -48,7 +48,8 @@ struct EulerTourForBFS : LevelAncestor{
 
   template<typename F>
   void exec(int v,int d,F f){
-    if(dep[v]+d>=n or H[dep[v]+d].empty()) return;
+    if(dep[v]+d>=(int)H.size()) return;
+    if(H[dep[v]+d].empty()) return;
     int l=find(v,dep[v]+d,0);
     int r=find(v,dep[v]+d,1);
     if(l<r) f(l,r);
