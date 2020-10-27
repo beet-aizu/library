@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp
     title: test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/queue_operate_all_composite.test.cpp
     title: test/yosupo/queue_operate_all_composite.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://atcoder.jp/contests/jag2018summer-day2/tasks/jag2018summer_day2_d
@@ -80,7 +80,7 @@ data:
   path: datastructure/slidingwindowaggregation.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp
   - test/yosupo/queue_operate_all_composite.test.cpp

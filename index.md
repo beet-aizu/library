@@ -31,10 +31,10 @@ data:
       title: bbst/pb_ds_tree.cpp
   - name: bbst/rbst/basic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/array.cpp
       title: bbst/rbst/basic/array.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/base.cpp
       title: bbst/rbst/basic/base.cpp
     - icon: ':heavy_check_mark:'
@@ -48,7 +48,7 @@ data:
       title: bbst/rbst/basic/ushi.cpp
   - name: bbst/rbst/persistent
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/persistent/array.cpp
       title: bbst/rbst/persistent/array.cpp
     - icon: ':warning:'
@@ -73,7 +73,7 @@ data:
     - icon: ':question:'
       path: combinatorics/enumeration.cpp
       title: combinatorics/enumeration.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/partition.cpp
       title: combinatorics/partition.cpp
     - icon: ':heavy_check_mark:'
@@ -133,7 +133,7 @@ data:
     - icon: ':question:'
       path: datastructure/binaryindexedtree.cpp
       title: Binary Indexed Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/binarytrie.cpp
       title: datastructure/binarytrie.cpp
     - icon: ':heavy_check_mark:'
@@ -166,7 +166,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/skewheap.cpp
       title: datastructure/skewheap.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
     - icon: ':heavy_check_mark:'
@@ -186,31 +186,31 @@ data:
     - icon: ':question:'
       path: formalpowerseries/base.cpp
       title: formalpowerseries/base.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/diff.cpp
       title: formalpowerseries/diff.cpp
     - icon: ':question:'
       path: formalpowerseries/div.cpp
       title: formalpowerseries/div.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/exp.cpp
       title: formalpowerseries/exp.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/integral.cpp
       title: formalpowerseries/integral.cpp
     - icon: ':question:'
       path: formalpowerseries/inv.cpp
       title: formalpowerseries/inv.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/log.cpp
       title: formalpowerseries/log.cpp
     - icon: ':question:'
       path: formalpowerseries/mod.cpp
       title: formalpowerseries/mod.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/pow.cpp
       title: formalpowerseries/pow.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/shift.cpp
       title: formalpowerseries/shift.cpp
     - icon: ':x:'
@@ -388,7 +388,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/linearcongruence.cpp
       title: math/linearcongruence.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/linearfunction.cpp
       title: math/linearfunction.cpp
     - icon: ':x:'
@@ -472,13 +472,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: polynomial/hash.cpp
       title: polynomial/hash.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/interpolate.cpp
       title: polynomial/interpolate.cpp
     - icon: ':question:'
       path: polynomial/lagrangeinterpolation.cpp
       title: polynomial/lagrangeinterpolation.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/multieval.cpp
       title: polynomial/multieval.cpp
     - icon: ':heavy_check_mark:'
@@ -495,12 +495,12 @@ data:
     - icon: ':question:'
       path: segtree/basic/lazy.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/ushi.cpp
       title: segtree/basic/ushi.cpp
   - name: segtree/count
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: segtree/count/dynamic_offline.cpp
       title: segtree/count/dynamic_offline.cpp
     - icon: ':heavy_check_mark:'
@@ -530,7 +530,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/knuthmorrispratt.cpp
       title: string/knuthmorrispratt.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/longestcommonprefix.cpp
       title: Longest Common Prefix
     - icon: ':heavy_check_mark:'
@@ -554,7 +554,7 @@ data:
     - icon: ':question:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/run.cpp
       title: string/run.cpp
     - icon: ':heavy_check_mark:'
@@ -1526,46 +1526,46 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/multipoint_evaluation.test.cpp
       title: test/yosupo/multipoint_evaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/number_of_substrings.test.cpp
       title: test/yosupo/number_of_substrings.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/partition_function.test.cpp
       title: test/yosupo/partition_function.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/persistent_queue.test.cpp
       title: test/yosupo/persistent_queue.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_rectangle_sum.test.cpp
       title: test/yosupo/point_add_rectangle_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/point_set_range_composite.test.cpp
       title: test/yosupo/point_set_range_composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/polynomial_interpolation.test.cpp
       title: test/yosupo/polynomial_interpolation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/polynomial_taylor_shift.test.cpp
       title: test/yosupo/polynomial_taylor_shift.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/pow_of_formal_power_series.test.cpp
       title: test/yosupo/pow_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/queue_operate_all_composite.test.cpp
       title: test/yosupo/queue_operate_all_composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/range_affine_range_sum.test.cpp
       title: test/yosupo/range_affine_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/range_kth_smallest.test.cpp
       title: test rquantile
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/runenumerate.test.cpp
       title: test/yosupo/runenumerate.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1574,7 +1574,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/segment_add_get_min.test.cpp
       title: test/yosupo/segment_add_get_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/set_xor_min.test.cpp
       title: test/yosupo/set_xor_min.test.cpp
     - icon: ':heavy_check_mark:'

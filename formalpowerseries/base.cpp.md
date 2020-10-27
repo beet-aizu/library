@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/bernoulli.cpp
     title: combinatorics/bernoulli.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/partition.cpp
     title: combinatorics/partition.cpp
   - icon: ':x:'
@@ -17,40 +17,40 @@ data:
   - icon: ':x:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
   - icon: ':question:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
   - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
   - icon: ':question:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/shift.cpp
     title: formalpowerseries/shift.cpp
   - icon: ':x:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedVerifiedWith:
@@ -81,16 +81,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/multipoint_evaluation.test.cpp
     title: test/yosupo/multipoint_evaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/partition_function.test.cpp
     title: test/yosupo/partition_function.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_taylor_shift.test.cpp
     title: test/yosupo/polynomial_taylor_shift.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
   - icon: ':x:'

@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
   - icon: ':question:'
@@ -25,16 +25,16 @@ data:
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
     links:
@@ -77,7 +77,7 @@ data:
   path: test/yosupo/polynomial_interpolation.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/polynomial_interpolation.test.cpp
 layout: document

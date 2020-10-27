@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':heavy_check_mark:'

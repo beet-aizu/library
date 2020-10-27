@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: Longest Common Prefix
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
     links:
@@ -39,7 +39,7 @@ data:
   path: test/yosupo/number_of_substrings.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/number_of_substrings.test.cpp
 layout: document

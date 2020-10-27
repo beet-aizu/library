@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/persistent_queue
@@ -48,7 +48,7 @@ data:
   path: test/yosupo/persistent_queue.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/persistent_queue.test.cpp
 layout: document

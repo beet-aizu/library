@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   - icon: ':heavy_check_mark:'

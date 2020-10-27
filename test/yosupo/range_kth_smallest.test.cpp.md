@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
@@ -88,7 +88,7 @@ data:
   path: test/yosupo/range_kth_smallest.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/range_kth_smallest.test.cpp
 layout: document

@@ -10,22 +10,22 @@ data:
   - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
   - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
   - icon: ':question:'
@@ -34,7 +34,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/pow_of_formal_power_series
     links:
@@ -77,7 +77,7 @@ data:
   path: test/yosupo/pow_of_formal_power_series.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/pow_of_formal_power_series.test.cpp
 layout: document

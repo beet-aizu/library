@@ -7,19 +7,19 @@ data:
   - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
   - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
   _extendedRequiredBy: []
@@ -27,11 +27,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -66,7 +66,7 @@ data:
   path: formalpowerseries/pow.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3084.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp

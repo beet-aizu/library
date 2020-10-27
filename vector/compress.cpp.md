@@ -30,10 +30,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
   - icon: ':x:'

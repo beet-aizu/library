@@ -22,7 +22,7 @@ data:
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedRequiredBy: []

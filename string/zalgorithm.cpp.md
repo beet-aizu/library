@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/run.cpp
     title: string/run.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3081.test.cpp
     title: test/aoj/3081.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
   - icon: ':x:'

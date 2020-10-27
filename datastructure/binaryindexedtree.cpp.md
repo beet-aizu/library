@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_D.test.cpp
     title: test/aoj/GRL_5_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_range_sum.test.cpp
     title: test/yosupo/point_add_range_sum.test.cpp
   - icon: ':x:'

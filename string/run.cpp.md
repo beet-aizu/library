@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3081.test.cpp
     title: test/aoj/3081.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -58,7 +58,7 @@ data:
   path: string/run.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3081.test.cpp
   - test/yosupo/runenumerate.test.cpp

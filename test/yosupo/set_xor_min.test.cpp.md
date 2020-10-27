@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/binarytrie.cpp
     title: datastructure/binarytrie.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
     links:
@@ -95,7 +95,7 @@ data:
   path: test/yosupo/set_xor_min.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/set_xor_min.test.cpp
 layout: document

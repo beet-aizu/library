@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: Longest Common Prefix
   _extendedVerifiedWith:
@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test query
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
   - icon: ':x:'
