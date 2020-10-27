@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum
     links:
@@ -48,7 +48,7 @@ data:
   path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
 layout: document

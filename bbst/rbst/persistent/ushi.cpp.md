@@ -4,16 +4,16 @@ data:
   - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -34,8 +34,8 @@ data:
     \      a->r=clone(a->r);\n    }\n    return super::eval(a);\n  }\n\n  T query(Node\
     \ *a,size_t l,size_t r){\n    auto s=super::split(a,l);\n    auto t=super::split(s.second,r-l);\n\
     \    return super::query(t.first);\n  }\n\n  Node* rebuild(Node* a){\n    auto\
-    \ vs=super::dump(a);\n    super::ptr=0;\n    return super::build(vector<Node>(vs.begin(),vs.end()));\n\
-    \  }\n\n  bool almost_full() const{\n    return super::ptr>LIM*9/10;\n  }\n};\n\
+    \ vs=super::dump(a);\n    super::size=0;\n    return super::build(vector<Node>(vs.begin(),vs.end()));\n\
+    \  }\n\n  bool almost_full() const{\n    return super::size>LIM*9/10;\n  }\n};\n\
     //END CUT HERE\n//INSERT ABOVE HERE\n#ifndef call_from_test\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn:
@@ -44,8 +44,8 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/ushi.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 19:18:31+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0437.test.cpp
 documentation_of: bbst/rbst/persistent/ushi.cpp

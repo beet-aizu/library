@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/dual.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -27,7 +27,7 @@ data:
   path: math/dual.cpp
   requiredBy: []
   timestamp: '2020-10-27 16:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
 documentation_of: math/dual.cpp

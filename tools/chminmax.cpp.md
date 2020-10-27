@@ -69,7 +69,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test query
   - icon: ':heavy_check_mark:'
@@ -93,7 +93,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_B.test.cpp
     title: test/aoj/DPL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
   - icon: ':heavy_check_mark:'

@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/dual.cpp
     title: math/dual.cpp
   - icon: ':question:'
@@ -19,7 +19,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
     links:
@@ -65,7 +65,7 @@ data:
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
 layout: document

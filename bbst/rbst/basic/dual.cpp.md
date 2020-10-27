@@ -9,14 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1579.test.cpp
     title: test/aoj/1579.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_E.bbst.test.cpp
     title: test/aoj/DSL_2_E.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -65,7 +65,7 @@ data:
   path: bbst/rbst/basic/dual.cpp
   requiredBy: []
   timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_E.bbst.test.cpp
   - test/aoj/1579.test.cpp

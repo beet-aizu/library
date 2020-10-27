@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   _extendedRequiredBy: []

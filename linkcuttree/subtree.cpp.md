@@ -9,17 +9,17 @@ data:
     title: tools/fastio.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
@@ -110,7 +110,7 @@ data:
   path: linkcuttree/subtree.cpp
   requiredBy: []
   timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3120.test.cpp
   - test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp

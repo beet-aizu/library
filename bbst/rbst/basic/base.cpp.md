@@ -5,13 +5,13 @@ data:
   - icon: ':question:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/dual.cpp
     title: bbst/rbst/basic/dual.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/lazy.cpp
     title: bbst/rbst/basic/lazy.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   - icon: ':x:'
@@ -20,11 +20,11 @@ data:
   - icon: ':warning:'
     path: bbst/rbst/persistent/lazy.cpp
     title: bbst/rbst/persistent/lazy.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/ushi.cpp
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,25 +39,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2890.test.cpp
     title: test order_of_key
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_E.bbst.test.cpp
     title: test/aoj/DSL_2_E.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.bbst.test.cpp
     title: test/aoj/DSL_2_F.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_G.bbst.test.cpp
     title: test/aoj/DSL_2_G.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_H.bbst.test.cpp
     title: test/aoj/DSL_2_H.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
   - icon: ':x:'
