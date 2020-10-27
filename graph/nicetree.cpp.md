@@ -28,11 +28,11 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ graph/nicetree.cpp: line 226: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\nstruct NiceTree{\n  vector< vector<int> > G;\n  vector< set<int>\
-    \ > ex;\n  vector<int> buff;\n  NiceTree(int n):G(n),ex(n),buff(n){}\n\n  void\
-    \ add_edge(int u,int v){\n    if(u>v) swap(u,v);\n    if(ex[u].count(v)) return;\n\
-    \    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n    ex[u].emplace(v);\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\nstruct NiceTree{\n  vector< vector<int> > G;\n  vector<\
+    \ set<int> > ex;\n  vector<int> buff;\n  NiceTree(int n):G(n),ex(n),buff(n){}\n\
+    \n  void add_edge(int u,int v){\n    if(u>v) swap(u,v);\n    if(ex[u].count(v))\
+    \ return;\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n    ex[u].emplace(v);\n\
     \  }\n\n  enum Type{LEAF, JOIN, INTRODUCE, FORGET};\n  struct Node{\n    int type,is_root;\n\
     \    Node():type(-1),is_root(1){}\n\n    // index for G\n    vector<int> bag;\n\
     \    void add_vertex(int v){bag.emplace_back(v);}\n\n    // index for T\n    vector<int>\
@@ -68,7 +68,7 @@ data:
     \    }\n\n    vector<int> deg(n);\n    queue<int> que;\n    for(int i=0;i<n;i++){\n\
     \      deg[i]=G[i].size();\n      if(deg[i]<=2) que.emplace(i);\n    }\n\n   \
     \ vector<int> used(n,-1);\n    T.emplace_back();\n    while(!que.empty()){\n \
-    \     int v=que.front();que.pop();\n      if(deg[v]>2||used[v]!=-1) continue;\n\
+    \     int v=que.front();que.pop();\n      if(deg[v]>2 or used[v]!=-1) continue;\n\
     \      Node r;\n      r.add_vertex(v);\n\n      int p=-1,q=-1;\n      for(int\
     \ u:G[v]){\n        if(used[u]==-1){\n          (p==-1?p:q)=u;\n          r.add_vertex(u);\n\
     \        }else if(used[u]>=0){\n          r.add_child(used[u]);\n          used[u]=-2;\n\
@@ -123,7 +123,7 @@ data:
   isVerificationFile: false
   path: graph/nicetree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:29:50+09:00'
+  timestamp: '2020-10-27 16:01:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2405.test.cpp

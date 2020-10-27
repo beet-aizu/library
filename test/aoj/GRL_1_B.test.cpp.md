@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/bellmanford.cpp
     title: graph/bellmanford.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
     links:
@@ -42,7 +42,7 @@ data:
     \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,m,r;\n  cin>>n>>m>>r;\n\
     \n  BellmanFord<int> G(n);\n  for(int i=0;i<m;i++){\n    int a,b,c;\n    cin>>a>>b>>c;\n\
     \    G.add_edge(a,b,c);\n  }\n\n  int neg_loop;\n  auto res=G.build(r,neg_loop);\n\
-    \  if(neg_loop) drop(\"NEGATIVE CYCLE\");\n\n  for(int x:res){\n    if(x==BellmanFord<int>::INF)\
+    \  if(neg_loop) drop(\"NEGATIVE CYCLE\");\n\n  for(int x:res){\n    if(x==numeric_limits<int>::max())\
     \ cout<<\"INF\\n\";\n    else cout<<x<<\"\\n\";\n  }\n  cout<<flush;\n  return\
     \ 0;\n}\n"
   code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\n\
@@ -52,16 +52,16 @@ data:
     \  cin>>n>>m>>r;\n\n  BellmanFord<int> G(n);\n  for(int i=0;i<m;i++){\n    int\
     \ a,b,c;\n    cin>>a>>b>>c;\n    G.add_edge(a,b,c);\n  }\n\n  int neg_loop;\n\
     \  auto res=G.build(r,neg_loop);\n  if(neg_loop) drop(\"NEGATIVE CYCLE\");\n\n\
-    \  for(int x:res){\n    if(x==BellmanFord<int>::INF) cout<<\"INF\\n\";\n    else\
-    \ cout<<x<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \  for(int x:res){\n    if(x==numeric_limits<int>::max()) cout<<\"INF\\n\";\n\
+    \    else cout<<x<<\"\\n\";\n  }\n  cout<<flush;\n  return 0;\n}\n"
   dependsOn:
   - tools/drop.cpp
   - graph/bellmanford.cpp
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 15:54:11+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-27 16:01:15+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp
 layout: document

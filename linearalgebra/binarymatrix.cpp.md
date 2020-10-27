@@ -26,16 +26,16 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linearalgebra/binarymatrix.cpp: line 82: unable to process #include in #if /\
     \ #ifdef / #ifndef other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\nconst int MAX = 2002;\nusing BS = bitset<MAX*2>;\nusing mat\
-    \ = vector<BS>;\n\nvoid gauss(mat &v){\n  int n=v.size();\n  for(int i=0;i<n;i++){\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\nconst int MAX = 2002;\nusing BS = bitset<MAX*2>;\nusing\
+    \ mat = vector<BS>;\n\nvoid gauss(mat &v){\n  int n=v.size();\n  for(int i=0;i<n;i++){\n\
     \    for(int k=i;k<n;k++){\n      if(v[k][i]){\n        swap(v[i],v[k]);\n   \
-    \     break;\n      }\n    }\n    for(int k=0;k<n;k++)\n      if(i!=k&&v[k][i])\
+    \     break;\n      }\n    }\n    for(int k=0;k<n;k++)\n      if(i!=k and v[k][i])\
     \ v[k]^=v[i];\n  }\n}\n\nint mrank(mat v,int m){\n  int n=v.size();\n  int r=0,c=0;\n\
     \  for(int i=0;i<n;i++){\n    int s=-1;\n    while(c<m){\n      for(int j=i;j<n;j++){\n\
     \        if(v[j][c]){\n          s=j;\n          break;\n        }\n      }\n\
     \      if(~s) break;\n      c++;\n    }\n    if(c>=m) break;\n\n    swap(v[i],v[s]);\n\
-    \    for(int j=0;j<n;j++)\n      if(i!=j&&v[j][c]) v[j]^=v[i];\n\n    r++;c++;\n\
+    \    for(int j=0;j<n;j++)\n      if(i!=j and v[j][c]) v[j]^=v[i];\n\n    r++;c++;\n\
     \  }\n  return r;\n}\n\nmat mul(const mat &a,const mat &b){\n  int n=a.size();\n\
     \  vector<vector<int> > tmp(n,vector<int>(n,0));\n  mat res(n,BS(0));\n  for(int\
     \ i=0;i<n;i++)\n    for(int j=0;j<n;j++)\n      for(int k=0;k<n;k++)\n       \
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: linearalgebra/binarymatrix.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:29:50+09:00'
+  timestamp: '2020-10-27 16:01:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1308.test.cpp

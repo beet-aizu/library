@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/tree_decomposition_width_2.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 16:01:41+09:00'
+  timestamp: '2020-10-27 16:01:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/tree_decomposition_width_2.test.cpp

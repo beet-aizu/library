@@ -26,7 +26,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ graph/twosatisfiability.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"stronglyconnectedcomponent.cpp\"\n#undef call_from_test\n\
     \n#endif\n//BEGIN CUT HERE\nstruct TwoSat{\n  int n;\n  SCC scc;\n  TwoSat(int\
     \ n):n(n),scc(n*2){}\n  int negate(int v){return (n+v)%(n*2);}\n  void add_if(int\
@@ -46,22 +46,22 @@ data:
     \      int x=min(as.size(),bs.size());\n      int i;\n      for(i=0;i<x;i++){\n\
     \        if(as[i]==bs[i]) continue;\n        if(as[i]<bs[i]){\n          ts.add_if(bs[i],as[i]);\n\
     \        }else{\n          ts.set_true(as[i]);\n          ts.set_false(bs[i]);\n\
-    \        }\n        break;\n      }\n      if((i==x)&&(as.size()>bs.size())) NG();\n\
-    \    };\n\n  for(int i=0;i+1<n;i++)\n    add_edge(G[i],G[i+1]);\n\n  auto vs=ts.build();\n\
-    \  if(vs.empty()) NG();\n\n  vector<int> ans;\n  for(int i=0;i<m;i++)\n    if(vs[i])\
-    \ ans.emplace_back(i);\n\n  puts(\"Yes\");\n  printf(\"%d\\n\",(int)ans.size());\n\
+    \        }\n        break;\n      }\n      if((i==x) and (as.size()>bs.size()))\
+    \ NG();\n    };\n\n  for(int i=0;i+1<n;i++)\n    add_edge(G[i],G[i+1]);\n\n  auto\
+    \ vs=ts.build();\n  if(vs.empty()) NG();\n\n  vector<int> ans;\n  for(int i=0;i<m;i++)\n\
+    \    if(vs[i]) ans.emplace_back(i);\n\n  puts(\"Yes\");\n  printf(\"%d\\n\",(int)ans.size());\n\
     \  for(int i=0;i<(int)ans.size();i++){\n    if(i) printf(\" \");\n    printf(\"\
     %d\",ans[i]+1);\n  }\n  puts(\"\");\n\n  return 0;\n}\n/*\n  verified 2019/06/20\n\
     \  http://codeforces.com/contest/875/problem/C\n*/\n\n// test add_nand\nsigned\
     \ YUKI_470(){\n  int n;\n  cin>>n;\n  vector<string> u(n);\n  for(int i=0;i<n;i++)\
     \ cin>>u[i];\n\n  auto NO=[](){cout<<\"Impossible\"<<endl;exit(0);};\n\n  if(n>=100)\
     \ NO();\n\n  TwoSat ts(n);\n  for(int i=0;i<n;i++){\n    for(int j=0;j<i;j++){\n\
-    \      auto &as=u[i];\n      auto &bs=u[j];\n      if(as[0]==bs[0]&&as[1]==bs[1])\n\
-    \        ts.add_nand(i,j);\n\n      if(as[0]==bs[1]&&as[1]==bs[2])\n        ts.add_nand(i,ts.negate(j));\n\
-    \n      if(as[1]==bs[0]&&as[2]==bs[1])\n        ts.add_nand(ts.negate(i),j);\n\
-    \n      if(as[1]==bs[1]&&as[2]==bs[2])\n        ts.add_nand(ts.negate(i),ts.negate(j));\n\
-    \n      if(as[0]==bs[0]) ts.add_nand(ts.negate(i),ts.negate(j));\n      if(as[0]==bs[2])\
-    \ ts.add_nand(ts.negate(i),j);\n      if(as[2]==bs[0]) ts.add_nand(i,ts.negate(j));\n\
+    \      auto &as=u[i];\n      auto &bs=u[j];\n      if(as[0]==bs[0] and as[1]==bs[1])\n\
+    \        ts.add_nand(i,j);\n\n      if(as[0]==bs[1] and as[1]==bs[2])\n      \
+    \  ts.add_nand(i,ts.negate(j));\n\n      if(as[1]==bs[0] and as[2]==bs[1])\n \
+    \       ts.add_nand(ts.negate(i),j);\n\n      if(as[1]==bs[1] and as[2]==bs[2])\n\
+    \        ts.add_nand(ts.negate(i),ts.negate(j));\n\n      if(as[0]==bs[0]) ts.add_nand(ts.negate(i),ts.negate(j));\n\
+    \      if(as[0]==bs[2]) ts.add_nand(ts.negate(i),j);\n      if(as[2]==bs[0]) ts.add_nand(i,ts.negate(j));\n\
     \      if(as[2]==bs[2]) ts.add_nand(i,j);\n    }\n  }\n\n  auto res=ts.build();\n\
     \  if(res.empty()) NO();\n\n  for(int i=0;i<n;i++){\n    if(res[i])\n      cout<<u[i][0]<<u[i][1]<<\"\
     \ \"<<u[i][2]<<endl;\n    else\n      cout<<u[i][0]<<\" \"<<u[i][1]<<u[i][2]<<endl;\n\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: graph/twosatisfiability.cpp
   requiredBy: []
-  timestamp: '2020-10-25 17:34:17+09:00'
+  timestamp: '2020-10-27 16:01:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3102.test.cpp

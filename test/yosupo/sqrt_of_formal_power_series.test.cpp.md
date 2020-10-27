@@ -22,7 +22,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
