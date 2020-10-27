@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -17,10 +15,6 @@ decltype(auto) zip(vector<Ts>... args){
 //END CUT HERE
 #ifndef call_from_test
 signed main(){
-  vector<int> as({1,2,3});
-  vector<string> bs({"a","b","c"});
-  auto zs=zip(as,bs);
-  for(auto [x,y]:zs) cout<<x<<" "<<y<<endl;
   return 0;
 }
 #endif
