@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,34 +28,7 @@ namespace MonotoneMinima{
 }
 //END CUT HERE
 #ifndef call_from_test
-
-#define call_from_test
-#include "../tools/fastio.cpp"
-#undef call_from_test
-
-//INSERT ABOVE HERE
-signed COLOPL2018FINAL_C(){
-  using ll = long long;
-
-  int n;
-  cin>>n;
-  vector<ll> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  auto dist=[&](int i,int j){return as[j]+(ll)(i-j)*(i-j);};
-  auto res=MonotoneMinima::args<ll>(n,n,dist);
-
-  for(int i=0;i<n;i++) cout<<dist(i,res[i])<<"\n";
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/12/17
-  https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
-*/
-
 signed main(){
-  //COLOPL2018FINAL_C();
   return 0;
 }
 #endif

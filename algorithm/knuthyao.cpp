@@ -1,7 +1,5 @@
-#pragma once
-
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE

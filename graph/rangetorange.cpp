@@ -1,14 +1,9 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 #endif
 
-/*
- * @see https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
- */
-
+// https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
 //BEGIN CUT HERE
 struct RangeToRange{
   const int n;
