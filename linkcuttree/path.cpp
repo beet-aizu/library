@@ -17,7 +17,6 @@ struct NodeBase{
   bool rev;
   T val,dat;
   E laz;
-  NodeBase(){}
   NodeBase(T val,E laz):
     rev(0),val(val),dat(val),laz(laz){
     l=r=p=nullptr;}

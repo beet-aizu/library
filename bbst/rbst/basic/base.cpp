@@ -17,20 +17,17 @@ struct BBSTBase{
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
 
-  static array<Node, LIM> pool;
-  size_t ptr;
-  BBSTBase():ptr(0){}
+  alignas(Node) static byte pool[sizeof(Node) * LIM];
+  static Node* ptr;
+  static size_t size;
+
+  template<typename... Args>
+  inline Node* create(Args&&... args){
+    return new (ptr+size++) Node(std::forward<Args>(args)...);
+  }
 
   size_t count(const Node *a){
     return a?a->cnt:0;
-  }
-
-  inline Node* create(){
-    return &pool[ptr++];
-  }
-
-  inline Node* create(Node v){
-    return &(pool[ptr++]=v);
   }
 
   virtual void toggle(Node *a)=0;
@@ -122,7 +119,11 @@ struct BBSTBase{
   }
 };
 template<typename Node, size_t LIM>
-array<Node, LIM> BBSTBase<Node, LIM>::pool;
+byte BBSTBase<Node, LIM>::pool[];
+template<typename Node, size_t LIM>
+Node* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node, LIM>::pool;
+template<typename Node, size_t LIM>
+size_t BBSTBase<Node, LIM>::size=0;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

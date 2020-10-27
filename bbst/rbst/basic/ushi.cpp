@@ -15,7 +15,6 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   T val,dat;
-  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val):
     cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}
 };
@@ -160,8 +159,8 @@ signed HAPPYQUERY_C(){
       return memo[x];
     };
 
-  vector<Node> ws(n);
-  for(int i=0;i<n;i++) ws[i]=Node(hs(vs[i]));
+  vector<Node> ws;
+  for(int i=0;i<n;i++) ws.emplace_back(hs(vs[i]));
   auto rt=G.build(ws);
 
   for(int i=0;i<q;i++){

@@ -17,7 +17,6 @@ struct NodeBase{
   bool rev;
   T val,dat;
   E laz;
-  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val,E laz):
     cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}
 };
@@ -155,21 +154,21 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
   using T = tuple<int, int, int>;
   using P = pair<int, int>;
   auto f=[](T a,T b){
-           return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
-         };
+    return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);
+  };
   auto g=[](T a,P b){
-           return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
-         };
+    return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));
+  };
   auto h=[](P a,P b){
-           return P(a.first+b.first,a.second+b.second);
-         };
+    return P(a.first+b.first,a.second+b.second);
+  };
   const int INF = 1e9;
 
   using Node = NodeBase<T, P>;
   constexpr size_t LIM = 1e6;
   Lazy<Node, LIM> G(f,g,h,T(INF,INF,0),P(0,0));
 
-  vector<Node> vs(S.size()+2);
+  vector<Node> vs(S.size()+2,Node(G.ti,G.ei));
   for(int i=0;i<(int)S.size();i++)
     vs[i+1].val=T(0,0,S[i]=='('?1:-1);
 

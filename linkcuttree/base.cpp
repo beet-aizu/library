@@ -5,26 +5,17 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename Node, size_t LIM>
 struct LinkCutTreeBase{
-  static array<Node, LIM> pool;
-  size_t ptr;
+  alignas(Node) static byte pool[sizeof(Node) * LIM];
+  static Node* ptr;
+  static size_t size;
 
-  LinkCutTreeBase():ptr(0){}
-
-  inline Node* create(){
-    return &pool[ptr++];
+  template<typename... Args>
+  inline Node* create(Args&&... args){
+    return new (ptr+size++) Node(std::forward<Args>(args)...);
   }
 
-  inline Node* create(Node v){
-    return &(pool[ptr++]=v);
-  }
-
-  inline size_t idx(Node *t){
-    return t-&pool[0];
-  }
-
-  Node* operator[](size_t k){
-    return &(pool[k]);
-  }
+  inline size_t idx(Node *t){return t-ptr;}
+  Node* operator[](size_t k){return ptr+k;}
 
   virtual void toggle(Node *t) = 0;
   virtual Node* eval(Node *t) = 0;
@@ -142,7 +133,11 @@ struct LinkCutTreeBase{
   }
 };
 template<typename Node, size_t LIM>
-array<Node, LIM> LinkCutTreeBase<Node, LIM>::pool;
+byte LinkCutTreeBase<Node, LIM>::pool[];
+template<typename Node, size_t LIM>
+Node* LinkCutTreeBase<Node, LIM>::ptr=(Node*)LinkCutTreeBase<Node, LIM>::pool;
+template<typename Node, size_t LIM>
+size_t LinkCutTreeBase<Node, LIM>::size=0;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

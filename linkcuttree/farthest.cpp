@@ -16,7 +16,6 @@ struct NodeBase{
   bool rev;
   T val,ld,rd,smd;
   multiset<T> td;
-  NodeBase(){}
   NodeBase(T val):rev(0),val(val){
     l=r=p=nullptr;
     ld=rd=smd=val;

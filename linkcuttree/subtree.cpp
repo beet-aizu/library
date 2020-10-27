@@ -15,7 +15,6 @@ struct NodeBase{
   NodeBase *l,*r,*p;
   bool rev;
   A val,dat,sum;
-  NodeBase(){}
   NodeBase(A val,A dat,A sum):
     rev(0),val(val),dat(dat),sum(sum){
     l=r=p=nullptr;}

@@ -15,7 +15,6 @@ struct NodeBase{
   size_t cnt;
   bool rev;
   T val;
-  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}
   NodeBase(T val):
     cnt(1),rev(0),val(val){l=r=p=nullptr;}
 };
