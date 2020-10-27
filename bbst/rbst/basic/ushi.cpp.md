@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/persistent/ushi.cpp
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query
@@ -34,15 +34,15 @@ data:
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"base.cpp\"\n#undef call_from_test\n\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename Tp>\nstruct NodeBase{\n  using T = Tp;\n \
-    \ NodeBase *l,*r,*p;\n  size_t cnt;\n  bool rev;\n  T val,dat;\n  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}\n\
-    \  NodeBase(T val):\n    cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}\n};\n\
-    \ntemplate<typename Node, size_t LIM>\nstruct Ushi : BBSTBase<Node, LIM>{\n  using\
-    \ super = BBSTBase<Node, LIM>;\n\n  using T = typename Node::T;\n\n  using F =\
-    \ function<T(T,T)>;\n  using S = function<T(T)>;\n\n  F f;\n  S flip;\n  T ti;\n\
-    \n  Ushi(F f,S flip,T ti):\n    f(f),flip(flip),ti(ti){}\n\n  Ushi(F f,T ti):Ushi(f,[](T\
-    \ a){return a;},ti){}\n\n  T query(const Node *a){\n    return a?a->dat:ti;\n\
-    \  }\n\n  using super::count;\n  Node* recalc(Node *a){\n    a->cnt=count(a->l)+1+count(a->r);\n\
-    \    a->dat=a->val;\n    if(a->l) a->dat=f(a->l->dat,a->dat);\n    if(a->r) a->dat=f(a->dat,a->r->dat);\n\
+    \ NodeBase *l,*r,*p;\n  size_t cnt;\n  bool rev;\n  T val,dat;\n  NodeBase(T val):\n\
+    \    cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}\n};\n\ntemplate<typename\
+    \ Node, size_t LIM>\nstruct Ushi : BBSTBase<Node, LIM>{\n  using super = BBSTBase<Node,\
+    \ LIM>;\n\n  using T = typename Node::T;\n\n  using F = function<T(T,T)>;\n  using\
+    \ S = function<T(T)>;\n\n  F f;\n  S flip;\n  T ti;\n\n  Ushi(F f,S flip,T ti):\n\
+    \    f(f),flip(flip),ti(ti){}\n\n  Ushi(F f,T ti):Ushi(f,[](T a){return a;},ti){}\n\
+    \n  T query(const Node *a){\n    return a?a->dat:ti;\n  }\n\n  using super::count;\n\
+    \  Node* recalc(Node *a){\n    a->cnt=count(a->l)+1+count(a->r);\n    a->dat=a->val;\n\
+    \    if(a->l) a->dat=f(a->l->dat,a->dat);\n    if(a->r) a->dat=f(a->dat,a->r->dat);\n\
     \    return a;\n  }\n\n  using super::toggle;\n  void toggle(Node *a){\n    swap(a->l,a->r);\n\
     \    a->val=flip(a->val);\n    a->dat=flip(a->dat);\n    a->rev^=1;\n  }\n\n \
     \ // remove \"virtual\" for optimization\n  virtual Node* eval(Node* a){\n   \
@@ -70,12 +70,12 @@ data:
     \ a,ll b){return a+b;};\n  ll ti=0;\n\n  using Node=NodeBase<ll>;\n  constexpr\
     \ size_t LIM = 1e6;\n  Ushi<Node, LIM> G(f,ti);\n\n  unordered_map<int, ll> memo;\n\
     \  auto hs=\n    [&](int x){\n      if(!memo.count(x))\n        memo[x]=G.xor128();\n\
-    \      return memo[x];\n    };\n\n  vector<Node> ws(n);\n  for(int i=0;i<n;i++)\
-    \ ws[i]=Node(hs(vs[i]));\n  auto rt=G.build(ws);\n\n  for(int i=0;i<q;i++){\n\
-    \    if(ts[i]==1) rt=G.toggle(rt,ls[i],rs[i]);\n    if(ts[i]==2) rt=G.set_val(rt,ps[i],hs(xs[i]));\n\
-    \    if(ts[i]==3){\n      ll x=G.query(rt,as[i],bs[i]);\n      ll y=G.query(rt,cs[i],ds[i]);\n\
-    \      cout<<(x==y?\"Yes\":\"No\")<<\"\\n\";\n    }\n  }\n  cout<<flush;\n  return\
-    \ 0;\n}\n/*\n  verified on 2019/06/24\n  https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query\n\
+    \      return memo[x];\n    };\n\n  vector<Node> ws;\n  for(int i=0;i<n;i++) ws.emplace_back(hs(vs[i]));\n\
+    \  auto rt=G.build(ws);\n\n  for(int i=0;i<q;i++){\n    if(ts[i]==1) rt=G.toggle(rt,ls[i],rs[i]);\n\
+    \    if(ts[i]==2) rt=G.set_val(rt,ps[i],hs(xs[i]));\n    if(ts[i]==3){\n     \
+    \ ll x=G.query(rt,as[i],bs[i]);\n      ll y=G.query(rt,cs[i],ds[i]);\n      cout<<(x==y?\"\
+    Yes\":\"No\")<<\"\\n\";\n    }\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified\
+    \ on 2019/06/24\n  https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query\n\
     */\n\nsigned main(){\n  HAPPYQUERY_C();\n  return 0;\n}\n#endif\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
@@ -83,8 +83,8 @@ data:
   path: bbst/rbst/basic/ushi.cpp
   requiredBy:
   - bbst/rbst/persistent/ushi.cpp
-  timestamp: '2020-10-27 17:04:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 18:48:03+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/1508.test.cpp

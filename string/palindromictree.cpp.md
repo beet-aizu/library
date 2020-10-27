@@ -6,25 +6,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2292.test.cpp
     title: test/aoj/2292.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0399.test.cpp
     title: test/yukicoder/0399.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/palindromictree.cpp\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\nstruct PalindromicTree{\n  struct\
-    \ node{\n    map<char, int> nxt;\n    int len,suf,app,cnt;\n    node(){}\n   \
-    \ node(int len,int suf,int app,int cnt)\n      :len(len),suf(suf),app(app),cnt(cnt){}\n\
-    \  };\n  vector<node> vs;\n  vector<int> ord;\n  int n,ptr;\n\n  PalindromicTree(){}\n\
-    \  PalindromicTree(const string &s)\n    :vs(s.size()+10),n(2),ptr(1){\n\n   \
-    \ vs[0]=node(-1,0,-1,0);\n    vs[1]=node( 0,0,-1,0);\n\n    for(int i=0;i<(int)s.size();i++)\
-    \ add_char(s,i);\n    calc_order();\n    calc_count();\n  }\n\n  bool add_char(const\
-    \ string &s,int pos){\n    char ch=s[pos];\n    int cur=ptr;\n    while(1){\n\
-    \      int rev=pos-1-vs[cur].len;\n      if(rev>=0 and s[rev]==ch) break;\n  \
-    \    cur=vs[cur].suf;\n    }\n\n    if(vs[cur].nxt.count(ch)){\n      ptr=vs[cur].nxt[ch];\n\
-    \      vs[ptr].cnt++;\n      return false;\n    }\n    ptr=n++;\n\n    vs[ptr]=node(vs[cur].len+2,-1,pos-vs[cur].len-1,1);\n\
+    \ node{\n    map<char, int> nxt;\n    int len,suf,app,cnt;\n    node():len(-1){}\n\
+    \    node(int len,int suf,int app,int cnt)\n      :len(len),suf(suf),app(app),cnt(cnt){}\n\
+    \  };\n  vector<node> vs;\n  vector<int> ord;\n  int n,ptr;\n\n  PalindromicTree(const\
+    \ string &s)\n    :vs(s.size()+10),n(2),ptr(1){\n\n    vs[0]=node(-1,0,-1,0);\n\
+    \    vs[1]=node( 0,0,-1,0);\n\n    for(int i=0;i<(int)s.size();i++) add_char(s,i);\n\
+    \    calc_order();\n    calc_count();\n  }\n\n  bool add_char(const string &s,int\
+    \ pos){\n    char ch=s[pos];\n    int cur=ptr;\n    while(1){\n      int rev=pos-1-vs[cur].len;\n\
+    \      if(rev>=0 and s[rev]==ch) break;\n      cur=vs[cur].suf;\n    }\n\n   \
+    \ if(vs[cur].nxt.count(ch)){\n      ptr=vs[cur].nxt[ch];\n      vs[ptr].cnt++;\n\
+    \      return false;\n    }\n    ptr=n++;\n\n    vs[ptr]=node(vs[cur].len+2,-1,pos-vs[cur].len-1,1);\n\
     \    vs[cur].nxt[ch]=ptr;\n\n    if(vs[ptr].len==1){\n      vs[ptr].suf=1;\n \
     \     return true;\n    }\n\n    while(1){\n      cur=vs[cur].suf;\n      int\
     \ rev=pos-1-vs[cur].len;\n      if(rev>=0 and s[rev]==ch){\n        vs[ptr].suf=vs[cur].nxt[ch];\n\
@@ -37,9 +37,9 @@ data:
     \ main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\nstruct PalindromicTree{\n  struct node{\n    map<char,\
-    \ int> nxt;\n    int len,suf,app,cnt;\n    node(){}\n    node(int len,int suf,int\
-    \ app,int cnt)\n      :len(len),suf(suf),app(app),cnt(cnt){}\n  };\n  vector<node>\
-    \ vs;\n  vector<int> ord;\n  int n,ptr;\n\n  PalindromicTree(){}\n  PalindromicTree(const\
+    \ int> nxt;\n    int len,suf,app,cnt;\n    node():len(-1){}\n    node(int len,int\
+    \ suf,int app,int cnt)\n      :len(len),suf(suf),app(app),cnt(cnt){}\n  };\n \
+    \ vector<node> vs;\n  vector<int> ord;\n  int n,ptr;\n\n  PalindromicTree(const\
     \ string &s)\n    :vs(s.size()+10),n(2),ptr(1){\n\n    vs[0]=node(-1,0,-1,0);\n\
     \    vs[1]=node( 0,0,-1,0);\n\n    for(int i=0;i<(int)s.size();i++) add_char(s,i);\n\
     \    calc_order();\n    calc_count();\n  }\n\n  bool add_char(const string &s,int\
@@ -61,8 +61,8 @@ data:
   isVerificationFile: false
   path: string/palindromictree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 18:08:33+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0399.test.cpp
   - test/aoj/2292.test.cpp

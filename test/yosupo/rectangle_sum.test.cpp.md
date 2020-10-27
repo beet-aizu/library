@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
@@ -28,12 +28,12 @@ data:
     \  return 0;\n}\n#endif\n#line 1 \"segtree/count/dynamic_offline.cpp\"\n\n#line\
     \ 3 \"segtree/count/dynamic_offline.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\ntemplate<typename Key,typename T>\nstruct RangeCount{\n  struct BIT{\n\
-    \    vector<T> dat;\n    BIT(){}\n    BIT(int n){dat.assign(++n,0);}\n    T sum(int\
-    \ k){\n      T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n      return res;\n\
-    \    }\n    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k) dat[k]+=v;\n\
-    \    }\n  };\n  int n;\n  vector< vector<Key> > val;\n  vector<BIT> dat;\n  RangeCount(){}\n\
-    \  RangeCount(int n):n(n){\n    val.assign(n<<1,vector<Key>());\n    dat.reserve(n<<1);\n\
-    \  }\n  void preupdate(int a,Key x){\n    a+=n;\n    while(a){\n      val[a].emplace_back(x);\n\
+    \    vector<T> dat;\n    BIT(int n){dat.assign(++n,0);}\n    T sum(int k){\n \
+    \     T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n      return res;\n    }\n\
+    \    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k) dat[k]+=v;\n\
+    \    }\n  };\n  int n;\n  vector< vector<Key> > val;\n  vector<BIT> dat;\n  RangeCount(int\
+    \ n):n(n){\n    val.assign(n<<1,vector<Key>());\n    dat.reserve(n<<1);\n  }\n\
+    \  void preupdate(int a,Key x){\n    a+=n;\n    while(a){\n      val[a].emplace_back(x);\n\
     \      a>>=1;\n    }\n  }\n  void build(){\n    for(int i=0;i<n*2;i++){\n    \
     \  auto &vs=val[i];\n      sort(vs.begin(),vs.end());\n      vs.erase(unique(vs.begin(),vs.end()),vs.end());\n\
     \      dat.emplace_back(vs.size());\n    }\n  }\n  void update(int a,Key x,T z){\n\
@@ -73,8 +73,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/rectangle_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 18:08:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/rectangle_sum.test.cpp
 layout: document

@@ -25,24 +25,24 @@ data:
     #define call_from_test\n#include \"primaldual.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\n// O((F+F') E \\log V), F': sum of caps with negative\
     \ cost\ntemplate<typename Flow, typename Cost>\nstruct NegativeEdge{\n  PrimalDual<Flow,\
-    \ Cost> G;\n  vector<Flow> fs;\n  Cost sum;\n  int S,T;\n  NegativeEdge(){}\n\
-    \  NegativeEdge(int n):G(n+2),fs(n+2,0),sum(0),S(n),T(n+1){}\n\n  void use_edge(int\
-    \ u,int v,Flow cap,Cost cost){\n    fs[u]-=cap;\n    fs[v]+=cap;\n    sum=sum+cost*cap;\n\
-    \  }\n\n  void add_edge(int u,int v,Flow cap,Cost cost){\n    if(cost<Cost(0)){\n\
-    \      use_edge(u,v,cap,cost);\n      swap(u,v);\n      cost=-cost;\n    }\n \
-    \   G.add_edge(u,v,cap,cost);\n  }\n\n  bool build(){\n    Flow f=0;\n    for(int\
-    \ i=0;i<S;i++){\n      if(fs[i]>0){\n        f+=fs[i];\n        G.add_edge(S,i,+fs[i],Cost(0));\n\
-    \      }\n      if(fs[i]<0){\n        G.add_edge(i,T,-fs[i],Cost(0));\n      }\n\
-    \    }\n    return G.build(S,T,f);\n  }\n\n  bool build(int ts,int tt,Flow tf){\n\
-    \    fs[ts]+=tf;\n    fs[tt]-=tf;\n    return build();\n  }\n\n  Cost get_cost(){\n\
-    \    return sum+G.get_cost();\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ Cost> G;\n  vector<Flow> fs;\n  Cost sum;\n  int S,T;\n  NegativeEdge(int n):G(n+2),fs(n+2,0),sum(0),S(n),T(n+1){}\n\
+    \n  void use_edge(int u,int v,Flow cap,Cost cost){\n    fs[u]-=cap;\n    fs[v]+=cap;\n\
+    \    sum=sum+cost*cap;\n  }\n\n  void add_edge(int u,int v,Flow cap,Cost cost){\n\
+    \    if(cost<Cost(0)){\n      use_edge(u,v,cap,cost);\n      swap(u,v);\n    \
+    \  cost=-cost;\n    }\n    G.add_edge(u,v,cap,cost);\n  }\n\n  bool build(){\n\
+    \    Flow f=0;\n    for(int i=0;i<S;i++){\n      if(fs[i]>0){\n        f+=fs[i];\n\
+    \        G.add_edge(S,i,+fs[i],Cost(0));\n      }\n      if(fs[i]<0){\n      \
+    \  G.add_edge(i,T,-fs[i],Cost(0));\n      }\n    }\n    return G.build(S,T,f);\n\
+    \  }\n\n  bool build(int ts,int tt,Flow tf){\n    fs[ts]+=tf;\n    fs[tt]-=tf;\n\
+    \    return build();\n  }\n\n  Cost get_cost(){\n    return sum+G.get_cost();\n\
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - mincostflow/primaldual.cpp
   isVerificationFile: false
   path: mincostflow/negativeedge.cpp
   requiredBy: []
-  timestamp: '2020-10-06 13:10:17+09:00'
+  timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2627.test.cpp

@@ -21,11 +21,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_14_C.test.cpp
     title: test/aoj/ALDS1_14_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0399.test.cpp
     title: test/yukicoder/0399.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/rollinghash.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -55,7 +55,7 @@ data:
   requiredBy:
   - string/rectanglehash.cpp
   timestamp: '2019-10-28 14:24:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0399.test.cpp
   - test/aoj/1312.test.cpp

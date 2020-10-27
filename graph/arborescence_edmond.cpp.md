@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/stronglyconnectedcomponent.cpp
     title: graph/stronglyconnectedcomponent.cpp
   _extendedRequiredBy: []
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: graph/arborescence_edmond.cpp
   requiredBy: []
-  timestamp: '2020-10-25 17:34:17+09:00'
+  timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_2_B.test.cpp

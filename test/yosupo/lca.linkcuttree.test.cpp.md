@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
   _extendedRequiredBy: []
@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 17:58:49+09:00'
+  timestamp: '2020-10-27 18:48:03+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/lca.linkcuttree.test.cpp

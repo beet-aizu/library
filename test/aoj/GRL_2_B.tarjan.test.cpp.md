@@ -32,17 +32,16 @@ data:
     \      if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
     \      swap(a->l,a->r);\n      return a;\n    }\n\n    Node* pop(Node* a){\n \
     \     eval(a);\n      auto res=meld(a->l,a->r);\n      delete a;\n      return\
-    \ res;\n    }\n  };\n\n  struct UnionFind{\n    vector<int> r,p;\n    UnionFind(){}\n\
-    \    UnionFind(int sz):r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}\n    int find(int\
-    \ x){\n      return (x==p[x]?x:p[x]=find(p[x]));\n    }\n    bool same(int x,int\
-    \ y){\n      return find(x)==find(y);\n    }\n    void unite(int x,int y){\n \
-    \     x=find(x);y=find(y);\n      if(x==y) return;\n      r[x]+=r[y];\n      p[y]=x;\n\
-    \    }\n  };\n\n  struct edge{\n    int from,to;\n    T cost;\n    edge(){}\n\
-    \    edge(int from,int to,T cost):from(from),to(to),cost(cost){}\n  };\n\n  int\
-    \ n;\n  vector<edge> es;\n\n  Arborescence(int n):n(n){};\n\n  void add_edge(int\
-    \ from,int to,T cost){\n    es.emplace_back(from,to,cost);\n  }\n\n  T build(int\
-    \ r){\n    UnionFind uf(n);\n    const T INF = numeric_limits<T>::max()/2;\n \
-    \   SkewHeap hp(INF);\n    vector<typename SkewHeap::Node*> come(n,nullptr);\n\
+    \ res;\n    }\n  };\n\n  struct UnionFind{\n    vector<int> r,p;\n    UnionFind(int\
+    \ sz):r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}\n    int find(int x){\n    \
+    \  return (x==p[x]?x:p[x]=find(p[x]));\n    }\n    bool same(int x,int y){\n \
+    \     return find(x)==find(y);\n    }\n    void unite(int x,int y){\n      x=find(x);y=find(y);\n\
+    \      if(x==y) return;\n      r[x]+=r[y];\n      p[y]=x;\n    }\n  };\n\n  struct\
+    \ edge{\n    int from,to;\n    T cost;\n    edge(int from,int to,T cost):from(from),to(to),cost(cost){}\n\
+    \  };\n\n  int n;\n  vector<edge> es;\n\n  Arborescence(int n):n(n){};\n\n  void\
+    \ add_edge(int from,int to,T cost){\n    es.emplace_back(from,to,cost);\n  }\n\
+    \n  T build(int r){\n    UnionFind uf(n);\n    const T INF = numeric_limits<T>::max()/2;\n\
+    \    SkewHeap hp(INF);\n    vector<typename SkewHeap::Node*> come(n,nullptr);\n\
     \    vector<int> used(n,0),from(n,-1);\n    vector<T> cost(n,-1);\n\n    used[r]=2;\n\
     \    for(int i=0;i<(int)es.size();i++){\n      edge &e=es[i];\n      come[e.to]=hp.meld(come[e.to],hp.push(e.cost,i));\n\
     \    }\n\n    T res=0;\n    for(int i=0;i<n;i++){\n      if(used[i]) continue;\n\
@@ -77,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_2_B.tarjan.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 15:54:11+09:00'
+  timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_2_B.tarjan.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
@@ -9,20 +9,20 @@ data:
     path: bbst/rbst/persistent/lazy.cpp
     title: bbst/rbst/persistent/lazy.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_F.bbst.test.cpp
     title: test/aoj/DSL_2_F.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_G.bbst.test.cpp
     title: test/aoj/DSL_2_G.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_H.bbst.test.cpp
     title: test/aoj/DSL_2_H.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
@@ -38,8 +38,7 @@ data:
     #define call_from_test\n#include \"base.cpp\"\n#undef call_from_test\n\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename Tp, typename Ep>\nstruct NodeBase{\n  using\
     \ T = Tp;\n  using E = Ep;\n  NodeBase *l,*r,*p;\n  size_t cnt;\n  bool rev;\n\
-    \  T val,dat;\n  E laz;\n  NodeBase():cnt(1),rev(0){l=r=p=nullptr;}\n  NodeBase(T\
-    \ val,E laz):\n    cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}\n\
+    \  T val,dat;\n  E laz;\n  NodeBase(T val,E laz):\n    cnt(1),rev(0),val(val),dat(val),laz(laz){l=r=p=nullptr;}\n\
     };\n\ntemplate<typename Node, size_t LIM>\nstruct Lazy : BBSTBase<Node, LIM>{\n\
     \  using super = BBSTBase<Node, LIM>;\n\n  using T = typename Node::T;\n  using\
     \ E = typename Node::E;\n\n  using F = function<T(T, T)>;\n  using G = function<T(T,\
@@ -75,13 +74,12 @@ data:
     \    return vs;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
     \ HERE\nchar buf[114514];\nsigned CODEFESTIVAL2014EXHIBITION_B(){\n  int Q;\n\
     \  scanf(\"%d\",&Q);\n  scanf(\"%s\\n\",buf);\n  string S(buf);\n  using T = tuple<int,\
-    \ int, int>;\n  using P = pair<int, int>;\n  auto f=[](T a,T b){\n           return\
-    \ T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);\n         };\n  auto\
-    \ g=[](T a,P b){\n           return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));\n\
-    \         };\n  auto h=[](P a,P b){\n           return P(a.first+b.first,a.second+b.second);\n\
-    \         };\n  const int INF = 1e9;\n\n  using Node = NodeBase<T, P>;\n  constexpr\
-    \ size_t LIM = 1e6;\n  Lazy<Node, LIM> G(f,g,h,T(INF,INF,0),P(0,0));\n\n  vector<Node>\
-    \ vs(S.size()+2);\n  for(int i=0;i<(int)S.size();i++)\n    vs[i+1].val=T(0,0,S[i]=='('?1:-1);\n\
+    \ int, int>;\n  using P = pair<int, int>;\n  auto f=[](T a,T b){\n    return T(min(get<0>(a),get<0>(b)),min(get<1>(a),get<1>(b)),0);\n\
+    \  };\n  auto g=[](T a,P b){\n    return T(get<0>(a)+b.first,get<1>(a)+b.second,get<2>(a));\n\
+    \  };\n  auto h=[](P a,P b){\n    return P(a.first+b.first,a.second+b.second);\n\
+    \  };\n  const int INF = 1e9;\n\n  using Node = NodeBase<T, P>;\n  constexpr size_t\
+    \ LIM = 1e6;\n  Lazy<Node, LIM> G(f,g,h,T(INF,INF,0),P(0,0));\n\n  vector<Node>\
+    \ vs(S.size()+2,Node(G.ti,G.ei));\n  for(int i=0;i<(int)S.size();i++)\n    vs[i+1].val=T(0,0,S[i]=='('?1:-1);\n\
     \n  auto rt=G.build(vs);\n  for(int i=1;i<=(int)S.size();i++){\n    int z=get<2>(G.get_val(rt,i));\n\
     \    rt=G.update(rt,i,G.count(rt),P(z,0));\n    rt=G.update(rt,0,i+1,P(0,-z));\n\
     \  }\n\n  for(int i=0;i<Q;i++){\n    char x;\n    int y,z;\n    scanf(\"%c %d\
@@ -102,8 +100,8 @@ data:
   path: bbst/rbst/basic/lazy.cpp
   requiredBy:
   - bbst/rbst/persistent/lazy.cpp
-  timestamp: '2020-10-27 17:04:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 18:48:03+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp

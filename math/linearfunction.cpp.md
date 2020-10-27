@@ -9,7 +9,7 @@ data:
   - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
   - icon: ':heavy_check_mark:'

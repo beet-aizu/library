@@ -9,17 +9,17 @@ data:
     links: []
   bundledCode: "#line 1 \"segtree/types/offline.cpp\"\n#include<bits/stdc++.h>\nusing\
     \ namespace std;\n\n#define IGNORE\n\ntemplate<typename T>\nstruct RangeCount{\n\
-    \  struct BIT{\n    vector<T> dat;\n    BIT(){}\n    BIT(int n){dat.assign(++n,0);}\n\
-    \    T sum(int k){\n      T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n     \
-    \ return res;\n    }\n    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k)\
+    \  struct BIT{\n    vector<T> dat;\n    BIT(int n){dat.assign(++n,0);}\n    T\
+    \ sum(int k){\n      T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n      return\
+    \ res;\n    }\n    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k)\
     \ dat[k]+=v;\n    }\n  };\n  int n;\n  vector<vector<int> > val;\n  vector<BIT>\
-    \ dat;\n  RangeCount(){}\n  RangeCount(int n_){\n    n=1;\n    while(n<n_) n<<=1;\n\
-    \    val.assign(n<<1,vector<int>());\n    dat.reserve(n<<1);\n  }\n  void preupdate(int\
-    \ a,int x){\n    a+=n;\n    while(a){\n      val[a].emplace_back(x);\n      a>>=1;\n\
-    \    }\n  }\n  void build(){\n    for(int i=0;i<n*2;i++){\n      auto &v=val[i];\n\
-    \      sort(v.begin(),v.end());\n      v.erase(unique(v.begin(),v.end()),v.end());\n\
-    \      dat.emplace_back(v.size());\n    }\n  }\n  void update(int a,int x,int\
-    \ z){\n    a+=n;\n    while(a){\n      auto &v=val[a];\n      int k=lower_bound(v.begin(),v.end(),x)-v.begin();\n\
+    \ dat;\n  RangeCount(int n_){\n    n=1;\n    while(n<n_) n<<=1;\n    val.assign(n<<1,vector<int>());\n\
+    \    dat.reserve(n<<1);\n  }\n  void preupdate(int a,int x){\n    a+=n;\n    while(a){\n\
+    \      val[a].emplace_back(x);\n      a>>=1;\n    }\n  }\n  void build(){\n  \
+    \  for(int i=0;i<n*2;i++){\n      auto &v=val[i];\n      sort(v.begin(),v.end());\n\
+    \      v.erase(unique(v.begin(),v.end()),v.end());\n      dat.emplace_back(v.size());\n\
+    \    }\n  }\n  void update(int a,int x,int z){\n    a+=n;\n    while(a){\n   \
+    \   auto &v=val[a];\n      int k=lower_bound(v.begin(),v.end(),x)-v.begin();\n\
     \      dat[a].add(k,z);\n      a>>=1;\n    }\n  }\n  T calc(int k,int x,int y){\n\
     \    auto &v=val[k];\n    int p=lower_bound(v.begin(),v.end(),x)-v.begin();\n\
     \    int q=lower_bound(v.begin(),v.end(),y)-v.begin();\n    return dat[k].sum(q)-dat[k].sum(p);\n\
@@ -95,17 +95,17 @@ data:
     \    u--;\n        rt.count(et.ls[u],et.rs[u]);\n      }\n    }\n    auto vx=rt.build();\n\
     \    for(int x:vx) printf(\"%d\\n\",x);\n  }\n  return 0;\n}\n"
   code: "#include<bits/stdc++.h>\nusing namespace std;\n\n#define IGNORE\n\ntemplate<typename\
-    \ T>\nstruct RangeCount{\n  struct BIT{\n    vector<T> dat;\n    BIT(){}\n   \
-    \ BIT(int n){dat.assign(++n,0);}\n    T sum(int k){\n      T res=0;\n      for(;k;k-=k&-k)\
-    \ res+=dat[k];\n      return res;\n    }\n    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k)\
+    \ T>\nstruct RangeCount{\n  struct BIT{\n    vector<T> dat;\n    BIT(int n){dat.assign(++n,0);}\n\
+    \    T sum(int k){\n      T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n     \
+    \ return res;\n    }\n    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k)\
     \ dat[k]+=v;\n    }\n  };\n  int n;\n  vector<vector<int> > val;\n  vector<BIT>\
-    \ dat;\n  RangeCount(){}\n  RangeCount(int n_){\n    n=1;\n    while(n<n_) n<<=1;\n\
-    \    val.assign(n<<1,vector<int>());\n    dat.reserve(n<<1);\n  }\n  void preupdate(int\
-    \ a,int x){\n    a+=n;\n    while(a){\n      val[a].emplace_back(x);\n      a>>=1;\n\
-    \    }\n  }\n  void build(){\n    for(int i=0;i<n*2;i++){\n      auto &v=val[i];\n\
-    \      sort(v.begin(),v.end());\n      v.erase(unique(v.begin(),v.end()),v.end());\n\
-    \      dat.emplace_back(v.size());\n    }\n  }\n  void update(int a,int x,int\
-    \ z){\n    a+=n;\n    while(a){\n      auto &v=val[a];\n      int k=lower_bound(v.begin(),v.end(),x)-v.begin();\n\
+    \ dat;\n  RangeCount(int n_){\n    n=1;\n    while(n<n_) n<<=1;\n    val.assign(n<<1,vector<int>());\n\
+    \    dat.reserve(n<<1);\n  }\n  void preupdate(int a,int x){\n    a+=n;\n    while(a){\n\
+    \      val[a].emplace_back(x);\n      a>>=1;\n    }\n  }\n  void build(){\n  \
+    \  for(int i=0;i<n*2;i++){\n      auto &v=val[i];\n      sort(v.begin(),v.end());\n\
+    \      v.erase(unique(v.begin(),v.end()),v.end());\n      dat.emplace_back(v.size());\n\
+    \    }\n  }\n  void update(int a,int x,int z){\n    a+=n;\n    while(a){\n   \
+    \   auto &v=val[a];\n      int k=lower_bound(v.begin(),v.end(),x)-v.begin();\n\
     \      dat[a].add(k,z);\n      a>>=1;\n    }\n  }\n  T calc(int k,int x,int y){\n\
     \    auto &v=val[k];\n    int p=lower_bound(v.begin(),v.end(),x)-v.begin();\n\
     \    int q=lower_bound(v.begin(),v.end(),y)-v.begin();\n    return dat[k].sum(q)-dat[k].sum(p);\n\
@@ -184,7 +184,7 @@ data:
   isVerificationFile: false
   path: segtree/types/offline.cpp
   requiredBy: []
-  timestamp: '2020-10-27 17:58:49+09:00'
+  timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: segtree/types/offline.cpp

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
   - icon: ':question:'
@@ -13,7 +13,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
     links:
@@ -47,8 +47,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_A.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 17:58:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 18:48:03+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_A.linkcuttree.test.cpp
 layout: document

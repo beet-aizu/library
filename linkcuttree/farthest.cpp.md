@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/1595.linkcuttree.test.cpp
     title: test/aoj/1595.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
@@ -30,8 +30,8 @@ data:
     #define call_from_test\n#include \"base.cpp\"\n#undef call_from_test\n\n#endif\n\
     // https://ei1333.hateblo.jp/entry/2019/06/13/133736\n//BEGIN CUT HERE\ntemplate<typename\
     \ Tp>\nstruct NodeBase{\n  using T = Tp;\n  NodeBase *l,*r,*p;\n  bool rev;\n\
-    \  T val,ld,rd,smd;\n  multiset<T> td;\n  NodeBase(){}\n  NodeBase(T val):rev(0),val(val){\n\
-    \    l=r=p=nullptr;\n    ld=rd=smd=val;\n    td.emplace(0);\n  }\n};\n\ntemplate<typename\
+    \  T val,ld,rd,smd;\n  multiset<T> td;\n  NodeBase(T val):rev(0),val(val){\n \
+    \   l=r=p=nullptr;\n    ld=rd=smd=val;\n    td.emplace(0);\n  }\n};\n\ntemplate<typename\
     \ Np, size_t LIM>\nstruct Farthest : LinkCutTreeBase<Np, LIM>{\n  using super\
     \ = LinkCutTreeBase<Np, LIM>;\n  using Node = Np;\n  using T = typename Node::T;\n\
     \n  Node* create(T val){\n    return super::create(Node(val));\n  }\n\n  inline\
@@ -65,8 +65,8 @@ data:
   isVerificationFile: false
   path: linkcuttree/farthest.cpp
   requiredBy: []
-  timestamp: '2020-10-27 17:58:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 18:48:03+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp
   - test/aoj/GRL_5_A.linkcuttree.test.cpp
