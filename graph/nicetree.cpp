@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -136,7 +136,7 @@ struct NiceTree{
     T.emplace_back();
     while(!que.empty()){
       int v=que.front();que.pop();
-      if(deg[v]>2||used[v]!=-1) continue;
+      if(deg[v]>2 or used[v]!=-1) continue;
       Node r;
       r.add_vertex(v);
 

@@ -18,7 +18,7 @@ bool hasMultipleEulerianTrail(Graph &G){
 
   int st=-1,en=-1,sz=0;
   for(int i=0;i<n;i++){
-    if(ind[i]>=3||outd[i]>=3) return true;
+    if(ind[i]>=3 or outd[i]>=3) return true;
     if(ind[i]<outd[i]) st=i;
     if(ind[i]>outd[i]) en=i;
     if(ind[i]+outd[i]) sz++;
@@ -26,7 +26,7 @@ bool hasMultipleEulerianTrail(Graph &G){
   if(sz<2) return false;
   if(st<0) return true;
 
-  while(ind[en]==1+loop[en]&&st!=en) en=pre[en];
+  while(ind[en]==1+loop[en] and st!=en) en=pre[en];
   if(st==en) return false;
 
   queue<int> que;
@@ -36,7 +36,7 @@ bool hasMultipleEulerianTrail(Graph &G){
   while(!que.empty()){
     int v=que.front();que.pop();
     for(int u:G[v]){
-      if(u==en||rs[u]) continue;
+      if(u==en or rs[u]) continue;
       rs[u]=1;
       que.emplace(u);
     }
@@ -49,7 +49,7 @@ bool hasMultipleEulerianTrail(Graph &G){
     int v=que.front();que.pop();
     if(rs[v]) return true;
     for(int u:G[v]){
-      if(u==en||us[u]) continue;
+      if(u==en or us[u]) continue;
       us[u]=1;
       que.emplace(u);
     }

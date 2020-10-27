@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -17,7 +17,7 @@ void gauss(mat &v){
       }
     }
     for(int k=0;k<n;k++)
-      if(i!=k&&v[k][i]) v[k]^=v[i];
+      if(i!=k and v[k][i]) v[k]^=v[i];
   }
 }
 
@@ -40,7 +40,7 @@ int mrank(mat v,int m){
 
     swap(v[i],v[s]);
     for(int j=0;j<n;j++)
-      if(i!=j&&v[j][c]) v[j]^=v[i];
+      if(i!=j and v[j][c]) v[j]^=v[i];
 
     r++;c++;
   }

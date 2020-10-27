@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -46,7 +44,7 @@ struct TwoEdgeConnectedComponents{
   void fill_component(int v){
     C[blg[v]].emplace_back(v);
     for(int u:G[v]){
-      if(~blg[u]||is_bridge(u,v)) continue;
+      if(~blg[u] or is_bridge(u,v)) continue;
       blg[u]=blg[v];
       fill_component(u);
     }

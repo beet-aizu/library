@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -24,7 +24,7 @@ struct TopologicalSort{
       ps.emplace_back(v);
       for(int u:G[v]){
         indeg[u]--;
-        if(indeg[u]==0&&!used[u]){
+        if(indeg[u]==0 and !used[u]){
           used[u]=1;
           que.emplace(u);
         }
@@ -35,7 +35,7 @@ struct TopologicalSort{
   vector<int> build(){
     int n=G.size();
     for(int i=0;i<n;i++)
-      if(indeg[i]==0&&!used[i]) bfs(i);
+      if(indeg[i]==0 and !used[i]) bfs(i);
     return ps;
   }
 };

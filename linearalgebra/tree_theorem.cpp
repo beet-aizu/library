@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -59,7 +57,7 @@ struct MatrixTreeTheorem{
       queue<int> q,r;
       for(auto &h:H) h.clear();
       int p=i;
-      while(i<(int)es.size()&&es[i].c==es[p].c){
+      while(i<(int)es.size() and es[i].c==es[p].c){
         int u=uf.find(es[i].a);
         int v=uf.find(es[i++].b);
         H[u].emplace_back(v);

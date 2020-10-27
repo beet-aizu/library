@@ -27,7 +27,7 @@ signed main(){
   if(neg_loop) drop("NEGATIVE CYCLE");
 
   for(int x:res){
-    if(x==BellmanFord<int>::INF) cout<<"INF\n";
+    if(x==numeric_limits<int>::max()) cout<<"INF\n";
     else cout<<x<<"\n";
   }
   cout<<flush;

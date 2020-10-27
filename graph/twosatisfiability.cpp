@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -79,7 +79,7 @@ signed CFR441_C(){
         }
         break;
       }
-      if((i==x)&&(as.size()>bs.size())) NG();
+      if((i==x) and (as.size()>bs.size())) NG();
     };
 
   for(int i=0;i+1<n;i++)
@@ -123,16 +123,16 @@ signed YUKI_470(){
     for(int j=0;j<i;j++){
       auto &as=u[i];
       auto &bs=u[j];
-      if(as[0]==bs[0]&&as[1]==bs[1])
+      if(as[0]==bs[0] and as[1]==bs[1])
         ts.add_nand(i,j);
 
-      if(as[0]==bs[1]&&as[1]==bs[2])
+      if(as[0]==bs[1] and as[1]==bs[2])
         ts.add_nand(i,ts.negate(j));
 
-      if(as[1]==bs[0]&&as[2]==bs[1])
+      if(as[1]==bs[0] and as[2]==bs[1])
         ts.add_nand(ts.negate(i),j);
 
-      if(as[1]==bs[1]&&as[2]==bs[2])
+      if(as[1]==bs[1] and as[2]==bs[2])
         ts.add_nand(ts.negate(i),ts.negate(j));
 
       if(as[0]==bs[0]) ts.add_nand(ts.negate(i),ts.negate(j));
