@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/twoway.cpp
     title: math/twoway.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   _extendedRequiredBy: []
@@ -60,24 +60,23 @@ data:
     \  TwoWay(T x,T y):x(x),y(y){}\n  TwoWay operator+(const TwoWay &o)const{return\
     \ TwoWay(x+o.x,o.y+y);}\n  TwoWay operator*(const TwoWay &o)const{return TwoWay(x*o.x,o.y*y);}\n\
     };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n#line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n\
-    #line 5 \"toptree/toptree.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\nstruct TopTree{\n  enum\
-    \ Type { Compress, Rake, Edge };\n  struct Node{\n    Vertex* vs[2];\n    Cluster\
-    \ dat;\n    Node* p;\n    Node* q;\n    Node* ch[2];\n    bool rev,guard;\n  \
-    \  Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n  };\n\
-    \n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n  size_t\
-    \ ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\n  inline\
-    \ Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n    auto dummy=&pool_v[ptr_v++];\n\
-    \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
-    \ u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
-    \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
-    \ auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n\
-    \    return pushup(t);\n  }\n\n  inline Node* rake(Node* l,Node* r){\n    auto\
-    \ t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n    return\
-    \ pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n    if(!p)\
-    \ return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return 0;\n   \
-    \ if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
+    \  return 0;\n}\n#endif\n#line 1 \"toptree/toptree.cpp\"\n\n#line 3 \"toptree/toptree.cpp\"\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename\
+    \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
+    \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
+    \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+    \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
+    \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\
+    \n  inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n\
+    \    auto dummy=&pool_v[ptr_v++];\n    *t=v;\n    link(t,id,dummy);\n    return\
+    \ t;\n  }\n\n  inline Node* edge(Vertex* u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n\
+    \    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n    return pushup(t);\n\
+    \  }\n\n  inline Node* compress(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n\
+    \    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n    return pushup(t);\n  }\n\
+    \n  inline Node* rake(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n\
+    \    return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n\
+    \    if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
+    \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
     \ t){\n    Node* p=t->p;\n    if(!p) return -1;\n    if(p->ch[0]==t) return 0;\n\
     \    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  inline Node* pushup(Node*\
     \ const t){\n    Node* const l=t->ch[0];\n    Node* const r=t->ch[1];\n\n    if(t->type==Type::Compress){\n\
@@ -234,7 +233,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:41:24+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

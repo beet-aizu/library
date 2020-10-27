@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/distancesum.cpp
     title: toptree/distancesum.cpp
   _extendedVerifiedWith:
@@ -30,37 +30,36 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3453.test.cpp
     title: Minimum Steiner Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
-    \ Vertex, typename Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress,\
-    \ Rake, Edge };\n  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node*\
-    \ p;\n    Node* q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n  \
-    \  Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n  };\n\n  static array<Vertex,\
-    \ LIM> pool_v;\n  static array<Node, LIM> pool_c;\n  size_t ptr_v,ptr_c;\n\n \
-    \ Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\n  inline Vertex* create(Vertex\
-    \ v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n    auto dummy=&pool_v[ptr_v++];\n\
-    \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
-    \ u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
-    \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
-    \ auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n\
-    \    return pushup(t);\n  }\n\n  inline Node* rake(Node* l,Node* r){\n    auto\
-    \ t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n    return\
-    \ pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n    if(!p)\
-    \ return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return 0;\n   \
-    \ if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
+  bundledCode: "#line 1 \"toptree/toptree.cpp\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename\
+    \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
+    \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
+    \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+    \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
+    \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\
+    \n  inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n\
+    \    auto dummy=&pool_v[ptr_v++];\n    *t=v;\n    link(t,id,dummy);\n    return\
+    \ t;\n  }\n\n  inline Node* edge(Vertex* u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n\
+    \    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n    return pushup(t);\n\
+    \  }\n\n  inline Node* compress(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n\
+    \    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n    return pushup(t);\n  }\n\
+    \n  inline Node* rake(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n\
+    \    return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n\
+    \    if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
+    \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
     \ t){\n    Node* p=t->p;\n    if(!p) return -1;\n    if(p->ch[0]==t) return 0;\n\
     \    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  inline Node* pushup(Node*\
     \ const t){\n    Node* const l=t->ch[0];\n    Node* const r=t->ch[1];\n\n    if(t->type==Type::Compress){\n\
@@ -166,11 +165,11 @@ data:
     \ Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex, Cluster,\
     \ LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_c;\n//END CUT HERE\n#ifndef\
     \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster,\
-    \ size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct\
-    \ Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n  \
-    \  Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster, size_t LIM>\n\
+    struct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct Node{\n    Vertex*\
+    \ vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n    Node* ch[2];\n   \
+    \ bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
     \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
     \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\
     \n  inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n\
@@ -293,8 +292,8 @@ data:
   path: toptree/toptree.cpp
   requiredBy:
   - toptree/distancesum.cpp
-  timestamp: '2020-09-01 16:43:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 16:52:37+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/3453.test.cpp

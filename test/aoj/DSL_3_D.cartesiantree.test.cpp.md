@@ -18,18 +18,17 @@ data:
   bundledCode: "#line 1 \"test/aoj/DSL_3_D.cartesiantree.test.cpp\"\n// verification-helper:\
     \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
-    \ 2 \"datastructure/cartesiantree.cpp\"\n\n#ifndef call_from_test\n#line 5 \"\
-    datastructure/cartesiantree.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN CUT\
-    \ HERE\ntemplate<typename T>\nvector<int> cartesian_tree(const vector<T> &vs){\n\
-    \  int n=vs.size();\n  vector<int> ps(n,-1),ls(n,-1),rs(n,-1);\n  int cur=0;\n\
-    \  for(int i=1;i<n;i++){\n    if(vs[cur]<=vs[i]){\n      rs[cur]=i;\n      ps[i]=cur;\n\
-    \      cur=i;\n      continue;\n    }\n    while(~ps[cur] and vs[i]<vs[ps[cur]])\
-    \ cur=ps[cur];\n    ps[i]=ps[cur];\n    if(~ps[i]) rs[ps[i]]=i;\n    ls[i]=cur;\n\
-    \    ps[cur]=i;\n    cur=i;\n  }\n  return ps;\n}\n//END CUT HERE\n\n#ifndef call_from_test\n\
-    signed main(){\n  return 0;\n}\n#endif\n#line 1 \"tree/lca.cpp\"\n\n#line 3 \"\
-    tree/lca.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\nstruct LCA{\n\
-    \  const int lg = 12;\n  const int sz = 1<<lg;\n  const int ms = sz-1;\n  int\
-    \ n;\n  vector<int> P,D,E,A,B,T,ht;\n  vector<vector<int> > G,dat;\n  LCA(int\
+    \ 1 \"datastructure/cartesiantree.cpp\"\n\n#line 3 \"datastructure/cartesiantree.cpp\"\
+    \nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nvector<int>\
+    \ cartesian_tree(const vector<T> &vs){\n  int n=vs.size();\n  vector<int> ps(n,-1),ls(n,-1),rs(n,-1);\n\
+    \  int cur=0;\n  for(int i=1;i<n;i++){\n    if(vs[cur]<=vs[i]){\n      rs[cur]=i;\n\
+    \      ps[i]=cur;\n      cur=i;\n      continue;\n    }\n    while(~ps[cur] and\
+    \ vs[i]<vs[ps[cur]]) cur=ps[cur];\n    ps[i]=ps[cur];\n    if(~ps[i]) rs[ps[i]]=i;\n\
+    \    ls[i]=cur;\n    ps[cur]=i;\n    cur=i;\n  }\n  return ps;\n}\n//END CUT HERE\n\
+    \n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"tree/lca.cpp\"\
+    \n\n#line 3 \"tree/lca.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    struct LCA{\n  const int lg = 12;\n  const int sz = 1<<lg;\n  const int ms = sz-1;\n\
+    \  int n;\n  vector<int> P,D,E,A,B,T,ht;\n  vector<vector<int> > G,dat;\n  LCA(int\
     \ n):\n    n(n),P(n,-1),D(n),E(n*2,0),A(n*2,-1),B(n*2/lg+1),T(sz,0),G(n){}\n\n\
     \  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
     \  }\n\n  void dfs(int v,int p,int d){\n    int k=0,u;\n    vector<int> iter(n,0);\n\
@@ -82,7 +81,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_3_D.cartesiantree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:01:13+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_3_D.cartesiantree.test.cpp

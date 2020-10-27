@@ -28,7 +28,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

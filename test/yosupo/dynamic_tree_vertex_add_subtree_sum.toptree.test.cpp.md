@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   _extendedRequiredBy: []
@@ -15,11 +15,11 @@ data:
   bundledCode: "#line 1 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\
     \n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
-    \ 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#line 5 \"toptree/toptree.cpp\"\
-    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename\
-    \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
-    \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
-    \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+    \ 1 \"toptree/toptree.cpp\"\n\n#line 3 \"toptree/toptree.cpp\"\nusing namespace\
+    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster,\
+    \ size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct\
+    \ Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n  \
+    \  Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
     \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
     \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\
     \n  inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n\
@@ -177,7 +177,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:33:26+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp

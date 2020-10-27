@@ -114,14 +114,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tools/chminmax.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -143,7 +143,7 @@ data:
   - datastructure/slidingwindowaggregation.cpp
   - graph/nicetree.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3227.test.cpp
   - test/yukicoder/3912.test.cpp

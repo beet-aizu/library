@@ -17,12 +17,12 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ graph/voronoiminimumspanningtree.cpp: line 65: unable to process #include in\
+    \ graph/voronoiminimumspanningtree.cpp: line 63: unable to process #include in\
     \ #if / #ifdef / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct VoronoiMST{\n \
-    \ int n;\n  using E = pair<int, T>;\n  using P = pair<T, int>;\n  vector<vector<E>\
-    \ > G;\n  VoronoiMST(vector<T> &x){\n    n=x.size();\n    G.assign(n<<1,vector<E>());\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct VoronoiMST{\n  int n;\n\
+    \  using E = pair<int, T>;\n  using P = pair<T, int>;\n  vector<vector<E> > G;\n\
+    \  VoronoiMST(vector<T> &x){\n    n=x.size();\n    G.assign(n<<1,vector<E>());\n\
     \    for(int i=0;i<n;i++) G[i].emplace_back(n+i,x[i]);\n  }\n  void add_edge(int\
     \ u,int v,T c){\n    G[u+n].emplace_back(v+n,c);\n    G[v+n].emplace_back(u+n,c);\n\
     \  }\n  vector<vector<E> > build(){\n    priority_queue<P, vector<P>, greater<P>\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: graph/voronoiminimumspanningtree.cpp
   requiredBy: []
-  timestamp: '2020-10-09 14:11:38+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/voronoiminimumspanningtree.cpp

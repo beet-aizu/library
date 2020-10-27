@@ -10,11 +10,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"toptree/farthest.cpp\"\n\n#ifndef call_from_test\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\nstruct Vertex{\n\
-    \  void* handle;\n  Vertex():handle(nullptr){}\n};\n\ntemplate<typename T>\nstruct\
-    \ Farthest{\n  struct pi{\n    T dist;\n    int idx;\n    pi():dist(0),idx(-1){}\n\
-    \    pi(T dist,int idx):dist(dist),idx(idx){}\n    bool operator<(const pi &o)const{return\
+  bundledCode: "#line 1 \"toptree/farthest.cpp\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct Vertex{\n  void* handle;\n\
+    \  Vertex():handle(nullptr){}\n};\n\ntemplate<typename T>\nstruct Farthest{\n\
+    \  struct pi{\n    T dist;\n    int idx;\n    pi():dist(0),idx(-1){}\n    pi(T\
+    \ dist,int idx):dist(dist),idx(idx){}\n    bool operator<(const pi &o)const{return\
     \ dist<o.dist;}\n    pi operator+(const T e)const{return pi(dist+e,idx);}\n  };\n\
     \  pi md,lf,rg;\n  T len;\n  Farthest():lf(0,-1),rg(0,-1),len(0){}\n  Farthest(T\
     \ d,int f,int t):lf(d,t),rg(d,f),len(d){}\n  Farthest(pi md,pi lf,pi rg,T len):\n\
@@ -25,8 +25,8 @@ data:
     \    return Farthest(pi(),max(x.lf,y.rg+x.len),max(x.rg,y.rg),x.len);\n  }\n};\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\nstruct Vertex{\n  void* handle;\n  Vertex():handle(nullptr){}\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\nstruct Vertex{\n  void* handle;\n  Vertex():handle(nullptr){}\n\
     };\n\ntemplate<typename T>\nstruct Farthest{\n  struct pi{\n    T dist;\n    int\
     \ idx;\n    pi():dist(0),idx(-1){}\n    pi(T dist,int idx):dist(dist),idx(idx){}\n\
     \    bool operator<(const pi &o)const{return dist<o.dist;}\n    pi operator+(const\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: toptree/farthest.cpp
   requiredBy: []
-  timestamp: '2020-09-01 16:43:17+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3143.test.cpp

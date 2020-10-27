@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
@@ -17,11 +17,11 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ convolution/fastwalshhadamardtransform.cpp: line 46: unable to process #include\
+    \ convolution/fastwalshhadamardtransform.cpp: line 44: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nvoid FWT(vector<T> &as){\n\
-    \  int n=as.size();\n  for(int d=1;d<n;d<<=1){\n    for(int m=d<<1,i=0;i<n;i+=m){\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nvoid FWT(vector<T> &as){\n  int\
+    \ n=as.size();\n  for(int d=1;d<n;d<<=1){\n    for(int m=d<<1,i=0;i<n;i+=m){\n\
     \      for(int j=0;j<d;j++){\n        T x=as[i+j],y=as[i+j+d];\n        as[i+j+0]=x+y;\n\
     \        as[i+j+d]=x-y;\n      }\n    }\n  }\n}\n\ntemplate<typename T>\nvoid\
     \ multiply(vector<T> &as,const vector<T> &bs){\n  for(int i=0;i<(int)as.size();i++)\n\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: convolution/fastwalshhadamardtransform.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/fastwalshhadamardtransform.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   _extendedRequiredBy: []
@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -25,12 +25,12 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ toptree/distancesum.cpp: line 8: unable to process #include in #if / #ifdef\
+    \ toptree/distancesum.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"toptree.cpp\"\n#undef call_from_test\n\
-    \n#endif\n//BEGIN CUT HERE\n\ntemplate<typename T, size_t LIM>\nstruct DistanceSum{\n\
-    \  struct Vertex{\n    void* handle;\n    T color;\n    Vertex(T color=0):handle(nullptr),color(color){}\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"toptree.cpp\"\n#undef call_from_test\n\n#endif\n\
+    //BEGIN CUT HERE\n\ntemplate<typename T, size_t LIM>\nstruct DistanceSum{\n  struct\
+    \ Vertex{\n    void* handle;\n    T color;\n    Vertex(T color=0):handle(nullptr),color(color){}\n\
     \  };\n\n  struct Cluster{\n    struct pi{\n      T cnt;\n      Vertex* ptr;\n\
     \      pi():cnt(-1),ptr(nullptr){}\n      pi(T cnt,Vertex* ptr):cnt(cnt),ptr(ptr){}\n\
     \      bool operator<(const pi &o)const{return cnt<o.cnt;}\n    };\n\n    T len,cnt,chd,ans;\n\
@@ -68,8 +68,8 @@ data:
   isVerificationFile: false
   path: toptree/distancesum.cpp
   requiredBy: []
-  timestamp: '2020-09-01 16:43:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 16:52:37+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/2587.test.cpp

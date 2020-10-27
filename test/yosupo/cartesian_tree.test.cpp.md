@@ -14,11 +14,11 @@ data:
     - https://judge.yosupo.jp/problem/cartesian_tree
   bundledCode: "#line 1 \"test/yosupo/cartesian_tree.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://judge.yosupo.jp/problem/cartesian_tree\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/cartesiantree.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"datastructure/cartesiantree.cpp\"\nusing\
-    \ namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nvector<int>\
-    \ cartesian_tree(const vector<T> &vs){\n  int n=vs.size();\n  vector<int> ps(n,-1),ls(n,-1),rs(n,-1);\n\
-    \  int cur=0;\n  for(int i=1;i<n;i++){\n    if(vs[cur]<=vs[i]){\n      rs[cur]=i;\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/cartesiantree.cpp\"\
+    \n\n#line 3 \"datastructure/cartesiantree.cpp\"\nusing namespace std;\n#endif\n\
+    \n//BEGIN CUT HERE\ntemplate<typename T>\nvector<int> cartesian_tree(const vector<T>\
+    \ &vs){\n  int n=vs.size();\n  vector<int> ps(n,-1),ls(n,-1),rs(n,-1);\n  int\
+    \ cur=0;\n  for(int i=1;i<n;i++){\n    if(vs[cur]<=vs[i]){\n      rs[cur]=i;\n\
     \      ps[i]=cur;\n      cur=i;\n      continue;\n    }\n    while(~ps[cur] and\
     \ vs[i]<vs[ps[cur]]) cur=ps[cur];\n    ps[i]=ps[cur];\n    if(~ps[i]) rs[ps[i]]=i;\n\
     \    ls[i]=cur;\n    ps[cur]=i;\n    cur=i;\n  }\n  return ps;\n}\n//END CUT HERE\n\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/cartesian_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:19:56+09:00'
+  timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/cartesian_tree.test.cpp
