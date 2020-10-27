@@ -41,13 +41,11 @@ struct Lazy : BBSTBase<Node, LIM>{
   T ti;
   E ei;
 
-  Lazy(F f,G g,H h,T ti,E ei):
-    super(),f(f),g(g),h(h),ti(ti),ei(ei){
-    flip=[](T a){return a;};
-  }
-
   Lazy(F f,G g,H h,S flip,T ti,E ei):
-    super(),f(f),g(g),h(h),flip(flip),ti(ti),ei(ei){}
+    f(f),g(g),h(h),flip(flip),ti(ti),ei(ei){}
+
+  Lazy(F f,G g,H h,T ti,E ei):
+    Lazy(f,g,h,[](T a){return a;},ti,ei){}
 
   using super::create;
   using super::merge;

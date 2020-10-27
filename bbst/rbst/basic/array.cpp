@@ -24,9 +24,6 @@ template<typename Node, size_t LIM>
 struct Array : BBSTBase<Node, LIM>{
   using T = typename Node::T;
   using super = BBSTBase<Node, LIM>;
-
-  Array():super(){}
-
   using super::count;
 
   Node* recalc(Node *a){

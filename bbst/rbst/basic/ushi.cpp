@@ -26,19 +26,17 @@ struct Ushi : BBSTBase<Node, LIM>{
 
   using T = typename Node::T;
 
-  using F = function<T(T, T)>;
+  using F = function<T(T,T)>;
   using S = function<T(T)>;
 
   F f;
   S flip;
   T ti;
 
-  Ushi(F f,T ti):super(),f(f),ti(ti){
-    flip=[](T a){return a;};
-  }
-
   Ushi(F f,S flip,T ti):
-    super(),f(f),flip(flip),ti(ti){}
+    f(f),flip(flip),ti(ti){}
+
+  Ushi(F f,T ti):Ushi(f,[](T a){return a;},ti){}
 
   T query(const Node *a){
     return a?a->dat:ti;

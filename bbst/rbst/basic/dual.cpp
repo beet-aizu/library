@@ -24,12 +24,12 @@ template<typename Node, size_t LIM>
 struct Dual : BBSTBase<Node, LIM>{
   using E = typename Node::E;
   using super = BBSTBase<Node, LIM>;
-  using H = function<E(E, E)>;
+  using H = function<E(E,E)>;
 
   H h;
   E ei;
 
-  Dual(H h,E ei):super(),h(h),ei(ei){}
+  Dual(H h,E ei):h(h),ei(ei){}
 
   using super::create;
   using super::merge;
