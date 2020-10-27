@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -35,12 +35,16 @@ struct PersistentLazy : Lazy<Node, LIM>{
 
   Node* rebuild(Node* a){
     auto vs=super::dump(a);
-    super::ptr=0;
-    return super::build(vs);
+    vector<Node> nx;
+    nx.reserve(vs.size());
+    for(auto v:vs)
+      nx.emplace_back(v,super::ei);
+    super::size=0;
+    return super::build(nx);
   }
 
   bool almost_full() const{
-    return super::ptr>LIM*9/10;
+    return super::size>LIM*9/10;
   }
 };
 //END CUT HERE
@@ -51,8 +55,8 @@ signed ARC030_D(){
 
   using ll = long long;
   using P = pair<ll, ll>;
-  vector<P> v(n,P(0,1));
-  for(int i=0;i<n;i++) scanf("%lld",&v[i].first);
+  vector<P> vp(n,P(0,1));
+  for(int i=0;i<n;i++) scanf("%lld",&vp[i].first);
 
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,ll b){return P(a.first+b*a.second,a.second);};
@@ -61,7 +65,10 @@ signed ARC030_D(){
   using Node = NodeBase<P, ll>;
   constexpr size_t LIM = 6e6;
   PersistentLazy<Node, LIM> G(f,g,h,P(0,0),0);
-  auto rt=G.build(v);
+
+  vector<Node> vs;
+  for(auto v:vp) vs.emplace_back(v,0);
+  auto rt=G.build(vs);
 
   for(int i=0;i<q;i++){
     int t;
@@ -95,7 +102,7 @@ signed ARC030_D(){
   return 0;
 }
 /*
-  verified on 2019/10/22
+  verified on 2020/10/27
   https://atcoder.jp/contests/arc030/tasks/arc030_4
 */
 

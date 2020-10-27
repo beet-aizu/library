@@ -38,12 +38,12 @@ struct PersistentUshi : Ushi<Node, LIM>{
 
   Node* rebuild(Node* a){
     auto vs=super::dump(a);
-    super::ptr=0;
+    super::size=0;
     return super::build(vector<Node>(vs.begin(),vs.end()));
   }
 
   bool almost_full() const{
-    return super::ptr>LIM*9/10;
+    return super::size>LIM*9/10;
   }
 };
 //END CUT HERE
