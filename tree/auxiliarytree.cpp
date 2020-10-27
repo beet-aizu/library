@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -16,7 +14,6 @@ struct AuxiliaryTree : LowestCommonAncestor{
 
   vector<int> idx;
   vector<vector<int>> T;
-  AuxiliaryTree(){}
   AuxiliaryTree(int n):super(n),idx(n),T(n){}
 
   void dfs(int v,int p,int &pos){
