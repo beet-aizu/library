@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
     title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -31,10 +31,10 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ convolution/garner.cpp: line 8: unable to process #include in #if / #ifdef /\
+    \ convolution/garner.cpp: line 6: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"../mod/mint.cpp\"\n#include \"numbertheoretictransform.cpp\"\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../mod/mint.cpp\"\n#include \"numbertheoretictransform.cpp\"\
     \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\nstruct Garner{\n  using ll\
     \ = long long;\n  static NTT<0> ntt0;\n  static NTT<1> ntt1;\n  static NTT<2>\
     \ ntt2;\n\n  static constexpr int pow(int a,int b,int md){\n    int res=1;\n \
@@ -67,8 +67,8 @@ data:
   path: convolution/garner.cpp
   requiredBy:
   - mod/factorial.cpp
-  timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 17:04:27+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1504.test.cpp
   - test/aoj/2985.garner.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy: []
@@ -9,14 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1579.test.cpp
     title: test/aoj/1579.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_E.bbst.test.cpp
     title: test/aoj/DSL_2_E.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -34,7 +34,7 @@ data:
     \  NodeBase(E dat,E laz):\n    cnt(1),rev(0),dat(dat),laz(laz){l=r=p=nullptr;}\n\
     };\n\ntemplate<typename Node, size_t LIM>\nstruct Dual : BBSTBase<Node, LIM>{\n\
     \  using E = typename Node::E;\n  using super = BBSTBase<Node, LIM>;\n  using\
-    \ H = function<E(E, E)>;\n\n  H h;\n  E ei;\n\n  Dual(H h,E ei):super(),h(h),ei(ei){}\n\
+    \ H = function<E(E,E)>;\n\n  H h;\n  E ei;\n\n  Dual(H h,E ei):h(h),ei(ei){}\n\
     \n  using super::create;\n  using super::merge;\n  using super::split;\n\n  Node*\
     \ build(size_t l,size_t r){\n    if(l+1==r) return create(Node(ei,ei));\n    size_t\
     \ m=(l+r)>>1;\n    return merge(build(l,m),build(m,r));\n  }\n\n  Node* init(int\
@@ -65,8 +65,8 @@ data:
   isVerificationFile: false
   path: bbst/rbst/basic/dual.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 17:04:27+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_E.bbst.test.cpp
   - test/aoj/1579.test.cpp

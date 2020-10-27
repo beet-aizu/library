@@ -1,34 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -67,7 +67,7 @@ data:
   path: polynomial/interpolate.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/polynomial_interpolation.test.cpp
 documentation_of: polynomial/interpolate.cpp

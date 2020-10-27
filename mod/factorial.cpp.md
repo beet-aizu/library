@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/rint.cpp
     title: mod/rint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: false
   path: mod/factorial.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 17:04:27+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1504.test.cpp
 documentation_of: mod/factorial.cpp

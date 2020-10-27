@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
   _extendedRequiredBy: []

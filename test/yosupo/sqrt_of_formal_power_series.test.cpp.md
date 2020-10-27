@@ -1,34 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
     links:
@@ -41,7 +41,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ convolution/numbertheoretictransform.cpp: line 8: unable to process #include\
+    \ convolution/numbertheoretictransform.cpp: line 6: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sqrt_of_formal_power_series\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
@@ -72,8 +72,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/sqrt_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 17:04:27+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/sqrt_of_formal_power_series.test.cpp
 layout: document

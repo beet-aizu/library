@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
@@ -38,13 +38,12 @@ data:
     \  NodeBase(T val):\n    cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}\n};\n\
     \ntemplate<typename Node, size_t LIM>\nstruct Ushi : BBSTBase<Node, LIM>{\n  using\
     \ super = BBSTBase<Node, LIM>;\n\n  using T = typename Node::T;\n\n  using F =\
-    \ function<T(T, T)>;\n  using S = function<T(T)>;\n\n  F f;\n  S flip;\n  T ti;\n\
-    \n  Ushi(F f,T ti):super(),f(f),ti(ti){\n    flip=[](T a){return a;};\n  }\n\n\
-    \  Ushi(F f,S flip,T ti):\n    super(),f(f),flip(flip),ti(ti){}\n\n  T query(const\
-    \ Node *a){\n    return a?a->dat:ti;\n  }\n\n  using super::count;\n  Node* recalc(Node\
-    \ *a){\n    a->cnt=count(a->l)+1+count(a->r);\n    a->dat=a->val;\n    if(a->l)\
-    \ a->dat=f(a->l->dat,a->dat);\n    if(a->r) a->dat=f(a->dat,a->r->dat);\n    return\
-    \ a;\n  }\n\n  using super::toggle;\n  void toggle(Node *a){\n    swap(a->l,a->r);\n\
+    \ function<T(T,T)>;\n  using S = function<T(T)>;\n\n  F f;\n  S flip;\n  T ti;\n\
+    \n  Ushi(F f,S flip,T ti):\n    f(f),flip(flip),ti(ti){}\n\n  Ushi(F f,T ti):Ushi(f,[](T\
+    \ a){return a;},ti){}\n\n  T query(const Node *a){\n    return a?a->dat:ti;\n\
+    \  }\n\n  using super::count;\n  Node* recalc(Node *a){\n    a->cnt=count(a->l)+1+count(a->r);\n\
+    \    a->dat=a->val;\n    if(a->l) a->dat=f(a->l->dat,a->dat);\n    if(a->r) a->dat=f(a->dat,a->r->dat);\n\
+    \    return a;\n  }\n\n  using super::toggle;\n  void toggle(Node *a){\n    swap(a->l,a->r);\n\
     \    a->val=flip(a->val);\n    a->dat=flip(a->dat);\n    a->rev^=1;\n  }\n\n \
     \ // remove \"virtual\" for optimization\n  virtual Node* eval(Node* a){\n   \
     \ if(a->rev){\n      if(a->l) toggle(a->l);\n      if(a->r) toggle(a->r);\n  \
@@ -84,7 +83,7 @@ data:
   path: bbst/rbst/basic/ushi.cpp
   requiredBy:
   - bbst/rbst/persistent/ushi.cpp
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-10-27 17:04:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_A.bbst.test.cpp

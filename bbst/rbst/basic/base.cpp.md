@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/dual.cpp
     title: bbst/rbst/basic/dual.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/basic/lazy.cpp
     title: bbst/rbst/basic/lazy.cpp
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
   - icon: ':warning:'
@@ -42,29 +42,29 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_E.bbst.test.cpp
     title: test/aoj/DSL_2_E.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_F.bbst.test.cpp
     title: test/aoj/DSL_2_F.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_G.bbst.test.cpp
     title: test/aoj/DSL_2_G.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_H.bbst.test.cpp
     title: test/aoj/DSL_2_H.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"bbst/rbst/basic/base.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -152,7 +152,7 @@ data:
   - bbst/rbst/basic/dual.cpp
   - bbst/rbst/basic/lazy.cpp
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp

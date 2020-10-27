@@ -1,40 +1,40 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
     links:
@@ -47,7 +47,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ convolution/numbertheoretictransform.cpp: line 8: unable to process #include\
+    \ convolution/numbertheoretictransform.cpp: line 6: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/polynomial_interpolation\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
@@ -76,8 +76,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/polynomial_interpolation.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 17:04:27+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/polynomial_interpolation.test.cpp
 layout: document
