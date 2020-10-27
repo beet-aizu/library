@@ -8,9 +8,9 @@ struct WeightedUnionFind{
   vector<int> rs,ps;
   vector<T> ws;
 
-  WeightedUnionFind(){}
-  WeightedUnionFind(int n):
-    rs(n,1),ps(n),ws(n,T(0)){iota(ps.begin(),ps.end(),0);}
+  WeightedUnionFind(int n):rs(n,1),ps(n),ws(n,T(0)){
+    iota(ps.begin(),ps.end(),0);
+  }
 
   int find(int x){
     if(x==ps[x]) return x;

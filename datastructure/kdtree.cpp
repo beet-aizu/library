@@ -17,7 +17,6 @@ struct KDTree{
   public:
     int id;
     T x,y;
-    Point(){}
     Point(int id,T x,T y): id(id),x(x),y(y){}
     bool operator<(const Point &p)const{
       return id<p.id;

@@ -4,11 +4,10 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 struct LowestCommonAncestor{
-  int n,h;
+  int h;
   vector< vector<int> > G,par;
   vector<int> dep;
-  LowestCommonAncestor(){}
-  LowestCommonAncestor(int n):n(n),G(n),dep(n){
+  LowestCommonAncestor(int n):G(n),dep(n){
     h=1;
     while((1<<h)<=n) h++;
     par.assign(h,vector<int>(n,-1));
@@ -27,6 +26,7 @@ struct LowestCommonAncestor{
   }
 
   void build(int r=0){
+    int n=G.size();
     dfs(r,-1,0);
     for(int k=0;k+1<h;k++)
       for(int v=0;v<n;v++)

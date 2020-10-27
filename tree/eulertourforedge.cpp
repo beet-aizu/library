@@ -21,7 +21,6 @@ private:
 public:
   vector< vector<int> > G;
 
-  EulerTourForEdge(){}
   EulerTourForEdge(int n):
     ds(n),us(n),dep(n),G(n){}
 

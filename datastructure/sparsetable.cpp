@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -10,7 +10,6 @@ struct SparseTable{
   vector<int> ht;
   const F f;
 
-  SparseTable(){}
   SparseTable(F f):f(f){}
 
   void build(const vector<T> &v){

@@ -6,7 +6,6 @@ using namespace std;
 struct Centroid{
   vector<int> sz,dead;
   vector< vector<int> > G;
-  Centroid(){}
   Centroid(int n):sz(n,1),dead(n,0),G(n){}
 
   void add_edge(int u,int v){

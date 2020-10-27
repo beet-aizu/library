@@ -1,14 +1,12 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
 struct QuickFind{
-  int n;
   vector<int> rs,ps;
-  vector<vector<int> > vs;
-  QuickFind(){}
-  QuickFind(int sz):n(sz),rs(sz,1),ps(sz),vs(sz){
+  vector< vector<int> > vs;
+  QuickFind(int n):rs(n,1),ps(n),vs(n){
     iota(ps.begin(),ps.end(),0);
     for(int i=0;i<n;i++) vs[i].assign(1,i);
   }

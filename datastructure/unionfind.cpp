@@ -1,13 +1,14 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
 struct UnionFind{
   int num;
   vector<int> rs,ps;
-  UnionFind(){}
-  UnionFind(int n):num(n),rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}
+  UnionFind(int n):num(n),rs(n,1),ps(n,0){
+    iota(ps.begin(),ps.end(),0);
+  }
   int find(int x){
     return (x==ps[x]?x:ps[x]=find(ps[x]));
   }
