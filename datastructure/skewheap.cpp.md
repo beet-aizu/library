@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2415.test.cpp
     title: test/aoj/2415.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/ALDS1_9_C.test.cpp
     title: test/aoj/ALDS1_9_C.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://atcoder.jp/contests/apc001/tasks/apc001_d
@@ -26,10 +26,10 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ datastructure/skewheap.cpp: line 75: unable to process #include in #if / #ifdef\
+    \ datastructure/skewheap.cpp: line 72: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T, typename E>\nstruct SkewHeap{\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T, typename E>\nstruct SkewHeap{\n\
     \  using G = function<T(T,E)>;\n  using H = function<E(E,E)>;\n  using C = function<bool(T,T)>;\n\
     \  G g;\n  H h;\n  C c;\n  T INF;\n  E ei;\n  SkewHeap(G g,H h,C c,T INF,E ei):g(g),h(h),c(c),INF(INF),ei(ei){}\n\
     \n  struct Node{\n    Node *l,*r;\n    T val;\n    E add;\n    Node(T val,E add):val(val),add(add){l=r=nullptr;}\n\
@@ -40,10 +40,10 @@ data:
     \   return a!=nullptr?min(top(a->l),top(a->r)):INF;\n  }\n\n  Node* add(Node *a,E\
     \ d){\n    if(a!=nullptr) a->add=h(a->add,d);\n    return a;\n  }\n\n  Node* push(T\
     \ v){\n    return new Node(v,ei);\n  }\n\n  Node* meld(Node *a,Node *b){\n   \
-    \ if(!a||!b) return a?a:b;\n    if(c(top(a),top(b))) swap(a,b);\n    eval(a);\n\
+    \ if(!a or !b) return a?a:b;\n    if(c(top(a),top(b))) swap(a,b);\n    eval(a);\n\
     \    a->r=meld(a->r,b);\n    swap(a->l,a->r);\n    return a;\n  }\n\n  Node* pop(Node*\
     \ a){\n    eval(a);\n    auto res=meld(a->l,a->r);\n    delete a;\n    return\
-    \ res;\n  }\n\n};\n//END CUT HERE\n#ifndef call_from_test\n\n#define call_from_test\n\
+    \ res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\n#define call_from_test\n\
     #include \"unionfind.cpp\"\n#undef call_from_test\n\nsigned APC001_D(){\n  using\
     \ ll = long long;\n  using Heap = SkewHeap<ll, ll>;\n  ll n,m;\n  cin>>n>>m;\n\
     \  vector<ll> a(n);\n  for(ll i=0;i<n;i++) cin>>a[i];\n\n  auto g=[](ll a,ll b){return\
@@ -66,8 +66,8 @@ data:
   path: datastructure/skewheap.cpp
   requiredBy:
   - algorithm/optimalbinarytree.cpp
-  timestamp: '2020-05-17 19:42:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2415.test.cpp
   - test/aoj/ALDS1_9_C.test.cpp

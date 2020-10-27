@@ -9,11 +9,11 @@ data:
     title: formalpowerseries/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -22,10 +22,10 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ combinatorics/stirling2nd.cpp: line 8: unable to process #include in #if / #ifdef\
+    \ combinatorics/stirling2nd.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"enumeration.cpp\"\n#include \"../formalpowerseries/base.cpp\"\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"enumeration.cpp\"\n#include \"../formalpowerseries/base.cpp\"\
     \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename M_>\nstruct\
     \ Stirling2nd : FormalPowerSeries<M_>{\n  using M = M_;\n  using super = FormalPowerSeries<M>;\n\
     \  using Poly = typename super::Poly;\n  using super::super, super::finv;\n\n\
@@ -40,8 +40,8 @@ data:
   isVerificationFile: false
   path: combinatorics/stirling2nd.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:39:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/stirling_number_of_the_second_kind.test.cpp
 documentation_of: combinatorics/stirling2nd.cpp

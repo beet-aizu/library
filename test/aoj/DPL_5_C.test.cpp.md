@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   - icon: ':question:'
@@ -13,7 +13,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C
     links:
@@ -26,7 +26,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ combinatorics/surjection.cpp: line 8: unable to process #include in #if / #ifdef\
+    \ combinatorics/surjection.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
   code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_C\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:33:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_C.test.cpp
 layout: document

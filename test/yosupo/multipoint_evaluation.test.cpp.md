@@ -10,25 +10,25 @@ data:
   - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
   - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
     links:
@@ -67,8 +67,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/multipoint_evaluation.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:55:16+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/multipoint_evaluation.test.cpp
 layout: document

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/skewheap.cpp
     title: datastructure/skewheap.cpp
   _extendedRequiredBy: []
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: algorithm/optimalbinarytree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2415.test.cpp

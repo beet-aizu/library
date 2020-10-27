@@ -8,21 +8,21 @@ data:
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
     title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -67,8 +67,8 @@ data:
   path: convolution/garner.cpp
   requiredBy:
   - mod/factorial.cpp
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1504.test.cpp
   - test/aoj/2985.garner.test.cpp

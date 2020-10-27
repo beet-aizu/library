@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/bernoulli.cpp
     title: combinatorics/bernoulli.cpp
   - icon: ':question:'
@@ -22,7 +22,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/bernoulli_number
     links:
@@ -57,8 +57,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/bernoulli_number.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:55:16+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/bernoulli_number.test.cpp
 layout: document

@@ -19,9 +19,9 @@ data:
     \  T operator()(const T x)const{return k*x+m;}\n};\n\ntemplate <typename T, Objective\
     \ objective>\nstruct ConvexHullTrick : deque<Line<T>>{\n  inline int sgn(T x){return\
     \ x==0?0:(x<0?-1:1);}\n\n  using D = long double;\n  inline bool check(const Line<T>\
-    \ &a,const Line<T> &b,const Line<T> &c){\n    if(b.m==a.m||c.m==b.m)\n      return\
-    \ sgn(b.k-a.k)*sgn(c.m-b.m) >= sgn(c.k-b.k)*sgn(b.m-a.m);\n    // return (b.k-a.k)*(c.m-b.m)\
-    \ >= (b.m-a.m)*(c.k-b.k);\n    return\n      D(b.k-a.k)*sgn(c.m-b.m)/D(abs(b.m-a.m))\
+    \ &a,const Line<T> &b,const Line<T> &c){\n    if(b.m==a.m or c.m==b.m)\n     \
+    \ return sgn(b.k-a.k)*sgn(c.m-b.m) >= sgn(c.k-b.k)*sgn(b.m-a.m);\n    // return\
+    \ (b.k-a.k)*(c.m-b.m) >= (b.m-a.m)*(c.k-b.k);\n    return\n      D(b.k-a.k)*sgn(c.m-b.m)/D(abs(b.m-a.m))\
     \ >=\n      D(c.k-b.k)*sgn(b.m-a.m)/D(abs(c.m-b.m));\n  }\n\n  using super = deque<Line<T>>;\n\
     \  using super::empty,super::size,super::front,super::back;\n  using super::emplace_front,super::emplace_back;\n\
     \  using super::pop_front,super::pop_back;\n  const Line<T> at(int i) const{return\
@@ -48,7 +48,7 @@ data:
     \ k*x+m;}\n};\n\ntemplate <typename T, Objective objective>\nstruct ConvexHullTrick\
     \ : deque<Line<T>>{\n  inline int sgn(T x){return x==0?0:(x<0?-1:1);}\n\n  using\
     \ D = long double;\n  inline bool check(const Line<T> &a,const Line<T> &b,const\
-    \ Line<T> &c){\n    if(b.m==a.m||c.m==b.m)\n      return sgn(b.k-a.k)*sgn(c.m-b.m)\
+    \ Line<T> &c){\n    if(b.m==a.m or c.m==b.m)\n      return sgn(b.k-a.k)*sgn(c.m-b.m)\
     \ >= sgn(c.k-b.k)*sgn(b.m-a.m);\n    // return (b.k-a.k)*(c.m-b.m) >= (b.m-a.m)*(c.k-b.k);\n\
     \    return\n      D(b.k-a.k)*sgn(c.m-b.m)/D(abs(b.m-a.m)) >=\n      D(c.k-b.k)*sgn(b.m-a.m)/D(abs(c.m-b.m));\n\
     \  }\n\n  using super = deque<Line<T>>;\n  using super::empty,super::size,super::front,super::back;\n\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: convexhulltrick/convexhulltrick.cpp
   requiredBy: []
-  timestamp: '2020-10-03 18:22:12+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2975.test.cpp

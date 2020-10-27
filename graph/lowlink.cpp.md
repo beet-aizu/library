@@ -104,7 +104,7 @@ data:
   isVerificationFile: false
   path: graph/lowlink.cpp
   requiredBy: []
-  timestamp: '2020-05-17 19:42:37+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_3_A.test.cpp

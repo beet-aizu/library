@@ -31,7 +31,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/exp_of_formal_power_series
     links:
@@ -71,8 +71,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/exp_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 16:37:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/exp_of_formal_power_series.test.cpp
 layout: document

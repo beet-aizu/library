@@ -9,11 +9,11 @@ data:
     title: formalpowerseries/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/polynomial_taylor_shift.test.cpp
     title: test/yosupo/polynomial_taylor_shift.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -39,8 +39,8 @@ data:
   isVerificationFile: false
   path: formalpowerseries/shift.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:55:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/polynomial_taylor_shift.test.cpp
 documentation_of: formalpowerseries/shift.cpp

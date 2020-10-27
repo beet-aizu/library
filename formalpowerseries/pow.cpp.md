@@ -27,11 +27,11 @@ data:
   - icon: ':x:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -65,8 +65,8 @@ data:
   isVerificationFile: false
   path: formalpowerseries/pow.cpp
   requiredBy: []
-  timestamp: '2020-10-13 16:37:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/3084.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp

@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4271.test.cpp
     title: test/yukicoder/4271.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"polynomial/recursivesequence.cpp\"\n\n#ifndef call_from_test\n\
@@ -45,7 +45,7 @@ data:
   path: polynomial/recursivesequence.cpp
   requiredBy: []
   timestamp: '2020-08-28 13:36:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/4271.test.cpp
 documentation_of: polynomial/recursivesequence.cpp

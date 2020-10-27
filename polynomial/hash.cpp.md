@@ -140,7 +140,7 @@ data:
   isVerificationFile: false
   path: polynomial/hash.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:15:27+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2971.test.cpp

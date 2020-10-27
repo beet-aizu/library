@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
   - icon: ':question:'
@@ -19,7 +19,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind
     links:
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 15:39:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/stirling_number_of_the_second_kind.test.cpp
 layout: document

@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: matching/tutte.cpp
   requiredBy: []
-  timestamp: '2020-09-30 12:41:42+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2983.test.cpp

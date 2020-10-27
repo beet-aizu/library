@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/dual.cpp
     title: math/dual.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':question:'
@@ -19,7 +19,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
     links:
@@ -64,8 +64,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:33:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
 layout: document

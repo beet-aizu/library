@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
   - icon: ':question:'

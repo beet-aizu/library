@@ -20,23 +20,23 @@ data:
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':x:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/exp_of_formal_power_series.test.cpp
     title: test/yosupo/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
   _pathExtension: cpp
@@ -70,7 +70,7 @@ data:
   path: formalpowerseries/exp.cpp
   requiredBy:
   - formalpowerseries/pow.cpp
-  timestamp: '2020-10-13 16:37:55+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3084.test.cpp

@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: convolution/fastwalshhadamardtransform.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:21:09+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: convolution/fastwalshhadamardtransform.cpp

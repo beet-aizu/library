@@ -2,30 +2,30 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: convolution/arbitrarymod.cpp
     title: convolution/arbitrarymod.cpp
   - icon: ':x:'
     path: tools/bigint.cpp
     title: tools/bigint.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod_1000000007.test.cpp
     title: test/yosupo/convolution_mod_1000000007.test.cpp
   - icon: ':x:'
     path: test/yosupo/frequency_table_of_tree_distance.test.cpp
     title: test/yosupo/frequency_table_of_tree_distance.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/fastfouriertransform.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -95,7 +95,7 @@ data:
   - convolution/arbitrarymod.cpp
   - tools/bigint.cpp
   timestamp: '2019-12-26 23:10:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0444.test.cpp

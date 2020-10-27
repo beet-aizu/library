@@ -21,14 +21,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://ei1333.hateblo.jp/entry/2018/05/29/011140
@@ -83,7 +83,7 @@ data:
   path: linkcuttree/path.cpp
   requiredBy: []
   timestamp: '2020-07-16 18:11:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
   - test/aoj/0367.linkcuttree.test.cpp

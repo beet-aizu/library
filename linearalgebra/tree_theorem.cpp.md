@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linearalgebra/matrix.cpp
     title: linearalgebra/matrix.cpp
   - icon: ':question:'
@@ -75,7 +75,7 @@ data:
   isVerificationFile: false
   path: linearalgebra/tree_theorem.cpp
   requiredBy: []
-  timestamp: '2020-10-09 14:11:38+09:00'
+  timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0314.test.cpp

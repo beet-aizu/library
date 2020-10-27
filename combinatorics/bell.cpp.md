@@ -6,11 +6,11 @@ data:
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_G.test.cpp
     title: test/aoj/DPL_5_G.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -19,11 +19,11 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ combinatorics/bell.cpp: line 8: unable to process #include in #if / #ifdef /\
+    \ combinatorics/bell.cpp: line 6: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"enumeration.cpp\"\n#undef call_from_test\n\
-    \n#endif\n//BEGIN CUT HERE\n// put n distinct balls into at most k identical boxes\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"enumeration.cpp\"\n#undef call_from_test\n\n\
+    #endif\n//BEGIN CUT HERE\n// put n distinct balls into at most k identical boxes\n\
     template<typename M>\nM bell(int n,int k){\n  if(n==0) return M(1);\n\n  using\
     \ E = Enumeration<M>;\n  k=min(k,n);\n  E::init(k);\n\n  vector<M> dp(k+1);\n\
     \  dp[0]=M(1);\n  for(int i=1;i<=k;i++)\n    dp[i]=dp[i-1]+((i&1)?-E::Finv(i):E::Finv(i));\n\
@@ -35,8 +35,8 @@ data:
   isVerificationFile: false
   path: combinatorics/bell.cpp
   requiredBy: []
-  timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 13:13:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DPL_5_G.test.cpp
 documentation_of: combinatorics/bell.cpp
