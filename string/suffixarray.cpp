@@ -4,10 +4,9 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 struct SuffixArray{
-  string s;
+  const string s;
   vector<int> sa,rev;
 
-  SuffixArray(){}
   SuffixArray(const string &s_):s(s_+'$'){
     int n=s.size();
     sa.resize(n);

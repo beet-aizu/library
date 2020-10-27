@@ -17,35 +17,34 @@ struct TopTree{
     Node():p(nullptr),q(nullptr),rev(false),guard(false){}
   };
 
-  static array<Vertex, LIM> pool_v;
-  static array<Node, LIM> pool_c;
-  size_t ptr_v,ptr_c;
+  static array<Vertex, LIM> pool_vertex;
+  static array<Node, LIM> pool_node;
+  static size_t ptr_vertex,ptr_node;
 
   Cluster id;
-  TopTree():ptr_v(0),ptr_c(0){}
 
   inline Vertex* create(Vertex v=Vertex()){
-    auto t=&pool_v[ptr_v++];
-    auto dummy=&pool_v[ptr_v++];
+    auto t=&pool_vertex[ptr_vertex++];
+    auto dummy=&pool_vertex[ptr_vertex++];
     *t=v;
     link(t,id,dummy);
     return t;
   }
 
   inline Node* edge(Vertex* u,Cluster w,Vertex* v){
-    auto t=&(pool_c[ptr_c++]);
+    auto t=&(pool_node[ptr_node++]);
     t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;
     return pushup(t);
   }
 
   inline Node* compress(Node* l,Node* r){
-    auto t=&(pool_c[ptr_c++]);
+    auto t=&(pool_node[ptr_node++]);
     t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;
     return pushup(t);
   }
 
   inline Node* rake(Node* l,Node* r){
-    auto t=&(pool_c[ptr_c++]);
+    auto t=&(pool_node[ptr_node++]);
     t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;
     return pushup(t);
   }
@@ -441,10 +440,14 @@ struct TopTree{
   }
 };
 template<typename Vertex, typename Cluster, size_t LIM>
-array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_v;
+array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_vertex;
 template<typename Vertex, typename Cluster, size_t LIM>
 array<typename TopTree<Vertex, Cluster, LIM>::Node, LIM>
-TopTree<Vertex, Cluster, LIM>::pool_c;
+TopTree<Vertex, Cluster, LIM>::pool_node;
+template<typename Vertex, typename Cluster, size_t LIM>
+size_t TopTree<Vertex, Cluster, LIM>::ptr_vertex;
+template<typename Vertex, typename Cluster, size_t LIM>
+size_t TopTree<Vertex, Cluster, LIM>::ptr_node;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

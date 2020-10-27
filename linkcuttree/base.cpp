@@ -133,7 +133,7 @@ struct LinkCutTreeBase{
   }
 };
 template<typename Node, size_t LIM>
-byte LinkCutTreeBase<Node, LIM>::pool[];
+alignas(Node) byte LinkCutTreeBase<Node, LIM>::pool[];
 template<typename Node, size_t LIM>
 Node* LinkCutTreeBase<Node, LIM>::ptr=(Node*)LinkCutTreeBase<Node, LIM>::pool;
 template<typename Node, size_t LIM>

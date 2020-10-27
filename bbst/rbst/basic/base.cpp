@@ -119,7 +119,7 @@ struct BBSTBase{
   }
 };
 template<typename Node, size_t LIM>
-byte BBSTBase<Node, LIM>::pool[];
+alignas(Node) byte BBSTBase<Node, LIM>::pool[];
 template<typename Node, size_t LIM>
 Node* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node, LIM>::pool;
 template<typename Node, size_t LIM>

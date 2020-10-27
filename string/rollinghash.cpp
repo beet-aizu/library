@@ -7,7 +7,6 @@ template<typename T,T MOD,T B>
 struct RollingHash{
   using ll = long long;
   vector<T> hash,po;
-  RollingHash(){}
   RollingHash(vector<T> vs){init(vs);}
   RollingHash(string &s){
     vector<T> vs;

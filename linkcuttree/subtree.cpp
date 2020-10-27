@@ -129,7 +129,7 @@ signed CFR564_E(){
   using ll = long long;
   struct A{
     ll sz1,sz2;
-    A():sz1(0),sz2(){}
+    A():sz1(0),sz2(0){}
     A(ll sz1,ll sz2):sz1(sz1),sz2(sz2){}
     A operator+(const A &a)const{
       return A(sz1+a.sz1,sz2+a.sz2);

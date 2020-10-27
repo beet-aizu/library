@@ -21,29 +21,29 @@ signed main(){
   vector< unordered_map<ll, ll> > m(n);
 
   auto mget=[&](ll a,ll b){
-              if(!m[a].count(b)) return 0LL;
-              ll res=ws[a]+ws[b]+m[a][b];
-              if(res%k) return res;
-              return 0LL;
-            };
+    if(!m[a].count(b)) return 0LL;
+    ll res=ws[a]+ws[b]+m[a][b];
+    if(res%k) return res;
+    return 0LL;
+  };
 
   auto f=[&](T a,T b){
-           ll al,ar,av;
-           tie(al,ar,av)=a;
-           ll bl,br,bv;
-           tie(bl,br,bv)=b;
-           return T(al,br,av+bv+mget(ar,bl));
-         };
+    ll al,ar,av;
+    tie(al,ar,av)=a;
+    ll bl,br,bv;
+    tie(bl,br,bv)=b;
+    return T(al,br,av+bv+mget(ar,bl));
+  };
 
   auto g=[&](T a,ll){return a;};
 
   auto h=[&](ll a,ll){return a;};
 
   auto s=[&](T a){
-           ll al,ar,av;
-           tie(al,ar,av)=a;
-           return T(ar,al,av);
-         };
+    ll al,ar,av;
+    tie(al,ar,av)=a;
+    return T(ar,al,av);
+  };
 
   using Node = NodeBase<T, ll>;
   constexpr size_t LIM = 1e6;
