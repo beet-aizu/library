@@ -11,7 +11,6 @@ struct SegmentTree{
   T ti;
   vector<T> dat;
 
-  SegmentTree(){}
   SegmentTree(F f,T ti):f(f),ti(ti){}
 
   void init(int n_){

@@ -8,7 +8,6 @@ struct SegmentTree{
   using P = pair<int, Key>;
   int n;
   vector< vector<Key> > dat;
-  SegmentTree(){}
   SegmentTree(int n,vector<P> vs):n(n){
     dat.assign(n<<1,vector<Key>());
     for(auto p:vs)

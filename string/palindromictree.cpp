@@ -7,7 +7,7 @@ struct PalindromicTree{
   struct node{
     map<char, int> nxt;
     int len,suf,app,cnt;
-    node(){}
+    node():len(-1){}
     node(int len,int suf,int app,int cnt)
       :len(len),suf(suf),app(app),cnt(cnt){}
   };
@@ -15,7 +15,6 @@ struct PalindromicTree{
   vector<int> ord;
   int n,ptr;
 
-  PalindromicTree(){}
   PalindromicTree(const string &s)
     :vs(s.size()+10),n(2),ptr(1){
 

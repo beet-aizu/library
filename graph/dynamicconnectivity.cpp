@@ -7,7 +7,6 @@ struct PersistentUnionFind{
   using T = pair<int, int>;
   vector<int> rs,ps;
   stack<T> st;
-  PersistentUnionFind(){}
   PersistentUnionFind(int n):
     rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}
   int find(int x){
@@ -46,7 +45,6 @@ struct DynamicConnectivity{
   vector <pair<range, edge> > prc;
   map<edge, int> cnt,app;
 
-  DynamicConnectivity(){}
   DynamicConnectivity(int n,int q_):q(1),puf(n){
     while(q<q_) q<<=1;
     edges.resize(q*2);

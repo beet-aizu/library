@@ -7,7 +7,6 @@ struct TopologicalSort{
   vector< set<int> > G;
   vector<int> used,indeg,ps;
 
-  TopologicalSort(){}
   TopologicalSort(int n):G(n),used(n,0),indeg(n,0){}
 
   void add_edge(int s,int t){

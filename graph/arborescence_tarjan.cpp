@@ -66,7 +66,6 @@ struct Arborescence{
 
   struct UnionFind{
     vector<int> r,p;
-    UnionFind(){}
     UnionFind(int sz):r(sz,1),p(sz,0){iota(p.begin(),p.end(),0);}
     int find(int x){
       return (x==p[x]?x:p[x]=find(p[x]));
@@ -85,7 +84,6 @@ struct Arborescence{
   struct edge{
     int from,to;
     T cost;
-    edge(){}
     edge(int from,int to,T cost):from(from),to(to),cost(cost){}
   };
 

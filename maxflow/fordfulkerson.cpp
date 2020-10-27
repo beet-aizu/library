@@ -16,7 +16,6 @@ struct FordFulkerson{
   vector< vector<Edge> > G;
   vector<int> used;
 
-  FordFulkerson(){}
   FordFulkerson(int n):G(n),used(n){}
 
   int add_edge(int src,int dst,Flow cap){

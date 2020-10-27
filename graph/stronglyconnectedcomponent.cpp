@@ -6,7 +6,6 @@ using namespace std;
 struct SCC{
   vector< vector<int> > G,R,H,C;
   vector<int> vs,used,blg;
-  SCC(){}
   SCC(int n):G(n),R(n),used(n),blg(n){}
 
   void add_edge(int u,int v){

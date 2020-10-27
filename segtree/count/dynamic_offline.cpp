@@ -7,7 +7,6 @@ template<typename Key,typename T>
 struct RangeCount{
   struct BIT{
     vector<T> dat;
-    BIT(){}
     BIT(int n){dat.assign(++n,0);}
     T sum(int k){
       T res=0;
@@ -21,7 +20,6 @@ struct RangeCount{
   int n;
   vector< vector<Key> > val;
   vector<BIT> dat;
-  RangeCount(){}
   RangeCount(int n):n(n){
     val.assign(n<<1,vector<Key>());
     dat.reserve(n<<1);

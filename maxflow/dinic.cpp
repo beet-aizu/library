@@ -17,7 +17,6 @@ struct Dinic{
   vector< vector<Edge> > G;
   vector<int> level,iter;
 
-  Dinic(){}
   Dinic(int n):G(n),level(n),iter(n){}
 
   int add_edge(int src,int dst,Flow cap){

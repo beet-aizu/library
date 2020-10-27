@@ -15,7 +15,6 @@ struct NegativeEdge{
   vector<Flow> fs;
   Cost sum;
   int S,T;
-  NegativeEdge(){}
   NegativeEdge(int n):G(n+2),fs(n+2,0),sum(0),S(n),T(n+1){}
 
   void use_edge(int u,int v,Flow cap,Cost cost){
