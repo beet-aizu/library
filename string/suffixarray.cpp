@@ -1,7 +1,6 @@
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
-
 #endif
 //BEGIN CUT HERE
 struct SuffixArray{
@@ -46,12 +45,12 @@ struct SuffixArray{
 
   bool lt_substr(string &t,int si,int ti){
     int sn=s.size(),tn=t.size();
-    while(si<sn&&ti<tn){
+    while(si<sn and ti<tn){
       if(s[si]<t[ti]) return 1;
       if(s[si]>t[ti]) return 0;
       si++;ti++;
     }
-    return si==sn&&ti<tn;
+    return si==sn and ti<tn;
   }
 
   int lower_bound(string& t){

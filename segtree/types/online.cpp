@@ -83,7 +83,7 @@ struct RangeTypes{
       vx.emplace_back(*it);
       vc.emplace_back(get(*it));
     }
-    if(vx.empty()||vx.back()!=b-1){
+    if(vx.empty() or vx.back()!=b-1){
       vx.emplace_back(b-1);
       vc.emplace_back(get(b-1));
     }
@@ -92,7 +92,7 @@ struct RangeTypes{
     {
       auto it=sr.lower_bound(range(a,0,0));
       if(it!=sr.begin()) --it;
-      if(it->l<a&&a<it->r) vr.emplace_back(*it);
+      if(it->l<a and a<it->r) vr.emplace_back(*it);
     }
     for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){
       if(it->l>=b) break;
@@ -156,10 +156,10 @@ struct RangeTypes{
   int query(const int a,const int b,const int c,const int d) const{
     int res=0;
     auto calc=[&](const gtree<int> &g){
-                int lb=*g.lower_bound(c);
-                int ub=*g.upper_bound(d);
-                return g.order_of_key(ub)-g.order_of_key(lb);
-              };
+      int lb=*g.lower_bound(c);
+      int ub=*g.upper_bound(d);
+      return g.order_of_key(ub)-g.order_of_key(lb);
+    };
     for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){
       if(l&1) res+=calc(rc[l++]);
       if(r&1) res+=calc(rc[--r]);
@@ -228,7 +228,7 @@ signed main(){
     int q;
     scanf("%d",&q);
 
-    if(n<=5000||q<=5000||casecnt>=2){
+    if(n<=5000 or q<=5000 or casecnt>=2){
       vector<int> val(n),used(n+1,-1);
       for(int i=0;i<n;i++) val[et.ls[i]]=c[i];
 

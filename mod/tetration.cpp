@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,7 +11,7 @@ using namespace std;
 template<typename T>
 T mpow(T a,T n,T m,T &f){
   using ull = unsigned long long;
-  if(a==1||n==0) return 1;
+  if(a==1 or n==0) return 1;
   ull v=1,x=a,z=m;
   f|=x>=z;
   x%=m;
@@ -32,7 +30,7 @@ template<typename T>
 T tetration(T a,T n,T m,T &f){
   if(a==0) return ~n&1;
   if(m==1) return f=1;
-  if(a==1||n==0) return 1;
+  if(a==1 or n==0) return 1;
   if(n==1){
     f|=a>=m;
     return a%m+f*m;

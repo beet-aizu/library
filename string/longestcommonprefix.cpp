@@ -22,7 +22,7 @@ struct LongestCommonPrefix{
     for(int i=0;i<n;i++){
       int j=sa[sa.rev[i]-1];
       if(t>0) t--;
-      for(;j+t<n&&i+t<n;t++){
+      for(;j+t<n and i+t<n;t++){
         if(sa.s[j+t]!=sa.s[i+t]) break;
       }
       lcp[sa.rev[i]-1]=t;

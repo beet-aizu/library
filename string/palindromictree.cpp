@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -32,7 +32,7 @@ struct PalindromicTree{
     int cur=ptr;
     while(1){
       int rev=pos-1-vs[cur].len;
-      if(rev>=0&&s[rev]==ch) break;
+      if(rev>=0 and s[rev]==ch) break;
       cur=vs[cur].suf;
     }
 
@@ -54,7 +54,7 @@ struct PalindromicTree{
     while(1){
       cur=vs[cur].suf;
       int rev=pos-1-vs[cur].len;
-      if(rev>=0&&s[rev]==ch){
+      if(rev>=0 and s[rev]==ch){
         vs[ptr].suf=vs[cur].nxt[ch];
         break;
       }

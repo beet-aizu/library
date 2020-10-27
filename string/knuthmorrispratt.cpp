@@ -1,20 +1,16 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-/*
- * @see https://snuke.hatenablog.com/entry/2017/07/18/101026
- */
+// https://snuke.hatenablog.com/entry/2017/07/18/101026
 //BEGIN CUT HERE
 vector<int> knuth_morris_pratt(const string &s){
   int n=s.size();
   vector<int> kmp(n+1,-1);
   for(int i=0,j=-1;i<n;i++){
-    while(~j&&s[i]!=s[j]) j=kmp[j];
+    while(~j and s[i]!=s[j]) j=kmp[j];
     kmp[i+1]=++j;
-    if(i+1<n&&s[i+1]==s[j]) kmp[i+1]=kmp[j];
+    if(i+1<n and s[i+1]==s[j]) kmp[i+1]=kmp[j];
   }
   return kmp;
 }

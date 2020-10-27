@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -165,7 +163,7 @@ signed CODEFLYER2018_F(){
         A=*s.begin();
         B=*t.begin();
       }
-      if(a1<0&&a2<0){
+      if(a1<0 and a2<0){
         print("No");
         return;
       }
@@ -187,7 +185,7 @@ signed CODEFLYER2018_F(){
         D=*t.begin();
       }
 
-      if(c1<0&&c2<0){
+      if(c1<0 and c2<0){
         print("No");
         return;
       }
@@ -277,16 +275,16 @@ signed CODEFLYER2018_F(){
 
   auto calc=
     [&](){
-      if(mrs.size()>2u||mcs.size()>2u){
+      if(mrs.size()>2u or mcs.size()>2u){
         print("No");
         return;
       }
-      if(mrs.size()==1u||mcs.size()==1u){
+      if(mrs.size()==1u or mcs.size()==1u){
         print("Yes");
         return;
       }
 
-      if(mrs.size()==2u||mcs.size()==2u){
+      if(mrs.size()==2u or mcs.size()==2u){
         check();
         return;
       }
@@ -373,9 +371,9 @@ signed JAG2018SUMMER_DAY2_F(){
   }
 
   for(int i=0;i<n;i++){
-    if(c[i].x==d.x&&c[i].y==d.y) drop(i);
+    if(c[i].x==d.x and c[i].y==d.y) drop(i);
 
-    if(a[i].x==b[i].x&&c[i].x==d.x) drop(i);
+    if(a[i].x==b[i].x and c[i].x==d.x) drop(i);
 
     if(a[i].x==b[i].x){
       V nx=a[i].x;

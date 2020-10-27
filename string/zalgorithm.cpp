@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -11,14 +11,14 @@ vector<int> zalgorithm(vector<T> vs){
   as[0]=n;
   int i=1,j=0;
   while(i<n){
-    while(i+j<n&&vs[j]==vs[i+j]) j++;
+    while(i+j<n and vs[j]==vs[i+j]) j++;
     as[i]=j;
     if(j==0){
       i++;
       continue;
     }
     int k=1;
-    while(i+k<n&&k+as[k]<j) as[i+k]=as[k],k++;
+    while(i+k<n and k+as[k]<j) as[i+k]=as[k],k++;
     i+=k;
     j-=k;
   }

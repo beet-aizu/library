@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -67,7 +65,7 @@ int factor(string s,int& p){
 
 int number(string s,int& p){
   int res=0;
-  while(p<(int)s.size()&&isdigit(s[p]))
+  while(p<(int)s.size() and isdigit(s[p]))
     res=res*10+s[p++]-'0';
   return res;
 }

@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -54,8 +54,8 @@ struct SegmentTree{
   }
 
   T query(Node* t,int l,int r,int lb,int ub){
-    if(r<=lb||ub<=l) return ti;
-    if(l<=lb&&ub<=r) return t->dat;
+    if(r<=lb or ub<=l) return ti;
+    if(l<=lb and ub<=r) return t->dat;
     int m=(lb+ub)>>1;
     return f(query(t->l,l,r,lb,m),query(t->r,l,r,m,ub));
   }
@@ -71,57 +71,7 @@ struct SegmentTree{
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-signed HAPPYQUERY_B(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int n;
-  cin>>n;
-  vector<int> as(n);
-  for(int i=0;i<n;i++) cin>>as[i];
-
-  auto f=[](int a,int b){return min(a,b);};
-  int ti=INT_MAX;
-  SegmentTree<int> seg(f,ti);
-  auto rt=seg.build(as);
-
-  int q1;
-  cin>>q1;
-
-  vector<decltype(rt)> rts;
-  rts.reserve(q1+1);
-  rts.emplace_back(rt);
-
-  for(int i=0;i<q1;i++){
-    int p,x;
-    cin>>p>>x;
-    p--;
-    rt=seg.set_val(rt,p,x);
-    rts.emplace_back(rt);
-  }
-
-  int q2;
-  cin>>q2;
-  int x=0;
-  for(int i=0;i<q2;i++){
-    int a,b,c;
-    cin>>a>>b>>c;
-    int k=a^x;
-    int l=(b^x)-1;
-    int r=(c^x);
-    assert(l<r);
-    x=seg.query(rts[k],l,r);
-    cout<<x<<"\n";
-  }
-  cout<<flush;
-  return 0;
-}
-/*
-  verified on 2019/06/22
-  https://www.hackerrank.com/contests/happy-query-contest/challenges/minimum-history-query
-*/
 signed main(){
-  HAPPYQUERY_B();
   return 0;
 }
 #endif

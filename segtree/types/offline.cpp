@@ -134,7 +134,7 @@ struct RangeTypes{
       vx.emplace_back(*it);
       vc.emplace_back(get(*it));
     }
-    if(vx.empty()||vx.back()!=b-1){
+    if(vx.empty() or vx.back()!=b-1){
       vx.emplace_back(b-1);
       vc.emplace_back(get(b-1));
     }
@@ -143,7 +143,7 @@ struct RangeTypes{
     {
       auto it=sr.lower_bound(range(a,0,0));
       if(it!=sr.begin()) --it;
-      if(it->l<a&&a<it->r) vr.emplace_back(*it);
+      if(it->l<a and a<it->r) vr.emplace_back(*it);
     }
     for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){
       if(it->l>=b) break;
@@ -280,7 +280,7 @@ signed main(){
     int q;
     scanf("%d",&q);
 
-    if(n<=50000||q<=50000){
+    if(n<=50000 or q<=50000){
       vector<int> val(n),used(n+1,-1);
       for(int i=0;i<n;i++) val[et.ls[i]]=c[i];
 

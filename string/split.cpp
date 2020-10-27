@@ -9,7 +9,7 @@ vector<string> split(string& s,char c){
   for(int i=0;i<n;i++){
     if(s[i]==c) continue;
     res.emplace_back();
-    while(i<n&&s[i]!=c) res.back()+=s[i++];
+    while(i<n and s[i]!=c) res.back()+=s[i++];
   }
   return res;
 }

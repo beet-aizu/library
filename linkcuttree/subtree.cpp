@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -7,9 +7,7 @@ using namespace std;
 #undef call_from_test
 
 #endif
-/**
- * @see http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
- */
+// http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
 //BEGIN CUT HERE
 template<typename Ap>
 struct NodeBase{
@@ -195,7 +193,7 @@ signed CFR564_E(){
         lct.link(lct[par[v]],lct[v]);
         cur+=lct.query(lct.root(lct[v])).sz2;
       }
-      if(i+1==(int)modv[c].size()||modt[c][i]!=modt[c][i+1]){
+      if(i+1==(int)modv[c].size() or modt[c][i]!=modt[c][i+1]){
         delta[modt[c][i]]+=cur-lst;
         lst=cur;
       }
