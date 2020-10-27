@@ -5,6 +5,9 @@ data:
     path: math/extgcd.cpp
     title: math/extgcd.cpp
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: math/combination.cpp
+    title: math/combination.cpp
   - icon: ':heavy_check_mark:'
     path: math/linearcongruence.cpp
     title: math/linearcongruence.cpp
@@ -38,6 +41,7 @@ data:
   isVerificationFile: false
   path: mod/inverse.cpp
   requiredBy:
+  - math/combination.cpp
   - math/linearcongruence.cpp
   timestamp: '2020-09-21 00:38:13+09:00'
   verificationStatus: LIBRARY_ALL_AC

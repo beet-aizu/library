@@ -4,6 +4,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/extgcd.cpp
     title: math/extgcd.cpp
+  - icon: ':heavy_check_mark:'
+    path: mod/inverse.cpp
+    title: mod/inverse.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -17,16 +20,17 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ math/combination.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef\
+    \ math/combination.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"extgcd.cpp\"\n#undef call_from_test\n\
-    \n#endif\n//BEGIN CUT HERE\ntemplate<typename T, size_t sz>\nstruct Combination{\n\
-    \  using ll = long long;\n  array<T, sz> fact;\n\n  T mod;\n  Combination(T mod):mod(mod){init();}\n\
-    \n  void init(){\n    fact[0]=1;\n    for(int i=1;i<(int)sz;i++)\n      fact[i]=(ll)fact[i-1]*i%mod;\n\
-    \  }\n\n  T mod_fact(T n,T& e){\n    e=0;\n    if(n==0) return 1;\n    T res=mod_fact(n/mod,e);\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"extgcd.cpp\"\n#include \"../mod/inverse.cpp\"\
+    \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename T, size_t\
+    \ sz>\nstruct Combination{\n  using ll = long long;\n  array<T, sz> fact;\n\n\
+    \  T mod;\n  Combination(T mod):mod(mod){init();}\n\n  void init(){\n    fact[0]=1;\n\
+    \    for(int i=1;i<(int)sz;i++)\n      fact[i]=(ll)fact[i-1]*i%mod;\n  }\n\n \
+    \ T mod_fact(T n,T& e){\n    e=0;\n    if(n==0) return 1;\n    T res=mod_fact(n/mod,e);\n\
     \    e+=n/mod;\n    if(n/mod%2!=0)return res*(mod-fact[n%mod])%mod;\n    return\
-    \ res*fact[n%mod]%mod;\n  }\n\n  T mod_comb(T n,T k){\n    if(n==k||k==0) return\
+    \ res*fact[n%mod]%mod;\n  }\n\n  T mod_comb(T n,T k){\n    if(n==k or k==0) return\
     \ 1;\n    T e1,e2,e3;\n    T a1=mod_fact(n,e1),a2=mod_fact(k,e2),a3=mod_fact(n-k,e3);\n\
     \    if(e1>e2+e3) return 0;\n    return a1*mod_inverse<ll>((ll)a2*a3%mod,mod)%mod;\n\
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
@@ -41,10 +45,11 @@ data:
     */\n#endif\n"
   dependsOn:
   - math/extgcd.cpp
+  - mod/inverse.cpp
   isVerificationFile: false
   path: math/combination.cpp
   requiredBy: []
-  timestamp: '2020-09-21 00:38:13+09:00'
+  timestamp: '2020-10-27 16:14:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combination.cpp

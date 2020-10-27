@@ -30,7 +30,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ mod/factorial.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../mod/mint.cpp\"\n#include \"../convolution/numbertheoretictransform.cpp\"\
     \n#include \"../convolution/garner.cpp\"\n#include \"../mod/rint.cpp\"\n#undef\
     \ call_from_test\n\n#endif\n//BEGIN CUT HERE\nint factorial(long long n,int MOD){\n\
@@ -39,10 +39,10 @@ data:
     \ fact[i]=fact[i-1]*R(i);\n  finv[d*2]=fact[d*2].inv();\n  for(int i=d*2-1;i>=0;i--)\
     \ finv[i]=finv[i+1]*R(i+1);\n\n  vector<R> seq({1,d+1});\n  seq.reserve(d+1);\n\
     \n  int sz=1;\n  while(sz<d){\n    vector<R> aux(sz,1);\n    vector<R> f(sz*4,0),g(sz*4,0);\n\
-    \    for(int i=0;i<=sz;i++){\n      f[i]=finv[i]*finv[sz-i]*seq[i];\n      if(((sz+i)&1)&&(f[i].v!=0))\
-    \ f[i]=-f[i];\n    }\n\n    vector<R> pf(f);\n    vector<R> as;\n    as.emplace_back(R(sz+1));\n\
-    \    as.emplace_back(R(sz)/R(d));\n    as.emplace_back(R(sz)/R(d)+R(sz+1));\n\n\
-    \    for(int idx=0;idx<3;idx++){\n      for(int i=0;i<sz*4;i++) f[i]=pf[i];\n\
+    \    for(int i=0;i<=sz;i++){\n      f[i]=finv[i]*finv[sz-i]*seq[i];\n      if(((sz+i)&1)\
+    \ and (f[i].v!=0)) f[i]=-f[i];\n    }\n\n    vector<R> pf(f);\n    vector<R> as;\n\
+    \    as.emplace_back(R(sz+1));\n    as.emplace_back(R(sz)/R(d));\n    as.emplace_back(R(sz)/R(d)+R(sz+1));\n\
+    \n    for(int idx=0;idx<3;idx++){\n      for(int i=0;i<sz*4;i++) f[i]=pf[i];\n\
     \      for(int i=1;i<sz*2+2;i++)\n        g[i]=(as[idx]-R(sz-i+1)).inv();\n  \
     \    f=arb.multiply(f,g);\n      f.resize(sz*4);\n\n      R prod=1;\n      for(int\
     \ i=0;i<=sz;i++) prod*=as[idx]-R(i);\n\n      for(int i=0;i<=sz;i++){\n      \
@@ -63,7 +63,7 @@ data:
   isVerificationFile: false
   path: mod/factorial.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 16:14:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1504.test.cpp

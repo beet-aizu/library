@@ -21,14 +21,14 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ math/tetrahedra.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../linearalgebra/matrix.cpp\"\n#undef call_from_test\n\
     \n#endif\n//BEGIN CUT HERE\nbool isTriangle(double a1,double a2,double a3){\n\
-    \  if(a1+a2<=a3||a2+a3<=a1||a3+a1<=a2) return 0;\n  return 1;\n}\n\ndouble tetrahedra(double\
-    \ OA,double OB,double OC,\n                  double AB,double AC,double BC){\n\
-    \  if(!isTriangle(OA,OB,AB)) return 0;\n  if(!isTriangle(OB,OC,BC)) return 0;\n\
-    \  if(!isTriangle(OC,OA,AC)) return 0;\n  if(!isTriangle(AB,AC,BC)) return 0;\n\
-    \  Matrix<double> A(5,5);\n  A[0][0]=    0;A[0][1]=AB*AB;A[0][2]=AC*AC;A[0][3]=OA*OA;A[0][4]=1;\n\
+    \  if(a1+a2<=a3 or a2+a3<=a1 or a3+a1<=a2) return 0;\n  return 1;\n}\n\ndouble\
+    \ tetrahedra(double OA,double OB,double OC,\n                  double AB,double\
+    \ AC,double BC){\n  if(!isTriangle(OA,OB,AB)) return 0;\n  if(!isTriangle(OB,OC,BC))\
+    \ return 0;\n  if(!isTriangle(OC,OA,AC)) return 0;\n  if(!isTriangle(AB,AC,BC))\
+    \ return 0;\n  Matrix<double> A(5,5);\n  A[0][0]=    0;A[0][1]=AB*AB;A[0][2]=AC*AC;A[0][3]=OA*OA;A[0][4]=1;\n\
     \  A[1][0]=AB*AB;A[1][1]=    0;A[1][2]=BC*BC;A[1][3]=OB*OB;A[1][4]=1;\n  A[2][0]=AC*AC;A[2][1]=BC*BC;A[2][2]=\
     \    0;A[2][3]=OC*OC;A[2][4]=1;\n  A[3][0]=OA*OA;A[3][1]=OB*OB;A[3][2]=OC*OC;A[3][3]=\
     \    0;A[3][4]=1;\n  A[4][0]=    1;A[4][1]=    1;A[4][2]=    1;A[4][3]=    1;A[4][4]=0;\n\
@@ -39,7 +39,7 @@ data:
   isVerificationFile: false
   path: math/tetrahedra.cpp
   requiredBy: []
-  timestamp: '2019-10-29 12:01:20+09:00'
+  timestamp: '2020-10-27 16:14:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2060.test.cpp

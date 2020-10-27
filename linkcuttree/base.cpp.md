@@ -66,8 +66,8 @@ data:
     \    if((x->r=t->l)) t->l->p=x;\n    t->l=x;x->p=t;\n    pushup(x);pushup(t);\n\
     \    if((t->p=y)){\n      if(y->l==x) y->l=t;\n      if(y->r==x) y->r=t;\n   \
     \   pushup(y);\n    }\n  }\n\n  // for splay tree (not original tree)\n  bool\
-    \ is_root(Node *t){\n    return !t->p or (t->p->l!=t&&t->p->r!=t);\n  }\n\n  void\
-    \ splay(Node *t){\n    eval(t);\n    while(!is_root(t)){\n      Node *q=t->p;\n\
+    \ is_root(Node *t){\n    return !t->p or (t->p->l!=t and t->p->r!=t);\n  }\n\n\
+    \  void splay(Node *t){\n    eval(t);\n    while(!is_root(t)){\n      Node *q=t->p;\n\
     \      if(is_root(q)){\n        eval(q);eval(t);\n        if(q->l==t) rotR(t);\n\
     \        else rotL(t);\n      }else{\n        auto *r=q->p;\n        eval(r);eval(q);eval(t);\n\
     \        if(r->l==q){\n          if(q->l==t) rotR(q),rotR(t);\n          else\
@@ -102,8 +102,8 @@ data:
     \    if((x->r=t->l)) t->l->p=x;\n    t->l=x;x->p=t;\n    pushup(x);pushup(t);\n\
     \    if((t->p=y)){\n      if(y->l==x) y->l=t;\n      if(y->r==x) y->r=t;\n   \
     \   pushup(y);\n    }\n  }\n\n  // for splay tree (not original tree)\n  bool\
-    \ is_root(Node *t){\n    return !t->p or (t->p->l!=t&&t->p->r!=t);\n  }\n\n  void\
-    \ splay(Node *t){\n    eval(t);\n    while(!is_root(t)){\n      Node *q=t->p;\n\
+    \ is_root(Node *t){\n    return !t->p or (t->p->l!=t and t->p->r!=t);\n  }\n\n\
+    \  void splay(Node *t){\n    eval(t);\n    while(!is_root(t)){\n      Node *q=t->p;\n\
     \      if(is_root(q)){\n        eval(q);eval(t);\n        if(q->l==t) rotR(t);\n\
     \        else rotL(t);\n      }else{\n        auto *r=q->p;\n        eval(r);eval(q);eval(t);\n\
     \        if(r->l==q){\n          if(q->l==t) rotR(q),rotR(t);\n          else\
@@ -131,7 +131,7 @@ data:
   - linkcuttree/subtree.cpp
   - linkcuttree/path.cpp
   - linkcuttree/farthest.cpp
-  timestamp: '2020-10-27 13:26:46+09:00'
+  timestamp: '2020-10-27 16:14:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
