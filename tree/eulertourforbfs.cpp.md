@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/levelancestor.cpp
     title: tree/levelancestor.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -19,10 +19,10 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ tree/eulertourforbfs.cpp: line 8: unable to process #include in #if / #ifdef\
+    \ tree/eulertourforbfs.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"levelancestor.cpp\"\n#undef call_from_test\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"levelancestor.cpp\"\n#undef call_from_test\n\
     \n#endif\n\n//BEGIN CUT HERE\nstruct EulerTourForBFS : LevelAncestor{\n  using\
     \ super = LevelAncestor;\n  vector<int> ls;\n  vector<vector<int>> H;\n  EulerTourForBFS(int\
     \ n):super(n),ls(n),H(n){}\n\n  using super::par;\n  using super::dep;\n  void\
@@ -42,8 +42,8 @@ data:
   isVerificationFile: false
   path: tree/eulertourforbfs.cpp
   requiredBy: []
-  timestamp: '2020-09-30 16:50:39+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 16:41:24+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3405.test.cpp
 documentation_of: tree/eulertourforbfs.cpp

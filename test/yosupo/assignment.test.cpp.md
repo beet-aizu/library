@@ -15,7 +15,7 @@ data:
     - https://judge.yosupo.jp/problem/assignment
   bundledCode: "#line 1 \"test/yosupo/assignment.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n\
-    #line 2 \"bflow/capacityscaling.cpp\"\n\n#ifndef call_from_test\n#line 5 \"bflow/capacityscaling.cpp\"\
+    #line 1 \"bflow/capacityscaling.cpp\"\n\n#line 3 \"bflow/capacityscaling.cpp\"\
     \nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// O(m^2 \\log m \\log U)\n\
     // U: maximum capacity\nenum Objective{\n  MINIMIZE = +1,\n  MAXIMIZE = -1,\n\
     };\ntemplate<typename Flow, typename Cost,\n         Objective objective = Objective::MINIMIZE>\n\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/assignment.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 12:06:53+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/assignment.test.cpp

@@ -43,7 +43,7 @@ data:
   requiredBy:
   - math/combination.cpp
   - math/linearcongruence.cpp
-  timestamp: '2020-09-21 00:38:13+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2970.test.cpp

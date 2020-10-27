@@ -36,14 +36,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/range_affine_range_sum.test.cpp
     title: test/yosupo/range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://codeforces.com/contest/1179/problem/C
@@ -136,7 +136,7 @@ data:
   path: segtree/basic/lazy.cpp
   requiredBy: []
   timestamp: '2020-10-27 16:27:26+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5223.test.cpp
   - test/yukicoder/3405.test.cpp

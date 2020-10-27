@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: math/combination.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combination.cpp

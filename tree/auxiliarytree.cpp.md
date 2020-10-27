@@ -25,35 +25,34 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ tree/auxiliarytree.cpp: line 8: unable to process #include in #if / #ifdef /\
+    \ tree/auxiliarytree.cpp: line 6: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"lowestcommonancestor.cpp\"\n#undef\
-    \ call_from_test\n\n#endif\n\n//BEGIN CUT HERE\nstruct AuxiliaryTree : LowestCommonAncestor{\n\
-    \  using super = LowestCommonAncestor;\n\n  vector<int> idx;\n  vector<vector<int>>\
-    \ T;\n  AuxiliaryTree(){}\n  AuxiliaryTree(int n):super(n),idx(n),T(n){}\n\n \
-    \ void dfs(int v,int p,int &pos){\n    idx[v]=pos++;\n    for(int u:G[v])\n  \
-    \    if(u!=p) dfs(u,v,pos);\n  }\n\n  void build(int r=0){\n    super::build(r);\n\
-    \    int pos=0;\n    dfs(r,-1,pos);\n  }\n\n  void add_aux_edge(int u,int v){\n\
-    \    T[u].emplace_back(v);\n    T[v].emplace_back(u);\n  }\n\n  using super::lca,\
-    \ super::dep;\n  void query(vector<int> &vs){\n    assert(!vs.empty());\n    sort(vs.begin(),vs.end(),\n\
-    \         [&](int a,int b){return idx[a]<idx[b];});\n    vs.erase(unique(vs.begin(),vs.end()),vs.end());\n\
-    \n    int k=vs.size();\n    stack<int> st;\n    st.emplace(vs[0]);\n    for(int\
-    \ i=0;i+1<k;i++){\n      int w=lca(vs[i],vs[i+1]);\n      if(w!=vs[i]){\n    \
-    \    int l=st.top();st.pop();\n        while(!st.empty() and dep[w]<dep[st.top()]){\n\
-    \          add_aux_edge(st.top(),l);\n          l=st.top();st.pop();\n       \
-    \ }\n        if(st.empty() or st.top()!=w){\n          st.emplace(w);\n      \
-    \    vs.emplace_back(w);\n        }\n        add_aux_edge(w,l);\n      }\n   \
-    \   st.emplace(vs[i+1]);\n    }\n\n    while(st.size()>1){\n      int c=st.top();st.pop();\n\
-    \      add_aux_edge(st.top(),c);\n    }\n  }\n\n  void clear(const vector<int>\
-    \ &ws){\n    for(int w:ws) T[w].clear();\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    signed main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"lowestcommonancestor.cpp\"\n#undef call_from_test\n\
+    \n#endif\n\n//BEGIN CUT HERE\nstruct AuxiliaryTree : LowestCommonAncestor{\n \
+    \ using super = LowestCommonAncestor;\n\n  vector<int> idx;\n  vector<vector<int>>\
+    \ T;\n  AuxiliaryTree(int n):super(n),idx(n),T(n){}\n\n  void dfs(int v,int p,int\
+    \ &pos){\n    idx[v]=pos++;\n    for(int u:G[v])\n      if(u!=p) dfs(u,v,pos);\n\
+    \  }\n\n  void build(int r=0){\n    super::build(r);\n    int pos=0;\n    dfs(r,-1,pos);\n\
+    \  }\n\n  void add_aux_edge(int u,int v){\n    T[u].emplace_back(v);\n    T[v].emplace_back(u);\n\
+    \  }\n\n  using super::lca, super::dep;\n  void query(vector<int> &vs){\n    assert(!vs.empty());\n\
+    \    sort(vs.begin(),vs.end(),\n         [&](int a,int b){return idx[a]<idx[b];});\n\
+    \    vs.erase(unique(vs.begin(),vs.end()),vs.end());\n\n    int k=vs.size();\n\
+    \    stack<int> st;\n    st.emplace(vs[0]);\n    for(int i=0;i+1<k;i++){\n   \
+    \   int w=lca(vs[i],vs[i+1]);\n      if(w!=vs[i]){\n        int l=st.top();st.pop();\n\
+    \        while(!st.empty() and dep[w]<dep[st.top()]){\n          add_aux_edge(st.top(),l);\n\
+    \          l=st.top();st.pop();\n        }\n        if(st.empty() or st.top()!=w){\n\
+    \          st.emplace(w);\n          vs.emplace_back(w);\n        }\n        add_aux_edge(w,l);\n\
+    \      }\n      st.emplace(vs[i+1]);\n    }\n\n    while(st.size()>1){\n     \
+    \ int c=st.top();st.pop();\n      add_aux_edge(st.top(),c);\n    }\n  }\n\n  void\
+    \ clear(const vector<int> &ws){\n    for(int w:ws) T[w].clear();\n  }\n};\n//END\
+    \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - tree/lowestcommonancestor.cpp
   isVerificationFile: false
   path: tree/auxiliarytree.cpp
   requiredBy: []
-  timestamp: '2020-09-30 16:50:39+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3407.test.cpp

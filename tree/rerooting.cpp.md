@@ -16,17 +16,16 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"tree/rerooting.cpp\"\n\n#ifndef call_from_test\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T, typename Edge>\nstruct ReRooting{\n  struct Node{\n    int to,rev;\n    Edge\
-    \ data;\n    Node(int to,Edge data):to(to),data(data){}\n    bool operator<(const\
-    \ Node &v)const{return to<v.to;};\n  };\n\n  using Fold = function<T(T, T)>;\n\
-    \  using Lift = function<T(T, Edge)>;\n\n  vector< vector<Node> > G;\n  vector<\
-    \ vector<T> > ld,rd;\n  vector<int> lp,rp;\n\n  const Fold fold;\n  const Lift\
-    \ lift;\n  const T id;\n\n  ReRooting(int n,const Fold fold,const Lift lift,const\
-    \ T id):\n    G(n),ld(n),rd(n),lp(n),rp(n),fold(fold),lift(lift),id(id){}\n\n\
-    \  void add_edge(int u,int v,Edge d,Edge e){\n    G[u].emplace_back(v,d);\n  \
-    \  G[v].emplace_back(u,e);\n  }\n\n  void add_edge(int u,int v,Edge d){add_edge(u,v,d,d);}\n\
+  bundledCode: "#line 1 \"tree/rerooting.cpp\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T, typename Edge>\n\
+    struct ReRooting{\n  struct Node{\n    int to,rev;\n    Edge data;\n    Node(int\
+    \ to,Edge data):to(to),data(data){}\n    bool operator<(const Node &v)const{return\
+    \ to<v.to;};\n  };\n\n  using Fold = function<T(T, T)>;\n  using Lift = function<T(T,\
+    \ Edge)>;\n\n  vector< vector<Node> > G;\n  vector< vector<T> > ld,rd;\n  vector<int>\
+    \ lp,rp;\n\n  const Fold fold;\n  const Lift lift;\n  const T id;\n\n  ReRooting(int\
+    \ n,const Fold fold,const Lift lift,const T id):\n    G(n),ld(n),rd(n),lp(n),rp(n),fold(fold),lift(lift),id(id){}\n\
+    \n  void add_edge(int u,int v,Edge d,Edge e){\n    G[u].emplace_back(v,d);\n \
+    \   G[v].emplace_back(u,e);\n  }\n\n  void add_edge(int u,int v,Edge d){add_edge(u,v,d,d);}\n\
     \n  // k: idx for edge (not vertex)\n  T dfs(int v,int k){\n    while(lp[v]!=k\
     \ and lp[v]<(int)G[v].size()){\n      auto &e=G[v][lp[v]];\n      ld[v][lp[v]+1]=fold(ld[v][lp[v]],lift(dfs(e.to,e.rev),e.data));\n\
     \      lp[v]++;\n    }\n    while(rp[v]!=k and rp[v]>=0){\n      auto &e=G[v][rp[v]];\n\
@@ -43,14 +42,14 @@ data:
     \    return lift(dfs(v,G[p][k].rev),G[p][k].data);\n  }\n};\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T, typename Edge>\nstruct\
-    \ ReRooting{\n  struct Node{\n    int to,rev;\n    Edge data;\n    Node(int to,Edge\
-    \ data):to(to),data(data){}\n    bool operator<(const Node &v)const{return to<v.to;};\n\
-    \  };\n\n  using Fold = function<T(T, T)>;\n  using Lift = function<T(T, Edge)>;\n\
-    \n  vector< vector<Node> > G;\n  vector< vector<T> > ld,rd;\n  vector<int> lp,rp;\n\
-    \n  const Fold fold;\n  const Lift lift;\n  const T id;\n\n  ReRooting(int n,const\
-    \ Fold fold,const Lift lift,const T id):\n    G(n),ld(n),rd(n),lp(n),rp(n),fold(fold),lift(lift),id(id){}\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n\n//BEGIN CUT HERE\ntemplate<typename T, typename Edge>\nstruct ReRooting{\n\
+    \  struct Node{\n    int to,rev;\n    Edge data;\n    Node(int to,Edge data):to(to),data(data){}\n\
+    \    bool operator<(const Node &v)const{return to<v.to;};\n  };\n\n  using Fold\
+    \ = function<T(T, T)>;\n  using Lift = function<T(T, Edge)>;\n\n  vector< vector<Node>\
+    \ > G;\n  vector< vector<T> > ld,rd;\n  vector<int> lp,rp;\n\n  const Fold fold;\n\
+    \  const Lift lift;\n  const T id;\n\n  ReRooting(int n,const Fold fold,const\
+    \ Lift lift,const T id):\n    G(n),ld(n),rd(n),lp(n),rp(n),fold(fold),lift(lift),id(id){}\n\
     \n  void add_edge(int u,int v,Edge d,Edge e){\n    G[u].emplace_back(v,d);\n \
     \   G[v].emplace_back(u,e);\n  }\n\n  void add_edge(int u,int v,Edge d){add_edge(u,v,d,d);}\n\
     \n  // k: idx for edge (not vertex)\n  T dfs(int v,int k){\n    while(lp[v]!=k\
@@ -73,7 +72,7 @@ data:
   isVerificationFile: false
   path: tree/rerooting.cpp
   requiredBy: []
-  timestamp: '2020-09-15 17:50:40+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2085.test.cpp

@@ -44,40 +44,40 @@ data:
     \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
     \ T, T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T, T MOD>\nostream&\
     \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 2 \"math/linearfunction.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"math/linearfunction.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\n// a * x + b\ntemplate<typename T>\nstruct LinearFunction{\n\
-    \  T a,b;\n  LinearFunction():a(0),b(0){}\n  LinearFunction(T a,T b):a(a),b(b){}\n\
-    \n  using LF = LinearFunction;\n  static LF add_identity(){return LF(T(0),T(0));}\n\
-    \  static LF mul_identity(){return LF(T(1),T(0));}\n  LF& operator+=(const LF\
-    \ &o){\n    a+=o.a;b+=o.b;\n    return *this;\n  }\n  LF& operator*=(const LF\
-    \ &o){\n    a=a*o.a;\n    b=b*o.a+o.b;\n    return *this;\n  }\n  LF operator+(const\
-    \ LF &o)const{return LF(*this)+=o;}\n  LF operator*(const LF &o)const{return LF(*this)*=o;}\n\
+    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"math/linearfunction.cpp\"\
+    \n\n#line 3 \"math/linearfunction.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
+    \ CUT HERE\n// a * x + b\ntemplate<typename T>\nstruct LinearFunction{\n  T a,b;\n\
+    \  LinearFunction():a(0),b(0){}\n  LinearFunction(T a,T b):a(a),b(b){}\n\n  using\
+    \ LF = LinearFunction;\n  static LF add_identity(){return LF(T(0),T(0));}\n  static\
+    \ LF mul_identity(){return LF(T(1),T(0));}\n  LF& operator+=(const LF &o){\n \
+    \   a+=o.a;b+=o.b;\n    return *this;\n  }\n  LF& operator*=(const LF &o){\n \
+    \   a=a*o.a;\n    b=b*o.a+o.b;\n    return *this;\n  }\n  LF operator+(const LF\
+    \ &o)const{return LF(*this)+=o;}\n  LF operator*(const LF &o)const{return LF(*this)*=o;}\n\
     \n  T operator()(T x) const{return a*x+b;}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 2 \"math/twoway.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"math/twoway.cpp\"\nusing namespace std;\n\
-    #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct TwoWay{\n  T x,y;\n  TwoWay(T\
-    \ z=T()):x(z),y(z){}\n  TwoWay(T x,T y):x(x),y(y){}\n  TwoWay operator+(const\
-    \ TwoWay &o)const{return TwoWay(x+o.x,o.y+y);}\n  TwoWay operator*(const TwoWay\
-    \ &o)const{return TwoWay(x*o.x,o.y*y);}\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 2 \"toptree/toptree.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"toptree/toptree.cpp\"\nusing namespace std;\n\
-    #endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster, size_t LIM>\n\
-    struct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct Node{\n    Vertex*\
-    \ vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n    Node* ch[2];\n   \
-    \ bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
-    \  };\n\n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n\
-    \  size_t ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\
-    \n  inline Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n\
-    \    auto dummy=&pool_v[ptr_v++];\n    *t=v;\n    link(t,id,dummy);\n    return\
-    \ t;\n  }\n\n  inline Node* edge(Vertex* u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n\
-    \    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n    return pushup(t);\n\
-    \  }\n\n  inline Node* compress(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n\
-    \    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n    return pushup(t);\n  }\n\
-    \n  inline Node* rake(Node* l,Node* r){\n    auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n\
-    \    return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n\
-    \    if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
-    \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"math/twoway.cpp\"\
+    \n\n#line 3 \"math/twoway.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    template<typename T>\nstruct TwoWay{\n  T x,y;\n  TwoWay(T z=T()):x(z),y(z){}\n\
+    \  TwoWay(T x,T y):x(x),y(y){}\n  TwoWay operator+(const TwoWay &o)const{return\
+    \ TwoWay(x+o.x,o.y+y);}\n  TwoWay operator*(const TwoWay &o)const{return TwoWay(x*o.x,o.y*y);}\n\
+    };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n#line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n\
+    #line 5 \"toptree/toptree.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    template<typename Vertex, typename Cluster, size_t LIM>\nstruct TopTree{\n  enum\
+    \ Type { Compress, Rake, Edge };\n  struct Node{\n    Vertex* vs[2];\n    Cluster\
+    \ dat;\n    Node* p;\n    Node* q;\n    Node* ch[2];\n    bool rev,guard;\n  \
+    \  Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n  };\n\
+    \n  static array<Vertex, LIM> pool_v;\n  static array<Node, LIM> pool_c;\n  size_t\
+    \ ptr_v,ptr_c;\n\n  Cluster id;\n  TopTree():ptr_v(0),ptr_c(0),id(){}\n\n  inline\
+    \ Vertex* create(Vertex v=Vertex()){\n    auto t=&pool_v[ptr_v++];\n    auto dummy=&pool_v[ptr_v++];\n\
+    \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
+    \ u,Cluster w,Vertex* v){\n    auto t=&(pool_c[ptr_c++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
+    \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
+    \ auto t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n\
+    \    return pushup(t);\n  }\n\n  inline Node* rake(Node* l,Node* r){\n    auto\
+    \ t=&(pool_c[ptr_c++]);\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n    return\
+    \ pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n    if(!p)\
+    \ return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return 0;\n   \
+    \ if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
     \ t){\n    Node* p=t->p;\n    if(!p) return -1;\n    if(p->ch[0]==t) return 0;\n\
     \    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  inline Node* pushup(Node*\
     \ const t){\n    Node* const l=t->ch[0];\n    Node* const r=t->ch[1];\n\n    if(t->type==Type::Compress){\n\
@@ -234,7 +234,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

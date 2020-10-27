@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/largestrectangle.cpp
       title: algorithm/largestrectangle.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/mo.cpp
       title: algorithm/mo.cpp
     - icon: ':heavy_check_mark:'
@@ -130,7 +130,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/absolutesum.cpp
       title: datastructure/absolutesum.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/binaryindexedtree.cpp
       title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
@@ -492,7 +492,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: segtree/basic/dual.cpp
       title: segtree/basic/dual.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/lazy.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -647,7 +647,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/diameterforvertex.cpp
       title: tree/diameterforvertex.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforbfs.cpp
       title: tree/eulertourforbfs.cpp
     - icon: ':heavy_check_mark:'
@@ -662,7 +662,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/lca.cpp
       title: tree/lca.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/levelancestor.cpp
       title: tree/levelancestor.cpp
     - icon: ':heavy_check_mark:'
@@ -1729,7 +1729,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/3227.test.cpp
       title: test/yukicoder/3227.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/3405.test.cpp
       title: test/yukicoder/3405.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1783,7 +1783,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/5011.test.cpp
       title: test/yukicoder/5011.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/5223.test.cpp
       title: test/yukicoder/5223.test.cpp
 layout: toppage

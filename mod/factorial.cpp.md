@@ -63,7 +63,7 @@ data:
   isVerificationFile: false
   path: mod/factorial.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1504.test.cpp

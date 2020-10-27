@@ -16,14 +16,14 @@ data:
     - https://judge.yosupo.jp/problem/min_cost_b_flow
   bundledCode: "#line 1 \"test/yosupo/min_cost_b_flow.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/min_cost_b_flow\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 2 \"bflow/capacityscaling.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"bflow/capacityscaling.cpp\"\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\n// O(m^2 \\log m \\log U)\n// U: maximum capacity\n\
-    enum Objective{\n  MINIMIZE = +1,\n  MAXIMIZE = -1,\n};\ntemplate<typename Flow,\
-    \ typename Cost,\n         Objective objective = Objective::MINIMIZE>\nstruct\
-    \ MinCostFlow{\n  template<typename T> inline void chmin(T &x,T y){x=min(x,y);}\n\
-    \n  struct Edge{\n    int src,dst;\n    Flow flow,cap;\n    Cost cost;\n    int\
-    \ rev;\n    Edge(int src,int dst,Flow cap,Cost cost,int rev):\n      src(src),dst(dst),flow(0),cap(cap),cost(cost),rev(rev){}\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"bflow/capacityscaling.cpp\"\
+    \n\n#line 3 \"bflow/capacityscaling.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
+    \ CUT HERE\n// O(m^2 \\log m \\log U)\n// U: maximum capacity\nenum Objective{\n\
+    \  MINIMIZE = +1,\n  MAXIMIZE = -1,\n};\ntemplate<typename Flow, typename Cost,\n\
+    \         Objective objective = Objective::MINIMIZE>\nstruct MinCostFlow{\n  template<typename\
+    \ T> inline void chmin(T &x,T y){x=min(x,y);}\n\n  struct Edge{\n    int src,dst;\n\
+    \    Flow flow,cap;\n    Cost cost;\n    int rev;\n    Edge(int src,int dst,Flow\
+    \ cap,Cost cost,int rev):\n      src(src),dst(dst),flow(0),cap(cap),cost(cost),rev(rev){}\n\
     \    Flow residual_cap()const{return cap-flow;}\n  };\n\n  struct EdgePtr{\n \
     \   int v,e;\n    EdgePtr(int v,int e):v(v),e(e){}\n  };\n\n  int n;\n  vector<vector<Edge>>\
     \ G;\n  vector<Flow> b;\n  vector<Cost> p;\n\n  MinCostFlow(int n):n(n),G(n),b(n,0){}\n\
@@ -112,7 +112,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/min_cost_b_flow.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 16:25:54+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/min_cost_b_flow.test.cpp

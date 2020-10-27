@@ -19,14 +19,13 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"bflow/capacityscaling.cpp\"\n\n#ifndef call_from_test\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// O(m^2\
-    \ \\log m \\log U)\n// U: maximum capacity\nenum Objective{\n  MINIMIZE = +1,\n\
-    \  MAXIMIZE = -1,\n};\ntemplate<typename Flow, typename Cost,\n         Objective\
-    \ objective = Objective::MINIMIZE>\nstruct MinCostFlow{\n  template<typename T>\
-    \ inline void chmin(T &x,T y){x=min(x,y);}\n\n  struct Edge{\n    int src,dst;\n\
-    \    Flow flow,cap;\n    Cost cost;\n    int rev;\n    Edge(int src,int dst,Flow\
-    \ cap,Cost cost,int rev):\n      src(src),dst(dst),flow(0),cap(cap),cost(cost),rev(rev){}\n\
+  bundledCode: "#line 1 \"bflow/capacityscaling.cpp\"\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\n// O(m^2 \\log m \\log U)\n//\
+    \ U: maximum capacity\nenum Objective{\n  MINIMIZE = +1,\n  MAXIMIZE = -1,\n};\n\
+    template<typename Flow, typename Cost,\n         Objective objective = Objective::MINIMIZE>\n\
+    struct MinCostFlow{\n  template<typename T> inline void chmin(T &x,T y){x=min(x,y);}\n\
+    \n  struct Edge{\n    int src,dst;\n    Flow flow,cap;\n    Cost cost;\n    int\
+    \ rev;\n    Edge(int src,int dst,Flow cap,Cost cost,int rev):\n      src(src),dst(dst),flow(0),cap(cap),cost(cost),rev(rev){}\n\
     \    Flow residual_cap()const{return cap-flow;}\n  };\n\n  struct EdgePtr{\n \
     \   int v,e;\n    EdgePtr(int v,int e):v(v),e(e){}\n  };\n\n  int n;\n  vector<vector<Edge>>\
     \ G;\n  vector<Flow> b;\n  vector<Cost> p;\n\n  MinCostFlow(int n):n(n),G(n),b(n,0){}\n\
@@ -82,8 +81,8 @@ data:
     \ Flow, typename Cost>\nusing MaxGainFlow = MinCostFlow<Flow, Cost, Objective::MAXIMIZE>;\n\
     //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\n// O(m^2 \\log m \\log U)\n// U: maximum capacity\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\n// O(m^2 \\log m \\log U)\n// U: maximum capacity\n\
     enum Objective{\n  MINIMIZE = +1,\n  MAXIMIZE = -1,\n};\ntemplate<typename Flow,\
     \ typename Cost,\n         Objective objective = Objective::MINIMIZE>\nstruct\
     \ MinCostFlow{\n  template<typename T> inline void chmin(T &x,T y){x=min(x,y);}\n\
@@ -148,7 +147,7 @@ data:
   isVerificationFile: false
   path: bflow/capacityscaling.cpp
   requiredBy: []
-  timestamp: '2020-09-24 16:25:54+09:00'
+  timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2872.test.cpp
