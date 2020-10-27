@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2646
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2646"
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -8,6 +8,10 @@ using namespace std;
 #include "../../tools/cc_hash.cpp"
 #include "../../datastructure/pb_ds_cc_hash_table.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);
