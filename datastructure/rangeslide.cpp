@@ -24,7 +24,7 @@ struct RangeSlide{
         l=r=ls[i];
       }
       while(r<rs[i]){
-        while(!deq.empty()&&
+        while(!deq.empty() and
               !cmp(vs[deq.back()],vs[r])) deq.pop_back();
         deq.emplace_back(r++);
       }

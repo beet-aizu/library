@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -60,7 +60,7 @@ struct KDTree{
   void find(int v,T sx,T tx,T sy,T ty,int depth,vector<Point> &ans){
     T x=ps[ts[v].pos].x;
     T y=ps[ts[v].pos].y;
-    if(sx<=x&&x<=tx&&sy<=y&&y<=ty)
+    if(sx<=x and x<=tx and sy<=y and y<=ty)
       ans.emplace_back(ps[ts[v].pos]);
 
     if(depth%2==0){

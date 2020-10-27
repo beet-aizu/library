@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -17,7 +17,7 @@ struct AbsoluteSum{
     auto p=interval();
     lp.emplace(x);
     rp.emplace(x);
-    if(p.first<=x&&x<=p.second) return T(0);
+    if(p.first<=x and x<=p.second) return T(0);
     if(*lp.rbegin()>*rp.begin()){
       T a=*lp.rbegin();
       T b=*rp.begin();
@@ -33,7 +33,7 @@ struct AbsoluteSum{
 
   T erase(T x){
     assert(lp.count(x)+rp.count(x)>=2);
-    if(lp.count(x)&&rp.count(x)){
+    if(lp.count(x) and rp.count(x)){
       lp.erase(lp.find(x));
       rp.erase(rp.find(x));
       return T(0);
@@ -50,7 +50,7 @@ struct AbsoluteSum{
       lp.erase(lp.rbegin().base());
     }
     auto p=interval();
-    if(p.first<=x&&x<=p.second) return T(0);
+    if(p.first<=x and x<=p.second) return T(0);
     T res=min(abs(p.first-x),abs(p.second-x));
     sum-=res;
     return res;

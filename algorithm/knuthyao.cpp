@@ -15,7 +15,7 @@ T KnuthYao(int n,F cost){
       int p=ar[i][j-1],q=ar[i+1][j];
       dp[i][j]=dp[i][p]+dp[p+1][j]+cost(i,p,j);
       ar[i][j]=p;
-      for(int k=p;k<=q&&k+1<=j;k++){
+      for(int k=p;k<=q and k+1<=j;k++){
         T res=dp[i][k]+dp[k+1][j]+cost(i,k,j);
         if(res<dp[i][j]) dp[i][j]=res,ar[i][j]=k;
       }

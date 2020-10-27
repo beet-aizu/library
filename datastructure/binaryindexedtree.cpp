@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -36,7 +34,7 @@ public:
     int x=0,p=1;
     while(p<n) p<<=1;
     for(int k=p;k>0;k>>=1){
-      if(x+k<=n&&bit[x+k]<r){
+      if(x+k<=n and bit[x+k]<r){
         r-=bit[x+k];
         x+=k;
       }

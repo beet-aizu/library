@@ -99,7 +99,7 @@ struct BBSTBase{
   }
 
   inline bool is_right(Node* a){
-    return a->p&&a->p->r==a;
+    return a->p and a->p->r==a;
   }
 
   size_t order_of_key(Node* a){

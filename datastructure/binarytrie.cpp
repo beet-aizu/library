@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -36,8 +34,8 @@ struct BinaryTrie{
     Node* a=root;
     for(int i=X-1;i>=0;i--){
       bool f=(nb>>i)&1;
-      if(!f&&!a->l) a->l=emplace(a);
-      if( f&&!a->r) a->r=emplace(a);
+      if(!f and !a->l) a->l=emplace(a);
+      if( f and !a->r) a->r=emplace(a);
       a=f?a->r:a->l;
     }
     a->cnt+=k;
@@ -58,13 +56,13 @@ struct BinaryTrie{
   }
 
   Node* check(Node *a){
-    if(!a||count(a)) return a;
+    if(!a or count(a)) return a;
     delete(a);
     return nullptr;
   }
 
   void sub(Node* a,size_t k=1){
-    assert(a&&a->cnt>=k);
+    assert(a and a->cnt>=k);
     a->cnt-=k;
     while((a=a->p)){
       a->l=check(a->l);
@@ -79,7 +77,7 @@ struct BinaryTrie{
     Node* a=root;
     for(int i=X-1;i>=0;i--){
       bool f=(nb>>i)&1;
-      if(!a->l||!a->r) a=a->l?a->l:a->r;
+      if(!a->l or !a->r) a=a->l?a->l:a->r;
       else a=f?a->l:a->r;
     }
     return a;
@@ -93,7 +91,7 @@ struct BinaryTrie{
     if(!a) return a;
     Node *l=a->l,*r=a->r;
     if((acc>>i)&1) swap(l,r);
-    if(l||r) return ge(l?l:r,i+1);
+    if(l or r) return ge(l?l:r,i+1);
     return a;
   }
 
@@ -101,7 +99,7 @@ struct BinaryTrie{
     if(!(a->p)) return nullptr;
     Node *l=a->p->l,*r=a->p->r;
     if((acc>>(i+1))&1) swap(l,r);
-    if(a==l&&r) return ge(r,i);
+    if(a==l and r) return ge(r,i);
     return next(a->p,i+1);
   }
 
@@ -110,8 +108,8 @@ struct BinaryTrie{
     Node* a=root;
     for(int i=X-1;i>=0;i--){
       bool f=(nb>>i)&1;
-      if(!f&&a->l){a=a->l;continue;}
-      if( f&&a->r){a=a->r;continue;}
+      if(!f and a->l){a=a->l;continue;}
+      if( f and a->r){a=a->r;continue;}
       if((b>>i)&1) return next(a,i);
       return ge(a,i);
     }

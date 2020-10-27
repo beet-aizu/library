@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -36,8 +36,7 @@ struct bigint {
   bigint operator+(const bigint &v) const{
     if(sign==v.sign){
       bigint res=v;
-
-      for(ll i=0,carry=0;i<(ll)max(a.size(),v.a.size())||carry;++i){
+      for(ll i=0,carry=0;i<(ll)max(a.size(),v.a.size()) or carry;++i){
         if(i==(ll)res.a.size()) res.a.emplace_back(0);
         res.a[i]+=carry+(i<(ll)a.size()?a[i]:0);
         carry=res.a[i]>=base;
@@ -45,14 +44,14 @@ struct bigint {
       }
       return res;
     }
-    return *this -(-v);
+    return *this-(-v);
   }
 
   bigint operator-(const bigint &v) const{
     if(sign==v.sign){
       if(abs()>=v.abs()){
         bigint res=*this;
-        for(ll i=0,carry=0;i<(ll)v.a.size()||carry;++i){
+        for(ll i=0,carry=0;i<(ll)v.a.size() or carry;++i){
           res.a[i]-=carry+(i<(ll)v.a.size()?v.a[i]:0);
           carry=res.a[i]<0;
           if(carry) res.a[i]+=base;
@@ -67,7 +66,7 @@ struct bigint {
 
   void operator*=(ll v){
     if(v<0) sign=-sign,v=-v;
-    for(ll i=0,carry=0;i<(ll)a.size()|| carry;++i){
+    for(ll i=0,carry=0;i<(ll)a.size() or  carry;++i){
       if(i ==(ll)a.size()) a.emplace_back(0);
       ll cur=a[i] *(ll)v+carry;
       carry=(ll)(cur/base);
@@ -79,7 +78,7 @@ struct bigint {
 
   bigint operator*(ll v) const{
     bigint res=*this;
-    res *=v;
+    res*=v;
     return res;
   }
 
@@ -135,7 +134,7 @@ struct bigint {
   ll operator%(ll v) const{
     if(v<0) v=-v;
     ll m=0;
-    for(ll i=a.size()-1;i>=0;--i) m=(a[i]+m *(ll)base)%v;
+    for(ll i=a.size()-1;i>=0;--i) m=(a[i]+m*(ll)base)%v;
     return m*sign;
   }
 
@@ -176,20 +175,20 @@ struct bigint {
   }
 
   bool operator==(const bigint &v) const{
-    return !(*this<v)&&!(v<*this);
+    return !(*this<v) and !(v<*this);
   }
 
   bool operator!=(const bigint &v) const{
-    return *this<v|| v<*this;
+    return *this<v or v<*this;
   }
 
   void trim(){
-    while(!a.empty()&&!a.back()) a.pop_back();
+    while(!a.empty() and !a.back()) a.pop_back();
     if(a.empty()) sign=1;
   }
 
   bool isZero() const{
-    return a.empty()||(a.size()==1&&!a[0]);
+    return a.empty() or (a.size()==1 and !a[0]);
   }
 
   bigint operator-() const{
@@ -211,7 +210,7 @@ struct bigint {
   }
 
   friend bigint gcd(const bigint &a,const bigint &b){
-    return b.isZero() ? a : gcd(b,a%b);
+    return b.isZero()?a:gcd(b,a%b);
   }
 
   friend bigint lcm(const bigint &a,const bigint &b){
@@ -222,7 +221,7 @@ struct bigint {
     sign=1;
     a.clear();
     ll pos=0;
-    while(pos<(ll)s.size()&&(s[pos]=='-'|| s[pos]=='+')){
+    while(pos<(ll)s.size() and (s[pos]=='-' or s[pos]=='+')){
       if(s[pos]=='-') sign=-sign;
       ++pos;
     }
@@ -266,7 +265,7 @@ struct bigint {
       }
     }
     res.emplace_back((signed)cur);
-    while(!res.empty()&&!res.back()) res.pop_back();
+    while(!res.empty() and !res.back()) res.pop_back();
     return res;
   }
 
@@ -326,7 +325,7 @@ struct bigint {
       ll cur=c[i]+carry;
       res.a.emplace_back((ll)(cur%nbase));
       carry=(ll)(cur/nbase);
-      if(i+1==(int)c.size()&&carry>0) c.emplace_back(0);
+      if(i+1==(int)c.size() and carry>0) c.emplace_back(0);
     }
 
     res.a=convert_base(res.a,nbase_digits,base_digits);

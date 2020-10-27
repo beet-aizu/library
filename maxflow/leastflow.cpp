@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -28,7 +28,7 @@ struct LeastFlow{
     T b=G.flow(s,Y);
     T c=G.flow(X,t);
     T d=G.flow(s,t);
-    return (b==c&&a+b==sum)?b+d:T(-1);
+    return (b==c and a+b==sum)?b+d:T(-1);
   }
 };
 //END CUT HERE

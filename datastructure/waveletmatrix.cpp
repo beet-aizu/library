@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -38,7 +36,7 @@ struct FullyIndexableDictionary{
   }
 
   int select(bool v,int k){
-    if(k<0||rank(v,len)<=k) return -1;
+    if(k<0 or rank(v,len)<=k) return -1;
     int l=0,r=len;
     while(l+1<r){
       int m=(l+r)>>1;
@@ -106,7 +104,7 @@ struct WaveletMatrix{
     for(int dep=MAXLOG-1;dep>=0;dep--){
       bool bit=(v>>(MAXLOG-(dep+1)))&1;
       k=mat[dep].select(bit,k,buff1[dep]);
-      if(k>=buff2[dep]||k<0) return -1;
+      if(k>=buff2[dep] or k<0) return -1;
       k-=buff1[dep];
     }
     return k;
@@ -118,7 +116,7 @@ struct WaveletMatrix{
 
   // return k-th largest value in [l,r)
   T quantile(int l,int r,int k){
-    if(r-l<=k||k<0) return -1;
+    if(r-l<=k or k<0) return -1;
     T res=0;
     for(int dep=0;dep<MAXLOG;dep++){
       int p=mat[dep].rank(1,l);
@@ -142,11 +140,11 @@ struct WaveletMatrix{
 
   int freq_dfs(int d,int l,int r,T val,T a,T b){
     if(l==r) return 0;
-    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;
+    if(d==MAXLOG) return (a<=val and val<b)?r-l:0;
     T nv=T(1)<<(MAXLOG-d-1)|val;
     T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;
-    if(nnv<a||b<=val) return 0;
-    if(a<=val&&nnv<b) return r-l;
+    if(nnv<a or b<=val) return 0;
+    if(a<=val and nnv<b) return r-l;
     int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);
     return freq_dfs(d+1,l-lc,r-rc,val,a,b)
       +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);

@@ -37,7 +37,7 @@ T optimalbinarytree(vector<T> ws){
     int i;
     do{
       tie(c,i)=pq.top();pq.pop();
-    }while(rs[i]<0||cs[i]!=c);
+    }while(rs[i]<0 or cs[i]!=c);
 
     bool ml=false,mr=false;
     if(ws[i]+heap.top(hs[i])==c){
@@ -58,7 +58,7 @@ T optimalbinarytree(vector<T> ws){
     if(ml) ws[i]=INF;
     if(mr) ws[rs[i]]=INF;
 
-    if(ml&&i>0){
+    if(ml and i>0){
       int j=ls[i];
       hs[j]=heap.meld(hs[j],hs[i]);
       rs[j]=rs[i];
@@ -67,7 +67,7 @@ T optimalbinarytree(vector<T> ws){
       i=j;
     }
 
-    if(mr&&rs[i]+1<n){
+    if(mr and rs[i]+1<n){
       int j=rs[i];
       hs[i]=heap.meld(hs[i],hs[j]);
       rs[i]=rs[j];

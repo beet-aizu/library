@@ -24,7 +24,7 @@ struct PrioritySum{
       pq1.emplace(pq2.top());
       pq2.pop();
     }
-    if(pq1.empty()||pq2.empty()) return;
+    if(pq1.empty() or pq2.empty()) return;
     while(C2()(pq1.top(),pq2.top())){
       T t1=pq1.top();pq1.pop();
       T t2=pq2.top();pq2.pop();
@@ -182,7 +182,7 @@ signed CGR002_F(){
     for(int v:alive[t]){
       if(used[v]) continue;
       int u=v;
-      while(~par[u]&&!dead[par[u]]) u=par[u];
+      while(~par[u] and !dead[par[u]]) u=par[u];
       P tmp=dfs2(u,par[u],t,dfs2);
       res+=min(tmp.first+cst[u],tmp.second);
     }
