@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []

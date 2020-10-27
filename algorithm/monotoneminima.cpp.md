@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
   _extendedRequiredBy: []
@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: algorithm/monotoneminima.cpp
   requiredBy: []
-  timestamp: '2020-05-07 20:09:06+09:00'
+  timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2603.test.cpp

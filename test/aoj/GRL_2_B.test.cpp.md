@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/stronglyconnectedcomponent.cpp
     title: graph/stronglyconnectedcomponent.cpp
   _extendedRequiredBy: []

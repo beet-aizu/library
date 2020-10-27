@@ -6,14 +6,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1595.test.cpp
     title: test/aoj/1595.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3148.test.cpp
     title: test/aoj/3148.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2085.test.cpp
     title: test/yukicoder/2085.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/rerooting.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -74,7 +74,7 @@ data:
   path: tree/rerooting.cpp
   requiredBy: []
   timestamp: '2020-09-15 17:50:40+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/2085.test.cpp
   - test/aoj/1595.test.cpp

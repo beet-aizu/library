@@ -8,10 +8,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/longestcommonsubstring.cpp
     title: string/longestcommonsubstring.cpp
   _extendedVerifiedWith:
@@ -45,95 +45,95 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
     title: initialize potential
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2308.test.cpp
     title: test/aoj/2308.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2725.test.cpp
     title: test/aoj/2725.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2790.test.cpp
     title: test/aoj/2790.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2975.test.cpp
     title: test/aoj/2975.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3037.test.cpp
     title: test/aoj/3037.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3112.test.cpp
     title: test query
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3148.test.cpp
     title: test/aoj/3148.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3168.test.cpp
     title: test/aoj/3168.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/ALDS1_10_C.test.cpp
     title: test/aoj/ALDS1_10_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_1_E.test.cpp
     title: test/aoj/DPL_1_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_3_B.test.cpp
     title: test/aoj/DPL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/3049.test.cpp
     title: test/aoj/geometry/3049.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/3056.test.cpp
     title: test/aoj/geometry/3056.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"tools/chminmax.cpp\"\n\n#ifndef call_from_test\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename\
-    \ T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T1,typename T2> inline void\
-    \ chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline void\
-    \ chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n#ifndef call_from_test\nsigned\
-    \ main(){\n  return 0;\n}\n#endif\n"
+  bundledCode: "#line 1 \"tools/chminmax.cpp\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T1,typename T2>\
+    \ inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2>\
+    \ inline void chmax(T1 &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n#ifndef call_from_test\n\
+    signed main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T1,typename T2> inline void chmin(T1\
+    \ &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline void chmax(T1\
+    \ &a,T2 b){if(a<b) a=b;}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: tools/chminmax.cpp
@@ -142,8 +142,8 @@ data:
   - string/editdistance.cpp
   - datastructure/slidingwindowaggregation.cpp
   - graph/nicetree.cpp
-  timestamp: '2020-03-12 16:36:20+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 12:29:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3227.test.cpp
   - test/yukicoder/3912.test.cpp

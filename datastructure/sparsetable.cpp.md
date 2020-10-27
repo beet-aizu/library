@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3086.test.cpp
     title: test/aoj/3086.test.cpp
   - icon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
     path: test/yosupo/staticrmq.sparsetable.test.cpp
     title: test/yosupo/staticrmq.sparsetable.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/sparsetable.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -42,7 +42,7 @@ data:
   path: datastructure/sparsetable.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:22:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3086.test.cpp
   - test/aoj/DSL_3_D.sparsetable.test.cpp

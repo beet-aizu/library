@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convexhulltrick/linecontainer.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -57,7 +57,7 @@ data:
   path: convexhulltrick/linecontainer.cpp
   requiredBy: []
   timestamp: '2020-10-03 18:22:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/3069.test.cpp
 documentation_of: convexhulltrick/linecontainer.cpp

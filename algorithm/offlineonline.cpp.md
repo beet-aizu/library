@@ -3,20 +3,20 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3086.test.cpp
     title: test/aoj/3086.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1948.test.cpp
     title: test/yukicoder/1948.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1950.test.cpp
     title: test/yukicoder/1950.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2113.test.cpp
     title: test/yukicoder/2113.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://qiita.com/tmaehara/items/0687af2cfb807cde7860
@@ -59,7 +59,7 @@ data:
   path: algorithm/offlineonline.cpp
   requiredBy: []
   timestamp: '2020-09-30 12:35:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/2113.test.cpp

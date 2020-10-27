@@ -3,33 +3,32 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"vector/fusion.cpp\"\n\n#ifndef call_from_test\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T, typename ...Ts>\nvector<T> fusion(vector<T> bs,Ts... ts){\n  auto append=[&](auto\
-    \ vs){for(auto v:vs) bs.emplace_back(v);};\n  initializer_list<int>{(void(append(ts)),0)...};\n\
-    \  return bs;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return\
-    \ 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
+  bundledCode: "#line 1 \"vector/fusion.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T, typename ...Ts>\nvector<T>\
     \ fusion(vector<T> bs,Ts... ts){\n  auto append=[&](auto vs){for(auto v:vs) bs.emplace_back(v);};\n\
+    \  initializer_list<int>{(void(append(ts)),0)...};\n  return bs;\n}\n//END CUT\
+    \ HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n\n//BEGIN CUT HERE\ntemplate<typename T, typename ...Ts>\nvector<T> fusion(vector<T>\
+    \ bs,Ts... ts){\n  auto append=[&](auto vs){for(auto v:vs) bs.emplace_back(v);};\n\
     \  initializer_list<int>{(void(append(ts)),0)...};\n  return bs;\n}\n//END CUT\
     \ HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: vector/fusion.cpp
   requiredBy: []
-  timestamp: '2020-04-18 17:56:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 12:29:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/2359.test.cpp
   - test/aoj/2563.test.cpp

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
     links:
@@ -37,8 +37,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_1_E.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:33:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:29:50+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DPL_1_E.test.cpp
 layout: document

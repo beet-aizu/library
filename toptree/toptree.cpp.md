@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/distancesum.cpp
     title: toptree/distancesum.cpp
   _extendedVerifiedWith:
@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2636.test.cpp
     title: Distance Sum
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3037.test.cpp
     title: test/aoj/3037.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,14 +33,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3453.test.cpp
     title: Minimum Steiner Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"toptree/toptree.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -294,7 +294,7 @@ data:
   requiredBy:
   - toptree/distancesum.cpp
   timestamp: '2020-09-01 16:43:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/3453.test.cpp

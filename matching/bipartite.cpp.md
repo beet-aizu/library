@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2513.test.cpp
     title: test/aoj/2513.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3168.test.cpp
     title: test/aoj/3168.test.cpp
   - icon: ':heavy_check_mark:'
@@ -16,7 +16,7 @@ data:
     path: test/aoj/GRL_7_A.test.cpp
     title: test/aoj/GRL_7_A.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"matching/bipartite.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -61,7 +61,7 @@ data:
   path: matching/bipartite.cpp
   requiredBy: []
   timestamp: '2020-10-07 02:53:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2513.test.cpp
   - test/aoj/GRL_7_A.test.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: io/precision.cpp
     title: io/precision.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     ERROR: 1e-6
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B
@@ -40,8 +40,8 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_15_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 12:16:15+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:29:50+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_15_B.test.cpp
 layout: document

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tools/fastio.cpp
     title: tools/fastio.cpp
   _extendedRequiredBy: []
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: tree/diameterforedge.cpp
   requiredBy: []
-  timestamp: '2020-05-18 20:55:43+09:00'
+  timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_A.test.cpp

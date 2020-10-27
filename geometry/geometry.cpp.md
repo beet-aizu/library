@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
   - icon: ':heavy_check_mark:'
@@ -12,10 +12,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2454.test.cpp
     title: test/aoj/geometry/2454.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/3049.test.cpp
     title: test/aoj/geometry/3049.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/3056.test.cpp
     title: test/aoj/geometry/3056.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_2_C.test.cpp
     title: test/aoj/geometry/CGL_2_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/CGL_2_D.test.cpp
     title: test/aoj/geometry/CGL_2_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -78,14 +78,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/CGL_7_G.test.cpp
     title: test/aoj/geometry/CGL_7_G.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/CGL_7_H.test.cpp
     title: test/aoj/geometry/CGL_7_H.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/CGL_7_I.test.cpp
     title: test/aoj/geometry/CGL_7_I.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/geometry.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -480,7 +480,7 @@ data:
   path: geometry/geometry.cpp
   requiredBy: []
   timestamp: '2020-10-26 15:08:18+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/geometry/CGL_4_A.test.cpp
   - test/aoj/geometry/CGL_2_A.test.cpp

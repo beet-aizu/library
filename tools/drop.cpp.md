@@ -6,10 +6,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0422.test.cpp
     title: test/aoj/0422.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2308.test.cpp
     title: test/aoj/2308.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3138.test.cpp
     title: test/aoj/3138.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3148.test.cpp
     title: test/aoj/3148.test.cpp
   - icon: ':heavy_check_mark:'
@@ -43,7 +43,7 @@ data:
     path: test/yosupo/tree_decomposition_width_2.test.cpp
     title: test/yosupo/tree_decomposition_width_2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tools/drop.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
@@ -59,7 +59,7 @@ data:
   path: tools/drop.cpp
   requiredBy: []
   timestamp: '2019-12-26 23:42:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2308.test.cpp
   - test/aoj/GRL_1_B.test.cpp

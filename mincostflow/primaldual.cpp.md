@@ -2,27 +2,27 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: mincostflow/negativeedge.cpp
     title: "\u6700\u5C0F\u8CBB\u7528\u6D41\u306E\u8CA0\u8FBA\u9664\u53BB"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
     title: initialize potential
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2679.test.cpp
     title: lexicographical cost
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_6_B.test.cpp
     title: test/aoj/GRL_6_B.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"mincostflow/primaldual.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -87,7 +87,7 @@ data:
   requiredBy:
   - mincostflow/negativeedge.cpp
   timestamp: '2020-10-06 13:10:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2679.test.cpp
   - test/aoj/GRL_6_B.test.cpp

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
@@ -18,9 +18,9 @@ data:
     - https://judge.yosupo.jp/problem/point_add_rectangle_sum
   bundledCode: "#line 1 \"test/yosupo/point_add_rectangle_sum.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 2 \"vector/compress.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"vector/compress.cpp\"\nusing namespace std;\n\
-    #endif\n\n//BEGIN CUT HERE\ntemplate<typename V>\nV compress(V vs){\n  sort(vs.begin(),vs.end());\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"vector/compress.cpp\"\
+    \n\n#line 3 \"vector/compress.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN CUT\
+    \ HERE\ntemplate<typename V>\nV compress(V vs){\n  sort(vs.begin(),vs.end());\n\
     \  vs.erase(unique(vs.begin(),vs.end()),vs.end());\n  return vs;\n}\ntemplate<typename\
     \ T>\nmap<T, int> dict(const vector<T> &vs){\n  map<T, int> res;\n  for(int i=0;i<(int)vs.size();i++)\n\
     \    res[vs[i]]=i;\n  return res;\n}\nmap<char, int> dict(const string &s){\n\
@@ -82,8 +82,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_rectangle_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-02 21:26:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:29:50+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/point_add_rectangle_sum.test.cpp
 layout: document

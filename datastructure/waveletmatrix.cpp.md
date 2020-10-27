@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/range_kth_smallest.test.cpp
     title: test rquantile
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
   - icon: ':heavy_check_mark:'
@@ -24,11 +24,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2147.test.cpp
     title: test/yukicoder/2147.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructure/waveletmatrix.cpp\"\n\n#ifndef call_from_test\n\
@@ -147,7 +147,7 @@ data:
   path: datastructure/waveletmatrix.cpp
   requiredBy: []
   timestamp: '2020-09-14 22:28:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3227.test.cpp
   - test/yukicoder/1937.test.cpp
