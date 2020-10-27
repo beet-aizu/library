@@ -105,7 +105,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/3056.test.cpp
     title: test/aoj/geometry/3056.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
   - icon: ':x:'

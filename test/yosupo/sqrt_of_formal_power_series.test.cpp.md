@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':question:'
@@ -13,22 +13,22 @@ data:
   - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/sqrt.cpp
     title: mod/sqrt.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
     links:
@@ -73,7 +73,7 @@ data:
   path: test/yosupo/sqrt_of_formal_power_series.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/sqrt_of_formal_power_series.test.cpp
 layout: document

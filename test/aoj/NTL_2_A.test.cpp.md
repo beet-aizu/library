@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/bigint.cpp
     title: tools/bigint.cpp
   _extendedRequiredBy: []

@@ -21,16 +21,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3168.test.cpp
     title: test/aoj/3168.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1948.test.cpp
     title: test/yukicoder/1948.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1950.test.cpp
     title: test/yukicoder/1950.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2113.test.cpp
     title: test/yukicoder/2113.test.cpp
   - icon: ':x:'

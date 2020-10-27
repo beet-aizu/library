@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rectanglehash.cpp
     title: string/rectanglehash.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/rollinghash.cpp
     title: string/rollinghash.cpp
   _extendedRequiredBy: []

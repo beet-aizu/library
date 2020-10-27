@@ -2,21 +2,21 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: mod/tetration.cpp
     title: mod/tetration.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_D.test.cpp
     title: test/aoj/NTL_1_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/tetration_mod.test.cpp
     title: test/yosupo/tetration_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0472.test.cpp
     title: test/yukicoder/0472.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/totient.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -35,7 +35,7 @@ data:
   requiredBy:
   - mod/tetration.cpp
   timestamp: '2020-10-24 12:57:36+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0472.test.cpp
   - test/aoj/NTL_1_D.test.cpp

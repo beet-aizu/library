@@ -6,14 +6,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0168.test.cpp
     title: test/aoj/0168.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1973.test.cpp
     title: test/yukicoder/1973.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://atcoder.jp/contests/abc009/tasks/abc009_4
@@ -65,7 +65,7 @@ data:
   path: math/kitamasa.cpp
   requiredBy: []
   timestamp: '2020-10-13 18:24:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0104.test.cpp
   - test/yukicoder/1973.test.cpp

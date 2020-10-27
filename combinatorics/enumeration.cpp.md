@@ -11,10 +11,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/partition.cpp
     title: combinatorics/partition.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/stirling1st.cpp
     title: combinatorics/stirling1st.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
   - icon: ':question:'
@@ -26,7 +26,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
   - icon: ':heavy_check_mark:'
@@ -41,7 +41,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':heavy_check_mark:'
@@ -50,7 +50,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/shift.cpp
     title: formalpowerseries/shift.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
   - icon: ':heavy_check_mark:'
@@ -132,16 +132,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':x:'

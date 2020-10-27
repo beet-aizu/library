@@ -6,10 +6,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/find_linear_recurrence.test.cpp
     title: test/yosupo/find_linear_recurrence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':x:'

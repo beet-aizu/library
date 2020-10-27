@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/run.cpp
     title: string/run.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
   _extendedRequiredBy: []

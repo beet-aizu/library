@@ -15,13 +15,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/range_kth_smallest.test.cpp
     title: test rquantile
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1937.test.cpp
     title: test rangefreq
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2147.test.cpp
     title: test/yukicoder/2147.test.cpp
   - icon: ':x:'

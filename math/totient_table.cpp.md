@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2286.test.cpp
     title: test/aoj/2286.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1665.test.cpp
     title: test/yukicoder/1665.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/totient_table.cpp\"\n\n#ifndef call_from_test\n#include\
@@ -30,7 +30,7 @@ data:
   path: math/totient_table.cpp
   requiredBy: []
   timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1665.test.cpp
   - test/aoj/2286.test.cpp

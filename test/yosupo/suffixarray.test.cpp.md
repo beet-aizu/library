@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/suffixarray.cpp
     title: Suffix Array
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
     links:
@@ -54,7 +54,7 @@ data:
   path: test/yosupo/suffixarray.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/suffixarray.test.cpp
 layout: document

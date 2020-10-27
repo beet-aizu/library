@@ -36,10 +36,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
   - icon: ':x:'

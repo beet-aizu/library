@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/rangeslide.cpp
     title: datastructure/rangeslide.cpp
   _extendedRequiredBy: []

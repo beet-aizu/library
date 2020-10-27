@@ -24,11 +24,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/suffixarray.test.cpp
     title: test/yosupo/suffixarray.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/suffixarray.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -84,7 +84,7 @@ data:
   requiredBy:
   - string/longestcommonprefix.cpp
   timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3112.test.cpp
   - test/aoj/2644.test.cpp
