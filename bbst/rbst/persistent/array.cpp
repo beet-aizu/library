@@ -16,9 +16,7 @@ struct PersistentArray : Array<Node, LIM>{
 
   inline Node* clone(Node* a){
     if(a==nullptr) return a;
-    Node* b=super::create();
-    *b=*a;
-    return b;
+    return super::create(*a);
   }
 
   Node* eval(Node* a){
@@ -32,12 +30,12 @@ struct PersistentArray : Array<Node, LIM>{
 
   Node* rebuild(Node* a){
     auto v=super::dump(a);
-    super::ptr=0;
+    super::size=0;
     return super::build(v);
   }
 
   bool almost_full() const{
-    return super::ptr>LIM*9/10;
+    return super::size>LIM*9/10;
   }
 };
 //END CUT HERE
