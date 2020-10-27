@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,6 +16,7 @@ struct PartitionTable{
       }
     }
   }
+
   // put n identical balls into k identical boxes
   M operator()(int n,int k){return dp[n][k];}
 

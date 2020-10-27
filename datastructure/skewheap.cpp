@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -52,7 +50,7 @@ struct SkewHeap{
   }
 
   Node* meld(Node *a,Node *b){
-    if(!a||!b) return a?a:b;
+    if(!a or !b) return a?a:b;
     if(c(top(a),top(b))) swap(a,b);
     eval(a);
     a->r=meld(a->r,b);
@@ -66,7 +64,6 @@ struct SkewHeap{
     delete a;
     return res;
   }
-
 };
 //END CUT HERE
 #ifndef call_from_test

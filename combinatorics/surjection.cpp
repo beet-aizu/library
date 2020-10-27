@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -24,7 +22,6 @@ M surjection(int n,int k){
   return res;
 }
 //END CUT HERE
-
 #ifndef call_from_test
 signed main(){
   return 0;

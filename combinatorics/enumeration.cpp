@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -43,21 +41,21 @@ public:
   }
 
   static M C(int n,int k){
-    if(n<k||k<0) return M(0);
+    if(n<k or k<0) return M(0);
     init(n);
     return fact[n]*finv[n-k]*finv[k];
   }
 
   static M P(int n,int k){
-    if(n<k||k<0) return M(0);
+    if(n<k or k<0) return M(0);
     init(n);
     return fact[n]*finv[n-k];
   }
 
   // put n identical balls into k distinct boxes
   static M H(int n,int k){
-    if(n<0||k<0) return M(0);
-    if(!n&&!k) return M(1);
+    if(n<0 or k<0) return M(0);
+    if(!n and !k) return M(1);
     init(n+k);
     return C(n+k-1,n);
   }

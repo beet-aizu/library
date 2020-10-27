@@ -1,12 +1,10 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
 #endif
 
 //BEGIN CUT HERE
-template<typename T,T MOD = 1000000007>
+template<typename T, T MOD = 1000000007>
 struct Mint{
   static constexpr T mod = MOD;
   T v;
@@ -54,39 +52,12 @@ struct Mint{
     return num/dom;
   }
 };
-template<typename T,T MOD> constexpr T Mint<T, MOD>::mod;
-template<typename T,T MOD>
+template<typename T, T MOD> constexpr T Mint<T, MOD>::mod;
+template<typename T, T MOD>
 ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 //END CUT HERE
 #ifndef call_from_test
-
-//INSERT ABOVE HERE
-signed ABC127_E(){
-  cin.tie(0);
-  ios::sync_with_stdio(0);
-
-  int h,w,k;
-  cin>>h>>w>>k;
-  using M = Mint<int>;
-
-  M ans{0};
-  for(int d=1;d<h;d++)
-    ans+=M(d)*M(h-d)*M(w)*M(w);
-
-  for(int d=1;d<w;d++)
-    ans+=M(d)*M(w-d)*M(h)*M(h);
-
-  ans*=M::comb(h*w-2,k-2);
-  cout<<ans<<endl;
-  return 0;
-}
-/*
-  verified on 2019/06/12
-  https://atcoder.jp/contests/abc127/tasks/abc127_e
-*/
-
 signed main(){
-  //ABC127_E();
   return 0;
 }
 #endif

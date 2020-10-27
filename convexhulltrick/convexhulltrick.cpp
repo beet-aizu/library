@@ -19,7 +19,7 @@ struct ConvexHullTrick : deque<Line<T>>{
 
   using D = long double;
   inline bool check(const Line<T> &a,const Line<T> &b,const Line<T> &c){
-    if(b.m==a.m||c.m==b.m)
+    if(b.m==a.m or c.m==b.m)
       return sgn(b.k-a.k)*sgn(c.m-b.m) >= sgn(c.k-b.k)*sgn(b.m-a.m);
     // return (b.k-a.k)*(c.m-b.m) >= (b.m-a.m)*(c.k-b.k);
     return

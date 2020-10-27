@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -19,7 +19,7 @@ struct BIT2D{
     return s;
   }
   void add(int i,int j,T a){
-    if(i==0||j==0) return;
+    if(i==0 or j==0) return;
     for(int x=i;x<=n;x+=(x&-x))
       for(int y=j;y<=m;y+=(y&-y))
         bit[x][y]+=a;
