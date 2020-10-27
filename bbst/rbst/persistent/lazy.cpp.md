@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/lazy.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-10-27 15:50:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: bbst/rbst/persistent/lazy.cpp

@@ -34,7 +34,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ bbst/rbst/basic/lazy.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"base.cpp\"\n#undef call_from_test\n\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename Tp, typename Ep>\nstruct NodeBase{\n  using\
     \ T = Tp;\n  using E = Ep;\n  NodeBase *l,*r,*p;\n  size_t cnt;\n  bool rev;\n\
@@ -85,7 +85,7 @@ data:
     \n  auto rt=G.build(vs);\n  for(int i=1;i<=(int)S.size();i++){\n    int z=get<2>(G.get_val(rt,i));\n\
     \    rt=G.update(rt,i,G.count(rt),P(z,0));\n    rt=G.update(rt,0,i+1,P(0,-z));\n\
     \  }\n\n  for(int i=0;i<Q;i++){\n    char x;\n    int y,z;\n    scanf(\"%c %d\
-    \ %d\\n\",&x,&y,&z);\n    z++;\n    if(x=='('||x==')'){\n      z=(x=='('?1:-1);\n\
+    \ %d\\n\",&x,&y,&z);\n    z++;\n    if(x=='(' or x==')'){\n      z=(x=='('?1:-1);\n\
     \      T prv=G.get_val(rt,y-1);\n      T nxt=G.get_val(rt,y);\n      T cur(get<0>(prv),get<1>(nxt),z);\n\
     \      rt=G.insert(rt,y,Node(cur,P(0,0)));\n      rt=G.update(rt,y,G.count(rt),P(z,0));\n\
     \      rt=G.update(rt,0,y+1,P(0,-z));\n    }\n\n    if(x=='D'){\n      z=get<2>(G.get_val(rt,y));\n\
@@ -102,7 +102,7 @@ data:
   path: bbst/rbst/basic/lazy.cpp
   requiredBy:
   - bbst/rbst/persistent/lazy.cpp
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-10-27 15:50:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp
