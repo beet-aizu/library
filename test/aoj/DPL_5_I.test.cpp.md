@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   - icon: ':question:'

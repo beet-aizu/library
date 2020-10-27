@@ -38,7 +38,7 @@ data:
   - icon: ':x:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
   - icon: ':x:'
@@ -63,7 +63,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3072.test.cpp
     title: test/aoj/3072.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
   - icon: ':x:'

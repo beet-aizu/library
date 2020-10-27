@@ -25,7 +25,7 @@ data:
   - icon: ':question:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
   - icon: ':question:'

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedRequiredBy: []

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
     links:
@@ -38,7 +38,7 @@ data:
   path: test/aoj/DPL_1_E.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_1_E.test.cpp
 layout: document

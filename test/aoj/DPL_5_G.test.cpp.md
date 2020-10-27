@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/bell.cpp
     title: combinatorics/bell.cpp
   - icon: ':question:'
@@ -13,7 +13,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G
     links:
@@ -42,7 +42,7 @@ data:
   path: test/aoj/DPL_5_G.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_G.test.cpp
 layout: document

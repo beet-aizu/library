@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/skewheap.cpp
     title: datastructure/skewheap.cpp
   - icon: ':heavy_check_mark:'

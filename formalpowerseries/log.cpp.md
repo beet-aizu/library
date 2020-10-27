@@ -20,7 +20,7 @@ data:
   - icon: ':question:'
     path: formalpowerseries/exp.cpp
     title: formalpowerseries/exp.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
   _extendedVerifiedWith:
@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
   - icon: ':x:'

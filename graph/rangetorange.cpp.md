@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
   - icon: ':x:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://lorent-kyopro.hatenablog.com/entry/2020/07/24/170656
@@ -53,7 +53,7 @@ data:
   path: graph/rangetorange.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:43:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4387.test.cpp
   - test/aoj/3506.test.cpp

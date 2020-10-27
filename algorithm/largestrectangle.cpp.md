@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_B.test.cpp
     title: test/aoj/DPL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_3_C.test.cpp
     title: test/aoj/DPL_3_C.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"algorithm/largestrectangle.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -36,7 +36,7 @@ data:
   path: algorithm/largestrectangle.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:43:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DPL_3_C.test.cpp
   - test/aoj/DPL_3_B.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: matching/bipartite.cpp
     title: matching/bipartite.cpp
   _extendedRequiredBy: []

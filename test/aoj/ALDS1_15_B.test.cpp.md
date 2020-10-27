@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     ERROR: 1e-6
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_15_B
@@ -41,7 +41,7 @@ data:
   path: test/aoj/ALDS1_15_B.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_15_B.test.cpp
 layout: document

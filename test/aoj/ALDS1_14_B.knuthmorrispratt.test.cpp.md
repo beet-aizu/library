@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/knuthmorrispratt.cpp
     title: string/knuthmorrispratt.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
     links:
@@ -55,7 +55,7 @@ data:
   path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
 layout: document
