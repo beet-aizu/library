@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/sparsetable.cpp
     title: datastructure/sparsetable.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
@@ -17,9 +17,9 @@ data:
     using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/sparsetable.cpp\"\
     \n\n#line 3 \"datastructure/sparsetable.cpp\"\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename T>\nstruct SparseTable{\n  using F = function<T(T,\
-    \ T)>;\n  vector< vector<T> > dat;\n  vector<int> ht;\n  const F f;\n\n  SparseTable(){}\n\
-    \  SparseTable(F f):f(f){}\n\n  void build(const vector<T> &v){\n    int n=v.size(),h=1;\n\
-    \    while((1<<h)<=n) h++;\n    dat.assign(h,vector<T>(n));\n    ht.assign(n+1,0);\n\
+    \ T)>;\n  vector< vector<T> > dat;\n  vector<int> ht;\n  const F f;\n\n  SparseTable(F\
+    \ f):f(f){}\n\n  void build(const vector<T> &v){\n    int n=v.size(),h=1;\n  \
+    \  while((1<<h)<=n) h++;\n    dat.assign(h,vector<T>(n));\n    ht.assign(n+1,0);\n\
     \    for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;\n\n    for(int j=0;j<n;j++) dat[0][j]=v[j];\n\
     \    for(int i=1,p=1;i<h;i++,p<<=1)\n      for(int j=0;j<n;j++)\n        dat[i][j]=f(dat[i-1][j],dat[i-1][min(j+p,n-1)]);\n\
     \  };\n\n  T query(int a,int b){\n    int l=b-a;\n    return f(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);\n\
@@ -43,8 +43,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/staticrmq.sparsetable.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 16:01:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 19:32:25+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/staticrmq.sparsetable.test.cpp
 layout: document

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
   - icon: ':question:'

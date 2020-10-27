@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/lowestcommonancestor.cpp
     title: tree/lowestcommonancestor.cpp
   _extendedRequiredBy: []
@@ -9,14 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0439.test.cpp
     title: test/aoj/0439.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -52,8 +52,8 @@ data:
   isVerificationFile: false
   path: tree/auxiliarytree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 19:32:25+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp

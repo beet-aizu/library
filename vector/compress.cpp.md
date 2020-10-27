@@ -42,13 +42,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4778.test.cpp
     title: test/yukicoder/4778.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp

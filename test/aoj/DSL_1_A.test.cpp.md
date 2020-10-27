@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
   _extendedRequiredBy: []
@@ -17,10 +17,10 @@ data:
     \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line 1 \"\
     datastructure/unionfind.cpp\"\n\n#line 3 \"datastructure/unionfind.cpp\"\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct UnionFind{\n  int num;\n  vector<int>\
-    \ rs,ps;\n  UnionFind(){}\n  UnionFind(int n):num(n),rs(n,1),ps(n,0){iota(ps.begin(),ps.end(),0);}\n\
-    \  int find(int x){\n    return (x==ps[x]?x:ps[x]=find(ps[x]));\n  }\n  bool same(int\
-    \ x,int y){\n    return find(x)==find(y);\n  }\n  void unite(int x,int y){\n \
-    \   x=find(x);y=find(y);\n    if(x==y) return;\n    if(rs[x]<rs[y]) swap(x,y);\n\
+    \ rs,ps;\n  UnionFind(int n):num(n),rs(n,1),ps(n,0){\n    iota(ps.begin(),ps.end(),0);\n\
+    \  }\n  int find(int x){\n    return (x==ps[x]?x:ps[x]=find(ps[x]));\n  }\n  bool\
+    \ same(int x,int y){\n    return find(x)==find(y);\n  }\n  void unite(int x,int\
+    \ y){\n    x=find(x);y=find(y);\n    if(x==y) return;\n    if(rs[x]<rs[y]) swap(x,y);\n\
     \    rs[x]+=rs[y];\n    ps[y]=x;\n    num--;\n  }\n  int size(int x){\n    return\
     \ rs[find(x)];\n  }\n  int count() const{\n    return num;\n  }\n};\n//END CUT\
     \ HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:47:24+09:00'
+  timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_A.test.cpp

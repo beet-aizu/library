@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
   _extendedRequiredBy: []
@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2020-10-09 14:11:38+09:00'
+  timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_2_A.test.cpp

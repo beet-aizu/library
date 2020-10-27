@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
   - icon: ':heavy_check_mark:'
@@ -23,8 +23,8 @@ data:
     \ ds,us,dep,btm;\n\n  void dfs(int v,int p,int d){\n    dep[v]=d;\n    for(int\
     \ u:G[v]){\n      if(u==p) continue;\n      ds[u]=btm.size();\n      btm.emplace_back(u);\n\
     \      dfs(u,v,d+1);\n      us[u]=btm.size();\n      btm.emplace_back(u);\n  \
-    \  }\n  }\npublic:\n  vector< vector<int> > G;\n\n  EulerTourForEdge(){}\n  EulerTourForEdge(int\
-    \ n):\n    ds(n),us(n),dep(n),G(n){}\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
+    \  }\n  }\npublic:\n  vector< vector<int> > G;\n\n  EulerTourForEdge(int n):\n\
+    \    ds(n),us(n),dep(n),G(n){}\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
     \    G[v].emplace_back(u);\n  }\n\n  void build(int r=0){\n    btm.clear();\n\
     \    ds[r]=btm.size();\n    btm.emplace_back(r);\n    dfs(r,-1,0);\n    us[r]=btm.size();\n\
     \    btm.emplace_back(r);\n  }\n\n  int child(int u,int v){\n    return dep[u]<dep[v]?v:u;\n\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_D.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_D.test.cpp

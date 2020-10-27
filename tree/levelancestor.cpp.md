@@ -2,39 +2,39 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/eulertourforbfs.cpp
     title: tree/eulertourforbfs.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0391.test.cpp
     title: test/aoj/0391.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tree/levelancestor.cpp\"\n\n#include<bits/stdc++.h>\nusing\
-    \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct LevelAncestor{\n  int n,h;\n\
-    \  vector<vector<int> > G,par,lad;\n  vector<int> dep,nxt,len,pth,ord,hs;\n  LevelAncestor(){}\n\
-    \  LevelAncestor(int n):\n    n(n),G(n),dep(n),nxt(n,-1),len(n),pth(n),ord(n),hs(n+1,0){\n\
-    \    h=1;\n    while((1<<h)<=n) h++;\n    par.assign(h,vector<int>(n,-1));\n \
-    \   for(int i=2;i<=n;i++) hs[i]=hs[i>>1]+1;\n  }\n\n  void add_edge(int u,int\
-    \ v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n  }\n\n  void dfs(int\
-    \ v,int p,int d,int f){\n    if(nxt[v]<0){\n      par[0][nxt[v]=v]=p;\n      len[v]=dep[v]=d;\n\
-    \      for(int u:G[v]){\n        if(u==p) continue;\n        dfs(u,v,d+1,0);\n\
-    \        if(len[v]<len[u]) nxt[v]=u,len[v]=len[u];\n      }\n    }\n    if(!f)\
-    \ return;\n    pth[v]=lad.size();\n    lad.emplace_back();\n    for(int k=v;;k=nxt[k]){\n\
-    \      lad.back().emplace_back(k);\n      pth[k]=pth[v];\n      if(k==nxt[k])\
-    \ break;\n    }\n    for(;;p=v,v=nxt[v]){\n      for(int u:G[v])\n        if(u!=p\
-    \ and u!=nxt[v]) dfs(u,v,d+1,1);\n      if(v==nxt[v]) break;\n    }\n  }\n\n \
-    \ void build(int r=0){\n    dfs(r,-1,0,1);\n    for(int k=0;k+1<h;k++){\n    \
-    \  for(int v=0;v<n;v++){\n        if(par[k][v]<0) par[k+1][v]=-1;\n        else\
-    \ par[k+1][v]=par[k][par[k][v]];\n      }\n    }\n    for(int i=0;i<(int)lad.size();i++){\n\
-    \      int v=lad[i][0],p=par[0][v];\n      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n\
-    \        lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct LevelAncestor{\n  int h;\n\
+    \  vector<vector<int> > G,par,lad;\n  vector<int> dep,nxt,len,pth,ord,hs;\n  LevelAncestor(int\
+    \ n):\n    G(n),dep(n),nxt(n,-1),len(n),pth(n),ord(n),hs(n+1,0){\n    h=1;\n \
+    \   while((1<<h)<=n) h++;\n    par.assign(h,vector<int>(n,-1));\n    for(int i=2;i<=n;i++)\
+    \ hs[i]=hs[i>>1]+1;\n  }\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
+    \    G[v].emplace_back(u);\n  }\n\n  void dfs(int v,int p,int d,int f){\n    if(nxt[v]<0){\n\
+    \      par[0][nxt[v]=v]=p;\n      len[v]=dep[v]=d;\n      for(int u:G[v]){\n \
+    \       if(u==p) continue;\n        dfs(u,v,d+1,0);\n        if(len[v]<len[u])\
+    \ nxt[v]=u,len[v]=len[u];\n      }\n    }\n    if(!f) return;\n    pth[v]=lad.size();\n\
+    \    lad.emplace_back();\n    for(int k=v;;k=nxt[k]){\n      lad.back().emplace_back(k);\n\
+    \      pth[k]=pth[v];\n      if(k==nxt[k]) break;\n    }\n    for(;;p=v,v=nxt[v]){\n\
+    \      for(int u:G[v])\n        if(u!=p and u!=nxt[v]) dfs(u,v,d+1,1);\n     \
+    \ if(v==nxt[v]) break;\n    }\n  }\n\n  void build(int r=0){\n    int n=G.size();\n\
+    \    dfs(r,-1,0,1);\n    for(int k=0;k+1<h;k++){\n      for(int v=0;v<n;v++){\n\
+    \        if(par[k][v]<0) par[k+1][v]=-1;\n        else par[k+1][v]=par[k][par[k][v]];\n\
+    \      }\n    }\n    for(int i=0;i<(int)lad.size();i++){\n      int v=lad[i][0],p=par[0][v];\n\
+    \      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n   \
+    \     lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
     \          lad[i][m-(j+1)]=lad[i][m-(j+l+1)];\n        for(int j=0;j<l;j++)\n\
     \          lad[i][j]=lad[k][ord[p]-l+j+1];\n      }\n      for(int j=0;j<(int)lad[i].size();j++)\n\
     \        if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;\n    }\n  }\n\n  int lca(int\
@@ -48,24 +48,23 @@ data:
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\nstruct LevelAncestor{\n  int n,h;\n  vector<vector<int> > G,par,lad;\n\
-    \  vector<int> dep,nxt,len,pth,ord,hs;\n  LevelAncestor(){}\n  LevelAncestor(int\
-    \ n):\n    n(n),G(n),dep(n),nxt(n,-1),len(n),pth(n),ord(n),hs(n+1,0){\n    h=1;\n\
-    \    while((1<<h)<=n) h++;\n    par.assign(h,vector<int>(n,-1));\n    for(int\
-    \ i=2;i<=n;i++) hs[i]=hs[i>>1]+1;\n  }\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
-    \    G[v].emplace_back(u);\n  }\n\n  void dfs(int v,int p,int d,int f){\n    if(nxt[v]<0){\n\
-    \      par[0][nxt[v]=v]=p;\n      len[v]=dep[v]=d;\n      for(int u:G[v]){\n \
-    \       if(u==p) continue;\n        dfs(u,v,d+1,0);\n        if(len[v]<len[u])\
-    \ nxt[v]=u,len[v]=len[u];\n      }\n    }\n    if(!f) return;\n    pth[v]=lad.size();\n\
-    \    lad.emplace_back();\n    for(int k=v;;k=nxt[k]){\n      lad.back().emplace_back(k);\n\
-    \      pth[k]=pth[v];\n      if(k==nxt[k]) break;\n    }\n    for(;;p=v,v=nxt[v]){\n\
-    \      for(int u:G[v])\n        if(u!=p and u!=nxt[v]) dfs(u,v,d+1,1);\n     \
-    \ if(v==nxt[v]) break;\n    }\n  }\n\n  void build(int r=0){\n    dfs(r,-1,0,1);\n\
-    \    for(int k=0;k+1<h;k++){\n      for(int v=0;v<n;v++){\n        if(par[k][v]<0)\
-    \ par[k+1][v]=-1;\n        else par[k+1][v]=par[k][par[k][v]];\n      }\n    }\n\
-    \    for(int i=0;i<(int)lad.size();i++){\n      int v=lad[i][0],p=par[0][v];\n\
-    \      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n   \
-    \     lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
+    //BEGIN CUT HERE\nstruct LevelAncestor{\n  int h;\n  vector<vector<int> > G,par,lad;\n\
+    \  vector<int> dep,nxt,len,pth,ord,hs;\n  LevelAncestor(int n):\n    G(n),dep(n),nxt(n,-1),len(n),pth(n),ord(n),hs(n+1,0){\n\
+    \    h=1;\n    while((1<<h)<=n) h++;\n    par.assign(h,vector<int>(n,-1));\n \
+    \   for(int i=2;i<=n;i++) hs[i]=hs[i>>1]+1;\n  }\n\n  void add_edge(int u,int\
+    \ v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n  }\n\n  void dfs(int\
+    \ v,int p,int d,int f){\n    if(nxt[v]<0){\n      par[0][nxt[v]=v]=p;\n      len[v]=dep[v]=d;\n\
+    \      for(int u:G[v]){\n        if(u==p) continue;\n        dfs(u,v,d+1,0);\n\
+    \        if(len[v]<len[u]) nxt[v]=u,len[v]=len[u];\n      }\n    }\n    if(!f)\
+    \ return;\n    pth[v]=lad.size();\n    lad.emplace_back();\n    for(int k=v;;k=nxt[k]){\n\
+    \      lad.back().emplace_back(k);\n      pth[k]=pth[v];\n      if(k==nxt[k])\
+    \ break;\n    }\n    for(;;p=v,v=nxt[v]){\n      for(int u:G[v])\n        if(u!=p\
+    \ and u!=nxt[v]) dfs(u,v,d+1,1);\n      if(v==nxt[v]) break;\n    }\n  }\n\n \
+    \ void build(int r=0){\n    int n=G.size();\n    dfs(r,-1,0,1);\n    for(int k=0;k+1<h;k++){\n\
+    \      for(int v=0;v<n;v++){\n        if(par[k][v]<0) par[k+1][v]=-1;\n      \
+    \  else par[k+1][v]=par[k][par[k][v]];\n      }\n    }\n    for(int i=0;i<(int)lad.size();i++){\n\
+    \      int v=lad[i][0],p=par[0][v];\n      if(~p){\n        int k=pth[p],l=min(ord[p]+1,(int)lad[i].size());\n\
+    \        lad[i].resize(l+lad[i].size());\n        for(int j=0,m=lad[i].size();j+l<m;j++)\n\
     \          lad[i][m-(j+1)]=lad[i][m-(j+l+1)];\n        for(int j=0;j<l;j++)\n\
     \          lad[i][j]=lad[k][ord[p]-l+j+1];\n      }\n      for(int j=0;j<(int)lad[i].size();j++)\n\
     \        if(pth[lad[i][j]]==i) ord[lad[i][j]]=j;\n    }\n  }\n\n  int lca(int\
@@ -83,8 +82,8 @@ data:
   path: tree/levelancestor.cpp
   requiredBy:
   - tree/eulertourforbfs.cpp
-  timestamp: '2020-09-30 16:50:39+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 19:32:25+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/3405.test.cpp
   - test/aoj/0391.test.cpp

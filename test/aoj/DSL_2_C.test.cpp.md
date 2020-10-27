@@ -18,11 +18,11 @@ data:
     datastructure/kdtree.cpp\"\n\n#line 3 \"datastructure/kdtree.cpp\"\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct KDTree{\n  static\
     \ const int NIL = -1;\n\n  class Node{\n  public:\n    int pos,p,l,r;\n    Node(){pos=p=l=r=NIL;}\n\
-    \  };\n\n  class Point{\n  public:\n    int id;\n    T x,y;\n    Point(){}\n \
-    \   Point(int id,T x,T y): id(id),x(x),y(y){}\n    bool operator<(const Point\
-    \ &p)const{\n      return id<p.id;\n    }\n  };\n\n  vector<Point> ps;\n  vector<Node>\
-    \ ts;\n  int np;\n\n  void add_point(int i,int x,int y){\n    ps.emplace_back(i,x,y);\n\
-    \    ts.emplace_back();\n  }\n\n  static bool lessX(const Point &p1,const Point\
+    \  };\n\n  class Point{\n  public:\n    int id;\n    T x,y;\n    Point(int id,T\
+    \ x,T y): id(id),x(x),y(y){}\n    bool operator<(const Point &p)const{\n     \
+    \ return id<p.id;\n    }\n  };\n\n  vector<Point> ps;\n  vector<Node> ts;\n  int\
+    \ np;\n\n  void add_point(int i,int x,int y){\n    ps.emplace_back(i,x,y);\n \
+    \   ts.emplace_back();\n  }\n\n  static bool lessX(const Point &p1,const Point\
     \ &p2){return p1.x<p2.x;}\n  static bool lessY(const Point &p1,const Point &p2){return\
     \ p1.y<p2.y;}\n\n  int dfs(int l,int r,int depth){\n    if(l>=r) return NIL;\n\
     \    int mid=(l+r)/2;\n    int t=np++;\n    if(depth%2==0){\n      sort(ps.begin()+l,ps.begin()+r,lessX);\n\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_C.test.cpp

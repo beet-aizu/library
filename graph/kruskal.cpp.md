@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
   _extendedRequiredBy:
@@ -18,11 +18,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_A.test.cpp
     title: test/aoj/GRL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/manhattanmst.test.cpp
     title: test/yosupo/manhattanmst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -51,8 +51,8 @@ data:
   requiredBy:
   - graph/voronoiminimumspanningtree.cpp
   - linearalgebra/tree_theorem.cpp
-  timestamp: '2020-10-09 14:11:38+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 19:32:25+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_2_A.test.cpp
   - test/aoj/0403.test.cpp

@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -30,14 +30,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2125.test.cpp
     title: test/yukicoder/2125.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/binaryindexedtree.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -71,7 +71,7 @@ data:
   path: datastructure/binaryindexedtree.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/2125.test.cpp

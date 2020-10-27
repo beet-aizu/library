@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: tree/mo_on_tree.cpp
   requiredBy: []
-  timestamp: '2020-10-09 19:36:50+09:00'
+  timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2270.test.cpp

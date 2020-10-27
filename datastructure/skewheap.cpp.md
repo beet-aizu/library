@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
   _extendedRequiredBy:
@@ -66,7 +66,7 @@ data:
   path: datastructure/skewheap.cpp
   requiredBy:
   - algorithm/optimalbinarytree.cpp
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2415.test.cpp

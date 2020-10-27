@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/manhattanmst.cpp
     title: graph/manhattanmst.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/manhattanmst
@@ -46,8 +46,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/manhattanmst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-09 14:51:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 19:32:25+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/manhattanmst.test.cpp
 layout: document
