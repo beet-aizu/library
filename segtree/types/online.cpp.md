@@ -12,7 +12,7 @@ data:
     #include<ext/pb_ds/tree_policy.hpp>\n#include<ext/pb_ds/tag_and_trait.hpp>\nusing\
     \ namespace __gnu_pbds;\n\nstruct RangeTypes{\n  template <typename T>\n  using\
     \ gtree = tree<T, null_type, less<T>, rb_tree_tag,\n                     tree_order_statistics_node_update>;\n\
-    \  struct range{\n    int l,r,c;\n    range(){}\n    range(int l,int r,int c):l(l),r(r),c(c){}\n\
+    \  struct range{\n    int l,r,c;\n    range(int l,int r,int c):l(l),r(r),c(c){}\n\
     \    bool operator<(const range &a)const{\n      return l<a.l;\n    }\n  };\n\n\
     \  int n,m,time;\n  vector<int> nxt,dat,upd;\n  set<int> sx;\n\n  set<range> sr;\n\
     \  vector<set<range> > se;\n  vector<gtree<int> > rc;\n\n  RangeTypes(int n_,int\
@@ -56,15 +56,15 @@ data:
     \ query(a,b,b,INT_MAX-1);\n  }\n};\n\n\ntemplate<typename T1,typename T2> inline\
     \ void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline\
     \ void chmax(T1 &a,T2 b){if(a<b) a=b;}\n\n\nstruct EulerTour{\n  int n,pos;\n\
-    \  vector<vector<int> > G;\n  vector<int> ls,rs;\n\n  EulerTour(){}\n  EulerTour(int\
-    \ n):n(n),G(n),ls(n),rs(n){}\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
-    \    G[v].emplace_back(u);\n  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n\
-    \    for(int u:G[v])\n      if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void\
-    \ build(int r=0){\n    pos=0;\n    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\n\
-    signed main(){\n  int T;\n  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n\
-    \    printf(\"Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour\
-    \ et(n);\n    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n\
-    \      u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
+    \  vector<vector<int> > G;\n  vector<int> ls,rs;\n\n  EulerTour(int n):n(n),G(n),ls(n),rs(n){}\n\
+    \n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
+    \  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n    for(int u:G[v])\n    \
+    \  if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void build(int r=0){\n    pos=0;\n\
+    \    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\nsigned main(){\n  int T;\n\
+    \  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n    printf(\"\
+    Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour et(n);\n\
+    \    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n  \
+    \    u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
     \ i=0;i<n;i++) scanf(\"%d\",&c[i]);\n\n    et.build();\n    int q;\n    scanf(\"\
     %d\",&q);\n\n    if(n<=5000 or q<=5000 or casecnt>=2){\n      vector<int> val(n),used(n+1,-1);\n\
     \      for(int i=0;i<n;i++) val[et.ls[i]]=c[i];\n\n      for(int i=0;i<q;i++){\n\
@@ -87,7 +87,7 @@ data:
     #include<ext/pb_ds/tree_policy.hpp>\n#include<ext/pb_ds/tag_and_trait.hpp>\nusing\
     \ namespace __gnu_pbds;\n\nstruct RangeTypes{\n  template <typename T>\n  using\
     \ gtree = tree<T, null_type, less<T>, rb_tree_tag,\n                     tree_order_statistics_node_update>;\n\
-    \  struct range{\n    int l,r,c;\n    range(){}\n    range(int l,int r,int c):l(l),r(r),c(c){}\n\
+    \  struct range{\n    int l,r,c;\n    range(int l,int r,int c):l(l),r(r),c(c){}\n\
     \    bool operator<(const range &a)const{\n      return l<a.l;\n    }\n  };\n\n\
     \  int n,m,time;\n  vector<int> nxt,dat,upd;\n  set<int> sx;\n\n  set<range> sr;\n\
     \  vector<set<range> > se;\n  vector<gtree<int> > rc;\n\n  RangeTypes(int n_,int\
@@ -131,15 +131,15 @@ data:
     \ query(a,b,b,INT_MAX-1);\n  }\n};\n\n\ntemplate<typename T1,typename T2> inline\
     \ void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline\
     \ void chmax(T1 &a,T2 b){if(a<b) a=b;}\n\n\nstruct EulerTour{\n  int n,pos;\n\
-    \  vector<vector<int> > G;\n  vector<int> ls,rs;\n\n  EulerTour(){}\n  EulerTour(int\
-    \ n):n(n),G(n),ls(n),rs(n){}\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
-    \    G[v].emplace_back(u);\n  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n\
-    \    for(int u:G[v])\n      if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void\
-    \ build(int r=0){\n    pos=0;\n    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\n\
-    signed main(){\n  int T;\n  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n\
-    \    printf(\"Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour\
-    \ et(n);\n    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n\
-    \      u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
+    \  vector<vector<int> > G;\n  vector<int> ls,rs;\n\n  EulerTour(int n):n(n),G(n),ls(n),rs(n){}\n\
+    \n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
+    \  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n    for(int u:G[v])\n    \
+    \  if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void build(int r=0){\n    pos=0;\n\
+    \    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\nsigned main(){\n  int T;\n\
+    \  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n    printf(\"\
+    Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour et(n);\n\
+    \    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n  \
+    \    u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
     \ i=0;i<n;i++) scanf(\"%d\",&c[i]);\n\n    et.build();\n    int q;\n    scanf(\"\
     %d\",&q);\n\n    if(n<=5000 or q<=5000 or casecnt>=2){\n      vector<int> val(n),used(n+1,-1);\n\
     \      for(int i=0;i<n;i++) val[et.ls[i]]=c[i];\n\n      for(int i=0;i<q;i++){\n\
@@ -162,7 +162,7 @@ data:
   isVerificationFile: false
   path: segtree/types/online.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
+  timestamp: '2020-10-27 17:58:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: segtree/types/online.cpp

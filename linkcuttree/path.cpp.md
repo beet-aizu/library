@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   _extendedRequiredBy: []
@@ -21,14 +21,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://ei1333.hateblo.jp/entry/2018/05/29/011140
@@ -41,21 +41,20 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ linkcuttree/path.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"base.cpp\"\n#undef call_from_test\n\n#endif\n\
-    /**\n * @see https://ei1333.hateblo.jp/entry/2018/05/29/011140\n */\n//BEGIN CUT\
-    \ HERE\ntemplate<typename Tp,typename Ep>\nstruct NodeBase{\n  using T = Tp;\n\
-    \  using E = Ep;\n  NodeBase *l,*r,*p;\n  bool rev;\n  T val,dat;\n  E laz;\n\
-    \  NodeBase(){}\n  NodeBase(T val,E laz):\n    rev(0),val(val),dat(val),laz(laz){\n\
-    \    l=r=p=nullptr;}\n};\n\ntemplate<typename Np, size_t LIM>\nstruct Path : LinkCutTreeBase<Np,\
-    \ LIM>{\n  using super = LinkCutTreeBase<Np, LIM>;\n  using Node = Np;\n  using\
-    \ T = typename Node::T;\n  using E = typename Node::E;\n\n  using F = function<T(T,\
-    \ T)>;\n  using G = function<T(T, E)>;\n  using H = function<E(E, E)>;\n  using\
-    \ S = function<T(T)>;\n  F f;\n  G g;\n  H h;\n  S flip;\n  E ei;\n\n  Path(F\
-    \ f,G g,H h,E ei):\n    super(),f(f),g(g),h(h),ei(ei){\n    flip=[](T a){return\
-    \ a;};\n  }\n\n  Path(F f,G g,H h,S flip,E ei):\n    super(),f(f),g(g),h(h),flip(flip),ei(ei){}\n\
-    \n  Node* create(T val){\n    return super::create(Node(val,ei));\n  }\n\n  inline\
-    \ void propagate(Node *t,E v){\n    t->laz=h(t->laz,v);\n    t->val=g(t->val,v);\n\
+    // https://ei1333.hateblo.jp/entry/2018/05/29/011140\n//BEGIN CUT HERE\ntemplate<typename\
+    \ Tp,typename Ep>\nstruct NodeBase{\n  using T = Tp;\n  using E = Ep;\n  NodeBase\
+    \ *l,*r,*p;\n  bool rev;\n  T val,dat;\n  E laz;\n  NodeBase(){}\n  NodeBase(T\
+    \ val,E laz):\n    rev(0),val(val),dat(val),laz(laz){\n    l=r=p=nullptr;}\n};\n\
+    \ntemplate<typename Np, size_t LIM>\nstruct Path : LinkCutTreeBase<Np, LIM>{\n\
+    \  using super = LinkCutTreeBase<Np, LIM>;\n  using Node = Np;\n  using T = typename\
+    \ Node::T;\n  using E = typename Node::E;\n\n  using F = function<T(T, T)>;\n\
+    \  using G = function<T(T, E)>;\n  using H = function<E(E, E)>;\n  using S = function<T(T)>;\n\
+    \  F f;\n  G g;\n  H h;\n  S flip;\n  E ei;\n\n  Path(F f,G g,H h,S flip,E ei):\n\
+    \    f(f),g(g),h(h),flip(flip),ei(ei){}\n\n  Path(F f,G g,H h,E ei):\n    Path(f,g,h,[](T\
+    \ a){return a;},ei){}\n\n  Node* create(T val){\n    return super::create(Node(val,ei));\n\
+    \  }\n\n  inline void propagate(Node *t,E v){\n    t->laz=h(t->laz,v);\n    t->val=g(t->val,v);\n\
     \    t->dat=g(t->dat,v);\n  }\n\n  inline void toggle(Node *t){\n    swap(t->l,t->r);\n\
     \    t->dat=flip(t->dat);\n    t->rev^=1;\n  }\n\n  inline Node* eval(Node *t){\n\
     \    if(t->laz!=ei){\n      if(t->l) propagate(t->l,t->laz);\n      if(t->r) propagate(t->r,t->laz);\n\
@@ -82,8 +81,8 @@ data:
   isVerificationFile: false
   path: linkcuttree/path.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 17:58:49+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
   - test/aoj/0367.linkcuttree.test.cpp

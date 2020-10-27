@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   - icon: ':heavy_check_mark:'
@@ -15,11 +15,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
@@ -41,9 +41,9 @@ data:
     \    rev(0),val(val),dat(dat),sum(sum){\n    l=r=p=nullptr;}\n};\n\ntemplate<typename\
     \ Np, size_t LIM>\nstruct SubTree : LinkCutTreeBase<Np, LIM>{\n  using super =\
     \ LinkCutTreeBase<Np, LIM>;\n  using Node = Np;\n  using A = typename Node::A;\n\
-    \n  SubTree():super(){}\n\n  Node* create(A val){\n    return super::create(Node(val,A(),val));\n\
-    \  }\n\n  inline void toggle(Node *t){\n    swap(t->l,t->r);\n    t->rev^=1;\n\
-    \  }\n\n  inline Node* eval(Node *t){\n    if(t->rev){\n      if(t->l) toggle(t->l);\n\
+    \n  Node* create(A val){\n    return super::create(Node(val,A(),val));\n  }\n\n\
+    \  inline void toggle(Node *t){\n    swap(t->l,t->r);\n    t->rev^=1;\n  }\n\n\
+    \  inline Node* eval(Node *t){\n    if(t->rev){\n      if(t->l) toggle(t->l);\n\
     \      if(t->r) toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\
     \n  inline A resolve(Node *t){\n    return t?t->sum:A();\n  }\n\n  inline void\
     \ pushup(Node *t){\n    if(t==nullptr) return;\n    t->sum=t->val+t->dat;\n  \
@@ -109,8 +109,8 @@ data:
   isVerificationFile: false
   path: linkcuttree/subtree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 17:58:49+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3120.test.cpp
   - test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp

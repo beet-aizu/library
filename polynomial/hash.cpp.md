@@ -30,8 +30,8 @@ data:
     #define call_from_test\n#include \"../mod/mint.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename T,typename M1,typename M2,typename\
     \ M3>\nstruct PolynomialHash{\n  struct V{\n    M1 v1;\n    M2 v2;\n    M3 v3;\n\
-    \    V(){}\n    V(int x):v1(x),v2(x),v3(x){}\n    V(long long x):v1(x),v2(x),v3(x){}\n\
-    \    V(M1 v1,M2 v2,M3 v3):v1(v1),v2(v2),v3(v3){}\n\n    V& operator+=(V a){v1+=a.v1;v2+=a.v2;v3+=a.v3;;return\
+    \    V(int x):v1(x),v2(x),v3(x){}\n    V(long long x):v1(x),v2(x),v3(x){}\n  \
+    \  V(M1 v1,M2 v2,M3 v3):v1(v1),v2(v2),v3(v3){}\n\n    V& operator+=(V a){v1+=a.v1;v2+=a.v2;v3+=a.v3;;return\
     \ *this;}\n    V& operator-=(V a){v1-=a.v1;v2-=a.v2;v3-=a.v3;;return *this;}\n\
     \    V& operator*=(V a){v1*=a.v1;v2*=a.v2;v3*=a.v3;;return *this;}\n    V& operator/=(V\
     \ a){v1/=a.v1;v2/=a.v2;v3/=a.v3;;return *this;}\n\n    V operator+(V a) const{return\
@@ -60,13 +60,13 @@ data:
     \ k){\n      vector<int> a(k);\n      for(int i=0;i<k;i++) a[i]=v[i];\n      return\
     \ a;\n    };\n\n  using M1 = Mint<int, int(1e9+7)>;\n  using M2 = Mint<int, int(1e9+9)>;\n\
     \  using M3 = Mint<int, int(1e8+7)>;\n\n  PolynomialHash<int, M1, M2, M3> ph(MAX);\n\
-    \  using V = decltype(ph)::V;\n\n  vector<V> vrs(h),vcs(w);\n  vector<int> tmp(w,1);\n\
-    \  V ri=ph.build(tmp);\n  tmp.assign(h,1);\n  V ci=ph.build(tmp);\n\n  for(int\
-    \ i=0;i<h;i++){\n    auto v=conv(rs[i],w);\n    vrs[i]=ph.build(v);\n    if(rs[i][0])\
-    \ vrs[i]=ri-vrs[i];\n  }\n\n  for(int j=0;j<w;j++){\n    auto v=conv(cs[j],h);\n\
-    \    vcs[j]=ph.build(v);\n    if(cs[j][0]) vcs[j]=ci-vcs[j];\n  }\n\n  map<V,\
-    \ set<int> > mrs, mcs;\n  for(int i=0;i<h;i++) mrs[vrs[i]].emplace(i);\n  for(int\
-    \ j=0;j<w;j++) mcs[vcs[j]].emplace(j);\n\n  auto print=[&](string s){cout<<s<<\"\
+    \  using V = decltype(ph)::V;\n\n  vector<V> vrs(h,0),vcs(w,0);\n  vector<int>\
+    \ tmp(w,1);\n  V ri=ph.build(tmp);\n  tmp.assign(h,1);\n  V ci=ph.build(tmp);\n\
+    \n  for(int i=0;i<h;i++){\n    auto v=conv(rs[i],w);\n    vrs[i]=ph.build(v);\n\
+    \    if(rs[i][0]) vrs[i]=ri-vrs[i];\n  }\n\n  for(int j=0;j<w;j++){\n    auto\
+    \ v=conv(cs[j],h);\n    vcs[j]=ph.build(v);\n    if(cs[j][0]) vcs[j]=ci-vcs[j];\n\
+    \  }\n\n  map<V, set<int> > mrs, mcs;\n  for(int i=0;i<h;i++) mrs[vrs[i]].emplace(i);\n\
+    \  for(int j=0;j<w;j++) mcs[vcs[j]].emplace(j);\n\n  auto print=[&](string s){cout<<s<<\"\
     \\n\";};\n\n  auto check=\n    [&](){\n      int a1=-1,b1=-1,c1=-1,d1=-1;\n  \
     \    int a2=-1,b2=-1,c2=-1,d2=-1;\n\n      int A,B,C,D;\n\n      {\n        auto\
     \ latte=mrs.begin();\n        set<int> &s=latte->second;\n        latte++;\n \
@@ -118,9 +118,9 @@ data:
     \  https://atcoder.jp/contests/bitflyer2018-final/tasks/bitflyer2018_final_f\n\
     */\n\nusing M1 = Mint<int, int(1e9+7)>;\nusing M2 = Mint<int, int(1e9+9)>;\nusing\
     \ M3 = Mint<int, int(1e8+7)>;\n\nPolynomialHash<int, M1, M2, M3> ph(2000);\nusing\
-    \ V = decltype(ph)::V;\n\nstruct Point{\n  V x,y;\n  Point(){}\n  Point(V x,V\
-    \ y):x(x),y(y){}\n};\n\nusing Vector = Point;\n\nPoint getP(){\n  int x,y;\n \
-    \ cin>>x>>y;\n  return Point(V((long long)x),V((long long)y));\n}\n\nsigned JAG2018SUMMER_DAY2_F(){\n\
+    \ V = decltype(ph)::V;\n\nstruct Point{\n  V x,y;\n  Point():x(0),y(0){}\n  Point(V\
+    \ x,V y):x(x),y(y){}\n};\n\nusing Vector = Point;\n\nPoint getP(){\n  int x,y;\n\
+    \  cin>>x>>y;\n  return Point(V((long long)x),V((long long)y));\n}\n\nsigned JAG2018SUMMER_DAY2_F(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n  Point d=getP();\n\
     \n  vector<Point> a(n),b(n),c(n);\n  for(int i=0;i<n;i++){\n    a[i]=getP();\n\
     \    b[i]=getP();\n    c[i]=getP();\n  }\n\n  for(int i=0;i<n;i++){\n    if(c[i].x==d.x\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: false
   path: polynomial/hash.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
+  timestamp: '2020-10-27 17:58:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2971.test.cpp

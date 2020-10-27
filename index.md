@@ -330,16 +330,16 @@ data:
       title: linearalgebra/tree_theorem.cpp
   - name: linkcuttree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/base.cpp
       title: linkcuttree/base.cpp
     - icon: ':heavy_check_mark:'
       path: linkcuttree/farthest.cpp
       title: linkcuttree/farthest.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/path.cpp
       title: linkcuttree/path.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/subtree.cpp
       title: linkcuttree/subtree.cpp
   - name: matching
@@ -364,7 +364,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/convertbase.cpp
       title: math/convertbase.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/dual.cpp
       title: math/dual.cpp
     - icon: ':heavy_check_mark:'
@@ -388,7 +388,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/linearcongruence.cpp
       title: math/linearcongruence.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/linearfunction.cpp
       title: math/linearfunction.cpp
     - icon: ':heavy_check_mark:'
@@ -406,7 +406,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/totient_table.cpp
       title: math/totient_table.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/twoway.cpp
       title: math/twoway.cpp
   - name: maxflow
@@ -1466,10 +1466,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
       title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
       title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
       title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1493,7 +1493,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/kth_root_integer.test.cpp
       title: test/yosupo/kth_root_integer.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/lca.linkcuttree.test.cpp
       title: test/yosupo/lca.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1634,7 +1634,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_path_sum.test.cpp
       title: test/yosupo/vertex_add_path_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1711,7 +1711,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/2147.test.cpp
       title: test/yukicoder/2147.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/2587.test.cpp
       title: test/yukicoder/2587.test.cpp
     - icon: ':heavy_check_mark:'

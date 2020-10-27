@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   _extendedRequiredBy: []
@@ -28,19 +28,18 @@ data:
     \ / #ifndef other than include guards\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"base.cpp\"\n#undef call_from_test\n\n#endif\n\
-    /**\n * @see https://ei1333.hateblo.jp/entry/2019/06/13/133736\n */\n//BEGIN CUT\
-    \ HERE\ntemplate<typename Tp>\nstruct NodeBase{\n  using T = Tp;\n  NodeBase *l,*r,*p;\n\
-    \  bool rev;\n  T val,ld,rd,smd;\n  multiset<T> td;\n  NodeBase(){}\n  NodeBase(T\
-    \ val):rev(0),val(val){\n    l=r=p=nullptr;\n    ld=rd=smd=val;\n    td.emplace(0);\n\
-    \  }\n};\n\ntemplate<typename Np, size_t LIM>\nstruct Farthest : LinkCutTreeBase<Np,\
-    \ LIM>{\n  using super = LinkCutTreeBase<Np, LIM>;\n  using Node = Np;\n  using\
-    \ T = typename Node::T;\n\n  Farthest():super(){}\n\n  Node* create(T val){\n\
-    \    return super::create(Node(val));\n  }\n\n  inline void toggle(Node *t){\n\
-    \    swap(t->l,t->r);\n    swap(t->ld,t->rd);\n    t->rev^=1;\n  }\n\n  inline\
-    \ Node* eval(Node *t){\n    if(t->rev){\n      if(t->l) toggle(t->l);\n      if(t->r)\
-    \ toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\n  inline void\
-    \ pushup(Node *t){\n    if(t==nullptr) return;\n    t->smd=t->val;\n    if(t->l)\
-    \ t->smd+=t->l->smd;\n    if(t->r) t->smd+=t->r->smd;\n\n    T lld=t->l?t->l->ld:0;\n\
+    // https://ei1333.hateblo.jp/entry/2019/06/13/133736\n//BEGIN CUT HERE\ntemplate<typename\
+    \ Tp>\nstruct NodeBase{\n  using T = Tp;\n  NodeBase *l,*r,*p;\n  bool rev;\n\
+    \  T val,ld,rd,smd;\n  multiset<T> td;\n  NodeBase(){}\n  NodeBase(T val):rev(0),val(val){\n\
+    \    l=r=p=nullptr;\n    ld=rd=smd=val;\n    td.emplace(0);\n  }\n};\n\ntemplate<typename\
+    \ Np, size_t LIM>\nstruct Farthest : LinkCutTreeBase<Np, LIM>{\n  using super\
+    \ = LinkCutTreeBase<Np, LIM>;\n  using Node = Np;\n  using T = typename Node::T;\n\
+    \n  Node* create(T val){\n    return super::create(Node(val));\n  }\n\n  inline\
+    \ void toggle(Node *t){\n    swap(t->l,t->r);\n    swap(t->ld,t->rd);\n    t->rev^=1;\n\
+    \  }\n\n  inline Node* eval(Node *t){\n    if(t->rev){\n      if(t->l) toggle(t->l);\n\
+    \      if(t->r) toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\
+    \n  inline void pushup(Node *t){\n    if(t==nullptr) return;\n    t->smd=t->val;\n\
+    \    if(t->l) t->smd+=t->l->smd;\n    if(t->r) t->smd+=t->r->smd;\n\n    T lld=t->l?t->l->ld:0;\n\
     \    T rrd=t->r?t->r->rd:0;\n\n    T lsmd=t->l?t->l->smd:0;\n    T rsmd=t->r?t->r->smd:0;\n\
     \n    t->ld=max(lld,lsmd+t->val+*(t->td).rbegin());\n    if(t->r) t->ld=max(t->ld,lsmd+t->val+t->r->ld);\n\
     \n    t->rd=max(rrd,rsmd+t->val+*(t->td).rbegin());\n    if(t->l) t->rd=max(t->rd,rsmd+t->val+t->l->rd);\n\
@@ -66,7 +65,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/farthest.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
+  timestamp: '2020-10-27 17:58:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp
