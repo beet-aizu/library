@@ -3,47 +3,47 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/set_xor_min.test.cpp
     title: test/yosupo/set_xor_min.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - http://codeforces.com/contest/966/problem/C
     - https://atcoder.jp/contests/arc033/tasks/arc033_3
-  bundledCode: "#line 2 \"datastructure/binarytrie.cpp\"\n\n#ifndef call_from_test\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T,size_t X>\nstruct BinaryTrie{\n  struct Node{\n    size_t cnt;\n    Node *p,*l,*r;\n\
-    \    Node(Node* p):cnt(0),p(p){l=r=nullptr;}\n  };\n\n  T acc;\n  Node *root;\n\
-    \  BinaryTrie():acc(0){root=emplace(nullptr);}\n\n  void clear(Node *a){\n   \
-    \ if(!a) return;\n    clear(a->l);clear(a->r);\n    delete(a);\n  }\n\n  inline\
-    \ Node* emplace(Node* p){\n    return new Node(p);\n  }\n\n  inline size_t count(Node*\
-    \ a){\n    return a?a->cnt:0;\n  }\n\n  void add(const T b,size_t k=1){\n    const\
-    \ T nb=b^acc;\n    Node* a=root;\n    for(int i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n\
-    \      if(!f&&!a->l) a->l=emplace(a);\n      if( f&&!a->r) a->r=emplace(a);\n\
-    \      a=f?a->r:a->l;\n    }\n    a->cnt+=k;\n    while((a=a->p)) a->cnt=count(a->l)+count(a->r);\n\
-    \  }\n\n  inline void update(const T b){acc^=b;}\n\n  Node* find(const T b){\n\
-    \    const T nb=b^acc;\n    Node* a=root;\n    for(int i=X-1;i>=0;i--){\n    \
-    \  bool f=(nb>>i)&1;\n      a=f?a->r:a->l;\n      if(!a) return a;\n    }\n  \
-    \  return a;\n  }\n\n  Node* check(Node *a){\n    if(!a||count(a)) return a;\n\
-    \    delete(a);\n    return nullptr;\n  }\n\n  void sub(Node* a,size_t k=1){\n\
-    \    assert(a&&a->cnt>=k);\n    a->cnt-=k;\n    while((a=a->p)){\n      a->l=check(a->l);\n\
-    \      a->r=check(a->r);\n      a->cnt=count(a->l)+count(a->r);\n    }\n  }\n\n\
-    \  Node* xmax(const T b){\n    assert(count(root));\n    const T nb=b^acc;\n \
-    \   Node* a=root;\n    for(int i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n   \
-    \   if(!a->l||!a->r) a=a->l?a->l:a->r;\n      else a=f?a->l:a->r;\n    }\n   \
-    \ return a;\n  }\n\n  Node* xmin(const T b){\n    return xmax(~b&((T(1)<<X)-1));\n\
-    \  }\n\n  Node* ge(Node *a,int i){\n    if(!a) return a;\n    Node *l=a->l,*r=a->r;\n\
-    \    if((acc>>i)&1) swap(l,r);\n    if(l||r) return ge(l?l:r,i+1);\n    return\
-    \ a;\n  }\n\n  Node* next(Node* a,int i){\n    if(!(a->p)) return nullptr;\n \
-    \   Node *l=a->p->l,*r=a->p->r;\n    if((acc>>(i+1))&1) swap(l,r);\n    if(a==l&&r)\
-    \ return ge(r,i);\n    return next(a->p,i+1);\n  }\n\n  Node* lower_bound(const\
-    \ T b){\n    const T nb=b^acc;\n    Node* a=root;\n    for(int i=X-1;i>=0;i--){\n\
-    \      bool f=(nb>>i)&1;\n      if(!f&&a->l){a=a->l;continue;}\n      if( f&&a->r){a=a->r;continue;}\n\
+  bundledCode: "#line 1 \"datastructure/binarytrie.cpp\"\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,size_t X>\n\
+    struct BinaryTrie{\n  struct Node{\n    size_t cnt;\n    Node *p,*l,*r;\n    Node(Node*\
+    \ p):cnt(0),p(p){l=r=nullptr;}\n  };\n\n  T acc;\n  Node *root;\n  BinaryTrie():acc(0){root=emplace(nullptr);}\n\
+    \n  void clear(Node *a){\n    if(!a) return;\n    clear(a->l);clear(a->r);\n \
+    \   delete(a);\n  }\n\n  inline Node* emplace(Node* p){\n    return new Node(p);\n\
+    \  }\n\n  inline size_t count(Node* a){\n    return a?a->cnt:0;\n  }\n\n  void\
+    \ add(const T b,size_t k=1){\n    const T nb=b^acc;\n    Node* a=root;\n    for(int\
+    \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!f and !a->l) a->l=emplace(a);\n\
+    \      if( f and !a->r) a->r=emplace(a);\n      a=f?a->r:a->l;\n    }\n    a->cnt+=k;\n\
+    \    while((a=a->p)) a->cnt=count(a->l)+count(a->r);\n  }\n\n  inline void update(const\
+    \ T b){acc^=b;}\n\n  Node* find(const T b){\n    const T nb=b^acc;\n    Node*\
+    \ a=root;\n    for(int i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      a=f?a->r:a->l;\n\
+    \      if(!a) return a;\n    }\n    return a;\n  }\n\n  Node* check(Node *a){\n\
+    \    if(!a or count(a)) return a;\n    delete(a);\n    return nullptr;\n  }\n\n\
+    \  void sub(Node* a,size_t k=1){\n    assert(a and a->cnt>=k);\n    a->cnt-=k;\n\
+    \    while((a=a->p)){\n      a->l=check(a->l);\n      a->r=check(a->r);\n    \
+    \  a->cnt=count(a->l)+count(a->r);\n    }\n  }\n\n  Node* xmax(const T b){\n \
+    \   assert(count(root));\n    const T nb=b^acc;\n    Node* a=root;\n    for(int\
+    \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!a->l or !a->r) a=a->l?a->l:a->r;\n\
+    \      else a=f?a->l:a->r;\n    }\n    return a;\n  }\n\n  Node* xmin(const T\
+    \ b){\n    return xmax(~b&((T(1)<<X)-1));\n  }\n\n  Node* ge(Node *a,int i){\n\
+    \    if(!a) return a;\n    Node *l=a->l,*r=a->r;\n    if((acc>>i)&1) swap(l,r);\n\
+    \    if(l or r) return ge(l?l:r,i+1);\n    return a;\n  }\n\n  Node* next(Node*\
+    \ a,int i){\n    if(!(a->p)) return nullptr;\n    Node *l=a->p->l,*r=a->p->r;\n\
+    \    if((acc>>(i+1))&1) swap(l,r);\n    if(a==l and r) return ge(r,i);\n    return\
+    \ next(a->p,i+1);\n  }\n\n  Node* lower_bound(const T b){\n    const T nb=b^acc;\n\
+    \    Node* a=root;\n    for(int i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n  \
+    \    if(!f and a->l){a=a->l;continue;}\n      if( f and a->r){a=a->r;continue;}\n\
     \      if((b>>i)&1) return next(a,i);\n      return ge(a,i);\n    }\n    return\
     \ a;\n  }\n\n  Node* upper_bound(const T b){\n    return lower_bound(b+1);\n \
     \ }\n\n  T val(Node* a){\n    T res(0);\n    for(int i=0;i<(int)X;i++){\n    \
@@ -73,36 +73,36 @@ data:
     \ \");\n    printf(\"%lld\",ans[i]);\n  }\n  puts(\"\");\n  return 0;\n}\n/*\n\
     \  verified on 2020/06/06\n  http://codeforces.com/contest/966/problem/C\n*/\n\
     \nsigned main(){\n  //ARC033_C();\n  //CFR477_C();\n  return 0;\n}\n#endif\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T,size_t X>\nstruct BinaryTrie{\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T,size_t X>\nstruct BinaryTrie{\n\
     \  struct Node{\n    size_t cnt;\n    Node *p,*l,*r;\n    Node(Node* p):cnt(0),p(p){l=r=nullptr;}\n\
     \  };\n\n  T acc;\n  Node *root;\n  BinaryTrie():acc(0){root=emplace(nullptr);}\n\
     \n  void clear(Node *a){\n    if(!a) return;\n    clear(a->l);clear(a->r);\n \
     \   delete(a);\n  }\n\n  inline Node* emplace(Node* p){\n    return new Node(p);\n\
     \  }\n\n  inline size_t count(Node* a){\n    return a?a->cnt:0;\n  }\n\n  void\
     \ add(const T b,size_t k=1){\n    const T nb=b^acc;\n    Node* a=root;\n    for(int\
-    \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!f&&!a->l) a->l=emplace(a);\n\
-    \      if( f&&!a->r) a->r=emplace(a);\n      a=f?a->r:a->l;\n    }\n    a->cnt+=k;\n\
+    \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!f and !a->l) a->l=emplace(a);\n\
+    \      if( f and !a->r) a->r=emplace(a);\n      a=f?a->r:a->l;\n    }\n    a->cnt+=k;\n\
     \    while((a=a->p)) a->cnt=count(a->l)+count(a->r);\n  }\n\n  inline void update(const\
     \ T b){acc^=b;}\n\n  Node* find(const T b){\n    const T nb=b^acc;\n    Node*\
     \ a=root;\n    for(int i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      a=f?a->r:a->l;\n\
     \      if(!a) return a;\n    }\n    return a;\n  }\n\n  Node* check(Node *a){\n\
-    \    if(!a||count(a)) return a;\n    delete(a);\n    return nullptr;\n  }\n\n\
-    \  void sub(Node* a,size_t k=1){\n    assert(a&&a->cnt>=k);\n    a->cnt-=k;\n\
+    \    if(!a or count(a)) return a;\n    delete(a);\n    return nullptr;\n  }\n\n\
+    \  void sub(Node* a,size_t k=1){\n    assert(a and a->cnt>=k);\n    a->cnt-=k;\n\
     \    while((a=a->p)){\n      a->l=check(a->l);\n      a->r=check(a->r);\n    \
     \  a->cnt=count(a->l)+count(a->r);\n    }\n  }\n\n  Node* xmax(const T b){\n \
     \   assert(count(root));\n    const T nb=b^acc;\n    Node* a=root;\n    for(int\
-    \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!a->l||!a->r) a=a->l?a->l:a->r;\n\
+    \ i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n      if(!a->l or !a->r) a=a->l?a->l:a->r;\n\
     \      else a=f?a->l:a->r;\n    }\n    return a;\n  }\n\n  Node* xmin(const T\
     \ b){\n    return xmax(~b&((T(1)<<X)-1));\n  }\n\n  Node* ge(Node *a,int i){\n\
     \    if(!a) return a;\n    Node *l=a->l,*r=a->r;\n    if((acc>>i)&1) swap(l,r);\n\
-    \    if(l||r) return ge(l?l:r,i+1);\n    return a;\n  }\n\n  Node* next(Node*\
+    \    if(l or r) return ge(l?l:r,i+1);\n    return a;\n  }\n\n  Node* next(Node*\
     \ a,int i){\n    if(!(a->p)) return nullptr;\n    Node *l=a->p->l,*r=a->p->r;\n\
-    \    if((acc>>(i+1))&1) swap(l,r);\n    if(a==l&&r) return ge(r,i);\n    return\
+    \    if((acc>>(i+1))&1) swap(l,r);\n    if(a==l and r) return ge(r,i);\n    return\
     \ next(a->p,i+1);\n  }\n\n  Node* lower_bound(const T b){\n    const T nb=b^acc;\n\
     \    Node* a=root;\n    for(int i=X-1;i>=0;i--){\n      bool f=(nb>>i)&1;\n  \
-    \    if(!f&&a->l){a=a->l;continue;}\n      if( f&&a->r){a=a->r;continue;}\n  \
-    \    if((b>>i)&1) return next(a,i);\n      return ge(a,i);\n    }\n    return\
+    \    if(!f and a->l){a=a->l;continue;}\n      if( f and a->r){a=a->r;continue;}\n\
+    \      if((b>>i)&1) return next(a,i);\n      return ge(a,i);\n    }\n    return\
     \ a;\n  }\n\n  Node* upper_bound(const T b){\n    return lower_bound(b+1);\n \
     \ }\n\n  T val(Node* a){\n    T res(0);\n    for(int i=0;i<(int)X;i++){\n    \
     \  assert(a->p);\n      res|=(T(a==a->p->r)<<i);\n      a=a->p;\n    }\n    return\
@@ -135,8 +135,8 @@ data:
   isVerificationFile: false
   path: datastructure/binarytrie.cpp
   requiredBy: []
-  timestamp: '2020-06-06 14:04:57+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DSL_2_B.test.cpp
   - test/yosupo/set_xor_min.test.cpp

@@ -21,21 +21,21 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ maxflow/leastflow.cpp: line 6: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"dinic.cpp\"\n#undef call_from_test\n\n#endif\n\
     //BEGIN CUT HERE\ntemplate<typename T>\nstruct LeastFlow{\n  Dinic<T, true> G;\n\
     \  int X,Y;\n  T sum;\n  LeastFlow(int n):G(n+2),X(n),Y(n+1),sum(0){}\n\n  void\
     \ add_edge(int from,int to,T low,T hgh){\n    assert(low<=hgh);\n    G.add_edge(from,to,hgh-low);\n\
     \    G.add_edge(X,to,low);\n    G.add_edge(from,Y,low);\n    sum+=low;\n  }\n\n\
     \  T flow(int s,int t){\n    T a=G.flow(X,Y);\n    T b=G.flow(s,Y);\n    T c=G.flow(X,t);\n\
-    \    T d=G.flow(s,t);\n    return (b==c&&a+b==sum)?b+d:T(-1);\n  }\n};\n//END\
+    \    T d=G.flow(s,t);\n    return (b==c and a+b==sum)?b+d:T(-1);\n  }\n};\n//END\
     \ CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - maxflow/dinic.cpp
   isVerificationFile: false
   path: maxflow/leastflow.cpp
   requiredBy: []
-  timestamp: '2020-10-03 00:11:59+09:00'
+  timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1615.test.cpp

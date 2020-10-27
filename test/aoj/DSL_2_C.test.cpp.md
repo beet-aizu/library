@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructure/kdtree.cpp
     title: datastructure/kdtree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
     links:
@@ -30,11 +30,11 @@ data:
     \    ts[t].l=dfs(l,mid,depth+1);\n    ts[t].r=dfs(mid+1,r,depth+1);\n    return\
     \ t;\n  }\n\n  int build(){\n    np=0;\n    return dfs(0,ps.size(),0);\n  }\n\n\
     \  // [sx, tx] * [sy, ty]\n  void find(int v,T sx,T tx,T sy,T ty,int depth,vector<Point>\
-    \ &ans){\n    T x=ps[ts[v].pos].x;\n    T y=ps[ts[v].pos].y;\n    if(sx<=x&&x<=tx&&sy<=y&&y<=ty)\n\
-    \      ans.emplace_back(ps[ts[v].pos]);\n\n    if(depth%2==0){\n      if(ts[v].l!=NIL){\n\
-    \        if(sx<=x) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);\n      }\n      if(ts[v].r!=NIL){\n\
-    \        if(x<=tx) find(ts[v].r,sx,tx,sy,ty,depth+1,ans);\n      }\n    }else{\n\
-    \      if(ts[v].l!=NIL){\n        if(sy<=y) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);\n\
+    \ &ans){\n    T x=ps[ts[v].pos].x;\n    T y=ps[ts[v].pos].y;\n    if(sx<=x and\
+    \ x<=tx and sy<=y and y<=ty)\n      ans.emplace_back(ps[ts[v].pos]);\n\n    if(depth%2==0){\n\
+    \      if(ts[v].l!=NIL){\n        if(sx<=x) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);\n\
+    \      }\n      if(ts[v].r!=NIL){\n        if(x<=tx) find(ts[v].r,sx,tx,sy,ty,depth+1,ans);\n\
+    \      }\n    }else{\n      if(ts[v].l!=NIL){\n        if(sy<=y) find(ts[v].l,sx,tx,sy,ty,depth+1,ans);\n\
     \      }\n      if(ts[v].r!=NIL){\n        if(y<=ty) find(ts[v].r,sx,tx,sy,ty,depth+1,ans);\n\
     \      }\n    }\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
     \  return 0;\n}\n#endif\n#line 8 \"test/aoj/DSL_2_C.test.cpp\"\n#undef call_from_test\n\
@@ -60,8 +60,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-10-26 14:50:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_C.test.cpp
 layout: document

@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3074.test.cpp
     title: test/aoj/3074.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
   - icon: ':heavy_check_mark:'
@@ -214,7 +214,7 @@ data:
     path: test/yukicoder/5011.test.cpp
     title: test/yukicoder/5011.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://atcoder.jp/contests/abc127/tasks/abc127_e
@@ -283,7 +283,7 @@ data:
   - graph/lowlink.cpp
   - linearalgebra/tree_theorem.cpp
   timestamp: '2020-03-12 17:02:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0104.test.cpp

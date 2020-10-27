@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/diameterforedge.cpp
     title: tree/diameterforedge.cpp
   _extendedVerifiedWith:

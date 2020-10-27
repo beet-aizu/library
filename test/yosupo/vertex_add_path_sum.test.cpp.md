@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/heavylightdecomposition.cpp
     title: Heavy Light Decomposition
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
     links:
@@ -38,30 +38,29 @@ data:
     \ swap(u,v);\n      if(nxt[u]!=nxt[v]){\n        f(vid[nxt[v]],vid[v]+1);\n  \
     \      v=par[nxt[v]];\n      }else{\n        if(u!=v) f(vid[u]+1,vid[v]+1);\n\
     \        break;\n      }\n    }\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    signed main(){\n  return 0;\n};\n#endif\n#line 2 \"datastructure/binaryindexedtree.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"datastructure/binaryindexedtree.cpp\"\n\
-    using namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T>\nclass\
-    \ BIT{\nprivate:\n  // \\sum_{j < i}  v[j]\n  T sum(int i){\n    T s(0);\n   \
-    \ for(int x=i;x>0;x-=(x&-x))\n      s+=bit[x];\n    return s;\n  }\npublic:\n\
-    \  int n;\n  vector<T> bit;\n  BIT(int n_):n(n_+1),bit(n+1,0){}\n\n  // v[i] +=\
-    \ a\n  void add(int i,T a){\n    for(int x=++i;x<=n;x+=(x&-x))\n      bit[x]+=a;\n\
-    \  }\n  // \\sum_{l <= i < r} v[i]\n  T query(int l,int r){return sum(r)-sum(l);}\n\
-    \n  // min({x | sum(x) >= w})\n  int lower_bound(const T w){\n    if(w<=0) return\
-    \ 0;\n    T r=w;\n    int x=0,p=1;\n    while(p<n) p<<=1;\n    for(int k=p;k>0;k>>=1){\n\
-    \      if(x+k<=n&&bit[x+k]<r){\n        r-=bit[x+k];\n        x+=k;\n      }\n\
-    \    }\n    x++;\n    assert(sum(x-1)<w and sum(x)>=w);\n    return x;\n  }\n\n\
-    \  // min({x | sum(x) > w})\n  int upper_bound(T w){return lower_bound(w+1);}\n\
-    };\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n\
-    #line 9 \"test/yosupo/vertex_add_path_sum.test.cpp\"\n#undef call_from_test\n\n\
-    signed main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n,q;\n  cin>>n>>q;\n\
-    \n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  HLD G(n);\n  for(int\
-    \ i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.add_edge(u,v);\n  }\n  G.build();\n\
-    \n  using ll = long long;\n  BIT<ll> bit(n);\n  for(int i=0;i<n;i++)\n    bit.add(G.vid[i],as[i]);\n\
-    \n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n      int p,x;\n\
-    \      cin>>p>>x;\n      bit.add(G.vid[p],x);\n    }\n    if(t==1){\n      int\
-    \ u,v;\n      cin>>u>>v;\n      ll res=0;\n      auto f=[&](int l,int r){res+=bit.query(l,r);};\n\
-    \      G.for_each(u,v,f);\n      cout<<res<<'\\n';\n    }\n  }\n  return 0;\n\
-    }\n"
+    signed main(){\n  return 0;\n};\n#endif\n#line 1 \"datastructure/binaryindexedtree.cpp\"\
+    \n\n#line 3 \"datastructure/binaryindexedtree.cpp\"\nusing namespace std;\n#endif\n\
+    \n//BEGIN CUT HERE\ntemplate<typename T>\nclass BIT{\nprivate:\n  // \\sum_{j\
+    \ < i}  v[j]\n  T sum(int i){\n    T s(0);\n    for(int x=i;x>0;x-=(x&-x))\n \
+    \     s+=bit[x];\n    return s;\n  }\npublic:\n  int n;\n  vector<T> bit;\n  BIT(int\
+    \ n_):n(n_+1),bit(n+1,0){}\n\n  // v[i] += a\n  void add(int i,T a){\n    for(int\
+    \ x=++i;x<=n;x+=(x&-x))\n      bit[x]+=a;\n  }\n  // \\sum_{l <= i < r} v[i]\n\
+    \  T query(int l,int r){return sum(r)-sum(l);}\n\n  // min({x | sum(x) >= w})\n\
+    \  int lower_bound(const T w){\n    if(w<=0) return 0;\n    T r=w;\n    int x=0,p=1;\n\
+    \    while(p<n) p<<=1;\n    for(int k=p;k>0;k>>=1){\n      if(x+k<=n and bit[x+k]<r){\n\
+    \        r-=bit[x+k];\n        x+=k;\n      }\n    }\n    x++;\n    assert(sum(x-1)<w\
+    \ and sum(x)>=w);\n    return x;\n  }\n\n  // min({x | sum(x) > w})\n  int upper_bound(T\
+    \ w){return lower_bound(w+1);}\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n#line 9 \"test/yosupo/vertex_add_path_sum.test.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n,q;\n  cin>>n>>q;\n\n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\
+    \n  HLD G(n);\n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.add_edge(u,v);\n\
+    \  }\n  G.build();\n\n  using ll = long long;\n  BIT<ll> bit(n);\n  for(int i=0;i<n;i++)\n\
+    \    bit.add(G.vid[i],as[i]);\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\
+    \    if(t==0){\n      int p,x;\n      cin>>p>>x;\n      bit.add(G.vid[p],x);\n\
+    \    }\n    if(t==1){\n      int u,v;\n      cin>>u>>v;\n      ll res=0;\n   \
+    \   auto f=[&](int l,int r){res+=bit.query(l,r);};\n      G.for_each(u,v,f);\n\
+    \      cout<<res<<'\\n';\n    }\n  }\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/vertex_add_path_sum\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../tree/heavylightdecomposition.cpp\"\n#include \"../../datastructure/binaryindexedtree.cpp\"\
@@ -80,8 +79,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 16:01:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/vertex_add_path_sum.test.cpp
 layout: document

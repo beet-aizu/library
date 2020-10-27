@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: tools/fixpoint.cpp
     title: tools/fixpoint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/diameterforedge.cpp
     title: tree/diameterforedge.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
     links:
@@ -40,8 +40,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/tree_diameter.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 16:01:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/tree_diameter.test.cpp
 layout: document

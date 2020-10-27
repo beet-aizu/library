@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
@@ -53,8 +53,8 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/array.cpp
   requiredBy: []
-  timestamp: '2020-10-02 16:55:26+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp
 documentation_of: bbst/rbst/persistent/array.cpp

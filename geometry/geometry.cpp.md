@@ -6,7 +6,7 @@ data:
   - icon: ':x:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/2448.test.cpp
     title: test/aoj/geometry/2448.test.cpp
   - icon: ':heavy_check_mark:'

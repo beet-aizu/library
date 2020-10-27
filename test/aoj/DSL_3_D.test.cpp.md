@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D
     links:
@@ -22,7 +22,7 @@ data:
     \    rs.emplace_back(r);\n  }\n\n  vector<size_t> build(){\n    deque<size_t>\
     \ deq;\n    vector<size_t> res;\n    for(size_t i=0,l=0,r=0;i<ls.size();i++){\n\
     \      if(r<=ls[i]){\n        deq.clear();\n        l=r=ls[i];\n      }\n    \
-    \  while(r<rs[i]){\n        while(!deq.empty()&&\n              !cmp(vs[deq.back()],vs[r]))\
+    \  while(r<rs[i]){\n        while(!deq.empty() and\n              !cmp(vs[deq.back()],vs[r]))\
     \ deq.pop_back();\n        deq.emplace_back(r++);\n      }\n      while(l<ls[i]){\n\
     \        if(deq.front()==l++) deq.pop_front();\n      }\n      res.emplace_back(deq.front());\n\
     \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
@@ -47,8 +47,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_3_D.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:01:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DSL_3_D.test.cpp
 layout: document

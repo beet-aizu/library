@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/arbitrarymod.cpp
     title: convolution/arbitrarymod.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

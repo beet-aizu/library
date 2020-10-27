@@ -7,24 +7,24 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
     - https://judge.yosupo.jp/problem/range_kth_smallest
   bundledCode: "#line 1 \"test/yosupo/range_kth_smallest.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://judge.yosupo.jp/problem/range_kth_smallest\n\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\n#define call_from_test\n#line 2 \"datastructure/waveletmatrix.cpp\"\
-    \n\n#ifndef call_from_test\n#line 5 \"datastructure/waveletmatrix.cpp\"\nusing\
-    \ namespace std;\n#endif\n\n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n\
-    \  int len,blk;\n  vector<unsigned> bit;\n  vector<int> sum;\n\n  FullyIndexableDictionary(){}\n\
-    \  FullyIndexableDictionary(int len)\n    :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}\n\
-    \n  void set(int k){\n    bit[k>>5]|=1u<<(k&31);\n  }\n\n  void build(){\n   \
-    \ sum[0]=0;\n    for(int i=1;i<blk;i++)\n      sum[i]=sum[i-1]+__builtin_popcount(bit[i-1]);\n\
+    using namespace std;\n\n#define call_from_test\n#line 1 \"datastructure/waveletmatrix.cpp\"\
+    \n\n#line 3 \"datastructure/waveletmatrix.cpp\"\nusing namespace std;\n#endif\n\
+    \n//BEGIN CUT HERE\nstruct FullyIndexableDictionary{\n  int len,blk;\n  vector<unsigned>\
+    \ bit;\n  vector<int> sum;\n\n  FullyIndexableDictionary(){}\n  FullyIndexableDictionary(int\
+    \ len)\n    :len(len),blk((len+31)>>5),bit(blk,0),sum(blk,0){}\n\n  void set(int\
+    \ k){\n    bit[k>>5]|=1u<<(k&31);\n  }\n\n  void build(){\n    sum[0]=0;\n   \
+    \ for(int i=1;i<blk;i++)\n      sum[i]=sum[i-1]+__builtin_popcount(bit[i-1]);\n\
     \  }\n\n  bool operator[](int k) const{\n    return bool((bit[k>>5]>>(k&31))&1);\n\
     \  }\n\n  int rank(int k){\n    return sum[k>>5]+__builtin_popcount(bit[k>>5]&((1u<<(k&31))-1));\n\
     \  }\n\n  int rank(bool v,int k){\n    return (v?rank(k):k-rank(k));\n  }\n\n\
-    \  int select(bool v,int k){\n    if(k<0||rank(v,len)<=k) return -1;\n    int\
+    \  int select(bool v,int k){\n    if(k<0 or rank(v,len)<=k) return -1;\n    int\
     \ l=0,r=len;\n    while(l+1<r){\n      int m=(l+r)>>1;\n      if(rank(v,m)>=k+1)\
     \ r=m;\n      else l=m;\n    }\n    return r-1;\n  }\n\n  int select(bool v,int\
     \ i,int l){\n    return select(v,i+rank(v,l));\n  }\n};\n\ntemplate<class T,int\
@@ -44,19 +44,19 @@ data:
     \      r=mat[dep].rank(bit,r)+zs[dep]*bit;\n    }\n    return r-l;\n  }\n\n  //\
     \ return the position of k-th v\n  int select(T v,int k){\n    rank(v,len);\n\
     \    for(int dep=MAXLOG-1;dep>=0;dep--){\n      bool bit=(v>>(MAXLOG-(dep+1)))&1;\n\
-    \      k=mat[dep].select(bit,k,buff1[dep]);\n      if(k>=buff2[dep]||k<0) return\
+    \      k=mat[dep].select(bit,k,buff1[dep]);\n      if(k>=buff2[dep] or k<0) return\
     \ -1;\n      k-=buff1[dep];\n    }\n    return k;\n  }\n\n  int select(T v,int\
     \ k,int l){\n    return select(v,k+rank(v,l));\n  }\n\n  // return k-th largest\
-    \ value in [l,r)\n  T quantile(int l,int r,int k){\n    if(r-l<=k||k<0) return\
+    \ value in [l,r)\n  T quantile(int l,int r,int k){\n    if(r-l<=k or k<0) return\
     \ -1;\n    T res=0;\n    for(int dep=0;dep<MAXLOG;dep++){\n      int p=mat[dep].rank(1,l);\n\
     \      int q=mat[dep].rank(1,r);\n      if(q-p>k){\n        l=p+zs[dep];\n   \
     \     r=q+zs[dep];\n        res|=T(1)<<(MAXLOG-(dep+1));\n      }else{\n     \
     \   k-=(q-p);\n        l-=p;\n        r-=q;\n      }\n    }\n    return res;\n\
     \  }\n\n  T rquantile(int l,int r,int k){\n    return quantile(l,r,r-l-k-1);\n\
     \  }\n\n  int freq_dfs(int d,int l,int r,T val,T a,T b){\n    if(l==r) return\
-    \ 0;\n    if(d==MAXLOG) return (a<=val&&val<b)?r-l:0;\n    T nv=T(1)<<(MAXLOG-d-1)|val;\n\
-    \    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;\n    if(nnv<a||b<=val) return 0;\n   \
-    \ if(a<=val&&nnv<b) return r-l;\n    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);\n\
+    \ 0;\n    if(d==MAXLOG) return (a<=val and val<b)?r-l:0;\n    T nv=T(1)<<(MAXLOG-d-1)|val;\n\
+    \    T nnv=((T(1)<<(MAXLOG-d-1))-1)|nv;\n    if(nnv<a or b<=val) return 0;\n \
+    \   if(a<=val and nnv<b) return r-l;\n    int lc=mat[d].rank(1,l),rc=mat[d].rank(1,r);\n\
     \    return freq_dfs(d+1,l-lc,r-rc,val,a,b)\n      +freq_dfs(d+1,lc+zs[d],rc+zs[d],nv,a,b);\n\
     \  }\n\n  // return number of points in [left, right) * [lower, upper)\n  int\
     \ rangefreq(int left,int right,T lower,T upper){\n    return freq_dfs(0,left,right,0,lower,upper);\n\
@@ -87,8 +87,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:47:34+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 12:55:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/range_kth_smallest.test.cpp
 layout: document

@@ -6,13 +6,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2790.test.cpp
     title: test/aoj/2790.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
   - icon: ':x:'
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/frequency_table_of_tree_distance.test.cpp
     title: test/yosupo/frequency_table_of_tree_distance.test.cpp
   - icon: ':x:'

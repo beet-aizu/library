@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0613.test.cpp
     title: test/aoj/0613.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_3_D.test.cpp
     title: test/aoj/DSL_3_D.test.cpp
   - icon: ':x:'
@@ -23,7 +23,7 @@ data:
     \ l,size_t r){\n    ls.emplace_back(l);\n    rs.emplace_back(r);\n  }\n\n  vector<size_t>\
     \ build(){\n    deque<size_t> deq;\n    vector<size_t> res;\n    for(size_t i=0,l=0,r=0;i<ls.size();i++){\n\
     \      if(r<=ls[i]){\n        deq.clear();\n        l=r=ls[i];\n      }\n    \
-    \  while(r<rs[i]){\n        while(!deq.empty()&&\n              !cmp(vs[deq.back()],vs[r]))\
+    \  while(r<rs[i]){\n        while(!deq.empty() and\n              !cmp(vs[deq.back()],vs[r]))\
     \ deq.pop_back();\n        deq.emplace_back(r++);\n      }\n      while(l<ls[i]){\n\
     \        if(deq.front()==l++) deq.pop_front();\n      }\n      res.emplace_back(deq.front());\n\
     \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
@@ -35,7 +35,7 @@ data:
     \  }\n\n  vector<size_t> build(){\n    deque<size_t> deq;\n    vector<size_t>\
     \ res;\n    for(size_t i=0,l=0,r=0;i<ls.size();i++){\n      if(r<=ls[i]){\n  \
     \      deq.clear();\n        l=r=ls[i];\n      }\n      while(r<rs[i]){\n    \
-    \    while(!deq.empty()&&\n              !cmp(vs[deq.back()],vs[r])) deq.pop_back();\n\
+    \    while(!deq.empty() and\n              !cmp(vs[deq.back()],vs[r])) deq.pop_back();\n\
     \        deq.emplace_back(r++);\n      }\n      while(l<ls[i]){\n        if(deq.front()==l++)\
     \ deq.pop_front();\n      }\n      res.emplace_back(deq.front());\n    }\n   \
     \ return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: datastructure/rangeslide.cpp
   requiredBy: []
-  timestamp: '2020-02-15 16:18:53+09:00'
+  timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1923.test.cpp

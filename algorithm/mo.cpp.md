@@ -15,7 +15,7 @@ data:
   - icon: ':x:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
   _pathExtension: cpp

@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2667.test.cpp
     title: Path & Subtree Queries
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tree/heavylightdecomposition.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -66,7 +66,7 @@ data:
   path: tree/heavylightdecomposition.cpp
   requiredBy: []
   timestamp: '2020-09-15 22:29:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2450.test.cpp
   - test/aoj/0367.test.cpp

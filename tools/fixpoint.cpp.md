@@ -18,19 +18,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2790.test.cpp
     title: test/aoj/2790.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
   - icon: ':x:'
     path: test/aoj/3142.test.cpp
     title: test/aoj/3142.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/geometry/2448.test.cpp
     title: test/aoj/geometry/2448.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/frequency_table_of_tree_distance.test.cpp
     title: test/yosupo/frequency_table_of_tree_distance.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/tree_diameter.test.cpp
     title: test/yosupo/tree_diameter.test.cpp
   - icon: ':x:'
@@ -46,25 +46,25 @@ data:
   _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"tools/fixpoint.cpp\"\n\n#include<bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename F>\nstruct FixPoint : F{\n\
-    \  FixPoint(F&& f):F(forward<F>(f)){}\n  template<typename... Args>\n  decltype(auto)\
-    \ operator()(Args&&... args) const{\n    return F::operator()(*this,forward<Args>(args)...);\n\
+  bundledCode: "#line 1 \"tools/fixpoint.cpp\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename F>\nstruct FixPoint\
+    \ : F{\n  FixPoint(F&& f):F(forward<F>(f)){}\n  template<typename... Args>\n \
+    \ decltype(auto) operator()(Args&&... args) const{\n    return F::operator()(*this,forward<Args>(args)...);\n\
     \  }\n};\ntemplate<typename F>\ninline decltype(auto) MFP(F&& f){\n  return FixPoint<F>{forward<F>(f)};\n\
     }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate<typename F>\nstruct FixPoint : F{\n  FixPoint(F&& f):F(forward<F>(f)){}\n\
-    \  template<typename... Args>\n  decltype(auto) operator()(Args&&... args) const{\n\
-    \    return F::operator()(*this,forward<Args>(args)...);\n  }\n};\ntemplate<typename\
-    \ F>\ninline decltype(auto) MFP(F&& f){\n  return FixPoint<F>{forward<F>(f)};\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename F>\nstruct FixPoint : F{\n  FixPoint(F&&\
+    \ f):F(forward<F>(f)){}\n  template<typename... Args>\n  decltype(auto) operator()(Args&&...\
+    \ args) const{\n    return F::operator()(*this,forward<Args>(args)...);\n  }\n\
+    };\ntemplate<typename F>\ninline decltype(auto) MFP(F&& f){\n  return FixPoint<F>{forward<F>(f)};\n\
     }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: tools/fixpoint.cpp
   requiredBy: []
-  timestamp: '2019-12-26 23:42:22+09:00'
+  timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4852.test.cpp

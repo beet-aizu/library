@@ -31,15 +31,15 @@ data:
     \ P = pair<T, int>;\n  priority_queue<P,vector<P>,greater<P> > pq;\n  for(int\
     \ i=0;i<n-1;i++){\n    ls[i]=i-1;\n    rs[i]=i+1;\n    cs[i]=ws[i]+ws[i+1];\n\
     \    pq.emplace(cs[i],i);\n  }\n\n  T res=0;\n  for(int k=0;k<n-1;k++){\n    T\
-    \ c;\n    int i;\n    do{\n      tie(c,i)=pq.top();pq.pop();\n    }while(rs[i]<0||cs[i]!=c);\n\
-    \n    bool ml=false,mr=false;\n    if(ws[i]+heap.top(hs[i])==c){\n      hs[i]=heap.pop(hs[i]);\n\
-    \      ml=true;\n    }else if(ws[i]+ws[rs[i]]==c){\n      ml=mr=true;\n    }else\
-    \ if(heap.top(hs[i])+heap.snd(hs[i])==c){\n      hs[i]=heap.pop(heap.pop(hs[i]));\n\
+    \ c;\n    int i;\n    do{\n      tie(c,i)=pq.top();pq.pop();\n    }while(rs[i]<0\
+    \ or cs[i]!=c);\n\n    bool ml=false,mr=false;\n    if(ws[i]+heap.top(hs[i])==c){\n\
+    \      hs[i]=heap.pop(hs[i]);\n      ml=true;\n    }else if(ws[i]+ws[rs[i]]==c){\n\
+    \      ml=mr=true;\n    }else if(heap.top(hs[i])+heap.snd(hs[i])==c){\n      hs[i]=heap.pop(heap.pop(hs[i]));\n\
     \    }else{\n      hs[i]=heap.pop(hs[i]);\n      mr=true;\n    }\n\n    res+=c;\n\
     \    hs[i]=heap.meld(hs[i],heap.push(c));\n\n    if(ml) ws[i]=INF;\n    if(mr)\
-    \ ws[rs[i]]=INF;\n\n    if(ml&&i>0){\n      int j=ls[i];\n      hs[j]=heap.meld(hs[j],hs[i]);\n\
+    \ ws[rs[i]]=INF;\n\n    if(ml and i>0){\n      int j=ls[i];\n      hs[j]=heap.meld(hs[j],hs[i]);\n\
     \      rs[j]=rs[i];\n      rs[i]=-1;\n      ls[rs[j]]=j;\n      i=j;\n    }\n\n\
-    \    if(mr&&rs[i]+1<n){\n      int j=rs[i];\n      hs[i]=heap.meld(hs[i],hs[j]);\n\
+    \    if(mr and rs[i]+1<n){\n      int j=rs[i];\n      hs[i]=heap.meld(hs[i],hs[j]);\n\
     \      rs[i]=rs[j];\n      rs[j]=-1;\n      ls[rs[i]]=i;\n    }\n\n    cs[i]=min({ws[i]+ws[rs[i]],INF,\n\
     \               min(ws[i],ws[rs[i]])+heap.top(hs[i]),\n               heap.top(hs[i])+heap.snd(hs[i])});\n\
     \    pq.emplace(cs[i],i);\n  }\n  return res;\n}\n//END CUT HERE\n#ifndef call_from_test\n\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: algorithm/optimalbinarytree.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:43:10+09:00'
+  timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2415.test.cpp

@@ -18,7 +18,7 @@ data:
     \n  void resolve(){\n    assert(size()>=num);\n    while(pq2.size()<num){\n  \
     \    sum+=pq1.top();\n      pq2.emplace(pq1.top());\n      pq1.pop();\n    }\n\
     \    while(pq2.size()>num){\n      sum-=pq2.top();\n      pq1.emplace(pq2.top());\n\
-    \      pq2.pop();\n    }\n    if(pq1.empty()||pq2.empty()) return;\n    while(C2()(pq1.top(),pq2.top())){\n\
+    \      pq2.pop();\n    }\n    if(pq1.empty() or pq2.empty()) return;\n    while(C2()(pq1.top(),pq2.top())){\n\
     \      T t1=pq1.top();pq1.pop();\n      T t2=pq2.top();pq2.pop();\n      sum+=t1;\n\
     \      sum-=t2;\n      pq1.emplace(t2);\n      pq2.emplace(t1);\n    }\n  }\n\n\
     \  T query(){resolve();return sum;}\n\n  void push(const T &x){pq1.emplace(x);}\n\
@@ -61,8 +61,8 @@ data:
     \          while((int)ms[v].num>k) ms[v].shrink();\n          chmin(y,sum+z+ms[v].query());\n\
     \        }\n        if(i<(int)res.size()) z+=res[i];\n      }\n      return P(x,y);\n\
     \    };\n\n  for(int t=0;t<n;t++){\n    if(t) cout<<\" \";\n    ll res=0;\n  \
-    \  for(int v:alive[t]){\n      if(used[v]) continue;\n      int u=v;\n      while(~par[u]&&!dead[par[u]])\
-    \ u=par[u];\n      P tmp=dfs2(u,par[u],t,dfs2);\n      res+=min(tmp.first+cst[u],tmp.second);\n\
+    \  for(int v:alive[t]){\n      if(used[v]) continue;\n      int u=v;\n      while(~par[u]\
+    \ and !dead[par[u]]) u=par[u];\n      P tmp=dfs2(u,par[u],t,dfs2);\n      res+=min(tmp.first+cst[u],tmp.second);\n\
     \    }\n\n    cout<<res;\n    for(int v:alive[t]) used[v]=0;\n    for(int v:death[t]){\n\
     \      dead[v]=1;\n      for(auto e:G[v])\n        if(e.first==par[v])\n     \
     \     ms[e.first].push(e.second);\n    }\n  }\n  cout<<endl;\n  return 0;\n}\n\
@@ -76,7 +76,7 @@ data:
     \n  void resolve(){\n    assert(size()>=num);\n    while(pq2.size()<num){\n  \
     \    sum+=pq1.top();\n      pq2.emplace(pq1.top());\n      pq1.pop();\n    }\n\
     \    while(pq2.size()>num){\n      sum-=pq2.top();\n      pq1.emplace(pq2.top());\n\
-    \      pq2.pop();\n    }\n    if(pq1.empty()||pq2.empty()) return;\n    while(C2()(pq1.top(),pq2.top())){\n\
+    \      pq2.pop();\n    }\n    if(pq1.empty() or pq2.empty()) return;\n    while(C2()(pq1.top(),pq2.top())){\n\
     \      T t1=pq1.top();pq1.pop();\n      T t2=pq2.top();pq2.pop();\n      sum+=t1;\n\
     \      sum-=t2;\n      pq1.emplace(t2);\n      pq2.emplace(t1);\n    }\n  }\n\n\
     \  T query(){resolve();return sum;}\n\n  void push(const T &x){pq1.emplace(x);}\n\
@@ -119,8 +119,8 @@ data:
     \          while((int)ms[v].num>k) ms[v].shrink();\n          chmin(y,sum+z+ms[v].query());\n\
     \        }\n        if(i<(int)res.size()) z+=res[i];\n      }\n      return P(x,y);\n\
     \    };\n\n  for(int t=0;t<n;t++){\n    if(t) cout<<\" \";\n    ll res=0;\n  \
-    \  for(int v:alive[t]){\n      if(used[v]) continue;\n      int u=v;\n      while(~par[u]&&!dead[par[u]])\
-    \ u=par[u];\n      P tmp=dfs2(u,par[u],t,dfs2);\n      res+=min(tmp.first+cst[u],tmp.second);\n\
+    \  for(int v:alive[t]){\n      if(used[v]) continue;\n      int u=v;\n      while(~par[u]\
+    \ and !dead[par[u]]) u=par[u];\n      P tmp=dfs2(u,par[u],t,dfs2);\n      res+=min(tmp.first+cst[u],tmp.second);\n\
     \    }\n\n    cout<<res;\n    for(int v:alive[t]) used[v]=0;\n    for(int v:death[t]){\n\
     \      dead[v]=1;\n      for(auto e:G[v])\n        if(e.first==par[v])\n     \
     \     ms[e.first].push(e.second);\n    }\n  }\n  cout<<endl;\n  return 0;\n}\n\
@@ -130,7 +130,7 @@ data:
   isVerificationFile: false
   path: datastructure/prioritysum.cpp
   requiredBy: []
-  timestamp: '2019-12-17 21:51:08+09:00'
+  timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructure/prioritysum.cpp
