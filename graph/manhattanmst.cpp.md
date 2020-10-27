@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0403.test.cpp
     title: test/aoj/0403.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/manhattanmst.test.cpp
     title: test/yosupo/manhattanmst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/manhattanmst.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -47,7 +47,7 @@ data:
   path: graph/manhattanmst.cpp
   requiredBy: []
   timestamp: '2020-10-09 14:11:38+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0403.test.cpp
   - test/yosupo/manhattanmst.test.cpp

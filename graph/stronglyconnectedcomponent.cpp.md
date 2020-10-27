@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/twosatisfiability.cpp
     title: graph/twosatisfiability.cpp
   _extendedVerifiedWith:
@@ -30,10 +30,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_2_B.test.cpp
     title: test/aoj/GRL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/scc.test.cpp
     title: test/yosupo/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/two_sat.test.cpp
     title: test/yosupo/two_sat.test.cpp
   - icon: ':x:'

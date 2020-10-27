@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
     title: test/aoj/DSL_3_D.disjointsparsetable.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
     title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
   - icon: ':x:'

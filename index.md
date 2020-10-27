@@ -79,10 +79,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/partitiontable.cpp
       title: combinatorics/partitiontable.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/stirling1st.cpp
       title: combinatorics/stirling1st.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/stirling2nd.cpp
       title: combinatorics/stirling2nd.cpp
     - icon: ':heavy_check_mark:'
@@ -116,10 +116,10 @@ data:
     - icon: ':warning:'
       path: convolution/fastwalshhadamardtransform.cpp
       title: convolution/fastwalshhadamardtransform.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: convolution/garner.cpp
       title: convolution/garner.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: convolution/numbertheoretictransform.cpp
       title: convolution/numbertheoretictransform.cpp
   - name: datastructure
@@ -169,10 +169,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/unionfind.cpp
       title: datastructure/unionfind.cpp
     - icon: ':heavy_check_mark:'
@@ -189,7 +189,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: formalpowerseries/diff.cpp
       title: formalpowerseries/diff.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/div.cpp
       title: formalpowerseries/div.cpp
     - icon: ':heavy_check_mark:'
@@ -204,7 +204,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: formalpowerseries/log.cpp
       title: formalpowerseries/log.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/mod.cpp
       title: formalpowerseries/mod.cpp
     - icon: ':heavy_check_mark:'
@@ -213,7 +213,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: formalpowerseries/shift.cpp
       title: formalpowerseries/shift.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/sqrt.cpp
       title: formalpowerseries/sqrt.cpp
   - name: geometry/3D
@@ -264,13 +264,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/independentset.cpp
       title: graph/independentset.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.cpp
       title: graph/kruskal.cpp
     - icon: ':heavy_check_mark:'
       path: graph/lowlink.cpp
       title: graph/lowlink.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/manhattanmst.cpp
       title: graph/manhattanmst.cpp
     - icon: ':heavy_check_mark:'
@@ -297,7 +297,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/twoedgeconnectedcomponents.cpp
       title: graph/twoedgeconnectedcomponents.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/twosatisfiability.cpp
       title: graph/twosatisfiability.cpp
     - icon: ':warning:'
@@ -330,16 +330,16 @@ data:
       title: linearalgebra/tree_theorem.cpp
   - name: linkcuttree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/base.cpp
       title: linkcuttree/base.cpp
     - icon: ':heavy_check_mark:'
       path: linkcuttree/farthest.cpp
       title: linkcuttree/farthest.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/path.cpp
       title: linkcuttree/path.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/subtree.cpp
       title: linkcuttree/subtree.cpp
   - name: matching
@@ -388,7 +388,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/linearcongruence.cpp
       title: math/linearcongruence.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/linearfunction.cpp
       title: math/linearfunction.cpp
     - icon: ':heavy_check_mark:'
@@ -434,7 +434,7 @@ data:
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41"
   - name: mod
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: mod/factorial.cpp
       title: mod/factorial.cpp
     - icon: ':heavy_check_mark:'
@@ -455,10 +455,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/pow.cpp
       title: mod/pow.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/rint.cpp
       title: mod/rint.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/sqrt.cpp
       title: mod/sqrt.cpp
     - icon: ':heavy_check_mark:'
@@ -495,7 +495,7 @@ data:
     - icon: ':question:'
       path: segtree/basic/lazy.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/ushi.cpp
       title: segtree/basic/ushi.cpp
   - name: segtree/count
@@ -530,7 +530,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/knuthmorrispratt.cpp
       title: string/knuthmorrispratt.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/longestcommonprefix.cpp
       title: Longest Common Prefix
     - icon: ':heavy_check_mark:'
@@ -542,7 +542,7 @@ data:
     - icon: ':warning:'
       path: string/morrispratt.cpp
       title: string/morrispratt.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/palindromictree.cpp
       title: string/palindromictree.cpp
     - icon: ':heavy_check_mark:'
@@ -551,7 +551,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rectanglehash.cpp
       title: string/rectanglehash.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
     - icon: ':heavy_check_mark:'
@@ -560,7 +560,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/split.cpp
       title: string/split.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/suffixarray.cpp
       title: Suffix Array
     - icon: ':heavy_check_mark:'
@@ -589,7 +589,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tools/drop.cpp
       title: tools/drop.cpp
     - icon: ':heavy_check_mark:'
@@ -653,7 +653,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/eulertourforedge.cpp
       title: tree/eulertourforedge.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/eulertourforvertex.cpp
       title: tree/eulertourforvertex.cpp
     - icon: ':heavy_check_mark:'
@@ -1493,10 +1493,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/kth_root_integer.test.cpp
       title: test/yosupo/kth_root_integer.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.linkcuttree.test.cpp
       title: test/yosupo/lca.linkcuttree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1505,7 +1505,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/log_of_formal_power_series.test.cpp
       title: test/yosupo/log_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/manhattanmst.test.cpp
       title: test/yosupo/manhattanmst.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1526,7 +1526,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/multipoint_evaluation.test.cpp
       title: test/yosupo/multipoint_evaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/number_of_substrings.test.cpp
       title: test/yosupo/number_of_substrings.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1538,10 +1538,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_rectangle_sum.test.cpp
       title: test/yosupo/point_add_rectangle_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/point_set_range_composite.test.cpp
       title: test/yosupo/point_set_range_composite.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1562,13 +1562,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/range_kth_smallest.test.cpp
       title: test rquantile
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/runenumerate.test.cpp
       title: test/yosupo/runenumerate.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/scc.test.cpp
       title: test/yosupo/scc.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1586,7 +1586,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/sqrt_mod.test.cpp
       title: test/yosupo/sqrt_mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/sqrt_of_formal_power_series.test.cpp
       title: test/yosupo/sqrt_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1595,19 +1595,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static_range_sum.test.cpp
       title: test/yosupo/static_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
       title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/staticrmq.sparsetable.test.cpp
       title: test/yosupo/staticrmq.sparsetable.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
       title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
       title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/suffixarray.test.cpp
       title: test/yosupo/suffixarray.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1625,19 +1625,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/two_edge_connected_components.test.cpp
       title: test/yosupo/two_edge_connected_components.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/two_sat.test.cpp
       title: test/yosupo/two_sat.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/unionfind.test.cpp
       title: test/yosupo/unionfind.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_path_sum.test.cpp
       title: test/yosupo/vertex_add_path_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_subtree_sum.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1657,10 +1657,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0222.test.cpp
       title: test/yukicoder/0222.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0399.test.cpp
       title: test/yukicoder/0399.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0444.test.cpp
       title: test/yukicoder/0444.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1669,7 +1669,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0831.test.cpp
       title: test/yukicoder/0831.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1504.test.cpp
       title: test/yukicoder/1504.test.cpp
     - icon: ':heavy_check_mark:'

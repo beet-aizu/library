@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2292.test.cpp
     title: test/aoj/2292.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0399.test.cpp
     title: test/yukicoder/0399.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/palindromictree.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -62,7 +62,7 @@ data:
   path: string/palindromictree.cpp
   requiredBy: []
   timestamp: '2020-10-27 18:08:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0399.test.cpp
   - test/aoj/2292.test.cpp

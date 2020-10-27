@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linearalgebra/binarymatrix.cpp
     title: linearalgebra/binarymatrix.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   - icon: ':heavy_check_mark:'
