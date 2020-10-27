@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
   - icon: ':question:'

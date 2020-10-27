@@ -45,28 +45,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
     title: initialize potential
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2308.test.cpp
     title: test/aoj/2308.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2627.test.cpp
     title: test/aoj/2627.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2725.test.cpp
     title: test/aoj/2725.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2736.test.cpp
     title: test/aoj/2736.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2790.test.cpp
     title: test/aoj/2790.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2975.test.cpp
     title: test/aoj/2975.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3037.test.cpp
     title: test/aoj/3037.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
   - icon: ':x:'

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: io/precision.cpp
     title: io/precision.cpp
   _extendedRequiredBy: []

@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2725.test.cpp
     title: test/aoj/2725.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2975.test.cpp
     title: test/aoj/2975.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convexhulltrick/convexhulltrick.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -75,7 +75,7 @@ data:
   path: convexhulltrick/convexhulltrick.cpp
   requiredBy: []
   timestamp: '2020-10-03 18:22:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2975.test.cpp
   - test/aoj/2725.test.cpp

@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2646.test.cpp
     title: test/aoj/2646.test.cpp
   - icon: ':x:'
     path: test/yosupo/associative_array.test.cpp
     title: test/yosupo/associative_array.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/pb_ds_cc_hash_table.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -28,7 +28,7 @@ data:
   path: datastructure/pb_ds_cc_hash_table.cpp
   requiredBy: []
   timestamp: '2019-12-27 08:56:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/2646.test.cpp
   - test/yosupo/associative_array.test.cpp

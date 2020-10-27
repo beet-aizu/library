@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2636.test.cpp
     title: Distance Sum
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3037.test.cpp
     title: test/aoj/3037.test.cpp
   - icon: ':heavy_check_mark:'

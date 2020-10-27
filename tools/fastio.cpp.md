@@ -3,9 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: algorithm/monotoneminima.cpp
-    title: algorithm/monotoneminima.cpp
-  - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
   - icon: ':heavy_check_mark:'
@@ -42,7 +39,6 @@ data:
   requiredBy:
   - datastructure/slidingwindowaggregation.cpp
   - graph/nicetree.cpp
-  - algorithm/monotoneminima.cpp
   - tree/diameterforedge.cpp
   - linearalgebra/binarymatrix.cpp
   - linkcuttree/subtree.cpp

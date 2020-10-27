@@ -19,11 +19,11 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ algorithm/optimalbinarytree.cpp: line 8: unable to process #include in #if /\
+    \ algorithm/optimalbinarytree.cpp: line 6: unable to process #include in #if /\
     \ #ifdef / #ifndef other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"../datastructure/skewheap.cpp\"\n\
-    #undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT optimalbinarytree(vector<T>\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../datastructure/skewheap.cpp\"\n#undef call_from_test\n\
+    \n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT optimalbinarytree(vector<T>\
     \ ws){\n  const T INF = numeric_limits<T>::max()/2;\n  using Heap=SkewHeap<T,\
     \ T>;\n\n  auto g=[](T a,T b){return a+b;};\n  auto c=[](T a,T b){return a>b;};\n\
     \  Heap heap(g,g,c,INF,0);\n\n  int n=ws.size();\n  vector<typename Heap::Node*\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: algorithm/optimalbinarytree.cpp
   requiredBy: []
-  timestamp: '2020-05-17 19:42:37+09:00'
+  timestamp: '2020-10-27 12:43:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2415.test.cpp

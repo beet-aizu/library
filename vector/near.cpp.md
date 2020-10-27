@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
   - icon: ':x:'
     path: test/yukicoder/4778.test.cpp
     title: test/yukicoder/4778.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"vector/near.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -44,7 +44,7 @@ data:
   path: vector/near.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4778.test.cpp
   - test/aoj/2359.test.cpp

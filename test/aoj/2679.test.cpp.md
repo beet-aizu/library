@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mincostflow/primaldual.cpp
     title: "\u6700\u5C0F\u8CBB\u7528\u6D41"
   _extendedRequiredBy: []

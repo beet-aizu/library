@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/knuthyao.cpp
       title: algorithm/knuthyao.cpp
-    - icon: ':question:'
+    - icon: ':x:'
       path: algorithm/largestrectangle.cpp
       title: algorithm/largestrectangle.cpp
     - icon: ':question:'
@@ -15,13 +15,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/monotoneminima.cpp
       title: algorithm/monotoneminima.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: algorithm/offlineonline.cpp
       title: algorithm/offlineonline.cpp
     - icon: ':heavy_check_mark:'
       path: algorithm/optimalbinarytree.cpp
       title: algorithm/optimalbinarytree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/parallelbinarysearch.cpp
       title: algorithm/parallelbinarysearch.cpp
   - name: bbst
@@ -90,10 +90,10 @@ data:
       title: combinatorics/surjection.cpp
   - name: convexhulltrick
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convexhulltrick/convexhulltrick.cpp
       title: convexhulltrick/convexhulltrick.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: convexhulltrick/linecontainer.cpp
       title: convexhulltrick/linecontainer.cpp
     - icon: ':heavy_check_mark:'
@@ -148,7 +148,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/kdtree.cpp
       title: datastructure/kdtree.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: datastructure/pb_ds_cc_hash_table.cpp
       title: datastructure/pb_ds_cc_hash_table.cpp
     - icon: ':warning:'
@@ -169,7 +169,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
     - icon: ':heavy_check_mark:'
@@ -229,12 +229,12 @@ data:
     - icon: ':question:'
       path: geometry/geometry.cpp
       title: geometry/geometry.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/projectilemotion.cpp
       title: geometry/projectilemotion.cpp
   - name: graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/arborescence_edmond.cpp
       title: graph/arborescence_edmond.cpp
     - icon: ':heavy_check_mark:'
@@ -281,7 +281,7 @@ data:
       title: graph/nicetree.cpp
     - icon: ':x:'
       path: graph/rangetorange.cpp
-      title: graph/rangetorange.cpp
+      title: Range to Range
     - icon: ':warning:'
       path: graph/semikernel.cpp
       title: graph/semikernel.cpp
@@ -305,7 +305,7 @@ data:
       title: graph/voronoiminimumspanningtree.cpp
   - name: io
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: io/precision.cpp
       title: io/precision.cpp
     - icon: ':question:'
@@ -426,10 +426,10 @@ data:
       title: "\u6700\u5927\u4E8C\u54C1\u7A2E\u6D41"
   - name: mincostflow
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: mincostflow/negativeedge.cpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\u306E\u8CA0\u8FBA\u9664\u53BB"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mincostflow/primaldual.cpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41"
   - name: mod
@@ -492,7 +492,7 @@ data:
     - icon: ':question:'
       path: segtree/basic/dual.cpp
       title: segtree/basic/dual.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: segtree/basic/lazy.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -577,7 +577,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/bigint.cpp
       title: tools/bigint.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
     - icon: ':question:'
@@ -682,19 +682,19 @@ data:
     - icon: ':question:'
       path: vector/compress.cpp
       title: vector/compress.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: vector/fusion.cpp
       title: vector/fusion.cpp
     - icon: ':heavy_check_mark:'
       path: vector/identity.cpp
       title: vector/identity.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: vector/multi.cpp
       title: vector/multi.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: vector/near.cpp
       title: vector/near.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: vector/zip.cpp
       title: vector/zip.cpp
   verificationCategories:
@@ -868,16 +868,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2292.test.cpp
       title: test/aoj/2292.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2294.test.cpp
       title: test/aoj/2294.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2308.test.cpp
       title: test/aoj/2308.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2309.tarjan.test.cpp
       title: test/aoj/2309.tarjan.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2309.test.cpp
       title: test/aoj/2309.test.cpp
     - icon: ':heavy_check_mark:'
@@ -889,7 +889,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2328.test.cpp
       title: test/aoj/2328.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2359.test.cpp
       title: test/aoj/2359.test.cpp
     - icon: ':heavy_check_mark:'
@@ -922,7 +922,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2560.test.cpp
       title: test/aoj/2560.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2563.test.cpp
       title: test/aoj/2563.test.cpp
     - icon: ':heavy_check_mark:'
@@ -931,7 +931,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2624.test.cpp
       title: test/aoj/2624.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2627.test.cpp
       title: test/aoj/2627.test.cpp
     - icon: ':heavy_check_mark:'
@@ -940,7 +940,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2644.test.cpp
       title: test/aoj/2644.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2646.test.cpp
       title: test/aoj/2646.test.cpp
     - icon: ':heavy_check_mark:'
@@ -967,13 +967,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2720.test.cpp
       title: test/aoj/2720.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2725.test.cpp
       title: test/aoj/2725.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2736.test.cpp
       title: test/aoj/2736.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2790.test.cpp
       title: test/aoj/2790.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1009,7 +1009,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2971.test.cpp
       title: test/aoj/2971.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2975.test.cpp
       title: test/aoj/2975.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1039,7 +1039,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3035.test.cpp
       title: test/aoj/3035.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3037.test.cpp
       title: test/aoj/3037.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1057,7 +1057,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3063.test.cpp
       title: test/aoj/3063.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3069.test.cpp
       title: test/aoj/3069.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1075,7 +1075,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3084.test.cpp
       title: test/aoj/3084.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3086.test.cpp
       title: test/aoj/3086.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1141,7 +1141,7 @@ data:
     - icon: ':x:'
       path: test/aoj/DPL_3_B.test.cpp
       title: test/aoj/DPL_3_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DPL_3_C.test.cpp
       title: test/aoj/DPL_3_C.test.cpp
     - icon: ':heavy_check_mark:'

@@ -21,10 +21,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2270.test.cpp
     title: test/aoj/2270.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2563.test.cpp
     title: test/aoj/2563.test.cpp
   - icon: ':x:'

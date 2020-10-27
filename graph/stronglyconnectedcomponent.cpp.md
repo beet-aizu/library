@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/arborescence_edmond.cpp
     title: graph/arborescence_edmond.cpp
   - icon: ':heavy_check_mark:'
@@ -12,10 +12,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2222.test.cpp
     title: test/aoj/2222.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2309.tarjan.test.cpp
     title: test/aoj/2309.tarjan.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2309.test.cpp
     title: test/aoj/2309.test.cpp
   - icon: ':heavy_check_mark:'

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: datastructure/pb_ds_cc_hash_table.cpp
     title: datastructure/pb_ds_cc_hash_table.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: tools/cc_hash.cpp
     title: tools/cc_hash.cpp
   _extendedRequiredBy: []
