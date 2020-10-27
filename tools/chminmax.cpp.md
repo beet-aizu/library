@@ -108,20 +108,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tools/chminmax.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -143,7 +143,7 @@ data:
   - datastructure/slidingwindowaggregation.cpp
   - graph/nicetree.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3227.test.cpp
   - test/yukicoder/3912.test.cpp

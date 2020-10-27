@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4569.test.cpp
     title: test/yukicoder/4569.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"mod/rint.cpp\"\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\n\
@@ -63,7 +63,7 @@ data:
   requiredBy:
   - mod/factorial.cpp
   timestamp: '2020-03-12 17:15:27+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4569.test.cpp
   - test/yukicoder/1504.test.cpp

@@ -36,11 +36,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/two_sat.test.cpp
     title: test/yosupo/two_sat.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/stronglyconnectedcomponent.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -82,7 +82,7 @@ data:
   - graph/twosatisfiability.cpp
   - graph/arborescence_edmond.cpp
   timestamp: '2020-10-25 17:34:17+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4387.test.cpp
   - test/aoj/GRL_2_B.test.cpp
