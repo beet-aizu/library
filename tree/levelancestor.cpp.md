@@ -2,18 +2,18 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/eulertourforbfs.cpp
     title: tree/eulertourforbfs.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0391.test.cpp
     title: test/aoj/0391.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tree/levelancestor.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -83,7 +83,7 @@ data:
   requiredBy:
   - tree/eulertourforbfs.cpp
   timestamp: '2020-10-27 19:32:25+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3405.test.cpp
   - test/aoj/0391.test.cpp

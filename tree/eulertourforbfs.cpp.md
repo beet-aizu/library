@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/levelancestor.cpp
     title: tree/levelancestor.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -34,16 +34,17 @@ data:
     \  int l=-1,r=H[d].size();\n    while(l+1<r){\n      int m=(l+r)>>1;\n      int\
     \ p=super::up(H[d][m],d-dep[v]);\n      if(ls[v]+a<=ls[p]) r=m;\n      else l=m;\n\
     \    }\n    return ls[H[d][0]]+r;\n  }\n\n  template<typename F>\n  void exec(int\
-    \ v,int d,F f){\n    if(dep[v]+d>=n or H[dep[v]+d].empty()) return;\n    int l=find(v,dep[v]+d,0);\n\
-    \    int r=find(v,dep[v]+d,1);\n    if(l<r) f(l,r);\n  }\n};\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ v,int d,F f){\n    if(dep[v]+d>=(int)H.size()) return;\n    if(H[dep[v]+d].empty())\
+    \ return;\n    int l=find(v,dep[v]+d,0);\n    int r=find(v,dep[v]+d,1);\n    if(l<r)\
+    \ f(l,r);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n \
+    \ return 0;\n}\n#endif\n"
   dependsOn:
   - tree/levelancestor.cpp
   isVerificationFile: false
   path: tree/eulertourforbfs.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:32:25+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 20:13:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3405.test.cpp
 documentation_of: tree/eulertourforbfs.cpp
