@@ -3,19 +3,19 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2334.test.cpp
     title: test/aoj/geometry/2334.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2448.test.cpp
     title: test/aoj/geometry/2448.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/2454.test.cpp
     title: test/aoj/geometry/2454.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/3049.test.cpp
     title: test/aoj/geometry/3049.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/3056.test.cpp
     title: test/aoj/geometry/3056.test.cpp
   - icon: ':heavy_check_mark:'

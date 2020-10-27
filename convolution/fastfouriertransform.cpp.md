@@ -5,7 +5,7 @@ data:
   - icon: ':question:'
     path: convolution/arbitrarymod.cpp
     title: convolution/arbitrarymod.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: tools/bigint.cpp
     title: tools/bigint.cpp
   _extendedVerifiedWith:

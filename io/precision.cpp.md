@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_15_B.test.cpp
     title: test/aoj/ALDS1_15_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/3049.test.cpp
     title: test/aoj/geometry/3049.test.cpp
   - icon: ':x:'

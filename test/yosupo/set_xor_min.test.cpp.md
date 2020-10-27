@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: datastructure/binarytrie.cpp
     title: datastructure/binarytrie.cpp
   _extendedRequiredBy: []

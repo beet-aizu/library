@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/eulertourforedge.cpp
     title: tree/eulertourforedge.cpp
   _extendedRequiredBy: []
