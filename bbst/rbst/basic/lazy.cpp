@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -187,7 +187,7 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
     int y,z;
     scanf("%c %d %d\n",&x,&y,&z);
     z++;
-    if(x=='('||x==')'){
+    if(x=='(' or x==')'){
       z=(x=='('?1:-1);
       T prv=G.get_val(rt,y-1);
       T nxt=G.get_val(rt,y);

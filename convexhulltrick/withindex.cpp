@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 //BEGIN CUT HERE
 // index siyou kimattenai
@@ -21,7 +21,7 @@ struct ConvexHullTrickWithIndex {
 
   using D = long double;
   inline bool check(const P &a,const P &b,const P &c){
-    if(b.b==a.b||c.b==b.b)
+    if(b.b==a.b or c.b==b.b)
       return sgn(b.m-a.m)*sgn(c.b-b.b) >= sgn(c.m-b.m)*sgn(b.b-a.b);
     return D(b.m-a.m)*sgn(c.b-b.b)/D(abs(b.b-a.b))
       >= D(c.m-b.m)*sgn(b.b-a.b)/D(abs(c.b-b.b));
@@ -35,12 +35,12 @@ struct ConvexHullTrickWithIndex {
       return;
     }
 
-    if(empty()||H.front().m<=m){
+    if(empty() or H.front().m<=m){
       if(H.front().m==m){
         if(H.front().b<=b) return;
         H.pop_front();
       }
-      while(H.size()>=2&&check(line,H.front(),H[1])) H.pop_front();
+      while(H.size()>=2 and check(line,H.front(),H[1])) H.pop_front();
       H.emplace_front(line);
     }else{
       assert(m<=H.back().m);
@@ -48,7 +48,7 @@ struct ConvexHullTrickWithIndex {
         if(H.back().b<=b) return;
         H.pop_back();
       }
-      while(H.size()>=2&&check(H[H.size()-2],H.back(),line)) H.pop_back();
+      while(H.size()>=2 and check(H[H.size()-2],H.back(),line)) H.pop_back();
       H.emplace_back(line);
     }
   }
@@ -71,14 +71,14 @@ struct ConvexHullTrickWithIndex {
 
   pair<T, int> queryMonotoneInc(T x){
     assert(!empty());
-    while(H.size()>=2&&getY(H.front(),x)>=getY(H[1],x)) H.pop_front();
+    while(H.size()>=2 and getY(H.front(),x)>=getY(H[1],x)) H.pop_front();
     if(isMin) return getY(H.front(),x);
     return make_pair(-getY(H.front(),x).first,H.front().idx);
   }
 
   pair<T, int> queryMonotoneDec(T x){
     assert(!empty());
-    while(H.size()>=2&&getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
+    while(H.size()>=2 and getY(H.back(),x)>=getY(H[H.size()-2],x)) H.pop_back();
     if(isMin) return getY(H.back(),x);
     return make_pair(-getY(H.back(),x).first,H.back().idx);
   }

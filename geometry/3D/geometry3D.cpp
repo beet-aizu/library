@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 //BEGIN CUT HERE
 
@@ -27,7 +27,7 @@ struct Point3D{
     return z<p.z;
   }
   bool operator == (const Point3D &p) const{
-    return fabs(x-p.x)<EPS && fabs(y-p.y)<EPS && fabs(z-p.z)<EPS;
+    return fabs(x-p.x)<EPS  and  fabs(y-p.y)<EPS  and  fabs(z-p.z)<EPS;
   }
 };
 istream &operator >> (istream &is,Point3D &p){
@@ -102,7 +102,7 @@ double getDistanceSP(Segment3D s,Point3D p){
 bool intersectSC(Segment3D s,Sphere c){
   double d=getDistanceSP(s,c.c);
   if(d>c.r) return 0;
-  return !((abs(s.p1-c.c)<=c.r)&&(abs(s.p2-c.c)<=c.r));
+  return !((abs(s.p1-c.c)<=c.r) and (abs(s.p2-c.c)<=c.r));
 }
 
 struct ConvexHull3D{
@@ -189,7 +189,7 @@ struct ConvexHull3D{
     }
     for(int i=4;i<n;i++){
       for(int j=0;j<num;j++){
-        if(f[j].ok&&dblcmp(p[i],f[j])>EPS){
+        if(f[j].ok and dblcmp(p[i],f[j])>EPS){
           dfs(i,j);
           break;
         }
@@ -210,8 +210,8 @@ struct ConvexHull3D{
     Point3D &b=p[f[s].b];
     Point3D &c=p[f[s].c];
     return  (abs(volume(a,b,c,p[f[t].a]))<EPS)
-      &&    (abs(volume(a,b,c,p[f[t].b]))<EPS)
-      &&    (abs(volume(a,b,c,p[f[t].c]))<EPS);
+       and     (abs(volume(a,b,c,p[f[t].b]))<EPS)
+       and     (abs(volume(a,b,c,p[f[t].c]))<EPS);
   }
 
   int polygon(){
