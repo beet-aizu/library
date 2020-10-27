@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -28,7 +28,7 @@ int maximal_matching(vector< vector<int> > G){
 
   int res=0;
   for(int i=0,j=0;i<n;i++){
-    while(j<n&&H[i][j]==M(0)){
+    while(j<n and H[i][j]==M(0)){
       int p=i;
       for(int k=i+1;k<n;k++)
         if(H[k][j]!=M(0)) p=k;

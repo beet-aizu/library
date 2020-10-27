@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,7 +16,7 @@ struct Polynomial{
   };
 
   void shrink(){
-    while(co.size()>1u&&!co.back())
+    while(co.size()>1u and !co.back())
       co.pop_back();
   }
 
@@ -38,7 +36,7 @@ struct Polynomial{
     for(int i=n-1;i>0;i--){
       if(!co[i]) continue;
       flg=1;
-      if(i!=n-1&&co[i]>0) cout<<"+";
+      if(i!=n-1 and co[i]>0) cout<<"+";
       if(co[i]==-1) cout<<"-";
       else if(co[i]!=1) cout<<co[i];
 
@@ -46,7 +44,7 @@ struct Polynomial{
       if(i!=1) cout<<"^"<<i;
     }
     if(co[0]){
-      if(flg&&co[0]>0) cout<<"+";
+      if(flg and co[0]>0) cout<<"+";
       cout<<co[0];
     }
     cout<<endl;
@@ -116,7 +114,7 @@ Polynomial<T> gcd(Polynomial<T> a,Polynomial<T> b){
   a.shrink();a.reduce();
   b.shrink();b.reduce();
   if(a.size()<b.size()) swap(a,b);
-  if(b.size()==1u&&!b[0]) return a;
+  if(b.size()==1u and !b[0]) return a;
   return gcd(b,a%b);
 }
 //END CUT HERE

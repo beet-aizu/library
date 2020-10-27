@@ -1,17 +1,16 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
 // O(N M)
 struct Bipartite{
-  int n,time;
+  int time;
   vector< vector<int> > G;
   vector<int> match,used,dead;
 
-  Bipartite(){}
-  Bipartite(int n):n(n),time(0),G(n),
-                   match(n,-1),used(n,-1),dead(n,0){}
+  Bipartite(int n):
+    time(0),G(n),match(n,-1),used(n,-1),dead(n,0){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v);
@@ -23,7 +22,7 @@ struct Bipartite{
     for(int u:G[v]){
       if(dead[u]) continue;
       int w=match[u];
-      if((w<0)||(used[w]<time&&dfs(w))){
+      if((w<0) or (used[w]<time and dfs(w))){
         match[v]=u;
         match[u]=v;
         return 1;
@@ -34,7 +33,7 @@ struct Bipartite{
 
   int build(){
     int res=0;
-    for(int v=0;v<n;v++){
+    for(int v=0;v<(int)G.size();v++){
       if(dead[v] or ~match[v]) continue;
       time++;
       res+=dfs(v);

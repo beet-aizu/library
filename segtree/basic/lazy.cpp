@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -94,7 +94,7 @@ struct SegmentTree{
     propagate(k);
     int m=(l+r)>>1;
     if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);
-    if(st<=l&&!check(f(acc,dat[k]))){
+    if(st<=l and !check(f(acc,dat[k]))){
       acc=f(acc,dat[k]);
       return -1;
     }

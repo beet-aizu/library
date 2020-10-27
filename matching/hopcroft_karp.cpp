@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -9,8 +9,8 @@ struct HopcroftKarp{
   vector< vector<int> > G;
   vector<int> match,level;
 
-  HopcroftKarp(){}
-  HopcroftKarp(int L,int R):L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}
+  HopcroftKarp(int L,int R):
+    L(L),R(R),G(L+R),match(L+R,-1),level(L+R){}
 
   void add_edge(int u,int v){
     G[u].emplace_back(v+L);
@@ -49,7 +49,7 @@ struct HopcroftKarp{
       if(level[v]+1!=level[u]) continue;
       level[u]=-1;
       int w=match[u];
-      if(w<0||dfs(w)){
+      if(w<0 or dfs(w)){
         match[v]=u;
         match[u]=v;
         level[v]=-1;
@@ -64,7 +64,7 @@ struct HopcroftKarp{
     int res=0;
     while(bfs())
       for(int i=0;i<L;i++)
-        if(match[i]<0&&dfs(i))
+        if(match[i]<0 and dfs(i))
           res++;
     return res;
   }
