@@ -240,7 +240,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/arborescence_tarjan.cpp
       title: graph/arborescence_tarjan.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/bellmanford.cpp
       title: graph/bellmanford.cpp
     - icon: ':heavy_check_mark:'
@@ -589,7 +589,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/drop.cpp
       title: tools/drop.cpp
     - icon: ':heavy_check_mark:'
@@ -1252,7 +1252,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL_1_B.test.cpp
       title: test/aoj/GRL_1_B.test.cpp
     - icon: ':heavy_check_mark:'

@@ -11,7 +11,7 @@ data:
   attributes:
     links:
     - https://vjudge.net/problem/UVA-11183
-  bundledCode: "#line 1 \"graph/arborescence_tarjan.cpp\"\n\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"graph/arborescence_tarjan.cpp\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Arborescence{\n\
     \  struct SkewHeap{\n    using P = pair<T, int>;\n    const P INF;\n    const\
     \ T add_identity;\n    SkewHeap(T inf):INF(inf,-1),add_identity(0){}\n\n    struct\
@@ -23,8 +23,8 @@ data:
     \    }\n\n    P snd(Node *a){\n      eval(a);\n      return a?min(top(a->l),top(a->r)):INF;\n\
     \    }\n\n    Node* add(Node *a,T d){\n      if(a) a->add+=d;\n      return a;\n\
     \    }\n\n    Node* push(T v,int i){\n      return new Node(P(v,i),add_identity);\n\
-    \    }\n\n    Node* meld(Node *a,Node *b){\n      if(!a||!b) return a?a:b;\n \
-    \     if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
+    \    }\n\n    Node* meld(Node *a,Node *b){\n      if(!a or !b) return a?a:b;\n\
+    \      if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
     \      swap(a->l,a->r);\n      return a;\n    }\n\n    Node* pop(Node* a){\n \
     \     eval(a);\n      auto res=meld(a->l,a->r);\n      delete a;\n      return\
     \ res;\n    }\n  };\n\n  struct UnionFind{\n    vector<int> r,p;\n    UnionFind(){}\n\
@@ -57,11 +57,11 @@ data:
     : \";\n    if(ans<0) cout<<\"Possums!\"<<endl;\n    else cout<<ans<<endl;\n  }\n\
     \  return 0;\n}\n/*\n  verified on 2019/12/17\n  https://vjudge.net/problem/UVA-11183\n\
     */\n\n\nsigned main(){\n  //UVA_11183();\n  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate<typename T>\nstruct Arborescence{\n  struct SkewHeap{\n\
-    \    using P = pair<T, int>;\n    const P INF;\n    const T add_identity;\n  \
-    \  SkewHeap(T inf):INF(inf,-1),add_identity(0){}\n\n    struct Node{\n      Node\
-    \ *l,*r;\n      P val;\n      T add;\n      Node(P val,T add):val(val),add(add){l=r=nullptr;}\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T>\nstruct Arborescence{\n  struct\
+    \ SkewHeap{\n    using P = pair<T, int>;\n    const P INF;\n    const T add_identity;\n\
+    \    SkewHeap(T inf):INF(inf,-1),add_identity(0){}\n\n    struct Node{\n     \
+    \ Node *l,*r;\n      P val;\n      T add;\n      Node(P val,T add):val(val),add(add){l=r=nullptr;}\n\
     \    };\n\n    P reflect(P x,T y){return P(x.first+y,x.second);}\n\n    void eval(Node\
     \ *a){\n      if(a==nullptr) return;\n      if(a->add==add_identity) return;\n\
     \      if(a->l) a->l->add+=a->add;\n      if(a->r) a->r->add+=a->add;\n      a->val=reflect(a->val,a->add);\n\
@@ -69,8 +69,8 @@ data:
     \    }\n\n    P snd(Node *a){\n      eval(a);\n      return a?min(top(a->l),top(a->r)):INF;\n\
     \    }\n\n    Node* add(Node *a,T d){\n      if(a) a->add+=d;\n      return a;\n\
     \    }\n\n    Node* push(T v,int i){\n      return new Node(P(v,i),add_identity);\n\
-    \    }\n\n    Node* meld(Node *a,Node *b){\n      if(!a||!b) return a?a:b;\n \
-    \     if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
+    \    }\n\n    Node* meld(Node *a,Node *b){\n      if(!a or !b) return a?a:b;\n\
+    \      if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
     \      swap(a->l,a->r);\n      return a;\n    }\n\n    Node* pop(Node* a){\n \
     \     eval(a);\n      auto res=meld(a->l,a->r);\n      delete a;\n      return\
     \ res;\n    }\n  };\n\n  struct UnionFind{\n    vector<int> r,p;\n    UnionFind(){}\n\
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: graph/arborescence_tarjan.cpp
   requiredBy: []
-  timestamp: '2019-12-17 22:09:22+09:00'
+  timestamp: '2020-10-27 15:54:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_2_B.tarjan.test.cpp

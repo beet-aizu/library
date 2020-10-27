@@ -30,35 +30,35 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ graph/lowlink.cpp: line 112: unable to process #include in #if / #ifdef / #ifndef\
+    \ graph/lowlink.cpp: line 110: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#endif\n//BEGIN CUT HERE\nstruct LowLink{\n  int n,pos;\n  vector<int>\
-    \ ord,low,par,blg,num;\n  vector<vector<int> > G,C,T;\n  vector<vector<pair<int,\
-    \ int> > > E;\n\n  vector<int> ap;\n  vector<pair<int, int> > bs,cand;\n\n  LowLink(int\
-    \ n):n(n),pos(0),ord(n,-1),low(n),\n                 par(n,-1),blg(n,-1),num(n,1),G(n){}\n\
-    \n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
-    \  }\n\n  bool is_bridge(int u,int v){\n    if(ord[u]>ord[v]) swap(u,v);\n   \
-    \ return ord[u]<low[v];\n  }\n\n  void dfs(int v){\n    ord[v]=low[v]=pos++;\n\
-    \    int dup=0;\n    for(int u:G[v]){\n      if(u==par[v]){\n        if(dup) low[v]=min(low[v],ord[u]);\n\
-    \        dup=1;\n        continue;\n      }\n      if(ord[u]<ord[v])\n       \
-    \ cand.emplace_back(min(u,v),max(u,v));\n      if(~ord[u]){\n        low[v]=min(low[v],ord[u]);\n\
-    \        continue;\n      }\n      par[u]=v;\n      dfs(u);\n      num[v]+=num[u];\n\
-    \      low[v]=min(low[v],low[u]);\n      if(is_bridge(u,v)) bs.emplace_back(u,v);\n\
-    \      if(low[u]>=ord[v]){\n        E.emplace_back();\n        while(1){\n   \
-    \       auto e=cand.back();\n          cand.pop_back();\n          E.back().emplace_back(e);\n\
-    \          if(make_pair(min(u,v),max(u,v))==e) break;\n        }\n      }\n  \
-    \  }\n  }\n\n  void fill_component(int v){\n    C[blg[v]].emplace_back(v);\n \
-    \   for(int u:G[v]){\n      if(~blg[u]||is_bridge(u,v)) continue;\n      blg[u]=blg[v];\n\
-    \      fill_component(u);\n    }\n  }\n\n  void add_component(int v,int &k){\n\
-    \    if(~blg[v]) return;\n    blg[v]=k++;\n    C.emplace_back();\n    fill_component(v);\n\
-    \  }\n\n  int build(){\n    for(int i=0;i<n;i++)\n      if(ord[i]<0) dfs(i);\n\
-    \n    vector<int> cnt(n,0);\n    for(int i=0;i<n;i++){\n      int p=par[i];\n\
-    \      if(p<0) continue;\n      if(par[p]<0) cnt[p]++;\n      else if(ord[p]<=low[i])\
-    \ ap.emplace_back(p);\n    }\n\n    for(int i=0;i<n;i++)\n      if(cnt[i]>1) ap.emplace_back(i);\n\
-    \n    sort(ap.begin(),ap.end());\n    ap.erase(unique(ap.begin(),ap.end()),ap.end());\n\
-    \n    int k=0;\n    for(int i=0;i<n;i++) add_component(i,k);\n\n    T.assign(k,vector<int>());\n\
-    \    for(auto e:bs){\n      int u=blg[e.first],v=blg[e.second];\n      T[u].emplace_back(v);\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\nstruct LowLink{\n  int n,pos;\n  vector<int> ord,low,par,blg,num;\n\
+    \  vector<vector<int> > G,C,T;\n  vector<vector<pair<int, int> > > E;\n\n  vector<int>\
+    \ ap;\n  vector<pair<int, int> > bs,cand;\n\n  LowLink(int n):n(n),pos(0),ord(n,-1),low(n),\n\
+    \                 par(n,-1),blg(n,-1),num(n,1),G(n){}\n\n  void add_edge(int u,int\
+    \ v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n  }\n\n  bool is_bridge(int\
+    \ u,int v){\n    if(ord[u]>ord[v]) swap(u,v);\n    return ord[u]<low[v];\n  }\n\
+    \n  void dfs(int v){\n    ord[v]=low[v]=pos++;\n    int dup=0;\n    for(int u:G[v]){\n\
+    \      if(u==par[v]){\n        if(dup) low[v]=min(low[v],ord[u]);\n        dup=1;\n\
+    \        continue;\n      }\n      if(ord[u]<ord[v])\n        cand.emplace_back(min(u,v),max(u,v));\n\
+    \      if(~ord[u]){\n        low[v]=min(low[v],ord[u]);\n        continue;\n \
+    \     }\n      par[u]=v;\n      dfs(u);\n      num[v]+=num[u];\n      low[v]=min(low[v],low[u]);\n\
+    \      if(is_bridge(u,v)) bs.emplace_back(u,v);\n      if(low[u]>=ord[v]){\n \
+    \       E.emplace_back();\n        while(1){\n          auto e=cand.back();\n\
+    \          cand.pop_back();\n          E.back().emplace_back(e);\n          if(make_pair(min(u,v),max(u,v))==e)\
+    \ break;\n        }\n      }\n    }\n  }\n\n  void fill_component(int v){\n  \
+    \  C[blg[v]].emplace_back(v);\n    for(int u:G[v]){\n      if(~blg[u] or is_bridge(u,v))\
+    \ continue;\n      blg[u]=blg[v];\n      fill_component(u);\n    }\n  }\n\n  void\
+    \ add_component(int v,int &k){\n    if(~blg[v]) return;\n    blg[v]=k++;\n   \
+    \ C.emplace_back();\n    fill_component(v);\n  }\n\n  int build(){\n    for(int\
+    \ i=0;i<n;i++)\n      if(ord[i]<0) dfs(i);\n\n    vector<int> cnt(n,0);\n    for(int\
+    \ i=0;i<n;i++){\n      int p=par[i];\n      if(p<0) continue;\n      if(par[p]<0)\
+    \ cnt[p]++;\n      else if(ord[p]<=low[i]) ap.emplace_back(p);\n    }\n\n    for(int\
+    \ i=0;i<n;i++)\n      if(cnt[i]>1) ap.emplace_back(i);\n\n    sort(ap.begin(),ap.end());\n\
+    \    ap.erase(unique(ap.begin(),ap.end()),ap.end());\n\n    int k=0;\n    for(int\
+    \ i=0;i<n;i++) add_component(i,k);\n\n    T.assign(k,vector<int>());\n    for(auto\
+    \ e:bs){\n      int u=blg[e.first],v=blg[e.second];\n      T[u].emplace_back(v);\n\
     \      T[v].emplace_back(u);\n    }\n    return k;\n  }\n};\n//END CUT HERE\n\
     #ifndef call_from_test\n\n#define call_from_test\n#include \"../datastructure/unionfind.cpp\"\
     \n#include \"../mod/mint.cpp\"\n#include \"../combinatorics/enumeration.cpp\"\n\
@@ -78,7 +78,7 @@ data:
     \      }\n    };\n  add_edge(R);\n  add_edge(C);\n\n  G.build();\n  auto ap=G.ap;\n\
     \n  vector<int> ans(2*n+1,0);\n  for(int i=0;i<2*n+1;i++)\n    if(uf.same(vs[0],i))\
     \ ans[i]=1;\n\n  for(int v:ap){\n    if(!uf.same(vs[0],v)) continue;\n    for(int\
-    \ u:G.G[v]){\n      if(G.par[u]!=v) continue;\n      if(~G.par[v]&&G.ord[v]>G.low[u])\
+    \ u:G.G[v]){\n      if(G.par[u]!=v) continue;\n      if(~G.par[v] and G.ord[v]>G.low[u])\
     \ continue;\n      if(G.num[u]&1) ans[v]=0;\n    }\n  }\n\n  for(int i=0;i<2*n+1;i++)\
     \ cout<<(ans[i]?\"OK\\n\":\"NG\\n\");\n  cout<<flush;\n  return 0;\n}\n/*\n  verified\
     \ on 2019/10/25\n  https://atcoder.jp/contests/arc045/tasks/arc045_d\n*/\n\n\n\
@@ -104,7 +104,7 @@ data:
   isVerificationFile: false
   path: graph/lowlink.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 15:54:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_3_A.test.cpp

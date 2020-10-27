@@ -28,8 +28,8 @@ data:
     \    }\n\n    P snd(Node *a){\n      eval(a);\n      return a?min(top(a->l),top(a->r)):INF;\n\
     \    }\n\n    Node* add(Node *a,T d){\n      if(a) a->add+=d;\n      return a;\n\
     \    }\n\n    Node* push(T v,int i){\n      return new Node(P(v,i),add_identity);\n\
-    \    }\n\n    Node* meld(Node *a,Node *b){\n      if(!a||!b) return a?a:b;\n \
-    \     if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
+    \    }\n\n    Node* meld(Node *a,Node *b){\n      if(!a or !b) return a?a:b;\n\
+    \      if(top(b)<top(a)) swap(a,b);\n      eval(a);\n      a->r=meld(a->r,b);\n\
     \      swap(a->l,a->r);\n      return a;\n    }\n\n    Node* pop(Node* a){\n \
     \     eval(a);\n      auto res=meld(a->l,a->r);\n      delete a;\n      return\
     \ res;\n    }\n  };\n\n  struct UnionFind{\n    vector<int> r,p;\n    UnionFind(){}\n\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_2_B.tarjan.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:01:13+09:00'
+  timestamp: '2020-10-27 15:54:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_2_B.tarjan.test.cpp
