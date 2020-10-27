@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: convolution/arbitrarymod.cpp
     title: convolution/arbitrarymod.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
   - icon: ':question:'

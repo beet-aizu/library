@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/farthest.cpp
   requiredBy: []
-  timestamp: '2020-07-16 18:11:07+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp

@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/totient.cpp
     title: math/totient.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/tetration_mod.test.cpp
     title: test/yosupo/tetration_mod.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0472.test.cpp
     title: test/yukicoder/0472.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -22,18 +22,18 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ mod/tetration.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef\
+    \ mod/tetration.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"../math/totient.cpp\"\n#undef call_from_test\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../math/totient.cpp\"\n#undef call_from_test\n\
     \n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT mpow(T a,T n,T m,T &f){\n\
-    \  using ull = unsigned long long;\n  if(a==1||n==0) return 1;\n  ull v=1,x=a,z=m;\n\
+    \  using ull = unsigned long long;\n  if(a==1 or n==0) return 1;\n  ull v=1,x=a,z=m;\n\
     \  f|=x>=z;\n  x%=m;\n  while(1){\n    if(n&1) v*=x;\n    if(v>=z) f=1,v%=m;\n\
     \    n>>=1;\n    if(!n) break;\n    x=x*x;\n    if(x>=z) f=1,x%=m;\n  }\n  return\
     \ v;\n}\n\ntemplate<typename T>\nT tetration(T a,T n,T m,T &f){\n  if(a==0) return\
-    \ ~n&1;\n  if(m==1) return f=1;\n  if(a==1||n==0) return 1;\n  if(n==1){\n   \
-    \ f|=a>=m;\n    return a%m+f*m;\n  }\n  T z=tetration(a,n-1,totient(m),f);\n \
-    \ T r=mpow(a,z,m,f);\n  return r+f*m;\n}\n\ntemplate<typename T>\nT tetration(T\
+    \ ~n&1;\n  if(m==1) return f=1;\n  if(a==1 or n==0) return 1;\n  if(n==1){\n \
+    \   f|=a>=m;\n    return a%m+f*m;\n  }\n  T z=tetration(a,n-1,totient(m),f);\n\
+    \  T r=mpow(a,z,m,f);\n  return r+f*m;\n}\n\ntemplate<typename T>\nT tetration(T\
     \ a,T n,T m){\n  T f=0;\n  return tetration(a,n,m,f)%m;\n}\n//END CUT HERE\n#ifndef\
     \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
@@ -41,8 +41,8 @@ data:
   isVerificationFile: false
   path: mod/tetration.cpp
   requiredBy: []
-  timestamp: '2020-10-24 12:57:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 13:26:46+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/0472.test.cpp
   - test/yosupo/tetration_mod.test.cpp

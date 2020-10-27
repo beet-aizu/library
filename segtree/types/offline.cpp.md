@@ -42,10 +42,10 @@ data:
     \    time++;\n    // gather information\n    vector<int> vx,vc;\n    if(a) vc.emplace_back(get(a-1));\n\
     \    vc.emplace_back(c);\n    for(auto it=sx.lower_bound(a);it!=sx.end();++it){\n\
     \      if(*it>=b) break;\n      vx.emplace_back(*it);\n      vc.emplace_back(get(*it));\n\
-    \    }\n    if(vx.empty()||vx.back()!=b-1){\n      vx.emplace_back(b-1);\n   \
-    \   vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n      auto\
-    \ it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n      if(it->l<a&&a<it->r)\
-    \ vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
+    \    }\n    if(vx.empty() or vx.back()!=b-1){\n      vx.emplace_back(b-1);\n \
+    \     vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n    \
+    \  auto it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n   \
+    \   if(it->l<a and a<it->r) vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
     \      if(it->l>=b) break;\n      vr.emplace_back(*it);\n    }\n\n    // update\
     \ information\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n      if(l&1) dat[l]=c,upd[l]=time,l++;\n\
     \      if(r&1) --r,dat[r]=c,upd[r]=time;\n    }\n\n    for(auto r:vr){\n     \
@@ -78,7 +78,7 @@ data:
     \ et(n);\n    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n\
     \      u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
     \ i=0;i<n;i++) scanf(\"%d\",&c[i]);\n\n    et.build();\n    int q;\n    scanf(\"\
-    %d\",&q);\n\n    if(n<=50000||q<=50000){\n      vector<int> val(n),used(n+1,-1);\n\
+    %d\",&q);\n\n    if(n<=50000 or q<=50000){\n      vector<int> val(n),used(n+1,-1);\n\
     \      for(int i=0;i<n;i++) val[et.ls[i]]=c[i];\n\n      for(int i=0;i<q;i++){\n\
     \        int type;\n        scanf(\"%d\",&type);\n        if(type==0){\n     \
     \     int u,w;\n          scanf(\"%d %d\",&u,&w);\n          u--;\n          for(int\
@@ -129,10 +129,10 @@ data:
     \    time++;\n    // gather information\n    vector<int> vx,vc;\n    if(a) vc.emplace_back(get(a-1));\n\
     \    vc.emplace_back(c);\n    for(auto it=sx.lower_bound(a);it!=sx.end();++it){\n\
     \      if(*it>=b) break;\n      vx.emplace_back(*it);\n      vc.emplace_back(get(*it));\n\
-    \    }\n    if(vx.empty()||vx.back()!=b-1){\n      vx.emplace_back(b-1);\n   \
-    \   vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n      auto\
-    \ it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n      if(it->l<a&&a<it->r)\
-    \ vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
+    \    }\n    if(vx.empty() or vx.back()!=b-1){\n      vx.emplace_back(b-1);\n \
+    \     vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n    \
+    \  auto it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n   \
+    \   if(it->l<a and a<it->r) vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
     \      if(it->l>=b) break;\n      vr.emplace_back(*it);\n    }\n\n    // update\
     \ information\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n      if(l&1) dat[l]=c,upd[l]=time,l++;\n\
     \      if(r&1) --r,dat[r]=c,upd[r]=time;\n    }\n\n    for(auto r:vr){\n     \
@@ -165,7 +165,7 @@ data:
     \ et(n);\n    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n\
     \      u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
     \ i=0;i<n;i++) scanf(\"%d\",&c[i]);\n\n    et.build();\n    int q;\n    scanf(\"\
-    %d\",&q);\n\n    if(n<=50000||q<=50000){\n      vector<int> val(n),used(n+1,-1);\n\
+    %d\",&q);\n\n    if(n<=50000 or q<=50000){\n      vector<int> val(n),used(n+1,-1);\n\
     \      for(int i=0;i<n;i++) val[et.ls[i]]=c[i];\n\n      for(int i=0;i<q;i++){\n\
     \        int type;\n        scanf(\"%d\",&type);\n        if(type==0){\n     \
     \     int u,w;\n          scanf(\"%d %d\",&u,&w);\n          u--;\n          for(int\
@@ -186,7 +186,7 @@ data:
   isVerificationFile: false
   path: segtree/types/offline.cpp
   requiredBy: []
-  timestamp: '2019-12-17 21:51:08+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: segtree/types/offline.cpp

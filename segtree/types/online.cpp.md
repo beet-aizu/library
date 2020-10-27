@@ -29,10 +29,10 @@ data:
     \ information\n    vector<int> vx,vc;\n    if(a) vc.emplace_back(get(a-1));\n\
     \    vc.emplace_back(c);\n    for(auto it=sx.lower_bound(a);it!=sx.end();++it){\n\
     \      if(*it>=b) break;\n      vx.emplace_back(*it);\n      vc.emplace_back(get(*it));\n\
-    \    }\n    if(vx.empty()||vx.back()!=b-1){\n      vx.emplace_back(b-1);\n   \
-    \   vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n      auto\
-    \ it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n      if(it->l<a&&a<it->r)\
-    \ vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
+    \    }\n    if(vx.empty() or vx.back()!=b-1){\n      vx.emplace_back(b-1);\n \
+    \     vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n    \
+    \  auto it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n   \
+    \   if(it->l<a and a<it->r) vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
     \      if(it->l>=b) break;\n      vr.emplace_back(*it);\n    }\n\n    // update\
     \ information\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n      if(l&1) dat[l]=c,upd[l]=time,l++;\n\
     \      if(r&1) --r,dat[r]=c,upd[r]=time;\n    }\n\n    for(auto r:vr){\n     \
@@ -49,25 +49,24 @@ data:
     \      int ny=(it==se[x].end()?n+(++time):it->l),y=(--it)->r-1;\n      reset(y,ny);\n\
     \      if(ny!=y+1) sx.emplace(y);\n    }\n  }\n\n  int query(const int a,const\
     \ int b,const int c,const int d) const{\n    int res=0;\n    auto calc=[&](const\
-    \ gtree<int> &g){\n                int lb=*g.lower_bound(c);\n               \
-    \ int ub=*g.upper_bound(d);\n                return g.order_of_key(ub)-g.order_of_key(lb);\n\
-    \              };\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n      if(l&1) res+=calc(rc[l++]);\n\
-    \      if(r&1) res+=calc(rc[--r]);\n    }\n    return res;\n  }\n\n  int count(const\
-    \ int a,const int b) const{\n    return query(a,b,b,INT_MAX-1);\n  }\n};\n\n\n\
-    template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\n\
-    template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}\n\
-    \n\nstruct EulerTour{\n  int n,pos;\n  vector<vector<int> > G;\n  vector<int>\
-    \ ls,rs;\n\n  EulerTour(){}\n  EulerTour(int n):n(n),G(n),ls(n),rs(n){}\n\n  void\
-    \ add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
-    \  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n    for(int u:G[v])\n    \
-    \  if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void build(int r=0){\n    pos=0;\n\
-    \    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\nsigned main(){\n  int T;\n\
-    \  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n    printf(\"\
-    Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour et(n);\n\
-    \    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n  \
-    \    u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
+    \ gtree<int> &g){\n      int lb=*g.lower_bound(c);\n      int ub=*g.upper_bound(d);\n\
+    \      return g.order_of_key(ub)-g.order_of_key(lb);\n    };\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n\
+    \      if(l&1) res+=calc(rc[l++]);\n      if(r&1) res+=calc(rc[--r]);\n    }\n\
+    \    return res;\n  }\n\n  int count(const int a,const int b) const{\n    return\
+    \ query(a,b,b,INT_MAX-1);\n  }\n};\n\n\ntemplate<typename T1,typename T2> inline\
+    \ void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline\
+    \ void chmax(T1 &a,T2 b){if(a<b) a=b;}\n\n\nstruct EulerTour{\n  int n,pos;\n\
+    \  vector<vector<int> > G;\n  vector<int> ls,rs;\n\n  EulerTour(){}\n  EulerTour(int\
+    \ n):n(n),G(n),ls(n),rs(n){}\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
+    \    G[v].emplace_back(u);\n  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n\
+    \    for(int u:G[v])\n      if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void\
+    \ build(int r=0){\n    pos=0;\n    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\n\
+    signed main(){\n  int T;\n  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n\
+    \    printf(\"Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour\
+    \ et(n);\n    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n\
+    \      u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
     \ i=0;i<n;i++) scanf(\"%d\",&c[i]);\n\n    et.build();\n    int q;\n    scanf(\"\
-    %d\",&q);\n\n    if(n<=5000||q<=5000||casecnt>=2){\n      vector<int> val(n),used(n+1,-1);\n\
+    %d\",&q);\n\n    if(n<=5000 or q<=5000 or casecnt>=2){\n      vector<int> val(n),used(n+1,-1);\n\
     \      for(int i=0;i<n;i++) val[et.ls[i]]=c[i];\n\n      for(int i=0;i<q;i++){\n\
     \        int type;\n        scanf(\"%d\",&type);\n        if(type==0){\n     \
     \     int u,w;\n          scanf(\"%d %d\",&u,&w);\n          u--;\n          for(int\
@@ -105,10 +104,10 @@ data:
     \ information\n    vector<int> vx,vc;\n    if(a) vc.emplace_back(get(a-1));\n\
     \    vc.emplace_back(c);\n    for(auto it=sx.lower_bound(a);it!=sx.end();++it){\n\
     \      if(*it>=b) break;\n      vx.emplace_back(*it);\n      vc.emplace_back(get(*it));\n\
-    \    }\n    if(vx.empty()||vx.back()!=b-1){\n      vx.emplace_back(b-1);\n   \
-    \   vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n      auto\
-    \ it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n      if(it->l<a&&a<it->r)\
-    \ vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
+    \    }\n    if(vx.empty() or vx.back()!=b-1){\n      vx.emplace_back(b-1);\n \
+    \     vc.emplace_back(get(b-1));\n    }\n\n    vector<range> vr;\n    {\n    \
+    \  auto it=sr.lower_bound(range(a,0,0));\n      if(it!=sr.begin()) --it;\n   \
+    \   if(it->l<a and a<it->r) vr.emplace_back(*it);\n    }\n    for(auto it=sr.lower_bound(range(a,0,0));it!=sr.end();++it){\n\
     \      if(it->l>=b) break;\n      vr.emplace_back(*it);\n    }\n\n    // update\
     \ information\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n      if(l&1) dat[l]=c,upd[l]=time,l++;\n\
     \      if(r&1) --r,dat[r]=c,upd[r]=time;\n    }\n\n    for(auto r:vr){\n     \
@@ -125,25 +124,24 @@ data:
     \      int ny=(it==se[x].end()?n+(++time):it->l),y=(--it)->r-1;\n      reset(y,ny);\n\
     \      if(ny!=y+1) sx.emplace(y);\n    }\n  }\n\n  int query(const int a,const\
     \ int b,const int c,const int d) const{\n    int res=0;\n    auto calc=[&](const\
-    \ gtree<int> &g){\n                int lb=*g.lower_bound(c);\n               \
-    \ int ub=*g.upper_bound(d);\n                return g.order_of_key(ub)-g.order_of_key(lb);\n\
-    \              };\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n      if(l&1) res+=calc(rc[l++]);\n\
-    \      if(r&1) res+=calc(rc[--r]);\n    }\n    return res;\n  }\n\n  int count(const\
-    \ int a,const int b) const{\n    return query(a,b,b,INT_MAX-1);\n  }\n};\n\n\n\
-    template<typename T1,typename T2> inline void chmin(T1 &a,T2 b){if(a>b) a=b;}\n\
-    template<typename T1,typename T2> inline void chmax(T1 &a,T2 b){if(a<b) a=b;}\n\
-    \n\nstruct EulerTour{\n  int n,pos;\n  vector<vector<int> > G;\n  vector<int>\
-    \ ls,rs;\n\n  EulerTour(){}\n  EulerTour(int n):n(n),G(n),ls(n),rs(n){}\n\n  void\
-    \ add_edge(int u,int v){\n    G[u].emplace_back(v);\n    G[v].emplace_back(u);\n\
-    \  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n    for(int u:G[v])\n    \
-    \  if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void build(int r=0){\n    pos=0;\n\
-    \    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\nsigned main(){\n  int T;\n\
-    \  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n    printf(\"\
-    Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour et(n);\n\
-    \    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n  \
-    \    u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
+    \ gtree<int> &g){\n      int lb=*g.lower_bound(c);\n      int ub=*g.upper_bound(d);\n\
+    \      return g.order_of_key(ub)-g.order_of_key(lb);\n    };\n    for(int l=a+n,r=b+n;l<r;l>>=1,r>>=1){\n\
+    \      if(l&1) res+=calc(rc[l++]);\n      if(r&1) res+=calc(rc[--r]);\n    }\n\
+    \    return res;\n  }\n\n  int count(const int a,const int b) const{\n    return\
+    \ query(a,b,b,INT_MAX-1);\n  }\n};\n\n\ntemplate<typename T1,typename T2> inline\
+    \ void chmin(T1 &a,T2 b){if(a>b) a=b;}\ntemplate<typename T1,typename T2> inline\
+    \ void chmax(T1 &a,T2 b){if(a<b) a=b;}\n\n\nstruct EulerTour{\n  int n,pos;\n\
+    \  vector<vector<int> > G;\n  vector<int> ls,rs;\n\n  EulerTour(){}\n  EulerTour(int\
+    \ n):n(n),G(n),ls(n),rs(n){}\n\n  void add_edge(int u,int v){\n    G[u].emplace_back(v);\n\
+    \    G[v].emplace_back(u);\n  }\n\n  void dfs(int v,int p){\n    ls[v]=pos++;\n\
+    \    for(int u:G[v])\n      if(u!=p) dfs(u,v);\n    rs[v]=pos;\n  }\n\n  void\
+    \ build(int r=0){\n    pos=0;\n    dfs(r,-1);\n  }\n\n};\n\n//INSERT ABOVE HERE\n\
+    signed main(){\n  int T;\n  scanf(\"%d\",&T);\n\n  int casecnt=0;\n  for(int t=1;t<=T;t++){\n\
+    \    printf(\"Case #%d:\\n\",t);\n    int n;\n    scanf(\"%d\",&n);\n    EulerTour\
+    \ et(n);\n    for(int i=1;i<n;i++){\n      int u,v;\n      scanf(\"%d %d\",&u,&v);\n\
+    \      u--;v--;\n      et.add_edge(u,v);\n    }\n    vector<int> c(n);\n    for(int\
     \ i=0;i<n;i++) scanf(\"%d\",&c[i]);\n\n    et.build();\n    int q;\n    scanf(\"\
-    %d\",&q);\n\n    if(n<=5000||q<=5000||casecnt>=2){\n      vector<int> val(n),used(n+1,-1);\n\
+    %d\",&q);\n\n    if(n<=5000 or q<=5000 or casecnt>=2){\n      vector<int> val(n),used(n+1,-1);\n\
     \      for(int i=0;i<n;i++) val[et.ls[i]]=c[i];\n\n      for(int i=0;i<q;i++){\n\
     \        int type;\n        scanf(\"%d\",&type);\n        if(type==0){\n     \
     \     int u,w;\n          scanf(\"%d %d\",&u,&w);\n          u--;\n          for(int\
@@ -164,7 +162,7 @@ data:
   isVerificationFile: false
   path: segtree/types/online.cpp
   requiredBy: []
-  timestamp: '2019-12-17 21:51:08+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: segtree/types/online.cpp

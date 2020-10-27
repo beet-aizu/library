@@ -16,20 +16,20 @@ data:
   bundledCode: "#line 1 \"string/split.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\nvector<string> split(string& s,char c){\n  int\
     \ n=s.size();\n  vector<string> res;\n  for(int i=0;i<n;i++){\n    if(s[i]==c)\
-    \ continue;\n    res.emplace_back();\n    while(i<n&&s[i]!=c) res.back()+=s[i++];\n\
+    \ continue;\n    res.emplace_back();\n    while(i<n and s[i]!=c) res.back()+=s[i++];\n\
     \  }\n  return res;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n\
     \  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\nvector<string> split(string& s,char c){\n  int n=s.size();\n\
     \  vector<string> res;\n  for(int i=0;i<n;i++){\n    if(s[i]==c) continue;\n \
-    \   res.emplace_back();\n    while(i<n&&s[i]!=c) res.back()+=s[i++];\n  }\n  return\
-    \ res;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n\
-    }\n#endif\n"
+    \   res.emplace_back();\n    while(i<n and s[i]!=c) res.back()+=s[i++];\n  }\n\
+    \  return res;\n}\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return\
+    \ 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: string/split.cpp
   requiredBy: []
-  timestamp: '2020-10-26 14:50:55+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2328.test.cpp

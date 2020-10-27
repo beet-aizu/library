@@ -24,11 +24,11 @@ data:
     , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ polynomial/hash.cpp: line 8: unable to process #include in #if / #ifdef / #ifndef\
+    \ polynomial/hash.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#pragma once\n\n#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#define call_from_test\n#include \"../mod/mint.cpp\"\n#undef call_from_test\n\
-    \n#endif\n//BEGIN CUT HERE\ntemplate<typename T,typename M1,typename M2,typename\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+    #define call_from_test\n#include \"../mod/mint.cpp\"\n#undef call_from_test\n\n\
+    #endif\n//BEGIN CUT HERE\ntemplate<typename T,typename M1,typename M2,typename\
     \ M3>\nstruct PolynomialHash{\n  struct V{\n    M1 v1;\n    M2 v2;\n    M3 v3;\n\
     \    V(){}\n    V(int x):v1(x),v2(x),v3(x){}\n    V(long long x):v1(x),v2(x),v3(x){}\n\
     \    V(M1 v1,M2 v2,M3 v3):v1(v1),v2(v2),v3(v3){}\n\n    V& operator+=(V a){v1+=a.v1;v2+=a.v2;v3+=a.v3;;return\
@@ -73,14 +73,14 @@ data:
     \       set<int> &t=latte->second;\n        if(*--s.end()-*s.begin()+1==(int)s.size()){\n\
     \          a1=*s.begin();\n          b1=*--s.end();\n        }\n        if(*--t.end()-*t.begin()+1==(int)t.size()){\n\
     \          a2=*t.begin();\n          b2=*--t.end();\n        }\n        A=*s.begin();\n\
-    \        B=*t.begin();\n      }\n      if(a1<0&&a2<0){\n        print(\"No\");\n\
-    \        return;\n      }\n\n      {\n        auto latte=mcs.begin();\n      \
-    \  set<int> &s=latte->second;\n        latte++;\n        set<int> &t=latte->second;\n\
+    \        B=*t.begin();\n      }\n      if(a1<0 and a2<0){\n        print(\"No\"\
+    );\n        return;\n      }\n\n      {\n        auto latte=mcs.begin();\n   \
+    \     set<int> &s=latte->second;\n        latte++;\n        set<int> &t=latte->second;\n\
     \        if(*--s.end()-*s.begin()+1==(int)s.size()){\n          c1=*s.begin();\n\
     \          d1=*--s.end();\n        }\n        if(*--t.end()-*t.begin()+1==(int)t.size()){\n\
     \          c2=*t.begin();\n          d2=*--t.end();\n        }\n        C=*s.begin();\n\
-    \        D=*t.begin();\n      }\n\n      if(c1<0&&c2<0){\n        print(\"No\"\
-    );\n        return;\n      }\n\n      {\n        int flg=0;\n        if(~c1){\n\
+    \        D=*t.begin();\n      }\n\n      if(c1<0 and c2<0){\n        print(\"\
+    No\");\n        return;\n      }\n\n      {\n        int flg=0;\n        if(~c1){\n\
     \          BS r=rs[A]^rs[B];\n          r>>=c1;\n          int k=r.count();\n\
     \          r>>=(d1-c1+1);\n          k-=r.count();\n          flg|=(d1-c1+1)==k;\n\
     \        }\n        if(~c1){\n          BS r=rs[A]^~rs[B];\n          r>>=c1;\n\
@@ -103,10 +103,10 @@ data:
     \          r>>=(b2-a2+1);\n          k-=r.count();\n          flg|=(b2-a2+1)==k;\n\
     \        }\n        if(!flg){\n          print(\"No\");\n          return;\n \
     \       }\n      }\n\n      print(\"Yes\");\n    };\n\n  auto calc=\n    [&](){\n\
-    \      if(mrs.size()>2u||mcs.size()>2u){\n        print(\"No\");\n        return;\n\
-    \      }\n      if(mrs.size()==1u||mcs.size()==1u){\n        print(\"Yes\");\n\
-    \        return;\n      }\n\n      if(mrs.size()==2u||mcs.size()==2u){\n     \
-    \   check();\n        return;\n      }\n      print(\"No\");\n    };\n\n  calc();\n\
+    \      if(mrs.size()>2u or mcs.size()>2u){\n        print(\"No\");\n        return;\n\
+    \      }\n      if(mrs.size()==1u or mcs.size()==1u){\n        print(\"Yes\");\n\
+    \        return;\n      }\n\n      if(mrs.size()==2u or mcs.size()==2u){\n   \
+    \     check();\n        return;\n      }\n      print(\"No\");\n    };\n\n  calc();\n\
     \n  for(int i=1;i<q;i++){\n    int r,c;\n    cin>>r>>c;\n    r--;c--;\n\n    mrs[vrs[r]].erase(r);\n\
     \    if(mrs[vrs[r]].empty()) mrs.erase(vrs[r]);\n    mcs[vcs[c]].erase(c);\n \
     \   if(mcs[vcs[c]].empty()) mcs.erase(vcs[c]);\n\n    if(rs[r][0]) vrs[r]=ri-vrs[r];\n\
@@ -123,9 +123,9 @@ data:
     \ cin>>x>>y;\n  return Point(V((long long)x),V((long long)y));\n}\n\nsigned JAG2018SUMMER_DAY2_F(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n  Point d=getP();\n\
     \n  vector<Point> a(n),b(n),c(n);\n  for(int i=0;i<n;i++){\n    a[i]=getP();\n\
-    \    b[i]=getP();\n    c[i]=getP();\n  }\n\n  for(int i=0;i<n;i++){\n    if(c[i].x==d.x&&c[i].y==d.y)\
-    \ drop(i);\n\n    if(a[i].x==b[i].x&&c[i].x==d.x) drop(i);\n\n    if(a[i].x==b[i].x){\n\
-    \      V nx=a[i].x;\n      V ny=c[i].y;\n      ny+=(nx-c[i].x)/(d.x-c[i].x)*(d.y-c[i].y);\n\
+    \    b[i]=getP();\n    c[i]=getP();\n  }\n\n  for(int i=0;i<n;i++){\n    if(c[i].x==d.x\
+    \ and c[i].y==d.y) drop(i);\n\n    if(a[i].x==b[i].x and c[i].x==d.x) drop(i);\n\
+    \n    if(a[i].x==b[i].x){\n      V nx=a[i].x;\n      V ny=c[i].y;\n      ny+=(nx-c[i].x)/(d.x-c[i].x)*(d.y-c[i].y);\n\
     \      d=Point(nx,ny);\n      continue;\n    }\n\n    if(c[i].x==d.x){\n     \
     \ V nx=c[i].x;\n      V ny=a[i].y;\n      ny+=(nx-a[i].x)/(b[i].x-a[i].x)*(b[i].y-a[i].y);\n\
     \      d=Point(nx,ny);\n      continue;\n    }\n\n    V al=(b[i].y-a[i].y)/(b[i].x-a[i].x);\n\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: false
   path: polynomial/hash.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2971.test.cpp

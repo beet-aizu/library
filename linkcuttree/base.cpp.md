@@ -8,7 +8,7 @@ data:
   - icon: ':question:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedVerifiedWith:
@@ -21,31 +21,31 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2450.linkcuttree.test.cpp
     title: test/aoj/2450.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
   - icon: ':x:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_D.linkcuttree.test.cpp
     title: test/aoj/GRL_5_D.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_E.linkcuttree.test.cpp
     title: test/aoj/GRL_5_E.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
   _pathExtension: cpp
@@ -66,7 +66,7 @@ data:
     \    if((x->r=t->l)) t->l->p=x;\n    t->l=x;x->p=t;\n    pushup(x);pushup(t);\n\
     \    if((t->p=y)){\n      if(y->l==x) y->l=t;\n      if(y->r==x) y->r=t;\n   \
     \   pushup(y);\n    }\n  }\n\n  // for splay tree (not original tree)\n  bool\
-    \ is_root(Node *t){\n    return !t->p||(t->p->l!=t&&t->p->r!=t);\n  }\n\n  void\
+    \ is_root(Node *t){\n    return !t->p or (t->p->l!=t&&t->p->r!=t);\n  }\n\n  void\
     \ splay(Node *t){\n    eval(t);\n    while(!is_root(t)){\n      Node *q=t->p;\n\
     \      if(is_root(q)){\n        eval(q);eval(t);\n        if(q->l==t) rotR(t);\n\
     \        else rotL(t);\n      }else{\n        auto *r=q->p;\n        eval(r);eval(q);eval(t);\n\
@@ -102,7 +102,7 @@ data:
     \    if((x->r=t->l)) t->l->p=x;\n    t->l=x;x->p=t;\n    pushup(x);pushup(t);\n\
     \    if((t->p=y)){\n      if(y->l==x) y->l=t;\n      if(y->r==x) y->r=t;\n   \
     \   pushup(y);\n    }\n  }\n\n  // for splay tree (not original tree)\n  bool\
-    \ is_root(Node *t){\n    return !t->p||(t->p->l!=t&&t->p->r!=t);\n  }\n\n  void\
+    \ is_root(Node *t){\n    return !t->p or (t->p->l!=t&&t->p->r!=t);\n  }\n\n  void\
     \ splay(Node *t){\n    eval(t);\n    while(!is_root(t)){\n      Node *q=t->p;\n\
     \      if(is_root(q)){\n        eval(q);eval(t);\n        if(q->l==t) rotR(t);\n\
     \        else rotL(t);\n      }else{\n        auto *r=q->p;\n        eval(r);eval(q);eval(t);\n\
@@ -131,7 +131,7 @@ data:
   - linkcuttree/subtree.cpp
   - linkcuttree/path.cpp
   - linkcuttree/farthest.cpp
-  timestamp: '2020-07-16 18:11:07+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp

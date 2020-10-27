@@ -21,10 +21,10 @@ data:
   - icon: ':x:'
     path: test/aoj/3112.test.cpp
     title: test query
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/suffixarray.test.cpp
     title: test/yosupo/suffixarray.test.cpp
   _pathExtension: cpp
@@ -32,7 +32,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"string/suffixarray.cpp\"\n\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\n\n#endif\n//BEGIN CUT HERE\nstruct SuffixArray{\n  string s;\n\
+    \ namespace std;\n#endif\n//BEGIN CUT HERE\nstruct SuffixArray{\n  string s;\n\
     \  vector<int> sa,rev;\n\n  SuffixArray(){}\n  SuffixArray(const string &s_):s(s_+'$'){\n\
     \    int n=s.size();\n    sa.resize(n);\n    iota(sa.begin(),sa.end(),0);\n  \
     \  sort(sa.begin(),sa.end(),\n         [&](int a,int b){\n           if(s[a]==s[b])\
@@ -46,16 +46,16 @@ data:
     \    int s1=rs[i]-len;\n        if(s1>=0) sa[cnt[cs[s1]]++]=s1;\n      }\n   \
     \   cs.swap(rs);\n    }\n    rev.resize(n);\n    for(int i=0;i<n;i++) rev[sa[i]]=i;\n\
     \  }\n  int operator[](int i) const{return sa[i];}\n\n  bool lt_substr(string\
-    \ &t,int si,int ti){\n    int sn=s.size(),tn=t.size();\n    while(si<sn&&ti<tn){\n\
+    \ &t,int si,int ti){\n    int sn=s.size(),tn=t.size();\n    while(si<sn and ti<tn){\n\
     \      if(s[si]<t[ti]) return 1;\n      if(s[si]>t[ti]) return 0;\n      si++;ti++;\n\
-    \    }\n    return si==sn&&ti<tn;\n  }\n\n  int lower_bound(string& t){\n    int\
-    \ l=0,r=s.size();\n    while(l+1<r){\n      int m=(l+r)>>1;\n      if(lt_substr(t,sa[m],0))\
+    \    }\n    return si==sn and ti<tn;\n  }\n\n  int lower_bound(string& t){\n \
+    \   int l=0,r=s.size();\n    while(l+1<r){\n      int m=(l+r)>>1;\n      if(lt_substr(t,sa[m],0))\
     \ l=m;\n      else r=m;\n    }\n    return r;\n  }\n\n  int upper_bound(string&\
     \ t){\n    t.back()++;\n    int res=lower_bound(t);\n    t.back()--;\n    return\
     \ res;\n  }\n\n  // O(|T|*log|S|)\n  int count(string& T){\n    return upper_bound(T)-lower_bound(T);\n\
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n};\n#endif\n"
-  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\nstruct SuffixArray{\n  string s;\n  vector<int> sa,rev;\n\
     \n  SuffixArray(){}\n  SuffixArray(const string &s_):s(s_+'$'){\n    int n=s.size();\n\
     \    sa.resize(n);\n    iota(sa.begin(),sa.end(),0);\n    sort(sa.begin(),sa.end(),\n\
@@ -69,10 +69,10 @@ data:
     \      for(int i=0;i<n;i++){\n        int s1=rs[i]-len;\n        if(s1>=0) sa[cnt[cs[s1]]++]=s1;\n\
     \      }\n      cs.swap(rs);\n    }\n    rev.resize(n);\n    for(int i=0;i<n;i++)\
     \ rev[sa[i]]=i;\n  }\n  int operator[](int i) const{return sa[i];}\n\n  bool lt_substr(string\
-    \ &t,int si,int ti){\n    int sn=s.size(),tn=t.size();\n    while(si<sn&&ti<tn){\n\
+    \ &t,int si,int ti){\n    int sn=s.size(),tn=t.size();\n    while(si<sn and ti<tn){\n\
     \      if(s[si]<t[ti]) return 1;\n      if(s[si]>t[ti]) return 0;\n      si++;ti++;\n\
-    \    }\n    return si==sn&&ti<tn;\n  }\n\n  int lower_bound(string& t){\n    int\
-    \ l=0,r=s.size();\n    while(l+1<r){\n      int m=(l+r)>>1;\n      if(lt_substr(t,sa[m],0))\
+    \    }\n    return si==sn and ti<tn;\n  }\n\n  int lower_bound(string& t){\n \
+    \   int l=0,r=s.size();\n    while(l+1<r){\n      int m=(l+r)>>1;\n      if(lt_substr(t,sa[m],0))\
     \ l=m;\n      else r=m;\n    }\n    return r;\n  }\n\n  int upper_bound(string&\
     \ t){\n    t.back()++;\n    int res=lower_bound(t);\n    t.back()--;\n    return\
     \ res;\n  }\n\n  // O(|T|*log|S|)\n  int count(string& T){\n    return upper_bound(T)-lower_bound(T);\n\
@@ -83,7 +83,7 @@ data:
   path: string/suffixarray.cpp
   requiredBy:
   - string/longestcommonprefix.cpp
-  timestamp: '2020-10-13 14:00:24+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3112.test.cpp

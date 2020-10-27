@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_A.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:29:50+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_A.linkcuttree.test.cpp

@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E
     links:
@@ -46,8 +46,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_E.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:10:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:26:46+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_E.linkcuttree.test.cpp
 layout: document

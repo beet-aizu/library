@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
     links:
@@ -38,8 +38,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 14:00:24+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:26:46+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/number_of_substrings.test.cpp
 layout: document

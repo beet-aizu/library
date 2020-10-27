@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/run.cpp
     title: string/run.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/runenumerate
     links:
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/runenumerate.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:47:34+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:26:46+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/runenumerate.test.cpp
 layout: document

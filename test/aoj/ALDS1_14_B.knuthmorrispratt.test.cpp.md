@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/knuthmorrispratt.cpp
     title: string/knuthmorrispratt.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
     links:
@@ -15,11 +15,11 @@ data:
   bundledCode: "#line 1 \"test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp\"\n// verification-helper:\
     \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
-    \ 2 \"string/knuthmorrispratt.cpp\"\n\n#ifndef call_from_test\n#line 5 \"string/knuthmorrispratt.cpp\"\
-    \nusing namespace std;\n#endif\n/*\n * @see https://snuke.hatenablog.com/entry/2017/07/18/101026\n\
-    \ */\n//BEGIN CUT HERE\nvector<int> knuth_morris_pratt(const string &s){\n  int\
-    \ n=s.size();\n  vector<int> kmp(n+1,-1);\n  for(int i=0,j=-1;i<n;i++){\n    while(~j&&s[i]!=s[j])\
-    \ j=kmp[j];\n    kmp[i+1]=++j;\n    if(i+1<n&&s[i+1]==s[j]) kmp[i+1]=kmp[j];\n\
+    \ 1 \"string/knuthmorrispratt.cpp\"\n\n#line 3 \"string/knuthmorrispratt.cpp\"\
+    \nusing namespace std;\n#endif\n// https://snuke.hatenablog.com/entry/2017/07/18/101026\n\
+    //BEGIN CUT HERE\nvector<int> knuth_morris_pratt(const string &s){\n  int n=s.size();\n\
+    \  vector<int> kmp(n+1,-1);\n  for(int i=0,j=-1;i<n;i++){\n    while(~j and s[i]!=s[j])\
+    \ j=kmp[j];\n    kmp[i+1]=++j;\n    if(i+1<n and s[i+1]==s[j]) kmp[i+1]=kmp[j];\n\
     \  }\n  return kmp;\n}\n// positions for t that match s\nvector<int> pattern_match(string\
     \ s,string t){\n  int n=s.size(),m=t.size();\n  vector<int> kmp=knuth_morris_pratt(s);\n\
     \n  vector<int> res;\n  int i=0,j=0;\n  while(i+j<m){\n    if(s[j]==t[i+j]){\n\
@@ -54,8 +54,8 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:33:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-27 13:26:46+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
 layout: document

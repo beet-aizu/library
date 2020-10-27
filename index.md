@@ -104,13 +104,13 @@ data:
       title: convexhulltrick/withindex.cpp
   - name: convolution
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: convolution/arbitrarymod.cpp
       title: convolution/arbitrarymod.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: convolution/convolution2D.cpp
       title: convolution/convolution2D.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: convolution/fastfouriertransform.cpp
       title: convolution/fastfouriertransform.cpp
     - icon: ':warning:'
@@ -339,7 +339,7 @@ data:
     - icon: ':question:'
       path: linkcuttree/path.cpp
       title: linkcuttree/path.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: linkcuttree/subtree.cpp
       title: linkcuttree/subtree.cpp
   - name: matching
@@ -400,7 +400,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/tetrahedra.cpp
       title: math/tetrahedra.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/totient.cpp
       title: math/totient.cpp
     - icon: ':question:'
@@ -461,7 +461,7 @@ data:
     - icon: ':question:'
       path: mod/sqrt.cpp
       title: mod/sqrt.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: mod/tetration.cpp
       title: mod/tetration.cpp
   - name: polynomial
@@ -527,7 +527,7 @@ data:
     - icon: ':x:'
       path: string/editdistance.cpp
       title: string/editdistance.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/knuthmorrispratt.cpp
       title: string/knuthmorrispratt.cpp
     - icon: ':question:'
@@ -542,7 +542,7 @@ data:
     - icon: ':warning:'
       path: string/morrispratt.cpp
       title: string/morrispratt.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/palindromictree.cpp
       title: string/palindromictree.cpp
     - icon: ':heavy_check_mark:'
@@ -551,10 +551,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rectanglehash.cpp
       title: string/rectanglehash.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/rollinghash.cpp
       title: string/rollinghash.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/run.cpp
       title: string/run.cpp
     - icon: ':heavy_check_mark:'
@@ -566,7 +566,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/trie.cpp
       title: string/trie.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
   - name: tools
@@ -1024,7 +1024,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2985.garner.test.cpp
       title: test/aoj/2985.garner.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2985.test.cpp
       title: test/aoj/2985.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1060,13 +1060,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3069.test.cpp
       title: test/aoj/3069.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3072.test.cpp
       title: test/aoj/3072.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3073.test.cpp
       title: test/aoj/3073.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3074.test.cpp
       title: test/aoj/3074.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1087,7 +1087,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3117.test.cpp
       title: test order_of_key
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3120.test.cpp
       title: test/aoj/3120.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1117,7 +1117,7 @@ data:
     - icon: ':x:'
       path: test/aoj/ALDS1_10_C.test.cpp
       title: test/aoj/ALDS1_10_C.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
       title: test/aoj/ALDS1_14_B.knuthmorrispratt.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1282,13 +1282,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_C.test.cpp
       title: test/aoj/GRL_5_C.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL_5_D.linkcuttree.test.cpp
       title: test/aoj/GRL_5_D.linkcuttree.test.cpp
     - icon: ':x:'
       path: test/aoj/GRL_5_D.test.cpp
       title: test/aoj/GRL_5_D.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL_5_E.linkcuttree.test.cpp
       title: test/aoj/GRL_5_E.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1457,10 +1457,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/dominatortree.test.cpp
       title: test/yosupo/dominatortree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
       title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
       title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1493,7 +1493,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/kth_root_integer.test.cpp
       title: test/yosupo/kth_root_integer.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/lca.linkcuttree.test.cpp
       title: test/yosupo/lca.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1526,7 +1526,7 @@ data:
     - icon: ':x:'
       path: test/yosupo/multipoint_evaluation.test.cpp
       title: test/yosupo/multipoint_evaluation.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/number_of_substrings.test.cpp
       title: test/yosupo/number_of_substrings.test.cpp
     - icon: ':x:'
@@ -1565,7 +1565,7 @@ data:
     - icon: ':x:'
       path: test/yosupo/rectangle_sum.test.cpp
       title: test/yosupo/rectangle_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/runenumerate.test.cpp
       title: test/yosupo/runenumerate.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1607,13 +1607,13 @@ data:
     - icon: ':x:'
       path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
       title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/suffixarray.test.cpp
       title: test/yosupo/suffixarray.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/sum_of_floor_of_linear.test.cpp
       title: test/yosupo/sum_of_floor_of_linear.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/tetration_mod.test.cpp
       title: test/yosupo/tetration_mod.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1634,13 +1634,13 @@ data:
     - icon: ':x:'
       path: test/yosupo/vertex_add_path_sum.test.cpp
       title: test/yosupo/vertex_add_path_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
     - icon: ':x:'
       path: test/yosupo/vertex_add_subtree_sum.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
   - name: test/yukicoder
@@ -1657,13 +1657,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0222.test.cpp
       title: test/yukicoder/0222.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/0399.test.cpp
       title: test/yukicoder/0399.test.cpp
     - icon: ':x:'
       path: test/yukicoder/0444.test.cpp
       title: test/yukicoder/0444.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/0472.test.cpp
       title: test/yukicoder/0472.test.cpp
     - icon: ':x:'

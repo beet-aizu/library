@@ -15,7 +15,7 @@ data:
   - icon: ':x:'
     path: test/aoj/3112.test.cpp
     title: test query
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
   _pathExtension: cpp
@@ -36,7 +36,7 @@ data:
     \ vector<int> ht;\n  vector< vector<int> > dat;\n  LongestCommonPrefix(string\
     \ &s):sa(s){\n    int n=s.size();\n    vector<int> lcp(n,0);\n\n    int t=0;\n\
     \    lcp[0]=0;\n    for(int i=0;i<n;i++){\n      int j=sa[sa.rev[i]-1];\n    \
-    \  if(t>0) t--;\n      for(;j+t<n&&i+t<n;t++){\n        if(sa.s[j+t]!=sa.s[i+t])\
+    \  if(t>0) t--;\n      for(;j+t<n and i+t<n;t++){\n        if(sa.s[j+t]!=sa.s[i+t])\
     \ break;\n      }\n      lcp[sa.rev[i]-1]=t;\n    }\n\n    int h=1;\n    while((1<<h)<n)\
     \ h++;\n    dat.assign(h,vector<int>(n));\n    ht.assign(n+1,0);\n    for(int\
     \ j=2;j<=n;j++) ht[j]=ht[j>>1]+1;\n\n    for(int j=0;j<n;j++) dat[0][j]=lcp[j];\n\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: string/longestcommonprefix.cpp
   requiredBy: []
-  timestamp: '2020-10-13 14:00:24+09:00'
+  timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/3112.test.cpp

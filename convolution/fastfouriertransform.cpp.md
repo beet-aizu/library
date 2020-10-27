@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: convolution/arbitrarymod.cpp
     title: convolution/arbitrarymod.cpp
   - icon: ':x:'
     path: tools/bigint.cpp
     title: tools/bigint.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
   - icon: ':x:'
@@ -25,7 +25,7 @@ data:
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/fastfouriertransform.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -95,7 +95,7 @@ data:
   - convolution/arbitrarymod.cpp
   - tools/bigint.cpp
   timestamp: '2019-12-26 23:10:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0444.test.cpp
