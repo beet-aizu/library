@@ -8,7 +8,6 @@ struct trio{
   T first;
   U second;
   V third;
-  trio(){}
   trio(T first,U second,V third):
     first(first),second(second),third(third){}
   operator tuple<T&, U&, V&>(){

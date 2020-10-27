@@ -27,8 +27,6 @@ struct SubTree : LinkCutTreeBase<Np, LIM>{
   using Node = Np;
   using A = typename Node::A;
 
-  SubTree():super(){}
-
   Node* create(A val){
     return super::create(Node(val,A(),val));
   }

@@ -14,7 +14,6 @@ struct PolynomialHash{
     M1 v1;
     M2 v2;
     M3 v3;
-    V(){}
     V(int x):v1(x),v2(x),v3(x){}
     V(long long x):v1(x),v2(x),v3(x){}
     V(M1 v1,M2 v2,M3 v3):v1(v1),v2(v2),v3(v3){}
@@ -116,7 +115,7 @@ signed CODEFLYER2018_F(){
   PolynomialHash<int, M1, M2, M3> ph(MAX);
   using V = decltype(ph)::V;
 
-  vector<V> vrs(h),vcs(w);
+  vector<V> vrs(h,0),vcs(w,0);
   vector<int> tmp(w,1);
   V ri=ph.build(tmp);
   tmp.assign(h,1);
@@ -343,7 +342,7 @@ using V = decltype(ph)::V;
 
 struct Point{
   V x,y;
-  Point(){}
+  Point():x(0),y(0){}
   Point(V x,V y):x(x),y(y){}
 };
 

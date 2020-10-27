@@ -72,7 +72,6 @@ struct RangeCount{
 struct RangeTypes{
   struct range{
     int l,r,c;
-    range(){}
     range(int l,int r,int c):l(l),r(r),c(c){}
     bool operator<(const range &a)const{
       return l<a.l;
@@ -235,7 +234,6 @@ struct EulerTour{
   vector<vector<int> > G;
   vector<int> ls,rs;
 
-  EulerTour(){}
   EulerTour(int n):n(n),G(n),ls(n),rs(n){}
 
   void add_edge(int u,int v){

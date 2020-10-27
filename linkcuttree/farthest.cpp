@@ -7,9 +7,7 @@ using namespace std;
 #undef call_from_test
 
 #endif
-/**
- * @see https://ei1333.hateblo.jp/entry/2019/06/13/133736
- */
+// https://ei1333.hateblo.jp/entry/2019/06/13/133736
 //BEGIN CUT HERE
 template<typename Tp>
 struct NodeBase{
@@ -31,8 +29,6 @@ struct Farthest : LinkCutTreeBase<Np, LIM>{
   using super = LinkCutTreeBase<Np, LIM>;
   using Node = Np;
   using T = typename Node::T;
-
-  Farthest():super(){}
 
   Node* create(T val){
     return super::create(Node(val));

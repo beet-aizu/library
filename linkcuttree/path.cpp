@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -7,9 +7,7 @@ using namespace std;
 #undef call_from_test
 
 #endif
-/**
- * @see https://ei1333.hateblo.jp/entry/2018/05/29/011140
- */
+// https://ei1333.hateblo.jp/entry/2018/05/29/011140
 //BEGIN CUT HERE
 template<typename Tp,typename Ep>
 struct NodeBase{
@@ -42,13 +40,11 @@ struct Path : LinkCutTreeBase<Np, LIM>{
   S flip;
   E ei;
 
-  Path(F f,G g,H h,E ei):
-    super(),f(f),g(g),h(h),ei(ei){
-    flip=[](T a){return a;};
-  }
-
   Path(F f,G g,H h,S flip,E ei):
-    super(),f(f),g(g),h(h),flip(flip),ei(ei){}
+    f(f),g(g),h(h),flip(flip),ei(ei){}
+
+  Path(F f,G g,H h,E ei):
+    Path(f,g,h,[](T a){return a;},ei){}
 
   Node* create(T val){
     return super::create(Node(val,ei));

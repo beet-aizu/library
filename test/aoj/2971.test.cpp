@@ -22,7 +22,7 @@ PH ph(1);
 
 const int MAX = 1e5+100;
 int used[MAX]={};
-PH::V vs[MAX];
+vector<PH::V> vs(MAX,0);
 
 using P = pair<int, int>;
 vector<P> G[MAX],R[MAX];
