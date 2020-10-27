@@ -33,17 +33,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2113.test.cpp
     title: test/yukicoder/2113.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4569.test.cpp
     title: test/yukicoder/4569.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"io/single.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -59,7 +59,7 @@ data:
   path: io/single.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/4862.test.cpp

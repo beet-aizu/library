@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"polynomial/berlekampmassey.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -48,7 +48,7 @@ data:
   path: polynomial/berlekampmassey.cpp
   requiredBy: []
   timestamp: '2020-10-27 16:52:37+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0104.test.cpp
   - test/yukicoder/0444.test.cpp

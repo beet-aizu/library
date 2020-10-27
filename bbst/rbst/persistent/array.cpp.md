@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
@@ -30,12 +30,12 @@ data:
     \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t\
     \ LIM>\nstruct PersistentArray : Array<Node, LIM>{\n  using super = Array<Node,\
     \ LIM>;\n  using super::super;\n\n  inline Node* clone(Node* a){\n    if(a==nullptr)\
-    \ return a;\n    Node* b=super::create();\n    *b=*a;\n    return b;\n  }\n\n\
-    \  Node* eval(Node* a){\n    a=clone(a);\n    if(a->rev){\n      a->l=clone(a->l);\n\
-    \      a->r=clone(a->r);\n    }\n    return super::eval(a);\n  }\n\n  Node* rebuild(Node*\
-    \ a){\n    auto v=super::dump(a);\n    super::ptr=0;\n    return super::build(v);\n\
-    \  }\n\n  bool almost_full() const{\n    return super::ptr>LIM*9/10;\n  }\n};\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned JOISC2012_COPYPASTE(){\n\
+    \ return a;\n    return super::create(*a);\n  }\n\n  Node* eval(Node* a){\n  \
+    \  a=clone(a);\n    if(a->rev){\n      a->l=clone(a->l);\n      a->r=clone(a->r);\n\
+    \    }\n    return super::eval(a);\n  }\n\n  Node* rebuild(Node* a){\n    auto\
+    \ v=super::dump(a);\n    super::size=0;\n    return super::build(v);\n  }\n\n\
+    \  bool almost_full() const{\n    return super::size>LIM*9/10;\n  }\n};\n//END\
+    \ CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned JOISC2012_COPYPASTE(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  int m;\n  string buf;\n  cin>>m>>buf;\n\
     \n  using Node = NodeBase<char>;\n  const size_t LIM = 1e7;\n  PersistentArray<Node,\
     \ LIM> pa;\n\n  vector<char> v(buf.begin(),buf.end());\n  auto rt=pa.build(v);\n\
@@ -53,8 +53,8 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/array.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-27 20:02:44+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp
 documentation_of: bbst/rbst/persistent/array.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/longestcommonsubstring.cpp
     title: string/longestcommonsubstring.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
   _extendedRequiredBy: []

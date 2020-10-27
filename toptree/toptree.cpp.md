@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: toptree/distancesum.cpp
     title: toptree/distancesum.cpp
   _extendedVerifiedWith:
@@ -27,20 +27,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3453.test.cpp
     title: Minimum Steiner Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"toptree/toptree.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -299,7 +299,7 @@ data:
   requiredBy:
   - toptree/distancesum.cpp
   timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/3453.test.cpp

@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2063.test.cpp
     title: test/yukicoder/2063.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"segtree/count/dynamic_offline.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -64,7 +64,7 @@ data:
   path: segtree/count/dynamic_offline.cpp
   requiredBy: []
   timestamp: '2020-10-27 18:08:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2063.test.cpp
   - test/aoj/2842.test.cpp

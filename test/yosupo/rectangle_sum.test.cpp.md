@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []

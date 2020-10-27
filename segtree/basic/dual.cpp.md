@@ -15,11 +15,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_E.test.cpp
     title: test/aoj/DSL_2_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"segtree/basic/dual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -55,7 +55,7 @@ data:
   path: segtree/basic/dual.cpp
   requiredBy: []
   timestamp: '2019-12-17 13:36:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3912.test.cpp
   - test/aoj/3112.test.cpp

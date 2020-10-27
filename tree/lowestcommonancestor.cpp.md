@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/auxiliarytree.cpp
     title: Auxiliary Tree
   _extendedVerifiedWith:
@@ -18,14 +18,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3407.test.cpp
     title: test/yukicoder/3407.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tree/lowestcommonancestor.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -64,7 +64,7 @@ data:
   requiredBy:
   - tree/auxiliarytree.cpp
   timestamp: '2020-10-27 19:32:25+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3407.test.cpp
   - test/yukicoder/4852.test.cpp

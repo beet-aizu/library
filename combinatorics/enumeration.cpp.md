@@ -20,7 +20,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   - icon: ':heavy_check_mark:'
@@ -35,7 +35,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
   - icon: ':heavy_check_mark:'
@@ -144,14 +144,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"combinatorics/enumeration.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -218,7 +218,7 @@ data:
   - formalpowerseries/base.cpp
   - formalpowerseries/pow.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0444.test.cpp

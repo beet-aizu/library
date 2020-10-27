@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/staticrmq.disjointsparsetable.test.cpp
     title: test/yosupo/staticrmq.disjointsparsetable.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4072.test.cpp
     title: test/yukicoder/4072.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://www.codechef.com/problems/SEGPROD
@@ -72,7 +72,7 @@ data:
   path: datastructure/disjointsparsetable.cpp
   requiredBy: []
   timestamp: '2020-10-27 19:32:25+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4072.test.cpp
   - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
