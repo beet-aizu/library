@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/basic/lazy.cpp
     title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
@@ -39,7 +39,7 @@ data:
     \    }\n    return f(vl,vr);\n  }\n\n  template<typename C>\n  int find(int st,C\
     \ &check,T &acc,int k,int l,int r){\n    if(l+1==r){\n      acc=f(acc,reflect(k));\n\
     \      return check(acc)?k-n:-1;\n    }\n    propagate(k);\n    int m=(l+r)>>1;\n\
-    \    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n    if(st<=l&&!check(f(acc,dat[k]))){\n\
+    \    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n    if(st<=l and !check(f(acc,dat[k]))){\n\
     \      acc=f(acc,dat[k]);\n      return -1;\n    }\n    int vl=find(st,check,acc,(k<<1)|0,l,m);\n\
     \    if(~vl) return vl;\n    return find(st,check,acc,(k<<1)|1,m,r);\n  }\n\n\
     \  template<typename C>\n  int find(int st,C &check){\n    T acc=ti;\n    return\
@@ -81,7 +81,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2020-09-28 12:07:09+09:00'
+  timestamp: '2020-10-27 16:27:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_I.test.cpp

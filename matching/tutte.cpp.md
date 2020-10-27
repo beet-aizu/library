@@ -21,15 +21,15 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ matching/tutte.cpp: line 6: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../mod/mint.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\nint maximal_matching(vector< vector<int> > G){\n  int\
     \ n=G.size();\n\n  random_device rd;\n  mt19937 mt(rd());\n  using M = Mint<int>;\n\
     \  uniform_int_distribution<int> ud(1,M::mod-1);\n\n  vector< vector<M> > H(n,vector<M>(n,0));\n\
     \  for(int v=0;v<n;v++){\n    for(int u:G[v]){\n      if(u>=v) continue;\n   \
     \   M val(ud(mt));\n      H[u][v]= val;\n      H[v][u]=-val;\n    }\n  }\n\n \
-    \ int res=0;\n  for(int i=0,j=0;i<n;i++){\n    while(j<n&&H[i][j]==M(0)){\n  \
-    \    int p=i;\n      for(int k=i+1;k<n;k++)\n        if(H[k][j]!=M(0)) p=k;\n\
+    \ int res=0;\n  for(int i=0,j=0;i<n;i++){\n    while(j<n and H[i][j]==M(0)){\n\
+    \      int p=i;\n      for(int k=i+1;k<n;k++)\n        if(H[k][j]!=M(0)) p=k;\n\
     \      if(i!=p) swap(H[i],H[p]);\n      else j++;\n    }\n    if(j==n) break;\n\
     \    M tmp=H[i][j].inv();\n    for(int s=j;s<n;s++) H[i][s]*=tmp;\n    for(int\
     \ k=i+1;k<n;k++)\n      for(int s=n-1;s>=j;s--)\n        H[k][s]-=H[k][j]*H[i][s];\n\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: matching/tutte.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2020-10-27 16:27:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2983.test.cpp

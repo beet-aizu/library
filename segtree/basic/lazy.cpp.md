@@ -36,18 +36,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/range_affine_range_sum.test.cpp
     title: test/yosupo/range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://codeforces.com/contest/1179/problem/C
-  bundledCode: "#line 1 \"segtree/basic/lazy.cpp\"\n\n#include<bits/stdc++.h>\nusing\
+  bundledCode: "#line 1 \"segtree/basic/lazy.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate <typename T,typename E>\n\
     struct SegmentTree{\n  using F = function<T(T,T)>;\n  using G = function<T(T,E)>;\n\
     \  using H = function<E(E,E)>;\n  int n,height;\n  F f;\n  G g;\n  H h;\n  T ti;\n\
@@ -71,7 +71,7 @@ data:
     \    }\n    return f(vl,vr);\n  }\n\n  template<typename C>\n  int find(int st,C\
     \ &check,T &acc,int k,int l,int r){\n    if(l+1==r){\n      acc=f(acc,reflect(k));\n\
     \      return check(acc)?k-n:-1;\n    }\n    propagate(k);\n    int m=(l+r)>>1;\n\
-    \    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n    if(st<=l&&!check(f(acc,dat[k]))){\n\
+    \    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n    if(st<=l and !check(f(acc,dat[k]))){\n\
     \      acc=f(acc,dat[k]);\n      return -1;\n    }\n    int vl=find(st,check,acc,(k<<1)|0,l,m);\n\
     \    if(~vl) return vl;\n    return find(st,check,acc,(k<<1)|1,m,r);\n  }\n\n\
     \  template<typename C>\n  int find(int st,C &check){\n    T acc=ti;\n    return\
@@ -89,9 +89,9 @@ data:
     \    }\n    int pos=seg.find(0,check);\n    cout<<(pos<0?pos:sz-pos)<<\"\\n\"\
     ;\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2019/10/28\n  https://codeforces.com/contest/1179/problem/C\n\
     */\n\nsigned main(){\n  CFR569_C();\n  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
-    //BEGIN CUT HERE\ntemplate <typename T,typename E>\nstruct SegmentTree{\n  using\
-    \ F = function<T(T,T)>;\n  using G = function<T(T,E)>;\n  using H = function<E(E,E)>;\n\
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n//BEGIN CUT HERE\ntemplate <typename T,typename E>\nstruct SegmentTree{\n\
+    \  using F = function<T(T,T)>;\n  using G = function<T(T,E)>;\n  using H = function<E(E,E)>;\n\
     \  int n,height;\n  F f;\n  G g;\n  H h;\n  T ti;\n  E ei;\n  vector<T> dat;\n\
     \  vector<E> laz;\n  SegmentTree(F f,G g,H h,T ti,E ei):\n    f(f),g(g),h(h),ti(ti),ei(ei){}\n\
     \n  void init(int n_){\n    n=1;height=0;\n    while(n<n_) n<<=1,height++;\n \
@@ -113,7 +113,7 @@ data:
     \    }\n    return f(vl,vr);\n  }\n\n  template<typename C>\n  int find(int st,C\
     \ &check,T &acc,int k,int l,int r){\n    if(l+1==r){\n      acc=f(acc,reflect(k));\n\
     \      return check(acc)?k-n:-1;\n    }\n    propagate(k);\n    int m=(l+r)>>1;\n\
-    \    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n    if(st<=l&&!check(f(acc,dat[k]))){\n\
+    \    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n    if(st<=l and !check(f(acc,dat[k]))){\n\
     \      acc=f(acc,dat[k]);\n      return -1;\n    }\n    int vl=find(st,check,acc,(k<<1)|0,l,m);\n\
     \    if(~vl) return vl;\n    return find(st,check,acc,(k<<1)|1,m,r);\n  }\n\n\
     \  template<typename C>\n  int find(int st,C &check){\n    T acc=ti;\n    return\
@@ -135,8 +135,8 @@ data:
   isVerificationFile: false
   path: segtree/basic/lazy.cpp
   requiredBy: []
-  timestamp: '2020-09-28 12:04:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-27 16:27:26+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/5223.test.cpp
   - test/yukicoder/3405.test.cpp

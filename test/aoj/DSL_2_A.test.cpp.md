@@ -29,7 +29,7 @@ data:
     \    return f(vl,vr);\n  }\n\n  template<typename C>\n  int find(int st,C &check,T\
     \ &acc,int k,int l,int r){\n    if(l+1==r){\n      acc=f(acc,dat[k]);\n      return\
     \ check(acc)?k-n:-1;\n    }\n    int m=(l+r)>>1;\n    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);\n\
-    \    if(st<=l&&!check(f(acc,dat[k]))){\n      acc=f(acc,dat[k]);\n      return\
+    \    if(st<=l and !check(f(acc,dat[k]))){\n      acc=f(acc,dat[k]);\n      return\
     \ -1;\n    }\n    int vl=find(st,check,acc,(k<<1)|0,l,m);\n    if(~vl) return\
     \ vl;\n    return find(st,check,acc,(k<<1)|1,m,r);\n  }\n\n  template<typename\
     \ C>\n  int find(int st,C &check){\n    T acc=ti;\n    return find(st,check,acc,1,0,n);\n\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 14:47:24+09:00'
+  timestamp: '2020-10-27 16:27:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_A.test.cpp
