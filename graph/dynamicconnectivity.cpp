@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -63,8 +63,8 @@ struct DynamicConnectivity{
   }
 
   void add(int a,int b,edge e,int k,int l,int r){
-    if(r<=a||b<=l) return;
-    if(a<=l&&r<=b){
+    if(r<=a or b<=l) return;
+    if(a<=l and r<=b){
       edges[k].emplace_back(e);
       return;
     }

@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -48,7 +48,7 @@ struct Arborescence{
     }
 
     Node* meld(Node *a,Node *b){
-      if(!a||!b) return a?a:b;
+      if(!a or !b) return a?a:b;
       if(top(b)<top(a)) swap(a,b);
       eval(a);
       a->r=meld(a->r,b);

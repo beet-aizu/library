@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef call_from_test
 #include <bits/stdc++.h>
 using namespace std;
@@ -62,7 +60,7 @@ struct LowLink{
   void fill_component(int v){
     C[blg[v]].emplace_back(v);
     for(int u:G[v]){
-      if(~blg[u]||is_bridge(u,v)) continue;
+      if(~blg[u] or is_bridge(u,v)) continue;
       blg[u]=blg[v];
       fill_component(u);
     }
@@ -173,7 +171,7 @@ signed ARC045_D(){
     if(!uf.same(vs[0],v)) continue;
     for(int u:G.G[v]){
       if(G.par[u]!=v) continue;
-      if(~G.par[v]&&G.ord[v]>G.low[u]) continue;
+      if(~G.par[v] and G.ord[v]>G.low[u]) continue;
       if(G.num[u]&1) ans[v]=0;
     }
   }

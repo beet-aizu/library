@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
@@ -22,12 +22,12 @@ struct IndependentSet{
 
     int v=-1;
     for(int i=0;i<n;i++){
-      if(used[i]||dead[i]) continue;
+      if(used[i] or dead[i]) continue;
       if(deg[i]<=1){
         v=i;
         break;
       }
-      if(v<0||deg[v]<deg[i]) v=i;
+      if(v<0 or deg[v]<deg[i]) v=i;
     }
     if(v<0) return;
 

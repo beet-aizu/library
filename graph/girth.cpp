@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 //BEGIN CUT HERE
 // size of minimum cycle
@@ -60,7 +60,7 @@ signed CFR580_B(){
   vector< vector<int> > G(n);
   for(int i=0;i<n;i++)
     for(int j=0;j<n;j++)
-      if((i!=j)&&(as[i]&as[j]))
+      if((i!=j) and (as[i]&as[j]))
         G[i].emplace_back(j);
 
   cout<<girth(G)<<endl;
