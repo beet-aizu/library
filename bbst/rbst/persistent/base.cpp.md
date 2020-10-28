@@ -44,14 +44,12 @@ data:
     \ void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n  }\n\n  inline\
     \ Node* eval(Node *t){\n    return static_cast<Impl*>(this)->eval(t);\n  }\n\n\
     \  inline Node* pushup(Node *t){\n    return static_cast<Impl*>(this)->pushup(t);\n\
-    \  }\n\n  using super::count;\n  void dump(Node* a,typename vector<Node>::iterator\
-    \ it){\n    if(!count(a)) return;\n    a=eval(a);\n    auto cur=it+count(a->l);\n\
-    \    dump(a->l,it);\n    dump(a->r,it+count(a->l)+1);\n    a->l=a->r=nullptr;\n\
-    \    *cur=*pushup(a);\n  }\n\n  vector<Node> dump(Node* a){\n    assert(a!=nullptr);\n\
-    \    vector<Node> vs(count(a),*a);\n    dump(a,vs.begin());\n    return vs;\n\
+    \  }\n\n  void dump(typename vector<Node>::iterator it,Node* a){\n    static_cast<Impl*>(this)->dump(it,a);\n\
+    \  }\n\n  using super::count;\n  vector<Node> dump(Node* a){\n    assert(a!=nullptr);\n\
+    \    vector<Node> vs(count(a),*a);\n    dump(vs.begin(),a);\n    return vs;\n\
     \  }\n\n  Node* rebuild(Node* a){\n    auto vs=dump(a);\n    super::size=0;\n\
-    \    return super::build(vs);\n  }\n\n  bool almost_full(double d=0.8) const{\n\
-    \    return super::size>LIM*d;\n  }\n};\ntemplate<typename Node, size_t LIM, typename\
+    \    return super::build(vs);\n  }\n\n  bool almost_full() const{\n    return\
+    \ super::size+1000>LIM;\n  }\n};\ntemplate<typename Node, size_t LIM, typename\
     \ Impl>\nbool PersistentBase<Node, LIM, Impl>::exist = false;\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n"
@@ -63,7 +61,7 @@ data:
   - bbst/rbst/persistent/ushi.cpp
   - bbst/rbst/persistent/array.cpp
   - bbst/rbst/persistent/lazy.cpp
-  timestamp: '2020-10-28 18:43:09+09:00'
+  timestamp: '2020-10-28 22:03:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0437.test.cpp

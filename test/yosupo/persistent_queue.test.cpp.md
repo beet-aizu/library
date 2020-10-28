@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/persistent_queue.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
+  timestamp: '2020-10-28 22:03:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/persistent_queue.test.cpp

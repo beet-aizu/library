@@ -46,11 +46,16 @@ data:
     \    }\n    return t;\n  }\n\n  using super::count;\n  inline Node* pushup(Node\
     \ *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    t->dat=t->val;\n    if(t->l)\
     \ t->dat=f(t->l->dat,t->dat);\n    if(t->r) t->dat=f(t->dat,t->r->dat);\n    return\
-    \ t;\n  }\n\n  using super::merge;\n  using super::split;\n\n  T query(const Node\
-    \ *a){\n    return a?a->dat:ti;\n  }\n\n  T query(Node *a,size_t l,size_t r){\n\
-    \    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n    auto u=t.first;\n\
-    \    return query(u);\n  }\n\n  Node* update(Node *a,size_t l,size_t r,E v){\n\
-    \    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n    auto u=eval(t.first);\n\
+    \ t;\n  }\n\n  void dump_impl(typename vector<Node>::iterator it,\n          \
+    \       const Node* t,bool rev,E laz){\n    if(!count(t)) return;\n\n    Node\
+    \ *l=t->l,*r=t->r;\n    if(rev) swap(l,r);\n    rev^=t->rev;\n\n    dump_impl(it,l,rev,h(laz,t->laz));\n\
+    \    *(it+count(l))=Node(g(t->val,laz),ei);\n    dump_impl(it+count(l)+1,r,rev,h(laz,t->laz));\n\
+    \  }\n\n  using super::dump;\n  void dump(typename vector<Node>::iterator it,Node*\
+    \ t){\n    dump_impl(it,t,false,ei);\n  }\n\n  using super::merge;\n  using super::split;\n\
+    \n  T query(const Node *a){\n    return a?a->dat:ti;\n  }\n\n  T query(Node *a,size_t\
+    \ l,size_t r){\n    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n    auto\
+    \ u=t.first;\n    return query(u);\n  }\n\n  Node* update(Node *a,size_t l,size_t\
+    \ r,E v){\n    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n    auto u=eval(t.first);\n\
     \    propagate(u,v);\n    return merge(s.first,merge(u,t.second));\n  }\n\n  T\
     \ get_val(Node *a,size_t k){\n    assert(k<count(a));\n    a=eval(a);\n    size_t\
     \ num=count(a->l);\n    if(k<num) return get_val(a->l,k);\n    if(k>num) return\
@@ -81,7 +86,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/lazy.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
+  timestamp: '2020-10-28 22:03:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: bbst/rbst/persistent/lazy.cpp

@@ -42,23 +42,28 @@ data:
     \    }\n    return t;\n  }\n\n  using super::count;\n  inline Node* pushup(Node\
     \ *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    t->dat=t->val;\n    if(t->l)\
     \ t->dat=f(t->l->dat,t->dat);\n    if(t->r) t->dat=f(t->dat,t->r->dat);\n    return\
-    \ t;\n  }\n\n  using super::merge;\n  using super::split;\n\n  T query(const Node\
-    \ *a){\n    return a?a->dat:ti;\n  }\n\n  T query(Node *&a,size_t l,size_t r){\n\
-    \    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n    auto u=t.first;\n\
-    \    T res=query(u);\n    a=merge(s.first,merge(u,t.second));\n    return res;\n\
-    \  }\n\n  T get_val(Node *a,size_t k){\n    return super::find_by_order(a,k)->val;\n\
-    \  }\n\n  Node* set_val(Node *a,size_t k,T val){\n    assert(k<count(a));\n  \
-    \  a=eval(a);\n    size_t num=count(a->l);\n    if(k<num) a->l=set_val(a->l,k,val);\n\
-    \    if(k>num) a->r=set_val(a->r,k-(num+1),val);\n    if(k==num) a->val=val;\n\
-    \    return pushup(a);\n  }\n};\n//END CUT HERE\n//INSERT ABOVE HERE\n#ifndef\
-    \ call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ t;\n  }\n\n  void dump_impl(typename vector<Node>::iterator it,\n          \
+    \       Node* const t,bool rev){\n    if(!count(t)) return;\n\n    Node *l=t->l,*r=t->r;\n\
+    \    if(rev) swap(l,r);\n    rev^=t->rev;\n\n    dump_impl(it,l,rev);\n    *(it+count(l))=Node(t->val);\n\
+    \    dump_impl(it+count(l)+1,r,rev);\n  }\n\n  using super::dump;\n  void dump(typename\
+    \ vector<Node>::iterator it,Node* t){\n    dump_impl(it,t,false);\n  }\n\n  using\
+    \ super::merge;\n  using super::split;\n\n  T query(const Node *a){\n    return\
+    \ a?a->dat:ti;\n  }\n\n  T query(Node *&a,size_t l,size_t r){\n    auto s=split(a,l);\n\
+    \    auto t=split(s.second,r-l);\n    auto u=t.first;\n    T res=query(u);\n \
+    \   a=merge(s.first,merge(u,t.second));\n    return res;\n  }\n\n  T get_val(Node\
+    \ *a,size_t k){\n    return super::find_by_order(a,k)->val;\n  }\n\n  Node* set_val(Node\
+    \ *a,size_t k,T val){\n    assert(k<count(a));\n    a=eval(a);\n    size_t num=count(a->l);\n\
+    \    if(k<num) a->l=set_val(a->l,k,val);\n    if(k>num) a->r=set_val(a->r,k-(num+1),val);\n\
+    \    if(k==num) a->val=val;\n    return pushup(a);\n  }\n};\n//END CUT HERE\n\
+    //INSERT ABOVE HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n\
+    #endif\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
   - bbst/rbst/persistent/base.cpp
   isVerificationFile: false
   path: bbst/rbst/persistent/ushi.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
+  timestamp: '2020-10-28 22:03:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0437.test.cpp

@@ -35,13 +35,19 @@ data:
     \ PersistentArray>;\n  using T = typename Node::T;\n\n  inline void toggle(Node\
     \ *t){\n    swap(t->l,t->r);\n    t->rev^=1;\n  }\n\n  using super::clone;\n \
     \ inline Node* eval(Node* t){\n    t=clone(t);\n    if(t->rev){\n      t->l=clone(t->l);\n\
-    \      t->r=clone(t->r);\n    }\n    return t;\n  }\n\n  using super::count;\n\
-    \  inline Node* pushup(Node *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    return\
-    \ t;\n  }\n\n  using super::find_by_order;\n\n  Node* set_val(Node *a,size_t k,T\
-    \ val){\n    auto b=find_by_order(a,k);\n    b->val=val;\n    return b;\n  }\n\
-    \n  T get_val(Node *a,size_t k){\n    return find_by_order(a,k)->val;\n  }\n};\n\
-    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned JOISC2012_COPYPASTE(){\n\
-    \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  int m;\n  string buf;\n  cin>>m>>buf;\n\
+    \      t->r=clone(t->r);\n\n      if(t->l) toggle(t->l);\n      if(t->r) toggle(t->r);\n\
+    \      t->rev=false;\n    }\n    return t;\n  }\n\n  using super::count;\n  inline\
+    \ Node* pushup(Node *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    return t;\n\
+    \  }\n\n  void dump_impl(typename vector<Node>::iterator it,\n               \
+    \  Node* const t,bool rev){\n    if(!count(t)) return;\n\n    Node *l=t->l,*r=t->r;\n\
+    \    if(rev) swap(l,r);\n    rev^=t->rev;\n\n    dump_impl(it,l,rev);\n    *(it+count(l))=Node(t->val);\n\
+    \    dump_impl(it+count(l)+1,r,rev);\n  }\n\n  using super::dump;\n  void dump(typename\
+    \ vector<Node>::iterator it,Node* t){\n    dump_impl(it,t,false);\n  }\n\n  using\
+    \ super::find_by_order;\n\n  Node* set_val(Node *a,size_t k,T val){\n    auto\
+    \ b=find_by_order(a,k);\n    b->val=val;\n    return b;\n  }\n\n  T get_val(Node\
+    \ *a,size_t k){\n    return find_by_order(a,k)->val;\n  }\n};\n//END CUT HERE\n\
+    #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned JOISC2012_COPYPASTE(){\n \
+    \ cin.tie(0);\n  ios::sync_with_stdio(0);\n  int m;\n  string buf;\n  cin>>m>>buf;\n\
     \n  using Node = NodeBase<char>;\n  const size_t LIM = 1e7;\n  PersistentArray<Node,\
     \ LIM> pa;\n\n  vector<Node> vs(buf.begin(),buf.end());\n  auto rt=pa.build(vs);\n\
     \n  int n;\n  cin>>n;\n  for(int i=0;i<n;i++){\n    int a,b,c;\n    cin>>a>>b>>c;\n\
@@ -58,7 +64,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/array.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
+  timestamp: '2020-10-28 22:03:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp
