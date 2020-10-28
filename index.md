@@ -31,10 +31,10 @@ data:
       title: bbst/pb_ds_tree.cpp
   - name: bbst/rbst/basic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/array.cpp
       title: bbst/rbst/basic/array.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/base.cpp
       title: bbst/rbst/basic/base.cpp
     - icon: ':heavy_check_mark:'
@@ -43,18 +43,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/lazy.cpp
       title: bbst/rbst/basic/lazy.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/ushi.cpp
       title: bbst/rbst/basic/ushi.cpp
   - name: bbst/rbst/persistent
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/persistent/array.cpp
       title: bbst/rbst/persistent/array.cpp
+    - icon: ':heavy_check_mark:'
+      path: bbst/rbst/persistent/base.cpp
+      title: bbst/rbst/persistent/base.cpp
     - icon: ':warning:'
       path: bbst/rbst/persistent/lazy.cpp
       title: bbst/rbst/persistent/lazy.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/persistent/ushi.cpp
       title: bbst/rbst/persistent/ushi.cpp
   - name: bflow
@@ -308,7 +311,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
     - icon: ':heavy_check_mark:'
@@ -751,7 +754,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0425.test.cpp
       title: test/aoj/0425.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/0437.test.cpp
       title: test/aoj/0437.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1532,7 +1535,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/partition_function.test.cpp
       title: test/yosupo/partition_function.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/persistent_queue.test.cpp
       title: test/yosupo/persistent_queue.test.cpp
     - icon: ':heavy_check_mark:'

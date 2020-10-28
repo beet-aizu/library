@@ -1,13 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: bbst/rbst/persistent/lazy.cpp
-    title: bbst/rbst/persistent/lazy.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.bbst.test.cpp
@@ -96,9 +93,8 @@ data:
   - bbst/rbst/basic/base.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/lazy.cpp
-  requiredBy:
-  - bbst/rbst/persistent/lazy.cpp
-  timestamp: '2020-10-28 15:23:04+09:00'
+  requiredBy: []
+  timestamp: '2020-10-28 18:29:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp

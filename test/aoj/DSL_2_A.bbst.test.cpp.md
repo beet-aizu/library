@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   _extendedRequiredBy: []
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_A.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 16:34:30+09:00'
+  timestamp: '2020-10-28 18:29:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_A.bbst.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy: []
@@ -35,14 +35,14 @@ data:
     \ Node, size_t LIM>\nstruct Dual : BBSTBase<Node, LIM, Dual<Node, LIM>>{\n  using\
     \ super = BBSTBase<Node, LIM, Dual>;\n  using E = typename Node::E;\n  using H\
     \ = function<E(E, E)>;\n\n  H h;\n  E ei;\n\n  Dual(H h,E ei):h(h),ei(ei){}\n\n\
-    \  void propagate(Node *t,E x){\n    t->val=h(t->val,x);\n    t->laz=h(t->laz,x);\n\
-    \  }\n\n  using super::toggle;\n  void toggle(Node *t){\n    swap(t->l,t->r);\n\
-    \    t->rev^=1;\n  }\n\n  Node* eval(Node* t){\n    if(t->laz!=ei){\n      if(t->l)\
-    \ propagate(t->l,t->laz);\n      if(t->r) propagate(t->r,t->laz);\n      t->laz=ei;\n\
-    \    }\n    if(t->rev){\n      if(t->l) toggle(t->l);\n      if(t->r) toggle(t->r);\n\
-    \      t->rev=false;\n    }\n    return t;\n  }\n\n  using super::count;\n  Node*\
-    \ pushup(Node *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    return t;\n  }\n\
-    \n  Node* init(int n){\n    return super::build(vector<Node>(n,Node(ei,ei)));\n\
+    \  inline void propagate(Node *t,E x){\n    t->val=h(t->val,x);\n    t->laz=h(t->laz,x);\n\
+    \  }\n\n  using super::toggle;\n  inline void toggle(Node *t){\n    swap(t->l,t->r);\n\
+    \    t->rev^=1;\n  }\n\n  inline Node* eval(Node* t){\n    if(t->laz!=ei){\n \
+    \     if(t->l) propagate(t->l,t->laz);\n      if(t->r) propagate(t->r,t->laz);\n\
+    \      t->laz=ei;\n    }\n    if(t->rev){\n      if(t->l) toggle(t->l);\n    \
+    \  if(t->r) toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\n\
+    \  using super::count;\n  inline Node* pushup(Node *t){\n    t->cnt=count(t->l)+1+count(t->r);\n\
+    \    return t;\n  }\n\n  Node* init(int n){\n    return super::build(vector<Node>(n,Node(ei,ei)));\n\
     \  }\n\n  using super::merge;\n  using super::split;\n\n  Node* update(Node *a,size_t\
     \ l,size_t r,E x){\n    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n\
     \    auto u=eval(t.first);\n    propagate(u,x);\n    return merge(s.first,merge(u,t.second));\n\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/basic/dual.cpp
   requiredBy: []
-  timestamp: '2020-10-28 16:34:30+09:00'
+  timestamp: '2020-10-28 18:29:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_E.bbst.test.cpp

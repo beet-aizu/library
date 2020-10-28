@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
   - icon: ':heavy_check_mark:'
@@ -11,20 +11,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/lazy.cpp
     title: bbst/rbst/basic/lazy.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/persistent/base.cpp
+    title: bbst/rbst/persistent/base.cpp
   - icon: ':warning:'
     path: bbst/rbst/persistent/lazy.cpp
     title: bbst/rbst/persistent/lazy.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/ushi.cpp
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,11 +63,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"bbst/rbst/basic/base.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -103,11 +106,7 @@ data:
     \      a=a->p;\n    }\n    return res;\n  }\n\n  Node* build(size_t l,size_t r,const\
     \ vector<Node> &vs){\n    if(l+1==r) return create(vs[l]);\n    size_t m=(l+r)>>1;\n\
     \    return merge(build(l,m,vs),build(m,r,vs));\n  }\n\n  Node* build(const vector<Node>\
-    \ &vs){\n    return build(0,vs.size(),vs);\n  }\n\n  template<typename T>\n  void\
-    \ dump(Node* a,typename vector<T>::iterator it){\n    if(!count(a)) return;\n\
-    \    a=eval(a);\n    dump(a->l,it);\n    *(it+count(a->l))=a->val;\n    dump(a->r,it+count(a->l)+1);\n\
-    \  }\n\n  template<typename T>\n  vector<T> dump(Node* a){\n    vector<T> vs(count(a));\n\
-    \    dump(a,vs.begin());\n    return vs;\n  }\n};\ntemplate<typename Node, size_t\
+    \ &vs){\n    return build(0,vs.size(),vs);\n  }\n};\ntemplate<typename Node, size_t\
     \ LIM, typename Impl>\nalignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];\n\
     template<typename Node, size_t LIM, typename Impl>\nNode* BBSTBase<Node, LIM,\
     \ Impl>::ptr=\n  (Node*)BBSTBase<Node, LIM, Impl>::pool;\ntemplate<typename Node,\
@@ -150,11 +149,7 @@ data:
     \      a=a->p;\n    }\n    return res;\n  }\n\n  Node* build(size_t l,size_t r,const\
     \ vector<Node> &vs){\n    if(l+1==r) return create(vs[l]);\n    size_t m=(l+r)>>1;\n\
     \    return merge(build(l,m,vs),build(m,r,vs));\n  }\n\n  Node* build(const vector<Node>\
-    \ &vs){\n    return build(0,vs.size(),vs);\n  }\n\n  template<typename T>\n  void\
-    \ dump(Node* a,typename vector<T>::iterator it){\n    if(!count(a)) return;\n\
-    \    a=eval(a);\n    dump(a->l,it);\n    *(it+count(a->l))=a->val;\n    dump(a->r,it+count(a->l)+1);\n\
-    \  }\n\n  template<typename T>\n  vector<T> dump(Node* a){\n    vector<T> vs(count(a));\n\
-    \    dump(a,vs.begin());\n    return vs;\n  }\n};\ntemplate<typename Node, size_t\
+    \ &vs){\n    return build(0,vs.size(),vs);\n  }\n};\ntemplate<typename Node, size_t\
     \ LIM, typename Impl>\nalignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];\n\
     template<typename Node, size_t LIM, typename Impl>\nNode* BBSTBase<Node, LIM,\
     \ Impl>::ptr=\n  (Node*)BBSTBase<Node, LIM, Impl>::pool;\ntemplate<typename Node,\
@@ -167,13 +162,14 @@ data:
   requiredBy:
   - bbst/rbst/persistent/ushi.cpp
   - bbst/rbst/persistent/array.cpp
+  - bbst/rbst/persistent/base.cpp
   - bbst/rbst/persistent/lazy.cpp
   - bbst/rbst/basic/ushi.cpp
   - bbst/rbst/basic/array.cpp
   - bbst/rbst/basic/dual.cpp
   - bbst/rbst/basic/lazy.cpp
-  timestamp: '2020-10-28 15:23:04+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-10-28 18:29:04+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp

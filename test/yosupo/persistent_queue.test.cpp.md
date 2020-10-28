@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: bbst/rbst/basic/array.cpp
-    title: bbst/rbst/basic/array.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
+  - icon: ':heavy_check_mark:'
+    path: bbst/rbst/persistent/base.cpp
+    title: bbst/rbst/persistent/base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/persistent_queue
@@ -27,11 +27,11 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ bbst/rbst/basic/array.cpp: line 6: unable to process #include in #if / #ifdef\
+    \ bbst/rbst/persistent/base.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_queue\"\n\n\
     #include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../bbst/rbst/basic/base.cpp\"\n#include \"../../bbst/rbst/basic/array.cpp\"\
+    \ \"../../bbst/rbst/basic/base.cpp\"\n#include \"../../bbst/rbst/persistent/base.cpp\"\
     \n#include \"../../bbst/rbst/persistent/array.cpp\"\n#undef call_from_test\n\n\
     #ifdef SANITIZE\n#define IGNORE\n#endif\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  using Node = NodeBase<int>;\n  const int LIM = 2e7;\n  PersistentArray<Node,\
@@ -42,13 +42,13 @@ data:
     \\n\";\n      ss[i]=pa.erase(ss[t],1);\n    }\n  }\n\n  return 0;\n}\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
-  - bbst/rbst/basic/array.cpp
+  - bbst/rbst/persistent/base.cpp
   - bbst/rbst/persistent/array.cpp
   isVerificationFile: true
   path: test/yosupo/persistent_queue.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 15:23:04+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-28 18:29:04+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/persistent_queue.test.cpp
 layout: document

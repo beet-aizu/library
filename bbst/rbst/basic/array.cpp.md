@@ -1,13 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  _extendedRequiredBy:
-  - icon: ':x:'
-    path: bbst/rbst/persistent/array.cpp
-    title: bbst/rbst/persistent/array.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0438.test.cpp
@@ -15,11 +12,8 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2890.test.cpp
     title: test order_of_key
-  - icon: ':x:'
-    path: test/yosupo/persistent_queue.test.cpp
-    title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -36,28 +30,26 @@ data:
     \ NodeBase *l,*r,*p;\n  size_t cnt;\n  bool rev;\n  T val;\n  NodeBase(T val):\n\
     \    cnt(1),rev(0),val(val){l=r=p=nullptr;}\n};\n\ntemplate<typename Node, size_t\
     \ LIM>\nstruct Array : BBSTBase<Node, LIM, Array<Node, LIM>>{\n  using super =\
-    \ BBSTBase<Node, LIM, Array>;\n  using T = typename Node::T;\n\n  void toggle(Node\
-    \ *t){\n    swap(t->l,t->r);\n    t->rev^=1;\n  }\n\n  Node* eval(Node* t){\n\
-    \    if(t->rev){\n      if(t->l) toggle(t->l);\n      if(t->r) toggle(t->r);\n\
-    \      t->rev=false;\n    }\n    return t;\n  }\n\n  using super::count;\n  Node*\
-    \ pushup(Node *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    return t;\n  }\n\
-    \n  using super::find_by_order;\n\n  Node* set_val(Node *a,size_t k,T val){\n\
-    \    auto b=find_by_order(a,k);\n    b->val=val;\n    return b;\n  }\n\n  T get_val(Node\
-    \ *a,size_t k){\n    return find_by_order(a,k)->val;\n  }\n};\n//END CUT HERE\n\
-    #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
-    #endif\n"
+    \ BBSTBase<Node, LIM, Array>;\n  using T = typename Node::T;\n\n  inline void\
+    \ toggle(Node *t){\n    swap(t->l,t->r);\n    t->rev^=1;\n  }\n\n  inline Node*\
+    \ eval(Node* t){\n    if(t->rev){\n      if(t->l) toggle(t->l);\n      if(t->r)\
+    \ toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\n  using super::count;\n\
+    \  inline Node* pushup(Node *t){\n    t->cnt=count(t->l)+1+count(t->r);\n    return\
+    \ t;\n  }\n\n  using super::find_by_order;\n\n  Node* set_val(Node *a,size_t k,T\
+    \ val){\n    auto b=find_by_order(a,k);\n    b->val=val;\n    return b;\n  }\n\
+    \n  T get_val(Node *a,size_t k){\n    return find_by_order(a,k)->val;\n  }\n};\n\
+    //END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/array.cpp
-  requiredBy:
-  - bbst/rbst/persistent/array.cpp
-  timestamp: '2020-10-28 15:23:04+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  requiredBy: []
+  timestamp: '2020-10-28 18:29:04+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2890.test.cpp
   - test/aoj/0438.test.cpp
-  - test/yosupo/persistent_queue.test.cpp
 documentation_of: bbst/rbst/basic/array.cpp
 layout: document
 redirect_from:

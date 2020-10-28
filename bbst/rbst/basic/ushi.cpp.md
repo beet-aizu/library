@@ -1,17 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  _extendedRequiredBy:
-  - icon: ':x:'
-    path: bbst/rbst/persistent/ushi.cpp
-    title: bbst/rbst/persistent/ushi.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/aoj/0437.test.cpp
-    title: test/aoj/0437.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
@@ -19,7 +13,7 @@ data:
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query
@@ -51,13 +45,13 @@ data:
     \ *a){\n    return a?a->dat:ti;\n  }\n\n  T query(Node *&a,size_t l,size_t r){\n\
     \    auto s=split(a,l);\n    auto t=split(s.second,r-l);\n    auto u=t.first;\n\
     \    T res=query(u);\n    a=merge(s.first,merge(u,t.second));\n    return res;\n\
+    \  }\n\n  T get_val(Node *a,size_t k){\n    return super::find_by_order(a,k)->val;\n\
     \  }\n\n  Node* set_val(Node *a,size_t k,T val){\n    assert(k<count(a));\n  \
     \  a=eval(a);\n    size_t num=count(a->l);\n    if(k<num) a->l=set_val(a->l,k,val);\n\
     \    if(k>num) a->r=set_val(a->r,k-(num+1),val);\n    if(k==num) a->val=val;\n\
-    \    return pushup(a);\n  }\n\n  T get_val(Node *a,size_t k){\n    return super::find_by_order(a,k)->val;\n\
-    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\n// test\
-    \ toggle\nsigned HAPPYQUERY_C(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n\
-    \  int n;\n  cin>>n;\n  vector<int> vs(n);\n  for(int i=0;i<n;i++) cin>>vs[i];\n\
+    \    return pushup(a);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\n\n// test toggle\nsigned HAPPYQUERY_C(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n;\n  cin>>n;\n  vector<int> vs(n);\n  for(int i=0;i<n;i++) cin>>vs[i];\n\
     \n  int q;\n  cin>>q;\n  vector<int> ts(q);\n  vector<int> ls(q),rs(q);\n  vector<int>\
     \ ps(q),xs(q);\n  vector<int> as(q),bs(q),cs(q),ds(q);\n  for(int i=0;i<q;i++){\n\
     \    cin>>ts[i];\n    if(ts[i]==1) cin>>ls[i]>>rs[i],ls[i]--;\n    if(ts[i]==2)\
@@ -77,14 +71,12 @@ data:
   - bbst/rbst/basic/base.cpp
   isVerificationFile: false
   path: bbst/rbst/basic/ushi.cpp
-  requiredBy:
-  - bbst/rbst/persistent/ushi.cpp
-  timestamp: '2020-10-28 16:34:30+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  requiredBy: []
+  timestamp: '2020-10-28 18:29:04+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/1508.test.cpp
-  - test/aoj/0437.test.cpp
 documentation_of: bbst/rbst/basic/ushi.cpp
 layout: document
 redirect_from:
