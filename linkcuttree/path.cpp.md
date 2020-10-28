@@ -47,14 +47,14 @@ data:
     \ Tp,typename Ep>\nstruct NodeBase{\n  using T = Tp;\n  using E = Ep;\n  NodeBase\
     \ *l,*r,*p;\n  bool rev;\n  T val,dat;\n  E laz;\n  NodeBase(T val,E laz):\n \
     \   rev(0),val(val),dat(val),laz(laz){\n    l=r=p=nullptr;}\n};\n\ntemplate<typename\
-    \ Np, size_t LIM>\nstruct Path : LinkCutTreeBase<Np, LIM>{\n  using super = LinkCutTreeBase<Np,\
-    \ LIM>;\n  using Node = Np;\n  using T = typename Node::T;\n  using E = typename\
-    \ Node::E;\n\n  using F = function<T(T, T)>;\n  using G = function<T(T, E)>;\n\
-    \  using H = function<E(E, E)>;\n  using S = function<T(T)>;\n  F f;\n  G g;\n\
-    \  H h;\n  S flip;\n  E ei;\n\n  Path(F f,G g,H h,S flip,E ei):\n    f(f),g(g),h(h),flip(flip),ei(ei){}\n\
-    \n  Path(F f,G g,H h,E ei):\n    Path(f,g,h,[](T a){return a;},ei){}\n\n  Node*\
-    \ create(T val){\n    return super::create(Node(val,ei));\n  }\n\n  inline void\
-    \ propagate(Node *t,E v){\n    t->laz=h(t->laz,v);\n    t->val=g(t->val,v);\n\
+    \ Np, size_t LIM>\nstruct Path : LinkCutTreeBase<Np, LIM, Path<Np, LIM>>{\n  using\
+    \ super = LinkCutTreeBase<Np, LIM, Path>;\n  using Node = Np;\n  using T = typename\
+    \ Node::T;\n  using E = typename Node::E;\n\n  using F = function<T(T, T)>;\n\
+    \  using G = function<T(T, E)>;\n  using H = function<E(E, E)>;\n  using S = function<T(T)>;\n\
+    \  F f;\n  G g;\n  H h;\n  S flip;\n  E ei;\n\n  Path(F f,G g,H h,S flip,E ei):\n\
+    \    f(f),g(g),h(h),flip(flip),ei(ei){}\n\n  Path(F f,G g,H h,E ei):\n    Path(f,g,h,[](T\
+    \ a){return a;},ei){}\n\n  Node* create(T val){\n    return super::create(Node(val,ei));\n\
+    \  }\n\n  inline void propagate(Node *t,E v){\n    t->laz=h(t->laz,v);\n    t->val=g(t->val,v);\n\
     \    t->dat=g(t->dat,v);\n  }\n\n  inline void toggle(Node *t){\n    swap(t->l,t->r);\n\
     \    t->dat=flip(t->dat);\n    t->rev^=1;\n  }\n\n  inline Node* eval(Node *t){\n\
     \    if(t->laz!=ei){\n      if(t->l) propagate(t->l,t->laz);\n      if(t->r) propagate(t->r,t->laz);\n\
@@ -73,7 +73,7 @@ data:
     \ cin>>s>>a>>b;\n    a--;b--;\n    if(s==\"add\"s){\n      lct.evert(lct[b]);\n\
     \      lct.link(lct[a],lct[b]);\n    }\n    if(s==\"rem\"s){\n      auto v=lct.lca(lct[a],lct[b])==lct[a]?lct[b]:lct[a];\n\
     \      lct.cut(v);\n    }\n    if(s==\"conn\"s)\n      cout<<(lct.is_connected(lct[a],lct[b])?\"\
-    YES\\n\":\"NO\\n\");\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2020/01/08\n\
+    YES\\n\":\"NO\\n\");\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2020/10/28\n\
     \  https://www.spoj.com/problems/DYNACON1/\n*/\n\nsigned main(){\n  //SPOJ_DYNACON1();\n\
     \  return 0;\n}\n#endif\n"
   dependsOn:
@@ -81,7 +81,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/path.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:04:41+09:00'
+  timestamp: '2020-10-28 14:04:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp

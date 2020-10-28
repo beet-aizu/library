@@ -1635,9 +1635,6 @@ data:
       path: test/yosupo/vertex_add_path_sum.test.cpp
       title: test/yosupo/vertex_add_path_sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-      title: test/yosupo/vertex_add_subtree_sum.linkcuttree.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_subtree_sum.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.test.cpp
     - icon: ':heavy_check_mark:'

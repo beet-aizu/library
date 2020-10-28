@@ -31,7 +31,7 @@ data:
     #undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \  const char newl = '\\n';\n\n  using ll = long long;\n\n  int n,q;\n  cin>>n>>q;\n\
     \  vector<ll> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n\n  using Node = NodeBase<ll>;\n\
-    \  constexpr size_t LIM = 2e5+100;\n  using LCT = SubTree<Node, LIM>;\n  LCT lct;\n\
+    \  constexpr size_t LIM = 2e5+100;\n  using LCT = Subtree<Node, LIM>;\n  LCT lct;\n\
     \n  for(int i=0;i<n;i++) lct.create(as[i]);\n\n  for(int i=1;i<n;i++){\n    int\
     \ u,v;\n    cin>>u>>v;\n    lct.evert(lct[v]);\n    lct.link(lct[u],lct[v]);\n\
     \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n    \
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:04:41+09:00'
+  timestamp: '2020-10-28 14:04:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
