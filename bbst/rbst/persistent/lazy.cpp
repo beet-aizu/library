@@ -34,7 +34,7 @@ struct PersistentLazy : Lazy<Node, LIM>{
   }
 
   Node* rebuild(Node* a){
-    auto vs=super::dump(a);
+    auto vs=super::dump<T>(a);
     vector<Node> nx;
     nx.reserve(vs.size());
     for(auto v:vs)

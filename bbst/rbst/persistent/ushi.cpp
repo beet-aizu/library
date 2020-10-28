@@ -16,18 +16,18 @@ struct PersistentUshi : Ushi<Node, LIM>{
   using super::super;
   using T = typename Node::T;
 
-  inline Node* clone(Node* a){
-    if(a==nullptr) return a;
-    return super::create(*a);
+  inline Node* clone(Node* t){
+    if(t==nullptr) return t;
+    return super::create(*t);
   }
 
-  Node* eval(Node* a){
-    a=clone(a);
-    if(a->rev){
-      a->l=clone(a->l);
-      a->r=clone(a->r);
+  Node* eval(Node* t){
+    t=clone(t);
+    if(t->rev){
+      t->l=clone(t->l);
+      t->r=clone(t->r);
     }
-    return super::eval(a);
+    return super::eval(t);
   }
 
   T query(Node *a,size_t l,size_t r){

@@ -3,7 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename Node, size_t LIM>
+template<typename Node, size_t LIM, typename Impl>
 struct BBSTBase{
   using u32 = uint32_t;
   u32 xor128(){
@@ -17,7 +17,7 @@ struct BBSTBase{
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
 
-  alignas(Node) static byte pool[sizeof(Node) * LIM];
+  alignas(Node) static uint8_t pool[sizeof(Node) * LIM];
   static Node* ptr;
   static size_t size;
 
@@ -30,9 +30,17 @@ struct BBSTBase{
     return a?a->cnt:0;
   }
 
-  virtual void toggle(Node *a)=0;
-  virtual Node* eval(Node* a)=0;
-  virtual Node* recalc(Node* a)=0;
+  inline void toggle(Node *t){
+    static_cast<Impl*>(this)->toggle(t);
+  }
+
+  inline Node* eval(Node *t){
+    return static_cast<Impl*>(this)->eval(t);
+  }
+
+  inline Node* pushup(Node *t){
+    return static_cast<Impl*>(this)->pushup(t);
+  }
 
   Node* toggle(Node *a,size_t l,size_t r){
     auto s=split(a,l);
@@ -49,12 +57,12 @@ struct BBSTBase{
       a=eval(a);
       a->r=merge(a->r,b);
       a->r->p=a;
-      return recalc(a);
+      return pushup(a);
     }
     b=eval(b);
     b->l=merge(a,b->l);
     b->l->p=b;
-    return recalc(b);
+    return pushup(b);
   }
 
   pair<Node*, Node*> split(Node* a,size_t k){
@@ -65,23 +73,24 @@ struct BBSTBase{
       auto s=split(a->l,k);
       a->l=s.second;
       if(a->l) a->l->p=a;
-      return make_pair(s.first,recalc(a));
+      return make_pair(s.first,pushup(a));
     }
     if(a->r) a->r->p=nullptr;
     auto s=split(a->r,k-(count(a->l)+1));
     a->r=s.first;
     if(a->r) a->r->p=a;
-    return make_pair(recalc(a),s.second);
+    return make_pair(pushup(a),s.second);
   }
 
-  Node* insert(Node *a,size_t pos,Node v){
+  Node* insert(Node *a,size_t k,Node v){
     Node* b=create(v);
-    auto s=split(a,pos);
+    auto s=split(a,k);
     return merge(merge(s.first,b),s.second);
   }
 
-  Node* erase(Node *a,size_t pos){
-    auto s=split(a,pos);
+  Node* erase(Node *a,size_t k){
+    assert(k<count(a));
+    auto s=split(a,k);
     auto t=split(s.second,1);
     return merge(s.first,t.second);
   }
@@ -117,13 +126,30 @@ struct BBSTBase{
   Node* build(const vector<Node> &vs){
     return build(0,vs.size(),vs);
   }
+
+  template<typename T>
+  void dump(Node* a,typename vector<T>::iterator it){
+    if(!count(a)) return;
+    a=eval(a);
+    dump(a->l,it);
+    *(it+count(a->l))=a->val;
+    dump(a->r,it+count(a->l)+1);
+  }
+
+  template<typename T>
+  vector<T> dump(Node* a){
+    vector<T> vs(count(a));
+    dump(a,vs.begin());
+    return vs;
+  }
 };
-template<typename Node, size_t LIM>
-alignas(Node) byte BBSTBase<Node, LIM>::pool[];
-template<typename Node, size_t LIM>
-Node* BBSTBase<Node, LIM>::ptr=(Node*)BBSTBase<Node, LIM>::pool;
-template<typename Node, size_t LIM>
-size_t BBSTBase<Node, LIM>::size=0;
+template<typename Node, size_t LIM, typename Impl>
+alignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];
+template<typename Node, size_t LIM, typename Impl>
+Node* BBSTBase<Node, LIM, Impl>::ptr=
+  (Node*)BBSTBase<Node, LIM, Impl>::pool;
+template<typename Node, size_t LIM, typename Impl>
+size_t BBSTBase<Node, LIM, Impl>::size=0;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

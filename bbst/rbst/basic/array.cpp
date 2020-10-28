@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -20,29 +20,28 @@ struct NodeBase{
 };
 
 template<typename Node, size_t LIM>
-struct Array : BBSTBase<Node, LIM>{
+struct Array : BBSTBase<Node, LIM, Array<Node, LIM>>{
+  using super = BBSTBase<Node, LIM, Array>;
   using T = typename Node::T;
-  using super = BBSTBase<Node, LIM>;
-  using super::count;
 
-  Node* recalc(Node *a){
-    a->cnt=count(a->l)+1+count(a->r);
-    return a;
+  void toggle(Node *t){
+    swap(t->l,t->r);
+    t->rev^=1;
   }
 
-  void toggle(Node *a){
-    swap(a->l,a->r);
-    a->rev^=1;
-  }
-
-  // remove "virtual" for optimization
-  virtual Node* eval(Node* a){
-    if(a->rev){
-      if(a->l) toggle(a->l);
-      if(a->r) toggle(a->r);
-      a->rev=false;
+  Node* eval(Node* t){
+    if(t->rev){
+      if(t->l) toggle(t->l);
+      if(t->r) toggle(t->r);
+      t->rev=false;
     }
-    return recalc(a);
+    return t;
+  }
+
+  using super::count;
+  Node* pushup(Node *t){
+    t->cnt=count(t->l)+1+count(t->r);
+    return t;
   }
 
   using super::find_by_order;
@@ -55,24 +54,6 @@ struct Array : BBSTBase<Node, LIM>{
 
   T get_val(Node *a,size_t k){
     return find_by_order(a,k)->val;
-  }
-
-  void dump(Node* a,typename vector<T>::iterator it){
-    if(!count(a)) return;
-    if(a->rev){
-      if(a->l) toggle(a->l);
-      if(a->r) toggle(a->r);
-      a->rev=false;
-    }
-    dump(a->l,it);
-    *(it+count(a->l))=a->val;
-    dump(a->r,it+count(a->l)+1);
-  }
-
-  vector<T> dump(Node* a){
-    vector<T> vs(count(a));
-    dump(a,vs.begin());
-    return vs;
   }
 };
 //END CUT HERE

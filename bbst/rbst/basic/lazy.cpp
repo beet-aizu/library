@@ -22,8 +22,8 @@ struct NodeBase{
 };
 
 template<typename Node, size_t LIM>
-struct Lazy : BBSTBase<Node, LIM>{
-  using super = BBSTBase<Node, LIM>;
+struct Lazy : BBSTBase<Node, LIM, Lazy<Node, LIM>>{
+  using super = BBSTBase<Node, LIM, Lazy>;
 
   using T = typename Node::T;
   using E = typename Node::E;
@@ -46,50 +46,47 @@ struct Lazy : BBSTBase<Node, LIM>{
   Lazy(F f,G g,H h,T ti,E ei):
     Lazy(f,g,h,[](T a){return a;},ti,ei){}
 
-  using super::create;
+  inline void propagate(Node *t,E v){
+    t->laz=h(t->laz,v);
+    t->val=g(t->val,v);
+    t->dat=g(t->dat,v);
+  }
+
+  inline void toggle(Node *t){
+    swap(t->l,t->r);
+    t->val=flip(t->val);
+    t->dat=flip(t->dat);
+    t->rev^=1;
+  }
+
+  inline Node* eval(Node* t){
+    if(t->laz!=ei){
+      if(t->l) propagate(t->l,t->laz);
+      if(t->r) propagate(t->r,t->laz);
+      t->laz=ei;
+    }
+    if(t->rev){
+      if(t->l) toggle(t->l);
+      if(t->r) toggle(t->r);
+      t->rev=false;
+    }
+    return t;
+  }
+
+  using super::count;
+  inline Node* pushup(Node *t){
+    t->cnt=count(t->l)+1+count(t->r);
+    t->dat=t->val;
+    if(t->l) t->dat=f(t->l->dat,t->dat);
+    if(t->r) t->dat=f(t->dat,t->r->dat);
+    return t;
+  }
+
   using super::merge;
   using super::split;
 
   T query(const Node *a){
     return a?a->dat:ti;
-  }
-
-  using super::count;
-  Node* recalc(Node *a){
-    a->cnt=count(a->l)+1+count(a->r);
-    a->dat=a->val;
-    if(a->l) a->dat=f(a->l->dat,a->dat);
-    if(a->r) a->dat=f(a->dat,a->r->dat);
-    return a;
-  }
-
-  void propagate(Node *a,E v){
-    a->laz=h(a->laz,v);
-    a->val=g(a->val,v);
-    a->dat=g(a->dat,v);
-  }
-
-  using super::toggle;
-  void toggle(Node *a){
-    swap(a->l,a->r);
-    a->val=flip(a->val);
-    a->dat=flip(a->dat);
-    a->rev^=1;
-  }
-
-  // remove "virtual" for optimization
-  virtual Node* eval(Node* a){
-    if(a->laz!=ei){
-      if(a->l) propagate(a->l,a->laz);
-      if(a->r) propagate(a->r,a->laz);
-      a->laz=ei;
-    }
-    if(a->rev){
-      if(a->l) toggle(a->l);
-      if(a->r) toggle(a->r);
-      a->rev=false;
-    }
-    return recalc(a);
   }
 
   T query(Node *&a,size_t l,size_t r){
@@ -101,22 +98,12 @@ struct Lazy : BBSTBase<Node, LIM>{
     return res;
   }
 
-  Node* update(Node *a,size_t l,size_t r,E x){
+  Node* update(Node *a,size_t l,size_t r,E v){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
     auto u=eval(t.first);
-    propagate(u,x);
+    propagate(u,v);
     return merge(s.first,merge(u,t.second));
-  }
-
-  Node* set_val(Node *a,size_t k,T val){
-    assert(k<count(a));
-    a=eval(a);
-    size_t num=count(a->l);
-    if(k<num) a->l=set_val(a->l,k,val);
-    if(k>num) a->r=set_val(a->r,k-(num+1),val);
-    if(k==num) a->val=val;
-    return recalc(a);
   }
 
   T get_val(Node *a,size_t k){
@@ -128,29 +115,31 @@ struct Lazy : BBSTBase<Node, LIM>{
     return a->val;
   }
 
-  void dump(Node* a,typename vector<T>::iterator it){
-    if(!count(a)) return;
+  Node* set_val(Node *a,size_t k,T val){
+    assert(k<count(a));
     a=eval(a);
-    dump(a->l,it);
-    *(it+count(a->l))=a->val;
-    dump(a->r,it+count(a->l)+1);
-  }
-
-  vector<T> dump(Node* a){
-    vector<T> vs(count(a));
-    dump(a,vs.begin());
-    return vs;
+    size_t num=count(a->l);
+    if(k<num) a->l=set_val(a->l,k,val);
+    if(k>num) a->r=set_val(a->r,k-(num+1),val);
+    if(k==num) a->val=val;
+    return pushup(a);
   }
 };
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
-char buf[114514];
+
+// test insert, erase
 signed CODEFESTIVAL2014EXHIBITION_B(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
   int Q;
-  scanf("%d",&Q);
-  scanf("%s\n",buf);
-  string S(buf);
+  cin>>Q;
+
+  string S;
+  cin>>S;
+
   using T = tuple<int, int, int>;
   using P = pair<int, int>;
   auto f=[](T a,T b){
@@ -168,24 +157,26 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
   constexpr size_t LIM = 1e6;
   Lazy<Node, LIM> G(f,g,h,T(INF,INF,0),P(0,0));
 
-  vector<Node> vs(S.size()+2,Node(G.ti,G.ei));
-  for(int i=0;i<(int)S.size();i++)
-    vs[i+1].val=T(0,0,S[i]=='('?1:-1);
-
+  vector<Node> vs((int)S.size()+2,Node(T(0,0,0),G.ei));
   auto rt=G.build(vs);
+
+  for(int i=0;i<(int)S.size();i++)
+    rt=G.set_val(rt,i+1,T(0,0,S[i]=='('?+1:-1));
+
   for(int i=1;i<=(int)S.size();i++){
     int z=get<2>(G.get_val(rt,i));
-    rt=G.update(rt,i,G.count(rt),P(z,0));
+    rt=G.update(rt,i,G.count(rt),P(+z,0));
     rt=G.update(rt,0,i+1,P(0,-z));
   }
 
   for(int i=0;i<Q;i++){
     char x;
     int y,z;
-    scanf("%c %d %d\n",&x,&y,&z);
+    cin>>x>>y>>z;
+
     z++;
     if(x=='(' or x==')'){
-      z=(x=='('?1:-1);
+      z=(x=='('?+1:-1);
       T prv=G.get_val(rt,y-1);
       T nxt=G.get_val(rt,y);
       T cur(get<0>(prv),get<1>(nxt),z);
@@ -208,14 +199,14 @@ signed CODEFESTIVAL2014EXHIBITION_B(){
       int ans=0;
       if(get<0>(prv)>get<0>(cur)) ans+=get<0>(prv)-get<0>(cur);
       if(get<1>(nxt)>get<1>(cur)) ans+=get<1>(nxt)-get<1>(cur);
-      printf("%d\n",ans);
+      cout<<ans<<'\n';
     }
   }
 
   return 0;
 }
 /*
-  verified on 2019/12/27
+  verified on 2020/10/28
   https://atcoder.jp/contests/code-festival-2014-exhibition-open/tasks/code_festival_exhibition_b
 */
 

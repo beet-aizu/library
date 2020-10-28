@@ -1,5 +1,5 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
@@ -14,67 +14,58 @@ struct NodeBase{
   NodeBase *l,*r,*p;
   size_t cnt;
   bool rev;
-  E dat,laz;
-  NodeBase(E dat,E laz):
-    cnt(1),rev(0),dat(dat),laz(laz){l=r=p=nullptr;}
+  E val,laz;
+  NodeBase(E val,E laz):
+    cnt(1),rev(0),val(val),laz(laz){l=r=p=nullptr;}
 };
 
 template<typename Node, size_t LIM>
-struct Dual : BBSTBase<Node, LIM>{
+struct Dual : BBSTBase<Node, LIM, Dual<Node, LIM>>{
+  using super = BBSTBase<Node, LIM, Dual>;
   using E = typename Node::E;
-  using super = BBSTBase<Node, LIM>;
-  using H = function<E(E,E)>;
+  using H = function<E(E, E)>;
 
   H h;
   E ei;
 
   Dual(H h,E ei):h(h),ei(ei){}
 
-  using super::create;
-  using super::merge;
-  using super::split;
-
-  Node* build(size_t l,size_t r){
-    if(l+1==r) return create(Node(ei,ei));
-    size_t m=(l+r)>>1;
-    return merge(build(l,m),build(m,r));
+  void propagate(Node *t,E x){
+    t->val=h(t->val,x);
+    t->laz=h(t->laz,x);
   }
 
-  Node* init(int n){
-    return build(0,n);
+  void toggle(Node *t){
+    swap(t->l,t->r);
+    t->rev^=1;
+  }
+
+  Node* eval(Node* t){
+    if(t->laz!=ei){
+      if(t->l) propagate(t->l,t->laz);
+      if(t->r) propagate(t->r,t->laz);
+      t->laz=ei;
+    }
+    if(t->rev){
+      if(t->l) toggle(t->l);
+      if(t->r) toggle(t->r);
+      t->rev=false;
+    }
+    return t;
   }
 
   using super::count;
-  Node* recalc(Node *a){
-    a->cnt=count(a->l)+1+count(a->r);
-    return a;
+  Node* pushup(Node *t){
+    t->cnt=count(t->l)+1+count(t->r);
+    return t;
   }
 
-  void propagate(Node *a,E x){
-    a->dat=h(a->dat,x);
-    a->laz=h(a->laz,x);
+  Node* init(int n){
+    return build(vector<Node>(n,Node(ei,ei)));
   }
 
-  using super::toggle;
-  void toggle(Node *a){
-    swap(a->l,a->r);
-    a->rev^=1;
-  }
-
-  // remove "virtual" for optimization
-  virtual Node* eval(Node* a){
-    if(a->laz!=ei){
-      if(a->l) propagate(a->l,a->laz);
-      if(a->r) propagate(a->r,a->laz);
-      a->laz=ei;
-    }
-    if(a->rev){
-      if(a->l) toggle(a->l);
-      if(a->r) toggle(a->r);
-      a->rev=false;
-    }
-    return recalc(a);
-  }
+  using super::merge;
+  using super::split;
 
   Node* update(Node *a,size_t l,size_t r,E x){
     auto s=split(a,l);
@@ -90,8 +81,8 @@ struct Dual : BBSTBase<Node, LIM>{
     size_t num=count(a->l);
     if(k<num) a->l=set_val(a->l,k,x);
     if(k>num) a->r=set_val(a->r,k-(num+1),x);
-    if(k==num) a->dat=x;
-    return recalc(a);
+    if(k==num) a->val=x;
+    return pushup(a);
   }
 
   E get_val(Node *a,size_t k){
@@ -100,21 +91,7 @@ struct Dual : BBSTBase<Node, LIM>{
     size_t num=count(a->l);
     if(k<num) return get_val(a->l,k);
     if(k>num) return get_val(a->r,k-(num+1));
-    return a->dat;
-  }
-
-  void dump(Node* a,typename vector<E>::iterator it){
-    if(!count(a)) return;
-    a=eval(a);
-    dump(a->l,it);
-    *(it+count(a->l))=a->dat;
-    dump(a->r,it+count(a->l)+1);
-  }
-
-  vector<E> dump(Node* a){
-    vector<E> vs(count(a));
-    dump(a,vs.begin());
-    return vs;
+    return a->val;
   }
 };
 //END CUT HERE

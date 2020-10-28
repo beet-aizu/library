@@ -20,12 +20,11 @@ struct NodeBase{
 };
 
 template<typename Node, size_t LIM>
-struct Ushi : BBSTBase<Node, LIM>{
-  using super = BBSTBase<Node, LIM>;
+struct Ushi : BBSTBase<Node, LIM, Ushi<Node, LIM>>{
+  using super = BBSTBase<Node, LIM, Ushi>;
 
   using T = typename Node::T;
-
-  using F = function<T(T,T)>;
+  using F = function<T(T, T)>;
   using S = function<T(T)>;
 
   F f;
@@ -37,39 +36,37 @@ struct Ushi : BBSTBase<Node, LIM>{
 
   Ushi(F f,T ti):Ushi(f,[](T a){return a;},ti){}
 
-  T query(const Node *a){
-    return a?a->dat:ti;
+  inline void toggle(Node *t){
+    swap(t->l,t->r);
+    t->val=flip(t->val);
+    t->dat=flip(t->dat);
+    t->rev^=1;
+  }
+
+  inline Node* eval(Node* t){
+    if(t->rev){
+      if(t->l) toggle(t->l);
+      if(t->r) toggle(t->r);
+      t->rev=false;
+    }
+    return t;
   }
 
   using super::count;
-  Node* recalc(Node *a){
-    a->cnt=count(a->l)+1+count(a->r);
-    a->dat=a->val;
-    if(a->l) a->dat=f(a->l->dat,a->dat);
-    if(a->r) a->dat=f(a->dat,a->r->dat);
-    return a;
-  }
-
-  using super::toggle;
-  void toggle(Node *a){
-    swap(a->l,a->r);
-    a->val=flip(a->val);
-    a->dat=flip(a->dat);
-    a->rev^=1;
-  }
-
-  // remove "virtual" for optimization
-  virtual Node* eval(Node* a){
-    if(a->rev){
-      if(a->l) toggle(a->l);
-      if(a->r) toggle(a->r);
-      a->rev=false;
-    }
-    return recalc(a);
+  inline Node* pushup(Node *t){
+    t->cnt=count(t->l)+1+count(t->r);
+    t->dat=t->val;
+    if(t->l) t->dat=f(t->l->dat,t->dat);
+    if(t->r) t->dat=f(t->dat,t->r->dat);
+    return t;
   }
 
   using super::merge;
   using super::split;
+
+  T query(const Node *a){
+    return a?a->dat:ti;
+  }
 
   T query(Node *&a,size_t l,size_t r){
     auto s=split(a,l);
@@ -87,30 +84,11 @@ struct Ushi : BBSTBase<Node, LIM>{
     if(k<num) a->l=set_val(a->l,k,val);
     if(k>num) a->r=set_val(a->r,k-(num+1),val);
     if(k==num) a->val=val;
-    return recalc(a);
+    return pushup(a);
   }
 
   T get_val(Node *a,size_t k){
     return super::find_by_order(a,k)->val;
-  }
-
-  void dump(Node* a,typename vector<T>::iterator it){
-    if(!count(a)) return;
-    if(a->rev){
-      if(a->l) toggle(a->l);
-      if(a->r) toggle(a->r);
-      a->rev=false;
-    }
-    dump(a->l,it);
-    *(it+count(a->l))=a->val;
-    dump(a->r,it+count(a->l)+1);
-  }
-
-  // destroy data
-  vector<T> dump(Node* a){
-    vector<T> vs(count(a));
-    dump(a,vs.begin());
-    return vs;
   }
 };
 //END CUT HERE
