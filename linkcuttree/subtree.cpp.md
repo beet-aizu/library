@@ -44,7 +44,7 @@ data:
     \ toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\n  inline A\
     \ resolve(Node *t){\n    return t?t->sum:A();\n  }\n\n  inline void pushup(Node\
     \ *t){\n    if(t==nullptr) return;\n    t->sum=t->val+t->dat;\n    t->sum+=resolve(t->l);\n\
-    \    t->sum+=resolve(t->r);\n  }\n\n  using super::splay;\n\n  Node* expose(Node\
+    \    t->sum+=resolve(t->r);\n  }\n\n  using super::splay;\n\n  inline Node* expose(Node\
     \ *t){\n    Node *rp=nullptr;\n    for(Node *c=t;c;c=c->p){\n      splay(c);\n\
     \      c->dat+=resolve(c->r);\n      c->r=rp;\n      c->dat-=resolve(c->r);\n\
     \      pushup(c);\n      rp=c;\n    }\n    splay(t);\n    return rp;\n  }\n\n\
@@ -106,7 +106,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/subtree.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:04:48+09:00'
+  timestamp: '2020-10-28 14:16:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3120.test.cpp

@@ -61,17 +61,20 @@ data:
     \      t->laz=ei;\n    }\n    if(t->rev){\n      if(t->l) toggle(t->l);\n    \
     \  if(t->r) toggle(t->r);\n      t->rev=false;\n    }\n    return t;\n  }\n\n\
     \  inline void pushup(Node *t){\n    t->dat=t->val;\n    if(t->l) t->dat=f(t->l->dat,t->dat);\n\
-    \    if(t->r) t->dat=f(t->dat,t->r->dat);\n  }\n\n  using super::expose;\n\n \
-    \ T query(Node *t){\n    expose(t);\n    return t->dat;\n  }\n\n  void update(Node\
-    \ *t,E v){\n    expose(t);\n    propagate(t,v);\n    eval(t);\n  }\n\n  void set_val(Node\
-    \ *t,T v){\n    expose(t);\n    t->val=v;\n    eval(t);\n  }\n};\n//END CUT HERE\n\
-    #ifndef call_from_test\n\n// test dynamic tree\nsigned SPOJ_DYNACON1(){\n  cin.tie(0);\n\
-    \  ios::sync_with_stdio(0);\n\n  int n,m;\n  cin>>n>>m;\n  using Node = NodeBase<int,\
-    \ int>;\n  constexpr size_t LIM = 1e6;\n  using LCT = Path<Node, LIM>;\n\n  auto\
-    \ f=[](int a,int b){return a+b;};\n  LCT lct(f,f,f,0);\n  for(int i=0;i<n;i++)\
-    \ lct.create(0);\n\n  for(int i=0;i<m;i++){\n    string s;\n    int a,b;\n   \
-    \ cin>>s>>a>>b;\n    a--;b--;\n    if(s==\"add\"s){\n      lct.evert(lct[b]);\n\
-    \      lct.link(lct[a],lct[b]);\n    }\n    if(s==\"rem\"s){\n      auto v=lct.lca(lct[a],lct[b])==lct[a]?lct[b]:lct[a];\n\
+    \    if(t->r) t->dat=f(t->dat,t->r->dat);\n  }\n\n  using super::splay;\n\n  inline\
+    \ Node* expose(Node *t){\n    Node *rp=nullptr;\n    for(Node *c=t;c;c=c->p){\n\
+    \      splay(c);\n      c->r=rp;\n      pushup(c);\n      rp=c;\n    }\n    splay(t);\n\
+    \    return rp;\n  }\n\n  T query(Node *t){\n    expose(t);\n    return t->dat;\n\
+    \  }\n\n  void update(Node *t,E v){\n    expose(t);\n    propagate(t,v);\n   \
+    \ eval(t);\n  }\n\n  void set_val(Node *t,T v){\n    expose(t);\n    t->val=v;\n\
+    \    eval(t);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\n// test dynamic\
+    \ tree\nsigned SPOJ_DYNACON1(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n\
+    \  int n,m;\n  cin>>n>>m;\n  using Node = NodeBase<int, int>;\n  constexpr size_t\
+    \ LIM = 1e6;\n  using LCT = Path<Node, LIM>;\n\n  auto f=[](int a,int b){return\
+    \ a+b;};\n  LCT lct(f,f,f,0);\n  for(int i=0;i<n;i++) lct.create(0);\n\n  for(int\
+    \ i=0;i<m;i++){\n    string s;\n    int a,b;\n    cin>>s>>a>>b;\n    a--;b--;\n\
+    \    if(s==\"add\"s){\n      lct.evert(lct[b]);\n      lct.link(lct[a],lct[b]);\n\
+    \    }\n    if(s==\"rem\"s){\n      auto v=lct.lca(lct[a],lct[b])==lct[a]?lct[b]:lct[a];\n\
     \      lct.cut(v);\n    }\n    if(s==\"conn\"s)\n      cout<<(lct.is_connected(lct[a],lct[b])?\"\
     YES\\n\":\"NO\\n\");\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2020/10/28\n\
     \  https://www.spoj.com/problems/DYNACON1/\n*/\n\nsigned main(){\n  //SPOJ_DYNACON1();\n\
@@ -81,7 +84,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/path.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:04:48+09:00'
+  timestamp: '2020-10-28 14:16:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp

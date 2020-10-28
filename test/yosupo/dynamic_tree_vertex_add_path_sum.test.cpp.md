@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:04:48+09:00'
+  timestamp: '2020-10-28 14:16:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp

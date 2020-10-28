@@ -44,7 +44,7 @@ data:
     \    T rsmd=t->r?t->r->smd:0;\n\n    t->ld=max(lld,lsmd+t->val+*(t->td).rbegin());\n\
     \    if(t->r) t->ld=max(t->ld,lsmd+t->val+t->r->ld);\n\n    t->rd=max(rrd,rsmd+t->val+*(t->td).rbegin());\n\
     \    if(t->l) t->rd=max(t->rd,rsmd+t->val+t->l->rd);\n  }\n\n  using super::splay;\n\
-    \n  Node* expose(Node *t){\n    Node *rp=nullptr;\n    for(Node *c=t;c;c=c->p){\n\
+    \n  inline Node* expose(Node *t){\n    Node *rp=nullptr;\n    for(Node *c=t;c;c=c->p){\n\
     \      splay(c);\n      if(c->r) c->td.emplace(c->r->ld);\n      c->r=rp;\n  \
     \    if(c->r) c->td.erase(c->td.find(c->r->ld));\n      pushup(c);\n      rp=c;\n\
     \    }\n    splay(t);\n    return rp;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/farthest.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:04:48+09:00'
+  timestamp: '2020-10-28 14:16:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp

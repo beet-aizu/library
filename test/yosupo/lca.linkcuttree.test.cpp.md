@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:04:48+09:00'
+  timestamp: '2020-10-28 14:16:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.linkcuttree.test.cpp
