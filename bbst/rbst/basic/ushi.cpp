@@ -36,6 +36,7 @@ struct Ushi : BBSTBase<Node, LIM, Ushi<Node, LIM>>{
 
   Ushi(F f,T ti):Ushi(f,[](T a){return a;},ti){}
 
+  using super::toggle;
   inline void toggle(Node *t){
     swap(t->l,t->r);
     t->val=flip(t->val);

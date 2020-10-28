@@ -35,6 +35,7 @@ struct Dual : BBSTBase<Node, LIM, Dual<Node, LIM>>{
     t->laz=h(t->laz,x);
   }
 
+  using super::toggle;
   void toggle(Node *t){
     swap(t->l,t->r);
     t->rev^=1;
@@ -61,7 +62,7 @@ struct Dual : BBSTBase<Node, LIM, Dual<Node, LIM>>{
   }
 
   Node* init(int n){
-    return build(vector<Node>(n,Node(ei,ei)));
+    return super::build(vector<Node>(n,Node(ei,ei)));
   }
 
   using super::merge;
