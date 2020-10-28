@@ -37,7 +37,7 @@ data:
     - icon: ':question:'
       path: bbst/rbst/basic/base.cpp
       title: bbst/rbst/basic/base.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/dual.cpp
       title: bbst/rbst/basic/dual.cpp
     - icon: ':heavy_check_mark:'
@@ -802,13 +802,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/1338.test.cpp
       title: test/aoj/1338.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/1508.test.cpp
       title: test/aoj/1508.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/1549.test.cpp
       title: test succ, pred
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/1579.test.cpp
       title: test/aoj/1579.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1201,13 +1201,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_C.test.cpp
       title: test/aoj/DSL_2_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_D.bbst.test.cpp
       title: test/aoj/DSL_2_D.bbst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_D.test.cpp
       title: test/aoj/DSL_2_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_E.bbst.test.cpp
       title: test/aoj/DSL_2_E.bbst.test.cpp
     - icon: ':heavy_check_mark:'

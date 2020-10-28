@@ -5,7 +5,7 @@ data:
   - icon: ':question:'
     path: bbst/rbst/basic/array.cpp
     title: bbst/rbst/basic/array.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/dual.cpp
     title: bbst/rbst/basic/dual.cpp
   - icon: ':heavy_check_mark:'
@@ -30,10 +30,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0438.test.cpp
     title: test find_by_order, order_of_key
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/1579.test.cpp
     title: test/aoj/1579.test.cpp
   - icon: ':heavy_check_mark:'
@@ -42,10 +42,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_D.bbst.test.cpp
     title: test/aoj/DSL_2_D.bbst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_E.bbst.test.cpp
     title: test/aoj/DSL_2_E.bbst.test.cpp
   - icon: ':heavy_check_mark:'

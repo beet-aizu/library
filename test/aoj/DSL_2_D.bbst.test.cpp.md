@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/dual.cpp
     title: bbst/rbst/basic/dual.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
     links:
@@ -42,8 +42,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_D.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 15:23:04+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-28 16:34:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_D.bbst.test.cpp
 layout: document

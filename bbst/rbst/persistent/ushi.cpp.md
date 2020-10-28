@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/ushi.cpp
   requiredBy: []
-  timestamp: '2020-10-28 15:23:04+09:00'
+  timestamp: '2020-10-28 16:34:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/0437.test.cpp
