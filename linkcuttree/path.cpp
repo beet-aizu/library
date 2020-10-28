@@ -81,7 +81,19 @@ struct Path : LinkCutTreeBase<Np, LIM, Path<Np, LIM>>{
     if(t->r) t->dat=f(t->dat,t->r->dat);
   }
 
-  using super::expose;
+  using super::splay;
+
+  inline Node* expose(Node *t){
+    Node *rp=nullptr;
+    for(Node *c=t;c;c=c->p){
+      splay(c);
+      c->r=rp;
+      pushup(c);
+      rp=c;
+    }
+    splay(t);
+    return rp;
+  }
 
   T query(Node *t){
     expose(t);

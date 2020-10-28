@@ -17,16 +17,20 @@ struct LinkCutTreeBase{
   inline size_t idx(Node *t){return t-ptr;}
   Node* operator[](size_t k){return ptr+k;}
 
-  void toggle(Node *t){
+  inline void toggle(Node *t){
     static_cast<Impl*>(this)->toggle(t);
   }
 
-  Node* eval(Node *t){
+  inline Node* eval(Node *t){
     return static_cast<Impl*>(this)->eval(t);
   }
 
-  void pushup(Node *t){
+  inline void pushup(Node *t){
     static_cast<Impl*>(this)->pushup(t);
+  }
+
+  inline Node* expose(Node *t){
+    return static_cast<Impl*>(this)->expose(t);
   }
 
   void rotR(Node *t){
@@ -78,18 +82,6 @@ struct LinkCutTreeBase{
         }
       }
     }
-  }
-
-  virtual Node* expose(Node *t){
-    Node *rp=nullptr;
-    for(Node *c=t;c;c=c->p){
-      splay(c);
-      c->r=rp;
-      pushup(c);
-      rp=c;
-    }
-    splay(t);
-    return rp;
   }
 
   // c must be root on LCT

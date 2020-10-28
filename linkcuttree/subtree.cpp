@@ -57,7 +57,7 @@ struct Subtree : LinkCutTreeBase<Np, LIM, Subtree<Np, LIM>>{
 
   using super::splay;
 
-  Node* expose(Node *t){
+  inline Node* expose(Node *t){
     Node *rp=nullptr;
     for(Node *c=t;c;c=c->p){
       splay(c);
