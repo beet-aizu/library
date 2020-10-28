@@ -13,6 +13,12 @@ struct PersistentBase : BBSTBase<Node, LIM, PersistentBase<Node, LIM, Impl>>{
   using super = BBSTBase<Node, LIM, PersistentBase>;
   using T = typename Node::T;
 
+  static bool exist;
+  PersistentBase(){
+    // rebuild destroys all elements in the pool
+    assert(!exchange(exist,true));
+  }
+
   inline Node* clone(Node* a){
     if(a==nullptr) return a;
     return super::create(*a);
@@ -58,6 +64,8 @@ struct PersistentBase : BBSTBase<Node, LIM, PersistentBase<Node, LIM, Impl>>{
     return super::size>LIM*d;
   }
 };
+template<typename Node, size_t LIM, typename Impl>
+bool PersistentBase<Node, LIM, Impl>::exist = false;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

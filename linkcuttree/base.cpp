@@ -5,7 +5,7 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename Node, size_t LIM, typename Impl>
 struct LinkCutTreeBase{
-  alignas(Node) static uint8_t pool[sizeof(Node) * LIM];
+  alignas(Node) static char pool[sizeof(Node) * LIM];
   static Node* ptr;
   static size_t size;
 
@@ -133,7 +133,7 @@ struct LinkCutTreeBase{
   }
 };
 template<typename Node, size_t LIM, typename Impl>
-alignas(Node) uint8_t LinkCutTreeBase<Node, LIM, Impl>::pool[];
+alignas(Node) char LinkCutTreeBase<Node, LIM, Impl>::pool[];
 template<typename Node, size_t LIM, typename Impl>
 Node* LinkCutTreeBase<Node, LIM, Impl>::ptr=
   (Node*)LinkCutTreeBase<Node, LIM, Impl>::pool;

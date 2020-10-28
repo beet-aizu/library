@@ -17,7 +17,7 @@ struct BBSTBase{
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
 
-  alignas(Node) static uint8_t pool[sizeof(Node) * LIM];
+  alignas(Node) static char pool[sizeof(Node) * LIM];
   static Node* ptr;
   static size_t size;
 
@@ -128,7 +128,7 @@ struct BBSTBase{
   }
 };
 template<typename Node, size_t LIM, typename Impl>
-alignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];
+alignas(Node) char BBSTBase<Node, LIM, Impl>::pool[];
 template<typename Node, size_t LIM, typename Impl>
 Node* BBSTBase<Node, LIM, Impl>::ptr=
   (Node*)BBSTBase<Node, LIM, Impl>::pool;
