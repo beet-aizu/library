@@ -36,21 +36,15 @@ struct PersistentBase : BBSTBase<Node, LIM, PersistentBase<Node, LIM, Impl>>{
     return static_cast<Impl*>(this)->pushup(t);
   }
 
-  using super::count;
-  void dump(Node* a,typename vector<Node>::iterator it){
-    if(!count(a)) return;
-    a=eval(a);
-    auto cur=it+count(a->l);
-    dump(a->l,it);
-    dump(a->r,it+count(a->l)+1);
-    a->l=a->r=nullptr;
-    *cur=*pushup(a);
+  void dump(typename vector<Node>::iterator it,Node* a){
+    static_cast<Impl*>(this)->dump(it,a);
   }
 
+  using super::count;
   vector<Node> dump(Node* a){
     assert(a!=nullptr);
     vector<Node> vs(count(a),*a);
-    dump(a,vs.begin());
+    dump(vs.begin(),a);
     return vs;
   }
 
@@ -60,8 +54,8 @@ struct PersistentBase : BBSTBase<Node, LIM, PersistentBase<Node, LIM, Impl>>{
     return super::build(vs);
   }
 
-  bool almost_full(double d=0.8) const{
-    return super::size>LIM*d;
+  bool almost_full() const{
+    return super::size+1000>LIM;
   }
 };
 template<typename Node, size_t LIM, typename Impl>

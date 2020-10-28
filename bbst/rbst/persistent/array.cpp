@@ -37,6 +37,10 @@ struct PersistentArray :
     if(t->rev){
       t->l=clone(t->l);
       t->r=clone(t->r);
+
+      if(t->l) toggle(t->l);
+      if(t->r) toggle(t->r);
+      t->rev=false;
     }
     return t;
   }
@@ -45,6 +49,24 @@ struct PersistentArray :
   inline Node* pushup(Node *t){
     t->cnt=count(t->l)+1+count(t->r);
     return t;
+  }
+
+  void dump_impl(typename vector<Node>::iterator it,
+                 Node* const t,bool rev){
+    if(!count(t)) return;
+
+    Node *l=t->l,*r=t->r;
+    if(rev) swap(l,r);
+    rev^=t->rev;
+
+    dump_impl(it,l,rev);
+    *(it+count(l))=Node(t->val);
+    dump_impl(it+count(l)+1,r,rev);
+  }
+
+  using super::dump;
+  void dump(typename vector<Node>::iterator it,Node* t){
+    dump_impl(it,t,false);
   }
 
   using super::find_by_order;

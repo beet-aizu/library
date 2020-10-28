@@ -93,6 +93,24 @@ struct PersistentLazy :
     return t;
   }
 
+  void dump_impl(typename vector<Node>::iterator it,
+                 const Node* t,bool rev,E laz){
+    if(!count(t)) return;
+
+    Node *l=t->l,*r=t->r;
+    if(rev) swap(l,r);
+    rev^=t->rev;
+
+    dump_impl(it,l,rev,h(laz,t->laz));
+    *(it+count(l))=Node(g(t->val,laz),ei);
+    dump_impl(it+count(l)+1,r,rev,h(laz,t->laz));
+  }
+
+  using super::dump;
+  void dump(typename vector<Node>::iterator it,Node* t){
+    dump_impl(it,t,false,ei);
+  }
+
   using super::merge;
   using super::split;
 

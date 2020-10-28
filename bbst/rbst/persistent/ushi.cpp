@@ -69,6 +69,24 @@ struct PersistentUshi :
     return t;
   }
 
+  void dump_impl(typename vector<Node>::iterator it,
+                 Node* const t,bool rev){
+    if(!count(t)) return;
+
+    Node *l=t->l,*r=t->r;
+    if(rev) swap(l,r);
+    rev^=t->rev;
+
+    dump_impl(it,l,rev);
+    *(it+count(l))=Node(t->val);
+    dump_impl(it+count(l)+1,r,rev);
+  }
+
+  using super::dump;
+  void dump(typename vector<Node>::iterator it,Node* t){
+    dump_impl(it,t,false);
+  }
+
   using super::merge;
   using super::split;
 
