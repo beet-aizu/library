@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/persistent/ushi.cpp
     title: bbst/rbst/persistent/ushi.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/1508.test.cpp
     title: test/aoj/1508.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.bbst.test.cpp
     title: test/aoj/DSL_2_A.bbst.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://www.hackerrank.com/contests/happy-query-contest/challenges/range-sorting-query
@@ -36,36 +36,31 @@ data:
     //BEGIN CUT HERE\ntemplate<typename Tp>\nstruct NodeBase{\n  using T = Tp;\n \
     \ NodeBase *l,*r,*p;\n  size_t cnt;\n  bool rev;\n  T val,dat;\n  NodeBase(T val):\n\
     \    cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}\n};\n\ntemplate<typename\
-    \ Node, size_t LIM>\nstruct Ushi : BBSTBase<Node, LIM>{\n  using super = BBSTBase<Node,\
-    \ LIM>;\n\n  using T = typename Node::T;\n\n  using F = function<T(T,T)>;\n  using\
-    \ S = function<T(T)>;\n\n  F f;\n  S flip;\n  T ti;\n\n  Ushi(F f,S flip,T ti):\n\
-    \    f(f),flip(flip),ti(ti){}\n\n  Ushi(F f,T ti):Ushi(f,[](T a){return a;},ti){}\n\
-    \n  T query(const Node *a){\n    return a?a->dat:ti;\n  }\n\n  using super::count;\n\
-    \  Node* recalc(Node *a){\n    a->cnt=count(a->l)+1+count(a->r);\n    a->dat=a->val;\n\
-    \    if(a->l) a->dat=f(a->l->dat,a->dat);\n    if(a->r) a->dat=f(a->dat,a->r->dat);\n\
-    \    return a;\n  }\n\n  using super::toggle;\n  void toggle(Node *a){\n    swap(a->l,a->r);\n\
-    \    a->val=flip(a->val);\n    a->dat=flip(a->dat);\n    a->rev^=1;\n  }\n\n \
-    \ // remove \"virtual\" for optimization\n  virtual Node* eval(Node* a){\n   \
-    \ if(a->rev){\n      if(a->l) toggle(a->l);\n      if(a->r) toggle(a->r);\n  \
-    \    a->rev=false;\n    }\n    return recalc(a);\n  }\n\n  using super::merge;\n\
-    \  using super::split;\n\n  T query(Node *&a,size_t l,size_t r){\n    auto s=split(a,l);\n\
-    \    auto t=split(s.second,r-l);\n    auto u=t.first;\n    T res=query(u);\n \
-    \   a=merge(s.first,merge(u,t.second));\n    return res;\n  }\n\n  Node* set_val(Node\
-    \ *a,size_t k,T val){\n    assert(k<count(a));\n    a=eval(a);\n    size_t num=count(a->l);\n\
-    \    if(k<num) a->l=set_val(a->l,k,val);\n    if(k>num) a->r=set_val(a->r,k-(num+1),val);\n\
-    \    if(k==num) a->val=val;\n    return recalc(a);\n  }\n\n  T get_val(Node *a,size_t\
-    \ k){\n    return super::find_by_order(a,k)->val;\n  }\n\n  void dump(Node* a,typename\
-    \ vector<T>::iterator it){\n    if(!count(a)) return;\n    if(a->rev){\n     \
-    \ if(a->l) toggle(a->l);\n      if(a->r) toggle(a->r);\n      a->rev=false;\n\
-    \    }\n    dump(a->l,it);\n    *(it+count(a->l))=a->val;\n    dump(a->r,it+count(a->l)+1);\n\
-    \  }\n\n  // destroy data\n  vector<T> dump(Node* a){\n    vector<T> vs(count(a));\n\
-    \    dump(a,vs.begin());\n    return vs;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\n\n// test toggle\nsigned HAPPYQUERY_C(){\n  cin.tie(0);\n\
-    \  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n  vector<int> vs(n);\n  for(int\
-    \ i=0;i<n;i++) cin>>vs[i];\n\n  int q;\n  cin>>q;\n  vector<int> ts(q);\n  vector<int>\
-    \ ls(q),rs(q);\n  vector<int> ps(q),xs(q);\n  vector<int> as(q),bs(q),cs(q),ds(q);\n\
-    \  for(int i=0;i<q;i++){\n    cin>>ts[i];\n    if(ts[i]==1) cin>>ls[i]>>rs[i],ls[i]--;\n\
-    \    if(ts[i]==2) cin>>ps[i]>>xs[i],ps[i]--;\n    if(ts[i]==3){\n      cin>>as[i]>>bs[i]>>cs[i]>>ds[i];\n\
+    \ Node, size_t LIM>\nstruct Ushi : BBSTBase<Node, LIM, Ushi<Node, LIM>>{\n  using\
+    \ super = BBSTBase<Node, LIM, Ushi>;\n\n  using T = typename Node::T;\n  using\
+    \ F = function<T(T, T)>;\n  using S = function<T(T)>;\n\n  F f;\n  S flip;\n \
+    \ T ti;\n\n  Ushi(F f,S flip,T ti):\n    f(f),flip(flip),ti(ti){}\n\n  Ushi(F\
+    \ f,T ti):Ushi(f,[](T a){return a;},ti){}\n\n  inline void toggle(Node *t){\n\
+    \    swap(t->l,t->r);\n    t->val=flip(t->val);\n    t->dat=flip(t->dat);\n  \
+    \  t->rev^=1;\n  }\n\n  inline Node* eval(Node* t){\n    if(t->rev){\n      if(t->l)\
+    \ toggle(t->l);\n      if(t->r) toggle(t->r);\n      t->rev=false;\n    }\n  \
+    \  return t;\n  }\n\n  using super::count;\n  inline Node* pushup(Node *t){\n\
+    \    t->cnt=count(t->l)+1+count(t->r);\n    t->dat=t->val;\n    if(t->l) t->dat=f(t->l->dat,t->dat);\n\
+    \    if(t->r) t->dat=f(t->dat,t->r->dat);\n    return t;\n  }\n\n  using super::merge;\n\
+    \  using super::split;\n\n  T query(const Node *a){\n    return a?a->dat:ti;\n\
+    \  }\n\n  T query(Node *&a,size_t l,size_t r){\n    auto s=split(a,l);\n    auto\
+    \ t=split(s.second,r-l);\n    auto u=t.first;\n    T res=query(u);\n    a=merge(s.first,merge(u,t.second));\n\
+    \    return res;\n  }\n\n  Node* set_val(Node *a,size_t k,T val){\n    assert(k<count(a));\n\
+    \    a=eval(a);\n    size_t num=count(a->l);\n    if(k<num) a->l=set_val(a->l,k,val);\n\
+    \    if(k>num) a->r=set_val(a->r,k-(num+1),val);\n    if(k==num) a->val=val;\n\
+    \    return pushup(a);\n  }\n\n  T get_val(Node *a,size_t k){\n    return super::find_by_order(a,k)->val;\n\
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\n// test\
+    \ toggle\nsigned HAPPYQUERY_C(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n\
+    \  int n;\n  cin>>n;\n  vector<int> vs(n);\n  for(int i=0;i<n;i++) cin>>vs[i];\n\
+    \n  int q;\n  cin>>q;\n  vector<int> ts(q);\n  vector<int> ls(q),rs(q);\n  vector<int>\
+    \ ps(q),xs(q);\n  vector<int> as(q),bs(q),cs(q),ds(q);\n  for(int i=0;i<q;i++){\n\
+    \    cin>>ts[i];\n    if(ts[i]==1) cin>>ls[i]>>rs[i],ls[i]--;\n    if(ts[i]==2)\
+    \ cin>>ps[i]>>xs[i],ps[i]--;\n    if(ts[i]==3){\n      cin>>as[i]>>bs[i]>>cs[i]>>ds[i];\n\
     \      as[i]--;cs[i]--;\n    }\n  }\n\n  using ll = long long;\n  auto f=[](ll\
     \ a,ll b){return a+b;};\n  ll ti=0;\n\n  using Node=NodeBase<ll>;\n  constexpr\
     \ size_t LIM = 1e6;\n  Ushi<Node, LIM> G(f,ti);\n\n  unordered_map<int, ll> memo;\n\
@@ -83,8 +78,8 @@ data:
   path: bbst/rbst/basic/ushi.cpp
   requiredBy:
   - bbst/rbst/persistent/ushi.cpp
-  timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-28 15:23:04+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_A.bbst.test.cpp
   - test/aoj/1508.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   - icon: ':heavy_check_mark:'
@@ -31,7 +31,7 @@ data:
     \ eval(Node* a){\n    a=clone(a);\n    a->l=clone(a->l);\n    a->r=clone(a->r);\n\
     \    return super::eval(a);\n  }\n\n  T query(Node *a,size_t l,size_t r){\n  \
     \  auto s=super::split(a,l);\n    auto t=super::split(s.second,r-l);\n    return\
-    \ super::query(t.first);\n  }\n\n  Node* rebuild(Node* a){\n    auto vs=super::dump(a);\n\
+    \ super::query(t.first);\n  }\n\n  Node* rebuild(Node* a){\n    auto vs=super::dump<T>(a);\n\
     \    vector<Node> nx;\n    nx.reserve(vs.size());\n    for(auto v:vs)\n      nx.emplace_back(v,super::ei);\n\
     \    super::size=0;\n    return super::build(nx);\n  }\n\n  bool almost_full()\
     \ const{\n    return super::size>LIM*9/10;\n  }\n};\n//END CUT HERE\n//INSERT\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/lazy.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:18:31+09:00'
+  timestamp: '2020-10-28 15:23:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: bbst/rbst/persistent/lazy.cpp

@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -29,9 +29,9 @@ data:
     \n#undef call_from_test\n\n#endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t\
     \ LIM>\nstruct PersistentUshi : Ushi<Node, LIM>{\n  using super = Ushi<Node, LIM>;\n\
     \  using super::super;\n  using T = typename Node::T;\n\n  inline Node* clone(Node*\
-    \ a){\n    if(a==nullptr) return a;\n    return super::create(*a);\n  }\n\n  Node*\
-    \ eval(Node* a){\n    a=clone(a);\n    if(a->rev){\n      a->l=clone(a->l);\n\
-    \      a->r=clone(a->r);\n    }\n    return super::eval(a);\n  }\n\n  T query(Node\
+    \ t){\n    if(t==nullptr) return t;\n    return super::create(*t);\n  }\n\n  Node*\
+    \ eval(Node* t){\n    t=clone(t);\n    if(t->rev){\n      t->l=clone(t->l);\n\
+    \      t->r=clone(t->r);\n    }\n    return super::eval(t);\n  }\n\n  T query(Node\
     \ *a,size_t l,size_t r){\n    auto s=super::split(a,l);\n    auto t=super::split(s.second,r-l);\n\
     \    return super::query(t.first);\n  }\n\n  Node* rebuild(Node* a){\n    auto\
     \ vs=super::dump(a);\n    super::size=0;\n    return super::build(vector<Node>(vs.begin(),vs.end()));\n\
@@ -44,8 +44,8 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/ushi.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:18:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-28 15:23:04+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/0437.test.cpp
 documentation_of: bbst/rbst/persistent/ushi.cpp
