@@ -23,8 +23,8 @@ struct NodeBase{
 };
 
 template<typename Np, size_t LIM>
-struct Path : LinkCutTreeBase<Np, LIM>{
-  using super = LinkCutTreeBase<Np, LIM>;
+struct Path : LinkCutTreeBase<Np, LIM, Path<Np, LIM>>{
+  using super = LinkCutTreeBase<Np, LIM, Path>;
   using Node = Np;
   using T = typename Node::T;
   using E = typename Node::E;
@@ -138,7 +138,7 @@ signed SPOJ_DYNACON1(){
   return 0;
 }
 /*
-  verified on 2020/01/08
+  verified on 2020/10/28
   https://www.spoj.com/problems/DYNACON1/
 */
 

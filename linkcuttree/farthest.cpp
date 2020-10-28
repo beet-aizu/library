@@ -24,8 +24,8 @@ struct NodeBase{
 };
 
 template<typename Np, size_t LIM>
-struct Farthest : LinkCutTreeBase<Np, LIM>{
-  using super = LinkCutTreeBase<Np, LIM>;
+struct Farthest : LinkCutTreeBase<Np, LIM, Farthest<Np, LIM>>{
+  using super = LinkCutTreeBase<Np, LIM, Farthest>;
   using Node = Np;
   using T = typename Node::T;
 
@@ -131,7 +131,7 @@ signed TKPPC2015_J(){
   return 0;
 }
 /*
-  verified on 2020/01/06
+  verified on 2020/10/28
   https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
 */
 

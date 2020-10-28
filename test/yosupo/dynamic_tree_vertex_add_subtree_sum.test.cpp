@@ -22,7 +22,7 @@ signed main(){
 
   using Node = NodeBase<ll>;
   constexpr size_t LIM = 2e5+100;
-  using LCT = SubTree<Node, LIM>;
+  using LCT = Subtree<Node, LIM>;
   LCT lct;
 
   for(int i=0;i<n;i++) lct.create(as[i]);

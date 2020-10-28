@@ -14,7 +14,7 @@ signed main(){
 
   using Node = NodeBase<int>;
   constexpr size_t LIM = 1e5+100;
-  using LCT = SubTree<Node, LIM>;
+  using LCT = Subtree<Node, LIM>;
   LCT lct;
 
   int n,q;

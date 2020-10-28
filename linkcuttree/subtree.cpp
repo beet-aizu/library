@@ -21,8 +21,8 @@ struct NodeBase{
 };
 
 template<typename Np, size_t LIM>
-struct SubTree : LinkCutTreeBase<Np, LIM>{
-  using super = LinkCutTreeBase<Np, LIM>;
+struct Subtree : LinkCutTreeBase<Np, LIM, Subtree<Np, LIM>>{
+  using super = LinkCutTreeBase<Np, LIM, Subtree>;
   using Node = Np;
   using A = typename Node::A;
 
@@ -148,7 +148,7 @@ signed CFR564_E(){
 
   using Node = NodeBase<A>;
   constexpr size_t LIM = 1e6;
-  using LCT = SubTree<Node, LIM>;
+  using LCT = Subtree<Node, LIM>;
   LCT lct;
 
   for(int i=0;i<n+1;i++) lct.create(A(1,0));
@@ -213,7 +213,7 @@ signed CFR564_E(){
   return 0;
 }
 /*
-  verified on 2020/01/06
+  verified on 2020/10/28
   https://codeforces.com/contest/1172/problem/E
 */
 
@@ -236,7 +236,7 @@ signed NIKKEI2019_QUAL_E(){
   using ll = long long;
   using Node = NodeBase<ll>;
   constexpr size_t LIM = 1e6;
-  using LCT = SubTree<Node, LIM>;
+  using LCT = Subtree<Node, LIM>;
   LCT lct;
 
   for(int i=0;i<n;i++) lct.create(xs[i]);
@@ -271,7 +271,7 @@ signed NIKKEI2019_QUAL_E(){
   return 0;
 }
 /*
-  verified on 2020/01/06
+  verified on 2020/10/28
   https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_e
 */
 

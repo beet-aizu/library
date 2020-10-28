@@ -3,9 +3,9 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename Node, size_t LIM>
+template<typename Node, size_t LIM, typename Impl>
 struct LinkCutTreeBase{
-  alignas(Node) static byte pool[sizeof(Node) * LIM];
+  alignas(Node) static uint8_t pool[sizeof(Node) * LIM];
   static Node* ptr;
   static size_t size;
 
@@ -17,9 +17,17 @@ struct LinkCutTreeBase{
   inline size_t idx(Node *t){return t-ptr;}
   Node* operator[](size_t k){return ptr+k;}
 
-  virtual void toggle(Node *t) = 0;
-  virtual Node* eval(Node *t) = 0;
-  virtual void pushup(Node *t) = 0;
+  void toggle(Node *t){
+    static_cast<Impl*>(this)->toggle(t);
+  }
+
+  Node* eval(Node *t){
+    return static_cast<Impl*>(this)->eval(t);
+  }
+
+  void pushup(Node *t){
+    static_cast<Impl*>(this)->pushup(t);
+  }
 
   void rotR(Node *t){
     Node *x=t->p,*y=x->p;
@@ -132,12 +140,13 @@ struct LinkCutTreeBase{
     return expose(b);
   }
 };
-template<typename Node, size_t LIM>
-alignas(Node) byte LinkCutTreeBase<Node, LIM>::pool[];
-template<typename Node, size_t LIM>
-Node* LinkCutTreeBase<Node, LIM>::ptr=(Node*)LinkCutTreeBase<Node, LIM>::pool;
-template<typename Node, size_t LIM>
-size_t LinkCutTreeBase<Node, LIM>::size=0;
+template<typename Node, size_t LIM, typename Impl>
+alignas(Node) uint8_t LinkCutTreeBase<Node, LIM, Impl>::pool[];
+template<typename Node, size_t LIM, typename Impl>
+Node* LinkCutTreeBase<Node, LIM, Impl>::ptr=
+  (Node*)LinkCutTreeBase<Node, LIM, Impl>::pool;
+template<typename Node, size_t LIM, typename Impl>
+size_t LinkCutTreeBase<Node, LIM, Impl>::size=0;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
