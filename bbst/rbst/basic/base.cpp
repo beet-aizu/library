@@ -126,22 +126,6 @@ struct BBSTBase{
   Node* build(const vector<Node> &vs){
     return build(0,vs.size(),vs);
   }
-
-  template<typename T>
-  void dump(Node* a,typename vector<T>::iterator it){
-    if(!count(a)) return;
-    a=eval(a);
-    dump(a->l,it);
-    *(it+count(a->l))=a->val;
-    dump(a->r,it+count(a->l)+1);
-  }
-
-  template<typename T>
-  vector<T> dump(Node* a){
-    vector<T> vs(count(a));
-    dump(a,vs.begin());
-    return vs;
-  }
 };
 template<typename Node, size_t LIM, typename Impl>
 alignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];

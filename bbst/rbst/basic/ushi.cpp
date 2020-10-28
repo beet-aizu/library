@@ -78,6 +78,10 @@ struct Ushi : BBSTBase<Node, LIM, Ushi<Node, LIM>>{
     return res;
   }
 
+  T get_val(Node *a,size_t k){
+    return super::find_by_order(a,k)->val;
+  }
+
   Node* set_val(Node *a,size_t k,T val){
     assert(k<count(a));
     a=eval(a);
@@ -86,10 +90,6 @@ struct Ushi : BBSTBase<Node, LIM, Ushi<Node, LIM>>{
     if(k>num) a->r=set_val(a->r,k-(num+1),val);
     if(k==num) a->val=val;
     return pushup(a);
-  }
-
-  T get_val(Node *a,size_t k){
-    return super::find_by_order(a,k)->val;
   }
 };
 //END CUT HERE

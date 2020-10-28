@@ -4,38 +4,59 @@ using namespace std;
 
 #define call_from_test
 #include "../basic/base.cpp"
-#include "../basic/array.cpp"
+#include "base.cpp"
 #undef call_from_test
 
 #endif
 //BEGIN CUT HERE
+template<typename Tp>
+struct NodeBase{
+  using T = Tp;
+  NodeBase *l,*r,*p;
+  size_t cnt;
+  bool rev;
+  T val;
+  NodeBase(T val):
+    cnt(1),rev(0),val(val){l=r=p=nullptr;}
+};
+
 template<typename Node, size_t LIM>
-struct PersistentArray : Array<Node, LIM>{
-  using super = Array<Node, LIM>;
-  using super::super;
+struct PersistentArray :
+  PersistentBase<Node, LIM, PersistentArray<Node, LIM>>{
+  using super = PersistentBase<Node, LIM, PersistentArray>;
+  using T = typename Node::T;
 
-  inline Node* clone(Node* a){
-    if(a==nullptr) return a;
-    return super::create(*a);
+  inline void toggle(Node *t){
+    swap(t->l,t->r);
+    t->rev^=1;
   }
 
-  Node* eval(Node* a){
-    a=clone(a);
-    if(a->rev){
-      a->l=clone(a->l);
-      a->r=clone(a->r);
+  using super::clone;
+  inline Node* eval(Node* t){
+    t=clone(t);
+    if(t->rev){
+      t->l=clone(t->l);
+      t->r=clone(t->r);
     }
-    return super::eval(a);
+    return t;
   }
 
-  Node* rebuild(Node* a){
-    auto v=super::dump(a);
-    super::size=0;
-    return super::build(v);
+  using super::count;
+  inline Node* pushup(Node *t){
+    t->cnt=count(t->l)+1+count(t->r);
+    return t;
   }
 
-  bool almost_full() const{
-    return super::size>LIM*9/10;
+  using super::find_by_order;
+
+  Node* set_val(Node *a,size_t k,T val){
+    auto b=find_by_order(a,k);
+    b->val=val;
+    return b;
+  }
+
+  T get_val(Node *a,size_t k){
+    return find_by_order(a,k)->val;
   }
 };
 //END CUT HERE
@@ -52,8 +73,8 @@ signed JOISC2012_COPYPASTE(){
   const size_t LIM = 1e7;
   PersistentArray<Node, LIM> pa;
 
-  vector<char> v(buf.begin(),buf.end());
-  auto rt=pa.build(v);
+  vector<Node> vs(buf.begin(),buf.end());
+  auto rt=pa.build(vs);
 
   int n;
   cin>>n;
@@ -73,12 +94,12 @@ signed JOISC2012_COPYPASTE(){
 
   auto ds=pa.dump(rt);
   buf.resize(ds.size());
-  for(int i=0;i<(int)ds.size();i++) buf[i]=ds[i];
+  for(int i=0;i<(int)ds.size();i++) buf[i]=ds[i].val;
   cout<<buf<<endl;
   return 0;
 }
 /*
-  verified on 2019/10/22
+  verified on 2020/10/28
   https://atcoder.jp/contests/joisc2012/tasks/joisc2012_copypaste
 */
 

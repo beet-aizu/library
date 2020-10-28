@@ -30,18 +30,18 @@ struct Dual : BBSTBase<Node, LIM, Dual<Node, LIM>>{
 
   Dual(H h,E ei):h(h),ei(ei){}
 
-  void propagate(Node *t,E x){
+  inline void propagate(Node *t,E x){
     t->val=h(t->val,x);
     t->laz=h(t->laz,x);
   }
 
   using super::toggle;
-  void toggle(Node *t){
+  inline void toggle(Node *t){
     swap(t->l,t->r);
     t->rev^=1;
   }
 
-  Node* eval(Node* t){
+  inline Node* eval(Node* t){
     if(t->laz!=ei){
       if(t->l) propagate(t->l,t->laz);
       if(t->r) propagate(t->r,t->laz);
@@ -56,7 +56,7 @@ struct Dual : BBSTBase<Node, LIM, Dual<Node, LIM>>{
   }
 
   using super::count;
-  Node* pushup(Node *t){
+  inline Node* pushup(Node *t){
     t->cnt=count(t->l)+1+count(t->r);
     return t;
   }

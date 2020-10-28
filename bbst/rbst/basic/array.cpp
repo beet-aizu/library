@@ -24,12 +24,12 @@ struct Array : BBSTBase<Node, LIM, Array<Node, LIM>>{
   using super = BBSTBase<Node, LIM, Array>;
   using T = typename Node::T;
 
-  void toggle(Node *t){
+  inline void toggle(Node *t){
     swap(t->l,t->r);
     t->rev^=1;
   }
 
-  Node* eval(Node* t){
+  inline Node* eval(Node* t){
     if(t->rev){
       if(t->l) toggle(t->l);
       if(t->r) toggle(t->r);
@@ -39,7 +39,7 @@ struct Array : BBSTBase<Node, LIM, Array<Node, LIM>>{
   }
 
   using super::count;
-  Node* pushup(Node *t){
+  inline Node* pushup(Node *t){
     t->cnt=count(t->l)+1+count(t->r);
     return t;
   }

@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/basic/array.cpp"
+#include "../../bbst/rbst/persistent/base.cpp"
 #include "../../bbst/rbst/persistent/array.cpp"
 #undef call_from_test
 

@@ -6,7 +6,7 @@ using namespace std;
 #define call_from_test
 #include "../../io/single.cpp"
 #include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/basic/ushi.cpp"
+#include "../../bbst/rbst/persistent/base.cpp"
 #include "../../bbst/rbst/persistent/ushi.cpp"
 #undef call_from_test
 
