@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
   - icon: ':heavy_check_mark:'
@@ -42,16 +42,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"linkcuttree/base.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t LIM,\
-    \ typename Impl>\nstruct LinkCutTreeBase{\n  alignas(Node) static uint8_t pool[sizeof(Node)\
+    \ typename Impl>\nstruct LinkCutTreeBase{\n  alignas(Node) static char pool[sizeof(Node)\
     \ * LIM];\n  static Node* ptr;\n  static size_t size;\n\n  template<typename...\
     \ Args>\n  inline Node* create(Args&&... args){\n    return new (ptr+size++) Node(std::forward<Args>(args)...);\n\
     \  }\n\n  inline size_t idx(Node *t){return t-ptr;}\n  Node* operator[](size_t\
@@ -82,7 +82,7 @@ data:
     \ *t){\n    expose(t);\n    while(t->l) t=eval(t->l);\n    splay(t);\n    return\
     \ t;\n  }\n\n  bool is_connected(Node *a,Node *b){\n    return root(a)==root(b);\n\
     \  }\n\n  Node *lca(Node *a,Node *b){\n    expose(a);\n    return expose(b);\n\
-    \  }\n};\ntemplate<typename Node, size_t LIM, typename Impl>\nalignas(Node) uint8_t\
+    \  }\n};\ntemplate<typename Node, size_t LIM, typename Impl>\nalignas(Node) char\
     \ LinkCutTreeBase<Node, LIM, Impl>::pool[];\ntemplate<typename Node, size_t LIM,\
     \ typename Impl>\nNode* LinkCutTreeBase<Node, LIM, Impl>::ptr=\n  (Node*)LinkCutTreeBase<Node,\
     \ LIM, Impl>::pool;\ntemplate<typename Node, size_t LIM, typename Impl>\nsize_t\
@@ -90,7 +90,7 @@ data:
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t LIM, typename Impl>\n\
-    struct LinkCutTreeBase{\n  alignas(Node) static uint8_t pool[sizeof(Node) * LIM];\n\
+    struct LinkCutTreeBase{\n  alignas(Node) static char pool[sizeof(Node) * LIM];\n\
     \  static Node* ptr;\n  static size_t size;\n\n  template<typename... Args>\n\
     \  inline Node* create(Args&&... args){\n    return new (ptr+size++) Node(std::forward<Args>(args)...);\n\
     \  }\n\n  inline size_t idx(Node *t){return t-ptr;}\n  Node* operator[](size_t\
@@ -121,7 +121,7 @@ data:
     \ *t){\n    expose(t);\n    while(t->l) t=eval(t->l);\n    splay(t);\n    return\
     \ t;\n  }\n\n  bool is_connected(Node *a,Node *b){\n    return root(a)==root(b);\n\
     \  }\n\n  Node *lca(Node *a,Node *b){\n    expose(a);\n    return expose(b);\n\
-    \  }\n};\ntemplate<typename Node, size_t LIM, typename Impl>\nalignas(Node) uint8_t\
+    \  }\n};\ntemplate<typename Node, size_t LIM, typename Impl>\nalignas(Node) char\
     \ LinkCutTreeBase<Node, LIM, Impl>::pool[];\ntemplate<typename Node, size_t LIM,\
     \ typename Impl>\nNode* LinkCutTreeBase<Node, LIM, Impl>::ptr=\n  (Node*)LinkCutTreeBase<Node,\
     \ LIM, Impl>::pool;\ntemplate<typename Node, size_t LIM, typename Impl>\nsize_t\
@@ -134,8 +134,8 @@ data:
   - linkcuttree/subtree.cpp
   - linkcuttree/path.cpp
   - linkcuttree/farthest.cpp
-  timestamp: '2020-10-28 14:16:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-28 18:43:09+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
   - test/aoj/1595.linkcuttree.test.cpp

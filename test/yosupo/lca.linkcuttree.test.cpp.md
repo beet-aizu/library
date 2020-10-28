@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:16:09+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-28 18:43:09+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/lca.linkcuttree.test.cpp
 layout: document

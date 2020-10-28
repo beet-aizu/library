@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   _extendedRequiredBy: []
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: linkcuttree/farthest.cpp
   requiredBy: []
-  timestamp: '2020-10-28 14:16:09+09:00'
+  timestamp: '2020-10-28 18:43:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1595.linkcuttree.test.cpp

@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
   - icon: ':warning:'
@@ -18,11 +18,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0437.test.cpp
     title: test/aoj/0437.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -38,10 +38,12 @@ data:
     \n#endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t LIM, typename Impl>\n\
     struct PersistentBase : BBSTBase<Node, LIM, PersistentBase<Node, LIM, Impl>>{\n\
     \  using super = BBSTBase<Node, LIM, PersistentBase>;\n  using T = typename Node::T;\n\
-    \n  inline Node* clone(Node* a){\n    if(a==nullptr) return a;\n    return super::create(*a);\n\
-    \  }\n\n  inline void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n\
-    \  }\n\n  inline Node* eval(Node *t){\n    return static_cast<Impl*>(this)->eval(t);\n\
-    \  }\n\n  inline Node* pushup(Node *t){\n    return static_cast<Impl*>(this)->pushup(t);\n\
+    \n  static bool exist;\n  PersistentBase(){\n    // rebuild destroys all elements\
+    \ in the pool\n    assert(!exchange(exist,true));\n  }\n\n  inline Node* clone(Node*\
+    \ a){\n    if(a==nullptr) return a;\n    return super::create(*a);\n  }\n\n  inline\
+    \ void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n  }\n\n  inline\
+    \ Node* eval(Node *t){\n    return static_cast<Impl*>(this)->eval(t);\n  }\n\n\
+    \  inline Node* pushup(Node *t){\n    return static_cast<Impl*>(this)->pushup(t);\n\
     \  }\n\n  using super::count;\n  void dump(Node* a,typename vector<Node>::iterator\
     \ it){\n    if(!count(a)) return;\n    a=eval(a);\n    auto cur=it+count(a->l);\n\
     \    dump(a->l,it);\n    dump(a->r,it+count(a->l)+1);\n    a->l=a->r=nullptr;\n\
@@ -49,8 +51,10 @@ data:
     \    vector<Node> vs(count(a),*a);\n    dump(a,vs.begin());\n    return vs;\n\
     \  }\n\n  Node* rebuild(Node* a){\n    auto vs=dump(a);\n    super::size=0;\n\
     \    return super::build(vs);\n  }\n\n  bool almost_full(double d=0.8) const{\n\
-    \    return super::size>LIM*d;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \    return super::size>LIM*d;\n  }\n};\ntemplate<typename Node, size_t LIM, typename\
+    \ Impl>\nbool PersistentBase<Node, LIM, Impl>::exist = false;\n//END CUT HERE\n\
+    #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
+    #endif\n"
   dependsOn:
   - bbst/rbst/basic/base.cpp
   isVerificationFile: false
@@ -59,8 +63,8 @@ data:
   - bbst/rbst/persistent/ushi.cpp
   - bbst/rbst/persistent/array.cpp
   - bbst/rbst/persistent/lazy.cpp
-  timestamp: '2020-10-28 18:29:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-28 18:43:09+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/0437.test.cpp
   - test/yosupo/persistent_queue.test.cpp

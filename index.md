@@ -34,7 +34,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: bbst/rbst/basic/array.cpp
       title: bbst/rbst/basic/array.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: bbst/rbst/basic/base.cpp
       title: bbst/rbst/basic/base.cpp
     - icon: ':heavy_check_mark:'
@@ -48,10 +48,10 @@ data:
       title: bbst/rbst/basic/ushi.cpp
   - name: bbst/rbst/persistent
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: bbst/rbst/persistent/array.cpp
       title: bbst/rbst/persistent/array.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: bbst/rbst/persistent/base.cpp
       title: bbst/rbst/persistent/base.cpp
     - icon: ':warning:'
@@ -333,13 +333,13 @@ data:
       title: linearalgebra/tree_theorem.cpp
   - name: linkcuttree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/base.cpp
       title: linkcuttree/base.cpp
     - icon: ':heavy_check_mark:'
       path: linkcuttree/farthest.cpp
       title: linkcuttree/farthest.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linkcuttree/path.cpp
       title: linkcuttree/path.cpp
     - icon: ':heavy_check_mark:'
@@ -1496,7 +1496,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/kth_root_integer.test.cpp
       title: test/yosupo/kth_root_integer.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/lca.linkcuttree.test.cpp
       title: test/yosupo/lca.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1535,7 +1535,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/partition_function.test.cpp
       title: test/yosupo/partition_function.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/persistent_queue.test.cpp
       title: test/yosupo/persistent_queue.test.cpp
     - icon: ':heavy_check_mark:'

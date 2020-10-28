@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/persistent/base.cpp
     title: bbst/rbst/persistent/base.cpp
   _extendedRequiredBy: []
@@ -81,7 +81,7 @@ data:
   isVerificationFile: false
   path: bbst/rbst/persistent/lazy.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:29:04+09:00'
+  timestamp: '2020-10-28 18:43:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: bbst/rbst/persistent/lazy.cpp

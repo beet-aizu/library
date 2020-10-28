@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/basic/base.cpp
     title: bbst/rbst/basic/base.cpp
   - icon: ':heavy_check_mark:'
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_A.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:29:04+09:00'
+  timestamp: '2020-10-28 18:43:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_A.bbst.test.cpp

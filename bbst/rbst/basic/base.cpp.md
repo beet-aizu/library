@@ -14,10 +14,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/basic/ushi.cpp
     title: bbst/rbst/basic/ushi.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: bbst/rbst/persistent/array.cpp
     title: bbst/rbst/persistent/array.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/persistent/base.cpp
     title: bbst/rbst/persistent/base.cpp
   - icon: ':warning:'
@@ -63,11 +63,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"bbst/rbst/basic/base.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -76,7 +76,7 @@ data:
     \    static u32 x = 123456789;\n    static u32 y = 362436069;\n    static u32\
     \ z = 521288629;\n    static u32 w = 88675123;\n\n    u32 t = x ^ (x << 11);\n\
     \    x = y; y = z; z = w;\n    return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));\n\
-    \  }\n\n  alignas(Node) static uint8_t pool[sizeof(Node) * LIM];\n  static Node*\
+    \  }\n\n  alignas(Node) static char pool[sizeof(Node) * LIM];\n  static Node*\
     \ ptr;\n  static size_t size;\n\n  template<typename... Args>\n  inline Node*\
     \ create(Args&&... args){\n    return new (ptr+size++) Node(std::forward<Args>(args)...);\n\
     \  }\n\n  size_t count(const Node *a){\n    return a?a->cnt:0;\n  }\n\n  inline\
@@ -107,7 +107,7 @@ data:
     \ vector<Node> &vs){\n    if(l+1==r) return create(vs[l]);\n    size_t m=(l+r)>>1;\n\
     \    return merge(build(l,m,vs),build(m,r,vs));\n  }\n\n  Node* build(const vector<Node>\
     \ &vs){\n    return build(0,vs.size(),vs);\n  }\n};\ntemplate<typename Node, size_t\
-    \ LIM, typename Impl>\nalignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];\n\
+    \ LIM, typename Impl>\nalignas(Node) char BBSTBase<Node, LIM, Impl>::pool[];\n\
     template<typename Node, size_t LIM, typename Impl>\nNode* BBSTBase<Node, LIM,\
     \ Impl>::ptr=\n  (Node*)BBSTBase<Node, LIM, Impl>::pool;\ntemplate<typename Node,\
     \ size_t LIM, typename Impl>\nsize_t BBSTBase<Node, LIM, Impl>::size=0;\n//END\
@@ -119,7 +119,7 @@ data:
     \ 123456789;\n    static u32 y = 362436069;\n    static u32 z = 521288629;\n \
     \   static u32 w = 88675123;\n\n    u32 t = x ^ (x << 11);\n    x = y; y = z;\
     \ z = w;\n    return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));\n  }\n\n  alignas(Node)\
-    \ static uint8_t pool[sizeof(Node) * LIM];\n  static Node* ptr;\n  static size_t\
+    \ static char pool[sizeof(Node) * LIM];\n  static Node* ptr;\n  static size_t\
     \ size;\n\n  template<typename... Args>\n  inline Node* create(Args&&... args){\n\
     \    return new (ptr+size++) Node(std::forward<Args>(args)...);\n  }\n\n  size_t\
     \ count(const Node *a){\n    return a?a->cnt:0;\n  }\n\n  inline void toggle(Node\
@@ -150,7 +150,7 @@ data:
     \ vector<Node> &vs){\n    if(l+1==r) return create(vs[l]);\n    size_t m=(l+r)>>1;\n\
     \    return merge(build(l,m,vs),build(m,r,vs));\n  }\n\n  Node* build(const vector<Node>\
     \ &vs){\n    return build(0,vs.size(),vs);\n  }\n};\ntemplate<typename Node, size_t\
-    \ LIM, typename Impl>\nalignas(Node) uint8_t BBSTBase<Node, LIM, Impl>::pool[];\n\
+    \ LIM, typename Impl>\nalignas(Node) char BBSTBase<Node, LIM, Impl>::pool[];\n\
     template<typename Node, size_t LIM, typename Impl>\nNode* BBSTBase<Node, LIM,\
     \ Impl>::ptr=\n  (Node*)BBSTBase<Node, LIM, Impl>::pool;\ntemplate<typename Node,\
     \ size_t LIM, typename Impl>\nsize_t BBSTBase<Node, LIM, Impl>::size=0;\n//END\
@@ -168,8 +168,8 @@ data:
   - bbst/rbst/basic/array.cpp
   - bbst/rbst/basic/dual.cpp
   - bbst/rbst/basic/lazy.cpp
-  timestamp: '2020-10-28 18:29:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-28 18:43:09+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_A.bbst.test.cpp
