@@ -35,6 +35,7 @@ struct TopologicalSort{
     int n=G.size();
     for(int i=0;i<n;i++)
       if(indeg[i]==0 and !used[i]) bfs(i);
+    if(n!=(int)ps.size()) return {};
     return ps;
   }
 };
