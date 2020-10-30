@@ -22,6 +22,9 @@ data:
     path: test/aoj/2975.test.cpp
     title: test/aoj/2975.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3208.test.cpp
+    title: test/aoj/3208.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_15_B.test.cpp
     title: test/aoj/ALDS1_15_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -70,6 +73,7 @@ data:
   - test/aoj/geometry/CGL_7_I.test.cpp
   - test/aoj/geometry/CGL_7_H.test.cpp
   - test/aoj/geometry/CGL_2_D.test.cpp
+  - test/aoj/3208.test.cpp
 documentation_of: io/precision.cpp
 layout: document
 redirect_from:

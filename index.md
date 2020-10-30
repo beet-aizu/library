@@ -291,7 +291,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/stronglyconnectedcomponent.cpp
       title: graph/stronglyconnectedcomponent.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/topologicalsort.cpp
       title: graph/topologicalsort.cpp
     - icon: ':heavy_check_mark:'
@@ -1114,6 +1114,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3198.test.cpp
       title: test/aoj/3198.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3208.test.cpp
+      title: test/aoj/3208.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3506.test.cpp
       title: test/aoj/3506.test.cpp

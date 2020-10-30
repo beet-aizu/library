@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3208.test.cpp
+    title: test/aoj/3208.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/topologicalsort.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -16,8 +19,8 @@ data:
     \      for(int u:G[v]){\n        indeg[u]--;\n        if(indeg[u]==0 and !used[u]){\n\
     \          used[u]=1;\n          que.emplace(u);\n        }\n      }\n    }\n\
     \  }\n\n  vector<int> build(){\n    int n=G.size();\n    for(int i=0;i<n;i++)\n\
-    \      if(indeg[i]==0 and !used[i]) bfs(i);\n    return ps;\n  }\n};\n//END CUT\
-    \ HERE\n#ifndef call_from_test\n#endif\n"
+    \      if(indeg[i]==0 and !used[i]) bfs(i);\n    if(n!=(int)ps.size()) return\
+    \ {};\n    return ps;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\nstruct TopologicalSort{\n  vector< set<int> > G;\n \
     \ vector<int> used,indeg,ps;\n\n  TopologicalSort(int n):G(n),used(n,0),indeg(n,0){}\n\
@@ -27,15 +30,16 @@ data:
     \      for(int u:G[v]){\n        indeg[u]--;\n        if(indeg[u]==0 and !used[u]){\n\
     \          used[u]=1;\n          que.emplace(u);\n        }\n      }\n    }\n\
     \  }\n\n  vector<int> build(){\n    int n=G.size();\n    for(int i=0;i<n;i++)\n\
-    \      if(indeg[i]==0 and !used[i]) bfs(i);\n    return ps;\n  }\n};\n//END CUT\
-    \ HERE\n#ifndef call_from_test\n#endif\n"
+    \      if(indeg[i]==0 and !used[i]) bfs(i);\n    if(n!=(int)ps.size()) return\
+    \ {};\n    return ps;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/topologicalsort.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:08:33+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-10-30 12:06:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/3208.test.cpp
 documentation_of: graph/topologicalsort.cpp
 layout: document
 redirect_from:
