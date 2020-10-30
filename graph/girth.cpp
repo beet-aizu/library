@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 //BEGIN CUT HERE
-// size of minimum cycle
+// size of minimum cycle in undirected graph
 int girth(vector< vector<int> > G){
   int n=G.size();
   int res=n+1;
