@@ -1,15 +1,14 @@
 #ifndef call_from_test
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #endif
 //BEGIN CUT HERE
 struct LevelAncestor{
-  int h;
   vector<vector<int> > G,par,lad;
   vector<int> dep,nxt,len,pth,ord,hs;
   LevelAncestor(int n):
     G(n),dep(n),nxt(n,-1),len(n),pth(n),ord(n),hs(n+1,0){
-    h=1;
+    int h=1;
     while((1<<h)<=n) h++;
     par.assign(h,vector<int>(n,-1));
     for(int i=2;i<=n;i++) hs[i]=hs[i>>1]+1;
@@ -48,7 +47,7 @@ struct LevelAncestor{
   void build(int r=0){
     int n=G.size();
     dfs(r,-1,0,1);
-    for(int k=0;k+1<h;k++){
+    for(int k=0;k+1<(int)par.size();k++){
       for(int v=0;v<n;v++){
         if(par[k][v]<0) par[k+1][v]=-1;
         else par[k+1][v]=par[k][par[k][v]];
@@ -70,20 +69,24 @@ struct LevelAncestor{
   }
 
   int lca(int u,int v){
+    int h=par.size();
+
     if(dep[u]>dep[v]) swap(u,v);
-    for(int k=0;k<h;k++){
-      if((dep[v]-dep[u])>>k&1){
+    for(int k=0;k<h;k++)
+      if((dep[v]-dep[u])>>k&1)
         v=par[k][v];
-      }
-    }
+
     if(u==v) return u;
     for(int k=h-1;k>=0;k--){
-      if(par[k][u]!=par[k][v]){
-        u=par[k][u];
-        v=par[k][v];
-      }
+      if(par[k][u]==par[k][v]) continue;
+      u=par[k][u];
+      v=par[k][v];
     }
     return par[0][u];
+  }
+
+  int distance(int u,int v){
+    return dep[u]+dep[v]-dep[lca(u,v)]*2;
   }
 
   int up(int v,int d){
@@ -93,8 +96,11 @@ struct LevelAncestor{
     return lad[pth[v]][ord[v]-d];
   }
 
-  int distance(int u,int v){
-    return dep[u]+dep[v]-dep[lca(u,v)]*2;
+  // from u to v
+  int next(int u,int v){
+    if(dep[u]>=dep[v]) return par[0][u];
+    int l=up(v,dep[v]-dep[u]-1);
+    return par[0][l]==u?l:par[0][u];
   }
 };
 //END CUT HERE
