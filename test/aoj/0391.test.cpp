@@ -1,35 +1,31 @@
 // verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0391
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../tools/chminmax.cpp"
-#include "../../tree/lca.cpp"
 #include "../../tree/levelancestor.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   int n,q;
   cin>>n>>q;
   using P = pair<int, int>;
   vector<vector<P> > G(n);
-  LCA lca(n);
   LevelAncestor la(n);
   for(int i=1;i<n;i++){
     int u,v,w;
     cin>>u>>v>>w;
     u--;v--;
-    lca.add_edge(u,v);
     la.add_edge(u,v);
     G[u].emplace_back(v,w);
     G[v].emplace_back(u,w);
   }
-
-  lca.build();
   la.build();
 
   vector<int> dep(n,0);
@@ -49,11 +45,11 @@ signed main(){
     }
   }
 
-  auto dist=[&](int u,int v){return dep[u]+dep[v]-2*dep[lca.lca(u,v)];};
+  auto dist=[&](int u,int v){return dep[u]+dep[v]-2*dep[la.lca(u,v)];};
   auto path=
     [&](int u,int v,int d){
       if(d==0) return u;
-      int r=lca.lca(u,v);
+      int r=la.lca(u,v);
       int x=la.distance(u,r),y=la.distance(r,v);
       if(d<=x) return la.up(u,d);
       return la.up(v,(x+y)-d);
@@ -70,7 +66,7 @@ signed main(){
                     dist(c,v)*(c!=u)});
       };
 
-    int p=lca.lca(a,b),q=lca.lca(b,c),r=lca.lca(c,a);
+    int p=la.lca(a,b),q=la.lca(b,c),r=la.lca(c,a);
     int v=la.dep[p]>la.dep[q]?p:(la.dep[q]>la.dep[r]?q:r);
 
     int ans=min({calc(a),calc(b),calc(c),calc(v)});
@@ -86,8 +82,7 @@ signed main(){
       chmin(ans,calc(path(u,v,l)));
       chmin(ans,calc(path(u,v,r)));
     }
-    cout<<ans<<"\n";
+    cout<<ans<<newl;
   }
-  cout<<flush;
   return 0;
 }
