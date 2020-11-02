@@ -92,7 +92,7 @@ struct LevelAncestor{
   int up(int v,int d){
     if(d==0) return v;
     v=par[hs[d]][v];
-    d-=1LL<<hs[d];
+    d-=1<<hs[d];
     return lad[pth[v]][ord[v]-d];
   }
 
