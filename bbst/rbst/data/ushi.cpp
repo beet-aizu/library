@@ -51,6 +51,29 @@ struct Ushi{
   inline T reflect(Node *t){
     return t?t->dat:ti;
   }
+
+  inline bool dirty(Node *t){
+    return t->rev;
+  }
+
+  void dump(typename vector<Node>::iterator it,Node* const t,bool rev){
+    if(!count(t)) return;
+
+    Node *l=t->l,*r=t->r;
+    if(rev) swap(l,r);
+    rev^=t->rev;
+
+    dump(it,l,rev);
+    *(it+count(l))=Node(t->val);
+    dump(it+count(l)+1,r,rev);
+  }
+
+  vector<Node> dump(Node* t){
+    assert(t!=nullptr);
+    vector<Node> vs(count(t),*t);
+    dump(vs.begin(),t,false);
+    return vs;
+  }
 };
 
 //END CUT HERE

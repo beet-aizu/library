@@ -18,11 +18,11 @@ struct Basic : RBST<Basic<Data, LIM>, Data, typename Data::Node, LIM>{
   template<class... Args>
   Basic(Args... args):data(forward<Args>(args)...){}
 
-  Node* touch(Node *t){return data.eval(t);}
-  void toggle(Node *t){return data.toggle(t);}
-  Node* pushup(Node *t){return data.pushup(t);}
+  inline Node* touch(Node *t){return data.eval(t);}
+  inline void toggle(Node *t){return data.toggle(t);}
+  inline Node* pushup(Node *t){return data.pushup(t);}
 
-  decltype(auto) get_val(Node *a){
+  inline decltype(auto) get_val(Node *a){
     return data.reflect(a);
   }
 
