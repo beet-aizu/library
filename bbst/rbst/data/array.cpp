@@ -41,7 +41,7 @@ struct Array{
     return t;
   }
 
-  inline T reflect(Node *t){
+  inline T get_val(Node *t){
     assert(t);
     return t->val;
   }

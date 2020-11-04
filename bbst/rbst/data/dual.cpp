@@ -55,9 +55,9 @@ struct Dual{
     return t;
   }
 
-  inline E reflect(Node *t){
+  inline E get_val(Node *t){
     assert(t);
-    return h(t->val,t->laz);
+    return t->val;
   }
 };
 //END CUT HERE

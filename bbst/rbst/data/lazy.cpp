@@ -69,26 +69,33 @@ struct Lazy{
     return t;
   }
 
-  inline T reflect(Node *t){
-    return t?t->dat:ti;
+  inline T get_val(Node *t){
+    assert(t);
+    return t->val;
   }
 
-  void dump(typename vector<Node>::iterator it,Node* const t,bool rev){
+  inline T reflect(Node *t){
+    assert(t);
+    return t->dat;
+  }
+
+  void dump(typename vector<Node>::iterator it,
+            const Node* t,bool rev,E laz){
     if(!count(t)) return;
 
     Node *l=t->l,*r=t->r;
     if(rev) swap(l,r);
     rev^=t->rev;
 
-    dump(it,l,rev);
-    *(it+count(l))=Node(t->val);
-    dump(it+count(l)+1,r,rev);
+    dump(it,l,rev,h(laz,t->laz));
+    *(it+count(l))=Node(g(t->val,laz),ei);
+    dump(it+count(l)+1,r,rev,h(laz,t->laz));
   }
 
   vector<Node> dump(Node* t){
     assert(t!=nullptr);
     vector<Node> vs(count(t),*t);
-    dump(vs.begin(),t,false);
+    dump(vs.begin(),t,false,ei);
     return vs;
   }
 };

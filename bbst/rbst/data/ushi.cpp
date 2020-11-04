@@ -52,8 +52,14 @@ struct Ushi{
     return t;
   }
 
+  inline T get_val(Node *t){
+    assert(t);
+    return t->val;
+  }
+
   inline T reflect(Node *t){
-    return t?t->dat:ti;
+    assert(t);
+    return t->dat;
   }
 
   void dump(typename vector<Node>::iterator it,Node* const t,bool rev){
