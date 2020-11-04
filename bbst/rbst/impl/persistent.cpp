@@ -35,6 +35,8 @@ struct Persistent : RBST<Persistent<Data, LIM>, Data, typename Data::Node, LIM>{
 
   using super::toggle;
   inline void toggle(Node *t){return data.toggle(t);}
+  template<typename E>
+  inline void propagate(Node *t,E x){return data.propagate(t,x);}
   inline Node* pushup(Node *t){return data.pushup(t);}
 
   inline decltype(auto) get_val(Node *a,size_t k){

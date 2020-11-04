@@ -150,7 +150,7 @@ struct RBST{
     auto s=split(a,l);
     auto t=split(s.second,r-l);
     auto u=touch(t.first);
-    propagate(u,v);
+    static_cast<Impl*>(this)->propagate(u,v);
     return merge(s.first,merge(u,t.second));
   }
 

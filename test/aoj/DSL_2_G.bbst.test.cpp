@@ -1,29 +1,34 @@
 // verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/basic/lazy.cpp"
+#include "../../bbst/rbst/rbst.cpp"
+#include "../../bbst/rbst/data/lazy.cpp"
+#include "../../bbst/rbst/impl/basic.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
-  using ll = long long;
   int n,q;
   cin>>n>>q;
 
+  using ll = long long;
   using P = pair<ll, ll>;
   auto f=[](P a,P b){return P(a.first+b.first,a.second+b.second);};
   auto g=[](P a,ll b){return P(a.first+b*a.second,a.second);};
   auto h=[](ll a,ll b){return a+b;};
+  auto flip=[](P a){return a;};
 
-  using Node = NodeBase<P, ll>;
+  using Data = Lazy<P, ll, decltype(f), decltype(g), decltype(h),
+                    decltype(flip)>;
+  using Node = Data::Node;
   constexpr size_t LIM = 1e6;
-  Lazy<Node, LIM> G(f,g,h,P(0,0),0);
+  Basic<Data, LIM> G(f,g,h,flip,P(0,0),0);
   auto rt=G.build(vector<Node>(n,Node(P(0,1),0)));
 
   for(int i=0;i<q;i++){
@@ -39,9 +44,8 @@ signed main(){
       int s,t;
       cin>>s>>t;
       s--;
-      cout<<G.query(rt,s,t).first<<"\n";
+      cout<<G.query(rt,s,t).first<<newl;
     }
   }
-  cout<<flush;
   return 0;
 }
