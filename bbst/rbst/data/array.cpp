@@ -3,21 +3,15 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename T, typename F, typename Flip>
-struct Ushi{
-  F f;
-  Flip flip;
-  T ti;
-
-  Ushi(F f,Flip flip,T ti):f(f),flip(flip),ti(ti){}
-
+template<typename T>
+struct Array{
   struct Node{
     Node *l,*r,*p;
     size_t cnt;
     bool rev;
-    T val,dat;
+    T val;
     Node(T val):
-      cnt(1),rev(0),val(val),dat(val){l=r=p=nullptr;}
+      cnt(1),rev(0),val(val){l=r=p=nullptr;}
   };
 
   static inline size_t count(const Node *t){
@@ -26,8 +20,6 @@ struct Ushi{
 
   inline void toggle(Node *t){
     swap(t->l,t->r);
-    t->val=flip(t->val);
-    t->dat=flip(t->dat);
     t->rev^=1;
   }
 
@@ -46,14 +38,12 @@ struct Ushi{
 
   inline Node* pushup(Node *t){
     t->cnt=count(t->l)+1+count(t->r);
-    t->dat=t->val;
-    if(t->l) t->dat=f(t->l->dat,t->dat);
-    if(t->r) t->dat=f(t->dat,t->r->dat);
     return t;
   }
 
   inline T reflect(Node *t){
-    return t?t->dat:ti;
+    assert(t);
+    return t->val;
   }
 
   void dump(typename vector<Node>::iterator it,Node* const t,bool rev){
@@ -75,7 +65,6 @@ struct Ushi{
     return vs;
   }
 };
-
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

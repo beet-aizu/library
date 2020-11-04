@@ -136,13 +136,13 @@ struct RBST{
     return pushup(a);
   }
 
-  decltype(auto) get_val(Node *a,size_t k){
+  Node* get_val(Node *a,size_t k){
     assert(k<count(a));
     a=touch(a);
     size_t num=count(a->l);
     if(k<num) return get_val(a->l,k);
     if(k>num) return get_val(a->r,k-(num+1));
-    return static_cast<Impl*>(this)->get_val(a);
+    return a;
   }
 
   template<typename E>
@@ -158,7 +158,7 @@ struct RBST{
     auto s=split(a,l);
     auto t=split(s.second,r-l);
     auto u=t.first;
-    auto res=static_cast<Impl*>(this)->get_val(u);
+    auto res=static_cast<Impl*>(this)->query(u);
     a=merge(s.first,merge(u,t.second));
     return res;
   }

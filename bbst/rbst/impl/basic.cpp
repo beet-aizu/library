@@ -19,14 +19,19 @@ struct Basic : RBST<Basic<Data, LIM>, Data, typename Data::Node, LIM>{
   Basic(Args... args):data(forward<Args>(args)...){}
 
   inline Node* touch(Node *t){return data.eval(t);}
+
+  using super::toggle;
   inline void toggle(Node *t){return data.toggle(t);}
   inline Node* pushup(Node *t){return data.pushup(t);}
 
-  inline decltype(auto) get_val(Node *a){
-    return data.reflect(a);
+  inline decltype(auto) get_val(Node *a,size_t k){
+    return data.reflect(super::get_val(a,k));
   }
 
-  using super::toggle;
+  using super::query;
+  inline decltype(auto) query(Node *a){
+    return data.reflect(a);
+  }
 };
 //END CUT HERE
 #ifndef call_from_test
