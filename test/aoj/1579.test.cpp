@@ -4,8 +4,9 @@
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/basic/dual.cpp"
+#include "../../bbst/rbst/rbst.cpp"
+#include "../../bbst/rbst/data/dual.cpp"
+#include "../../bbst/rbst/impl/basic.cpp"
 #undef call_from_test
 
 signed main(){
@@ -26,24 +27,24 @@ signed main(){
   };
 
   const ll MAX = 1e9;
-  auto h=
-    [](E a,E b){
-      E c(a.a+a.b*(a.c+b.a),a.b*b.b,0);
-      c.c=c.a/c.b+b.c;
-      c.a%=c.b;
-      if(c.b>MAX){
-        c.a=max(0LL,MAX-(c.b-c.a));
-        c.b=MAX;
-      }
-      return c;
-    };
+  auto h=[](E a,E b){
+    E c(a.a+a.b*(a.c+b.a),a.b*b.b,0);
+    c.c=c.a/c.b+b.c;
+    c.a%=c.b;
+    if(c.b>MAX){
+      c.a=max(0LL,MAX-(c.b-c.a));
+      c.b=MAX;
+    }
+    return c;
+  };
   E ei(0,1,0);
 
-  using Node = NodeBase<E>;
+  using Data = Dual<E, decltype(h)>;
+  using Node = Data::Node;
   constexpr size_t LIM = 1e6;
-  Dual<Node, LIM> G(h,ei);
+  Basic<Data, LIM> G(h,ei);
 
-  auto r=G.init(n);
+  auto r=G.build(vector<Node>(n,ei));
   for(int i=0;i<n;i++){
     int v=a+d*i;
     r=G.update(r,i,i+1,E(0,1,v));

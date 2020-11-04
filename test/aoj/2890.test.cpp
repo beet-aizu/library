@@ -4,8 +4,9 @@
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/basic/array.cpp"
+#include "../../bbst/rbst/rbst.cpp"
+#include "../../bbst/rbst/data/array.cpp"
+#include "../../bbst/rbst/impl/basic.cpp"
 #undef call_from_test
 
 signed main(){
@@ -15,9 +16,10 @@ signed main(){
   int n,q;
   cin>>n>>q;
 
-  using Node = NodeBase<int>;
+  using Data = Array<int>;
+  using Node = Data::Node;
   const int LIM = 1e6;
-  Array<Node, LIM> as;
+  Basic<Data, LIM> as;
 
   Node* rt=nullptr;
   vector<Node*> vs(n+1);
