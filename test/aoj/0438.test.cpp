@@ -5,12 +5,13 @@ using namespace std;
 
 #define call_from_test
 #include "../../io/single.cpp"
-#include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/basic/array.cpp"
+#include "../../bbst/rbst/rbst.cpp"
+#include "../../bbst/rbst/data/array.cpp"
+#include "../../bbst/rbst/impl/basic.cpp"
 #undef call_from_test
 
 struct T;
-using Node = NodeBase<T>;
+using Node = Array<T>::Node;
 
 struct T{
   Node* nxt;
@@ -39,7 +40,8 @@ signed main(){
   }
 
   const size_t LIM = 1e6;
-  Array<Node, LIM> H;
+  using Data = Array<T>;
+  Basic<Data, LIM> H;
   vector<Node*> ps(n,nullptr);
   ps[n-1]=H.create(Node(T(nullptr,cs[n-1])));
   auto R=ps[n-1];

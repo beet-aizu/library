@@ -5,9 +5,9 @@ using namespace std;
 
 #define call_from_test
 #include "../../io/single.cpp"
-#include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/persistent/base.cpp"
-#include "../../bbst/rbst/persistent/ushi.cpp"
+#include "../../bbst/rbst/rbst.cpp"
+#include "../../bbst/rbst/data/ushi.cpp"
+#include "../../bbst/rbst/impl/persistent.cpp"
 #undef call_from_test
 
 signed main(){
@@ -16,10 +16,12 @@ signed main(){
   const char newl = '\n';
 
   using ll = long long;
-  using Node = NodeBase<ll>;
-  const size_t LIM = 3e6;
   auto f=[&](ll a,ll b){return a+b;};
-  PersistentUshi<Node, LIM> G(f,0);
+  auto flip=[&](ll a){return a;};
+  using Data = Ushi<ll, decltype(f), decltype(flip)>;
+  using Node = Data::Node;
+  const size_t LIM = 3e6;
+  Persistent<Data, LIM> G(f,flip,0);
 
   int n,m;
   cin>>n>>m;

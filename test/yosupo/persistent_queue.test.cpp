@@ -1,12 +1,12 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/persistent_queue"
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../bbst/rbst/basic/base.cpp"
-#include "../../bbst/rbst/persistent/base.cpp"
-#include "../../bbst/rbst/persistent/array.cpp"
+#include "../../bbst/rbst/rbst.cpp"
+#include "../../bbst/rbst/data/array.cpp"
+#include "../../bbst/rbst/impl/persistent.cpp"
 #undef call_from_test
 
 #ifdef SANITIZE
@@ -16,10 +16,12 @@ using namespace std;
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
-  using Node = NodeBase<int>;
+  using Data = Array<int>;
+  using Node = Data::Node;
   const int LIM = 2e7;
-  PersistentArray<Node, LIM> pa;
+  Persistent<Data, LIM> pa;
   Node* rt=pa.create(0);
 
   int q;
@@ -37,7 +39,7 @@ signed main(){
     if(a==1){
       int t;
       cin>>t;
-      cout<<pa.get_val(ss[t],1)<<"\n";
+      cout<<pa.get_val(ss[t],1)<<newl;
       ss[i]=pa.erase(ss[t],1);
     }
   }

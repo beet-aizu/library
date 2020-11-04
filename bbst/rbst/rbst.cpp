@@ -3,8 +3,8 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename Node, size_t LIM, typename Impl>
-struct BBSTBase{
+template<typename Impl, typename Data, typename Node, size_t LIM>
+struct RBST{
   using u32 = uint32_t;
   u32 xor128(){
     static u32 x = 123456789;
@@ -17,25 +17,23 @@ struct BBSTBase{
     return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
   }
 
-  alignas(Node) static char pool[sizeof(Node) * LIM];
-  static Node* ptr;
-  static size_t size;
+  alignas(Node) static inline char pool[sizeof(Node)*LIM];
+  static inline Node* ptr = (Node*)pool;
+  static inline size_t size;
 
   template<typename... Args>
   inline Node* create(Args&&... args){
     return new (ptr+size++) Node(std::forward<Args>(args)...);
   }
 
-  size_t count(const Node *a){
-    return a?a->cnt:0;
+  inline size_t count(const Node *t){return Data::count(t);}
+
+  inline Node* touch(Node *t){
+    return static_cast<Impl*>(this)->touch(t);
   }
 
   inline void toggle(Node *t){
-    static_cast<Impl*>(this)->toggle(t);
-  }
-
-  inline Node* eval(Node *t){
-    return static_cast<Impl*>(this)->eval(t);
+    return static_cast<Impl*>(this)->toggle(t);
   }
 
   inline Node* pushup(Node *t){
@@ -45,7 +43,7 @@ struct BBSTBase{
   Node* toggle(Node *a,size_t l,size_t r){
     auto s=split(a,l);
     auto t=split(s.second,r-l);
-    auto u=eval(t.first);
+    auto u=touch(t.first);
     toggle(u);
     return merge(s.first,merge(u,t.second));
   }
@@ -54,12 +52,12 @@ struct BBSTBase{
     if(a==nullptr) return b;
     if(b==nullptr) return a;
     if(xor128()%(count(a)+count(b))<count(a)){
-      a=eval(a);
+      a=touch(a);
       a->r=merge(a->r,b);
       a->r->p=a;
       return pushup(a);
     }
-    b=eval(b);
+    b=touch(b);
     b->l=merge(a,b->l);
     b->l->p=b;
     return pushup(b);
@@ -67,7 +65,7 @@ struct BBSTBase{
 
   pair<Node*, Node*> split(Node* a,size_t k){
     if(a==nullptr) return make_pair(a,a);
-    a=eval(a);
+    a=touch(a);
     if(k<=count(a->l)){
       if(a->l) a->l->p=nullptr;
       auto s=split(a->l,k);
@@ -97,7 +95,7 @@ struct BBSTBase{
 
   Node* find_by_order(Node *a,size_t k){
     assert(k<count(a));
-    a=eval(a);
+    a=touch(a);
     size_t num=count(a->l);
     if(k<num) return find_by_order(a->l,k);
     if(k>num) return find_by_order(a->r,k-(num+1));
@@ -126,14 +124,45 @@ struct BBSTBase{
   Node* build(const vector<Node> &vs){
     return build(0,vs.size(),vs);
   }
+
+  template<typename T>
+  Node* set_val(Node *a,size_t k,T val){
+    assert(k<count(a));
+    a=touch(a);
+    size_t num=count(a->l);
+    if(k<num) a->l=set_val(a->l,k,val);
+    if(k>num) a->r=set_val(a->r,k-(num+1),val);
+    if(k==num) a->val=val;
+    return pushup(a);
+  }
+
+  Node* get_val(Node *a,size_t k){
+    assert(k<count(a));
+    a=touch(a);
+    size_t num=count(a->l);
+    if(k<num) return get_val(a->l,k);
+    if(k>num) return get_val(a->r,k-(num+1));
+    return a;
+  }
+
+  template<typename E>
+  Node* update(Node *a,size_t l,size_t r,E v){
+    auto s=split(a,l);
+    auto t=split(s.second,r-l);
+    auto u=touch(t.first);
+    static_cast<Impl*>(this)->propagate(u,v);
+    return merge(s.first,merge(u,t.second));
+  }
+
+  decltype(auto) query(Node *&a,size_t l,size_t r){
+    auto s=split(a,l);
+    auto t=split(s.second,r-l);
+    auto u=t.first;
+    auto res=static_cast<Impl*>(this)->query(u);
+    a=merge(s.first,merge(u,t.second));
+    return res;
+  }
 };
-template<typename Node, size_t LIM, typename Impl>
-alignas(Node) char BBSTBase<Node, LIM, Impl>::pool[];
-template<typename Node, size_t LIM, typename Impl>
-Node* BBSTBase<Node, LIM, Impl>::ptr=
-  (Node*)BBSTBase<Node, LIM, Impl>::pool;
-template<typename Node, size_t LIM, typename Impl>
-size_t BBSTBase<Node, LIM, Impl>::size=0;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
