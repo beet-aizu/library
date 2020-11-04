@@ -29,37 +29,33 @@ data:
     - icon: ':heavy_check_mark:'
       path: bbst/pb_ds_tree.cpp
       title: bbst/pb_ds_tree.cpp
-  - name: bbst/rbst/basic
+  - name: bbst/rbst/data
     pages:
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/basic/array.cpp
-      title: bbst/rbst/basic/array.cpp
+      path: bbst/rbst/data/array.cpp
+      title: bbst/rbst/data/array.cpp
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/basic/base.cpp
-      title: bbst/rbst/basic/base.cpp
+      path: bbst/rbst/data/dual.cpp
+      title: bbst/rbst/data/dual.cpp
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/basic/dual.cpp
-      title: bbst/rbst/basic/dual.cpp
+      path: bbst/rbst/data/lazy.cpp
+      title: bbst/rbst/data/lazy.cpp
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/basic/lazy.cpp
-      title: bbst/rbst/basic/lazy.cpp
-    - icon: ':heavy_check_mark:'
-      path: bbst/rbst/basic/ushi.cpp
-      title: bbst/rbst/basic/ushi.cpp
-  - name: bbst/rbst/persistent
+      path: bbst/rbst/data/ushi.cpp
+      title: bbst/rbst/data/ushi.cpp
+  - name: bbst/rbst/impl
     pages:
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/persistent/array.cpp
-      title: bbst/rbst/persistent/array.cpp
+      path: bbst/rbst/impl/basic.cpp
+      title: bbst/rbst/impl/basic.cpp
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/persistent/base.cpp
-      title: bbst/rbst/persistent/base.cpp
-    - icon: ':warning:'
-      path: bbst/rbst/persistent/lazy.cpp
-      title: bbst/rbst/persistent/lazy.cpp
+      path: bbst/rbst/impl/persistent.cpp
+      title: bbst/rbst/impl/persistent.cpp
+  - name: bbst/rbst
+    pages:
     - icon: ':heavy_check_mark:'
-      path: bbst/rbst/persistent/ushi.cpp
-      title: bbst/rbst/persistent/ushi.cpp
+      path: bbst/rbst/rbst.cpp
+      title: bbst/rbst/rbst.cpp
   - name: bflow
     pages:
     - icon: ':heavy_check_mark:'
@@ -1196,9 +1192,6 @@ data:
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/DSL_2_A.bbst.test.cpp
-      title: test/aoj/DSL_2_A.bbst.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_A.test.cpp
       title: test/aoj/DSL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1208,14 +1201,8 @@ data:
       path: test/aoj/DSL_2_C.test.cpp
       title: test/aoj/DSL_2_C.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/DSL_2_D.bbst.test.cpp
-      title: test/aoj/DSL_2_D.bbst.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_D.test.cpp
       title: test/aoj/DSL_2_D.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/DSL_2_E.bbst.test.cpp
-      title: test/aoj/DSL_2_E.bbst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_E.test.cpp
       title: test/aoj/DSL_2_E.test.cpp
