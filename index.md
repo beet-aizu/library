@@ -112,15 +112,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/fastfouriertransform.cpp
       title: convolution/fastfouriertransform.cpp
-    - icon: ':warning:'
-      path: convolution/fastwalshhadamardtransform.cpp
-      title: convolution/fastwalshhadamardtransform.cpp
     - icon: ':heavy_check_mark:'
       path: convolution/garner.cpp
       title: convolution/garner.cpp
     - icon: ':heavy_check_mark:'
       path: convolution/numbertheoretictransform.cpp
       title: convolution/numbertheoretictransform.cpp
+  - name: convolution/bitwise
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convolution/bitwise/xor.cpp
+      title: convolution/bitwise/xor.cpp
   - name: datastructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -732,6 +734,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0391.test.cpp
       title: test/aoj/0391.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/0402.test.cpp
+      title: test/aoj/0402.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/0403.test.cpp
       title: test/aoj/0403.test.cpp

@@ -2,9 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: convolution/fastwalshhadamardtransform.cpp
-    title: convolution/fastwalshhadamardtransform.cpp
+  - icon: ':heavy_check_mark:'
+    path: convolution/bitwise/xor.cpp
+    title: convolution/bitwise/xor.cpp
   - icon: ':heavy_check_mark:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
@@ -266,8 +266,8 @@ data:
   - polynomial/hash.cpp
   - mod/factorial.cpp
   - matching/tutte.cpp
+  - convolution/bitwise/xor.cpp
   - convolution/garner.cpp
-  - convolution/fastwalshhadamardtransform.cpp
   - convolution/numbertheoretictransform.cpp
   - graph/lowlink.cpp
   - linearalgebra/tree_theorem.cpp
