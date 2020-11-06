@@ -4,12 +4,25 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-void FWT(vector<T> &as){
+auto divide_by_two(T x)
+  ->enable_if_t<!is_class<T>::value, T>{
+  return x/T(2);
+}
+
+template<typename T>
+auto divide_by_two(T x)
+  ->enable_if_t< is_class<T>::value, T>{
+  static const T inv = T(2).inv();
+  return x*inv;
+}
+
+template<typename T>
+void fwht(vector<T> &as){
   int n=as.size();
   for(int d=1;d<n;d<<=1){
     for(int m=d<<1,i=0;i<n;i+=m){
       for(int j=0;j<d;j++){
-        T x=as[i+j],y=as[i+j+d];
+        T x=as[i+j+0],y=as[i+j+d];
         as[i+j+0]=x+y;
         as[i+j+d]=x-y;
       }
@@ -18,21 +31,14 @@ void FWT(vector<T> &as){
 }
 
 template<typename T>
-void multiply(vector<T> &as,const vector<T> &bs){
-  for(int i=0;i<(int)as.size();i++)
-    as[i]=as[i]*bs[i];
-}
-
-template<typename T>
-void UFWT(vector<T> &as){
-  T inv2=T(2).inv();
+void ifwht(vector<T> &as){
   int n=as.size();
   for(int d=1;d<n;d<<=1){
     for(int m=d<<1,i=0;i<n;i+=m){
       for(int j=0;j<d;j++){
-        T x=as[i+j],y=as[i+j+d];
-        as[i+j+0]=(x+y)*inv2;
-        as[i+j+d]=(x-y)*inv2;
+        T x=as[i+j+0],y=as[i+j+d];
+        as[i+j+0]=divide_by_two(x+y);
+        as[i+j+d]=divide_by_two(x-y);
       }
     }
   }
@@ -41,10 +47,9 @@ void UFWT(vector<T> &as){
 #ifndef call_from_test
 
 #define call_from_test
-#include "../mod/mint.cpp"
+#include "../../mod/mint.cpp"
 #undef call_from_test
 
-//INSERT ABOVE HERE
 signed CGR002_H(){
   cin.tie(0);
   ios::sync_with_stdio(0);
@@ -78,7 +83,7 @@ signed CGR002_H(){
       vs[c[i]]+=(t==2);
       vs[b[i]^c[i]]+=(t==3);
     }
-    FWT(vs);
+    fwht(vs);
     for(int i=0;i<(1<<k);i++) vm[i][t]=vs[i];
   }
 
@@ -95,7 +100,7 @@ signed CGR002_H(){
     vs[i]*=M(p-q-r).pow(w);
   }
 
-  UFWT(vs);
+  ifwht(vs);
   for(int i=0;i<(1<<k);i++){
     if(i) cout<<" ";
     cout<<vs[ofs^i].v;
@@ -104,12 +109,13 @@ signed CGR002_H(){
   return 0;
 }
 /*
-  verified on 2020/05/07
+  verified on 2020/11/06
   https://codeforces.com/contest/1119/problem/H
 */
 
+//INSERT ABOVE HERE
 signed main(){
-  CGR002_H();
+  // CGR002_H();
   return 0;
 }
 #endif
