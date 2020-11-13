@@ -8,8 +8,9 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+// mod can be composite numbers
 template<typename T>
-T order(T x,T MOD){
+T order(T x,const T MOD){
   static map<T, vector<T>> dp;
   static map<T, T> phi;
 

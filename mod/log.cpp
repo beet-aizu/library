@@ -4,28 +4,30 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 // find x s.t. a^x = b (x >= 0)
+// return MOD if not found
+// MOD can be composite numbers
 template<typename T>
-T mod_log(T a,T b,T mod){
+T mod_log(T a,T b,const T MOD){
   using ll = long long;
   ll g=1;
   {
-    ll m=mod;
+    ll m=MOD;
     while(m){
-      g=(ll)g*a%mod;
+      g=(ll)g*a%MOD;
       m>>=1;
     }
   }
-  g=__gcd(g,(ll)mod);
+  g=__gcd(g,(ll)MOD);
   ll c=0,t=1;
   while(t%g){
     if(t==b) return c;
-    t=t*a%mod;
+    t=t*a%MOD;
     c++;
   }
   // not found
-  if(b%g) return mod;
+  if(b%g) return MOD;
   t/=g;b/=g;
-  const ll n=mod/g;
+  const ll n=MOD/g;
   ll h=0,gs=1;
   while(h*h<n){
     gs=gs*a%n;
@@ -49,7 +51,7 @@ T mod_log(T a,T b,T mod){
     }
   }
   // not found
-  return mod;
+  return MOD;
 }
 //END CUT HERE
 #ifndef call_from_test

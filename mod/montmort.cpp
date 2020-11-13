@@ -9,12 +9,13 @@ struct Montmort{
   using ll = long long;
   vector<T> dp;
 
-  Montmort(int n,int mod):dp(n+1,0){
+  // MOD can be composite numbers
+  Montmort(int n,const int MOD):dp(n+1,0){
     for(int k=2;k<=n;k++){
-      dp[k]=(ll)dp[k-1]*k%mod;
+      dp[k]=(ll)dp[k-1]*k%MOD;
       if(~k&1) dp[k]+=1;
-      else dp[k]+=mod-1;
-      if(dp[k]>=mod) dp[k]-=mod;
+      else dp[k]+=MOD-1;
+      if(dp[k]>=MOD) dp[k]-=MOD;
     }
   }
 

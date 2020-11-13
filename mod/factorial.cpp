@@ -11,7 +11,8 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
-int factorial(long long n,int MOD){
+// MOD: prime
+int factorial(long long n,const int MOD){
   if(n>=MOD) return 0;
   Garner arb;
   using R = Rint<int>;

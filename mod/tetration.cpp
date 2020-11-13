@@ -26,25 +26,29 @@ T mpow(T a,T n,T m,T &f){
   return v;
 }
 
+// a^a^a^... (repeat n times)
+// MOD can be composite numbers
 template<typename T>
-T tetration(T a,T n,T m,T &f){
+T tetration(T a,T n,const T MOD,T &f){
   if(a==0) return ~n&1;
-  if(m==1) return f=1;
+  if(MOD==1) return f=1;
   if(a==1 or n==0) return 1;
   if(n==1){
-    f|=a>=m;
-    return a%m+f*m;
+    f|=a>=MOD;
+    return a%MOD+f*MOD;
   }
-  T z=tetration(a,n-1,totient(m),f);
-  T r=mpow(a,z,m,f);
-  return r+f*m;
+  T z=tetration(a,n-1,totient(MOD),f);
+  T r=mpow(a,z,MOD,f);
+  return r+f*MOD;
 }
 
+// MOD can be composite numbers
 template<typename T>
-T tetration(T a,T n,T m){
+T tetration(T a,T n,const T MOD){
   T f=0;
-  return tetration(a,n,m,f)%m;
+  return tetration(a,n,MOD,f)%MOD;
 }
+
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

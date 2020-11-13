@@ -8,11 +8,12 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+// a, MOD coprime
 template<typename T>
-T mod_inverse(T a,T mod){
+T mod_inverse(T a,const T MOD){
   T x,y;
-  extgcd(a,mod,x,y);
-  return (x%mod+mod)%mod;
+  extgcd(a,MOD,x,y);
+  return (x%MOD+MOD)%MOD;
 }
 //END CUT HERE
 #ifndef call_from_test
