@@ -32,10 +32,10 @@ data:
     \ other than include guards\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../math/extgcd.cpp\"\n#undef call_from_test\n\
-    \n#endif\n//BEGIN CUT HERE\ntemplate<typename T>\nT mod_inverse(T a,T mod){\n\
-    \  T x,y;\n  extgcd(a,mod,x,y);\n  return (x%mod+mod)%mod;\n}\n//END CUT HERE\n\
-    #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
-    #endif\n"
+    \n#endif\n//BEGIN CUT HERE\n// a, MOD coprime\ntemplate<typename T>\nT mod_inverse(T\
+    \ a,const T MOD){\n  T x,y;\n  extgcd(a,MOD,x,y);\n  return (x%MOD+MOD)%MOD;\n\
+    }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn:
   - math/extgcd.cpp
   isVerificationFile: false
@@ -43,7 +43,7 @@ data:
   requiredBy:
   - math/combination.cpp
   - math/linearcongruence.cpp
-  timestamp: '2020-10-27 16:41:24+09:00'
+  timestamp: '2020-11-13 17:57:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2970.test.cpp

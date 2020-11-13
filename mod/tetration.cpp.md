@@ -30,18 +30,20 @@ data:
     \  using ull = unsigned long long;\n  if(a==1 or n==0) return 1;\n  ull v=1,x=a,z=m;\n\
     \  f|=x>=z;\n  x%=m;\n  while(1){\n    if(n&1) v*=x;\n    if(v>=z) f=1,v%=m;\n\
     \    n>>=1;\n    if(!n) break;\n    x=x*x;\n    if(x>=z) f=1,x%=m;\n  }\n  return\
-    \ v;\n}\n\ntemplate<typename T>\nT tetration(T a,T n,T m,T &f){\n  if(a==0) return\
-    \ ~n&1;\n  if(m==1) return f=1;\n  if(a==1 or n==0) return 1;\n  if(n==1){\n \
-    \   f|=a>=m;\n    return a%m+f*m;\n  }\n  T z=tetration(a,n-1,totient(m),f);\n\
-    \  T r=mpow(a,z,m,f);\n  return r+f*m;\n}\n\ntemplate<typename T>\nT tetration(T\
-    \ a,T n,T m){\n  T f=0;\n  return tetration(a,n,m,f)%m;\n}\n//END CUT HERE\n#ifndef\
-    \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ v;\n}\n\n// a^a^a^... (repeat n times)\n// MOD can be composite numbers\ntemplate<typename\
+    \ T>\nT tetration(T a,T n,const T MOD,T &f){\n  if(a==0) return ~n&1;\n  if(MOD==1)\
+    \ return f=1;\n  if(a==1 or n==0) return 1;\n  if(n==1){\n    f|=a>=MOD;\n   \
+    \ return a%MOD+f*MOD;\n  }\n  T z=tetration(a,n-1,totient(MOD),f);\n  T r=mpow(a,z,MOD,f);\n\
+    \  return r+f*MOD;\n}\n\n// MOD can be composite numbers\ntemplate<typename T>\n\
+    T tetration(T a,T n,const T MOD){\n  T f=0;\n  return tetration(a,n,MOD,f)%MOD;\n\
+    }\n\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn:
   - math/totient.cpp
   isVerificationFile: false
   path: mod/tetration.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
+  timestamp: '2020-11-13 17:57:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0472.test.cpp
