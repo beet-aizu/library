@@ -4,17 +4,17 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 template<typename T>
-int jacobi(T a,const T MOD){
+int jacobi(T a,T m){
   int s=1;
-  if(a<0) a=a%MOD+MOD;
-  while(MOD>1){
-    a%=MOD;
+  if(a<0) a=a%m+m;
+  while(m>1){
+    a%=m;
     if(a==0) return 0;
     int r=__builtin_ctz(a);
-    if((r&1) and ((MOD+2)&4)) s=-s;
+    if((r&1) and ((m+2)&4)) s=-s;
     a>>=r;
-    if(a&MOD&2) s=-s;
-    swap(a,MOD);
+    if(a&m&2) s=-s;
+    swap(a,m);
   }
   return s;
 }
