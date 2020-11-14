@@ -345,6 +345,7 @@
 "test/yukicoder/3912.test.cpp": "2020-10-27 19:32:25 +0900",
 "test/yukicoder/3961.test.cpp": "2020-10-27 19:32:25 +0900",
 "test/yukicoder/4072.test.cpp": "2020-10-27 19:32:25 +0900",
+"test/yukicoder/4271.avx.test.cpp": "2020-11-14 15:20:59 +0900",
 "test/yukicoder/4271.test.cpp": "2020-10-27 16:52:37 +0900",
 "test/yukicoder/4387.test.cpp": "2020-10-27 18:08:33 +0900",
 "test/yukicoder/4474.test.cpp": "2020-11-13 17:57:07 +0900",
