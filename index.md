@@ -576,8 +576,8 @@ data:
       path: tools/all_permutations.cpp
       title: tools/all_permutations.cpp
     - icon: ':heavy_check_mark:'
-      path: tools/avx.cpp
-      title: tools/avx.cpp
+      path: tools/avx2.cpp
+      title: tools/avx2.cpp
     - icon: ':heavy_check_mark:'
       path: tools/bigint.cpp
       title: tools/bigint.cpp
@@ -1749,8 +1749,8 @@ data:
       path: test/yukicoder/4072.test.cpp
       title: test/yukicoder/4072.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/yukicoder/4271.avx.test.cpp
-      title: test/yukicoder/4271.avx.test.cpp
+      path: test/yukicoder/4271.avx2.test.cpp
+      title: test/yukicoder/4271.avx2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4271.test.cpp
       title: test/yukicoder/4271.test.cpp
