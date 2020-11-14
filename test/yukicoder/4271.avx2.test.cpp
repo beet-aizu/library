@@ -1,7 +1,7 @@
 // verification-helper: PROBLEM https://yukicoder.me/problems/4271
 
 #define call_from_test
-#include "../../tools/avx.cpp"
+#include "../../tools/avx2.cpp"
 #undef call_from_test
 
 #include <bits/stdc++.h>
