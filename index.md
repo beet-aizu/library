@@ -120,6 +120,15 @@ data:
       title: convolution/numbertheoretictransform.cpp
   - name: convolution/bitwise
     pages:
+    - icon: ':warning:'
+      path: convolution/bitwise/and.cpp
+      title: convolution/bitwise/and.cpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/bitwise/fwht.cpp
+      title: convolution/bitwise/fwht.cpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/bitwise/or.cpp
+      title: convolution/bitwise/or.cpp
     - icon: ':heavy_check_mark:'
       path: convolution/bitwise/xor.cpp
       title: convolution/bitwise/xor.cpp
@@ -1037,6 +1046,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2979.test.cpp
       title: test/aoj/2979.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2981.test.cpp
+      title: test/aoj/2981.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2983.test.cpp
       title: test/aoj/2983.test.cpp
