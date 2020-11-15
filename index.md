@@ -699,6 +699,9 @@ data:
       path: vector/near.cpp
       title: vector/near.cpp
     - icon: ':heavy_check_mark:'
+      path: vector/runlength.cpp
+      title: vector/runlength.cpp
+    - icon: ':heavy_check_mark:'
       path: vector/zip.cpp
       title: vector/zip.cpp
   verificationCategories:
@@ -1775,6 +1778,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4862.test.cpp
       title: test/yukicoder/4862.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/4872.test.cpp
+      title: test/yukicoder/4872.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4918.test.cpp
       title: test/yukicoder/4918.test.cpp
