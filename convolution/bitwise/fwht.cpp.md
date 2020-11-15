@@ -9,14 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0402.test.cpp
     title: test/aoj/0402.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2446.test.cpp
     title: test/aoj/2446.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2981.test.cpp
     title: test/aoj/2981.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://kazuma8128.hatenablog.com/entry/2018/05/31/144519
@@ -40,7 +40,7 @@ data:
   requiredBy:
   - convolution/bitwise/xor.cpp
   timestamp: '2020-11-15 18:54:23+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0402.test.cpp
   - test/aoj/2981.test.cpp
