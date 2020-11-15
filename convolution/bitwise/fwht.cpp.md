@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2981.test.cpp
     title: test/aoj/2981.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5025.test.cpp
+    title: test/yukicoder/5025.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -42,6 +45,7 @@ data:
   timestamp: '2020-11-15 18:54:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/5025.test.cpp
   - test/aoj/0402.test.cpp
   - test/aoj/2981.test.cpp
   - test/aoj/2446.test.cpp
