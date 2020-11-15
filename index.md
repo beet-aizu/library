@@ -683,7 +683,7 @@ data:
       title: Sack (dsu on tree)
   - name: vector
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: vector/compress.cpp
       title: vector/compress.cpp
     - icon: ':heavy_check_mark:'
@@ -695,7 +695,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: vector/multi.cpp
       title: vector/multi.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: vector/near.cpp
       title: vector/near.cpp
     - icon: ':heavy_check_mark:'
@@ -1778,7 +1778,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4706.test.cpp
       title: test/yukicoder/4706.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/4778.test.cpp
       title: test/yukicoder/4778.test.cpp
     - icon: ':heavy_check_mark:'
