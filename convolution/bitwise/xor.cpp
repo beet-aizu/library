@@ -15,38 +15,21 @@ auto divide_by_two(T x)
   static const T inv = T(2).inv();
   return x*inv;
 }
-
-template<typename T>
-void fwht(vector<T> &as){
-  int n=as.size();
-  for(int d=1;d<n;d<<=1){
-    for(int m=d<<1,i=0;i<n;i+=m){
-      for(int j=0;j<d;j++){
-        T x=as[i+j+0],y=as[i+j+d];
-        as[i+j+0]=x+y;
-        as[i+j+d]=x-y;
-      }
-    }
-  }
-}
-
-template<typename T>
-void ifwht(vector<T> &as){
-  int n=as.size();
-  for(int d=1;d<n;d<<=1){
-    for(int m=d<<1,i=0;i<n;i+=m){
-      for(int j=0;j<d;j++){
-        T x=as[i+j+0],y=as[i+j+d];
-        as[i+j+0]=divide_by_two(x+y);
-        as[i+j+d]=divide_by_two(x-y);
-      }
-    }
-  }
-}
+auto zeta=[](auto& lo,auto& hi){
+  auto x=lo+hi,y=lo-hi;
+  lo=x;
+  hi=y;
+};
+auto moebius=[](auto& lo,auto& hi){
+  auto x=lo+hi,y=lo-hi;
+  lo=divide_by_two(x);
+  hi=divide_by_two(y);
+};
 //END CUT HERE
 #ifndef call_from_test
 
 #define call_from_test
+#include "fwht.cpp"
 #include "../../mod/mint.cpp"
 #undef call_from_test
 
@@ -83,7 +66,7 @@ signed CGR002_H(){
       vs[c[i]]+=(t==2);
       vs[b[i]^c[i]]+=(t==3);
     }
-    fwht(vs);
+    fwht(vs,zeta);
     for(int i=0;i<(1<<k);i++) vm[i][t]=vs[i];
   }
 
@@ -100,7 +83,7 @@ signed CGR002_H(){
     vs[i]*=M(p-q-r).pow(w);
   }
 
-  ifwht(vs);
+  fwht(vs,moebius);
   for(int i=0;i<(1<<k);i++){
     if(i) cout<<" ";
     cout<<vs[ofs^i].v;
@@ -109,7 +92,7 @@ signed CGR002_H(){
   return 0;
 }
 /*
-  verified on 2020/11/06
+  verified on 2020/11/15
   https://codeforces.com/contest/1119/problem/H
 */
 

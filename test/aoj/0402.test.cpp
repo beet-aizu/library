@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../convolution/bitwise/fwht.cpp"
 #include "../../convolution/bitwise/xor.cpp"
 #undef call_from_test
 
@@ -26,9 +27,9 @@ signed main(){
     cnt[s]++;
   }
 
-  fwht(cnt);
+  fwht(cnt,zeta);
   for(ll &v:cnt) v=v*v;
-  ifwht(cnt);
+  fwht(cnt,moebius);
 
   k--;
   for(int v=sz-1;v>=0;v--){
