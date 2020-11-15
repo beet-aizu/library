@@ -11,8 +11,8 @@ vector<T> add(vector<T> vs,vector<T> as){
   return vs;
 }
 
-template<typename T>
-vector<T> add(vector<T> vs,T a){
+template<typename T, typename U>
+vector<T> add(vector<T> vs,U a){
   return add(vs,vector<T>(vs.size(),a));
 }
 
@@ -23,8 +23,8 @@ vector<T> mul(vector<T> vs,vector<T> as){
   return vs;
 }
 
-template<typename T>
-vector<T> mul(vector<T> vs,T a){
+template<typename T, typename U>
+vector<T> mul(vector<T> vs,U a){
   return mul(vs,vector<T>(vs.size(),a));
 }
 
@@ -33,7 +33,7 @@ vector<T> near(vector<T> vs,Ts... ts){
   vector<T> rs;
   rs.reserve(vs.size()*sizeof...(ts));
   auto append=[&](auto a){
-    for(auto w:add(vs,(T)a)) rs.emplace_back(w);
+    for(auto w:add(vs,a)) rs.emplace_back(w);
   };
   initializer_list<int>{(void(append(ts)),0)...};
   return rs;
