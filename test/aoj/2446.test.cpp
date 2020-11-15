@@ -24,14 +24,16 @@ signed main(){
 
   vector<ll> dp(1<<n,0);
   for(int bit=1;bit<(1<<n);bit++){
-    __int128_t l=1;
-    auto mlcm=[&](auto x,auto y){return x/gcd<ll>(x,y)*y;};
+    ll cur=1;
     for(int i=0;i<n;i++){
       if((~bit>>i)&1) continue;
-      l=mlcm(l,as[i]);
-      if(l>m) break;
+      __int128_t nxt=cur;
+      nxt*=as[i]/gcd(cur,as[i]);
+      if(nxt>m) nxt=m+1;
+      cur=nxt;
+      if(cur>m) break;
     }
-    dp[bit]=m/l;
+    dp[bit]=m/cur;
   }
 
   fwht(dp,moebius);
