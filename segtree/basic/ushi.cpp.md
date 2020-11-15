@@ -10,6 +10,9 @@ data:
     path: test/aoj/2644.test.cpp
     title: test/aoj/2644.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2969.test.cpp
+    title: test/aoj/2969.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_A.test.cpp
     title: test/aoj/DSL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -82,6 +85,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2644.test.cpp
+  - test/aoj/2969.test.cpp
   - test/aoj/0367.test.cpp
   - test/aoj/DSL_2_A.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp

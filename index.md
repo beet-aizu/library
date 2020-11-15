@@ -683,7 +683,7 @@ data:
       title: Sack (dsu on tree)
   - name: vector
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: vector/compress.cpp
       title: vector/compress.cpp
     - icon: ':heavy_check_mark:'
@@ -695,12 +695,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: vector/multi.cpp
       title: vector/multi.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: vector/near.cpp
       title: vector/near.cpp
     - icon: ':heavy_check_mark:'
       path: vector/runlength.cpp
       title: vector/runlength.cpp
+    - icon: ':heavy_check_mark:'
+      path: vector/sorted.cpp
+      title: vector/sorted.cpp
     - icon: ':heavy_check_mark:'
       path: vector/zip.cpp
       title: vector/zip.cpp
@@ -1016,6 +1019,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2968.test.cpp
       title: test/aoj/2968.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2969.test.cpp
+      title: test/aoj/2969.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2970.test.cpp
       title: test/aoj/2970.test.cpp
@@ -1772,7 +1778,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4706.test.cpp
       title: test/yukicoder/4706.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/4778.test.cpp
       title: test/yukicoder/4778.test.cpp
     - icon: ':heavy_check_mark:'

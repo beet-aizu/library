@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: io/single.cpp
     title: io/single.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []

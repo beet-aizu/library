@@ -31,6 +31,9 @@ data:
     path: test/aoj/2968.test.cpp
     title: test/aoj/2968.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2969.test.cpp
+    title: test/aoj/2969.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,14 +51,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4778.test.cpp
     title: test/yukicoder/4778.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"vector/compress.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -78,12 +81,13 @@ data:
   path: vector/compress.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/3961.test.cpp
   - test/yukicoder/4778.test.cpp
   - test/yukicoder/1732.test.cpp
+  - test/aoj/2969.test.cpp
   - test/aoj/3506.test.cpp
   - test/aoj/0343.test.cpp
   - test/aoj/2359.test.cpp
