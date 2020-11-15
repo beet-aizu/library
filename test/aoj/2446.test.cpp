@@ -7,7 +7,7 @@ using namespace std;
 #define call_from_test
 #include "../../io/precision.cpp"
 #include "../../convolution/bitwise/fwht.cpp"
-#include "../../convolution/bitwise/and.cpp"
+#include "../../convolution/bitwise/or.cpp"
 #undef call_from_test
 
 signed main(){

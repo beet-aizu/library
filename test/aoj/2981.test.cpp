@@ -7,7 +7,7 @@ using namespace std;
 #include "../../io/single.cpp"
 #include "../../tools/drop.cpp"
 #include "../../convolution/bitwise/fwht.cpp"
-#include "../../convolution/bitwise/or.cpp"
+#include "../../convolution/bitwise/and.cpp"
 #undef call_from_test
 
 signed main(){
