@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2968.test.cpp
+    title: test/aoj/2968.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_A.test.cpp
     title: test/aoj/NTL_1_A.test.cpp
   _pathExtension: cpp
@@ -30,6 +33,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/NTL_1_A.test.cpp
+  - test/aoj/2968.test.cpp
 documentation_of: math/factorize.cpp
 layout: document
 redirect_from:
