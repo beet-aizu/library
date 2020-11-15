@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: convolution/bitwise/fwht.cpp
     title: convolution/bitwise/fwht.cpp
   - icon: ':heavy_check_mark:'

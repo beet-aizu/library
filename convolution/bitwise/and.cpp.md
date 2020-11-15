@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/2446.test.cpp
+    title: test/aoj/2446.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/bitwise/and.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -20,8 +23,9 @@ data:
   path: convolution/bitwise/and.cpp
   requiredBy: []
   timestamp: '2020-11-15 18:54:23+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/aoj/2446.test.cpp
 documentation_of: convolution/bitwise/and.cpp
 layout: document
 redirect_from:

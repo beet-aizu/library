@@ -120,10 +120,10 @@ data:
       title: convolution/numbertheoretictransform.cpp
   - name: convolution/bitwise
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: convolution/bitwise/and.cpp
       title: convolution/bitwise/and.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convolution/bitwise/fwht.cpp
       title: convolution/bitwise/fwht.cpp
     - icon: ':heavy_check_mark:'
@@ -315,7 +315,7 @@ data:
       title: graph/voronoiminimumspanningtree.cpp
   - name: io
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: io/precision.cpp
       title: io/precision.cpp
     - icon: ':heavy_check_mark:'
@@ -929,6 +929,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2444.test.cpp
       title: test/aoj/2444.test.cpp
+    - icon: ':x:'
+      path: test/aoj/2446.test.cpp
+      title: test/aoj/2446.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2450.linkcuttree.test.cpp
       title: test/aoj/2450.linkcuttree.test.cpp
