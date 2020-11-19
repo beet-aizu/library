@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1642.test.cpp
+    title: test/aoj/1642.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_primes.test.cpp
     title: test/yosupo/enumerate_primes.test.cpp
   _pathExtension: cpp
@@ -31,6 +34,7 @@ data:
   timestamp: '2020-10-07 11:59:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/1642.test.cpp
   - test/yosupo/enumerate_primes.test.cpp
 documentation_of: math/enumerate_primes.cpp
 layout: document

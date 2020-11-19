@@ -37,6 +37,9 @@ data:
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1642.test.cpp
+    title: test/aoj/1642.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2187.test.cpp
     title: test/aoj/2187.test.cpp
   - icon: ':heavy_check_mark:'
@@ -170,6 +173,7 @@ data:
   - test/aoj/0391.test.cpp
   - test/aoj/DPL_3_B.test.cpp
   - test/aoj/2790.test.cpp
+  - test/aoj/1642.test.cpp
   - test/aoj/1607.test.cpp
   - test/aoj/0439.test.cpp
   - test/aoj/2736.test.cpp
