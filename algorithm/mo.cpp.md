@@ -63,8 +63,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5223.test.cpp
-  - test/aoj/2270.test.cpp
   - test/aoj/0425.test.cpp
+  - test/aoj/2270.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: algorithm/mo.cpp
 layout: document

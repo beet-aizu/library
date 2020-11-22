@@ -57,6 +57,9 @@ data:
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
   - icon: ':heavy_check_mark:'
+    path: math/sequence.cpp
+    title: math/sequence.cpp
+  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
   - icon: ':heavy_check_mark:'
@@ -199,56 +202,57 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - math/sequence.cpp
+  - graph/lowlink.cpp
+  - combinatorics/bernoulli.cpp
+  - combinatorics/bell.cpp
   - combinatorics/stirling1st.cpp
   - combinatorics/partition.cpp
   - combinatorics/surjection.cpp
   - combinatorics/stirling2nd.cpp
-  - combinatorics/bell.cpp
-  - combinatorics/bernoulli.cpp
-  - graph/lowlink.cpp
-  - formalpowerseries/integral.cpp
-  - formalpowerseries/shift.cpp
   - formalpowerseries/sqrt.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/exp.cpp
+  - formalpowerseries/pow.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/log.cpp
+  - formalpowerseries/integral.cpp
+  - formalpowerseries/mod.cpp
   - formalpowerseries/div.cpp
   - formalpowerseries/diff.cpp
-  - formalpowerseries/log.cpp
-  - formalpowerseries/exp.cpp
-  - formalpowerseries/inv.cpp
-  - formalpowerseries/mod.cpp
-  - formalpowerseries/base.cpp
-  - formalpowerseries/pow.cpp
+  - formalpowerseries/shift.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2744.test.cpp
-  - test/yukicoder/0444.test.cpp
   - test/yukicoder/2772.test.cpp
+  - test/yukicoder/0444.test.cpp
   - test/aoj/DPL_5_C.test.cpp
-  - test/aoj/3072.test.cpp
-  - test/aoj/DPL_5_I.test.cpp
-  - test/aoj/DPL_5_H.test.cpp
-  - test/aoj/3084.test.cpp
-  - test/aoj/DPL_5_B.test.cpp
+  - test/aoj/DPL_5_J.test.cpp
+  - test/aoj/DPL_5_G.test.cpp
   - test/aoj/DPL_5_D.test.cpp
+  - test/aoj/3084.test.cpp
+  - test/aoj/DPL_5_H.test.cpp
+  - test/aoj/3072.test.cpp
+  - test/aoj/DPL_5_B.test.cpp
+  - test/aoj/DPL_5_F.test.cpp
+  - test/aoj/DPL_5_I.test.cpp
+  - test/aoj/2985.test.cpp
+  - test/aoj/DPL_5_A.test.cpp
   - test/aoj/DPL_5_K.test.cpp
   - test/aoj/2985.garner.test.cpp
-  - test/aoj/DPL_5_A.test.cpp
-  - test/aoj/DPL_5_G.test.cpp
-  - test/aoj/DPL_5_J.test.cpp
-  - test/aoj/DPL_5_F.test.cpp
-  - test/aoj/2985.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/polynomial_taylor_shift.test.cpp
   - test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - test/yosupo/inv_of_formal_power_series.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
-  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/multipoint_evaluation.test.cpp
-  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
   - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - test/yosupo/partition_function.test.cpp
 documentation_of: combinatorics/enumeration.cpp
 layout: document
 redirect_from:

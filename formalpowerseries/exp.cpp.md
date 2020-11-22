@@ -74,10 +74,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3084.test.cpp
-  - test/aoj/2985.garner.test.cpp
   - test/aoj/2985.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/aoj/2985.garner.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
 documentation_of: formalpowerseries/exp.cpp
 layout: document
 redirect_from:

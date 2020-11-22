@@ -62,9 +62,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3506.test.cpp
-  - test/aoj/3183.test.cpp
   - test/aoj/0423.test.cpp
   - test/aoj/geometry/2334.test.cpp
+  - test/aoj/3183.test.cpp
   - test/yosupo/shortest_path.test.cpp
 documentation_of: graph/dijkstra.cpp
 layout: document

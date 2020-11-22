@@ -63,8 +63,8 @@ data:
   timestamp: '2020-10-27 16:01:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1308.test.cpp
   - test/aoj/2624.test.cpp
+  - test/aoj/1308.test.cpp
 documentation_of: linearalgebra/binarymatrix.cpp
 layout: document
 redirect_from:

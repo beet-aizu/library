@@ -48,8 +48,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1923.test.cpp
-  - test/aoj/0613.test.cpp
   - test/aoj/DSL_3_D.test.cpp
+  - test/aoj/0613.test.cpp
 documentation_of: datastructure/rangeslide.cpp
 layout: document
 redirect_from:

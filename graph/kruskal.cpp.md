@@ -49,8 +49,8 @@ data:
   isVerificationFile: false
   path: graph/kruskal.cpp
   requiredBy:
-  - graph/voronoiminimumspanningtree.cpp
   - linearalgebra/tree_theorem.cpp
+  - graph/voronoiminimumspanningtree.cpp
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

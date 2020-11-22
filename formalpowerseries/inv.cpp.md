@@ -111,32 +111,32 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
-  - combinatorics/partition.cpp
   - combinatorics/bernoulli.cpp
+  - combinatorics/partition.cpp
   - formalpowerseries/sqrt.cpp
-  - formalpowerseries/div.cpp
-  - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
-  - formalpowerseries/mod.cpp
   - formalpowerseries/pow.cpp
+  - formalpowerseries/log.cpp
+  - formalpowerseries/mod.cpp
+  - formalpowerseries/div.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0444.test.cpp
-  - test/aoj/3072.test.cpp
   - test/aoj/3084.test.cpp
-  - test/aoj/2985.garner.test.cpp
+  - test/aoj/3072.test.cpp
   - test/aoj/2985.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/aoj/2985.garner.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/multipoint_evaluation.test.cpp
-  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
   - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - test/yosupo/partition_function.test.cpp
 documentation_of: formalpowerseries/inv.cpp
 layout: document
 redirect_from:

@@ -57,9 +57,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_2_B.test.cpp
-  - test/aoj/2309.test.cpp
   - test/aoj/2309.tarjan.test.cpp
   - test/aoj/2647.test.cpp
+  - test/aoj/2309.test.cpp
 documentation_of: graph/arborescence_edmond.cpp
 layout: document
 redirect_from:

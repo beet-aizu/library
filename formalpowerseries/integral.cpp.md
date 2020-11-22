@@ -61,18 +61,18 @@ data:
   isVerificationFile: false
   path: formalpowerseries/integral.cpp
   requiredBy:
-  - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
   - formalpowerseries/pow.cpp
+  - formalpowerseries/log.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3084.test.cpp
-  - test/aoj/2985.garner.test.cpp
   - test/aoj/2985.test.cpp
+  - test/aoj/2985.garner.test.cpp
+  - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/exp_of_formal_power_series.test.cpp
 documentation_of: formalpowerseries/integral.cpp
 layout: document
 redirect_from:

@@ -405,6 +405,9 @@ data:
       path: math/quotients.cpp
       title: math/quotients.cpp
     - icon: ':heavy_check_mark:'
+      path: math/sequence.cpp
+      title: math/sequence.cpp
+    - icon: ':heavy_check_mark:'
       path: math/sum_of_floor.cpp
       title: math/sum_of_floor.cpp
     - icon: ':heavy_check_mark:'
