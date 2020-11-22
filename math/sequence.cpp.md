@@ -34,13 +34,14 @@ data:
     \ Sequence : FormalPowerSeries<M>{\n  using FormalPowerSeries<M>::FormalPowerSeries;\n\
     \  using Poly = vector<M>;\n\n  struct Calculator{\n    const Poly as,cs;\n  \
     \  Sequence* seq;\n    Calculator(const Poly as_,const Poly cs_,Sequence *seq_):\n\
-    \      as(as_),cs(cs_),seq(seq_){}\n    M operator()(long long n){\n      Poly\
-    \ rs({M(1)}),ts({M(0),M(1)});\n      n--;\n      while(n){\n        if(n&1) rs=seq->mod(seq->mul(rs,ts),cs);\n\
-    \        ts=seq->mod(seq->mul(ts,ts),cs);\n        n>>=1;\n      }\n      M res(0);\n\
-    \      rs.resize(cs.size(),M(0));\n      for(int i=0;i<(int)cs.size();i++) res+=as[i]*rs[i];\n\
-    \      return res;\n    }\n  };\n\n  Calculator build(vector<M> as){\n    return\
-    \ Calculator(as,berlekamp_massey(as),this);\n  }\n};\n//END CUT HERE\n#ifndef\
-    \ call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \      as(as_),cs(cs_),seq(seq_){}\n    M operator()(long long n){\n      if(n<(int)as.size())\
+    \ return as[n];\n      Poly rs({M(1)}),ts({M(0),M(1)});\n      while(n){\n   \
+    \     if(n&1) rs=seq->mod(seq->mul(rs,ts),cs);\n        ts=seq->mod(seq->mul(ts,ts),cs);\n\
+    \        n>>=1;\n      }\n      M res(0);\n      rs.resize(cs.size(),M(0));\n\
+    \      for(int i=0;i<(int)cs.size();i++) res+=as[i]*rs[i];\n      return res;\n\
+    \    }\n  };\n\n  Calculator build(vector<M> as){\n    return Calculator(as,berlekamp_massey(as),this);\n\
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - combinatorics/enumeration.cpp
   - formalpowerseries/base.cpp
@@ -48,7 +49,7 @@ data:
   isVerificationFile: false
   path: math/sequence.cpp
   requiredBy: []
-  timestamp: '2020-11-22 15:57:57+09:00'
+  timestamp: '2020-11-22 16:20:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0444.test.cpp
