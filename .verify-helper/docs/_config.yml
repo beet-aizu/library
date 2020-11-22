@@ -1,1 +1,1 @@
-exclude: ["./heuristic/", "./icpc/", "./leetcode/", "./test/aoj/2432.ignore.cpp", "test/aoj/GRL_4_B.ignore.cpp", "./test/resolve.py"]
+exclude: ["./heuristic/", "./leetcode/", "./test/aoj/2432.ignore.cpp", "test/aoj/GRL_4_B.ignore.cpp"]
