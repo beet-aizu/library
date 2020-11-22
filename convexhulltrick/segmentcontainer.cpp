@@ -23,7 +23,7 @@ struct SegmentContainer{
     sort(xs.begin(),xs.end());
     xs.erase(unique(xs.begin(),xs.end()),xs.end());
     n=xs.size();
-    dat.assign(n<<1,Segment({T(0),INF*objective}));
+    dat.assign(n<<1,Segment({T(0),INF}));
   }
 
   inline int index(T x) const{
