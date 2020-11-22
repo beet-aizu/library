@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/sequence.cpp
     title: math/sequence.cpp
   _extendedVerifiedWith:
@@ -12,14 +12,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"polynomial/berlekampmassey.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -52,7 +52,7 @@ data:
   requiredBy:
   - math/sequence.cpp
   timestamp: '2020-10-27 16:52:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0104.test.cpp
   - test/yukicoder/3211.test.cpp

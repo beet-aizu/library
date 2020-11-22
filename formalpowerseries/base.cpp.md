@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
   _extendedRequiredBy:
@@ -11,16 +11,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/partition.cpp
     title: combinatorics/partition.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling1st.cpp
     title: combinatorics/stirling1st.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
   - icon: ':heavy_check_mark:'
@@ -29,13 +29,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/integral.cpp
     title: formalpowerseries/integral.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/sequence.cpp
     title: math/sequence.cpp
   - icon: ':heavy_check_mark:'
@@ -99,20 +99,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_first_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/09/27/224701
@@ -139,7 +139,9 @@ data:
     \    for(int i=0;i<(int)as.size();i++) cs[i]+=as[i];\n    for(int i=0;i<(int)bs.size();i++)\
     \ cs[i]-=bs[i];\n    return cs;\n  }\n\n  Poly mul(Poly as,Poly bs){\n    return\
     \ conv(as,bs);\n  }\n\n  Poly mul(Poly as,M k){\n    for(auto &a:as) a*=k;\n \
-    \   return as;\n  }\n\n  // F(0) must not be 0\n  Poly inv(Poly as,int deg);\n\
+    \   return as;\n  }\n\n  bool is_zero(Poly as){\n    return as==Poly(as.size(),0);\n\
+    \  }\n\n  void shrink(Poly &as){\n    assert(not is_zero(as));\n    while(as.back()==M(0))\
+    \ as.pop_back();\n  }\n\n  // F(0) must not be 0\n  Poly inv(Poly as,int deg);\n\
     \n  // not zero\n  Poly div(Poly as,Poly bs);\n\n  // not zero\n  Poly mod(Poly\
     \ as,Poly bs);\n\n  // F(0) must be 1\n  Poly sqrt(Poly as,int deg);\n\n  Poly\
     \ diff(Poly as);\n  Poly integral(Poly as);\n\n  // F(0) must be 1\n  Poly log(Poly\
@@ -169,8 +171,8 @@ data:
   - formalpowerseries/div.cpp
   - formalpowerseries/diff.cpp
   - formalpowerseries/shift.cpp
-  timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-11-22 16:25:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/2744.test.cpp
   - test/yukicoder/0444.test.cpp

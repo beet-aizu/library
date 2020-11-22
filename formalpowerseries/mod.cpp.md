@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
   _extendedRequiredBy:
@@ -27,11 +27,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -46,8 +46,8 @@ data:
     #define call_from_test\n#include \"../combinatorics/enumeration.cpp\"\n#include\
     \ \"base.cpp\"\n#include \"inv.cpp\"\n#include \"div.cpp\"\n#undef call_from_test\n\
     \n#endif\n//BEGIN CUT HERE\ntemplate<typename M>\nvector<M> FormalPowerSeries<M>::mod(Poly\
-    \ as,Poly bs){\n  if(as==Poly(as.size(),0)) return Poly({0});\n  as=sub(as,mul(div(as,bs),bs));\n\
-    \  if(as==Poly(as.size(),0)) return Poly({0});\n  while(as.back()==M(0)) as.pop_back();\n\
+    \ as,Poly bs){\n  if(is_zero(as)) return Poly({0});\n  shrink(as);shrink(bs);\n\
+    \  as=sub(as,mul(div(as,bs),bs));\n  if(is_zero(as)) return Poly({0});\n  shrink(as);\n\
     \  return as;\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\n\
     signed main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
@@ -60,8 +60,8 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
-  timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-11-22 16:25:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0444.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
