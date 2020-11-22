@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
@@ -60,6 +63,7 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - includes/formalpowerseries.h
   - formalpowerseries/mod.cpp
   timestamp: '2020-11-22 16:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC

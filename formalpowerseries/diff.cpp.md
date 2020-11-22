@@ -17,6 +17,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
@@ -68,6 +71,7 @@ data:
   path: formalpowerseries/diff.cpp
   requiredBy:
   - polynomial/interpolate.cpp
+  - includes/formalpowerseries.h
   - formalpowerseries/exp.cpp
   - formalpowerseries/pow.cpp
   - formalpowerseries/log.cpp

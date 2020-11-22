@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
@@ -69,6 +72,7 @@ data:
   isVerificationFile: false
   path: formalpowerseries/exp.cpp
   requiredBy:
+  - includes/formalpowerseries.h
   - formalpowerseries/pow.cpp
   timestamp: '2020-11-22 16:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC

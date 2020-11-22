@@ -313,6 +313,11 @@ data:
     - icon: ':warning:'
       path: graph/voronoiminimumspanningtree.cpp
       title: graph/voronoiminimumspanningtree.cpp
+  - name: includes
+    pages:
+    - icon: ':warning:'
+      path: includes/formalpowerseries.h
+      title: includes/formalpowerseries.h
   - name: io
     pages:
     - icon: ':heavy_check_mark:'

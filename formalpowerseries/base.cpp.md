@@ -47,6 +47,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
     path: math/sequence.cpp
     title: math/sequence.cpp
@@ -156,6 +159,7 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - includes/formalpowerseries.h
   - math/sequence.cpp
   - combinatorics/bernoulli.cpp
   - combinatorics/stirling1st.cpp

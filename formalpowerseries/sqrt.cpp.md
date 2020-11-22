@@ -10,7 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
@@ -41,7 +44,8 @@ data:
   - formalpowerseries/inv.cpp
   isVerificationFile: false
   path: formalpowerseries/sqrt.cpp
-  requiredBy: []
+  requiredBy:
+  - includes/formalpowerseries.h
   timestamp: '2020-11-22 16:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

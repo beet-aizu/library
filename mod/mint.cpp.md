@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
     path: linearalgebra/tree_theorem.cpp
     title: linearalgebra/tree_theorem.cpp
@@ -267,6 +270,7 @@ data:
   path: mod/mint.cpp
   requiredBy:
   - polynomial/hash.cpp
+  - includes/formalpowerseries.h
   - convolution/numbertheoretictransform.cpp
   - convolution/bitwise/xor.cpp
   - convolution/garner.cpp

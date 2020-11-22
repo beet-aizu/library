@@ -56,6 +56,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
     path: math/sequence.cpp
     title: math/sequence.cpp
@@ -202,6 +205,7 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - includes/formalpowerseries.h
   - math/sequence.cpp
   - graph/lowlink.cpp
   - combinatorics/bernoulli.cpp

@@ -32,6 +32,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
@@ -111,6 +114,7 @@ data:
   requiredBy:
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - includes/formalpowerseries.h
   - combinatorics/bernoulli.cpp
   - combinatorics/partition.cpp
   - formalpowerseries/sqrt.cpp

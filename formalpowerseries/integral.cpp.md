@@ -17,6 +17,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
+  - icon: ':warning:'
+    path: includes/formalpowerseries.h
+    title: includes/formalpowerseries.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
@@ -61,6 +64,7 @@ data:
   isVerificationFile: false
   path: formalpowerseries/integral.cpp
   requiredBy:
+  - includes/formalpowerseries.h
   - formalpowerseries/exp.cpp
   - formalpowerseries/pow.cpp
   - formalpowerseries/log.cpp
