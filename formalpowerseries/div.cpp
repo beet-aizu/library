@@ -12,9 +12,8 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename M>
 vector<M> FormalPowerSeries<M>::div(Poly as,Poly bs){
-  while(as.back()==M(0)) as.pop_back();
-  while(bs.back()==M(0)) bs.pop_back();
-  if(bs.size()>as.size()) return Poly();
+  shrink(as);shrink(bs);
+  if(as.size()<bs.size()) return Poly({0});
   reverse(as.begin(),as.end());
   reverse(bs.begin(),bs.end());
   int need=as.size()-bs.size()+1;

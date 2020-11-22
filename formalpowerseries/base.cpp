@@ -51,6 +51,15 @@ struct FormalPowerSeries : Enumeration<M_> {
     return as;
   }
 
+  bool is_zero(Poly as){
+    return as==Poly(as.size(),0);
+  }
+
+  void shrink(Poly &as){
+    assert(not is_zero(as));
+    while(as.back()==M(0)) as.pop_back();
+  }
+
   // F(0) must not be 0
   Poly inv(Poly as,int deg);
 

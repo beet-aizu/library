@@ -13,10 +13,11 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename M>
 vector<M> FormalPowerSeries<M>::mod(Poly as,Poly bs){
-  if(as==Poly(as.size(),0)) return Poly({0});
+  if(is_zero(as)) return Poly({0});
+  shrink(as);shrink(bs);
   as=sub(as,mul(div(as,bs),bs));
-  if(as==Poly(as.size(),0)) return Poly({0});
-  while(as.back()==M(0)) as.pop_back();
+  if(is_zero(as)) return Poly({0});
+  shrink(as);
   return as;
 }
 //END CUT HERE

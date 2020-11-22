@@ -16,7 +16,8 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename M>
 vector<M> FormalPowerSeries<M>::pow(Poly as,long long k,int deg){
-  if(as==Poly(as.size(),M(0))) return Poly(deg,M(0));
+  if(is_zero(as)) return Poly(deg,M(0));
+  shrink(as);
 
   int cnt=0;
   while(as[cnt]==M(0)) cnt++;
