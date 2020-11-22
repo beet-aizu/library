@@ -22,7 +22,7 @@ data:
     \ INF = numeric_limits<T>::max() / 2;\n  struct Segment{\n    T a,b;\n    T operator()(T\
     \ x) const{return a*x+b;}\n  };\n\n  int n;\n  vector<T> xs;\n  vector<Segment>\
     \ dat;\n  SegmentContainer(const vector<T> &xs_):xs(xs_){\n    sort(xs.begin(),xs.end());\n\
-    \    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n    n=xs.size();\n    dat.assign(n<<1,Segment({T(0),INF*objective}));\n\
+    \    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n    n=xs.size();\n    dat.assign(n<<1,Segment({T(0),INF}));\n\
     \  }\n\n  inline int index(T x) const{\n    return lower_bound(xs.begin(),xs.end(),x)-xs.begin();\n\
     \  }\n\n  // [xl, xr)\n  void add(T a,T b,T xl,T xr){\n    Segment g({a*objective,b*objective});\n\
     \    for(int l=index(xl)+n,r=index(xr)+n;l<r;l>>=1,r>>=1){\n      if(l&1) update(g,l++);\n\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/line_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2020-10-03 18:22:12+09:00'
+  timestamp: '2020-11-22 19:37:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/line_add_get_min.test.cpp
