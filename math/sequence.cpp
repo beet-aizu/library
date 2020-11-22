@@ -21,8 +21,8 @@ struct Sequence : FormalPowerSeries<M>{
     Calculator(const Poly as_,const Poly cs_,Sequence *seq_):
       as(as_),cs(cs_),seq(seq_){}
     M operator()(long long n){
+      if(n<(int)as.size()) return as[n];
       Poly rs({M(1)}),ts({M(0),M(1)});
-      n--;
       while(n){
         if(n&1) rs=seq->mod(seq->mul(rs,ts),cs);
         ts=seq->mod(seq->mul(ts,ts),cs);

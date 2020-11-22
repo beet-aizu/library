@@ -26,8 +26,11 @@ signed main(){
   auto conv=[&](auto as,auto bs){return arb.multiply(as,bs);};
 
   long long n;
+  cin>>n;
+  n--;
+
   int p,c;
-  cin>>n>>p>>c;
+  cin>>p>>c;
 
   const int d = 606 * 13;
   auto calc=[&](int l,vector<int> vs){
