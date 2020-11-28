@@ -371,6 +371,9 @@ data:
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
+      path: math/affine.cpp
+      title: math/affine.cpp
+    - icon: ':heavy_check_mark:'
       path: math/carmichael.cpp
       title: math/carmichael.cpp
     - icon: ':warning:'

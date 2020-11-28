@@ -11,6 +11,9 @@ data:
     path: bbst/rbst/rbst.cpp
     title: bbst/rbst/rbst.cpp
   - icon: ':heavy_check_mark:'
+    path: math/affine.cpp
+    title: math/affine.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
@@ -33,15 +36,12 @@ data:
     \ / #ifndef other than include guards\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../mod/mint.cpp\"\n#include \"../../bbst/rbst/rbst.cpp\"\n#include \"../../bbst/rbst/data/lazy.cpp\"\
-    \n#include \"../../bbst/rbst/impl/basic.cpp\"\n#undef call_from_test\n\nsigned\
-    \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\\
-    n';\n\n  using M = Mint<int, 998244353>;\n  using T = pair<M, M>;\n  using E =\
-    \ pair<M, M>;\n  auto f=[](T a,T b){return T(a.first+b.first,a.second+b.second);};\n\
-    \  auto g=[](T a,E b){return T(a.first*b.first+a.second*b.second,a.second);};\n\
-    \  auto h=[](E a,E b){return E(a.first*b.first,a.second*b.first+b.second);};\n\
-    \  auto flip=[](T a){return a;};\n  T ti(0,0);\n  E ei(1,0);\n\n  using Data =\
-    \ Lazy<T, E, decltype(f), decltype(g), decltype(h),\n                    decltype(flip)>;\n\
+    \ \"../../mod/mint.cpp\"\n#include \"../../math/affine.cpp\"\n#include \"../../bbst/rbst/rbst.cpp\"\
+    \n#include \"../../bbst/rbst/data/lazy.cpp\"\n#include \"../../bbst/rbst/impl/basic.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \  const char newl = '\\n';\n\n  using M = Mint<int, 998244353>;\n  using T =\
+    \ pair<M, M>;\n  using E = pair<M, M>;\n  auto [f,g,h,ti,ei]=Affine::params<T,\
+    \ E>();\n\n  auto flip=[](T a){return a;};\n  using Data = decltype(Lazy(f,g,h,flip,ti,ei));\n\
     \  using Node = Data::Node;\n  constexpr size_t LIM = 1e6;\n  Basic<Data, LIM>\
     \ G(f,g,h,flip,ti,ei);\n\n  int n,q;\n  cin>>n>>q;\n  vector<int> as(n);\n  for(int\
     \ i=0;i<n;i++) cin>>as[i];\n  vector<Node> vt;\n  for(int i=0;i<n;i++) vt.emplace_back(T(as[i],1),ei);\n\
@@ -54,13 +54,14 @@ data:
     \    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
+  - math/affine.cpp
   - bbst/rbst/rbst.cpp
   - bbst/rbst/data/lazy.cpp
   - bbst/rbst/impl/basic.cpp
   isVerificationFile: true
   path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-11-28 17:53:43+09:00'
+  timestamp: '2020-11-28 18:10:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
