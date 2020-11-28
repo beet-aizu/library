@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: math/affine.cpp
+    title: math/affine.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
@@ -37,14 +40,24 @@ data:
     \      dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
     \ T, T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T, T MOD>\nostream&\
     \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"segtree/basic/lazy.cpp\"\
-    \n\n#line 3 \"segtree/basic/lazy.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
-    \ CUT HERE\ntemplate <typename T,typename E>\nstruct SegmentTree{\n  using F =\
-    \ function<T(T,T)>;\n  using G = function<T(T,E)>;\n  using H = function<E(E,E)>;\n\
-    \  int n,height;\n  F f;\n  G g;\n  H h;\n  T ti;\n  E ei;\n  vector<T> dat;\n\
-    \  vector<E> laz;\n  SegmentTree(F f,G g,H h,T ti,E ei):\n    f(f),g(g),h(h),ti(ti),ei(ei){}\n\
-    \n  void init(int n_){\n    n=1;height=0;\n    while(n<n_) n<<=1,height++;\n \
-    \   dat.assign(2*n,ti);\n    laz.assign(2*n,ei);\n  }\n\n  void build(const vector<T>\
+    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"math/affine.cpp\"\
+    \n\n#line 3 \"math/affine.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    namespace Affine{\n  template<typename T>\n  T op(T a,T b){return T(a.first+b.first,a.second+b.second);}\n\
+    \  template<typename T, typename E>\n  T mapping(T a,E b){return T(a.first*b.first+a.second*b.second,a.second);}\n\
+    \  template<typename E>\n  E composition(E a,E b){return E(a.first*b.first,a.second*b.first+b.second);}\n\
+    \n  template<typename T> T e(){return T(0,0);};\n  template<typename E> E id(){return\
+    \ E(1,0);};\n\n  template<typename T, typename E>\n  decltype(auto) params(){\n\
+    \    auto f=[](T a,T b){return op(a,b);};\n    auto g=[](T a,E b){return mapping(a,b);};\n\
+    \    auto h=[](E a,E b){return composition(a,b);};\n    return make_tuple(f,g,h,e<T>(),id<T>());\n\
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n#line 1 \"segtree/basic/lazy.cpp\"\n\n#line\
+    \ 3 \"segtree/basic/lazy.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
+    template <typename T,typename E>\nstruct SegmentTree{\n  using F = function<T(T,T)>;\n\
+    \  using G = function<T(T,E)>;\n  using H = function<E(E,E)>;\n  int n,height;\n\
+    \  F f;\n  G g;\n  H h;\n  T ti;\n  E ei;\n  vector<T> dat;\n  vector<E> laz;\n\
+    \  SegmentTree(F f,G g,H h,T ti,E ei):\n    f(f),g(g),h(h),ti(ti),ei(ei){}\n\n\
+    \  void init(int n_){\n    n=1;height=0;\n    while(n<n_) n<<=1,height++;\n  \
+    \  dat.assign(2*n,ti);\n    laz.assign(2*n,ei);\n  }\n\n  void build(const vector<T>\
     \ &v){\n    int n_=v.size();\n    init(n_);\n    for(int i=0;i<n_;i++) dat[n+i]=v[i];\n\
     \    for(int i=n-1;i;i--)\n      dat[i]=f(dat[(i<<1)|0],dat[(i<<1)|1]);\n  }\n\
     \n  inline T reflect(int k){\n    return laz[k]==ei?dat[k]:g(dat[k],laz[k]);\n\
@@ -79,41 +92,38 @@ data:
     \   seg.update(sz-bs[k],sz,+1);\n      bs[k]=v;\n      seg.update(sz-bs[k],sz,-1);\n\
     \    }\n    int pos=seg.find(0,check);\n    cout<<(pos<0?pos:sz-pos)<<\"\\n\"\
     ;\n  }\n  cout<<flush;\n  return 0;\n}\n/*\n  verified on 2019/10/28\n  https://codeforces.com/contest/1179/problem/C\n\
-    */\n\nsigned main(){\n  CFR569_C();\n  return 0;\n}\n#endif\n#line 9 \"test/yosupo/range_affine_range_sum.test.cpp\"\
+    */\n\nsigned main(){\n  CFR569_C();\n  return 0;\n}\n#endif\n#line 10 \"test/yosupo/range_affine_range_sum.test.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
-    \n  using M = Mint<int, 998244353>;\n  using T = pair<M, M>;\n  using E = pair<M,\
-    \ M>;\n  auto f=[](T a,T b){return T(a.first+b.first,a.second+b.second);};\n \
-    \ auto g=[](T a,E b){return T(a.first*b.first+a.second*b.second,a.second);};\n\
-    \  auto h=[](E a,E b){return E(a.first*b.first,a.second*b.first+b.second);};\n\
-    \  T ti(0,0);\n  E ei(1,0);\n  SegmentTree<T, E> seg(f,g,h,ti,ei);\n\n  int n,q;\n\
-    \  cin>>n>>q;\n  vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n  vector<T>\
-    \ vt;\n  for(int i=0;i<n;i++) vt.emplace_back(as[i],1);\n  seg.build(vt);\n\n\
-    \  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n    if(t==0){\n      int l,r,b,c;\n\
-    \      cin>>l>>r>>b>>c;\n      seg.update(l,r,T(M(b),M(c)));\n    }\n    if(t==1){\n\
-    \      int l,r;\n      cin>>l>>r;\n      cout<<seg.query(l,r).first<<\"\\n\";\n\
-    \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \  const char newl = '\\n';\n\n  using M = Mint<int, 998244353>;\n  using T =\
+    \ pair<M, M>;\n  using E = pair<M, M>;\n  auto [f,g,h,ti,ei]=Affine::params<T,\
+    \ E>();\n  SegmentTree<T, E> seg(f,g,h,ti,ei);\n\n  int n,q;\n  cin>>n>>q;\n \
+    \ vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n  vector<T> vt;\n  for(int\
+    \ i=0;i<n;i++) vt.emplace_back(as[i],1);\n  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n\
+    \    int t;\n    cin>>t;\n    if(t==0){\n      int l,r,b,c;\n      cin>>l>>r>>b>>c;\n\
+    \      seg.update(l,r,T(M(b),M(c)));\n    }\n    if(t==1){\n      int l,r;\n \
+    \     cin>>l>>r;\n      cout<<seg.query(l,r).first<<newl;\n    }\n  }\n  return\
+    \ 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/range_affine_range_sum\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
-    \ \"../../mod/mint.cpp\"\n#include \"../../segtree/basic/lazy.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  using M = Mint<int,\
-    \ 998244353>;\n  using T = pair<M, M>;\n  using E = pair<M, M>;\n  auto f=[](T\
-    \ a,T b){return T(a.first+b.first,a.second+b.second);};\n  auto g=[](T a,E b){return\
-    \ T(a.first*b.first+a.second*b.second,a.second);};\n  auto h=[](E a,E b){return\
-    \ E(a.first*b.first,a.second*b.first+b.second);};\n  T ti(0,0);\n  E ei(1,0);\n\
-    \  SegmentTree<T, E> seg(f,g,h,ti,ei);\n\n  int n,q;\n  cin>>n>>q;\n  vector<int>\
-    \ as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n  vector<T> vt;\n  for(int i=0;i<n;i++)\
-    \ vt.emplace_back(as[i],1);\n  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n   \
-    \ int t;\n    cin>>t;\n    if(t==0){\n      int l,r,b,c;\n      cin>>l>>r>>b>>c;\n\
+    \ \"../../mod/mint.cpp\"\n#include \"../../math/affine.cpp\"\n#include \"../../segtree/basic/lazy.cpp\"\
+    \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \  const char newl = '\\n';\n\n  using M = Mint<int, 998244353>;\n  using T =\
+    \ pair<M, M>;\n  using E = pair<M, M>;\n  auto [f,g,h,ti,ei]=Affine::params<T,\
+    \ E>();\n  SegmentTree<T, E> seg(f,g,h,ti,ei);\n\n  int n,q;\n  cin>>n>>q;\n \
+    \ vector<int> as(n);\n  for(int i=0;i<n;i++) cin>>as[i];\n  vector<T> vt;\n  for(int\
+    \ i=0;i<n;i++) vt.emplace_back(as[i],1);\n  seg.build(vt);\n\n  for(int i=0;i<q;i++){\n\
+    \    int t;\n    cin>>t;\n    if(t==0){\n      int l,r,b,c;\n      cin>>l>>r>>b>>c;\n\
     \      seg.update(l,r,T(M(b),M(c)));\n    }\n    if(t==1){\n      int l,r;\n \
-    \     cin>>l>>r;\n      cout<<seg.query(l,r).first<<\"\\n\";\n    }\n  }\n  cout<<flush;\n\
-    \  return 0;\n}\n"
+    \     cin>>l>>r;\n      cout<<seg.query(l,r).first<<newl;\n    }\n  }\n  return\
+    \ 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
+  - math/affine.cpp
   - segtree/basic/lazy.cpp
   isVerificationFile: true
   path: test/yosupo/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:27:26+09:00'
+  timestamp: '2020-11-28 18:17:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/range_affine_range_sum.test.cpp
