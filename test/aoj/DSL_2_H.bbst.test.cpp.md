@@ -35,10 +35,9 @@ data:
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\n';\n\n  int\
     \ n,q;\n  cin>>n>>q;\n\n  auto f=[](int a,int b){return min(a,b);};\n  auto g=[](int\
     \ a,int b){return a+b;};\n  auto flip=[](int a){return a;};\n\n  using Data =\
-    \ Lazy<int, int, decltype(f), decltype(g), decltype(g),\n                    decltype(flip)>;\n\
-    \  using Node = Data::Node;\n  constexpr size_t LIM = 1e6;\n  Basic<Data, LIM>\
-    \ G(f,g,g,flip,INT_MAX,0);\n  auto rt=G.build(vector<Node>(n,Node(0,0)));\n\n\
-    \  for(int i=0;i<q;i++){\n    int c;\n    cin>>c;\n    if(c==0){\n      int s,t,x;\n\
+    \ decltype(Lazy(f,g,g,flip,INT_MAX,0));\n  using Node = Data::Node;\n  constexpr\
+    \ size_t LIM = 1e6;\n  Basic<Data, LIM> G(f,g,g,flip,INT_MAX,0);\n  auto rt=G.build(vector<Node>(n,Node(0,0)));\n\
+    \n  for(int i=0;i<q;i++){\n    int c;\n    cin>>c;\n    if(c==0){\n      int s,t,x;\n\
     \      cin>>s>>t>>x;\n      rt=G.update(rt,s,t+1,x);\n    }\n    if(c==1){\n \
     \     int s,t;\n      cin>>s>>t;\n      cout<<G.query(rt,s,t+1)<<newl;\n    }\n\
     \  }\n  return 0;\n}\n"
@@ -49,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_H.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-11-04 18:35:12+09:00'
+  timestamp: '2020-11-28 18:14:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_H.bbst.test.cpp

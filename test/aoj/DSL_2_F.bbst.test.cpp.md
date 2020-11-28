@@ -34,8 +34,7 @@ data:
     \ \"../../bbst/rbst/impl/basic.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\n';\n\n  int\
     \ n,q;\n  cin>>n>>q;\n\n  auto f=[](int a,int b){return min(a,b);};\n  auto g=[](int\
-    \  ,int b){return b;};\n  auto flip=[](int a){return a;};\n\n  using Data = Lazy<int,\
-    \ int, decltype(f), decltype(g), decltype(g),\n                    decltype(flip)>;\n\
+    \  ,int b){return b;};\n  auto flip=[](int a){return a;};\n\n  using Data = decltype(Lazy(f,g,g,flip,INT_MAX,-1));\n\
     \  using Node = Data::Node;\n  constexpr size_t LIM = 1e6;\n  Basic<Data, LIM>\
     \ G(f,g,g,flip,INT_MAX,-1);\n  auto rt=G.build(vector<Node>(n,Node(INT_MAX,-1)));\n\
     \n  for(int i=0;i<q;i++){\n    int c;\n    cin>>c;\n    if(c==0){\n      int s,t,x;\n\
@@ -49,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_F.bbst.test.cpp
   requiredBy: []
-  timestamp: '2020-11-04 18:35:12+09:00'
+  timestamp: '2020-11-28 18:14:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_F.bbst.test.cpp
