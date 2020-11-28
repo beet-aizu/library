@@ -48,7 +48,7 @@ data:
     \n  template<typename T> T e(){return T(0,0);};\n  template<typename E> E id(){return\
     \ E(1,0);};\n\n  template<typename T, typename E>\n  decltype(auto) params(){\n\
     \    auto f=[](T a,T b){return op(a,b);};\n    auto g=[](T a,E b){return mapping(a,b);};\n\
-    \    auto h=[](E a,E b){return composition(a,b);};\n    return make_tuple(f,g,h,e<T>(),id<T>());\n\
+    \    auto h=[](E a,E b){return composition(a,b);};\n    return make_tuple(f,g,h,e<T>(),id<E>());\n\
     \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
     \ main(){\n  return 0;\n}\n#endif\n#line 1 \"segtree/basic/lazy.cpp\"\n\n#line\
     \ 3 \"segtree/basic/lazy.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
@@ -123,7 +123,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-11-28 18:17:19+09:00'
+  timestamp: '2020-11-28 18:20:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/range_affine_range_sum.test.cpp
