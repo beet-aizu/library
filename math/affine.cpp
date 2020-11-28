@@ -19,7 +19,7 @@ namespace Affine{
     auto f=[](T a,T b){return op(a,b);};
     auto g=[](T a,E b){return mapping(a,b);};
     auto h=[](E a,E b){return composition(a,b);};
-    return make_tuple(f,g,h,e<T>(),id<T>());
+    return make_tuple(f,g,h,e<T>(),id<E>());
   }
 };
 //END CUT HERE
