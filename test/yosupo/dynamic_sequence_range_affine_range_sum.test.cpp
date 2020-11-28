@@ -5,6 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
+#include "../../math/affine.cpp"
 #include "../../bbst/rbst/rbst.cpp"
 #include "../../bbst/rbst/data/lazy.cpp"
 #include "../../bbst/rbst/impl/basic.cpp"
@@ -18,15 +19,10 @@ signed main(){
   using M = Mint<int, 998244353>;
   using T = pair<M, M>;
   using E = pair<M, M>;
-  auto f=[](T a,T b){return T(a.first+b.first,a.second+b.second);};
-  auto g=[](T a,E b){return T(a.first*b.first+a.second*b.second,a.second);};
-  auto h=[](E a,E b){return E(a.first*b.first,a.second*b.first+b.second);};
-  auto flip=[](T a){return a;};
-  T ti(0,0);
-  E ei(1,0);
+  auto [f,g,h,ti,ei]=Affine::params<T, E>();
 
-  using Data = Lazy<T, E, decltype(f), decltype(g), decltype(h),
-                    decltype(flip)>;
+  auto flip=[](T a){return a;};
+  using Data = decltype(Lazy(f,g,h,flip,ti,ei));
   using Node = Data::Node;
   constexpr size_t LIM = 1e6;
   Basic<Data, LIM> G(f,g,h,flip,ti,ei);
