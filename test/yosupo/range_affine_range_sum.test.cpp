@@ -5,21 +5,19 @@ using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
+#include "../../math/affine.cpp"
 #include "../../segtree/basic/lazy.cpp"
 #undef call_from_test
 
 signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
+  const char newl = '\n';
 
   using M = Mint<int, 998244353>;
   using T = pair<M, M>;
   using E = pair<M, M>;
-  auto f=[](T a,T b){return T(a.first+b.first,a.second+b.second);};
-  auto g=[](T a,E b){return T(a.first*b.first+a.second*b.second,a.second);};
-  auto h=[](E a,E b){return E(a.first*b.first,a.second*b.first+b.second);};
-  T ti(0,0);
-  E ei(1,0);
+  auto [f,g,h,ti,ei]=Affine::params<T, E>();
   SegmentTree<T, E> seg(f,g,h,ti,ei);
 
   int n,q;
@@ -41,9 +39,8 @@ signed main(){
     if(t==1){
       int l,r;
       cin>>l>>r;
-      cout<<seg.query(l,r).first<<"\n";
+      cout<<seg.query(l,r).first<<newl;
     }
   }
-  cout<<flush;
   return 0;
 }
