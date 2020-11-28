@@ -24,8 +24,7 @@ signed main(){
   auto h=[](ll a,ll b){return a+b;};
   auto flip=[](P a){return a;};
 
-  using Data = Lazy<P, ll, decltype(f), decltype(g), decltype(h),
-                    decltype(flip)>;
+  using Data = decltype(Lazy(f,g,h,flip,P(0,0),0));
   using Node = Data::Node;
   constexpr size_t LIM = 1e6;
   Basic<Data, LIM> G(f,g,h,flip,P(0,0),0);

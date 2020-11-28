@@ -23,12 +23,12 @@ signed main(){
   auto h=[](int,int b){return b;};
   auto flip=[](P a){return a;};
 
-  using Data = Lazy<P, int, decltype(f), decltype(g), decltype(h),
-                    decltype(flip)>;
+  int ei=-1010;
+  using Data = decltype(Lazy(f,g,h,flip,P(0,0),ei));
   using Node = Data::Node;
   constexpr size_t LIM = 1e6;
-  Basic<Data, LIM> G(f,g,h,flip,P(0,0),-1010);
-  auto rt=G.build(vector<Node>(n,Node(P(0,1),-1010)));
+  Basic<Data, LIM> G(f,g,h,flip,P(0,0),ei);
+  auto rt=G.build(vector<Node>(n,Node(P(0,1),ei)));
 
   for(int i=0;i<q;i++){
     int c;
@@ -44,6 +44,5 @@ signed main(){
       cout<<G.query(rt,s,t+1).first<<newl;
     }
   }
-  cout<<flush;
   return 0;
 }
