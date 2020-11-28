@@ -1497,6 +1497,9 @@ data:
       path: test/yosupo/dominatortree.test.cpp
       title: test/yosupo/dominatortree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+      title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
       title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     - icon: ':heavy_check_mark:'

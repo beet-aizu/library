@@ -130,6 +130,9 @@ data:
     path: test/yosupo/convolution_mod_1000000007.test.cpp
     title: test/yosupo/convolution_mod_1000000007.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+    title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -340,6 +343,7 @@ data:
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/yosupo/convolution_mod_1000000007.test.cpp
   - test/yosupo/range_affine_range_sum.test.cpp
   - test/yosupo/partition_function.test.cpp

@@ -37,6 +37,9 @@ data:
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+    title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
   _pathExtension: cpp
@@ -164,6 +167,7 @@ data:
   - test/aoj/DSL_2_F.bbst.test.cpp
   - test/aoj/0438.test.cpp
   - test/yosupo/persistent_queue.test.cpp
+  - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: bbst/rbst/rbst.cpp
 layout: document
 redirect_from:

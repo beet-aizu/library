@@ -30,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+    title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -38,7 +41,7 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ bbst/rbst/impl/basic.cpp: line 6: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
@@ -72,6 +75,7 @@ data:
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_F.bbst.test.cpp
   - test/aoj/0438.test.cpp
+  - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: bbst/rbst/impl/basic.cpp
 layout: document
 redirect_from:
