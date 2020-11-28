@@ -254,6 +254,7 @@
 "test/yosupo/convolution_mod_1000000007.test.cpp": "2020-10-27 17:04:27 +0900",
 "test/yosupo/discrete_logarithm_mod.test.cpp": "2020-11-13 17:57:07 +0900",
 "test/yosupo/dominatortree.test.cpp": "2020-09-25 15:33:26 +0900",
+"test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp": "2020-11-28 17:53:43 +0900",
 "test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp": "2020-10-28 18:43:09 +0900",
 "test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp": "2020-10-28 18:43:09 +0900",
 "test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp": "2020-10-27 19:04:41 +0900",
