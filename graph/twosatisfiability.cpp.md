@@ -75,8 +75,8 @@ data:
   timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3102.test.cpp
   - test/yosupo/two_sat.test.cpp
+  - test/aoj/3102.test.cpp
 documentation_of: graph/twosatisfiability.cpp
 layout: document
 redirect_from:

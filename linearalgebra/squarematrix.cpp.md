@@ -62,8 +62,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0831.test.cpp
-  - test/aoj/3074.test.cpp
   - test/aoj/2397.test.cpp
+  - test/aoj/3074.test.cpp
 documentation_of: linearalgebra/squarematrix.cpp
 layout: document
 redirect_from:

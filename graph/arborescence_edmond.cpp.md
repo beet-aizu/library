@@ -56,10 +56,10 @@ data:
   timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_2_B.test.cpp
+  - test/aoj/2309.test.cpp
   - test/aoj/2309.tarjan.test.cpp
   - test/aoj/2647.test.cpp
-  - test/aoj/2309.test.cpp
+  - test/aoj/GRL_2_B.test.cpp
 documentation_of: graph/arborescence_edmond.cpp
 layout: document
 redirect_from:

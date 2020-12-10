@@ -54,10 +54,10 @@ data:
   timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3063.test.cpp
-  - test/aoj/2711.test.cpp
-  - test/aoj/3112.test.cpp
   - test/yosupo/number_of_substrings.test.cpp
+  - test/aoj/2711.test.cpp
+  - test/aoj/3063.test.cpp
+  - test/aoj/3112.test.cpp
 documentation_of: string/longestcommonprefix.cpp
 layout: document
 title: Longest Common Prefix

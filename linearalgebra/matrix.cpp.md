@@ -193,10 +193,10 @@ data:
   timestamp: '2019-10-29 12:01:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1328.test.cpp
+  - test/yosupo/matrix_det.test.cpp
   - test/aoj/2060.test.cpp
   - test/aoj/0314.test.cpp
-  - test/yosupo/matrix_det.test.cpp
+  - test/aoj/1328.test.cpp
 documentation_of: linearalgebra/matrix.cpp
 layout: document
 redirect_from:

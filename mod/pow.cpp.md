@@ -40,8 +40,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/4474.test.cpp
-  - test/aoj/NTL_1_B.test.cpp
   - test/aoj/3062.test.cpp
+  - test/aoj/NTL_1_B.test.cpp
 documentation_of: mod/pow.cpp
 layout: document
 redirect_from:

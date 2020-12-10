@@ -138,8 +138,8 @@ data:
   timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_2_B.test.cpp
   - test/yosupo/set_xor_min.test.cpp
+  - test/aoj/DSL_2_B.test.cpp
 documentation_of: datastructure/binarytrie.cpp
 layout: document
 redirect_from:

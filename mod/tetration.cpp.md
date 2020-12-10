@@ -46,8 +46,8 @@ data:
   timestamp: '2020-11-13 17:57:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0472.test.cpp
   - test/yosupo/tetration_mod.test.cpp
+  - test/yukicoder/0472.test.cpp
 documentation_of: mod/tetration.cpp
 layout: document
 redirect_from:

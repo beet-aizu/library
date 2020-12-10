@@ -54,8 +54,8 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_5_D.test.cpp
   - test/aoj/2270.test.cpp
+  - test/aoj/GRL_5_D.test.cpp
 documentation_of: tree/eulertourforedge.cpp
 layout: document
 redirect_from:

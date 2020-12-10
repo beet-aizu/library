@@ -32,8 +32,8 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2646.test.cpp
   - test/yosupo/associative_array.test.cpp
+  - test/aoj/2646.test.cpp
 documentation_of: tools/cc_hash.cpp
 layout: document
 redirect_from:

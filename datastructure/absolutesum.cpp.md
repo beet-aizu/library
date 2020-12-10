@@ -25,7 +25,7 @@ data:
     \      return T(0);\n    }\n    if(lp.count(x)){\n      lp.erase(lp.find(x));\n\
     \      lp.erase(lp.find(x));\n      lp.emplace(*rp.begin());\n      rp.erase(rp.begin());\n\
     \    }else{\n      rp.erase(rp.find(x));\n      rp.erase(rp.find(x));\n      rp.emplace(*lp.rbegin());\n\
-    \      lp.erase(lp.rbegin().base());\n    }\n    auto p=interval();\n    if(p.first<=x\
+    \      lp.erase(--lp.end());\n    }\n    auto p=interval();\n    if(p.first<=x\
     \ and x<=p.second) return T(0);\n    T res=min(abs(p.first-x),abs(p.second-x));\n\
     \    sum-=res;\n    return res;\n  }\n\n  pair<T, T> interval(){\n    assert(!lp.empty());\n\
     \    return make_pair(*lp.rbegin(),*rp.begin());\n  }\n\n  T value(){return sum;}\n\
@@ -50,7 +50,7 @@ data:
     \      return T(0);\n    }\n    if(lp.count(x)){\n      lp.erase(lp.find(x));\n\
     \      lp.erase(lp.find(x));\n      lp.emplace(*rp.begin());\n      rp.erase(rp.begin());\n\
     \    }else{\n      rp.erase(rp.find(x));\n      rp.erase(rp.find(x));\n      rp.emplace(*lp.rbegin());\n\
-    \      lp.erase(lp.rbegin().base());\n    }\n    auto p=interval();\n    if(p.first<=x\
+    \      lp.erase(--lp.end());\n    }\n    auto p=interval();\n    if(p.first<=x\
     \ and x<=p.second) return T(0);\n    T res=min(abs(p.first-x),abs(p.second-x));\n\
     \    sum-=res;\n    return res;\n  }\n\n  pair<T, T> interval(){\n    assert(!lp.empty());\n\
     \    return make_pair(*lp.rbegin(),*rp.begin());\n  }\n\n  T value(){return sum;}\n\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: datastructure/absolutesum.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
+  timestamp: '2020-12-10 16:40:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2600.test.cpp
