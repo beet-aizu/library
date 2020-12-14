@@ -121,6 +121,9 @@ data:
     path: test/yosupo/bernoulli_number.test.cpp
     title: test/yosupo/bernoulli_number.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/bitwise_and_convolution.test.cpp
+    title: test/yosupo/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/convolution_mod.test.cpp
     title: test/yosupo/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
@@ -294,6 +297,7 @@ data:
   - test/yosupo/queue_operate_all_composite.test.cpp
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/yosupo/polynomial_taylor_shift.test.cpp
+  - test/yosupo/bitwise_and_convolution.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp
   - test/yosupo/bernoulli_number.test.cpp
   - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

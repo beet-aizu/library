@@ -1482,6 +1482,9 @@ data:
       path: test/yosupo/bipartitematching.test.cpp
       title: test/yosupo/bipartitematching.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo/bitwise_and_convolution.test.cpp
+      title: test/yosupo/bitwise_and_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/cartesian_tree.test.cpp
       title: test/yosupo/cartesian_tree.test.cpp
     - icon: ':heavy_check_mark:'

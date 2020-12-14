@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2981.test.cpp
     title: test/aoj/2981.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bitwise_and_convolution.test.cpp
+    title: test/yosupo/bitwise_and_convolution.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -25,6 +28,7 @@ data:
   timestamp: '2020-11-15 20:13:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo/bitwise_and_convolution.test.cpp
   - test/aoj/2981.test.cpp
 documentation_of: convolution/bitwise/and.cpp
 layout: document
