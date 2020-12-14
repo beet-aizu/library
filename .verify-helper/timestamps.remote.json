@@ -248,6 +248,7 @@
 "test/yosupo/associative_array.test.cpp": "2020-10-27 12:29:50 +0900",
 "test/yosupo/bernoulli_number.test.cpp": "2020-11-22 16:25:12 +0900",
 "test/yosupo/bipartitematching.test.cpp": "2020-10-27 16:27:26 +0900",
+"test/yosupo/bitwise_and_convolution.test.cpp": "2020-12-14 13:58:13 +0900",
 "test/yosupo/cartesian_tree.test.cpp": "2020-10-27 16:52:37 +0900",
 "test/yosupo/convolution_mod.test.cpp": "2020-10-27 17:04:27 +0900",
 "test/yosupo/convolution_mod_1000000007.garner.test.cpp": "2020-10-27 17:04:27 +0900",
