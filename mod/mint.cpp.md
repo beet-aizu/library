@@ -3,9 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: convolution/bitwise/xor.cpp
-    title: convolution/bitwise/xor.cpp
-  - icon: ':heavy_check_mark:'
     path: convolution/garner.cpp
     title: convolution/garner.cpp
   - icon: ':heavy_check_mark:'
@@ -123,6 +120,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/bitwise_and_convolution.test.cpp
     title: test/yosupo/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bitwise_xor_convolution.test.cpp
+    title: test/yosupo/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/convolution_mod.test.cpp
     title: test/yosupo/convolution_mod.test.cpp
@@ -282,7 +282,6 @@ data:
   - graph/lowlink.cpp
   - convolution/garner.cpp
   - convolution/numbertheoretictransform.cpp
-  - convolution/bitwise/xor.cpp
   - polynomial/hash.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -307,6 +306,7 @@ data:
   - test/yosupo/partition_function.test.cpp
   - test/yosupo/convolution_mod_1000000007.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/bitwise_xor_convolution.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/inv_of_formal_power_series.test.cpp

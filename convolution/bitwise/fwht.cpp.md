@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: convolution/bitwise/xor.cpp
-    title: convolution/bitwise/xor.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0402.test.cpp
@@ -18,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/bitwise_and_convolution.test.cpp
     title: test/yosupo/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/bitwise_xor_convolution.test.cpp
+    title: test/yosupo/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
@@ -43,12 +43,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: convolution/bitwise/fwht.cpp
-  requiredBy:
-  - convolution/bitwise/xor.cpp
+  requiredBy: []
   timestamp: '2020-11-15 18:54:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/bitwise_and_convolution.test.cpp
+  - test/yosupo/bitwise_xor_convolution.test.cpp
   - test/yukicoder/5025.test.cpp
   - test/aoj/0402.test.cpp
   - test/aoj/2981.test.cpp
