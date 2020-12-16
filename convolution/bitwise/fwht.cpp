@@ -4,6 +4,7 @@ using namespace std;
 #endif
 // https://kazuma8128.hatenablog.com/entry/2018/05/31/144519
 //BEGIN CUT HERE
+// O(n \log n)
 template<typename T, typename F>
 void fwht(vector<T> &as,F f){
   int n=as.size();

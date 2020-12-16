@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_and_convolution
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/subset_convolution
 
 #include <bits/stdc++.h>
 using namespace std;
