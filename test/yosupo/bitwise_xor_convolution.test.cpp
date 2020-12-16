@@ -28,7 +28,9 @@ signed main(){
 
   for(int i=0;i<sz;i++) as[i]*=bs[i];
 
-  fwht(as,moebius);
+  fwht(as,zeta);
+  M inv=M(sz).inv();
+  for(int i=0;i<sz;i++) as[i]*=inv;
 
   for(int i=0;i<sz;i++){
     if(i) cout<<' ';
