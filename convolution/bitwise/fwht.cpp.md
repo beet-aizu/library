@@ -18,11 +18,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/bitwise_xor_convolution.test.cpp
     title: test/yosupo/bitwise_xor_convolution.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/subset_convolution.test.cpp
+    title: test/yosupo/subset_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://kazuma8128.hatenablog.com/entry/2018/05/31/144519
@@ -45,8 +48,9 @@ data:
   path: convolution/bitwise/fwht.cpp
   requiredBy: []
   timestamp: '2020-11-15 18:54:23+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yosupo/subset_convolution.test.cpp
   - test/yosupo/bitwise_and_convolution.test.cpp
   - test/yosupo/bitwise_xor_convolution.test.cpp
   - test/yukicoder/5025.test.cpp

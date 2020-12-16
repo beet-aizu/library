@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: convolution/bitwise/and.cpp
-    title: convolution/bitwise/and.cpp
   - icon: ':question:'
     path: convolution/bitwise/fwht.cpp
     title: convolution/bitwise/fwht.cpp
+  - icon: ':question:'
+    path: convolution/bitwise/or.cpp
+    title: convolution/bitwise/or.cpp
   - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_and_convolution
     links:
     - https://judge.yosupo.jp/problem/bitwise_and_convolution
-  bundledCode: "#line 1 \"test/yosupo/bitwise_and_convolution.test.cpp\"\n// verification-helper:\
+  bundledCode: "#line 1 \"test/yosupo/subset_convolution.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://judge.yosupo.jp/problem/bitwise_and_convolution\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line 1 \"\
     mod/mint.cpp\"\n\n#line 3 \"mod/mint.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN\
@@ -47,41 +47,45 @@ data:
     \ f){\n  int n=as.size();\n  for(int d=1;d<n;d<<=1)\n    for(int m=d<<1,i=0;i<n;i+=m)\n\
     \      for(int j=0;j<d;j++)\n        f(as[i+j],as[i+j+d]);\n}\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
-    #endif\n#line 1 \"convolution/bitwise/and.cpp\"\n\n#line 3 \"convolution/bitwise/and.cpp\"\
+    #endif\n#line 1 \"convolution/bitwise/or.cpp\"\n\n#line 3 \"convolution/bitwise/or.cpp\"\
     \nusing namespace std;\n#endif\n//BEGIN CUT HERE\nauto zeta=[](auto& lo,auto&\
-    \ hi){lo+=hi;};\nauto moebius=[](auto& lo,auto& hi){lo-=hi;};\n//END CUT HERE\n\
+    \ hi){hi+=lo;};\nauto moebius=[](auto& lo,auto& hi){hi-=lo;};\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
-    #endif\n#line 10 \"test/yosupo/bitwise_and_convolution.test.cpp\"\n#undef call_from_test\n\
+    #endif\n#line 10 \"test/yosupo/subset_convolution.test.cpp\"\n#undef call_from_test\n\
     \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
-    \n  using M = Mint<int, 998244353>;\n\n  int sz=1<<n;\n  vector<M> as(sz),bs(sz);\n\
-    \  for(int i=0;i<sz;i++) cin>>as[i].v;\n  for(int i=0;i<sz;i++) cin>>bs[i].v;\n\
-    \n  fwht(as,zeta);\n  fwht(bs,zeta);\n\n  for(int i=0;i<sz;i++) as[i]*=bs[i];\n\
-    \n  fwht(as,moebius);\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<as[i];\n\
+    \n  using M = Mint<int, 998244353>;\n  using V = valarray<M>;\n\n  int sz=1<<n;\n\
+    \n  vector<V> as(sz,V(n+1)),bs(sz,V(n+1));\n  for(int i=0;i<sz;i++) cin>>as[i][__builtin_popcount(i)].v;\n\
+    \  for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;\n\n  fwht(as,zeta);\n\
+    \  fwht(bs,zeta);\n\n  vector<V> cs(sz,V(n+1));\n  for(int i=0;i<sz;i++)\n   \
+    \ for(int j=0;j<=n;j++)\n      for(int k=0;j+k<=n;k++)\n        cs[i][j+k]+=as[i][j]*bs[i][k];\n\
+    \n  fwht(cs,moebius);\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<cs[i][__builtin_popcount(i)];\n\
     \  }\n  cout<<endl;\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_and_convolution\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/bitwise/fwht.cpp\"\n#include\
-    \ \"../../convolution/bitwise/and.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
+    \ \"../../convolution/bitwise/or.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n  using M\
-    \ = Mint<int, 998244353>;\n\n  int sz=1<<n;\n  vector<M> as(sz),bs(sz);\n  for(int\
-    \ i=0;i<sz;i++) cin>>as[i].v;\n  for(int i=0;i<sz;i++) cin>>bs[i].v;\n\n  fwht(as,zeta);\n\
-    \  fwht(bs,zeta);\n\n  for(int i=0;i<sz;i++) as[i]*=bs[i];\n\n  fwht(as,moebius);\n\
-    \n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<as[i];\n  }\n  cout<<endl;\n\
-    \  return 0;\n}\n"
+    \ = Mint<int, 998244353>;\n  using V = valarray<M>;\n\n  int sz=1<<n;\n\n  vector<V>\
+    \ as(sz,V(n+1)),bs(sz,V(n+1));\n  for(int i=0;i<sz;i++) cin>>as[i][__builtin_popcount(i)].v;\n\
+    \  for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;\n\n  fwht(as,zeta);\n\
+    \  fwht(bs,zeta);\n\n  vector<V> cs(sz,V(n+1));\n  for(int i=0;i<sz;i++)\n   \
+    \ for(int j=0;j<=n;j++)\n      for(int k=0;j+k<=n;k++)\n        cs[i][j+k]+=as[i][j]*bs[i][k];\n\
+    \n  fwht(cs,moebius);\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<cs[i][__builtin_popcount(i)];\n\
+    \  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
   - convolution/bitwise/fwht.cpp
-  - convolution/bitwise/and.cpp
+  - convolution/bitwise/or.cpp
   isVerificationFile: true
-  path: test/yosupo/bitwise_and_convolution.test.cpp
+  path: test/yosupo/subset_convolution.test.cpp
   requiredBy: []
-  timestamp: '2020-12-14 13:58:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-12-16 13:00:21+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/yosupo/bitwise_and_convolution.test.cpp
+documentation_of: test/yosupo/subset_convolution.test.cpp
 layout: document
 redirect_from:
-- /verify/test/yosupo/bitwise_and_convolution.test.cpp
-- /verify/test/yosupo/bitwise_and_convolution.test.cpp.html
-title: test/yosupo/bitwise_and_convolution.test.cpp
+- /verify/test/yosupo/subset_convolution.test.cpp
+- /verify/test/yosupo/subset_convolution.test.cpp.html
+title: test/yosupo/subset_convolution.test.cpp
 ---

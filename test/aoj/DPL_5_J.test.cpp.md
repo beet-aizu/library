@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/partitiontable.cpp
     title: combinatorics/partitiontable.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

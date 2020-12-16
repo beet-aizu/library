@@ -189,6 +189,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/subset_convolution.test.cpp
+    title: test/yosupo/subset_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0022.test.cpp
     title: test/yukicoder/0022.test.cpp
@@ -226,7 +229,7 @@ data:
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"mod/mint.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -284,7 +287,7 @@ data:
   - convolution/numbertheoretictransform.cpp
   - polynomial/hash.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/find_linear_recurrence.test.cpp
   - test/yosupo/convolution_mod_1000000007.garner.test.cpp
@@ -295,6 +298,7 @@ data:
   - test/yosupo/stirling_number_of_the_first_kind.test.cpp
   - test/yosupo/queue_operate_all_composite.test.cpp
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+  - test/yosupo/subset_convolution.test.cpp
   - test/yosupo/polynomial_taylor_shift.test.cpp
   - test/yosupo/bitwise_and_convolution.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp

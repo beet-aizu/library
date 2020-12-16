@@ -123,10 +123,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/bitwise/and.cpp
       title: convolution/bitwise/and.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convolution/bitwise/fwht.cpp
       title: convolution/bitwise/fwht.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convolution/bitwise/or.cpp
       title: convolution/bitwise/or.cpp
     - icon: ':heavy_check_mark:'
@@ -464,7 +464,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/log.cpp
       title: mod/log.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: mod/mint.cpp
       title: mod/mint.cpp
     - icon: ':heavy_check_mark:'
@@ -1658,6 +1658,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
       title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
+    - icon: ':x:'
+      path: test/yosupo/subset_convolution.test.cpp
+      title: test/yosupo/subset_convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/suffixarray.test.cpp
       title: test/yosupo/suffixarray.test.cpp
