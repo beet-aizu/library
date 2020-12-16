@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/bitwise/and.cpp
     title: convolution/bitwise/and.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/bitwise/fwht.cpp
     title: convolution/bitwise/fwht.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
@@ -43,8 +43,8 @@ data:
     \ MOD> m){os<<m.v;return os;}\n//END CUT HERE\n#ifndef call_from_test\nsigned\
     \ main(){\n  return 0;\n}\n#endif\n#line 1 \"convolution/bitwise/fwht.cpp\"\n\n\
     #line 3 \"convolution/bitwise/fwht.cpp\"\nusing namespace std;\n#endif\n// https://kazuma8128.hatenablog.com/entry/2018/05/31/144519\n\
-    //BEGIN CUT HERE\ntemplate<typename T, typename F>\nvoid fwht(vector<T> &as,F\
-    \ f){\n  int n=as.size();\n  for(int d=1;d<n;d<<=1)\n    for(int m=d<<1,i=0;i<n;i+=m)\n\
+    //BEGIN CUT HERE\n// O(n \\log n)\ntemplate<typename T, typename F>\nvoid fwht(vector<T>\
+    \ &as,F f){\n  int n=as.size();\n  for(int d=1;d<n;d<<=1)\n    for(int m=d<<1,i=0;i<n;i+=m)\n\
     \      for(int j=0;j<d;j++)\n        f(as[i+j],as[i+j+d]);\n}\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n#line 1 \"convolution/bitwise/and.cpp\"\n\n#line 3 \"convolution/bitwise/and.cpp\"\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/bitwise_and_convolution.test.cpp
   requiredBy: []
-  timestamp: '2020-12-14 13:58:13+09:00'
+  timestamp: '2020-12-16 13:04:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/bitwise_and_convolution.test.cpp
