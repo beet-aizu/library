@@ -1,12 +1,13 @@
 // verification-helper: PROBLEM https://yukicoder.me/problems/104
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
 #include "../../mod/mint.cpp"
 #include "../../polynomial/berlekampmassey.cpp"
-#include "../../math/kitamasa.cpp"
+#include "../../convolution/naive.cpp"
+#include "../../math/bostan_mori.cpp"
 #undef call_from_test
 
 signed main(){
@@ -18,14 +19,15 @@ signed main(){
   cin>>n>>p>>c;
 
   using M = Mint<int>;
+  using Poly = vector<M>;
 
   const int d = 1500;
   const int MAX = p+c+1;
-  vector<vector<M>> cf(MAX,vector<M>(d,0));
+  vector<Poly> cf(MAX,Poly(d,0));
   cf[0][0]=M(1);
 
   for(int v:{2,3,5,7,11,13}){
-    vector<vector<M>> nx(MAX,vector<M>(d,0));
+    vector<Poly> nx(MAX,Poly(d,0));
     for(int t=0;t<=p;t++)
       for(int i=0;i<d;i++)
         for(int j=0;t+j<=p&&i+v*j<d;j++)
@@ -34,7 +36,7 @@ signed main(){
   }
 
   for(int v:{4,6,8,9,10,12}){
-    vector<vector<M>> nx(MAX,vector<M>(d,0));
+    vector<Poly> nx(MAX,Poly(d,0));
     for(int t=p;t<=p+c;t++)
       for(int i=0;i<d;i++)
         for(int j=0;t+j<=p+c&&i+v*j<d;j++)
@@ -42,7 +44,7 @@ signed main(){
     swap(cf,nx);
   }
 
-  vector<M> dp(d*3,0),as(d*3,0);
+  Poly dp(d*3,0),as(d*3,0);
   dp[0]=M(1);
   for(int i=0;i<(int)dp.size();i++){
     for(int j=0;j<d&&i+j<(int)dp.size();j++)
@@ -54,11 +56,7 @@ signed main(){
   as.resize(d*2);
 
   auto cs=berlekamp_massey(as);
-  cs.pop_back();
-  for(auto &c:cs) c*=-M(1);
-
-  Kitamasa<M> kt(cs);
-  as.resize(cs.size());
-  cout<<kt.calc(as,n-1)<<endl;
+  BostanMori<M> bm(naive<M>());
+  cout<<bm.build(n-1,as,cs)<<endl;
   return 0;
 }
