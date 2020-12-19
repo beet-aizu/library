@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0168.test.cpp
     title: test/aoj/0168.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0104.test.cpp
+    title: test/yukicoder/0104.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -44,6 +47,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0168.test.cpp
+  - test/yukicoder/0104.test.cpp
 documentation_of: math/bostan_mori.cpp
 layout: document
 redirect_from:

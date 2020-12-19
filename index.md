@@ -116,6 +116,9 @@ data:
       path: convolution/garner.cpp
       title: convolution/garner.cpp
     - icon: ':heavy_check_mark:'
+      path: convolution/naive.cpp
+      title: convolution/naive.cpp
+    - icon: ':heavy_check_mark:'
       path: convolution/numbertheoretictransform.cpp
       title: convolution/numbertheoretictransform.cpp
   - name: convolution/bitwise

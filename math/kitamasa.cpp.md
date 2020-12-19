@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0104.test.cpp
-    title: test/yukicoder/0104.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1973.test.cpp
     title: test/yukicoder/1973.test.cpp
   _pathExtension: cpp
@@ -65,7 +62,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1973.test.cpp
-  - test/yukicoder/0104.test.cpp
 documentation_of: math/kitamasa.cpp
 layout: document
 redirect_from:
