@@ -7,7 +7,7 @@ using namespace std;
 #include "../../mod/mint.cpp"
 #include "../../polynomial/berlekampmassey.cpp"
 #include "../../convolution/naive.cpp"
-#include "../../math/bostan_mori.cpp"
+#include "../../math/bostanmori.cpp"
 #undef call_from_test
 
 signed main(){
@@ -55,8 +55,7 @@ signed main(){
   }
   as.resize(d*2);
 
-  auto cs=berlekamp_massey(as);
   BostanMori<M> bm(naive<M>());
-  cout<<bm.build(n-1,as,cs)<<endl;
+  cout<<bm.build(n-1,as,berlekamp_massey(as))<<endl;
   return 0;
 }

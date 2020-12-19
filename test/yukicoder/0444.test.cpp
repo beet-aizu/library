@@ -8,12 +8,7 @@ using namespace std;
 #include "../../convolution/fastfouriertransform.cpp"
 #include "../../convolution/arbitrarymod.cpp"
 #include "../../polynomial/berlekampmassey.cpp"
-#include "../../combinatorics/enumeration.cpp"
-#include "../../formalpowerseries/base.cpp"
-#include "../../formalpowerseries/inv.cpp"
-#include "../../formalpowerseries/div.cpp"
-#include "../../formalpowerseries/mod.cpp"
-#include "../../math/sequence.cpp"
+#include "../../math/bostanmori.cpp"
 #undef call_from_test
 
 signed main(){
@@ -65,7 +60,7 @@ signed main(){
   }
   as.resize(d*2);
 
-  Sequence<M> seq(conv);
-  cout<<seq.build(as)(n)<<endl;
+  BostanMori<M> seq(conv);
+  cout<<seq.build(n,as,berlekamp_massey(as))<<endl;
   return 0;
 }

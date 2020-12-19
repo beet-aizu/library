@@ -5,7 +5,7 @@ using namespace std;
 
 #define call_from_test
 #include "../../convolution/naive.cpp"
-#include "../../math/bostan_mori.cpp"
+#include "../../math/bostanmori.cpp"
 #undef call_from_test
 
 signed main(){
