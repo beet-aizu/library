@@ -82,9 +82,6 @@ data:
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0444.test.cpp
-    title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   _pathExtension: cpp
@@ -140,7 +137,6 @@ data:
   - test/aoj/2985.garner.test.cpp
   - test/aoj/3072.test.cpp
   - test/yukicoder/2744.test.cpp
-  - test/yukicoder/0444.test.cpp
 documentation_of: formalpowerseries/inv.cpp
 layout: document
 redirect_from:

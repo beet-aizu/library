@@ -9,11 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0444.test.cpp
+    title: test/yukicoder/0444.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/bostan_mori.cpp\"\n\n#include <bits/stdc++.h>\nusing\
+  bundledCode: "#line 1 \"math/bostanmori.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n// Find k-th term of linear recurrence\n\
     template<typename T>\nstruct BostanMori{\n  using Poly = vector<T>;\n  using Conv\
     \ = function<Poly(Poly, Poly)>;\n\n  Conv conv;\n  BostanMori(Conv conv_):conv(conv_){}\n\
@@ -41,17 +44,18 @@ data:
     \  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
-  path: math/bostan_mori.cpp
+  path: math/bostanmori.cpp
   requiredBy: []
-  timestamp: '2020-12-19 16:10:28+09:00'
+  timestamp: '2020-12-19 16:30:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0168.test.cpp
   - test/yukicoder/0104.test.cpp
-documentation_of: math/bostan_mori.cpp
+  - test/yukicoder/0444.test.cpp
+documentation_of: math/bostanmori.cpp
 layout: document
 redirect_from:
-- /library/math/bostan_mori.cpp
-- /library/math/bostan_mori.cpp.html
-title: math/bostan_mori.cpp
+- /library/math/bostanmori.cpp
+- /library/math/bostanmori.cpp.html
+title: math/bostanmori.cpp
 ---

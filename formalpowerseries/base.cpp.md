@@ -51,9 +51,6 @@ data:
     path: includes/formalpowerseries.h
     title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
-    path: math/sequence.cpp
-    title: math/sequence.cpp
-  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
   - icon: ':heavy_check_mark:'
@@ -108,9 +105,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0444.test.cpp
-    title: test/yukicoder/0444.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
@@ -174,7 +168,6 @@ data:
   - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
   - formalpowerseries/inv.cpp
-  - math/sequence.cpp
   timestamp: '2020-11-22 16:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -195,7 +188,6 @@ data:
   - test/aoj/2985.garner.test.cpp
   - test/aoj/3072.test.cpp
   - test/yukicoder/2744.test.cpp
-  - test/yukicoder/0444.test.cpp
 documentation_of: formalpowerseries/base.cpp
 layout: document
 redirect_from:

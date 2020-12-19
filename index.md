@@ -377,8 +377,8 @@ data:
       path: math/affine.cpp
       title: math/affine.cpp
     - icon: ':heavy_check_mark:'
-      path: math/bostan_mori.cpp
-      title: math/bostan_mori.cpp
+      path: math/bostanmori.cpp
+      title: math/bostanmori.cpp
     - icon: ':heavy_check_mark:'
       path: math/carmichael.cpp
       title: math/carmichael.cpp
@@ -418,9 +418,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/quotients.cpp
       title: math/quotients.cpp
-    - icon: ':heavy_check_mark:'
-      path: math/sequence.cpp
-      title: math/sequence.cpp
     - icon: ':heavy_check_mark:'
       path: math/sum_of_floor.cpp
       title: math/sum_of_floor.cpp

@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: math/sequence.cpp
-    title: math/sequence.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/find_linear_recurrence.test.cpp
@@ -49,8 +46,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: polynomial/berlekampmassey.cpp
-  requiredBy:
-  - math/sequence.cpp
+  requiredBy: []
   timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

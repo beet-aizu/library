@@ -60,9 +60,6 @@ data:
     path: includes/formalpowerseries.h
     title: includes/formalpowerseries.h
   - icon: ':heavy_check_mark:'
-    path: math/sequence.cpp
-    title: math/sequence.cpp
-  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
   - icon: ':heavy_check_mark:'
@@ -148,9 +145,6 @@ data:
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0444.test.cpp
-    title: test/yukicoder/0444.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
   - icon: ':heavy_check_mark:'
@@ -224,7 +218,6 @@ data:
   - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
   - formalpowerseries/inv.cpp
-  - math/sequence.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -255,7 +248,6 @@ data:
   - test/aoj/DPL_5_F.test.cpp
   - test/aoj/DPL_5_I.test.cpp
   - test/yukicoder/2744.test.cpp
-  - test/yukicoder/0444.test.cpp
   - test/yukicoder/2772.test.cpp
 documentation_of: combinatorics/enumeration.cpp
 layout: document

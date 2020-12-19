@@ -30,9 +30,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/0444.test.cpp
-    title: test/yukicoder/0444.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -70,7 +67,6 @@ data:
   verifiedWith:
   - test/yosupo/multipoint_evaluation.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yukicoder/0444.test.cpp
 documentation_of: formalpowerseries/div.cpp
 layout: document
 redirect_from:
