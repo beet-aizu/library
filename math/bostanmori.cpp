@@ -4,6 +4,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 // Find k-th term of linear recurrence
+// execute `conv` O(\log k) times
 template<typename T>
 struct BostanMori{
   using Poly = vector<T>;

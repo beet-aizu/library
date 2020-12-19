@@ -3,6 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+// O(N M)
 template<typename T>
 decltype(auto) naive(){
   using Poly = vector<T>;
