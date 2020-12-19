@@ -63,8 +63,8 @@ data:
   timestamp: '2020-11-22 19:37:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/line_add_get_min.test.cpp
   - test/yosupo/segment_add_get_min.test.cpp
+  - test/yosupo/line_add_get_min.test.cpp
 documentation_of: convexhulltrick/segmentcontainer.cpp
 layout: document
 redirect_from:

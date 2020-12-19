@@ -66,8 +66,8 @@ data:
   verifiedWith:
   - test/aoj/2513.test.cpp
   - test/aoj/3168.test.cpp
-  - test/aoj/3198.test.cpp
   - test/aoj/GRL_7_A.test.cpp
+  - test/aoj/3198.test.cpp
 documentation_of: matching/bipartite.cpp
 layout: document
 redirect_from:

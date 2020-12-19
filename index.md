@@ -374,6 +374,9 @@ data:
       path: math/affine.cpp
       title: math/affine.cpp
     - icon: ':heavy_check_mark:'
+      path: math/bostan_mori.cpp
+      title: math/bostan_mori.cpp
+    - icon: ':heavy_check_mark:'
       path: math/carmichael.cpp
       title: math/carmichael.cpp
     - icon: ':warning:'

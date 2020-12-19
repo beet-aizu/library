@@ -85,10 +85,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_set_range_composite.test.cpp
-  - test/aoj/DSL_2_A.test.cpp
   - test/aoj/2644.test.cpp
-  - test/aoj/0367.test.cpp
   - test/aoj/2969.test.cpp
+  - test/aoj/DSL_2_A.test.cpp
+  - test/aoj/0367.test.cpp
 documentation_of: segtree/basic/ushi.cpp
 layout: document
 redirect_from:

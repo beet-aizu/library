@@ -75,8 +75,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/staticrmq.disjointsparsetable.test.cpp
-  - test/yukicoder/4072.test.cpp
   - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
+  - test/yukicoder/4072.test.cpp
 documentation_of: datastructure/disjointsparsetable.cpp
 layout: document
 redirect_from:

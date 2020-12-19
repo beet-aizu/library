@@ -32,8 +32,8 @@ data:
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1665.test.cpp
   - test/aoj/2286.test.cpp
+  - test/yukicoder/1665.test.cpp
 documentation_of: math/totient_table.cpp
 layout: document
 redirect_from:

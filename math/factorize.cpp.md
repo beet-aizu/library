@@ -32,8 +32,8 @@ data:
   timestamp: '2019-12-26 23:22:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2968.test.cpp
   - test/aoj/NTL_1_A.test.cpp
+  - test/aoj/2968.test.cpp
 documentation_of: math/factorize.cpp
 layout: document
 redirect_from:

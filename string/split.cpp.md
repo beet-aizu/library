@@ -32,8 +32,8 @@ data:
   timestamp: '2020-10-27 13:26:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1300.test.cpp
   - test/aoj/2328.test.cpp
+  - test/aoj/1300.test.cpp
 documentation_of: string/split.cpp
 layout: document
 redirect_from:

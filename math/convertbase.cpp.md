@@ -34,8 +34,8 @@ data:
   timestamp: '2020-02-15 15:47:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1580.test.cpp
   - test/aoj/0233.test.cpp
+  - test/yukicoder/1580.test.cpp
 documentation_of: math/convertbase.cpp
 layout: document
 redirect_from:
