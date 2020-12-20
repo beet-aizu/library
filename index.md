@@ -614,6 +614,9 @@ data:
       path: tools/debug.cpp
       title: tools/debug.cpp
     - icon: ':heavy_check_mark:'
+      path: tools/defaultdict.cpp
+      title: tools/defaultdict.cpp
+    - icon: ':heavy_check_mark:'
       path: tools/dice.cpp
       title: tools/dice.cpp
     - icon: ':heavy_check_mark:'
@@ -1165,6 +1168,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3208.test.cpp
       title: test/aoj/3208.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3213.test.cpp
+      title: test/aoj/3213.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/3506.test.cpp
       title: test/aoj/3506.test.cpp

@@ -28,6 +28,9 @@ data:
     path: test/aoj/3168.test.cpp
     title: test/aoj/3168.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/3213.test.cpp
+    title: test/aoj/3213.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
   - icon: ':heavy_check_mark:'
@@ -72,6 +75,7 @@ data:
   verifiedWith:
   - test/yosupo/static_range_inversions_query.test.cpp
   - test/aoj/0437.test.cpp
+  - test/aoj/3213.test.cpp
   - test/aoj/3168.test.cpp
   - test/aoj/0438.test.cpp
   - test/aoj/2968.test.cpp
