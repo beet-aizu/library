@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+// ref. https://qiita.com/ryuhe1/items/da5acbcce4ac1911f47a
 //BEGIN CUT HERE
 // Find k-th term of linear recurrence
 // execute `conv` O(\log k) times

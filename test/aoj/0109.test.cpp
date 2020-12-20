@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0109
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
