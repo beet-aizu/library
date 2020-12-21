@@ -3,6 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+// O(nm)
 string longest_common_substring(string s,string t){
   int n=s.size(),m=t.size();
   s+='$';t+='%';
