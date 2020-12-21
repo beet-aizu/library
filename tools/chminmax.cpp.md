@@ -11,9 +11,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
-  - icon: ':heavy_check_mark:'
-    path: string/longestcommonsubstring.cpp
-    title: string/longestcommonsubstring.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0391.test.cpp
@@ -100,9 +97,6 @@ data:
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ALDS1_10_C.test.cpp
-    title: test/aoj/ALDS1_10_C.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_1_E.test.cpp
     title: test/aoj/DPL_1_E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -155,7 +149,6 @@ data:
   requiredBy:
   - datastructure/slidingwindowaggregation.cpp
   - string/editdistance.cpp
-  - string/longestcommonsubstring.cpp
   - graph/nicetree.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -188,7 +181,6 @@ data:
   - test/aoj/0596.test.cpp
   - test/aoj/3142.test.cpp
   - test/aoj/1642.test.cpp
-  - test/aoj/ALDS1_10_C.test.cpp
   - test/aoj/3112.test.cpp
   - test/aoj/2230.test.cpp
   - test/aoj/3506.test.cpp
