@@ -16,7 +16,7 @@ data:
     \ PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
     \ 1 \"string/longestcommonsubstring.cpp\"\n\n#line 3 \"string/longestcommonsubstring.cpp\"\
-    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\nstring longest_common_substring(string\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\n// O(nm)\nstring longest_common_substring(string\
     \ s,string t){\n  int n=s.size(),m=t.size();\n  s+='$';t+='%';\n  vector< vector<int>\
     \ > dp(n+2,vector<int>(m+2,-(n+m)));\n  dp[0][0]=0;\n\n  auto chmax=[&](int &a,int\
     \ b){if(a<b) a=b;};\n  for(int i=0;i<=n;i++){\n    for(int j=0;j<=m;j++){\n  \
@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_10_C.test.cpp
   requiredBy: []
-  timestamp: '2020-12-21 13:19:34+09:00'
+  timestamp: '2020-12-21 13:22:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_10_C.test.cpp
