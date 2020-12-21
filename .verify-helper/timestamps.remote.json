@@ -298,6 +298,7 @@
 "test/yosupo/scc.test.cpp": "2020-10-27 18:08:33 +0900",
 "test/yosupo/segment_add_get_min.test.cpp": "2020-11-22 19:37:49 +0900",
 "test/yosupo/set_xor_min.test.cpp": "2020-10-27 12:55:52 +0900",
+"test/yosupo/sharp_p_subset_sum.test.cpp": "2020-12-21 13:43:34 +0900",
 "test/yosupo/shortest_path.test.cpp": "2020-09-25 18:28:59 +0900",
 "test/yosupo/sort_points_by_argument.test.cpp": "2020-10-27 16:41:24 +0900",
 "test/yosupo/sqrt_mod.test.cpp": "2020-11-13 20:22:13 +0900",
