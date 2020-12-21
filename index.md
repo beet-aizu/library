@@ -1638,6 +1638,9 @@ data:
       path: test/yosupo/set_xor_min.test.cpp
       title: test/yosupo/set_xor_min.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo/sharp_p_subset_sum.test.cpp
+      title: test/yosupo/sharp_p_subset_sum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/shortest_path.test.cpp
       title: test/yosupo/shortest_path.test.cpp
     - icon: ':heavy_check_mark:'

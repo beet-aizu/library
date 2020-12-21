@@ -67,6 +67,9 @@ data:
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/sharp_p_subset_sum.test.cpp
+    title: test/yosupo/sharp_p_subset_sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -138,6 +141,7 @@ data:
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp
   - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
