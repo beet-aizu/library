@@ -8,9 +8,8 @@ struct SuffixArray{
   const Seq s;
   vector<int> sa,rev;
 
-  static Seq concat(Seq x,int y){x.push_back(y);return x;};
-
-  SuffixArray(const Seq &s_,int guard='$'):s(concat(s_, guard)){
+  SuffixArray(const Seq &s_,int guard='$'):
+    s([](Seq x,int y){return x.emplace_back(y),x;}(s_,guard)){
     int n=s.size();
     sa.resize(n);
     iota(sa.begin(),sa.end(),0);
@@ -43,6 +42,7 @@ struct SuffixArray{
     rev.resize(n);
     for(int i=0;i<n;i++) rev[sa[i]]=i;
   }
+
   int operator[](int i) const{return sa[i];}
 
   bool lt_substr(const Seq &t,int si,int ti){
@@ -81,6 +81,14 @@ struct SuffixArray{
 #ifndef call_from_test
 //INSERT ABOVE HERE
 signed main(){
+  vector<int> vs({1, 2, 3, 1, 2, 1});
+  SuffixArray sa(vs, -1);
+  for(int i=0;i<=(int)vs.size();i++) cout<<sa[i]<<endl;
+
+  cout<<sa.count({1})<<endl;
+  cout<<sa.count({1, 2})<<endl;
+  cout<<sa.count({1, 2, 3})<<endl;
+  cout<<sa.count({1, 2, 3, 4})<<endl;
   return 0;
-};
+}
 #endif
