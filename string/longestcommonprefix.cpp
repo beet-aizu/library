@@ -8,12 +8,14 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
+
+template<typename Seq = string>
 struct LongestCommonPrefix{
-  SuffixArray sa;
+  SuffixArray<Seq> sa;
 
   vector<int> ht;
   vector< vector<int> > dat;
-  LongestCommonPrefix(string &s):sa(s){
+  LongestCommonPrefix(Seq &s):sa(s){
     int n=s.size();
     vector<int> lcp(n,0);
 

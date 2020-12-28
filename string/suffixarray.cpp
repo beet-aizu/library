@@ -3,11 +3,14 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
+template<typename Seq = string>
 struct SuffixArray{
-  const string s;
+  const Seq s;
   vector<int> sa,rev;
 
-  SuffixArray(const string &s_):s(s_+'$'){
+  static Seq concat(Seq x,int y){x.push_back(y);return x;};
+
+  SuffixArray(const Seq &s_,int guard='$'):s(concat(s_, guard)){
     int n=s.size();
     sa.resize(n);
     iota(sa.begin(),sa.end(),0);
@@ -42,7 +45,7 @@ struct SuffixArray{
   }
   int operator[](int i) const{return sa[i];}
 
-  bool lt_substr(string &t,int si,int ti){
+  bool lt_substr(const Seq &t,int si,int ti){
     int sn=s.size(),tn=t.size();
     while(si<sn and ti<tn){
       if(s[si]<t[ti]) return 1;
@@ -52,7 +55,7 @@ struct SuffixArray{
     return si==sn and ti<tn;
   }
 
-  int lower_bound(string& t){
+  int lower_bound(Seq t){
     int l=0,r=s.size();
     while(l+1<r){
       int m=(l+r)>>1;
@@ -62,16 +65,16 @@ struct SuffixArray{
     return r;
   }
 
-  int upper_bound(string& t){
+  int upper_bound(Seq t){
     t.back()++;
     int res=lower_bound(t);
     t.back()--;
     return res;
   }
 
-  // O(|T|*log|S|)
-  int count(string& T){
-    return upper_bound(T)-lower_bound(T);
+  // O(|t| \log|s|)
+  int count(Seq t){
+    return upper_bound(t)-lower_bound(t);
   }
 };
 //END CUT HERE
