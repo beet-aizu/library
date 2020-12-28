@@ -9,7 +9,7 @@ struct SuffixArray{
   vector<int> sa,rev;
 
   SuffixArray(const Seq &s_,int guard='$'):
-    s([](Seq x,int y){return x.emplace_back(y),x;}(s_,guard)){
+    s([](Seq x,int y){return x.push_back(y),x;}(s_,guard)){
     int n=s.size();
     sa.resize(n);
     iota(sa.begin(),sa.end(),0);
