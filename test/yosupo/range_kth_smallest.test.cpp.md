@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/waveletmatrix.cpp
     title: Wavelet Matrix
   _extendedRequiredBy: []

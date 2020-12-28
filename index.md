@@ -188,7 +188,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/unionfind.cpp
       title: datastructure/unionfind.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructure/waveletmatrix.cpp
       title: Wavelet Matrix
     - icon: ':heavy_check_mark:'
@@ -513,13 +513,13 @@ data:
       title: polynomial/recursivesequence.cpp
   - name: segtree/basic
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: segtree/basic/dual.cpp
       title: segtree/basic/dual.cpp
     - icon: ':heavy_check_mark:'
       path: segtree/basic/lazy.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: segtree/basic/ushi.cpp
       title: segtree/basic/ushi.cpp
   - name: segtree/count
@@ -554,7 +554,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/knuthmorrispratt.cpp
       title: string/knuthmorrispratt.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/longestcommonprefix.cpp
       title: Longest Common Prefix
     - icon: ':heavy_check_mark:'
@@ -584,7 +584,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/split.cpp
       title: string/split.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/suffixarray.cpp
       title: Suffix Array
     - icon: ':heavy_check_mark:'
@@ -607,7 +607,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/cc_hash.cpp
       title: tools/cc_hash.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tools/chminmax.cpp
       title: tools/chminmax.cpp
     - icon: ':warning:'
@@ -982,7 +982,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2636.test.cpp
       title: Distance Sum
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/2644.test.cpp
       title: test/aoj/2644.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1006,7 +1006,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2679.test.cpp
       title: lexicographical cost
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/2711.test.cpp
       title: test lcp
     - icon: ':heavy_check_mark:'
@@ -1087,7 +1087,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3024.test.cpp
       title: test/aoj/3024.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3033.test.cpp
       title: test/aoj/3033.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1108,7 +1108,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3062.test.cpp
       title: test/aoj/3062.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3063.test.cpp
       title: test/aoj/3063.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1135,7 +1135,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3102.test.cpp
       title: test/aoj/3102.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/3112.test.cpp
       title: test query
     - icon: ':heavy_check_mark:'
@@ -1586,7 +1586,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/multipoint_evaluation.test.cpp
       title: test/yosupo/multipoint_evaluation.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/number_of_substrings.test.cpp
       title: test/yosupo/number_of_substrings.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1673,7 +1673,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/subset_convolution.test.cpp
       title: test/yosupo/subset_convolution.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/suffixarray.test.cpp
       title: test/yosupo/suffixarray.test.cpp
     - icon: ':heavy_check_mark:'

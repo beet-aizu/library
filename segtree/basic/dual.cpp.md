@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2359.test.cpp
     title: test/aoj/2359.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/3112.test.cpp
     title: test query
   - icon: ':heavy_check_mark:'
@@ -19,7 +19,7 @@ data:
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"segtree/basic/dual.cpp\"\n\n#include<bits/stdc++.h>\nusing\
@@ -55,7 +55,7 @@ data:
   path: segtree/basic/dual.cpp
   requiredBy: []
   timestamp: '2019-12-17 13:36:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DSL_2_D.test.cpp
   - test/aoj/2359.test.cpp
