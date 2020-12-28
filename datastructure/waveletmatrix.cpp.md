@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2674.test.cpp
     title: test/aoj/2674.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
   - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     path: test/yukicoder/3227.test.cpp
     title: test/yukicoder/3227.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/waveletmatrix.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -146,7 +146,7 @@ data:
   path: datastructure/waveletmatrix.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/range_kth_smallest.test.cpp
   - test/aoj/1549.test.cpp

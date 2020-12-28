@@ -2,39 +2,39 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: Longest Common Prefix
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2644.test.cpp
     title: test/aoj/2644.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2711.test.cpp
     title: test lcp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3033.test.cpp
     title: test/aoj/3033.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3063.test.cpp
     title: test/aoj/3063.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test query
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/suffixarray.test.cpp
     title: test/yosupo/suffixarray.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/suffixarray.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Seq = string>\n\
     struct SuffixArray{\n  const Seq s;\n  vector<int> sa,rev;\n\n  SuffixArray(const\
-    \ Seq &s_,int guard='$'):\n    s([](Seq x,int y){return x.emplace_back(y),x;}(s_,guard)){\n\
+    \ Seq &s_,int guard='$'):\n    s([](Seq x,int y){return x.push_back(y),x;}(s_,guard)){\n\
     \    int n=s.size();\n    sa.resize(n);\n    iota(sa.begin(),sa.end(),0);\n  \
     \  sort(sa.begin(),sa.end(),\n         [&](int a,int b){\n           if(s[a]==s[b])\
     \ return a>b;\n           return s[a]<s[b];\n         });\n\n    vector<int> cs(n,0),rs(n);\n\
@@ -63,7 +63,7 @@ data:
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename Seq = string>\nstruct SuffixArray{\n\
     \  const Seq s;\n  vector<int> sa,rev;\n\n  SuffixArray(const Seq &s_,int guard='$'):\n\
-    \    s([](Seq x,int y){return x.emplace_back(y),x;}(s_,guard)){\n    int n=s.size();\n\
+    \    s([](Seq x,int y){return x.push_back(y),x;}(s_,guard)){\n    int n=s.size();\n\
     \    sa.resize(n);\n    iota(sa.begin(),sa.end(),0);\n    sort(sa.begin(),sa.end(),\n\
     \         [&](int a,int b){\n           if(s[a]==s[b]) return a>b;\n         \
     \  return s[a]<s[b];\n         });\n\n    vector<int> cs(n,0),rs(n);\n    for(int\
@@ -93,8 +93,8 @@ data:
   path: string/suffixarray.cpp
   requiredBy:
   - string/longestcommonprefix.cpp
-  timestamp: '2020-12-28 13:17:17+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-12-28 13:49:02+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/suffixarray.test.cpp
   - test/yosupo/number_of_substrings.test.cpp

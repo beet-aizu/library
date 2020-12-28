@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/longestcommonprefix.cpp
     title: Longest Common Prefix
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/suffixarray.cpp
     title: Suffix Array
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
     links:
@@ -38,8 +38,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2020-12-28 13:17:17+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-28 13:49:02+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/number_of_substrings.test.cpp
 layout: document

@@ -75,7 +75,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
     title: test/aoj/3069.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test query
   - icon: ':heavy_check_mark:'
@@ -130,7 +130,7 @@ data:
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tools/chminmax.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -151,7 +151,7 @@ data:
   - string/editdistance.cpp
   - graph/nicetree.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/geometry/3049.test.cpp
   - test/aoj/geometry/2334.test.cpp

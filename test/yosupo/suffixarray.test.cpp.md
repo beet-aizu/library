@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/suffixarray.cpp
     title: Suffix Array
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
     links:
@@ -18,7 +18,7 @@ data:
     \n\n#line 3 \"string/suffixarray.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
     \ CUT HERE\ntemplate<typename Seq = string>\nstruct SuffixArray{\n  const Seq\
     \ s;\n  vector<int> sa,rev;\n\n  SuffixArray(const Seq &s_,int guard='$'):\n \
-    \   s([](Seq x,int y){return x.emplace_back(y),x;}(s_,guard)){\n    int n=s.size();\n\
+    \   s([](Seq x,int y){return x.push_back(y),x;}(s_,guard)){\n    int n=s.size();\n\
     \    sa.resize(n);\n    iota(sa.begin(),sa.end(),0);\n    sort(sa.begin(),sa.end(),\n\
     \         [&](int a,int b){\n           if(s[a]==s[b]) return a>b;\n         \
     \  return s[a]<s[b];\n         });\n\n    vector<int> cs(n,0),rs(n);\n    for(int\
@@ -57,8 +57,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/suffixarray.test.cpp
   requiredBy: []
-  timestamp: '2020-12-28 13:17:17+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-28 13:49:02+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/suffixarray.test.cpp
 layout: document
