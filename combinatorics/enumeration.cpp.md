@@ -21,6 +21,9 @@ data:
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   - icon: ':heavy_check_mark:'
+    path: formalpowerseries/998244353.cpp
+    title: formalpowerseries/998244353.cpp
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   - icon: ':heavy_check_mark:'
@@ -213,6 +216,7 @@ data:
   - combinatorics/bernoulli.cpp
   - graph/lowlink.cpp
   - includes/formalpowerseries.h
+  - formalpowerseries/998244353.cpp
   - formalpowerseries/shift.cpp
   - formalpowerseries/sqrt.cpp
   - formalpowerseries/base.cpp

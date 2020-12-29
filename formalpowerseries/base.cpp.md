@@ -18,6 +18,9 @@ data:
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
   - icon: ':heavy_check_mark:'
+    path: formalpowerseries/998244353.cpp
+    title: formalpowerseries/998244353.cpp
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
   - icon: ':heavy_check_mark:'
@@ -164,6 +167,7 @@ data:
   - combinatorics/stirling1st.cpp
   - combinatorics/bernoulli.cpp
   - includes/formalpowerseries.h
+  - formalpowerseries/998244353.cpp
   - formalpowerseries/shift.cpp
   - formalpowerseries/sqrt.cpp
   - formalpowerseries/diff.cpp

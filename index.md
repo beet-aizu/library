@@ -197,6 +197,9 @@ data:
   - name: formalpowerseries
     pages:
     - icon: ':heavy_check_mark:'
+      path: formalpowerseries/998244353.cpp
+      title: formalpowerseries/998244353.cpp
+    - icon: ':heavy_check_mark:'
       path: formalpowerseries/base.cpp
       title: formalpowerseries/base.cpp
     - icon: ':heavy_check_mark:'

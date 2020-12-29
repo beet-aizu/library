@@ -9,6 +9,9 @@ data:
     path: convolution/garner.cpp
     title: convolution/garner.cpp
   - icon: ':heavy_check_mark:'
+    path: formalpowerseries/998244353.cpp
+    title: formalpowerseries/998244353.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
   _extendedVerifiedWith:
@@ -131,6 +134,7 @@ data:
   requiredBy:
   - convolution/garner.cpp
   - mod/factorial.cpp
+  - formalpowerseries/998244353.cpp
   timestamp: '2020-10-27 17:04:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

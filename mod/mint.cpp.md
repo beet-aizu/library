@@ -9,6 +9,9 @@ data:
     path: convolution/numbertheoretictransform.cpp
     title: convolution/numbertheoretictransform.cpp
   - icon: ':heavy_check_mark:'
+    path: formalpowerseries/998244353.cpp
+    title: formalpowerseries/998244353.cpp
+  - icon: ':heavy_check_mark:'
     path: graph/lowlink.cpp
     title: graph/lowlink.cpp
   - icon: ':warning:'
@@ -292,6 +295,7 @@ data:
   - convolution/garner.cpp
   - convolution/numbertheoretictransform.cpp
   - mod/factorial.cpp
+  - formalpowerseries/998244353.cpp
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
