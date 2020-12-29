@@ -15,6 +15,7 @@ using namespace std;
 #include "../../formalpowerseries/log.cpp"
 #include "../../formalpowerseries/exp.cpp"
 #include "../../formalpowerseries/pow.cpp"
+#include "../../formalpowerseries/998244353.cpp"
 #undef call_from_test
 
 //INSERT ABOVE HERE
@@ -22,15 +23,10 @@ signed main(){
   cin.tie(0);
   ios::sync_with_stdio(0);
 
-  NTT<2> ntt;
-  using M = decltype(ntt)::M;
-  using E = Enumeration<M>;
-  auto conv=[&](auto as,auto bs){return ntt.multiply(as,bs);};
-  FormalPowerSeries<M> FPS(conv);
-
   int n,m,k;
   cin>>n>>m>>k;
 
+  using namespace fps_998244353;
   E::init(n+m);
 
   auto ps=FPS.exp({M(0),M(1)},n+1);
