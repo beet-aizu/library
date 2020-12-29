@@ -111,6 +111,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2744.test.cpp
     title: test/yukicoder/2744.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5633.test.cpp
+    title: test/yukicoder/5633.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -192,6 +195,7 @@ data:
   - test/aoj/2985.garner.test.cpp
   - test/aoj/3072.test.cpp
   - test/yukicoder/2744.test.cpp
+  - test/yukicoder/5633.test.cpp
 documentation_of: formalpowerseries/base.cpp
 layout: document
 redirect_from:

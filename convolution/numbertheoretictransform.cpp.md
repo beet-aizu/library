@@ -81,6 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5633.test.cpp
+    title: test/yukicoder/5633.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -154,6 +157,7 @@ data:
   - test/aoj/3072.test.cpp
   - test/aoj/3074.test.cpp
   - test/yukicoder/1504.test.cpp
+  - test/yukicoder/5633.test.cpp
 documentation_of: convolution/numbertheoretictransform.cpp
 layout: document
 redirect_from:

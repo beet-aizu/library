@@ -33,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5633.test.cpp
+    title: test/yukicoder/5633.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -74,6 +77,7 @@ data:
   verifiedWith:
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/aoj/3084.test.cpp
+  - test/yukicoder/5633.test.cpp
 documentation_of: formalpowerseries/pow.cpp
 layout: document
 redirect_from:

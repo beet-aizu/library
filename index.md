@@ -725,6 +725,9 @@ data:
       path: vector/near.cpp
       title: vector/near.cpp
     - icon: ':heavy_check_mark:'
+      path: vector/powers.cpp
+      title: vector/powers.cpp
+    - icon: ':heavy_check_mark:'
       path: vector/runlength.cpp
       title: vector/runlength.cpp
     - icon: ':heavy_check_mark:'
@@ -1858,5 +1861,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/5223.test.cpp
       title: test/yukicoder/5223.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/5633.test.cpp
+      title: test/yukicoder/5633.test.cpp
 layout: toppage
 ---

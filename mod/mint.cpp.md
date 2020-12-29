@@ -231,6 +231,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/5633.test.cpp
+    title: test/yukicoder/5633.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -360,6 +363,7 @@ data:
   - test/yukicoder/3211.test.cpp
   - test/yukicoder/5025.test.cpp
   - test/yukicoder/2772.test.cpp
+  - test/yukicoder/5633.test.cpp
 documentation_of: mod/mint.cpp
 layout: document
 redirect_from:
