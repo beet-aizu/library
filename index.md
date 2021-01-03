@@ -266,6 +266,9 @@ data:
       path: graph/chromatic.cpp
       title: graph/chromatic.cpp
     - icon: ':heavy_check_mark:'
+      path: graph/cycle.cpp
+      title: graph/cycle.cpp
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.cpp
       title: graph/dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -1043,6 +1046,9 @@ data:
       path: test/aoj/2890.test.cpp
       title: test order_of_key
     - icon: ':heavy_check_mark:'
+      path: test/aoj/2891.test.cpp
+      title: test/aoj/2891.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/2934.test.cpp
       title: test/aoj/2934.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1514,6 +1520,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/convolution_mod_1000000007.test.cpp
       title: test/yosupo/convolution_mod_1000000007.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/cycle_detection.test.cpp
+      title: test/yosupo/cycle_detection.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/discrete_logarithm_mod.test.cpp
       title: test/yosupo/discrete_logarithm_mod.test.cpp
