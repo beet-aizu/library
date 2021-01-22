@@ -18,6 +18,7 @@ struct Trie{
   F conv;
 
   Trie(F conv,char c='$'):conv(conv){vs.emplace_back(c);}
+  Trie(char start,char c='$'):Trie([=](char a){return a-start;},c){}
 
   inline int &next(int i,int j){
     return vs[i].nxt[j];

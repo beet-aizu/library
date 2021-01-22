@@ -19,8 +19,7 @@ signed main(){
   int n,q;
   cin>>n>>q;
 
-  auto conv=[](char c){return c-'a';};
-  AhoCorasick<26, false> aho(conv);
+  AhoCorasick<26, false> aho('a');
   aho.add(s,0);
   aho.build();
 
