@@ -15,6 +15,8 @@ struct AhoCorasick : Trie<X+1>{
   using super::vs, super::conv;
 
   vector<int> cnt;
+
+  // O(\sigma \sum |T_i|)
   void build(){
     int n=vs.size();
     cnt.resize(n);
@@ -65,6 +67,7 @@ struct AhoCorasick : Trie<X+1>{
     return cnt[pos];
   }
 
+  // O(|S|)
   int match(string s){
     int res=0,pos=0;
     for(auto &c:s){
@@ -74,6 +77,7 @@ struct AhoCorasick : Trie<X+1>{
     return res;
   }
 
+  // O(|S| + \sum |T_i|)
   vector<int> frequency(string s){
     vector<int> res(size(),0);
     int pos=0;
