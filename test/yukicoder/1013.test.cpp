@@ -24,7 +24,7 @@ signed main(){
   cout<<aho.match(s)<<endl;
 
   auto res=aho.frequency(s);
-  int cnt=0;
+  long long cnt=0;
   for(auto c:cs) cnt+=res[aho.find(c)];
   assert(cnt==aho.match(s));
   return 0;
