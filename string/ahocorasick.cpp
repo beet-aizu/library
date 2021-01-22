@@ -8,15 +8,14 @@ using namespace std;
 
 #endif
 //BEGIN CUT HERE
-template<size_t X>
+template<size_t X, bool heavy>
 struct AhoCorasick : Trie<X+1>{
-  using TRIE = Trie<X+1>;
-  using TRIE::TRIE;
-  using TRIE::next;
-  vector<int> cnt;
+  using super = Trie<X+1>;
+  using super::super, super::next, super::size;
+  using super::vs, super::conv;
 
-  void build(int heavy=true){
-    auto &vs=TRIE::vs;
+  vector<int> cnt;
+  void build(){
     int n=vs.size();
     cnt.resize(n);
     for(int i=0;i<n;i++){
@@ -62,20 +61,29 @@ struct AhoCorasick : Trie<X+1>{
     }
   }
 
-  vector<int> match(string s,int heavy=true){
-    auto &vs=TRIE::vs;
-    vector<int> res(heavy?TRIE::size():1);
-    int pos=0;
+  int count(int pos){
+    return cnt[pos];
+  }
+
+  int match(string s){
+    int res=0,pos=0;
     for(auto &c:s){
-      pos=next(pos,TRIE::conv(c));
-      if(heavy) for(auto &x:vs[pos].idxs) res[x]++;
-      else res[0]+=cnt[pos];
+      pos=next(pos,conv(c));
+      res+=count(pos);
     }
     return res;
   }
 
-  int count(int pos){
-    return cnt[pos];
+  vector<int> frequency(string s){
+    vector<int> res(size(),0);
+    int pos=0;
+    for(auto &c:s){
+      pos=next(pos,conv(c));
+      res[pos]++;
+    }
+    for(int i=size()-1;i;i--)
+      res[vs[i].nxt[X]]+=res[i];
+    return res;
   }
 };
 //END CUT HERE

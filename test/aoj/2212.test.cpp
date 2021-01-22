@@ -29,9 +29,9 @@ signed main(){
         if(c=='L') return 3;
         return -1;
       };
-    AhoCorasick<4> aho(conv);
+    AhoCorasick<4, false> aho(conv);
     for(int i=0;i<p;i++) aho.add(ps[i],i);
-    aho.build(false);
+    aho.build();
 
     memset(dp,-1,sizeof(dp));
     using T = tuple<int, int, int>;

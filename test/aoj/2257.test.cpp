@@ -26,7 +26,7 @@ signed main(){
     for(int i=0;i<k;i++) cin>>season[i];
 
     Trie<27>::F f=[](char c){return c-'a';};
-    AhoCorasick<26> aho(f);
+    AhoCorasick<26, false> aho(f);
     for(int i=0;i<k;i++) aho.add(season[i],i);
     aho.build();
     int l=aho.size();
