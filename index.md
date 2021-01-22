@@ -332,7 +332,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/precision.cpp
       title: io/precision.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
     - icon: ':heavy_check_mark:'
@@ -551,7 +551,7 @@ data:
       title: segtree/types/online.cpp
   - name: string
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/ahocorasick.cpp
       title: string/ahocorasick.cpp
     - icon: ':heavy_check_mark:'
@@ -593,7 +593,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/suffixarray.cpp
       title: Suffix Array
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/trie.cpp
       title: string/trie.cpp
     - icon: ':heavy_check_mark:'
@@ -1747,7 +1747,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0831.test.cpp
       title: test/yukicoder/0831.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: test/yukicoder/1013.test.cpp
     - icon: ':heavy_check_mark:'
