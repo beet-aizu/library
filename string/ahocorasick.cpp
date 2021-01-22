@@ -14,7 +14,7 @@ struct AhoCorasick : Trie<X+1>{
   using super::super, super::next, super::size;
   using super::vs, super::conv;
 
-  vector<int> cnt;
+  vector<int> cnt,order;
 
   // O(\sigma \sum |T_i|)
   void build(){
@@ -36,6 +36,7 @@ struct AhoCorasick : Trie<X+1>{
     }
 
     while(!que.empty()){
+      order.emplace_back(que.front());
       auto &x=vs[que.front()];
       int fail=x.nxt[X];
 
@@ -86,7 +87,7 @@ struct AhoCorasick : Trie<X+1>{
       res[pos]++;
     }
     for(int i=size()-1;i;i--)
-      res[vs[i].nxt[X]]+=res[i];
+      res[vs[order[i]].nxt[X]]+=res[order[i]];
     return res;
   }
 };

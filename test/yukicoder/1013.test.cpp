@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../io/single.cpp"
 #include "../../string/trie.cpp"
 #include "../../string/ahocorasick.cpp"
 #undef call_from_test
@@ -17,12 +18,14 @@ signed main(){
   cin>>s;
   int m;
   cin>>m;
-  for(int i=0;i<m;i++){
-    string c;
-    cin>>c;
-    aho.add(c,i);
-  }
+  auto cs=read<string>(m);
+  for(auto c:cs) aho.add(c,0);
   aho.build();
   cout<<aho.match(s)<<endl;
+
+  auto res=aho.frequency(s);
+  int cnt=0;
+  for(auto c:cs) cnt+=res[aho.find(c)];
+  assert(cnt==aho.match(s));
   return 0;
 }

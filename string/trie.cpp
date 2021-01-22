@@ -6,19 +6,18 @@ using namespace std;
 template<size_t X>
 struct Trie{
   struct Node{
-    char c;
     array<int, X> nxt;
     vector<int> idxs;
     int idx;
-    Node(char c):c(c),idx(-1){fill(nxt.begin(),nxt.end(),-1);}
+    Node():idx(-1){fill(nxt.begin(),nxt.end(),-1);}
   };
 
   using F = function<int(char)>;
   vector<Node> vs;
   F conv;
 
-  Trie(F conv,char c='$'):conv(conv){vs.emplace_back(c);}
-  Trie(char start,char c='$'):Trie([=](char a){return a-start;},c){}
+  Trie(F conv):conv(conv){vs.emplace_back();}
+  Trie(char start):Trie([=](char a){return a-start;}){}
 
   inline int &next(int i,int j){
     return vs[i].nxt[j];
@@ -26,15 +25,15 @@ struct Trie{
 
   void add(const string &s,int x){
     int pos=0;
-    for(int i=0;i<(int)s.size();i++){
-      int k=conv(s[i]);
+    for(char c:s){
+      int k=conv(c);
       if(~next(pos,k)){
         pos=next(pos,k);
         continue;
       }
       int npos=vs.size();
       next(pos,k)=npos;
-      vs.emplace_back(s[i]);
+      vs.emplace_back();
       pos=npos;
     }
     vs[pos].idx=x;
@@ -43,8 +42,8 @@ struct Trie{
 
   int find(const string &s){
     int pos=0;
-    for(int i=0;i<(int)s.size();i++){
-      int k=conv(s[i]);
+    for(char c:s){
+      int k=conv(c);
       if(next(pos,k)<0) return -1;
       pos=next(pos,k);
     }
@@ -65,7 +64,6 @@ struct Trie{
   vector<int> idxs(int pos){
     return pos<0?vector<int>():vs[pos].idxs;
   }
-
 };
 //END CUT HERE
 #ifndef call_from_test
