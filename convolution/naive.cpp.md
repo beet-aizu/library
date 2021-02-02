@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -33,8 +34,8 @@ data:
   timestamp: '2020-12-19 16:36:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0168.test.cpp
   - test/yukicoder/0104.test.cpp
+  - test/aoj/0168.test.cpp
 documentation_of: convolution/naive.cpp
 layout: document
 redirect_from:

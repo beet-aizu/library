@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -70,8 +71,8 @@ data:
   verifiedWith:
   - test/yosupo/vertex_add_path_sum.test.cpp
   - test/aoj/2450.test.cpp
-  - test/aoj/2667.test.cpp
   - test/aoj/0367.test.cpp
+  - test/aoj/2667.test.cpp
 documentation_of: tree/heavylightdecomposition.cpp
 layout: document
 title: Heavy Light Decomposition

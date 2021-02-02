@@ -18,6 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/number_of_substrings.test.cpp
     title: test/yosupo/number_of_substrings.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -56,8 +57,8 @@ data:
   verifiedWith:
   - test/yosupo/number_of_substrings.test.cpp
   - test/aoj/2711.test.cpp
-  - test/aoj/3112.test.cpp
   - test/aoj/3063.test.cpp
+  - test/aoj/3112.test.cpp
 documentation_of: string/longestcommonprefix.cpp
 layout: document
 title: Longest Common Prefix

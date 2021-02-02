@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -51,9 +52,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/find_linear_recurrence.test.cpp
-  - test/yukicoder/0104.test.cpp
-  - test/yukicoder/0444.test.cpp
   - test/yukicoder/3211.test.cpp
+  - test/yukicoder/0444.test.cpp
+  - test/yukicoder/0104.test.cpp
 documentation_of: polynomial/berlekampmassey.cpp
 layout: document
 redirect_from:

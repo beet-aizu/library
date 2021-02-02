@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4569.test.cpp
     title: test/yukicoder/4569.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -65,9 +66,9 @@ data:
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0422.test.cpp
-  - test/yukicoder/4569.test.cpp
   - test/yukicoder/1504.test.cpp
+  - test/yukicoder/4569.test.cpp
+  - test/aoj/0422.test.cpp
 documentation_of: mod/rint.cpp
 layout: document
 redirect_from:

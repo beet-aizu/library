@@ -24,6 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0399.test.cpp
     title: test/yukicoder/0399.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -56,12 +57,12 @@ data:
   timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2444.test.cpp
-  - test/aoj/2292.test.cpp
-  - test/aoj/ALDS1_14_B.test.cpp
-  - test/aoj/1312.test.cpp
-  - test/aoj/ALDS1_14_C.test.cpp
   - test/yukicoder/0399.test.cpp
+  - test/aoj/1312.test.cpp
+  - test/aoj/2444.test.cpp
+  - test/aoj/ALDS1_14_B.test.cpp
+  - test/aoj/2292.test.cpp
+  - test/aoj/ALDS1_14_C.test.cpp
 documentation_of: string/rollinghash.cpp
 layout: document
 redirect_from:

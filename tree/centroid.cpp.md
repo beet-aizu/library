@@ -21,6 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -61,11 +62,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/frequency_table_of_tree_distance.test.cpp
-  - test/aoj/3084.test.cpp
-  - test/aoj/2790.test.cpp
-  - test/aoj/3142.test.cpp
-  - test/yukicoder/3961.test.cpp
   - test/yukicoder/3912.test.cpp
+  - test/yukicoder/3961.test.cpp
+  - test/aoj/3142.test.cpp
+  - test/aoj/2790.test.cpp
+  - test/aoj/3084.test.cpp
 documentation_of: tree/centroid.cpp
 layout: document
 redirect_from:

@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1665.test.cpp
     title: test/yukicoder/1665.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -32,8 +33,8 @@ data:
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2286.test.cpp
   - test/yukicoder/1665.test.cpp
+  - test/aoj/2286.test.cpp
 documentation_of: math/totient_table.cpp
 layout: document
 redirect_from:

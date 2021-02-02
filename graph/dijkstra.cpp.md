@@ -18,6 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/shortest_path.test.cpp
     title: test/yosupo/shortest_path.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -62,10 +63,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/shortest_path.test.cpp
-  - test/aoj/3183.test.cpp
-  - test/aoj/geometry/2334.test.cpp
-  - test/aoj/0423.test.cpp
   - test/aoj/3506.test.cpp
+  - test/aoj/3183.test.cpp
+  - test/aoj/0423.test.cpp
+  - test/aoj/geometry/2334.test.cpp
 documentation_of: graph/dijkstra.cpp
 layout: document
 redirect_from:

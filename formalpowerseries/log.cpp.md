@@ -51,6 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5633.test.cpp
     title: test/yukicoder/5633.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -86,13 +87,13 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/aoj/2985.test.cpp
-  - test/aoj/3084.test.cpp
-  - test/aoj/2985.garner.test.cpp
   - test/yukicoder/5633.test.cpp
+  - test/aoj/2985.test.cpp
+  - test/aoj/2985.garner.test.cpp
+  - test/aoj/3084.test.cpp
 documentation_of: formalpowerseries/log.cpp
 layout: document
 redirect_from:

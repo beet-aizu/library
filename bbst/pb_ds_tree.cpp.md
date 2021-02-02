@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3117.test.cpp
     title: test order_of_key
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -36,8 +37,8 @@ data:
   timestamp: '2019-12-26 22:03:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0563.test.cpp
   - test/aoj/3117.test.cpp
+  - test/aoj/0563.test.cpp
 documentation_of: bbst/pb_ds_tree.cpp
 layout: document
 redirect_from:

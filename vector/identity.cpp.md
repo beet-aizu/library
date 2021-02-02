@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2290.test.cpp
     title: initialize potential
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -28,8 +29,8 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0425.test.cpp
   - test/aoj/2290.test.cpp
+  - test/aoj/0425.test.cpp
 documentation_of: vector/identity.cpp
 layout: document
 redirect_from:

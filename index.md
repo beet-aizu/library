@@ -1569,6 +1569,9 @@ data:
       path: test/yosupo/kth_root_integer.test.cpp
       title: test/yosupo/kth_root_integer.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
+      title: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.linkcuttree.test.cpp
       title: test/yosupo/lca.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'

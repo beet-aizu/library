@@ -39,6 +39,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -86,14 +87,14 @@ data:
   verifiedWith:
   - test/yosupo/two_sat.test.cpp
   - test/yosupo/scc.test.cpp
-  - test/aoj/3183.test.cpp
-  - test/aoj/3102.test.cpp
-  - test/aoj/2309.tarjan.test.cpp
-  - test/aoj/GRL_2_B.test.cpp
+  - test/yukicoder/4387.test.cpp
   - test/aoj/2309.test.cpp
   - test/aoj/2647.test.cpp
   - test/aoj/2222.test.cpp
-  - test/yukicoder/4387.test.cpp
+  - test/aoj/3183.test.cpp
+  - test/aoj/3102.test.cpp
+  - test/aoj/GRL_2_B.test.cpp
+  - test/aoj/2309.tarjan.test.cpp
 documentation_of: graph/stronglyconnectedcomponent.cpp
 layout: document
 redirect_from:

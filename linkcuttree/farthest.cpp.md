@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -69,8 +70,8 @@ data:
   timestamp: '2020-10-28 18:43:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_5_A.linkcuttree.test.cpp
   - test/aoj/1595.linkcuttree.test.cpp
+  - test/aoj/GRL_5_A.linkcuttree.test.cpp
 documentation_of: linkcuttree/farthest.cpp
 layout: document
 redirect_from:

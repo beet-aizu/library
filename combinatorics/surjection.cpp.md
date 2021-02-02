@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -42,9 +43,9 @@ data:
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DPL_5_C.test.cpp
-  - test/aoj/DPL_5_I.test.cpp
   - test/yukicoder/2772.test.cpp
+  - test/aoj/DPL_5_I.test.cpp
+  - test/aoj/DPL_5_C.test.cpp
 documentation_of: combinatorics/surjection.cpp
 layout: document
 redirect_from:

@@ -21,6 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/matrix_det.test.cpp
     title: test/yosupo/matrix_det.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -194,9 +195,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/matrix_det.test.cpp
+  - test/aoj/2060.test.cpp
   - test/aoj/0314.test.cpp
   - test/aoj/1328.test.cpp
-  - test/aoj/2060.test.cpp
 documentation_of: linearalgebra/matrix.cpp
 layout: document
 redirect_from:

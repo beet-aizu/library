@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -87,8 +88,8 @@ data:
   timestamp: '2020-11-02 16:12:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0391.test.cpp
   - test/yukicoder/3405.test.cpp
+  - test/aoj/0391.test.cpp
 documentation_of: tree/levelancestor.cpp
 layout: document
 redirect_from:

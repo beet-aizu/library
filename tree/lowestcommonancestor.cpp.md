@@ -24,6 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -67,11 +68,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
-  - test/aoj/0439.test.cpp
+  - test/yukicoder/4852.test.cpp
+  - test/yukicoder/3407.test.cpp
   - test/aoj/2270.test.cpp
   - test/aoj/GRL_5_C.test.cpp
-  - test/yukicoder/3407.test.cpp
-  - test/yukicoder/4852.test.cpp
+  - test/aoj/0439.test.cpp
 documentation_of: tree/lowestcommonancestor.cpp
 layout: document
 redirect_from:

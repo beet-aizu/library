@@ -18,6 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -63,9 +64,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static_range_inversions_query.test.cpp
-  - test/aoj/0425.test.cpp
-  - test/aoj/2270.test.cpp
   - test/yukicoder/5223.test.cpp
+  - test/aoj/2270.test.cpp
+  - test/aoj/0425.test.cpp
 documentation_of: algorithm/mo.cpp
 layout: document
 redirect_from:

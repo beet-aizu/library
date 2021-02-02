@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/persistent_queue.test.cpp
     title: test/yosupo/persistent_queue.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -62,8 +63,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp
-  - test/aoj/0438.test.cpp
   - test/aoj/2890.test.cpp
+  - test/aoj/0438.test.cpp
 documentation_of: bbst/rbst/data/array.cpp
 layout: document
 redirect_from:

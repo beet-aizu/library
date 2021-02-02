@@ -21,6 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_E.test.cpp
     title: test/aoj/NTL_1_E.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -41,9 +42,9 @@ data:
   isVerificationFile: false
   path: math/extgcd.cpp
   requiredBy:
-  - mod/inverse.cpp
   - math/combination.cpp
   - math/linearcongruence.cpp
+  - mod/inverse.cpp
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

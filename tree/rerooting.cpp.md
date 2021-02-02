@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2085.test.cpp
     title: test/yukicoder/2085.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -75,9 +76,9 @@ data:
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/2085.test.cpp
   - test/aoj/3148.test.cpp
   - test/aoj/1595.test.cpp
-  - test/yukicoder/2085.test.cpp
 documentation_of: tree/rerooting.cpp
 layout: document
 title: ReRooting

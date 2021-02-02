@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1580.test.cpp
     title: test/yukicoder/1580.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -34,8 +35,8 @@ data:
   timestamp: '2020-02-15 15:47:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0233.test.cpp
   - test/yukicoder/1580.test.cpp
+  - test/aoj/0233.test.cpp
 documentation_of: math/convertbase.cpp
 layout: document
 redirect_from:

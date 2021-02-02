@@ -7,11 +7,15 @@ data:
     path: test/aoj/0168.test.cpp
     title: test/aoj/0168.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
+    title: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -52,9 +56,10 @@ data:
   timestamp: '2020-12-20 13:43:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0168.test.cpp
-  - test/yukicoder/0104.test.cpp
+  - test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
   - test/yukicoder/0444.test.cpp
+  - test/yukicoder/0104.test.cpp
+  - test/aoj/0168.test.cpp
 documentation_of: math/bostanmori.cpp
 layout: document
 redirect_from:

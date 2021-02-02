@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2063.test.cpp
     title: test/yukicoder/2063.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -66,10 +67,10 @@ data:
   timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/point_add_rectangle_sum.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
-  - test/aoj/2842.test.cpp
+  - test/yosupo/point_add_rectangle_sum.test.cpp
   - test/yukicoder/2063.test.cpp
+  - test/aoj/2842.test.cpp
 documentation_of: segtree/count/dynamic_offline.cpp
 layout: document
 redirect_from:

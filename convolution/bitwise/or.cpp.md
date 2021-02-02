@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -32,8 +33,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/subset_convolution.test.cpp
-  - test/aoj/2446.test.cpp
   - test/yukicoder/5025.test.cpp
+  - test/aoj/2446.test.cpp
 documentation_of: convolution/bitwise/or.cpp
 layout: document
 redirect_from:

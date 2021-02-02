@@ -18,6 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

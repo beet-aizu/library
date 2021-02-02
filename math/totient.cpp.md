@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0472.test.cpp
     title: test/yukicoder/0472.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -38,8 +39,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/tetration_mod.test.cpp
-  - test/aoj/NTL_1_D.test.cpp
   - test/yukicoder/0472.test.cpp
+  - test/aoj/NTL_1_D.test.cpp
 documentation_of: math/totient.cpp
 layout: document
 redirect_from:

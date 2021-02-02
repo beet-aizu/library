@@ -21,6 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
     title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -88,10 +89,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
-  - test/aoj/DSL_2_F.bbst.test.cpp
-  - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp
+  - test/aoj/DSL_2_F.bbst.test.cpp
   - test/aoj/DSL_2_I.bbst.test.cpp
+  - test/aoj/DSL_2_G.bbst.test.cpp
 documentation_of: bbst/rbst/data/lazy.cpp
 layout: document
 redirect_from:

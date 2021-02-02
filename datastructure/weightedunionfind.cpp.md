@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3592.test.cpp
     title: test/yukicoder/3592.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -44,8 +45,8 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_1_B.test.cpp
   - test/yukicoder/3592.test.cpp
+  - test/aoj/DSL_1_B.test.cpp
 documentation_of: datastructure/weightedunionfind.cpp
 layout: document
 redirect_from:

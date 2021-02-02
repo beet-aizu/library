@@ -6,6 +6,7 @@ data:
     title: Minimum Cost Flow with Capacity Scaling
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

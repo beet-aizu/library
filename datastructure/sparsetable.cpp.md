@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/staticrmq.sparsetable.test.cpp
     title: test/yosupo/staticrmq.sparsetable.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -46,8 +47,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/staticrmq.sparsetable.test.cpp
-  - test/aoj/DSL_3_D.sparsetable.test.cpp
   - test/aoj/3086.test.cpp
+  - test/aoj/DSL_3_D.sparsetable.test.cpp
 documentation_of: datastructure/sparsetable.cpp
 layout: document
 redirect_from:

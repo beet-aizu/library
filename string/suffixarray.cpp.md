@@ -27,6 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/suffixarray.test.cpp
     title: test/yosupo/suffixarray.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -98,11 +99,11 @@ data:
   verifiedWith:
   - test/yosupo/suffixarray.test.cpp
   - test/yosupo/number_of_substrings.test.cpp
-  - test/aoj/3033.test.cpp
   - test/aoj/2644.test.cpp
   - test/aoj/2711.test.cpp
-  - test/aoj/3112.test.cpp
   - test/aoj/3063.test.cpp
+  - test/aoj/3033.test.cpp
+  - test/aoj/3112.test.cpp
 documentation_of: string/suffixarray.cpp
 layout: document
 title: Suffix Array

@@ -42,6 +42,7 @@ data:
     title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':warning:'
   attributes:

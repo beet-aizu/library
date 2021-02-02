@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0022.test.cpp
     title: test/yukicoder/0022.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -38,8 +39,8 @@ data:
   timestamp: '2020-03-10 20:00:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2951.test.cpp
   - test/yukicoder/0022.test.cpp
+  - test/aoj/2951.test.cpp
 documentation_of: polynomial/lagrangeinterpolation.cpp
 layout: document
 redirect_from:

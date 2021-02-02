@@ -51,6 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5633.test.cpp
     title: test/yukicoder/5633.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -76,23 +77,23 @@ data:
   isVerificationFile: false
   path: formalpowerseries/diff.cpp
   requiredBy:
-  - polynomial/interpolate.cpp
   - includes/formalpowerseries.h
   - formalpowerseries/pow.cpp
   - formalpowerseries/log.cpp
   - formalpowerseries/exp.cpp
+  - polynomial/interpolate.cpp
   timestamp: '2020-11-22 16:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/aoj/2985.test.cpp
-  - test/aoj/3084.test.cpp
-  - test/aoj/2985.garner.test.cpp
   - test/yukicoder/5633.test.cpp
+  - test/aoj/2985.test.cpp
+  - test/aoj/2985.garner.test.cpp
+  - test/aoj/3084.test.cpp
 documentation_of: formalpowerseries/diff.cpp
 layout: document
 redirect_from:

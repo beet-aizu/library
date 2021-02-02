@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2971.test.cpp
     title: test/aoj/2971.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -143,8 +144,8 @@ data:
   timestamp: '2020-10-27 17:58:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2971.test.cpp
   - test/aoj/1630.test.cpp
+  - test/aoj/2971.test.cpp
 documentation_of: polynomial/hash.cpp
 layout: document
 redirect_from:

@@ -18,6 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -86,9 +87,9 @@ data:
   verifiedWith:
   - test/yosupo/point_set_range_composite.test.cpp
   - test/aoj/2644.test.cpp
-  - test/aoj/2969.test.cpp
-  - test/aoj/DSL_2_A.test.cpp
   - test/aoj/0367.test.cpp
+  - test/aoj/DSL_2_A.test.cpp
+  - test/aoj/2969.test.cpp
 documentation_of: segtree/basic/ushi.cpp
 layout: document
 redirect_from:
