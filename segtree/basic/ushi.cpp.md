@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/yukicoder/3277.cpp
-    title: test/yukicoder/3277.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0367.test.cpp
@@ -21,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3277.test.cpp
+    title: test/yukicoder/3277.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -69,12 +69,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: segtree/basic/ushi.cpp
-  requiredBy:
-  - test/yukicoder/3277.cpp
+  requiredBy: []
   timestamp: '2021-02-05 14:59:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_set_range_composite.test.cpp
+  - test/yukicoder/3277.test.cpp
   - test/aoj/2644.test.cpp
   - test/aoj/0367.test.cpp
   - test/aoj/DSL_2_A.test.cpp

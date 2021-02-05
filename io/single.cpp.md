@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/yukicoder/3277.cpp
-    title: test/yukicoder/3277.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0437.test.cpp
@@ -49,6 +46,9 @@ data:
     path: test/yukicoder/2113.test.cpp
     title: test/yukicoder/2113.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3277.test.cpp
+    title: test/yukicoder/3277.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4387.test.cpp
     title: test/yukicoder/4387.test.cpp
   - icon: ':heavy_check_mark:'
@@ -76,14 +76,14 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: io/single.cpp
-  requiredBy:
-  - test/yukicoder/3277.cpp
+  requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static_range_inversions_query.test.cpp
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/1013.test.cpp
+  - test/yukicoder/3277.test.cpp
   - test/yukicoder/4387.test.cpp
   - test/yukicoder/4872.test.cpp
   - test/yukicoder/1950.test.cpp
