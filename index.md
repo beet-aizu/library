@@ -599,6 +599,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
+  - name: test/yukicoder
+    pages:
+    - icon: ':warning:'
+      path: test/yukicoder/3277.cpp
+      title: test/yukicoder/3277.cpp
   - name: tools
     pages:
     - icon: ':heavy_check_mark:'

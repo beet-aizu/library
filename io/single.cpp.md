@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/yukicoder/3277.cpp
+    title: test/yukicoder/3277.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0437.test.cpp
@@ -73,7 +76,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: io/single.cpp
-  requiredBy: []
+  requiredBy:
+  - test/yukicoder/3277.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
