@@ -44,65 +44,34 @@ struct SegmentTree{
   }
 
   template<typename C>
-  int find(int st,C &check,T &acc,int k,int l,int r){
+  int max_right(int s,C &check,T &acc,int k,int l,int r){
     if(l+1==r){
       acc=f(acc,dat[k]);
-      return check(acc)?k-n:-1;
+      return check(acc)?-1:k-n;
     }
     int m=(l+r)>>1;
-    if(m<=st) return find(st,check,acc,(k<<1)|1,m,r);
-    if(st<=l and !check(f(acc,dat[k]))){
+    if(m<=s) return max_right(s,check,acc,(k<<1)|1,m,r);
+    if(s<=l and check(f(acc,dat[k]))){
       acc=f(acc,dat[k]);
       return -1;
     }
-    int vl=find(st,check,acc,(k<<1)|0,l,m);
+    int vl=max_right(s,check,acc,(k<<1)|0,l,m);
     if(~vl) return vl;
-    return find(st,check,acc,(k<<1)|1,m,r);
+    return max_right(s,check,acc,(k<<1)|1,m,r);
   }
 
+  // max t s.t. check(query(s,t))
+  // O(\log N)
   template<typename C>
-  int find(int st,C &check){
+  int max_right(int s,C &check){
+    assert(s<n and check(ti) and not check(query(s,n)));
     T acc=ti;
-    return find(st,check,acc,1,0,n);
+    return max_right(s,check,acc,1,0,n);
   }
 };
 //END CUT HERE
 #ifndef call_from_test
-
-// find with non-invertible monoid
-signed KUPC2013_D(){
-  int n;
-  scanf("%d",&n);
-  vector<int> as(n+2,0);
-  for(int i=1;i<=n;i++) scanf("%d",&as[i]);
-
-  const int INF = 1.1e9;
-  auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int> seg(f,INF);
-  seg.build(as);
-
-  using P = pair<int, int>;
-  set<P> sp;
-  for(int k=0;k<2;k++){
-    for(int i=1;i<=n;i++){
-      auto check=[&](int x){return x<as[i];};
-      int l=seg.find(i,check);
-      sp.emplace(k?n+2-l:l,as[i]);
-    }
-    reverse(as.begin(),as.end());
-    seg.build(as);
-  }
-
-  printf("%d\n",(int)sp.size()/2);
-  return 0;
-}
-/*
-  verified on 2019/12/26
-  https://atcoder.jp/contests/kupc2013/tasks/kupc2013_d
-*/
-
 signed main(){
-  //KUPC2013_D();
   return 0;
 }
 #endif
