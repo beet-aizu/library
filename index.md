@@ -338,6 +338,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/tuple.cpp
       title: io/tuple.cpp
+    - icon: ':heavy_check_mark:'
+      path: io/yesno.cpp
+      title: io/yesno.cpp
   - name: linearalgebra
     pages:
     - icon: ':heavy_check_mark:'
@@ -1814,6 +1817,9 @@ data:
       path: test/yukicoder/3277.test.cpp
       title: test/yukicoder/3277.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yukicoder/3354.test.cpp
+      title: test/yukicoder/3354.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/3405.test.cpp
       title: test/yukicoder/3405.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1834,6 +1840,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4072.test.cpp
       title: test/yukicoder/4072.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/4117.test.cpp
+      title: test/yukicoder/4117.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/4271.avx2.test.cpp
       title: test/yukicoder/4271.avx2.test.cpp

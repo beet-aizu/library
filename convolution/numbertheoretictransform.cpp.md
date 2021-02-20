@@ -142,31 +142,31 @@ data:
   timestamp: '2020-10-27 17:04:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
+  - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
+  - test/yosupo/inv_of_formal_power_series.test.cpp
+  - test/yosupo/polynomial_taylor_shift.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/sharp_p_subset_sum.test.cpp
+  - test/yosupo/convolution_mod_1000000007.garner.test.cpp
+  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/convolution_mod.test.cpp
+  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - test/yosupo/bernoulli_number.test.cpp
-  - test/yosupo/polynomial_taylor_shift.test.cpp
-  - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/convolution_mod_1000000007.garner.test.cpp
-  - test/yosupo/exp_of_formal_power_series.test.cpp
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
-  - test/yosupo/partition_function.test.cpp
-  - test/yosupo/inv_of_formal_power_series.test.cpp
-  - test/yosupo/multipoint_evaluation.test.cpp
-  - test/yosupo/sharp_p_subset_sum.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/yosupo/convolution_mod.test.cpp
-  - test/yukicoder/1504.test.cpp
-  - test/yukicoder/5633.test.cpp
-  - test/aoj/2959.test.cpp
-  - test/aoj/2560.test.cpp
-  - test/aoj/2977.test.cpp
-  - test/aoj/3074.test.cpp
-  - test/aoj/3072.test.cpp
   - test/aoj/2985.garner.test.cpp
   - test/aoj/3084.test.cpp
+  - test/aoj/3074.test.cpp
+  - test/aoj/2959.test.cpp
+  - test/aoj/3072.test.cpp
+  - test/aoj/2977.test.cpp
+  - test/aoj/2560.test.cpp
+  - test/yukicoder/5633.test.cpp
+  - test/yukicoder/1504.test.cpp
 documentation_of: convolution/numbertheoretictransform.cpp
 layout: document
 redirect_from:

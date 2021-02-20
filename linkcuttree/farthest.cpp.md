@@ -70,8 +70,8 @@ data:
   timestamp: '2020-10-28 18:43:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1595.linkcuttree.test.cpp
   - test/aoj/GRL_5_A.linkcuttree.test.cpp
+  - test/aoj/1595.linkcuttree.test.cpp
 documentation_of: linkcuttree/farthest.cpp
 layout: document
 redirect_from:

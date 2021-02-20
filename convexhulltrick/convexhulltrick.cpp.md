@@ -78,8 +78,8 @@ data:
   timestamp: '2020-10-27 13:13:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2975.test.cpp
   - test/aoj/2725.test.cpp
+  - test/aoj/2975.test.cpp
 documentation_of: convexhulltrick/convexhulltrick.cpp
 layout: document
 redirect_from:

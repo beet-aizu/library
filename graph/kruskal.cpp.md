@@ -56,8 +56,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/manhattanmst.test.cpp
-  - test/aoj/0403.test.cpp
   - test/aoj/GRL_2_A.test.cpp
+  - test/aoj/0403.test.cpp
 documentation_of: graph/kruskal.cpp
 layout: document
 redirect_from:

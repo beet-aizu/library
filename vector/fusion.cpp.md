@@ -34,9 +34,9 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2359.test.cpp
-  - test/aoj/2563.test.cpp
   - test/aoj/2969.test.cpp
+  - test/aoj/2563.test.cpp
+  - test/aoj/2359.test.cpp
 documentation_of: vector/fusion.cpp
 layout: document
 redirect_from:

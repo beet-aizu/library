@@ -34,8 +34,8 @@ data:
   timestamp: '2020-12-19 16:36:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0104.test.cpp
   - test/aoj/0168.test.cpp
+  - test/yukicoder/0104.test.cpp
 documentation_of: convolution/naive.cpp
 layout: document
 redirect_from:

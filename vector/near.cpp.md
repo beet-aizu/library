@@ -50,9 +50,9 @@ data:
   timestamp: '2020-11-15 18:14:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/4778.test.cpp
-  - test/aoj/2359.test.cpp
   - test/aoj/2969.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/yukicoder/4778.test.cpp
 documentation_of: vector/near.cpp
 layout: document
 redirect_from:
