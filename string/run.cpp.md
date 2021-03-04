@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
   _extendedRequiredBy: []
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: string/run.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
+  timestamp: '2021-03-04 17:00:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/runenumerate.test.cpp

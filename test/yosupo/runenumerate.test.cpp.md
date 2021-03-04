@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/run.cpp
     title: string/run.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/zalgorithm.cpp
     title: string/zalgorithm.cpp
   _extendedRequiredBy: []
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/runenumerate.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:26:46+09:00'
+  timestamp: '2021-03-04 17:00:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/runenumerate.test.cpp

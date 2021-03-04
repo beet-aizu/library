@@ -335,7 +335,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: io/single.cpp
       title: io/single.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: io/space.cpp
       title: io/space.cpp
     - icon: ':heavy_check_mark:'
@@ -602,7 +602,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/trie.cpp
       title: string/trie.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/zalgorithm.cpp
       title: string/zalgorithm.cpp
   - name: tools
@@ -1724,7 +1724,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/vertex_add_subtree_sum.test.cpp
       title: test/yosupo/vertex_add_subtree_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/zalgorithm.test.cpp
       title: test/yosupo/zalgorithm.test.cpp
   - name: test/yukicoder

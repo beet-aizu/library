@@ -12,38 +12,39 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/runenumerate.test.cpp
     title: test/yosupo/runenumerate.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/zalgorithm.test.cpp
     title: test/yosupo/zalgorithm.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/zalgorithm.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n// longest common prefix of s and\
-    \ s[i:n]\ntemplate<typename T>\nvector<int> zalgorithm(vector<T> vs){\n  int n=vs.size();\n\
-    \  vector<int> as(n+1,0);\n  as[0]=n;\n  int i=1,j=0;\n  while(i<n){\n    while(i+j<n\
-    \ and vs[j]==vs[i+j]) j++;\n    as[i]=j;\n    if(j==0){\n      i++;\n      continue;\n\
-    \    }\n    int k=1;\n    while(i+k<n and k+as[k]<j) as[i+k]=as[k],k++;\n    i+=k;\n\
-    \    j-=k;\n  }\n  return as;\n}\nvector<int> zalgorithm(string s){\n  return\
-    \ zalgorithm(vector<char>(s.begin(),s.end()));\n}\n//END CUT HERE\n#ifndef call_from_test\n\
-    signed main(){\n  return 0;\n}\n#endif\n"
+    \ s[i:n]\n// return n + 1 elements for run enumerate\ntemplate<typename T>\nvector<int>\
+    \ zalgorithm(vector<T> vs){\n  int n=vs.size();\n  vector<int> as(n+1,0);\n  as[0]=n;\n\
+    \  int i=1,j=0;\n  while(i<n){\n    while(i+j<n and vs[j]==vs[i+j]) j++;\n   \
+    \ as[i]=j;\n    if(j==0){\n      i++;\n      continue;\n    }\n    int k=1;\n\
+    \    while(i+k<n and k+as[k]<j) as[i+k]=as[k],k++;\n    i+=k;\n    j-=k;\n  }\n\
+    \  return as;\n}\nvector<int> zalgorithm(string s){\n  return zalgorithm(vector<char>(s.begin(),s.end()));\n\
+    }\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    #endif\n//BEGIN CUT HERE\n// longest common prefix of s and s[i:n]\ntemplate<typename\
-    \ T>\nvector<int> zalgorithm(vector<T> vs){\n  int n=vs.size();\n  vector<int>\
-    \ as(n+1,0);\n  as[0]=n;\n  int i=1,j=0;\n  while(i<n){\n    while(i+j<n and vs[j]==vs[i+j])\
-    \ j++;\n    as[i]=j;\n    if(j==0){\n      i++;\n      continue;\n    }\n    int\
-    \ k=1;\n    while(i+k<n and k+as[k]<j) as[i+k]=as[k],k++;\n    i+=k;\n    j-=k;\n\
-    \  }\n  return as;\n}\nvector<int> zalgorithm(string s){\n  return zalgorithm(vector<char>(s.begin(),s.end()));\n\
+    #endif\n//BEGIN CUT HERE\n// longest common prefix of s and s[i:n]\n// return\
+    \ n + 1 elements for run enumerate\ntemplate<typename T>\nvector<int> zalgorithm(vector<T>\
+    \ vs){\n  int n=vs.size();\n  vector<int> as(n+1,0);\n  as[0]=n;\n  int i=1,j=0;\n\
+    \  while(i<n){\n    while(i+j<n and vs[j]==vs[i+j]) j++;\n    as[i]=j;\n    if(j==0){\n\
+    \      i++;\n      continue;\n    }\n    int k=1;\n    while(i+k<n and k+as[k]<j)\
+    \ as[i+k]=as[k],k++;\n    i+=k;\n    j-=k;\n  }\n  return as;\n}\nvector<int>\
+    \ zalgorithm(string s){\n  return zalgorithm(vector<char>(s.begin(),s.end()));\n\
     }\n//END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: string/zalgorithm.cpp
   requiredBy:
   - string/run.cpp
-  timestamp: '2020-10-27 13:26:46+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-03-04 17:00:41+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/runenumerate.test.cpp
