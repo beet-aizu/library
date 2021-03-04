@@ -15,6 +15,8 @@ signed main(){
   string s;
   cin>>s;
 
-  space(zalgorithm(s));
+  auto zs=zalgorithm(s);
+  zs.pop_back();
+  space(zs);
   return 0;
 }

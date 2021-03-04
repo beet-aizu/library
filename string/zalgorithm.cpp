@@ -4,6 +4,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 // longest common prefix of s and s[i:n]
+// return n + 1 elements for run enumerate
 template<typename T>
 vector<int> zalgorithm(vector<T> vs){
   int n=vs.size();
