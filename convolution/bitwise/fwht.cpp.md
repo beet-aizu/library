@@ -54,10 +54,10 @@ data:
   - test/yosupo/bitwise_xor_convolution.test.cpp
   - test/yosupo/subset_convolution.test.cpp
   - test/yosupo/bitwise_and_convolution.test.cpp
-  - test/aoj/2446.test.cpp
-  - test/aoj/2981.test.cpp
-  - test/aoj/0402.test.cpp
   - test/yukicoder/5025.test.cpp
+  - test/aoj/0402.test.cpp
+  - test/aoj/2981.test.cpp
+  - test/aoj/2446.test.cpp
 documentation_of: convolution/bitwise/fwht.cpp
 layout: document
 redirect_from:

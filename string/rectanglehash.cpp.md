@@ -43,8 +43,8 @@ data:
   timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/ALDS1_14_C.test.cpp
   - test/aoj/1312.test.cpp
+  - test/aoj/ALDS1_14_C.test.cpp
 documentation_of: string/rectanglehash.cpp
 layout: document
 redirect_from:

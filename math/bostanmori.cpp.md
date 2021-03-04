@@ -57,9 +57,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
-  - test/aoj/0168.test.cpp
-  - test/yukicoder/0444.test.cpp
   - test/yukicoder/0104.test.cpp
+  - test/yukicoder/0444.test.cpp
+  - test/aoj/0168.test.cpp
 documentation_of: math/bostanmori.cpp
 layout: document
 redirect_from:

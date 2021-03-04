@@ -42,8 +42,8 @@ data:
   isVerificationFile: false
   path: mod/inverse.cpp
   requiredBy:
-  - math/linearcongruence.cpp
   - math/combination.cpp
+  - math/linearcongruence.cpp
   timestamp: '2020-11-13 17:57:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

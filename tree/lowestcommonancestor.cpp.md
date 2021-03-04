@@ -68,11 +68,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
-  - test/aoj/GRL_5_C.test.cpp
-  - test/aoj/2270.test.cpp
-  - test/aoj/0439.test.cpp
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/3407.test.cpp
+  - test/aoj/0439.test.cpp
+  - test/aoj/GRL_5_C.test.cpp
+  - test/aoj/2270.test.cpp
 documentation_of: tree/lowestcommonancestor.cpp
 layout: document
 redirect_from:

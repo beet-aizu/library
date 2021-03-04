@@ -54,9 +54,9 @@ data:
   timestamp: '2020-10-27 17:04:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2560.test.cpp
   - test/aoj/3074.test.cpp
   - test/aoj/2977.test.cpp
-  - test/aoj/2560.test.cpp
 documentation_of: convolution/convolution2D.cpp
 layout: document
 redirect_from:
