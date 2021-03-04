@@ -322,7 +322,6 @@
 "test/yosupo/unionfind.test.cpp": "2020-10-27 19:32:25 +0900",
 "test/yosupo/vertex_add_path_sum.test.cpp": "2020-10-27 12:55:52 +0900",
 "test/yosupo/vertex_add_subtree_sum.test.cpp": "2020-10-27 19:32:25 +0900",
-"test/yosupo/zalgorithm.test.cpp": "2020-10-27 13:26:46 +0900",
 "test/yukicoder/0022.test.cpp": "2020-10-27 13:13:52 +0900",
 "test/yukicoder/0104.test.cpp": "2020-12-20 13:43:34 +0900",
 "test/yukicoder/0143.test.cpp": "2020-10-27 12:55:52 +0900",
