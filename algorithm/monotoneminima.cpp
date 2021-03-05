@@ -18,7 +18,7 @@ namespace MonotoneMinima{
     induce<T>(m+1,r,idx,b,dp,dist);
   }
 
-  // p < q -> argmin f(p, *) < argmin f(q, *)
+  // p < q -> argmin f(p, *) <= argmin f(q, *)
   template<typename T,typename F>
   vector<int> args(int n,int m,F dist){
     vector<int> dp(n,-1);
