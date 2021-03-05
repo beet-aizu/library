@@ -58,11 +58,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0399.test.cpp
-  - test/aoj/2444.test.cpp
   - test/aoj/1312.test.cpp
-  - test/aoj/ALDS1_14_B.test.cpp
+  - test/aoj/2444.test.cpp
   - test/aoj/ALDS1_14_C.test.cpp
   - test/aoj/2292.test.cpp
+  - test/aoj/ALDS1_14_B.test.cpp
 documentation_of: string/rollinghash.cpp
 layout: document
 redirect_from:

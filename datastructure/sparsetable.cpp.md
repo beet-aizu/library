@@ -47,8 +47,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/staticrmq.sparsetable.test.cpp
-  - test/aoj/3086.test.cpp
   - test/aoj/DSL_3_D.sparsetable.test.cpp
+  - test/aoj/3086.test.cpp
 documentation_of: datastructure/sparsetable.cpp
 layout: document
 redirect_from:

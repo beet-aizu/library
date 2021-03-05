@@ -38,11 +38,11 @@ data:
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
-  - graph/nicetree.cpp
   - linearalgebra/binarymatrix.cpp
-  - datastructure/slidingwindowaggregation.cpp
+  - graph/nicetree.cpp
   - linkcuttree/subtree.cpp
   - tree/diameterforedge.cpp
+  - datastructure/slidingwindowaggregation.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

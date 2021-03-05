@@ -48,9 +48,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_set_range_composite.test.cpp
+  - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   - test/yosupo/queue_operate_all_composite.test.cpp
   - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
 documentation_of: math/linearfunction.cpp
 layout: document
 redirect_from:

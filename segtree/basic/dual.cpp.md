@@ -59,9 +59,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3912.test.cpp
+  - test/aoj/DSL_2_D.test.cpp
   - test/aoj/3112.test.cpp
   - test/aoj/DSL_2_E.test.cpp
-  - test/aoj/DSL_2_D.test.cpp
   - test/aoj/2359.test.cpp
 documentation_of: segtree/basic/dual.cpp
 layout: document

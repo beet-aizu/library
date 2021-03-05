@@ -61,9 +61,9 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/frequency_table_of_tree_distance.test.cpp
-  - test/yukicoder/3912.test.cpp
   - test/yukicoder/3961.test.cpp
+  - test/yukicoder/3912.test.cpp
+  - test/yosupo/frequency_table_of_tree_distance.test.cpp
   - test/aoj/3142.test.cpp
   - test/aoj/3084.test.cpp
   - test/aoj/2790.test.cpp

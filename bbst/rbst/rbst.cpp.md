@@ -158,17 +158,17 @@ data:
   timestamp: '2020-11-04 17:54:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/yosupo/persistent_queue.test.cpp
-  - test/aoj/DSL_2_G.bbst.test.cpp
-  - test/aoj/1508.test.cpp
-  - test/aoj/0437.test.cpp
-  - test/aoj/2890.test.cpp
-  - test/aoj/DSL_2_I.bbst.test.cpp
-  - test/aoj/DSL_2_H.bbst.test.cpp
+  - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/aoj/1579.test.cpp
   - test/aoj/0438.test.cpp
+  - test/aoj/2890.test.cpp
+  - test/aoj/DSL_2_I.bbst.test.cpp
+  - test/aoj/1508.test.cpp
+  - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_F.bbst.test.cpp
+  - test/aoj/DSL_2_H.bbst.test.cpp
+  - test/aoj/0437.test.cpp
 documentation_of: bbst/rbst/rbst.cpp
 layout: document
 redirect_from:

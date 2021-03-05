@@ -63,8 +63,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/persistent_queue.test.cpp
-  - test/aoj/2890.test.cpp
   - test/aoj/0438.test.cpp
+  - test/aoj/2890.test.cpp
 documentation_of: bbst/rbst/data/array.cpp
 layout: document
 redirect_from:

@@ -42,8 +42,8 @@ data:
   isVerificationFile: false
   path: math/extgcd.cpp
   requiredBy:
-  - math/combination.cpp
   - math/linearcongruence.cpp
+  - math/combination.cpp
   - mod/inverse.cpp
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
