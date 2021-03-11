@@ -19,6 +19,9 @@ data:
     path: test/aoj/2646.test.cpp
     title: test/aoj/2646.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2687.test.cpp
+    title: test/aoj/2687.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/2790.test.cpp
     title: test/aoj/2790.test.cpp
   - icon: ':heavy_check_mark:'
@@ -83,6 +86,7 @@ data:
   - test/aoj/1642.test.cpp
   - test/aoj/geometry/2448.test.cpp
   - test/aoj/3142.test.cpp
+  - test/aoj/2687.test.cpp
   - test/aoj/3084.test.cpp
   - test/aoj/2790.test.cpp
 documentation_of: tools/fixpoint.cpp

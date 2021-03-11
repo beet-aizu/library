@@ -177,6 +177,9 @@ data:
       path: datastructure/rangeslide.cpp
       title: datastructure/rangeslide.cpp
     - icon: ':heavy_check_mark:'
+      path: datastructure/rotcev.cpp
+      title: datastructure/rotcev.cpp
+    - icon: ':heavy_check_mark:'
       path: datastructure/skewheap.cpp
       title: datastructure/skewheap.cpp
     - icon: ':heavy_check_mark:'
@@ -1021,6 +1024,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2679.test.cpp
       title: lexicographical cost
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2687.test.cpp
+      title: test/aoj/2687.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2711.test.cpp
       title: test lcp
