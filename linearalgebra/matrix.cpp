@@ -17,7 +17,7 @@ struct Matrix{
   arr& operator[](size_t k){return dat[k];}
   const arr& operator[](size_t k) const {return dat[k];}
 
-  static Matrix cross(const Matrix &A,const Matrix &B){
+  static Matrix matmul(const Matrix &A,const Matrix &B){
     Matrix res(A.size(),B[0].size());
     for(int i=0;i<(int)A.size();i++)
       for(int j=0;j<(int)B[0].size();j++)
@@ -35,8 +35,8 @@ struct Matrix{
   Matrix pow(long long n) const{
     Matrix a(dat),res=identity(size());
     while(n){
-      if(n&1) res=cross(res,a);
-      a=cross(a,a);
+      if(n&1) res=matmul(res,a);
+      a=matmul(a,a);
       n>>=1;
     }
     return res;
