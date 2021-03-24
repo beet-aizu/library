@@ -752,6 +752,11 @@ data:
       path: vector/zip.cpp
       title: vector/zip.cpp
   verificationCategories:
+  - name: blog
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: blog/monoid.test.cpp
+      title: blog/monoid.test.cpp
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'
