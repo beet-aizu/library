@@ -53,7 +53,7 @@ title: "\u30E2\u30CE\u30A4\u30C9\u307E\u3068\u3081"
 一点更新　区間積　うし木
 ```cpp
   using M = SquareMatrix<unsigned, 6>;
-  auto f=[](M a,M b){return M::cross(a,b);};
+  auto f=[](M a,M b){return a*b;};
 ```
 [https://atcoder.jp/contests/ddcc2019-final/submissions/4558460:title]
 
@@ -68,7 +68,7 @@ DAGの数え上げはDPでできる　DPをセグ木で高速化
 ```cpp
   using M = Mint<Int>;
   using MM = SquareMatrix<M, 2>;
-  auto f=[&](MM a,MM b){return MM::cross(b,a);};
+  auto f=[&](MM a,MM b){return b*a;};
 ```
 [https://atcoder.jp/contests/yahoo-procon2019-final/submissions/4558478:title]
 
@@ -212,7 +212,7 @@ pekempeyさんの解説：
   auto f=[](int a,int b){
            if(a==0&&b==0) return 0;
            if(a==0||b==0) return a?a:b;
-           return __gcd(abs(a),abs(b));
+           return gcd(abs(a),abs(b));
          };
 ```
 [https://atcoder.jp/contests/arc017/submissions/4558398:title]
@@ -287,7 +287,7 @@ upd, mul, add, fib
 ```cpp
   using M = Mint<int>;
   using MM = SquareMatrix<M, 2>;
-  auto f=[](MM a,MM b){return MM::cross(a,b);};
+  auto f=[](MM a,MM b){return a*b;};
 ```
 [https://yukicoder.me/submissions/320087:title]
 

@@ -38,8 +38,8 @@ data:
   timestamp: '2020-10-24 12:57:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0472.test.cpp
   - test/yosupo/tetration_mod.test.cpp
+  - test/yukicoder/0472.test.cpp
   - test/aoj/NTL_1_D.test.cpp
 documentation_of: math/totient.cpp
 layout: document

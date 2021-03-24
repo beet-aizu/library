@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: linearalgebra/tree_theorem.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:32:25+09:00'
+  timestamp: '2021-03-24 18:46:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0314.test.cpp

@@ -66,8 +66,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1013.test.cpp
-  - test/aoj/2257.test.cpp
   - test/aoj/3073.test.cpp
+  - test/aoj/2257.test.cpp
   - test/aoj/2212.test.cpp
 documentation_of: string/ahocorasick.cpp
 layout: document

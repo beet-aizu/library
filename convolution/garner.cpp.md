@@ -71,8 +71,8 @@ data:
   timestamp: '2020-10-27 17:04:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1504.test.cpp
   - test/yosupo/convolution_mod_1000000007.garner.test.cpp
+  - test/yukicoder/1504.test.cpp
   - test/aoj/2985.garner.test.cpp
 documentation_of: convolution/garner.cpp
 layout: document

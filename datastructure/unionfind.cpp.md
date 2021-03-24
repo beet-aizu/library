@@ -75,10 +75,10 @@ data:
   - test/yosupo/unionfind.test.cpp
   - test/yosupo/manhattanmst.test.cpp
   - test/aoj/2995.test.cpp
-  - test/aoj/0314.test.cpp
+  - test/aoj/DSL_1_A.test.cpp
   - test/aoj/GRL_2_A.test.cpp
   - test/aoj/0403.test.cpp
-  - test/aoj/DSL_1_A.test.cpp
+  - test/aoj/0314.test.cpp
 documentation_of: datastructure/unionfind.cpp
 layout: document
 redirect_from:

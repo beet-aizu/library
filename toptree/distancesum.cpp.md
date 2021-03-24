@@ -72,8 +72,8 @@ data:
   timestamp: '2020-10-27 19:04:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/2587.test.cpp
   - test/yukicoder/4862.test.cpp
+  - test/yukicoder/2587.test.cpp
   - test/aoj/2636.test.cpp
 documentation_of: toptree/distancesum.cpp
 layout: document

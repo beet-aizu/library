@@ -59,15 +59,15 @@ data:
   isVerificationFile: false
   path: formalpowerseries/div.cpp
   requiredBy:
-  - formalpowerseries/mod.cpp
-  - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
+  - polynomial/interpolate.cpp
+  - formalpowerseries/mod.cpp
   - includes/formalpowerseries.h
   timestamp: '2020-11-22 16:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/multipoint_evaluation.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
+  - test/yosupo/multipoint_evaluation.test.cpp
 documentation_of: formalpowerseries/div.cpp
 layout: document
 redirect_from:

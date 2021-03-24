@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: math/tetrahedra.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:14:03+09:00'
+  timestamp: '2021-03-24 18:46:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2060.test.cpp
