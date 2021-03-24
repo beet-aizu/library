@@ -752,11 +752,11 @@ data:
       path: vector/zip.cpp
       title: vector/zip.cpp
   verificationCategories:
-  - name: blog
+  - name: docs/blog
     pages:
     - icon: ':heavy_check_mark:'
-      path: blog/monoid.test.cpp
-      title: blog/monoid.test.cpp
+      path: docs/blog/monoid.test.cpp
+      title: "\u30E2\u30CE\u30A4\u30C9\u307E\u3068\u3081"
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'
