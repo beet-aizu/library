@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/twoway.cpp
     title: math/twoway.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
     links:
@@ -66,9 +66,10 @@ data:
     \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
     \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
     \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
-    \  };\n\n  static array<Vertex, LIM> pool_vertex;\n  static array<Node, LIM> pool_node;\n\
-    \  static size_t ptr_vertex,ptr_node;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex\
-    \ v=Vertex()){\n    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
+    \  };\n\n  inline static array<Vertex, LIM> pool_vertex;\n  inline static size_t\
+    \ ptr_vertex = 0;\n\n  inline static array<Node, LIM> pool_node;\n  inline static\
+    \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex v=Vertex()){\n\
+    \    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
     \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
     \ u,Cluster w,Vertex* v){\n    auto t=&(pool_node[ptr_node++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
     \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
@@ -178,14 +179,8 @@ data:
     \ Cluster get_subtree(Vertex* p,Vertex* v){\n    Node* t=path(p,v);\n    Cluster\
     \ res=t->p->ch[1]->dat;\n    res.toggle();\n    Node* rk=t->p->q;\n    if(t->p->q){\n\
     \      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n      res=Cluster::rake(res,rk->dat);\n\
-    \    }\n    return res;\n  }\n};\ntemplate<typename Vertex, typename Cluster,\
-    \ size_t LIM>\narray<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_vertex;\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex,\
-    \ Cluster, LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_node;\ntemplate<typename\
-    \ Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex, Cluster, LIM>::ptr_vertex;\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex,\
-    \ Cluster, LIM>::ptr_node;\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
-    \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 11 \"test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp\"\
+    \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 11 \"test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp\"\
     \n#undef call_from_test\n\nusing M = Mint<int, 998244353>;\nusing L = LinearFunction<M>;\n\
     using P = TwoWay<L>;\n\nstruct Vertex{\n  void* handle;\n  L val;\n  Vertex(L\
     \ val=L()):handle(nullptr),val(val){}\n};\n\nstruct Cluster{\n  P res;\n  Cluster():res(L(1,0)){}\n\
@@ -236,8 +231,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
 layout: document

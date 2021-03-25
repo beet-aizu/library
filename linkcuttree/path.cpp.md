@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   _extendedRequiredBy: []
@@ -12,24 +12,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2450.linkcuttree.test.cpp
     title: test/aoj/2450.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_D.linkcuttree.test.cpp
     title: test/aoj/GRL_5_D.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_E.linkcuttree.test.cpp
     title: test/aoj/GRL_5_E.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://ei1333.hateblo.jp/entry/2018/05/29/011140
@@ -85,8 +85,8 @@ data:
   isVerificationFile: false
   path: linkcuttree/path.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp

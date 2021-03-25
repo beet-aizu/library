@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   _extendedRequiredBy: []
@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2636.test.cpp
     title: Distance Sum
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -69,8 +69,8 @@ data:
   isVerificationFile: false
   path: toptree/distancesum.cpp
   requiredBy: []
-  timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4862.test.cpp
   - test/yukicoder/2587.test.cpp

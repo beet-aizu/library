@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
   - icon: ':heavy_check_mark:'
@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - http://beet-aizu.hatenablog.com/entry/2019/06/08/221833
@@ -107,8 +107,8 @@ data:
   isVerificationFile: false
   path: linkcuttree/subtree.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
   - test/aoj/3120.test.cpp

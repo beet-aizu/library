@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: toptree/distancesum.cpp
     title: toptree/distancesum.cpp
   _extendedVerifiedWith:
@@ -21,27 +21,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3143.test.cpp
     title: Farthest (with index)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2587.test.cpp
     title: test/yukicoder/2587.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3453.test.cpp
     title: Minimum Steiner Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4706.test.cpp
     title: test/yukicoder/4706.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"toptree/toptree.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -49,9 +49,10 @@ data:
     \ Cluster, size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
     \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
     \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
-    \  };\n\n  static array<Vertex, LIM> pool_vertex;\n  static array<Node, LIM> pool_node;\n\
-    \  static size_t ptr_vertex,ptr_node;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex\
-    \ v=Vertex()){\n    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
+    \  };\n\n  inline static array<Vertex, LIM> pool_vertex;\n  inline static size_t\
+    \ ptr_vertex = 0;\n\n  inline static array<Node, LIM> pool_node;\n  inline static\
+    \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex v=Vertex()){\n\
+    \    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
     \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
     \ u,Cluster w,Vertex* v){\n    auto t=&(pool_node[ptr_node++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
     \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
@@ -161,22 +162,17 @@ data:
     \ Cluster get_subtree(Vertex* p,Vertex* v){\n    Node* t=path(p,v);\n    Cluster\
     \ res=t->p->ch[1]->dat;\n    res.toggle();\n    Node* rk=t->p->q;\n    if(t->p->q){\n\
     \      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n      res=Cluster::rake(res,rk->dat);\n\
-    \    }\n    return res;\n  }\n};\ntemplate<typename Vertex, typename Cluster,\
-    \ size_t LIM>\narray<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_vertex;\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex,\
-    \ Cluster, LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_node;\ntemplate<typename\
-    \ Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex, Cluster, LIM>::ptr_vertex;\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex,\
-    \ Cluster, LIM>::ptr_node;\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
-    \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster, size_t LIM>\n\
     struct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct Node{\n    Vertex*\
     \ vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n    Node* ch[2];\n   \
     \ bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
-    \  };\n\n  static array<Vertex, LIM> pool_vertex;\n  static array<Node, LIM> pool_node;\n\
-    \  static size_t ptr_vertex,ptr_node;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex\
-    \ v=Vertex()){\n    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
+    \  };\n\n  inline static array<Vertex, LIM> pool_vertex;\n  inline static size_t\
+    \ ptr_vertex = 0;\n\n  inline static array<Node, LIM> pool_node;\n  inline static\
+    \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex v=Vertex()){\n\
+    \    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
     \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  inline Node* edge(Vertex*\
     \ u,Cluster w,Vertex* v){\n    auto t=&(pool_node[ptr_node++]);\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
     \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
@@ -286,21 +282,15 @@ data:
     \ Cluster get_subtree(Vertex* p,Vertex* v){\n    Node* t=path(p,v);\n    Cluster\
     \ res=t->p->ch[1]->dat;\n    res.toggle();\n    Node* rk=t->p->q;\n    if(t->p->q){\n\
     \      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n      res=Cluster::rake(res,rk->dat);\n\
-    \    }\n    return res;\n  }\n};\ntemplate<typename Vertex, typename Cluster,\
-    \ size_t LIM>\narray<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_vertex;\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\narray<typename TopTree<Vertex,\
-    \ Cluster, LIM>::Node, LIM>\nTopTree<Vertex, Cluster, LIM>::pool_node;\ntemplate<typename\
-    \ Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex, Cluster, LIM>::ptr_vertex;\n\
-    template<typename Vertex, typename Cluster, size_t LIM>\nsize_t TopTree<Vertex,\
-    \ Cluster, LIM>::ptr_node;\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE\
-    \ HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: toptree/toptree.cpp
   requiredBy:
   - toptree/distancesum.cpp
-  timestamp: '2020-10-27 19:04:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp

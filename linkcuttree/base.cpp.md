@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/path.cpp
     title: linkcuttree/path.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/subtree.cpp
     title: linkcuttree/subtree.cpp
   _extendedVerifiedWith:
@@ -24,39 +24,40 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3120.test.cpp
     title: test/aoj/3120.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_D.linkcuttree.test.cpp
     title: test/aoj/GRL_5_D.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_5_E.linkcuttree.test.cpp
     title: test/aoj/GRL_5_E.linkcuttree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
     title: test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
     title: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/lca.linkcuttree.test.cpp
     title: test/yosupo/lca.linkcuttree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"linkcuttree/base.cpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t LIM,\
-    \ typename Impl>\nstruct LinkCutTreeBase{\n  alignas(Node) static char pool[sizeof(Node)\
-    \ * LIM];\n  static Node* ptr;\n  static size_t size;\n\n  template<typename...\
-    \ Args>\n  inline Node* create(Args&&... args){\n    return new (ptr+size++) Node(std::forward<Args>(args)...);\n\
-    \  }\n\n  inline size_t idx(Node *t){return t-ptr;}\n  Node* operator[](size_t\
-    \ k){return ptr+k;}\n\n  inline void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n\
+    \ typename Impl>\nstruct LinkCutTreeBase{\n  alignas(Node) inline static char\
+    \ pool[sizeof(Node) * LIM];\n  inline static Node* ptr = (Node*)pool;\n  inline\
+    \ static size_t size = 0;\n\n  template<typename... Args>\n  inline Node* create(Args&&...\
+    \ args){\n    return new (ptr+size++) Node(std::forward<Args>(args)...);\n  }\n\
+    \n  inline size_t idx(Node *t){return t-ptr;}\n  Node* operator[](size_t k){return\
+    \ ptr+k;}\n\n  inline void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n\
     \  }\n\n  inline Node* eval(Node *t){\n    return static_cast<Impl*>(this)->eval(t);\n\
     \  }\n\n  inline void pushup(Node *t){\n    static_cast<Impl*>(this)->pushup(t);\n\
     \  }\n\n  inline Node* expose(Node *t){\n    return static_cast<Impl*>(this)->expose(t);\n\
@@ -83,20 +84,17 @@ data:
     \ *t){\n    expose(t);\n    while(t->l) t=eval(t->l);\n    splay(t);\n    return\
     \ t;\n  }\n\n  bool is_connected(Node *a,Node *b){\n    return root(a)==root(b);\n\
     \  }\n\n  Node *lca(Node *a,Node *b){\n    expose(a);\n    return expose(b);\n\
-    \  }\n};\ntemplate<typename Node, size_t LIM, typename Impl>\nalignas(Node) char\
-    \ LinkCutTreeBase<Node, LIM, Impl>::pool[];\ntemplate<typename Node, size_t LIM,\
-    \ typename Impl>\nNode* LinkCutTreeBase<Node, LIM, Impl>::ptr=\n  (Node*)LinkCutTreeBase<Node,\
-    \ LIM, Impl>::pool;\ntemplate<typename Node, size_t LIM, typename Impl>\nsize_t\
-    \ LinkCutTreeBase<Node, LIM, Impl>::size=0;\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\ntemplate<typename Node, size_t LIM, typename Impl>\n\
-    struct LinkCutTreeBase{\n  alignas(Node) static char pool[sizeof(Node) * LIM];\n\
-    \  static Node* ptr;\n  static size_t size;\n\n  template<typename... Args>\n\
-    \  inline Node* create(Args&&... args){\n    return new (ptr+size++) Node(std::forward<Args>(args)...);\n\
-    \  }\n\n  inline size_t idx(Node *t){return t-ptr;}\n  Node* operator[](size_t\
-    \ k){return ptr+k;}\n\n  inline void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n\
-    \  }\n\n  inline Node* eval(Node *t){\n    return static_cast<Impl*>(this)->eval(t);\n\
+    struct LinkCutTreeBase{\n  alignas(Node) inline static char pool[sizeof(Node)\
+    \ * LIM];\n  inline static Node* ptr = (Node*)pool;\n  inline static size_t size\
+    \ = 0;\n\n  template<typename... Args>\n  inline Node* create(Args&&... args){\n\
+    \    return new (ptr+size++) Node(std::forward<Args>(args)...);\n  }\n\n  inline\
+    \ size_t idx(Node *t){return t-ptr;}\n  Node* operator[](size_t k){return ptr+k;}\n\
+    \n  inline void toggle(Node *t){\n    static_cast<Impl*>(this)->toggle(t);\n \
+    \ }\n\n  inline Node* eval(Node *t){\n    return static_cast<Impl*>(this)->eval(t);\n\
     \  }\n\n  inline void pushup(Node *t){\n    static_cast<Impl*>(this)->pushup(t);\n\
     \  }\n\n  inline Node* expose(Node *t){\n    return static_cast<Impl*>(this)->expose(t);\n\
     \  }\n\n  void rotR(Node *t){\n    Node *x=t->p,*y=x->p;\n    if((x->l=t->r))\
@@ -122,12 +120,8 @@ data:
     \ *t){\n    expose(t);\n    while(t->l) t=eval(t->l);\n    splay(t);\n    return\
     \ t;\n  }\n\n  bool is_connected(Node *a,Node *b){\n    return root(a)==root(b);\n\
     \  }\n\n  Node *lca(Node *a,Node *b){\n    expose(a);\n    return expose(b);\n\
-    \  }\n};\ntemplate<typename Node, size_t LIM, typename Impl>\nalignas(Node) char\
-    \ LinkCutTreeBase<Node, LIM, Impl>::pool[];\ntemplate<typename Node, size_t LIM,\
-    \ typename Impl>\nNode* LinkCutTreeBase<Node, LIM, Impl>::ptr=\n  (Node*)LinkCutTreeBase<Node,\
-    \ LIM, Impl>::pool;\ntemplate<typename Node, size_t LIM, typename Impl>\nsize_t\
-    \ LinkCutTreeBase<Node, LIM, Impl>::size=0;\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: linkcuttree/base.cpp
@@ -135,8 +129,8 @@ data:
   - linkcuttree/path.cpp
   - linkcuttree/farthest.cpp
   - linkcuttree/subtree.cpp
-  timestamp: '2020-10-28 18:43:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp

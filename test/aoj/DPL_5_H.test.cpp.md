@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_H
     links:
@@ -41,23 +41,21 @@ data:
     #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"combinatorics/enumeration.cpp\"\
     \n\n#line 3 \"combinatorics/enumeration.cpp\"\nusing namespace std;\n#endif\n\n\
     //BEGIN CUT HERE\ntemplate<typename M_>\nclass Enumeration{\n  using M = M_;\n\
-    protected:\n  static vector<M> fact,finv,invs;\npublic:\n  static void init(int\
-    \ n){\n    n=min<decltype(M::mod)>(n,M::mod-1);\n\n    int m=fact.size();\n  \
-    \  if(n<m) return;\n\n    fact.resize(n+1,1);\n    finv.resize(n+1,1);\n    invs.resize(n+1,1);\n\
-    \n    if(m==0) m=1;\n    for(int i=m;i<=n;i++) fact[i]=fact[i-1]*M(i);\n    finv[n]=M(1)/fact[n];\n\
-    \    for(int i=n;i>=m;i--) finv[i-1]=finv[i]*M(i);\n    for(int i=m;i<=n;i++)\
-    \ invs[i]=finv[i]*fact[i-1];\n  }\n\n  static M Fact(int n){\n    init(n);\n \
-    \   return fact[n];\n  }\n  static M Finv(int n){\n    init(n);\n    return finv[n];\n\
-    \  }\n  static M Invs(int n){\n    init(n);\n    return invs[n];\n  }\n\n  static\
-    \ M C(int n,int k){\n    if(n<k or k<0) return M(0);\n    init(n);\n    return\
-    \ fact[n]*finv[n-k]*finv[k];\n  }\n\n  static M P(int n,int k){\n    if(n<k or\
-    \ k<0) return M(0);\n    init(n);\n    return fact[n]*finv[n-k];\n  }\n\n  //\
-    \ put n identical balls into k distinct boxes\n  static M H(int n,int k){\n  \
-    \  if(n<0 or k<0) return M(0);\n    if(!n and !k) return M(1);\n    init(n+k);\n\
-    \    return C(n+k-1,n);\n  }\n};\ntemplate<typename M>\nvector<M> Enumeration<M>::fact=vector<M>();\n\
-    template<typename M>\nvector<M> Enumeration<M>::finv=vector<M>();\ntemplate<typename\
-    \ M>\nvector<M> Enumeration<M>::invs=vector<M>();\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 9 \"test/aoj/DPL_5_H.test.cpp\"\
+    protected:\n  inline static vector<M> fact,finv,invs;\npublic:\n  static void\
+    \ init(int n){\n    n=min<decltype(M::mod)>(n,M::mod-1);\n\n    int m=fact.size();\n\
+    \    if(n<m) return;\n\n    fact.resize(n+1,1);\n    finv.resize(n+1,1);\n   \
+    \ invs.resize(n+1,1);\n\n    if(m==0) m=1;\n    for(int i=m;i<=n;i++) fact[i]=fact[i-1]*M(i);\n\
+    \    finv[n]=M(1)/fact[n];\n    for(int i=n;i>=m;i--) finv[i-1]=finv[i]*M(i);\n\
+    \    for(int i=m;i<=n;i++) invs[i]=finv[i]*fact[i-1];\n  }\n\n  static M Fact(int\
+    \ n){\n    init(n);\n    return fact[n];\n  }\n  static M Finv(int n){\n    init(n);\n\
+    \    return finv[n];\n  }\n  static M Invs(int n){\n    init(n);\n    return invs[n];\n\
+    \  }\n\n  static M C(int n,int k){\n    if(n<k or k<0) return M(0);\n    init(n);\n\
+    \    return fact[n]*finv[n-k]*finv[k];\n  }\n\n  static M P(int n,int k){\n  \
+    \  if(n<k or k<0) return M(0);\n    init(n);\n    return fact[n]*finv[n-k];\n\
+    \  }\n\n  // put n identical balls into k distinct boxes\n  static M H(int n,int\
+    \ k){\n    if(n<0 or k<0) return M(0);\n    if(!n and !k) return M(1);\n    init(n+k);\n\
+    \    return C(n+k-1,n);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 9 \"test/aoj/DPL_5_H.test.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  int n,k;\n  scanf(\"%d %d\",&n,&k);\n\
     \  printf(\"%d\\n\",(n<=k));\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_H\n\
@@ -71,8 +69,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_H.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_H.test.cpp
 layout: document

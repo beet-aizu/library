@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/chminmax.cpp
     title: tools/chminmax.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
     links:
@@ -48,8 +48,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_5_A.linkcuttree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-28 18:43:09+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:21:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_A.linkcuttree.test.cpp
 layout: document

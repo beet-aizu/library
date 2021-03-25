@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

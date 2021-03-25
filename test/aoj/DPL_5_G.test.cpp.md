@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/bell.cpp
     title: combinatorics/bell.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_G.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_G.test.cpp
