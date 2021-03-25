@@ -120,7 +120,7 @@ signed main(){
 
         {
           V malta(1);
-          map<V, ll> dp2;
+          map<V, ll, decltype(comp)> dp2(comp);
           dp2[malta*nv]++;
           for(int k=1;k<(int)vm[i][j].size();k++){
             malta*=vm[i][j][k];
