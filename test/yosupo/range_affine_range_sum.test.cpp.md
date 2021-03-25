@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/affine.cpp
     title: math/affine.cpp
   - icon: ':question:'

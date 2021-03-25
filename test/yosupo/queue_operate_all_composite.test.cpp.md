@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':question:'

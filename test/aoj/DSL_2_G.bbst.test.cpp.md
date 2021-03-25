@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/data/lazy.cpp
     title: bbst/rbst/data/lazy.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/impl/basic.cpp
     title: bbst/rbst/impl/basic.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: bbst/rbst/rbst.cpp
     title: bbst/rbst/rbst.cpp
   _extendedRequiredBy: []

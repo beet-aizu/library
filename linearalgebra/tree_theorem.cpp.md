@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.cpp
     title: graph/kruskal.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linearalgebra/matrix.cpp
     title: linearalgebra/matrix.cpp
   - icon: ':question:'
