@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/bell.cpp
     title: combinatorics/bell.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/bernoulli.cpp
     title: combinatorics/bernoulli.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
   - icon: ':x:'
     path: combinatorics/stirling2nd.cpp
     title: combinatorics/stirling2nd.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   - icon: ':x:'
@@ -81,37 +81,37 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_A.test.cpp
     title: test/aoj/DPL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_B.test.cpp
     title: test/aoj/DPL_5_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_C.test.cpp
     title: test/aoj/DPL_5_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_D.test.cpp
     title: test/aoj/DPL_5_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_F.test.cpp
     title: test/aoj/DPL_5_F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_G.test.cpp
     title: test/aoj/DPL_5_G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_H.test.cpp
     title: test/aoj/DPL_5_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_I.test.cpp
     title: test/aoj/DPL_5_I.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_J.test.cpp
     title: test/aoj/DPL_5_J.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_K.test.cpp
     title: test/aoj/DPL_5_K.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/bernoulli_number.test.cpp
     title: test/yosupo/bernoulli_number.test.cpp
   - icon: ':x:'

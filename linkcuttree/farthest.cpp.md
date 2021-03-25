@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1595.linkcuttree.test.cpp
     title: test/aoj/1595.linkcuttree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_5_A.linkcuttree.test.cpp
     title: test/aoj/GRL_5_A.linkcuttree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://atcoder.jp/contests/tkppc/tasks/tkppc2015_j
@@ -68,7 +68,7 @@ data:
   path: linkcuttree/farthest.cpp
   requiredBy: []
   timestamp: '2021-03-25 09:21:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_5_A.linkcuttree.test.cpp
   - test/aoj/1595.linkcuttree.test.cpp

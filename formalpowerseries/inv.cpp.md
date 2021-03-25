@@ -8,7 +8,7 @@ data:
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/bernoulli.cpp
     title: combinatorics/bernoulli.cpp
   - icon: ':x:'
@@ -54,7 +54,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/bernoulli_number.test.cpp
     title: test/yosupo/bernoulli_number.test.cpp
   - icon: ':x:'

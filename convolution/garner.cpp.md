@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.garner.test.cpp
     title: test/aoj/2985.garner.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
     title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
   - icon: ':x:'

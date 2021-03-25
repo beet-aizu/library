@@ -63,10 +63,10 @@ data:
       title: Minimum Cost Flow with Capacity Scaling
   - name: combinatorics
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/bell.cpp
       title: combinatorics/bell.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/bernoulli.cpp
       title: combinatorics/bernoulli.cpp
     - icon: ':question:'
@@ -75,7 +75,7 @@ data:
     - icon: ':x:'
       path: combinatorics/partition.cpp
       title: combinatorics/partition.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/partitiontable.cpp
       title: combinatorics/partitiontable.cpp
     - icon: ':x:'
@@ -84,7 +84,7 @@ data:
     - icon: ':x:'
       path: combinatorics/stirling2nd.cpp
       title: combinatorics/stirling2nd.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: combinatorics/surjection.cpp
       title: combinatorics/surjection.cpp
   - name: convexhulltrick
@@ -123,7 +123,7 @@ data:
       title: convolution/numbertheoretictransform.cpp
   - name: convolution/bitwise
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: convolution/bitwise/and.cpp
       title: convolution/bitwise/and.cpp
     - icon: ':question:'
@@ -132,7 +132,7 @@ data:
     - icon: ':question:'
       path: convolution/bitwise/or.cpp
       title: convolution/bitwise/or.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: convolution/bitwise/xor.cpp
       title: convolution/bitwise/xor.cpp
   - name: datastructure
@@ -170,7 +170,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/quickfind.cpp
       title: datastructure/quickfind.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/radixheap.cpp
       title: datastructure/radixheap.cpp
     - icon: ':heavy_check_mark:'
@@ -366,7 +366,7 @@ data:
     - icon: ':question:'
       path: linkcuttree/base.cpp
       title: linkcuttree/base.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: linkcuttree/farthest.cpp
       title: linkcuttree/farthest.cpp
     - icon: ':question:'
@@ -616,7 +616,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tools/avx2.cpp
       title: tools/avx2.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: tools/bigint.cpp
       title: tools/bigint.cpp
     - icon: ':heavy_check_mark:'
@@ -1233,40 +1233,40 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_3_C.test.cpp
       title: test/aoj/DPL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_A.test.cpp
       title: test/aoj/DPL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_B.test.cpp
       title: test/aoj/DPL_5_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_C.test.cpp
       title: test/aoj/DPL_5_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_D.test.cpp
       title: test/aoj/DPL_5_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_E.test.cpp
       title: test/aoj/DPL_5_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_F.test.cpp
       title: test/aoj/DPL_5_F.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_G.test.cpp
       title: test/aoj/DPL_5_G.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_H.test.cpp
       title: test/aoj/DPL_5_H.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_I.test.cpp
       title: test/aoj/DPL_5_I.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_J.test.cpp
       title: test/aoj/DPL_5_J.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_K.test.cpp
       title: test/aoj/DPL_5_K.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_L.test.cpp
       title: test/aoj/DPL_5_L.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1326,7 +1326,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_3_D.test.cpp
       title: test/aoj/DSL_3_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1347,7 +1347,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_3_B.test.cpp
       title: test/aoj/GRL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_A.linkcuttree.test.cpp
       title: test/aoj/GRL_5_A.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1359,13 +1359,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_C.test.cpp
       title: test/aoj/GRL_5_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_D.linkcuttree.test.cpp
       title: test/aoj/GRL_5_D.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_D.test.cpp
       title: test/aoj/GRL_5_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_E.linkcuttree.test.cpp
       title: test/aoj/GRL_5_E.linkcuttree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1401,22 +1401,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_E.test.cpp
       title: test/aoj/NTL_1_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_2_A.test.cpp
       title: test/aoj/NTL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_2_B.test.cpp
       title: test/aoj/NTL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_2_C.test.cpp
       title: test/aoj/NTL_2_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_2_D.test.cpp
       title: test/aoj/NTL_2_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_2_E.test.cpp
       title: test/aoj/NTL_2_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_2_F.test.cpp
       title: test/aoj/NTL_2_F.test.cpp
   - name: test/aoj/geometry
@@ -1510,25 +1510,25 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/associative_array.test.cpp
       title: test/yosupo/associative_array.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/bernoulli_number.test.cpp
       title: test/yosupo/bernoulli_number.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/bipartitematching.test.cpp
       title: test/yosupo/bipartitematching.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/bitwise_and_convolution.test.cpp
       title: test/yosupo/bitwise_and_convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/bitwise_xor_convolution.test.cpp
       title: test/yosupo/bitwise_xor_convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/cartesian_tree.test.cpp
       title: test/yosupo/cartesian_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/convolution_mod.test.cpp
       title: test/yosupo/convolution_mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
       title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
     - icon: ':x:'

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: linkcuttree/base.cpp
     title: linkcuttree/base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: linkcuttree/farthest.cpp
     title: linkcuttree/farthest.cpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: tools/chminmax.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
     links:
@@ -49,7 +49,7 @@ data:
   path: test/aoj/GRL_5_A.linkcuttree.test.cpp
   requiredBy: []
   timestamp: '2021-03-25 09:21:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_5_A.linkcuttree.test.cpp
 layout: document
