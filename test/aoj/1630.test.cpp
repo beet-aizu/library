@@ -92,7 +92,13 @@ signed main(){
     for(int i=0;i<1010;i++){
       auto &v=vs[i];
       if(v.empty()) continue;
-      map<V, ll> dp;
+
+      auto comp=[](V a,V b){
+        auto [a1,a2,a3]=a;
+        auto [b1,b2,b3]=b;
+        return make_tuple(a1.v,a2.v,a3.v)<make_tuple(b1.v,b2.v,b3.v);
+      };
+      map<V, ll, decltype(comp)> dp(comp);
       V uku(0);
 
       dp[uku]++;
