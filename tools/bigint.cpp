@@ -12,8 +12,8 @@ struct bigint {
   using ll = long long;
   using vll = vector<ll>;
 
-  constexpr static ll base = 1000000000;
-  constexpr static ll base_digits = 9;
+  inline static constexpr ll base_digits = 9;
+  inline static constexpr ll base = 1000000000;
 
   vll a;
   ll sign;

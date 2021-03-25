@@ -7,7 +7,7 @@ using namespace std;
 // Key: int or long long
 template<typename K,typename V>
 struct RadixHeap{
-  static constexpr int bit = sizeof(K) * 8;
+  inline static constexpr int bit = sizeof(K) * 8;
   array<vector< pair<K, V> >, bit> vs;
 
   int size;

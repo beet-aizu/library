@@ -20,8 +20,8 @@ constexpr int brts(int x){
 
 template<int X>
 struct NTT{
-  static constexpr int md = bmds(X);
-  static constexpr int rt = brts(X);
+  inline static constexpr int md = bmds(X);
+  inline static constexpr int rt = brts(X);
   using M = Mint<int, md>;
   vector< vector<M> > rts,rrts;
 
@@ -92,8 +92,6 @@ struct NTT{
     return cs;
   }
 };
-template<int X> constexpr int NTT<X>::md;
-template<int X> constexpr int NTT<X>::rt;
 //END CUT HERE
 #ifndef call_from_test
 signed main(){

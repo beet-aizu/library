@@ -6,7 +6,7 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename T, T MOD = 1000000007>
 struct Mint{
-  static constexpr T mod = MOD;
+  inline static constexpr T mod = MOD;
   T v;
   Mint():v(0){}
   Mint(signed v):v(v){}
@@ -52,7 +52,6 @@ struct Mint{
     return num/dom;
   }
 };
-template<typename T, T MOD> constexpr T Mint<T, MOD>::mod;
 template<typename T, T MOD>
 ostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}
 //END CUT HERE
