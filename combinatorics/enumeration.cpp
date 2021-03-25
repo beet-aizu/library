@@ -8,7 +8,7 @@ template<typename M_>
 class Enumeration{
   using M = M_;
 protected:
-  static vector<M> fact,finv,invs;
+  inline static vector<M> fact,finv,invs;
 public:
   static void init(int n){
     n=min<decltype(M::mod)>(n,M::mod-1);
@@ -60,12 +60,6 @@ public:
     return C(n+k-1,n);
   }
 };
-template<typename M>
-vector<M> Enumeration<M>::fact=vector<M>();
-template<typename M>
-vector<M> Enumeration<M>::finv=vector<M>();
-template<typename M>
-vector<M> Enumeration<M>::invs=vector<M>();
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

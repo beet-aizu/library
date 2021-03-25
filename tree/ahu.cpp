@@ -6,7 +6,7 @@ using namespace std;
 // http://wwwmayr.in.tum.de/konferenzen/Jass08/courses/1/smal/Smal_Talk.pdf
 //BEGIN CUT HERE
 struct AHU{
-  static map<vector<int>, int> I;
+  inline static map<vector<int>, int> I;
   vector< vector<int> > G;
   AHU(int n):G(n){}
 
@@ -30,7 +30,6 @@ struct AHU{
     return dfs(r,-1);
   }
 };
-map<vector<int>, int> AHU::I;
 
 //END CUT HERE
 #ifndef call_from_test

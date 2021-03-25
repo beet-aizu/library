@@ -5,7 +5,7 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename T>
 struct Rint{
-  static T mod;
+  inline static T mod;
   static void set_mod(T nmod){mod=nmod;}
 
   T v;
@@ -44,7 +44,6 @@ struct Rint{
   bool operator!=(const Rint a)const{return v!=a.v;}
   bool operator <(const Rint a)const{return v <a.v;}
 };
-template<typename T> T Rint<T>::mod;
 template<typename T>
 ostream& operator<<(ostream &os,Rint<T> m){os<<m.v;return os;}
 //END CUT HERE

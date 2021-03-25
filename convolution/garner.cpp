@@ -11,9 +11,9 @@ using namespace std;
 //BEGIN CUT HERE
 struct Garner{
   using ll = long long;
-  static NTT<0> ntt0;
-  static NTT<1> ntt1;
-  static NTT<2> ntt2;
+  inline static NTT<0> ntt0;
+  inline static NTT<1> ntt1;
+  inline static NTT<2> ntt2;
 
   static constexpr int pow(int a,int b,int md){
     int res=1;
@@ -78,9 +78,6 @@ struct Garner{
     return cm;
   }
 };
-NTT<0> Garner::ntt0;
-NTT<1> Garner::ntt1;
-NTT<2> Garner::ntt2;
 //END CUT HERE
 #ifndef call_from_test
 signed main(){

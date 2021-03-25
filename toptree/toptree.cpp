@@ -17,9 +17,11 @@ struct TopTree{
     Node():p(nullptr),q(nullptr),rev(false),guard(false){}
   };
 
-  static array<Vertex, LIM> pool_vertex;
-  static array<Node, LIM> pool_node;
-  static size_t ptr_vertex,ptr_node;
+  inline static array<Vertex, LIM> pool_vertex;
+  inline static size_t ptr_vertex = 0;
+
+  inline static array<Node, LIM> pool_node;
+  inline static size_t ptr_node = 0;
 
   Cluster id;
 
@@ -439,15 +441,6 @@ struct TopTree{
     return res;
   }
 };
-template<typename Vertex, typename Cluster, size_t LIM>
-array<Vertex, LIM> TopTree<Vertex, Cluster, LIM>::pool_vertex;
-template<typename Vertex, typename Cluster, size_t LIM>
-array<typename TopTree<Vertex, Cluster, LIM>::Node, LIM>
-TopTree<Vertex, Cluster, LIM>::pool_node;
-template<typename Vertex, typename Cluster, size_t LIM>
-size_t TopTree<Vertex, Cluster, LIM>::ptr_vertex;
-template<typename Vertex, typename Cluster, size_t LIM>
-size_t TopTree<Vertex, Cluster, LIM>::ptr_node;
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
