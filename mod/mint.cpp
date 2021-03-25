@@ -42,7 +42,6 @@ struct Mint{
 
   bool operator==(const Mint a)const{return v==a.v;}
   bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;}
 
   static Mint comb(long long n,int k){
     Mint num(1),dom(1);
