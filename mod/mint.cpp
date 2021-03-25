@@ -37,6 +37,7 @@ struct Mint{
   Mint operator*(Mint a) const{return Mint(v)*=a;}
   Mint operator/(Mint a) const{return Mint(v)/=a;}
 
+  Mint operator+() const{return *this;}
   Mint operator-() const{return v?Mint(MOD-v):Mint(v);}
 
   bool operator==(const Mint a)const{return v==a.v;}
