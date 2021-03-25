@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
     title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/range_affine_range_sum.test.cpp
     title: test/yosupo/range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/affine.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -41,7 +41,7 @@ data:
   path: math/affine.cpp
   requiredBy: []
   timestamp: '2020-11-28 18:20:37+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/yosupo/range_affine_range_sum.test.cpp

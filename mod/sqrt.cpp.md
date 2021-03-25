@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_mod.test.cpp
     title: test/yosupo/sqrt_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sqrt_of_formal_power_series.test.cpp
     title: test/yosupo/sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"mod/sqrt.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -49,7 +49,7 @@ data:
   path: mod/sqrt.cpp
   requiredBy: []
   timestamp: '2020-11-13 20:22:13+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/sqrt_mod.test.cpp
   - test/yosupo/sqrt_of_formal_power_series.test.cpp

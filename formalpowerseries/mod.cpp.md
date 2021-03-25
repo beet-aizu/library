@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: formalpowerseries/base.cpp
     title: formalpowerseries/base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
   - icon: ':question:'
@@ -17,22 +17,22 @@ data:
   - icon: ':warning:'
     path: includes/formalpowerseries.h
     title: includes/formalpowerseries.h
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/multipoint_evaluation.test.cpp
     title: test/yosupo/multipoint_evaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -63,7 +63,7 @@ data:
   - polynomial/interpolate.cpp
   - includes/formalpowerseries.h
   timestamp: '2021-03-25 09:21:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp

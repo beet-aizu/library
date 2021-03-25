@@ -12,15 +12,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2969.test.cpp
     title: test/aoj/2969.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3277.test.cpp
     title: test/yukicoder/3277.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"segtree/basic/ushi.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -68,7 +68,7 @@ data:
   path: segtree/basic/ushi.cpp
   requiredBy: []
   timestamp: '2021-02-05 14:59:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_set_range_composite.test.cpp
   - test/yukicoder/3277.test.cpp

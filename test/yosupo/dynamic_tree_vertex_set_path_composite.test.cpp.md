@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/dual.cpp
     title: math/dual.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':question:'

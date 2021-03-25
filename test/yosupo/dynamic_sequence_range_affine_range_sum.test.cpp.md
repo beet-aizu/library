@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/rbst.cpp
     title: bbst/rbst/rbst.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/affine.cpp
     title: math/affine.cpp
   - icon: ':question:'

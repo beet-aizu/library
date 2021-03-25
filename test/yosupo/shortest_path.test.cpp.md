@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tools/drop.cpp
     title: tools/drop.cpp
   _extendedRequiredBy: []

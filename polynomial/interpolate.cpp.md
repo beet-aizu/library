@@ -10,26 +10,26 @@ data:
   - icon: ':question:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
   - icon: ':question:'
     path: formalpowerseries/inv.cpp
     title: formalpowerseries/inv.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/multieval.cpp
     title: polynomial/multieval.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -68,7 +68,7 @@ data:
   path: polynomial/interpolate.cpp
   requiredBy: []
   timestamp: '2021-03-25 09:21:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/polynomial_interpolation.test.cpp
 documentation_of: polynomial/interpolate.cpp

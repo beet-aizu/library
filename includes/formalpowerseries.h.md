@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: formalpowerseries/diff.cpp
     title: formalpowerseries/diff.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/div.cpp
     title: formalpowerseries/div.cpp
   - icon: ':question:'
@@ -25,16 +25,16 @@ data:
   - icon: ':question:'
     path: formalpowerseries/log.cpp
     title: formalpowerseries/log.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/mod.cpp
     title: formalpowerseries/mod.cpp
   - icon: ':question:'
     path: formalpowerseries/pow.cpp
     title: formalpowerseries/pow.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/shift.cpp
     title: formalpowerseries/shift.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: formalpowerseries/sqrt.cpp
     title: formalpowerseries/sqrt.cpp
   - icon: ':question:'

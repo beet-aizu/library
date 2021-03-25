@@ -20,7 +20,7 @@ data:
   - icon: ':warning:'
     path: includes/formalpowerseries.h
     title: includes/formalpowerseries.h
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/interpolate.cpp
     title: polynomial/interpolate.cpp
   _extendedVerifiedWith:
@@ -39,13 +39,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/log_of_formal_power_series.test.cpp
     title: test/yosupo/log_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/polynomial_interpolation.test.cpp
     title: test/yosupo/polynomial_interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/sharp_p_subset_sum.test.cpp
     title: test/yosupo/sharp_p_subset_sum.test.cpp
   - icon: ':x:'
