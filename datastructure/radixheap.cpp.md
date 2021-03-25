@@ -6,19 +6,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1607.test.cpp
     title: test/aoj/1607.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL_1_A.test.cpp
     title: test/aoj/GRL_1_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/radixheap.cpp\"\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n#endif\n//BEGIN CUT HERE\n// prohibited to push an element\
     \ less than popped one\n// Key: int or long long\ntemplate<typename K,typename\
-    \ V>\nstruct RadixHeap{\n  static constexpr int bit = sizeof(K) * 8;\n  array<vector<\
-    \ pair<K, V> >, bit> vs;\n\n  int size;\n  K last;\n  RadixHeap():size(0),last(0){}\n\
+    \ V>\nstruct RadixHeap{\n  inline static constexpr int bit = sizeof(K) * 8;\n\
+    \  array<vector< pair<K, V> >, bit> vs;\n\n  int size;\n  K last;\n  RadixHeap():size(0),last(0){}\n\
     \n  bool empty() const{return size==0;}\n\n  inline int getbit(int a){\n    return\
     \ a?bit-__builtin_clz(a):0;\n  }\n\n  inline int getbit(long long a){\n    return\
     \ a?bit-__builtin_clzll(a):0;\n  }\n\n  void emplace(K key,V val){\n    size++;\n\
@@ -31,10 +31,10 @@ data:
     signed main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include<bits/stdc++.h>\nusing namespace std;\n#endif\n\
     //BEGIN CUT HERE\n// prohibited to push an element less than popped one\n// Key:\
-    \ int or long long\ntemplate<typename K,typename V>\nstruct RadixHeap{\n  static\
-    \ constexpr int bit = sizeof(K) * 8;\n  array<vector< pair<K, V> >, bit> vs;\n\
-    \n  int size;\n  K last;\n  RadixHeap():size(0),last(0){}\n\n  bool empty() const{return\
-    \ size==0;}\n\n  inline int getbit(int a){\n    return a?bit-__builtin_clz(a):0;\n\
+    \ int or long long\ntemplate<typename K,typename V>\nstruct RadixHeap{\n  inline\
+    \ static constexpr int bit = sizeof(K) * 8;\n  array<vector< pair<K, V> >, bit>\
+    \ vs;\n\n  int size;\n  K last;\n  RadixHeap():size(0),last(0){}\n\n  bool empty()\
+    \ const{return size==0;}\n\n  inline int getbit(int a){\n    return a?bit-__builtin_clz(a):0;\n\
     \  }\n\n  inline int getbit(long long a){\n    return a?bit-__builtin_clzll(a):0;\n\
     \  }\n\n  void emplace(K key,V val){\n    size++;\n    vs[getbit(key^last)].emplace_back(key,val);\n\
     \  }\n\n  pair<K, V> pop(){\n    if(vs[0].empty()){\n      int idx=1;\n      while(vs[idx].empty())\
@@ -47,8 +47,8 @@ data:
   isVerificationFile: false
   path: datastructure/radixheap.cpp
   requiredBy: []
-  timestamp: '2019-12-09 23:10:40+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:40:53+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/1607.test.cpp
   - test/aoj/GRL_1_A.test.cpp

@@ -12,21 +12,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2981.test.cpp
     title: test/aoj/2981.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/bitwise_and_convolution.test.cpp
     title: test/yosupo/bitwise_and_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/bitwise_xor_convolution.test.cpp
     title: test/yosupo/bitwise_xor_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/subset_convolution.test.cpp
     title: test/yosupo/subset_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://kazuma8128.hatenablog.com/entry/2018/05/31/144519
@@ -49,7 +49,7 @@ data:
   path: convolution/bitwise/fwht.cpp
   requiredBy: []
   timestamp: '2020-12-16 13:04:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/bitwise_and_convolution.test.cpp
   - test/yosupo/subset_convolution.test.cpp

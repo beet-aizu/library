@@ -5,20 +5,20 @@ data:
   - icon: ':question:'
     path: convolution/arbitrarymod.cpp
     title: convolution/arbitrarymod.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tools/bigint.cpp
     title: tools/bigint.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2985.test.cpp
     title: test/aoj/2985.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod_1000000007.test.cpp
     title: test/yosupo/convolution_mod_1000000007.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/frequency_table_of_tree_distance.test.cpp
     title: test/yosupo/frequency_table_of_tree_distance.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':x:'

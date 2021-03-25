@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2446.test.cpp
     title: test/aoj/2446.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/subset_convolution.test.cpp
     title: test/yosupo/subset_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/bitwise/or.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -30,7 +30,7 @@ data:
   path: convolution/bitwise/or.cpp
   requiredBy: []
   timestamp: '2020-11-15 20:13:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/subset_convolution.test.cpp
   - test/yukicoder/5025.test.cpp

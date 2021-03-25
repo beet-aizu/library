@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2060.test.cpp
     title: test/aoj/2060.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/matrix_det.test.cpp
     title: test/yosupo/matrix_det.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://atcoder.jp/contests/arc050/tasks/arc050_c
@@ -192,7 +192,7 @@ data:
   - linearalgebra/tree_theorem.cpp
   - math/tetrahedra.cpp
   timestamp: '2021-03-24 18:46:00+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/matrix_det.test.cpp
   - test/aoj/2060.test.cpp

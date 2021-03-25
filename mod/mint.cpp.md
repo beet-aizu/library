@@ -26,7 +26,7 @@ data:
   - icon: ':x:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/hash.cpp
     title: polynomial/hash.cpp
   _extendedVerifiedWith:
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1300.test.cpp
     title: test/aoj/1300.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/1630.test.cpp
     title: test/aoj/1630.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,25 +81,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3084.test.cpp
     title: test/aoj/3084.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_A.test.cpp
     title: test/aoj/DPL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_B.test.cpp
     title: test/aoj/DPL_5_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_C.test.cpp
     title: test/aoj/DPL_5_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_D.test.cpp
     title: test/aoj/DPL_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_E.test.cpp
     title: test/aoj/DPL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_F.test.cpp
     title: test/aoj/DPL_5_F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_G.test.cpp
     title: test/aoj/DPL_5_G.test.cpp
   - icon: ':x:'
@@ -114,28 +114,28 @@ data:
   - icon: ':x:'
     path: test/aoj/DPL_5_K.test.cpp
     title: test/aoj/DPL_5_K.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_L.test.cpp
     title: test/aoj/DPL_5_L.test.cpp
   - icon: ':x:'
     path: test/yosupo/bernoulli_number.test.cpp
     title: test/yosupo/bernoulli_number.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/bitwise_and_convolution.test.cpp
     title: test/yosupo/bitwise_and_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/bitwise_xor_convolution.test.cpp
     title: test/yosupo/bitwise_xor_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod.test.cpp
     title: test/yosupo/convolution_mod.test.cpp
   - icon: ':x:'
     path: test/yosupo/convolution_mod_1000000007.garner.test.cpp
     title: test/yosupo/convolution_mod_1000000007.garner.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod_1000000007.test.cpp
     title: test/yosupo/convolution_mod_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
     title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - icon: ':x:'
@@ -147,19 +147,19 @@ data:
   - icon: ':x:'
     path: test/yosupo/exp_of_formal_power_series.test.cpp
     title: test/yosupo/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/find_linear_recurrence.test.cpp
     title: test/yosupo/find_linear_recurrence.test.cpp
   - icon: ':x:'
     path: test/yosupo/inv_of_formal_power_series.test.cpp
     title: test/yosupo/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
     title: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
   - icon: ':x:'
     path: test/yosupo/log_of_formal_power_series.test.cpp
     title: test/yosupo/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/matrix_det.test.cpp
     title: test/yosupo/matrix_det.test.cpp
   - icon: ':x:'
@@ -168,7 +168,7 @@ data:
   - icon: ':x:'
     path: test/yosupo/partition_function.test.cpp
     title: test/yosupo/partition_function.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
   - icon: ':x:'
@@ -180,10 +180,10 @@ data:
   - icon: ':x:'
     path: test/yosupo/pow_of_formal_power_series.test.cpp
     title: test/yosupo/pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/queue_operate_all_composite.test.cpp
     title: test/yosupo/queue_operate_all_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/range_affine_range_sum.test.cpp
     title: test/yosupo/range_affine_range_sum.test.cpp
   - icon: ':x:'
@@ -198,25 +198,25 @@ data:
   - icon: ':x:'
     path: test/yosupo/stirling_number_of_the_second_kind.test.cpp
     title: test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/subset_convolution.test.cpp
     title: test/yosupo/subset_convolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0022.test.cpp
     title: test/yukicoder/0022.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0104.test.cpp
     title: test/yukicoder/0104.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0444.test.cpp
     title: test/yukicoder/0444.test.cpp
   - icon: ':x:'
     path: test/yukicoder/1504.test.cpp
     title: test/yukicoder/1504.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1665.test.cpp
     title: test/yukicoder/1665.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1973.test.cpp
     title: test/yukicoder/1973.test.cpp
   - icon: ':x:'
@@ -225,16 +225,16 @@ data:
   - icon: ':x:'
     path: test/yukicoder/2772.test.cpp
     title: test/yukicoder/2772.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4271.test.cpp
     title: test/yukicoder/4271.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5011.test.cpp
     title: test/yukicoder/5011.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5025.test.cpp
     title: test/yukicoder/5025.test.cpp
   - icon: ':x:'
@@ -247,7 +247,27 @@ data:
     links: []
   bundledCode: "#line 1 \"mod/mint.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename T, T MOD = 1000000007>\n\
-    struct Mint{\n  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed\
+    struct Mint{\n  inline static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n\
+    \  Mint(signed v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint\
+    \ pow(long long k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n\
+    \      tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
+    \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
+    \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
+    \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
+    \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
+    \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
+    \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
+    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator+()\
+    \ const{return *this;}\n  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}\n\
+    \n  bool operator==(const Mint a)const{return v==a.v;}\n  bool operator!=(const\
+    \ Mint a)const{return v!=a.v;}\n\n  static Mint comb(long long n,int k){\n   \
+    \ Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n    \
+    \  dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename T,\
+    \ T MOD>\nostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n\
+    //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    #endif\n\n//BEGIN CUT HERE\ntemplate<typename T, T MOD = 1000000007>\nstruct Mint{\n\
+    \  inline static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed\
     \ v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long\
     \ k){\n    Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n     \
     \ tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
@@ -257,36 +277,14 @@ data:
     \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
     \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
     \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
-    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator-()\
-    \ const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const Mint a)const{return\
-    \ v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n  bool operator\
-    \ <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long long n,int k){\n\
-    \    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n \
-    \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
-    \ T, T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T, T MOD>\nostream&\
-    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
-  code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    #endif\n\n//BEGIN CUT HERE\ntemplate<typename T, T MOD = 1000000007>\nstruct Mint{\n\
-    \  static constexpr T mod = MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed v):v(v){}\n\
-    \  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long k){\n  \
-    \  Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n      tmp*=tmp;\n\
-    \      k>>=1;\n    }\n    return res;\n  }\n\n  static Mint add_identity(){return\
-    \ Mint(0);}\n  static Mint mul_identity(){return Mint(1);}\n\n  Mint inv(){return\
-    \ pow(MOD-2);}\n\n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n\
-    \  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint&\
-    \ operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}\n  Mint& operator/=(Mint a){return\
-    \ (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n \
-    \ Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a) const{return\
-    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator-()\
-    \ const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const Mint a)const{return\
-    \ v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n  bool operator\
-    \ <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long long n,int k){\n\
-    \    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n \
-    \     dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
-    \ T, T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T, T MOD>\nostream&\
-    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\n  Mint operator+()\
+    \ const{return *this;}\n  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}\n\
+    \n  bool operator==(const Mint a)const{return v==a.v;}\n  bool operator!=(const\
+    \ Mint a)const{return v!=a.v;}\n\n  static Mint comb(long long n,int k){\n   \
+    \ Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n    \
+    \  dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename T,\
+    \ T MOD>\nostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n\
+    //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: mod/mint.cpp
@@ -300,7 +298,7 @@ data:
   - formalpowerseries/998244353.cpp
   - graph/lowlink.cpp
   - includes/formalpowerseries.h
-  timestamp: '2020-10-27 13:13:52+09:00'
+  timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/sharp_p_subset_sum.test.cpp

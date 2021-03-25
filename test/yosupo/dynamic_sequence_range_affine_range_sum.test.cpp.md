@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/data/lazy.cpp
     title: bbst/rbst/data/lazy.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/impl/basic.cpp
     title: bbst/rbst/impl/basic.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/rbst.cpp
     title: bbst/rbst/rbst.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/affine.cpp
     title: math/affine.cpp
   - icon: ':question:'
@@ -18,9 +18,9 @@ data:
     title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum
     links:
@@ -62,8 +62,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-11-28 18:20:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:46:10+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
 layout: document

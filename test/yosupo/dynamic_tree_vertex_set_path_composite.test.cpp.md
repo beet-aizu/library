@@ -10,7 +10,7 @@ data:
   - icon: ':x:'
     path: math/dual.cpp
     title: math/dual.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':question:'
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 09:21:12+09:00'
+  timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp

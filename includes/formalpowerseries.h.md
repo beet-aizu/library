@@ -118,7 +118,7 @@ data:
   isVerificationFile: false
   path: includes/formalpowerseries.h
   requiredBy: []
-  timestamp: '2021-03-25 09:21:12+09:00'
+  timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: includes/formalpowerseries.h

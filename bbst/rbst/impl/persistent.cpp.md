@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/data/array.cpp
     title: bbst/rbst/data/array.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/data/lazy.cpp
     title: bbst/rbst/data/lazy.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/rbst.cpp
     title: bbst/rbst/rbst.cpp
   _extendedRequiredBy: []

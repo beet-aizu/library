@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.bbst.test.cpp
     title: test/aoj/DSL_2_I.bbst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
     title: test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"bbst/rbst/data/lazy.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -86,7 +86,7 @@ data:
   requiredBy:
   - bbst/rbst/impl/persistent.cpp
   timestamp: '2020-11-04 18:27:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp

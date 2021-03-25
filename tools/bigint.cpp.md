@@ -6,36 +6,36 @@ data:
     title: convolution/fastfouriertransform.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/NTL_2_A.test.cpp
     title: test/aoj/NTL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/NTL_2_B.test.cpp
     title: test/aoj/NTL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/NTL_2_C.test.cpp
     title: test/aoj/NTL_2_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/NTL_2_D.test.cpp
     title: test/aoj/NTL_2_D.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/NTL_2_E.test.cpp
     title: test/aoj/NTL_2_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/NTL_2_F.test.cpp
     title: test/aoj/NTL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0143.test.cpp
     title: test/yukicoder/0143.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0831.test.cpp
     title: test/yukicoder/0831.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2125.test.cpp
     title: test/yukicoder/2125.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -49,10 +49,10 @@ data:
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\n\
     #define call_from_test\n#include \"../convolution/fastfouriertransform.cpp\"\n\
     #undef call_from_test\n\n#endif\n//BEGIN CUT HERE\nstruct bigint {\n  using ll\
-    \ = long long;\n  using vll = vector<ll>;\n\n  constexpr static ll base = 1000000000;\n\
-    \  constexpr static ll base_digits = 9;\n\n  vll a;\n  ll sign;\n\n  bigint():sign(1){}\n\
-    \n  bigint(ll v){*this=v;}\n\n  bigint(const string &s){read(s);}\n\n  static\
-    \ bigint add_identity(){return bigint(0);}\n  static bigint mul_identity(){return\
+    \ = long long;\n  using vll = vector<ll>;\n\n  inline static constexpr ll base_digits\
+    \ = 9;\n  inline static constexpr ll base = 1000000000;\n\n  vll a;\n  ll sign;\n\
+    \n  bigint():sign(1){}\n\n  bigint(ll v){*this=v;}\n\n  bigint(const string &s){read(s);}\n\
+    \n  static bigint add_identity(){return bigint(0);}\n  static bigint mul_identity(){return\
     \ bigint(1);}\n\n  void operator=(ll v){\n    sign=1;\n    if(v<0) sign=-1,v=-v;\n\
     \    for(;v>0;v=v/base) a.emplace_back(v%base);\n  }\n\n  bigint operator+(const\
     \ bigint &v) const{\n    if(sign==v.sign){\n      bigint res=v;\n      for(ll\
@@ -150,8 +150,8 @@ data:
   isVerificationFile: false
   path: tools/bigint.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-25 09:40:53+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/0831.test.cpp
   - test/yukicoder/2125.test.cpp

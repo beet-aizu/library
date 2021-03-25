@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: bbst/rbst/impl/persistent.cpp
     title: bbst/rbst/impl/persistent.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: bbst/rbst/rbst.cpp
     title: bbst/rbst/rbst.cpp
   _extendedRequiredBy: []

@@ -67,7 +67,7 @@ data:
   path: convolution/garner.cpp
   requiredBy:
   - mod/factorial.cpp
-  timestamp: '2021-03-25 09:21:12+09:00'
+  timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/convolution_mod_1000000007.garner.test.cpp

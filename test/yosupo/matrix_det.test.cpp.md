@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linearalgebra/matrix.cpp
     title: linearalgebra/matrix.cpp
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/matrix_det
     links:
@@ -20,8 +20,8 @@ data:
     \ PROBLEM https://judge.yosupo.jp/problem/matrix_det\n\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n#define call_from_test\n#line 1 \"mod/mint.cpp\"\n\n#line\
     \ 3 \"mod/mint.cpp\"\nusing namespace std;\n#endif\n\n//BEGIN CUT HERE\ntemplate<typename\
-    \ T, T MOD = 1000000007>\nstruct Mint{\n  static constexpr T mod = MOD;\n  T v;\n\
-    \  Mint():v(0){}\n  Mint(signed v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0)\
+    \ T, T MOD = 1000000007>\nstruct Mint{\n  inline static constexpr T mod = MOD;\n\
+    \  T v;\n  Mint():v(0){}\n  Mint(signed v):v(v){}\n  Mint(long long t){v=t%MOD;if(v<0)\
     \ v+=MOD;}\n\n  Mint pow(long long k){\n    Mint res(1),tmp(v);\n    while(k){\n\
     \      if(k&1) res*=tmp;\n      tmp*=tmp;\n      k>>=1;\n    }\n    return res;\n\
     \  }\n\n  static Mint add_identity(){return Mint(0);}\n  static Mint mul_identity(){return\
@@ -31,24 +31,23 @@ data:
     \ a){return (*this)*=a.inv();}\n\n  Mint operator+(Mint a) const{return Mint(v)+=a;}\n\
     \  Mint operator-(Mint a) const{return Mint(v)-=a;}\n  Mint operator*(Mint a)\
     \ const{return Mint(v)*=a;}\n  Mint operator/(Mint a) const{return Mint(v)/=a;}\n\
-    \n  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}\n\n  bool operator==(const\
-    \ Mint a)const{return v==a.v;}\n  bool operator!=(const Mint a)const{return v!=a.v;}\n\
-    \  bool operator <(const Mint a)const{return v <a.v;}\n\n  static Mint comb(long\
-    \ long n,int k){\n    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n\
-    \      dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename\
-    \ T, T MOD> constexpr T Mint<T, MOD>::mod;\ntemplate<typename T, T MOD>\nostream&\
-    \ operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n//END CUT HERE\n\
-    #ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"linearalgebra/matrix.cpp\"\
-    \n\n#line 3 \"linearalgebra/matrix.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
-    \ CUT HERE\ntemplate<typename K>\nstruct Matrix{\n  typedef vector<K> arr;\n \
-    \ typedef vector<arr> mat;\n  mat dat;\n\n  Matrix(size_t r,size_t c):dat(r,arr(c,K())){}\n\
-    \  Matrix(mat dat):dat(dat){}\n\n  size_t size() const{return dat.size();}\n \
-    \ bool empty() const{return size()==0;}\n  arr& operator[](size_t k){return dat[k];}\n\
-    \  const arr& operator[](size_t k) const {return dat[k];}\n\n  static Matrix matmul(const\
-    \ Matrix &A,const Matrix &B){\n    Matrix res(A.size(),B[0].size());\n    for(int\
-    \ i=0;i<(int)A.size();i++)\n      for(int j=0;j<(int)B[0].size();j++)\n      \
-    \  for(int k=0;k<(int)B.size();k++)\n          res[i][j]+=A[i][k]*B[k][j];\n \
-    \   return res;\n  }\n\n  static Matrix identity(size_t n){\n    Matrix res(n,n);\n\
+    \n  Mint operator+() const{return *this;}\n  Mint operator-() const{return v?Mint(MOD-v):Mint(v);}\n\
+    \n  bool operator==(const Mint a)const{return v==a.v;}\n  bool operator!=(const\
+    \ Mint a)const{return v!=a.v;}\n\n  static Mint comb(long long n,int k){\n   \
+    \ Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n    \
+    \  dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n};\ntemplate<typename T,\
+    \ T MOD>\nostream& operator<<(ostream &os,Mint<T, MOD> m){os<<m.v;return os;}\n\
+    //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n\
+    #line 1 \"linearalgebra/matrix.cpp\"\n\n#line 3 \"linearalgebra/matrix.cpp\"\n\
+    using namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename K>\nstruct Matrix{\n\
+    \  typedef vector<K> arr;\n  typedef vector<arr> mat;\n  mat dat;\n\n  Matrix(size_t\
+    \ r,size_t c):dat(r,arr(c,K())){}\n  Matrix(mat dat):dat(dat){}\n\n  size_t size()\
+    \ const{return dat.size();}\n  bool empty() const{return size()==0;}\n  arr& operator[](size_t\
+    \ k){return dat[k];}\n  const arr& operator[](size_t k) const {return dat[k];}\n\
+    \n  static Matrix matmul(const Matrix &A,const Matrix &B){\n    Matrix res(A.size(),B[0].size());\n\
+    \    for(int i=0;i<(int)A.size();i++)\n      for(int j=0;j<(int)B[0].size();j++)\n\
+    \        for(int k=0;k<(int)B.size();k++)\n          res[i][j]+=A[i][k]*B[k][j];\n\
+    \    return res;\n  }\n\n  static Matrix identity(size_t n){\n    Matrix res(n,n);\n\
     \    for(int i=0;i<(int)n;i++) res[i][i]=K(1);\n    return res;\n  }\n\n  Matrix\
     \ pow(long long n) const{\n    Matrix a(dat),res=identity(size());\n    while(n){\n\
     \      if(n&1) res=matmul(res,a);\n      a=matmul(a,a);\n      n>>=1;\n    }\n\
@@ -134,8 +133,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/matrix_det.test.cpp
   requiredBy: []
-  timestamp: '2021-03-24 18:46:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:46:10+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/matrix_det.test.cpp
 layout: document

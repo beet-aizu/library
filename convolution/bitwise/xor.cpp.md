@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0402.test.cpp
     title: test/aoj/0402.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/bitwise_xor_convolution.test.cpp
     title: test/yosupo/bitwise_xor_convolution.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/bitwise/xor.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -30,7 +30,7 @@ data:
   path: convolution/bitwise/xor.cpp
   requiredBy: []
   timestamp: '2020-12-16 12:53:06+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/bitwise_xor_convolution.test.cpp
   - test/aoj/0402.test.cpp

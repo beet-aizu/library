@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/slidingwindowaggregation.cpp
     title: datastructure/slidingwindowaggregation.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: mod/mint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/queue_operate_all_composite
     links:
@@ -47,8 +47,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/queue_operate_all_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 16:41:24+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:46:10+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/queue_operate_all_composite.test.cpp
 layout: document

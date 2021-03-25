@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: combinatorics/surjection.cpp
     title: combinatorics/surjection.cpp
   - icon: ':question:'
@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_I.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 09:21:12+09:00'
+  timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_I.test.cpp

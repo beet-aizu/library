@@ -6,12 +6,12 @@ data:
   - icon: ':x:'
     path: test/aoj/DPL_5_J.test.cpp
     title: test/aoj/DPL_5_J.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DPL_5_L.test.cpp
     title: test/aoj/DPL_5_L.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"combinatorics/partitiontable.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -37,7 +37,7 @@ data:
   path: combinatorics/partitiontable.cpp
   requiredBy: []
   timestamp: '2020-10-27 13:13:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DPL_5_J.test.cpp
   - test/aoj/DPL_5_L.test.cpp

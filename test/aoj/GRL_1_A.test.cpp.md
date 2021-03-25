@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/radixheap.cpp
     title: datastructure/radixheap.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
     links:
@@ -19,7 +19,7 @@ data:
     datastructure/radixheap.cpp\"\n\n#line 3 \"datastructure/radixheap.cpp\"\nusing\
     \ namespace std;\n#endif\n//BEGIN CUT HERE\n// prohibited to push an element less\
     \ than popped one\n// Key: int or long long\ntemplate<typename K,typename V>\n\
-    struct RadixHeap{\n  static constexpr int bit = sizeof(K) * 8;\n  array<vector<\
+    struct RadixHeap{\n  inline static constexpr int bit = sizeof(K) * 8;\n  array<vector<\
     \ pair<K, V> >, bit> vs;\n\n  int size;\n  K last;\n  RadixHeap():size(0),last(0){}\n\
     \n  bool empty() const{return size==0;}\n\n  inline int getbit(int a){\n    return\
     \ a?bit-__builtin_clz(a):0;\n  }\n\n  inline int getbit(long long a){\n    return\
@@ -59,8 +59,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-25 15:01:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-03-25 09:40:53+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_A.test.cpp
 layout: document

@@ -39,7 +39,7 @@ data:
   - icon: ':x:'
     path: test/yosupo/bernoulli_number.test.cpp
     title: test/yosupo/bernoulli_number.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/convolution_mod.test.cpp
     title: test/yosupo/convolution_mod.test.cpp
   - icon: ':x:'
@@ -51,7 +51,7 @@ data:
   - icon: ':x:'
     path: test/yosupo/inv_of_formal_power_series.test.cpp
     title: test/yosupo/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
     title: test/yosupo/kth_term_of_linearly_recurrent_sequence.test.cpp
   - icon: ':x:'
@@ -108,19 +108,20 @@ data:
     #endif\n//BEGIN CUT HERE\nconstexpr int bmds(int x){\n  const int v[] = {1012924417,\
     \ 924844033, 998244353,\n                   897581057, 645922817};\n  return v[x];\n\
     }\nconstexpr int brts(int x){\n  const int v[] = {5, 5, 3, 3, 3};\n  return v[x];\n\
-    }\n\ntemplate<int X>\nstruct NTT{\n  static constexpr int md = bmds(X);\n  static\
-    \ constexpr int rt = brts(X);\n  using M = Mint<int, md>;\n  vector< vector<M>\
-    \ > rts,rrts;\n\n  void ensure_base(int n){\n    if((int)rts.size()>=n) return;\n\
-    \    rts.resize(n);rrts.resize(n);\n    for(int i=1;i<n;i<<=1){\n      if(!rts[i].empty())\
-    \ continue;\n      M w=M(rt).pow((md-1)/(i<<1));\n      M rw=w.inv();\n      rts[i].resize(i);rrts[i].resize(i);\n\
-    \      rts[i][0]=M(1);rrts[i][0]=M(1);\n      for(int k=1;k<i;k++){\n        rts[i][k]=rts[i][k-1]*w;\n\
-    \        rrts[i][k]=rrts[i][k-1]*rw;\n      }\n    }\n  }\n\n  void ntt(vector<M>\
-    \ &as,bool f){\n    int n=as.size();\n    assert((n&(n-1))==0);\n    ensure_base(n);\n\
-    \n    for(int i=0,j=1;j+1<n;j++){\n      for(int k=n>>1;k>(i^=k);k>>=1);\n   \
-    \   if(i>j) swap(as[i],as[j]);\n    }\n\n    for(int i=1;i<n;i<<=1){\n      for(int\
-    \ j=0;j<n;j+=i*2){\n        for(int k=0;k<i;k++){\n          M z=as[i+j+k]*(f?rrts[i][k]:rts[i][k]);\n\
-    \          as[i+j+k]=as[j+k]-z;\n          as[j+k]+=z;\n        }\n      }\n \
-    \   }\n\n    if(f){\n      M tmp=M(n).inv();\n      for(int i=0;i<n;i++) as[i]*=tmp;\n\
+    }\n\ntemplate<int X>\nstruct NTT{\n  inline static constexpr int md = bmds(X);\n\
+    \  inline static constexpr int rt = brts(X);\n  using M = Mint<int, md>;\n  vector<\
+    \ vector<M> > rts,rrts;\n\n  void ensure_base(int n){\n    if((int)rts.size()>=n)\
+    \ return;\n    rts.resize(n);rrts.resize(n);\n    for(int i=1;i<n;i<<=1){\n  \
+    \    if(!rts[i].empty()) continue;\n      M w=M(rt).pow((md-1)/(i<<1));\n    \
+    \  M rw=w.inv();\n      rts[i].resize(i);rrts[i].resize(i);\n      rts[i][0]=M(1);rrts[i][0]=M(1);\n\
+    \      for(int k=1;k<i;k++){\n        rts[i][k]=rts[i][k-1]*w;\n        rrts[i][k]=rrts[i][k-1]*rw;\n\
+    \      }\n    }\n  }\n\n  void ntt(vector<M> &as,bool f){\n    int n=as.size();\n\
+    \    assert((n&(n-1))==0);\n    ensure_base(n);\n\n    for(int i=0,j=1;j+1<n;j++){\n\
+    \      for(int k=n>>1;k>(i^=k);k>>=1);\n      if(i>j) swap(as[i],as[j]);\n   \
+    \ }\n\n    for(int i=1;i<n;i<<=1){\n      for(int j=0;j<n;j+=i*2){\n        for(int\
+    \ k=0;k<i;k++){\n          M z=as[i+j+k]*(f?rrts[i][k]:rts[i][k]);\n         \
+    \ as[i+j+k]=as[j+k]-z;\n          as[j+k]+=z;\n        }\n      }\n    }\n\n \
+    \   if(f){\n      M tmp=M(n).inv();\n      for(int i=0;i<n;i++) as[i]*=tmp;\n\
     \    }\n  }\n\n  vector<M> multiply(vector<M> as,vector<M> bs){\n    int need=as.size()+bs.size()-1;\n\
     \    int sz=1;\n    while(sz<need) sz<<=1;\n    as.resize(sz,M(0));\n    bs.resize(sz,M(0));\n\
     \n    ntt(as,0);ntt(bs,0);\n    for(int i=0;i<sz;i++) as[i]*=bs[i];\n    ntt(as,1);\n\
@@ -129,7 +130,6 @@ data:
     \ i=0;i<(int)am.size();i++) am[i]=M(as[i]);\n    for(int i=0;i<(int)bm.size();i++)\
     \ bm[i]=M(bs[i]);\n    vector<M> cm=multiply(am,bm);\n    vector<int> cs(cm.size());\n\
     \    for(int i=0;i<(int)cs.size();i++) cs[i]=cm[i].v;\n    return cs;\n  }\n};\n\
-    template<int X> constexpr int NTT<X>::md;\ntemplate<int X> constexpr int NTT<X>::rt;\n\
     //END CUT HERE\n#ifndef call_from_test\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn:
   - mod/mint.cpp
@@ -139,7 +139,7 @@ data:
   - convolution/garner.cpp
   - mod/factorial.cpp
   - formalpowerseries/998244353.cpp
-  timestamp: '2020-10-27 17:04:27+09:00'
+  timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/sharp_p_subset_sum.test.cpp

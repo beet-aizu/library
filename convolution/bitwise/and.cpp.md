@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2981.test.cpp
     title: test/aoj/2981.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/bitwise_and_convolution.test.cpp
     title: test/yosupo/bitwise_and_convolution.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/bitwise/and.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -27,7 +27,7 @@ data:
   path: convolution/bitwise/and.cpp
   requiredBy: []
   timestamp: '2020-11-15 20:13:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo/bitwise_and_convolution.test.cpp
   - test/aoj/2981.test.cpp
