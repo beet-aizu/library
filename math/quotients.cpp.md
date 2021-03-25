@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5011.test.cpp
     title: test/yukicoder/5011.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/quotients.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -30,7 +30,7 @@ data:
   path: math/quotients.cpp
   requiredBy: []
   timestamp: '2020-10-24 13:53:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5011.test.cpp
 documentation_of: math/quotients.cpp

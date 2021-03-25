@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/bitwise/fwht.cpp
     title: convolution/bitwise/fwht.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: convolution/bitwise/or.cpp
     title: convolution/bitwise/or.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

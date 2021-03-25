@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/linearfunction.cpp
     title: math/linearfunction.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2951.test.cpp
     title: test/aoj/2951.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0022.test.cpp
     title: test/yukicoder/0022.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"polynomial/lagrangeinterpolation.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -37,7 +37,7 @@ data:
   path: polynomial/lagrangeinterpolation.cpp
   requiredBy: []
   timestamp: '2020-03-10 20:00:42+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0022.test.cpp
   - test/aoj/2951.test.cpp

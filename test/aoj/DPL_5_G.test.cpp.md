@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: combinatorics/bell.cpp
     title: combinatorics/bell.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/enumeration.cpp
     title: combinatorics/enumeration.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

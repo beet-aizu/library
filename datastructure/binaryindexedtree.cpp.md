@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2125.test.cpp
     title: test/yukicoder/2125.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/binaryindexedtree.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -72,7 +72,7 @@ data:
   path: datastructure/binaryindexedtree.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/static_range_inversions_query.test.cpp
   - test/yosupo/point_add_range_sum.test.cpp

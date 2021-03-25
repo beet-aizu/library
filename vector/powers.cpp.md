@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5633.test.cpp
     title: test/yukicoder/5633.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"vector/powers.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -26,7 +26,7 @@ data:
   path: vector/powers.cpp
   requiredBy: []
   timestamp: '2020-12-29 11:19:45+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5633.test.cpp
 documentation_of: vector/powers.cpp

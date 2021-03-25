@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/twoway.cpp
     title: math/twoway.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: toptree/toptree.cpp
     title: toptree/toptree.cpp
   _extendedRequiredBy: []

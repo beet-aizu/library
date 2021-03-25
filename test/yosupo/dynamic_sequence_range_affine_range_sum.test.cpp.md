@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/affine.cpp
     title: math/affine.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []
