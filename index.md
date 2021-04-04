@@ -186,6 +186,9 @@ data:
       path: datastructure/slidingwindowaggregation.cpp
       title: datastructure/slidingwindowaggregation.cpp
     - icon: ':heavy_check_mark:'
+      path: datastructure/slope.cpp
+      title: datastructure/slope.cpp
+    - icon: ':heavy_check_mark:'
       path: datastructure/sparsetable.cpp
       title: datastructure/sparsetable.cpp
     - icon: ':heavy_check_mark:'
@@ -1894,6 +1897,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/5025.test.cpp
       title: test/yukicoder/5025.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/5061.test.cpp
+      title: test/yukicoder/5061.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/5223.test.cpp
       title: test/yukicoder/5223.test.cpp

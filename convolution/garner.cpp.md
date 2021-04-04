@@ -70,8 +70,8 @@ data:
   timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/convolution_mod_1000000007.garner.test.cpp
   - test/yukicoder/1504.test.cpp
+  - test/yosupo/convolution_mod_1000000007.garner.test.cpp
   - test/aoj/2985.garner.test.cpp
 documentation_of: convolution/garner.cpp
 layout: document

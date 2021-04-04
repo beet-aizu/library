@@ -91,10 +91,10 @@ data:
   - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
   - test/yosupo/lca.linkcuttree.test.cpp
-  - test/aoj/0367.linkcuttree.test.cpp
   - test/aoj/2450.linkcuttree.test.cpp
-  - test/aoj/GRL_5_E.linkcuttree.test.cpp
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
+  - test/aoj/GRL_5_E.linkcuttree.test.cpp
+  - test/aoj/0367.linkcuttree.test.cpp
 documentation_of: linkcuttree/path.cpp
 layout: document
 redirect_from:

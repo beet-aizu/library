@@ -70,8 +70,8 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/ALDS1_9_C.test.cpp
   - test/aoj/2415.test.cpp
+  - test/aoj/ALDS1_9_C.test.cpp
 documentation_of: datastructure/skewheap.cpp
 layout: document
 redirect_from:

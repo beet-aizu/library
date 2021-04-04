@@ -51,10 +51,10 @@ data:
   timestamp: '2020-10-27 16:52:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/find_linear_recurrence.test.cpp
   - test/yukicoder/0104.test.cpp
   - test/yukicoder/3211.test.cpp
   - test/yukicoder/0444.test.cpp
+  - test/yosupo/find_linear_recurrence.test.cpp
 documentation_of: polynomial/berlekampmassey.cpp
 layout: document
 redirect_from:

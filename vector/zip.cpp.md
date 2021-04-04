@@ -37,8 +37,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2563.test.cpp
-  - test/aoj/2969.test.cpp
   - test/aoj/2725.test.cpp
+  - test/aoj/2969.test.cpp
 documentation_of: vector/zip.cpp
 layout: document
 redirect_from:
