@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://yukicoder.me/problems/5061
+#define PROBLEM "https://yukicoder.me/problems/5061"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -9,6 +9,10 @@ using namespace std;
 #include "../../vector/compress.cpp"
 #include "../../datastructure/slope.cpp"
 #undef call_from_test
+
+#ifdef SANITIZE
+#define IGNORE
+#endif
 
 signed main(){
   cin.tie(0);

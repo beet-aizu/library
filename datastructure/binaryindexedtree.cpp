@@ -17,13 +17,14 @@ private:
 public:
   int n;
   vector<T> bit;
-  BIT(int n_):n(n_+1),bit(n+1,0){}
+  BIT(int n_):n(n_+1),bit(n_+2,0){}
 
   // v[i] += a
   void add(int i,T a){
     for(int x=++i;x<=n;x+=(x&-x))
       bit[x]+=a;
   }
+
   // \sum_{l <= i < r} v[i]
   T query(int l,int r){return sum(r)-sum(l);}
 

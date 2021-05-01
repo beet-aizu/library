@@ -20,6 +20,12 @@ map<T, int> dict(const vector<T> &vs){
 map<char, int> dict(const string &s){
   return dict(vector<char>(s.begin(),s.end()));
 }
+template<typename T>
+vector<T> compressed(vector<T> vs){
+  auto dc=dict(compress(vs));
+  for(auto &v:vs) v=dc[v];
+  return vs;
+}
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE
