@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
@@ -25,13 +25,14 @@ data:
     \  return vs;\n}\ntemplate<typename T>\nmap<T, int> dict(const vector<T> &vs){\n\
     \  map<T, int> res;\n  for(int i=0;i<(int)vs.size();i++)\n    res[vs[i]]=i;\n\
     \  return res;\n}\nmap<char, int> dict(const string &s){\n  return dict(vector<char>(s.begin(),s.end()));\n\
-    }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n#line 1 \"segtree/count/dynamic_offline.cpp\"\n\n#line\
-    \ 3 \"segtree/count/dynamic_offline.cpp\"\nusing namespace std;\n#endif\n//BEGIN\
-    \ CUT HERE\ntemplate<typename Key,typename T>\nstruct RangeCount{\n  struct BIT{\n\
-    \    vector<T> dat;\n    BIT(int n){dat.assign(++n,0);}\n    T sum(int k){\n \
-    \     T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n      return res;\n    }\n\
-    \    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k) dat[k]+=v;\n\
+    }\ntemplate<typename T>\nvector<T> compressed(vector<T> vs){\n  auto dc=dict(compress(vs));\n\
+    \  for(auto &v:vs) v=dc[v];\n  return vs;\n}\n//END CUT HERE\n#ifndef call_from_test\n\
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"segtree/count/dynamic_offline.cpp\"\
+    \n\n#line 3 \"segtree/count/dynamic_offline.cpp\"\nusing namespace std;\n#endif\n\
+    //BEGIN CUT HERE\ntemplate<typename Key,typename T>\nstruct RangeCount{\n  struct\
+    \ BIT{\n    vector<T> dat;\n    BIT(int n){dat.assign(++n,0);}\n    T sum(int\
+    \ k){\n      T res=0;\n      for(;k;k-=k&-k) res+=dat[k];\n      return res;\n\
+    \    }\n    void add(int k,T v){\n      for(++k;k<(int)dat.size();k+=k&-k) dat[k]+=v;\n\
     \    }\n  };\n  int n;\n  vector< vector<Key> > val;\n  vector<BIT> dat;\n  RangeCount(int\
     \ n):n(n){\n    val.assign(n<<1,vector<Key>());\n    dat.reserve(n<<1);\n  }\n\
     \  void preupdate(int a,Key x){\n    a+=n;\n    while(a){\n      val[a].emplace_back(x);\n\
@@ -74,8 +75,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/rectangle_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 18:08:33+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-05-01 12:56:38+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/rectangle_sum.test.cpp
 layout: document

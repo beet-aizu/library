@@ -90,9 +90,9 @@ data:
   verifiedWith:
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/aoj/DSL_2_G.bbst.test.cpp
+  - test/aoj/DSL_2_F.bbst.test.cpp
   - test/aoj/DSL_2_I.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp
-  - test/aoj/DSL_2_F.bbst.test.cpp
 documentation_of: bbst/rbst/data/lazy.cpp
 layout: document
 redirect_from:

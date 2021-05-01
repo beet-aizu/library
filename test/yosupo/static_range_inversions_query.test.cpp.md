@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: io/single.cpp
     title: io/single.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
     links:
@@ -34,8 +34,10 @@ data:
     \  vs.erase(unique(vs.begin(),vs.end()),vs.end());\n  return vs;\n}\ntemplate<typename\
     \ T>\nmap<T, int> dict(const vector<T> &vs){\n  map<T, int> res;\n  for(int i=0;i<(int)vs.size();i++)\n\
     \    res[vs[i]]=i;\n  return res;\n}\nmap<char, int> dict(const string &s){\n\
-    \  return dict(vector<char>(s.begin(),s.end()));\n}\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"algorithm/mo.cpp\"\
+    \  return dict(vector<char>(s.begin(),s.end()));\n}\ntemplate<typename T>\nvector<T>\
+    \ compressed(vector<T> vs){\n  auto dc=dict(compress(vs));\n  for(auto &v:vs)\
+    \ v=dc[v];\n  return vs;\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 1 \"algorithm/mo.cpp\"\
     \n\n#line 3 \"algorithm/mo.cpp\"\nusing namespace std;\n#endif\n//BEGIN CUT HERE\n\
     struct Mo{\n  using F = function<void(int)>;\n  vector<int> ls,rs,ord;\n  int\
     \ n,width,nl,nr,ptr;\n  F expandL,expandR;\n  F shrinkL,shrinkR;\n\n  Mo(int n,int\
@@ -56,8 +58,8 @@ data:
     //BEGIN CUT HERE\ntemplate<typename T>\nclass BIT{\nprivate:\n  // \\sum_{j <\
     \ i}  v[j]\n  T sum(int i){\n    T s(0);\n    for(int x=i;x>0;x-=(x&-x))\n   \
     \   s+=bit[x];\n    return s;\n  }\npublic:\n  int n;\n  vector<T> bit;\n  BIT(int\
-    \ n_):n(n_+1),bit(n+1,0){}\n\n  // v[i] += a\n  void add(int i,T a){\n    for(int\
-    \ x=++i;x<=n;x+=(x&-x))\n      bit[x]+=a;\n  }\n  // \\sum_{l <= i < r} v[i]\n\
+    \ n_):n(n_+1),bit(n_+2,0){}\n\n  // v[i] += a\n  void add(int i,T a){\n    for(int\
+    \ x=++i;x<=n;x+=(x&-x))\n      bit[x]+=a;\n  }\n\n  // \\sum_{l <= i < r} v[i]\n\
     \  T query(int l,int r){return sum(r)-sum(l);}\n\n  // min({x | sum(x) >= w})\n\
     \  int lower_bound(const T w){\n    if(w<=0) return 0;\n    T r=w;\n    int x=0,p=1;\n\
     \    while(p<n) p<<=1;\n    for(int k=p;k>0;k>>=1){\n      if(x+k<=n and bit[x+k]<r){\n\
@@ -97,8 +99,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/static_range_inversions_query.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-05-01 12:56:38+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/static_range_inversions_query.test.cpp
 layout: document

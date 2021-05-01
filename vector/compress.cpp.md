@@ -37,32 +37,35 @@ data:
     path: test/aoj/3506.test.cpp
     title: test/aoj/3506.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_5_D.test.cpp
+    title: test/aoj/ALDS1_5_D.test.cpp
+  - icon: ':x:'
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4778.test.cpp
     title: test/yukicoder/4778.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5061.test.cpp
     title: test/yukicoder/5061.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"vector/compress.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -71,41 +74,45 @@ data:
     \  return vs;\n}\ntemplate<typename T>\nmap<T, int> dict(const vector<T> &vs){\n\
     \  map<T, int> res;\n  for(int i=0;i<(int)vs.size();i++)\n    res[vs[i]]=i;\n\
     \  return res;\n}\nmap<char, int> dict(const string &s){\n  return dict(vector<char>(s.begin(),s.end()));\n\
-    }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
+    }\ntemplate<typename T>\nvector<T> compressed(vector<T> vs){\n  auto dc=dict(compress(vs));\n\
+    \  for(auto &v:vs) v=dc[v];\n  return vs;\n}\n//END CUT HERE\n#ifndef call_from_test\n\
+    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n\n//BEGIN CUT HERE\ntemplate<typename V>\nV compress(V vs){\n  sort(vs.begin(),vs.end());\n\
     \  vs.erase(unique(vs.begin(),vs.end()),vs.end());\n  return vs;\n}\ntemplate<typename\
     \ T>\nmap<T, int> dict(const vector<T> &vs){\n  map<T, int> res;\n  for(int i=0;i<(int)vs.size();i++)\n\
     \    res[vs[i]]=i;\n  return res;\n}\nmap<char, int> dict(const string &s){\n\
-    \  return dict(vector<char>(s.begin(),s.end()));\n}\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \  return dict(vector<char>(s.begin(),s.end()));\n}\ntemplate<typename T>\nvector<T>\
+    \ compressed(vector<T> vs){\n  auto dc=dict(compress(vs));\n  for(auto &v:vs)\
+    \ v=dc[v];\n  return vs;\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: vector/compress.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-05-01 12:56:38+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/4852.test.cpp
-  - test/yukicoder/5061.test.cpp
-  - test/yukicoder/4778.test.cpp
-  - test/yukicoder/1732.test.cpp
   - test/yukicoder/3961.test.cpp
+  - test/yukicoder/5061.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/4778.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
-  - test/yosupo/point_add_rectangle_sum.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
-  - test/aoj/2359.test.cpp
-  - test/aoj/1599.test.cpp
-  - test/aoj/0613.test.cpp
-  - test/aoj/3506.test.cpp
-  - test/aoj/1607.test.cpp
-  - test/aoj/2563.test.cpp
-  - test/aoj/1300.test.cpp
+  - test/yosupo/point_add_rectangle_sum.test.cpp
+  - test/aoj/ALDS1_5_D.test.cpp
   - test/aoj/2270.test.cpp
-  - test/aoj/2969.test.cpp
-  - test/aoj/0343.test.cpp
+  - test/aoj/2563.test.cpp
+  - test/aoj/0613.test.cpp
+  - test/aoj/1300.test.cpp
+  - test/aoj/3506.test.cpp
   - test/aoj/2968.test.cpp
+  - test/aoj/1599.test.cpp
+  - test/aoj/1607.test.cpp
+  - test/aoj/2969.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/aoj/0343.test.cpp
 documentation_of: vector/compress.cpp
 layout: document
 redirect_from:

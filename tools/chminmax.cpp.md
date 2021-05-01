@@ -114,7 +114,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/geometry/3056.test.cpp
     title: test/aoj/geometry/3056.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
   - icon: ':heavy_check_mark:'
@@ -129,9 +129,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4918.test.cpp
     title: test/yukicoder/4918.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tools/chminmax.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -148,51 +148,51 @@ data:
   isVerificationFile: false
   path: tools/chminmax.cpp
   requiredBy:
+  - datastructure/slidingwindowaggregation.cpp
   - string/editdistance.cpp
   - graph/nicetree.cpp
-  - datastructure/slidingwindowaggregation.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yukicoder/3227.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/4918.test.cpp
   - test/yukicoder/4706.test.cpp
   - test/yukicoder/3912.test.cpp
-  - test/yukicoder/4918.test.cpp
-  - test/yukicoder/1732.test.cpp
-  - test/yukicoder/3227.test.cpp
-  - test/aoj/0613.test.cpp
-  - test/aoj/0596.test.cpp
-  - test/aoj/3037.test.cpp
-  - test/aoj/0439.test.cpp
-  - test/aoj/3506.test.cpp
-  - test/aoj/2736.test.cpp
-  - test/aoj/2187.test.cpp
-  - test/aoj/1607.test.cpp
-  - test/aoj/1549.test.cpp
-  - test/aoj/3142.test.cpp
-  - test/aoj/3069.test.cpp
-  - test/aoj/2725.test.cpp
-  - test/aoj/2975.test.cpp
   - test/aoj/2230.test.cpp
-  - test/aoj/geometry/2334.test.cpp
-  - test/aoj/geometry/3056.test.cpp
-  - test/aoj/geometry/3049.test.cpp
-  - test/aoj/GRL_5_A.linkcuttree.test.cpp
+  - test/aoj/0596.test.cpp
   - test/aoj/2627.test.cpp
-  - test/aoj/3148.test.cpp
-  - test/aoj/2969.test.cpp
-  - test/aoj/2290.test.cpp
   - test/aoj/DPL_1_E.test.cpp
-  - test/aoj/3208.test.cpp
-  - test/aoj/0415.test.cpp
-  - test/aoj/1642.test.cpp
-  - test/aoj/3112.test.cpp
-  - test/aoj/2308.test.cpp
-  - test/aoj/2968.test.cpp
-  - test/aoj/3213.test.cpp
-  - test/aoj/DPL_3_B.test.cpp
+  - test/aoj/3069.test.cpp
   - test/aoj/3168.test.cpp
+  - test/aoj/3208.test.cpp
+  - test/aoj/geometry/3056.test.cpp
+  - test/aoj/geometry/2334.test.cpp
+  - test/aoj/geometry/3049.test.cpp
+  - test/aoj/0613.test.cpp
+  - test/aoj/2725.test.cpp
+  - test/aoj/2290.test.cpp
+  - test/aoj/3506.test.cpp
+  - test/aoj/2968.test.cpp
+  - test/aoj/1549.test.cpp
+  - test/aoj/3213.test.cpp
+  - test/aoj/2308.test.cpp
+  - test/aoj/2736.test.cpp
+  - test/aoj/GRL_5_A.linkcuttree.test.cpp
+  - test/aoj/1607.test.cpp
+  - test/aoj/2187.test.cpp
   - test/aoj/2790.test.cpp
+  - test/aoj/2975.test.cpp
+  - test/aoj/2969.test.cpp
+  - test/aoj/3142.test.cpp
+  - test/aoj/3112.test.cpp
+  - test/aoj/0439.test.cpp
+  - test/aoj/3148.test.cpp
+  - test/aoj/1642.test.cpp
+  - test/aoj/3037.test.cpp
+  - test/aoj/DPL_3_B.test.cpp
   - test/aoj/0391.test.cpp
+  - test/aoj/0415.test.cpp
 documentation_of: tools/chminmax.cpp
 layout: document
 redirect_from:

@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/fastfouriertransform.cpp
     title: convolution/fastfouriertransform.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tools/fixpoint.cpp
     title: tools/fixpoint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/centroid.cpp
     title: tree/centroid.cpp
   _extendedRequiredBy: []

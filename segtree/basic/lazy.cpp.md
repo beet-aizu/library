@@ -39,12 +39,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3405.test.cpp
     title: test/yukicoder/3405.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://codeforces.com/contest/1179/problem/C
@@ -137,21 +137,21 @@ data:
   path: segtree/basic/lazy.cpp
   requiredBy: []
   timestamp: '2020-10-27 16:27:26+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/3405.test.cpp
   - test/yukicoder/5223.test.cpp
+  - test/yukicoder/3405.test.cpp
   - test/yosupo/range_affine_range_sum.test.cpp
-  - test/aoj/2359.test.cpp
-  - test/aoj/3035.test.cpp
-  - test/aoj/2563.test.cpp
   - test/aoj/DSL_2_H.test.cpp
-  - test/aoj/2871.test.cpp
-  - test/aoj/DSL_2_I.test.cpp
-  - test/aoj/DSL_2_F.test.cpp
-  - test/aoj/2450.test.cpp
+  - test/aoj/2563.test.cpp
+  - test/aoj/3035.test.cpp
   - test/aoj/2667.test.cpp
+  - test/aoj/2450.test.cpp
+  - test/aoj/2871.test.cpp
   - test/aoj/3073.test.cpp
+  - test/aoj/DSL_2_F.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/aoj/DSL_2_I.test.cpp
 documentation_of: segtree/basic/lazy.cpp
 layout: document
 title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
