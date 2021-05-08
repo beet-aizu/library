@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3213.test.cpp
     title: test/aoj/3213.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,12 +60,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4872.test.cpp
     title: test/yukicoder/4872.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5061.test.cpp
     title: test/yukicoder/5061.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"io/single.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -81,28 +81,28 @@ data:
   path: io/single.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1948.test.cpp
-  - test/yukicoder/4872.test.cpp
-  - test/yukicoder/1950.test.cpp
-  - test/yukicoder/2113.test.cpp
-  - test/yukicoder/3277.test.cpp
-  - test/yukicoder/1013.test.cpp
-  - test/yukicoder/4862.test.cpp
-  - test/yukicoder/4569.test.cpp
-  - test/yukicoder/4387.test.cpp
-  - test/yukicoder/5061.test.cpp
-  - test/yosupo/static_range_inversions_query.test.cpp
-  - test/aoj/3168.test.cpp
-  - test/aoj/2981.test.cpp
-  - test/aoj/2968.test.cpp
-  - test/aoj/3086.test.cpp
+  - test/aoj/1613.test.cpp
   - test/aoj/0437.test.cpp
   - test/aoj/3213.test.cpp
+  - test/aoj/2968.test.cpp
   - test/aoj/0438.test.cpp
+  - test/aoj/3086.test.cpp
+  - test/aoj/2981.test.cpp
+  - test/aoj/3168.test.cpp
   - test/aoj/0439.test.cpp
-  - test/aoj/1613.test.cpp
+  - test/yukicoder/1013.test.cpp
+  - test/yukicoder/4569.test.cpp
+  - test/yukicoder/1948.test.cpp
+  - test/yukicoder/4387.test.cpp
+  - test/yukicoder/3277.test.cpp
+  - test/yukicoder/1950.test.cpp
+  - test/yukicoder/5061.test.cpp
+  - test/yukicoder/4872.test.cpp
+  - test/yukicoder/4862.test.cpp
+  - test/yukicoder/2113.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: io/single.cpp
 layout: document
 redirect_from:

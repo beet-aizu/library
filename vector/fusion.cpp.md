@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2969.test.cpp
     title: test/aoj/2969.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5061.test.cpp
     title: test/yukicoder/5061.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"vector/fusion.cpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -35,12 +35,12 @@ data:
   path: vector/fusion.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:29:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/5061.test.cpp
-  - test/aoj/2563.test.cpp
   - test/aoj/2969.test.cpp
+  - test/aoj/2563.test.cpp
   - test/aoj/2359.test.cpp
+  - test/yukicoder/5061.test.cpp
 documentation_of: vector/fusion.cpp
 layout: document
 redirect_from:

@@ -40,9 +40,9 @@ data:
   timestamp: '2020-11-13 17:57:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/4474.test.cpp
   - test/aoj/3062.test.cpp
   - test/aoj/NTL_1_B.test.cpp
+  - test/yukicoder/4474.test.cpp
 documentation_of: mod/pow.cpp
 layout: document
 redirect_from:

@@ -58,8 +58,8 @@ data:
   timestamp: '2020-10-27 15:54:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/maximum_independent_set.test.cpp
   - test/aoj/2948.test.cpp
+  - test/yosupo/maximum_independent_set.test.cpp
 documentation_of: graph/independentset.cpp
 layout: document
 redirect_from:

@@ -42,15 +42,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/3912.test.cpp
     title: test/yukicoder/3912.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"tools/fixpoint.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -72,23 +72,23 @@ data:
   path: tools/fixpoint.cpp
   requiredBy: []
   timestamp: '2020-10-27 12:55:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2646.test.cpp
+  - test/aoj/1642.test.cpp
+  - test/aoj/3084.test.cpp
+  - test/aoj/0377.test.cpp
+  - test/aoj/3142.test.cpp
+  - test/aoj/2790.test.cpp
+  - test/aoj/0367.test.cpp
+  - test/aoj/2687.test.cpp
+  - test/aoj/geometry/2448.test.cpp
+  - test/aoj/0613.test.cpp
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/3961.test.cpp
   - test/yukicoder/3912.test.cpp
   - test/yosupo/frequency_table_of_tree_distance.test.cpp
   - test/yosupo/tree_diameter.test.cpp
-  - test/aoj/0367.test.cpp
-  - test/aoj/0377.test.cpp
-  - test/aoj/geometry/2448.test.cpp
-  - test/aoj/0613.test.cpp
-  - test/aoj/3084.test.cpp
-  - test/aoj/2687.test.cpp
-  - test/aoj/2790.test.cpp
-  - test/aoj/3142.test.cpp
-  - test/aoj/1642.test.cpp
-  - test/aoj/2646.test.cpp
 documentation_of: tools/fixpoint.cpp
 layout: document
 redirect_from:

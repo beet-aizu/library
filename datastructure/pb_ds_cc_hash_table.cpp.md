@@ -31,8 +31,8 @@ data:
   timestamp: '2019-12-27 08:56:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/associative_array.test.cpp
   - test/aoj/2646.test.cpp
+  - test/yosupo/associative_array.test.cpp
 documentation_of: datastructure/pb_ds_cc_hash_table.cpp
 layout: document
 redirect_from:

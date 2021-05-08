@@ -42,15 +42,15 @@ data:
   isVerificationFile: false
   path: math/extgcd.cpp
   requiredBy:
-  - math/combination.cpp
   - math/linearcongruence.cpp
+  - math/combination.cpp
   - mod/inverse.cpp
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/NTL_1_E.test.cpp
-  - test/aoj/2970.test.cpp
   - test/aoj/2659.test.cpp
+  - test/aoj/2970.test.cpp
+  - test/aoj/NTL_1_E.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document
 redirect_from:

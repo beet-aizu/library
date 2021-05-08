@@ -6,18 +6,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2842.test.cpp
     title: test/aoj/2842.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/2063.test.cpp
     title: test/yukicoder/2063.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"segtree/count/dynamic_offline.cpp\"\n\n#include<bits/stdc++.h>\n\
@@ -65,12 +65,12 @@ data:
   path: segtree/count/dynamic_offline.cpp
   requiredBy: []
   timestamp: '2020-10-27 18:08:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/2063.test.cpp
-  - test/yosupo/rectangle_sum.test.cpp
-  - test/yosupo/point_add_rectangle_sum.test.cpp
   - test/aoj/2842.test.cpp
+  - test/yukicoder/2063.test.cpp
+  - test/yosupo/point_add_rectangle_sum.test.cpp
+  - test/yosupo/rectangle_sum.test.cpp
 documentation_of: segtree/count/dynamic_offline.cpp
 layout: document
 redirect_from:

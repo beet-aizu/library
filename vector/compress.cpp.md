@@ -39,33 +39,33 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_5_D.test.cpp
     title: test/aoj/ALDS1_5_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_rectangle_sum.test.cpp
     title: test/yosupo/point_add_rectangle_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/rectangle_sum.test.cpp
     title: test/yosupo/rectangle_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/3961.test.cpp
     title: test/yukicoder/3961.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4778.test.cpp
     title: test/yukicoder/4778.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5061.test.cpp
     title: test/yukicoder/5061.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"vector/compress.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -91,28 +91,28 @@ data:
   path: vector/compress.cpp
   requiredBy: []
   timestamp: '2021-05-01 12:56:38+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/4852.test.cpp
-  - test/yukicoder/3961.test.cpp
-  - test/yukicoder/5061.test.cpp
-  - test/yukicoder/1732.test.cpp
-  - test/yukicoder/4778.test.cpp
-  - test/yosupo/rectangle_sum.test.cpp
-  - test/yosupo/static_range_inversions_query.test.cpp
-  - test/yosupo/point_add_rectangle_sum.test.cpp
-  - test/aoj/ALDS1_5_D.test.cpp
-  - test/aoj/2270.test.cpp
-  - test/aoj/2563.test.cpp
-  - test/aoj/0613.test.cpp
-  - test/aoj/1300.test.cpp
-  - test/aoj/3506.test.cpp
-  - test/aoj/2968.test.cpp
-  - test/aoj/1599.test.cpp
-  - test/aoj/1607.test.cpp
-  - test/aoj/2969.test.cpp
-  - test/aoj/2359.test.cpp
   - test/aoj/0343.test.cpp
+  - test/aoj/ALDS1_5_D.test.cpp
+  - test/aoj/2969.test.cpp
+  - test/aoj/2270.test.cpp
+  - test/aoj/2968.test.cpp
+  - test/aoj/3506.test.cpp
+  - test/aoj/2563.test.cpp
+  - test/aoj/1599.test.cpp
+  - test/aoj/1300.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/aoj/0613.test.cpp
+  - test/aoj/1607.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/4852.test.cpp
+  - test/yukicoder/4778.test.cpp
+  - test/yukicoder/5061.test.cpp
+  - test/yukicoder/3961.test.cpp
+  - test/yosupo/point_add_rectangle_sum.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
+  - test/yosupo/rectangle_sum.test.cpp
 documentation_of: vector/compress.cpp
 layout: document
 redirect_from:

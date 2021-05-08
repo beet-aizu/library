@@ -69,8 +69,8 @@ data:
   timestamp: '2019-12-21 20:40:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/dominatortree.test.cpp
   - test/aoj/0294.test.cpp
+  - test/yosupo/dominatortree.test.cpp
 documentation_of: graph/dominatortree.cpp
 layout: document
 redirect_from:

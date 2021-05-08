@@ -64,9 +64,9 @@ data:
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/0422.test.cpp
   - test/yukicoder/4569.test.cpp
   - test/yukicoder/1504.test.cpp
-  - test/aoj/0422.test.cpp
 documentation_of: mod/rint.cpp
 layout: document
 redirect_from:

@@ -21,30 +21,30 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_range_sum.test.cpp
     title: test/yosupo/point_add_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_path_sum.test.cpp
     title: test/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/vertex_add_subtree_sum.test.cpp
     title: test/yosupo/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2125.test.cpp
     title: test/yukicoder/2125.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4852.test.cpp
     title: test/yukicoder/4852.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/5223.test.cpp
     title: test/yukicoder/5223.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructure/binaryindexedtree.cpp\"\n\n#include <bits/stdc++.h>\n\
@@ -79,20 +79,20 @@ data:
   requiredBy:
   - vector/inversion.cpp
   timestamp: '2021-05-01 12:56:38+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/0343.test.cpp
+  - test/aoj/ALDS1_5_D.test.cpp
+  - test/aoj/2270.test.cpp
+  - test/aoj/GRL_5_D.test.cpp
+  - test/yukicoder/1732.test.cpp
   - test/yukicoder/4852.test.cpp
   - test/yukicoder/5223.test.cpp
-  - test/yukicoder/1732.test.cpp
   - test/yukicoder/2125.test.cpp
-  - test/yosupo/vertex_add_path_sum.test.cpp
-  - test/yosupo/static_range_inversions_query.test.cpp
   - test/yosupo/point_add_range_sum.test.cpp
   - test/yosupo/vertex_add_subtree_sum.test.cpp
-  - test/aoj/ALDS1_5_D.test.cpp
-  - test/aoj/GRL_5_D.test.cpp
-  - test/aoj/2270.test.cpp
-  - test/aoj/0343.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
+  - test/yosupo/vertex_add_path_sum.test.cpp
 documentation_of: datastructure/binaryindexedtree.cpp
 layout: document
 title: Binary Indexed Tree

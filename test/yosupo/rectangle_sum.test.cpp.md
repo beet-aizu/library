@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: segtree/count/dynamic_offline.cpp
     title: segtree/count/dynamic_offline.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
@@ -76,7 +76,7 @@ data:
   path: test/yosupo/rectangle_sum.test.cpp
   requiredBy: []
   timestamp: '2021-05-01 12:56:38+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/rectangle_sum.test.cpp
 layout: document

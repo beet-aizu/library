@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/mo.cpp
     title: algorithm/mo.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/binaryindexedtree.cpp
     title: Binary Indexed Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: io/single.cpp
     title: io/single.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: vector/compress.cpp
     title: vector/compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
     links:
@@ -100,7 +100,7 @@ data:
   path: test/yosupo/static_range_inversions_query.test.cpp
   requiredBy: []
   timestamp: '2021-05-01 12:56:38+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/static_range_inversions_query.test.cpp
 layout: document
