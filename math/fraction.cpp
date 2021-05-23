@@ -5,30 +5,30 @@ using namespace std;
 //BEGIN CUT HERE
 template<typename T>
 struct fraction{
-  T num,dom;
-  fraction(T n,T d):num(n),dom(d){
-    assert(dom!=0);
-    if(dom<0) num*=-1,dom*=-1;
-    T tmp=__gcd(abs(num),abs(dom));
+  T num,den;
+  fraction(T n,T d):num(n),den(d){
+    assert(den!=0);
+    if(den<0) num*=-1,den*=-1;
+    T tmp=gcd(abs(num),abs(den));
     num/=tmp;
-    dom/=tmp;
+    den/=tmp;
   }
-  fraction operator+(const fraction a) const{
-    return fraction(num*a.dom+a.num*dom,dom*a.dom);
+  const fraction operator+(const fraction& a) const{
+    return fraction(num*a.den+a.num*den,den*a.den);
   }
-  fraction operator-(const fraction a) const{
-    return fraction(num*a.dom-a.num*dom,dom*a.dom);
+  const fraction operator-(const fraction& a) const{
+    return fraction(num*a.den-a.num*den,den*a.den);
   }
-  fraction operator*(const fraction a) const{
-    return fraction(num*a.num,dom*a.dom);
+  const fraction operator*(const fraction& a) const{
+    return fraction(num*a.num,den*a.den);
   }
-  fraction operator/(const fraction a){
-    return fraction(num*a.dom,dom*a.num);
+  const fraction operator/(const fraction& a) const{
+    return fraction(num*a.den,den*a.num);
   }
-  fraction operator*(T k) const{return fraction(num*k,dom);}
-  fraction operator/(T k) const{return fraction(num,dom*k);}
+  const fraction operator*(T k) const{return fraction(num*k,den);}
+  const fraction operator/(T k) const{return fraction(num,den*k);}
 #define define_cmp(op) \
-  bool operator op (const fraction a)const{return num*a.dom op a.num*dom;}
+  bool operator op (const fraction& a) const{return num*a.den op a.num*den;}
   define_cmp(==)
   define_cmp(!=)
   define_cmp(<)

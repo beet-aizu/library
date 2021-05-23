@@ -12,18 +12,18 @@ using frac = fraction<ll>;
 
 int H,h,m,s;
 void print(frac f){
-  int t=f.num/(f.dom*60);
+  int t=f.num/(f.den*60);
   cout<<(t%(60*H))/60<<" ";
   cout<<(t%60)<<" ";
-  cout<<(f.num)%(f.dom*60)<<" "<<f.dom<<endl;
+  cout<<(f.num)%(f.den*60)<<" "<<f.den<<endl;
 }
 
 frac norm2(frac a){
   if(a.num==0) return frac(0,1);
-  while(a.num<0) a.num+=a.dom;
-  while(a.num>=a.dom) a.num-=a.dom;
-  ll tmp=__gcd(a.num,a.dom);
-  return frac(a.num/tmp,a.dom/tmp);
+  while(a.num<0) a.num+=a.den;
+  while(a.num>=a.den) a.num-=a.den;
+  ll tmp=__gcd(a.num,a.den);
+  return frac(a.num/tmp,a.den/tmp);
 }
 
 signed main(){

@@ -22,6 +22,6 @@ signed main(){
   F x(0,1);
   while(x<c) x=x+d;
   x=x-c;
-  cout<<x.num*60/x.dom<<endl;
+  cout<<x.num*60/x.den<<endl;
   return 0;
 }
