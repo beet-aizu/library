@@ -45,8 +45,8 @@ data:
   timestamp: '2020-11-13 17:57:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3062.test.cpp
   - test/yukicoder/4474.test.cpp
+  - test/aoj/3062.test.cpp
 documentation_of: mod/order.cpp
 layout: document
 redirect_from:

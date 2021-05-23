@@ -93,26 +93,26 @@ data:
   timestamp: '2021-05-01 12:56:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0343.test.cpp
-  - test/aoj/ALDS1_5_D.test.cpp
-  - test/aoj/2969.test.cpp
-  - test/aoj/2270.test.cpp
-  - test/aoj/2968.test.cpp
-  - test/aoj/3506.test.cpp
-  - test/aoj/2563.test.cpp
-  - test/aoj/1599.test.cpp
-  - test/aoj/1300.test.cpp
-  - test/aoj/2359.test.cpp
-  - test/aoj/0613.test.cpp
-  - test/aoj/1607.test.cpp
-  - test/yukicoder/1732.test.cpp
-  - test/yukicoder/4852.test.cpp
-  - test/yukicoder/4778.test.cpp
-  - test/yukicoder/5061.test.cpp
-  - test/yukicoder/3961.test.cpp
-  - test/yosupo/point_add_rectangle_sum.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
+  - test/yosupo/point_add_rectangle_sum.test.cpp
+  - test/yukicoder/3961.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/4778.test.cpp
+  - test/yukicoder/5061.test.cpp
+  - test/yukicoder/4852.test.cpp
+  - test/aoj/1599.test.cpp
+  - test/aoj/2968.test.cpp
+  - test/aoj/1300.test.cpp
+  - test/aoj/3506.test.cpp
+  - test/aoj/2969.test.cpp
+  - test/aoj/0613.test.cpp
+  - test/aoj/2563.test.cpp
+  - test/aoj/1607.test.cpp
+  - test/aoj/2359.test.cpp
+  - test/aoj/ALDS1_5_D.test.cpp
+  - test/aoj/0343.test.cpp
+  - test/aoj/2270.test.cpp
 documentation_of: vector/compress.cpp
 layout: document
 redirect_from:

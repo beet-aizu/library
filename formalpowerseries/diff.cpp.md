@@ -77,23 +77,23 @@ data:
   isVerificationFile: false
   path: formalpowerseries/diff.cpp
   requiredBy:
-  - formalpowerseries/exp.cpp
-  - formalpowerseries/log.cpp
-  - formalpowerseries/pow.cpp
   - includes/formalpowerseries.h
   - polynomial/interpolate.cpp
+  - formalpowerseries/pow.cpp
+  - formalpowerseries/exp.cpp
+  - formalpowerseries/log.cpp
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2985.garner.test.cpp
-  - test/aoj/3084.test.cpp
-  - test/aoj/2985.test.cpp
-  - test/yukicoder/5633.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/sharp_p_subset_sum.test.cpp
+  - test/yukicoder/5633.test.cpp
+  - test/aoj/2985.garner.test.cpp
+  - test/aoj/2985.test.cpp
+  - test/aoj/3084.test.cpp
 documentation_of: formalpowerseries/diff.cpp
 layout: document
 redirect_from:

@@ -59,10 +59,10 @@ data:
   timestamp: '2020-10-27 17:04:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2985.test.cpp
+  - test/yosupo/convolution_mod_1000000007.test.cpp
   - test/yukicoder/0444.test.cpp
   - test/yukicoder/2744.test.cpp
-  - test/yosupo/convolution_mod_1000000007.test.cpp
+  - test/aoj/2985.test.cpp
 documentation_of: convolution/arbitrarymod.cpp
 layout: document
 redirect_from:

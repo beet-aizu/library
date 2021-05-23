@@ -46,9 +46,9 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_3_D.sparsetable.test.cpp
-  - test/aoj/3086.test.cpp
   - test/yosupo/staticrmq.sparsetable.test.cpp
+  - test/aoj/3086.test.cpp
+  - test/aoj/DSL_3_D.sparsetable.test.cpp
 documentation_of: datastructure/sparsetable.cpp
 layout: document
 redirect_from:

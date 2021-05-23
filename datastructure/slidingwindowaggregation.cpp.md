@@ -83,8 +83,8 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp
   - test/yosupo/queue_operate_all_composite.test.cpp
+  - test/aoj/DSL_3_D.slidingwindowaggregation.test.cpp
 documentation_of: datastructure/slidingwindowaggregation.cpp
 layout: document
 redirect_from:

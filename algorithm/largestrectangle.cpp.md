@@ -39,8 +39,8 @@ data:
   timestamp: '2020-10-27 12:43:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DPL_3_B.test.cpp
   - test/aoj/DPL_3_C.test.cpp
+  - test/aoj/DPL_3_B.test.cpp
 documentation_of: algorithm/largestrectangle.cpp
 layout: document
 redirect_from:

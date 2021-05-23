@@ -35,8 +35,8 @@ data:
   timestamp: '2020-10-07 11:59:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1642.test.cpp
   - test/yosupo/enumerate_primes.test.cpp
+  - test/aoj/1642.test.cpp
 documentation_of: math/enumerate_primes.cpp
 layout: document
 redirect_from:

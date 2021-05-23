@@ -67,10 +67,10 @@ data:
   timestamp: '2021-01-22 18:27:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2257.test.cpp
+  - test/yukicoder/1013.test.cpp
   - test/aoj/2212.test.cpp
   - test/aoj/3073.test.cpp
-  - test/yukicoder/1013.test.cpp
+  - test/aoj/2257.test.cpp
 documentation_of: string/trie.cpp
 layout: document
 redirect_from:

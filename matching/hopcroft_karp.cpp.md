@@ -61,8 +61,8 @@ data:
   timestamp: '2020-10-27 16:27:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0424.test.cpp
   - test/yosupo/bipartitematching.test.cpp
+  - test/aoj/0424.test.cpp
 documentation_of: matching/hopcroft_karp.cpp
 layout: document
 redirect_from:

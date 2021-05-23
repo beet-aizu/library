@@ -127,8 +127,8 @@ data:
   timestamp: '2020-10-27 16:01:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2405.test.cpp
   - test/yosupo/tree_decomposition_width_2.test.cpp
+  - test/aoj/2405.test.cpp
 documentation_of: graph/nicetree.cpp
 layout: document
 redirect_from:

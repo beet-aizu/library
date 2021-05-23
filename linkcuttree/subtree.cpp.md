@@ -110,8 +110,8 @@ data:
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3120.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_subtree_sum.test.cpp
+  - test/aoj/3120.test.cpp
 documentation_of: linkcuttree/subtree.cpp
 layout: document
 redirect_from:

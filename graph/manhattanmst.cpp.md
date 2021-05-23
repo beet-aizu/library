@@ -50,8 +50,8 @@ data:
   timestamp: '2020-10-09 14:11:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0403.test.cpp
   - test/yosupo/manhattanmst.test.cpp
+  - test/aoj/0403.test.cpp
 documentation_of: graph/manhattanmst.cpp
 layout: document
 redirect_from:

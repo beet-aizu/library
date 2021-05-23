@@ -94,8 +94,8 @@ data:
   timestamp: '2020-11-04 18:35:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0437.test.cpp
   - test/yosupo/persistent_queue.test.cpp
+  - test/aoj/0437.test.cpp
 documentation_of: bbst/rbst/impl/persistent.cpp
 layout: document
 redirect_from:
