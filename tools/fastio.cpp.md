@@ -40,9 +40,9 @@ data:
   requiredBy:
   - linearalgebra/binarymatrix.cpp
   - linkcuttree/subtree.cpp
-  - datastructure/slidingwindowaggregation.cpp
-  - tree/diameterforedge.cpp
   - graph/nicetree.cpp
+  - tree/diameterforedge.cpp
+  - datastructure/slidingwindowaggregation.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: math/linearcongruence.cpp
   requiredBy: []
-  timestamp: '2020-11-13 17:57:07+09:00'
+  timestamp: '2021-06-20 16:57:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2970.test.cpp

@@ -81,18 +81,18 @@ data:
   timestamp: '2021-05-01 12:56:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/static_range_inversions_query.test.cpp
-  - test/yosupo/vertex_add_subtree_sum.test.cpp
-  - test/yosupo/point_add_range_sum.test.cpp
-  - test/yosupo/vertex_add_path_sum.test.cpp
-  - test/yukicoder/1732.test.cpp
-  - test/yukicoder/5223.test.cpp
   - test/yukicoder/2125.test.cpp
   - test/yukicoder/4852.test.cpp
-  - test/aoj/GRL_5_D.test.cpp
-  - test/aoj/ALDS1_5_D.test.cpp
-  - test/aoj/0343.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/5223.test.cpp
+  - test/yosupo/vertex_add_path_sum.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
+  - test/yosupo/point_add_range_sum.test.cpp
+  - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/aoj/2270.test.cpp
+  - test/aoj/0343.test.cpp
+  - test/aoj/ALDS1_5_D.test.cpp
+  - test/aoj/GRL_5_D.test.cpp
 documentation_of: datastructure/binaryindexedtree.cpp
 layout: document
 title: Binary Indexed Tree

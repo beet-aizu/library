@@ -44,8 +44,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2772.test.cpp
-  - test/aoj/DPL_5_I.test.cpp
   - test/aoj/DPL_5_C.test.cpp
+  - test/aoj/DPL_5_I.test.cpp
 documentation_of: combinatorics/surjection.cpp
 layout: document
 redirect_from:

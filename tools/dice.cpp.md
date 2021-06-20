@@ -74,13 +74,13 @@ data:
   timestamp: '2020-10-25 17:34:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/ITP1_11_C.test.cpp
   - test/aoj/ITP1_11_A.test.cpp
-  - test/aoj/1197.test.cpp
-  - test/aoj/ITP1_11_B.test.cpp
+  - test/aoj/ITP1_11_C.test.cpp
   - test/aoj/0502.test.cpp
-  - test/aoj/ITP1_11_D.test.cpp
+  - test/aoj/ITP1_11_B.test.cpp
   - test/aoj/3138.test.cpp
+  - test/aoj/ITP1_11_D.test.cpp
+  - test/aoj/1197.test.cpp
 documentation_of: tools/dice.cpp
 layout: document
 redirect_from:

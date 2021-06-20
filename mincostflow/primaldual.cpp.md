@@ -90,11 +90,11 @@ data:
   timestamp: '2020-10-06 13:10:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2736.test.cpp
+  - test/aoj/2679.test.cpp
   - test/aoj/2627.test.cpp
   - test/aoj/2290.test.cpp
   - test/aoj/GRL_6_B.test.cpp
-  - test/aoj/2679.test.cpp
+  - test/aoj/2736.test.cpp
 documentation_of: mincostflow/primaldual.cpp
 layout: document
 title: "\u6700\u5C0F\u8CBB\u7528\u6D41"

@@ -60,9 +60,9 @@ data:
   path: formalpowerseries/div.cpp
   requiredBy:
   - includes/formalpowerseries.h
-  - polynomial/multieval.cpp
-  - polynomial/interpolate.cpp
   - formalpowerseries/mod.cpp
+  - polynomial/interpolate.cpp
+  - polynomial/multieval.cpp
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
