@@ -149,6 +149,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/binarytrie.cpp
       title: datastructure/binarytrie.cpp
+    - icon: ':x:'
+      path: datastructure/bitvector.cpp
+      title: datastructure/bitvector.cpp
     - icon: ':heavy_check_mark:'
       path: datastructure/cartesiantree.cpp
       title: datastructure/cartesiantree.cpp
@@ -1753,6 +1756,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0143.test.cpp
       title: test/yukicoder/0143.test.cpp
+    - icon: ':x:'
+      path: test/yukicoder/0206.test.cpp
+      title: test/yukicoder/0206.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0222.test.cpp
       title: test/yukicoder/0222.test.cpp
