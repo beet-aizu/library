@@ -3,7 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-// find (x, y) s.t. ax + by = gcd(a, b)
+// find (x, y) s.t. ax + by = gcd(a, b), minimize |x| + |y|
 // |x| <= b, |y| <= a
 // return gcd(a, b)
 template<typename T>
@@ -16,6 +16,12 @@ T extgcd(T a,T b,T& x,T& y){
     x=1;y=0;
   }
   return d;
+}
+template<typename T>
+pair<T, T> extgcd(T a,T b){
+  T x,y;
+  extgcd(a,b,x,y);
+  return make_pair(x,y);
 }
 //END CUT HERE
 #ifndef call_from_test

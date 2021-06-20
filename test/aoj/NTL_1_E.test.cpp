@@ -10,8 +10,7 @@ using namespace std;
 signed main(){
   int a,b;
   cin>>a>>b;
-  int x,y;
-  extgcd(a,b,x,y);
+  auto[x,y]=extgcd(a,b);
   cout<<x<<" "<<y<<endl;
   return 0;
 }
