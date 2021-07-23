@@ -65,6 +65,8 @@ struct Slope{
     for(auto[pos,num]:vectorize(R)) res+=relu(x-pos)*num;
     return res;
   }
+
+  T get_min(){return entire;}
 };
 //END CUT HERE
 #ifndef call_from_test
