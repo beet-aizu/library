@@ -24,6 +24,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/parallelbinarysearch.cpp
       title: algorithm/parallelbinarysearch.cpp
+    - icon: ':heavy_check_mark:'
+      path: algorithm/partialsum.cpp
+      title: algorithm/partialsum.cpp
   - name: bbst
     pages:
     - icon: ':heavy_check_mark:'
@@ -271,6 +274,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/bfs.cpp
       title: graph/bfs.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/bipartitedecomposition.cpp
+      title: graph/bipartitedecomposition.cpp
     - icon: ':heavy_check_mark:'
       path: graph/chromatic.cpp
       title: graph/chromatic.cpp
@@ -961,6 +967,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2359.test.cpp
       title: test/aoj/2359.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2370.test.cpp
+      title: test/aoj/2370.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2397.test.cpp
       title: test/aoj/2397.test.cpp
