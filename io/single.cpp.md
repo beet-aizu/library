@@ -83,25 +83,25 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1948.test.cpp
-  - test/yukicoder/2113.test.cpp
+  - test/yosupo/static_range_inversions_query.test.cpp
   - test/yukicoder/1013.test.cpp
-  - test/yukicoder/3277.test.cpp
-  - test/yukicoder/4872.test.cpp
-  - test/yukicoder/4569.test.cpp
   - test/yukicoder/4862.test.cpp
+  - test/yukicoder/3277.test.cpp
+  - test/yukicoder/1948.test.cpp
+  - test/yukicoder/4387.test.cpp
+  - test/yukicoder/4872.test.cpp
   - test/yukicoder/5061.test.cpp
   - test/yukicoder/1950.test.cpp
-  - test/yukicoder/4387.test.cpp
-  - test/yosupo/static_range_inversions_query.test.cpp
+  - test/yukicoder/2113.test.cpp
+  - test/yukicoder/4569.test.cpp
+  - test/aoj/0439.test.cpp
+  - test/aoj/0438.test.cpp
   - test/aoj/1613.test.cpp
   - test/aoj/3213.test.cpp
+  - test/aoj/2981.test.cpp
   - test/aoj/3086.test.cpp
-  - test/aoj/0438.test.cpp
   - test/aoj/0437.test.cpp
   - test/aoj/2968.test.cpp
-  - test/aoj/2981.test.cpp
-  - test/aoj/0439.test.cpp
   - test/aoj/3168.test.cpp
 documentation_of: io/single.cpp
 layout: document

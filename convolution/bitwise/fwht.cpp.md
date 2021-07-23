@@ -51,13 +51,13 @@ data:
   timestamp: '2020-12-16 13:04:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/5025.test.cpp
-  - test/yosupo/bitwise_and_convolution.test.cpp
   - test/yosupo/subset_convolution.test.cpp
   - test/yosupo/bitwise_xor_convolution.test.cpp
-  - test/aoj/2446.test.cpp
+  - test/yosupo/bitwise_and_convolution.test.cpp
+  - test/yukicoder/5025.test.cpp
   - test/aoj/0402.test.cpp
   - test/aoj/2981.test.cpp
+  - test/aoj/2446.test.cpp
 documentation_of: convolution/bitwise/fwht.cpp
 layout: document
 redirect_from:

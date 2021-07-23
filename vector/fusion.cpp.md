@@ -38,9 +38,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5061.test.cpp
-  - test/aoj/2969.test.cpp
   - test/aoj/2359.test.cpp
   - test/aoj/2563.test.cpp
+  - test/aoj/2969.test.cpp
 documentation_of: vector/fusion.cpp
 layout: document
 redirect_from:

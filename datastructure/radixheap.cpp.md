@@ -50,8 +50,8 @@ data:
   timestamp: '2021-03-25 09:40:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1607.test.cpp
   - test/aoj/GRL_1_A.test.cpp
+  - test/aoj/1607.test.cpp
 documentation_of: datastructure/radixheap.cpp
 layout: document
 redirect_from:

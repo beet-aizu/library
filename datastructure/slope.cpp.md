@@ -32,8 +32,9 @@ data:
     \ res=entire;\n    auto vectorize=[](auto pq){\n      vector<P> vp;\n      vp.reserve(pq.size());\n\
     \      while(!pq.empty()) vp.emplace_back(pq.top()),pq.pop();\n      return vp;\n\
     \    };\n    for(auto[pos,num]:vectorize(L)) res+=relu(pos-x)*num;\n    for(auto[pos,num]:vectorize(R))\
-    \ res+=relu(x-pos)*num;\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ res+=relu(x-pos)*num;\n    return res;\n  }\n\n  T get_min(){return entire;}\n\
+    };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
     #endif\n//BEGIN CUT HERE\n// https://maspypy.com/slope-trick-1-%e8%a7%a3%e8%aa%ac%e7%b7%a8\n\
     template<typename T>\nstruct Slope{\n  using P = pair<T, T>;\n  priority_queue<P,\
@@ -54,13 +55,14 @@ data:
     \ res=entire;\n    auto vectorize=[](auto pq){\n      vector<P> vp;\n      vp.reserve(pq.size());\n\
     \      while(!pq.empty()) vp.emplace_back(pq.top()),pq.pop();\n      return vp;\n\
     \    };\n    for(auto[pos,num]:vectorize(L)) res+=relu(pos-x)*num;\n    for(auto[pos,num]:vectorize(R))\
-    \ res+=relu(x-pos)*num;\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    \ res+=relu(x-pos)*num;\n    return res;\n  }\n\n  T get_min(){return entire;}\n\
+    };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: datastructure/slope.cpp
   requiredBy: []
-  timestamp: '2021-04-04 22:56:07+09:00'
+  timestamp: '2021-07-23 12:18:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5061.test.cpp
