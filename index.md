@@ -758,6 +758,9 @@ data:
       path: vector/powers.cpp
       title: vector/powers.cpp
     - icon: ':heavy_check_mark:'
+      path: vector/reversed.cpp
+      title: vector/reversed.cpp
+    - icon: ':heavy_check_mark:'
       path: vector/runlength.cpp
       title: vector/runlength.cpp
     - icon: ':heavy_check_mark:'
