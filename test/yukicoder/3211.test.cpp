@@ -4,6 +4,7 @@
 using namespace std;
 
 #define call_from_test
+#include "../../vector/reversed.cpp"
 #include "../../mod/mint.cpp"
 #include "../../polynomial/berlekampmassey.cpp"
 #undef call_from_test
@@ -28,8 +29,7 @@ signed main(){
     for(int t=0;s+t<n;t++)
       bs[s+t]+=as[s]*as[t];
 
-  auto cs=berlekamp_massey(bs);
-  reverse(cs.begin(),cs.end());
+  auto cs=reversed(berlekamp_massey(bs));
 
   const int MAX = 2e6 + 100;
   vector<M> dp(MAX,0);
