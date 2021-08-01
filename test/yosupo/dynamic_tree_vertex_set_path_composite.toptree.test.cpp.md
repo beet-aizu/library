@@ -12,7 +12,7 @@ data:
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
     path: toptree/toptree.cpp
-    title: toptree/toptree.cpp
+    title: Top Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

@@ -307,8 +307,11 @@ data:
   - test/aoj/1595.toptree.test.cpp
 documentation_of: toptree/toptree.cpp
 layout: document
-redirect_from:
-- /library/toptree/toptree.cpp
-- /library/toptree/toptree.cpp.html
-title: toptree/toptree.cpp
+title: Top Tree
 ---
+
+## 解説記事
+[Toptree 導入編](https://niuez.hatenablog.com/entry/2019/08/04/191420)
+
+[Toptree - Link & Cut編](https://niuez.hatenablog.com/entry/2019/08/05/114511)
+

@@ -683,7 +683,7 @@ data:
       title: toptree/steiner.cpp
     - icon: ':heavy_check_mark:'
       path: toptree/toptree.cpp
-      title: toptree/toptree.cpp
+      title: Top Tree
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
