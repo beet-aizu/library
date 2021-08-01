@@ -56,8 +56,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/number_of_substrings.test.cpp
-  - test/aoj/3112.test.cpp
   - test/aoj/3063.test.cpp
+  - test/aoj/3112.test.cpp
   - test/aoj/2711.test.cpp
 documentation_of: string/longestcommonprefix.cpp
 layout: document

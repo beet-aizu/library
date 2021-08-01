@@ -189,15 +189,15 @@ data:
   isVerificationFile: false
   path: linearalgebra/matrix.cpp
   requiredBy:
-  - linearalgebra/tree_theorem.cpp
   - math/tetrahedra.cpp
+  - linearalgebra/tree_theorem.cpp
   timestamp: '2021-03-24 18:46:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/matrix_det.test.cpp
   - test/aoj/1328.test.cpp
-  - test/aoj/0314.test.cpp
   - test/aoj/2060.test.cpp
+  - test/aoj/0314.test.cpp
 documentation_of: linearalgebra/matrix.cpp
 layout: document
 redirect_from:

@@ -88,12 +88,12 @@ data:
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
-  - test/yosupo/lca.linkcuttree.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_path_sum.test.cpp
+  - test/yosupo/lca.linkcuttree.test.cpp
+  - test/yosupo/dynamic_tree_vertex_set_path_composite.test.cpp
   - test/aoj/GRL_5_E.linkcuttree.test.cpp
-  - test/aoj/2450.linkcuttree.test.cpp
   - test/aoj/0367.linkcuttree.test.cpp
+  - test/aoj/2450.linkcuttree.test.cpp
   - test/aoj/GRL_5_D.linkcuttree.test.cpp
 documentation_of: linkcuttree/path.cpp
 layout: document

@@ -160,12 +160,12 @@ data:
   verifiedWith:
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
   - test/yosupo/persistent_queue.test.cpp
-  - test/aoj/1508.test.cpp
+  - test/aoj/2890.test.cpp
+  - test/aoj/1579.test.cpp
   - test/aoj/DSL_2_G.bbst.test.cpp
   - test/aoj/DSL_2_F.bbst.test.cpp
-  - test/aoj/2890.test.cpp
   - test/aoj/0438.test.cpp
-  - test/aoj/1579.test.cpp
+  - test/aoj/1508.test.cpp
   - test/aoj/DSL_2_I.bbst.test.cpp
   - test/aoj/DSL_2_H.bbst.test.cpp
   - test/aoj/0437.test.cpp

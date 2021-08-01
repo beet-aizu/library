@@ -46,8 +46,8 @@ data:
   timestamp: '2021-03-04 17:00:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/zalgorithm.test.cpp
   - test/yosupo/runenumerate.test.cpp
+  - test/yosupo/zalgorithm.test.cpp
   - test/aoj/3081.test.cpp
 documentation_of: string/zalgorithm.cpp
 layout: document

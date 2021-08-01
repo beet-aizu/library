@@ -65,10 +65,10 @@ data:
   timestamp: '2020-10-27 16:27:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_7_A.test.cpp
-  - test/aoj/2513.test.cpp
   - test/aoj/3198.test.cpp
+  - test/aoj/2513.test.cpp
   - test/aoj/3168.test.cpp
+  - test/aoj/GRL_7_A.test.cpp
 documentation_of: matching/bipartite.cpp
 layout: document
 redirect_from:
