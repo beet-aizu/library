@@ -33,20 +33,31 @@ struct TopTree{
     return t;
   }
 
+  Node* recycle=nullptr;
+  inline void dispose_node(Node* t){
+    t->p=recycle;
+    recycle=t;
+  }
+
+  inline Node* get_new_node(){
+    if(recycle) return new(exchange(recycle,recycle->p)) Node;
+    return &(pool_node[ptr_node++]);
+  }
+
   inline Node* edge(Vertex* u,Cluster w,Vertex* v){
-    auto t=&(pool_node[ptr_node++]);
+    auto t=get_new_node();
     t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;
     return pushup(t);
   }
 
   inline Node* compress(Node* l,Node* r){
-    auto t=&(pool_node[ptr_node++]);
+    auto t=get_new_node();
     t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;
     return pushup(t);
   }
 
   inline Node* rake(Node* l,Node* r){
-    auto t=&(pool_node[ptr_node++]);
+    auto t=get_new_node();
     t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;
     return pushup(t);
   }
@@ -265,6 +276,7 @@ struct TopTree{
     Node* rk=rt->q;
     if(!rk){
       Node* ll=rt->ch[0];
+      dispose_node(ll->p);
       ll->p=nullptr;
       pushup(ll);
     }else if(rk->type==Type::Compress or rk->type==Type::Edge){
@@ -312,78 +324,75 @@ struct TopTree{
     Node* ee=edge(u,w,v);
     Node* ll=nullptr;
 
-    if(!nnv) ll=ee;
-    else{
-      Node* vv=expose(nnv);
-      propagate(vv);
-      if(vv->vs[1]==v) set_toggle(vv);
-      if(vv->vs[0]==v){
-        Node* nv=compress(ee,vv);
-        ee->p=nv;
-        pushup(ee);
-        vv->p=nv;
-        pushup(vv);pushup(nv);
-        ll=nv;
-      }else{
-        Node* nv=vv;
-        Node* ch=nv->ch[0];
-        propagate(ch);
-        nv->ch[0]=ee;
-        ee->p=nv;
-        pushup(ee);
+    assert(nnv);
+    Node* vv=expose(nnv);
+    propagate(vv);
+    if(vv->vs[1]==v) set_toggle(vv);
+    if(vv->vs[0]==v){
+      Node* nv=compress(ee,vv);
+      ee->p=nv;
+      pushup(ee);
+      vv->p=nv;
+      pushup(vv);pushup(nv);
+      ll=nv;
+    }else{
+      Node* nv=vv;
+      Node* ch=nv->ch[0];
+      propagate(ch);
+      nv->ch[0]=ee;
+      ee->p=nv;
+      pushup(ee);
 
-        Node* bt=nv->q;
-        Node* rk=nullptr;
-        if(bt){
-          propagate(bt);
-          rk=rake(bt,ch);
-          bt->p=rk;
-          ch->p=rk;
-          pushup(bt);pushup(ch);
-        }else{
-          rk=ch;
-        }
-        nv->q=rk;
-        rk->p=nv;
-        pushup(rk);pushup(nv);
-        ll=nv;
+      Node* bt=nv->q;
+      Node* rk=nullptr;
+      if(bt){
+        propagate(bt);
+        rk=rake(bt,ch);
+        bt->p=rk;
+        ch->p=rk;
+        pushup(bt);pushup(ch);
+      }else{
+        rk=ch;
       }
+      nv->q=rk;
+      rk->p=nv;
+      pushup(rk);pushup(nv);
+      ll=nv;
     }
 
-    if(nnu){
-      Node* uu=expose(nnu);
-      propagate(uu);
-      if(uu->vs[0]==u) set_toggle(uu);
-      if(uu->vs[1]==u){
-        Node* tp=compress(uu,ll);
-        uu->p=tp;
-        ll->p=tp;
-        pushup(uu);pushup(ll);pushup(tp);
+    assert(nnu);
+    Node* uu=expose(nnu);
+    propagate(uu);
+    if(uu->vs[0]==u) set_toggle(uu);
+    if(uu->vs[1]==u){
+      Node* tp=compress(uu,ll);
+      uu->p=tp;
+      ll->p=tp;
+      pushup(uu);pushup(ll);pushup(tp);
+    }else{
+      Node* nu=uu;
+      Node* ch=nu->ch[1];
+      toggle(ch);
+      propagate(ch);
+
+      nu->ch[1]=ll;
+      ll->p=nu;
+      pushup(ll);
+
+      Node* al=nu->q;
+      Node* rk=nullptr;
+      if(al){
+        propagate(al);
+        rk=rake(al,ch);
+        al->p=rk;
+        ch->p=rk;
+        pushup(al);pushup(ch);
       }else{
-        Node* nu=uu;
-        Node* ch=nu->ch[1];
-        toggle(ch);
-        propagate(ch);
-
-        nu->ch[1]=ll;
-        ll->p=nu;
-        pushup(ll);
-
-        Node* al=nu->q;
-        Node* rk=nullptr;
-        if(al){
-          propagate(al);
-          rk=rake(al,ch);
-          al->p=rk;
-          ch->p=rk;
-          pushup(al);pushup(ch);
-        }else{
-          rk=ch;
-        }
-        nu->q=rk;
-        rk->p=nu;
-        pushup(rk);pushup(nu);
+        rk=ch;
       }
+      nu->q=rk;
+      rk->p=nu;
+      pushup(rk);pushup(nu);
     }
     return ee;
   }
@@ -395,6 +404,7 @@ struct TopTree{
     Node* rr=rt->ch[1];
     rr->p=nullptr;
     set_toggle(rr);
+    dispose_node(rr->ch[1]);
     bring(rr);bring(rt);
   }
 
