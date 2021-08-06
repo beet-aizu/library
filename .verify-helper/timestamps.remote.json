@@ -382,5 +382,6 @@
 "test/yukicoder/5025.test.cpp": "2021-03-25 09:46:10 +0900",
 "test/yukicoder/5061.test.cpp": "2021-07-23 12:18:16 +0900",
 "test/yukicoder/5223.test.cpp": "2021-05-01 12:56:38 +0900",
-"test/yukicoder/5633.test.cpp": "2021-03-25 09:46:10 +0900"
+"test/yukicoder/5633.test.cpp": "2021-03-25 09:46:10 +0900",
+"test/yukicoder/6680.test.cpp": "2021-08-06 23:06:43 +0900"
 }
