@@ -63,6 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5061.test.cpp
     title: test/yukicoder/5061.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/6680.test.cpp
+    title: test/yukicoder/6680.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -86,6 +89,7 @@ data:
   - test/yosupo/static_range_inversions_query.test.cpp
   - test/yukicoder/1948.test.cpp
   - test/yukicoder/4862.test.cpp
+  - test/yukicoder/6680.test.cpp
   - test/yukicoder/5061.test.cpp
   - test/yukicoder/4569.test.cpp
   - test/yukicoder/1950.test.cpp

@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/shortest_path.test.cpp
     title: test/yosupo/shortest_path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/6680.test.cpp
+    title: test/yukicoder/6680.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -63,6 +66,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/shortest_path.test.cpp
+  - test/yukicoder/6680.test.cpp
   - test/aoj/3506.test.cpp
   - test/aoj/3183.test.cpp
   - test/aoj/0423.test.cpp

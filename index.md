@@ -296,6 +296,9 @@ data:
       path: graph/girth.cpp
       title: graph/girth.cpp
     - icon: ':heavy_check_mark:'
+      path: graph/grid.cpp
+      title: graph/grid.cpp
+    - icon: ':heavy_check_mark:'
       path: graph/independentset.cpp
       title: graph/independentset.cpp
     - icon: ':heavy_check_mark:'
@@ -1930,5 +1933,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/5633.test.cpp
       title: test/yukicoder/5633.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/6680.test.cpp
+      title: test/yukicoder/6680.test.cpp
 layout: toppage
 ---
