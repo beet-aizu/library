@@ -452,6 +452,9 @@ data:
       path: math/sum_of_floor.cpp
       title: math/sum_of_floor.cpp
     - icon: ':heavy_check_mark:'
+      path: math/sum_of_geometric_sequence.cpp
+      title: math/sum_of_geometric_sequence.cpp
+    - icon: ':heavy_check_mark:'
       path: math/tetrahedra.cpp
       title: math/tetrahedra.cpp
     - icon: ':heavy_check_mark:'
@@ -1834,6 +1837,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/2147.test.cpp
       title: test/yukicoder/2147.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/2520.test.cpp
+      title: test/yukicoder/2520.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/2587.test.cpp
       title: test/yukicoder/2587.test.cpp
