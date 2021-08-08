@@ -69,12 +69,10 @@ data:
     \      if(i!=p) swap(A[i],A[p]),res=-res;\n      if(is_zero(A[i][i])) return K(0);\n\
     \      res*=A[i][i];\n      for(int j=i+1;j<n;j++) A[i][j]/=A[i][i];\n      for(int\
     \ j=i+1;j<n;j++)\n        for(int k=i+1;k<n;k++)\n          A[j][k]-=A[j][i]*A[i][k];\n\
-    \    }\n    return res;\n  }\n\n  static K sigma(K x,long long n){\n    Matrix\
-    \ A(2,2);\n    A[0][0]=x;A[0][1]=0;\n    A[1][0]=1;A[1][1]=1;\n    return A.pow(n)[1][0];\n\
-    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\ntemplate<typename T>\nstruct\
-    \ Mint{\n  static T MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed v):v(v){}\n \
-    \ Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long k){\n   \
-    \ Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n      tmp*=tmp;\n\
+    \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\ntemplate<typename\
+    \ T>\nstruct Mint{\n  static T MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed v):v(v){}\n\
+    \  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long k){\n  \
+    \  Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n      tmp*=tmp;\n\
     \      k>>=1;\n    }\n    return res;\n  }\n\n  Mint inv(){return pow(MOD-2);}\n\
     \n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint& operator-=(Mint\
     \ a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return\
@@ -147,12 +145,10 @@ data:
     \      if(i!=p) swap(A[i],A[p]),res=-res;\n      if(is_zero(A[i][i])) return K(0);\n\
     \      res*=A[i][i];\n      for(int j=i+1;j<n;j++) A[i][j]/=A[i][i];\n      for(int\
     \ j=i+1;j<n;j++)\n        for(int k=i+1;k<n;k++)\n          A[j][k]-=A[j][i]*A[i][k];\n\
-    \    }\n    return res;\n  }\n\n  static K sigma(K x,long long n){\n    Matrix\
-    \ A(2,2);\n    A[0][0]=x;A[0][1]=0;\n    A[1][0]=1;A[1][1]=1;\n    return A.pow(n)[1][0];\n\
-    \  }\n};\n//END CUT HERE\n#ifndef call_from_test\ntemplate<typename T>\nstruct\
-    \ Mint{\n  static T MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed v):v(v){}\n \
-    \ Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long k){\n   \
-    \ Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n      tmp*=tmp;\n\
+    \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\ntemplate<typename\
+    \ T>\nstruct Mint{\n  static T MOD;\n  T v;\n  Mint():v(0){}\n  Mint(signed v):v(v){}\n\
+    \  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}\n\n  Mint pow(long long k){\n  \
+    \  Mint res(1),tmp(v);\n    while(k){\n      if(k&1) res*=tmp;\n      tmp*=tmp;\n\
     \      k>>=1;\n    }\n    return res;\n  }\n\n  Mint inv(){return pow(MOD-2);}\n\
     \n  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint& operator-=(Mint\
     \ a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}\n  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return\
@@ -191,7 +187,7 @@ data:
   requiredBy:
   - math/tetrahedra.cpp
   - linearalgebra/tree_theorem.cpp
-  timestamp: '2021-03-24 18:46:00+09:00'
+  timestamp: '2021-08-08 16:25:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/matrix_det.test.cpp
