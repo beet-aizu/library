@@ -119,13 +119,6 @@ struct Matrix{
     }
     return res;
   }
-
-  static K sigma(K x,long long n){
-    Matrix A(2,2);
-    A[0][0]=x;A[0][1]=0;
-    A[1][0]=1;A[1][1]=1;
-    return A.pow(n)[1][0];
-  }
 };
 //END CUT HERE
 #ifndef call_from_test
