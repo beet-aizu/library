@@ -9,7 +9,7 @@ using namespace std;
 #endif
 //BEGIN CUT HERE
 
-template<typename T, size_t LIM>
+template<typename T, size_t N>
 struct DistanceSum{
   struct Vertex{
     void* handle;
@@ -34,7 +34,7 @@ struct DistanceSum{
 
     void toggle(){swap(sum_l,sum_r);}
 
-    static Cluster compress(Cluster x,Vertex *v,Cluster y){
+    static Cluster compress(const Cluster& x,Vertex *v,const Cluster& y){
       Cluster nxt;
       nxt.len=x.len+y.len;
       nxt.cnt=x.cnt+x.chd+(v->color)+y.cnt;
@@ -56,7 +56,7 @@ struct DistanceSum{
       return nxt;
     }
 
-    static Cluster rake(Cluster x,Cluster y){
+    static Cluster rake(const Cluster& x,const Cluster& y){
       Cluster nxt;
       nxt.len=x.len;
       nxt.cnt=x.cnt;
@@ -76,7 +76,7 @@ struct DistanceSum{
     }
   };
 
-  TopTree<Vertex, Cluster, LIM> G;
+  TopTree<Vertex, Cluster, N> G;
   using Type = typename decltype(G)::Type;
 
   Vertex* centroid(Vertex* v){
@@ -120,7 +120,7 @@ struct DistanceSum{
     }
     return ctr;
   }
-  Vertex* create(T color){return G.create(Vertex(color));}
+  Vertex* create(T color){return G.create(color);}
   void link(Vertex* u,Cluster w,Vertex* v){G.link(u,Cluster(w),v);}
   void cut(Vertex* u,Vertex* v){G.cut(u,v);}
   void set_vertex(Vertex* u,T color){G.set_vertex(u,Vertex(color));}

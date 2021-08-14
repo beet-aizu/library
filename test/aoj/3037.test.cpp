@@ -43,11 +43,11 @@ signed main(){
   vector<int> ws(n);
   for(int i=0;i<n;i++) cin>>ws[i];
 
-  const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> G;
+  const size_t N = 1e5;
+  TopTree<Vertex, Cluster, N> G;
 
   vector<Vertex*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=G.create(Vertex(ws[i]));
+  for(int i=0;i<n;i++) vs[i]=G.create(ws[i]);
 
   for(int i=1;i<n;i++){
     int u,v;

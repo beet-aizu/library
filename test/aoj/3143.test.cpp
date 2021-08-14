@@ -17,9 +17,9 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  const size_t LIM = 1e6;
+  const size_t N = MAX;
   using Cluster = Farthest<long long>;
-  TopTree<Vertex, Cluster, LIM> G;
+  TopTree<Vertex, Cluster, N> G;
 
   int n;
   cin>>n;

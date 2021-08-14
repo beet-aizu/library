@@ -17,8 +17,8 @@ signed main(){
   cin>>n;
 
   using ll = long long;
-  const size_t LIM = 1e6;
-  DistanceSum<ll, LIM> G;
+  const size_t N = 2e5;
+  DistanceSum<ll, N> G;
 
   vector<decltype(G)::Vertex*> vs(n);
   for(int i=0;i<n;i++) vs[i]=G.create(0);

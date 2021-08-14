@@ -22,8 +22,8 @@ signed main(){
   vector<ll> cnt(n,0);
   for(int &c:cs) cnt[--c]++;
 
-  constexpr size_t LIM = 1e6;
-  DistanceSum<ll, LIM> G;
+  constexpr size_t N = 1e5;
+  DistanceSum<ll, N> G;
   vector<decltype(G)::Vertex*> vs(n);
   for(int i=0;i<n;i++) vs[i]=G.create(cnt[i]);
 

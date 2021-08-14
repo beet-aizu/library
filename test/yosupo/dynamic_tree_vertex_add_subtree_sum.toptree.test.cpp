@@ -31,8 +31,8 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  const size_t LIM = 2e6;
-  TopTree<Vertex, Cluster, LIM> G;
+  const size_t N = 2e5;
+  TopTree<Vertex, Cluster, N> G;
 
   int n,q;
   cin>>n>>q;
@@ -41,7 +41,7 @@ signed main(){
 
   vector<Vertex*> vs(n);
   for(int i=0;i<n;i++)
-    vs[i]=G.create(Vertex(as[i]));
+    vs[i]=G.create(as[i]);
 
   for(int i=1;i<n;i++){
     int u,v;
@@ -74,6 +74,5 @@ signed main(){
       cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;
     }
   }
-  cout<<flush;
   return 0;
 }

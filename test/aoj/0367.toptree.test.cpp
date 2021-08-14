@@ -51,11 +51,11 @@ signed main(){
   int n;
   cin>>n>>K;
 
-  const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> T;
+  const size_t N = 1e5;
+  TopTree<Vertex, Cluster, N> T;
 
   vector<Vertex*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=T.create(Vertex(0));
+  for(int i=0;i<n;i++) vs[i]=T.create();
 
   for(int i=1;i<n;i++){
     int a,b,c;

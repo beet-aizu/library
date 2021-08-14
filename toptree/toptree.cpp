@@ -3,7 +3,7 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template<typename Vertex, typename Cluster, size_t LIM>
+template<typename Vertex, typename Cluster, size_t N>
 struct TopTree{
   enum Type { Compress, Rake, Edge };
   struct Node{
@@ -17,18 +17,19 @@ struct TopTree{
     Node():p(nullptr),q(nullptr),rev(false),guard(false){}
   };
 
-  inline static array<Vertex, LIM> pool_vertex;
+  inline static array<Vertex, 2*N> pool_vertex;
   inline static size_t ptr_vertex = 0;
 
-  inline static array<Node, LIM> pool_node;
+  inline static array<Node, 4*N> pool_node;
   inline static size_t ptr_node = 0;
 
   Cluster id;
 
-  inline Vertex* create(Vertex v=Vertex()){
+  template<typename ...Args>
+  inline Vertex* create(Args ...args){
     auto t=&pool_vertex[ptr_vertex++];
     auto dummy=&pool_vertex[ptr_vertex++];
-    *t=v;
+    *t=Vertex(forward<Args>(args)...);
     link(t,id,dummy);
     return t;
   }
@@ -280,8 +281,6 @@ struct TopTree{
       ll->p=nullptr;
       pushup(ll);
     }else if(rk->type==Type::Compress or rk->type==Type::Edge){
-      propagate(rk);
-
       Node* nr=rk;
       set_toggle(nr);
       rt->ch[1]=nr;
@@ -312,6 +311,7 @@ struct TopTree{
       rt->q=ll;
       ll->p=rt;
 
+      dispose_node(rk);
       pushup(ll);pushup(rr);pushup(rt);
     }
   }
@@ -404,6 +404,7 @@ struct TopTree{
     Node* rr=rt->ch[1];
     rr->p=nullptr;
     set_toggle(rr);
+    assert(rr->ch[1]->type==Type::Edge);
     dispose_node(rr->ch[1]);
     bring(rr);bring(rt);
   }

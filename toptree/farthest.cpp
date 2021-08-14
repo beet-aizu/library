@@ -22,10 +22,8 @@ struct Farthest{
   T len;
   Farthest():lf(0,-1),rg(0,-1),len(0){}
   Farthest(T d,int f,int t):lf(d,t),rg(d,f),len(d){}
-  Farthest(pi md,pi lf,pi rg,T len):
-    md(md),lf(lf),rg(rg),len(len){}
+  Farthest(pi md,pi lf,pi rg,T len):md(md),lf(lf),rg(rg),len(len){}
   void toggle(){swap(lf,rg);}
-
   static Farthest compress(Farthest &x,Vertex*,Farthest &y){
     return Farthest(
       max(x.rg,y.lf),

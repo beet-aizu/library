@@ -36,14 +36,14 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  const size_t LIM = 1e6;
-  TopTree<Vertex, Cluster, LIM> T;
+  const size_t N = 1e5;
+  TopTree<Vertex, Cluster, N> T;
 
   int n;
   cin>>n;
 
   vector<Vertex*> vs(n);
-  for(int i=0;i<n;i++) vs[i]=T.create(Vertex(i));
+  for(int i=0;i<n;i++) vs[i]=T.create(i);
 
   for(int i=1;i<n;i++){
     int u,v;

@@ -13,9 +13,9 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  const size_t LIM = 3e6;
+  const size_t N = 1e5;
   using Cluster = SteinerTree<long long>;
-  TopTree<Vertex, Cluster, LIM> G;
+  TopTree<Vertex, Cluster, N> G;
 
   int n;
   cin>>n;
