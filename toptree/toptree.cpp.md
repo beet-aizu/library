@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: toptree/distancesum.cpp
     title: toptree/distancesum.cpp
+  - icon: ':heavy_check_mark:'
+    path: toptree/farthest.cpp
+    title: toptree/farthest.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0367.toptree.test.cpp
@@ -295,6 +298,7 @@ data:
   path: toptree/toptree.cpp
   requiredBy:
   - toptree/distancesum.cpp
+  - toptree/farthest.cpp
   timestamp: '2021-08-14 14:38:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
