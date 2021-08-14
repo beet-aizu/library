@@ -18,10 +18,11 @@ signed main(){
 
   using ll = long long;
   const size_t N = 1e5;
-  DistanceSum<ll, N> G;
+  using Cluster = DistanceSum<ll>;
+  TopTree<Vertex, Cluster, N> G;
 
   vector<int> xs(n,1);
-  vector<decltype(G)::Vertex*> vs(n);
+  vector<Vertex*> vs(n);
   for(int i=0;i<n;i++) vs[i]=G.create(xs[i]);
 
   ll pre=0;
@@ -55,8 +56,8 @@ signed main(){
       xs[a]^=1;
       G.set_vertex(vs[a],xs[a]);
 
-      auto cc=G.centroid(vs[a]);
-      ll res=G.query(cc);
+      auto cc=centroid(G,vs[a]);
+      ll res=G.get_subtree(cc).ans;
       cout<<res<<newl;
       pre+=res;pre%=n;
     }

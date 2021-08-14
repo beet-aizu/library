@@ -23,8 +23,9 @@ signed main(){
   for(int &c:cs) cnt[--c]++;
 
   constexpr size_t N = 1e5;
-  DistanceSum<ll, N> G;
-  vector<decltype(G)::Vertex*> vs(n);
+  using Cluster = DistanceSum<ll>;
+  TopTree<Vertex, Cluster, N> G;
+  vector<Vertex*> vs(n);
   for(int i=0;i<n;i++) vs[i]=G.create(cnt[i]);
 
   for(int i=1;i<n;i++){
@@ -50,7 +51,7 @@ signed main(){
       int e;
       cin>>e;
       e--;
-      cout<<G.query(vs[e])<<newl;
+      cout<<G.get_subtree(vs[e]).ans<<newl;
       flg=1;
     }
   }
