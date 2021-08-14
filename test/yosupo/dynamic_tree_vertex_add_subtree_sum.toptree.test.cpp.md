@@ -18,16 +18,17 @@ data:
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#line\
     \ 1 \"toptree/toptree.cpp\"\n\n#line 3 \"toptree/toptree.cpp\"\nusing namespace\
     \ std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster,\
-    \ size_t LIM>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct\
+    \ size_t N>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct\
     \ Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n  \
     \  Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
-    \  };\n\n  inline static array<Vertex, LIM> pool_vertex;\n  inline static size_t\
-    \ ptr_vertex = 0;\n\n  inline static array<Node, LIM> pool_node;\n  inline static\
-    \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  inline Vertex* create(Vertex v=Vertex()){\n\
-    \    auto t=&pool_vertex[ptr_vertex++];\n    auto dummy=&pool_vertex[ptr_vertex++];\n\
-    \    *t=v;\n    link(t,id,dummy);\n    return t;\n  }\n\n  Node* recycle=nullptr;\n\
-    \  inline void dispose_node(Node* t){\n    t->p=recycle;\n    recycle=t;\n  }\n\
-    \n  inline Node* get_new_node(){\n    if(recycle) return new(exchange(recycle,recycle->p))\
+    \  };\n\n  inline static array<Vertex, 2*N> pool_vertex;\n  inline static size_t\
+    \ ptr_vertex = 0;\n\n  inline static array<Node, 4*N> pool_node;\n  inline static\
+    \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  template<typename ...Args>\n  inline\
+    \ Vertex* create(Args ...args){\n    auto t=&pool_vertex[ptr_vertex++];\n    auto\
+    \ dummy=&pool_vertex[ptr_vertex++];\n    *t=Vertex(forward<Args>(args)...);\n\
+    \    link(t,id,dummy);\n    return t;\n  }\n\n  Node* recycle=nullptr;\n  inline\
+    \ void dispose_node(Node* t){\n    t->p=recycle;\n    recycle=t;\n  }\n\n  inline\
+    \ Node* get_new_node(){\n    if(recycle) return new(exchange(recycle,recycle->p))\
     \ Node;\n    return &(pool_node[ptr_node++]);\n  }\n\n  inline Node* edge(Vertex*\
     \ u,Cluster w,Vertex* v){\n    auto t=get_new_node();\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
     \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
@@ -94,13 +95,13 @@ data:
     \ set_toggle(rt);\n  }\n\n  void bring(Node* rt){\n    Node* rk=rt->q;\n    if(!rk){\n\
     \      Node* ll=rt->ch[0];\n      dispose_node(ll->p);\n      ll->p=nullptr;\n\
     \      pushup(ll);\n    }else if(rk->type==Type::Compress or rk->type==Type::Edge){\n\
-    \      propagate(rk);\n\n      Node* nr=rk;\n      set_toggle(nr);\n      rt->ch[1]=nr;\n\
-    \      nr->p=rt;\n      rt->q=nullptr;\n\n      pushup(nr);pushup(rt);\n    }else\
-    \ if(rk->type==Type::Rake){\n      propagate(rk);\n      while(rk->ch[1]->type==Type::Rake){\n\
-    \        propagate(rk->ch[1]);\n        rk=rk->ch[1];\n      }\n      pushdown(rk);\n\
-    \n      rt->guard=true;\n      splay(rk);\n      rt->guard=false;\n\n      Node*\
-    \ ll=rk->ch[0];\n      Node* rr=rk->ch[1];\n      propagate(ll);\n      set_toggle(rr);\n\
-    \n      rt->ch[1]=rr;\n      rr->p=rt;\n\n      rt->q=ll;\n      ll->p=rt;\n\n\
+    \      Node* nr=rk;\n      set_toggle(nr);\n      rt->ch[1]=nr;\n      nr->p=rt;\n\
+    \      rt->q=nullptr;\n\n      pushup(nr);pushup(rt);\n    }else if(rk->type==Type::Rake){\n\
+    \      propagate(rk);\n      while(rk->ch[1]->type==Type::Rake){\n        propagate(rk->ch[1]);\n\
+    \        rk=rk->ch[1];\n      }\n      pushdown(rk);\n\n      rt->guard=true;\n\
+    \      splay(rk);\n      rt->guard=false;\n\n      Node* ll=rk->ch[0];\n     \
+    \ Node* rr=rk->ch[1];\n      propagate(ll);\n      set_toggle(rr);\n\n      rt->ch[1]=rr;\n\
+    \      rr->p=rt;\n\n      rt->q=ll;\n      ll->p=rt;\n\n      dispose_node(rk);\n\
     \      pushup(ll);pushup(rr);pushup(rt);\n    }\n  }\n\n  Node* link(Vertex* u,Cluster\
     \ w,Vertex* v){\n    if(!u->handle and !v->handle) return edge(u,w,v);\n\n   \
     \ Node* nnu=(Node*)u->handle;\n    Node* nnv=(Node*)v->handle;\n    Node* ee=edge(u,w,v);\n\
@@ -123,36 +124,37 @@ data:
     \        rk=ch;\n      }\n      nu->q=rk;\n      rk->p=nu;\n      pushup(rk);pushup(nu);\n\
     \    }\n    return ee;\n  }\n\n  void cut(Vertex* u,Vertex *v){\n    soft_expose(u,v);\n\
     \    Node* rt=(Node*)u->handle;\n    propagate(rt);\n    Node* rr=rt->ch[1];\n\
-    \    rr->p=nullptr;\n    set_toggle(rr);\n    dispose_node(rr->ch[1]);\n    bring(rr);bring(rt);\n\
-    \  }\n\n  Node* path(Vertex* u,Vertex* v){\n    assert(u!=v);\n    soft_expose(u,v);\n\
-    \    Node* rt=(Node*)u->handle;\n    propagate(rt);\n    propagate(rt->ch[1]);\n\
-    \    return rt->ch[1]->ch[0];\n  }\n\n  void set_vertex(Vertex* u,Vertex v){\n\
-    \    auto t=expose(u);\n    *u=v;\n    pushup(t);\n  }\n\n  void set_edge(Vertex*\
-    \ u,Vertex* v,const Cluster &w){\n    auto t=path(u,v);\n    assert(t->type==Type::Edge);\n\
-    \    t->dat=w;\n    while(t) pushup(t),t=t->p;\n  }\n\n  Cluster get_path(Vertex*\
-    \ u,Vertex* v){\n    return path(u,v)->dat;\n  }\n\n  Cluster get_subtree(Vertex*\
-    \ v){\n    return expose(v)->dat;\n  }\n\n  // subtree of v when p is root\n \
-    \ Cluster get_subtree(Vertex* p,Vertex* v){\n    Node* t=path(p,v);\n    Cluster\
-    \ res=t->p->ch[1]->dat;\n    res.toggle();\n    Node* rk=t->p->q;\n    if(t->p->q){\n\
-    \      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n      res=Cluster::rake(res,rk->dat);\n\
-    \    }\n    return res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
-    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 8 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\
+    \    rr->p=nullptr;\n    set_toggle(rr);\n    assert(rr->ch[1]->type==Type::Edge);\n\
+    \    dispose_node(rr->ch[1]);\n    bring(rr);bring(rt);\n  }\n\n  Node* path(Vertex*\
+    \ u,Vertex* v){\n    assert(u!=v);\n    soft_expose(u,v);\n    Node* rt=(Node*)u->handle;\n\
+    \    propagate(rt);\n    propagate(rt->ch[1]);\n    return rt->ch[1]->ch[0];\n\
+    \  }\n\n  void set_vertex(Vertex* u,Vertex v){\n    auto t=expose(u);\n    *u=v;\n\
+    \    pushup(t);\n  }\n\n  void set_edge(Vertex* u,Vertex* v,const Cluster &w){\n\
+    \    auto t=path(u,v);\n    assert(t->type==Type::Edge);\n    t->dat=w;\n    while(t)\
+    \ pushup(t),t=t->p;\n  }\n\n  Cluster get_path(Vertex* u,Vertex* v){\n    return\
+    \ path(u,v)->dat;\n  }\n\n  Cluster get_subtree(Vertex* v){\n    return expose(v)->dat;\n\
+    \  }\n\n  // subtree of v when p is root\n  Cluster get_subtree(Vertex* p,Vertex*\
+    \ v){\n    Node* t=path(p,v);\n    Cluster res=t->p->ch[1]->dat;\n    res.toggle();\n\
+    \    Node* rk=t->p->q;\n    if(t->p->q){\n      assert(rk->vs[1]==t->p->ch[1]->vs[0]);\n\
+    \      res=Cluster::rake(res,rk->dat);\n    }\n    return res;\n  }\n};\n//END\
+    \ CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return\
+    \ 0;\n}\n#endif\n#line 8 \"test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp\"\
     \n#undef call_from_test\n\nusing ll = long long;\nstruct Vertex{\n  void* handle;\n\
     \  ll val;\n  Vertex(ll val=0):handle(nullptr),val(val){}\n};\n\nstruct Cluster{\n\
     \  ll res;\n  Cluster(ll res=0):res(res){}\n  void toggle(){}\n  static Cluster\
     \ compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res+v->val+y.res);\n\
     \  }\n  static Cluster rake(Cluster x,Cluster y){\n    return Cluster(x.res+y.res);\n\
     \  }\n};\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const\
-    \ char newl = '\\n';\n\n  const size_t LIM = 2e6;\n  TopTree<Vertex, Cluster,\
-    \ LIM> G;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n  for(int i=0;i<n;i++)\
-    \ cin>>as[i];\n\n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(Vertex(as[i]));\n\
+    \ char newl = '\\n';\n\n  const size_t N = 2e5;\n  TopTree<Vertex, Cluster, N>\
+    \ G;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n  for(int i=0;i<n;i++)\
+    \ cin>>as[i];\n\n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(as[i]);\n\
     \n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.link(vs[u],Cluster(0),vs[v]);\n\
     \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n  \
     \    int u,v,w,x;\n      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n     \
     \ G.link(vs[w],Cluster(0),vs[x]);\n    }\n\n    if(t==1){\n      int p,x;\n  \
     \    cin>>p>>x;\n      as[p]+=x;\n      G.set_vertex(vs[p],Vertex(as[p]));\n \
     \   }\n\n    if(t==2){\n      int v,p;\n      cin>>v>>p;\n      cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;\n\
-    \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \    }\n  }\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\n\
     \n#include<bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../toptree/toptree.cpp\"\n#undef call_from_test\n\nusing ll = long long;\n\
@@ -161,22 +163,22 @@ data:
     \  static Cluster compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res+v->val+y.res);\n\
     \  }\n  static Cluster rake(Cluster x,Cluster y){\n    return Cluster(x.res+y.res);\n\
     \  }\n};\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const\
-    \ char newl = '\\n';\n\n  const size_t LIM = 2e6;\n  TopTree<Vertex, Cluster,\
-    \ LIM> G;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n  for(int i=0;i<n;i++)\
-    \ cin>>as[i];\n\n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(Vertex(as[i]));\n\
+    \ char newl = '\\n';\n\n  const size_t N = 2e5;\n  TopTree<Vertex, Cluster, N>\
+    \ G;\n\n  int n,q;\n  cin>>n>>q;\n  vector<ll> as(n);\n  for(int i=0;i<n;i++)\
+    \ cin>>as[i];\n\n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(as[i]);\n\
     \n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.link(vs[u],Cluster(0),vs[v]);\n\
     \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n  \
     \    int u,v,w,x;\n      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n     \
     \ G.link(vs[w],Cluster(0),vs[x]);\n    }\n\n    if(t==1){\n      int p,x;\n  \
     \    cin>>p>>x;\n      as[p]+=x;\n      G.set_vertex(vs[p],Vertex(as[p]));\n \
     \   }\n\n    if(t==2){\n      int v,p;\n      cin>>v>>p;\n      cout<<as[v]+G.get_subtree(vs[p],vs[v]).res<<newl;\n\
-    \    }\n  }\n  cout<<flush;\n  return 0;\n}\n"
+    \    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - toptree/toptree.cpp
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   requiredBy: []
-  timestamp: '2021-08-01 23:10:54+09:00'
+  timestamp: '2021-08-14 14:38:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
