@@ -57,7 +57,7 @@ signed main(){
     as[i]--;bs[i]--;
   }
 
-  const size_t N = 2e5;
+  const size_t N = 2e5+1;
   TopTree<Vertex, Cluster, N> G;
 
   vector<Vertex*> ptr(n);
@@ -75,7 +75,7 @@ signed main(){
   }
   cout<<ans<<newl;
 
-  Vertex* rt=G.create(Vertex(0));
+  Vertex* rt=G.create(0);
 
   int q;
   cin>>q;
