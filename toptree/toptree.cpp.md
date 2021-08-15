@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3143.test.cpp
     title: Farthest (with index)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3179.test.cpp
     title: test/aoj/3179.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"toptree/toptree.cpp\"\n\n#include <bits/stdc++.h>\nusing\
@@ -303,7 +303,7 @@ data:
   - toptree/distancesum.cpp
   - toptree/farthest.cpp
   timestamp: '2021-08-14 14:38:54+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

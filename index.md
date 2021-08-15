@@ -500,7 +500,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/log.cpp
       title: mod/log.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/mint.cpp
       title: mod/mint.cpp
     - icon: ':heavy_check_mark:'
@@ -687,7 +687,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: toptree/steiner.cpp
       title: toptree/steiner.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: toptree/toptree.cpp
       title: Top Tree
   - name: tree
@@ -1210,7 +1210,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3168.test.cpp
       title: test/aoj/3168.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/3179.test.cpp
       title: test/aoj/3179.test.cpp
     - icon: ':heavy_check_mark:'

@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: formalpowerseries/shift.cpp
     title: formalpowerseries/shift.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

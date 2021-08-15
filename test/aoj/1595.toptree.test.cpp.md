@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: toptree/toptree.cpp
     title: Top Tree
   _extendedRequiredBy: []
