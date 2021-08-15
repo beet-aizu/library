@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linearalgebra/matrix.cpp
     title: linearalgebra/matrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

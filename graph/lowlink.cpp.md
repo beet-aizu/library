@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   _extendedRequiredBy: []

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/affine.cpp
     title: math/affine.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: mod/mint.cpp
     title: mod/mint.cpp
   - icon: ':heavy_check_mark:'
