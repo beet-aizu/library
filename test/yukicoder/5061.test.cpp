@@ -44,7 +44,7 @@ signed main(){
       S.add_a_minus_x(0,cs[i]-pos);
       S.add_x_minus_a(0,cs[i]-pos);
       pos=cs[i];
-      S.shift(num[i]);
+      S.shift(-num[i]);
       S.apply_cumulative_min();
     }
 
