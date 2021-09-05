@@ -156,12 +156,12 @@ data:
   - test/yukicoder/2125.test.cpp
   - test/yukicoder/0143.test.cpp
   - test/yukicoder/0831.test.cpp
-  - test/aoj/NTL_2_C.test.cpp
   - test/aoj/NTL_2_A.test.cpp
-  - test/aoj/NTL_2_D.test.cpp
-  - test/aoj/NTL_2_F.test.cpp
   - test/aoj/NTL_2_B.test.cpp
+  - test/aoj/NTL_2_C.test.cpp
+  - test/aoj/NTL_2_F.test.cpp
   - test/aoj/NTL_2_E.test.cpp
+  - test/aoj/NTL_2_D.test.cpp
 documentation_of: tools/bigint.cpp
 layout: document
 redirect_from:

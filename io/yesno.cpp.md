@@ -33,8 +33,8 @@ data:
   timestamp: '2021-02-20 22:51:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/3354.test.cpp
   - test/yukicoder/4117.test.cpp
+  - test/yukicoder/3354.test.cpp
 documentation_of: io/yesno.cpp
 layout: document
 redirect_from:

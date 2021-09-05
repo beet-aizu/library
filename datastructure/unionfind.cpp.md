@@ -66,19 +66,19 @@ data:
   path: datastructure/unionfind.cpp
   requiredBy:
   - linearalgebra/tree_theorem.cpp
+  - datastructure/skewheap.cpp
   - graph/kruskal.cpp
   - graph/lowlink.cpp
-  - datastructure/skewheap.cpp
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/manhattanmst.test.cpp
   - test/yosupo/unionfind.test.cpp
-  - test/aoj/DSL_1_A.test.cpp
   - test/aoj/2995.test.cpp
+  - test/aoj/GRL_2_A.test.cpp
   - test/aoj/0403.test.cpp
   - test/aoj/0314.test.cpp
-  - test/aoj/GRL_2_A.test.cpp
+  - test/aoj/DSL_1_A.test.cpp
 documentation_of: datastructure/unionfind.cpp
 layout: document
 redirect_from:

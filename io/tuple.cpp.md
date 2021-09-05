@@ -37,8 +37,8 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/4852.test.cpp
   - test/yukicoder/4918.test.cpp
+  - test/yukicoder/4852.test.cpp
 documentation_of: io/tuple.cpp
 layout: document
 redirect_from:

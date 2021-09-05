@@ -144,8 +144,8 @@ data:
   timestamp: '2021-03-25 09:46:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2971.test.cpp
   - test/aoj/1630.test.cpp
+  - test/aoj/2971.test.cpp
 documentation_of: polynomial/hash.cpp
 layout: document
 redirect_from:

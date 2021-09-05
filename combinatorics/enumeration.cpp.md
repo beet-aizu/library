@@ -203,61 +203,61 @@ data:
   isVerificationFile: false
   path: combinatorics/enumeration.cpp
   requiredBy:
-  - polynomial/interpolate.cpp
-  - polynomial/multieval.cpp
-  - combinatorics/surjection.cpp
-  - combinatorics/stirling2nd.cpp
-  - combinatorics/stirling1st.cpp
-  - combinatorics/partition.cpp
-  - combinatorics/bell.cpp
-  - combinatorics/bernoulli.cpp
-  - includes/formalpowerseries.h
-  - graph/lowlink.cpp
-  - formalpowerseries/log.cpp
-  - formalpowerseries/998244353.cpp
-  - formalpowerseries/inv.cpp
-  - formalpowerseries/div.cpp
-  - formalpowerseries/diff.cpp
-  - formalpowerseries/mod.cpp
-  - formalpowerseries/integral.cpp
-  - formalpowerseries/shift.cpp
-  - formalpowerseries/base.cpp
-  - formalpowerseries/exp.cpp
   - formalpowerseries/sqrt.cpp
+  - formalpowerseries/base.cpp
+  - formalpowerseries/diff.cpp
+  - formalpowerseries/div.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/exp.cpp
+  - formalpowerseries/integral.cpp
+  - formalpowerseries/mod.cpp
+  - formalpowerseries/998244353.cpp
+  - formalpowerseries/shift.cpp
   - formalpowerseries/pow.cpp
+  - formalpowerseries/log.cpp
+  - combinatorics/bernoulli.cpp
+  - combinatorics/stirling2nd.cpp
+  - combinatorics/partition.cpp
+  - combinatorics/stirling1st.cpp
+  - combinatorics/surjection.cpp
+  - combinatorics/bell.cpp
+  - graph/lowlink.cpp
+  - polynomial/multieval.cpp
+  - polynomial/interpolate.cpp
+  - includes/formalpowerseries.h
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
-  - test/yosupo/bernoulli_number.test.cpp
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
-  - test/yosupo/partition_function.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
-  - test/yosupo/log_of_formal_power_series.test.cpp
-  - test/yosupo/exp_of_formal_power_series.test.cpp
-  - test/yosupo/sharp_p_subset_sum.test.cpp
-  - test/yosupo/polynomial_interpolation.test.cpp
-  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - test/yosupo/polynomial_taylor_shift.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/yosupo/exp_of_formal_power_series.test.cpp
+  - test/yosupo/polynomial_taylor_shift.test.cpp
+  - test/yosupo/polynomial_interpolation.test.cpp
+  - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
+  - test/yosupo/stirling_number_of_the_first_kind.test.cpp
+  - test/yosupo/partition_function.test.cpp
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yosupo/inv_of_formal_power_series.test.cpp
   - test/yukicoder/5633.test.cpp
-  - test/yukicoder/2772.test.cpp
   - test/yukicoder/2744.test.cpp
-  - test/aoj/DPL_5_G.test.cpp
-  - test/aoj/DPL_5_D.test.cpp
-  - test/aoj/DPL_5_I.test.cpp
-  - test/aoj/DPL_5_H.test.cpp
-  - test/aoj/2985.test.cpp
-  - test/aoj/3084.test.cpp
+  - test/yukicoder/2772.test.cpp
   - test/aoj/DPL_5_B.test.cpp
-  - test/aoj/DPL_5_J.test.cpp
-  - test/aoj/DPL_5_C.test.cpp
-  - test/aoj/DPL_5_A.test.cpp
-  - test/aoj/DPL_5_K.test.cpp
-  - test/aoj/DPL_5_F.test.cpp
-  - test/aoj/2985.garner.test.cpp
   - test/aoj/3072.test.cpp
+  - test/aoj/3084.test.cpp
+  - test/aoj/DPL_5_K.test.cpp
+  - test/aoj/DPL_5_D.test.cpp
+  - test/aoj/DPL_5_A.test.cpp
+  - test/aoj/2985.garner.test.cpp
+  - test/aoj/DPL_5_F.test.cpp
+  - test/aoj/DPL_5_I.test.cpp
+  - test/aoj/DPL_5_G.test.cpp
+  - test/aoj/DPL_5_C.test.cpp
+  - test/aoj/2985.test.cpp
+  - test/aoj/DPL_5_J.test.cpp
+  - test/aoj/DPL_5_H.test.cpp
 documentation_of: combinatorics/enumeration.cpp
 layout: document
 redirect_from:

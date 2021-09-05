@@ -79,8 +79,8 @@ data:
   isVerificationFile: false
   path: formalpowerseries/exp.cpp
   requiredBy:
-  - includes/formalpowerseries.h
   - formalpowerseries/pow.cpp
+  - includes/formalpowerseries.h
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -88,9 +88,9 @@ data:
   - test/yosupo/exp_of_formal_power_series.test.cpp
   - test/yosupo/sharp_p_subset_sum.test.cpp
   - test/yukicoder/5633.test.cpp
-  - test/aoj/2985.test.cpp
   - test/aoj/3084.test.cpp
   - test/aoj/2985.garner.test.cpp
+  - test/aoj/2985.test.cpp
 documentation_of: formalpowerseries/exp.cpp
 layout: document
 redirect_from:

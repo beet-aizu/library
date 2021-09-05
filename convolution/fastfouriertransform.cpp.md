@@ -93,8 +93,8 @@ data:
   isVerificationFile: false
   path: convolution/fastfouriertransform.cpp
   requiredBy:
-  - convolution/arbitrarymod.cpp
   - tools/bigint.cpp
+  - convolution/arbitrarymod.cpp
   timestamp: '2019-12-26 23:10:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -56,8 +56,8 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/4852.test.cpp
   - test/yukicoder/3407.test.cpp
+  - test/yukicoder/4852.test.cpp
   - test/aoj/0439.test.cpp
 documentation_of: tree/auxiliarytree.cpp
 layout: document
