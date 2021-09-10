@@ -3,14 +3,14 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-int expression(string,int&);
-int term(string,int&);
-int factor(string,int&);
-int number(string,int&);
+int expression(string&,int&);
+int term(string&,int&);
+int factor(string&,int&);
+int number(string&,int&);
 
 bool f;
 
-int expression(string s,int& p){
+int expression(string& s,int& p){
   int res=term(s,p);
   while(p<(int)s.size()){
     if(s[p]=='+'){
@@ -28,7 +28,7 @@ int expression(string s,int& p){
   return res;
 }
 
-int term(string s,int& p){
+int term(string& s,int& p){
   int res=factor(s,p);
   while(p<(int)s.size()){
     if(s[p]=='*'){
@@ -51,7 +51,7 @@ int term(string s,int& p){
   return res;
 }
 
-int factor(string s,int& p){
+int factor(string& s,int& p){
   int res;
   if(s[p]=='('){
     p++;
@@ -63,7 +63,7 @@ int factor(string s,int& p){
   return res;
 }
 
-int number(string s,int& p){
+int number(string& s,int& p){
   int res=0;
   while(p<(int)s.size() and isdigit(s[p]))
     res=res*10+s[p++]-'0';
