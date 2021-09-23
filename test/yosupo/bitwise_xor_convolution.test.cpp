@@ -23,12 +23,12 @@ signed main(){
   for(int i=0;i<sz;i++) cin>>as[i].v;
   for(int i=0;i<sz;i++) cin>>bs[i].v;
 
-  fwht(as,zeta);
-  fwht(bs,zeta);
+  fwht(as,bitwise_xor::zeta);
+  fwht(bs,bitwise_xor::zeta);
 
   for(int i=0;i<sz;i++) as[i]*=bs[i];
 
-  fwht(as,zeta);
+  fwht(as,bitwise_xor::zeta);
   M inv=M(sz).inv();
   for(int i=0;i<sz;i++) as[i]*=inv;
 

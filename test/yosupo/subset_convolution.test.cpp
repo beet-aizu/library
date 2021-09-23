@@ -25,8 +25,8 @@ signed main(){
   for(int i=0;i<sz;i++) cin>>as[i][__builtin_popcount(i)].v;
   for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;
 
-  fwht(as,zeta);
-  fwht(bs,zeta);
+  fwht(as,bitwise_or::zeta);
+  fwht(bs,bitwise_or::zeta);
 
   vector<V> cs(sz,V(n+1));
   for(int i=0;i<sz;i++)
@@ -34,7 +34,7 @@ signed main(){
       for(int k=0;j+k<=n;k++)
         cs[i][j+k]+=as[i][j]*bs[i][k];
 
-  fwht(cs,moebius);
+  fwht(cs,bitwise_or::moebius);
 
   for(int i=0;i<sz;i++){
     if(i) cout<<' ';

@@ -27,9 +27,9 @@ signed main(){
     cnt[s]++;
   }
 
-  fwht(cnt,zeta);
+  fwht(cnt,bitwise_xor::zeta);
   for(ll &v:cnt) v=v*v;
-  fwht(cnt,moebius);
+  fwht(cnt,bitwise_xor::moebius);
 
   k--;
   for(int v=sz-1;v>=0;v--){

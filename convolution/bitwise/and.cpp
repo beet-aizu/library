@@ -3,8 +3,10 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-auto zeta=[](auto& lo,auto& hi){lo+=hi;};
-auto moebius=[](auto& lo,auto& hi){lo-=hi;};
+namespace bitwise_and{
+  auto zeta=[](auto& lo,auto& hi){lo+=hi;};
+  auto moebius=[](auto& lo,auto& hi){lo-=hi;};
+}
 //END CUT HERE
 #ifndef call_from_test
 //INSERT ABOVE HERE

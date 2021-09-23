@@ -20,7 +20,7 @@ signed main(){
   auto as=read(sz);
 
   auto dp(as);
-  fwht(dp,zeta);
+  fwht(dp,bitwise_and::zeta);
 
   for(int i=0;i<sz;i++){
     if(!as[i]) continue;

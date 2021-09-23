@@ -25,10 +25,10 @@ signed main(){
   for(int i=0;i<(int)as.size();i++)
     dp[i]=M(as[i])/M(sum);
 
-  fwht(dp,zeta);
+  fwht(dp,bitwise_or::zeta);
   for(int i=0;i<(int)dp.size();i++)
     dp[i]=M(1)/(M(1)-dp[i]);
-  fwht(dp,moebius);
+  fwht(dp,bitwise_or::moebius);
 
   cout<<accumulate(dp.begin(),dp.end()-1,M(0))<<endl;
   return 0;

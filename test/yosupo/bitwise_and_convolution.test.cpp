@@ -23,12 +23,12 @@ signed main(){
   for(int i=0;i<sz;i++) cin>>as[i].v;
   for(int i=0;i<sz;i++) cin>>bs[i].v;
 
-  fwht(as,zeta);
-  fwht(bs,zeta);
+  fwht(as,bitwise_and::zeta);
+  fwht(bs,bitwise_and::zeta);
 
   for(int i=0;i<sz;i++) as[i]*=bs[i];
 
-  fwht(as,moebius);
+  fwht(as,bitwise_and::moebius);
 
   for(int i=0;i<sz;i++){
     if(i) cout<<' ';

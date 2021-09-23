@@ -34,7 +34,7 @@ signed main(){
     dp[bit]=m/t;
   }
 
-  fwht(dp,moebius);
+  fwht(dp,bitwise_or::moebius);
 
   double ans=0;
   for(int bit=0;bit<(1<<n);bit++){
