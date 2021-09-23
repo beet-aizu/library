@@ -49,10 +49,11 @@ struct MatrixTreeTheorem{
     return vs;
   }
 
-  K build(){
+  tuple<int, K, T> build(){
     sort(es.begin(),es.end());
     fill(used.begin(),used.end(),0);
     K res(1);
+    T cost(0);
     for(int i=0;i<(int)es.size();){
       queue<int> q,r;
       for(auto &h:H) h.clear();
@@ -73,10 +74,9 @@ struct MatrixTreeTheorem{
         if(m==1) continue;
 
         sort(vs.begin(),vs.end());
-        auto idx=
-          [&](int x){
-            return lower_bound(vs.begin(),vs.end(),x)-vs.begin();
-          };
+        auto idx=[&](int x){
+          return lower_bound(vs.begin(),vs.end(),x)-vs.begin();
+        };
         M A(m,m);
         for(int x:vs)
           for(int y:H[x])
@@ -91,13 +91,14 @@ struct MatrixTreeTheorem{
 
         res*=A.determinant();
         for(int x:vs) uf.unite(v,x);
+        cost+=T(m-1)*es[p].c;
       }
       while(!r.empty()){
         int v=r.front();r.pop();
         used[v]=0;
       }
     }
-    return res;
+    return make_tuple(uf.count(),res,cost);
   }
 };
 //END CUT HERE
@@ -105,7 +106,6 @@ struct MatrixTreeTheorem{
 
 #define call_from_test
 #include "../mod/mint.cpp"
-#include "../graph/kruskal.cpp"
 #undef call_from_test
 
 //INSERT ABOVE HERE
@@ -114,15 +114,14 @@ signed ARC018_D(){
   int n,m;
   scanf("%d %d",&n,&m);
   MatrixTreeTheorem<M, int> mtt(n);
-  Kruskal<int> G(n);
   for(int i=0;i<m;i++){
     int a,b,c;
     scanf("%d %d %d",&a,&b,&c);
     a--;b--;
     mtt.add_edge(a,b,c);
-    G.add_edge(a,b,c);
   }
-  printf("%d %d\n",G.build(),mtt.build().v);
+  auto[k,res,cost]=mtt.build();
+  printf("%d %d\n",cost,res.v);
   return 0;
 }
 /*
