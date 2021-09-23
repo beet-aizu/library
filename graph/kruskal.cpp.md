@@ -8,9 +8,6 @@ data:
   - icon: ':warning:'
     path: graph/voronoiminimumspanningtree.cpp
     title: graph/voronoiminimumspanningtree.cpp
-  - icon: ':heavy_check_mark:'
-    path: linearalgebra/tree_theorem.cpp
-    title: linearalgebra/tree_theorem.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0403.test.cpp
@@ -51,7 +48,6 @@ data:
   path: graph/kruskal.cpp
   requiredBy:
   - graph/voronoiminimumspanningtree.cpp
-  - linearalgebra/tree_theorem.cpp
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

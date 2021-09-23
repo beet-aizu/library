@@ -5,9 +5,6 @@ data:
     path: datastructure/unionfind.cpp
     title: datastructure/unionfind.cpp
   - icon: ':heavy_check_mark:'
-    path: graph/kruskal.cpp
-    title: graph/kruskal.cpp
-  - icon: ':heavy_check_mark:'
     path: linearalgebra/matrix.cpp
     title: linearalgebra/matrix.cpp
   - icon: ':heavy_check_mark:'
@@ -44,40 +41,38 @@ data:
     \  used[v]=1;\n    q.emplace(v);\n    while(!q.empty()){\n      v=q.front();q.pop();\n\
     \      vs.emplace_back(v);\n      for(int u:H[v]){\n        if(used[u]) continue;\n\
     \        used[u]=1;\n        q.emplace(u);\n      }\n    }\n    return vs;\n \
-    \ }\n\n  K build(){\n    sort(es.begin(),es.end());\n    fill(used.begin(),used.end(),0);\n\
-    \    K res(1);\n    for(int i=0;i<(int)es.size();){\n      queue<int> q,r;\n \
-    \     for(auto &h:H) h.clear();\n      int p=i;\n      while(i<(int)es.size()\
+    \ }\n\n  tuple<int, K, T> build(){\n    sort(es.begin(),es.end());\n    fill(used.begin(),used.end(),0);\n\
+    \    K res(1);\n    T cost(0);\n    for(int i=0;i<(int)es.size();){\n      queue<int>\
+    \ q,r;\n      for(auto &h:H) h.clear();\n      int p=i;\n      while(i<(int)es.size()\
     \ and es[i].c==es[p].c){\n        int u=uf.find(es[i].a);\n        int v=uf.find(es[i++].b);\n\
     \        H[u].emplace_back(v);\n        H[v].emplace_back(u);\n        q.emplace(u);q.emplace(v);\n\
     \        r.emplace(u);r.emplace(v);\n      }\n      while(!q.empty()){\n     \
     \   int v=q.front();q.pop();\n        if(used[v]) continue;\n        vector<int>\
     \ vs=bfs(v);\n        int m=vs.size();\n        if(m==1) continue;\n\n       \
-    \ sort(vs.begin(),vs.end());\n        auto idx=\n          [&](int x){\n     \
-    \       return lower_bound(vs.begin(),vs.end(),x)-vs.begin();\n          };\n\
-    \        M A(m,m);\n        for(int x:vs)\n          for(int y:H[x])\n       \
-    \     if(x!=y) A[idx(x)][idx(y)]-=K(1);\n\n        for(int x=0;x<m;x++)\n    \
-    \      for(int y=0;y<m;y++)\n            if(x!=y) A[x][x]-=A[x][y];\n\n      \
-    \  A.dat.pop_back();\n        for(auto &a:A.dat) a.pop_back();\n\n        res*=A.determinant();\n\
-    \        for(int x:vs) uf.unite(v,x);\n      }\n      while(!r.empty()){\n   \
-    \     int v=r.front();r.pop();\n        used[v]=0;\n      }\n    }\n    return\
-    \ res;\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\n#define call_from_test\n\
-    #include \"../mod/mint.cpp\"\n#include \"../graph/kruskal.cpp\"\n#undef call_from_test\n\
-    \n//INSERT ABOVE HERE\nsigned ARC018_D(){\n  using M = Mint<int>;\n  int n,m;\n\
-    \  scanf(\"%d %d\",&n,&m);\n  MatrixTreeTheorem<M, int> mtt(n);\n  Kruskal<int>\
-    \ G(n);\n  for(int i=0;i<m;i++){\n    int a,b,c;\n    scanf(\"%d %d %d\",&a,&b,&c);\n\
-    \    a--;b--;\n    mtt.add_edge(a,b,c);\n    G.add_edge(a,b,c);\n  }\n  printf(\"\
-    %d %d\\n\",G.build(),mtt.build().v);\n  return 0;\n}\n/*\n  verified on 2018/10/30\n\
+    \ sort(vs.begin(),vs.end());\n        auto idx=[&](int x){\n          return lower_bound(vs.begin(),vs.end(),x)-vs.begin();\n\
+    \        };\n        M A(m,m);\n        for(int x:vs)\n          for(int y:H[x])\n\
+    \            if(x!=y) A[idx(x)][idx(y)]-=K(1);\n\n        for(int x=0;x<m;x++)\n\
+    \          for(int y=0;y<m;y++)\n            if(x!=y) A[x][x]-=A[x][y];\n\n  \
+    \      A.dat.pop_back();\n        for(auto &a:A.dat) a.pop_back();\n\n       \
+    \ res*=A.determinant();\n        for(int x:vs) uf.unite(v,x);\n        cost+=T(m-1)*es[p].c;\n\
+    \      }\n      while(!r.empty()){\n        int v=r.front();r.pop();\n       \
+    \ used[v]=0;\n      }\n    }\n    return make_tuple(uf.count(),res,cost);\n  }\n\
+    };\n//END CUT HERE\n#ifndef call_from_test\n\n#define call_from_test\n#include\
+    \ \"../mod/mint.cpp\"\n#undef call_from_test\n\n//INSERT ABOVE HERE\nsigned ARC018_D(){\n\
+    \  using M = Mint<int>;\n  int n,m;\n  scanf(\"%d %d\",&n,&m);\n  MatrixTreeTheorem<M,\
+    \ int> mtt(n);\n  for(int i=0;i<m;i++){\n    int a,b,c;\n    scanf(\"%d %d %d\"\
+    ,&a,&b,&c);\n    a--;b--;\n    mtt.add_edge(a,b,c);\n  }\n  auto[k,res,cost]=mtt.build();\n\
+    \  printf(\"%d %d\\n\",cost,res.v);\n  return 0;\n}\n/*\n  verified on 2018/10/30\n\
     \  https://atcoder.jp/contests/arc018/tasks/arc018_4\n*/\n\nsigned main(){\n \
     \ ARC018_D();\n  return 0;\n}\n#endif\n"
   dependsOn:
   - linearalgebra/matrix.cpp
   - datastructure/unionfind.cpp
   - mod/mint.cpp
-  - graph/kruskal.cpp
   isVerificationFile: false
   path: linearalgebra/tree_theorem.cpp
   requiredBy: []
-  timestamp: '2021-08-08 16:25:15+09:00'
+  timestamp: '2021-09-23 21:03:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0314.test.cpp
