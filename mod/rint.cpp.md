@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: linearalgebra/matrix.cpp
+    title: linearalgebra/matrix.cpp
+  - icon: ':heavy_check_mark:'
     path: mod/factorial.cpp
     title: mod/factorial.cpp
   _extendedVerifiedWith:
@@ -61,6 +64,7 @@ data:
   path: mod/rint.cpp
   requiredBy:
   - mod/factorial.cpp
+  - linearalgebra/matrix.cpp
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

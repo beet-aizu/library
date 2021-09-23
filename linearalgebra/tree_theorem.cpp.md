@@ -62,7 +62,7 @@ data:
     \  using M = Mint<int>;\n  int n,m;\n  scanf(\"%d %d\",&n,&m);\n  MatrixTreeTheorem<M,\
     \ int> mtt(n);\n  for(int i=0;i<m;i++){\n    int a,b,c;\n    scanf(\"%d %d %d\"\
     ,&a,&b,&c);\n    a--;b--;\n    mtt.add_edge(a,b,c);\n  }\n  auto[k,res,cost]=mtt.build();\n\
-    \  printf(\"%d %d\\n\",cost,res.v);\n  return 0;\n}\n/*\n  verified on 2018/10/30\n\
+    \  printf(\"%d %d\\n\",cost,res.v);\n  return 0;\n}\n/*\n  verified on 2021/09/23\n\
     \  https://atcoder.jp/contests/arc018/tasks/arc018_4\n*/\n\nsigned main(){\n \
     \ ARC018_D();\n  return 0;\n}\n#endif\n"
   dependsOn:
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: linearalgebra/tree_theorem.cpp
   requiredBy: []
-  timestamp: '2021-09-23 21:03:03+09:00'
+  timestamp: '2021-09-23 21:21:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0314.test.cpp
