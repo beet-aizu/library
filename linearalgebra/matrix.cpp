@@ -33,6 +33,8 @@ struct Matrix{
   }
 
   Matrix pow(long long n) const{
+    assert(n>=0);
+    assert(dat.size()==dat[0].size());
     Matrix a(dat),res=identity(size());
     while(n){
       if(n&1) res=matmul(res,a);
@@ -55,7 +57,7 @@ struct Matrix{
   template<typename T, typename ET<T>::type* = nullptr>
   static bool compare(T x,T y){return abs(x)<abs(y);}
   template<typename T, typename EF<T>::type* = nullptr>
-  static bool compare(T x,T y){(void)x;return y!=T(0);}
+  static bool compare(T,T y){return !is_zero(y);}
 
   // assume regularity
   static Matrix gauss_jordan(const Matrix &A,const Matrix &B){
@@ -122,72 +124,19 @@ struct Matrix{
 };
 //END CUT HERE
 #ifndef call_from_test
-template<typename T>
-struct Mint{
-  static T MOD;
-  T v;
-  Mint():v(0){}
-  Mint(signed v):v(v){}
-  Mint(long long t){v=t%MOD;if(v<0) v+=MOD;}
+#define call_from_test
+#include "../mod/rint.cpp"
+#undef call_from_test
 
-  Mint pow(long long k){
-    Mint res(1),tmp(v);
-    while(k){
-      if(k&1) res*=tmp;
-      tmp*=tmp;
-      k>>=1;
-    }
-    return res;
-  }
-
-  Mint inv(){return pow(MOD-2);}
-
-  Mint& operator+=(Mint a){v+=a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator-=(Mint a){v+=MOD-a.v;if(v>=MOD)v-=MOD;return *this;}
-  Mint& operator*=(Mint a){v=1LL*v*a.v%MOD;return *this;}
-  Mint& operator/=(Mint a){return (*this)*=a.inv();}
-
-  Mint operator+(Mint a) const{return Mint(v)+=a;};
-  Mint operator-(Mint a) const{return Mint(v)-=a;};
-  Mint operator*(Mint a) const{return Mint(v)*=a;};
-  Mint operator/(Mint a) const{return Mint(v)/=a;};
-
-  Mint operator-(){return v?MOD-v:v;}
-
-  bool operator==(const Mint a)const{return v==a.v;}
-  bool operator!=(const Mint a)const{return v!=a.v;}
-  bool operator <(const Mint a)const{return v <a.v;};
-};
-template<typename T> Mint<T> abs(Mint<T> a){return a;};
-template<typename T> T Mint<T>::MOD = 1e9+7;
-
-
-signed ARC050_C(){
-  using ll = long long;
-  using M = Mint<ll>;
-  using MM = Matrix<M>;
-  ll a,b,m;
-  scanf("%lld %lld %lld",&a,&b,&m);
-  M::MOD = m;
-  ll c=__gcd(a,b);
-  M x=M((ll)10).pow(c);
-  M ans=MM::sigma(x,a/c)*MM::sigma(M((ll)10),b);
-  printf("%lld\n",ans.v);
-  return 0;
-}
-/*
-  verified on 2018/10/17
-  https://atcoder.jp/contests/arc050/tasks/arc050_c
-*/
-
+// test inv
 signed SPOJ_MIFF(){
   int first=1;
   int n,p;
   while(scanf("%d %d",&n,&p),n){
     if(!first) puts("");
     first=0;
-    using M = Mint<int>;
-    M::MOD = p;
+    using M = Rint<int>;
+    M::set_mod(p);
     using MM = Matrix<M>;
     MM A(n,n);
     for(int i=0;i<n;i++)
@@ -208,18 +157,19 @@ signed SPOJ_MIFF(){
   return 0;
 }
 /*
-  verified on 2018/10/17
+  verified on 2021/09/23
   https://www.spoj.com/problems/MIFF/
 */
 
+// test pow
 signed SPOJ_MPOW(){
   int T;
   scanf("%d",&T);
   while(T--){
     int n,p;
     scanf("%d %d",&n,&p);
-    using M = Mint<int>;
-    M::MOD = 1e9+7;
+    using M = Rint<int>;
+    M::set_mod(1e9+7);
     using MM = Matrix<M>;
     MM A(n,n);
     for(int i=0;i<n;i++)
@@ -237,12 +187,11 @@ signed SPOJ_MPOW(){
   return 0;
 }
 /*
-  verified on 2018/10/17
+  verified on 2021/09/23
   https://www.spoj.com/problems/MPOW/
 */
 
 signed main(){
-  //ARC050_C();
   //SPOJ_MIFF();
   //SPOJ_MPOW();
   return 0;

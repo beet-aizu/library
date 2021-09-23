@@ -125,7 +125,7 @@ signed ARC018_D(){
   return 0;
 }
 /*
-  verified on 2018/10/30
+  verified on 2021/09/23
   https://atcoder.jp/contests/arc018/tasks/arc018_4
 */
 
