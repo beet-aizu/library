@@ -48,17 +48,18 @@ data:
     \      for(int j=0;j<d;j++)\n        f(as[i+j],as[i+j+d]);\n}\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n#line 1 \"convolution/bitwise/or.cpp\"\n\n#line 3 \"convolution/bitwise/or.cpp\"\
-    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\nauto zeta=[](auto& lo,auto&\
-    \ hi){hi+=lo;};\nauto moebius=[](auto& lo,auto& hi){hi-=lo;};\n//END CUT HERE\n\
-    #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
-    #endif\n#line 10 \"test/yosupo/subset_convolution.test.cpp\"\n#undef call_from_test\n\
-    \nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\
-    \n  using M = Mint<int, 998244353>;\n  using V = valarray<M>;\n\n  int sz=1<<n;\n\
-    \n  vector<V> as(sz,V(n+1)),bs(sz,V(n+1));\n  for(int i=0;i<sz;i++) cin>>as[i][__builtin_popcount(i)].v;\n\
-    \  for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;\n\n  fwht(as,zeta);\n\
-    \  fwht(bs,zeta);\n\n  vector<V> cs(sz,V(n+1));\n  for(int i=0;i<sz;i++)\n   \
-    \ for(int j=0;j<=n;j++)\n      for(int k=0;j+k<=n;k++)\n        cs[i][j+k]+=as[i][j]*bs[i][k];\n\
-    \n  fwht(cs,moebius);\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<cs[i][__builtin_popcount(i)];\n\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\nnamespace bitwise_or{\n  auto\
+    \ zeta=[](auto& lo,auto& hi){hi+=lo;};\n  auto moebius=[](auto& lo,auto& hi){hi-=lo;};\n\
+    }\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
+    \  return 0;\n}\n#endif\n#line 10 \"test/yosupo/subset_convolution.test.cpp\"\n\
+    #undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
+    \n  int n;\n  cin>>n;\n\n  using M = Mint<int, 998244353>;\n  using V = valarray<M>;\n\
+    \n  int sz=1<<n;\n\n  vector<V> as(sz,V(n+1)),bs(sz,V(n+1));\n  for(int i=0;i<sz;i++)\
+    \ cin>>as[i][__builtin_popcount(i)].v;\n  for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;\n\
+    \n  fwht(as,bitwise_or::zeta);\n  fwht(bs,bitwise_or::zeta);\n\n  vector<V> cs(sz,V(n+1));\n\
+    \  for(int i=0;i<sz;i++)\n    for(int j=0;j<=n;j++)\n      for(int k=0;j+k<=n;k++)\n\
+    \        cs[i][j+k]+=as[i][j]*bs[i][k];\n\n  fwht(cs,bitwise_or::moebius);\n\n\
+    \  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<cs[i][__builtin_popcount(i)];\n\
     \  }\n  cout<<endl;\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/subset_convolution\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
@@ -67,11 +68,12 @@ data:
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n  using M\
     \ = Mint<int, 998244353>;\n  using V = valarray<M>;\n\n  int sz=1<<n;\n\n  vector<V>\
     \ as(sz,V(n+1)),bs(sz,V(n+1));\n  for(int i=0;i<sz;i++) cin>>as[i][__builtin_popcount(i)].v;\n\
-    \  for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;\n\n  fwht(as,zeta);\n\
-    \  fwht(bs,zeta);\n\n  vector<V> cs(sz,V(n+1));\n  for(int i=0;i<sz;i++)\n   \
-    \ for(int j=0;j<=n;j++)\n      for(int k=0;j+k<=n;k++)\n        cs[i][j+k]+=as[i][j]*bs[i][k];\n\
-    \n  fwht(cs,moebius);\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n    cout<<cs[i][__builtin_popcount(i)];\n\
-    \  }\n  cout<<endl;\n  return 0;\n}\n"
+    \  for(int i=0;i<sz;i++) cin>>bs[i][__builtin_popcount(i)].v;\n\n  fwht(as,bitwise_or::zeta);\n\
+    \  fwht(bs,bitwise_or::zeta);\n\n  vector<V> cs(sz,V(n+1));\n  for(int i=0;i<sz;i++)\n\
+    \    for(int j=0;j<=n;j++)\n      for(int k=0;j+k<=n;k++)\n        cs[i][j+k]+=as[i][j]*bs[i][k];\n\
+    \n  fwht(cs,bitwise_or::moebius);\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<'\
+    \ ';\n    cout<<cs[i][__builtin_popcount(i)];\n  }\n  cout<<endl;\n  return 0;\n\
+    }\n"
   dependsOn:
   - mod/mint.cpp
   - convolution/bitwise/fwht.cpp
@@ -79,7 +81,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/subset_convolution.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 09:46:10+09:00'
+  timestamp: '2021-09-23 20:26:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/subset_convolution.test.cpp

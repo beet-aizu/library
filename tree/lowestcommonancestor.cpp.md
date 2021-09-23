@@ -67,12 +67,12 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/lca.test.cpp
-  - test/yukicoder/3407.test.cpp
-  - test/yukicoder/4852.test.cpp
   - test/aoj/GRL_5_C.test.cpp
   - test/aoj/2270.test.cpp
   - test/aoj/0439.test.cpp
+  - test/yosupo/lca.test.cpp
+  - test/yukicoder/3407.test.cpp
+  - test/yukicoder/4852.test.cpp
 documentation_of: tree/lowestcommonancestor.cpp
 layout: document
 redirect_from:

@@ -15,25 +15,26 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"convolution/bitwise/xor.cpp\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n#endif\n//BEGIN CUT HERE\nauto zeta=[](auto& lo,auto& hi){\n\
-    \  auto x=lo+hi,y=lo-hi;\n  lo=x;\n  hi=y;\n};\nauto moebius=[](auto& lo,auto&\
-    \ hi){\n  auto x=lo+hi,y=lo-hi;\n  lo=x/decltype(x)(2);\n  hi=y/decltype(y)(2);\n\
-    };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n"
+    using namespace std;\n#endif\n//BEGIN CUT HERE\nnamespace bitwise_xor{\n  auto\
+    \ zeta=[](auto& lo,auto& hi){\n    auto x=lo+hi,y=lo-hi;\n    lo=x;\n    hi=y;\n\
+    \  };\n  auto moebius=[](auto& lo,auto& hi){\n    auto x=lo+hi,y=lo-hi;\n    lo=x/decltype(x)(2);\n\
+    \    hi=y/decltype(y)(2);\n  };\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
   code: "#ifndef call_from_test\n#include <bits/stdc++.h>\nusing namespace std;\n\
-    #endif\n//BEGIN CUT HERE\nauto zeta=[](auto& lo,auto& hi){\n  auto x=lo+hi,y=lo-hi;\n\
-    \  lo=x;\n  hi=y;\n};\nauto moebius=[](auto& lo,auto& hi){\n  auto x=lo+hi,y=lo-hi;\n\
-    \  lo=x/decltype(x)(2);\n  hi=y/decltype(y)(2);\n};\n//END CUT HERE\n#ifndef call_from_test\n\
-    //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
+    #endif\n//BEGIN CUT HERE\nnamespace bitwise_xor{\n  auto zeta=[](auto& lo,auto&\
+    \ hi){\n    auto x=lo+hi,y=lo-hi;\n    lo=x;\n    hi=y;\n  };\n  auto moebius=[](auto&\
+    \ lo,auto& hi){\n    auto x=lo+hi,y=lo-hi;\n    lo=x/decltype(x)(2);\n    hi=y/decltype(y)(2);\n\
+    \  };\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned\
+    \ main(){\n  return 0;\n}\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: convolution/bitwise/xor.cpp
   requiredBy: []
-  timestamp: '2020-12-16 12:53:06+09:00'
+  timestamp: '2021-09-23 20:26:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/bitwise_xor_convolution.test.cpp
   - test/aoj/0402.test.cpp
+  - test/yosupo/bitwise_xor_convolution.test.cpp
 documentation_of: convolution/bitwise/xor.cpp
 layout: document
 redirect_from:

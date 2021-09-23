@@ -41,8 +41,8 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/vertex_add_subtree_sum.test.cpp
   - test/aoj/2871.test.cpp
+  - test/yosupo/vertex_add_subtree_sum.test.cpp
 documentation_of: tree/eulertourforvertex.cpp
 layout: document
 redirect_from:

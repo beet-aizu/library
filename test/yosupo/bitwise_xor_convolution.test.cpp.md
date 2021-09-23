@@ -49,26 +49,26 @@ data:
     \      for(int j=0;j<d;j++)\n        f(as[i+j],as[i+j+d]);\n}\n//END CUT HERE\n\
     #ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n\
     #endif\n#line 1 \"convolution/bitwise/xor.cpp\"\n\n#line 3 \"convolution/bitwise/xor.cpp\"\
-    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\nauto zeta=[](auto& lo,auto&\
-    \ hi){\n  auto x=lo+hi,y=lo-hi;\n  lo=x;\n  hi=y;\n};\nauto moebius=[](auto& lo,auto&\
-    \ hi){\n  auto x=lo+hi,y=lo-hi;\n  lo=x/decltype(x)(2);\n  hi=y/decltype(y)(2);\n\
-    };\n//END CUT HERE\n#ifndef call_from_test\n//INSERT ABOVE HERE\nsigned main(){\n\
-    \  return 0;\n}\n#endif\n#line 10 \"test/yosupo/bitwise_xor_convolution.test.cpp\"\
+    \nusing namespace std;\n#endif\n//BEGIN CUT HERE\nnamespace bitwise_xor{\n  auto\
+    \ zeta=[](auto& lo,auto& hi){\n    auto x=lo+hi,y=lo-hi;\n    lo=x;\n    hi=y;\n\
+    \  };\n  auto moebius=[](auto& lo,auto& hi){\n    auto x=lo+hi,y=lo-hi;\n    lo=x/decltype(x)(2);\n\
+    \    hi=y/decltype(y)(2);\n  };\n}\n//END CUT HERE\n#ifndef call_from_test\n//INSERT\
+    \ ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n#line 10 \"test/yosupo/bitwise_xor_convolution.test.cpp\"\
     \n#undef call_from_test\n\nsigned main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n\
     \n  int n;\n  cin>>n;\n\n  using M = Mint<int, 998244353>;\n\n  int sz=1<<n;\n\
     \  vector<M> as(sz),bs(sz);\n  for(int i=0;i<sz;i++) cin>>as[i].v;\n  for(int\
-    \ i=0;i<sz;i++) cin>>bs[i].v;\n\n  fwht(as,zeta);\n  fwht(bs,zeta);\n\n  for(int\
-    \ i=0;i<sz;i++) as[i]*=bs[i];\n\n  fwht(as,zeta);\n  M inv=M(sz).inv();\n  for(int\
-    \ i=0;i<sz;i++) as[i]*=inv;\n\n  for(int i=0;i<sz;i++){\n    if(i) cout<<' ';\n\
-    \    cout<<as[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
+    \ i=0;i<sz;i++) cin>>bs[i].v;\n\n  fwht(as,bitwise_xor::zeta);\n  fwht(bs,bitwise_xor::zeta);\n\
+    \n  for(int i=0;i<sz;i++) as[i]*=bs[i];\n\n  fwht(as,bitwise_xor::zeta);\n  M\
+    \ inv=M(sz).inv();\n  for(int i=0;i<sz;i++) as[i]*=inv;\n\n  for(int i=0;i<sz;i++){\n\
+    \    if(i) cout<<' ';\n    cout<<as[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_xor_convolution\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
     \ \"../../mod/mint.cpp\"\n#include \"../../convolution/bitwise/fwht.cpp\"\n#include\
     \ \"../../convolution/bitwise/xor.cpp\"\n#undef call_from_test\n\nsigned main(){\n\
     \  cin.tie(0);\n  ios::sync_with_stdio(0);\n\n  int n;\n  cin>>n;\n\n  using M\
     \ = Mint<int, 998244353>;\n\n  int sz=1<<n;\n  vector<M> as(sz),bs(sz);\n  for(int\
-    \ i=0;i<sz;i++) cin>>as[i].v;\n  for(int i=0;i<sz;i++) cin>>bs[i].v;\n\n  fwht(as,zeta);\n\
-    \  fwht(bs,zeta);\n\n  for(int i=0;i<sz;i++) as[i]*=bs[i];\n\n  fwht(as,zeta);\n\
+    \ i=0;i<sz;i++) cin>>as[i].v;\n  for(int i=0;i<sz;i++) cin>>bs[i].v;\n\n  fwht(as,bitwise_xor::zeta);\n\
+    \  fwht(bs,bitwise_xor::zeta);\n\n  for(int i=0;i<sz;i++) as[i]*=bs[i];\n\n  fwht(as,bitwise_xor::zeta);\n\
     \  M inv=M(sz).inv();\n  for(int i=0;i<sz;i++) as[i]*=inv;\n\n  for(int i=0;i<sz;i++){\n\
     \    if(i) cout<<' ';\n    cout<<as[i];\n  }\n  cout<<endl;\n  return 0;\n}\n"
   dependsOn:
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 09:46:10+09:00'
+  timestamp: '2021-09-23 20:26:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/bitwise_xor_convolution.test.cpp
