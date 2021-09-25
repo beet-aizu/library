@@ -54,7 +54,7 @@ data:
     \ namespace std;\n#endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename\
     \ Cluster, size_t N>\nstruct TopTree{\n  enum Type { Compress, Rake, Edge };\n\
     \  struct Node{\n    Vertex* vs[2];\n    Cluster dat;\n    Node* p;\n    Node*\
-    \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+    \ q;\n    Node* ch[2];\n    bool rev,guard;\n    Type type;\n    Node(){p=q=nullptr;rev=guard=false;}\n\
     \  };\n\n  inline static array<Vertex, 2*N> pool_vertex;\n  inline static size_t\
     \ ptr_vertex = 0;\n\n  inline static array<Node, 4*N> pool_node;\n  inline static\
     \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  template<typename ...Args>\n  inline\
@@ -64,14 +64,14 @@ data:
     \ void dispose_node(Node* t){\n    t->p=recycle;\n    recycle=t;\n  }\n\n  inline\
     \ Node* get_new_node(){\n    if(recycle) return new(exchange(recycle,recycle->p))\
     \ Node;\n    return &(pool_node[ptr_node++]);\n  }\n\n  inline Node* edge(Vertex*\
-    \ u,Cluster w,Vertex* v){\n    auto t=get_new_node();\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
-    \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
-    \ auto t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n\
+    \ u,Cluster w,Vertex* v){\n    auto t=get_new_node();\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;\n\
+    \    t->type=Type::Edge;\n    return pushup(t);\n  }\n\n  inline Node* compress(Node*\
+    \ l,Node* r){\n    auto t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;\n    t->type=Type::Compress;\n\
     \    return pushup(t);\n  }\n\n  inline Node* rake(Node* l,Node* r){\n    auto\
-    \ t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n    return\
-    \ pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n    if(!p)\
-    \ return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return 0;\n   \
-    \ if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
+    \ t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;\n    t->type=Type::Rake;\n   \
+    \ return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n  \
+    \  if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
+    \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
     \ t){\n    Node* p=t->p;\n    if(!p) return -1;\n    if(p->ch[0]==t) return 0;\n\
     \    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  inline Node* pushup(Node*\
     \ const t){\n    Node* const l=t->ch[0];\n    Node* const r=t->ch[1];\n\n    if(t->type==Type::Compress){\n\
@@ -117,22 +117,23 @@ data:
     \      if(dir==1){\n        set_toggle(c);\n        set_toggle(t);\n      }\n\
     \      int n_dir=parent_dir(t);\n      if(~n_dir){\n        Node* const r=t->p;\n\
     \        propagate(c);\n        propagate(r);\n        r->ch[n_dir]=c;\n     \
-    \   c->p=r;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(r);pushup(t);pushup(n);\n\
-    \        splay(r);\n      }else{\n        propagate(c);\n        n->q=c;\n   \
-    \     c->p=n;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(t);pushup(n);\n\
-    \      }\n      if(t->type==Type::Edge) t=n;\n    }\n    return t;\n  }\n\n  Node*\
-    \ expose(Vertex* v){\n    return expose((Node*)(v->handle));\n  }\n\n  void soft_expose(Vertex*\
-    \ u,Vertex* v){\n    pushdown((Node*)u->handle);\n    pushdown((Node*)v->handle);\n\
-    \    Node* rt=expose(u);\n\n    if(u->handle==v->handle){\n      if(rt->vs[1]==u\
-    \ or rt->vs[0]==v)\n        set_toggle(rt);\n      return;\n    }\n\n    rt->guard=true;\n\
-    \    Node* soft=expose(v);\n    rt->guard=false;\n\n    pushup(rt);\n    if(parent_dir(soft)==0)\
-    \ set_toggle(rt);\n  }\n\n  void bring(Node* rt){\n    Node* rk=rt->q;\n    if(!rk){\n\
-    \      Node* ll=rt->ch[0];\n      dispose_node(ll->p);\n      ll->p=nullptr;\n\
-    \      pushup(ll);\n    }else if(rk->type==Type::Compress or rk->type==Type::Edge){\n\
-    \      Node* nr=rk;\n      set_toggle(nr);\n      rt->ch[1]=nr;\n      nr->p=rt;\n\
-    \      rt->q=nullptr;\n\n      pushup(nr);pushup(rt);\n    }else if(rk->type==Type::Rake){\n\
-    \      propagate(rk);\n      while(rk->ch[1]->type==Type::Rake){\n        propagate(rk->ch[1]);\n\
-    \        rk=rk->ch[1];\n      }\n      pushdown(rk);\n\n      rt->guard=true;\n\
+    \   c->p=r;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(r);\n\
+    \        pushup(t);pushup(n);\n        splay(r);\n      }else{\n        propagate(c);\n\
+    \        n->q=c;\n        c->p=n;\n        n->ch[dir]=t;\n        t->p=n;\n  \
+    \      pushup(c);pushup(t);pushup(n);\n      }\n      if(t->type==Type::Edge)\
+    \ t=n;\n    }\n    return t;\n  }\n\n  Node* expose(Vertex* v){\n    return expose((Node*)(v->handle));\n\
+    \  }\n\n  void soft_expose(Vertex* u,Vertex* v){\n    pushdown((Node*)u->handle);\n\
+    \    pushdown((Node*)v->handle);\n    Node* rt=expose(u);\n\n    if(u->handle==v->handle){\n\
+    \      if(rt->vs[1]==u or rt->vs[0]==v)\n        set_toggle(rt);\n      return;\n\
+    \    }\n\n    rt->guard=true;\n    Node* soft=expose(v);\n    rt->guard=false;\n\
+    \n    pushup(rt);\n    if(parent_dir(soft)==0) set_toggle(rt);\n  }\n\n  void\
+    \ bring(Node* rt){\n    Node* rk=rt->q;\n    if(!rk){\n      Node* ll=rt->ch[0];\n\
+    \      dispose_node(ll->p);\n      ll->p=nullptr;\n      pushup(ll);\n    }else\
+    \ if(rk->type==Type::Compress or rk->type==Type::Edge){\n      Node* nr=rk;\n\
+    \      set_toggle(nr);\n      rt->ch[1]=nr;\n      nr->p=rt;\n      rt->q=nullptr;\n\
+    \n      pushup(nr);pushup(rt);\n    }else if(rk->type==Type::Rake){\n      propagate(rk);\n\
+    \      while(rk->ch[1]->type==Type::Rake){\n        propagate(rk->ch[1]);\n  \
+    \      rk=rk->ch[1];\n      }\n      pushdown(rk);\n\n      rt->guard=true;\n\
     \      splay(rk);\n      rt->guard=false;\n\n      Node* ll=rk->ch[0];\n     \
     \ Node* rr=rk->ch[1];\n      propagate(ll);\n      set_toggle(rr);\n\n      rt->ch[1]=rr;\n\
     \      rr->p=rt;\n\n      rt->q=ll;\n      ll->p=rt;\n\n      dispose_node(rk);\n\
@@ -177,7 +178,7 @@ data:
     #endif\n//BEGIN CUT HERE\ntemplate<typename Vertex, typename Cluster, size_t N>\n\
     struct TopTree{\n  enum Type { Compress, Rake, Edge };\n  struct Node{\n    Vertex*\
     \ vs[2];\n    Cluster dat;\n    Node* p;\n    Node* q;\n    Node* ch[2];\n   \
-    \ bool rev,guard;\n    Type type;\n    Node():p(nullptr),q(nullptr),rev(false),guard(false){}\n\
+    \ bool rev,guard;\n    Type type;\n    Node(){p=q=nullptr;rev=guard=false;}\n\
     \  };\n\n  inline static array<Vertex, 2*N> pool_vertex;\n  inline static size_t\
     \ ptr_vertex = 0;\n\n  inline static array<Node, 4*N> pool_node;\n  inline static\
     \ size_t ptr_node = 0;\n\n  Cluster id;\n\n  template<typename ...Args>\n  inline\
@@ -187,14 +188,14 @@ data:
     \ void dispose_node(Node* t){\n    t->p=recycle;\n    recycle=t;\n  }\n\n  inline\
     \ Node* get_new_node(){\n    if(recycle) return new(exchange(recycle,recycle->p))\
     \ Node;\n    return &(pool_node[ptr_node++]);\n  }\n\n  inline Node* edge(Vertex*\
-    \ u,Cluster w,Vertex* v){\n    auto t=get_new_node();\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;\n\
-    \    return pushup(t);\n  }\n\n  inline Node* compress(Node* l,Node* r){\n   \
-    \ auto t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;\n\
+    \ u,Cluster w,Vertex* v){\n    auto t=get_new_node();\n    t->vs[0]=u;t->vs[1]=v;t->dat=w;\n\
+    \    t->type=Type::Edge;\n    return pushup(t);\n  }\n\n  inline Node* compress(Node*\
+    \ l,Node* r){\n    auto t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;\n    t->type=Type::Compress;\n\
     \    return pushup(t);\n  }\n\n  inline Node* rake(Node* l,Node* r){\n    auto\
-    \ t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;\n    return\
-    \ pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n    if(!p)\
-    \ return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return 0;\n   \
-    \ if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
+    \ t=get_new_node();\n    t->ch[0]=l;t->ch[1]=r;\n    t->type=Type::Rake;\n   \
+    \ return pushup(t);\n  }\n\n  int parent_dir(Node* t){\n    Node* p=t->p;\n  \
+    \  if(!p) return -1;\n    if(p->guard) return -1;\n    if(p->ch[0]==t) return\
+    \ 0;\n    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  int parent_dir_ignore_guard(Node*\
     \ t){\n    Node* p=t->p;\n    if(!p) return -1;\n    if(p->ch[0]==t) return 0;\n\
     \    if(p->ch[1]==t) return 1;\n    return -1;\n  }\n\n  inline Node* pushup(Node*\
     \ const t){\n    Node* const l=t->ch[0];\n    Node* const r=t->ch[1];\n\n    if(t->type==Type::Compress){\n\
@@ -240,22 +241,23 @@ data:
     \      if(dir==1){\n        set_toggle(c);\n        set_toggle(t);\n      }\n\
     \      int n_dir=parent_dir(t);\n      if(~n_dir){\n        Node* const r=t->p;\n\
     \        propagate(c);\n        propagate(r);\n        r->ch[n_dir]=c;\n     \
-    \   c->p=r;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(r);pushup(t);pushup(n);\n\
-    \        splay(r);\n      }else{\n        propagate(c);\n        n->q=c;\n   \
-    \     c->p=n;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(t);pushup(n);\n\
-    \      }\n      if(t->type==Type::Edge) t=n;\n    }\n    return t;\n  }\n\n  Node*\
-    \ expose(Vertex* v){\n    return expose((Node*)(v->handle));\n  }\n\n  void soft_expose(Vertex*\
-    \ u,Vertex* v){\n    pushdown((Node*)u->handle);\n    pushdown((Node*)v->handle);\n\
-    \    Node* rt=expose(u);\n\n    if(u->handle==v->handle){\n      if(rt->vs[1]==u\
-    \ or rt->vs[0]==v)\n        set_toggle(rt);\n      return;\n    }\n\n    rt->guard=true;\n\
-    \    Node* soft=expose(v);\n    rt->guard=false;\n\n    pushup(rt);\n    if(parent_dir(soft)==0)\
-    \ set_toggle(rt);\n  }\n\n  void bring(Node* rt){\n    Node* rk=rt->q;\n    if(!rk){\n\
-    \      Node* ll=rt->ch[0];\n      dispose_node(ll->p);\n      ll->p=nullptr;\n\
-    \      pushup(ll);\n    }else if(rk->type==Type::Compress or rk->type==Type::Edge){\n\
-    \      Node* nr=rk;\n      set_toggle(nr);\n      rt->ch[1]=nr;\n      nr->p=rt;\n\
-    \      rt->q=nullptr;\n\n      pushup(nr);pushup(rt);\n    }else if(rk->type==Type::Rake){\n\
-    \      propagate(rk);\n      while(rk->ch[1]->type==Type::Rake){\n        propagate(rk->ch[1]);\n\
-    \        rk=rk->ch[1];\n      }\n      pushdown(rk);\n\n      rt->guard=true;\n\
+    \   c->p=r;\n        n->ch[dir]=t;\n        t->p=n;\n        pushup(c);pushup(r);\n\
+    \        pushup(t);pushup(n);\n        splay(r);\n      }else{\n        propagate(c);\n\
+    \        n->q=c;\n        c->p=n;\n        n->ch[dir]=t;\n        t->p=n;\n  \
+    \      pushup(c);pushup(t);pushup(n);\n      }\n      if(t->type==Type::Edge)\
+    \ t=n;\n    }\n    return t;\n  }\n\n  Node* expose(Vertex* v){\n    return expose((Node*)(v->handle));\n\
+    \  }\n\n  void soft_expose(Vertex* u,Vertex* v){\n    pushdown((Node*)u->handle);\n\
+    \    pushdown((Node*)v->handle);\n    Node* rt=expose(u);\n\n    if(u->handle==v->handle){\n\
+    \      if(rt->vs[1]==u or rt->vs[0]==v)\n        set_toggle(rt);\n      return;\n\
+    \    }\n\n    rt->guard=true;\n    Node* soft=expose(v);\n    rt->guard=false;\n\
+    \n    pushup(rt);\n    if(parent_dir(soft)==0) set_toggle(rt);\n  }\n\n  void\
+    \ bring(Node* rt){\n    Node* rk=rt->q;\n    if(!rk){\n      Node* ll=rt->ch[0];\n\
+    \      dispose_node(ll->p);\n      ll->p=nullptr;\n      pushup(ll);\n    }else\
+    \ if(rk->type==Type::Compress or rk->type==Type::Edge){\n      Node* nr=rk;\n\
+    \      set_toggle(nr);\n      rt->ch[1]=nr;\n      nr->p=rt;\n      rt->q=nullptr;\n\
+    \n      pushup(nr);pushup(rt);\n    }else if(rk->type==Type::Rake){\n      propagate(rk);\n\
+    \      while(rk->ch[1]->type==Type::Rake){\n        propagate(rk->ch[1]);\n  \
+    \      rk=rk->ch[1];\n      }\n      pushdown(rk);\n\n      rt->guard=true;\n\
     \      splay(rk);\n      rt->guard=false;\n\n      Node* ll=rk->ch[0];\n     \
     \ Node* rr=rk->ch[1];\n      propagate(ll);\n      set_toggle(rr);\n\n      rt->ch[1]=rr;\n\
     \      rr->p=rt;\n\n      rt->q=ll;\n      ll->p=rt;\n\n      dispose_node(rk);\n\
@@ -302,7 +304,7 @@ data:
   requiredBy:
   - toptree/farthest.cpp
   - toptree/distancesum.cpp
-  timestamp: '2021-08-14 14:38:54+09:00'
+  timestamp: '2021-09-25 22:06:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/1595.toptree.test.cpp

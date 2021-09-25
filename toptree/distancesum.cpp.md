@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: toptree/distancesum.cpp
   requiredBy: []
-  timestamp: '2021-08-14 16:20:31+09:00'
+  timestamp: '2021-09-25 22:06:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/2636.test.cpp

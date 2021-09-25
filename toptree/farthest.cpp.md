@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: toptree/farthest.cpp
   requiredBy: []
-  timestamp: '2021-08-14 16:12:06+09:00'
+  timestamp: '2021-09-25 22:06:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3143.test.cpp
