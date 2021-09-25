@@ -14,7 +14,7 @@ struct TopTree{
     Node* ch[2];
     bool rev,guard;
     Type type;
-    Node():p(nullptr),q(nullptr),rev(false),guard(false){}
+    Node(){p=q=nullptr;rev=guard=false;}
   };
 
   inline static array<Vertex, 2*N> pool_vertex;
@@ -47,19 +47,22 @@ struct TopTree{
 
   inline Node* edge(Vertex* u,Cluster w,Vertex* v){
     auto t=get_new_node();
-    t->vs[0]=u;t->vs[1]=v;t->dat=w;t->type=Type::Edge;
+    t->vs[0]=u;t->vs[1]=v;t->dat=w;
+    t->type=Type::Edge;
     return pushup(t);
   }
 
   inline Node* compress(Node* l,Node* r){
     auto t=get_new_node();
-    t->ch[0]=l;t->ch[1]=r;t->type=Type::Compress;
+    t->ch[0]=l;t->ch[1]=r;
+    t->type=Type::Compress;
     return pushup(t);
   }
 
   inline Node* rake(Node* l,Node* r){
     auto t=get_new_node();
-    t->ch[0]=l;t->ch[1]=r;t->type=Type::Rake;
+    t->ch[0]=l;t->ch[1]=r;
+    t->type=Type::Rake;
     return pushup(t);
   }
 
@@ -235,7 +238,8 @@ struct TopTree{
         c->p=r;
         n->ch[dir]=t;
         t->p=n;
-        pushup(c);pushup(r);pushup(t);pushup(n);
+        pushup(c);pushup(r);
+        pushup(t);pushup(n);
         splay(r);
       }else{
         propagate(c);
