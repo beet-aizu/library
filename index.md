@@ -544,6 +544,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: polynomial/recursivesequence.cpp
       title: polynomial/recursivesequence.cpp
+  - name: segtree/2d
+    pages:
+    - icon: ':warning:'
+      path: segtree/2d/ushi.cpp
+      title: segtree/2d/ushi.cpp
   - name: segtree/basic
     pages:
     - icon: ':heavy_check_mark:'

@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/nicetree.cpp
     title: graph/nicetree.cpp
+  - icon: ':warning:'
+    path: segtree/2d/ushi.cpp
+    title: segtree/2d/ushi.cpp
   - icon: ':heavy_check_mark:'
     path: string/editdistance.cpp
     title: string/editdistance.cpp
@@ -151,6 +154,7 @@ data:
   - datastructure/slidingwindowaggregation.cpp
   - string/editdistance.cpp
   - graph/nicetree.cpp
+  - segtree/2d/ushi.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

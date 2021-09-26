@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: segtree/2d/ushi.cpp
+    title: segtree/2d/ushi.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0367.test.cpp
@@ -66,7 +69,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: segtree/basic/ushi.cpp
-  requiredBy: []
+  requiredBy:
+  - segtree/2d/ushi.cpp
   timestamp: '2021-02-05 14:59:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
