@@ -96,23 +96,61 @@ using MinConvexHullTrick = ConvexHullTrick<T, Objective::MINIMIZE>;
 template<typename T>
 using MaxConvexHullTrick = ConvexHullTrick<T, Objective::MAXIMIZE>;
 
-// minimize_{y0, y1 >=0} p0 y0 + p1 y1
-// such that as[i] * y0 + bs[i] * y1 >= cs[i]
-// assume all inputs are non-negative, as[i] > 0
-// O(n \log n) (n = as.size())
 template<typename T>
-T solve_lp(T p0,T p1,vector<T> as,vector<T> bs,vector<T> cs){
-  auto calc=[&](T y0,T y1){return max<T>(y0,0)*p0+max<T>(y1,0)*p1;};
-  MaxConvexHullTrick<T> cht;
-  T yy=cs[0]/as[0];
-  for(int i=0;i<(int)as.size();i++){
-    yy=max(yy,cs[i]/as[i]);
-    cht.add(-bs[i]/as[i],cs[i]/as[i]);
-  }
-  T res=calc(yy,0);
-  for(auto[y1,y0]:cht.getVertices()) res=min(res,calc(y0,y1));
+void chmin(optional<T> &a,const T& b){if(!a or *a>b) a=b;}
+
+// O(n \log n) (n = as.size())
+template<typename T, Objective objective>
+optional<T> solve_lp(T p0,T p1,vector<T> as,vector<T> bs,vector<T> cs){
+  auto calc=[&](T y0,T y1){return y0*p0+y1*p1;};
+  using P = pair<T, T>;
+  vector<P> vp;
+  for(int i=0;i<(int)as.size();i++)
+    vp.emplace_back(-bs[i]/as[i],cs[i]/as[i]);
+  sort(vp.begin(),vp.end());
+
+  ConvexHullTrick<T, objective> cht;
+  for(auto[k,m]:vp) cht.add(k,m);
+
+  optional<T> res;
+  for(auto[y1,y0]:cht.getVertices())
+    if(y0>=0 and y1>=0) chmin(res,calc(y0,y1));
   return res;
 }
+
+// minimize_{y0, y1 >=0} p0 y0 + p1 y1
+// s.t. as[i] * y0 + bs[i] * y1 >= cs[i]
+// assume as[i], bs[i] >0
+template<typename T>
+T solve_lp_min(T p0,T p1,vector<T> as,vector<T> bs,vector<T> cs){
+  T y0=0,y1=0;
+  for(int i=0;i<(int)as.size();i++){
+    y0=max(y0,cs[i]/as[i]);
+    y1=max(y1,cs[i]/bs[i]);
+  }
+  auto res=solve_lp<T, Objective::MAXIMIZE>(+p0,+p1,as,bs,cs);
+  chmin(res,p0*y0);
+  chmin(res,p1*y1);
+  return *res;
+}
+
+// maximize_{y0, y1 >=0} p0 y0 + p1 y1
+// s.t. as[i] * y0 + bs[i] * y1 <= cs[i]
+// assume as[i], bs[i] >0, cs[i] >=0
+template<typename T>
+T solve_lp_max(T p0,T p1,vector<T> as,vector<T> bs,vector<T> cs){
+  T y0=cs[0]/as[0],y1=cs[0]/bs[0];
+  for(int i=0;i<(int)as.size();i++){
+    y0=min(y0,cs[i]/as[i]);
+    y1=min(y1,cs[i]/bs[i]);
+    as[i]=-as[i];bs[i]=-bs[i];cs[i]=-cs[i];
+  }
+  auto res=solve_lp<T, Objective::MINIMIZE>(-p0,-p1,as,bs,cs);
+  chmin(res,-p0*y0);
+  chmin(res,-p1*y1);
+  return -*res;
+}
+
 
 //END CUT HERE
 #ifndef call_from_test
@@ -132,7 +170,7 @@ signed ARC128_C(){
   for(int i=0;i<=n;i++) bs[i]=n-i;
   for(int i=n;i>0;i--) cs[i-1]=as[i-1]+cs[i];
 
-  D ans=solve_lp<D>(m,s,vector<D>(n+1,1),bs,cs);
+  D ans=solve_lp_min<D>(m,s,vector<D>(n+1,1),bs,cs);
   cout<<fixed<<setprecision(12)<<ans<<endl;
   return 0;
 }
