@@ -92,7 +92,7 @@ data:
       title: combinatorics/surjection.cpp
   - name: convexhulltrick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: convexhulltrick/convexhulltrick.cpp
       title: convexhulltrick/convexhulltrick.cpp
     - icon: ':heavy_check_mark:'
@@ -1797,6 +1797,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0472.test.cpp
       title: test/yukicoder/0472.test.cpp
+    - icon: ':x:'
+      path: test/yukicoder/0771.test.cpp
+      title: test/yukicoder/0771.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0831.test.cpp
       title: test/yukicoder/0831.test.cpp
