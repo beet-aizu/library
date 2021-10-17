@@ -79,14 +79,70 @@ struct ConvexHullTrick : deque<Line<T>>{
     while(size()>=2 and at(size()-1)(x)>=at(size()-2)(x)) pop_back();
     return back()(x)*objective;
   }
+
+  vector<pair<T, T>> getVertices(){
+    vector<pair<T, T>> res;
+    for(int i=0;i+1<(int)size();i++){
+      auto l0=at(i+0),l1=at(i+1);
+      assert(l0.k!=l1.k);
+      T x=(l1.m-l0.m)/(l0.k-l1.k);
+      res.emplace_back(x,at(i)(x)*objective);
+    }
+    return res;
+  }
 };
 template<typename T>
 using MinConvexHullTrick = ConvexHullTrick<T, Objective::MINIMIZE>;
 template<typename T>
 using MaxConvexHullTrick = ConvexHullTrick<T, Objective::MAXIMIZE>;
+
+// minimize_{y0, y1 >=0} p0 y0 + p1 y1
+// such that as[i] * y0 + bs[i] * y1 >= cs[i]
+// assume all inputs are non-negative, as[i] > 0
+// O(n \log n) (n = as.size())
+template<typename T>
+T solve_lp(T p0,T p1,vector<T> as,vector<T> bs,vector<T> cs){
+  auto calc=[&](T y0,T y1){return max<T>(y0,0)*p0+max<T>(y1,0)*p1;};
+  MaxConvexHullTrick<T> cht;
+  T yy=cs[0]/as[0];
+  for(int i=0;i<(int)as.size();i++){
+    yy=max(yy,cs[i]/as[i]);
+    cht.add(-bs[i]/as[i],cs[i]/as[i]);
+  }
+  T res=calc(yy,0);
+  for(auto[y1,y0]:cht.getVertices()) res=min(res,calc(y0,y1));
+  return res;
+}
+
 //END CUT HERE
 #ifndef call_from_test
+
+signed ARC128_C(){
+  cin.tie(0);
+  ios::sync_with_stdio(0);
+
+  int n,m,s;
+  cin>>n>>m>>s;
+
+  using D = double;
+  vector<D> as(n);
+  for(int i=0;i<n;i++) cin>>as[i];
+
+  vector<D> bs(n+1,0),cs(n+1,0);
+  for(int i=0;i<=n;i++) bs[i]=n-i;
+  for(int i=n;i>0;i--) cs[i-1]=as[i-1]+cs[i];
+
+  D ans=solve_lp<D>(m,s,vector<D>(n+1,1),bs,cs);
+  cout<<fixed<<setprecision(12)<<ans<<endl;
+  return 0;
+}
+/*
+  verified on 2021/10/17
+  https://atcoder.jp/contests/arc128/tasks/arc128_c
+*/
+
 signed main(){
+  ARC128_C();
   return 0;
 }
 #endif
