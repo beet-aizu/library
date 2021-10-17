@@ -75,9 +75,9 @@ data:
   timestamp: '2020-10-27 19:32:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/4072.test.cpp
   - test/aoj/DSL_3_D.disjointsparsetable.test.cpp
   - test/yosupo/staticrmq.disjointsparsetable.test.cpp
-  - test/yukicoder/4072.test.cpp
 documentation_of: datastructure/disjointsparsetable.cpp
 layout: document
 redirect_from:

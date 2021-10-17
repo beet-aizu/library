@@ -38,8 +38,8 @@ data:
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
-  - tree/diameterforedge.cpp
   - datastructure/slidingwindowaggregation.cpp
+  - tree/diameterforedge.cpp
   - graph/nicetree.cpp
   - linearalgebra/binarymatrix.cpp
   - linkcuttree/subtree.cpp

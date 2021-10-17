@@ -65,20 +65,20 @@ data:
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2309.test.cpp
+  - test/yukicoder/1923.test.cpp
+  - test/aoj/2446.test.cpp
+  - test/aoj/geometry/CGL_7_H.test.cpp
+  - test/aoj/geometry/CGL_7_I.test.cpp
+  - test/aoj/geometry/CGL_2_D.test.cpp
+  - test/aoj/geometry/3049.test.cpp
+  - test/aoj/2308.test.cpp
   - test/aoj/ALDS1_15_B.test.cpp
   - test/aoj/2294.test.cpp
-  - test/aoj/geometry/3049.test.cpp
-  - test/aoj/geometry/CGL_7_H.test.cpp
-  - test/aoj/geometry/CGL_2_D.test.cpp
-  - test/aoj/geometry/CGL_7_I.test.cpp
   - test/aoj/2309.tarjan.test.cpp
-  - test/aoj/2446.test.cpp
   - test/aoj/3208.test.cpp
-  - test/aoj/2736.test.cpp
-  - test/aoj/2308.test.cpp
   - test/aoj/2975.test.cpp
-  - test/yukicoder/1923.test.cpp
+  - test/aoj/2736.test.cpp
+  - test/aoj/2309.test.cpp
 documentation_of: io/precision.cpp
 layout: document
 redirect_from:

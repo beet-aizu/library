@@ -58,11 +58,11 @@ data:
   timestamp: '2019-12-17 13:36:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3112.test.cpp
+  - test/yukicoder/3912.test.cpp
   - test/aoj/2359.test.cpp
+  - test/aoj/3112.test.cpp
   - test/aoj/DSL_2_D.test.cpp
   - test/aoj/DSL_2_E.test.cpp
-  - test/yukicoder/3912.test.cpp
 documentation_of: segtree/basic/dual.cpp
 layout: document
 redirect_from:

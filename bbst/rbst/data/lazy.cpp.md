@@ -89,9 +89,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_F.bbst.test.cpp
+  - test/aoj/DSL_2_H.bbst.test.cpp
   - test/aoj/DSL_2_I.bbst.test.cpp
   - test/aoj/DSL_2_G.bbst.test.cpp
-  - test/aoj/DSL_2_H.bbst.test.cpp
   - test/yosupo/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: bbst/rbst/data/lazy.cpp
 layout: document
