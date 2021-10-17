@@ -1,4 +1,5 @@
 // verification-helper: PROBLEM https://yukicoder.me/problems/771
+// verification-helper: ERROR 1e-6
 
 #include<bits/stdc++.h>
 using namespace std;
