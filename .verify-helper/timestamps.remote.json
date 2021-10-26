@@ -309,6 +309,7 @@
 "test/yosupo/sort_points_by_argument.test.cpp": "2020-10-27 16:41:24 +0900",
 "test/yosupo/sqrt_mod.test.cpp": "2020-11-13 20:22:13 +0900",
 "test/yosupo/sqrt_of_formal_power_series.test.cpp": "2021-03-25 09:46:10 +0900",
+"test/yosupo/static_range_frequency.test.cpp": "2021-10-27 00:41:51 +0900",
 "test/yosupo/static_range_inversions_query.test.cpp": "2021-05-01 12:56:38 +0900",
 "test/yosupo/static_range_sum.test.cpp": "2020-09-25 16:01:41 +0900",
 "test/yosupo/staticrmq.disjointsparsetable.test.cpp": "2020-10-27 19:32:25 +0900",
