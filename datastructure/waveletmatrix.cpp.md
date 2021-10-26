@@ -16,6 +16,9 @@ data:
     path: test/yosupo/range_kth_smallest.test.cpp
     title: test rquantile
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static_range_frequency.test.cpp
+    title: test/yosupo/static_range_frequency.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1732.test.cpp
     title: test quantile
   - icon: ':heavy_check_mark:'
@@ -156,6 +159,7 @@ data:
   - test/aoj/2674.test.cpp
   - test/aoj/1549.test.cpp
   - test/aoj/3063.test.cpp
+  - test/yosupo/static_range_frequency.test.cpp
   - test/yosupo/range_kth_smallest.test.cpp
 documentation_of: datastructure/waveletmatrix.cpp
 layout: document

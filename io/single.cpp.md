@@ -31,6 +31,9 @@ data:
     path: test/aoj/3213.test.cpp
     title: test/aoj/3213.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo/static_range_frequency.test.cpp
+    title: test/yosupo/static_range_frequency.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_inversions_query.test.cpp
     title: test/yosupo/static_range_inversions_query.test.cpp
   - icon: ':heavy_check_mark:'
@@ -106,6 +109,7 @@ data:
   - test/aoj/3168.test.cpp
   - test/aoj/1613.test.cpp
   - test/aoj/2981.test.cpp
+  - test/yosupo/static_range_frequency.test.cpp
   - test/yosupo/static_range_inversions_query.test.cpp
 documentation_of: io/single.cpp
 layout: document
