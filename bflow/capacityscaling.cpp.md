@@ -151,8 +151,8 @@ data:
   timestamp: '2020-10-27 16:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2230.test.cpp
   - test/aoj/2872.test.cpp
+  - test/aoj/2230.test.cpp
   - test/yosupo/min_cost_b_flow.test.cpp
   - test/yosupo/assignment.test.cpp
 documentation_of: bflow/capacityscaling.cpp

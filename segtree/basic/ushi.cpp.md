@@ -75,9 +75,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3277.test.cpp
-  - test/aoj/2969.test.cpp
   - test/aoj/2644.test.cpp
   - test/aoj/0367.test.cpp
+  - test/aoj/2969.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp
 documentation_of: segtree/basic/ushi.cpp
 layout: document

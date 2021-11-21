@@ -4,8 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2725.linecontainer.test.cpp
+    title: verify MaxLineContainer
+  - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
-    title: test/aoj/3069.test.cpp
+    title: verify MinLineContainer
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,6 +64,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3069.test.cpp
+  - test/aoj/2725.linecontainer.test.cpp
 documentation_of: convexhulltrick/linecontainer.cpp
 layout: document
 redirect_from:

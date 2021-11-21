@@ -161,45 +161,45 @@ data:
   isVerificationFile: false
   path: formalpowerseries/base.cpp
   requiredBy:
+  - includes/formalpowerseries.h
   - polynomial/interpolate.cpp
   - polynomial/multieval.cpp
-  - combinatorics/partition.cpp
-  - combinatorics/stirling1st.cpp
   - combinatorics/bernoulli.cpp
   - combinatorics/stirling2nd.cpp
-  - formalpowerseries/div.cpp
-  - formalpowerseries/diff.cpp
-  - formalpowerseries/pow.cpp
-  - formalpowerseries/shift.cpp
+  - combinatorics/stirling1st.cpp
+  - combinatorics/partition.cpp
   - formalpowerseries/integral.cpp
-  - formalpowerseries/sqrt.cpp
   - formalpowerseries/mod.cpp
-  - formalpowerseries/inv.cpp
   - formalpowerseries/exp.cpp
+  - formalpowerseries/shift.cpp
+  - formalpowerseries/diff.cpp
+  - formalpowerseries/inv.cpp
+  - formalpowerseries/pow.cpp
   - formalpowerseries/998244353.cpp
   - formalpowerseries/log.cpp
-  - includes/formalpowerseries.h
+  - formalpowerseries/div.cpp
+  - formalpowerseries/sqrt.cpp
   timestamp: '2021-03-25 09:21:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5633.test.cpp
   - test/yukicoder/2744.test.cpp
-  - test/aoj/3084.test.cpp
   - test/aoj/3072.test.cpp
+  - test/aoj/3084.test.cpp
   - test/aoj/2985.garner.test.cpp
   - test/aoj/2985.test.cpp
-  - test/yosupo/sharp_p_subset_sum.test.cpp
-  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
-  - test/yosupo/bernoulli_number.test.cpp
-  - test/yosupo/sqrt_of_formal_power_series.test.cpp
   - test/yosupo/partition_function.test.cpp
+  - test/yosupo/sharp_p_subset_sum.test.cpp
+  - test/yosupo/bernoulli_number.test.cpp
+  - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/yosupo/stirling_number_of_the_second_kind.test.cpp
   - test/yosupo/stirling_number_of_the_first_kind.test.cpp
   - test/yosupo/polynomial_interpolation.test.cpp
   - test/yosupo/multipoint_evaluation.test.cpp
-  - test/yosupo/inv_of_formal_power_series.test.cpp
   - test/yosupo/log_of_formal_power_series.test.cpp
+  - test/yosupo/inv_of_formal_power_series.test.cpp
   - test/yosupo/exp_of_formal_power_series.test.cpp
-  - test/yosupo/pow_of_formal_power_series.test.cpp
+  - test/yosupo/sqrt_of_formal_power_series.test.cpp
   - test/yosupo/polynomial_taylor_shift.test.cpp
 documentation_of: formalpowerseries/base.cpp
 layout: document

@@ -97,18 +97,18 @@ data:
   isVerificationFile: false
   path: maxflow/dinic.cpp
   requiredBy:
-  - maxflow/leastflow.cpp
   - maxflow/twocommodity.cpp
+  - maxflow/leastflow.cpp
   timestamp: '2020-10-27 18:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/3047.test.cpp
-  - test/aoj/2313.test.cpp
-  - test/aoj/2979.test.cpp
   - test/aoj/2328.test.cpp
-  - test/aoj/3058.test.cpp
   - test/aoj/1599.test.cpp
+  - test/aoj/3058.test.cpp
+  - test/aoj/2313.test.cpp
   - test/aoj/1615.test.cpp
+  - test/aoj/2979.test.cpp
 documentation_of: maxflow/dinic.cpp
 layout: document
 title: "\u6700\u5927\u6D41"

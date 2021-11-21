@@ -42,13 +42,13 @@ data:
   isVerificationFile: false
   path: mod/inverse.cpp
   requiredBy:
-  - math/combination.cpp
   - math/linearcongruence.cpp
+  - math/combination.cpp
   timestamp: '2021-06-20 16:57:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2970.test.cpp
   - test/aoj/2659.test.cpp
+  - test/aoj/2970.test.cpp
 documentation_of: mod/inverse.cpp
 layout: document
 redirect_from:
