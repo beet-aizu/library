@@ -5,10 +5,10 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.linecontainer.test.cpp
-    title: verify MaxLineContainer
+    title: test MaxLineContainer
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
-    title: verify MinLineContainer
+    title: test MinLineContainer
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'

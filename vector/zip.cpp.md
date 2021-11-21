@@ -8,7 +8,7 @@ data:
     title: test/aoj/2563.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.linecontainer.test.cpp
-    title: verify MaxLineContainer
+    title: test MaxLineContainer
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.test.cpp
     title: test/aoj/2725.test.cpp

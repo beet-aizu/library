@@ -56,7 +56,7 @@ data:
     title: test/aoj/2627.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.linecontainer.test.cpp
-    title: verify MaxLineContainer
+    title: test MaxLineContainer
   - icon: ':heavy_check_mark:'
     path: test/aoj/2725.test.cpp
     title: test/aoj/2725.test.cpp
@@ -80,7 +80,7 @@ data:
     title: test/aoj/3037.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/3069.test.cpp
-    title: verify MinLineContainer
+    title: test MinLineContainer
   - icon: ':heavy_check_mark:'
     path: test/aoj/3112.test.cpp
     title: test query

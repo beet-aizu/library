@@ -235,6 +235,9 @@ data:
     path: test/yukicoder/3211.test.cpp
     title: test/yukicoder/3211.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/3267.test.cpp
+    title: test GCDConvolution
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/4271.test.cpp
     title: test/yukicoder/4271.test.cpp
   - icon: ':heavy_check_mark:'
@@ -246,6 +249,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/5633.test.cpp
     title: test/yukicoder/5633.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/7107.test.cpp
+    title: test LCMConvolution
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -309,7 +315,9 @@ data:
   verifiedWith:
   - test/yukicoder/1973.test.cpp
   - test/yukicoder/5025.test.cpp
+  - test/yukicoder/7107.test.cpp
   - test/yukicoder/4271.test.cpp
+  - test/yukicoder/3267.test.cpp
   - test/yukicoder/3211.test.cpp
   - test/yukicoder/1665.test.cpp
   - test/yukicoder/0444.test.cpp
