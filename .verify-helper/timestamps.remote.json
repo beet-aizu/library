@@ -361,6 +361,7 @@
 "test/yukicoder/2772.test.cpp": "2021-03-25 09:46:10 +0900",
 "test/yukicoder/3211.test.cpp": "2021-07-24 22:40:18 +0900",
 "test/yukicoder/3227.test.cpp": "2020-10-27 12:55:52 +0900",
+"test/yukicoder/3267.test.cpp": "2021-11-21 12:07:31 +0900",
 "test/yukicoder/3277.test.cpp": "2021-02-05 15:09:55 +0900",
 "test/yukicoder/3354.test.cpp": "2021-02-20 22:51:36 +0900",
 "test/yukicoder/3405.test.cpp": "2020-11-02 16:12:53 +0900",
@@ -388,5 +389,6 @@
 "test/yukicoder/5061.test.cpp": "2021-09-05 12:24:05 +0900",
 "test/yukicoder/5223.test.cpp": "2021-05-01 12:56:38 +0900",
 "test/yukicoder/5633.test.cpp": "2021-03-25 09:46:10 +0900",
-"test/yukicoder/6680.test.cpp": "2021-08-06 23:06:43 +0900"
+"test/yukicoder/6680.test.cpp": "2021-08-06 23:06:43 +0900",
+"test/yukicoder/7107.test.cpp": "2021-11-21 12:07:31 +0900"
 }
