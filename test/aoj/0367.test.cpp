@@ -62,7 +62,7 @@ signed main(){
       return ti;
     };
 
-  SegmentTree<T> seg(f,ti);
+  SegmentTree seg(f,ti);
   vector<T> vt;
   for(int i=0;i<n;i++)
     vt.emplace_back(hld.inv[i],hld.inv[i],0);

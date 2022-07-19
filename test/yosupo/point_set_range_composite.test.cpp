@@ -23,7 +23,7 @@ signed main(){
   using T = LinearFunction<M>;
   auto f=[&](T x,T y){return x*y;};
   T ti=T::mul_identity();
-  SegmentTree<T> seg(f,ti);
+  SegmentTree seg(f,ti);
 
   vector<T> vt;
   for(int i=0;i<n;i++) vt.emplace_back(as[i],bs[i]);

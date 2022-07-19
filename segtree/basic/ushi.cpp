@@ -3,15 +3,16 @@
 using namespace std;
 #endif
 //BEGIN CUT HERE
-template <typename T>
+template <typename T, typename F>
 struct SegmentTree{
-  using F = function<T(T,T)>;
   int n;
   F f;
   T ti;
   vector<T> dat;
 
-  SegmentTree(F f,T ti):f(f),ti(ti){}
+  SegmentTree(F f_,T ti_):f(f_),ti(ti_){    
+    static_assert(std::is_same<T, typename std::invoke_result<F, T, T>::type>::value);
+  }
 
   void init(int n_){
     n=1;

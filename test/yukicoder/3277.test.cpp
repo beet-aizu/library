@@ -18,7 +18,7 @@ signed main(){
   auto as=read(n);
 
   auto f=[](int a,int b){return min(a,b);};
-  SegmentTree<int> seg(f,n+1);
+  SegmentTree seg(f,n+1);
   seg.build(as);
 
   for(int i=0;i<q;i++){

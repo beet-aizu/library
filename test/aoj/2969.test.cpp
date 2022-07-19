@@ -29,7 +29,7 @@ signed main(){
   int m=dc.size();
 
   auto f=[&](int a,int b){return min(a,b);};
-  SegmentTree<int> seg(f,n+3);
+  SegmentTree seg(f,n+3);
   seg.build(vector<int>(m,n+2));
   seg.set_val(dc[0],0);
 

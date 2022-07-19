@@ -23,7 +23,7 @@ signed main(){
                     min(a.second,b.second));
          };
   int n=s.size()+1;
-  SegmentTree<P> seg(f,P(-1,n+1));
+  SegmentTree seg(f,P(-1,n+1));
 
   vector<P> vp;
   for(int i=0;i<n;i++) vp.emplace_back(sa[i],sa[i]);
