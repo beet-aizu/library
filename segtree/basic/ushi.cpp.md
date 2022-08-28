@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: segtree/2d/ushi.cpp
     title: segtree/2d/ushi.cpp
   _extendedVerifiedWith:
@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2969.test.cpp
     title: test/aoj/2969.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/3518.test.cpp
+    title: test/aoj/3518.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/point_set_range_composite.test.cpp
     title: test/yosupo/point_set_range_composite.test.cpp
@@ -75,10 +78,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/3277.test.cpp
+  - test/yosupo/point_set_range_composite.test.cpp
+  - test/aoj/2969.test.cpp
+  - test/aoj/3518.test.cpp
   - test/aoj/2644.test.cpp
   - test/aoj/0367.test.cpp
-  - test/aoj/2969.test.cpp
-  - test/yosupo/point_set_range_composite.test.cpp
 documentation_of: segtree/basic/ushi.cpp
 layout: document
 redirect_from:

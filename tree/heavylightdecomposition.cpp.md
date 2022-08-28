@@ -69,10 +69,10 @@ data:
   timestamp: '2020-09-15 22:29:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0367.test.cpp
+  - test/yosupo/vertex_add_path_sum.test.cpp
   - test/aoj/2450.test.cpp
   - test/aoj/2667.test.cpp
-  - test/yosupo/vertex_add_path_sum.test.cpp
+  - test/aoj/0367.test.cpp
 documentation_of: tree/heavylightdecomposition.cpp
 layout: document
 title: Heavy Light Decomposition

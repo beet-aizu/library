@@ -33,8 +33,8 @@ data:
   timestamp: '2021-09-23 20:26:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/0402.test.cpp
   - test/yosupo/bitwise_xor_convolution.test.cpp
+  - test/aoj/0402.test.cpp
 documentation_of: convolution/bitwise/xor.cpp
 layout: document
 redirect_from:

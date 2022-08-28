@@ -35,8 +35,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/5025.test.cpp
-  - test/aoj/2446.test.cpp
   - test/yosupo/subset_convolution.test.cpp
+  - test/aoj/2446.test.cpp
 documentation_of: convolution/bitwise/or.cpp
 layout: document
 redirect_from:

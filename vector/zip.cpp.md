@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: segtree/2d/ushi.cpp
+    title: segtree/2d/ushi.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2563.test.cpp
@@ -35,14 +38,15 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: vector/zip.cpp
-  requiredBy: []
+  requiredBy:
+  - segtree/2d/ushi.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2563.test.cpp
   - test/aoj/2969.test.cpp
   - test/aoj/2725.linecontainer.test.cpp
   - test/aoj/2725.test.cpp
+  - test/aoj/2563.test.cpp
 documentation_of: vector/zip.cpp
 layout: document
 redirect_from:

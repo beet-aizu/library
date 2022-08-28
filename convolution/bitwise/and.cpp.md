@@ -31,8 +31,8 @@ data:
   timestamp: '2021-09-23 20:26:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2981.test.cpp
   - test/yosupo/bitwise_and_convolution.test.cpp
+  - test/aoj/2981.test.cpp
 documentation_of: convolution/bitwise/and.cpp
 layout: document
 redirect_from:

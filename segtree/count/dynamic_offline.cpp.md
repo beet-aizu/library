@@ -68,9 +68,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2063.test.cpp
-  - test/aoj/2842.test.cpp
   - test/yosupo/rectangle_sum.test.cpp
   - test/yosupo/point_add_rectangle_sum.test.cpp
+  - test/aoj/2842.test.cpp
 documentation_of: segtree/count/dynamic_offline.cpp
 layout: document
 redirect_from:

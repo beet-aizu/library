@@ -47,8 +47,8 @@ data:
   timestamp: '2021-01-03 18:39:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2891.test.cpp
   - test/yosupo/cycle_detection.test.cpp
+  - test/aoj/2891.test.cpp
 documentation_of: graph/cycle.cpp
 layout: document
 redirect_from:

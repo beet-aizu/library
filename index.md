@@ -552,7 +552,7 @@ data:
       title: polynomial/recursivesequence.cpp
   - name: segtree/2d
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/2d/ushi.cpp
       title: segtree/2d/ushi.cpp
   - name: segtree/basic
@@ -1242,6 +1242,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/3506.test.cpp
       title: test/aoj/3506.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/3518.test.cpp
+      title: test/aoj/3518.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_10_C.test.cpp
       title: test/aoj/ALDS1_10_C.test.cpp
