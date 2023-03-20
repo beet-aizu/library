@@ -15,7 +15,7 @@ struct LongestCommonPrefix{
 
   vector<int> ht;
   vector< vector<int> > dat;
-  LongestCommonPrefix(Seq &s):sa(s){
+  LongestCommonPrefix(const Seq &s):sa(s){
     int n=s.size();
     vector<int> lcp(n,0);
 
@@ -25,7 +25,7 @@ struct LongestCommonPrefix{
       int j=sa[sa.rev[i]-1];
       if(t>0) t--;
       for(;j+t<n and i+t<n;t++){
-        if(sa.s[j+t]!=sa.s[i+t]) break;
+        if(s[j+t]!=s[i+t]) break;
       }
       lcp[sa.rev[i]-1]=t;
     }
