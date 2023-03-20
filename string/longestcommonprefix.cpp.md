@@ -37,15 +37,16 @@ data:
     #define call_from_test\n#include \"suffixarray.cpp\"\n#undef call_from_test\n\n\
     #endif\n//BEGIN CUT HERE\n\ntemplate<typename Seq = string>\nstruct LongestCommonPrefix{\n\
     \  SuffixArray<Seq> sa;\n\n  vector<int> ht;\n  vector< vector<int> > dat;\n \
-    \ LongestCommonPrefix(Seq &s):sa(s){\n    int n=s.size();\n    vector<int> lcp(n,0);\n\
-    \n    int t=0;\n    lcp[0]=0;\n    for(int i=0;i<n;i++){\n      int j=sa[sa.rev[i]-1];\n\
-    \      if(t>0) t--;\n      for(;j+t<n and i+t<n;t++){\n        if(sa.s[j+t]!=sa.s[i+t])\
-    \ break;\n      }\n      lcp[sa.rev[i]-1]=t;\n    }\n\n    int h=1;\n    while((1<<h)<n)\
-    \ h++;\n    dat.assign(h,vector<int>(n));\n    ht.assign(n+1,0);\n    for(int\
-    \ j=2;j<=n;j++) ht[j]=ht[j>>1]+1;\n\n    for(int j=0;j<n;j++) dat[0][j]=lcp[j];\n\
-    \    for(int i=1,p=1;i<h;i++,p<<=1)\n      for(int j=0;j<n;j++)\n        dat[i][j]=min(dat[i-1][j],dat[i-1][min(j+p,n-1)]);\n\
-    \  }\n\n  // a, b are indices for suffix array\n  int query(int a,int b){\n  \
-    \  assert(a!=b);\n    if(a>b) swap(a,b);\n    int l=b-a;\n    return min(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);\n\
+    \ LongestCommonPrefix(const Seq &s):sa(s){\n    int n=s.size();\n    vector<int>\
+    \ lcp(n,0);\n\n    int t=0;\n    lcp[0]=0;\n    for(int i=0;i<n;i++){\n      int\
+    \ j=sa[sa.rev[i]-1];\n      if(t>0) t--;\n      for(;j+t<n and i+t<n;t++){\n \
+    \       if(s[j+t]!=s[i+t]) break;\n      }\n      lcp[sa.rev[i]-1]=t;\n    }\n\
+    \n    int h=1;\n    while((1<<h)<n) h++;\n    dat.assign(h,vector<int>(n));\n\
+    \    ht.assign(n+1,0);\n    for(int j=2;j<=n;j++) ht[j]=ht[j>>1]+1;\n\n    for(int\
+    \ j=0;j<n;j++) dat[0][j]=lcp[j];\n    for(int i=1,p=1;i<h;i++,p<<=1)\n      for(int\
+    \ j=0;j<n;j++)\n        dat[i][j]=min(dat[i-1][j],dat[i-1][min(j+p,n-1)]);\n \
+    \ }\n\n  // a, b are indices for suffix array\n  int query(int a,int b){\n   \
+    \ assert(a!=b);\n    if(a>b) swap(a,b);\n    int l=b-a;\n    return min(dat[ht[l]][a],dat[ht[l]][b-(1<<ht[l])]);\n\
     \  }\n\n  // a, b are indices for string\n  int lcp(int a,int b){\n    return\
     \ query(sa.rev[a],sa.rev[b]);\n  }\n};\n//END CUT HERE\n#ifndef call_from_test\n\
     //INSERT ABOVE HERE\nsigned main(){\n  return 0;\n}\n#endif\n"
@@ -54,7 +55,7 @@ data:
   isVerificationFile: false
   path: string/longestcommonprefix.cpp
   requiredBy: []
-  timestamp: '2023-03-20 15:38:36+09:00'
+  timestamp: '2023-03-20 16:01:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/number_of_substrings.test.cpp

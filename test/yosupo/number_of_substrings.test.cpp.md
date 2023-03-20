@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2023-03-20 15:38:36+09:00'
+  timestamp: '2023-03-20 16:01:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/number_of_substrings.test.cpp
