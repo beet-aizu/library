@@ -12,8 +12,6 @@ documentation_of: //string/suffixarray.cpp
 $O(\|S\| \log \|S\|)$
 
 ## 注意
-- 番兵として末尾に `$` を挿入している
-- $S$ に記号が含まれている場合は注意が必要
 - `sa[0]` は常に $\|S\|$ になる
 
 ## 解説記事
