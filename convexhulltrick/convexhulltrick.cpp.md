@@ -136,9 +136,9 @@ data:
   timestamp: '2021-10-17 17:32:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0771.test.cpp
-  - test/aoj/2975.test.cpp
   - test/aoj/2725.test.cpp
+  - test/aoj/2975.test.cpp
+  - test/yukicoder/0771.test.cpp
 documentation_of: convexhulltrick/convexhulltrick.cpp
 layout: document
 redirect_from:

@@ -63,8 +63,8 @@ data:
   timestamp: '2020-11-04 18:27:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/1508.test.cpp
   - test/aoj/0437.test.cpp
+  - test/aoj/1508.test.cpp
 documentation_of: bbst/rbst/data/ushi.cpp
 layout: document
 redirect_from:

@@ -77,12 +77,12 @@ data:
   timestamp: '2021-02-05 14:59:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/3277.test.cpp
   - test/yosupo/point_set_range_composite.test.cpp
-  - test/aoj/2969.test.cpp
   - test/aoj/3518.test.cpp
+  - test/aoj/2969.test.cpp
   - test/aoj/2644.test.cpp
   - test/aoj/0367.test.cpp
+  - test/yukicoder/3277.test.cpp
 documentation_of: segtree/basic/ushi.cpp
 layout: document
 redirect_from:

@@ -38,10 +38,10 @@ data:
   isVerificationFile: false
   path: tools/fastio.cpp
   requiredBy:
+  - linearalgebra/binarymatrix.cpp
   - tree/diameterforedge.cpp
   - graph/nicetree.cpp
   - datastructure/slidingwindowaggregation.cpp
-  - linearalgebra/binarymatrix.cpp
   - linkcuttree/subtree.cpp
   timestamp: '2020-10-27 12:29:50+09:00'
   verificationStatus: LIBRARY_ALL_AC

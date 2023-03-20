@@ -34,9 +34,9 @@ data:
   timestamp: '2021-09-23 20:26:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/5025.test.cpp
   - test/yosupo/subset_convolution.test.cpp
   - test/aoj/2446.test.cpp
+  - test/yukicoder/5025.test.cpp
 documentation_of: convolution/bitwise/or.cpp
 layout: document
 redirect_from:
