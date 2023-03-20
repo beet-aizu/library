@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: string/longestcommonprefix.cpp
   requiredBy: []
-  timestamp: '2020-12-28 13:49:02+09:00'
+  timestamp: '2023-03-20 15:38:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/number_of_substrings.test.cpp
