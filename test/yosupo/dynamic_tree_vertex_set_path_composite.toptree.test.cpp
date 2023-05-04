@@ -39,7 +39,7 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  const size_t N = 2e5;
+  const size_t N = 2e5 + 10;
   TopTree<Vertex, Cluster, N> G;
 
   int n,q;
@@ -56,6 +56,9 @@ signed main(){
     cin>>u>>v;
     G.link(vs[u],Cluster(L(1,0)),vs[v]);
   }
+
+  Vertex* du=G.create(L(1,0));
+  Vertex* dv=G.create(L(1,0));
 
   for(int i=0;i<q;i++){
     int t;
@@ -78,14 +81,15 @@ signed main(){
     if(t==2){
       int u,v,x;
       cin>>u>>v>>x;
-      if(u==v){
-        auto res=vs[u]->val;
-        cout<<res(x)<<newl;
-      }else{
-        auto res=G.get_path(vs[u],vs[v]).res.x;
-        res=vs[u]->val*res*vs[v]->val;
-        cout<<res(x)<<newl;
-      }
+
+      G.link(du,Cluster(L(1,0)),vs[u]);
+      G.link(dv,Cluster(L(1,0)),vs[v]);
+
+      auto res=G.get_path(du,dv).res.x;
+      cout<<res(x)<<newl;
+
+      G.cut(du,vs[u]);
+      G.cut(dv,vs[v]);
     }
   }
   return 0;

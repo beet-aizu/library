@@ -43,7 +43,7 @@ signed main(){
   vector<int> ws(n);
   for(int i=0;i<n;i++) cin>>ws[i];
 
-  const size_t N = 1e5;
+  const size_t N = 1e5 + 10;
   TopTree<Vertex, Cluster, N> G;
 
   vector<Vertex*> vs(n);
@@ -56,18 +56,23 @@ signed main(){
     G.link(vs[u],Cluster(),vs[v]);
   }
 
+  Vertex* da=G.create(0);
+  Vertex* db=G.create(0);
+
   int q;
   cin>>q;
   for(int i=0;i<q;i++){
     int a,b;
     cin>>a>>b;
     a--;b--;
-    ll res=G.get_path(vs[a],vs[b]).md;
-    auto ab=G.get_subtree(vs[a],vs[b]);
-    auto ba=G.get_subtree(vs[b],vs[a]);
-    chmax(res,max(ab.chd,ab.ma));
-    chmax(res,max(ba.chd,ba.ma));
-    cout<<res<<newl;
+
+    G.link(da,Cluster(),vs[a]);
+    G.link(db,Cluster(),vs[b]);
+
+    cout<<G.get_path(da,db).md<<newl;
+
+    G.cut(da,vs[a]);
+    G.cut(db,vs[b]);
   }
   return 0;
 }
