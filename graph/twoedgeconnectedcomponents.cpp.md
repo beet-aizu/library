@@ -70,8 +70,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/two_edge_connected_components.test.cpp
-  - test/aoj/0415.test.cpp
   - test/aoj/0377.test.cpp
+  - test/aoj/0415.test.cpp
 documentation_of: graph/twoedgeconnectedcomponents.cpp
 layout: document
 redirect_from:

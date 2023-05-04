@@ -191,17 +191,17 @@ data:
     \  static Cluster compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res*P(v->val)*y.res);\n\
     \  }\n  static Cluster rake(Cluster x,Cluster){\n    return x;\n  }\n};\n\nsigned\
     \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\\
-    n';\n\n  const size_t N = 2e5;\n  TopTree<Vertex, Cluster, N> G;\n\n  int n,q;\n\
-    \  cin>>n>>q;\n  vector<int> as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\
+    n';\n\n  const size_t N = 2e5 + 10;\n  TopTree<Vertex, Cluster, N> G;\n\n  int\
+    \ n,q;\n  cin>>n>>q;\n  vector<int> as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\
     \n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(L(as[i],bs[i]));\n\
     \n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.link(vs[u],Cluster(L(1,0)),vs[v]);\n\
-    \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n  \
-    \    int u,v,w,x;\n      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n     \
-    \ G.link(vs[w],Cluster(L(1,0)),vs[x]);\n    }\n\n    if(t==1){\n      int p,c,d;\n\
-    \      cin>>p>>c>>d;\n      G.set_vertex(vs[p],Vertex(L(c,d)));\n    }\n\n   \
-    \ if(t==2){\n      int u,v,x;\n      cin>>u>>v>>x;\n      if(u==v){\n        auto\
-    \ res=vs[u]->val;\n        cout<<res(x)<<newl;\n      }else{\n        auto res=G.get_path(vs[u],vs[v]).res.x;\n\
-    \        res=vs[u]->val*res*vs[v]->val;\n        cout<<res(x)<<newl;\n      }\n\
+    \  }\n\n  Vertex* du=G.create(L(1,0));\n  Vertex* dv=G.create(L(1,0));\n\n  for(int\
+    \ i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n      int u,v,w,x;\n\
+    \      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n      G.link(vs[w],Cluster(L(1,0)),vs[x]);\n\
+    \    }\n\n    if(t==1){\n      int p,c,d;\n      cin>>p>>c>>d;\n      G.set_vertex(vs[p],Vertex(L(c,d)));\n\
+    \    }\n\n    if(t==2){\n      int u,v,x;\n      cin>>u>>v>>x;\n\n      G.link(du,Cluster(L(1,0)),vs[u]);\n\
+    \      G.link(dv,Cluster(L(1,0)),vs[v]);\n\n      auto res=G.get_path(du,dv).res.x;\n\
+    \      cout<<res(x)<<newl;\n\n      G.cut(du,vs[u]);\n      G.cut(dv,vs[v]);\n\
     \    }\n  }\n  return 0;\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define call_from_test\n#include\
@@ -214,17 +214,17 @@ data:
     \ compress(Cluster x,Vertex* v,Cluster y){\n    return Cluster(x.res*P(v->val)*y.res);\n\
     \  }\n  static Cluster rake(Cluster x,Cluster){\n    return x;\n  }\n};\n\nsigned\
     \ main(){\n  cin.tie(0);\n  ios::sync_with_stdio(0);\n  const char newl = '\\\
-    n';\n\n  const size_t N = 2e5;\n  TopTree<Vertex, Cluster, N> G;\n\n  int n,q;\n\
-    \  cin>>n>>q;\n  vector<int> as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\
+    n';\n\n  const size_t N = 2e5 + 10;\n  TopTree<Vertex, Cluster, N> G;\n\n  int\
+    \ n,q;\n  cin>>n>>q;\n  vector<int> as(n),bs(n);\n  for(int i=0;i<n;i++) cin>>as[i]>>bs[i];\n\
     \n  vector<Vertex*> vs(n);\n  for(int i=0;i<n;i++)\n    vs[i]=G.create(L(as[i],bs[i]));\n\
     \n  for(int i=1;i<n;i++){\n    int u,v;\n    cin>>u>>v;\n    G.link(vs[u],Cluster(L(1,0)),vs[v]);\n\
-    \  }\n\n  for(int i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n  \
-    \    int u,v,w,x;\n      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n     \
-    \ G.link(vs[w],Cluster(L(1,0)),vs[x]);\n    }\n\n    if(t==1){\n      int p,c,d;\n\
-    \      cin>>p>>c>>d;\n      G.set_vertex(vs[p],Vertex(L(c,d)));\n    }\n\n   \
-    \ if(t==2){\n      int u,v,x;\n      cin>>u>>v>>x;\n      if(u==v){\n        auto\
-    \ res=vs[u]->val;\n        cout<<res(x)<<newl;\n      }else{\n        auto res=G.get_path(vs[u],vs[v]).res.x;\n\
-    \        res=vs[u]->val*res*vs[v]->val;\n        cout<<res(x)<<newl;\n      }\n\
+    \  }\n\n  Vertex* du=G.create(L(1,0));\n  Vertex* dv=G.create(L(1,0));\n\n  for(int\
+    \ i=0;i<q;i++){\n    int t;\n    cin>>t;\n\n    if(t==0){\n      int u,v,w,x;\n\
+    \      cin>>u>>v>>w>>x;\n\n      G.cut(vs[u],vs[v]);\n      G.link(vs[w],Cluster(L(1,0)),vs[x]);\n\
+    \    }\n\n    if(t==1){\n      int p,c,d;\n      cin>>p>>c>>d;\n      G.set_vertex(vs[p],Vertex(L(c,d)));\n\
+    \    }\n\n    if(t==2){\n      int u,v,x;\n      cin>>u>>v>>x;\n\n      G.link(du,Cluster(L(1,0)),vs[u]);\n\
+    \      G.link(dv,Cluster(L(1,0)),vs[v]);\n\n      auto res=G.get_path(du,dv).res.x;\n\
+    \      cout<<res(x)<<newl;\n\n      G.cut(du,vs[u]);\n      G.cut(dv,vs[v]);\n\
     \    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - mod/mint.cpp
@@ -234,7 +234,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   requiredBy: []
-  timestamp: '2021-09-25 22:06:41+09:00'
+  timestamp: '2023-05-04 18:59:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp

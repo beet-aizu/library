@@ -63,8 +63,8 @@ data:
   timestamp: '2020-10-03 18:22:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/2725.linecontainer.test.cpp
   - test/aoj/3069.test.cpp
+  - test/aoj/2725.linecontainer.test.cpp
 documentation_of: convexhulltrick/linecontainer.cpp
 layout: document
 redirect_from:

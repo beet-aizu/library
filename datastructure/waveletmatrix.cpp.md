@@ -152,15 +152,15 @@ data:
   timestamp: '2020-10-27 12:55:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/static_range_frequency.test.cpp
+  - test/yukicoder/1937.test.cpp
+  - test/yukicoder/2147.test.cpp
+  - test/yukicoder/1732.test.cpp
+  - test/yukicoder/3227.test.cpp
   - test/yosupo/range_kth_smallest.test.cpp
+  - test/yosupo/static_range_frequency.test.cpp
+  - test/aoj/1549.test.cpp
   - test/aoj/2674.test.cpp
   - test/aoj/3063.test.cpp
-  - test/aoj/1549.test.cpp
-  - test/yukicoder/1732.test.cpp
-  - test/yukicoder/2147.test.cpp
-  - test/yukicoder/3227.test.cpp
-  - test/yukicoder/1937.test.cpp
 documentation_of: datastructure/waveletmatrix.cpp
 layout: document
 title: Wavelet Matrix

@@ -103,11 +103,11 @@ data:
   verifiedWith:
   - test/yosupo/number_of_substrings.test.cpp
   - test/yosupo/suffixarray.test.cpp
-  - test/aoj/2711.test.cpp
+  - test/aoj/3112.test.cpp
   - test/aoj/3033.test.cpp
   - test/aoj/2644.test.cpp
-  - test/aoj/3112.test.cpp
   - test/aoj/3063.test.cpp
+  - test/aoj/2711.test.cpp
 documentation_of: string/suffixarray.cpp
 layout: document
 title: Suffix Array

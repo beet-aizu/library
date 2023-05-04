@@ -56,8 +56,8 @@ data:
   timestamp: '2020-10-27 12:43:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/3506.test.cpp
   - test/yukicoder/4387.test.cpp
+  - test/aoj/3506.test.cpp
 documentation_of: graph/rangetorange.cpp
 layout: document
 title: Range to Range

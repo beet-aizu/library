@@ -70,8 +70,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/vertex_add_path_sum.test.cpp
-  - test/aoj/2450.test.cpp
   - test/aoj/2667.test.cpp
+  - test/aoj/2450.test.cpp
   - test/aoj/0367.test.cpp
 documentation_of: tree/heavylightdecomposition.cpp
 layout: document
