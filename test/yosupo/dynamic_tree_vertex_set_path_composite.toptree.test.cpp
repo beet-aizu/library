@@ -39,7 +39,7 @@ signed main(){
   ios::sync_with_stdio(0);
   const char newl = '\n';
 
-  const size_t N = 2e5;
+  const size_t N = 2e5 + 10;
   TopTree<Vertex, Cluster, N> G;
 
   int n,q;
