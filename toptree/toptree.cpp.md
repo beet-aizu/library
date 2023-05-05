@@ -45,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/4862.test.cpp
     title: test/yukicoder/4862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/9158.test.cpp
+    title: test/yukicoder/9158.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -311,6 +314,7 @@ data:
   - test/yukicoder/3453.test.cpp
   - test/yukicoder/4706.test.cpp
   - test/yukicoder/2587.test.cpp
+  - test/yukicoder/9158.test.cpp
   - test/yosupo/dynamic_tree_vertex_set_path_composite.toptree.test.cpp
   - test/yosupo/dynamic_tree_vertex_add_subtree_sum.toptree.test.cpp
   - test/aoj/3143.test.cpp

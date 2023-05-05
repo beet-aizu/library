@@ -1974,5 +1974,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/7107.test.cpp
       title: test LCMConvolution
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/9158.test.cpp
+      title: test/yukicoder/9158.test.cpp
 layout: toppage
 ---

@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/3143.test.cpp
     title: Farthest (with index)
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/9158.test.cpp
+    title: test/yukicoder/9158.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,6 +64,7 @@ data:
   timestamp: '2021-09-25 22:06:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/9158.test.cpp
   - test/aoj/3143.test.cpp
 documentation_of: toptree/farthest.cpp
 layout: document
